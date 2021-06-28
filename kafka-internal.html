@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2021-06-17 Thu 18:11 -->
+<!-- 2021-06-28 Mon 11:43 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>kafka-internal</title>
@@ -229,175 +229,193 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgec4e06c">1. 第一章: 初识Kafka</a>
+<li><a href="#orgaf86151">1. 第一章: 初识Kafka</a>
 <ul>
-<li><a href="#orgcffe202">1.1. 基本概念</a></li>
-<li><a href="#org6250ba2">1.2. 安装与配置</a>
+<li><a href="#orgeb0d460">1.1. 基本概念</a></li>
+<li><a href="#org9b1c687">1.2. 安装与配置</a>
 <ul>
-<li><a href="#org0efc188">1.2.1. 安装JAVA环境</a></li>
-<li><a href="#orgf2d87b3">1.2.2. 配置ZooKeeper</a></li>
-<li><a href="#orgbc18b01">1.2.3. Kafka的安装与配置</a></li>
+<li><a href="#orgff75a0e">1.2.1. 安装JAVA环境</a></li>
+<li><a href="#org6b1f9c7">1.2.2. 配置ZooKeeper</a></li>
+<li><a href="#org8830bca">1.2.3. Kafka的安装与配置</a></li>
 </ul>
 </li>
-<li><a href="#orgae65a8c">1.3. 生产与消费</a></li>
-<li><a href="#org6715524">1.4. 服务端参数配置</a>
+<li><a href="#org22d1c81">1.3. 生产与消费</a></li>
+<li><a href="#org948980f">1.4. 服务端参数配置</a>
 <ul>
-<li><a href="#org42d4cb5">1.4.1. zookeeper.connect</a></li>
-<li><a href="#org6df5ddc">1.4.2. listeners</a></li>
-<li><a href="#org4c3ea68">1.4.3. broker.id</a></li>
-<li><a href="#org085f68c">1.4.4. log.dir和log.dirs</a></li>
-<li><a href="#org37d33df">1.4.5. message.max.bytes</a></li>
+<li><a href="#orgf2b15ea">1.4.1. zookeeper.connect</a></li>
+<li><a href="#orge32a0c4">1.4.2. listeners</a></li>
+<li><a href="#org704d6f8">1.4.3. broker.id</a></li>
+<li><a href="#org504f71a">1.4.4. log.dir和log.dirs</a></li>
+<li><a href="#org72204e5">1.4.5. message.max.bytes</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org17d04bb">2. 第二章 生产者</a>
+<li><a href="#org50d6e22">2. 第二章 生产者</a>
 <ul>
 <li>
 <ul>
-<li><a href="#org4d79e30">2.0.1. 客户端开发</a></li>
-<li><a href="#orgf63f0b8">2.0.2. 必要的参数配置</a></li>
-<li><a href="#org6c2c1a9">2.0.3. 消息的发送</a></li>
-<li><a href="#orgb59fc0f">2.0.4. 序列化</a></li>
-<li><a href="#org18fb8cc">2.0.5. 分区器</a></li>
-<li><a href="#orgf174f16">2.0.6. 生产者拦截器</a></li>
+<li><a href="#org1b5cbae">2.0.1. 客户端开发</a></li>
+<li><a href="#orgb0c08e1">2.0.2. 必要的参数配置</a></li>
+<li><a href="#orgfd13fd2">2.0.3. 消息的发送</a></li>
+<li><a href="#orgb0d97a8">2.0.4. 序列化</a></li>
+<li><a href="#org991871f">2.0.5. 分区器</a></li>
+<li><a href="#orga8947e1">2.0.6. 生产者拦截器</a></li>
 </ul>
 </li>
-<li><a href="#org8d462ac">2.1. 原理分析</a>
+<li><a href="#org661a995">2.1. 原理分析</a>
 <ul>
-<li><a href="#orgc5cf0a3">2.1.1. 整体架构</a></li>
-<li><a href="#org41b89e7">2.1.2. 元数据的更新</a></li>
+<li><a href="#org8730dc3">2.1.1. 整体架构</a></li>
+<li><a href="#orgbe2c046">2.1.2. 元数据的更新</a></li>
 </ul>
 </li>
-<li><a href="#org6b13eb5">2.2. 重要的生产者参数</a>
+<li><a href="#org5f75196">2.2. 重要的生产者参数</a>
 <ul>
-<li><a href="#org19e1b75">2.2.1. acks</a></li>
-<li><a href="#orgd51dcb8">2.2.2. max.request.size</a></li>
-<li><a href="#orge928eea">2.2.3. retries和retry.backoff.ms</a></li>
-<li><a href="#org0635282">2.2.4. compression.type</a></li>
-<li><a href="#org9de6329">2.2.5. connections.max.idle.ms</a></li>
-<li><a href="#org8034022">2.2.6. linger.ms</a></li>
-<li><a href="#org9693f84">2.2.7. receive.buffer.bytes</a></li>
-<li><a href="#org28c7750">2.2.8. send.buffer.byts</a></li>
-<li><a href="#org2981107">2.2.9. request.timeout.ms</a></li>
+<li><a href="#org18e226a">2.2.1. acks</a></li>
+<li><a href="#org9c81309">2.2.2. max.request.size</a></li>
+<li><a href="#orgbee58d9">2.2.3. retries和retry.backoff.ms</a></li>
+<li><a href="#org4f9b488">2.2.4. compression.type</a></li>
+<li><a href="#org56312c8">2.2.5. connections.max.idle.ms</a></li>
+<li><a href="#org6f0c39a">2.2.6. linger.ms</a></li>
+<li><a href="#orgd5aefde">2.2.7. receive.buffer.bytes</a></li>
+<li><a href="#orga61382a">2.2.8. send.buffer.byts</a></li>
+<li><a href="#orgb8f5df5">2.2.9. request.timeout.ms</a></li>
 </ul>
 </li>
-<li><a href="#orga636ee9">2.3. 其他常见参数意义</a></li>
+<li><a href="#orgbde597e">2.3. 其他常见参数意义</a></li>
 </ul>
 </li>
-<li><a href="#org9077e0f">3. 第三章 消费者</a>
+<li><a href="#orgd52857c">3. 第三章 消费者</a>
 <ul>
-<li><a href="#org487e230">3.1. 消费者与消费组</a></li>
-<li><a href="#orgd80a12b">3.2. 客户端开发</a>
+<li><a href="#org042d537">3.1. 消费者与消费组</a></li>
+<li><a href="#org05ad1aa">3.2. 客户端开发</a>
 <ul>
-<li><a href="#org9c58f53">3.2.1. 必要的参数设置</a></li>
-<li><a href="#org37d8872">3.2.2. 订阅主题与分区</a></li>
-<li><a href="#orgd05a7ea">3.2.3. 反序列化</a></li>
-<li><a href="#org185478a">3.2.4. 消息消费</a></li>
-<li><a href="#orgc6e5d2a">3.2.5. 位移提交</a></li>
-<li><a href="#org817ce69">3.2.6. 控制或关闭消费</a></li>
-<li><a href="#org4b9a432">3.2.7. 指定位移消费</a></li>
-<li><a href="#org5047078">3.2.8. 再均衡</a></li>
-<li><a href="#org3278591">3.2.9. 消费者拦截器</a></li>
-<li><a href="#org361f2c8">3.2.10. 多线程实现</a></li>
-<li><a href="#org45964ed">3.2.11. 重要的消费者参数</a></li>
+<li><a href="#orgef440ce">3.2.1. 必要的参数设置</a></li>
+<li><a href="#orgf7cb8d6">3.2.2. 订阅主题与分区</a></li>
+<li><a href="#org8d81869">3.2.3. 反序列化</a></li>
+<li><a href="#orgb8a5fa7">3.2.4. 消息消费</a></li>
+<li><a href="#org1c7daa3">3.2.5. 位移提交</a></li>
+<li><a href="#org622e5a8">3.2.6. 控制或关闭消费</a></li>
+<li><a href="#org2d6a2cc">3.2.7. 指定位移消费</a></li>
+<li><a href="#org1e2b570">3.2.8. 再均衡</a></li>
+<li><a href="#org255854e">3.2.9. 消费者拦截器</a></li>
+<li><a href="#orgbee25aa">3.2.10. 多线程实现</a></li>
+<li><a href="#org618508b">3.2.11. 重要的消费者参数</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org70b743d">4. 第四章 主题与分区</a>
+<li><a href="#org024fe1b">4. 第四章 主题与分区</a>
 <ul>
-<li><a href="#orgbbdd398">4.1. 主题的管理</a>
+<li><a href="#org87ce8ee">4.1. 主题的管理</a>
 <ul>
-<li><a href="#org7d4a158">4.1.1. 创建主题</a></li>
-<li><a href="#org6fc4e06">4.1.2. 分区副本的分配</a></li>
-<li><a href="#org2cc890b">4.1.3. 查看主题</a></li>
-<li><a href="#org6da1c51">4.1.4. 修改主题</a></li>
-<li><a href="#org44e6a38">4.1.5. 配置管理</a></li>
-<li><a href="#org1b6df07">4.1.6. 主题端参数</a></li>
-<li><a href="#org5ef4dd4">4.1.7. 删除主题</a></li>
+<li><a href="#orgbc1d3e8">4.1.1. 创建主题</a></li>
+<li><a href="#orge97186f">4.1.2. 分区副本的分配</a></li>
+<li><a href="#org9165994">4.1.3. 查看主题</a></li>
+<li><a href="#orgc4ceb2c">4.1.4. 修改主题</a></li>
+<li><a href="#org163681c">4.1.5. 配置管理</a></li>
+<li><a href="#orga927c9e">4.1.6. 主题端参数</a></li>
+<li><a href="#org2ca0330">4.1.7. 删除主题</a></li>
 </ul>
 </li>
-<li><a href="#orgd177eb6">4.2. 初识KafkaAdminClient</a>
+<li><a href="#orgfe16065">4.2. 初识KafkaAdminClient</a>
 <ul>
-<li><a href="#org0a5f2a6">4.2.1. 基本使用</a></li>
+<li><a href="#org9d0239c">4.2.1. 基本使用</a></li>
 </ul>
 </li>
-<li><a href="#orge090533">4.3. 分区的管理</a>
+<li><a href="#org624b7a3">4.3. 分区的管理</a>
 <ul>
-<li><a href="#orgec04d80">4.3.1. 优先副本的选举</a></li>
-<li><a href="#org5614d21">4.3.2. 分区重新分配</a></li>
-<li><a href="#orgf503949">4.3.3. 复制限流</a></li>
-<li><a href="#org21b3d27">4.3.4. 修改副本因子</a></li>
+<li><a href="#org21a9ab2">4.3.1. 优先副本的选举</a></li>
+<li><a href="#org3d3837b">4.3.2. 分区重新分配</a></li>
+<li><a href="#orgbb25dd8">4.3.3. 复制限流</a></li>
+<li><a href="#orgc353262">4.3.4. 修改副本因子</a></li>
 </ul>
 </li>
-<li><a href="#org7defcab">4.4. 如何选择合适的分区数</a>
+<li><a href="#orgd38a69b">4.4. 如何选择合适的分区数</a>
 <ul>
-<li><a href="#org9bf07b7">4.4.1. 性能测试工具</a></li>
-<li><a href="#orga266aff">4.4.2. 分区数的上限</a></li>
-<li><a href="#orgc5bb9b2">4.4.3. 考量因素</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#org46f6c5a">5. 第五章: 日志存储</a>
-<ul>
-<li><a href="#orgb1b4b4d">5.1. 文件目录布局</a></li>
-<li><a href="#org312b94c">5.2. 日志格式的演变</a>
-<ul>
-<li><a href="#org243962c">5.2.1. v0版本</a></li>
-<li><a href="#org4427b41">5.2.2. V1版本</a></li>
-<li><a href="#org4d377b5">5.2.3. V2版本</a></li>
-<li><a href="#org4ec98df">5.2.4. 消息压缩</a></li>
-<li><a href="#orge0f4a50">5.2.5. 变长字段</a></li>
-</ul>
-</li>
-<li><a href="#orgd0f3aff">5.3. 日志索引</a>
-<ul>
-<li><a href="#orgfd93ce3">5.3.1. 偏移量索引</a></li>
-<li><a href="#orgbfab80d">5.3.2. 时间戳索引</a></li>
-</ul>
-</li>
-<li><a href="#org73c48c5">5.4. 日志清理</a>
-<ul>
-<li><a href="#org2b5352b">5.4.1. 日志删除</a></li>
-<li><a href="#org1041eab">5.4.2. 日志压缩</a></li>
-</ul>
-</li>
-<li><a href="#orgd7653cd">5.5. 磁盘存储</a>
-<ul>
-<li><a href="#orgef70461">5.5.1. 页缓存</a></li>
-<li><a href="#orgdfb5700">5.5.2. 零拷贝</a></li>
+<li><a href="#orga1e2090">4.4.1. 性能测试工具</a></li>
+<li><a href="#orge7b7778">4.4.2. 分区数的上限</a></li>
+<li><a href="#orgd683b49">4.4.3. 考量因素</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orgab674df">6. 第六章: 深入服务端</a>
+<li><a href="#orga50dd59">5. 第五章: 日志存储</a>
 <ul>
-<li><a href="#org7971f56">6.1. 协议设计</a></li>
-<li><a href="#org09d1f8b">6.2. 时间轮:</a></li>
-<li><a href="#orge4ae9e0">6.3. 延时操作</a></li>
-<li><a href="#orgfa467c6">6.4. 控制器</a>
+<li><a href="#orgaa8a192">5.1. 文件目录布局</a></li>
+<li><a href="#org81446a1">5.2. 日志格式的演变</a>
 <ul>
-<li><a href="#org2aee5b1">6.4.1. 控制器的选举及异常恢复</a></li>
-<li><a href="#org56c341d">6.4.2. 如何优雅的关闭</a></li>
-<li><a href="#org427fb5b">6.4.3. 分区leader的选举</a></li>
+<li><a href="#org96b82e3">5.2.1. v0版本</a></li>
+<li><a href="#org4ab3d50">5.2.2. V1版本</a></li>
+<li><a href="#orgba0129f">5.2.3. V2版本</a></li>
+<li><a href="#org225c57b">5.2.4. 消息压缩</a></li>
+<li><a href="#org3ce504c">5.2.5. 变长字段</a></li>
 </ul>
 </li>
-<li><a href="#org9e41d92">6.5. 参数解密</a>
+<li><a href="#orgaf593bc">5.3. 日志索引</a>
 <ul>
-<li><a href="#org698fba9">6.5.1. broker.id</a></li>
-<li><a href="#org4d46468">6.5.2. bootstrap.servers</a></li>
-<li><a href="#orgb23061c">6.5.3. 服务端参数列表:</a></li>
+<li><a href="#org95d83b5">5.3.1. 偏移量索引</a></li>
+<li><a href="#org3445710">5.3.2. 时间戳索引</a></li>
 </ul>
 </li>
+<li><a href="#orgcb65ec3">5.4. 日志清理</a>
+<ul>
+<li><a href="#org41c622a">5.4.1. 日志删除</a></li>
+<li><a href="#org0eef95b">5.4.2. 日志压缩</a></li>
+</ul>
+</li>
+<li><a href="#orgbc57758">5.5. 磁盘存储</a>
+<ul>
+<li><a href="#org6119b56">5.5.1. 页缓存</a></li>
+<li><a href="#orgf281d26">5.5.2. 零拷贝</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org8499379">6. 第六章: 深入服务端</a>
+<ul>
+<li><a href="#org1abb69f">6.1. 协议设计</a></li>
+<li><a href="#org5a30526">6.2. 时间轮:</a></li>
+<li><a href="#org90d4854">6.3. 延时操作</a></li>
+<li><a href="#orgada1d03">6.4. 控制器</a>
+<ul>
+<li><a href="#orgc559461">6.4.1. 控制器的选举及异常恢复</a></li>
+<li><a href="#orgaea8259">6.4.2. 如何优雅的关闭</a></li>
+<li><a href="#orgeac90fa">6.4.3. 分区leader的选举</a></li>
+</ul>
+</li>
+<li><a href="#org52b77e8">6.5. 参数解密</a>
+<ul>
+<li><a href="#orgb1435bc">6.5.1. broker.id</a></li>
+<li><a href="#orge6b481b">6.5.2. bootstrap.servers</a></li>
+<li><a href="#orgf647bd2">6.5.3. 服务端参数列表:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgcdd35c0">7. 第7章 深入客户端</a>
+<ul>
+<li><a href="#org43136a1">7.1. 分区分配策略</a>
+<ul>
+<li><a href="#org89e4781">7.1.1. RangeAssignor分配策略</a></li>
+<li><a href="#orgf9d3e85">7.1.2. RoundRobinAssignor分配策略</a></li>
+<li><a href="#orgc2ce938">7.1.3. StickyAssignor分配策略</a></li>
+</ul>
+</li>
+<li><a href="#orgdd72592">7.2. 消费者协调器和组协调器</a>
+<ul>
+<li><a href="#org49c2018">7.2.1. 旧版消费者客户端的问题</a></li>
+<li><a href="#org61b5d11">7.2.2. 再均衡的原理</a></li>
+</ul>
+</li>
+<li><a href="#org4c644c0">7.3. __consumer_offsets剖析</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgec4e06c" class="outline-2">
-<h2 id="orgec4e06c"><span class="section-number-2">1</span> 第一章: 初识Kafka</h2>
+<div id="outline-container-orgaf86151" class="outline-2">
+<h2 id="orgaf86151"><span class="section-number-2">1</span> 第一章: 初识Kafka</h2>
 <div class="outline-text-2" id="text-1">
 <ul class="org-ul">
 <li>kafka被定为为一个分布式流处理平台</li>
@@ -412,8 +430,8 @@
 </ul></li>
 </ul>
 </div>
-<div id="outline-container-orgcffe202" class="outline-3">
-<h3 id="orgcffe202"><span class="section-number-3">1.1</span> 基本概念</h3>
+<div id="outline-container-orgeb0d460" class="outline-3">
+<h3 id="orgeb0d460"><span class="section-number-3">1.1</span> 基本概念</h3>
 <div class="outline-text-3" id="text-1-1">
 <ul class="org-ul">
 <li>一个典型的kafka体系包括:
@@ -439,7 +457,7 @@ broker组成一个kafka集群</li>
 <li><p>
 topic是一个逻辑上的概念,在实现上一般是分成多个partition(分区)的,也就是说:
 </p>
-<pre class="example" id="org1266691">
+<pre class="example" id="org09379ff">
 partition是topic的实现方法, topic是partition的抽象集合
 </pre></li>
 <li>一个分区只属于单个主题,同一个主题下的不同分区包含的消息是不同的</li>
@@ -449,7 +467,7 @@ log文件的时候,都会被分配一个特定的偏移量(offset)</li>
 如图1-2,主题有四个分区,消息被顺序追缴到每个分区日志文件的尾部
 </p>
 
-<div id="orgbaf64de" class="figure">
+<div id="org98e6018" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/kafka/ki-1-2.jpg" alt="ki-1-2.jpg" />
 </p>
 <p><span class="figure-number">Figure 1: </span>kafka/ki-1-2.jpg</p>
@@ -477,7 +495,7 @@ log文件的时候,都会被分配一个特定的偏移量(offset)</li>
 图1-3
 </p>
 
-<div id="org9d1881e" class="figure">
+<div id="orgcddfe2f" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/kafka/ki-1-3.jpg" alt="ki-1-3.jpg" />
 </p>
 <p><span class="figure-number">Figure 2: </span>kafka/ki-1-3.jpg</p>
@@ -496,7 +514,7 @@ log文件的时候,都会被分配一个特定的偏移量(offset)</li>
 <li><p>
 与leaser副本同步滞后过多的副本组成OSR(Out-of-Sync Replicas),所以得到:
 </p>
-<pre class="example" id="org110fadc">
+<pre class="example" id="orgc7c5980">
 AR = ISR+OSR
 </pre></li>
 <li>消息会先发送到leader副本, follower副本才能从leader副本拉取消息同步,所以follower
@@ -512,14 +530,14 @@ AR = ISR+OSR
 <li><p>
 ISR还和HW(High Watermark)有关系
 </p>
-<pre class="example" id="org9775576">
+<pre class="example" id="org8b785a4">
 High Watermark中文为高水位,标识了特定的消息偏移量(offset),消费者
 只能拉取这个offset之前的消息
 </pre></li>
 <li><p>
 和HW类似的概念是LEO(Log End Offset),它标识日志文件中下一条待写入消息的offset.换句话说,
 </p>
-<pre class="example" id="orgedafbe1">
+<pre class="example" id="orge106aae">
 HW是读取的边界,而LEO是写入的边界
 </pre></li>
 <li>下图就是一个标识HW和LEO关系的图:
@@ -528,7 +546,7 @@ HW是读取的边界,而LEO是写入的边界
 图1-4
 </p>
 
-<div id="orgc9aca88" class="figure">
+<div id="org42e3975" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/kafka/ki-1-4.jpg" alt="ki-1-4.jpg" />
 </p>
 <p><span class="figure-number">Figure 3: </span>kafka/ki-1-4.jpg</p>
@@ -546,7 +564,7 @@ HW是读取的边界,而LEO是写入的边界
 图1-5
 </p>
 
-<div id="orgf19f9ac" class="figure">
+<div id="org9661287" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/kafka/ki-1-5.jpg" alt="ki-1-5.jpg" />
 </p>
 <p><span class="figure-number">Figure 4: </span>kafka/ki-1-5.jpg</p>
@@ -561,7 +579,7 @@ HW是读取的边界,而LEO是写入的边界
 图1-6
 </p>
 
-<div id="org6e85840" class="figure">
+<div id="org3027325" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/kafka/ki-1-6.jpg" alt="ki-1-6.jpg" />
 </p>
 <p><span class="figure-number">Figure 5: </span>kafka/ki-1-6.jpg</p>
@@ -575,7 +593,7 @@ HW是读取的边界,而LEO是写入的边界
 图1-7
 </p>
 
-<div id="orgcde1943" class="figure">
+<div id="orgafe3c80" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/kafka/ki-1-7.jpg" alt="ki-1-7.jpg" />
 </p>
 <p><span class="figure-number">Figure 6: </span>kafka/ki-1-7.jpg</p>
@@ -591,7 +609,7 @@ HW是读取的边界,而LEO是写入的边界
 图1-8
 </p>
 
-<div id="org2145b43" class="figure">
+<div id="orgeb7e448" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/kafka/ki-1-8.jpg" alt="ki-1-8.jpg" />
 </p>
 <p><span class="figure-number">Figure 7: </span>kafka/ki-1-8.jpg</p>
@@ -610,15 +628,15 @@ HW是读取的边界,而LEO是写入的边界
 </ul>
 </div>
 </div>
-<div id="outline-container-org6250ba2" class="outline-3">
-<h3 id="org6250ba2"><span class="section-number-3">1.2</span> 安装与配置</h3>
+<div id="outline-container-org9b1c687" class="outline-3">
+<h3 id="org9b1c687"><span class="section-number-3">1.2</span> 安装与配置</h3>
 <div class="outline-text-3" id="text-1-2">
 <ul class="org-ul">
 <li>以Linux的centos为例子来介绍下如何如何搭建Kafka运行环境:</li>
 </ul>
 </div>
-<div id="outline-container-org0efc188" class="outline-4">
-<h4 id="org0efc188"><span class="section-number-4">1.2.1</span> 安装JAVA环境</h4>
+<div id="outline-container-orgff75a0e" class="outline-4">
+<h4 id="orgff75a0e"><span class="section-number-4">1.2.1</span> 安装JAVA环境</h4>
 <div class="outline-text-4" id="text-1-2-1">
 <ul class="org-ul">
 <li>安装JDK</li>
@@ -626,8 +644,8 @@ HW是读取的边界,而LEO是写入的边界
 </ul>
 </div>
 </div>
-<div id="outline-container-orgf2d87b3" class="outline-4">
-<h4 id="orgf2d87b3"><span class="section-number-4">1.2.2</span> 配置ZooKeeper</h4>
+<div id="outline-container-org6b1f9c7" class="outline-4">
+<h4 id="org6b1f9c7"><span class="section-number-4">1.2.2</span> 配置ZooKeeper</h4>
 <div class="outline-text-4" id="text-1-2-2">
 <ul class="org-ul">
 <li><p>
@@ -682,8 +700,8 @@ zoo.cfg文件内容如下
 </ul>
 </div>
 </div>
-<div id="outline-container-orgbc18b01" class="outline-4">
-<h4 id="orgbc18b01"><span class="section-number-4">1.2.3</span> Kafka的安装与配置</h4>
+<div id="outline-container-org8830bca" class="outline-4">
+<h4 id="org8830bca"><span class="section-number-4">1.2.3</span> Kafka的安装与配置</h4>
 <div class="outline-text-4" id="text-1-2-3">
 <ul class="org-ul">
 <li>下载kafka_2.11-2.0.0.tgz,将其复制到/opt</li>
@@ -722,8 +740,8 @@ zoo.cfg文件内容如下
 </div>
 </div>
 </div>
-<div id="outline-container-orgae65a8c" class="outline-3">
-<h3 id="orgae65a8c"><span class="section-number-3">1.3</span> 生产与消费</h3>
+<div id="outline-container-org22d1c81" class="outline-3">
+<h3 id="org22d1c81"><span class="section-number-3">1.3</span> 生产与消费</h3>
 <div class="outline-text-3" id="text-1-3">
 <ul class="org-ul">
 <li>生产者将消息发送至kafka的topic(更加准确的是topic的partition)中,而消费者也是
@@ -766,8 +784,8 @@ message
 </ul>
 </div>
 </div>
-<div id="outline-container-org6715524" class="outline-3">
-<h3 id="org6715524"><span class="section-number-3">1.4</span> 服务端参数配置</h3>
+<div id="outline-container-org948980f" class="outline-3">
+<h3 id="org948980f"><span class="section-number-3">1.4</span> 服务端参数配置</h3>
 <div class="outline-text-3" id="text-1-4">
 <ul class="org-ul">
 <li>kafka服务端有很多参数,虽然这些参数在大多数情况下不需要更改,但了解这些参数,以
@@ -775,8 +793,8 @@ message
 <li>下面讲的参数都配置在$KAFKA_HOME/config/server.properties文件中</li>
 </ul>
 </div>
-<div id="outline-container-org42d4cb5" class="outline-4">
-<h4 id="org42d4cb5"><span class="section-number-4">1.4.1</span> zookeeper.connect</h4>
+<div id="outline-container-orgf2b15ea" class="outline-4">
+<h4 id="orgf2b15ea"><span class="section-number-4">1.4.1</span> zookeeper.connect</h4>
 <div class="outline-text-4" id="text-1-4-1">
 <ul class="org-ul">
 <li>该参数指明broker要连接的zookeeper集群的服务地址,没有默认值,此参数为必填</li>
@@ -804,8 +822,8 @@ message
 </ul>
 </div>
 </div>
-<div id="outline-container-org6df5ddc" class="outline-4">
-<h4 id="org6df5ddc"><span class="section-number-4">1.4.2</span> listeners</h4>
+<div id="outline-container-orge32a0c4" class="outline-4">
+<h4 id="orge32a0c4"><span class="section-number-4">1.4.2</span> listeners</h4>
 <div class="outline-text-4" id="text-1-4-2">
 <ul class="org-ul">
 <li><p>
@@ -840,8 +858,8 @@ message
 </ul>
 </div>
 </div>
-<div id="outline-container-org4c3ea68" class="outline-4">
-<h4 id="org4c3ea68"><span class="section-number-4">1.4.3</span> broker.id</h4>
+<div id="outline-container-org704d6f8" class="outline-4">
+<h4 id="org704d6f8"><span class="section-number-4">1.4.3</span> broker.id</h4>
 <div class="outline-text-4" id="text-1-4-3">
 <ul class="org-ul">
 <li>kafka集群中的每个broker都有一个唯一标识,默认值为-1,如果没有设置,kafka会自动
@@ -849,8 +867,8 @@ message
 </ul>
 </div>
 </div>
-<div id="outline-container-org085f68c" class="outline-4">
-<h4 id="org085f68c"><span class="section-number-4">1.4.4</span> log.dir和log.dirs</h4>
+<div id="outline-container-org504f71a" class="outline-4">
+<h4 id="org504f71a"><span class="section-number-4">1.4.4</span> log.dir和log.dirs</h4>
 <div class="outline-text-4" id="text-1-4-4">
 <ul class="org-ul">
 <li>kafka把所有消息都保存在磁盘上,这两个参数来配置kafka日志存放的根目录:
@@ -861,8 +879,8 @@ message
 </ul>
 </div>
 </div>
-<div id="outline-container-org37d33df" class="outline-4">
-<h4 id="org37d33df"><span class="section-number-4">1.4.5</span> message.max.bytes</h4>
+<div id="outline-container-org72204e5" class="outline-4">
+<h4 id="org72204e5"><span class="section-number-4">1.4.5</span> message.max.bytes</h4>
 <div class="outline-text-4" id="text-1-4-5">
 <ul class="org-ul">
 <li>该参数用来指定broker能够接收消息的最大值,默认值为976.6KB</li>
@@ -879,8 +897,8 @@ message.max.bytes</li>
 </div>
 </div>
 </div>
-<div id="outline-container-org17d04bb" class="outline-2">
-<h2 id="org17d04bb"><span class="section-number-2">2</span> 第二章 生产者</h2>
+<div id="outline-container-org50d6e22" class="outline-2">
+<h2 id="org50d6e22"><span class="section-number-2">2</span> 第二章 生产者</h2>
 <div class="outline-text-2" id="text-2">
 <ul class="org-ul">
 <li>生产者就是负责向kafka发送消息的应用程序,kafka有两个大版本的生产者客户端:
@@ -890,8 +908,8 @@ message.max.bytes</li>
 </ul></li>
 </ul>
 </div>
-<div id="outline-container-org4d79e30" class="outline-4">
-<h4 id="org4d79e30"><span class="section-number-4">2.0.1</span> 客户端开发</h4>
+<div id="outline-container-org1b5cbae" class="outline-4">
+<h4 id="org1b5cbae"><span class="section-number-4">2.0.1</span> 客户端开发</h4>
 <div class="outline-text-4" id="text-2-0-1">
 <ul class="org-ul">
 <li>一个生产逻辑需要如下几个步骤:
@@ -966,8 +984,8 @@ message.max.bytes</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgf63f0b8" class="outline-4">
-<h4 id="orgf63f0b8"><span class="section-number-4">2.0.2</span> 必要的参数配置</h4>
+<div id="outline-container-orgb0c08e1" class="outline-4">
+<h4 id="orgb0c08e1"><span class="section-number-4">2.0.2</span> 必要的参数配置</h4>
 <div class="outline-text-4" id="text-2-0-2">
 <ul class="org-ul">
 <li>在创建真正的生产者实例前,需要配置相应的参数,我们这里使用initConfig()方法来
@@ -1030,8 +1048,8 @@ KafkaProducer中有多个构造方法,比如props里面没有设置key.serialize
 </ul>
 </div>
 </div>
-<div id="outline-container-org6c2c1a9" class="outline-4">
-<h4 id="org6c2c1a9"><span class="section-number-4">2.0.3</span> 消息的发送</h4>
+<div id="outline-container-orgfd13fd2" class="outline-4">
+<h4 id="orgfd13fd2"><span class="section-number-4">2.0.3</span> 消息的发送</h4>
 <div class="outline-text-4" id="text-2-0-3">
 <ul class="org-ul">
 <li>创建完生产者实例后,接下来的工作就是构建消息</li>
@@ -1168,8 +1186,8 @@ KafkaProducer提供IG带超时时间的close()方法
 </ul>
 </div>
 </div>
-<div id="outline-container-orgb59fc0f" class="outline-4">
-<h4 id="orgb59fc0f"><span class="section-number-4">2.0.4</span> 序列化</h4>
+<div id="outline-container-orgb0d97a8" class="outline-4">
+<h4 id="orgb0d97a8"><span class="section-number-4">2.0.4</span> 序列化</h4>
 <div class="outline-text-4" id="text-2-0-4">
 <ul class="org-ul">
 <li>生产者需要使用序列化器(Serializer)把对象转化为字节数组才能通过网络发送给Kafka</li>
@@ -1207,8 +1225,8 @@ Kafka客户端自带的序列化器实现了如下的接口org.apache.kafka.comm
 </ul>
 </div>
 </div>
-<div id="outline-container-org18fb8cc" class="outline-4">
-<h4 id="org18fb8cc"><span class="section-number-4">2.0.5</span> 分区器</h4>
+<div id="outline-container-org991871f" class="outline-4">
+<h4 id="org991871f"><span class="section-number-4">2.0.5</span> 分区器</h4>
 <div class="outline-text-4" id="text-2-0-5">
 <ul class="org-ul">
 <li>消息在通过send()方法发送到broker的过程中,有可能需要经过如下器:
@@ -1245,8 +1263,8 @@ Kafka客户端自带的序列化器实现了如下的接口org.apache.kafka.comm
 </ul>
 </div>
 </div>
-<div id="outline-container-orgf174f16" class="outline-4">
-<h4 id="orgf174f16"><span class="section-number-4">2.0.6</span> 生产者拦截器</h4>
+<div id="outline-container-orga8947e1" class="outline-4">
+<h4 id="orga8947e1"><span class="section-number-4">2.0.6</span> 生产者拦截器</h4>
 <div class="outline-text-4" id="text-2-0-6">
 <ul class="org-ul">
 <li>拦截器分为:
@@ -1273,12 +1291,12 @@ Kafka客户端自带的序列化器实现了如下的接口org.apache.kafka.comm
 </ul>
 </div>
 </div>
-<div id="outline-container-org8d462ac" class="outline-3">
-<h3 id="org8d462ac"><span class="section-number-3">2.1</span> 原理分析</h3>
+<div id="outline-container-org661a995" class="outline-3">
+<h3 id="org661a995"><span class="section-number-3">2.1</span> 原理分析</h3>
 <div class="outline-text-3" id="text-2-1">
 </div>
-<div id="outline-container-orgc5cf0a3" class="outline-4">
-<h4 id="orgc5cf0a3"><span class="section-number-4">2.1.1</span> 整体架构</h4>
+<div id="outline-container-org8730dc3" class="outline-4">
+<h4 id="org8730dc3"><span class="section-number-4">2.1.1</span> 整体架构</h4>
 <div class="outline-text-4" id="text-2-1-1">
 <ul class="org-ul">
 <li>下图是生产者客户端的整体架构</li>
@@ -1346,8 +1364,8 @@ ProducerBatch,并且能够使用BufferPool的cache功能</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org41b89e7" class="outline-4">
-<h4 id="org41b89e7"><span class="section-number-4">2.1.2</span> 元数据的更新</h4>
+<div id="outline-container-orgbe2c046" class="outline-4">
+<h4 id="orgbe2c046"><span class="section-number-4">2.1.2</span> 元数据的更新</h4>
 <div class="outline-text-4" id="text-2-1-2">
 <ul class="org-ul">
 <li>上一节提及的InFlightRequest还可以获得leastLoadedNode(也就是Node中负载最小的)
@@ -1384,16 +1402,16 @@ ProducerBatch,并且能够使用BufferPool的cache功能</li>
 </div>
 </div>
 </div>
-<div id="outline-container-org6b13eb5" class="outline-3">
-<h3 id="org6b13eb5"><span class="section-number-3">2.2</span> 重要的生产者参数</h3>
+<div id="outline-container-org5f75196" class="outline-3">
+<h3 id="org5f75196"><span class="section-number-3">2.2</span> 重要的生产者参数</h3>
 <div class="outline-text-3" id="text-2-2">
 <ul class="org-ul">
 <li>在KafkaProducer中除了之前讲过的参数,大部分参数都有合理的默认值,一般不需要修
 改他们,不过了解他们也有助于我们了解客户端,更容易的进行debug</li>
 </ul>
 </div>
-<div id="outline-container-org19e1b75" class="outline-4">
-<h4 id="org19e1b75"><span class="section-number-4">2.2.1</span> acks</h4>
+<div id="outline-container-org18e226a" class="outline-4">
+<h4 id="org18e226a"><span class="section-number-4">2.2.1</span> acks</h4>
 <div class="outline-text-4" id="text-2-2-1">
 <ul class="org-ul">
 <li>这个参数用来指定分区中必须要有多少个副本收到这条消息后,生产者才会任务这条
@@ -1428,8 +1446,8 @@ ProducerBatch,并且能够使用BufferPool的cache功能</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgd51dcb8" class="outline-4">
-<h4 id="orgd51dcb8"><span class="section-number-4">2.2.2</span> max.request.size</h4>
+<div id="outline-container-org9c81309" class="outline-4">
+<h4 id="org9c81309"><span class="section-number-4">2.2.2</span> max.request.size</h4>
 <div class="outline-text-4" id="text-2-2-2">
 <ul class="org-ul">
 <li>这个参数用来限制生产者客户端能够发送的消息(request)的最大值,默认值为1MB</li>
@@ -1441,8 +1459,8 @@ ProducerBatch,并且能够使用BufferPool的cache功能</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orge928eea" class="outline-4">
-<h4 id="orge928eea"><span class="section-number-4">2.2.3</span> retries和retry.backoff.ms</h4>
+<div id="outline-container-orgbee58d9" class="outline-4">
+<h4 id="orgbee58d9"><span class="section-number-4">2.2.3</span> retries和retry.backoff.ms</h4>
 <div class="outline-text-4" id="text-2-2-3">
 <ul class="org-ul">
 <li>retries参数用来配置生产者重试的次数,默认值为0,即发生异常的时候不进行任何重试</li>
@@ -1466,8 +1484,8 @@ ProducerBatch,并且能够使用BufferPool的cache功能</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org0635282" class="outline-4">
-<h4 id="org0635282"><span class="section-number-4">2.2.4</span> compression.type</h4>
+<div id="outline-container-org4f9b488" class="outline-4">
+<h4 id="org4f9b488"><span class="section-number-4">2.2.4</span> compression.type</h4>
 <div class="outline-text-4" id="text-2-2-4">
 <ul class="org-ul">
 <li>这个参数用来指定消息的压缩方式,默认是"none"也就是不会被压缩</li>
@@ -1482,16 +1500,16 @@ ProducerBatch,并且能够使用BufferPool的cache功能</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org9de6329" class="outline-4">
-<h4 id="org9de6329"><span class="section-number-4">2.2.5</span> connections.max.idle.ms</h4>
+<div id="outline-container-org56312c8" class="outline-4">
+<h4 id="org56312c8"><span class="section-number-4">2.2.5</span> connections.max.idle.ms</h4>
 <div class="outline-text-4" id="text-2-2-5">
 <ul class="org-ul">
 <li>参数指定多机之后关闭限制的连接,默认值是9分钟</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org8034022" class="outline-4">
-<h4 id="org8034022"><span class="section-number-4">2.2.6</span> linger.ms</h4>
+<div id="outline-container-org6f0c39a" class="outline-4">
+<h4 id="org6f0c39a"><span class="section-number-4">2.2.6</span> linger.ms</h4>
 <div class="outline-text-4" id="text-2-2-6">
 <ul class="org-ul">
 <li>这个参数用来指定生产者发送ProducerBatch之前等待更多ProducerRecord加入的时间</li>
@@ -1501,8 +1519,8 @@ ProducerBatch,并且能够使用BufferPool的cache功能</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org9693f84" class="outline-4">
-<h4 id="org9693f84"><span class="section-number-4">2.2.7</span> receive.buffer.bytes</h4>
+<div id="outline-container-orgd5aefde" class="outline-4">
+<h4 id="orgd5aefde"><span class="section-number-4">2.2.7</span> receive.buffer.bytes</h4>
 <div class="outline-text-4" id="text-2-2-7">
 <ul class="org-ul">
 <li>用来设置Socket接受消息缓冲区(SO_RECBUF)的大小</li>
@@ -1512,8 +1530,8 @@ ProducerBatch,并且能够使用BufferPool的cache功能</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org28c7750" class="outline-4">
-<h4 id="org28c7750"><span class="section-number-4">2.2.8</span> send.buffer.byts</h4>
+<div id="outline-container-orga61382a" class="outline-4">
+<h4 id="orga61382a"><span class="section-number-4">2.2.8</span> send.buffer.byts</h4>
 <div class="outline-text-4" id="text-2-2-8">
 <ul class="org-ul">
 <li>用来设置Socket发送消息缓冲区(SO_SNDBUF)的大小</li>
@@ -1522,8 +1540,8 @@ ProducerBatch,并且能够使用BufferPool的cache功能</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org2981107" class="outline-4">
-<h4 id="org2981107"><span class="section-number-4">2.2.9</span> request.timeout.ms</h4>
+<div id="outline-container-orgb8f5df5" class="outline-4">
+<h4 id="orgb8f5df5"><span class="section-number-4">2.2.9</span> request.timeout.ms</h4>
 <div class="outline-text-4" id="text-2-2-9">
 <ul class="org-ul">
 <li>用来配置Producer等待请求响应的最长时间,默认值是30000(ms),超时后可以重试</li>
@@ -1533,8 +1551,8 @@ ProducerBatch,并且能够使用BufferPool的cache功能</li>
 </div>
 </div>
 </div>
-<div id="outline-container-orga636ee9" class="outline-3">
-<h3 id="orga636ee9"><span class="section-number-3">2.3</span> 其他常见参数意义</h3>
+<div id="outline-container-orgbde597e" class="outline-3">
+<h3 id="orgbde597e"><span class="section-number-3">2.3</span> 其他常见参数意义</h3>
 <div class="outline-text-3" id="text-2-3">
 <ul class="org-ul">
 <li>还有很多其他生产者参数在这里列举一下:
@@ -1560,12 +1578,12 @@ ProducerBatch,并且能够使用BufferPool的cache功能</li>
 </div>
 </div>
 </div>
-<div id="outline-container-org9077e0f" class="outline-2">
-<h2 id="org9077e0f"><span class="section-number-2">3</span> 第三章 消费者</h2>
+<div id="outline-container-orgd52857c" class="outline-2">
+<h2 id="orgd52857c"><span class="section-number-2">3</span> 第三章 消费者</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-org487e230" class="outline-3">
-<h3 id="org487e230"><span class="section-number-3">3.1</span> 消费者与消费组</h3>
+<div id="outline-container-org042d537" class="outline-3">
+<h3 id="org042d537"><span class="section-number-3">3.1</span> 消费者与消费组</h3>
 <div class="outline-text-3" id="text-3-1">
 <ul class="org-ul">
 <li>消费者(Customer)负责订阅Kafka中的主题(Topic)</li>
@@ -1580,7 +1598,7 @@ ProducerBatch,并且能够使用BufferPool的cache功能</li>
 图3-1
 </p>
 
-<div id="orgfebbb36" class="figure">
+<div id="org99754dc" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/kafka/ki-3-1.jpg" alt="ki-3-1.jpg" />
 </p>
 <p><span class="figure-number">Figure 8: </span>kafka/ki-3-1.jpg</p>
@@ -1599,7 +1617,7 @@ ProducerBatch,并且能够使用BufferPool的cache功能</li>
 下图3-2中开始消费组中只有一个消费者C0,他订阅了一个主题,包含7个分区P0~P6
 </p>
 
-<div id="org26d5b66" class="figure">
+<div id="orgacd07f7" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/kafka/ki-3-2.jpg" alt="ki-3-2.jpg" />
 </p>
 <p><span class="figure-number">Figure 9: </span>kafka/ki-3-2.jpg</p>
@@ -1608,7 +1626,7 @@ ProducerBatch,并且能够使用BufferPool的cache功能</li>
 下图3-3中消费者组内又加了新的消费者C1,按照鸡丁逻辑,会把C0之前的部分分区分配给C1消费
 </p>
 
-<div id="org328b52b" class="figure">
+<div id="org1facc63" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/kafka/ki-3-3.jpg" alt="ki-3-3.jpg" />
 </p>
 <p><span class="figure-number">Figure 10: </span>kafka/ki-3-3.jpg</p>
@@ -1617,7 +1635,7 @@ ProducerBatch,并且能够使用BufferPool的cache功能</li>
 下图3-4中,又加入了C2,那么又会根据规则把一部分分区分给C2
 </p>
 
-<div id="org3f65fbf" class="figure">
+<div id="orgdfe4059" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/kafka/ki-3-4.jpg" alt="ki-3-4.jpg" />
 </p>
 <p><span class="figure-number">Figure 11: </span>kafka/ki-3-4.jpg</p>
@@ -1633,7 +1651,7 @@ ProducerBatch,并且能够使用BufferPool的cache功能</li>
 点对点(P2P)模式: 这种模式基于队列,生产商发送消息到队列,消费者从队列中接收
 消息,这种模式下
 </p>
-<pre class="example" id="org79b72b6">
+<pre class="example" id="org05af7c7">
 每条消息只会被一个消费者消费(因为队列只能存取一次),kafka通过把所有消费者放到
 同一个消费组里面来达到这个效果.因为消费者都在一个消费组里,所以每个消费者得到
 一部分消息,而一个消息只会发送给消费组中的一个消费者
@@ -1642,7 +1660,7 @@ ProducerBatch,并且能够使用BufferPool的cache功能</li>
 发布/订阅(Pub/Sub)模式:这种模式基于topic(主题),发布者将消息发布到主题,订
 阅者从主题中订阅消息,这种模式下
 </p>
-<pre class="example" id="org4ff994d">
+<pre class="example" id="org9424a67">
 每条消息会重复的发送给所有的消费者(如果消费者订阅了topic),kafka通过把每个消费
 者放到不同的消费组里面来达到消息.因为每个消费者在不同的消费组里面,因为每个消费组
 都会得到一遍消息,那么每个消费组里面的消费者都能得到一遍所有消息
@@ -1656,8 +1674,8 @@ ProducerBatch,并且能够使用BufferPool的cache功能</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgd80a12b" class="outline-3">
-<h3 id="orgd80a12b"><span class="section-number-3">3.2</span> 客户端开发</h3>
+<div id="outline-container-org05ad1aa" class="outline-3">
+<h3 id="org05ad1aa"><span class="section-number-3">3.2</span> 客户端开发</h3>
 <div class="outline-text-3" id="text-3-2">
 <ul class="org-ul">
 <li>本文主要介绍新消费者Java语言编写的新客户端</li>
@@ -1733,8 +1751,8 @@ ProducerBatch,并且能够使用BufferPool的cache功能</li>
 <li>我们后面来具体分析下代码</li>
 </ul>
 </div>
-<div id="outline-container-org9c58f53" class="outline-4">
-<h4 id="org9c58f53"><span class="section-number-4">3.2.1</span> 必要的参数设置</h4>
+<div id="outline-container-orgef440ce" class="outline-4">
+<h4 id="orgef440ce"><span class="section-number-4">3.2.1</span> 必要的参数设置</h4>
 <div class="outline-text-4" id="text-3-2-1">
 <ul class="org-ul">
 <li>在Kafka消费者客户端KafkaConsumer中有四个参数是必填的:
@@ -1767,8 +1785,8 @@ ProducerBatch,并且能够使用BufferPool的cache功能</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org37d8872" class="outline-4">
-<h4 id="org37d8872"><span class="section-number-4">3.2.2</span> 订阅主题与分区</h4>
+<div id="outline-container-orgf7cb8d6" class="outline-4">
+<h4 id="orgf7cb8d6"><span class="section-number-4">3.2.2</span> 订阅主题与分区</h4>
 <div class="outline-text-4" id="text-3-2-2">
 <ul class="org-ul">
 <li>我们使用subscribe()方法来订阅:
@@ -1857,7 +1875,7 @@ consumer.assign(partitions);
 <li><p>
 通过subscribe()方法订阅主题具有消费者自动再均衡的功能
 </p>
-<pre class="example" id="orgf38c97a">
+<pre class="example" id="org9f986e1">
 在多个消费者的情况下,可以根据分区分配策略来自动分配各个消费者与分区的关系
 当消费组内的消费者增加或者减少时,分区分配关系会自动调整,以实现消费负载均衡
 极故障自动转移
@@ -1866,8 +1884,8 @@ consumer.assign(partitions);
 </ul>
 </div>
 </div>
-<div id="outline-container-orgd05a7ea" class="outline-4">
-<h4 id="orgd05a7ea"><span class="section-number-4">3.2.3</span> 反序列化</h4>
+<div id="outline-container-org8d81869" class="outline-4">
+<h4 id="org8d81869"><span class="section-number-4">3.2.3</span> 反序列化</h4>
 <div class="outline-text-4" id="text-3-2-3">
 <ul class="org-ul">
 <li>和序列化的内容比较相似</li>
@@ -1885,8 +1903,8 @@ consumer.assign(partitions);
 </ul>
 </div>
 </div>
-<div id="outline-container-org185478a" class="outline-4">
-<h4 id="org185478a"><span class="section-number-4">3.2.4</span> 消息消费</h4>
+<div id="outline-container-orgb8a5fa7" class="outline-4">
+<h4 id="orgb8a5fa7"><span class="section-number-4">3.2.4</span> 消息消费</h4>
 <div class="outline-text-4" id="text-3-2-4">
 <ul class="org-ul">
 <li>kafka的消费是基于拉(Pull)模式的</li>
@@ -1935,8 +1953,8 @@ ConsumerRecord,可以使用其iterator()方法来遍历:
 </ul>
 </div>
 </div>
-<div id="outline-container-orgc6e5d2a" class="outline-4">
-<h4 id="orgc6e5d2a"><span class="section-number-4">3.2.5</span> 位移提交</h4>
+<div id="outline-container-org1c7daa3" class="outline-4">
+<h4 id="org1c7daa3"><span class="section-number-4">3.2.5</span> 位移提交</h4>
 <div class="outline-text-4" id="text-3-2-5">
 <ul class="org-ul">
 <li>对于kafka中的分区而言,它的每条消息都有唯一的offset,用来表示其在分区中的位置</li>
@@ -1956,7 +1974,7 @@ ConsumerRecord,可以使用其iterator()方法来遍历:
 <li><p>
 我们把消费位移存储起来(持久化)的动作称之为"提交"
 </p>
-<pre class="example" id="org4dc6527">
+<pre class="example" id="org7bbfcfe">
 消费者在消费完之后需要执行消费位移的提交
 </pre></li>
 <li>下图就是一个消费位移的解释:
@@ -1965,7 +1983,7 @@ ConsumerRecord,可以使用其iterator()方法来遍历:
 图3-6
 </p>
 
-<div id="org12e35ea" class="figure">
+<div id="org4b276a8" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/kafka/ki-3-6.jpg" alt="ki-3-6.jpg" />
 </p>
 <p><span class="figure-number">Figure 12: </span>kafka/ki-3-6.jpg</p>
@@ -2060,7 +2078,7 @@ ConsumerRecord,可以使用其iterator()方法来遍历:
 图3-7
 </p>
 
-<div id="orgd69dc2e" class="figure">
+<div id="org67962d7" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/kafka/ki-3-7.jpg" alt="ki-3-7.jpg" />
 </p>
 <p><span class="figure-number">Figure 13: </span>kafka/ki-3-7.jpg</p>
@@ -2089,7 +2107,7 @@ offset开始,所以很容易造成重复消费.</li>
 图3-8
 </p>
 
-<div id="org5ec468a" class="figure">
+<div id="org5ee03fb" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/kafka/ki-3-8.jpg" alt="ki-3-8.jpg" />
 </p>
 <p><span class="figure-number">Figure 14: </span>kafka/ki-3-8.jpg</p>
@@ -2109,7 +2127,7 @@ offset开始,所以很容易造成重复消费.</li>
 <li><p>
 前面说过,kafka客户端是在poll的时候,commit上次拉取的位移,这是基于一种假设
 </p>
-<pre class="example" id="orgf741d3f">
+<pre class="example" id="org6bc79ab">
 在拉取新的数据之前,老的数据已经消费完毕了
 </pre></li>
 <li>但是在很多时候,上面的假设是不成立的,因为真正成功消费数据,可能需要写入数据库,
@@ -2336,8 +2354,8 @@ offset开始,所以很容易造成重复消费.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org817ce69" class="outline-4">
-<h4 id="org817ce69"><span class="section-number-4">3.2.6</span> 控制或关闭消费</h4>
+<div id="outline-container-org622e5a8" class="outline-4">
+<h4 id="org622e5a8"><span class="section-number-4">3.2.6</span> 控制或关闭消费</h4>
 <div class="outline-text-4" id="text-3-2-6">
 <ul class="org-ul">
 <li>KafkaConsumer提供了对消费速度进行控制的方法,有些应用场景下,可能需要暂停某些
@@ -2400,8 +2418,8 @@ KafkaConsumer还提供了一个无参数的paused()方法来返回被暂停的�
 </ul>
 </div>
 </div>
-<div id="outline-container-org4b9a432" class="outline-4">
-<h4 id="org4b9a432"><span class="section-number-4">3.2.7</span> 指定位移消费</h4>
+<div id="outline-container-org2d6a2cc" class="outline-4">
+<h4 id="org2d6a2cc"><span class="section-number-4">3.2.7</span> 指定位移消费</h4>
 <div class="outline-text-4" id="text-3-2-7">
 <ul class="org-ul">
 <li>前面我们讲了如何进行消费位移的提交,正是因为消费位移的持久化,才能让消费者在
@@ -2488,7 +2506,7 @@ consumer.seek(<span style="color: #e68183;">new</span> <span style="color: #d9bb
 <li><p>
 我们前面说过
 </p>
-<pre class="example" id="org73ed01d">
+<pre class="example" id="orgb7bd4d5">
 auto.offset.reset设置起作用的前提,是消费者在启动的时候找不到消费位移
 </pre></li>
 <li><p>
@@ -2580,7 +2598,7 @@ KafkaConsumer同样考虑到了这种情况,提供了一个offsetsForTimes()的�
 <li><p>
 位移如果越界设置,也会触发auto.offset.reset参数(earliest, latest, none)的执行
 </p>
-<pre class="example" id="org246fada">
+<pre class="example" id="org7b36b18">
 所谓位移越界,是指知道消费位置,却无法在实际分区中查到
 </pre></li>
 <li>seek()的出现,让我们的位移存储突破了原有的存储方法(0.9之后kafka的offset信息
@@ -2590,8 +2608,8 @@ KafkaConsumer同样考虑到了这种情况,提供了一个offsetsForTimes()的�
 </ul>
 </div>
 </div>
-<div id="outline-container-org5047078" class="outline-4">
-<h4 id="org5047078"><span class="section-number-4">3.2.8</span> 再均衡</h4>
+<div id="outline-container-org1e2b570" class="outline-4">
+<h4 id="org1e2b570"><span class="section-number-4">3.2.8</span> 再均衡</h4>
 <div class="outline-text-4" id="text-3-2-8">
 <ul class="org-ul">
 <li>再均衡是指分区所属权从一个消费者转移到另外一个消费者的行为</li>
@@ -2613,8 +2631,8 @@ KafkaConsumer同样考虑到了这种情况,提供了一个offsetsForTimes()的�
 </ul>
 </div>
 </div>
-<div id="outline-container-org3278591" class="outline-4">
-<h4 id="org3278591"><span class="section-number-4">3.2.9</span> 消费者拦截器</h4>
+<div id="outline-container-org255854e" class="outline-4">
+<h4 id="org255854e"><span class="section-number-4">3.2.9</span> 消费者拦截器</h4>
 <div class="outline-text-4" id="text-3-2-9">
 <ul class="org-ul">
 <li>消费者拦截器会在:
@@ -2665,8 +2683,8 @@ onCommit()方法中读取这些信息</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org361f2c8" class="outline-4">
-<h4 id="org361f2c8"><span class="section-number-4">3.2.10</span> 多线程实现</h4>
+<div id="outline-container-orgbee25aa" class="outline-4">
+<h4 id="orgbee25aa"><span class="section-number-4">3.2.10</span> 多线程实现</h4>
 <div class="outline-text-4" id="text-3-2-10">
 <ul class="org-ul">
 <li>KafkaProducer是线程安全的,但是KafkaConsumer却是非线程安全的</li>
@@ -2845,12 +2863,12 @@ onCommit()方法中读取这些信息</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org45964ed" class="outline-4">
-<h4 id="org45964ed"><span class="section-number-4">3.2.11</span> 重要的消费者参数</h4>
+<div id="outline-container-org618508b" class="outline-4">
+<h4 id="org618508b"><span class="section-number-4">3.2.11</span> 重要的消费者参数</h4>
 <div class="outline-text-4" id="text-3-2-11">
 </div>
 <ol class="org-ol">
-<li><a id="org86a57f2"></a>fetch.min.bytes<br />
+<li><a id="org216d605"></a>fetch.min.bytes<br />
 <div class="outline-text-5" id="text-3-2-11-1">
 <ul class="org-ul">
 <li>该参数用来配置Consumer在一次拉取请求中能从Kafka中拉取的最小数据量,more是1(B)</li>
@@ -2860,7 +2878,7 @@ onCommit()方法中读取这些信息</li>
 </ul>
 </div>
 </li>
-<li><a id="orgc9188a4"></a>fetch.max.bytes<br />
+<li><a id="orgfb8c543"></a>fetch.max.bytes<br />
 <div class="outline-text-5" id="text-3-2-11-2">
 <ul class="org-ul">
 <li>该参数设置为一次拉取最大的值,默认是50MB</li>
@@ -2869,35 +2887,35 @@ onCommit()方法中读取这些信息</li>
 </ul>
 </div>
 </li>
-<li><a id="org677d489"></a>fetch.max.wait.ms<br />
+<li><a id="org17d28dc"></a>fetch.max.wait.ms<br />
 <div class="outline-text-5" id="text-3-2-11-3">
 <ul class="org-ul">
 <li>拉取不可能一直参考fetch.min.bytes,必须有一个等待超时时间,默认值是500ms</li>
 </ul>
 </div>
 </li>
-<li><a id="org3b0a714"></a>max.partition.fetch.bytes<br />
+<li><a id="org23316c2"></a>max.partition.fetch.bytes<br />
 <div class="outline-text-5" id="text-3-2-11-4">
 <ul class="org-ul">
 <li>参数用来设置每个分区给Consumer的最大数据量,more是1MB</li>
 </ul>
 </div>
 </li>
-<li><a id="org43ea543"></a>max.poll.records<br />
+<li><a id="orga5f96ed"></a>max.poll.records<br />
 <div class="outline-text-5" id="text-3-2-11-5">
 <ul class="org-ul">
 <li>参数用来配置Consumer在一次拉取中请求的最大的消息数目,默认是500条</li>
 </ul>
 </div>
 </li>
-<li><a id="orgf558f8f"></a>connections.max.idle.ms<br />
+<li><a id="orgcb498a7"></a>connections.max.idle.ms<br />
 <div class="outline-text-5" id="text-3-2-11-6">
 <ul class="org-ul">
 <li>参数指定多久之后关闭限制的连接,默认是9分钟</li>
 </ul>
 </div>
 </li>
-<li><a id="org0aa8c12"></a>exclude.internal.topics<br />
+<li><a id="orgad699e0"></a>exclude.internal.topics<br />
 <div class="outline-text-5" id="text-3-2-11-7">
 <ul class="org-ul">
 <li>kafka内部有两个主题__consumer_offsets和__transaction_state</li>
@@ -2906,49 +2924,49 @@ onCommit()方法中读取这些信息</li>
 </ul>
 </div>
 </li>
-<li><a id="orgb0209a9"></a>receive.buffer.bytes<br />
+<li><a id="orga9396da"></a>receive.buffer.bytes<br />
 <div class="outline-text-5" id="text-3-2-11-8">
 <ul class="org-ul">
 <li>设置Socket接受消息缓冲区(O_RECBUF)的大小,more是64KB</li>
 </ul>
 </div>
 </li>
-<li><a id="org596de7b"></a>send.buffer.bytes<br />
+<li><a id="org3c2718a"></a>send.buffer.bytes<br />
 <div class="outline-text-5" id="text-3-2-11-9">
 <ul class="org-ul">
 <li>设置Socket发送消息缓冲区(O_RECBUF)的大小,more是128KB</li>
 </ul>
 </div>
 </li>
-<li><a id="org6785573"></a>request.timeout.ms<br />
+<li><a id="org11ac58f"></a>request.timeout.ms<br />
 <div class="outline-text-5" id="text-3-2-11-10">
 <ul class="org-ul">
 <li>用来配置Consumer等待请求的最长时间</li>
 </ul>
 </div>
 </li>
-<li><a id="org3d02ddb"></a>metadata.max.age.ms<br />
+<li><a id="orge2add64"></a>metadata.max.age.ms<br />
 <div class="outline-text-5" id="text-3-2-11-11">
 <ul class="org-ul">
 <li>元数据过期时间,默认是五分钟</li>
 </ul>
 </div>
 </li>
-<li><a id="org0e9834f"></a>reconnect.backoff.ms<br />
+<li><a id="orgc74975f"></a>reconnect.backoff.ms<br />
 <div class="outline-text-5" id="text-3-2-11-12">
 <ul class="org-ul">
 <li>重新连接指定主机之前的等待时间</li>
 </ul>
 </div>
 </li>
-<li><a id="org7687c0c"></a>retry.backoff.ms<br />
+<li><a id="org26ec1a4"></a>retry.backoff.ms<br />
 <div class="outline-text-5" id="text-3-2-11-13">
 <ul class="org-ul">
 <li>重新发送失败请求到指定主题分区之前的等待时间</li>
 </ul>
 </div>
 </li>
-<li><a id="orgc4cefe2"></a>isolation.level<br />
+<li><a id="org74e416a"></a>isolation.level<br />
 <div class="outline-text-5" id="text-3-2-11-14">
 <ul class="org-ul">
 <li>消费者的事物隔离级别</li>
@@ -2959,8 +2977,8 @@ onCommit()方法中读取这些信息</li>
 </div>
 </div>
 </div>
-<div id="outline-container-org70b743d" class="outline-2">
-<h2 id="org70b743d"><span class="section-number-2">4</span> 第四章 主题与分区</h2>
+<div id="outline-container-org024fe1b" class="outline-2">
+<h2 id="org024fe1b"><span class="section-number-2">4</span> 第四章 主题与分区</h2>
 <div class="outline-text-2" id="text-4">
 <ul class="org-ul">
 <li>从kafka的底层实现来说,主题和分区都是逻辑上的概念:
@@ -2972,8 +2990,8 @@ onCommit()方法中读取这些信息</li>
 </ul></li>
 </ul>
 </div>
-<div id="outline-container-orgbbdd398" class="outline-3">
-<h3 id="orgbbdd398"><span class="section-number-3">4.1</span> 主题的管理</h3>
+<div id="outline-container-org87ce8ee" class="outline-3">
+<h3 id="org87ce8ee"><span class="section-number-3">4.1</span> 主题的管理</h3>
 <div class="outline-text-3" id="text-4-1">
 <ul class="org-ul">
 <li>主题的挂历包括:
@@ -2987,8 +3005,8 @@ onCommit()方法中读取这些信息</li>
 <li>除了使用命令行来管理topic还可以通过KafkaAdminClient的方式来实现</li>
 </ul>
 </div>
-<div id="outline-container-org7d4a158" class="outline-4">
-<h4 id="org7d4a158"><span class="section-number-4">4.1.1</span> 创建主题</h4>
+<div id="outline-container-orgbc1d3e8" class="outline-4">
+<h4 id="orgbc1d3e8"><span class="section-number-4">4.1.1</span> 创建主题</h4>
 <div class="outline-text-4" id="text-4-1-1">
 <ul class="org-ul">
 <li>如果broker端配置参数auto.create.topics.enable为true:
@@ -3014,14 +3032,14 @@ n    + 很多时候这种自动创建主题的行为都是非预期的,所以不
 <li><p>
 上面的代码创建的topic,副本因子为2,分区数为4, 而我们的broker节点只有三个,这说明
 </p>
-<pre class="example" id="org6b0deed">
+<pre class="example" id="org399662c">
 分区数目可以高于节点数目,但是副本数目必须小于等于节点数
 </pre></li>
 <li>执行完上面的创建脚本之后,kafka会在log.dir(或者log.dirs)下面创建相应的主题分区,默认情况下是在/tmp/kafka-logs/</li>
 <li><p>
 我们前面说了我们至于三个broker,而有四个分区,那么是不是必然有个broker里面存储会超过一个分区呢?
 </p>
-<pre class="example" id="org013754e">
+<pre class="example" id="org2939dcf">
 其实这么思考是不对的,我们的broker不仅仅要考虑到分区数目,还要考虑到副本因子,
 我们分区数目是4,副本因子是2,那么就要创建8个文件夹来存储数据
 </pre></li>
@@ -3063,7 +3081,7 @@ topic-create-3
 图4-1
 </p>
 
-<div id="org4c6ee36" class="figure">
+<div id="org696a113" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/kafka/ki-4-1.jpg" alt="ki-4-1.jpg" />
 </p>
 <p><span class="figure-number">Figure 15: </span>kafka/ki-4-1.jpg</p>
@@ -3131,7 +3149,7 @@ broker_id_for_part2_replica1: broker_id_for_part2_replica2,...&gt;
 <li><p>
 使用方法如下:
 </p>
-<pre class="example" id="orgb294c04">
+<pre class="example" id="org4eeb4b1">
 --config &lt;String:name=value1&gt; --config &lt;String:name=value2&gt;
 </pre></li>
 <li><p>
@@ -3213,8 +3231,8 @@ Topic: topic-create PartitionCount:4 ReplicationFactor:2 Configs:
 </ul>
 </div>
 </div>
-<div id="outline-container-org6fc4e06" class="outline-4">
-<h4 id="org6fc4e06"><span class="section-number-4">4.1.2</span> 分区副本的分配</h4>
+<div id="outline-container-orge97186f" class="outline-4">
+<h4 id="orge97186f"><span class="section-number-4">4.1.2</span> 分区副本的分配</h4>
 <div class="outline-text-4" id="text-4-1-2">
 <ul class="org-ul">
 <li>创建主题的时候:
@@ -3254,8 +3272,8 @@ Topic:topic-create-zk PartitionCount:4 ReplicationFactor:2 Configs:
 </ul>
 </div>
 </div>
-<div id="outline-container-org2cc890b" class="outline-4">
-<h4 id="org2cc890b"><span class="section-number-4">4.1.3</span> 查看主题</h4>
+<div id="outline-container-org9165994" class="outline-4">
+<h4 id="org9165994"><span class="section-number-4">4.1.3</span> 查看主题</h4>
 <div class="outline-text-4" id="text-4-1-3">
 <ul class="org-ul">
 <li>kafka-topics.sh一共有如下五种指令类型:
@@ -3334,8 +3352,8 @@ Topic: topic-create Partition: 3 Leader: -1 Replicas: 2, 1 Isr: 1
 </ul>
 </div>
 </div>
-<div id="outline-container-org6da1c51" class="outline-4">
-<h4 id="org6da1c51"><span class="section-number-4">4.1.4</span> 修改主题</h4>
+<div id="outline-container-orgc4ceb2c" class="outline-4">
+<h4 id="orgc4ceb2c"><span class="section-number-4">4.1.4</span> 修改主题</h4>
 <div class="outline-text-4" id="text-4-1-4">
 <ul class="org-ul">
 <li>当一个主题被创建之后,依然允许我们对其做一定的修改,比如修改分区个数,修改配置等,这时候使用kafka-topics.sh
@@ -3376,8 +3394,8 @@ Going forward, please use kafka-configs.sh for this functionality Updated config
 </ul>
 </div>
 </div>
-<div id="outline-container-org44e6a38" class="outline-4">
-<h4 id="org44e6a38"><span class="section-number-4">4.1.5</span> 配置管理</h4>
+<div id="outline-container-org163681c" class="outline-4">
+<h4 id="org163681c"><span class="section-number-4">4.1.5</span> 配置管理</h4>
 <div class="outline-text-4" id="text-4-1-5">
 <ul class="org-ul">
 <li>kafka-config.sh 是专门用来对配置进行修改的.其修改范围比"kafka-topics.sh &#x2013;alter"(只能修改topic配置)大,
@@ -3468,8 +3486,8 @@ entity-type和entity-name内容有一定的范围:
 </ul>
 </div>
 </div>
-<div id="outline-container-org1b6df07" class="outline-4">
-<h4 id="org1b6df07"><span class="section-number-4">4.1.6</span> 主题端参数</h4>
+<div id="outline-container-orga927c9e" class="outline-4">
+<h4 id="orga927c9e"><span class="section-number-4">4.1.6</span> 主题端参数</h4>
 <div class="outline-text-4" id="text-4-1-6">
 <ul class="org-ul">
 <li>与主题相关的所有配置参数在broekr层面都有对应的参数,比如:
@@ -3651,8 +3669,8 @@ entity-type和entity-name内容有一定的范围:
 </ul>
 </div>
 </div>
-<div id="outline-container-org5ef4dd4" class="outline-4">
-<h4 id="org5ef4dd4"><span class="section-number-4">4.1.7</span> 删除主题</h4>
+<div id="outline-container-org2ca0330" class="outline-4">
+<h4 id="org2ca0330"><span class="section-number-4">4.1.7</span> 删除主题</h4>
 <div class="outline-text-4" id="text-4-1-7">
 <ul class="org-ul">
 <li><p>
@@ -3697,16 +3715,16 @@ Created /admin/delete_topics/topic-delete
 </div>
 </div>
 </div>
-<div id="outline-container-orgd177eb6" class="outline-3">
-<h3 id="orgd177eb6"><span class="section-number-3">4.2</span> 初识KafkaAdminClient</h3>
+<div id="outline-container-orgfe16065" class="outline-3">
+<h3 id="orgfe16065"><span class="section-number-3">4.2</span> 初识KafkaAdminClient</h3>
 <div class="outline-text-3" id="text-4-2">
 <ul class="org-ul">
 <li>一般情况下,我们倾向于使用kafka-topics.sh脚本来管理主题,但是有时候我们有些过于定制化的开发,这个
 时候,我们就要使用API来完成,也就是KafkaAdminClient</li>
 </ul>
 </div>
-<div id="outline-container-org0a5f2a6" class="outline-4">
-<h4 id="org0a5f2a6"><span class="section-number-4">4.2.1</span> 基本使用</h4>
+<div id="outline-container-org9d0239c" class="outline-4">
+<h4 id="org9d0239c"><span class="section-number-4">4.2.1</span> 基本使用</h4>
 <div class="outline-text-4" id="text-4-2-1">
 <ul class="org-ul">
 <li>从0.11.0.0开始,Kafka提供了一个工具类org.apache.kafka.clients.admin.KafkaAdminClient来对kafka管
@@ -3721,12 +3739,12 @@ Created /admin/delete_topics/topic-delete
 </div>
 </div>
 </div>
-<div id="outline-container-orge090533" class="outline-3">
-<h3 id="orge090533"><span class="section-number-3">4.3</span> 分区的管理</h3>
+<div id="outline-container-org624b7a3" class="outline-3">
+<h3 id="org624b7a3"><span class="section-number-3">4.3</span> 分区的管理</h3>
 <div class="outline-text-3" id="text-4-3">
 </div>
-<div id="outline-container-orgec04d80" class="outline-4">
-<h4 id="orgec04d80"><span class="section-number-4">4.3.1</span> 优先副本的选举</h4>
+<div id="outline-container-org21a9ab2" class="outline-4">
+<h4 id="org21a9ab2"><span class="section-number-4">4.3.1</span> 优先副本的选举</h4>
 <div class="outline-text-4" id="text-4-3-1">
 <ul class="org-ul">
 <li>分区使用多副本机制来提升可靠性,只有leader副本对外提供读写服务</li>
@@ -3859,14 +3877,14 @@ Topic:topic-partitions PartitionCount:3 ReplicationFactor:2 Configs:
 </ul>
 </div>
 </div>
-<div id="outline-container-org5614d21" class="outline-4">
-<h4 id="org5614d21"><span class="section-number-4">4.3.2</span> 分区重新分配</h4>
+<div id="outline-container-org3d3837b" class="outline-4">
+<h4 id="org3d3837b"><span class="section-number-4">4.3.2</span> 分区重新分配</h4>
 <div class="outline-text-4" id="text-4-3-2">
 <ul class="org-ul">
 <li><p>
 前面我们解决的问题是
 </p>
-<pre class="example" id="org2ed6db3">
+<pre class="example" id="org29d89b9">
 由于宕机等因素,分区的leader过分的集中在了某些broker上面
 </pre></li>
 <li>而我们本节想解决的问题,就是由于某些原因,我们要把分区移动到固定的broker上面,某些原因包括:
@@ -3985,8 +4003,8 @@ Reassignment of partition topic-reassign-0 completed successfully
 </ul>
 </div>
 </div>
-<div id="outline-container-orgf503949" class="outline-4">
-<h4 id="orgf503949"><span class="section-number-4">4.3.3</span> 复制限流</h4>
+<div id="outline-container-orgbb25dd8" class="outline-4">
+<h4 id="orgbb25dd8"><span class="section-number-4">4.3.3</span> 复制限流</h4>
 <div class="outline-text-4" id="text-4-3-3">
 <ul class="org-ul">
 <li>分区重新分配的本质在于数据复制,先增加新的副本,然后进行数据同步,最后删除旧的副本.</li>
@@ -4045,8 +4063,8 @@ Completed Updating config for entity: brokers <span style="color: #87af87;">'1'<
 </ul>
 </div>
 </div>
-<div id="outline-container-org21b3d27" class="outline-4">
-<h4 id="org21b3d27"><span class="section-number-4">4.3.4</span> 修改副本因子</h4>
+<div id="outline-container-orgc353262" class="outline-4">
+<h4 id="orgc353262"><span class="section-number-4">4.3.4</span> 修改副本因子</h4>
 <div class="outline-text-4" id="text-4-3-4">
 <ul class="org-ul">
 <li>分区数目可以更改(只能增加不能减小)</li>
@@ -4078,8 +4096,8 @@ index 21baf43..8390693 100644
 </div>
 </div>
 </div>
-<div id="outline-container-org7defcab" class="outline-3">
-<h3 id="org7defcab"><span class="section-number-3">4.4</span> 如何选择合适的分区数</h3>
+<div id="outline-container-orgd38a69b" class="outline-3">
+<h3 id="orgd38a69b"><span class="section-number-3">4.4</span> 如何选择合适的分区数</h3>
 <div class="outline-text-3" id="text-4-4">
 <ul class="org-ul">
 <li>这个问题没有固定的答案,需要从某些角度进行具体分析,最终还是要根据如下条件选择:
@@ -4091,8 +4109,8 @@ index 21baf43..8390693 100644
 </ul></li>
 </ul>
 </div>
-<div id="outline-container-org9bf07b7" class="outline-4">
-<h4 id="org9bf07b7"><span class="section-number-4">4.4.1</span> 性能测试工具</h4>
+<div id="outline-container-orga1e2090" class="outline-4">
+<h4 id="orga1e2090"><span class="section-number-4">4.4.1</span> 性能测试工具</h4>
 <div class="outline-text-4" id="text-4-4-1">
 <ul class="org-ul">
 <li>本章主要介绍kafka自带性能测试工具kafka-producer-perf-test.sh</li>
@@ -4132,7 +4150,7 @@ start.time, end.time, date.consumed.in.MB, MB.sec, data.consumed.in.nMsg, nMsg.s
 </ul>
 </div>
 <ol class="org-ol">
-<li><a id="org513e307"></a>分区数越多吞吐量就越高吗<br />
+<li><a id="org18d9399"></a>分区数越多吞吐量就越高吗<br />
 <div class="outline-text-5" id="text-4-4-1-1">
 <ul class="org-ul">
 <li>理论上分区数目越多,吞吐量就越大,但是实际上并非如此</li>
@@ -4157,7 +4175,7 @@ start.time, end.time, date.consumed.in.MB, MB.sec, data.consumed.in.nMsg, nMsg.s
 测试结果如图4-2所示
 </p>
 
-<div id="org5982fd2" class="figure">
+<div id="org90cad5b" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/kafka-4-2.jpg" alt="kafka-4-2.jpg" />
 </p>
 <p><span class="figure-number">Figure 16: </span>kafka-4-2.jpg</p>
@@ -4175,7 +4193,7 @@ start.time, end.time, date.consumed.in.MB, MB.sec, data.consumed.in.nMsg, nMsg.s
 得到的性能测试结果如下图4-3,和producer的结果类似,也存在类似的阈值
 </p>
 
-<div id="org2803d3d" class="figure">
+<div id="org4607b68" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/kafka/ki-4-3.jpg" alt="ki-4-3.jpg" />
 </p>
 <p><span class="figure-number">Figure 17: </span>kafka/ki-4-3.jpg</p>
@@ -4185,8 +4203,8 @@ start.time, end.time, date.consumed.in.MB, MB.sec, data.consumed.in.nMsg, nMsg.s
 </li>
 </ol>
 </div>
-<div id="outline-container-orga266aff" class="outline-4">
-<h4 id="orga266aff"><span class="section-number-4">4.4.2</span> 分区数的上限</h4>
+<div id="outline-container-orge7b7778" class="outline-4">
+<h4 id="orge7b7778"><span class="section-number-4">4.4.2</span> 分区数的上限</h4>
 <div class="outline-text-4" id="text-4-4-2">
 <ul class="org-ul">
 <li>一味地增加分区并不能使得吞吐量一直得到提升, 而且分区数目特别大还会引起kafka进程的崩溃</li>
@@ -4202,7 +4220,7 @@ Created topic <span style="color: #87af87;">"topic-bomb"</span>.
 显示创建topic成功后,我们会发现kafka进程崩溃了,通过查看kafka日志文件($KAFKA_HOME/logs/server.log)
 我们会发现日志中出现大量的异常
 </p>
-<pre class="example" id="orge6c08e1">
+<pre class="example" id="org3be2064">
 java.io.IOException: Too many open files
 </pre></li>
 <li><p>
@@ -4241,8 +4259,8 @@ java.io.IOException: Too many open files
 </ul>
 </div>
 </div>
-<div id="outline-container-orgc5bb9b2" class="outline-4">
-<h4 id="orgc5bb9b2"><span class="section-number-4">4.4.3</span> 考量因素</h4>
+<div id="outline-container-orgd683b49" class="outline-4">
+<h4 id="orgd683b49"><span class="section-number-4">4.4.3</span> 考量因素</h4>
 <div class="outline-text-4" id="text-4-4-3">
 <ul class="org-ul">
 <li>从吞吐量的考量,我们要通过性能测试找到分区数目的"阈值",因为超过"阈值"后,增加分区数目只能起到反作用</li>
@@ -4258,12 +4276,12 @@ java.io.IOException: Too many open files
 </div>
 </div>
 </div>
-<div id="outline-container-org46f6c5a" class="outline-2">
-<h2 id="org46f6c5a"><span class="section-number-2">5</span> 第五章: 日志存储</h2>
+<div id="outline-container-orga50dd59" class="outline-2">
+<h2 id="orga50dd59"><span class="section-number-2">5</span> 第五章: 日志存储</h2>
 <div class="outline-text-2" id="text-5">
 </div>
-<div id="outline-container-orgb1b4b4d" class="outline-3">
-<h3 id="orgb1b4b4d"><span class="section-number-3">5.1</span> 文件目录布局</h3>
+<div id="outline-container-orgaa8a192" class="outline-3">
+<h3 id="orgaa8a192"><span class="section-number-3">5.1</span> 文件目录布局</h3>
 <div class="outline-text-3" id="text-5-1">
 <ul class="org-ul">
 <li>kafka中的消息是以主题为基本单位进行归类的,各个主题在逻辑上是相互独立的</li>
@@ -4279,7 +4297,7 @@ java.io.IOException: Too many open files
 下图就是上述所有关系的总结
 </p>
 
-<div id="org92f0d14" class="figure">
+<div id="org4a2a0ad" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/kafka/ki-5-1.jpg" alt="ki-5-1.jpg" />
 </p>
 <p><span class="figure-number">Figure 18: </span>kafka/ki-5-1.jpg</p>
@@ -4326,7 +4344,7 @@ __consumer_offsets-xx的文件夹</li>
 每一个根目录下面都会抱恨最基本的四个检查文件xxx-checkoutpoint和meta.properties文件,如图5-2
 </p>
 
-<div id="org34483d4" class="figure">
+<div id="orgfd87d06" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/kafka/ki-5-2.jpg" alt="ki-5-2.jpg" />
 </p>
 <p><span class="figure-number">Figure 19: </span>kafka/ki-5-2.jpg</p>
@@ -4334,8 +4352,8 @@ __consumer_offsets-xx的文件夹</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org312b94c" class="outline-3">
-<h3 id="org312b94c"><span class="section-number-3">5.2</span> 日志格式的演变</h3>
+<div id="outline-container-org81446a1" class="outline-3">
+<h3 id="org81446a1"><span class="section-number-3">5.2</span> 日志格式的演变</h3>
 <div class="outline-text-3" id="text-5-2">
 <ul class="org-ul">
 <li>随着Kafka的发展,其消息格式也经历了3个版本的变化:
@@ -4347,8 +4365,8 @@ __consumer_offsets-xx的文件夹</li>
 <li>下面的讨论,如果特殊说明我们讨论的都是消息未压缩的形式</li>
 </ul>
 </div>
-<div id="outline-container-org243962c" class="outline-4">
-<h4 id="org243962c"><span class="section-number-4">5.2.1</span> v0版本</h4>
+<div id="outline-container-org96b82e3" class="outline-4">
+<h4 id="org96b82e3"><span class="section-number-4">5.2.1</span> v0版本</h4>
 <div class="outline-text-4" id="text-5-2-1">
 <ul class="org-ul">
 <li>在Kafka 0.10.0之前都采用这个消息格式.</li>
@@ -4356,7 +4374,7 @@ __consumer_offsets-xx的文件夹</li>
 图5-3详细介绍了消息格式
 </p>
 
-<div id="orgb340b3c" class="figure">
+<div id="orgeca25ee" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/kafka/ki-5-3.jpg" alt="ki-5-3.jpg" />
 </p>
 <p><span class="figure-number">Figure 20: </span>kafka/ki-5-3.jpg</p>
@@ -4379,8 +4397,8 @@ __consumer_offsets-xx的文件夹</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org4427b41" class="outline-4">
-<h4 id="org4427b41"><span class="section-number-4">5.2.2</span> V1版本</h4>
+<div id="outline-container-org4ab3d50" class="outline-4">
+<h4 id="org4ab3d50"><span class="section-number-4">5.2.2</span> V1版本</h4>
 <div class="outline-text-4" id="text-5-2-2">
 <ul class="org-ul">
 <li>从0.10.版本开始,到0.11.0版本之前的消息格式为v1</li>
@@ -4396,16 +4414,16 @@ __consumer_offsets-xx的文件夹</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org4d377b5" class="outline-4">
-<h4 id="org4d377b5"><span class="section-number-4">5.2.3</span> V2版本</h4>
+<div id="outline-container-orgba0129f" class="outline-4">
+<h4 id="orgba0129f"><span class="section-number-4">5.2.3</span> V2版本</h4>
 <div class="outline-text-4" id="text-5-2-3">
 <ul class="org-ul">
 <li>v2版本中的消息称之为Record Batch,而不是之前的Message Set</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org4ec98df" class="outline-4">
-<h4 id="org4ec98df"><span class="section-number-4">5.2.4</span> 消息压缩</h4>
+<div id="outline-container-org225c57b" class="outline-4">
+<h4 id="org225c57b"><span class="section-number-4">5.2.4</span> 消息压缩</h4>
 <div class="outline-text-4" id="text-5-2-4">
 <ul class="org-ul">
 <li>常见的压缩算法是数据量越大效果越好(因为相同的东西更多)</li>
@@ -4429,7 +4447,7 @@ __consumer_offsets-xx的文件夹</li>
 的value,如下图5-5
 </p>
 
-<div id="orgc18ea0f" class="figure">
+<div id="orgeb6c5cb" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/kafka/ki-5-5.jpg" alt="ki-5-5.jpg" />
 </p>
 <p><span class="figure-number">Figure 21: </span>kafka/ki-5-5.jpg</p>
@@ -4439,7 +4457,7 @@ __consumer_offsets-xx的文件夹</li>
 当生产者创建压缩消息的时候,对内部压缩消息设置的offset从0开始分配内部消息的offset,如下图
 </p>
 
-<div id="org1da6922" class="figure">
+<div id="org6ea7e1d" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/kafka/ki-5-6.jpg" alt="ki-5-6.jpg" />
 </p>
 <p><span class="figure-number">Figure 22: </span>kafka/ki-5-6.jpg</p>
@@ -4463,8 +4481,8 @@ __consumer_offsets-xx的文件夹</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orge0f4a50" class="outline-4">
-<h4 id="orge0f4a50"><span class="section-number-4">5.2.5</span> 变长字段</h4>
+<div id="outline-container-org3ce504c" class="outline-4">
+<h4 id="org3ce504c"><span class="section-number-4">5.2.5</span> 变长字段</h4>
 <div class="outline-text-4" id="text-5-2-5">
 <ul class="org-ul">
 <li>kafka v2版本里面参考了Protocol Buffer,引入了变长整形和ZigZag编码</li>
@@ -4503,8 +4521,8 @@ __consumer_offsets-xx的文件夹</li>
 </div>
 </div>
 </div>
-<div id="outline-container-orgd0f3aff" class="outline-3">
-<h3 id="orgd0f3aff"><span class="section-number-3">5.3</span> 日志索引</h3>
+<div id="outline-container-orgaf593bc" class="outline-3">
+<h3 id="orgaf593bc"><span class="section-number-3">5.3</span> 日志索引</h3>
 <div class="outline-text-3" id="text-5-3">
 <ul class="org-ul">
 <li>每个日志分段文件有两个索引:
@@ -4530,8 +4548,8 @@ __consumer_offsets-xx的文件夹</li>
 文件为实际的占用空间</li>
 </ul>
 </div>
-<div id="outline-container-orgfd93ce3" class="outline-4">
-<h4 id="orgfd93ce3"><span class="section-number-4">5.3.1</span> 偏移量索引</h4>
+<div id="outline-container-org95d83b5" class="outline-4">
+<h4 id="org95d83b5"><span class="section-number-4">5.3.1</span> 偏移量索引</h4>
 <div class="outline-text-4" id="text-5-3-1">
 <ul class="org-ul">
 <li>偏移量索引占用八个字节,分两个部分:
@@ -4543,8 +4561,8 @@ __consumer_offsets-xx的文件夹</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgbfab80d" class="outline-4">
-<h4 id="orgbfab80d"><span class="section-number-4">5.3.2</span> 时间戳索引</h4>
+<div id="outline-container-org3445710" class="outline-4">
+<h4 id="org3445710"><span class="section-number-4">5.3.2</span> 时间戳索引</h4>
 <div class="outline-text-4" id="text-5-3-2">
 <ul class="org-ul">
 <li>每个时间戳索引占用12个字节,分为两个部分:
@@ -4556,8 +4574,8 @@ __consumer_offsets-xx的文件夹</li>
 </div>
 </div>
 </div>
-<div id="outline-container-org73c48c5" class="outline-3">
-<h3 id="org73c48c5"><span class="section-number-3">5.4</span> 日志清理</h3>
+<div id="outline-container-orgcb65ec3" class="outline-3">
+<h3 id="orgcb65ec3"><span class="section-number-3">5.4</span> 日志清理</h3>
 <div class="outline-text-3" id="text-5-4">
 <ul class="org-ul">
 <li>Kafka把消息存储在磁盘上,为了控制磁盘占用空间的不断增加,就需要对消息进行清理操作</li>
@@ -4575,8 +4593,8 @@ __consumer_offsets-xx的文件夹</li>
 </ul></li>
 </ul>
 </div>
-<div id="outline-container-org2b5352b" class="outline-4">
-<h4 id="org2b5352b"><span class="section-number-4">5.4.1</span> 日志删除</h4>
+<div id="outline-container-org41c622a" class="outline-4">
+<h4 id="org41c622a"><span class="section-number-4">5.4.1</span> 日志删除</h4>
 <div class="outline-text-4" id="text-5-4-1">
 <ul class="org-ul">
 <li>Kafka的日志管理器中,会有一个专门的日志删除任务来周期性的检查和删除不符合保留条件的日志分段文件</li>
@@ -4610,8 +4628,8 @@ largestTimeStamp来计算</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org1041eab" class="outline-4">
-<h4 id="org1041eab"><span class="section-number-4">5.4.2</span> 日志压缩</h4>
+<div id="outline-container-org0eef95b" class="outline-4">
+<h4 id="org0eef95b"><span class="section-number-4">5.4.2</span> 日志压缩</h4>
 <div class="outline-text-4" id="text-5-4-2">
 <ul class="org-ul">
 <li>Log Compaction(翻译成日志压缩,但是翻译不准确,其实不是压缩),而是定期清理value值,保证同一个key只有一个value值</li>
@@ -4620,8 +4638,8 @@ largestTimeStamp来计算</li>
 </div>
 </div>
 </div>
-<div id="outline-container-orgd7653cd" class="outline-3">
-<h3 id="orgd7653cd"><span class="section-number-3">5.5</span> 磁盘存储</h3>
+<div id="outline-container-orgbc57758" class="outline-3">
+<h3 id="orgbc57758"><span class="section-number-3">5.5</span> 磁盘存储</h3>
 <div class="outline-text-3" id="text-5-5">
 <ul class="org-ul">
 <li>Kafka依赖文件系统(也就是磁盘)来存储和缓存消息.</li>
@@ -4637,8 +4655,8 @@ largestTimeStamp来计算</li>
 修改已写入的消息</li>
 </ul>
 </div>
-<div id="outline-container-orgef70461" class="outline-4">
-<h4 id="orgef70461"><span class="section-number-4">5.5.1</span> 页缓存</h4>
+<div id="outline-container-org6119b56" class="outline-4">
+<h4 id="org6119b56"><span class="section-number-4">5.5.1</span> 页缓存</h4>
 <div class="outline-text-4" id="text-5-5-1">
 <ul class="org-ul">
 <li>页缓存是操作系统实现的主要磁盘缓存,用来减少I/O操作.具体来说就是:
@@ -4678,14 +4696,14 @@ largestTimeStamp来计算</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgdfb5700" class="outline-4">
-<h4 id="orgdfb5700"><span class="section-number-4">5.5.2</span> 零拷贝</h4>
+<div id="outline-container-orgf281d26" class="outline-4">
+<h4 id="orgf281d26"><span class="section-number-4">5.5.2</span> 零拷贝</h4>
 <div class="outline-text-4" id="text-5-5-2">
 <ul class="org-ul">
 <li><p>
 除了消息顺序追加,页缓存等技术,kafka还使用零拷贝(Zero-Copy)技术来进一步提升性能
 </p>
-<pre class="example" id="orgee18154">
+<pre class="example" id="org7e68c96">
 所谓零拷贝,是指将数据直接从磁盘文件复制到网卡设备中,而不经由应用程序之手
 </pre></li>
 <li>我们来对比一下传统方法和零拷贝的区别,场景是"读取一个文件,并且将内容通过网络传输出去":
@@ -4719,7 +4737,7 @@ space返回user space, 一共两次,总共四次了
 整个过程总共四次拷贝,四次context switch,如图5-23
 </p>
 
-<div id="org3490921" class="figure">
+<div id="org4e4c765" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/kafka/ki-5-23.jpg" alt="ki-5-23.jpg" />
 </p>
 <p><span class="figure-number">Figure 23: </span>kafka/ki-5-23.jpg</p>
@@ -4735,7 +4753,7 @@ space返回user space, 一共两次,总共四次了
 整个过程总共两次拷贝,两次context switch,如图5-24
 </p>
 
-<div id="org7197dfb" class="figure">
+<div id="org29f456d" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/kafka/ki-5-24.jpg" alt="ki-5-24.jpg" />
 </p>
 <p><span class="figure-number">Figure 24: </span>kafka/ki-5-24.jpg</p>
@@ -4747,12 +4765,12 @@ space返回user space, 一共两次,总共四次了
 </div>
 </div>
 </div>
-<div id="outline-container-orgab674df" class="outline-2">
-<h2 id="orgab674df"><span class="section-number-2">6</span> 第六章: 深入服务端</h2>
+<div id="outline-container-org8499379" class="outline-2">
+<h2 id="org8499379"><span class="section-number-2">6</span> 第六章: 深入服务端</h2>
 <div class="outline-text-2" id="text-6">
 </div>
-<div id="outline-container-org7971f56" class="outline-3">
-<h3 id="org7971f56"><span class="section-number-3">6.1</span> 协议设计</h3>
+<div id="outline-container-org1abb69f" class="outline-3">
+<h3 id="org1abb69f"><span class="section-number-3">6.1</span> 协议设计</h3>
 <div class="outline-text-3" id="text-6-1">
 <ul class="org-ul">
 <li>在实际应用中,Kafka经常被用作高性能,可扩展的消息中间件.为了提供高性能,Kafka自定义了一组基于TCP的二进制协议</li>
@@ -4822,7 +4840,7 @@ ProduceResponse</li>
 图6-4
 </p>
 
-<div id="org2658b90" class="figure">
+<div id="org3d26ba1" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/kafka/ki-6-4.jpg" alt="ki-6-4.jpg" />
 </p>
 <p><span class="figure-number">Figure 25: </span>kafka/ki-6-4.jpg</p>
@@ -4844,8 +4862,8 @@ ProduceResponse</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org09d1f8b" class="outline-3">
-<h3 id="org09d1f8b"><span class="section-number-3">6.2</span> 时间轮:</h3>
+<div id="outline-container-org5a30526" class="outline-3">
+<h3 id="org5a30526"><span class="section-number-3">6.2</span> 时间轮:</h3>
 <div class="outline-text-3" id="text-6-2">
 <ul class="org-ul">
 <li>Kafka中存在大量的延时操作,比如延时生产,延时拉取,和延时删除</li>
@@ -4856,7 +4874,7 @@ ProduceResponse</li>
 一个定时任务列表
 </p>
 
-<div id="org25ac9cf" class="figure">
+<div id="orgaa3b42e" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/kafka/ki-6-7.jpg" alt="ki-6-7.jpg" />
 </p>
 <p><span class="figure-number">Figure 26: </span>kafka/ki-6-7.jpg</p>
@@ -4865,8 +4883,8 @@ ProduceResponse</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orge4ae9e0" class="outline-3">
-<h3 id="orge4ae9e0"><span class="section-number-3">6.3</span> 延时操作</h3>
+<div id="outline-container-org90d4854" class="outline-3">
+<h3 id="org90d4854"><span class="section-number-3">6.3</span> 延时操作</h3>
 <div class="outline-text-3" id="text-6-3">
 <ul class="org-ul">
 <li>如果在使用生产者客户端发送消息的时候将acks参数设置为-1,那么就意味着要等待ISR集合中所有的副本都
@@ -4933,8 +4951,8 @@ ProduceResponse</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgfa467c6" class="outline-3">
-<h3 id="orgfa467c6"><span class="section-number-3">6.4</span> 控制器</h3>
+<div id="outline-container-orgada1d03" class="outline-3">
+<h3 id="orgada1d03"><span class="section-number-3">6.4</span> 控制器</h3>
 <div class="outline-text-3" id="text-6-4">
 <ul class="org-ul">
 <li>在kafka集群中会有一个或者多个broker,其中一个broker会被选举为控制器,它负责管理整个集群中所有分区
@@ -4944,8 +4962,8 @@ ProduceResponse</li>
 <li>当使用kafka-topics.sh脚本为某个topic增加分区数量时,同样还是由控制器负责分区的重新分配</li>
 </ul>
 </div>
-<div id="outline-container-org2aee5b1" class="outline-4">
-<h4 id="org2aee5b1"><span class="section-number-4">6.4.1</span> 控制器的选举及异常恢复</h4>
+<div id="outline-container-orgc559461" class="outline-4">
+<h4 id="orgc559461"><span class="section-number-4">6.4.1</span> 控制器的选举及异常恢复</h4>
 <div class="outline-text-4" id="text-6-4-1">
 <ul class="org-ul">
 <li><p>
@@ -4999,8 +5017,8 @@ Kafka中的控制器选举工作依赖于Zookeeper,成功选举为控制权的br
 </ul>
 </div>
 </div>
-<div id="outline-container-org56c341d" class="outline-4">
-<h4 id="org56c341d"><span class="section-number-4">6.4.2</span> 如何优雅的关闭</h4>
+<div id="outline-container-orgaea8259" class="outline-4">
+<h4 id="orgaea8259"><span class="section-number-4">6.4.2</span> 如何优雅的关闭</h4>
 <div class="outline-text-4" id="text-6-4-2">
 <ul class="org-ul">
 <li>不要使用kill -9 $KAFKA_PID 这种办法关闭</li>
@@ -5016,8 +5034,8 @@ Kafka中的控制器选举工作依赖于Zookeeper,成功选举为控制权的br
 </ul>
 </div>
 </div>
-<div id="outline-container-org427fb5b" class="outline-4">
-<h4 id="org427fb5b"><span class="section-number-4">6.4.3</span> 分区leader的选举</h4>
+<div id="outline-container-orgeac90fa" class="outline-4">
+<h4 id="orgeac90fa"><span class="section-number-4">6.4.3</span> 分区leader的选举</h4>
 <div class="outline-text-4" id="text-6-4-3">
 <ul class="org-ul">
 <li>分区leader副本的选举由控制器具体负责实施,实施的时间点有:
@@ -5035,16 +5053,16 @@ Kafka中的控制器选举工作依赖于Zookeeper,成功选举为控制权的br
 </div>
 </div>
 </div>
-<div id="outline-container-org9e41d92" class="outline-3">
-<h3 id="org9e41d92"><span class="section-number-3">6.5</span> 参数解密</h3>
+<div id="outline-container-org52b77e8" class="outline-3">
+<h3 id="org52b77e8"><span class="section-number-3">6.5</span> 参数解密</h3>
 <div class="outline-text-3" id="text-6-5">
 <ul class="org-ul">
 <li>如果broker端没有显示的配置listeners(或者advertised.listeners)使用IP地址,那么最好将bootstrap.server
 配置成主机名,而不要使用IP地址,因为Kafka内部使用的是全称域名</li>
 </ul>
 </div>
-<div id="outline-container-org698fba9" class="outline-4">
-<h4 id="org698fba9"><span class="section-number-4">6.5.1</span> broker.id</h4>
+<div id="outline-container-orgb1435bc" class="outline-4">
+<h4 id="orgb1435bc"><span class="section-number-4">6.5.1</span> broker.id</h4>
 <div class="outline-text-4" id="text-6-5-1">
 <ul class="org-ul">
 <li>broker.id是在broker启动之前必须设置的参数,kafka集群中,每个broker都有一个唯一的id</li>
@@ -5054,16 +5072,16 @@ broker的健康状态检查就依赖于此虚节点</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org4d46468" class="outline-4">
-<h4 id="org4d46468"><span class="section-number-4">6.5.2</span> bootstrap.servers</h4>
+<div id="outline-container-orge6b481b" class="outline-4">
+<h4 id="orge6b481b"><span class="section-number-4">6.5.2</span> bootstrap.servers</h4>
 <div class="outline-text-4" id="text-6-5-2">
 <ul class="org-ul">
 <li>bootstrap.servers是新版本的kafka用来指定broker地址的地方</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgb23061c" class="outline-4">
-<h4 id="orgb23061c"><span class="section-number-4">6.5.3</span> 服务端参数列表:</h4>
+<div id="outline-container-orgf647bd2" class="outline-4">
+<h4 id="orgf647bd2"><span class="section-number-4">6.5.3</span> 服务端参数列表:</h4>
 <div class="outline-text-4" id="text-6-5-3">
 <ul class="org-ul">
 <li>auto.create.topics.enable,默认值true,是否开启自动创建主题的功能</li>
@@ -5112,10 +5130,236 @@ org.apache.kafka.server.policy.CreateTopicPolicy接口</li>
 </div>
 </div>
 </div>
+<div id="outline-container-orgcdd35c0" class="outline-2">
+<h2 id="orgcdd35c0"><span class="section-number-2">7</span> 第7章 深入客户端</h2>
+<div class="outline-text-2" id="text-7">
+</div>
+<div id="outline-container-org43136a1" class="outline-3">
+<h3 id="org43136a1"><span class="section-number-3">7.1</span> 分区分配策略</h3>
+<div class="outline-text-3" id="text-7-1">
+<ul class="org-ul">
+<li>kafka提供了消费者客户端参数partition.assignment.strategy来设置消费者与订阅主题之间的分区分配策略,</li>
+<li>默认情况下这个数的值为org.apache.kafka.clients.consumer.RangeAssignor,除此之外还有两个策略:
+<ul class="org-ul">
+<li>RoundRobinAssignor</li>
+<li>StickyAssignor</li>
+</ul></li>
+<li>参数partition.assignment.strategy可以配置多个值,不同值之间使用逗号隔开</li>
+</ul>
+</div>
+<div id="outline-container-org89e4781" class="outline-4">
+<h4 id="org89e4781"><span class="section-number-4">7.1.1</span> RangeAssignor分配策略</h4>
+<div class="outline-text-4" id="text-7-1-1">
+<ul class="org-ul">
+<li>RangeAssignor分配策略的原理:
+<ul class="org-ul">
+<li>假设n = 分区数/消费者数量</li>
+<li>m = 分区数%消费者数量</li>
+<li>那么前m个消费者每人分配n+1个分区,后面的消费者每人分配n个分区</li>
+<li>比如分区数是10,消费者是3,那么n=3,m=1, 第一个消费者分3+1个,第二个消费者分3个,第三个消费者分3个</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgf9d3e85" class="outline-4">
+<h4 id="orgf9d3e85"><span class="section-number-4">7.1.2</span> RoundRobinAssignor分配策略</h4>
+<div class="outline-text-4" id="text-7-1-2">
+<ul class="org-ul">
+<li>原理是将消费组内所有的消费者及消费者订阅的所有主题按照字典序排序,然后通过轮询的方式逐个将分区依
+次分配给每个消费者</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgc2ce938" class="outline-4">
+<h4 id="orgc2ce938"><span class="section-number-4">7.1.3</span> StickyAssignor分配策略</h4>
+<div class="outline-text-4" id="text-7-1-3">
+<ul class="org-ul">
+<li>从0.11.x版本开始引入,其目的有两个:
+<ul class="org-ul">
+<li>分区尽可能的均匀</li>
+<li>分区的分配尽可能的和上次分配的保持相同</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgdd72592" class="outline-3">
+<h3 id="orgdd72592"><span class="section-number-3">7.2</span> 消费者协调器和组协调器</h3>
+<div class="outline-text-3" id="text-7-2">
+<ul class="org-ul">
+<li>了解了kafka中消费者的分区分配策略后,会有如下的疑问:
+<ul class="org-ul">
+<li>如果消费者客户端中配置了两个分配策略,那么以哪个为准呢?</li>
+<li>如果有多个消费者,彼此所配置的分配策略并不完全相同,那么以哪个为准?</li>
+<li>多个消费者之间的分区分配是需要协同的,那么这个协同的过程又是怎样的?</li>
+</ul></li>
+<li>上面问题的答案就是这一切交由如下两个部分来完成:
+<ul class="org-ul">
+<li>消费者协调器ConsumerCoordinator</li>
+<li>组协调器GroupCoordinator</li>
+</ul></li>
+</ul>
+</div>
+<div id="outline-container-org49c2018" class="outline-4">
+<h4 id="org49c2018"><span class="section-number-4">7.2.1</span> 旧版消费者客户端的问题</h4>
+<div class="outline-text-4" id="text-7-2-1">
+<ul class="org-ul">
+<li>旧版客户端太过依赖ZooKeeper,容易发生如下问题:
+<ul class="org-ul">
+<li>羊群效应</li>
+<li>脑裂问题</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org61b5d11" class="outline-4">
+<h4 id="org61b5d11"><span class="section-number-4">7.2.2</span> 再均衡的原理</h4>
+<div class="outline-text-4" id="text-7-2-2">
+<ul class="org-ul">
+<li>新版本客户端重新进行了设计:
+<ul class="org-ul">
+<li>将全服的消费组分成了多个子集</li>
+<li>每个子集在服务端对应一个GroupCoordinator对其进行管理</li>
+<li>消费者中的ConsumerCoordinator组件负责与GroupCoordinator进行交互</li>
+</ul></li>
+<li>ConsumerCoordinator和GroupCoordinator的最重要职责就是负责执行消费者的再均衡,如下的情况会触发这
+个再均衡:
+<ul class="org-ul">
+<li>有新的消费者加入消费组</li>
+<li>有消费者宕机下线,遇到长时间GC没有想GroupCoordinator发送心跳等也被GroupCoordinator认为是下线</li>
+<li>有消费者主动提出退出消费组(发送LeaveGroupRequest请求)</li>
+<li>消费组对应的GroupCoorinator节点发生变化</li>
+</ul></li>
+<li>下面是一个例子来讲解当有消费者加入消费组的时候,消费者,消费组和GroupCoordinator会经理以下几个阶段</li>
+</ul>
+</div>
+<ol class="org-ol">
+<li><a id="orgcfb0a35"></a>第一阶段FIND_COORDINATOR<br />
+<div class="outline-text-5" id="text-7-2-2-1">
+<ul class="org-ul">
+<li>消费者需要确定,其消费组对应的GroupCoordinator所在的broker</li>
+<li>然后与这个broker建立网络连接,如果之前建立过连接,就可以进入第二阶段</li>
+<li>否则就要向集群中的某个节点发送FINDCoordinatorRequest来查找对应的GroupCoordinator,这个请求包含
+两个field:
+<ul class="org-ul">
+<li>coordinator_key:其实就是group_id</li>
+<li>coordinator_type: 当前都是0</li>
+</ul></li>
+<li><p>
+kafka收到这请求后,会根据coordinator_key(group_id)来查找对应的GroupCoordinator节点,具体查找
+方式如下
+</p>
+<div class="org-src-container">
+<pre class="src src-java">Utils.abs(groupId.<span style="color: #d9bb80;">hashCode</span>) % groupMetadataTopicpartitionCount
+</pre>
+</div></li>
+<li>其中groupMetadataTopicpartitionCount就是主题__consumer_offset的分区个数(默认是50)</li>
+<li>这样找到对应的__consumer_offset分区之后,在寻找此分区对应的分区leader副本所在的broker节点,该
+broker节点即为这个groupId所对应的GroupCoordinator节点</li>
+</ul>
+</div>
+</li>
+<li><a id="orgdaa9962"></a>第二阶段JOIN_GROUP<br />
+<div class="outline-text-5" id="text-7-2-2-2">
+<ul class="org-ul">
+<li>在成功找到消费组对应的GroupCoordinator之后,就进入了加入消费组的阶段,在此阶段,消费者会向GroupCoordinator
+发送JoinGroupRequest请求,其包含如下field:
+<ul class="org-ul">
+<li>group_id消费组的id</li>
+<li>session_timeout,对应消费端参数session.timeout.ms默认值10000(10秒),GroupCoordinator对超过
+session_timeout还没有收到心跳报文的消费者,以下线对待之</li>
+<li>rebalance_timeout,对应消费端参数max.poll.interval.ms,默认值五分钟,表示当消费组再平衡的时候,
+GroupCoordinator等待各消费者重新加入的最长等待时间</li>
+<li>member_id表示GroupCoordinator分配给消费者的id标识</li>
+<li>protocol_type表示消费组实现的协议,对于消费者而言这个字段为consumer</li>
+</ul></li>
+<li>消费者在发送JoinGroupRequest之后,会阻塞等待Kafka服务端的响应.</li>
+<li>服务端在收到JoinGroupRequest之后,会交由GroupCoordinator来进行处理,如果是第一次请求,则member_id为
+null,那么GroupCoordinator会为这个消费者请求一个member_id</li>
+<li>GroupCoordinator还要为消费组内的消费者选出一个leader:
+<ul class="org-ul">
+<li>如果消费组里面没有leader,那么第一个进入的消费者就是leader</li>
+<li>如果原有leader退出了,那么随机选择一个</li>
+</ul></li>
+<li>每个消费者都会带不同的选举策略,把这些消费者的策略总结开来,投票,最终决定策略是哪个</li>
+</ul>
+</div>
+</li>
+<li><a id="org39fb7b9"></a>第三阶段SYNC_GROUP<br />
+<div class="outline-text-5" id="text-7-2-2-3">
+<ul class="org-ul">
+<li>leader消费者根据第二阶段选举出来的分区分配策略来实施具体的分区分配,在此之后要将方案同步给各个
+消费者(同步的方式,是各个消费者给GroupCoordinator发送SyncGroupRequest请求同步分配方案)</li>
+</ul>
+</div>
+</li>
+<li><a id="org46486b8"></a>第四阶段HEARTBEAT<br />
+<div class="outline-text-5" id="text-7-2-2-4">
+<ul class="org-ul">
+<li>消费者通过向GroupCoordinator发送心跳来维持他们于消费者的从属关系,以及他们对分区的所有权关系</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org4c644c0" class="outline-3">
+<h3 id="org4c644c0"><span class="section-number-3">7.3</span> __consumer_offsets剖析</h3>
+<div class="outline-text-3" id="text-7-3">
+<ul class="org-ul">
+<li>位移提交是消费者客户端中,比较重要的特性.位移提交的内容最终会被保存在kafka内部的主题__consumer_offsets中</li>
+<li>一般情况下,当集群中第一次有消费者(集群的第一消费者,每个集群只有一个)消费消息时会自动创建主题
+__consumer_offsets</li>
+<li>__consumer_offsets的副本因子受到offsets.topic.replication.factor参数的约束,默认值是3</li>
+<li>__consumer_offsets的分区数受到offsets.topic.num.partitions参数的约束,默认值是50</li>
+<li>客户单端提交消费位移是使用OffsetCommitRequest请求实现的,这里只介绍这个request的几个特殊的field:
+<ul class="org-ul">
+<li>retention_time表示当前提交的消费位移所能保留的时长(对于消费者而言,这个值始终是-1,也就是按照broker端的
+offsets.rentention.minutes来确定保留时长,默认是7天).注意,这个值的默认值曾经不是-1,而是1天,这个
+造成过很多问题</li>
+</ul></li>
+<li>最终提交的消费位移也会以消息的形式(把上面的request解析成消息)发送到主题__consumer_offsets,key,value
+如图7-17所示</li>
+<li>在处理完消费位移之后,Kafka返回OffsetCommitReponse,如图7-18</li>
+<li><p>
+我们可以通过kafka-console-consumer.sh脚本来查看__consumer_offsets中的内容,不过要设定formatter参数,如下
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">&gt; bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic __consumer_offsets --partition 20 --formatter <span style="color: #87af87;">\</span>
+  <span style="color: #87af87;">'kafka.coordinator.group.GroupMetadataManager$OffsetsMessageFormatter'</span>
+
+[consumerGroupId,topic-offsets,30]::[OffsetMetadata[2130,NO_METADATA],Commit TIme 1438843128354,ExpirationTime 1539447928354]
+</pre>
+</div></li>
+<li><p>
+使用OffsetsMessageFormatter打印的格式可以概括为
+</p>
+<pre class="example" id="org4661838">
+"[%s,%s,%d]:: [OffsetMetadata[%d,%s],CommitTime %d,ExpirationTime %d]".format(group,topic,partition,offset,metadata,commitTimestamp, expireTimestamp)
+</pre></li>
+<li><p>
+如果某个key(version+group+topic+partition的组合)对应的消费位移过期了,那么对应的value就是null,也
+就是墓碑消息,对应的打印结果也会变成如下的形式
+</p>
+<pre class="example" id="org4c240d8">
+" [%s,%s,%d]::null".format(group, topic, partition)
+</pre></li>
+<li><p>
+比如,在有时候查看__consumer_offsets中会有如下的内容,说明这个消费位移已经过期了
+</p>
+<pre class="example" id="org66ff3be">
+[consumerGroupId,topic-offsets,21]::null
+</pre></li>
+<li>在kafka中,有个名叫delete-expired-group-metadata的定时任务来负责清理过期的消费位移,每十分钟执行一次</li>
+<li>还有metadata,一般情况下,它的值要么为null,要么是空字符串(空的时候,OffsetsMessageFormatter会展示位NO_METADATA]</li>
+</ul>
+</div>
+</div>
+</div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: harrifeng@outlook.com</p>
-<p class="date">Created: 2021-06-17 Thu 18:11</p>
+<p class="date">Created: 2021-06-28 Mon 11:43</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
