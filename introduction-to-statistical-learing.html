@@ -1,0 +1,3668 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2021-07-06 Tue 10:34 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>introduction-to-statistical-learning</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="harrifeng@outlook.com" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/readtheorg.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/js/readtheorg.js"></script>
+<script type="text/javascript">
+// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
+<!--/*--><![CDATA[/*><!--*/
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+    /*]]>*///-->
+// @license-end
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">introduction-to-statistical-learning</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org24e2103">1. Chapter 1: Introduction</a>
+<ul>
+<li><a href="#org7f51895">1.1. An Overview of Statistical Learning</a>
+<ul>
+<li><a href="#org538d21c">1.1.1. Wage Data</a></li>
+<li><a href="#org4099af2">1.1.2. Stock Market Data</a></li>
+<li><a href="#orgb9d8e3a">1.1.3. Gene Expression Data</a></li>
+</ul>
+</li>
+<li><a href="#orge8127bb">1.2. A Brief History of Statistical Learning</a></li>
+<li><a href="#org3d8f4c0">1.3. This Book</a></li>
+<li><a href="#org3f8ca7f">1.4. Who Should Read This Book?</a></li>
+<li><a href="#orgec85897">1.5. Notation and Simple Matrix Algebra</a></li>
+</ul>
+</li>
+<li><a href="#org978d134">2. Chapter 2: Statistical Learning</a>
+<ul>
+<li><a href="#orgc317a4a">2.1. What Is Statistical Learning?</a>
+<ul>
+<li><a href="#org0d71401">2.1.1. Why Estimate f?</a></li>
+<li><a href="#orgc21610a">2.1.2. How Do We Estimate f?</a></li>
+<li><a href="#orga19411d">2.1.3. The Trade-Off Between Prediction Accuracy and Model Interpretability</a></li>
+<li><a href="#org0bbee83">2.1.4. Supervised Versus Unsupervised Learning</a></li>
+<li><a href="#orge21c407">2.1.5. Regression Versus Classification Problems</a></li>
+</ul>
+</li>
+<li><a href="#org9c0ec6b">2.2. Assessing Model Accuracy</a>
+<ul>
+<li><a href="#orgee509d5">2.2.1. Measuring the Quality of Fit</a></li>
+<li><a href="#org7b80b55">2.2.2. The Bias-Variance Trade-Off</a></li>
+<li><a href="#orgfb9b9ba">2.2.3. The Classification Setting</a></li>
+</ul>
+</li>
+<li><a href="#org4e0189a">2.3. Lab: Introduction to R</a>
+<ul>
+<li><a href="#orgf919f5b">2.3.1. Basic Commands</a></li>
+<li><a href="#org2104569">2.3.2. Graphics</a></li>
+<li><a href="#org0bc93f8">2.3.3. Indexing Data</a></li>
+<li><a href="#org7d86f65">2.3.4. Loading Data</a></li>
+<li><a href="#org7517ad8">2.3.5. Additional Graphical and Numerical Summaries</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orge4588bf">3. Chapter 3: Linear Regression</a>
+<ul>
+<li><a href="#org2012ee2">3.1. Simple Linear Regression</a>
+<ul>
+<li><a href="#orgc186b2f">3.1.1. Estimating the Coefficients</a></li>
+<li><a href="#orgf9b6c6d">3.1.2. Assessing the Accuracy of the Coefficient Estimates</a></li>
+<li><a href="#orgd3f8beb">3.1.3. Assessing the Accuracy of the Model</a></li>
+</ul>
+</li>
+<li><a href="#orgc8273d0">3.2. Multiple Linear Regression</a>
+<ul>
+<li><a href="#org34d528a">3.2.1. Estimating the Regression Coefficients</a></li>
+<li><a href="#org8665e5a">3.2.2. Some Important Questions</a></li>
+</ul>
+</li>
+<li><a href="#org1c631bb">3.3. Other Considerations in the Regression Model</a>
+<ul>
+<li><a href="#orga7fe71f">3.3.1. Qualitative Predictors</a></li>
+<li><a href="#orged723cc">3.3.2. Predictors with Only Two Levels</a></li>
+<li><a href="#org5be3761">3.3.3. Qualitative Predictors with More than Two Levels</a></li>
+<li><a href="#org33536c6">3.3.4. Extensions of the Linear Model</a></li>
+<li><a href="#org6742af6">3.3.5. Potential Problems</a></li>
+</ul>
+</li>
+<li><a href="#org8153bc9">3.4. The Marketing Plan</a>
+<ul>
+<li><a href="#org51b288e">3.4.1. Is there a relationship between advertising sales and budget?</a></li>
+<li><a href="#org6d8cd10">3.4.2. How strongis the relationship?</a></li>
+<li><a href="#orgf50d8e8">3.4.3. Which media contribute to sales?</a></li>
+<li><a href="#orgd31f907">3.4.4. How large is the effect of each medium on seles?</a></li>
+<li><a href="#org6695680">3.4.5. How accurately can we predict future sales?</a></li>
+<li><a href="#org68d5a9f">3.4.6. Is the relationship linear?</a></li>
+<li><a href="#org18db6d7">3.4.7. Is there synergy among the advertising media?</a></li>
+</ul>
+</li>
+<li><a href="#orge8b9770">3.5. Comparison of Linear Regression</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org24e2103" class="outline-2">
+<h2 id="org24e2103"><span class="section-number-2">1</span> Chapter 1: Introduction</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-org7f51895" class="outline-3">
+<h3 id="org7f51895"><span class="section-number-3">1.1</span> An Overview of Statistical Learning</h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li>statistical learning 代表一系列理解数据的工具,这些工具可以分为:
+<ul class="org-ul">
+<li>supervised</li>
+<li>unsupervised</li>
+</ul></li>
+<li>一般来说,supervised statistical learning包含创建一个statistical model用来:
+<ul class="org-ul">
+<li>基于一个或者多个input来predicting output</li>
+<li>基于一个或者多个input来estimating output</li>
+</ul></li>
+<li>对于unsupervised statistical learning来说,他们有input但是没有supervising的output
+但是我们可以从这种数据中学习relationship和structure</li>
+<li>为了我们的讲述更加的容易理解,我们简短的介绍下实际生活的三个data set</li>
+</ul>
+</div>
+<div id="outline-container-org538d21c" class="outline-4">
+<h4 id="org538d21c"><span class="section-number-4">1.1.1</span> Wage Data</h4>
+<div class="outline-text-4" id="text-1-1-1">
+<ul class="org-ul">
+<li>在这本书里面,我们会把这个例子叫成是Wage data set</li>
+<li>Wage data set是研究美国大西洋区域的一些男性工资,已经影响工资的因素,比如:年龄,教育水平,工作经验对工资的影响</li>
+<li>图1-1介绍了Wage data:
+<ul class="org-ul">
+<li><p>
+图1-1:
+</p>
+
+<div id="org2a9d446" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/isl/1-1.png" alt="1-1.png" />
+</p>
+<p><span class="figure-number">Figure 1: </span>isl/1-1.png</p>
+</div></li>
+<li>左边,上面是展示了每个年龄的wage,我们可以看到,随着年龄的增长工资增长</li>
+<li>但是增长停留在60岁,之后工资是随着年龄是下滑的</li>
+<li>图左边中的蓝色线是预测wage和age关系的,让我们把trend看的更清楚</li>
+<li>给我们雇员的age,我们可以使用这个curve来预测他的工资,但是我们也从图1-1中知道</li>
+<li>其实很多variability都和wage相关,仅仅使用age算出来的预测结果并不准确</li>
+<li>图1-1的中间是工资和年份的关系</li>
+<li>图1-1的右边是工资和教育水平的关系</li>
+<li>这两个小图也证明,工资和年份以及教育水平也有关系</li>
+</ul></li>
+<li>很明显的,对wage最精确的prediction必须包含age,education和year:
+<ul class="org-ul">
+<li>第三章会介绍包含age,education,year来预测wage的linear regression</li>
+<li>第七章会介绍non-linear的关系</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org4099af2" class="outline-4">
+<h4 id="org4099af2"><span class="section-number-4">1.1.2</span> Stock Market Data</h4>
+<div class="outline-text-4" id="text-1-1-2">
+<ul class="org-ul">
+<li>Wage data包含预测如下两种value, 这些问题也被称之为回归问题(regression problem):
+<ul class="org-ul">
+<li>continuous output value</li>
+<li>quantitative output value</li>
+</ul></li>
+<li>另外一些情况下,我们希望预测non-numerical vaue,也就是分类问题(categorical problem):
+<ul class="org-ul">
+<li>qualitative output</li>
+</ul></li>
+<li>第四章我们会分析一个stock market data set,这个data set包含2001到2005年S&amp;P的
+daily movement,这就是一个non-numerical的分类问题,因为我们只需要预测指数:
+<ul class="org-ul">
+<li>increase</li>
+<li>还是decrease</li>
+</ul></li>
+<li>图1-2描述的是前一天的movement对下一天的影响:
+<ul class="org-ul">
+<li>648天第二天会涨</li>
+<li>602天第二天会跌</li>
+</ul></li>
+<li>图1-2左, 这两个plot看起来完全一样,也就意味着使用昨天的数据来预测今天的行情,不太可能.</li>
+<li>图1-2中,图1-2右,是两天前和三天前的数据和今天涨跌的关系,也看起来很像,无法预
+测第二天的涨跌</li>
+<li>图1-2的数据lack of pattern是可以预期的: 如果这些数据和涨跌联系紧密,那么仅凭
+这个就可以赚大钱</li>
+<li>我们后面就通过quandratic discriminant analysis 模型,能够在60%的情况下,预测
+正确涨跌</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgb9d8e3a" class="outline-4">
+<h4 id="orgb9d8e3a"><span class="section-number-4">1.1.3</span> Gene Expression Data</h4>
+<div class="outline-text-4" id="text-1-1-3">
+<ul class="org-ul">
+<li>前面两组数据都是input和output兼有,另外还有一种重要的数据就只有input,没有output</li>
+<li>比如我们有一组当前用户的数据,我想知道哪些用户比较相似,算一类(通过可以观察到的特点)</li>
+<li>和前面例子不同的是,我们这里无法预测出一个output value</li>
+<li>我们会在第10章会讨论statistical learning method来处理这种没有nutural output
+variable的情况</li>
+<li>我们使用了NCI60数据,包含6830 gene expression measurement(64种cancer cell line)</li>
+<li>这种数据下,我们已经不再关注于predict 一个particular output variable,而是要
+判断是否存在一个group, cluster</li>
+<li>图1-4左边就是把64个cell line以Z1和Z2两个数字展示出来,而且分成了四组(四种颜
+色),也就是基因大概分成了四种</li>
+<li>图1-4右边有14种颜色,这些颜色是14种cancer的类型,我们可以看到相同类型的cancer
+其实是聚集的</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orge8127bb" class="outline-3">
+<h3 id="orge8127bb"><span class="section-number-3">1.2</span> A Brief History of Statistical Learning</h3>
+<div class="outline-text-3" id="text-1-2">
+<ul class="org-ul">
+<li>虽然statistical learning是一个比较新的概念,但是很多概念已经存在了很久</li>
+<li>在十九世纪初, Legendre和Gauss发表了论文,实践了linear regression的最初form</li>
+<li>linear regression最初在天文问题上得到了应用</li>
+<li>最初linear regression用来预测quantitative value,比如某个人的工资</li>
+<li>后来为了预测qualitative value比如股票是涨还是跌,Fisher在1936年为这类问题起名
+linear discriminant analysis</li>
+<li>在1940年代,多个作者把linear discriminant analysis改了一个名字,新名字叫做
+logistic regression(logisttic对应qualitative)</li>
+<li>1970年代,Nelder和Wedderburn把linear regression和logistic regression统一为一
+个名词:generalized linear model</li>
+<li>整个70年代都是对linear method的研究,因为当时无法fit non-linear relation</li>
+<li>80年代,计算机的引入终于能让non-linear relation的适应成为可能. 1980年 Breiman
+引入了classification and regression tree,这个技术有如下跨时代的意义:
+<ul class="org-ul">
+<li>验证了detailed implementation of a method的力量,比如cross-validation for
+model selection</li>
+</ul></li>
+<li>1986年, Hastie发明了generalized additive model</li>
+<li><p>
+从那以后,statistical learning开始在machine learning的帮助下,聚焦在如下领域
+</p>
+<pre class="example" id="org1ffbf9a">
+supervised and unsupervised modeling and prediction
+</pre></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org3d8f4c0" class="outline-3">
+<h3 id="org3d8f4c0"><span class="section-number-3">1.3</span> This Book</h3>
+<div class="outline-text-3" id="text-1-3">
+<ul class="org-ul">
+<li>ESL大而全,比较专业</li>
+<li>本书(ISL)主要是为了把statistical learning推向主流</li>
+<li>本书(ISL)基于以下前提:
+<ol class="org-ol">
+<li>很多statistical learning method在统计学以外的领域也很有作用</li>
+<li>statistical learning不应该作为黑盒</li>
+<li>本书不使用矩阵和向量,尽可能使用英语来教育用户</li>
+<li>我们假设用户喜欢使用statistical learning方法来解决实际问题</li>
+</ol></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org3f8ca7f" class="outline-3">
+<h3 id="org3f8ca7f"><span class="section-number-3">1.4</span> Who Should Read This Book?</h3>
+<div class="outline-text-3" id="text-1-4">
+<ul class="org-ul">
+<li>所有希望使用statistical method来使用数据,完成模型和预测的人</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgec85897" class="outline-3">
+<h3 id="orgec85897"><span class="section-number-3">1.5</span> Notation and Simple Matrix Algebra</h3>
+<div class="outline-text-3" id="text-1-5">
+<ul class="org-ul">
+<li>教材选择正确的notation很难,我们本书和ESL使用同样的notation</li>
+<li>我们会使用n来代表distinct data point的数目</li>
+<li>我们会使用p来代表能用来做prediction的variable的数目</li>
+<li>比如wage data set包含12个变量,3000个人,所以我们就有:
+<ul class="org-ul">
+<li>n = 3000</li>
+<li>p = 12个variable(比如year, age, sex等),本书中variable都是有颜色的字体</li>
+</ul></li>
+<li>总体上来说,我们要让xij来代表第i次观察的时候,第j次的变量:
+<ul class="org-ul">
+<li>i = 1, 2,&#x2026;.n</li>
+<li>j = 1, 2,&#x2026;p</li>
+</ul></li>
+<li>这样我们就可以得到一个矩阵</li>
+<li>有时候,我们会对X的row(行)比较感兴趣,那么其中一个row(名字叫xi)就是如下,它有p个variable</li>
+<li>我们以wage data为例,xi就是一个长度为12的vector,包括year, age, sex</li>
+<li>另外一些时候,我们对X的column(列)比较感兴趣,那么我们就得到了Xj,如下</li>
+<li>对于Wage data来说,x1包括了3000个year的信息</li>
+<li>我们使用yi来表示第ith次观测后,我们得到的prediction,比如wage</li>
+<li>所以我们的观测组合就是{(x1,y1),(x2,y2)&#x2026;},每个xi就是一个长度为p的向量</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org978d134" class="outline-2">
+<h2 id="org978d134"><span class="section-number-2">2</span> Chapter 2: Statistical Learning</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-orgc317a4a" class="outline-3">
+<h3 id="orgc317a4a"><span class="section-number-3">2.1</span> What Is Statistical Learning?</h3>
+<div class="outline-text-3" id="text-2-1">
+<ul class="org-ul">
+<li>为了能够刺激我们对于statistical learning的学习,我们先从简单的例子开始,假设我
+们是数据分析师,被雇佣来对如何提高某个产品销量提供建议</li>
+<li>Advertising data set包含:
+<ul class="org-ul">
+<li>一个产品在200个不同市场的sales</li>
+<li>200个市场每个市场的预算总和,以及在TV, radio, newspaper的分配比例</li>
+</ul></li>
+<li>上面的数据在图-2.1展示</li>
+<li>我们数据分析师的工作是在客户不增加预算的情况下,找到广告和销售的association,
+然后改变不同领域投入的广告费比例,从而提升效果,最终提升销量</li>
+<li>换句话说,我们的目标是develop an accurate model, 让这个model能够在提供三种不
+同budget作为输入的基础上,预测sales</li>
+<li>以上面的例子为例:
+<ul class="org-ul">
+<li>广告预算就是input variables</li>
+<li>销售额就是output variables</li>
+<li>input variables, 通常使用大写的X来代替,其中每个input variable就用X1, X2等
+等来代替,比如我们可以用X1来指代TV budget, X2指代radio budget, X3指代newspaper
+budget</li>
+<li>inputs还有许多其他的名字,其实是同一回事:
+<ol class="org-ol">
+<li>predictors</li>
+<li>independent variables</li>
+<li>features</li>
+<li>variables</li>
+</ol></li>
+<li>output vairable,通常使用大写的Y来表示,比如这里的sales,就使用Y来表示</li>
+<li>outputs也有很多其他的名字,其实是同一回事:
+<ol class="org-ol">
+<li>response</li>
+<li>dependent variable</li>
+</ol></li>
+</ul></li>
+<li>一般来说,假设我们观测到了:
+<ol class="org-ol">
+<li>quantitative response Y</li>
+<li>p个predictor: X1, X2,&#x2026;Xp</li>
+</ol></li>
+<li><p>
+并且我们assume在Y和X(X1,X2&#x2026;Xp)之间有relationship,那么我们可以使用如下的公式来表示:
+</p>
+<pre class="example" id="org81c6353">
+Y = f(X) + e
+</pre></li>
+<li>这里的:
+<ul class="org-ul">
+<li>f是fixed但是却未知的作用于X1&#x2026;Xp的函数,它是一个systematic information</li>
+<li>e是random error term,这个数值是independent于X,并且有平均值为zero</li>
+</ul></li>
+<li>我们再来引入一个新图片,图2-2</li>
+<li>图2-2的最左边是一个关于如下两个量之间的关系:
+<ul class="org-ul">
+<li>income</li>
+<li>years of education</li>
+</ul></li>
+<li><p>
+这个图显示给我们的信息是:我们可以通过year of education来预测income,但是预测所需要的function f通常是未知的
+</p>
+<pre class="example" id="orgcb298a9">
+The function f that connects the input variable to the output
+variable is in general unknown
+</pre></li>
+<li>为了获取f,我们需要通过我们observed point来estimate f.</li>
+<li>注意,这里的income数据是我们通过函数f来编造的,也就是说,这里的f是已知的(和数据已知,f未知相反),
+也就是图2-2中右边所示</li>
+<li>这里的vertical line代表error term e,我们注意到有的e是比f(蓝色线)低一点,有的比f高一点,总体来说平均值是0</li>
+<li>通常来说,函数f并不仅仅包含一个input variable,如图2-3所示,我们可以把income看成是function of:
+<ul class="org-ul">
+<li>years of education</li>
+<li>seniority</li>
+</ul></li>
+<li>这里的f就是两个维度的surface,并且必须使用观察的数据来估计</li>
+<li>本质上来说,statistical learning代表了一系列estimating f的方法.本章我们主要列出:
+<ul class="org-ul">
+<li>关键的概念</li>
+<li>用于估计的工具</li>
+</ul></li>
+</ul>
+</div>
+<div id="outline-container-org0d71401" class="outline-4">
+<h4 id="org0d71401"><span class="section-number-4">2.1.1</span> Why Estimate f?</h4>
+<div class="outline-text-4" id="text-2-1-1">
+<ul class="org-ul">
+<li>那么我们为什么需要来estimate f呢?</li>
+<li>两个原因:
+<ul class="org-ul">
+<li>prediction</li>
+<li>inference</li>
+</ul></li>
+</ul>
+</div>
+<ol class="org-ol">
+<li><a id="orge7afe18"></a>Prediction<br />
+<div class="outline-text-5" id="text-2-1-1-1">
+<ul class="org-ul">
+<li><p>
+在很多情况下, inputs X已经存在了,但是output Y不太容易获得,在这种情况下,由于
+error term 评价情况下为0,那么我们可以使用如下的公式来预测Y
+</p>
+<pre class="example" id="orga1923c9">
+Y^ = f^(X)
+</pre></li>
+<li>由于f是不可能准确获取的,我们这里使用f<sup>来代表我们estimate的f</sup></li>
+<li>这里的Y<sup>就是我们对Y的prediction</sup></li>
+<li>通常来说f<sup>是一个black</sup> box,如果能准确预测的话,人们对f<sup>的的样式其实不是很关心</sup></li>
+<li>我们来举个例子来说明这个情况:
+<ul class="org-ul">
+<li>X1&#x2026;.Xp是一个patient的p个血液特征</li>
+<li>Y是代表这个patient对于某个特定drug的严重反应指数</li>
+</ul></li>
+<li>对于Y的预测值Y<sup>的准确性依赖于两个类型的特征</sup>:
+<ul class="org-ul">
+<li>reducible error</li>
+<li>irreducible error</li>
+</ul></li>
+<li>一般来说,f<sup>和真正的f之间是有差距的,这个差距就是reducible</sup> error,名字的来源
+在于,这个差距是可以reduce的,因为我们可以使用最高精尖的statistical learning
+算法来让f<sup>无线接近于f</sup></li>
+<li>由于Y还是e的function,所以和e相关的,还是会影响prediction的效果,这就是所谓的
+irreducible error,注意无论我们怎么完美的estimate f,我们都无法减小e带来的error</li>
+<li>好,我们下面来解释下,为什么我们无法减小e:
+<ul class="org-ul">
+<li>e可能含有unmeasurable variation,比如:
+<ol class="org-ol">
+<li>对药物的反映可能每一天都不同</li>
+<li>drug的制造本身也是不同的</li>
+<li>每个病人的感受可能表达出来是不一样的.</li>
+</ol></li>
+</ul></li>
+<li>本书介绍如何让reducible error最小的estimating f的方法,需要牢记在心的是,irreducible error
+给了我们的prediction以上限,无法达到,而且在实践中也无法知道这个bound</li>
+</ul>
+</div>
+</li>
+<li><a id="orgb463d17"></a>Inference<br />
+<div class="outline-text-5" id="text-2-1-1-2">
+<ul class="org-ul">
+<li>inference比prediction进了一步:
+<ul class="org-ul">
+<li>我们不仅仅希望预测出准确的Y</li>
+<li>我们还希望了解X和Y的relationship:希望知道随着X的变化,Y如何变化</li>
+</ul></li>
+<li>在inference这种情况下,f<sup>不能再看成是black</sup> box,我们需要知道它的具体form</li>
+<li>在inference这种情况下,我们需要关系如下几个问题:
+<ul class="org-ul">
+<li>哪些predictor和最终的response有关?: 多数情况下,只有一小部分的predictor和最终的
+Y有关,在特定的情况下,能够识别出这一小部分predictor是非常重要的</li>
+<li>response和每个predictor之间是正向还是负向的关系?:有些predictor和Y是有positive
+relationship的,提高这种predictor就会提高response. 有些predictor和Y则相反</li>
+<li>Y和每个predictor之间的关系可以用linear equation来解释么?还是说需要更加复杂的公式
+来解释:历史上绝大多数estimate f的都是线性公式,但是实际上可能是更加复杂的relationship</li>
+</ul></li>
+<li>本书我们主要学习如下三种例子:
+<ul class="org-ul">
+<li>prediction setting</li>
+<li>inference setting</li>
+<li>combination of prediction and inference setting</li>
+</ul></li>
+<li>比如,一个公司想举办一个市场活动,这个活动:
+<ul class="org-ul">
+<li>需要识别哪些人会积极的反馈mailing</li>
+<li>inputs是对每个用户的人口统计学数据</li>
+<li>outputs是个人对于调查的反映</li>
+</ul></li>
+<li>在这个例子中,公司对于每个individual predictor和他的response之间的deep understanding并不感兴趣,
+公司只希望有个准确的模型,能够告诉我某个人是否会对mailing感兴趣,我好发广告给他.这就是一个典型的prediction
+的例子</li>
+<li>而一个典型的inference的例子,就是我们上面说的advertising data的例子,我们需要能够清楚的了解
+inputs和outputs之间的关系,才能分配不同的预算给不同媒体,从而达到效果的最大化</li>
+<li>而所谓的兼有prediction和inference的例子是房地产:
+<ul class="org-ul">
+<li>一个人肯定非常想知道,学校,社区,河景房等每个因素对于房价的影响,这相当于inference</li>
+<li>另外一个人则只想知道,一个标价为600w的房子,是高估了还是低估了.</li>
+</ul></li>
+<li>我们的预测里面是否包含inference(也就是是否需要知道inputs和outputs的关系)会导致我们选取不同的
+method来estimate f:
+<ul class="org-ul">
+<li>linear model能够获得简单而且又容易解释的inference,但是可能无法产生足够准确的预测结果</li>
+<li>很多non-linear model可以提供非常精确的prediction,但是代价是其可解释性不佳</li>
+</ul></li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div id="outline-container-orgc21610a" class="outline-4">
+<h4 id="orgc21610a"><span class="section-number-4">2.1.2</span> How Do We Estimate f?</h4>
+<div class="outline-text-4" id="text-2-1-2">
+<ul class="org-ul">
+<li>本书会介绍很多linear和non-linear办法来estimating f,无论linear与否,这些method都有很多
+共性:
+<ul class="org-ul">
+<li>作为inputs,我们观察到n个different data points</li>
+<li>这n个different data points叫做training data,因为我们用这些数据来train 我们的模型</li>
+<li>我们使用x<sub>ij来代表第j个predictor</sub>(比如year of education),的第i次观察到的值</li>
+<li>y<sub>i来代表第i次观察得到的response</sub></li>
+<li>所以我们的training data包含{(x1,y1),(x2,y2),&#x2026;.,(xn,yn)}</li>
+</ul></li>
+<li>我们的目标是使用statistical learning method来训练training data来estimate 这个unknown function f</li>
+<li>换句话说,我们希望查找f<sup>,从而得到Y</sup>^=f<sup>(X)</sup></li>
+<li>这种情况下,大多数的statistical learning method可以被分类为:
+<ul class="org-ul">
+<li>parametric approach</li>
+<li>non-parametric approach</li>
+</ul></li>
+</ul>
+</div>
+<ol class="org-ol">
+<li><a id="orgf06b4f4"></a>Parametric Methods<br />
+<div class="outline-text-5" id="text-2-1-2-1">
+<ul class="org-ul">
+<li>parametric method包含two-step model-based approach:
+<ol class="org-ol">
+<li><p>
+首先我们来assume一下functional form,比如我们假设f是linear的,那么就有
+</p>
+<pre class="example" id="org6b778df">
+f(X) = B0 + B1X1 + B2X2 + ....+BpXp
+</pre></li>
+<li>一旦确定了model,我们需要一个procedure来让我们的training data来fit这个model.
+我们只需要确定B0,B1&#x2026;Bp,使得Y≈B0 + B1X1 + B2X2 + &#x2026;.+BpXp. 最常见的fit的
+方法是least squares</li>
+</ol></li>
+<li>这种以model为基础的approach之所以被称之为parametric,是因为其estimating f的过程就是
+estimating这些parameter(B0,B1,,&#x2026;.Bp)</li>
+<li>parametric approach的缺点就是我们选择的model很多情况下可能并不match那个unknown form of f</li>
+<li>一旦选择的model和true f相差太远,我们的estimate结果就会非常的差</li>
+<li>一个可能的修改,是我们使用flexible model,这种model可能形成的functional form的可能性更多,
+更有可能匹配上f</li>
+<li>但是这种更加flexible 的model需要更多的参数,也更有可能更加的过拟合(overfitting)</li>
+<li>前面图2-3的情况如果我们最开始假设的model是linear的话,我们会先有一个公式</li>
+<li>然后我们使用least squares linear regression之后,得到了B0,B1,B2的值,之后我们得到了图2-4</li>
+<li>可以看到图2-4中的linear fit的不如图2-3中好,但是:
+<ul class="org-ul">
+<li>linear依然揭示了years of education和income比较postive的relationship</li>
+<li>linear同时揭示了seniority和income 的less postive的relationship</li>
+<li>并且在observation有限的情况下,linear是我们非常好的选择</li>
+</ul></li>
+</ul>
+</div>
+</li>
+<li><a id="org2abf8f6"></a>Non-parametric Methods<br />
+<div class="outline-text-5" id="text-2-1-2-2">
+<ul class="org-ul">
+<li>non-parameter method不会去明确的assume f的form</li>
+<li><p>
+由于开始没有去assume一个form,那么non-parameter就有一个相对的,非常大的优势,那就是:
+non-parameter method有可能能够非常精确的fit一系列的可能性form(of f)
+</p>
+<pre class="example" id="orgab19142">
+Non-parameter method have the potential to accurately fit a wider range of
+possible shapes of f
+</pre></li>
+<li>non-parametric approach也有很多缺点:因为他们不是简单的估计几个参数就可以的,所以为了
+得到更准确的模型,non-paramter approach需要非常大量的observation</li>
+<li>图2-5就是一个使用non-parameteric approach来fit Income data的例子</li>
+<li>这个例子中使用了thin-plate spline来预测f,其原理是,形成一个切面(图2-5中黄色
+的部分)让观察到的这些点尽可能的smooth</li>
+<li>这个method还需要设置smooth的level</li>
+<li>通过这个method和设置一个很低的smooth值,我们可以得到一个和observation非常贴合的模型(图2-6)</li>
+<li>但是这种method会有非常严重的overfitting(图2-6和图2-3差距非常大)</li>
+<li>我们后面会选择设置一个correct ammount的smooth来规避过拟合</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div id="outline-container-orga19411d" class="outline-4">
+<h4 id="orga19411d"><span class="section-number-4">2.1.3</span> The Trade-Off Between Prediction Accuracy and Model Interpretability</h4>
+<div class="outline-text-4" id="text-2-1-3">
+<ul class="org-ul">
+<li>我们这本书里面会遇到的method总体分为两种:
+<ul class="org-ul">
+<li>less flexible(也就是more restrictive): 这种method只能够产生比较少的estimate的shape,
+比如linear regresion就是这种method,因为他只能产生斜率和位移不太一样的直线shape</li>
+<li>more flexible: 这种method(比如thin plate splines)可以为estimate f产生非常多的shape</li>
+</ul></li>
+<li>乍一看,好像选择flexible的method是必然的选择,因为其能产生更多的可能性(shape),但是还是有
+很多理由让我们选择less flexible(more restrictive)的model的:
+<ul class="org-ul">
+<li>如果我们队inference更感兴趣,那么restrictive model更具有解释性,比如当inference
+更重要的时候,linear model可能是更好的选择,因为他能够让我们更容易的理解Y和X1,X2
+&#x2026;Xp之间的关系.反之, 比较flexible的approach,比如splines(或者boosting)会产生非常
+复杂的estimate f, 这个模型里面每个predictor和response之间的关系非常难以理解</li>
+</ul></li>
+<li>图2-7为我们展示了不同method之间flexiblility和interpretability之间的抉择:
+<ul class="org-ul">
+<li>Least squares linear regression,是相对比较inflexible的,但是非常的interpretable</li>
+<li>lasso,在linear model的基础上,使用更加fitting的过程来计算B0,B1&#x2026;Bp,这个过程会
+非常的inflexible,因为它会把一部分的参数Bx直接设置为0,所以它比linear model还要
+less inflexible,但是却是比linear regression更加的interpretable,因为最后的model
+只有部分不是0的Bx起到了作用(可能的shape种类比linear还小)</li>
+<li>GAMs(Generalize additive models),扩展了linear model,让这个model里面包含了一些
+non-linear relationship,所以GAMs会比linear regression更加的flexible,但是也同时
+less interpretable.因为inputs和outputs现在使用曲线而不是直线来表示</li>
+<li>完全的non-linear method比如gagging, boosting, svm等,都是非常flexible的但是也是
+非常难以interpret的</li>
+</ul></li>
+<li>前面我们讲了:
+<ul class="org-ul">
+<li>如果我们的目标是inference,那么不用说,我们使用simple并且相对inflexible的statistical
+learning method</li>
+<li><p>
+如果我们的目标就是prediction呢(比如预测股票的价格涨跌)?那么是不是说我们使用最
+flexible的model就可以了呢?答案是否定的,我们往往使用less flexible的model会取得
+比较accurate的prediction,原因在于
+</p>
+<pre class="example" id="orgb7eb4e2">
+Hilly flexible 的method,也有更多可能会过拟合(overfitting)
+</pre></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org0bbee83" class="outline-4">
+<h4 id="org0bbee83"><span class="section-number-4">2.1.4</span> Supervised Versus Unsupervised Learning</h4>
+<div class="outline-text-4" id="text-2-1-4">
+<ul class="org-ul">
+<li>大多数的statistical learning问题分为两个大类:
+<ul class="org-ul">
+<li>supervised(本书主要涉猎这个类别): 对每一个predictor,都严格的有一个response</li>
+<li>unsupervised:predictor存在,但是response不存在.这种情况下我们要试着去理解不同inputs
+之间的关系</li>
+</ul></li>
+<li>对于unsupervised来说,我们一个可能的的statistical learning工具是cluster analysis,
+这个工具的功能就是看看inputs是不是能够分成多个不同的group:
+<ul class="org-ul">
+<li>比如,我们在市场分析的时候,我们可以观察到不同的variable(zip code, family income, shopping habit)</li>
+<li>这些customers可能会落到不同的group,比如高支出和低支出group</li>
+</ul></li>
+<li>在实际工作当中,我们会遇到掺杂supervised和unsupervised的情况,比如:
+<ul class="org-ul">
+<li>我们有n个inputs,其中m个inputs有response,另外的n-m个inputs没有respose</li>
+<li>这种情况通常是input比较容易获取,但是respose的获取比较昂贵,所以我们获取了其中m个response(m远小于n)</li>
+<li>这种情况我们称之为semi-supervised learning problem</li>
+<li>这种情况本书不讨论</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orge21c407" class="outline-4">
+<h4 id="orge21c407"><span class="section-number-4">2.1.5</span> Regression Versus Classification Problems</h4>
+<div class="outline-text-4" id="text-2-1-5">
+<ul class="org-ul">
+<li>variable可以被分为两类:
+<ul class="org-ul">
+<li>quantitative(数量的): 一般是numerical value,比如人的年龄,身高,收入</li>
+<li>categorical(qualitative质量的): 一般是可以分类的,比如人的性别(男或者女),商品品牌(nike还是adidas),
+是否默认选择贷款(是还是否)</li>
+</ul></li>
+<li>我们会根据variable的不同(主要是response variable)来区分问题的名字:
+<ul class="org-ul">
+<li>拥有quantitative response的叫做regression problem(回归问题)</li>
+<li>有用categorical(qunlitative) response的叫做classification problem(分类问题)</li>
+</ul></li>
+<li>当然,这个分类并不是特别严格,比如:
+<ul class="org-ul">
+<li>linear regression使用了quantitative response</li>
+<li>logistic regression却使用了categorical response(比如two-class, binary)</li>
+</ul></li>
+<li>有很多statistical method即可以使用quantitative或者是qualitative 两种response,比如:
+<ul class="org-ul">
+<li>K-nearest neighbors</li>
+<li>boosting</li>
+</ul></li>
+<li>要注意,我们是根据response是否是数量的还是质量的来选择learning model(比如数量的,我们就
+选择linear regression,分类的,我们就选择logistic regression)</li>
+<li>但是,对于predictor是数量的还是分类的,我们并不怎么在乎,因为就算是分类的predictor也会在
+使用前被coded</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org9c0ec6b" class="outline-3">
+<h3 id="org9c0ec6b"><span class="section-number-3">2.2</span> Assessing Model Accuracy</h3>
+<div class="outline-text-3" id="text-2-2">
+<ul class="org-ul">
+<li>本书的一大目的,就是介绍一系列statistical learning method,而不仅仅是linear regression approach</li>
+<li>那么为什么要介绍那么多模型呢?不能选一个最好的模型介绍么?
+<ul class="org-ul">
+<li><p>
+答案是不行,也没有所谓"最好"的模型:没有一个method能够在所有的data sets上面击败所有对手
+</p>
+<pre class="example" id="org689bca5">
+There is no free lunch in statistics
+</pre></li>
+<li>对某个特定的data set, 一个method可能工作的最好,但是data set稍微变一变,可能最好的method
+就变成另外的了.所以对于特定的任务,选取合适的method就非常的重要</li>
+</ul></li>
+<li>本节,我们会讨论一些在选取statistical learning method过程中最重要的一些概念</li>
+</ul>
+</div>
+<div id="outline-container-orgee509d5" class="outline-4">
+<h4 id="orgee509d5"><span class="section-number-4">2.2.1</span> Measuring the Quality of Fit</h4>
+<div class="outline-text-4" id="text-2-2-1">
+<ul class="org-ul">
+<li>为了验证在一个given data set上面某些statistical learning method的performance,我们需要
+measure这个method做出的prediction和observed data之间的差距</li>
+<li>在regression setting中,最常见的measure方法叫做MSE(mean squared error),如下</li>
+<li>其中的f<sup>(xi)</sup>指的是f<sup>这个model给与的prediction</sup></li>
+<li>如果predicted response和trueresponse之间的值非常的靠近的话,MSE的结果会非常低</li>
+<li>MSE的计算,使用的是training data,所以我们可以给MSE一个更加严谨的命名: training MSE</li>
+<li>但是,实际生活中,我们不是特别在意模型在training data上的表现,而是更在意模型在test数据(也就是
+之前没见到过的数据)的表现</li>
+<li>所以就有如下计算test MSE的公式:其中(x0, y0)是没有在train data中使用的数据</li>
+<li>那么,如何来选取一个test MSE最小的model呢?
+<ul class="org-ul">
+<li>在一般情况下,你是能够有一个test数据集的(这些数据没有用来training model),并且input和response
+都有,这种情况下,我们计算test MSE,然后选择一个test MSE最小的model就好了</li>
+<li>在某些情况下如果没有test数据集的情况下,就无法计算test MSE了</li>
+</ul></li>
+<li><p>
+没有test数据集的情况下,很多人试图缩小training MSE从而期望test MSE也能相应的减小.这其实是错误的
+想法
+</p>
+<pre class="example" id="org7d73739">
+There is no guarantee that the method with the lowest training MSE
+will also have the lowest test MSE.
+</pre></li>
+<li>图2-9左侧介绍了这个现象:
+<ul class="org-ul">
+<li>左边的图中,black curve是true f</li>
+<li>orange是linear regression fit, 不太inflexible</li>
+<li>blue是smoothing splines, less flexible</li>
+<li>green是smoothing splines, more flexible</li>
+<li>green和 data point配合的非常的紧密,但是我们看到它和true f并不是非常贴合</li>
+</ul></li>
+<li>图2-9右侧介绍了随着flexible的增加, training MSE和test MSE的变化:
+<ul class="org-ul">
+<li>grey的曲线表示了随着几个不同的smoothing splines 的flexiblity(degree of freedom)的增加,
+training MSE的变化(可以看到这是个单调递减的关系)</li>
+<li>我们有桔红色,蓝色,绿色的三个小方块,地表图2-9中三种不同的model的flexiblity和
+training MSE(test MSE)的对应点,横轴是flibility,纵轴是MSE</li>
+<li>linear regression是最restrictive的,它的flexible值为2,MSE值为1.7左右</li>
+<li>training MSE很明显的随着flexibility的提升而下降</li>
+<li>绿色的点拥有最大的flexiblity(23),从而得到了最低的training MSE(0.4)</li>
+<li>由于这个例子我们知道true function f,所以我们可以计算test MSE(当然实践中,function f是不存在的,
+我们这里是为了说明问题,所以先创建了function f),test MSE使用红色的线表示</li>
+<li>和training MSE类似,test MSE开始的时候是先随着flexible的提升而降低的</li>
+<li>但是在某个point, test MSE开发随着flexible的提升而提升,总体来看,形成了一个U字型</li>
+<li>由于U字型的存在,所以linear regression的桔色和非常flexible的绿色,都有很高的test MSE</li>
+<li>而blue获得了最小化的test MSE,这不令人惊奇,因为从图2-9中我们就可以看到,blue和true f
+匹配的最好</li>
+<li>最后MSE为1.0的地方有一条虚线的横线,这条线代表的是irreducible error引入的Var(e),
+也就是说,无论如何都无法去除的误差.所有的model的MSE最低也不会低过这条线</li>
+<li>那么,blue对应的位置已经是离这条线最近的位置了,也可以说blue是这几个模型里面最接近
+理想的模型了.</li>
+</ul></li>
+<li>在图2-9里面:
+<ul class="org-ul">
+<li>随着flexibility的提升,我们看到training MSE是单调下降的</li>
+<li>随着flexibility的提升,我们看到test MSE是呈现一个U-shape的形状的</li>
+</ul></li>
+<li><p>
+上述是statistical learning的fundamental property,无论什么样的data set,也无论什么样的method,
+都有这个现象:
+</p>
+<pre class="example" id="org57d6746">
+As model flexibility increases, training MSE will decrease, but the test MSE may not.
+</pre></li>
+<li>当一个method产生了small training MSE,但是获得了large test MSE,那么我们就说,这个model
+overfitting了当前的数据</li>
+<li>发生overfitting的原因是我们的统计学习过程太想配合我们的training data了,于是找到了一个过于
+复杂的pattern, 这个pattern:
+<ul class="org-ul">
+<li>过于配合random change</li>
+<li>没有配合true properties of the unknownn function f</li>
+</ul></li>
+<li>一旦发生了overfitting,test MSE就会比较大,因为training data里面发现的pattern压根就不存在</li>
+<li>无论是否发生overfitting,training MSE总是比test MSE小,因为统计学习method总是试图去减小training MSE</li>
+<li>总体来说less flexible model会产生更小的test MSE</li>
+<li>我们再来看图2-10
+<ul class="org-ul">
+<li>true f是一个linear</li>
+<li>training MSE随着flexibility的提高而单调递减</li>
+<li>test MSE也有一个U-shape</li>
+<li>由于我们的true f是一个linear,所以test MSE的U左边很平缓,右边很陡峭. orange也比green的更符合true f</li>
+</ul></li>
+<li>我们再来看图2-11:
+<ul class="org-ul">
+<li>true f是一个highly non-linear</li>
+<li>training and test MSE的曲线,还是类似的情况: training MSE单调递减, test MSE U-shape</li>
+<li>training and test MSE曲线开始都是rapid的decrease</li>
+</ul></li>
+<li>在实践中,计算training MSE是比较简单的,但是计算test MSE是比较困难的,因为test data没有response数据</li>
+<li>前面的例子中, flexibility level的改变过程中会有一个test MSE最低的点(minium point),这个点会随着data set
+不同而改变的.</li>
+<li>本书我们会使用各种方法来计算这个minimum point:一个重要的计算test MSE的method就是cross-validation</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org7b80b55" class="outline-4">
+<h4 id="org7b80b55"><span class="section-number-4">2.2.2</span> The Bias-Variance Trade-Off</h4>
+<div class="outline-text-4" id="text-2-2-2">
+<ul class="org-ul">
+<li>上面的图2-9到图2-11中的U-shape其实是统计学习方法的两个competing property</li>
+<li>下面的公式2-7为我们介绍了expected test MSE是如何计算的</li>
+<li>我们下面来详细解释下这个公式:
+<ul class="org-ul">
+<li>这里的E(y0 - f<sup>(x0)</sup>)**2 代表了test MSE的期望,其中的f<sup>是我们通过大量的training</sup> set获得的</li>
+<li>如果我们想求平均值,那么对于每个可能的x0,求出expected test MSE,然后求平均值就可以了.</li>
+<li>公式2-7告诉我们为了减小expected test error,我们需要选择一个统计学习方法能够同时让如下两个值都小:
+<ol class="org-ol">
+<li>low variance</li>
+<li>low bias</li>
+</ol></li>
+<li>由于variation和bias都是非负值,所以我们的expected test MSE必然大于irreducible error: Var(e)</li>
+<li>下面来解释下什么是variance: variance代表如果我们使用不同的training data,我们的f<sup>会如何change</sup></li>
+<li>variance的值越小越好:
+<ol class="org-ol">
+<li>如果trainig data的极小变动就带来了巨大的f<sup>变动,我们就说这个model的variance是high的</sup></li>
+<li>如果trainig data的大变动爷不会带来了巨大的f<sup>变动,我们就说这个model的variance是low的</sup></li>
+</ol></li>
+<li>一般来说,越flexible的model拥有越higher的variance,以图2-9为例:
+<ol class="org-ol">
+<li>flexible green curve和inputs配合的很紧密,他的variance就很高,因为改变其中任何一个training
+data都会让f<sup>剧烈的改变,因为f</sup><sup>试图和每个点都配合的紧密</sup></li>
+<li>inflexible orange line的variance就很low,因为改动任何一个input都不会让line改动很大,因为这个
+模型本来也没指望每个data point都配合的好(它是直线,只能配合个大概)</li>
+</ol></li>
+<li>下面再来解释下什么是bias: bias代表我们想要逼近real-life problem的时候,不得不引入的误差</li>
+<li>比如linear regression模型会认为自己求解的问题是一个线性问题,所以这个模型所有的data point都应该
+再一条线上,但是实际生活当中的问题不可能是这么简单的关系,所以我们的estimate f上面的点不可避免
+的和真实的point在位置上有区别,也就是误差:
+<ol class="org-ol">
+<li>图2-11的例子,true f是non-line的,所以无论有多么多的input数据,使用linear regression也不可能
+得到多么准确的值,换句话说在这个例子里面,linear regression带来了high bias</li>
+<li>图2-10的例子,true f本来就接近于linear,所以足够多的inputs,我们的linear regression会带来比较
+准确的estimate</li>
+</ol></li>
+<li>总体上来说,更加flexible的method会导致低的bias</li>
+</ul></li>
+<li>一般来说,一旦我们选择了more flexible的method,那么:
+<ul class="org-ul">
+<li>variance会提升</li>
+<li>bias会降低</li>
+<li>如果variance的提升掩盖了bias的降低,test MSE会提升;反之,test MSE会降低</li>
+</ul></li>
+<li>一开始,flex的提升会导致bias会降低的比较快(超过variance的提升),所以testMSE会降低</li>
+<li>但是过了某个point之后,flex的提升不会让bias有明显的降低,但是同时variance却提高了,这时候testMSE
+会提高了,换句话说,过了某个point之后,就不宜再提升flex了.</li>
+<li>我们再来看看图2-12,一共有三幅图,三个case:
+<ul class="org-ul">
+<li>每个case里,blue都代表squared bias</li>
+<li>每个case里,orange代表variance</li>
+<li>每个case里,水平虚线代表Var(e), irreducible error</li>
+<li>每个case里,red代表test set MSE,是这个三个值的和</li>
+<li>每个case里,flex提升会伴随variance的提升和bias的下降.但是variance和bias的变化速率是不一样的</li>
+<li>在左边的case里,bias开始下降的非常迅速,导致开始testMSE下降的很厉害</li>
+<li>在中间的case里,true f是linear的,所以bias开始只有比较小的降幅(随着flex的提高),而testMSE就降低
+的很小了,后面过了某个point,随着variance的提升,testMSE也巨幅提升</li>
+<li>在右边的case里面,true f是non-linear的, 所以bias开始就 巨幅降低(随着flex的提高),而同时variance
+只有小幅提升,所以testMSE开始是巨幅降低.后面过了某个point之后,也是小幅提升</li>
+</ul></li>
+<li>图2-12里面介绍的bias,variance,testMSE的关系叫做bias-variance trade-off</li>
+<li>既然叫trade-off,那么必然可以有简单的一边倒的选择:
+<ul class="org-ul">
+<li>非常低的bias,但是非常高的variance: 比如画一条线,通过每个training data的point</li>
+<li>非常高的bias,但是非常低的variance: 比如画一条水平线</li>
+<li>挑战在于找到一个point,相对来说variance和bias都低,获得最低的testMSE</li>
+</ul></li>
+<li>日常生活中,f是无法观测到的, testMSE,bias,variance也是无法计算的,但是,我们要一直在心中谨记
+bias-variance trade-off:
+<ul class="org-ul">
+<li>本书会介绍很多极致flexible的method,他们的bias非常的低,但是这个metho却并不一定能够打败
+一些比较简单的模型,比如linear regression. 举个简单的例子: 我们的true f就是linear的,在
+这种情况下,模型linear regression就没有bias,那么其他的更加flexible的method是很难竞争的</li>
+<li>当然了,如果true f是non-linear的话,并且inputs足够的多, highly flexible approach肯定是更
+优的选择</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgfb9b9ba" class="outline-4">
+<h4 id="orgfb9b9ba"><span class="section-number-4">2.2.3</span> The Classification Setting</h4>
+<div class="outline-text-4" id="text-2-2-3">
+<ul class="org-ul">
+<li>目前为止,我们对模型准确率的讨论还是集中在regression setting,但是很多概念(如下)都可以应用到
+classification setting(当然,由于yi不再是numerical的了,所以还是需要做一些改动):
+<ul class="org-ul">
+<li>bias-variance trade-off</li>
+</ul></li>
+<li>比如对于classification来说,{(x1,y1),&#x2026;,(xn,yn)}里面,y1&#x2026;yn都是qualitative的了,在classification
+的情形下,评判模型准确率(accuracy of our estimate f^)的方法是training error rate:</li>
+<li>解释下上面的公式2-8:
+<ul class="org-ul">
+<li>y<sup>i是对i个observation做出的predicted</sup> label</li>
+<li>如果yi==y<sup>i,也就是预测准确了</sup>, I(yi != y<sup>i</sup>)就为0</li>
+<li>如果yi!=y<sup>i,也就是预测错误了</sup>, I(yi != y<sup>i</sup>)就为1</li>
+</ul></li>
+<li>公式2-8由于是使用training data数据计算的,所以名字叫training error rate,但是和regression问题一样,
+classification问题也比较关注test error rate,这也就引入了公式2-9:</li>
+<li>解释下公式2-9:
+<ul class="org-ul">
+<li>y<sup>0是为test</sup> observation predictor x0做出的预测</li>
+<li>一个好的classifier(模型)的特点,就是拥有比较小的test error</li>
+</ul></li>
+</ul>
+</div>
+<ol class="org-ol">
+<li><a id="orge9bfb61"></a>The Bayes Classifier<br />
+<div class="outline-text-5" id="text-2-2-3-1">
+<ul class="org-ul">
+<li>虽然定理的证明已经超出了本书的范畴,但是我们还是可以直接抛出结论:
+<ul class="org-ul">
+<li>公式2-9列出的test error rate,想要获得平均情况下的最小值,只需要根据input的value的不同,
+选择给每个observation一个最可能的class.</li>
+<li><p>
+换句话说就是
+</p>
+<pre class="example" id="org6e70f6c">
+全局(平均)的最小值的获得,可以分解为,每个成员选择对自己来说的最优选择就可以.
+</pre></li>
+<li>假设我们有一个input x0, 对于这个input x0, y是class j的概率最大,那么我们就赋予y为class j,
+如下公式2-10表示"对于这个input x0, y是class j的概率"</li>
+<li>上面的公式2-10类别叫做conditional probability,也就是针对input 为x0情况下的概率</li>
+</ul></li>
+<li>全局(平均)最小值的获取,可以分解为每次选择最优概率.这个公式就叫做贝叶斯分类器(Bayers Classifier)</li>
+<li>TODO</li>
+</ul>
+</div>
+</li>
+<li><a id="org4e76e30"></a>K-Nearest Neighbors<br />
+<div class="outline-text-5" id="text-2-2-3-2">
+<ul class="org-ul">
+<li>TODO</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org4e0189a" class="outline-3">
+<h3 id="org4e0189a"><span class="section-number-3">2.3</span> Lab: Introduction to R</h3>
+<div class="outline-text-3" id="text-2-3">
+</div>
+<div id="outline-container-orgf919f5b" class="outline-4">
+<h4 id="orgf919f5b"><span class="section-number-4">2.3.1</span> Basic Commands</h4>
+<div class="outline-text-4" id="text-2-3-1">
+<ul class="org-ul">
+<li>R语言使用function来进行操作,调用function  funcname的方法是funcname(input1, input2)
+<ul class="org-ul">
+<li><p>
+比如,使用c(),也就是concatenate函数来创建vector
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">&gt; x &lt;- c(1, 3, 2, 5)
+&gt; x
+[1] 1 3 2 5
+</pre>
+</div></li>
+<li><p>
+还可以使用=来代替&lt;-
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">&gt; x = c(1, 6, 2)
+&gt; x
+[1] 1 6 2
+&gt; y = c(1, 4, 3)
+&gt; y
+[1] 1 4 3
+</pre>
+</div></li>
+<li><p>
+可以使用?funcname来查询函数funcname
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">&gt; ?c
+c                     package:base                     R Documentation
+
+Combine Values into a Vector or List
+
+Description:
+
+     This is a generic <span style="color: #96CBFE; font-style: italic;">function</span> <span style="color: #C2FFDF;">which</span> combines its arguments.
+
+     The default method combines its arguments to form a vector.  All
+     arguments are coerced to a common type which is the type of the
+     returned value, and all attributes except names are removed.
+</pre>
+</div></li>
+</ul></li>
+<li><p>
+我们可以使用R来把两个set的数据加起来,相加的两个set必须length一样
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">&gt; length(x)
+[1] 3
+&gt; length(y)
+[1] 3
+&gt; x+y
+[1]  2 10  5
+</pre>
+</div></li>
+<li><p>
+我们可以使用ls()函数来查询我们创建的所有的data和function,还可以使用rm()来删除我们不想要的
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">&gt; ls()
+[1] <span style="color: #FFEA00;">"a"</span> <span style="color: #FFEA00;">"x"</span> <span style="color: #FFEA00;">"y"</span>
+&gt; rm(x,y)
+&gt; ls()
+[1] <span style="color: #FFEA00;">"a"</span>
+&gt; rm(<span style="color: #FFB8D1;">list</span>=ls())
+&gt; ls()
+<span style="color: #C2FFDF;">character</span>(0)
+</pre>
+</div></li>
+<li><p>
+matrix()函数用来创建matrix
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">&gt; x = matrix(<span style="color: #FFB8D1;">data</span>=c(1,2,3,4), <span style="color: #FFB8D1;">nrow</span>=2, <span style="color: #FFB8D1;">ncol</span>=2)
+&gt; x
+     [,1] [,2]
+[1,]    1    3
+[2,]    2    4
+</pre>
+</div></li>
+<li><p>
+参数也可以按照顺序列出,如下
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">&gt; <span style="color: #FFB8D1;">x</span>=matrix(c(1,2,3,4), 2, 2)
+&gt; x
+     [,1] [,2]
+[1,]    1    3
+[2,]    2    4
+</pre>
+</div></li>
+<li><p>
+默认情况下,matrix是按照column来填满的,我们也可以设置以row来填满
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">&gt; <span style="color: #FFB8D1;">x</span>=matrix(c(1,2,3,4), 2, 2, <span style="color: #FFB8D1;">byrow</span>=TRUE)
+&gt; x
+     [,1] [,2]
+[1,]    1    2
+[2,]    3    4
+</pre>
+</div></li>
+<li><p>
+如果我们不想把数据存储,那么可以不赋值,结果可以直接打印出来
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">&gt; matrix(c(1,2,3,4), 2, 2, <span style="color: #FFB8D1;">byrow</span>=TRUE)
+     [,1] [,2]
+[1,]    1    2
+[2,]    3    4
+</pre>
+</div></li>
+<li><p>
+sqrt()可以把某个matrix的每个成员进行一次开根号
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">&gt; sqrt(x)
+         [,1]     [,2]
+[1,] 1.000000 1.732051
+[2,] 1.414214 2.000000
+</pre>
+</div></li>
+<li><p>
+x<sup>2可以把某个matrix的每个成员进行一次乘方</sup>
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">&gt; x^2
+     [,1] [,2]
+[1,]    1    9
+[2,]    4   16
+</pre>
+</div></li>
+<li><p>
+rnorm()生成标准正态分布的随机数组成的vector
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">&gt; rnorm(3)
+[1]  1.166831 -2.851452  1.555772
+</pre>
+</div></li>
+<li><p>
+我们可以设置平均值和标准差
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">&gt; rnorm(5, <span style="color: #FFB8D1;">mean</span>=50, <span style="color: #FFB8D1;">sd</span>=.1)
+[1] 49.99422 50.09155 49.88295 50.02442 49.94970
+</pre>
+</div></li>
+<li><p>
+我们可以使用set.seed()来保证每次产生同样的seed
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">&gt; set.seed(1303)
+&gt; rnorm(50)
+ [1] -1.1439763145  1.3421293656  2.1853904757  0.5363925179  0.0631929665
+</pre>
+</div></li>
+<li><p>
+mean()和var()函数可以用来计算一个vector的平均值和方差(variance)
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">&gt; set.seed(3)
+&gt; y = rnorm(100)
+&gt; mean(y)
+[1] 0.01103557
+&gt; var(y)
+[1] 0.7328675
+</pre>
+</div></li>
+<li><p>
+sqrt()加var()的效果和sd()相同,都是获取vector的标准差(standard deviation)
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">&gt; sqrt(var(y))
+[1] 0.8560768
+&gt; sd(y)
+[1] 0.8560768
+</pre>
+</div></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org2104569" class="outline-4">
+<h4 id="org2104569"><span class="section-number-4">2.3.2</span> Graphics</h4>
+<div class="outline-text-4" id="text-2-3-2">
+<ul class="org-ul">
+<li><p>
+plot()是画图的主要函数,画出来是什么label都没有的,可以使用xlab等设置label
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">&gt; <span style="color: #FFB8D1;">x</span>=rnorm(100)
+&gt; <span style="color: #FFB8D1;">y</span>=rnorm(100)
+&gt; plot(x,y)
+&gt; plot(x,y,<span style="color: #FFB8D1;">xlab</span>=<span style="color: #FFEA00;">"this is the x-axis"</span>, <span style="color: #FFB8D1;">ylab</span>=<span style="color: #FFEA00;">"this is the y-axis"</span>, <span style="color: #FFB8D1;">main</span>=<span style="color: #FFEA00;">"Plot of X vs Y"</span>)
+</pre>
+</div></li>
+<li>如果想把plot打印到pdf(或者jpeg)文件,我们需要三步:
+<ol class="org-ol">
+<li>使用pdf("some-name.pdf")来选择一个output文件</li>
+<li>plot()打印想要的文件</li>
+<li>dev.off()告诉R,我们plot已经运行完了,请帮我们把数据存到pdf文件里面</li>
+</ol></li>
+<li><p>
+上面三个步骤缺一不可,完成后就在pwd文件夹生成pdf文件
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">&gt; pdf(<span style="color: #FFEA00;">"demo.pdf"</span>)
+&gt; plot(x,y,<span style="color: #FFB8D1;">col</span>=<span style="color: #FFEA00;">"orange"</span>)
+&gt; dev.off()
+null device
+          1
+</pre>
+</div></li>
+<li>seq()能够根据规则来生成vector:
+<ul class="org-ul">
+<li><p>
+seq(a,b)会生成integer的vector
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">&gt; seq(3,11)
+[1]  3  4  5  6  7  8  9 10 11
+</pre>
+</div></li>
+<li><p>
+a:b等于seq(a,b),比如3:11就等于seq(3,11)
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">&gt; 3:11
+[1]  3  4  5  6  7  8  9 10 11
+</pre>
+</div></li>
+<li><p>
+浮点数的vector生成方法是,设置上限和下线,以及个数
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">&gt; seq(1,2,<span style="color: #FFB8D1;">length</span>=10)
+ [1] 1.000000 1.111111 1.222222 1.333333 1.444444 1.555556 1.666667 1.777778
+ [9] 1.888889 2.000000
+</pre>
+</div></li>
+</ul></li>
+<li><p>
+contour()函数是等值线图
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">&gt; <span style="color: #FFB8D1;">x</span>=seq(-pi,pi,<span style="color: #FFB8D1;">length</span>=50)
+&gt; <span style="color: #FFB8D1;">y</span>=x
+&gt; <span style="color: #FFB8D1;">f</span>=outer(x,y,<span style="color: #96CBFE; font-style: italic;">function</span>(x,y)cos(y)/(1+x^2))
+&gt; contour(x,y,f)
+&gt; contour(x,y,f,<span style="color: #FFB8D1;">nlevels</span>=45,<span style="color: #FFB8D1;">add</span>=T)
+&gt; <span style="color: #FFB8D1;">fa</span>=(f-t(f))/2
+&gt; contour(x,y,fa,<span style="color: #FFB8D1;">nlevels</span>=15)
+</pre>
+</div></li>
+<li><p>
+image产生的是热图
+</p>
+<div class="org-src-container">
+<pre class="src src-shell"><span style="color: #C2FFDF;">image</span>(x,y,fa)
+</pre>
+</div></li>
+<li><p>
+persp产生的是三维图
+</p>
+<div class="org-src-container">
+<pre class="src src-shell"><span style="color: #C2FFDF;">persp</span>(x,y,fa)
+</pre>
+</div></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org0bc93f8" class="outline-4">
+<h4 id="org0bc93f8"><span class="section-number-4">2.3.3</span> Indexing Data</h4>
+<div class="outline-text-4" id="text-2-3-3">
+<ul class="org-ul">
+<li><p>
+R里面index数据非常方便,首先我们创建一个matrix,然后可以使用各种参数(value,vector, sequence)
+来index matrix
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">&gt; <span style="color: #FFB8D1;">A</span>=matrix(1:16,4,4)
+&gt; A
+     [,1] [,2] [,3] [,4]
+[1,]    1    5    9   13
+[2,]    2    6   10   14
+[3,]    3    7   11   15
+[4,]    4    8   12   16
+&gt; A[2,3]
+[1] 10
+&gt; A[c(1,3), c(2,4)]
+     [,1] [,2]
+[1,]    5   13
+[2,]    7   15
+&gt; A[1:3,2:4]
+     [,1] [,2] [,3]
+[1,]    5    9   13
+[2,]    6   10   14
+[3,]    7   11   15
+&gt; A[1:2,]
+     [,1] [,2] [,3] [,4]
+[1,]    1    5    9   13
+[2,]    2    6   10   14
+&gt; A[,1:2]
+     [,1] [,2]
+[1,]    1    5
+[2,]    2    6
+[3,]    3    7
+[4,]    4    8
+&gt; A[1,]
+[1]  1  5  9 13
+</pre>
+</div></li>
+<li><p>
+如果使用了负数符号(-),那么就意味着,去掉我们这里提到的行和列,比如我们想去掉第一个整行和第三个整
+行,我们可以运行
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">&gt; A[-c(1,3),]
+     [,1] [,2] [,3] [,4]
+[1,]    2    6   10   14
+[2,]    4    8   12   16
+</pre>
+</div></li>
+<li><p>
+我们还可以要求所有第一行和第三行不要,另外第一列,第三列,第四列也不要,就有如下
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">&gt; A[-c(1,3),-c(1,3,4)]
+[1] 6 8
+</pre>
+</div></li>
+<li><p>
+求一个矩阵的行数和列数,使用dim
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">&gt; dim(A)
+[1] 4 4
+</pre>
+</div></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org7d86f65" class="outline-4">
+<h4 id="org7d86f65"><span class="section-number-4">2.3.4</span> Loading Data</h4>
+<div class="outline-text-4" id="text-2-3-4">
+<ul class="org-ul">
+<li>R中和文件的数据交换有两个文件:
+<ul class="org-ul">
+<li>读取数据: read.table()</li>
+<li>写入数据: write.table()</li>
+</ul></li>
+<li><p>
+使用setwd和getwd来调整工作文件夹
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">&gt; getwd()
+[1] <span style="color: #FFEA00;">"/Users/fenghaoran"</span>
+&gt; setwd(<span style="color: #FFEA00;">"~/tmp"</span>)
+&gt; getwd()
+[1] <span style="color: #FFEA00;">"/Users/fenghaoran/tmp"</span>
+</pre>
+</div></li>
+<li>TODO</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org7517ad8" class="outline-4">
+<h4 id="org7517ad8"><span class="section-number-4">2.3.5</span> Additional Graphical and Numerical Summaries</h4>
+<div class="outline-text-4" id="text-2-3-5">
+<ul class="org-ul">
+<li>TODO</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orge4588bf" class="outline-2">
+<h2 id="orge4588bf"><span class="section-number-2">3</span> Chapter 3: Linear Regression</h2>
+<div class="outline-text-2" id="text-3">
+<ul class="org-ul">
+<li>线性模型是一种在监督学习中非常简单的模型,对于预测quantitative response非常有用</li>
+<li>虽然线性模型和其他现代的统计学习方法先比,看起来有点呆板,线性模型依然非常有用并且广泛被使用</li>
+<li>很多fancy的统计学习方法都可以看做是linear regression的总结和扩展</li>
+<li>本章我们会讲解:
+<ul class="org-ul">
+<li>linear regression背后的key idea</li>
+<li>为了fit linear regression,我们所用到的least squares approach</li>
+</ul></li>
+<li>回想下我们在chapter2的图2-1中介绍的Advertising Data: sales作为Y的情况下,如下三个参数分别作为X:
+<ul class="org-ul">
+<li>advertising budget in TV</li>
+<li>advertising budget in radio</li>
+<li>advertising budget in newspaper</li>
+</ul></li>
+<li>如果我们作为统计分析师被问及根据这个数据我们对下一个财年的marketing plan(为了提高sales)有什么计
+划的时候,我们该怎么回答</li>
+<li>为了回答好这个问题,我们需要哪些重要的信息?</li>
+<li>为了回答好这个问题,你可能需要回答好如下这些问题:
+<ol class="org-ol">
+<li>广告budget和sales之间,是否存在着relationship?
+我们第一个目的肯定是要来判断,是否在advertising和sales之间,存在着association.而且这个
+association必须要有,而且证明association存在的证据要明显,否则客户可能觉得我没必要投入广告了</li>
+<li>解决了是否有association的问题之后,下一个问题是ad budget和sales之间的relationship是否强?
+强的relationionship意味着"可预测性强",换句话说,一旦给了一些advertising budget,我就能高精度的预测
+出sales,这叫relationship强.如果预测的sales结果非常不准确,那就是可预测性弱</li>
+<li>下面解决哪个媒体对最后的sales有贡献?
+是否所有的media都对sales有贡献,还是只是其中的一两个有贡献?为了回答这个问题,我们要把每个媒体的
+对sales的影响给独立出来</li>
+<li>我们对某个媒体单独对sales的影响的估算,准确度是多少?
+在每种媒体上面花一美元,能得到多少sales的提升?这个提升的估计能精确到什么量级</li>
+<li>我们能对未来的销量做多准确的预测?
+一旦确定了三个媒体广告费的比例和数目,我们能够预测最后的sales么,我们的预测准确度是多少</li>
+<li>他们的relationship是linear的么?
+如果不同媒体的ad budget和sales是线性关系的,那么我们就使用linear regression作为工具,否则,我们
+可能要对predictor或者response做些转换,最终让他们可以使用linear regression</li>
+<li>不同的广告媒体之间,是否有协同作用(synergy effect)?
+有一种叫做synergy effect(在statistics里面叫做interaction effect)的现象,就是两种广告配合起来效
+果更好,比如:
+<ul class="org-ul">
+<li>效果更好的选择:花5万美元在tv,另外花5万美元在radio</li>
+<li>效果不如上面好的选择:把10万美元都花费在tv</li>
+</ul></li>
+</ol></li>
+<li>linear regression可以用来回答上面的所有问题,我们先大体上回复下上面的问题,然后会在3.4部分详细解释</li>
+</ul>
+</div>
+<div id="outline-container-org2012ee2" class="outline-3">
+<h3 id="org2012ee2"><span class="section-number-3">3.1</span> Simple Linear Regression</h3>
+<div class="outline-text-3" id="text-3-1">
+<ul class="org-ul">
+<li>Simple Linear Regression是非常简单的一种预测工具:
+<ul class="org-ul">
+<li>预测一个quantitative response Y</li>
+<li>根据一个(且仅有一个)predictor variable X</li>
+</ul></li>
+<li><p>
+换句话说,simple linear regression认为Y和X之间approximately有线性关系,这个线性关系使用数学的写法如下
+</p>
+\begin{equation}
+Y \thickapprox \beta_0 + \beta_1X,\tag{3.1}
+\end{equation}</li>
+<li><p>
+我们称之为在X上回归Y
+</p>
+<pre class="example" id="org03fc7c8">
+We are regressing Y on X
+</pre></li>
+<li>上面的公式中,β0和β1都是未知的常量,其中:
+<ul class="org-ul">
+<li>\(\beta_0\) 代表截距</li>
+<li>\(\beta_1\) 斜率</li>
+<li>\(\beta_0\) 和 \(\beta_1\) 都叫做模型的协同因素(coefficient)或者是parameter</li>
+</ul></li>
+<li>\(\beta_0\) 和 \(\beta_1\) 都是unknown的,我们通过我们的training data获得的是:
+<ul class="org-ul">
+<li>对于\(\beta_0\) 的estimate\(\hat{\beta_0}\)</li>
+<li>对于\(\beta_1\) 的estimate\(\hat{\beta_1}\)</li>
+<li><p>
+拥有了\(\hat{\beta_0}\) 和 \(\hat{\beta_1}\) 之后,我们面对新的输入x,求其estimate y(也就是\(\hat{y}\) )
+的时候,可以使用如下的公式
+</p>
+\begin{equation}
+\hat{y} = \hat{\beta_0} + \hat{\beta_1}x,\tag{3.2}
+\end{equation}</li>
+</ul></li>
+<li>这里的我们使用了hat symbol (^):
+<ul class="org-ul">
+<li>如果是coefficient使用hat symbol,那么就是代表estimated coeficient,比如\(\beta_0\) 和\(\beta_1\)</li>
+<li>如果是response使用来hat symbol,那么就是代表predicted value, 比如 \(\hat{y}\)</li>
+</ul></li>
+</ul>
+</div>
+<div id="outline-container-orgc186b2f" class="outline-4">
+<h4 id="orgc186b2f"><span class="section-number-4">3.1.1</span> Estimating the Coefficients</h4>
+<div class="outline-text-4" id="text-3-1-1">
+<ul class="org-ul">
+<li>实践当中,如果想要获得coefficient(β0和β1)才能做出prediction</li>
+<li><p>
+获取coefficient的方法是通过如下数据估算:每个数据都是对X或者Y的一次measurement,也就是一个input
+和output的pair
+</p>
+<pre class="example" id="org4400ba7">
+(x1,y1),(x2,y2),...,(xn,yn)
+</pre></li>
+<li>在Advertising data例子中,这个xn,yn的数据就是200个点(在二维坐标里面),我们要求出来一个β0和β1的组
+合,也就定义了一条线.</li>
+<li>这条线不是随便定义的,它要能够尽可能的(总体来说)更靠近这200个点.想要做到这一点,我们要尽可能的缩
+小least squares criterion</li>
+<li>我们下面来介绍下least sequares criterion
+<ul class="org-ul">
+<li>假设y<sup>i</sup>=β<sup>0</sup>+β<sup>1xi,那么y</sup><sup>i就是我们对于xi的一个prediction</sup></li>
+<li>ei = yi - y<sup>i代表第i个residual,也就是预测值和观察值之间的差距</sup></li>
+<li><p>
+我们定义一个RSS(residual sum of squares)
+</p>
+<pre class="example" id="org7c51fa8">
+RSS = e1**2 + e2**2....en**2
+</pre></li>
+<li>RSS等同于</li>
+<li>least squares approach能够选择β0和β1,让RSS最小</li>
+<li>使用微积分后,得到如下公式</li>
+
+<li>其中:
+<ol class="org-ol">
+<li>\(\overline{y}\) 为y的sample mean</li>
+<li>\(\overline{x}\) 为x的sample mean</li>
+</ol></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgf9b6c6d" class="outline-4">
+<h4 id="orgf9b6c6d"><span class="section-number-4">3.1.2</span> Assessing the Accuracy of the Coefficient Estimates</h4>
+<div class="outline-text-4" id="text-3-1-2">
+<ul class="org-ul">
+<li>第二章我们学过,X和Y之间的true relationship可以使用  \(Y = f(x) + \varepsilon\) 来表示,其中的:
+<ul class="org-ul">
+<li>f(x)是未知的</li>
+<li>\(\varepsilon\) 是mean-zero random error term</li>
+</ul></li>
+<li>在real application中,我们可以得到一系列的observations,从这些observation中:
+<ul class="org-ul">
+<li>我们可以计算出least squares line</li>
+<li>但是真正的population regression line是无法得到的</li>
+</ul></li>
+<li>图3-3的右边,我们从十个不同的data set里面就可以计算出十个不同的least squares line,但是population
+regression line始终不变</li>
+<li>如下的两个概念非常让人困惑:
+<ul class="org-ul">
+<li>population regression line</li>
+<li>least squares line</li>
+</ul></li>
+<li><p>
+这两个概念来源于standard statistical approach里面的一个用法
+</p>
+<pre class="example" id="orgfe763ed">
+使用sample信息来estimate large population特征
+</pre></li>
+<li>比如,我们想了解population的某个variable Y的平均值 \(\mu\):
+<ul class="org-ul">
+<li>\(\mu\) 是unknown的</li>
+<li>但是我们可以解除到Y的n个observation,我们可以使用这n个observation来estimate \(\mu\)</li>
+<li>比如我们计算这n个observation的平均值, 一个可行的方法求sample mean \(\hat{\mu}\)(来estimate \(\mu\)):
+<ul class="org-ul">
+<li>\(\hat{\mu} = \overline{y}\)</li>
+<li>其中,\(\overline{y} = \frac{1}{n}\sum_{i=1}^n\)</li>
+</ul></li>
+<li><p>
+sample mean和population mean肯定是不一样的,但是总体上来说,sample mean也能提供一个好的estimate
+</p>
+<pre class="example" id="org90f4777">
+In general the sample mean will provide a good estimate of the population mean
+</pre></li>
+</ul></li>
+<li>正是基于和上面同样的考量,在linear regression中:
+<ul class="org-ul">
+<li>未知的coefficients \(\beta_0\) 和 \(\beta_1\) 定义了population regression line</li>
+<li>我们试图去寻找 \(\hat{\beta_0}\) 和 \(\hat{\beta_1}\) ,这两个参数定义了least squares line</li>
+</ul></li>
+<li>我们的analogy是一个恰当的类比,理论基础来源于bias,我们类比的两个对象是:
+<ul class="org-ul">
+<li>linear regression</li>
+<li>estimation of the mean of a random variable</li>
+</ul></li>
+<li>我们之所以可以使用sample mean \(\hat{\mu}\) 来estimate \(\mu\),并且这个estimate还是unbiasd(公平)的,
+是因为从期望上来说,平均下来我们期望 \(\hat{\mu}\) 等于 \(\mu\)</li>
+<li>我们来解释下上面的这句话,类比者2(estimation of the mean of a random variable):
+<ul class="org-ul">
+<li>在某个特定的observations(\(y_1,y_2,...y_n\))上面计算出来的 \(\hat{\mu}\) 可能高于 \(\mu\)</li>
+<li>在另外一个observations上面计算出来的 \(\hat{\mu}\) 可能低于 \(\mu\)</li>
+<li><p>
+如果我们的有非常多个observation, 每次我们都计算来一个 \(\hat{\mu_i}\) , 这非常多个 \(\hat{\mu_i}\)
+的平均值,我们可以认为等于 \(\mu\)
+</p>
+<pre class="example" id="org967f826">
+If we could average a huge number of estimates of μ
+obtained from a huge number of sets of observations,
+then this average would exactly equal μ
+</pre></li>
+</ul></li>
+<li>一旦我们的类比者2成立,那么我们的类比者1(linear regression)也能成立:
+<ul class="org-ul">
+<li>从多个data set里面计算多个 \(\hat{\beta_0}\) 和 \(\hat{\beta_1}\)</li>
+<li><p>
+求这多个 \(\hat{\beta_0}\) 和 \(\hat{\beta_1}\) 的平均值,那么平均值就可以认为等于 \(\beta_0\) 和 \(\beta_1\)
+</p>
+<pre class="example" id="org3134a3a">
+If we estimate B0 and B1 on the basis of a particular data set, then
+our estimates won't be exactly equalt to B0 and B1.
+But if we could average the estimates obtained over a huge number of
+data sets, then the average of these estimates would be spot on!
+</pre></li>
+<li>我们可以来看看图3-3的右边,我们可以看到从不同data set获得了很多的least squares line,这些
+line的平均值会和最终的true population regression line非常的接近</li>
+</ul></li>
+<li>我们前面讲到过,如下两个值是可以认为基本相等的:
+<ul class="org-ul">
+<li>average of \(\hat{\mu}\) over many data sets</li>
+<li>true \(\mu\)</li>
+</ul></li>
+<li>那么很自然的,如果我们只有一个data sets,那么得到的某一个 \(\hat{\mu}\) 肯定不等于true \(\mu\) ,而是
+会大于或者小于true \(\mu\).换句话说,我们下面开始讨论某一个sample获得的 \(\mu\) 有多准确</li>
+<li>下面的问题就来到,我们的某一个 \(\hat{\mu}\) 的距离有多少?
+<ul class="org-ul">
+<li><p>
+我们计算standard error of \(\mu\) (写作 \(SE\left(\mu\right)\) 来说明这个距离
+</p>
+\begin{equation}
+Var\left(\hat{\mu}\right) = SE\left(\hat{\mu}\right)^2 = \frac{\sigma^2}{n},\tag{3.7}
+\end{equation}</li>
+<li><p>
+这里的 \(\sigma\) 就是Y中每个population的标准方差,也就是我们的预测和true f的平均差距,由于true f都是知道的
+所以我们的 \(\sigma\) 也unknown的
+</p>
+<pre class="example" id="org6fdadf1">
+标准方差是一组数值自平均值分散开来的程度的一种测量观念。一个较大的标准差，
+代表大部分的数值和其平均值之间差异较大；一个较小的标准差，代表这些数值较接近平均值。
+</pre></li>
+<li>我们可以看到standard error有两个影响的因子:
+<ol class="org-ol">
+<li>首先是 \(\hat{\mu}\) 和 \(\mu\) 的平均差距</li>
+<li>拥有越多的observation,我们就有越小的standard error</li>
+</ol></li>
+</ul></li>
+<li>我们以某个data set(sample)的 \(\mu\) 来了解了standard error的概念,主要是为了应用到我们的least square approach
+的coefficient上面</li>
+<li><p>
+和平均值 \(\mu\) 一样, \(\beta_0\) \(\beta_1\) 都有standard error,经过一些数学转换,我们得到 \(\beta_0\) \(\beta_1\) 的计算公式
+</p>
+\begin{equation}
+SE\left(\hat{\beta_0}\right)^2 = \sigma^2\left[\frac{1}{n} + \frac{\overline{x}^2}{\sum_{i=1}^n(x_i-\overline{x})^2}\right], \quad \quad\\
+SE\left(\hat{\beta_1}\right)^2 = \frac{\sigma^2}{\sum_{i=1}^n(x_i-\overline{x})^2},\\
+\tag={3.8}
+\end{equation}</li>
+<li>注意,这里的 \(\sigma^2\) 就是我们的模型和true f之间的未知的方差(所以 \(\sigma\) 也是未知的),也可以记做 \(Var(\varepsilon)\)</li>
+<li>上面两个公式揭示了如下两件事:
+<ul class="org-ul">
+<li>对于 \(\hat{\beta_0}\) 来说,如果 \(\overline{x}\) 等于0的话, \(SE( \hat{\beta_0})\) 就等于 \(SE(\hat{\mu})\)</li>
+<li>对于 \(SE(\hat{\beta_1\)}) 来说, 如果 \(x_i\) 更分散的话,那么我们的值越小,模型也就越准确, 这很好理解,如果都在一个平均值附近,那么可能是一条平线</li>
+</ul></li>
+<li><p>
+再来讨论下 \(\sigma\) 的问题,前面说了,这个 \(\sigma\) 由于是模型和unknown true f之间的差距,所以它本身也是unknown的.但是为了计算出
+\(SE(\hat{\beta_0})\) 和 \(SE(\hat{\beta_1})\), 你必须要能算出 \(\sigma\) 来,于是有了下面的estimate \(\sigma\) 公式 (RSE代表对 \(\sigma\) 的estimate,叫做
+residual standard error
+</p>
+\begin{equation}
+RSE = \sqrt{RSS/(n-2)}},\tag={3.8}
+\end{equation}</li>
+<li>由于我们的 \(\sigma\) 也是estimate的,那么我们计算的所谓 \(SE(\hat{\beta_1})\) 其实应该写作  \(\hat{SE}(\hat{\beta_1})\), 但是实际情况下就不会
+写那么细致了,还是写作 \(SE(\hat{\beta_1})\)</li>
+<li>费了那么大劲,我们了解了如何计算 Standard Error(特别是分别计算了 \(\beta_0\) 和 \(\beta_1\) 的SE),主要是因为Standard Error
+有其特殊的作用,第一个作用,就是计算Confidence interval(置信区间)</li>
+<li><p>
+统计学上常用95%置信度区间,所谓95%置信度区间,是指:我们定义一个区间的数据,在95%的概率下,这个区间会包含真正的,未知的,参数的值
+</p>
+<pre class="example" id="org5734ccf">
+A 95% confidence interval is defined as a range of values such that with
+95% probability, the range will contain the true unknown value of the parameter
+</pre></li>
+<li><p>
+在线性回归中, \(\beta_1\) 的95%的置信区间,定义如下:
+</p>
+\begin{equation}
+\left[\hat{\beta_1} - 2\cdot SE(\hat{\beta_1}),\quad \hat{\beta_1} + 2\cdot SE(\hat{\beta_1}) \right],\tag{3.10}
+\end{equation}</li>
+<li><p>
+经过计算 $&beta;<sub>1</sub>$的95%置信区间如下:
+</p>
+<pre class="example" id="org41cdfc0">
+[0.042,0.053]
+</pre></li>
+<li><p>
+类似的, \(\beta_0\) 的95%的置信区间,定义如下:
+</p>
+\begin{equation}
+\left[\hat{\beta_0} - 2\cdot SE(\hat{\beta_0}),\quad \hat{\beta_0} + 2\cdot SE(\hat{\beta_0}) \right],\tag{3.11}
+\end{equation}</li>
+<li><p>
+经过计算 $&beta;<sub>0</sub>$的95%置信区间如下:
+</p>
+<pre class="example" id="org1fac7ee">
+[6.130,7.935]
+</pre></li>
+<li><p>
+有了这两个公式,我们就知道了,在没有任何的广告投入的情况下(x为0),商品的销售量在如下区间
+</p>
+<pre class="example" id="org03d6f75">
+[6130,7940]
+</pre></li>
+<li><p>
+每当我们投入1000美金广告,那么,我们的销量提升空间为
+</p>
+<pre class="example" id="org7676542">
+[42, 53]
+</pre></li>
+<li>除了置信区间以外,standard error还可以用来对coefficient做hypothesis test(假设检验)</li>
+<li>常见的假设检验有:
+<ul class="org-ul">
+<li><p>
+null hypothesis:
+</p>
+<pre class="example" id="orgc6734da">
+H0: There is not relationship between X and Y
+</pre></li>
+<li><p>
+alternative hypothesis:
+</p>
+<pre class="example" id="org62f9969">
+Ha: There is some relationship between X and Y
+</pre></li>
+</ul></li>
+<li>在数学上H0和H1的定义分别是:
+<ul class="org-ul">
+<li><p>
+null hypothesis: 如果一旦 \(\beta_1\) 等于0, 那么我们的模型就简化为 \(Y , = \beta_0 + \varepsilon\),
+那么显然X就和Y不相关了
+</p>
+\begin{equation}
+H_0 : \beta_1 = 0,
+\end{equation}</li>
+<li><p>
+alternative hypothesis
+</p>
+\begin{equation}
+H_1 : \beta_1 \not = 0,
+\end{equation}</li>
+</ul></li>
+<li>为了判断到底是null hypothesis还是alternative hypothesis,我们需要我们的 \(\beta_1\) 是否足够远离0,一旦
+足够远离0,我们就可以认为 \(\beta_1\) 是non-zero的</li>
+<li>那么,这个足够远是多远呢:
+<ul class="org-ul">
+<li>如果 \(SE(\hat{\beta_1})\) 足够小,那么就算 \(\hat{\beta_1}\) 小一点,也没关系</li>
+<li>如果 \(SE(\hat{\beta_1})\) 太大,那么 \(\hat{\beta_1}\) 也必须很大,否则\(\hat{\beta_1} - SE(\hat{\beta_1})\)
+就有可能是0</li>
+</ul></li>
+<li><p>
+我们使用t-statistic来计算这个距离
+</p>
+\begin{equation}
+t = \frac{\hat{\beta_1} - 0}{SE(\hat{\beta_1})},\tag={3.14}
+\end{equation}</li>
+<li>我们还使用p-value来计算null hypothesis的概率:
+<ul class="org-ul">
+<li>如果p-value足够小,那么我们就认定predictor和response之间有关系</li>
+<li>如果p-value大,那么我们就认定predictor和response之间没有关系</li>
+</ul></li>
+<li>p-value足够小的足够是多足够:
+<ul class="org-ul">
+<li>5% (对应n=30情况下的t-statistics 2)</li>
+<li>1% (对应n=30情况下的t-statistics 2.75)</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgd3f8beb" class="outline-4">
+<h4 id="orgd3f8beb"><span class="section-number-4">3.1.3</span> Assessing the Accuracy of the Model</h4>
+<div class="outline-text-4" id="text-3-1-3">
+<ul class="org-ul">
+<li><p>
+一旦我们reject了null hypothesis(选择了alternative hypothesis),那么我们下一步就要量化我们的model
+有多fit我们的data
+</p>
+<pre class="example" id="org622928b">
+quantify the extent to which the model fits the data
+</pre></li>
+<li>对于linear regression来说,我们量化模型好还是差的方法有两种:
+<ul class="org-ul">
+<li>RSE (residual standard error)</li>
+<li>\(R^2\)</li>
+</ul></li>
+</ul>
+</div>
+<ol class="org-ol">
+<li><a id="org6905dba"></a>Residual Standard Error<br />
+<div class="outline-text-5" id="text-3-1-3-1">
+<ul class="org-ul">
+<li>我们从公式3.5( \(Y = \beta_0 + \beta_1X + \varepsilon\))可以看到,每个observation都要有一个error term \(\varepsilon\)</li>
+<li>由于这个error term \(\varepsilon\) 的存在,即便我们知道了 true \(\beta_0\) 和 true \(\beta_1\), 我们依然
+无法预测出准确的Y(因为 \(\varepsilon\) unknown)</li>
+<li><p>
+我们这里的RSE其实就是求 \(\varepsilon\) 的标准差,准确定义就是
+</p>
+<pre class="example" id="org417e567">
+RSE is the average amount that the response will deviate from the true regression line
+</pre></li>
+<li><p>
+RSE的计算公式如下
+</p>
+\begin{equation}
+RSE = \sqrt{\frac{1}{n-2}RSS}=\sqrt{\frac{1}{n-2}\displaystyle\sum_{i=1}^n (y_i - \hat{y_i})^2},\tag{3.15}
+\end{equation}</li>
+<li>在我们的Advertising例子中,我们的RSE是3.26,也就是说,即便我们的model能够得到true \(\beta_0\) 和 true \(\beta_1\),
+我们的预测值和真实值也要有平均3260的差距</li>
+<li>当然了3260这个差距是否是可以接受的,要看具体的problem context</li>
+<li>RSE还会被认为是model和data的fit程度的表达:
+<ul class="org-ul">
+<li>如果从model得到的prediction非常的准确,那么RSE就会很小,我们认为model fits the data well</li>
+<li>如果从model得到的 \(\hat{y}\) 和y差距非差大,那么RSE就会非常大,也就意味着model和data fit的不太好</li>
+</ul></li>
+</ul>
+</div>
+</li>
+<li><a id="org489c652"></a>\(R^2\) Statistic<br />
+<div class="outline-text-5" id="text-3-1-3-2">
+<ul class="org-ul">
+<li>RSE 提供了和model的差距的绝对值,但是他的缺点是他是以Y为度量单位的,就不免难以界定这个RSE是好还是坏</li>
+<li>\(R^2\) statistic就不一样啦,它使用了proportion(能够解释自己的variance百分比),也就是说, \(R^2\) statistic是一个介于0和1之间的浮点数
+其值是independent of the scale of Y</li>
+<li><p>
+下面我们来看看 $R<sup>2</sup>$的计算公式
+</p>
+\begin{equation}
+R^2 = \frac{TSS-RSS}{TSS} = 1 - \frac{RSS}{TSS},\tag{3.17}
+\end{equation}</li>
+<li>这个公式中的:
+<ul class="org-ul">
+<li><p>
+TSS 是total sum of squares
+</p>
+\begin{equation}
+TSS = \sum(y_i - \overline{y})^2
+\end{equation}</li>
+<li><p>
+RSS 是residual sum of squares
+</p>
+\begin{equation}
+RSS = \sum_{i=1}^n(y_i - \hat{y_i})^2
+\end{equation}</li>
+</ul></li>
+<li>TSS 度量的,是response自己的变动(方差), 在regression引入之前就有了</li>
+<li>而RSS则是在regression引入之后带来的,无法解释的(unexplained)的variability</li>
+<li>所以TSS-RSS就是能够解释的variability</li>
+<li>对于 $R<sup>2</sup>$的值:
+<ul class="org-ul">
+<li>如果接近1,那么说明大部分的response中的variability都被解释了</li>
+<li>如果接近0,那么说明大部分的response中的variability都没有被解释,这可能出现在linear model错误的情况下(或者自带的 error \(\sigma^2\) 太高</li>
+</ul></li>
+<li>我们的Advertising 例子中的 \(R^2\) 值为0.61,也就是说三分之二的variability都已经被解释了</li>
+<li>\(R^2\) statistic 对比RSE,拥有容易解释这个优势,因为不像RSE, \(R^2\) 一直能够在0和1之间</li>
+<li>虽然 \(R^2\) statistic 总是在[0,1]之间,但是判断什么是好的 \(R^2\) value是非常不容易的:
+<ul class="org-ul">
+<li>在物理学里面, 数据都是直接来自于linear model的(residual error很小),这种情况下,只有 \(R^2\) 非常接近1才是好的值</li>
+<li>在其他情况下, linear model只不过是对于data的一个粗略估计, residual error通常都非常的高,这种
+情况下 \(R^2\) 大概是0.1以下,是比较现实的</li>
+</ul></li>
+<li>\(R^2\) statistic 是用来度量 linear中X和Y的关系,correlation也是用来度量linear中X和Y的关系</li>
+<li>在simple linear regression中 \(R^2\) statistic 和 correlation是等价的</li>
+<li>但是correlation无法适应multiple linear regression,而 \(R^2\) 则自动适应这种情况</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orgc8273d0" class="outline-3">
+<h3 id="orgc8273d0"><span class="section-number-3">3.2</span> Multiple Linear Regression</h3>
+<div class="outline-text-3" id="text-3-2">
+<ul class="org-ul">
+<li>Simple Linear regression 对于单一input (predictor variable)是非常好的,但是在实践中,我们往往不止
+一个predictor</li>
+<li>以Advertising为例,我们使用simple linear mode来验证了如下两个数据的关系:
+<ul class="org-ul">
+<li>sales</li>
+<li>TV advertising花费</li>
+</ul></li>
+<li>但是实际上,我们还有两个没有用到的数据:
+<ul class="org-ul">
+<li>radio advertising花费</li>
+<li>newspaper advertising花费</li>
+</ul></li>
+<li>想知道这两个数据和sale有没有关系,我们就要引用到这两个数据,那我们如何扩展我们的分析来引入这两个数据呢?
+<ul class="org-ul">
+<li>一个可行的方案,是允许三个分开的simple linear regression,分别使用TV, radio, newspaper作为predictor</li>
+<li>我们执行之后得到三张表:
+<ol class="org-ol">
+<li><p>
+TV
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-right">Coefficient</th>
+<th scope="col" class="org-right">Std.error</th>
+<th scope="col" class="org-right">t-statistic</th>
+<th scope="col" class="org-left">p-value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Intercept</td>
+<td class="org-right">7.0325</td>
+<td class="org-right">0.4578</td>
+<td class="org-right">15.36</td>
+<td class="org-left">&lt; 0.0001</td>
+</tr>
+
+<tr>
+<td class="org-left">TV</td>
+<td class="org-right">0.0475</td>
+<td class="org-right">0.0027</td>
+<td class="org-right">17.67</td>
+<td class="org-left">&lt; 0.0001</td>
+</tr>
+</tbody>
+</table></li>
+<li><p>
+Radio
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-right">Coefficient</th>
+<th scope="col" class="org-right">Std.error</th>
+<th scope="col" class="org-right">t-statistic</th>
+<th scope="col" class="org-left">p-value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Intercept</td>
+<td class="org-right">9.312</td>
+<td class="org-right">0.563</td>
+<td class="org-right">16.54</td>
+<td class="org-left">&lt; 0.0001</td>
+</tr>
+
+<tr>
+<td class="org-left">radio</td>
+<td class="org-right">0.203</td>
+<td class="org-right">0.020</td>
+<td class="org-right">9.92</td>
+<td class="org-left">&lt; 0.0001</td>
+</tr>
+</tbody>
+</table></li>
+
+<li><p>
+Newspaper
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-right">Coefficient</th>
+<th scope="col" class="org-right">Std.error</th>
+<th scope="col" class="org-right">t-statistic</th>
+<th scope="col" class="org-left">p-value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Intercept</td>
+<td class="org-right">12.31</td>
+<td class="org-right">0.621</td>
+<td class="org-right">19.88</td>
+<td class="org-left">&lt; 0.0001</td>
+</tr>
+
+<tr>
+<td class="org-left">newspaper</td>
+<td class="org-right">0.055</td>
+<td class="org-right">0.017</td>
+<td class="org-right">3.30</td>
+<td class="org-left">0.00115</td>
+</tr>
+</tbody>
+</table></li>
+</ol></li>
+<li>我们可以看到每投入1000美金,TV增长47.5, radio增长203, newspaper增长55</li>
+</ul></li>
+<li>三个独立的linear regression有如下的问题:
+<ul class="org-ul">
+<li>给定了三个媒体的预算之后,无法预测销量,因为每个预算都有自己的linear regression,输入进去会得到三个
+不同的sales数据</li>
+<li>每个预算的linear regression其实都忽略了另外的两个预算的影响,这对模型准确度肯定有影响</li>
+</ul></li>
+<li>对simple linear regression的一个重大改进,就是把它扩展到能够关联多个predictor.这就是multiple linear
+regression model</li>
+<li><p>
+假设我们有p个不同的predictor,我们的multiple linear regression model的公式如下
+</p>
+\begin{equation}
+Y = \beta_0 + \beta_1X_1 + \beta_2X_2 + \cdot\cdot\cdot + \beta_pX_p + \varepsilon,\tag{3.19}
+\end{equation}
+<ul class="org-ul">
+<li>这里的 \(X_j\) 代表第 jth个predictor</li>
+<li>\(\beta_j\) 代表jth个preditor和response之间的关系</li>
+<li><p>
+我们使用 $&beta;<sub>j</sub>$的时候,要assume其他predictor都是fixed的
+</p>
+<pre class="example" id="orgf1ace5d">
+We interpret Bj as the average effect on Y of a one unit increase in Xj,
+holding all other predictors fixed.
+</pre></li>
+</ul></li>
+</ul>
+</div>
+<div id="outline-container-org34d528a" class="outline-4">
+<h4 id="org34d528a"><span class="section-number-4">3.2.1</span> Estimating the Regression Coefficients</h4>
+<div class="outline-text-4" id="text-3-2-1">
+<ul class="org-ul">
+<li>就像simple regression里面的设置一样, \(\beta_0,\beta_1,...,\beta_p\) 都是unknown的,我们必须estimate
+他们,estimate的值是加hat的: \(\hat{\beta_0},\hat{\beta_1},...,\hat{\beta_p}\)</li>
+<li><p>
+我们的预测计算使用的公式如下:
+</p>
+\begin{equation}
+\hat{y}=\hat{\beta_0} + \hat{\beta_1}x_1 + \hat{\beta_2}x_2 + \cdot\cdot\cdot + \hat{\beta_p}x_p,\tag{3.21}
+\end{equation}</li>
+<li><p>
+我们选取 \(\hat{\beta_0},\hat{\beta_1},...,\hat{\beta_p}\) 的标准依然是使得RSS最小,由于表达方式最
+好使用矩阵,这里不列出.各种统计学library可以自行计算.下面就是我们使用统计学library计算出来的结果
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-right">Coefficient</th>
+<th scope="col" class="org-right">Std. error</th>
+<th scope="col" class="org-right">t-statistic</th>
+<th scope="col" class="org-left">p-value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Intercept</td>
+<td class="org-right">2.939</td>
+<td class="org-right">0.3119</td>
+<td class="org-right">9.42</td>
+<td class="org-left">&lt;0.0001</td>
+</tr>
+
+<tr>
+<td class="org-left">TV</td>
+<td class="org-right">0.046</td>
+<td class="org-right">0.0014</td>
+<td class="org-right">32.81</td>
+<td class="org-left">&lt;0.0001</td>
+</tr>
+
+<tr>
+<td class="org-left">radio</td>
+<td class="org-right">0.189</td>
+<td class="org-right">0.0086</td>
+<td class="org-right">21.89</td>
+<td class="org-left">&lt;0.0001</td>
+</tr>
+
+<tr>
+<td class="org-left">newspaper</td>
+<td class="org-right">-0.001</td>
+<td class="org-right">0.0059</td>
+<td class="org-right">-0.18</td>
+<td class="org-left">0.8599</td>
+</tr>
+</tbody>
+</table></li>
+<li><p>
+我们要这样解读multiple linear regression
+</p>
+<pre class="example" id="org6f367f3">
+在TV和newspaper的预算固定的情况下,每额外提高1000美元预算在radio上面,可以得到189单位
+</pre></li>
+<li>我们可以看到, 在两种linear regression情况下, TV和radio的coefficient相差不多:
+<ul class="org-ul">
+<li>在simple linear regression的情况下, TV和radio每增加1000美元的提高值为47.5, 203</li>
+<li>在multiple linear regression的情况下, TV和radio每增加1000美元的提高值为46, 189</li>
+</ul></li>
+<li>但是,newspaper在single linear regression里面是非0的,而在multiple linear regression里面竟然接近0
+了,而且他的p-value不再significant(小于0.0001就是significant),变成了0.8599,一个非常大的值.
+<ul class="org-ul">
+<li>这说明了linear和multiple linear regression中的coefficient会有非常大的不同</li>
+</ul></li>
+<li><p>
+那么我们下面的情况是合理的么?:
+</p>
+<pre class="example" id="org0880d77">
+在multiple linear regression里面, sales和newspaper是没有关系的,但是在single linear regression
+里面sales和newspaper是有关系的
+</pre></li>
+<li>答案是合理的.</li>
+<li><p>
+我们先引入一个correlation matrix for TV, radio, newspaper
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-right">TV</th>
+<th scope="col" class="org-right">radio</th>
+<th scope="col" class="org-right">newspaper</th>
+<th scope="col" class="org-right">sales</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">TV</td>
+<td class="org-right">1.0000</td>
+<td class="org-right">0.0548</td>
+<td class="org-right">0.0567</td>
+<td class="org-right">0.7822</td>
+</tr>
+
+<tr>
+<td class="org-left">radio</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">1.0000</td>
+<td class="org-right">0.3541</td>
+<td class="org-right">0.5762</td>
+</tr>
+
+<tr>
+<td class="org-left">newspaper</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">1.0000</td>
+<td class="org-right">0.2283</td>
+</tr>
+
+<tr>
+<td class="org-left">sales</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">1.0000</td>
+</tr>
+</tbody>
+</table></li>
+<li>我们从上面的表格我们可以看到radio和newspaper的correlation是0.35,这样就意味着radio预算多的地方,
+newspaper预算也多</li>
+<li>假设multiple regression是正确的,newspaper对sales没有直接作用,但是radio对sales有直接作用:
+<ul class="org-ul">
+<li>那么在某个market上,我们radio的预算高,那么我们的sales就高</li>
+<li>通过correlation matrix我们发现,在这个market上,我们newspaper的预算也高</li>
+<li>如果没有multiple linear regression,只有simple linear regression的情况下(只考虑sales和newspaper),
+我们看到的结果就是:newspaper预算高,sales就高(虽然其实newspaper对销量没作用,但是radio有作用,
+newspaper沾了radio的光)</li>
+</ul></li>
+<li>我们可以在讲一个类似的情景:
+<ul class="org-ul">
+<li>如果跑一个simple regression会发现如下两个事件有positive relationship:
+<ol class="org-ol">
+<li>鲨鱼攻击 (sales)</li>
+<li>冰淇淋销量 (newspaper budget)</li>
+</ol></li>
+<li>我们再跑一个multiple regression,加上temperature,就会发现,其实鲨鱼攻击其实是和天气热强相关(天
+气热去沙滩的人多,自然鲨鱼攻击多):
+<ol class="org-ol">
+<li>鲨鱼攻击 (sales)</li>
+<li>冰淇淋销量 (newspaper budget)</li>
+<li>温度 (radio)</li>
+</ol></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org8665e5a" class="outline-4">
+<h4 id="org8665e5a"><span class="section-number-4">3.2.2</span> Some Important Questions</h4>
+<div class="outline-text-4" id="text-3-2-2">
+<ul class="org-ul">
+<li>当你运行multiple linear regression的时候,你要问一下如下几个问题:
+<ul class="org-ul">
+<li>我们的p个参数 \(X_1,X_2,\cdot\cdot\cdot,X_p\) 中,是否至少有一个predictor是有作用的</li>
+<li>所有的predictor都可以用来解释Y么,还是只有一小部分的predictor有作用?</li>
+<li>我们的model和data fit的怎么样?</li>
+<li>给predictor的一个子集,我们能预测出什么response,我们的预测准确度有多少?</li>
+</ul></li>
+<li>我们下面来回答这几个问题</li>
+</ul>
+</div>
+<ol class="org-ol">
+<li><a id="org6deca0d"></a>Is There a Relationship Between the Response and Predictors?<br />
+<div class="outline-text-5" id="text-3-2-2-1">
+<ul class="org-ul">
+<li>在multiple regression里面:
+<ul class="org-ul">
+<li><p>
+null hypothesis需要
+</p>
+\begin{equation}
+H_0 : \beta_1 = \beta_2 = \cdot\cdot\cdot = \beta_p = 0
+\end{equation}</li>
+<li><p>
+alternative hypothesis需要:
+</p>
+\begin{equation}
+H_a : at \quad least \quad one \quad \beta_j \quad is \quad non-zero
+\end{equation}</li>
+</ul></li>
+<li><p>
+hypothesis test 转而转化为计算F-statistic
+</p>
+\begin{equation}
+F = \frac{(TSS-RSS)/p}{RSS/(n-p-1)},\tag{3.23}
+\end{equation}</li>
+<li>我们认真观察f-statistic就会发现,对于simple linear regression来说:
+<ul class="org-ul">
+<li><p>
+如果linear model的假设正确的话,分子的期望为 \(\sigma^2\)
+</p>
+\begin{equation}
+E\left\{RSS/(n-p-1)\right\} = \sigma^2
+\end{equation}</li>
+<li><p>
+如果 \(H_0\) 为真的话,,分母的期望也为 \(\sigma^2\)
+</p>
+\begin{equation}
+E\left\{(TSS-RSS)/p\right\} = \sigma^2
+\end{equation}</li>
+<li>换句话说,如果predictor和response没有关系的话,f-statistic就会是1</li>
+<li>如果predictor和response有关系(也就是 \(H_a\) 为true),那么 \(E\left\{(TSS-RSS)/p\right\} > \sigma^2\),
+所以我们的F-statistic也就大</li>
+</ul></li>
+<li>F-statistic到底和1有多远的距离,才能让我们确认againt \(H_0\) 呢? 这个和n还有p的大小有关:
+<ul class="org-ul">
+<li>如果我们的n特别的大,那么即便是F-statistic稍微大于1,那么也是可以接受的</li>
+<li>如果我们的n比较小,那么就需要比较大的F-statistic才能reject \(H_0\)</li>
+</ul></li>
+<li>另外一个维度,如果我们确认我们的 $H<sub>0</sub>$为true,而且 errors \(\varepsilon_i\) 遵从正态分布的话,F-statistic
+也遵从正态分布</li>
+<li>对于任意的n和p产生的F-statistic,我们可以计算其p-value(越接近0,表示越strong的relation):
+<ul class="org-ul">
+<li>对于p-value来说,越接近0,说明越有relation</li>
+</ul></li>
+<li><p>
+有些时候我们想测试coefficient的一个subset(大小为q)是否和Y有relation,这种null hypothesis可以列
+为
+</p>
+\begin{equation}
+H_0: \beta_{p-q+1}=\beta_{p-q+2}=\cdot\cdot\cdot=\beta_p=0,
+\end{equation}</li>
+<li><p>
+如果这个null hypothesis成立的话,那也就是意味着我们使用p-q个参数创建了一个model,假设这个model的
+residual sum of squares叫做 \(RSS_0\),那么这个模型的F-statistic就是如下计算
+</p>
+\begin{equation}
+F = \frac{(RSS_0 - RSS)/q}{RSS/(n-p-1)},\tag{3.24}
+\end{equation}</li>
+<li>公式3.24和公式3.23虽然都是求f-statistic,但是分子却完全不一样,需要对f-statistic有比较清晰的了解
+才能弄清楚这个公式的来历:
+<ul class="org-ul">
+<li>分子是求平均偏移的,公式3.23除以的是p,也就是所有的variable</li>
+<li>公式3.24除以的是q,也就是不起作用的这些个variable. 是用 \(RSS_0\)(也就是这p-q个variable的RSS)
+减去RSS(也就是p个variable的RSS)</li>
+</ul></li>
+<li><p>
+这里我们再回头看一下,在表格3.4(如下)里面,我们列出了每个predictor的t-statistic和p-value,这表明
+了这个predictor是否和response有关
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-right">Coefficient</th>
+<th scope="col" class="org-right">Std. error</th>
+<th scope="col" class="org-right">t-statistic</th>
+<th scope="col" class="org-left">p-value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Intercept</td>
+<td class="org-right">2.939</td>
+<td class="org-right">0.3119</td>
+<td class="org-right">9.42</td>
+<td class="org-left">&lt;0.0001</td>
+</tr>
+
+<tr>
+<td class="org-left">TV</td>
+<td class="org-right">0.046</td>
+<td class="org-right">0.0014</td>
+<td class="org-right">32.81</td>
+<td class="org-left">&lt;0.0001</td>
+</tr>
+
+<tr>
+<td class="org-left">radio</td>
+<td class="org-right">0.189</td>
+<td class="org-right">0.0086</td>
+<td class="org-right">21.89</td>
+<td class="org-left">&lt;0.0001</td>
+</tr>
+
+<tr>
+<td class="org-left">newspaper</td>
+<td class="org-right">-0.001</td>
+<td class="org-right">0.0059</td>
+<td class="org-right">-0.18</td>
+<td class="org-left">0.8599</td>
+</tr>
+</tbody>
+</table></li>
+<li><p>
+每个predictor的t-statistic和p-value,叫做加入这个variable到model后的部分作用,用英文描述就是
+</p>
+<pre class="example" id="orge2ce79f">
+Partial effect of adding that variable to the model
+</pre></li>
+<li>既然我们已经有每个predictor是否对response有影响的数据了,那么我们看一眼这些数据,如果其中有一个predictor
+对response有影响,那么岂不是就不用算全局F-statistic了,因为全局F-statistic肯定是"至少有一个variable
+对response有影响"</li>
+<li><p>
+这里就出现了一个logic:
+</p>
+<pre class="example" id="org3cc973b">
+If any one of the p-value for the individual variables is very small, then
+at least one of the predictors is related to the response.
+</pre></li>
+<li>非常不幸的是,这个看似正确的logic,确是错误的.因为答案是:不一定,p越大越不一定
+<ul class="org-ul">
+<li>比如,假设p=100, 并且 \(H_0 : \beta_1=\beta_2= \cdot\cdot\cdot = \beta_p = 0\) (也就是说,没有variable和response有关系)</li>
+<li>在这种情况下,还是有约5%的variable的p-value会意外地(by chance)的低于0.05</li>
+<li>实际情况就是,我们几乎肯定会在100个variable里面找到其中一个的variable的p-value小于0.05</li>
+<li>那么我们如果根据这一个variable的低p-value来断定"肯定有variable和response有关系",那么,我们就大错特错了</li>
+<li><p>
+但是F-statistic就没有这个问题了,因为F-statistic已经校准(adjust)过predictor参数数量了,也就是说
+</p>
+<pre class="example" id="orgaf228cd">
+如果H0 =true, 无论predictor有多少(或者observation有多少),我们的F-statistic只会有5%的可能得到一个
+低于0.05的p-value.我们出错的概率只有5%,而上面错误的logic,错误的概率在p=100的情况下,几乎是100%
+</pre></li>
+</ul></li>
+<li>使用F-statistic来测试predictor和response之间关系这种approach,在p比较小的时候比较合适,所谓p比较
+小,指的是p相对于n来说,比较小</li>
+<li>但是,有些情况下,我们的p特别的大,比n还大(p&gt;n),换句话说,我们"要预测的coefficient \(\beta_j\) "比
+"提供预测数据的observation"还多.这种情况下,我们连least square都没法使用,更不必说f-statistic了</li>
+<li>对于这种p特别大的情况,我们可能需要新的approach,比如后面要讲到的forward selection</li>
+</ul>
+</div>
+</li>
+<li><a id="org99f3947"></a>Two: Deciding on Important Variables<br />
+<div class="outline-text-5" id="text-3-2-2-2">
+<ul class="org-ul">
+<li>正如前面讨论的,multiple regression分析的第一步是计算所有variable的F-statistic</li>
+<li>如果我们的f-statistic能够证明至少有一个variable是和response相关的,那么,我们的问题就转换为找到
+这些起作用的variable(虽然有可能所有的variable都有作用,但是更常见的情况是一部分variable有作用)</li>
+<li>挑选这些variable,并且组成一个新的,只有这些variable组成的model的过程,叫做variable selection,
+我们将会在第六章详细介绍,这里只介绍些概念</li>
+<li>最佳情况下,是我们把所有的variable组合都给给找出来.假设我们的p=2,那么我们可以排列组合出如下的不同model:
+<ul class="org-ul">
+<li>没有variable的model</li>
+<li>只包含 \(X_1\) 的model</li>
+<li>只包含 \(X_2\) 的model</li>
+<li>包含 \(X_1\) 和 \(X_2\) 的model</li>
+</ul></li>
+<li>然后我们使用如下的model判别工具,来选择最好的model:
+<ul class="org-ul">
+<li>Mallow</li>
+<li>Akaike information criterion (AIC)</li>
+<li>Bayesian information criterion (BIC)</li>
+<li>adjusted \(R^2\)</li>
+</ul></li>
+<li>这种方法要测试 \(2^p\) 种组合,在p很大的情况下,不是非常可行.所以上述方法只适用于p不大的情况,在p
+很大的情况下,我们需要如下的三种经典方法:
+<ul class="org-ul">
+<li>Forward selection:
+<ul class="org-ul">
+<li>我们从null model开始</li>
+<li>从p个variable里面挑选一个加到模型里,选择标准是加入后,让模型达到lowest RSS</li>
+<li>重复上面的过程,直到某些条件达到</li>
+</ul></li>
+<li>Backward selection:
+<ul class="org-ul">
+<li>我们从all variable model开始</li>
+<li>从p个variable里面挑选一个从模型里删除,选择的标准是p-value最大的</li>
+<li>重复上面的过程,直到某些条件达到(比如所有的variable都只有一个很小的p-value)</li>
+</ul></li>
+<li>Mixed selection:
+<ul class="org-ul">
+<li>我们从null model开始</li>
+<li>从p个variable里面挑选一个加到模型里,选择标准是加入后,让模型达到lowest RSS</li>
+<li>随着variable的增加,一旦发现已经加入的某个variable,在新的variable加入后,其p-value超过了某
+个阈值,我们就删除这个variable</li>
+<li>最终的效果就是在model里面的所有的variable,都有比较低的p-value.所有没有加入的variable是因为
+他们一旦加入,就会有比较大的p-value,所以只好待在model以外</li>
+</ul></li>
+</ul></li>
+<li>三种经典方法使用也有其要求:
+<ul class="org-ul">
+<li>backward selection不能在p&gt;n的情况下使用, forward selection可以在这种情况下使用</li>
+<li>forward selection是贪心算法,最后可能会包含早期加入的,其实不需要的variable, mixd selection可
+以补救这个问题</li>
+</ul></li>
+</ul>
+</div>
+</li>
+<li><a id="org0fd772a"></a>Three: Model Fit<br />
+<div class="outline-text-5" id="text-3-2-2-3">
+<ul class="org-ul">
+<li>最常见的数字化measure就是两个,计算方法multiple和simple linear regression一致:
+<ul class="org-ul">
+<li>\(R^2\)</li>
+<li>RSE</li>
+</ul></li>
+<li>我们先来看看 \(R^2\),我们之前知道, \(R^2\) 约接近1,说明模型中被解释的variable越多:
+<ul class="org-ul">
+<li>在simple linear regression里面,这就意味着模型的唯一variable被很好的解释了</li>
+<li>在multiple linear regression里面,则可以用来判断某个variable是否和response有关:
+<ul class="org-ul">
+<li>在Advertising data里面,三个variable都使用的model,其 $R<sup>2</sup>$值为0.8972</li>
+<li>在Advertising data里面,只使用TV和radio的model,其 $R<sup>2</sup>$值为0.89719</li>
+<li>换句话说,引入newspaper到已经有TV和radio的model,对 $R<sup>2</sup>$的提升极为有限(注意,多引入一个variable
+\(R^2\) 总会提升,无论这个variable是否起作用,因为我们要更fit trainig数据)</li>
+<li>加入newspaper后 $R<sup>2</sup>$得到了非常tiny的提升,更说明了newspaper没有作用</li>
+<li>与之相对的,只有TV的model的 $R<sup>2</sup>$值为0.61, 加入radio后,其 $R<sup>2</sup>$值的提升非常巨大,这说明,使用
+TV和radio的model比单纯使用TV的model要好</li>
+</ul></li>
+</ul></li>
+<li>我们再来看看RSE,我们之前知道, RSE越小越好
+<ul class="org-ul">
+<li>只有TV的model的RSE为3.26</li>
+<li>TV+radio model的RSE为1.681</li>
+<li>TV+radio+newspaper model的RSE为1.686</li>
+<li>我们看到,再增加了一个variable newspaper之后,RSE反而提升了,这证明newspaper确实是不需要的variable</li>
+</ul></li>
+<li><p>
+除了上面讨论的RSE和 \(R^2\), 我们还可以把data给打印(plot)出来,因为图像会给我们更好的揭示问题
+</p>
+<pre class="example" id="orgfa1f746">
+Graphical summaries can reveal problems with a model that are not
+visible from numerical statistics.
+</pre></li>
+<li>下图就是一个三维的plot,包含了TV+radio和sales之间的关系</li>
+<li>我们从上图中可知:
+<ul class="org-ul">
+<li>如果单独只用TV budget,或者单独只用radio budget,那么会overestimate sale</li>
+<li>如果混合使用TV和radio,那么会underestimate sale</li>
+<li>这说明non-linear pattern 无法精确的使用linear regression来建模</li>
+<li>这说明了协同作用(synergy or interaction)的存在,也就是media结合起来的提升,比单一的media带来
+的提升要大</li>
+</ul></li>
+</ul>
+</div>
+</li>
+<li><a id="orga624acf"></a>Four: Predictions<br />
+<div class="outline-text-5" id="text-3-2-2-4">
+<ul class="org-ul">
+<li>一旦我们确定了使用multiple regression model了,那么下一步就是在一堆predictor \(X_1,X_2,\cdot\cdot\cdot,X_p\)
+的基础上进行预测了,三十这个prediction包含了很多的uncertainty:
+<ol class="org-ol">
+<li>首先,我们的coefficient estimates \(\hat{\beta_0},\hat{\beta_1},\cdot\cdot\cdot,\hat{\beta_p}\)
+只不过是对真实值 $&beta;<sub>0,&beta;</sub><sub>1,&sdot;&sdot;&sdot;,&beta;</sub><sub>p</sub>$的预估值:
+<ul class="org-ul">
+<li><p>
+least squares plane公式是对true populationregression plane的estimate, least squares plane公式如下:
+</p>
+\begin{equation}
+\hat{Y} = \hat{\beta_0} + \hat{\beta_1}X_1 + \cdot\cdot\cdot + \hat{\beta_p}X_p
+\end{equation}</li>
+<li><p>
+true populationregression plane的公式如下:
+</p>
+\begin{equation}
+f(X) = \beta_0 + \beta_1X_1+\cdot\cdot\cdot+\beta_pX_p
+\end{equation}</li>
+<li>coefficient estimates既然是estimates,那么就不可能完全和真实值一致,他们的inaccuracy
+和reducible error相关.</li>
+<li>我们可以通过计算confidence interval来判断 \hat{Y} 和f(X)有多close</li>
+</ul></li>
+<li>在实践中,我们assume f(X)就是linear model,其实是一种猜测.如果true f(X)不是linear model
+的话,我们实际上就引入了model bias.
+<ul class="org-ul">
+<li>我们一旦使用了linear model,那么我们estimate的,其实是能够最大努力fit true f(X) surface的
+linear</li>
+<li>但是,我们一般忽略这个矛盾(discrepancy),使用了linear model,就假设linear model是正确的model</li>
+</ul></li>
+<li>即便我们知道真实的true f(X),也就是我们知道了 \(\beta_0,beta_1,\cdot\cdot\cdot,\beta_p\),我们
+也不可能得到完美的prediction,因为random error \(\varepsilon\) 的存在
+<ul class="org-ul">
+<li>在第2章,我们把random error叫做irreducible error</li>
+<li>Y和 \(\hat{Y}\) 在距离,我们使用prediction interval来标识</li>
+<li>prediction interval永远比confidence interval宽,因为prediction interval包含了如下两个部分:
+<ul class="org-ul">
+<li>reducible error: error in estimate for f(x)</li>
+<li>irreducible error: uncertainty as to how much an individual point will differ from
+the population regression plane</li>
+</ul></li>
+<li>我们使用confidence interval来量化uncertainty surrounding the average(注意这个平均)
+sale,比如花费100000在TV广告,另外花费20000在radio广告上,我们的confidence interval为
+[10985,11528],也就是意味着,95%的情形下,这个区间包含真正的f(X)</li>
+<li>我们使用prediction interval来量化uncertainty surrounding sales for a particular(注意这个
+指定)city.花费100000在TV,花费20000在radio,得到95%的prediction interval,也就是意味着95%的
+情况下,这个区间包含真正的Y for this city</li>
+<li>prediction interval由于是预测的指定的city,所以范围要大于confidence interval(不同location的
+平均sales)</li>
+</ul></li>
+</ol></li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org1c631bb" class="outline-3">
+<h3 id="org1c631bb"><span class="section-number-3">3.3</span> Other Considerations in the Regression Model</h3>
+<div class="outline-text-3" id="text-3-3">
+</div>
+<div id="outline-container-orga7fe71f" class="outline-4">
+<h4 id="orga7fe71f"><span class="section-number-4">3.3.1</span> Qualitative Predictors</h4>
+<div class="outline-text-4" id="text-3-3-1">
+<ul class="org-ul">
+<li>截止目前的讨论,我们assume linear regression model里面所有的variable都是quantitative(定量的)</li>
+<li>但是在实践中,并不全是这种情况,比如有些时候有些predictor是qualitative(定性的)</li>
+<li>图3-6就是这样一个例子
+<ul class="org-ul">
+<li>图3-6</li>
+<li>上图包含的是Credit data set balance,包含一批人的信用卡的平均debt,同时包括很多定量的数据:
+<ol class="org-ol">
+<li>age</li>
+<li>cards</li>
+<li>education</li>
+<li>income</li>
+<li>limit</li>
+<li>rating</li>
+</ol></li>
+<li>每个图的横坐标和纵坐标都列在图的左边和下边</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orged723cc" class="outline-4">
+<h4 id="orged723cc"><span class="section-number-4">3.3.2</span> Predictors with Only Two Levels</h4>
+<div class="outline-text-4" id="text-3-3-2">
+<ul class="org-ul">
+<li>假设我们希望调查如下两者的关系(忽略其他的variable):
+<ul class="org-ul">
+<li>creadit card balance</li>
+<li>性别</li>
+</ul></li>
+<li><p>
+如果qualitative predictor(又名factor)只有两个level,那么想把这种variable整合进regression model
+就非常简单:创建一个dummy variable只有两个numerical value,比如,对于gender variable,我们可以创建
+一个新的variable,其样式如下
+</p>
+\begin{equation}
+x_i =
+   \begin{cases}
+   1 &\text{if ith person is female} \\
+   0 &\text{if ith person is male} \tag{3.26}
+   \end{cases}
+\end{equation}</li>
+<li><p>
+使用上面的variable作为predictor在regression公式当中,会得到如下的model
+</p>
+\begin{equation}
+y_i = \beta_0 + \beta_1x_i + \varepsilon_i =
+   \begin{cases}
+   \beta_0 + \beta_1 + \varepsilon_i &\text{if ith person is female} \\
+   \beta_0 + \varepsilon_i &\text{if ith person is male} \tag{3.27}
+   \end{cases}
+\end{equation}</li>
+<li>针对这个model,我们可以得到:
+<ul class="org-ul">
+<li>\(\beta_0\) 就可以解释为male中的平均credit card balance</li>
+<li>\(\beta_1\) 就可以解释为male和female的credit card balance差值</li>
+</ul></li>
+<li><p>
+公式3.27定义的模型的coefficient值如下
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-right">Coefficient</th>
+<th scope="col" class="org-right">Std.error</th>
+<th scope="col" class="org-right">t-statistic</th>
+<th scope="col" class="org-left">p-value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Intercept</td>
+<td class="org-right">509.80</td>
+<td class="org-right">33.13</td>
+<td class="org-right">15.389</td>
+<td class="org-left">&lt;0.0001</td>
+</tr>
+
+<tr>
+<td class="org-left">gender[Femaile]</td>
+<td class="org-right">19.73</td>
+<td class="org-right">46.05</td>
+<td class="org-right">0.429</td>
+<td class="org-left">0.6690</td>
+</tr>
+</tbody>
+</table></li>
+<li>male的平均账单是509.80,female在此基础上增加19.73</li>
+<li>但是我们发现dummy variable的p-value非常的高,这说明性别间的信用卡账单,没有统计学上的不同</li>
+<li>有些同学可能觉得是不是把female从1变成0, male从0变成1,能够有所改变,其实这是不对的.无论怎么选,都
+会得到相同的结果(性别和账单没有统计学意义)</li>
+<li><p>
+同样的我们即便使用不同的coding schema,之前我们使用是0/1 coding schema,我们还可以使用-1/1 coding schema
+</p>
+\begin{equation}
+x_i =
+   \begin{cases}
+   1 &\text{if ith person is female} \\
+   -1 &\text{if ith person is male}
+   \end{cases}
+\end{equation}</li>
+<li><p>
+使用这个variable,我们得到的regression equation,如下
+</p>
+\begin{equation}
+y_i = \beta_0 + \beta_1x_i + \varepsilon_i =
+   \begin{cases}
+   \beta_0 + \beta_1 + \varepsilon_i &\text{if ith person is female} \\
+   \beta_0 - \beta_1 + \varepsilon_i &\text{if ith person is male}
+   \end{cases}
+\end{equation}</li>
+<li>换成上面的模型后,我们对 $&beta;<sub>0</sub> $ 和 \(\beta_1\) 的解释如下:
+<ul class="org-ul">
+<li>\(\beta_0\) 可以被解释为overall average credit card balance(忽略性别)</li>
+<li>\(\beta_1\) 是female比male高的amount</li>
+</ul></li>
+<li><p>
+再次强调,无论dummy variable更改成什么形式, predition的结果都是不变的!
+</p>
+<pre class="example" id="org7fa0ccc">
+The final predictions for the credit balances of males and females
+will be identical regardless of the coding scheme used. The only
+difference is in the way that the coefficients are interpreted
+</pre></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org5be3761" class="outline-4">
+<h4 id="org5be3761"><span class="section-number-4">3.3.3</span> Qualitative Predictors with More than Two Levels</h4>
+<div class="outline-text-4" id="text-3-3-3">
+<ul class="org-ul">
+<li>当我们的qualitative predictor拥有超过两个level(多个可能的值)的时候,我们就不能用一个dummy variable
+来代表所有的possible value了.</li>
+<li>我们需要创建additional dummy variable了.比如种族不是一两个,而是很多个(也就是三个,黄种人,白种人,
+黑种人),那么我们可以创建两个dummy variable:
+<ul class="org-ul">
+<li><p>
+variable \(x_{i1}\)
+</p>
+\begin{equation}
+x_{i1} =
+   \begin{cases}
+   1 &\text{if ith person is Asian} \\
+   0 &\text{if ith person is not Asian}
+   \end{cases}
+\end{equation}</li>
+<li><p>
+variable \(x_{i2}\)
+</p>
+\begin{equation}
+x_{i2} =
+   \begin{cases}
+   1 &\text{if ith person is Caucasian} \\
+   0 &\text{if ith person is not Caucasian}
+   \end{cases}
+\end{equation}</li>
+<li><p>
+把这两个variable都带入到我们的公式,得到新的regression equation
+</p>
+\begin{equation}
+y_i = \beta_0 + \beta_1x_{i1} + \beta_2x_{i2} + \varepsilon_i =
+   \begin{cases}
+   \beta_0 + \beta_1 + \varepsilon_i &\text{if ith person is Asian} \\
+   \beta_0 + \beta_2 + \varepsilon_i &\text{if ith person is Caucasian} \\
+   \beta_0 + \varepsilon_i &\text{if ith person is African American}
+   \end{cases}
+\end{equation}</li>
+<li>现在我们再来在当前的语境下,理解下上面的几个coefficient:
+<ol class="org-ol">
+<li>\(\beta_0\) 可以解释为黑人的平均信用卡账单数目</li>
+<li>\(\beta_1\) 可以解释为黄种人信用卡账单数目和黑人信用卡账单数目的差值</li>
+<li>\(\beta_1\) 可以解释为白种人信用卡账单数目和黑人信用卡账单数目的差值</li>
+</ol></li>
+</ul></li>
+<li>通过上面的例子,我们可以看到. dummy variable(2个)总比level(3个人种)少一个,而没有variable的那个
+level(这里就是黑人)叫做baseline</li>
+<li>同样需要注意的是,baseline选择哪个都一样,都不会影响最后的结果</li>
+<li><p>
+上面模型的coefficient如下
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-right">Coefficient</th>
+<th scope="col" class="org-right">Std. error</th>
+<th scope="col" class="org-right">t-statistic</th>
+<th scope="col" class="org-right">p-value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Intercept</td>
+<td class="org-right">531.00</td>
+<td class="org-right">46.32</td>
+<td class="org-right">11.464</td>
+<td class="org-right">&lt; 0.0001</td>
+</tr>
+
+<tr>
+<td class="org-left">Asian</td>
+<td class="org-right">-18.69</td>
+<td class="org-right">65.02</td>
+<td class="org-right">-0.287</td>
+<td class="org-right">0.7740</td>
+</tr>
+
+<tr>
+<td class="org-left">Caucasian</td>
+<td class="org-right">-12.50</td>
+<td class="org-right">56.68</td>
+<td class="org-right">-0.221</td>
+<td class="org-right">0.8260</td>
+</tr>
+</tbody>
+</table></li>
+<li>根据上面的表格我们可以知道:
+<ul class="org-ul">
+<li>黑人的平均信用卡账单是531美元</li>
+<li>黄种人平均账单比黑人少18.69美元</li>
+<li>白人平均账单比黑人少12.50美元</li>
+</ul></li>
+<li>但是两个dummy variable的p-value特别的高,也就是说这个假设在统计学上不成立</li>
+<li>前面说过,选择哪个baseline,不会影响prediction的结果,但是: coefficient和p-value确实会被dummy
+variable coding</li>
+<li><p>
+如果不想依赖单个coefficient,我们可以使用F-test来测试如下公式(这个不依赖于coding):
+</p>
+\begin{equation}
+H_0 : \beta_1 = \beta_2 = 0
+\end{equation}</li>
+<li>F-test的结果是0.96,也就意味着我们不能reject null hypothesis(balance和种族有关系)</li>
+<li>使用这种dummy variable的办法,在面对定量和定性的predictor时,都没有问题</li>
+<li>除了dummy variable, 还有很多coding qualitative variable的办法,这些不同的办法都会得到model fit,
+但是coefficient的解释是不一样的</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org33536c6" class="outline-4">
+<h4 id="org33536c6"><span class="section-number-4">3.3.4</span> Extensions of the Linear Model</h4>
+<div class="outline-text-4" id="text-3-3-4">
+<ul class="org-ul">
+<li>标准的linear regression(公式3-19),提供了可解释的result,并且在很多real-world问题上面工作的很好,
+但是,这是建立在很多极端假设(highly restrictive assumptions)的基础上的, 而且这些假设在实践当中
+还很容易被violated</li>
+<li>最重要的两个假设(assumption)是, predictor和response之间的关系是:
+<ul class="org-ul">
+<li>既additive: 这个assumption意味着,不同predictor之间的是相互独立的(independent)</li>
+<li>又linear: 这个assumption意味着,一个unit的 $X<sub>j</sub>$的增长,会带来const的Y的增长</li>
+</ul></li>
+<li>本书我们会带大家认识一些sophisticated的method,这些method,会relax这两个assumption</li>
+<li>这里我们先看一些method,这些method:
+<ul class="org-ul">
+<li>是对linear model的扩展</li>
+<li>同时还relax了这两个assumption</li>
+</ul></li>
+</ul>
+</div>
+<ol class="org-ol">
+<li><a id="orgead3ccd"></a>Removing the Additive Assumption<br />
+<div class="outline-text-5" id="text-3-3-4-1">
+<ul class="org-ul">
+<li>在前面的Advertising data的分析当中,我们总结到TV和radio都和sales有关系</li>
+<li>这个conclusion,基于如下的两个:
+<ul class="org-ul">
+<li>每个广告媒体(比如TV, radio)对于sales的作用都是相互独立的.但是这个假设很可能是不成立的:
+<ol class="org-ol">
+<li>同样有10万美元,我们可以全部投在TV上,或者全部投在radio上,或者一半TV,一半radio上</li>
+<li>实践证明一半TV,一半radio得到的sales最高</li>
+<li>在市场营销领域这个现象叫做synergy effect,在统计学领域,这个现象叫做interaction effect</li>
+<li>我们从图3-5也能看到:
+<ul class="org-ul">
+<li>当总钱数一定的情况下,如果TV,radio的某一个比例低的话(比如10%和90%), sales会比prediction低</li>
+<li>当总钱数一定的情况下,如果TV,radio分的比较均匀的话(比如50%和50%), sales会比prediction高</li>
+</ul></li>
+</ol></li>
+<li>每一个unit的广告媒体(比如TV, radio)费用的增加,sales会获取const的增加.我们可以从如下公式中看到
+<ul class="org-ul">
+<li><p>
+公式
+</p>
+\begin{equation}
+Y = \beta_0 + \beta_1X_1 + \beta_2X_2 + \varepsilon
+\end{equation}</li>
+<li>通过上面公式我们可以看到,如果 \(X_1\) 增加一个unit,那么Y就增加 \(\beta_1\) unit, \(X_2\) 完全没
+有参与进来</li>
+<li><p>
+如果我们想让 \(X_2\) 参与进来(允许interaction effect),那么我们就要引入第三个predictor,叫做
+interaction term,如下
+</p>
+\begin{equation}
+Y = \beta_0 + \beta_1X_1 + \beta_2X_2 + \beta_3X_1X_2 + \varepsilon
+\end{equation}</li>
+</ul></li>
+</ul></li>
+<li><p>
+我们把引入第三个predictor的例子套用到Advertising的例子上面,得到如下
+</p>
+\begin{equation}
+\tag{3.33}
+\begin{split}
+sales = \beta_0 + \beta_1 \times TV + \beta_2 \times radio + \beta_3 \times ( radio \times TV) + \varepsilon\\
+      = \beta_0 + (\beta_1 + \beta_3 \times  radio) \times TV + \beta_2 \times radio  + \varepsilon.
+\end{split}
+\end{equation}</li>
+<li>这里,我们就可以把 \(\beta_3\) 解释为一个unit的radio的提升带来的队TV的提升</li>
+<li><p>
+下面是公式3.33的的coefficient
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-right">Coefficient</th>
+<th scope="col" class="org-right">Std.error</th>
+<th scope="col" class="org-right">t-statistic</th>
+<th scope="col" class="org-left">p-value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Intercept</td>
+<td class="org-right">6.7502</td>
+<td class="org-right">0.248</td>
+<td class="org-right">27.23</td>
+<td class="org-left">&lt; 0.0001</td>
+</tr>
+
+<tr>
+<td class="org-left">TV</td>
+<td class="org-right">0.0191</td>
+<td class="org-right">0.002</td>
+<td class="org-right">12.70</td>
+<td class="org-left">&lt; 0.0001</td>
+</tr>
+
+<tr>
+<td class="org-left">radio</td>
+<td class="org-right">0.0289</td>
+<td class="org-right">0.009</td>
+<td class="org-right">3.24</td>
+<td class="org-left">0.0014</td>
+</tr>
+
+<tr>
+<td class="org-left">TV * radio</td>
+<td class="org-right">0.0011</td>
+<td class="org-right">0.000</td>
+<td class="org-right">20.73</td>
+<td class="org-left">&lt; 0.0001</td>
+</tr>
+</tbody>
+</table></li>
+<li>从上表中我们可以看到:
+<ul class="org-ul">
+<li>包含interaction term的model要强于</li>
+<li>只包含main effect的model</li>
+</ul></li>
+<li><p>
+interaction term (TV * radio)有非常小的p-value,也就说我们有strong evidence下面的公式成立
+</p>
+\begin{equation}
+H_a : \beta_3 \neq 0
+\end{equation}</li>
+<li>换句话说,很明显的true relation不可能是additive的</li>
+<li>模型(公式3.33)的 \(R^2\) 为96.8%, 而没有加入interaction term的模型的 \(R^2\) 值为89.7%,这说明
+很多在additive model中不能解释的部分,被interaction term给解释了</li>
+<li>上面的表格我们看到了,如下两种variable的p-value都很低:
+<ul class="org-ul">
+<li>main effect (TV, radio)</li>
+<li>interaction term</li>
+</ul></li>
+<li><p>
+但是在很多情况下,interaction term的p-value很低,但是main effect却不低.即便是这种情况下,我们的
+模型还是要包括main effect.这是由hierarchical principle决定的
+</p>
+<pre class="example" id="orgf4002b6">
+Hierarchical principle states that if we include an interaction in a model,
+we should also include the main effects, even if the p-values associated
+with their coefficients are not significant.
+</pre></li>
+<li>interaction 不仅仅能够作用于定量的variable之间,还可以作用于定量的variable和定性的variable之间</li>
+</ul>
+</div>
+</li>
+<li><a id="org9147cfd"></a>Non-linear Relationships<br />
+<div class="outline-text-5" id="text-3-3-4-2">
+<ul class="org-ul">
+<li>前面的假设之一是additive,假设之二就是linear,也就是说我们认定我们的predictor和response之间是线
+性的关系. 但是很多情况下,真实的relationship其实真的不一定是linear的</li>
+<li>我们这里先使用一个最简单把linear model扩展到non-linear relationship的方法,叫做polynomial regression</li>
+<li>我们看下图3-8
+<ul class="org-ul">
+<li>图3-8</li>
+<li>这是一个Auto的dataset,表示的是如下两个variable的关系:
+<ol class="org-ol">
+<li>mpg:每加仑跑的mile数目</li>
+<li>horsepower:马力</li>
+</ol></li>
+<li>图中的桔黄色线表示的是linear regression fit</li>
+<li>从图中我们很明显的看到mpg和horsepower明显是有关系的,但是从点的分布来看,更像是曲线,而非直线</li>
+<li>最简单的在linear model基础上引入non-linear model的方法,是使用transformed version of predictor</li>
+<li><p>
+比如图3-8,看起来像是一个二次方的shape,那么我们把horsepower的平方引入到model里面,得到
+</p>
+\begin{equation}
+mpg = \beta_0 + \beta_1 \times horsepower + \beta_2 \times horsepower^2 + \varepsilon \tag{3.36}
+\end{equation}</li>
+<li>我们这里使用了non-linear的function,但是我们的model确实还是能够看做是linear model,因为我们可
+以这样理解我们的模型:
+<ol class="org-ol">
+<li>\(X_1=horsepower\)</li>
+<li>\(X_2=horsepower^2\)</li>
+</ol></li>
+<li>这个模型既然还是linear model,那么我们还是可以使用standard linear regression software来预测coefficient:
+\(\beta_0, \beta_1, \beta_2\). 这个模型就是所谓的linear model with non-linear fit</li>
+<li>图3-8中的blue线就表示了二次方的fit</li>
+<li>蓝色的二次方fit从图中看出来的匹配效果就好于桔黄色的linear model fit:
+<ol class="org-ol">
+<li>蓝色二次方fit的$R<sup>2</sup>$值(0.688)也是要高于linear fit的(0.606)</li>
+<li>新模型的p-value也非常的低</li>
+</ol></li>
+<li>引入 $horsepower<sup>2</sup>$就带来了对model的improvement,那么很自然的话,我们会想想到引入 \(horsepower^3, horsepower^4, horsepower^5\)
+图3-8中的green线就是引入了\(horsepower^3, horsepower^4, horsepower^5\) 之后的结果.但是我们看到这个效果并不好(模型过于变化莫测),
+也就是说并不是引入更高level就能得到更好的model</li>
+</ul></li>
+<li>上面这种扩展linear model来适应non-linear relationship的approach叫做polynomial regression(因为引入了polynomial function)</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div id="outline-container-org6742af6" class="outline-4">
+<h4 id="org6742af6"><span class="section-number-4">3.3.5</span> Potential Problems</h4>
+<div class="outline-text-4" id="text-3-3-5">
+<ul class="org-ul">
+<li>当使用linear regression model来fit一个特定的data set 的时候,很多问题都会发生,最常见的问题有:
+<ul class="org-ul">
+<li>Non-linearity of the response-predictor relationships</li>
+<li>Correlation of error term</li>
+<li>Non-constant variance of error terms.</li>
+<li>outliers</li>
+<li>High-leverage points</li>
+<li>Collinearity</li>
+</ul></li>
+<li>实践当中,分辨并且处理这些问题既是科学,又是艺术.下面我们简要分析下这几个内容</li>
+</ul>
+</div>
+<ol class="org-ol">
+<li><a id="org5b94340"></a>Non-linearity of the Data<br />
+<div class="outline-text-5" id="text-3-3-5-1">
+<ul class="org-ul">
+<li>linear regression model的成功,有一个假设:在predictor和response之间,存在的是straight-line
+relationship</li>
+<li>如果true relationship不是linear,而且和linear相距甚远的话,那么我们从这线性模型获得的conclusion
+都是站不住脚的.从这个model获得的predictionn的准确率也会大打折扣</li>
+<li>残差图(Residual plots) 是非常有效的判断non-linearity的有效graphical tool手段.所谓残差图,这么一种图:
+<ul class="org-ul">
+<li>在纵轴显示residual(\(y_i - \hat{y_i}\))</li>
+<li>横轴显示independent variable(注意,不一定是predictor, 在predictor是多个的情况下,可以使用prediction,
+也就是 \(\hat{y_i}\) )</li>
+</ul></li>
+<li>对残值图的判断很有意思:
+<ul class="org-ul">
+<li>如果残值图的point是随机的分配再横坐标上面的,那么这个数据就是一个regression data,如下</li>
+<li>如果残值图的point是成non-random的分配(比如U形,或者倒U型的分配),那么说明这是一个nonlinear model</li>
+</ul></li>
+<li>看我们的例子:
+<ul class="org-ul">
+<li>图3-9</li>
+<li>左边的残值图(linear regression for Auto data set)为明显的U型(红色是smooth fit,用来判断trend),说明数据是非线性的</li>
+<li>右边的残值图(model contains quadratic term),则是是没有什么pattern(比较random),说明quadratic term增进了data fit</li>
+</ul></li>
+<li>一旦使用了残差图发现data不是linear association,那么最简单的方法就是对predictor使用non-linear
+transformation,比如 \(logX, \sqrt{X}, X^2\)</li>
+</ul>
+</div>
+</li>
+<li><a id="orgd428bbc"></a>Correlation of Error Terms<br />
+<div class="outline-text-5" id="text-3-3-5-2">
+<ul class="org-ul">
+<li>对线性模型来说,一个重要的assumption是error term( \(\varepsilon_1, \varepsilon_2,...\varepsilon_n\)) 之间是uncorrelated的.这就意味着:
+<ul class="org-ul">
+<li><p>
+如果error term( \(\varepsilon_1, \varepsilon_2,...\varepsilon_n\)) 之间是uncorrelated的,那么
+\(\varepslionj_i\) 是positive,就不能为 \(\varepslionj_i+1\) 是正还是负提供任何的帮助
+</p>
+<pre class="example" id="orgb9234ea">
+If the errors are uncorrelated, then the fact that e_i is positive provides little or
+no information about the sign of e_i+1
+</pre></li>
+</ul></li>
+<li>我们前面的为estimated regression coefficient计算的standard error都是基于error term之间是uncorrelated的</li>
+<li>如果error term之间有correlation的话,那么estimated standard error会underestimate 真正的standard error.那么:
+<ul class="org-ul">
+<li>我们算出来的confidence interval要比真实的 confidence interval要"宽泛"</li>
+<li>p-value也算出来比真实的p-value要lower, 这就会让我们做出不正确的判断:我们会误以为这个parameter 是statistically significant的</li>
+<li>总体来说,如果error term是correlated,那么我们就会对model有不正确的自信</li>
+</ul></li>
+<li>为什么error term之间会发生correlation呢?答案是:
+<ul class="org-ul">
+<li>这类correlation经常出现(不是必然出现在contex of time series data</li>
+<li>所谓time series data,就是在一段时间内,每隔固定的时间去度量得来的数据,比如,1995-2010,每年的
+国民生产总值,就是一个典型的time series data</li>
+</ul></li>
+<li>我们以下图来看一下三个time series data,看看哪些出现了correlation:
+<ul class="org-ul">
+<li>图3-10</li>
+<li>最上面我们看到的是一个uncorrelated error的residual,每个residual和相邻的residual的数值没关系,也就是没有trend</li>
+<li>相反,最下面的图,是一个correlation为0.9的residual,现在就有trend了:相邻的residual数值相似</li>
+<li>中间的图中是correlation为0.5的residual,有trend,但是不明显</li>
+</ul></li>
+<li>error term之间的correlation也会发生在非time series data身上,比如我们有个"身高和体重关系"的研究,
+如果进入研究的都是一家人,或者吃同样食物,有一样的生活环境,那么assumption of uncorrelated error
+就已经被违反了</li>
+<li>总的来说,对于linear regression以及其他的statistical method来说,assumption of uncorrelated error
+都是非常重要的,一个好的实验设计要减轻correlation的危害</li>
+</ul>
+</div>
+</li>
+<li><a id="org0b1c631"></a>Non-constant Variance of Error Terms<br />
+<div class="outline-text-5" id="text-3-3-5-3">
+<ul class="org-ul">
+<li>linear regression model的另外一个重要的assumption是error term的方差为常数(constant variance)
+\(Var(\varepsilon_i) = \sigma^2\)</li>
+<li>如下概念都依赖这个assumption:
+<ul class="org-ul">
+<li>standard error</li>
+<li>confidence interval</li>
+<li>hypothesis test</li>
+</ul></li>
+<li>但是,遗憾的是,error term的方差往往都不是const的,这个值往往会随着response的扩大而扩大</li>
+<li>如果一个error的方差不是const的,我们会叫他heteroscedasticity,会呈现出一个漏斗的形状:
+<ul class="org-ul">
+<li>图3-11</li>
+<li>图左边的部分residual就呈现一个漏斗形状</li>
+<li>为了解决左边的问题,我们可以把response转换成logY或者是 \(\sqrt{Y}\) 的形式,图右就是把response
+按照logY转换后的样子,residual就看起来比较const了</li>
+</ul></li>
+<li>weighted least squares</li>
+</ul>
+</div>
+</li>
+<li><a id="org033b7b6"></a>Outliers<br />
+<div class="outline-text-5" id="text-3-3-5-4">
+<ul class="org-ul">
+<li>所谓outlier,就是 \(y_i\) 和predicted value之间的距离</li>
+<li>outlier上升的原因很多,比如在data collection阶段,不正确的record observation</li>
+<li>我们看图来解释下:
+<ul class="org-ul">
+<li>图3-12</li>
+<li>左边图上的红色的点(observation 20)就是一个典型的outliter</li>
+<li>红色的实线是,包含outlier的最小二乘回归拟合(Least Squres regression fit)</li>
+<li>蓝色的虚线是,去掉outlier的最小二乘回归拟合(Least Squres regression fit)</li>
+<li><p>
+这种情况下,去除outlier,并没有改变least square line太多.这种情况是正常的
+</p>
+<pre class="example" id="org0c6518c">
+It is typical for an outlier that does not have an unusual predictor value to
+have little effect on the least squares fit.
+</pre></li>
+<li>但是outlier却会引起其他的问题:
+<ul class="org-ul">
+<li>在包括outlier的regression里面,RSE为1.09, $R<sup>2</sup>$为0.892</li>
+<li>不包括outlier的regression里面,RSE为0.77, $R<sup>2</sup>$为0.805</li>
+<li>由于RSE被用来计算confidence interval和p-value,RSE的改动会影响这两个值</li>
+</ul></li>
+<li>图3-12中间的是Residual plot,我们可以很容易发现哪个是outlier</li>
+<li>实践当中,使用residual plot不太方便,因为不知道超过residual多少算outlier(超过10,20,还是30?),
+没有一个统一的数值,所以我们一般使用图3-12右侧的studentized residual,因为它能够确定明确的范围:
+studentized residual值大于6的通常被认为是outlier</li>
+<li><p>
+studentized residual value之所以能够有明确的范围,因为他是使用residual除以standard error,这样
+一来使用standard error作为了基数,翻译起来就是
+</p>
+<pre class="example" id="org6787a1b">
+超过standard error六倍的residual都被认为是outlier
+</pre></li>
+</ul></li>
+<li>如果我们发现了outlier,当然第一反应就是删除这个observation,但是实际上,删除之前,我们要确认下,是
+不是我们model的问题</li>
+</ul>
+</div>
+</li>
+<li><a id="orgf9b374b"></a>High Leverage Points<br />
+<div class="outline-text-5" id="text-3-3-5-5">
+<ul class="org-ul">
+<li>前面讲过,对于某个response $y<sub>i</sub>$的observertion比较反常的的情况叫做outlier</li>
+<li>这节要讲的是,对于某个predictor $x<sub>i</sub>$的observertion比较反常的的情况叫做high leverage</li>
+<li>我们从图中解释一下:
+<ul class="org-ul">
+<li>图3-13</li>
+<li>左侧图中的41 observation就是high leverage,这个observation的predictor value相对于其他predictor
+来说比较大</li>
+<li>红色实线是包括41 observation的最小二乘回归拟合</li>
+<li>蓝色虚线是去除41 observation的最小二乘回归拟合</li>
+<li>相比于去除outlier,去除high leverage会极大的影响least squares line.</li>
+<li>正是由于几个high leverage observation就会严重影响最小二乘回归的line,所以我们一定要把这些high
+leverage的obervation给找出来</li>
+<li>在simple linear regression里面,非常容易找到high leverage,因为只需要看看predictor的值明显和其
+他predictor不在一块的情况就可以了.</li>
+<li>但是在multiple linear regression里面,却可能出现这种情况: 有个predictor,它在每个维度上面的值
+都是"合群"的,但是这些值组合起来就不"合群"了.比如上面中间的图:
+<ol class="org-ol">
+<li>所有的"合群"的值,应该是在蓝色虚线框定的一个椭圆形里面</li>
+<li>红色的点在二维空间里面肯定是不合群的</li>
+<li>红色的点的两个值X1,X2在各自的一维空间里面,却是"合群"的.</li>
+</ol></li>
+<li>二维空间我们还能画出来,但是一旦到了N维空间我们是画不出来的,所以,我们必须要有个数值来判定是
+否是high leverage,就是leverage statistic:
+<ul class="org-ul">
+<li><p>
+simple linear regression的计算leverage statistic的公式如下
+</p>
+\begin{equation}
+h_i = \frac{1}{n} + \frac{(x_i - \overline{x})^2}{\sum_{i'=1}^n(x_{i'}-\overline{x})^2}\tag{3.37}
+\end{equation}</li>
+<li>statistic的值越大,说明越可能是high leverage</li>
+<li>\(h_i\) 的值总是在1/n和1之间</li>
+<li>所有的observation的平均leverage等于(p+1)/n,如果某个observation的leverage statistic远远
+大于(p+1)/n,我们就会认为他是拥有high leverage的</li>
+</ul></li>
+</ul></li>
+<li>图3-13的右侧是把studentized residual和 \(h_i\) 都列在一起:
+<ul class="org-ul">
+<li>obvervation 41不仅仅是high leverage 同时也是high studentized redidual</li>
+<li>observation 20仅仅是high studentized redidual, 它的leverage并不high,所以其对least square fit
+影响并不大</li>
+</ul></li>
+</ul>
+</div>
+</li>
+<li><a id="orga96b75a"></a>Collinearity<br />
+<div class="outline-text-5" id="text-3-3-5-6">
+<ul class="org-ul">
+<li>Collinearity是说两个或者两个以上的predictor variable是相互联系的</li>
+<li>我们还是通过图来解释
+<ul class="org-ul">
+<li>图3-14</li>
+<li>左边的图中的limit和age没有明显的关系</li>
+<li>相反,右边图中的limit和rating却有明显的关系,这种情况就是collinear</li>
+<li>colinear的问题在于,limit和rating共同增加或减少,所以很难发现单独的一个predictor和response的关系</li>
+</ul></li>
+<li>我们再来看一个图表现了我们的困难
+<ul class="org-ul">
+<li>图3-15</li>
+<li>上图是不同模型RSS的contour plot:
+<ol class="org-ol">
+<li>左侧是predictor为limit,age,response为balance的模型,可以看到是一个比较正常的等值线</li>
+<li>右侧是predictor为limit,rating,response为balance的模型,可以看到由于 \(\(beta_Limit, \beta_Rating)\)
+太多相近值,导致最后的等值线非常的不正常</li>
+</ol></li>
+</ul></li>
+<li>由于collinearity减少了coefficient的精度,这会导致standard error \(\hat{\beta_j}\) 的提升,还会导致
+t-statistic的降低</li>
+<li><p>
+由于t-statistic的降低,我们的 \(H_0 : \beta_j = 0\) 可能会成立.换句话说,non-zero coefficient的可
+能性被collinearity降低了
+</p>
+<pre class="example" id="org92cbe28">
+The probability of correctly detecting a non-zero coefficient is reduced by collinearity
+</pre></li>
+<li>下面的图展示了两种不同的multiple regression model的coefficient
+<ul class="org-ul">
+<li>表3-11</li>
+<li>第一个regression的predictor是age和limit</li>
+<li>第二个regression的predictor是rating和limit</li>
+<li>可以看到第一个regression, age和limit都具有highly significant</li>
+<li>可以看到第二个regression, age和limit的p-value增加到了0.701</li>
+</ul></li>
+<li>每当遇到collinearity问题的时候,有两种解决办法:
+<ul class="org-ul">
+<li>直接去掉collinearity中的一个variable</li>
+<li>把collinearity的两个variable合并成一个</li>
+</ul></li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org8153bc9" class="outline-3">
+<h3 id="org8153bc9"><span class="section-number-3">3.4</span> The Marketing Plan</h3>
+<div class="outline-text-3" id="text-3-4">
+<ul class="org-ul">
+<li>我们现在回到开头的关于Advertising data的七个问题</li>
+</ul>
+</div>
+<div id="outline-container-org51b288e" class="outline-4">
+<h4 id="org51b288e"><span class="section-number-4">3.4.1</span> Is there a relationship between advertising sales and budget?</h4>
+<div class="outline-text-4" id="text-3-4-1">
+<ul class="org-ul">
+<li>想要回答这个问题,我们就需要创建一个multiple regression model:
+<ul class="org-ul">
+<li>predictor为TV, radio, newspaper</li>
+<li>response为sales</li>
+</ul></li>
+<li><p>
+针对这个新的model,我们来做测试一下如下的hypothesis
+</p>
+\begin{equation}
+H_0 : \beta_{tv} = \beta_{radio} = \beta_{newspaper} = 0
+\end{equation}</li>
+<li>我们使用f-statistic来判断,我们是否应该reject 这个null hypothesis</li>
+<li>在这个例子中,f-statistic对应的p-value非常的低,说明advertisig和sales之间,强烈的关系</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org6d8cd10" class="outline-4">
+<h4 id="org6d8cd10"><span class="section-number-4">3.4.2</span> How strongis the relationship?</h4>
+<div class="outline-text-4" id="text-3-4-2">
+<ul class="org-ul">
+<li>我们本章学习了两种方法来计算模型的accuracy:
+<ul class="org-ul">
+<li>RSE: RSE使用population regression line来估计response的standard deviation,Advertising data里面求得
+的RSE是1681,而response的平均值为14022,说明错误率大概是12%</li>
+<li>\(R^2\): \(R^2\) 记录response中有多少的百分比被predictor所解释</li>
+<li>在Advertising例子中, \(R^2\) 值为90%,说明90%的sales variance被predictor所解释了</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgf50d8e8" class="outline-4">
+<h4 id="orgf50d8e8"><span class="section-number-4">3.4.3</span> Which media contribute to sales?</h4>
+<div class="outline-text-4" id="text-3-4-3">
+<ul class="org-ul">
+<li>解释这个问题的法宝是predictor t-statistic的p-value</li>
+<li>在Advertising这个例子中:
+<ul class="org-ul">
+<li>TV, radio的p-value很低,说明他们和sales有直接作用</li>
+<li>newspaper的p-value很高,说明newspaper对sales没有直接作用</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgd31f907" class="outline-4">
+<h4 id="orgd31f907"><span class="section-number-4">3.4.4</span> How large is the effect of each medium on seles?</h4>
+<div class="outline-text-4" id="text-3-4-4">
+<ul class="org-ul">
+<li>我们可以使用standard error of $\hat{\beta_j}$来组建 $ &beta;<sub>j</sub>$的confidence interval</li>
+<li>对于Advertising数据来说, 95%的confidence interval的值:
+<ul class="org-ul">
+<li>TV是(0.043, 0.049)</li>
+<li>radio是(0.172, 0.206)</li>
+<li>newspaper是(-0.013, 0.001): 这个区间竟然包括0,说明variable不是statistically significant的</li>
+</ul></li>
+<li>我们后面学到了collinearity,下面通过VIF值来判断newspaper的confidence interval数据广,是不是因为collinearity:
+<ul class="org-ul">
+<li>TV的VIF score是1.005</li>
+<li>radio的VIF score是1.145</li>
+<li>newspaper的VIF score是1.145</li>
+<li>没有colinearity的迹象</li>
+</ul></li>
+<li>排除另外两个predictor,单独创建simple linear regression的效果:
+<ul class="org-ul">
+<li>TV和sales的association 是strong</li>
+<li>radio和sales的association 是strong</li>
+<li>newspaper和sales的association 是mild</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org6695680" class="outline-4">
+<h4 id="org6695680"><span class="section-number-4">3.4.5</span> How accurately can we predict future sales?</h4>
+<div class="outline-text-4" id="text-3-4-5">
+<ul class="org-ul">
+<li><p>
+我们可以使用如下的公式计算predict值
+</p>
+\begin{equation}
+\hat{y}=\hat{\beta_0} + \hat{\beta_1}x_1 + \hat{\beta_2}x_2 + \cdot\cdot\cdot + \hat{\beta_p}x_p,\tag{3.21}
+\end{equation}</li>
+<li>如果要计算这个模型的accuracy,那么就要分情况讨论:
+<ul class="org-ul">
+<li>如果要计算individual response(也就是 \(Y = f(x) + \varepsilon\) ), 我们就使用prediction interval</li>
+<li>如果要计算average response(也就是 \(Y = f(x)\) ), 我们就使用confidence interval</li>
+<li>由于prediction interval 包括了irreducible error ( $ &epsilon;$ ),所以相对于confidence interval要大一些</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org68d5a9f" class="outline-4">
+<h4 id="org68d5a9f"><span class="section-number-4">3.4.6</span> Is the relationship linear?</h4>
+<div class="outline-text-4" id="text-3-4-6">
+<ul class="org-ul">
+<li>我们学到了使用residual plot来判断non-linearity:
+<ul class="org-ul">
+<li>如果relationship是linear的,那么residual plot 应该显示出no pattern(比较随机)</li>
+<li>如果relationship是non-linear的,那么residual plot 应该显示出pattern (U,或者倒-U)</li>
+</ul></li>
+<li>对于Advertising data我们通过图3-5发现了它的non-linear effect(当然通过residual plot也可以发现),
+然后我们介绍了transformation of the predictor来缓解non-linear relationship</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org18db6d7" class="outline-4">
+<h4 id="org18db6d7"><span class="section-number-4">3.4.7</span> Is there synergy among the advertising media?</h4>
+<div class="outline-text-4" id="text-3-4-7">
+<ul class="org-ul">
+<li><p>
+standard linear regression model有一个假设就是: additive relationship between predictor and response:
+</p>
+<pre class="example" id="org16e1233">
+Additive model是非常容易解释的,其含义就是每个predictor对于response的贡献值是和其他predictor没有关系的
+</pre></li>
+<li>对于特定的数据集, additive assumption可能非常的不现实,我们介绍了如何引入一个interaction term来降低non-additive relationship</li>
+<li>interaction term的低p-value会揭示additive relationship的存在</li>
+<li>在 Advertising的例子中引入了interaction term之后,模型的 \(R^2\) 值从90%提升到了97%</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orge8b9770" class="outline-3">
+<h3 id="orge8b9770"><span class="section-number-3">3.5</span> Comparison of Linear Regression</h3>
+<div class="outline-text-3" id="text-3-5">
+<ul class="org-ul">
+<li>正如第二章讲的,linear regression是一种parametric approach,因为它成立有一个假设,就是假设你服从一
+个linear functional form: f(x)</li>
+<li>parametric method有很多的优势:
+<ul class="org-ul">
+<li>容易fit</li>
+<li>coefficient拥有simple interpretation</li>
+<li>test of statistical significance容易</li>
+</ul></li>
+<li>parametric method也有很多的缺点:
+<ul class="org-ul">
+<li>为了构建model,它必须设置一个强烈的assumption,就是数据符合一个f(X)</li>
+<li>如果真实的function form不是我们假设的样式,那么模型的准确率就非常的差</li>
+</ul></li>
+<li>相比之下, non-parametric method就不需要明确的assume一个parametric form f(X),它能够提供一个更加
+flexible的办法来performing regression</li>
+<li>本书介绍很多种non-parametirc method,这里我们先介绍一种最简单的,也是最广为人知的non-parametric
+method: KNN regression(K-nearest neighbors regression)</li>
+<li>KNN regression method的使用方法如下:
+<ul class="org-ul">
+<li>给定一个K的value,和一个prediction point \(x_0\)</li>
+<li>KNN regression会首先确定K个离 \(x_0\) 最近的observation,以 $N<sub>0</sub>$代表</li>
+<li>最后求这K个值的平均值</li>
+<li><p>
+整个过程的公式如下
+</p>
+\begin{equation}
+\hat{f}(x_0) = \frac{1}{K} \sum_{x_i \in N_0} {y_i}
+\end{equation}</li>
+</ul></li>
+<li>我们使用下图来介绍下拥有两个predictor的KNN
+<ul class="org-ul">
+<li>图3-16</li>
+<li>左边的图是一个K=1的情况,KNN的fit,比较明显的分成了几个阶段</li>
+<li>右边的图是一个K=9的情况,KNN的fit就会变得比较平滑</li>
+<li>总得来说K的最佳值会依赖于bias-variance tradeoff:
+<ol class="org-ol">
+<li>一个比较小的K值会提供最flexible fit: 拥有low bias,但是high variance</li>
+<li>一个比较大的k值会提供smoother的fit</li>
+<li>第五章我们会介绍多个estimating test error rate的方法,这些方法可以用来判断K的最佳值</li>
+</ol></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: harrifeng@outlook.com</p>
+<p class="date">Created: 2021-07-06 Tue 10:34</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
