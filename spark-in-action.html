@@ -1,0 +1,1733 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2021-07-07 Wed 13:46 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Spark In Action</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="harrifeng@outlook.com" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/readtheorg.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/js/readtheorg.js"></script>
+<script type="text/javascript">
+// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
+<!--/*--><![CDATA[/*><!--*/
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+    /*]]>*///-->
+// @license-end
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Spark In Action</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgf61d6ef">1. Chapter 1: So, what is Spark, anyway?</a>
+<ul>
+<li><a href="#orgf26668e">1.1. The big picture: What Spark is and what it does</a>
+<ul>
+<li><a href="#orgfeb9ac6">1.1.1. What is Spark?</a></li>
+<li><a href="#orge0a6994">1.1.2. The four pillars of mana</a></li>
+</ul>
+</li>
+<li><a href="#orgbcb03c1">1.2. How can you use Spark?</a>
+<ul>
+<li><a href="#org8058424">1.2.1. Spark in a data processing/engineering scenario</a></li>
+<li><a href="#orgca44eb5">1.2.2. Spark in a data science scenario</a></li>
+</ul>
+</li>
+<li><a href="#org1bf10e4">1.3. What can you do with Spark?</a>
+<ul>
+<li><a href="#orgfa74d01">1.3.1. Spark predicts restaurant quality at NC eateries</a></li>
+<li><a href="#org7fc43ef">1.3.2. Spark allows fast data transfor for Lumeris</a></li>
+<li><a href="#org97fbd9f">1.3.3. Spark analyzes equipment logs for CERN</a></li>
+<li><a href="#orgf20af9b">1.3.4. Other use cases</a></li>
+</ul>
+</li>
+<li><a href="#org6fc76c5">1.4. Why you will love the dataframe</a>
+<ul>
+<li><a href="#orge41caf9">1.4.1. The dataframe from a Java perspective</a></li>
+<li><a href="#org9355605">1.4.2. The dataframe from an RDBMS perspective</a></li>
+<li><a href="#org688d57d">1.4.3. A graphical representation of the dataframe</a></li>
+</ul>
+</li>
+<li><a href="#orga163399">1.5. Your first example</a>
+<ul>
+<li><a href="#org56a8134">1.5.1. Recommended software</a></li>
+<li><a href="#org9293880">1.5.2. Running your first application</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org6870c8d">2. Chapter 2: Architecture and flow</a>
+<ul>
+<li><a href="#org361abd9">2.1. Building your mental model</a></li>
+<li><a href="#org5337732">2.2. Using Java code to build your mental model</a></li>
+<li><a href="#orgb2d7cec">2.3. Walking through your application</a>
+<ul>
+<li><a href="#org79b3a29">2.3.1. Connecting to a master</a></li>
+<li><a href="#org39393da">2.3.2. Loading, or ingesting, the CSV file</a></li>
+<li><a href="#org8f4a1b8">2.3.3. Transforming your data</a></li>
+<li><a href="#org5f617ef">2.3.4. Saving the work done in your datafrmae to a database</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org9961b54">3. Chapter 3: The majestic role of the dataframe</a>
+<ul>
+<li><a href="#org346bd4c">3.1. The essential role of the dataframe in Spark</a>
+<ul>
+<li><a href="#org066e197">3.1.1. Organization of a dataframe</a></li>
+<li><a href="#org84d4fdb">3.1.2. Imutability is not a swear word</a></li>
+</ul>
+</li>
+<li><a href="#orgfc5e7d2">3.2. Using dataframes through examples</a>
+<ul>
+<li><a href="#org81f9daa">3.2.1. A dataframe after a simple CSV ingestion</a></li>
+<li><a href="#orgf6b49b2">3.2.2. Data is stored in partitions</a></li>
+<li><a href="#org7621cdb">3.2.3. Digging in the schema</a></li>
+<li><a href="#org96896cb">3.2.4. A datframe after a JSON ingestion</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgf61d6ef" class="outline-2">
+<h2 id="orgf61d6ef"><span class="section-number-2">1</span> Chapter 1: So, what is Spark, anyway?</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-orgf26668e" class="outline-3">
+<h3 id="orgf26668e"><span class="section-number-3">1.1</span> The big picture: What Spark is and what it does</h3>
+<div class="outline-text-3" id="text-1-1">
+</div>
+<div id="outline-container-orgfeb9ac6" class="outline-4">
+<h4 id="orgfeb9ac6"><span class="section-number-4">1.1.1</span> What is Spark?</h4>
+<div class="outline-text-4" id="text-1-1-1">
+<ul class="org-ul">
+<li>当你创建application的时候,你是在操作系统之上去创建app的.操作系统提供了很多基础服务,比如文件系统,
+网络驱动等,让你更容易的工作</li>
+<li>随着分布式计算的兴起,一个分布式的app需要引入分布式的功能.一个比较粗暴的做法,是通过library的方法
+向app里引入分布式计算和分析功能.使用library的方法有如下的缺点:
+<ul class="org-ul">
+<li>app变得更大</li>
+<li>app难以维护</li>
+<li>app更复杂,</li>
+<li>花费更高</li>
+</ul></li>
+<li>所以我们很自然的想到把分布式的计算和分析功能,像操作系统的基础服务一样,放到操作系统层,这样一来,
+带来很多优点:
+<ul class="org-ul">
+<li>提供统一的处理数据的能力(比如SQL)</li>
+<li>降低系统开发的成本</li>
+<li>关注于如何使用工具,而不是工具的内部运行原理</li>
+</ul></li>
+<li>其实spark就是这么做的,spark把自己做成了一个操作系统(只不过是在传统os的基础上又封装了一层),如图</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orge0a6994" class="outline-4">
+<h4 id="orge0a6994"><span class="section-number-4">1.1.2</span> The four pillars of mana</h4>
+<div class="outline-text-4" id="text-1-1-2">
+<ul class="org-ul">
+<li>对于spark来说,有四条支柱(four pillar),分别是:
+<ul class="org-ul">
+<li>Spark SQL</li>
+<li>Spark Streaming</li>
+<li>Spark MLlib(for machine learning)</li>
+<li>GraphX siting on top of Spark Core</li>
+</ul></li>
+<li>在这个基础上,下面的图有添加了hardware, os, 和application,如图(应用通过unified API来和spark交互)</li>
+<li>当然了,你的app可能spark运行的cluster接触不多,你主要通过如下的途径来接触spark:
+<ul class="org-ul">
+<li>Spark SQL: 你可以使用传统的SQL来和spark交互,Spark SQL是Spark的基石</li>
+<li>Spark Streaming: 新版本引入了structured streaming, 这是用来分析streaming data的流处理框架
+spark unified API会使用相似的方式来处理streamed data以及batch data</li>
+<li>Spark MLlib: 用来处理机器学习相关内容</li>
+<li>GraphX:用来处理graph data structure</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgbcb03c1" class="outline-3">
+<h3 id="orgbcb03c1"><span class="section-number-3">1.2</span> How can you use Spark?</h3>
+<div class="outline-text-3" id="text-1-2">
+</div>
+<div id="outline-container-org8058424" class="outline-4">
+<h4 id="org8058424"><span class="section-number-4">1.2.1</span> Spark in a data processing/engineering scenario</h4>
+<div class="outline-text-4" id="text-1-2-1">
+<ul class="org-ul">
+<li>spark 在大数据的如下领域比较出色:
+<ul class="org-ul">
+<li>ingest data</li>
+<li>clean data</li>
+<li>transform data</li>
+<li>republish data</li>
+</ul></li>
+<li>一个data enginneer 会使用如下四个步骤来使用spark
+<ul class="org-ul">
+<li>Ingestion</li>
+<li>Improvement of data qality (DQ)</li>
+<li>Transformation</li>
+<li>Publication</li>
+</ul></li>
+<li>整个过程分为四个步骤,每个步骤之后,data都会进入一个zone:
+<ul class="org-ul">
+<li>Ingesting data(数据获取): Spark可以从很多数据源获取数据,数据在这个阶段叫做raw data zone. 这个
+阶段叫做staging, landing, bronze, swamp zone</li>
+<li>Improving data quality (DQ): 在处理数据之前,你可能想去check一下data的质量.
+<ul class="org-ul">
+<li>比如我们可以使用DQ来确认下所有的生日都发生在以前</li>
+<li>我们可以把这个阶段叫做pure data zone</li>
+</ul></li>
+<li>Transforming data: 下一个阶段计算处理data,你可以把这个data和其他的data join起来,或者做些机器学习
+的处理.这个步骤是为了丰富data,所以叫做rich data zone</li>
+<li>Loading and publishing: 这一步你就可以把数据存储到data warehouse,或者存储到文件</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgca44eb5" class="outline-4">
+<h4 id="orgca44eb5"><span class="section-number-4">1.2.2</span> Spark in a data science scenario</h4>
+<div class="outline-text-4" id="text-1-2-2">
+<ul class="org-ul">
+<li>数据科学家和软件开发工程师有一些细微的不同,数据科学家专注于transformation part,并且喜欢interactive
+的交互方式(使用Jupyter)</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org1bf10e4" class="outline-3">
+<h3 id="org1bf10e4"><span class="section-number-3">1.3</span> What can you do with Spark?</h3>
+<div class="outline-text-3" id="text-1-3">
+<ul class="org-ul">
+<li>spark的use case都是那些在一台电脑上不能处理的情况</li>
+</ul>
+</div>
+<div id="outline-container-orgfa74d01" class="outline-4">
+<h4 id="orgfa74d01"><span class="section-number-4">1.3.1</span> Spark predicts restaurant quality at NC eateries</h4>
+<div class="outline-text-4" id="text-1-3-1">
+<ul class="org-ul">
+<li>用来统一评分数据</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org7fc43ef" class="outline-4">
+<h4 id="org7fc43ef"><span class="section-number-4">1.3.2</span> Spark allows fast data transfor for Lumeris</h4>
+</div>
+<div id="outline-container-org97fbd9f" class="outline-4">
+<h4 id="org97fbd9f"><span class="section-number-4">1.3.3</span> Spark analyzes equipment logs for CERN</h4>
+</div>
+<div id="outline-container-orgf20af9b" class="outline-4">
+<h4 id="orgf20af9b"><span class="section-number-4">1.3.4</span> Other use cases</h4>
+</div>
+</div>
+<div id="outline-container-org6fc76c5" class="outline-3">
+<h3 id="org6fc76c5"><span class="section-number-3">1.4</span> Why you will love the dataframe</h3>
+<div class="outline-text-3" id="text-1-4">
+<ul class="org-ul">
+<li>本节,我们的目的是让你喜欢上dataframe</li>
+<li>在spark语境里面,dataframe既是一个data container,又是一个API</li>
+<li>对于spark来说,dataframe的概念非常重要.在本节,你会看到:
+<ul class="org-ul">
+<li>从java的角度(程序开发者的角度)看,什么是dataframe</li>
+<li>从RDBMS的角度(数据科学家的角度)看,什么是dataframe</li>
+</ul></li>
+</ul>
+</div>
+<div id="outline-container-orge41caf9" class="outline-4">
+<h4 id="orge41caf9"><span class="section-number-4">1.4.1</span> The dataframe from a Java perspective</h4>
+<div class="outline-text-4" id="text-1-4-1">
+<ul class="org-ul">
+<li>如果你了解过JDBC,那么你就能感觉到dataframe和ResultSet很像:
+<ul class="org-ul">
+<li>两者的相同之处:
+<ol class="org-ol">
+<li>数据是通过API获得的</li>
+<li>你可以获取到schema</li>
+</ol></li>
+<li>两者的不同之处:
+<ol class="org-ol">
+<li>dataframe不使用next()函数</li>
+<li>spark里面新引入了UDF的概念</li>
+<li>你要先获取Row,然后再使用getter</li>
+<li>Metadat更加基本,Spark中没有主键和外键,索引的概念</li>
+</ol></li>
+<li>在java里面,dataframe会被实现成Dataset&lt;Row&gt;</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org9355605" class="outline-4">
+<h4 id="org9355605"><span class="section-number-4">1.4.2</span> The dataframe from an RDBMS perspective</h4>
+<div class="outline-text-4" id="text-1-4-2">
+<ul class="org-ul">
+<li>如果你来自数据库领域,那么你会发现dataframe很像一个table
+<ul class="org-ul">
+<li>两者的相同之处:
+<ol class="org-ol">
+<li>数据使用column和row来描述</li>
+<li>column是强类型的</li>
+</ol></li>
+<li>两者的不同之处:
+<ol class="org-ol">
+<li>数据是可以nested的,就像json格式</li>
+<li>你不去更新或者删除row,你只是创建新的dataframe</li>
+<li>你可以很轻松的增加或者删除column</li>
+<li>在dataframe上面没有索引,主键,外键这些概念</li>
+</ol></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org688d57d" class="outline-4">
+<h4 id="org688d57d"><span class="section-number-4">1.4.3</span> A graphical representation of the dataframe</h4>
+<div class="outline-text-4" id="text-1-4-3">
+<ul class="org-ul">
+<li>dataframe是整本书你都要用到的强大的工具,图1-7展示了API,implementation和storage的关系
+<ul class="org-ul">
+<li>图1-7</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orga163399" class="outline-3">
+<h3 id="orga163399"><span class="section-number-3">1.5</span> Your first example</h3>
+<div class="outline-text-3" id="text-1-5">
+<ul class="org-ul">
+<li>第一个spark例子,是:
+<ul class="org-ul">
+<li>读取一个文件</li>
+<li>把内容存储到dataframe</li>
+<li>展示内容</li>
+</ul></li>
+</ul>
+</div>
+<div id="outline-container-org56a8134" class="outline-4">
+<h4 id="org56a8134"><span class="section-number-4">1.5.1</span> Recommended software</h4>
+<div class="outline-text-4" id="text-1-5-1">
+<ul class="org-ul">
+<li>Apache Spark 3.0.0</li>
+<li>Unix-like OS system</li>
+<li>Java 8</li>
+<li>Maven 3.5.2 or above</li>
+<li>Git</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org9293880" class="outline-4">
+<h4 id="org9293880"><span class="section-number-4">1.5.2</span> Running your first application</h4>
+<div class="outline-text-4" id="text-1-5-2">
+<ul class="org-ul">
+<li><p>
+示例代码如下:
+</p>
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #e68183;">package</span> net.jgp.books.spark.ch01.<span style="color: #d3a0bc;">lab100_csv_to_dataframe</span>;
+
+<span style="color: #e68183;">import</span> <span style="color: #d3a0bc;">org</span>.<span style="color: #d3a0bc;">apache</span>.<span style="color: #d3a0bc;">spark</span>.<span style="color: #d3a0bc;">sql</span>.<span style="color: #d9bb80;">Dataset</span>;
+<span style="color: #e68183;">import</span> <span style="color: #d3a0bc;">org</span>.<span style="color: #d3a0bc;">apache</span>.<span style="color: #d3a0bc;">spark</span>.<span style="color: #d3a0bc;">sql</span>.<span style="color: #d9bb80;">Row</span>;
+<span style="color: #e68183;">import</span> <span style="color: #d3a0bc;">org</span>.<span style="color: #d3a0bc;">apache</span>.<span style="color: #d3a0bc;">spark</span>.<span style="color: #d3a0bc;">sql</span>.<span style="color: #d9bb80;">SparkSession</span>;
+
+<span style="color: #e1d7c0;">/**</span>
+<span style="color: #e1d7c0;"> * CSV ingestion in a dataframe.</span>
+<span style="color: #e1d7c0;"> *</span>
+<span style="color: #e1d7c0;"> * </span><span style="color: #d3a0bc;">@author</span><span style="color: #e1d7c0;"> jgp</span>
+<span style="color: #e1d7c0;"> */</span>
+<span style="color: #e68183;">public</span> <span style="color: #e68183;">class</span> <span style="color: #d9bb80;">CsvToDataframeApp</span> {
+
+  <span style="color: #e1d7c0;">/**</span>
+<span style="color: #e1d7c0;">   * main() is your entry point to the application.</span>
+<span style="color: #e1d7c0;">   *</span>
+<span style="color: #e1d7c0;">   * </span><span style="color: #d3a0bc;">@param</span><span style="color: #e1d7c0;"> args</span>
+<span style="color: #e1d7c0;">   */</span>
+  <span style="color: #e68183;">public</span> <span style="color: #e68183;">static</span> <span style="color: #d9bb80;">void</span> <span style="color: #87c095;">main</span>(<span style="color: #d9bb80;">String</span>[] <span style="color: #87c095; font-style: italic;">args</span>) {
+    <span style="color: #d9bb80;">CsvToDataframeApp</span> <span style="color: #87c095; font-style: italic;">app</span> = <span style="color: #e68183;">new</span> <span style="color: #d9bb80;">CsvToDataframeApp</span>();
+    app.start();
+  }
+
+  <span style="color: #e1d7c0;">/**</span>
+<span style="color: #e1d7c0;">   * The processing code.</span>
+<span style="color: #e1d7c0;">   */</span>
+  <span style="color: #e68183;">private</span> <span style="color: #d9bb80;">void</span> <span style="color: #87c095;">start</span>() {
+    <span style="color: #5b5b5b;">// </span><span style="color: #5b5b5b;">Creates a session on a local master</span>
+    <span style="color: #d9bb80;">SparkSession</span> <span style="color: #87c095; font-style: italic;">spark</span> = SparkSession.builder()
+        .appName(<span style="color: #87af87;">"CSV to Dataset"</span>)
+        .master(<span style="color: #87af87;">"local"</span>)
+        .getOrCreate();
+
+    <span style="color: #5b5b5b;">// </span><span style="color: #5b5b5b;">Reads a CSV file with header, called books.csv, stores it in a</span>
+    <span style="color: #5b5b5b;">// </span><span style="color: #5b5b5b;">dataframe</span>
+    <span style="color: #d9bb80;">Dataset</span>&lt;<span style="color: #d9bb80;">Row</span>&gt; <span style="color: #87c095; font-style: italic;">df</span> = spark.read().format(<span style="color: #87af87;">"csv"</span>)
+        .option(<span style="color: #87af87;">"header"</span>, <span style="color: #87af87;">"true"</span>)
+        .load(<span style="color: #87af87;">"data/books.csv"</span>);
+
+    <span style="color: #5b5b5b;">// </span><span style="color: #5b5b5b;">Shows at most 5 rows from the dataframe</span>
+    df.show(5);
+  }
+}
+</pre>
+</div></li>
+<li><p>
+运行代码如下
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">$ mvn clean install exec:exec
+[INFO] Scanning for projects...
+
++---+--------+--------------------+-----------+--------------------+
+| id|authorId|               title|releaseDate|                link|
++---+--------+--------------------+-----------+--------------------+
+|  1|       1|Fantastic Beasts ...|   11/18/16|http://amzn.to/2k...|
+|  2|       1|Harry Potter and ...|    10/6/15|http://amzn.to/2l...|
+|  3|       1|The Tales of Beed...|    12/4/08|http://amzn.to/2k...|
+|  4|       1|Harry Potter and ...|    10/4/16|http://amzn.to/2k...|
+|  5|       2|Informix 12.10 on...|    4/23/17|http://amzn.to/2i...|
++---+--------+--------------------+-----------+--------------------+
+only showing top 5 rows
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  14.668 s
+[INFO] Finished at: 2021-06-21T20:03:36+08:00
+[INFO] ------------------------------------------------------------------------
+</pre>
+</div></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org6870c8d" class="outline-2">
+<h2 id="org6870c8d"><span class="section-number-2">2</span> Chapter 2: Architecture and flow</h2>
+<div class="outline-text-2" id="text-2">
+<ul class="org-ul">
+<li>本章你会实践如下的一个项目:
+<ul class="org-ul">
+<li>loading 一个CSV file</li>
+<li>做一些操作</li>
+<li>把操作结果写入到PostgreSQL里面</li>
+</ul></li>
+</ul>
+</div>
+<div id="outline-container-org361abd9" class="outline-3">
+<h3 id="org361abd9"><span class="section-number-3">2.1</span> Building your mental model</h3>
+<div class="outline-text-3" id="text-2-1">
+<ul class="org-ul">
+<li><p>
+本书起了个名叫mental model,所谓mental model是指
+</p>
+<pre class="example" id="orgbff820a">
+In terms of software, mental model is a conceptual map that you can use to plan
+preict,diagnose, and debug your applications
+</pre></li>
+<li>为了能够开始构建mental model,你要先了解大数据的整体架构</li>
+<li>假设你有如下的大数据场景: 你是一个书商,有一个list的author存在一个file里面,你想对这些author做些
+操作,然后把结果存到数据库里面.在技术方面,这个过程如下:
+<ul class="org-ul">
+<li>准备一个csv文件</li>
+<li>把csv文件中的姓和名组合起来,形成新的data</li>
+<li>把新的data存储到database</li>
+</ul></li>
+<li>图2-1解释了你和spark分别做了哪些工作:
+<ul class="org-ul">
+<li>图2-1</li>
+<li>你的application代码,叫做driver(因为这个app drive了master),连接了一个spak cluster</li>
+<li>application会告诉cluster做什么</li>
+<li>master开始loading CSV file并且把结果存入了数据库</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org5337732" class="outline-3">
+<h3 id="org5337732"><span class="section-number-3">2.2</span> Using Java code to build your mental model</h3>
+<div class="outline-text-3" id="text-2-2">
+<ul class="org-ul">
+<li>图2-2简单描述了我们第二章的例子都做了哪些事情:
+<ul class="org-ul">
+<li>图2-2</li>
+<li>Spark读取csv file</li>
+<li>Spark把first name 加上逗号,再加上last name,合并成新字符串</li>
+<li>把新字符串存入到数据库</li>
+</ul></li>
+<li><p>
+下面就是全部代码
+</p>
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #e68183;">package</span> net.jgp.books.spark.ch02.<span style="color: #d3a0bc;">lab100_csv_to_db</span>;
+
+<span style="color: #e68183;">import</span> <span style="color: #e68183;">static</span> org.apache.spark.sql.functions.<span style="color: #d9bb80;">concat</span>;
+<span style="color: #e68183;">import</span> <span style="color: #e68183;">static</span> org.apache.spark.sql.functions.<span style="color: #d9bb80;">lit</span>;
+
+<span style="color: #e68183;">import</span> <span style="color: #d3a0bc;">java</span>.<span style="color: #d3a0bc;">util</span>.<span style="color: #d9bb80;">Properties</span>;
+
+<span style="color: #e68183;">import</span> <span style="color: #d3a0bc;">org</span>.<span style="color: #d3a0bc;">apache</span>.<span style="color: #d3a0bc;">spark</span>.<span style="color: #d3a0bc;">sql</span>.<span style="color: #d9bb80;">Dataset</span>;
+<span style="color: #e68183;">import</span> <span style="color: #d3a0bc;">org</span>.<span style="color: #d3a0bc;">apache</span>.<span style="color: #d3a0bc;">spark</span>.<span style="color: #d3a0bc;">sql</span>.<span style="color: #d9bb80;">Row</span>;
+<span style="color: #e68183;">import</span> <span style="color: #d3a0bc;">org</span>.<span style="color: #d3a0bc;">apache</span>.<span style="color: #d3a0bc;">spark</span>.<span style="color: #d3a0bc;">sql</span>.<span style="color: #d9bb80;">SaveMode</span>;
+<span style="color: #e68183;">import</span> <span style="color: #d3a0bc;">org</span>.<span style="color: #d3a0bc;">apache</span>.<span style="color: #d3a0bc;">spark</span>.<span style="color: #d3a0bc;">sql</span>.<span style="color: #d9bb80;">SparkSession</span>;
+
+<span style="color: #e1d7c0;">/**</span>
+<span style="color: #e1d7c0;"> * CSV to a relational database.</span>
+<span style="color: #e1d7c0;"> *</span>
+<span style="color: #e1d7c0;"> * </span><span style="color: #d3a0bc;">@author</span><span style="color: #e1d7c0;"> jgp</span>
+<span style="color: #e1d7c0;"> */</span>
+<span style="color: #e68183;">public</span> <span style="color: #e68183;">class</span> <span style="color: #d9bb80;">CsvToRelationalDatabaseApp</span> {
+
+  <span style="color: #e1d7c0;">/**</span>
+<span style="color: #e1d7c0;">   * main() is your entry point to the application.</span>
+<span style="color: #e1d7c0;">   *</span>
+<span style="color: #e1d7c0;">   * </span><span style="color: #d3a0bc;">@param</span><span style="color: #e1d7c0;"> args</span>
+<span style="color: #e1d7c0;">   */</span>
+  <span style="color: #e68183;">public</span> <span style="color: #e68183;">static</span> <span style="color: #d9bb80;">void</span> <span style="color: #87c095;">main</span>(<span style="color: #d9bb80;">String</span>[] <span style="color: #87c095; font-style: italic;">args</span>) {
+    <span style="color: #d9bb80;">CsvToRelationalDatabaseApp</span> <span style="color: #87c095; font-style: italic;">app</span> = <span style="color: #e68183;">new</span> <span style="color: #d9bb80;">CsvToRelationalDatabaseApp</span>();
+    app.start();
+  }
+
+  <span style="color: #e1d7c0;">/**</span>
+<span style="color: #e1d7c0;">   * The processing code.</span>
+<span style="color: #e1d7c0;">   */</span>
+  <span style="color: #e68183;">private</span> <span style="color: #d9bb80;">void</span> <span style="color: #87c095;">start</span>() {
+    <span style="color: #5b5b5b;">// </span><span style="color: #5b5b5b;">Creates a session on a local master</span>
+    <span style="color: #d9bb80;">SparkSession</span> <span style="color: #87c095; font-style: italic;">spark</span> = SparkSession.builder()
+        .appName(<span style="color: #87af87;">"CSV to DB"</span>)
+        .master(<span style="color: #87af87;">"local"</span>)
+        .getOrCreate();
+
+    <span style="color: #5b5b5b;">// </span><span style="color: #5b5b5b;">Step 1: Ingestion</span>
+    <span style="color: #5b5b5b;">// </span><span style="color: #5b5b5b;">---------</span>
+
+    <span style="color: #5b5b5b;">// </span><span style="color: #5b5b5b;">Reads a CSV file with header, called authors.csv, stores it in a</span>
+    <span style="color: #5b5b5b;">// </span><span style="color: #5b5b5b;">dataframe</span>
+    <span style="color: #d9bb80;">Dataset</span>&lt;<span style="color: #d9bb80;">Row</span>&gt; <span style="color: #87c095; font-style: italic;">df</span> = spark.read()
+        .format(<span style="color: #87af87;">"csv"</span>)
+        .option(<span style="color: #87af87;">"header"</span>, <span style="color: #87af87;">"true"</span>)
+        .load(<span style="color: #87af87;">"data/authors.csv"</span>);
+
+    <span style="color: #5b5b5b;">// </span><span style="color: #5b5b5b;">Step 2: Transform</span>
+    <span style="color: #5b5b5b;">// </span><span style="color: #5b5b5b;">---------</span>
+
+    <span style="color: #5b5b5b;">// </span><span style="color: #5b5b5b;">Creates a new column called "name" as the concatenation of lname, a</span>
+    <span style="color: #5b5b5b;">// </span><span style="color: #5b5b5b;">virtual column containing ", " and the fname column</span>
+    df = df.withColumn(
+        <span style="color: #87af87;">"name"</span>,
+        concat(df.col(<span style="color: #87af87;">"lname"</span>), lit(<span style="color: #87af87;">", "</span>), df.col(<span style="color: #87af87;">"fname"</span>)));
+
+    <span style="color: #5b5b5b;">// </span><span style="color: #5b5b5b;">Step 3: Save</span>
+    <span style="color: #5b5b5b;">// </span><span style="color: #5b5b5b;">---------</span>
+
+    <span style="color: #5b5b5b;">// </span><span style="color: #5b5b5b;">The connection URL, assuming your PostgreSQL instance runs locally on</span>
+    <span style="color: #5b5b5b;">// </span><span style="color: #5b5b5b;">the</span>
+    <span style="color: #5b5b5b;">// </span><span style="color: #5b5b5b;">default port, and the database we use is "spark_labs"</span>
+    <span style="color: #d9bb80;">String</span> <span style="color: #87c095; font-style: italic;">dbConnectionUrl</span> = <span style="color: #87af87;">"jdbc:postgresql://127.0.0.1/root"</span>;
+
+    <span style="color: #5b5b5b;">// </span><span style="color: #5b5b5b;">Properties to connect to the database, the JDBC driver is part of our</span>
+    <span style="color: #5b5b5b;">// </span><span style="color: #5b5b5b;">pom.xml</span>
+    <span style="color: #d9bb80;">Properties</span> <span style="color: #87c095; font-style: italic;">prop</span> = <span style="color: #e68183;">new</span> <span style="color: #d9bb80;">Properties</span>();
+    prop.setProperty(<span style="color: #87af87;">"driver"</span>, <span style="color: #87af87;">"org.postgresql.Driver"</span>);
+    prop.setProperty(<span style="color: #87af87;">"user"</span>, <span style="color: #87af87;">"root"</span>);
+    prop.setProperty(<span style="color: #87af87;">"password"</span>, <span style="color: #87af87;">"rootpass"</span>);
+
+    <span style="color: #5b5b5b;">// </span><span style="color: #5b5b5b;">Write in a table called ch02</span>
+    df.write()
+        .mode(<span style="color: #d3a0bc;">SaveMode</span>.Overwrite)
+        .jdbc(dbConnectionUrl, <span style="color: #87af87;">"ch02"</span>, prop);
+
+    System.out.println(<span style="color: #87af87;">"Process complete"</span>);
+  }
+}
+</pre>
+</div></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgb2d7cec" class="outline-3">
+<h3 id="orgb2d7cec"><span class="section-number-3">2.3</span> Walking through your application</h3>
+<div class="outline-text-3" id="text-2-3">
+<ul class="org-ul">
+<li>我们来分析下上面的代码</li>
+</ul>
+</div>
+<div id="outline-container-org79b3a29" class="outline-4">
+<h4 id="org79b3a29"><span class="section-number-4">2.3.1</span> Connecting to a master</h4>
+<div class="outline-text-4" id="text-2-3-1">
+<ul class="org-ul">
+<li><p>
+对每一个spark app来说,第一个operation总是connect到Spark master,得到一个Spark session,代码如下
+</p>
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #d9bb80;">SparkSession</span> <span style="color: #87c095; font-style: italic;">spark</span> = SparkSession.builder()
+    .appName(<span style="color: #87af87;">"CSV to DB"</span>)
+    .master(<span style="color: #87af87;">"local"</span>)
+    .getOrCreate();
+</pre>
+</div></li>
+<li>第一步的工作比较简单:
+<ul class="org-ul">
+<li>图2-4</li>
+<li>在t0时间,你开始application</li>
+<li>在t1时间,获取了session</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org39393da" class="outline-4">
+<h4 id="org39393da"><span class="section-number-4">2.3.2</span> Loading, or ingesting, the CSV file</h4>
+<div class="outline-text-4" id="text-2-3-2">
+<ul class="org-ul">
+<li>题目叫loading, or ingesting the CSV file,其实就是一个动作可以用多个单纯,这三个单词都是从csv获
+取数据的意思:
+<ul class="org-ul">
+<li>loading</li>
+<li>ingesting</li>
+<li>reading</li>
+</ul></li>
+<li>spark可以从多个cluster的node里面实施distributed ingestion</li>
+<li>spark不会让master做很多事情, spark主要依赖worker,如下图
+<ul class="org-ul">
+<li>图2-5</li>
+<li>这里有三个worker, 这三个worker在同一时间进行ingestion,叫做distributed ingestion.这里很多人会
+疑惑:如果有三个worker,谁来load file,如果同时读取,如何判断谁先谁后</li>
+<li>其实spark是把文件分成了不同的partition,每个worker读取自己的partition</li>
+<li><p>
+在t2阶段,master要求worker来load file,代码如下
+</p>
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #d9bb80;">Dataset</span>&lt;<span style="color: #d9bb80;">Row</span>&gt; <span style="color: #87c095; font-style: italic;">df</span> = spark.read()
+    .format(<span style="color: #87af87;">"csv"</span>)
+    .option(<span style="color: #87af87;">"header', "</span><span style="color: #d3a0bc;">true</span><span style="color: #d9bb80;">"</span><span style="color: #87af87;">)</span>
+    .load(<span style="color: #87af87;">"data/authors.csv"</span>);
+</pre>
+</div></li>
+<li><p>
+上面的option提到了header,也就是说把csv文件的第一行当做header,我们来看看csv文件内容
+</p>
+<pre class="example" id="org76fd54d">
+lname,fname
+Pascal,Blaise
+Voltaire,François
+Perrin,Jean-Georges
+Maréchal,Pierre
+Sylvain
+Karau,Holden
+Zaharia,Matei
+</pre></li>
+</ul></li>
+<li>worker的下一层就是task
+<ul class="org-ul">
+<li>图2-6</li>
+<li>每个worker会根据当前资源的情况创建task</li>
+<li>woker会assign memory partition给每个task</li>
+<li>图中的实心的task是正在工作的task,空心的是没有在工作的task</li>
+<li>csv文件里面每一行就是一个record(排除了header)</li>
+</ul></li>
+<li>下面就是具体的ingestion process
+<ul class="org-ul">
+<li>图2-7</li>
+<li>每个task有一个memory partition</li>
+<li>csv file里的每一行是一个record</li>
+<li>record被平均分配到不同的partition, memory box会显示哪个record在哪个partition,比如record1(Pascal,Blaise)
+就到了第一个worker的第一个partition,这个过程叫做R&gt;P</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org8f4a1b8" class="outline-4">
+<h4 id="org8f4a1b8"><span class="section-number-4">2.3.3</span> Transforming your data</h4>
+<div class="outline-text-4" id="text-2-3-3">
+<ul class="org-ul">
+<li>data一旦load,你就可以处理数据(process the records)了
+<ul class="org-ul">
+<li>图2-8</li>
+<li>处理数据的过程非常简单,把lname, fname加起来合成一个新的field叫name</li>
+<li><p>
+Spark增加了一个transformation到flow
+</p>
+<div class="org-src-container">
+<pre class="src src-java">df = df.withColumn(<span style="color: #87af87;">"name"</span>,
+                   concat(df.col(<span style="color: #87af87;">"lname"</span>), lit(<span style="color: #87af87;">", "</span>), df.col(<span style="color: #87af87;">"fname"</span>)));
+
+</pre>
+</div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org5f617ef" class="outline-4">
+<h4 id="org5f617ef"><span class="section-number-4">2.3.4</span> Saving the work done in your datafrmae to a database</h4>
+<div class="outline-text-4" id="text-2-3-4">
+<ul class="org-ul">
+<li>最后一步就是把结果写入到数据库:
+<ul class="org-ul">
+<li>图2-9</li>
+<li><p>
+代码如下
+</p>
+<div class="org-src-container">
+<pre class="src src-java">
+<span style="color: #d9bb80;">Properties</span> <span style="color: #87c095; font-style: italic;">prop</span> = <span style="color: #e68183;">new</span> <span style="color: #d9bb80;">Properties</span>();
+prop.setProperty(<span style="color: #87af87;">"driver"</span>, <span style="color: #87af87;">"org.postgresql.Driver"</span>);
+prop.setProperty(<span style="color: #87af87;">"user"</span>, <span style="color: #87af87;">"root"</span>);
+prop.setProperty(<span style="color: #87af87;">"password"</span>, <span style="color: #87af87;">"rootpass"</span>);
+
+<span style="color: #5b5b5b;">// </span><span style="color: #5b5b5b;">Write in a table called ch02</span>
+df.write()
+    .mode(<span style="color: #d3a0bc;">SaveMode</span>.Overwrite)
+    .jdbc(dbConnectionUrl, <span style="color: #87af87;">"ch02"</span>, prop);
+</pre>
+</div></li>
+<li>write()函数返回DataFrameWriter对象,然后在这个对象上面chain一个mode()函数</li>
+</ul></li>
+<li>全部过程如下:
+<ul class="org-ul">
+<li>图2-10</li>
+<li>需要注意如下几点:
+<ol class="org-ol">
+<li>整个dataset从来没有和application(driver)接触过,dataset的split是在worker,而不是在driver</li>
+<li>整个过程发生在worker</li>
+<li>worker把内部partition的data存储到database,在这个例子里面有四个connection同时连接数据库,如
+果这个数字太大,比如超过1000,那么数据库会refuse too many connection.所以这里后期我们需要进行
+改进</li>
+</ol></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org9961b54" class="outline-2">
+<h2 id="org9961b54"><span class="section-number-2">3</span> Chapter 3: The majestic role of the dataframe</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-org346bd4c" class="outline-3">
+<h3 id="org346bd4c"><span class="section-number-3">3.1</span> The essential role of the dataframe in Spark</h3>
+<div class="outline-text-3" id="text-3-1">
+<ul class="org-ul">
+<li>dataframe既是一个data structure,又是API,如图3-1</li>
+</ul>
+</div>
+<div id="outline-container-org066e197" class="outline-4">
+<h4 id="org066e197"><span class="section-number-4">3.1.1</span> Organization of a dataframe</h4>
+<div class="outline-text-4" id="text-3-1-1">
+<ul class="org-ul">
+<li>dataframe是一系列record组成的.和关系数据库里面的table是一个意思</li>
+<li>如下图:
+<ul class="org-ul">
+<li>图3-2</li>
+<li>dataframe可以从多种resource进行创建:
+<ol class="org-ol">
+<li>file</li>
+<li>database</li>
+<li>custom data source</li>
+</ol></li>
+</ul></li>
+<li>dataframe使用如下的形式展示Dataset&lt;Row&gt;</li>
+<li>storage可以选择是在硬盘还是内存,如果选择了内存,spark会尽可能的使用最多的内存</li>
+<li>dataframe会以StructType的形式包括schema,并且为了debug方便,提供了printSchema()</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org84d4fdb" class="outline-4">
+<h4 id="org84d4fdb"><span class="section-number-4">3.1.2</span> Imutability is not a swear word</h4>
+<div class="outline-text-4" id="text-3-1-2">
+<ul class="org-ul">
+<li>dataframe(包括RDD),会被认为是immutable storage.所谓immutable,就意味着一旦创建,就无法更改</li>
+<li>刚才我们还说到了process data,但是dataframe却是immutable的,这个看起来矛盾的逻辑可以用图来解释:
+<ul class="org-ul">
+<li>图3-3</li>
+<li>最开始的那个state,data是immutable的</li>
+<li>然后你可以开始process data,也就是更改这些数据,但是spark只存储transformation的step,而不是存储
+transformation之后的data</li>
+</ul></li>
+<li>为什么要使用immutable会在node多了情况下(分布式的情况下),会变得更加容易理解
+<ul class="org-ul">
+<li>图3-4</li>
+<li>在分布式的情况下,storage有如下choice:
+<ol class="org-ol">
+<li>store data,并且每次更改都存储在每个node</li>
+<li>在node之间,只分享transformation recipe</li>
+</ol></li>
+<li>spark使用了第二种方法,因为在node之间分享recipe会比分享data更简单</li>
+<li>在实际开发中,不需要太关注immutability, spark已经帮我们处理好了</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgfc5e7d2" class="outline-3">
+<h3 id="orgfc5e7d2"><span class="section-number-3">3.2</span> Using dataframes through examples</h3>
+<div class="outline-text-3" id="text-3-2">
+<ul class="org-ul">
+<li>本章我们回学习如何combine两个dataset,整体过程如图3-5</li>
+<li>合并后的dataframe,必须包含原有的所有field,如图3-6</li>
+</ul>
+</div>
+<div id="outline-container-org81f9daa" class="outline-4">
+<h4 id="org81f9daa"><span class="section-number-4">3.2.1</span> A dataframe after a simple CSV ingestion</h4>
+<div class="outline-text-4" id="text-3-2-1">
+<ul class="org-ul">
+<li>在这一节,你需要先ingest数据,然后在dataframe里面查阅数据,最后再来理解数据</li>
+<li>我们在去餐馆之前,会喜欢到大众点评了解餐厅的食物类别,位置,环境等因素</li>
+<li>大众点评可能从不同渠道获得这些餐厅的数据,原始数据的格式可能并不一样,比如有些是csv格式的,另外一
+些是json格式的,如图3-7</li>
+<li>我们需要把Wake County restaurant数据里面的key,和目标dataframe的key进行一一对应,如果field不存在,
+那么还要创建,整个过程如图3-8</li>
+<li>这段过程的
+<ul class="org-ul">
+<li><p>
+代码如下
+</p>
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #e68183;">package</span> net.jgp.books.spark.ch03.<span style="color: #d3a0bc;">lab200_ingestion_schema_manipulation</span>;
+
+<span style="color: #e68183;">import</span> <span style="color: #e68183;">static</span> org.apache.spark.sql.functions.<span style="color: #d9bb80;">concat</span>;
+<span style="color: #e68183;">import</span> <span style="color: #e68183;">static</span> org.apache.spark.sql.functions.<span style="color: #d9bb80;">lit</span>;
+
+<span style="color: #e68183;">import</span> <span style="color: #d3a0bc;">org</span>.<span style="color: #d3a0bc;">apache</span>.<span style="color: #d3a0bc;">spark</span>.<span style="color: #d9bb80;">Partition</span>;
+<span style="color: #e68183;">import</span> <span style="color: #d3a0bc;">org</span>.<span style="color: #d3a0bc;">apache</span>.<span style="color: #d3a0bc;">spark</span>.<span style="color: #d3a0bc;">sql</span>.<span style="color: #d9bb80;">Dataset</span>;
+<span style="color: #e68183;">import</span> <span style="color: #d3a0bc;">org</span>.<span style="color: #d3a0bc;">apache</span>.<span style="color: #d3a0bc;">spark</span>.<span style="color: #d3a0bc;">sql</span>.<span style="color: #d9bb80;">Row</span>;
+<span style="color: #e68183;">import</span> <span style="color: #d3a0bc;">org</span>.<span style="color: #d3a0bc;">apache</span>.<span style="color: #d3a0bc;">spark</span>.<span style="color: #d3a0bc;">sql</span>.<span style="color: #d9bb80;">SparkSession</span>;
+
+<span style="color: #e1d7c0;">/**</span>
+<span style="color: #e1d7c0;"> * CSV ingestion in a dataframe and manipulation.</span>
+<span style="color: #e1d7c0;"> *</span>
+<span style="color: #e1d7c0;"> * </span><span style="color: #d3a0bc;">@author</span><span style="color: #e1d7c0;"> jgp</span>
+<span style="color: #e1d7c0;"> */</span>
+<span style="color: #e68183;">public</span> <span style="color: #e68183;">class</span> <span style="color: #d9bb80;">IngestionSchemaManipulationApp</span> {
+
+  <span style="color: #e1d7c0;">/**</span>
+<span style="color: #e1d7c0;">   * main() is your entry point to the application.</span>
+<span style="color: #e1d7c0;">   *</span>
+<span style="color: #e1d7c0;">   * </span><span style="color: #d3a0bc;">@param</span><span style="color: #e1d7c0;"> args</span>
+<span style="color: #e1d7c0;">   */</span>
+  <span style="color: #e68183;">public</span> <span style="color: #e68183;">static</span> <span style="color: #d9bb80;">void</span> <span style="color: #87c095;">main</span>(<span style="color: #d9bb80;">String</span>[] <span style="color: #87c095; font-style: italic;">args</span>) {
+    <span style="color: #d9bb80;">IngestionSchemaManipulationApp</span> <span style="color: #87c095; font-style: italic;">app</span> =
+        <span style="color: #e68183;">new</span> <span style="color: #d9bb80;">IngestionSchemaManipulationApp</span>();
+    app.start();
+  }
+
+  <span style="color: #e1d7c0;">/**</span>
+<span style="color: #e1d7c0;">   * The processing code.</span>
+<span style="color: #e1d7c0;">   */</span>
+  <span style="color: #e68183;">private</span> <span style="color: #d9bb80;">void</span> <span style="color: #87c095;">start</span>() {
+    <span style="color: #5b5b5b;">// </span><span style="color: #5b5b5b;">Creates a session on a local master</span>
+    <span style="color: #d9bb80;">SparkSession</span> <span style="color: #87c095; font-style: italic;">spark</span> = SparkSession.builder()
+        .appName(<span style="color: #87af87;">"Restaurants in Wake County, NC"</span>)
+        .master(<span style="color: #87af87;">"local"</span>)
+        .getOrCreate();
+
+    <span style="color: #5b5b5b;">// </span><span style="color: #5b5b5b;">Reads a CSV file with header, called</span>
+    <span style="color: #5b5b5b;">// </span><span style="color: #5b5b5b;">Restaurants_in_Wake_County_NC.csv,</span>
+    <span style="color: #5b5b5b;">// </span><span style="color: #5b5b5b;">stores it in a dataframe</span>
+    <span style="color: #d9bb80;">Dataset</span>&lt;<span style="color: #d9bb80;">Row</span>&gt; <span style="color: #87c095; font-style: italic;">df</span> = spark.read().format(<span style="color: #87af87;">"csv"</span>)
+        .option(<span style="color: #87af87;">"header"</span>, <span style="color: #87af87;">"true"</span>)
+        .load(<span style="color: #87af87;">"data/Restaurants_in_Wake_County_NC.csv"</span>);
+    System.out.println(<span style="color: #87af87;">"*** Right after ingestion"</span>);
+    df.show(5);
+</pre>
+</div></li>
+<li><p>
+上面的代码输出结果如下
+</p>
+<pre class="example" id="org05708c1">
+*** Right after ingestion
++--------+-----------+--------------------+--------------------+--------+-----------+-----+----------+--------------+--------------------+-----------------+--------+------------+-----------+-------------+
+|OBJECTID|     HSISID|                NAME|            ADDRESS1|ADDRESS2|       CITY|STATE|POSTALCODE|   PHONENUMBER|  RESTAURANTOPENDATE|     FACILITYTYPE|PERMITID|           X|          Y|GEOCODESTATUS|
++--------+-----------+--------------------+--------------------+--------+-----------+-----+----------+--------------+--------------------+-----------------+--------+------------+-----------+-------------+
+|    1001|04092016024|                WABA|2502 1/2 HILLSBOR...|    null|    RALEIGH|   NC|     27607|(919) 833-1710|2011-10-18T00:00:...|       Restaurant|    6952|-78.66818477|35.78783803|            M|
+|    1002|04092021693|  WALMART DELI #2247|2010 KILDAIRE FAR...|    null|       CARY|   NC|     27518|(919) 852-6651|2011-11-08T00:00:...|       Food Stand|    6953|-78.78211173|35.73717591|            M|
+|    1003|04092017012|CAROLINA SUSHI &amp;a...|5951-107 POYNER V...|    null|    RALEIGH|   NC|     27616|(919) 981-5835|2015-08-28T00:00:...|       Restaurant|    6961|-78.57030208|35.86511564|            M|
+|    1004|04092030288|THE CORNER VENEZU...|    7500 RAMBLE WAY |    null|    RALEIGH|   NC|     27616|          null|2015-09-04T00:00:...|Mobile Food Units|    6962|  -78.537511|35.87630712|            M|
+|    1005|04092015530|        SUBWAY #3726| 12233 CAPITAL BLVD |    null|WAKE FOREST|   NC|27587-6200|(919) 556-8266|2009-12-11T00:00:...|       Restaurant|    6972|-78.54097555|35.98087357|            M|
++--------+-----------+--------------------+--------------------+--------+-----------+-----+----------+--------------+--------------------+-----------------+--------+------------+-----------+-------------+
+only showing top 5 rows
+</pre></li>
+</ul></li>
+<li>我们还可以使用printSchema()来查看dataframe的schema
+<ul class="org-ul">
+<li><p>
+代码如下
+</p>
+<div class="org-src-container">
+<pre class="src src-java">df.printSchema();
+</pre>
+</div></li>
+<li><p>
+输出如下
+</p>
+<pre class="example" id="org393a854">
+root
+ |-- OBJECTID: string (nullable = true)
+ |-- HSISID: string (nullable = true)
+ |-- NAME: string (nullable = true)
+ |-- ADDRESS1: string (nullable = true)
+ |-- ADDRESS2: string (nullable = true)
+ |-- CITY: string (nullable = true)
+ |-- STATE: string (nullable = true)
+ |-- POSTALCODE: string (nullable = true)
+ |-- PHONENUMBER: string (nullable = true)
+ |-- RESTAURANTOPENDATE: string (nullable = true)
+ |-- FACILITYTYPE: string (nullable = true)
+ |-- PERMITID: string (nullable = true)
+ |-- X: string (nullable = true)
+ |-- Y: string (nullable = true)
+ |-- GEOCODESTATUS: string (nullable = true)
+</pre></li>
+<li>由于schema可能是nested的,所以是以树型展示的,根目录是root</li>
+<li>第一列是field name</li>
+<li>第二列是type</li>
+<li>第三列是nullability,在这个例子里面,所有的field都可以是null</li>
+</ul></li>
+<li>我们想算一下一共有多少的record,那么可以如下操作:
+<ul class="org-ul">
+<li><p>
+代码
+</p>
+<div class="org-src-container">
+<pre class="src src-java">System.out.println(<span style="color: #87af87;">"We have "</span> + df.count() + <span style="color: #87af87;">" records."</span>);
+</pre>
+</div></li>
+<li><p>
+输出如下
+</p>
+<pre class="example" id="org35ffea8">
+We have 3440 records.
+</pre></li>
+</ul></li>
+<li>下面就是对我们的df进行transform了:
+<ul class="org-ul">
+<li><p>
+代码如下:
+</p>
+<div class="org-src-container">
+<pre class="src src-java">df = df.withColumn(<span style="color: #87af87;">"county"</span>, lit(<span style="color: #87af87;">"Wake"</span>))
+    .withColumnRenamed(<span style="color: #87af87;">"HSISID"</span>, <span style="color: #87af87;">"datasetId"</span>)
+    .withColumnRenamed(<span style="color: #87af87;">"NAME"</span>, <span style="color: #87af87;">"name"</span>)
+    .withColumnRenamed(<span style="color: #87af87;">"ADDRESS1"</span>, <span style="color: #87af87;">"address1"</span>)
+    .withColumnRenamed(<span style="color: #87af87;">"ADDRESS2"</span>, <span style="color: #87af87;">"address2"</span>)
+    .withColumnRenamed(<span style="color: #87af87;">"CITY"</span>, <span style="color: #87af87;">"city"</span>)
+    .withColumnRenamed(<span style="color: #87af87;">"STATE"</span>, <span style="color: #87af87;">"state"</span>)
+    .withColumnRenamed(<span style="color: #87af87;">"POSTALCODE"</span>, <span style="color: #87af87;">"zip"</span>)
+    .withColumnRenamed(<span style="color: #87af87;">"PHONENUMBER"</span>, <span style="color: #87af87;">"tel"</span>)
+    .withColumnRenamed(<span style="color: #87af87;">"RESTAURANTOPENDATE"</span>, <span style="color: #87af87;">"dateStart"</span>)
+    .withColumnRenamed(<span style="color: #87af87;">"FACILITYTYPE"</span>, <span style="color: #87af87;">"type"</span>)
+    .withColumnRenamed(<span style="color: #87af87;">"X"</span>, <span style="color: #87af87;">"geoX"</span>)
+    .withColumnRenamed(<span style="color: #87af87;">"Y"</span>, <span style="color: #87af87;">"geoY"</span>)
+    .drop(<span style="color: #87af87;">"OBJECTID"</span>)
+    .drop(<span style="color: #87af87;">"PERMITID"</span>)
+    .drop(<span style="color: #87af87;">"GEOCODESTATUS"</span>);
+df = df.withColumn(<span style="color: #87af87;">"id"</span>, concat(
+    df.col(<span style="color: #87af87;">"state"</span>),
+    lit(<span style="color: #87af87;">"_"</span>),
+    df.col(<span style="color: #87af87;">"county"</span>), lit(<span style="color: #87af87;">"_"</span>),
+    df.col(<span style="color: #87af87;">"datasetId"</span>)));
+
+<span style="color: #5b5b5b;">// </span><span style="color: #5b5b5b;">Shows at most 5 rows from the dataframe</span>
+System.out.println(<span style="color: #87af87;">"*** Dataframe transformed"</span>);
+df.show(5);
+</pre>
+</div></li>
+<li><p>
+输出如下
+</p>
+<pre class="example" id="org2282b64">
+*** Dataframe transformed
++-----------+--------------------+--------------------+--------+-----------+-----+----------+--------------+--------------------+-----------------+------------+-----------+------+-------------------+
+|  datasetId|                name|            address1|address2|       city|state|       zip|           tel|           dateStart|             type|        geoX|       geoY|county|                 id|
++-----------+--------------------+--------------------+--------+-----------+-----+----------+--------------+--------------------+-----------------+------------+-----------+------+-------------------+
+|04092016024|                WABA|2502 1/2 HILLSBOR...|    null|    RALEIGH|   NC|     27607|(919) 833-1710|2011-10-18T00:00:...|       Restaurant|-78.66818477|35.78783803|  Wake|NC_Wake_04092016024|
+|04092021693|  WALMART DELI #2247|2010 KILDAIRE FAR...|    null|       CARY|   NC|     27518|(919) 852-6651|2011-11-08T00:00:...|       Food Stand|-78.78211173|35.73717591|  Wake|NC_Wake_04092021693|
+|04092017012|CAROLINA SUSHI &amp;a...|5951-107 POYNER V...|    null|    RALEIGH|   NC|     27616|(919) 981-5835|2015-08-28T00:00:...|       Restaurant|-78.57030208|35.86511564|  Wake|NC_Wake_04092017012|
+|04092030288|THE CORNER VENEZU...|    7500 RAMBLE WAY |    null|    RALEIGH|   NC|     27616|          null|2015-09-04T00:00:...|Mobile Food Units|  -78.537511|35.87630712|  Wake|NC_Wake_04092030288|
+|04092015530|        SUBWAY #3726| 12233 CAPITAL BLVD |    null|WAKE FOREST|   NC|27587-6200|(919) 556-8266|2009-12-11T00:00:...|       Restaurant|-78.54097555|35.98087357|  Wake|NC_Wake_04092015530|
++-----------+--------------------+--------------------+--------+-----------+-----+----------+--------------+--------------------+-----------------+------------+-----------+------+-------------------+
+only showing top 5 rows
+</pre></li>
+<li>整个代码过程当中,用到了如下的函数:
+<ol class="org-ol">
+<li>withColumn(): 创建一个新的column</li>
+<li>withColumnRenamed(): 重命名一个column</li>
+<li>col(): 从名字获取column</li>
+<li>drop(): 从dataframe放弃一个column</li>
+<li>lit(): 使用一个literal value来创建一个column</li>
+<li>concat(): 连接多个column</li>
+</ol></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgf6b49b2" class="outline-4">
+<h4 id="orgf6b49b2"><span class="section-number-4">3.2.2</span> Data is stored in partitions</h4>
+<div class="outline-text-4" id="text-3-2-2">
+<ul class="org-ul">
+<li>对于spark来说,data不是存储在dataframe里面的,而是存储在partition里面,如图3-10</li>
+<li>我们不能直接通过dataframe来访问partition,我们需要从RDD来访问partition,我们还可以强制使用更多的
+partition来存储
+<ul class="org-ul">
+<li><p>
+代码如下
+</p>
+<div class="org-src-container">
+<pre class="src src-java">System.out.println(<span style="color: #87af87;">"*** Looking at partitions"</span>);
+<span style="color: #d9bb80;">Partition</span>[] <span style="color: #87c095; font-style: italic;">partitions</span> = df.rdd().partitions();
+<span style="color: #d9bb80;">int</span> <span style="color: #87c095; font-style: italic;">partitionCount</span> = partitions.length;
+System.out.println(<span style="color: #87af87;">"Partition count before repartition: "</span> +
+    partitionCount);
+
+df = df.repartition(4);
+System.out.println(<span style="color: #87af87;">"Partition count after repartition: "</span> +
+    df.rdd().partitions().length);
+
+</pre>
+</div></li>
+<li><p>
+输出如下
+</p>
+<pre class="example" id="org513e27b">
+*** Looking at partitions
+Partition count before repartition: 1
+Partition count after repartition: 4
+</pre></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org7621cdb" class="outline-4">
+<h4 id="org7621cdb"><span class="section-number-4">3.2.3</span> Digging in the schema</h4>
+<div class="outline-text-4" id="text-3-2-3">
+<ul class="org-ul">
+<li>前面的例子中,我们使用了printSchema()来打印schema,其实还可以使用schema()函数:</li>
+<li>可以把schema()以树的形式打印出来
+<ul class="org-ul">
+<li><p>
+代码如下
+</p>
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #e68183;">package</span> net.jgp.books.spark.ch03.<span style="color: #d3a0bc;">lab210_schema_introspection</span>;
+
+<span style="color: #e68183;">import</span> <span style="color: #e68183;">static</span> org.apache.spark.sql.functions.<span style="color: #d9bb80;">concat</span>;
+<span style="color: #e68183;">import</span> <span style="color: #e68183;">static</span> org.apache.spark.sql.functions.<span style="color: #d9bb80;">lit</span>;
+
+<span style="color: #e68183;">import</span> <span style="color: #d3a0bc;">org</span>.<span style="color: #d3a0bc;">apache</span>.<span style="color: #d3a0bc;">spark</span>.<span style="color: #d3a0bc;">sql</span>.<span style="color: #d9bb80;">Dataset</span>;
+<span style="color: #e68183;">import</span> <span style="color: #d3a0bc;">org</span>.<span style="color: #d3a0bc;">apache</span>.<span style="color: #d3a0bc;">spark</span>.<span style="color: #d3a0bc;">sql</span>.<span style="color: #d9bb80;">Row</span>;
+<span style="color: #e68183;">import</span> <span style="color: #d3a0bc;">org</span>.<span style="color: #d3a0bc;">apache</span>.<span style="color: #d3a0bc;">spark</span>.<span style="color: #d3a0bc;">sql</span>.<span style="color: #d9bb80;">SparkSession</span>;
+<span style="color: #e68183;">import</span> <span style="color: #d3a0bc;">org</span>.<span style="color: #d3a0bc;">apache</span>.<span style="color: #d3a0bc;">spark</span>.<span style="color: #d3a0bc;">sql</span>.<span style="color: #d3a0bc;">types</span>.<span style="color: #d9bb80;">StructType</span>;
+
+<span style="color: #e1d7c0;">/**</span>
+<span style="color: #e1d7c0;"> * Introspection of a schema.</span>
+<span style="color: #e1d7c0;"> *</span>
+<span style="color: #e1d7c0;"> * </span><span style="color: #d3a0bc;">@author</span><span style="color: #e1d7c0;"> jgp</span>
+<span style="color: #e1d7c0;"> */</span>
+<span style="color: #e68183;">public</span> <span style="color: #e68183;">class</span> <span style="color: #d9bb80;">SchemaIntrospectionApp</span> {
+
+  <span style="color: #e1d7c0;">/**</span>
+<span style="color: #e1d7c0;">   * main() is your entry point to the application.</span>
+<span style="color: #e1d7c0;">   *</span>
+<span style="color: #e1d7c0;">   * </span><span style="color: #d3a0bc;">@param</span><span style="color: #e1d7c0;"> args</span>
+<span style="color: #e1d7c0;">   */</span>
+  <span style="color: #e68183;">public</span> <span style="color: #e68183;">static</span> <span style="color: #d9bb80;">void</span> <span style="color: #87c095;">main</span>(<span style="color: #d9bb80;">String</span>[] <span style="color: #87c095; font-style: italic;">args</span>) {
+    <span style="color: #d9bb80;">SchemaIntrospectionApp</span> <span style="color: #87c095; font-style: italic;">app</span> = <span style="color: #e68183;">new</span> <span style="color: #d9bb80;">SchemaIntrospectionApp</span>();
+    app.start();
+  }
+
+  <span style="color: #e1d7c0;">/**</span>
+<span style="color: #e1d7c0;">   * The processing code.</span>
+<span style="color: #e1d7c0;">   */</span>
+  <span style="color: #e68183;">private</span> <span style="color: #d9bb80;">void</span> <span style="color: #87c095;">start</span>() {
+
+    <span style="color: #5b5b5b;">// </span><span style="color: #5b5b5b;">Similar to IngestionSchemaManipulationApp (no output)</span>
+    <span style="color: #5b5b5b;">////////////////////////////////////////////////////////////////////</span>
+
+    <span style="color: #5b5b5b;">// </span><span style="color: #5b5b5b;">Creates a session on a local master</span>
+    <span style="color: #d9bb80;">SparkSession</span> <span style="color: #87c095; font-style: italic;">spark</span> = SparkSession.builder()
+        .appName(<span style="color: #87af87;">"Schema introspection for restaurants in Wake County, NC"</span>)
+        .master(<span style="color: #87af87;">"local"</span>)
+        .getOrCreate();
+
+    <span style="color: #5b5b5b;">// </span><span style="color: #5b5b5b;">Reads a CSV file with header, called books.csv, stores it in a</span>
+    <span style="color: #5b5b5b;">// </span><span style="color: #5b5b5b;">dataframe</span>
+    <span style="color: #d9bb80;">Dataset</span>&lt;<span style="color: #d9bb80;">Row</span>&gt; <span style="color: #87c095; font-style: italic;">df</span> = spark.read().format(<span style="color: #87af87;">"csv"</span>)
+        .option(<span style="color: #87af87;">"header"</span>, <span style="color: #87af87;">"true"</span>)
+        .load(<span style="color: #87af87;">"data/Restaurants_in_Wake_County_NC.csv"</span>);
+
+    <span style="color: #5b5b5b;">// </span><span style="color: #5b5b5b;">Let's transform our dataframe</span>
+    df = df.withColumn(<span style="color: #87af87;">"county"</span>, lit(<span style="color: #87af87;">"Wake"</span>))
+        .withColumnRenamed(<span style="color: #87af87;">"HSISID"</span>, <span style="color: #87af87;">"datasetId"</span>)
+        .withColumnRenamed(<span style="color: #87af87;">"NAME"</span>, <span style="color: #87af87;">"name"</span>)
+        .withColumnRenamed(<span style="color: #87af87;">"ADDRESS1"</span>, <span style="color: #87af87;">"address1"</span>)
+        .withColumnRenamed(<span style="color: #87af87;">"ADDRESS2"</span>, <span style="color: #87af87;">"address2"</span>)
+        .withColumnRenamed(<span style="color: #87af87;">"CITY"</span>, <span style="color: #87af87;">"city"</span>)
+        .withColumnRenamed(<span style="color: #87af87;">"STATE"</span>, <span style="color: #87af87;">"state"</span>)
+        .withColumnRenamed(<span style="color: #87af87;">"POSTALCODE"</span>, <span style="color: #87af87;">"zip"</span>)
+        .withColumnRenamed(<span style="color: #87af87;">"PHONENUMBER"</span>, <span style="color: #87af87;">"tel"</span>)
+        .withColumnRenamed(<span style="color: #87af87;">"RESTAURANTOPENDATE"</span>, <span style="color: #87af87;">"dateStart"</span>)
+        .withColumnRenamed(<span style="color: #87af87;">"FACILITYTYPE"</span>, <span style="color: #87af87;">"type"</span>)
+        .withColumnRenamed(<span style="color: #87af87;">"X"</span>, <span style="color: #87af87;">"geoX"</span>)
+        .withColumnRenamed(<span style="color: #87af87;">"Y"</span>, <span style="color: #87af87;">"geoY"</span>);
+    df = df.withColumn(<span style="color: #87af87;">"id"</span>, concat(
+        df.col(<span style="color: #87af87;">"state"</span>),
+        lit(<span style="color: #87af87;">"_"</span>),
+        df.col(<span style="color: #87af87;">"county"</span>), lit(<span style="color: #87af87;">"_"</span>),
+        df.col(<span style="color: #87af87;">"datasetId"</span>)));
+
+    <span style="color: #5b5b5b;">// </span><span style="color: #5b5b5b;">NEW</span>
+    <span style="color: #5b5b5b;">////////////////////////////////////////////////////////////////////</span>
+
+    <span style="color: #d9bb80;">StructType</span> <span style="color: #87c095; font-style: italic;">schema</span> = df.schema();
+
+    System.out.println(<span style="color: #87af87;">"*** Schema as a tree:"</span>);
+    schema.printTreeString();
+</pre>
+</div></li>
+<li><p>
+输出如下
+</p>
+<pre class="example" id="org896a7a1">
+*** Schema as a tree:
+root
+ |-- OBJECTID: string (nullable = true)
+ |-- datasetId: string (nullable = true)
+ |-- name: string (nullable = true)
+ |-- address1: string (nullable = true)
+ |-- address2: string (nullable = true)
+ |-- city: string (nullable = true)
+ |-- state: string (nullable = true)
+ |-- zip: string (nullable = true)
+ |-- tel: string (nullable = true)
+ |-- dateStart: string (nullable = true)
+ |-- type: string (nullable = true)
+ |-- PERMITID: string (nullable = true)
+ |-- geoX: string (nullable = true)
+ |-- geoY: string (nullable = true)
+ |-- GEOCODESTATUS: string (nullable = true)
+ |-- county: string (nullable = false)
+ |-- id: string (nullable = true)
+</pre></li>
+</ul></li>
+<li>可以把schema()以字符串的形式打印出来
+<ul class="org-ul">
+<li><p>
+代码如下
+</p>
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #d9bb80;">String</span> <span style="color: #87c095; font-style: italic;">schemaAsString</span> = schema.mkString();
+System.out.println(<span style="color: #87af87;">"*** Schema as string: "</span> + schemaAsString);
+</pre>
+</div></li>
+<li><p>
+输出如下
+</p>
+<pre class="example" id="orga891c3d">
+*** Schema as string: StructField(OBJECTID,StringType,true)StructField(datasetId,StringType,true)StructField(name,StringType,true)StructField(address1,StringType,true)StructField(address2,StringType,true)StructField(city,StringType,true)StructField(state,StringType,true)StructField(zip,StringType,true)StructField(tel,StringType,true)StructField(dateStart,StringType,true)StructField(type,StringType,true)StructField(PERMITID,StringType,true)StructField(geoX,StringType,true)StructField(geoY,StringType,true)StructField(GEOCODESTATUS,StringType,true)StructField(county,StringType,false)StructField(id,StringType,true)
+</pre></li>
+</ul></li>
+<li>可以把schema()以json格式的形式打印出来
+<ul class="org-ul">
+<li><p>
+代码如下
+</p>
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #d9bb80;">String</span> <span style="color: #87c095; font-style: italic;">schemaAsJson</span> = schema.prettyJson();
+System.out.println(<span style="color: #87af87;">"*** Schema as JSON: "</span> + schemaAsJson);
+</pre>
+</div></li>
+<li><p>
+输出如下
+</p>
+<pre class="example" id="org52d4ee2">
+*** Schema as JSON: {
+  "type" : "struct",
+  "fields" : [ {
+    "name" : "OBJECTID",
+    "type" : "string",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "datasetId",
+    "type" : "string",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "name",
+    "type" : "string",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "address1",
+    "type" : "string",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "address2",
+    "type" : "string",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "city",
+    "type" : "string",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "state",
+    "type" : "string",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "zip",
+    "type" : "string",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "tel",
+    "type" : "string",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "dateStart",
+    "type" : "string",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "type",
+    "type" : "string",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "PERMITID",
+    "type" : "string",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "geoX",
+    "type" : "string",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "geoY",
+    "type" : "string",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "GEOCODESTATUS",
+    "type" : "string",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "county",
+    "type" : "string",
+    "nullable" : false,
+    "metadata" : { }
+  }, {
+    "name" : "id",
+    "type" : "string",
+    "nullable" : true,
+    "metadata" : { }
+  } ]
+}
+</pre></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org96896cb" class="outline-4">
+<h4 id="org96896cb"><span class="section-number-4">3.2.4</span> A datframe after a JSON ingestion</h4>
+<div class="outline-text-4" id="text-3-2-4">
+<ul class="org-ul">
+<li>JSON比CSV要更加的复杂的structure,因为它有nested structure.本节读取的是json文件,而不是csv文件</li>
+<li>整个过程如图3-11所示</li>
+<li>我们首先来看看ingestion代码后的dataframe的内容
+<ul class="org-ul">
+<li><p>
+代码
+</p>
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #e68183;">package</span> net.jgp.books.spark.ch03.<span style="color: #d3a0bc;">lab220_json_ingestion_schema_manipulation</span>;
+
+<span style="color: #e68183;">import</span> <span style="color: #e68183;">static</span> org.apache.spark.sql.functions.<span style="color: #d9bb80;">concat</span>;
+<span style="color: #e68183;">import</span> <span style="color: #e68183;">static</span> org.apache.spark.sql.functions.<span style="color: #d9bb80;">lit</span>;
+<span style="color: #e68183;">import</span> <span style="color: #e68183;">static</span> org.apache.spark.sql.functions.<span style="color: #d9bb80;">split</span>;
+
+<span style="color: #e68183;">import</span> <span style="color: #d3a0bc;">org</span>.<span style="color: #d3a0bc;">apache</span>.<span style="color: #d3a0bc;">spark</span>.<span style="color: #d9bb80;">Partition</span>;
+<span style="color: #e68183;">import</span> <span style="color: #d3a0bc;">org</span>.<span style="color: #d3a0bc;">apache</span>.<span style="color: #d3a0bc;">spark</span>.<span style="color: #d3a0bc;">sql</span>.<span style="color: #d9bb80;">Dataset</span>;
+<span style="color: #e68183;">import</span> <span style="color: #d3a0bc;">org</span>.<span style="color: #d3a0bc;">apache</span>.<span style="color: #d3a0bc;">spark</span>.<span style="color: #d3a0bc;">sql</span>.<span style="color: #d9bb80;">Row</span>;
+<span style="color: #e68183;">import</span> <span style="color: #d3a0bc;">org</span>.<span style="color: #d3a0bc;">apache</span>.<span style="color: #d3a0bc;">spark</span>.<span style="color: #d3a0bc;">sql</span>.<span style="color: #d9bb80;">SparkSession</span>;
+
+<span style="color: #e1d7c0;">/**</span>
+<span style="color: #e1d7c0;"> * CSV ingestion in a dataframe.</span>
+<span style="color: #e1d7c0;"> *</span>
+<span style="color: #e1d7c0;"> * </span><span style="color: #d3a0bc;">@author</span><span style="color: #e1d7c0;"> jgp</span>
+<span style="color: #e1d7c0;"> */</span>
+<span style="color: #e68183;">public</span> <span style="color: #e68183;">class</span> <span style="color: #d9bb80;">JsonIngestionSchemaManipulationApp</span> {
+
+  <span style="color: #e1d7c0;">/**</span>
+<span style="color: #e1d7c0;">   * main() is your entry point to the application.</span>
+<span style="color: #e1d7c0;">   *</span>
+<span style="color: #e1d7c0;">   * </span><span style="color: #d3a0bc;">@param</span><span style="color: #e1d7c0;"> args</span>
+<span style="color: #e1d7c0;">   */</span>
+  <span style="color: #e68183;">public</span> <span style="color: #e68183;">static</span> <span style="color: #d9bb80;">void</span> <span style="color: #87c095;">main</span>(<span style="color: #d9bb80;">String</span>[] <span style="color: #87c095; font-style: italic;">args</span>) {
+    <span style="color: #d9bb80;">JsonIngestionSchemaManipulationApp</span> <span style="color: #87c095; font-style: italic;">app</span> =
+        <span style="color: #e68183;">new</span> <span style="color: #d9bb80;">JsonIngestionSchemaManipulationApp</span>();
+    app.start();
+  }
+
+  <span style="color: #e1d7c0;">/**</span>
+<span style="color: #e1d7c0;">   * The processing code.</span>
+<span style="color: #e1d7c0;">   */</span>
+  <span style="color: #e68183;">private</span> <span style="color: #d9bb80;">void</span> <span style="color: #87c095;">start</span>() {
+    <span style="color: #5b5b5b;">// </span><span style="color: #5b5b5b;">Creates a session on a local master</span>
+    <span style="color: #d9bb80;">SparkSession</span> <span style="color: #87c095; font-style: italic;">spark</span> = SparkSession.builder()
+        .appName(<span style="color: #87af87;">"Restaurants in Durham County, NC"</span>)
+        .master(<span style="color: #87af87;">"local[*]"</span>)
+        .getOrCreate();
+
+    <span style="color: #5b5b5b;">// </span><span style="color: #5b5b5b;">Reads a JSON file called Restaurants_in_Durham_County_NC.json, stores</span>
+    <span style="color: #5b5b5b;">// </span><span style="color: #5b5b5b;">it</span>
+    <span style="color: #5b5b5b;">// </span><span style="color: #5b5b5b;">in a dataframe</span>
+    <span style="color: #d9bb80;">Dataset</span>&lt;<span style="color: #d9bb80;">Row</span>&gt; <span style="color: #87c095; font-style: italic;">df</span> = spark.read().format(<span style="color: #87af87;">"json"</span>)
+        .load(<span style="color: #87af87;">"data/Restaurants_in_Durham_County_NC.json"</span>);
+    System.out.println(<span style="color: #87af87;">"*** Right after ingestion"</span>);
+    df.show(5);
+</pre>
+</div></li>
+<li><p>
+输出如下
+</p>
+<pre class="example" id="orga2a65c5">
+*** Right after ingestion
++----------------+--------------------+--------------------+--------------------+--------------------+
+|       datasetid|              fields|            geometry|    record_timestamp|            recordid|
++----------------+--------------------+--------------------+--------------------+--------------------+
+|restaurants-data|{null, Full-Servi...|{[-78.9573299, 35...|2017-07-13T09:15:...|1644654b953d1802c...|
+|restaurants-data|{null, Nursing Ho...|{[-78.8895483, 36...|2017-07-13T09:15:...|93573dbf8c9e799d8...|
+|restaurants-data|{null, Fast Food ...|{[-78.9593263, 35...|2017-07-13T09:15:...|0d274200c7cef50d0...|
+|restaurants-data|{null, Full-Servi...|{[-78.9060312, 36...|2017-07-13T09:15:...|cf3e0b175a6ebad2a...|
+|restaurants-data|{null, null, [36....|{[-78.9135175, 36...|2017-07-13T09:15:...|e796570677f7c39cc...|
++----------------+--------------------+--------------------+--------------------+--------------------+
+only showing top 5 rows
+</pre></li>
+</ul></li>
+<li>由于有nested的内容,所以show()只能看内容的大概,无法看到真正的结构.我们输出schema如下
+<ul class="org-ul">
+<li><p>
+代码如下
+</p>
+<div class="org-src-container">
+<pre class="src src-java">df.printSchema();
+System.out.println(<span style="color: #87af87;">"We have "</span> + df.count() + <span style="color: #87af87;">" records."</span>);
+</pre>
+</div></li>
+<li><p>
+输出如下
+</p>
+<pre class="example" id="org39f3566">
+root
+ |-- datasetid: string (nullable = true)
+ |-- fields: struct (nullable = true)
+ |    |-- closing_date: string (nullable = true)
+ |    |-- est_group_desc: string (nullable = true)
+ |    |-- geolocation: array (nullable = true)
+ |    |    |-- element: double (containsNull = true)
+ |    |-- hours_of_operation: string (nullable = true)
+ |    |-- id: string (nullable = true)
+ |    |-- insp_freq: long (nullable = true)
+ |    |-- opening_date: string (nullable = true)
+ |    |-- premise_address1: string (nullable = true)
+ |    |-- premise_address2: string (nullable = true)
+ |    |-- premise_city: string (nullable = true)
+ |    |-- premise_name: string (nullable = true)
+ |    |-- premise_phone: string (nullable = true)
+ |    |-- premise_state: string (nullable = true)
+ |    |-- premise_zip: string (nullable = true)
+ |    |-- risk: long (nullable = true)
+ |    |-- rpt_area_desc: string (nullable = true)
+ |    |-- seats: long (nullable = true)
+ |    |-- sewage: string (nullable = true)
+ |    |-- smoking_allowed: string (nullable = true)
+ |    |-- status: string (nullable = true)
+ |    |-- transitional_type_desc: string (nullable = true)
+ |    |-- type_description: string (nullable = true)
+ |    |-- water: string (nullable = true)
+ |-- geometry: struct (nullable = true)
+ |    |-- coordinates: array (nullable = true)
+ |    |    |-- element: double (containsNull = true)
+ |    |-- type: string (nullable = true)
+ |-- record_timestamp: string (nullable = true)
+ |-- recordid: string (nullable = true)
+
+We have 2463 records.
+</pre></li>
+</ul></li>
+<li>一旦data已经导入到dataframe了,下一步就是使用API来处理这些data了,你的目标structure是flat的,所以
+mapping需要处理nested field.
+<ul class="org-ul">
+<li><p>
+我们使用dot(.)来获取structure的成员
+</p>
+<div class="org-src-container">
+<pre class="src src-java">df.col(<span style="color: #87af87;">"fields.id"</span>)
+</pre>
+</div></li>
+<li><p>
+我们使用getItem()函数来获取数组的成员
+</p>
+<div class="org-src-container">
+<pre class="src src-java">df.col(<span style="color: #87af87;">"fields.geolocation"</span>).getItem(0)
+</pre>
+</div></li>
+</ul></li>
+<li>我们要转换的数据有两种来源:
+<ul class="org-ul">
+<li><p>
+新数据格式的field,要么是从源数据的一个field转换而来
+</p>
+<div class="org-src-container">
+<pre class="src src-java">df = df.withColumn(<span style="color: #87af87;">"county"</span>, lit(<span style="color: #87af87;">"Durham"</span>))
+    .withColumn(<span style="color: #87af87;">"datasetId"</span>, df.col(<span style="color: #87af87;">"fields.id"</span>))
+    .withColumn(<span style="color: #87af87;">"name"</span>, df.col(<span style="color: #87af87;">"fields.premise_name"</span>))
+    .withColumn(<span style="color: #87af87;">"address1"</span>, df.col(<span style="color: #87af87;">"fields.premise_address1"</span>))
+    .withColumn(<span style="color: #87af87;">"address2"</span>, df.col(<span style="color: #87af87;">"fields.premise_address2"</span>))
+    .withColumn(<span style="color: #87af87;">"city"</span>, df.col(<span style="color: #87af87;">"fields.premise_city"</span>))
+    .withColumn(<span style="color: #87af87;">"state"</span>, df.col(<span style="color: #87af87;">"fields.premise_state"</span>))
+    .withColumn(<span style="color: #87af87;">"zip"</span>, df.col(<span style="color: #87af87;">"fields.premise_zip"</span>))
+    .withColumn(<span style="color: #87af87;">"tel"</span>, df.col(<span style="color: #87af87;">"fields.premise_phone"</span>))
+    .withColumn(<span style="color: #87af87;">"dateStart"</span>, df.col(<span style="color: #87af87;">"fields.opening_date"</span>))
+    .withColumn(<span style="color: #87af87;">"dateEnd"</span>, df.col(<span style="color: #87af87;">"fields.closing_date"</span>))
+    .withColumn(<span style="color: #87af87;">"type"</span>,
+        split(df.col(<span style="color: #87af87;">"fields.type_description"</span>), <span style="color: #87af87;">" - "</span>).getItem(1))
+    .withColumn(<span style="color: #87af87;">"geoX"</span>, df.col(<span style="color: #87af87;">"fields.geolocation"</span>).getItem(0))
+    .withColumn(<span style="color: #87af87;">"geoY"</span>, df.col(<span style="color: #87af87;">"fields.geolocation"</span>).getItem(1));
+</pre>
+</div></li>
+<li><p>
+新数据格式的field,要么是源数据组合而来
+</p>
+<div class="org-src-container">
+<pre class="src src-java">df = df.withColumn(<span style="color: #87af87;">"id"</span>,
+    concat(df.col(<span style="color: #87af87;">"state"</span>), lit(<span style="color: #87af87;">"_"</span>),
+        df.col(<span style="color: #87af87;">"county"</span>), lit(<span style="color: #87af87;">"_"</span>),
+        df.col(<span style="color: #87af87;">"datasetId"</span>)));
+</pre>
+</div></li>
+<li><p>
+打印出数据格式的代码如下
+</p>
+<div class="org-src-container">
+<pre class="src src-java">System.out.println(<span style="color: #87af87;">"*** Dataframe transformed"</span>);
+df.show(5);
+df.printSchema();
+</pre>
+</div></li>
+<li><p>
+输出如下
+</p>
+<pre class="example" id="org47c38ee">
+*** Dataframe transformed
++---------+--------------------+--------------------+--------------------+--------------------+------+--------------------+--------------------+--------+------+-----+-----+--------------+----------+-------+--------------------+----------+-----------+---------------+
+|datasetId|              fields|            geometry|    record_timestamp|            recordid|county|                name|            address1|address2|  city|state|  zip|           tel| dateStart|dateEnd|                type|      geoX|       geoY|             id|
++---------+--------------------+--------------------+--------------------+--------------------+------+--------------------+--------------------+--------+------+-----+-----+--------------+----------+-------+--------------------+----------+-----------+---------------+
+|    56060|{null, Full-Servi...|{[-78.9573299, 35...|2017-07-13T09:15:...|1644654b953d1802c...|Durham|    WEST 94TH ST PUB| 4711 HOPE VALLEY RD|SUITE 6C|DURHAM|   NC|27707|(919) 403-0025|1994-09-01|   null|          Restaurant|35.9207272|-78.9573299|NC_Durham_56060|
+|    58123|{null, Nursing Ho...|{[-78.8895483, 36...|2017-07-13T09:15:...|93573dbf8c9e799d8...|Durham|BROOKDALE DURHAM IFS|4434 BEN FRANKLIN...|    null|DURHAM|   NC|27704|(919) 479-9966|2003-10-15|   null|Institutional Foo...|36.0467802|-78.8895483|NC_Durham_58123|
+|    70266|{null, Fast Food ...|{[-78.9593263, 35...|2017-07-13T09:15:...|0d274200c7cef50d0...|Durham|       SMOOTHIE KING|1125 W. NC HWY 54...|    null|DURHAM|   NC|27707|(919) 489-7300|2009-07-09|   null|          Restaurant|35.9182655|-78.9593263|NC_Durham_70266|
+|    97837|{null, Full-Servi...|{[-78.9060312, 36...|2017-07-13T09:15:...|cf3e0b175a6ebad2a...|Durham|HAMPTON INN &amp; SUITES|   1542 N GREGSON ST|    null|DURHAM|   NC|27701|(919) 688-8880|2012-01-09|   null|          Restaurant|36.0183378|-78.9060312|NC_Durham_97837|
+|    60690|{null, null, [36....|{[-78.9135175, 36...|2017-07-13T09:15:...|e796570677f7c39cc...|Durham|BETTER LIVING CON...|       909 GARCIA ST|    null|DURHAM|   NC|27704|(919) 477-5825|2008-06-02|   null|    Residential Care|36.0556347|-78.9135175|NC_Durham_60690|
++---------+--------------------+--------------------+--------------------+--------------------+------+--------------------+--------------------+--------+------+-----+-----+--------------+----------+-------+--------------------+----------+-----------+---------------+
+only showing top 5 rows
+
+root
+ |-- datasetId: string (nullable = true)
+ |-- fields: struct (nullable = true)
+ |    |-- closing_date: string (nullable = true)
+ |    |-- est_group_desc: string (nullable = true)
+ |    |-- geolocation: array (nullable = true)
+ |    |    |-- element: double (containsNull = true)
+ |    |-- hours_of_operation: string (nullable = true)
+ |    |-- id: string (nullable = true)
+ |    |-- insp_freq: long (nullable = true)
+ |    |-- opening_date: string (nullable = true)
+ |    |-- premise_address1: string (nullable = true)
+ |    |-- premise_address2: string (nullable = true)
+ |    |-- premise_city: string (nullable = true)
+ |    |-- premise_name: string (nullable = true)
+ |    |-- premise_phone: string (nullable = true)
+ |    |-- premise_state: string (nullable = true)
+ |    |-- premise_zip: string (nullable = true)
+ |    |-- risk: long (nullable = true)
+ |    |-- rpt_area_desc: string (nullable = true)
+ |    |-- seats: long (nullable = true)
+ |    |-- sewage: string (nullable = true)
+ |    |-- smoking_allowed: string (nullable = true)
+ |    |-- status: string (nullable = true)
+ |    |-- transitional_type_desc: string (nullable = true)
+ |    |-- type_description: string (nullable = true)
+ |    |-- water: string (nullable = true)
+ |-- geometry: struct (nullable = true)
+ |    |-- coordinates: array (nullable = true)
+ |    |    |-- element: double (containsNull = true)
+ |    |-- type: string (nullable = true)
+ |-- record_timestamp: string (nullable = true)
+ |-- recordid: string (nullable = true)
+ |-- county: string (nullable = false)
+ |-- name: string (nullable = true)
+ |-- address1: string (nullable = true)
+ |-- address2: string (nullable = true)
+ |-- city: string (nullable = true)
+ |-- state: string (nullable = true)
+ |-- zip: string (nullable = true)
+ |-- tel: string (nullable = true)
+ |-- dateStart: string (nullable = true)
+ |-- dateEnd: string (nullable = true)
+ |-- type: string (nullable = true)
+ |-- geoX: double (nullable = true)
+ |-- geoY: double (nullable = true)
+ |-- id: string (nullable = true)
+</pre></li>
+</ul></li>
+<li>最后我们来看看partition数据:
+<ul class="org-ul">
+<li><p>
+代码如下:
+</p>
+<div class="org-src-container">
+<pre class="src src-java">System.out.println(<span style="color: #87af87;">"*** Looking at partitions"</span>);
+<span style="color: #d9bb80;">Partition</span>[] <span style="color: #87c095; font-style: italic;">partitions</span> = df.rdd().partitions();
+<span style="color: #d9bb80;">int</span> <span style="color: #87c095; font-style: italic;">partitionCount</span> = partitions.length;
+System.out.println(<span style="color: #87af87;">"Partition count before repartition: "</span> +
+    partitionCount);
+
+df = df.repartition(4);
+System.out.println(<span style="color: #87af87;">"Partition count after repartition: "</span> +
+    df.rdd().partitions().length);
+</pre>
+</div></li>
+<li><p>
+输出如下:
+</p>
+<pre class="example" id="orgb1ca6bc">
+*** Looking at partitions
+Partition count before repartition: 1
+Partition count after repartition: 4
+</pre></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: harrifeng@outlook.com</p>
+<p class="date">Created: 2021-07-07 Wed 13:46</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
