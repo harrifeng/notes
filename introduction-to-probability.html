@@ -3,10 +3,10 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2021-06-11 Fri 11:40 -->
+<!-- 2021-07-09 Fri 14:07 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Notes</title>
+<title>introduction-to-statistical-learning</title>
 <meta name="generator" content="Org mode" />
 <meta name="author" content="harrifeng@outlook.com" />
 <style type="text/css">
@@ -221,16 +221,189 @@
     /*]]>*///-->
 // @license-end
 </script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
 </head>
 <body>
-
-<h1>Notes</h1>
-<a href="./kafka-internal.html">Kafka Internal</a>
-</br>
-<a href="./introduction-to-statistical-learing.html">Introduction to Statistical Learning</a>
-</br>
-<a href="./spark-in-action.html">Spark In Action</a>
-</br>
-<a href="./introduction-to-probability.html">Introduction to Probability</a>
-</br>
+<div id="content">
+<h1 class="title">introduction-to-statistical-learning</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org146f939">1. Chapter 1: Sample Space and Probability</a>
+<ul>
+<li><a href="#org31445d6">1.1. SETS</a>
+<ul>
+<li><a href="#org8382a64">1.1.1. Set Operations</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org146f939" class="outline-2">
+<h2 id="org146f939"><span class="section-number-2">1</span> Chapter 1: Sample Space and Probability</h2>
+<div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li>Probability是一个非常有用的concept,但是却可以以很多种方式被解释,下面就是一个例子:一个病人住院了,
+需要在护士的监督下服用一种药.于是,在护士和病人的亲戚之间发生了如下对话:
+<ul class="org-ul">
+<li>亲戚:这个药有多大的概率能够工作</li>
+<li>护士:我希望它工作,但是要到明天才知道</li>
+<li>亲戚:我知道,但是我想知道的是概率,概率是多少</li>
+<li>护士:每个case都不同,我们要等待</li>
+<li>亲戚:让我们简化一下,假设有100个相同情况的病人,吃了这个药,那么你们期待能有几个人能够治好?</li>
+<li>护士(有点烦了):我告诉你了,每个人都是不同的,有些人吃药管用,有些人吃药不管用</li>
+<li>亲戚(非常坚持):好吧,那我们再换个角度,如果让你打赌,你是愿意赌这个药起作用还是不起作用</li>
+<li>护士(庆祝了一下):我赌药物能够工作</li>
+<li>亲戚(放心了一点):那么你是否接受如下的方案: 如果药物工作那么得到1美元,如果药物不工作,那么损失2美元?</li>
+<li>护士(被激怒了):多么病态的想法,你再浪费我的时间</li>
+</ul></li>
+<li>在这个例子中,亲戚希望使用概率的概念来讨论一些不确定的场景(uncertain situation)</li>
+<li>护士的第一反应,说明概率(probability)不是那么被大众所理解,所以亲戚试图以例子而不是concept来提问:
+<ul class="org-ul">
+<li>第一次的例子尝试,是把probability定义为发生的概率(frequency of occurrence):在足够数量的相似情况下,
+事情发生的次数,比如我们扔一百次硬币,大概50次朝上,50次朝下</li>
+<li>护士的回答也不是完全的错误,因为有可能这个药物是第一次试用(或者护士第一次用这个药),从护士大角度
+上来看,药物是否起作用这个事情就从来没有发生过,谈何frequency of occurrence</li>
+</ul></li>
+<li>虽然有很多情况下"把frequency引入对uncertainty事务的解释"是合理的,但是有很多情况下,不能使用frequency:
+<ul class="org-ul">
+<li>比如,一个学者声称,有90%的概率,伊利亚特和奥德赛都是同一个人写的</li>
+<li>这种情况就不是frequency能够解释的,因为写作这两本书是一个one-time event,不可能重复多次的</li>
+<li>这种expression更像是学者的主观信仰(subjective belief)</li>
+<li>很多人可能从科学角度对subjective belief没什么兴趣,其实普通人经常需要在uncertainty的情况下做决定,
+所以主观的belief也是非常重要的,为做决定也要了解这些belief</li>
+</ul></li>
+<li>实际上,理性的人的行为和做的决定,可以揭示很多关于subjective probabilities的事情,即便他们没有有意识
+的使用probabilistic reasoning</li>
+<li>上面对话的最后的部分就是想探知护士的belief信心概率:
+<ul class="org-ul">
+<li>护士愿意推荐,那么代表她认为药物有效的概率超过50%</li>
+<li>那么我们成功给1美元,失败罚2美元的策略,其实就是问护士对药物有效的信心有没有超过2/3</li>
+</ul></li>
+<li>本书的最大目标,是建设一个使用probabilistic model来描述uncertainty的艺术.
+<ul class="org-ul">
+<li>第一章我们就来技术一下这类model的主体架构和主要特性</li>
+<li>model主要作用是赋予一系列outcome以probabilites,我们首先要学习set theory</li>
+</ul></li>
+</ul>
+</div>
+<div id="outline-container-org31445d6" class="outline-3">
+<h3 id="org31445d6"><span class="section-number-3">1.1</span> SETS</h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li>set是一系列object的collection,这些object又被称为set的element.</li>
+<li>如果S是一个set,x是S的element,那么我们可以写作 \(x \in S\)</li>
+<li>如果S是一个set,x不是S的element,那么我们可以写作 \(x \notin S\)</li>
+<li>一个set可以没有element,叫做empty set, 写作 \(\varnothing\)</li>
+<li><p>
+如果S里面包含有穷尽的elements,比如 \(x_1, x_2,\cdot\cdot\cdot,x_n\),那么我们可以写作
+</p>
+\begin{equation}
+S = \{ x_1, x_2,\cdot\cdot\cdot,x_n \}.
+\end{equation}</li>
+<li>举两个例子:
+<ul class="org-ul">
+<li>筛子的set可以表示为{1,2,3,4,5,6}</li>
+<li>硬币的set可以表示为{H,T}: H表示head,T表示Tail</li>
+</ul></li>
+<li><p>
+如果S里面包含有穷尽的elements,比如 \(x_1, x_2,\cdot\cdot\cdot\),那么我们可以写作
+</p>
+\begin{equation}
+S = \{ x_1, x_2,\cdot\cdot\cdot \}.
+\end{equation}</li>
+<li>虽然这里S的element是infinite的,但是还是可以以$x<sub>1</sub>, x<sub>2,&sdot;&sdot;&sdot;</sub>$的形式写出来,我们就说它是
+countably的,合起来就叫做countably infinite</li>
+<li><p>
+和countably infinite相对应的,是uncountable infinite,比如0和1之间的实数,这些数字无法使用有逻辑的
+方式数出来,就叫uncountable infinite,可以如下表示
+</p>
+\begin{equation}
+S = \{x | 0 \leq x \leq 1\}
+\end{equation}</li>
+<li><p>
+这种x满足某种条件就可以组成set的方法,可以都使用"|"来分割,总结如下
+</p>
+\begin{equation}
+S = \{ x | x satisfies P \}
+\end{equation}</li>
+<li>如果每个S的element同时也是T的element,那么我们说S是T是subset,可以有两种方式表示:
+<ul class="org-ul">
+<li>S属于T: \(S \subset T\)</li>
+<li>T包含S: \(T \supset S\)</li>
+</ul></li>
+<li>S和T完全相等的话,我们可以写作 \(S=T\)</li>
+<li>为了方便,我们还可以引入一个universal set,表示包含所有的,我们在当前情况下感兴趣的object,写作 \(\Omega\)</li>
+</ul>
+</div>
+<div id="outline-container-org8382a64" class="outline-4">
+<h4 id="org8382a64"><span class="section-number-4">1.1.1</span> Set Operations</h4>
+<div class="outline-text-4" id="text-1-1-1">
+<ul class="org-ul">
+<li>补集(complement)
+<ul class="org-ul">
+<li><p>
+定义:是说element属于universal set范围内,但是不属于集合S,我们使用如下方式表示:
+</p>
+\begin{equation}
+\{ x \in \Omega | x \notin S}
+\end{equation}</li>
+<li><p>
+S的complement还有一种简单写法 \(S^c\),我们很容易得到如下的等式
+</p>
+\begin{equation}
+\Omega^c = \varnothing
+\end{equation}</li>
+</ul></li>
+<li>合集(union)
+<ul class="org-ul">
+<li>定义:是说两个set S和T的union是指一个新的set,其中的element:
+<ol class="org-ol">
+<li>要么属于S</li>
+<li>要么属于T</li>
+<li>要么两者都属于</li>
+</ol></li>
+<li>S和T的合集,写作 \(S \cup T\)</li>
+</ul></li>
+<li>交集(intersection)
+<ul class="org-ul">
+<li>定义:是说两个set S和T的union是指一个新的set,其中的element:既属于T,同时也属于S</li>
+<li>S和T的合集,写作 \(S \cap T\)</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: harrifeng@outlook.com</p>
+<p class="date">Created: 2021-07-09 Fri 14:07</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
 </body>
+</html>
