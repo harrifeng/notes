@@ -3,10 +3,10 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2021-06-11 Fri 11:40 -->
+<!-- 2021-07-20 Tue 16:12 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Notes</title>
+<title>leetcode-summary</title>
 <meta name="generator" content="Org mode" />
 <meta name="author" content="harrifeng@outlook.com" />
 <style type="text/css">
@@ -223,16 +223,123 @@
 </script>
 </head>
 <body>
+<div id="content">
+<h1 class="title">leetcode-summary</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org0111de8">1. 第二章 贪心算法</a>
+<ul>
+<li><a href="#org90aef5f">1.1. 算法解释</a></li>
+<li><a href="#org1ff9fbd">1.2. 题型总结</a></li>
+<li><a href="#org2685c1f">1.3. 分配问题</a>
+<ul>
+<li><a href="#org3985cb6">1.3.1. Assign Cookies (Easy)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org0111de8" class="outline-2">
+<h2 id="org0111de8"><span class="section-number-2">1</span> 第二章 贪心算法</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-org90aef5f" class="outline-3">
+<h3 id="org90aef5f"><span class="section-number-3">1.1</span> 算法解释</h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li>所谓贪心算法或者贪心策略,是指保证每次操作都是局部最优,从而得到的结果是全局最优</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org1ff9fbd" class="outline-3">
+<h3 id="org1ff9fbd"><span class="section-number-3">1.2</span> 题型总结</h3>
+</div>
+<div id="outline-container-org2685c1f" class="outline-3">
+<h3 id="org2685c1f"><span class="section-number-3">1.3</span> 分配问题</h3>
+<div class="outline-text-3" id="text-1-3">
+</div>
+<div id="outline-container-org3985cb6" class="outline-4">
+<h4 id="org3985cb6"><span class="section-number-4">1.3.1</span> Assign Cookies (Easy)</h4>
+<div class="outline-text-4" id="text-1-3-1">
+</div>
+<ol class="org-ol">
+<li><a id="org14eeca5"></a>题目描述<br />
+<div class="outline-text-5" id="text-1-3-1-1">
+<ul class="org-ul">
+<li>有一群孩子和一堆饼干，每个孩子有一个饥饿度，每个饼干都有一个大小。每个孩子只能吃 一个饼干，且只有饼干的大小不小于孩子的饥饿度时，这个孩子才能吃饱。求解最多有多少孩子 可以吃饱。</li>
+</ul>
+</div>
+</li>
+<li><a id="org631dc57"></a>输入输出样例<br />
+<div class="outline-text-5" id="text-1-3-1-2">
+<ul class="org-ul">
+<li><p>
+输入两个数组，分别代表孩子的饥饿度和饼干的大小。输出最多有多少孩子可以吃饱的数量。
+</p>
+<pre class="example" id="org30ae409">
+Input: [1,2], [1,2,3]
+Output: 2
+</pre></li>
+<li>在这个样例中，我们可以给两个孩子喂 [1,2]、[1,3]、[2,3] 这三种组合的任意一种。</li>
+</ul>
+</div>
+</li>
+<li><a id="orgb9c5c35"></a>题解<br />
+<div class="outline-text-5" id="text-1-3-1-3">
+<ul class="org-ul">
+<li>饥饿度最小的孩子最容易吃饱,所以先满足容易满足的孩子,毕竟我们的kpi是吃饱孩子的个数,一个容易吃饱和一个不容易吃饱的孩子对最终的贡献都是1</li>
+<li>我们需要先满足最容易吃饱的孩子,而且还要用能满足孩子的最小的饼干(贪心)</li>
+<li>满足第一个孩子之后,后续采取相同的策略,直到满足条件的饼干不存在</li>
+<li><p>
+总结一下这里的贪心策略
+</p>
+<pre class="example" id="org24c41b6">
+给剩余孩子里最小饥饿度的孩子分配最小的能饱腹的饼干
+</pre></li>
+<li>具体实现是: 把孩子和饼干分别排序,然后从"饥饿度最小的孩子"和"大小最小的饼干"出发来进行遍历,直到饼干或者孩子遍历完</li>
+<li><p>
+代码如下:
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #3b6ea8;">from</span> typing <span style="color: #3b6ea8;">import</span> List
 
-<h1>Notes</h1>
-<a href="./kafka-internal.html">Kafka Internal</a>
-</br>
-<a href="./introduction-to-statistical-learing.html">Introduction to Statistical Learning</a>
-</br>
-<a href="./spark-in-action.html">Spark In Action</a>
-</br>
-<a href="./introduction-to-probability.html">Introduction to Probability</a>
-</br>
-<a href="./leetcode-summary.html">Leetcode Summary</a>
-</br>
+
+<span style="color: #3b6ea8;">class</span> <span style="color: #9a7500;">Solution</span>:
+<span style="background-color: #eeeeee;"> </span>   <span style="color: #3b6ea8;">def</span> <span style="color: #29838d;">candy</span>(<span style="color: #3b6ea8;">self</span>, ratings: List[<span style="color: #29838d;">int</span>]) -&gt; <span style="color: #29838d;">int</span>:
+<span style="background-color: #eeeeee;"> </span>   <span style="background-color: #eeeeee;"> </span>   <span style="color: #cb9aad;">ret</span> = [1] * <span style="color: #29838d;">len</span>(ratings)
+<span style="background-color: #eeeeee;"> </span>   <span style="background-color: #eeeeee;"> </span>   <span style="color: #3b6ea8;">for</span> i <span style="color: #3b6ea8;">in</span> <span style="color: #29838d;">range</span>(1, <span style="color: #29838d;">len</span>(ratings)):
+<span style="background-color: #eeeeee;"> </span>   <span style="background-color: #eeeeee;"> </span>   <span style="background-color: #eeeeee;"> </span>   <span style="color: #3b6ea8;">if</span> ratings[i] &gt; ratings[i - 1]:
+<span style="background-color: #eeeeee;"> </span>   <span style="background-color: #eeeeee;"> </span>   <span style="background-color: #eeeeee;"> </span>   <span style="background-color: #eeeeee;"> </span>   <span style="color: #3b6ea8;">if</span> ret[i] &lt;= ret[i - 1]:
+<span style="background-color: #eeeeee;"> </span>   <span style="background-color: #eeeeee;"> </span>   <span style="background-color: #eeeeee;"> </span>   <span style="background-color: #eeeeee;"> </span>   <span style="background-color: #eeeeee;"> </span>   <span style="color: #cb9aad;">ret</span>[i] = ret[i - 1] + 1
+<span style="background-color: #eeeeee;"> </span>   <span style="background-color: #eeeeee;"> </span>   <span style="background-color: #eeeeee;"> </span>   <span style="color: #3b6ea8;">elif</span> ratings[i] &lt; ratings[i - 1]:
+<span style="background-color: #eeeeee;"> </span>   <span style="background-color: #eeeeee;"> </span>   <span style="background-color: #eeeeee;"> </span>   <span style="background-color: #eeeeee;"> </span>   <span style="color: #3b6ea8;">if</span> ret[i] &gt;= ret[i - 1]:
+<span style="background-color: #eeeeee;"> </span>   <span style="background-color: #eeeeee;"> </span>   <span style="background-color: #eeeeee;"> </span>   <span style="background-color: #eeeeee;"> </span>   <span style="background-color: #eeeeee;"> </span>   <span style="color: #cb9aad;">ret</span>[i - 1] = ret[i] + 1
+<span style="background-color: #eeeeee;"> </span>   <span style="background-color: #eeeeee;"> </span>   <span style="color: #3b6ea8;">for</span> i <span style="color: #3b6ea8;">in</span> <span style="color: #29838d;">range</span>(<span style="color: #29838d;">len</span>(ratings) - 1)[::-1]:
+<span style="background-color: #eeeeee;"> </span>   <span style="background-color: #eeeeee;"> </span>   <span style="background-color: #eeeeee;"> </span>   <span style="color: #3b6ea8;">if</span> ratings[i] &gt; ratings[i + 1]:
+<span style="background-color: #eeeeee;"> </span>   <span style="background-color: #eeeeee;"> </span>   <span style="background-color: #eeeeee;"> </span>   <span style="background-color: #eeeeee;"> </span>   <span style="color: #3b6ea8;">if</span> ret[i] &lt;= ret[i + 1]:
+<span style="background-color: #eeeeee;"> </span>   <span style="background-color: #eeeeee;"> </span>   <span style="background-color: #eeeeee;"> </span>   <span style="background-color: #eeeeee;"> </span>   <span style="background-color: #eeeeee;"> </span>   <span style="color: #cb9aad;">ret</span>[i] = ret[i + 1] + 1
+<span style="background-color: #eeeeee;"> </span>   <span style="background-color: #eeeeee;"> </span>   <span style="background-color: #eeeeee;"> </span>   <span style="color: #3b6ea8;">elif</span> ratings[i] &lt; ratings[i + 1]:
+<span style="background-color: #eeeeee;"> </span>   <span style="background-color: #eeeeee;"> </span>   <span style="background-color: #eeeeee;"> </span>   <span style="background-color: #eeeeee;"> </span>   <span style="color: #3b6ea8;">if</span> ret[i] &gt;= ret[i + 1]:
+<span style="background-color: #eeeeee;"> </span>   <span style="background-color: #eeeeee;"> </span>   <span style="background-color: #eeeeee;"> </span>   <span style="background-color: #eeeeee;"> </span>   <span style="background-color: #eeeeee;"> </span>   <span style="color: #cb9aad;">ret</span>[i + 1] = ret[i] + 1
+<span style="background-color: #eeeeee;"> </span>   <span style="background-color: #eeeeee;"> </span>   <span style="color: #3b6ea8;">return</span> <span style="color: #29838d;">sum</span>(ret)
+</pre>
+</div></li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: harrifeng@outlook.com</p>
+<p class="date">Created: 2021-07-20 Tue 16:12</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
 </body>
+</html>
