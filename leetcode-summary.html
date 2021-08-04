@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2021-07-20 Tue 16:12 -->
+<!-- 2021-08-04 Wed 09:47 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>leetcode-summary</title>
@@ -221,6 +221,28 @@
     /*]]>*///-->
 // @license-end
 </script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
 </head>
 <body>
 <div id="content">
@@ -229,13 +251,43 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org0111de8">1. 第二章 贪心算法</a>
+<li><a href="#org7b4337f">1. 第二章 贪心算法</a>
 <ul>
-<li><a href="#org90aef5f">1.1. 算法解释</a></li>
-<li><a href="#org1ff9fbd">1.2. 题型总结</a></li>
-<li><a href="#org2685c1f">1.3. 分配问题</a>
+<li><a href="#org2b3d24d">1.1. 算法解释</a></li>
+<li><a href="#org2f86e87">1.2. 分配问题</a>
 <ul>
-<li><a href="#org3985cb6">1.3.1. Assign Cookies (Easy)</a></li>
+<li><a href="#org101a2d3">1.2.1. 455 Assign Cookies (Easy)</a></li>
+<li><a href="#org0d2b798">1.2.2. 135 Candy (Hard)</a></li>
+</ul>
+</li>
+<li><a href="#orga7256a7">1.3. 区间问题</a>
+<ul>
+<li><a href="#orgb70229a">1.3.1. 435 Non-overlapping Intervals (Medium)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org546ae0f">2. 第三章 玩转双指针</a>
+<ul>
+<li><a href="#org69cc253">2.1. 算法解释</a></li>
+<li><a href="#org28e31a0">2.2. Two Sum问题</a>
+<ul>
+<li><a href="#orgb14875d">2.2.1. 167 Two Sum II - input array is sorted (Easy)</a></li>
+</ul>
+</li>
+<li><a href="#org0214e87">2.3. 归并两个有序数组</a>
+<ul>
+<li><a href="#orge39d140">2.3.1. 88 Merge Sorted Array (Easy)</a></li>
+</ul>
+</li>
+<li><a href="#org0bc6f28">2.4. 快慢指针</a>
+<ul>
+<li><a href="#orgc8b7613">2.4.1. 142. Linked List Cycle II (Medium)</a></li>
+</ul>
+</li>
+<li><a href="#org161dd68">2.5. 滑动窗口</a>
+<ul>
+<li><a href="#org1e16428">2.5.1. 76. Minimum Window Substring (Hard)</a></li>
 </ul>
 </li>
 </ul>
@@ -243,44 +295,41 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-org0111de8" class="outline-2">
-<h2 id="org0111de8"><span class="section-number-2">1</span> 第二章 贪心算法</h2>
+<div id="outline-container-org7b4337f" class="outline-2">
+<h2 id="org7b4337f"><span class="section-number-2">1</span> 第二章 贪心算法</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-org90aef5f" class="outline-3">
-<h3 id="org90aef5f"><span class="section-number-3">1.1</span> 算法解释</h3>
+<div id="outline-container-org2b3d24d" class="outline-3">
+<h3 id="org2b3d24d"><span class="section-number-3">1.1</span> 算法解释</h3>
 <div class="outline-text-3" id="text-1-1">
 <ul class="org-ul">
 <li>所谓贪心算法或者贪心策略,是指保证每次操作都是局部最优,从而得到的结果是全局最优</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org1ff9fbd" class="outline-3">
-<h3 id="org1ff9fbd"><span class="section-number-3">1.2</span> 题型总结</h3>
+<div id="outline-container-org2f86e87" class="outline-3">
+<h3 id="org2f86e87"><span class="section-number-3">1.2</span> 分配问题</h3>
+<div class="outline-text-3" id="text-1-2">
 </div>
-<div id="outline-container-org2685c1f" class="outline-3">
-<h3 id="org2685c1f"><span class="section-number-3">1.3</span> 分配问题</h3>
-<div class="outline-text-3" id="text-1-3">
-</div>
-<div id="outline-container-org3985cb6" class="outline-4">
-<h4 id="org3985cb6"><span class="section-number-4">1.3.1</span> Assign Cookies (Easy)</h4>
-<div class="outline-text-4" id="text-1-3-1">
+<div id="outline-container-org101a2d3" class="outline-4">
+<h4 id="org101a2d3"><span class="section-number-4">1.2.1</span> 455 Assign Cookies (Easy)</h4>
+<div class="outline-text-4" id="text-1-2-1">
 </div>
 <ol class="org-ol">
-<li><a id="org14eeca5"></a>题目描述<br />
-<div class="outline-text-5" id="text-1-3-1-1">
+<li><a id="org4eeece5"></a>题目描述<br />
+<div class="outline-text-5" id="text-1-2-1-1">
 <ul class="org-ul">
 <li>有一群孩子和一堆饼干，每个孩子有一个饥饿度，每个饼干都有一个大小。每个孩子只能吃 一个饼干，且只有饼干的大小不小于孩子的饥饿度时，这个孩子才能吃饱。求解最多有多少孩子 可以吃饱。</li>
 </ul>
 </div>
 </li>
-<li><a id="org631dc57"></a>输入输出样例<br />
-<div class="outline-text-5" id="text-1-3-1-2">
+<li><a id="org55827a5"></a>输入输出样例<br />
+<div class="outline-text-5" id="text-1-2-1-2">
 <ul class="org-ul">
 <li><p>
 输入两个数组，分别代表孩子的饥饿度和饼干的大小。输出最多有多少孩子可以吃饱的数量。
 </p>
-<pre class="example" id="org30ae409">
+<pre class="example" id="orgad7d259">
 Input: [1,2], [1,2,3]
 Output: 2
 </pre></li>
@@ -288,8 +337,8 @@ Output: 2
 </ul>
 </div>
 </li>
-<li><a id="orgb9c5c35"></a>题解<br />
-<div class="outline-text-5" id="text-1-3-1-3">
+<li><a id="orge070d42"></a>题解<br />
+<div class="outline-text-5" id="text-1-2-1-3">
 <ul class="org-ul">
 <li>饥饿度最小的孩子最容易吃饱,所以先满足容易满足的孩子,毕竟我们的kpi是吃饱孩子的个数,一个容易吃饱和一个不容易吃饱的孩子对最终的贡献都是1</li>
 <li>我们需要先满足最容易吃饱的孩子,而且还要用能满足孩子的最小的饼干(贪心)</li>
@@ -297,7 +346,7 @@ Output: 2
 <li><p>
 总结一下这里的贪心策略
 </p>
-<pre class="example" id="org24c41b6">
+<pre class="example" id="org023fade">
 给剩余孩子里最小饥饿度的孩子分配最小的能饱腹的饼干
 </pre></li>
 <li>具体实现是: 把孩子和饼干分别排序,然后从"饥饿度最小的孩子"和"大小最小的饼干"出发来进行遍历,直到饼干或者孩子遍历完</li>
@@ -305,27 +354,536 @@ Output: 2
 代码如下:
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #3b6ea8;">from</span> typing <span style="color: #3b6ea8;">import</span> List
+<pre class="src src-python"><span style="color: #00796b;">from</span> typing <span style="color: #00796b;">import</span> List
 
 
-<span style="color: #3b6ea8;">class</span> <span style="color: #9a7500;">Solution</span>:
-<span style="background-color: #eeeeee;"> </span>   <span style="color: #3b6ea8;">def</span> <span style="color: #29838d;">candy</span>(<span style="color: #3b6ea8;">self</span>, ratings: List[<span style="color: #29838d;">int</span>]) -&gt; <span style="color: #29838d;">int</span>:
-<span style="background-color: #eeeeee;"> </span>   <span style="background-color: #eeeeee;"> </span>   <span style="color: #cb9aad;">ret</span> = [1] * <span style="color: #29838d;">len</span>(ratings)
-<span style="background-color: #eeeeee;"> </span>   <span style="background-color: #eeeeee;"> </span>   <span style="color: #3b6ea8;">for</span> i <span style="color: #3b6ea8;">in</span> <span style="color: #29838d;">range</span>(1, <span style="color: #29838d;">len</span>(ratings)):
-<span style="background-color: #eeeeee;"> </span>   <span style="background-color: #eeeeee;"> </span>   <span style="background-color: #eeeeee;"> </span>   <span style="color: #3b6ea8;">if</span> ratings[i] &gt; ratings[i - 1]:
-<span style="background-color: #eeeeee;"> </span>   <span style="background-color: #eeeeee;"> </span>   <span style="background-color: #eeeeee;"> </span>   <span style="background-color: #eeeeee;"> </span>   <span style="color: #3b6ea8;">if</span> ret[i] &lt;= ret[i - 1]:
-<span style="background-color: #eeeeee;"> </span>   <span style="background-color: #eeeeee;"> </span>   <span style="background-color: #eeeeee;"> </span>   <span style="background-color: #eeeeee;"> </span>   <span style="background-color: #eeeeee;"> </span>   <span style="color: #cb9aad;">ret</span>[i] = ret[i - 1] + 1
-<span style="background-color: #eeeeee;"> </span>   <span style="background-color: #eeeeee;"> </span>   <span style="background-color: #eeeeee;"> </span>   <span style="color: #3b6ea8;">elif</span> ratings[i] &lt; ratings[i - 1]:
-<span style="background-color: #eeeeee;"> </span>   <span style="background-color: #eeeeee;"> </span>   <span style="background-color: #eeeeee;"> </span>   <span style="background-color: #eeeeee;"> </span>   <span style="color: #3b6ea8;">if</span> ret[i] &gt;= ret[i - 1]:
-<span style="background-color: #eeeeee;"> </span>   <span style="background-color: #eeeeee;"> </span>   <span style="background-color: #eeeeee;"> </span>   <span style="background-color: #eeeeee;"> </span>   <span style="background-color: #eeeeee;"> </span>   <span style="color: #cb9aad;">ret</span>[i - 1] = ret[i] + 1
-<span style="background-color: #eeeeee;"> </span>   <span style="background-color: #eeeeee;"> </span>   <span style="color: #3b6ea8;">for</span> i <span style="color: #3b6ea8;">in</span> <span style="color: #29838d;">range</span>(<span style="color: #29838d;">len</span>(ratings) - 1)[::-1]:
-<span style="background-color: #eeeeee;"> </span>   <span style="background-color: #eeeeee;"> </span>   <span style="background-color: #eeeeee;"> </span>   <span style="color: #3b6ea8;">if</span> ratings[i] &gt; ratings[i + 1]:
-<span style="background-color: #eeeeee;"> </span>   <span style="background-color: #eeeeee;"> </span>   <span style="background-color: #eeeeee;"> </span>   <span style="background-color: #eeeeee;"> </span>   <span style="color: #3b6ea8;">if</span> ret[i] &lt;= ret[i + 1]:
-<span style="background-color: #eeeeee;"> </span>   <span style="background-color: #eeeeee;"> </span>   <span style="background-color: #eeeeee;"> </span>   <span style="background-color: #eeeeee;"> </span>   <span style="background-color: #eeeeee;"> </span>   <span style="color: #cb9aad;">ret</span>[i] = ret[i + 1] + 1
-<span style="background-color: #eeeeee;"> </span>   <span style="background-color: #eeeeee;"> </span>   <span style="background-color: #eeeeee;"> </span>   <span style="color: #3b6ea8;">elif</span> ratings[i] &lt; ratings[i + 1]:
-<span style="background-color: #eeeeee;"> </span>   <span style="background-color: #eeeeee;"> </span>   <span style="background-color: #eeeeee;"> </span>   <span style="background-color: #eeeeee;"> </span>   <span style="color: #3b6ea8;">if</span> ret[i] &gt;= ret[i + 1]:
-<span style="background-color: #eeeeee;"> </span>   <span style="background-color: #eeeeee;"> </span>   <span style="background-color: #eeeeee;"> </span>   <span style="background-color: #eeeeee;"> </span>   <span style="background-color: #eeeeee;"> </span>   <span style="color: #cb9aad;">ret</span>[i + 1] = ret[i] + 1
-<span style="background-color: #eeeeee;"> </span>   <span style="background-color: #eeeeee;"> </span>   <span style="color: #3b6ea8;">return</span> <span style="color: #29838d;">sum</span>(ret)
+<span style="color: #00796b;">class</span> <span style="color: #0097A7;">Solution</span>:
+<span style="background-color: #ECEFF1;"> </span>   <span style="color: #00796b;">def</span> <span style="color: #0097A7;">findContentChildren</span>(<span style="color: #00796b;">self</span>, g: List[<span style="color: #B71C1C;">int</span>], s: List[<span style="color: #B71C1C;">int</span>]) -&gt; <span style="color: #B71C1C;">int</span>:
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #EF6C00;">needs</span> = <span style="color: #B71C1C;">sorted</span>(g)
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #EF6C00;">cookies</span> = <span style="color: #B71C1C;">sorted</span>(s)
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #EF6C00;">beg_n</span> = 0
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #EF6C00;">beg_c</span> = 0
+
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #00796b;">while</span> beg_n &lt; <span style="color: #B71C1C;">len</span>(needs) <span style="color: #00796b;">and</span> beg_c &lt; <span style="color: #B71C1C;">len</span>(cookies):
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #00796b;">if</span> cookies[beg_c] &gt;= needs[beg_n]:
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #EF6C00;">beg_n</span> += 1
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #EF6C00;">beg_c</span> += 1
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #00796b;">return</span> beg_n
+</pre>
+</div></li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div id="outline-container-org0d2b798" class="outline-4">
+<h4 id="org0d2b798"><span class="section-number-4">1.2.2</span> 135 Candy (Hard)</h4>
+<div class="outline-text-4" id="text-1-2-2">
+</div>
+<ol class="org-ol">
+<li><a id="orge5a7db0"></a>题目描述<br />
+<div class="outline-text-5" id="text-1-2-2-1">
+<ul class="org-ul">
+<li>一群孩子站成一排，每一个孩子有自己的评分。现在需要给这些孩子发糖果，规则是如果一 个孩子的评分
+比自己身旁的一个孩子要高，那么这个孩子就必须得到比身旁孩子更多的糖果;所 有孩子至少要有一个糖果。
+求解最少需要多少个糖果。</li>
+</ul>
+</div>
+</li>
+<li><a id="org7fadc61"></a>输入输出样例<br />
+<div class="outline-text-5" id="text-1-2-2-2">
+<ul class="org-ul">
+<li><p>
+输入是一个数组，表示孩子的评分。输出是最少糖果的数量。
+</p>
+<pre class="example" id="org99340ee">
+Input: [1,0,2]
+Output: 5
+Explain: 你可以分别给这三个孩子分发 2、1、2 颗糖果
+
+Input:[1,2,2]
+OUtput:4
+Explain:你可以分别给这三个孩子分发 1、2、1 颗糖果。第三个孩子只得到 1 颗糖果，这已满足上述两个条件。
+</pre></li>
+</ul>
+</div>
+</li>
+<li><a id="orgeeaf272"></a>题解<br />
+<div class="outline-text-5" id="text-1-2-2-3">
+<ul class="org-ul">
+<li>这道题目的难点在于要和两侧进行比较,如果遍历的时候需要考虑两边,一般都不好设计</li>
+<li>一般需要两侧比较的,都要改成单侧比较,然后从左到右,再从右到左,做两遍</li>
+<li>具体实现方法如下:
+<ul class="org-ul">
+<li>首先所有孩子的糖果初始化为1</li>
+<li>第一遍从左到右遍历,如果右边孩子的评分比左边高,则右边孩子的糖果数目更新为左边孩子的数目+1</li>
+<li>第二遍从右到左遍历,如果左边孩子的评分比右边高(且左边孩子的糖果数目小于等于右边),则左边孩子的
+糖果数目更新为右边孩子的数目+1</li>
+</ul></li>
+<li><p>
+代码如下
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #00796b;">from</span> typing <span style="color: #00796b;">import</span> List
+
+
+<span style="color: #00796b;">class</span> <span style="color: #0097A7;">Solution</span>:
+<span style="background-color: #ECEFF1;"> </span>   <span style="color: #00796b;">def</span> <span style="color: #0097A7;">candy</span>(<span style="color: #00796b;">self</span>, ratings: List[<span style="color: #B71C1C;">int</span>]) -&gt; <span style="color: #B71C1C;">int</span>:
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #EF6C00;">ret</span> = [1] * <span style="color: #B71C1C;">len</span>(ratings)
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #00796b;">for</span> i <span style="color: #00796b;">in</span> <span style="color: #B71C1C;">range</span>(1, <span style="color: #B71C1C;">len</span>(ratings)):
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #00796b;">if</span> ratings[i] &gt; ratings[i - 1]:
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #00796b;">if</span> ret[i] &lt;= ret[i - 1]:
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #EF6C00;">ret</span>[i] = ret[i - 1] + 1
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #00796b;">elif</span> ratings[i] &lt; ratings[i - 1]:
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #00796b;">if</span> ret[i] &gt;= ret[i - 1]:
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #EF6C00;">ret</span>[i - 1] = ret[i] + 1
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #00796b;">for</span> i <span style="color: #00796b;">in</span> <span style="color: #B71C1C;">range</span>(<span style="color: #B71C1C;">len</span>(ratings) - 1)[::-1]:
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #00796b;">if</span> ratings[i] &gt; ratings[i + 1]:
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #00796b;">if</span> ret[i] &lt;= ret[i + 1]:
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #EF6C00;">ret</span>[i] = ret[i + 1] + 1
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #00796b;">elif</span> ratings[i] &lt; ratings[i + 1]:
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #00796b;">if</span> ret[i] &gt;= ret[i + 1]:
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #EF6C00;">ret</span>[i + 1] = ret[i] + 1
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #00796b;">return</span> <span style="color: #B71C1C;">sum</span>(ret)
+</pre>
+</div></li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orga7256a7" class="outline-3">
+<h3 id="orga7256a7"><span class="section-number-3">1.3</span> 区间问题</h3>
+<div class="outline-text-3" id="text-1-3">
+</div>
+<div id="outline-container-orgb70229a" class="outline-4">
+<h4 id="orgb70229a"><span class="section-number-4">1.3.1</span> 435 Non-overlapping Intervals (Medium)</h4>
+<div class="outline-text-4" id="text-1-3-1">
+</div>
+<ol class="org-ol">
+<li><a id="org5a9d423"></a>题目描述<br />
+<div class="outline-text-5" id="text-1-3-1-1">
+<ul class="org-ul">
+<li>给定多个区间，计算让这些区间互不重叠所需要移除区间的最少个数。起止相连不算重叠</li>
+</ul>
+</div>
+</li>
+<li><a id="orgb22cc6d"></a>输入输出样例<br />
+<div class="outline-text-5" id="text-1-3-1-2">
+<ul class="org-ul">
+<li><p>
+输入是一个数组，数组由多个长度固定为 2 的数组组成，表示区间的开始和结尾。输出一个 整数，表示需要移除的区间数量。
+</p>
+<pre class="example" id="orgae9c083">
+Input: [[1,2], [2,4], [1,3]]
+Output: 1
+</pre></li>
+<li>在这个样例中，我们可以移除区间 [1,3]，使得剩余的区间 [[1,2], [2,4]] 互不重叠。</li>
+</ul>
+</div>
+</li>
+<li><a id="org8a81e90"></a>题解<br />
+<div class="outline-text-5" id="text-1-3-1-3">
+<ul class="org-ul">
+<li>求最少的移除的区间的个数,等同于尽量多保留不重叠的区间</li>
+<li><p>
+然后在保留区间的时候,区间的结尾比开头重要,这是这道题的题眼.选择区间结尾越小,留给其他区间的空间
+就越大,就越能保留更多的区间. y因此我们采取的贪心策略为
+</p>
+<pre class="example" id="orgdc3a851">
+优先保留结尾小且不相交的区间
+</pre></li>
+<li>具体实现方法为:
+<ul class="org-ul">
+<li>先把区间按照结尾的大小进行排序</li>
+<li>每次选择结尾最小,而且和前一个区间不重叠的区间</li>
+</ul></li>
+<li><p>
+代码如下
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #00796b;">from</span> typing <span style="color: #00796b;">import</span> List
+
+
+<span style="color: #00796b;">class</span> <span style="color: #0097A7;">Solution</span>:
+<span style="background-color: #ECEFF1;"> </span>   <span style="color: #00796b;">def</span> <span style="color: #0097A7;">eraseOverlapIntervals</span>(<span style="color: #00796b;">self</span>, intervals: List[List[<span style="color: #B71C1C;">int</span>]]) -&gt; <span style="color: #B71C1C;">int</span>:
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #EF6C00;">intervals</span> = <span style="color: #B71C1C;">sorted</span>(intervals, key=<span style="color: #00796b;">lambda</span> x: x[1])
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #EF6C00;">N</span> = <span style="color: #B71C1C;">len</span>(intervals)
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #EF6C00;">removed</span> = 0
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #EF6C00;">prev</span> = intervals[0][1]
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #00796b;">for</span> i <span style="color: #00796b;">in</span> <span style="color: #B71C1C;">range</span>(1, N):
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #00796b;">if</span> intervals[i][0] &lt; prev:
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #EF6C00;">removed</span> += 1
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #00796b;">else</span>:
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #EF6C00;">prev</span> = intervals[i][1]
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #00796b;">return</span> removed
+</pre>
+</div></li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="outline-container-org546ae0f" class="outline-2">
+<h2 id="org546ae0f"><span class="section-number-2">2</span> 第三章 玩转双指针</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-org69cc253" class="outline-3">
+<h3 id="org69cc253"><span class="section-number-3">2.1</span> 算法解释</h3>
+<div class="outline-text-3" id="text-2-1">
+<ul class="org-ul">
+<li>双指针主要用于遍历数组,两个指针指向不同的元素,从而协同完成任务</li>
+<li>如果两个指针指向同一个数组,遍历方向相同,但是不会相交,这种情况被称之为滑动窗口,在区间搜索中会经常用到</li>
+<li>如果两个指针指向同一个数组,遍历方向相反,那么往往是用在搜索排序好的数组</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org28e31a0" class="outline-3">
+<h3 id="org28e31a0"><span class="section-number-3">2.2</span> Two Sum问题</h3>
+<div class="outline-text-3" id="text-2-2">
+</div>
+<div id="outline-container-orgb14875d" class="outline-4">
+<h4 id="orgb14875d"><span class="section-number-4">2.2.1</span> 167 Two Sum II - input array is sorted (Easy)</h4>
+<div class="outline-text-4" id="text-2-2-1">
+</div>
+<ol class="org-ol">
+<li><a id="org47f8f6f"></a>题目描述<br />
+<div class="outline-text-5" id="text-2-2-1-1">
+<ul class="org-ul">
+<li>在一个增序的整数数组里找到两个数，使它们的和为给定值。已知有且只有一对解。</li>
+</ul>
+</div>
+</li>
+<li><a id="org73038f3"></a>输入输出样例<br />
+<div class="outline-text-5" id="text-2-2-1-2">
+<ul class="org-ul">
+<li><p>
+输入是一个数组(numbers)和一个给定值(target)。输出是两个数的位置，从 1 开始计数
+</p>
+<pre class="example" id="orga653c10">
+Input: numbers = [2,7,11,15], target = 9
+Output: [1,2]
+</pre></li>
+</ul>
+</div>
+</li>
+<li><a id="org35ef2bc"></a>题解<br />
+<div class="outline-text-5" id="text-2-2-1-3">
+<ul class="org-ul">
+<li>数组排序好,且需要遍历,那么双指针就是比较好的办法</li>
+<li>设置第一个位置是beg,最后一个位置是end</li>
+<li>两个指针一块朝中间赶,赶的策略是:
+<ul class="org-ul">
+<li>如果beg和end的和等于target,那么找到结果返回</li>
+<li>如果beg和end的和小于target,那么beg增大,因为beg增大,beg和end的和增大</li>
+<li>如果beg和end的和大于target,那么end减小,因为end减小,beg和end的和减小</li>
+</ul></li>
+<li><p>
+代码如下:
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #00796b;">class</span> <span style="color: #0097A7;">Solution</span>:
+<span style="background-color: #ECEFF1;"> </span>   <span style="color: #00796b;">def</span> <span style="color: #0097A7;">twoSum</span>(<span style="color: #00796b;">self</span>, numbers: List[<span style="color: #B71C1C;">int</span>], target: <span style="color: #B71C1C;">int</span>) -&gt; List[<span style="color: #B71C1C;">int</span>]:
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #00796b;">if</span> <span style="color: #B71C1C;">len</span>(numbers) &lt; 2:
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #00796b;">return</span> []
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #EF6C00;">beg</span> = 0
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #EF6C00;">end</span> = <span style="color: #B71C1C;">len</span>(numbers) - 1
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #00796b;">while</span> beg &lt; end:
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #00796b;">if</span> numbers[beg] + numbers[end] == target:
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #00796b;">return</span> [beg + 1, end + 1]
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #00796b;">elif</span> numbers[beg] + numbers[end] &lt; target:
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #EF6C00;">beg</span> += 1
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #00796b;">else</span>:
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #EF6C00;">end</span> -= 1
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #00796b;">return</span> []
+</pre>
+</div></li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org0214e87" class="outline-3">
+<h3 id="org0214e87"><span class="section-number-3">2.3</span> 归并两个有序数组</h3>
+<div class="outline-text-3" id="text-2-3">
+</div>
+<div id="outline-container-orge39d140" class="outline-4">
+<h4 id="orge39d140"><span class="section-number-4">2.3.1</span> 88 Merge Sorted Array (Easy)</h4>
+<div class="outline-text-4" id="text-2-3-1">
+</div>
+<ol class="org-ol">
+<li><a id="org2bf84db"></a>题目描述<br />
+<div class="outline-text-5" id="text-2-3-1-1">
+<ul class="org-ul">
+<li>给定两个有序数组，把两个数组合并为一个</li>
+</ul>
+</div>
+</li>
+<li><a id="orgc36e123"></a>输入输出样例<br />
+<div class="outline-text-5" id="text-2-3-1-2">
+<ul class="org-ul">
+<li><p>
+输入是两个数组,把合并好的信息存放到第一个数组
+</p>
+<pre class="example" id="orgc9296be">
+Input: nums1 = [1,2,3,0,0,0], m = 3, nums2 = [2,5,6], n = 3
+Output: nums1 = [1,2,2,3,5,6]
+</pre></li>
+</ul>
+</div>
+</li>
+<li><a id="org196d4bc"></a>题解<br />
+<div class="outline-text-5" id="text-2-3-1-3">
+<ul class="org-ul">
+<li>排序数组,还是两个,这两个信息告诉我们,大概率是一个two pointer问题</li>
+<li>我们把两个指针指向两个数组的末尾:
+<ul class="org-ul">
+<li>一个是m - 1</li>
+<li>一个是n - 1</li>
+</ul></li>
+<li>我们还需要第三个指针来指向要更新的位置m+n-1</li>
+<li>更新的退出条件是:
+<ul class="org-ul">
+<li>m最后大于0,那么就直接结束了,因为m个剩余数字已经在正确的位置上了</li>
+<li>n最后大于0,那么要把nums2剩下的n个数移动到nums1的前面</li>
+</ul></li>
+<li><p>
+代码如下
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #00796b;">from</span> typing <span style="color: #00796b;">import</span> List
+
+
+<span style="color: #00796b;">class</span> <span style="color: #0097A7;">Solution</span>:
+<span style="background-color: #ECEFF1;"> </span>   <span style="color: #00796b;">def</span> <span style="color: #0097A7;">merge</span>(
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #00796b;">self</span>, nums1: List[<span style="color: #B71C1C;">int</span>], m: <span style="color: #B71C1C;">int</span>, nums2: List[<span style="color: #B71C1C;">int</span>], n: <span style="color: #B71C1C;">int</span>
+<span style="background-color: #ECEFF1;"> </span>   ) -&gt; <span style="color: #558b2f;">None</span>:
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #673ab7;">"""</span>
+<span style="color: #673ab7; background-color: #ECEFF1;"> </span><span style="color: #673ab7;">   </span><span style="color: #673ab7; background-color: #ECEFF1;"> </span><span style="color: #673ab7;">   Do not return anything, modify nums1 in-place instead.</span>
+<span style="color: #673ab7; background-color: #ECEFF1;"> </span><span style="color: #673ab7;">   </span><span style="color: #673ab7; background-color: #ECEFF1;"> </span><span style="color: #673ab7;">   """</span>
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #EF6C00;">pos</span> = m + n - 1
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #EF6C00;">m</span> -= 1
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #EF6C00;">n</span> -= 1
+
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #00796b;">while</span> m &gt;= 0 <span style="color: #00796b;">and</span> n &gt;= 0:
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #00796b;">if</span> nums1[m] &gt; nums2[n]:
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #EF6C00;">nums1</span>[pos] = nums1[m]
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #EF6C00;">m</span> -= 1
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #00796b;">else</span>:
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #EF6C00;">nums1</span>[pos] = nums2[n]
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #EF6C00;">n</span> -= 1
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #EF6C00;">pos</span> -= 1
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #00796b;">if</span> n &gt;= 0:
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #EF6C00;">nums1</span>[: n + 1] = nums2[: n + 1]
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #00796b;">return</span>
+</pre>
+</div></li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org0bc6f28" class="outline-3">
+<h3 id="org0bc6f28"><span class="section-number-3">2.4</span> 快慢指针</h3>
+<div class="outline-text-3" id="text-2-4">
+</div>
+<div id="outline-container-orgc8b7613" class="outline-4">
+<h4 id="orgc8b7613"><span class="section-number-4">2.4.1</span> 142. Linked List Cycle II (Medium)</h4>
+<div class="outline-text-4" id="text-2-4-1">
+</div>
+<ol class="org-ol">
+<li><a id="orgf55aec8"></a>题目描述<br />
+<div class="outline-text-5" id="text-2-4-1-1">
+<ul class="org-ul">
+<li>给定一个链表，如果有环路，找出环路的开始点</li>
+</ul>
+</div>
+</li>
+<li><a id="org4496f01"></a>输入输出样例<br />
+<div class="outline-text-5" id="text-2-4-1-2">
+<ul class="org-ul">
+<li>输入是一个链表，输出是链表的一个节点。如果没有环路，返回一个空指针。</li>
+</ul>
+</div>
+</li>
+<li><a id="org6bc6157"></a>题解<br />
+<div class="outline-text-5" id="text-2-4-1-3">
+<ul class="org-ul">
+<li>这是一道链表找环路的问题,有一个通用的解法-快慢指针法(Floyed判圈法):
+<ul class="org-ul">
+<li>给定两个指针slow每次走一步,fast每次走两步</li>
+<li>如果fast可以走到尽头,说明没有环路</li>
+<li>如果fast可以无限走下去,那么说明一定有环路,而且在某个时刻slow和fast会相遇</li>
+</ul></li>
+<li>除了判圈,我们还可以寻找环开始的地方:
+<ul class="org-ul">
+<li>如果存在环</li>
+<li>当slow和fast第一次相遇时,将fast重新移动到链表开头,slow保持在原位置</li>
+<li>slow和fast同事都前进一步,当slow和fast下一次相遇时,相遇的点就是环路开始的点</li>
+</ul></li>
+<li>针对寻找环的开始位置,有如下证明:
+<ul class="org-ul">
+<li><p>
+图142.png
+</p>
+
+<div id="org605ac00" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/leetcode/142.png" alt="142.png" />
+</p>
+<p><span class="figure-number">Figure 1: </span>leetcode/142.png</p>
+</div></li>
+<li><p>
+假设slow走过的节点数目为 \(N_{slow}\) , AB = n, SA = m, 环的长度为L,a为slow绕过的圈数,那么有
+</p>
+\begin{equation}
+N_{slow} = m + n + a \cdot L
+\end{equation}</li>
+<li><p>
+假设fast绕过的圈数为b,而且fast第一次相遇的时候,走过的节点数是slow的两倍,那么有
+</p>
+\begin{equation}
+2 \cdot N_{slow} = m + n + b \cdot L
+\end{equation}</li>
+<li><p>
+左右上面的式子,左边减去 \(N_{slow}\), 右边减去 \(m + n + a \cdot L\),得到
+</p>
+\begin{equation}
+N_{slow} = (b - a) \cdot L
+\end{equation}</li>
+<li><p>
+最终我们得到了 \(N_{slow} = (b - a) \cdot L\) 也就是说slow在第一次相遇时候,走过的节点数是L的整数倍,也就是说
+</p>
+\begin{equation}
+m + n = L
+\end{equation}</li>
+</ul></li>
+<li>\(m + n=L\)  也就意味着m和L-n相等, slow从起点到环开始点走了m, fast从相遇点到环开始点也走了m,也就是L-n</li>
+<li><p>
+代码如下
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #00796b;">from</span> util.list_node <span style="color: #00796b;">import</span> ListNode
+
+
+<span style="color: #00796b;">class</span> <span style="color: #0097A7;">Solution</span>:
+<span style="background-color: #ECEFF1;"> </span>   <span style="color: #00796b;">def</span> <span style="color: #0097A7;">detectCycle</span>(<span style="color: #00796b;">self</span>, head: ListNode) -&gt; ListNode:
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #00796b;">if</span> head <span style="color: #00796b;">is</span> <span style="color: #558b2f;">None</span> <span style="color: #00796b;">or</span> head.<span style="color: #B71C1C;">next</span> <span style="color: #00796b;">is</span> <span style="color: #558b2f;">None</span>:
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #00796b;">return</span> <span style="color: #558b2f;">None</span>
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #EF6C00;">fast</span> = head
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #EF6C00;">slow</span> = head
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #00796b;">while</span> <span style="color: #558b2f;">True</span>:
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #00796b;">if</span> fast.<span style="color: #B71C1C;">next</span> <span style="color: #00796b;">is</span> <span style="color: #558b2f;">None</span> <span style="color: #00796b;">or</span> fast.<span style="color: #B71C1C;">next</span>.<span style="color: #B71C1C;">next</span> <span style="color: #00796b;">is</span> <span style="color: #558b2f;">None</span>:
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #00796b;">return</span> <span style="color: #558b2f;">None</span>
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #EF6C00;">fast</span> = fast.<span style="color: #B71C1C;">next</span>.<span style="color: #B71C1C;">next</span>
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #EF6C00;">slow</span> = slow.<span style="color: #B71C1C;">next</span>
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #00796b;">if</span> fast == slow:
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #00796b;">break</span>
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #EF6C00;">fast</span> = head
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #00796b;">while</span> fast != slow:
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #EF6C00;">fast</span> = fast.<span style="color: #B71C1C;">next</span>
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #EF6C00;">slow</span> = slow.<span style="color: #B71C1C;">next</span>
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #00796b;">return</span> fast
+</pre>
+</div></li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org161dd68" class="outline-3">
+<h3 id="org161dd68"><span class="section-number-3">2.5</span> 滑动窗口</h3>
+<div class="outline-text-3" id="text-2-5">
+</div>
+<div id="outline-container-org1e16428" class="outline-4">
+<h4 id="org1e16428"><span class="section-number-4">2.5.1</span> 76. Minimum Window Substring (Hard)</h4>
+<div class="outline-text-4" id="text-2-5-1">
+</div>
+<ol class="org-ol">
+<li><a id="org52997fa"></a>题目描述<br />
+<div class="outline-text-5" id="text-2-5-1-1">
+<ul class="org-ul">
+<li>给定两个字符串 S 和 T ，求 S 中包含 T 所有字符的最短连续子字符串的长度，同时要求时间复杂度不得超过 O(n)。</li>
+</ul>
+</div>
+</li>
+<li><a id="orgee2ae48"></a>输入输出样例<br />
+<div class="outline-text-5" id="text-2-5-1-2">
+<ul class="org-ul">
+<li><p>
+输入是两个字符串 S 和 T，输出是一个 S 字符串的子串。
+</p>
+<pre class="example" id="org9939349">
+Input: S = "ADOBECODEBANC", T = "ABC"
+Output: "BANC"
+</pre></li>
+<li>在这个样例中，S 中同时包含一个 A、一个 B、一个 C 的最短子字符串是“BANC”。</li>
+</ul>
+</div>
+</li>
+<li><a id="org34e5545"></a>题解<br />
+<div class="outline-text-5" id="text-2-5-1-3">
+<ul class="org-ul">
+<li>所谓滑动窗口问题,一般有如下的特征:
+<ul class="org-ul">
+<li>求极值(最大或者最小值)</li>
+<li>两个指针运动方向一致,两个指针之间的部分叫做窗口</li>
+<li>一般数据不是排序的</li>
+</ul></li>
+<li>本题总体思路是双指针,但是还有其他难点:
+<ol class="org-ol">
+<li>双指针谁先移动</li>
+<li>如何处理T中的重复,比如T是"AAB",有两个A</li>
+<li>如何处理S中的重复,比如S="AAABC", T="ABC"的情况下,如何跳过前两个A</li>
+<li>因为要返回字符串,如何存储区间</li>
+</ol></li>
+<li>下面算这几个难点的解决方案:
+<ol class="org-ol">
+<li>其实谁先移动都可以,但是我们选择让back先移动,因为front的移动范围就是当前位置,到小于等于back(注意这个等于)</li>
+<li>对于T中的重复,我们使用字典来记录summary[A] = 2</li>
+<li>对于S中的重复,我们需要使用一个cnt来记录"真实需要的数目",比如我们只需要3个(ABC),那么AAABC前
+两个AA移动的之后,cnt的值并不改动(可以通过summary[A]的大小来判断是否真的改动cnt)</li>
+</ol></li>
+<li><p>
+代码如下
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #00796b;">class</span> <span style="color: #0097A7;">Solution</span>:
+<span style="background-color: #ECEFF1;"> </span>   <span style="color: #00796b;">def</span> <span style="color: #0097A7;">minWindow</span>(<span style="color: #00796b;">self</span>, s: <span style="color: #B71C1C;">str</span>, t: <span style="color: #B71C1C;">str</span>) -&gt; <span style="color: #B71C1C;">str</span>:
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #EF6C00;">cnt</span> = <span style="color: #B71C1C;">len</span>(t)
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #00796b;">from</span> collections <span style="color: #00796b;">import</span> defaultdict
+
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #EF6C00;">summary</span> = defaultdict(<span style="color: #B71C1C;">int</span>)
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #00796b;">for</span> one <span style="color: #00796b;">in</span> t:
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #EF6C00;">summary</span>[one] += 1
+
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #EF6C00;">back</span> = 0
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #EF6C00;">front</span> = 0
+
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #EF6C00;">minv</span> = (0, <span style="color: #B71C1C;">float</span>(<span style="color: #689f38;">"inf"</span>))
+
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #00796b;">for</span> back, curr <span style="color: #00796b;">in</span> <span style="color: #B71C1C;">enumerate</span>(s):
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #00796b;">if</span> curr <span style="color: #00796b;">in</span> summary:
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #EF6C00;">summary</span>[curr] -= 1
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #00796b;">if</span> summary[curr] &gt;= 0:
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #EF6C00;">cnt</span> -= 1
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #00796b;">while</span> cnt == 0 <span style="color: #00796b;">and</span> front &lt;= back:
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #00796b;">if</span> s[front] <span style="color: #00796b;">in</span> summary:
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   summary[s[front]] += 1
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #00796b;">if</span> summary[s[front]] &gt; 0:
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #EF6C00;">cnt</span> += 1
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #00796b;">if</span> back - front &lt; minv[1] - minv[0]:
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #EF6C00;">minv</span> = (front, back)
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #EF6C00;">front</span> += 1
+
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #00796b;">if</span> minv[1] &gt; <span style="color: #B71C1C;">len</span>(s):
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #00796b;">return</span> <span style="color: #689f38;">""</span>
+<span style="background-color: #ECEFF1;"> </span>   <span style="background-color: #ECEFF1;"> </span>   <span style="color: #00796b;">return</span> s[minv[0] : minv[1] + 1]
 </pre>
 </div></li>
 </ul>
@@ -338,7 +896,7 @@ Output: 2
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: harrifeng@outlook.com</p>
-<p class="date">Created: 2021-07-20 Tue 16:12</p>
+<p class="date">Created: 2021-08-04 Wed 09:47</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
