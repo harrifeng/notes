@@ -1,2 +1,2 @@
 # notes
-All book notes host here
+All book notes
