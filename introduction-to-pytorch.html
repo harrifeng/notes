@@ -1,0 +1,2462 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2021-11-18 Thu 19:25 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>pytorch-basic</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="harrifeng@outlook.com" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/readtheorg.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/js/readtheorg.js"></script>
+<script type="text/javascript">
+// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
+<!--/*--><![CDATA[/*><!--*/
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+    /*]]>*///-->
+// @license-end
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">pytorch-basic</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org43cf6ee">1. Quickstart</a>
+<ul>
+<li><a href="#org6b59beb">1.1. Working with data</a></li>
+<li><a href="#org4765dd6">1.2. Creating Models</a></li>
+</ul>
+</li>
+<li><a href="#org54f5ee9">2. Tensors</a>
+<ul>
+<li><a href="#orgeff0b06">2.1. Initializing a Tensor</a>
+<ul>
+<li><a href="#orgc09b41e">2.1.1. Directly from data</a></li>
+<li><a href="#org4f9161a">2.1.2. From a NumPy array</a></li>
+<li><a href="#org177bf35">2.1.3. From another tensor</a></li>
+<li><a href="#org1c7cbf1">2.1.4. With random or constant values:</a></li>
+</ul>
+</li>
+<li><a href="#org4555655">2.2. Attributes of Tensor</a></li>
+<li><a href="#orgce4ab38">2.3. Operations on Tensors</a>
+<ul>
+<li><a href="#org1ac9655">2.3.1. Standard numpy-like indexing and slicing</a></li>
+<li><a href="#org48f7758">2.3.2. Joining tensors</a></li>
+<li><a href="#orgb679c13">2.3.3. Arithmetic operations</a></li>
+</ul>
+</li>
+<li><a href="#orgd712754">2.4. Bridge with Numpy</a>
+<ul>
+<li><a href="#org7c471ab">2.4.1. Tensor to Numpy array</a></li>
+<li><a href="#org1075845">2.4.2. Numpy array to Tensor</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgbe3c536">3. Datasets &amp; Dataloaders</a>
+<ul>
+<li><a href="#orgf200b11">3.1. Loading a Dataset</a></li>
+<li><a href="#org87dfa63">3.2. Iterating and Visualizing the Dataset</a></li>
+<li><a href="#org3f074e9">3.3. Creating a Custom Dataset for your files</a>
+<ul>
+<li><a href="#org4aa0077">3.3.1. __init__</a></li>
+<li><a href="#orgb23d5f2">3.3.2. __len__</a></li>
+<li><a href="#orgf6d3144">3.3.3. __getitem__</a></li>
+</ul>
+</li>
+<li><a href="#orgab32d67">3.4. Preparing your data for training with DataLoaders</a></li>
+<li><a href="#orgdd5216d">3.5. Iterate through the DataLoader</a></li>
+</ul>
+</li>
+<li><a href="#org6ce1712">4. Transforms</a>
+<ul>
+<li><a href="#org07bcbf3">4.1. ToTensor()</a></li>
+<li><a href="#org68e0198">4.2. Lambda Transforms</a></li>
+</ul>
+</li>
+<li><a href="#orgb55af80">5. Build The Neural Network</a>
+<ul>
+<li><a href="#org9f34a34">5.1. Get Device for Training</a></li>
+<li><a href="#orgc267249">5.2. Define the Class</a></li>
+<li><a href="#org22fc26e">5.3. Model Layers</a>
+<ul>
+<li><a href="#org8ff46b1">5.3.1. nn.Flatten</a></li>
+<li><a href="#orged00327">5.3.2. nn.Linear</a></li>
+<li><a href="#orgb0d9a9a">5.3.3. nn.ReLU</a></li>
+<li><a href="#org833239e">5.3.4. nn.Sequential</a></li>
+<li><a href="#org60d42c3">5.3.5. nn.Softmax</a></li>
+</ul>
+</li>
+<li><a href="#orgd69bb23">5.4. Model Parameters</a></li>
+</ul>
+</li>
+<li><a href="#orgb8eff61">6. Automatic Differentitaion With torch.autograd</a>
+<ul>
+<li><a href="#org191d53d">6.1. Computing Gradients</a></li>
+<li><a href="#org8116a39">6.2. Disabling Gradient Tracking</a></li>
+<li><a href="#org061bfc4">6.3. More on Computational Graphs</a></li>
+</ul>
+</li>
+<li><a href="#org6b7d65a">7. Optimizing Model Parameters</a>
+<ul>
+<li><a href="#org489aa06">7.1. Prereuisite Code</a></li>
+<li><a href="#orgd546989">7.2. Hyperparameters</a></li>
+<li><a href="#org6a4debe">7.3. Optimization Loop</a>
+<ul>
+<li><a href="#orgb5bb0c0">7.3.1. Loss Function</a></li>
+<li><a href="#org54eabb3">7.3.2. Optimizer</a></li>
+</ul>
+</li>
+<li><a href="#org662063c">7.4. Full Implementation</a></li>
+</ul>
+</li>
+<li><a href="#org32f9cbf">8. Save and Load the Model</a>
+<ul>
+<li><a href="#org595b05a">8.1. Saving and Loading Model Weights</a></li>
+<li><a href="#org89d5d93">8.2. Saving and Loading Models with Shapes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org43cf6ee" class="outline-2">
+<h2 id="org43cf6ee"><span class="section-number-2">1</span> Quickstart</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-org6b59beb" class="outline-3">
+<h3 id="org6b59beb"><span class="section-number-3">1.1</span> Working with data</h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li>pytorch有两个primitive来处理data:
+<ul class="org-ul">
+<li>torch.utils.data.Dataset: Dataset存储sample和对应的label</li>
+<li>torch.utils.data.DataLoader: DataLoader在Dataset的基础上wrap了一层iterable</li>
+</ul></li>
+<li><p>
+代码如下
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #9d0006;">import</span> torch
+<span style="color: #9d0006;">from</span> torch <span style="color: #9d0006;">import</span> nn
+<span style="color: #9d0006;">from</span> torch.utils.data <span style="color: #9d0006;">import</span> DataLoader
+<span style="color: #9d0006;">from</span> torchvision <span style="color: #9d0006;">import</span> datasets
+<span style="color: #9d0006;">from</span> torchvision.transforms <span style="color: #9d0006;">import</span> ToTensor, Lambda, Compose
+<span style="color: #9d0006;">import</span> matplotlib.pyplot <span style="color: #9d0006;">as</span> plt
+</pre>
+</div></li>
+<li>我们本tutorial会使用TorchVision dataset</li>
+<li>torchvision.datasets module包括了很多Dataset objects,很多是现实世界的数据集.本tutorial使用FashionMNIST
+dataset</li>
+<li>每个TorchVision Dataset都有两个argument:
+<ul class="org-ul">
+<li>transform: 修改sample</li>
+<li>target_transform: 修改label</li>
+</ul></li>
+<li>下载FashionMNIST的:
+<ul class="org-ul">
+<li><p>
+代码如下
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #9d0006;">import</span> torch
+<span style="color: #9d0006;">from</span> torch <span style="color: #9d0006;">import</span> nn
+<span style="color: #9d0006;">from</span> torch.utils.data <span style="color: #9d0006;">import</span> DataLoader
+<span style="color: #9d0006;">from</span> torchvision <span style="color: #9d0006;">import</span> datasets
+<span style="color: #9d0006;">from</span> torchvision.transforms <span style="color: #9d0006;">import</span> ToTensor, Lambda, Compose
+<span style="color: #9d0006;">import</span> matplotlib.pyplot <span style="color: #9d0006;">as</span> plt
+
+
+<span style="color: #a89984;"># </span><span style="color: #a89984;">Download training data from open datasets.</span>
+<span style="color: #076678;">training_data</span> = datasets.FashionMNIST(
+<span style="background-color: #ebdbb2;"> </span>   root=<span style="color: #79740e;">"data"</span>,
+<span style="background-color: #ebdbb2;"> </span>   train=<span style="color: #8f3f71;">True</span>,
+<span style="background-color: #ebdbb2;"> </span>   download=<span style="color: #8f3f71;">True</span>,
+<span style="background-color: #ebdbb2;"> </span>   transform=ToTensor(),
+)
+
+<span style="color: #a89984;"># </span><span style="color: #a89984;">Download test data from open datasets.</span>
+<span style="color: #076678;">test_data</span> = datasets.FashionMNIST(
+<span style="background-color: #ebdbb2;"> </span>   root=<span style="color: #79740e;">"data"</span>,
+<span style="background-color: #ebdbb2;"> </span>   train=<span style="color: #8f3f71;">False</span>,
+<span style="background-color: #ebdbb2;"> </span>   download=<span style="color: #8f3f71;">True</span>,
+<span style="background-color: #ebdbb2;"> </span>   transform=ToTensor(),
+)
+</pre>
+</div></li>
+<li><p>
+输出如下:
+</p>
+<pre class="example" id="org89a5426">
+/Users/fenghaoran/.virtualenvs/3ENV/bin/python3.7 /Users/fenghaoran/github/pytorch/code/001.py
+Downloading http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/train-images-idx3-ubyte.gz
+Downloading http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/train-images-idx3-ubyte.gz to data/FashionMNIST/raw/train-images-idx3-ubyte.gz
+100.0%
+Extracting data/FashionMNIST/raw/train-images-idx3-ubyte.gz to data/FashionMNIST/raw
+
+Downloading http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/train-labels-idx1-ubyte.gz
+Downloading http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/train-labels-idx1-ubyte.gz to data/FashionMNIST/raw/train-labels-idx1-ubyte.gz
+100.6%
+Extracting data/FashionMNIST/raw/train-labels-idx1-ubyte.gz to data/FashionMNIST/raw
+
+Downloading http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/t10k-images-idx3-ubyte.gz
+Downloading http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/t10k-images-idx3-ubyte.gz to data/FashionMNIST/raw/t10k-images-idx3-ubyte.gz
+100.0%
+Extracting data/FashionMNIST/raw/t10k-images-idx3-ubyte.gz to data/FashionMNIST/raw
+
+Downloading http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/t10k-labels-idx1-ubyte.gz
+Downloading http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/t10k-labels-idx1-ubyte.gz to data/FashionMNIST/raw/t10k-labels-idx1-ubyte.gz
+119.3%
+Extracting data/FashionMNIST/raw/t10k-labels-idx1-ubyte.gz to data/FashionMNIST/raw
+</pre></li>
+</ul></li>
+<li>我们把Dataset作为参数传入给DataLoader.这个会把我们的dataset转换成一个iterable,这个iterable支持:
+<ul class="org-ul">
+<li>automatic batching</li>
+<li>sampling</li>
+<li>shuffling</li>
+<li>multiprocess</li>
+</ul></li>
+<li>下面的例子就是我们定义了batch_size为64, 然后每次循环, dataloader会返回一个包含64个feature和label
+<ul class="org-ul">
+<li><p>
+代码如下
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #076678;">batch_size</span> = 64
+
+<span style="color: #a89984;"># </span><span style="color: #a89984;">Create data loaders</span>
+<span style="color: #076678;">train_dataloader</span> = DataLoader(training_data, batch_size=batch_size)
+<span style="color: #076678;">test_dataloader</span> = DataLoader(test_data, batch_size=batch_size)
+
+<span style="color: #9d0006;">for</span> X, y <span style="color: #9d0006;">in</span> test_dataloader:
+<span style="background-color: #ebdbb2;"> </span>   <span style="color: #9d0006;">print</span>(<span style="color: #79740e;">"Shape of X [N, C, H, W]: "</span>, X.shape)
+<span style="background-color: #ebdbb2;"> </span>   <span style="color: #9d0006;">print</span>(<span style="color: #79740e;">"Shape of y: "</span>, y.dtype)
+<span style="background-color: #ebdbb2;"> </span>   <span style="color: #9d0006;">break</span>
+</pre>
+</div></li>
+<li><p>
+输出如下
+</p>
+<pre class="example" id="orgd03ea84">
+Shape of X [N, C, H, W]:  torch.Size([64, 1, 28, 28])
+Shape of y:  torch.int64
+</pre></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org4765dd6" class="outline-3">
+<h3 id="org4765dd6"><span class="section-number-3">1.2</span> Creating Models</h3>
+<div class="outline-text-3" id="text-1-2">
+<ul class="org-ul">
+<li>为了创建一个neural network,我们要创建一个继承自nn.Module的class:
+<ul class="org-ul">
+<li>我们需要在__init__ function里面定义我们的network的layer</li>
+<li>我们还需要在forward函数里面data如何在network上面传输</li>
+<li>如果存在GPU,我们还可以把神经网络的代码移动到GPU</li>
+<li><p>
+代码如下
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #a89984;"># </span><span style="color: #a89984;">Define model</span>
+<span style="color: #9d0006;">class</span> <span style="color: #8f3f71;">NeuralNetwork</span>(nn.Module):
+<span style="background-color: #ebdbb2;"> </span>   <span style="color: #9d0006;">def</span> <span style="color: #b57614;">__init__</span>(<span style="color: #9d0006;">self</span>):
+<span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   <span style="color: #af3a03;">super</span>(NeuralNetwork, <span style="color: #9d0006;">self</span>).__init__()
+<span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   <span style="color: #9d0006;">self</span>.flatten = nn.Flatten()
+<span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   <span style="color: #9d0006;">self</span>.linear_relu_stack = nn.Sequential(
+<span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   nn.Linear(28 * 28, 512),
+<span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   nn.ReLU(),
+<span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   nn.Linear(512, 512),
+<span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   nn.ReLU(),
+<span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   nn.Linear(512, 10),
+<span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   nn.ReLU(),
+<span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   )
+
+<span style="background-color: #ebdbb2;"> </span>   <span style="color: #9d0006;">def</span> <span style="color: #b57614;">forward</span>(<span style="color: #9d0006;">self</span>, x):
+<span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   <span style="color: #076678;">x</span> = <span style="color: #9d0006;">self</span>.flatten(x)
+<span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   <span style="color: #076678;">logits</span> = <span style="color: #9d0006;">self</span>.linear_relu_stack(x)
+<span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   <span style="color: #9d0006;">return</span> logits
+
+
+<span style="color: #076678;">model</span> = NeuralNetwork().to(device)
+<span style="color: #9d0006;">print</span>(model)
+</pre>
+</div></li>
+<li><p>
+输出如下
+</p>
+<pre class="example" id="org001157d">
+Using cpu device
+NeuralNetwork(
+  (flatten): Flatten(start_dim=1, end_dim=-1)
+  (linear_relu_stack): Sequential(
+    (0): Linear(in_features=784, out_features=512, bias=True)
+    (1): ReLU()
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ReLU()
+    (4): Linear(in_features=512, out_features=10, bias=True)
+    (5): ReLU()
+  )
+)
+</pre></li>
+</ul></li>
+<li>TODO</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org54f5ee9" class="outline-2">
+<h2 id="org54f5ee9"><span class="section-number-2">2</span> Tensors</h2>
+<div class="outline-text-2" id="text-2">
+<ul class="org-ul">
+<li>tensors是一种特殊的数据结构,和array或者matrix非常相似.</li>
+<li>在pytorch里面,我们使用tensor来encode:
+<ul class="org-ul">
+<li>model的参数</li>
+<li>model的input</li>
+<li>model的output</li>
+</ul></li>
+<li>Tensor拥有NumPy的ndarray几乎所有的功能,额外还能支持GPU加速</li>
+<li>在实际应用中, tensor和NumPy array经常share underlying memory(这样可以减少数据库拷贝)</li>
+<li>Tensor还设计了能够自动计算梯度</li>
+<li><p>
+本节需要的头文件
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #9d0006;">import</span> torch
+<span style="color: #9d0006;">import</span> numpy <span style="color: #9d0006;">as</span> np
+</pre>
+</div></li>
+</ul>
+</div>
+<div id="outline-container-orgeff0b06" class="outline-3">
+<h3 id="orgeff0b06"><span class="section-number-3">2.1</span> Initializing a Tensor</h3>
+<div class="outline-text-3" id="text-2-1">
+<ul class="org-ul">
+<li>Tensor可以使用以多种方法初始化</li>
+</ul>
+</div>
+<div id="outline-container-orgc09b41e" class="outline-4">
+<h4 id="orgc09b41e"><span class="section-number-4">2.1.1</span> Directly from data</h4>
+<div class="outline-text-4" id="text-2-1-1">
+<ul class="org-ul">
+<li><p>
+可以从data直接初始化tensor
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #076678;">data</span> = [[1, 2], [3, 4]]
+<span style="color: #076678;">x_data</span> = torch.tensor(data)
+</pre>
+</div></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org4f9161a" class="outline-4">
+<h4 id="org4f9161a"><span class="section-number-4">2.1.2</span> From a NumPy array</h4>
+<div class="outline-text-4" id="text-2-1-2">
+<ul class="org-ul">
+<li><p>
+也可以从NumPy array初始化tensor,也可以从tensor转换成NumPy array
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #076678;">np_array</span> = np.array(data)
+<span style="color: #076678;">x_np</span> = torch.from_numpy(np_array)
+</pre>
+</div></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org177bf35" class="outline-4">
+<h4 id="org177bf35"><span class="section-number-4">2.1.3</span> From another tensor</h4>
+<div class="outline-text-4" id="text-2-1-3">
+<ul class="org-ul">
+<li>新的tensor会保留一些特性(shape, datatype), 当然我们也可以明确的override这些特性.不过值就不继承了,
+比如ones_like就会把原来的matrix的所有值换成1
+<ul class="org-ul">
+<li><p>
+代码如下:
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #076678;">x_ones</span> = torch.ones_like(x_data)  <span style="color: #a89984;"># </span><span style="color: #a89984;">retains the properties of x_data</span>
+<span style="color: #9d0006;">print</span>(f<span style="color: #79740e;">"Ones Tensor: \n {x_ones} \n"</span>)
+
+<span style="color: #076678;">x_rand</span> = torch.rand_like(
+<span style="background-color: #ebdbb2;"> </span>   x_data, dtype=torch.<span style="color: #af3a03;">float</span>
+)  <span style="color: #a89984;"># </span><span style="color: #a89984;">override the datatype of x_data</span>
+<span style="color: #9d0006;">print</span>(f<span style="color: #79740e;">"Random Tensor: \n {x_rand} \n"</span>)
+</pre>
+</div></li>
+<li><p>
+输出如下:
+</p>
+<pre class="example" id="orgcbd8583">
+Ones Tensor:
+ tensor([[1, 1],
+        [1, 1]])
+
+Random Tensor:
+ tensor([[0.7919, 0.3389],
+        [0.3505, 0.1489]])
+</pre></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org1c7cbf1" class="outline-4">
+<h4 id="org1c7cbf1"><span class="section-number-4">2.1.4</span> With random or constant values:</h4>
+<div class="outline-text-4" id="text-2-1-4">
+<ul class="org-ul">
+<li>我们可以使用一个tuple来定义tensor的dimensions,然后作为一个参数传递给初始化函数:
+<ul class="org-ul">
+<li><p>
+代码如下:
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #076678;">shape</span> = (
+<span style="background-color: #ebdbb2;"> </span>   2,
+<span style="background-color: #ebdbb2;"> </span>   3,
+)
+<span style="color: #076678;">rand_tensor</span> = torch.rand(shape)
+<span style="color: #076678;">ones_tensor</span> = torch.ones(shape)
+<span style="color: #076678;">zeros_tensor</span> = torch.zeros(shape)
+
+<span style="color: #9d0006;">print</span>(f<span style="color: #79740e;">"Random Tensor: \n {rand_tensor} \n"</span>)
+<span style="color: #9d0006;">print</span>(f<span style="color: #79740e;">"Ones Tensor: \n {ones_tensor} \n"</span>)
+<span style="color: #9d0006;">print</span>(f<span style="color: #79740e;">"Zeros Tensor: \n {zeros_tensor} \n"</span>)
+</pre>
+</div></li>
+<li><p>
+输出如下:
+</p>
+<pre class="example" id="orgb75191b">
+Random Tensor:
+ tensor([[0.6669, 0.3043, 0.1660],
+        [0.6319, 0.2304, 0.6747]])
+
+Ones Tensor:
+ tensor([[1., 1., 1.],
+        [1., 1., 1.]])
+
+Zeros Tensor:
+ tensor([[0., 0., 0.],
+        [0., 0., 0.]])
+</pre></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org4555655" class="outline-3">
+<h3 id="org4555655"><span class="section-number-3">2.2</span> Attributes of Tensor</h3>
+<div class="outline-text-3" id="text-2-2">
+<ul class="org-ul">
+<li>tensor的attribute描述了他们的shape,datatype,和他们所存储的device
+<ul class="org-ul">
+<li><p>
+代码如下
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #076678;">tensor</span> = torch.rand(3, 4)
+
+<span style="color: #9d0006;">print</span>(f<span style="color: #79740e;">"Shape of tensor: {tensor.shape}"</span>)
+<span style="color: #9d0006;">print</span>(f<span style="color: #79740e;">"Datatype of tensor: {tensor.dtype}"</span>)
+<span style="color: #9d0006;">print</span>(f<span style="color: #79740e;">"Device tensor is stored on: {tensor.device}"</span>)
+</pre>
+</div></li>
+<li><p>
+输出如下
+</p>
+<pre class="example" id="orgcdc5799">
+Shape of tensor: torch.Size([3, 4])
+Datatype of tensor: torch.float32
+Device tensor is stored on: cpu
+</pre></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgce4ab38" class="outline-3">
+<h3 id="orgce4ab38"><span class="section-number-3">2.3</span> Operations on Tensors</h3>
+<div class="outline-text-3" id="text-2-3">
+<ul class="org-ul">
+<li>tensor支持100多种操作,包括:
+<ul class="org-ul">
+<li>arithmetic</li>
+<li>linear algebra</li>
+<li>matrix manipulation(transposing, indexing, slicing)</li>
+<li>sampling</li>
+</ul></li>
+<li><p>
+这些操作可以在GPU上面或者CPU上面运行.默认情况下是在cpu运行.如果想在GPU运行,需要明确的使用`to`
+函数.需要注意的是跨设备(从CPU到GPU)拷贝tensor是非常expensive的操作,费时间,费内存
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #9d0006;">if</span> torch.cuda.is_available():
+<span style="background-color: #ebdbb2;"> </span>   <span style="color: #076678;">tensor</span> = tensor.to(<span style="color: #79740e;">"cuda"</span>)
+</pre>
+</div></li>
+<li>下面我们列举一些处理数据的api,和NumPy比起来是非常类似的</li>
+</ul>
+</div>
+<div id="outline-container-org1ac9655" class="outline-4">
+<h4 id="org1ac9655"><span class="section-number-4">2.3.1</span> Standard numpy-like indexing and slicing</h4>
+<div class="outline-text-4" id="text-2-3-1">
+<ul class="org-ul">
+<li><p>
+代码如下
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #9d0006;">print</span>(<span style="color: #79740e;">"Frist row: "</span>, tensor[0])
+<span style="color: #9d0006;">print</span>(<span style="color: #79740e;">"Frist column: "</span>, tensor[:,0]) <span style="color: #a89984;"># </span><span style="color: #a89984;">&#31532;&#19968;&#21040;&#26368;&#21518;&#19968;&#34892;&#30340;,&#31532;0&#20010;&#20803;&#32032;</span>
+<span style="color: #9d0006;">print</span>(<span style="color: #79740e;">"Last column: "</span>, tensor[...,-1]) <span style="color: #a89984;"># </span><span style="color: #a89984;">&#31532;&#19968;&#21040;&#26368;&#21518;&#19968;&#34892;&#30340;,&#26368;&#21518;&#19968;&#20010;&#20803;&#32032;</span>
+<span style="color: #076678;">tensor</span>[:,1] = 0
+<span style="color: #9d0006;">print</span>(tensor)
+</pre>
+</div></li>
+<li><p>
+输出如下
+</p>
+<pre class="example" id="orgf9903e5">
+Frist row:  tensor([1., 1., 1., 1.])
+Frist column:  tensor([1., 1., 1., 1.])
+Last column:  tensor([1., 1., 1., 1.])
+tensor([[1., 0., 1., 1.],
+        [1., 0., 1., 1.],
+        [1., 0., 1., 1.],
+        [1., 0., 1., 1.]])
+</pre></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org48f7758" class="outline-4">
+<h4 id="org48f7758"><span class="section-number-4">2.3.2</span> Joining tensors</h4>
+<div class="outline-text-4" id="text-2-3-2">
+<ul class="org-ul">
+<li>你可以使用torch.cat来concatenate一系列的tensor
+<ul class="org-ul">
+<li><p>
+代码如下
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #076678;">t1</span> = torch.cat([tensor, tensor, tensor], dim=1)
+<span style="color: #9d0006;">print</span>(t1)
+</pre>
+</div></li>
+<li><p>
+输出如下
+</p>
+<pre class="example" id="org5275b37">
+tensor([[1., 0., 1., 1., 1., 0., 1., 1., 1., 0., 1., 1.],
+        [1., 0., 1., 1., 1., 0., 1., 1., 1., 0., 1., 1.],
+        [1., 0., 1., 1., 1., 0., 1., 1., 1., 0., 1., 1.],
+        [1., 0., 1., 1., 1., 0., 1., 1., 1., 0., 1., 1.]])
+</pre></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgb679c13" class="outline-4">
+<h4 id="orgb679c13"><span class="section-number-4">2.3.3</span> Arithmetic operations</h4>
+<div class="outline-text-4" id="text-2-3-3">
+<ul class="org-ul">
+<li>如下操作都可以看做是两个matrix的multiplicaiton
+<ul class="org-ul">
+<li><p>
+代码如下
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #076678;">y1</span> = tensor @ tensor.T
+<span style="color: #076678;">y2</span> = tensor.matmul(tensor.T)
+<span style="color: #076678;">y3</span> = torch.rand_like(tensor)
+torch.matmul(tensor, tensor.T, out=y3)
+<span style="color: #9d0006;">print</span>(y1)
+<span style="color: #9d0006;">print</span>(y2)
+<span style="color: #9d0006;">print</span>(y3)
+</pre>
+</div></li>
+<li><p>
+输出如下
+</p>
+<pre class="example" id="org8a304a2">
+tensor([[3., 3., 3., 3.],
+        [3., 3., 3., 3.],
+        [3., 3., 3., 3.],
+        [3., 3., 3., 3.]])
+tensor([[3., 3., 3., 3.],
+        [3., 3., 3., 3.],
+        [3., 3., 3., 3.],
+        [3., 3., 3., 3.]])
+tensor([[3., 3., 3., 3.],
+        [3., 3., 3., 3.],
+        [3., 3., 3., 3.],
+        [3., 3., 3., 3.]])
+</pre></li>
+</ul></li>
+<li>如下操作是两个matrix对应item的乘法
+<ul class="org-ul">
+<li><p>
+代码如下
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #076678;">z1</span> = tensor * tensor
+<span style="color: #076678;">z2</span> = tensor.mul(tensor)
+<span style="color: #076678;">z3</span> = torch.rand_like(tensor)
+torch.mul(tensor, tensor, out=z3)
+<span style="color: #9d0006;">print</span>(z1)
+<span style="color: #9d0006;">print</span>(z2)
+<span style="color: #9d0006;">print</span>(z3)
+</pre>
+</div></li>
+<li><p>
+输出如下
+</p>
+<pre class="example" id="orgcabf136">
+tensor([[1., 0., 1., 1.],
+        [1., 0., 1., 1.],
+        [1., 0., 1., 1.],
+        [1., 0., 1., 1.]])
+tensor([[1., 0., 1., 1.],
+        [1., 0., 1., 1.],
+        [1., 0., 1., 1.],
+        [1., 0., 1., 1.]])
+tensor([[1., 0., 1., 1.],
+        [1., 0., 1., 1.],
+        [1., 0., 1., 1.],
+        [1., 0., 1., 1.]])
+</pre></li>
+</ul></li>
+<li>把一个tensor里面的数据累加到一个数据里面,我们要用到函数item()
+<ul class="org-ul">
+<li><p>
+代码如下
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #076678;">agg</span> = tensor.<span style="color: #af3a03;">sum</span>()
+<span style="color: #076678;">agg_item</span> = agg.item()
+<span style="color: #9d0006;">print</span>(agg_item, <span style="color: #af3a03;">type</span>(agg_item))
+</pre>
+</div></li>
+<li><p>
+输出如下
+</p>
+<pre class="example" id="org7211508">
+12.0 &lt;class 'float'&gt;
+</pre></li>
+</ul></li>
+<li>很多时候,我们还希望有in-place的操作,也就是把更改值直接作用到调用对象上面, 这种函数一般以"_"结尾
+<ul class="org-ul">
+<li><p>
+代码如下
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #9d0006;">print</span>(tensor, <span style="color: #79740e;">"\n"</span>)
+tensor.add_(5)
+<span style="color: #9d0006;">print</span>(tensor)
+</pre>
+</div></li>
+<li><p>
+输出如下
+</p>
+<pre class="example" id="org80b57f4">
+tensor([[1., 0., 1., 1.],
+        [1., 0., 1., 1.],
+        [1., 0., 1., 1.],
+        [1., 0., 1., 1.]])
+
+tensor([[6., 5., 6., 6.],
+        [6., 5., 6., 6.],
+        [6., 5., 6., 6.],
+        [6., 5., 6., 6.]])
+</pre></li>
+<li>由于in-place操作会丢失history,所以实践当中不推荐使用</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgd712754" class="outline-3">
+<h3 id="orgd712754"><span class="section-number-3">2.4</span> Bridge with Numpy</h3>
+<div class="outline-text-3" id="text-2-4">
+<ul class="org-ul">
+<li>在CPU上的时候, Tensor和NumPY array可以共享内存,这也就意味着一个内容改变了,另外一个也会跟着改变</li>
+</ul>
+</div>
+<div id="outline-container-org7c471ab" class="outline-4">
+<h4 id="org7c471ab"><span class="section-number-4">2.4.1</span> Tensor to Numpy array</h4>
+<div class="outline-text-4" id="text-2-4-1">
+<ul class="org-ul">
+<li>从tensor到numpy共享内存的例子
+<ul class="org-ul">
+<li><p>
+代码如下
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #076678;">t</span> = torch.ones(5)
+<span style="color: #9d0006;">print</span>(f<span style="color: #79740e;">"t: {t}"</span>)
+<span style="color: #076678;">n</span> = t.numpy()
+<span style="color: #9d0006;">print</span>(f<span style="color: #79740e;">"n: {n}"</span>)
+
+t.add_(1)
+<span style="color: #9d0006;">print</span>(f<span style="color: #79740e;">"t: {t}"</span>)
+<span style="color: #9d0006;">print</span>(f<span style="color: #79740e;">"n: {n}"</span>)
+</pre>
+</div></li>
+<li><p>
+输出如下
+</p>
+<pre class="example" id="org22329ca">
+t: tensor([1., 1., 1., 1., 1.])
+n: [1. 1. 1. 1. 1.]
+t: tensor([2., 2., 2., 2., 2.])
+n: [2. 2. 2. 2. 2.]
+</pre></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org1075845" class="outline-4">
+<h4 id="org1075845"><span class="section-number-4">2.4.2</span> Numpy array to Tensor</h4>
+<div class="outline-text-4" id="text-2-4-2">
+<ul class="org-ul">
+<li>从numpy到tensor共享内存的例子
+<ul class="org-ul">
+<li><p>
+代码如下
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #076678;">n</span> = np.ones(5)
+<span style="color: #076678;">t</span> = torch.from_numpy(n)
+<span style="color: #9d0006;">print</span>(f<span style="color: #79740e;">"t: {t}"</span>)
+<span style="color: #9d0006;">print</span>(f<span style="color: #79740e;">"n: {n}"</span>)
+np.add(n, 1, out=n)
+<span style="color: #9d0006;">print</span>(f<span style="color: #79740e;">"t: {t}"</span>)
+<span style="color: #9d0006;">print</span>(f<span style="color: #79740e;">"n: {n}"</span>)
+</pre>
+</div></li>
+<li><p>
+输出如下
+</p>
+<pre class="example" id="orgabe58f8">
+t: tensor([1., 1., 1., 1., 1.], dtype=torch.float64)
+n: [1. 1. 1. 1. 1.]
+t: tensor([2., 2., 2., 2., 2.], dtype=torch.float64)
+n: [2. 2. 2. 2. 2.]
+</pre></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgbe3c536" class="outline-2">
+<h2 id="orgbe3c536"><span class="section-number-2">3</span> Datasets &amp; Dataloaders</h2>
+<div class="outline-text-2" id="text-3">
+<ul class="org-ul">
+<li>处理data sample的代码可能会非常的麻烦,我们希望我们的dataset 代码和model training 代码区分开,为了
+达到这个目的,pytorch设计了两个data primitive, 这两个primitive可以处理你自己的数据,也可以使用pre-loaded
+的那些公共数据:
+<ul class="org-ul">
+<li>torch.utils.data.Dataset: 存储sample和sample对应的的label</li>
+<li>torch.utils.data.DataLoader: 在Dataset的基础上增加了iterable的功能</li>
+</ul></li>
+<li>PyTorch为了让用户做实验,内置了很多公共库,比如FashionMNIST,这种公共库都继承了torch.utils.data.Dataset</li>
+</ul>
+</div>
+<div id="outline-container-orgf200b11" class="outline-3">
+<h3 id="orgf200b11"><span class="section-number-3">3.1</span> Loading a Dataset</h3>
+<div class="outline-text-3" id="text-3-1">
+<ul class="org-ul">
+<li>下面我们就来看看pytorch如何load Fashion-MNIST数据. 这个数据:
+<ul class="org-ul">
+<li>有60000个training example</li>
+<li>有10000个test example</li>
+<li>每个example包含28*28 grayscale image</li>
+<li>每个example有对应的label(正确答案)</li>
+</ul></li>
+<li>我们下面的代码用到了如下的变量:
+<ul class="org-ul">
+<li>root是我们的train/test data存储的地方</li>
+<li>train代表了training或者test dataset</li>
+<li>download=True表示我们如果在root没有数据的话,要从互联网下载</li>
+<li>transform和target_transorm代表feature和label</li>
+</ul></li>
+<li>首先看下载Fashion-MNIST数据集的例子:
+<ul class="org-ul">
+<li><p>
+代码如下
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #9d0006;">import</span> torch
+
+<span style="color: #9d0006;">from</span> torch.utils.data <span style="color: #9d0006;">import</span> Dataset
+<span style="color: #9d0006;">from</span> torchvision <span style="color: #9d0006;">import</span> datasets
+<span style="color: #9d0006;">from</span> torchvision.transforms <span style="color: #9d0006;">import</span> ToTensor
+<span style="color: #9d0006;">import</span> matplotlib.pyplot <span style="color: #9d0006;">as</span> plt
+
+<span style="color: #076678;">training_data</span> = datasets.FashionMNIST(
+<span style="background-color: #ebdbb2;"> </span>   root=<span style="color: #79740e;">"data"</span>, train=<span style="color: #8f3f71;">True</span>, download=<span style="color: #8f3f71;">True</span>, transform=ToTensor()
+)
+
+<span style="color: #076678;">test_data</span> = datasets.FashionMNIST(
+<span style="background-color: #ebdbb2;"> </span>   root=<span style="color: #79740e;">"data"</span>, train=<span style="color: #8f3f71;">False</span>, download=<span style="color: #8f3f71;">True</span>, transform=ToTensor()
+)
+</pre>
+</div></li>
+<li><p>
+输出如下
+</p>
+<pre class="example" id="org22d194f">
+Downloading http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/train-images-idx3-ubyte.gz
+Downloading http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/train-images-idx3-ubyte.gz to data/FashionMNIST/raw/train-images-idx3-ubyte.gz
+100.0%
+Extracting data/FashionMNIST/raw/train-images-idx3-ubyte.gz to data/FashionMNIST/raw
+
+Downloading http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/train-labels-idx1-ubyte.gz
+Downloading http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/train-labels-idx1-ubyte.gz to data/FashionMNIST/raw/train-labels-idx1-ubyte.gz
+100.6%
+Extracting data/FashionMNIST/raw/train-labels-idx1-ubyte.gz to data/FashionMNIST/raw
+
+Downloading http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/t10k-images-idx3-ubyte.gz
+Downloading http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/t10k-images-idx3-ubyte.gz to data/FashionMNIST/raw/t10k-images-idx3-ubyte.gz
+100.0%
+Extracting data/FashionMNIST/raw/t10k-images-idx3-ubyte.gz to data/FashionMNIST/raw
+
+Downloading http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/t10k-labels-idx1-ubyte.gz
+Downloading http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/t10k-labels-idx1-ubyte.gz to data/FashionMNIST/raw/t10k-labels-idx1-ubyte.gz
+119.3%
+Extracting data/FashionMNIST/raw/t10k-labels-idx1-ubyte.gz to data/FashionMNIST/raw
+</pre></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org87dfa63" class="outline-3">
+<h3 id="org87dfa63"><span class="section-number-3">3.2</span> Iterating and Visualizing the Dataset</h3>
+<div class="outline-text-3" id="text-3-2">
+<ul class="org-ul">
+<li>我们可以像使用其他list一样使用Dataset,比如training_data[index], 我们使用matplotlib来visualize一些数据
+<ul class="org-ul">
+<li><p>
+代码如下
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #076678;">labels_map</span> = {
+<span style="background-color: #ebdbb2;"> </span>   0: <span style="color: #79740e;">"T-Shirt"</span>,
+<span style="background-color: #ebdbb2;"> </span>   1: <span style="color: #79740e;">"Trouser"</span>,
+<span style="background-color: #ebdbb2;"> </span>   2: <span style="color: #79740e;">"Pullover"</span>,
+<span style="background-color: #ebdbb2;"> </span>   3: <span style="color: #79740e;">"Dress"</span>,
+<span style="background-color: #ebdbb2;"> </span>   4: <span style="color: #79740e;">"Coat"</span>,
+<span style="background-color: #ebdbb2;"> </span>   5: <span style="color: #79740e;">"Sandal"</span>,
+<span style="background-color: #ebdbb2;"> </span>   6: <span style="color: #79740e;">"Shirt"</span>,
+<span style="background-color: #ebdbb2;"> </span>   7: <span style="color: #79740e;">"Sneaker"</span>,
+<span style="background-color: #ebdbb2;"> </span>   8: <span style="color: #79740e;">"Bag"</span>,
+<span style="background-color: #ebdbb2;"> </span>   9: <span style="color: #79740e;">"Ankle Boot"</span>,
+}
+
+<span style="color: #076678;">figure</span> = plt.figure(figsize=(8, 8))
+<span style="color: #076678;">cols</span>, <span style="color: #076678;">rows</span> = 3, 3
+<span style="color: #9d0006;">for</span> i <span style="color: #9d0006;">in</span> <span style="color: #af3a03;">range</span>(1, cols * rows + 1):
+<span style="background-color: #ebdbb2;"> </span>   <span style="color: #076678;">sample_idx</span> = torch.randint(<span style="color: #af3a03;">len</span>(training_data), size=(1,)).item()
+<span style="background-color: #ebdbb2;"> </span>   <span style="color: #9d0006;">print</span>(<span style="color: #79740e;">'''[sample_idx] ==&gt;'''</span>, sample_idx)
+<span style="background-color: #ebdbb2;"> </span>   <span style="color: #076678;">img</span>, <span style="color: #076678;">label</span> = training_data[sample_idx]
+<span style="background-color: #ebdbb2;"> </span>   figure.add_subplot(rows, cols, i)
+<span style="background-color: #ebdbb2;"> </span>   plt.title(labels_map[label])
+<span style="background-color: #ebdbb2;"> </span>   plt.axis(<span style="color: #79740e;">"off"</span>)
+<span style="background-color: #ebdbb2;"> </span>   plt.imshow(img.squeeze(), cmap=<span style="color: #79740e;">"gray"</span>)
+plt.show()
+</pre>
+</div></li>
+<li><p>
+输出如下
+</p>
+<pre class="example" id="orgf7faf2e">
+[sample_idx] ==&gt; 56165
+[sample_idx] ==&gt; 46042
+[sample_idx] ==&gt; 19185
+[sample_idx] ==&gt; 57231
+[sample_idx] ==&gt; 41509
+[sample_idx] ==&gt; 57455
+[sample_idx] ==&gt; 7884
+[sample_idx] ==&gt; 30338
+[sample_idx] ==&gt; 40487
+</pre></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org3f074e9" class="outline-3">
+<h3 id="org3f074e9"><span class="section-number-3">3.3</span> Creating a Custom Dataset for your files</h3>
+<div class="outline-text-3" id="text-3-3">
+<ul class="org-ul">
+<li>如果想创建自己的Dataset,那么就要继承torch.utils.data.Dataset,并且实现如下函数:
+<ul class="org-ul">
+<li>__init__</li>
+<li>__len__</li>
+<li>__geitem__</li>
+</ul></li>
+<li><p>
+代码如下
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #9d0006;">import</span> os
+<span style="color: #9d0006;">import</span> pandas <span style="color: #9d0006;">as</span> pd
+<span style="color: #9d0006;">from</span> torchvision.io <span style="color: #9d0006;">import</span> read_image
+
+
+<span style="color: #9d0006;">class</span> <span style="color: #8f3f71;">CustomImageDataset</span>(Dataset):
+<span style="background-color: #ebdbb2;"> </span>   <span style="color: #9d0006;">def</span> <span style="color: #b57614;">__init__</span>(
+<span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   <span style="color: #9d0006;">self</span>, annotations_file, img_dir, transform=<span style="color: #8f3f71;">None</span>, target_transform=<span style="color: #8f3f71;">None</span>
+<span style="background-color: #ebdbb2;"> </span>   ):
+<span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   <span style="color: #9d0006;">self</span>.img_labels = pd.read_csv(annotations_file)
+<span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   <span style="color: #9d0006;">self</span>.img_dir = img_dir
+<span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   <span style="color: #9d0006;">self</span>.transform = transform
+<span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   <span style="color: #9d0006;">self</span>.target_transform = target_transform
+
+<span style="background-color: #ebdbb2;"> </span>   <span style="color: #9d0006;">def</span> <span style="color: #b57614;">__len__</span>(<span style="color: #9d0006;">self</span>):
+<span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   <span style="color: #9d0006;">return</span> <span style="color: #af3a03;">len</span>(<span style="color: #9d0006;">self</span>.img_labels)
+
+<span style="background-color: #ebdbb2;"> </span>   <span style="color: #9d0006;">def</span> <span style="color: #b57614;">__getitem__</span>(<span style="color: #9d0006;">self</span>, idx):
+<span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   <span style="color: #076678;">img_path</span> = os.path.join(<span style="color: #9d0006;">self</span>.img_dir, <span style="color: #9d0006;">self</span>.img_labels.iloc[idx, 0])
+<span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   <span style="color: #076678;">image</span> = read_image(img_path)
+<span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   <span style="color: #076678;">label</span> = <span style="color: #9d0006;">self</span>.img_labels.iloc[idx, 1]
+<span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   <span style="color: #9d0006;">if</span> <span style="color: #9d0006;">self</span>.transform:
+<span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   <span style="color: #076678;">image</span> = <span style="color: #9d0006;">self</span>.transform(image)
+<span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   <span style="color: #9d0006;">if</span> <span style="color: #9d0006;">self</span>.target_transform:
+<span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   <span style="color: #076678;">label</span> = <span style="color: #9d0006;">self</span>.target_transform(label)
+<span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   <span style="color: #9d0006;">return</span> image, label
+</pre>
+</div></li>
+</ul>
+</div>
+<div id="outline-container-org4aa0077" class="outline-4">
+<h4 id="org4aa0077"><span class="section-number-4">3.3.1</span> __init__</h4>
+<div class="outline-text-4" id="text-3-3-1">
+<ul class="org-ul">
+<li>__init__函数会在Dataset对象实例化的时候运行一次,参数解释如下:
+<ul class="org-ul">
+<li><p>
+annotations_file: 一个csv文件,里面存放image文件和label的对应关系,例子如下
+</p>
+<pre class="example" id="org8f07bb7">
+tshirt1.jpg, 0
+tshirt2.jpg, 0
+......
+ankleboot999.jpg, 9
+</pre></li>
+<li>img_dir:放置图片的文件夹</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgb23d5f2" class="outline-4">
+<h4 id="orgb23d5f2"><span class="section-number-4">3.3.2</span> __len__</h4>
+<div class="outline-text-4" id="text-3-3-2">
+<ul class="org-ul">
+<li>__len__返回sample的总数,也就是label的总数</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgf6d3144" class="outline-4">
+<h4 id="orgf6d3144"><span class="section-number-4">3.3.3</span> __getitem__</h4>
+<div class="outline-text-4" id="text-3-3-3">
+<ul class="org-ul">
+<li>__getitem__返回在idx位置的sample</li>
+<li>根据idx,我们要:
+<ol class="org-ol">
+<li>判断出image的disk位置,转换成tensor(使用read_image)</li>
+<li>并且要获得这个image的label</li>
+<li>如果需要还要调用transform函数</li>
+<li>以tuple的形式返回(tensor_image, corresponding_label)</li>
+</ol></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgab32d67" class="outline-3">
+<h3 id="orgab32d67"><span class="section-number-3">3.4</span> Preparing your data for training with DataLoaders</h3>
+<div class="outline-text-3" id="text-3-4">
+<ul class="org-ul">
+<li>Dataset每次取一个sample,但是在训练的时候,我们会有如下多个sample一起取的需求:
+<ul class="org-ul">
+<li>以minibatch的方法取一批sample</li>
+<li>每个epoch都会reshuffle数据来减小overfitting</li>
+<li>使用Python的multiprocessing来加速数据获取</li>
+</ul></li>
+<li><p>
+DataLoader就是为了上面的需求而设计的iterable的Dataset
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #9d0006;">from</span> torch.utils.data <span style="color: #9d0006;">import</span> DataLoader
+
+<span style="color: #076678;">train_dataloader</span> = DataLoader(training_data, batch_size=64, shuffle=<span style="color: #8f3f71;">True</span>)
+<span style="color: #076678;">test_dataloader</span> = DataLoader(test_data, batch_size=64, shuffle=<span style="color: #8f3f71;">True</span>)
+</pre>
+</div></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgdd5216d" class="outline-3">
+<h3 id="orgdd5216d"><span class="section-number-3">3.5</span> Iterate through the DataLoader</h3>
+<div class="outline-text-3" id="text-3-5">
+<ul class="org-ul">
+<li>我们使用DataLoader就可以使用next来循环了</li>
+<li>返回的两个对象,train_feature和train_label都是包含64个成员</li>
+<li>由于我们设置了shuffle=True,所以我们每次循环之后,所有的batch都会重新洗牌
+<ul class="org-ul">
+<li><p>
+代码如下
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #a89984;"># </span><span style="color: #a89984;">Display image and label.</span>
+<span style="color: #076678;">train_features</span>, <span style="color: #076678;">train_labels</span> = <span style="color: #af3a03;">next</span>(<span style="color: #af3a03;">iter</span>(train_dataloader))
+<span style="color: #9d0006;">print</span>(f<span style="color: #79740e;">"Feature batch shape: {train_features.size()}"</span>)
+<span style="color: #9d0006;">print</span>(f<span style="color: #79740e;">"Label batch shape: {train_labels.size()}"</span>)
+<span style="color: #076678;">img</span> = train_features[0].squeeze()
+<span style="color: #076678;">label</span> = train_labels[0]
+plt.imshow(img, cmap=<span style="color: #79740e;">"gray"</span>)
+plt.show()
+<span style="color: #9d0006;">print</span>(f<span style="color: #79740e;">"Label: {label}"</span>)
+</pre>
+</div></li>
+<li><p>
+输出如下
+</p>
+<pre class="example" id="orgf112e36">
+Feature batch shape: torch.Size([64, 1, 28, 28])
+Label batch shape: torch.Size([64])
+Label: 7
+</pre></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org6ce1712" class="outline-2">
+<h2 id="org6ce1712"><span class="section-number-2">4</span> Transforms</h2>
+<div class="outline-text-2" id="text-4">
+<ul class="org-ul">
+<li>网上的数据,或者我们提供的数据,并不一定是我们训练的时候需要的格式(或者不同的训练可能会需要不同的格
+式),那么在下载之后,使用之前,我们要做一些转换,在pytorch这里,这个转换叫做transforms</li>
+<li>所有的TorchVision dataset都有两个参数:
+<ul class="org-ul">
+<li>transform用来修改feature的格式</li>
+<li>target_transform用来修改label的格式</li>
+</ul></li>
+<li>以FashionMNIST为例:
+<ul class="org-ul">
+<li>feature都是PIL 格式,我们需要把feature都转成normalized tensor</li>
+<li>label都是integer格式,我们需要把label转成one-hot encoded tensor</li>
+<li><p>
+代码如下
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #9d0006;">import</span> torch
+<span style="color: #9d0006;">from</span> torchvision <span style="color: #9d0006;">import</span> datasets
+<span style="color: #9d0006;">from</span> torchvision.transforms <span style="color: #9d0006;">import</span> ToTensor, Lambda
+
+<span style="color: #076678;">ds</span> = datasets.FashionMNIST(
+<span style="background-color: #ebdbb2;"> </span>   root=<span style="color: #79740e;">"data"</span>,
+<span style="background-color: #ebdbb2;"> </span>   train=<span style="color: #8f3f71;">True</span>,
+<span style="background-color: #ebdbb2;"> </span>   download=<span style="color: #8f3f71;">True</span>,
+<span style="background-color: #ebdbb2;"> </span>   transform=ToTensor(),
+<span style="background-color: #ebdbb2;"> </span>   target_transform=Lambda(
+<span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   <span style="color: #9d0006;">lambda</span> y: torch.zeros(10, dtype=torch.<span style="color: #af3a03;">float</span>).scatter_(
+<span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   0, torch.tensor(y), value=1
+<span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   )
+<span style="background-color: #ebdbb2;"> </span>   ),
+)
+</pre>
+</div></li>
+</ul></li>
+</ul>
+</div>
+<div id="outline-container-org07bcbf3" class="outline-3">
+<h3 id="org07bcbf3"><span class="section-number-3">4.1</span> ToTensor()</h3>
+<div class="outline-text-3" id="text-4-1">
+<ul class="org-ul">
+<li>ToTensor会把PIL image(或者NumPy ndarray)转换成FloatTensor,并且把image的pixel intensity控制在[0,1]
+之间</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org68e0198" class="outline-3">
+<h3 id="org68e0198"><span class="section-number-3">4.2</span> Lambda Transforms</h3>
+<div class="outline-text-3" id="text-4-2">
+<ul class="org-ul">
+<li>如果没有ToTensor这种函数,那么我们需要自己创建一个函数来作为transform,Lambda是一种临时只用一次的函数</li>
+<li>这里的Lambda函数:
+<ul class="org-ul">
+<li>首选会创建一个长度为10的zero tensor</li>
+<li>然后调用scatter_来给这个tensor的某个index赋值为1</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgb55af80" class="outline-2">
+<h2 id="orgb55af80"><span class="section-number-2">5</span> Build The Neural Network</h2>
+<div class="outline-text-2" id="text-5">
+<ul class="org-ul">
+<li>Neural network(神经网络)在pytorch里面叫一个module.</li>
+<li><p>
+每个module要么包含其他module,要么就是最底层的module,这个module包含很多layer,这些layer分别对data
+做operation. 两者相互关系如下:
+</p>
+<pre class="example" id="org929b072">
+moduleA
+|-- moduleB
+|   `-- LayerA
+`-- moduleC
+    |-- LayerB
+    `-- LayerC
+</pre></li>
+<li>pytorch里面,所有的和neural network相关的building block都在torch.nn这个namespace下面</li>
+<li>pytorch里面的module都继承自nn.Module</li>
+<li><p>
+本章需要的头文件如下
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #9d0006;">import</span> os
+<span style="color: #9d0006;">import</span> torch
+<span style="color: #9d0006;">from</span> torch <span style="color: #9d0006;">import</span> nn
+<span style="color: #9d0006;">from</span> torch.utils.data <span style="color: #9d0006;">import</span> DataLoader
+<span style="color: #9d0006;">from</span> torchvision <span style="color: #9d0006;">import</span> datasets, transforms
+</pre>
+</div></li>
+</ul>
+</div>
+<div id="outline-container-org9f34a34" class="outline-3">
+<h3 id="org9f34a34"><span class="section-number-3">5.1</span> Get Device for Training</h3>
+<div class="outline-text-3" id="text-5-1">
+<ul class="org-ul">
+<li><p>
+如果cuda存在,可以使用显卡来训练,否则使用cpu来训练
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #076678;">device</span> = <span style="color: #79740e;">"cuda"</span> <span style="color: #9d0006;">if</span> torch.cuda.is_available() <span style="color: #9d0006;">else</span> <span style="color: #79740e;">"cpu"</span>
+<span style="color: #9d0006;">print</span>(<span style="color: #79740e;">"Using {} device"</span>.<span style="color: #af3a03;">format</span>(device))
+</pre>
+</div></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgc267249" class="outline-3">
+<h3 id="orgc267249"><span class="section-number-3">5.2</span> Define the Class</h3>
+<div class="outline-text-3" id="text-5-2">
+<ul class="org-ul">
+<li>我们自己的神经网络继承自nn.Module:
+<ul class="org-ul">
+<li>通过__init__初始化neural network</li>
+<li>通过实现forward函数来实现对input data的操作</li>
+</ul></li>
+<li><p>
+创建神经网络代码如下
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #9d0006;">class</span> <span style="color: #8f3f71;">NeuralNetwork</span>(nn.Module):
+<span style="background-color: #ebdbb2;"> </span>   <span style="color: #9d0006;">def</span> <span style="color: #b57614;">__init__</span>(<span style="color: #9d0006;">self</span>):
+<span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   <span style="color: #af3a03;">super</span>(NeuralNetwork, <span style="color: #9d0006;">self</span>).__init__()
+<span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   <span style="color: #9d0006;">self</span>.flatten = nn.Flatten()
+<span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   <span style="color: #9d0006;">self</span>.linear_relu_stack = nn.Sequential(
+<span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   nn.Linear(28 * 28, 512),
+<span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   nn.ReLU(),
+<span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   nn.Linear(512, 512),
+<span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   nn.ReLU(),
+<span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   nn.Linear(512, 10),
+<span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   )
+
+<span style="background-color: #ebdbb2;"> </span>   <span style="color: #9d0006;">def</span> <span style="color: #b57614;">forward</span>(<span style="color: #9d0006;">self</span>, x):
+<span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   <span style="color: #076678;">x</span> = <span style="color: #9d0006;">self</span>.flatten(x)
+<span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   <span style="color: #076678;">logits</span> = <span style="color: #9d0006;">self</span>.linear_relu_stack(x)
+<span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   <span style="color: #9d0006;">return</span> logits
+
+</pre>
+</div></li>
+<li>神经网络代码创建后,可以打印出来,表示我们的model创建成功了,效果如下:
+<ul class="org-ul">
+<li><p>
+代码
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #076678;">model</span> = NeuralNetwork().to(device)
+<span style="color: #9d0006;">print</span>(model)
+</pre>
+</div></li>
+<li><p>
+输出
+</p>
+<pre class="example" id="org81f05db">
+NeuralNetwork(
+  (flatten): Flatten(start_dim=1, end_dim=-1)
+  (linear_relu_stack): Sequential(
+    (0): Linear(in_features=784, out_features=512, bias=True)
+    (1): ReLU()
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ReLU()
+    (4): Linear(in_features=512, out_features=10, bias=True)
+  )
+)
+</pre></li>
+</ul></li>
+<li>创建model之后,我们要开始使用model了,在pytorch里面,model是一个继承自nn.Module的class,但是,由于它
+实现了__call__,所以是callable的,直接把model当函数使用就可以了,参数是input data:
+<ul class="org-ul">
+<li><p>
+代码如下:
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #076678;">X</span> = torch.rand(1, 28, 28, device=device)
+<span style="color: #9d0006;">print</span>(<span style="color: #79740e;">"X&gt;"</span>, X)
+<span style="color: #076678;">logits</span> = model(X)
+<span style="color: #9d0006;">print</span>(<span style="color: #79740e;">"logits&gt;"</span>, logits)
+</pre>
+</div></li>
+<li><p>
+输出如下:
+</p>
+<pre class="example" id="org5672a7b">
+X&gt; tensor([[[3.4855e-01, 2.2404e-01, 9.4086e-04, 9.5183e-01, 6.4413e-01,
+          6.3813e-01, 2.9121e-01, 2.7684e-01, 7.4389e-01, 7.8992e-01,
+          1.1403e-01, 3.6536e-01, 8.8994e-01, 1.5893e-01, 7.1634e-01,
+          4.5617e-01, 9.4580e-01, 5.7355e-01, 5.2298e-01, 6.5089e-01,
+          6.2488e-01, 7.5967e-01, 5.6150e-01, 3.3489e-01, 6.6690e-01,
+          3.4567e-01, 8.5913e-01, 9.1230e-01],
+         [5.5698e-01, 5.6784e-01, 6.7565e-01, 1.1774e-01, 9.3881e-01,
+          6.7115e-01, 7.1790e-01, 1.5813e-01, 1.0446e-01, 8.2648e-02,
+          1.6147e-01, 8.2475e-01, 8.3832e-01, 9.9920e-01, 4.1542e-01,
+          3.3176e-01, 2.5911e-01, 6.8579e-01, 1.9526e-01, 5.8544e-01,
+          7.4770e-01, 6.9535e-01, 9.8096e-01, 1.5287e-01, 6.6194e-01,
+          9.0889e-01, 8.8180e-01, 5.2309e-01],
+          ...
+         [6.6676e-01, 5.1000e-01, 3.9123e-01, 6.8837e-03, 9.5137e-01,
+          6.5119e-01, 9.5212e-01, 4.0678e-01, 4.6109e-02, 1.5674e-01,
+          4.6521e-01, 2.0206e-01, 8.5580e-01, 5.1843e-01, 1.8716e-01,
+          1.0377e-03, 3.9218e-01, 5.4533e-01, 1.7358e-01, 5.1870e-01,
+          9.3065e-01, 7.2249e-01, 7.2775e-01, 7.2690e-01, 7.4644e-01,
+          8.2682e-01, 4.8469e-01, 5.6445e-01]]])
+logits&gt; tensor([[ 0.0330, -0.0429,  0.0134,  0.0410,  0.0819,  0.0849,  0.0231, -0.0021,
+         -0.0254, -0.0529]], grad_fn=&lt;AddmmBackward&gt;)
+</pre></li>
+<li>X也就是我们的input,是一个28*28的tensor</li>
+<li>logits就是我们model对这个input的预测结果,这个预测结果是raw的predicted value,每个value表示每种
+分类的可能性,比如,分类1的可能性是0.0330, 分类2的可能性是-0.0429</li>
+</ul></li>
+<li>raw的可能性有负值,而且和并不是1,所以需要使用其他方法修正为和为1的概率分布
+<ul class="org-ul">
+<li><p>
+代码如下
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #076678;">pred_probab</span> = nn.Softmax(dim=1)(logits)
+<span style="color: #9d0006;">print</span>(<span style="color: #79740e;">"pred_probab&gt;"</span>, pred_probab)
+</pre>
+</div></li>
+<li><p>
+输出如下
+</p>
+<pre class="example" id="org44c8c08">
+pred_probab&gt; tensor([[0.1017, 0.0942, 0.0997, 0.1025, 0.1068, 0.1071, 0.1007, 0.0982, 0.0959,
+         0.0933]], grad_fn=&lt;SoftmaxBackward&gt;)
+</pre></li>
+</ul></li>
+<li>这里的Softmax也是一个module:
+<ul class="org-ul">
+<li>继承自nn.Module</li>
+<li>通常作为神经网络的最后一个activation function来正则化输出.</li>
+<li>这里的dim是dimension的缩写,是说针对哪个维度来进行正则化:
+<ol class="org-ol">
+<li><p>
+针对列: 每一列所有概率加起来是1
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #076678;">y1</span> = F.softmax(x, dim=0)
+<span style="color: #9d0006;">print</span>(y1)
+<span style="color: #a89984;"># </span><span style="color: #a89984;">&lt;===================OUTPUT===================&gt;</span>
+<span style="color: #a89984;"># </span><span style="color: #a89984;">tensor([[0.3333, 0.3333, 0.3333, 0.3333],</span>
+<span style="color: #a89984;">#         </span><span style="color: #a89984;">[0.3333, 0.3333, 0.3333, 0.3333],</span>
+<span style="color: #a89984;">#         </span><span style="color: #a89984;">[0.3333, 0.3333, 0.3333, 0.3333]])</span>
+
+</pre>
+</div></li>
+<li><p>
+针对行: 每一行所有概率加起来是1
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #076678;">y2</span> = F.softmax(x, dim=1)
+<span style="color: #9d0006;">print</span>(y2)
+<span style="color: #a89984;"># </span><span style="color: #a89984;">&lt;===================OUTPUT===================&gt;</span>
+<span style="color: #a89984;"># </span><span style="color: #a89984;">tensor([[0.0321, 0.0871, 0.2369, 0.6439],</span>
+<span style="color: #a89984;">#         </span><span style="color: #a89984;">[0.0321, 0.0871, 0.2369, 0.6439],</span>
+<span style="color: #a89984;">#         </span><span style="color: #a89984;">[0.0321, 0.0871, 0.2369, 0.6439]])</span>
+</pre>
+</div></li>
+</ol></li>
+</ul></li>
+<li>最后输出tensor里面最大的一个index,这里使用了numpy里面的argmax来寻找醉倒index的值
+<ul class="org-ul">
+<li><p>
+代码如下
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #076678;">y_pred</span> = pred_probab.argmax(1)
+<span style="color: #9d0006;">print</span>(f<span style="color: #79740e;">"Predicted class: {y_pred}"</span>)
+</pre>
+</div></li>
+<li><p>
+输出如下
+</p>
+<pre class="example" id="orgbdee6d5">
+Predicted class: tensor([5])
+</pre></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org22fc26e" class="outline-3">
+<h3 id="org22fc26e"><span class="section-number-3">5.3</span> Model Layers</h3>
+<div class="outline-text-3" id="text-5-3">
+<ul class="org-ul">
+<li>我们使用额外的代码来了解下layer是如何组织的</li>
+<li>首先,我们使用随机的方式生成一个image
+<ul class="org-ul">
+<li><p>
+代码如下
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #076678;">input_image</span> = torch.rand(3, 4, 5)
+<span style="color: #9d0006;">print</span>(<span style="color: #79740e;">"""[input_image] ==&gt;"""</span>, input_image)
+<span style="color: #9d0006;">print</span>(<span style="color: #79740e;">"""[input_image.size()] ==&gt;"""</span>, input_image.size())
+</pre>
+</div></li>
+<li><p>
+输出如下
+</p>
+<pre class="example" id="org93ba945">
+[input_image] ==&gt; tensor([[[0.1550, 0.1822, 0.0137, 0.9355, 0.8929],
+         [0.8082, 0.2442, 0.7184, 0.0184, 0.0828],
+         [0.1097, 0.8672, 0.9809, 0.0283, 0.5656],
+         [0.8645, 0.2560, 0.2821, 0.0864, 0.2733]],
+
+        [[0.4551, 0.2518, 0.7734, 0.8949, 0.0994],
+         [0.6500, 0.3321, 0.3630, 0.1329, 0.8804],
+         [0.1265, 0.1371, 0.5087, 0.7530, 0.1164],
+         [0.0825, 0.6535, 0.6242, 0.1958, 0.1738]],
+
+        [[0.1569, 0.3409, 0.7097, 0.9930, 0.4367],
+         [0.0491, 0.4994, 0.8175, 0.8694, 0.2794],
+         [0.3276, 0.8073, 0.9999, 0.0745, 0.6946],
+         [0.4413, 0.6856, 0.1619, 0.5948, 0.5922]]])
+[input_image.size()] ==&gt; torch.Size([3, 4, 5])
+</pre></li>
+</ul></li>
+</ul>
+</div>
+<div id="outline-container-org8ff46b1" class="outline-4">
+<h4 id="org8ff46b1"><span class="section-number-4">5.3.1</span> nn.Flatten</h4>
+<div class="outline-text-4" id="text-5-3-1">
+<ul class="org-ul">
+<li>我们上面是一个3*4*5的三维矩阵,其实每个image是4*5的,所以我们其实想要一个3个像素为20的image,换句
+话说,就是3*4*5矩阵的第一个dimension(dim=0)保留,剩下的打平
+<ul class="org-ul">
+<li><p>
+代码如下
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #076678;">flatten</span> = nn.Flatten()
+<span style="color: #076678;">flat_image</span> = flatten(input_image)
+<span style="color: #9d0006;">print</span>(<span style="color: #79740e;">"""[flat_image] ==&gt;"""</span>, flat_image)
+<span style="color: #9d0006;">print</span>(<span style="color: #79740e;">"""[flat_image.size()] ==&gt;"""</span>, flat_image.size())
+</pre>
+</div></li>
+<li><p>
+输出如下
+</p>
+<pre class="example" id="orga1de7a5">
+[flat_image] ==&gt; tensor([[0.1550, 0.1822, 0.0137, 0.9355, 0.8929, 0.8082, 0.2442, 0.7184, 0.0184,
+         0.0828, 0.1097, 0.8672, 0.9809, 0.0283, 0.5656, 0.8645, 0.2560, 0.2821,
+         0.0864, 0.2733],
+        [0.4551, 0.2518, 0.7734, 0.8949, 0.0994, 0.6500, 0.3321, 0.3630, 0.1329,
+         0.8804, 0.1265, 0.1371, 0.5087, 0.7530, 0.1164, 0.0825, 0.6535, 0.6242,
+         0.1958, 0.1738],
+        [0.1569, 0.3409, 0.7097, 0.9930, 0.4367, 0.0491, 0.4994, 0.8175, 0.8694,
+         0.2794, 0.3276, 0.8073, 0.9999, 0.0745, 0.6946, 0.4413, 0.6856, 0.1619,
+         0.5948, 0.5922]])
+[flat_image.size()] ==&gt; torch.Size([3, 20])
+</pre></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orged00327" class="outline-4">
+<h4 id="orged00327"><span class="section-number-4">5.3.2</span> nn.Linear</h4>
+<div class="outline-text-4" id="text-5-3-2">
+<ul class="org-ul">
+<li>现在我们获得了3个像素为20(也就是20个float值)的input数据,如果我们想把每个input数据(20像素)映射成
+一个6像素的数据,那么我们就需要linear transformation</li>
+<li>pytorch为我们准备了这样的linear transformation: nn.Linear
+<ul class="org-ul">
+<li><p>
+接入代码如下
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #076678;">layer1</span> = nn.Linear(in_features=4 * 5, out_features=6)
+<span style="color: #076678;">hidden1</span> = layer1(flat_image)
+<span style="color: #9d0006;">print</span>(<span style="color: #79740e;">"""[hidden1] ==&gt;"""</span>, hidden1)
+<span style="color: #9d0006;">print</span>(<span style="color: #79740e;">"""[hidden1.size()] ==&gt;"""</span>, hidden1.size())
+</pre>
+</div></li>
+<li><p>
+输出如下
+</p>
+<pre class="example" id="org0d667f9">
+[hidden1] ==&gt; tensor([[ 0.0794,  0.5231, -0.2751,  0.3251, -0.1497,  0.2084],
+        [ 0.0444,  0.3368, -0.2555,  0.3189, -0.0683,  0.1535],
+        [-0.0784,  0.6062, -0.8009,  0.4397,  0.0825,  0.1439]],
+       grad_fn=&lt;AddmmBackward&gt;)
+[hidden1.size()] ==&gt; torch.Size([3, 6])
+</pre></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgb0d9a9a" class="outline-4">
+<h4 id="orgb0d9a9a"><span class="section-number-4">5.3.3</span> nn.ReLU</h4>
+<div class="outline-text-4" id="text-5-3-3">
+<ul class="org-ul">
+<li>ReLU是一种activation,所谓activation,是用来引入复杂的(非线性)的规则的</li>
+<li>activation通常在Linear transformation之后,帮助神经网络学习更复杂的规律(非线性规律)</li>
+<li>这里的ReLU是最常见的一个activation,就是说负数的话就映射为0,正数就是保持原来的值:
+<ul class="org-ul">
+<li><p>
+公式如下:
+</p>
+\begin{equation}
+ReLU(x) = max(0,x)
+\end{equation}</li>
+<li><p>
+接入代码如下
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #9d0006;">print</span>(f<span style="color: #79740e;">"Before ReLU: {hidden1}\n\n"</span>)
+<span style="color: #076678;">hidden1</span> = nn.ReLU()(hidden1)
+<span style="color: #9d0006;">print</span>(f<span style="color: #79740e;">"After ReLU: {hidden1}"</span>)
+</pre>
+</div></li>
+<li><p>
+输出如下
+</p>
+<pre class="example" id="org11c39e2">
+Before ReLU: tensor([[ 0.0794,  0.5231, -0.2751,  0.3251, -0.1497,  0.2084],
+        [ 0.0444,  0.3368, -0.2555,  0.3189, -0.0683,  0.1535],
+        [-0.0784,  0.6062, -0.8009,  0.4397,  0.0825,  0.1439]],
+       grad_fn=&lt;AddmmBackward&gt;)
+
+
+After ReLU: tensor([[0.0794, 0.5231, 0.0000, 0.3251, 0.0000, 0.2084],
+        [0.0444, 0.3368, 0.0000, 0.3189, 0.0000, 0.1535],
+        [0.0000, 0.6062, 0.0000, 0.4397, 0.0825, 0.1439]],
+       grad_fn=&lt;ReluBackward0&gt;)
+</pre></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org833239e" class="outline-4">
+<h4 id="org833239e"><span class="section-number-4">5.3.4</span> nn.Sequential</h4>
+<div class="outline-text-4" id="text-5-3-4">
+<ul class="org-ul">
+<li>我们来看看刚才的过程:
+<ol class="org-ol">
+<li>首先是3*(4*5)的三个raw input</li>
+<li>第一个module: flatten, 输入是3*(4*5),输出是3*20</li>
+<li>第二个module: nn.Linear(layer1), 输入是3*20,输出是3*6</li>
+<li>第三个module: nn.ReLU, 输入是3*6,输出还是3*6,所有负数都变成了零</li>
+</ol></li>
+<li>我们可以把上面的四个过程统一使用一个module处理,就是nn.Sequential:
+<ul class="org-ul">
+<li><p>
+代码如下,我们最后还多了一层,把output定格为了7
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #076678;">seq_modules</span> = nn.Sequential(flatten, layer1, nn.ReLU(), nn.Linear(6, 7))
+
+<span style="color: #076678;">input_image</span> = torch.rand(3, 4, 5)
+<span style="color: #076678;">logits</span> = seq_modules(input_image)
+
+<span style="color: #9d0006;">print</span>(<span style="color: #79740e;">"""[logits] ==&gt;"""</span>, logits)
+<span style="color: #9d0006;">print</span>(<span style="color: #79740e;">"""[logits.size()] ==&gt;"""</span>, logits.size())
+</pre>
+</div></li>
+<li><p>
+输出如下
+</p>
+<pre class="example" id="orgb7743f0">
+[logits] ==&gt; tensor([[-2.6497e-01, -9.1267e-02,  6.0936e-02, -1.5278e-02, -3.5053e-01,
+          8.0587e-02, -2.1164e-01],
+        [-2.3255e-01, -4.9769e-02,  3.9146e-02,  5.0154e-02, -4.0463e-01,
+          3.8066e-04, -1.5409e-01],
+        [-4.0593e-01, -2.6705e-01, -5.0617e-02, -7.1221e-02, -3.6326e-01,
+         -1.1169e-01,  2.1804e-02]], grad_fn=&lt;AddmmBackward&gt;)
+[logits.size()] ==&gt; torch.Size([3, 7])
+</pre></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org60d42c3" class="outline-4">
+<h4 id="org60d42c3"><span class="section-number-4">5.3.5</span> nn.Softmax</h4>
+<div class="outline-text-4" id="text-5-3-5">
+<ul class="org-ul">
+<li>为了让我们的分类问题最后的7个output能够满足一个概率分布,他们7个的概率和必须是1,所以要使用module:
+nn.Softmax:
+<ul class="org-ul">
+<li><p>
+代码如下
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #076678;">softmax</span> = nn.Softmax(dim=1)
+<span style="color: #076678;">pred_probab</span> = softmax(logits)
+<span style="color: #9d0006;">print</span>(<span style="color: #79740e;">"""[pred_probab] ==&gt;"""</span>, pred_probab)
+
+</pre>
+</div></li>
+<li><p>
+输出如下
+</p>
+<pre class="example" id="orgcc8bfcd">
+[pred_probab] ==&gt; tensor([[0.1213, 0.1443, 0.1680, 0.1557, 0.1114, 0.1714, 0.1279],
+        [0.1246, 0.1496, 0.1635, 0.1653, 0.1049, 0.1573, 0.1348],
+        [0.1125, 0.1292, 0.1604, 0.1572, 0.1174, 0.1509, 0.1725]],
+       grad_fn=&lt;SoftmaxBackward&gt;)
+</pre></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgd69bb23" class="outline-3">
+<h3 id="orgd69bb23"><span class="section-number-3">5.4</span> Model Parameters</h3>
+<div class="outline-text-3" id="text-5-4">
+<ul class="org-ul">
+<li>机器学习是让input和output去拟合一个人类可以理解的函数</li>
+<li>深度学习其实也是让input和output去拟合函数,只不过这个函数特别的负载,人类已经无法去理解,因为:
+<ul class="org-ul">
+<li>这个函数有很多层</li>
+<li>每一层都有对应的weight和bias</li>
+<li>这些weight和bias在模型创建的时候都是随机的,通过后面讲的训练会把这些weight和bias朝更拟合output
+的方向调整</li>
+<li>到目前为止,我们还没有将训练的过程,所以我们的model里面的weight和bias都是随机的</li>
+</ul></li>
+<li>下面我们使用代码来看看我们生成的model里面随机的weight和bias都是什么样的:
+<ul class="org-ul">
+<li><p>
+代码如下
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #9d0006;">print</span>(<span style="color: #79740e;">"Model structure: "</span>, model, <span style="color: #79740e;">"\n\n"</span>)
+
+<span style="color: #9d0006;">for</span> name, param <span style="color: #9d0006;">in</span> model.named_parameters():
+<span style="background-color: #ebdbb2;"> </span>   <span style="color: #9d0006;">print</span>(f<span style="color: #79740e;">"Layer: {name} | Size: {param.size()} \nValues: {param[:2]} \n"</span>)
+</pre>
+</div></li>
+<li><p>
+输出如下
+</p>
+<pre class="example" id="org50e473b">
+Model structure:  NeuralNetwork(
+  (flatten): Flatten(start_dim=1, end_dim=-1)
+  (linear_relu_stack): Sequential(
+    (0): Linear(in_features=784, out_features=512, bias=True)
+    (1): ReLU()
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ReLU()
+    (4): Linear(in_features=512, out_features=10, bias=True)
+  )
+)
+
+
+Layer: linear_relu_stack.0.weight | Size: torch.Size([512, 784])
+Values: tensor([[ 0.0354, -0.0001,  0.0253,  ..., -0.0030, -0.0246, -0.0285],
+        [ 0.0091,  0.0070,  0.0264,  ..., -0.0156, -0.0108,  0.0153]],
+       grad_fn=&lt;SliceBackward&gt;)
+
+Layer: linear_relu_stack.0.bias | Size: torch.Size([512])
+Values: tensor([ 0.0056, -0.0319], grad_fn=&lt;SliceBackward&gt;)
+
+Layer: linear_relu_stack.2.weight | Size: torch.Size([512, 512])
+Values: tensor([[-0.0228,  0.0358,  0.0308,  ..., -0.0433, -0.0227, -0.0242],
+        [-0.0052,  0.0408, -0.0430,  ..., -0.0049, -0.0225,  0.0050]],
+       grad_fn=&lt;SliceBackward&gt;)
+
+Layer: linear_relu_stack.2.bias | Size: torch.Size([512])
+Values: tensor([0.0017, 0.0280], grad_fn=&lt;SliceBackward&gt;)
+
+Layer: linear_relu_stack.4.weight | Size: torch.Size([10, 512])
+Values: tensor([[ 0.0390,  0.0072,  0.0054,  ...,  0.0183,  0.0282,  0.0360],
+        [-0.0165,  0.0336, -0.0274,  ..., -0.0119, -0.0261,  0.0167]],
+       grad_fn=&lt;SliceBackward&gt;)
+
+Layer: linear_relu_stack.4.bias | Size: torch.Size([10])
+Values: tensor([ 0.0213, -0.0026], grad_fn=&lt;SliceBackward&gt;)
+</pre></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgb8eff61" class="outline-2">
+<h2 id="orgb8eff61"><span class="section-number-2">6</span> Automatic Differentitaion With torch.autograd</h2>
+<div class="outline-text-2" id="text-6">
+<ul class="org-ul">
+<li>在训练神经网络的时候,最常用的算法是反向传播(back propagation),在这个算法的运行过程当中,weight和bias
+都会朝着梯度的相反方向进行修正(修正的过程使用optimizer)</li>
+<li>为了能够进行反向传播,pytorch必须在每一层都能够自动计算梯度,pytorch里面有个package torch.autograd
+来提供这个功能</li>
+<li>我们来看一个最简单的一层layer的例子:
+<ul class="org-ul">
+<li>input tensor是x, 是一个1*5的matrix</li>
+<li>权重是w(weight),是一个5*3的matrix</li>
+<li>偏差是b(bias),是一个1*3的matrix</li>
+<li>output tensor是y,是一个1*3的matrix</li>
+<li>z是一个简单的神经网络,使用x*w+b得到</li>
+<li>loss是损失函数</li>
+<li><p>
+代码如下
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #9d0006;">import</span> torch
+
+<span style="color: #076678;">x</span> = torch.ones(5)
+<span style="color: #076678;">y</span> = torch.zeros(3)
+<span style="color: #076678;">w</span> = torch.randn(5, 3, requires_grad=<span style="color: #8f3f71;">True</span>)
+<span style="color: #076678;">b</span> = torch.randn(3, requires_grad=<span style="color: #8f3f71;">True</span>)
+<span style="color: #076678;">z</span> = torch.matmul(x, w) + b
+<span style="color: #076678;">loss</span> = torch.nn.functional.binary_cross_entropy_with_logits(z, y)
+
+<span style="color: #9d0006;">print</span>(<span style="color: #79740e;">"""[x] ==&gt;"""</span>, x)
+<span style="color: #9d0006;">print</span>(<span style="color: #79740e;">"""[y] ==&gt;"""</span>, y)
+<span style="color: #9d0006;">print</span>(<span style="color: #79740e;">"""[w] ==&gt;"""</span>, w)
+<span style="color: #9d0006;">print</span>(<span style="color: #79740e;">"""[b] ==&gt;"""</span>, b)
+<span style="color: #9d0006;">print</span>(<span style="color: #79740e;">"""[z] ==&gt;"""</span>, z)
+<span style="color: #9d0006;">print</span>(<span style="color: #79740e;">'''[loss] ==&gt;'''</span>, loss)
+</pre>
+</div></li>
+<li><p>
+输出如下
+</p>
+<pre class="example" id="orgd3b034d">
+[x] ==&gt; tensor([1., 1., 1., 1., 1.])
+[y] ==&gt; tensor([0., 0., 0.])
+[w] ==&gt; tensor([[-1.8722,  1.5433, -1.6344],
+        [ 0.8174,  0.1571, -1.0487],
+        [-1.0059, -0.0180, -1.3587],
+        [-0.7847, -0.1392,  0.3352],
+        [-0.1005, -0.1010, -0.6419]], requires_grad=True)
+[b] ==&gt; tensor([ 0.1220, -0.6997, -0.6994], requires_grad=True)
+[z] ==&gt; tensor([-2.8239,  0.7424, -5.0480], grad_fn=&lt;AddBackward0&gt;)
+[loss] ==&gt; tensor(0.3986, grad_fn=&lt;BinaryCrossEntropyWithLogitsBackward&gt;)
+</pre></li>
+</ul></li>
+</ul>
+</div>
+<div id="outline-container-org191d53d" class="outline-3">
+<h3 id="org191d53d"><span class="section-number-3">6.1</span> Computing Gradients</h3>
+<div class="outline-text-3" id="text-6-1">
+<ul class="org-ul">
+<li>为了优化weight和bias,我们需要计算梯度:
+<ul class="org-ul">
+<li>\(\frac{\partial loss}{\partial w}\)</li>
+<li>\(\frac{\partial loss}{\partial d}\)</li>
+</ul></li>
+<li>计算方法是loss函数(创建的时候就传入了z)调用backward()函数
+<ul class="org-ul">
+<li><p>
+代码如下
+</p>
+<div class="org-src-container">
+<pre class="src src-python">loss.backward()
+<span style="color: #9d0006;">print</span>(<span style="color: #79740e;">"""[w.grad] ==&gt;"""</span>, w.grad)
+<span style="color: #9d0006;">print</span>(<span style="color: #79740e;">"""[b.grad] ==&gt;"""</span>, b.grad)
+</pre>
+</div></li>
+<li><p>
+输出如下
+</p>
+<pre class="example" id="orgec40e8c">
+[w.grad] ==&gt; tensor([[0.0187, 0.2258, 0.0021],
+        [0.0187, 0.2258, 0.0021],
+        [0.0187, 0.2258, 0.0021],
+        [0.0187, 0.2258, 0.0021],
+        [0.0187, 0.2258, 0.0021]])
+[b.grad] ==&gt; tensor([0.0187, 0.2258, 0.0021])
+</pre></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org8116a39" class="outline-3">
+<h3 id="org8116a39"><span class="section-number-3">6.2</span> Disabling Gradient Tracking</h3>
+<div class="outline-text-3" id="text-6-2">
+<ul class="org-ul">
+<li>默认情况下,所有的tensor都有requires_grad=True的设置,也就会同时支持梯度计算</li>
+<li>但是有些情况下你可能不想计算梯度:
+<ul class="org-ul">
+<li>比如你把一些神经网络的parameter设置为frozen parameter, 这在训练一些pretrained network的时候经常用到</li>
+<li>只想做forward pass,不想做back propagation那么停止计算梯度能够提高效率</li>
+</ul></li>
+<li>停止自动计算梯度的方法有两种:
+<ul class="org-ul">
+<li><p>
+设置no_grad()
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #076678;">z</span> = torch.matmul(x, w) + b
+<span style="color: #9d0006;">print</span>(z.requires_grad)
+
+<span style="color: #9d0006;">with</span> torch.no_grad():
+<span style="background-color: #ebdbb2;"> </span>   <span style="color: #076678;">z</span> = torch.matmul(x, w) + b
+<span style="color: #9d0006;">print</span>(z.requires_grad)
+
+<span style="color: #a89984;"># </span><span style="color: #a89984;">&lt;===================OUTPUT===================&gt;</span>
+<span style="color: #a89984;"># </span><span style="color: #a89984;">True</span>
+<span style="color: #a89984;"># </span><span style="color: #a89984;">False</span>
+</pre>
+</div></li>
+<li><p>
+调用detach()
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #076678;">z</span> = torch.matmul(x, w) + b
+<span style="color: #076678;">z_det</span> = z.detach()
+<span style="color: #9d0006;">print</span>(z_det.requires_grad)
+
+<span style="color: #a89984;"># </span><span style="color: #a89984;">&lt;===================OUTPUT===================&gt;</span>
+<span style="color: #a89984;"># </span><span style="color: #a89984;">False</span>
+</pre>
+</div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org061bfc4" class="outline-3">
+<h3 id="org061bfc4"><span class="section-number-3">6.3</span> More on Computational Graphs</h3>
+<div class="outline-text-3" id="text-6-3">
+<ul class="org-ul">
+<li>pytorch自动求梯度的原理如下:
+<ul class="org-ul">
+<li>autograd把所有的tensor的executed operation(和数据)都存在了一个DAG里面</li>
+<li>DAG的root是output tensor</li>
+<li>DAG的leaves是input tensor</li>
+<li>从root到leaf的过程就是自动求梯度的过程</li>
+</ul></li>
+<li>TODO</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org6b7d65a" class="outline-2">
+<h2 id="org6b7d65a"><span class="section-number-2">7</span> Optimizing Model Parameters</h2>
+<div class="outline-text-2" id="text-7">
+<ul class="org-ul">
+<li>我们已经有了model和data,那么下一步就是train,validate和test了,这个过程当中再来优化参数</li>
+<li>训练模型是一个交互式的过程,分成多个iteration,每个iteration叫一个epoch</li>
+<li>每个epoch都会:
+<ol class="org-ol">
+<li>对output做出猜测</li>
+<li>然后通过loss function计算和真实值的差距</li>
+<li>根据差距计算梯度</li>
+<li>根据梯度下降法来optimize参数(weight和bias)</li>
+</ol></li>
+</ul>
+</div>
+<div id="outline-container-org489aa06" class="outline-3">
+<h3 id="org489aa06"><span class="section-number-3">7.1</span> Prereuisite Code</h3>
+<div class="outline-text-3" id="text-7-1">
+<ul class="org-ul">
+<li><p>
+从前面的代码中拷贝如下代码
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #9d0006;">import</span> torch
+<span style="color: #9d0006;">from</span> torch <span style="color: #9d0006;">import</span> nn
+<span style="color: #9d0006;">from</span> torch.utils.data <span style="color: #9d0006;">import</span> DataLoader
+<span style="color: #9d0006;">from</span> torchvision <span style="color: #9d0006;">import</span> datasets
+<span style="color: #9d0006;">from</span> torchvision.transforms <span style="color: #9d0006;">import</span> ToTensor, Lambda
+
+<span style="color: #076678;">training_data</span> = datasets.FashionMNIST(
+<span style="background-color: #ebdbb2;"> </span>   root=<span style="color: #79740e;">"data"</span>, train=<span style="color: #8f3f71;">True</span>, download=<span style="color: #8f3f71;">True</span>, transform=ToTensor()
+)
+
+<span style="color: #076678;">test_data</span> = datasets.FashionMNIST(
+<span style="background-color: #ebdbb2;"> </span>   root=<span style="color: #79740e;">"data"</span>, train=<span style="color: #8f3f71;">False</span>, download=<span style="color: #8f3f71;">True</span>, transform=ToTensor()
+)
+
+<span style="color: #076678;">train_dataloader</span> = DataLoader(training_data, batch_size=64)
+<span style="color: #076678;">test_dataloader</span> = DataLoader(test_data, batch_size=64)
+
+
+<span style="color: #9d0006;">class</span> <span style="color: #8f3f71;">NeuralNetwork</span>(nn.Module):
+<span style="background-color: #ebdbb2;"> </span>   <span style="color: #9d0006;">def</span> <span style="color: #b57614;">__init__</span>(<span style="color: #9d0006;">self</span>):
+<span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   <span style="color: #af3a03;">super</span>(NeuralNetwork, <span style="color: #9d0006;">self</span>).__init__()
+<span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   <span style="color: #9d0006;">self</span>.flatten = nn.Flatten()
+<span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   <span style="color: #9d0006;">self</span>.linear_relu_stack = nn.Sequential(
+<span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   nn.Linear(28 * 28, 512),
+<span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   nn.ReLU(),
+<span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   nn.Linear(512, 512),
+<span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   nn.ReLU(),
+<span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   nn.Linear(512, 10),
+<span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   )
+
+<span style="background-color: #ebdbb2;"> </span>   <span style="color: #9d0006;">def</span> <span style="color: #b57614;">forward</span>(<span style="color: #9d0006;">self</span>, x):
+<span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   <span style="color: #076678;">x</span> = <span style="color: #9d0006;">self</span>.flatten(x)
+<span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   <span style="color: #076678;">logits</span> = <span style="color: #9d0006;">self</span>.linear_relu_stack(x)
+<span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   <span style="color: #9d0006;">return</span> logits
+
+
+<span style="color: #076678;">model</span> = NeuralNetwork()
+</pre>
+</div></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgd546989" class="outline-3">
+<h3 id="orgd546989"><span class="section-number-3">7.2</span> Hyperparameters</h3>
+<div class="outline-text-3" id="text-7-2">
+<ul class="org-ul">
+<li>所谓超参(hyperparameter)是相对于参数(weight和bias)而言的
+<ul class="org-ul">
+<li>参数(weight和bias)是神经网络自己维持的参数,是pytorch的使用人员无法更改的</li>
+<li>超参(hyperparameter)则不同,其是用来控制optimization process的</li>
+</ul></li>
+<li>我们这里定义三个超参:
+<ul class="org-ul">
+<li>Number of Epochs: 迭代多少次,一般来说,迭代的越多,最后模型的准确率越高</li>
+<li>Batch Size: parameter更新之前,有多少的data sample穿过神经网络</li>
+<li>Learning Rate: 每个epoch,我们超"梯度的反方向"更新参数的时候,更新大. 这个数目小了,容易降低learning
+speed,但是如果太大了,会导致unpredictable behavior</li>
+<li><p>
+代码如下
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #076678;">learning_rate</span> = 1e-3
+<span style="color: #076678;">batch_size</span> = 64
+<span style="color: #076678;">epochs</span> = 5
+</pre>
+</div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org6a4debe" class="outline-3">
+<h3 id="org6a4debe"><span class="section-number-3">7.3</span> Optimization Loop</h3>
+<div class="outline-text-3" id="text-7-3">
+<ul class="org-ul">
+<li>每个loop主要包含两个部分:
+<ul class="org-ul">
+<li>Train Loop, 遍历training data set,试图优化参数</li>
+<li>The Validation/Test Loop, 遍历test data set,看看我们的model performance是否提高了(如果没有提高
+可以中断训练,寻找bug)</li>
+</ul></li>
+</ul>
+</div>
+<div id="outline-container-orgb5bb0c0" class="outline-4">
+<h4 id="orgb5bb0c0"><span class="section-number-4">7.3.1</span> Loss Function</h4>
+<div class="outline-text-4" id="text-7-3-1">
+<ul class="org-ul">
+<li>当给与training data的时候,我们untrained network肯定会给出一个不正确的答案</li>
+<li>Loss function就是来度量我们的答案和正确答案之间的差距的,因为我们model的目的就是让loss function最小</li>
+<li>常见的loss function有:
+<ul class="org-ul">
+<li>nn.MSELoss(Mean Square Error),主要为regression task服务</li>
+<li>nn.NLLLoss(Negative Log Likelihood),主要为classification服务</li>
+<li>nn.CrossEntropyLoss,结合了nn.LogSoftmax和nn.NLLLoss</li>
+</ul></li>
+<li><p>
+我们这里使用nn.CrossEntropyLoss
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #076678;">loss_fn</span> = nn.CrossEntropyLoss()
+</pre>
+</div></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org54eabb3" class="outline-4">
+<h4 id="org54eabb3"><span class="section-number-4">7.3.2</span> Optimizer</h4>
+<div class="outline-text-4" id="text-7-3-2">
+<ul class="org-ul">
+<li>optimization是adjust model参数,并且减小model error的过程</li>
+<li>optimization algorithm是说我们如何超梯度的方向减少(比如SGD就是随机找一个向量的方向减少,而不是全部,为了减少运算量)</li>
+<li>optimization在pytorch里面被封装成optimizer,常见的optimizer有:
+<ul class="org-ul">
+<li>SGD</li>
+<li>ADAM</li>
+<li>RMSProp</li>
+</ul></li>
+<li><p>
+初始化optimizer需要输入model的参数和learning_rate
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #076678;">optimizer</span> = torch.optim.SGD(model.parameters(), lr=learning_rate)
+</pre>
+</div></li>
+<li>在一个training loop里面,我们要做到如下三个step:
+<ol class="org-ol">
+<li>调用optimizer.zero_grad()来reset 梯度的值,因为梯度的值是累加的,不清空会成倍累计</li>
+<li>使用loss.backwards()来进行反向传播的过程,然后把每个参数的梯度记录下来</li>
+<li>一旦有了梯度,我们就调用optimizer.step(),来使用特定的optimization algorithm来调整参数</li>
+</ol></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org662063c" class="outline-3">
+<h3 id="org662063c"><span class="section-number-3">7.4</span> Full Implementation</h3>
+<div class="outline-text-3" id="text-7-4">
+<ul class="org-ul">
+<li><p>
+全部代码如下
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #9d0006;">import</span> torch
+<span style="color: #9d0006;">from</span> torch <span style="color: #9d0006;">import</span> nn
+<span style="color: #9d0006;">from</span> torch.utils.data <span style="color: #9d0006;">import</span> DataLoader
+<span style="color: #9d0006;">from</span> torchvision <span style="color: #9d0006;">import</span> datasets
+<span style="color: #9d0006;">from</span> torchvision.transforms <span style="color: #9d0006;">import</span> ToTensor, Lambda
+
+<span style="color: #076678;">training_data</span> = datasets.FashionMNIST(
+<span style="background-color: #ebdbb2;"> </span>   root=<span style="color: #79740e;">"data"</span>, train=<span style="color: #8f3f71;">True</span>, download=<span style="color: #8f3f71;">True</span>, transform=ToTensor()
+)
+
+<span style="color: #076678;">test_data</span> = datasets.FashionMNIST(
+<span style="background-color: #ebdbb2;"> </span>   root=<span style="color: #79740e;">"data"</span>, train=<span style="color: #8f3f71;">False</span>, download=<span style="color: #8f3f71;">True</span>, transform=ToTensor()
+)
+
+<span style="color: #076678;">train_dataloader</span> = DataLoader(training_data, batch_size=64)
+<span style="color: #076678;">test_dataloader</span> = DataLoader(test_data, batch_size=64)
+
+
+<span style="color: #9d0006;">class</span> <span style="color: #8f3f71;">NeuralNetwork</span>(nn.Module):
+<span style="background-color: #ebdbb2;"> </span>   <span style="color: #9d0006;">def</span> <span style="color: #b57614;">__init__</span>(<span style="color: #9d0006;">self</span>):
+<span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   <span style="color: #af3a03;">super</span>(NeuralNetwork, <span style="color: #9d0006;">self</span>).__init__()
+<span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   <span style="color: #9d0006;">self</span>.flatten = nn.Flatten()
+<span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   <span style="color: #9d0006;">self</span>.linear_relu_stack = nn.Sequential(
+<span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   nn.Linear(28 * 28, 512),
+<span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   nn.ReLU(),
+<span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   nn.Linear(512, 512),
+<span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   nn.ReLU(),
+<span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   nn.Linear(512, 10),
+<span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   )
+
+<span style="background-color: #ebdbb2;"> </span>   <span style="color: #9d0006;">def</span> <span style="color: #b57614;">forward</span>(<span style="color: #9d0006;">self</span>, x):
+<span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   <span style="color: #076678;">x</span> = <span style="color: #9d0006;">self</span>.flatten(x)
+<span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   <span style="color: #076678;">logits</span> = <span style="color: #9d0006;">self</span>.linear_relu_stack(x)
+<span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   <span style="color: #9d0006;">return</span> logits
+
+
+<span style="color: #076678;">model</span> = NeuralNetwork()
+
+
+<span style="color: #076678;">learning_rate</span> = 1e-3
+<span style="color: #076678;">batch_size</span> = 64
+<span style="color: #076678;">epochs</span> = 5
+
+
+<span style="color: #9d0006;">def</span> <span style="color: #b57614;">train_loop</span>(dataloader, model, loss_fn, optimizer):
+<span style="background-color: #ebdbb2;"> </span>   <span style="color: #076678;">size</span> = <span style="color: #af3a03;">len</span>(dataloader.dataset)
+<span style="background-color: #ebdbb2;"> </span>   <span style="color: #9d0006;">for</span> batch, (X, y) <span style="color: #9d0006;">in</span> <span style="color: #af3a03;">enumerate</span>(dataloader):
+<span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   <span style="color: #a89984;"># </span><span style="color: #a89984;">Compute prediction and loss</span>
+<span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   <span style="color: #076678;">pred</span> = model(X)
+<span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   <span style="color: #076678;">loss</span> = loss_fn(pred, y)
+
+<span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   <span style="color: #a89984;"># </span><span style="color: #a89984;">Backpropagation</span>
+<span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   optimizer.zero_grad()
+<span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   loss.backward()
+<span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   optimizer.step()
+
+<span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   <span style="color: #9d0006;">if</span> batch % 100 == 0:
+<span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   <span style="color: #076678;">loss</span>, <span style="color: #076678;">current</span> = loss.item(), batch * <span style="color: #af3a03;">len</span>(X)
+<span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   <span style="color: #9d0006;">print</span>(f<span style="color: #79740e;">"loss: {loss:&gt;7f}  [{current:&gt;5d}/{size:&gt;5d}]"</span>)
+
+
+<span style="color: #9d0006;">def</span> <span style="color: #b57614;">test_loop</span>(dataloader, model, loss_fn):
+<span style="background-color: #ebdbb2;"> </span>   <span style="color: #076678;">size</span> = <span style="color: #af3a03;">len</span>(dataloader.dataset)
+<span style="background-color: #ebdbb2;"> </span>   <span style="color: #076678;">num_batches</span> = <span style="color: #af3a03;">len</span>(dataloader)
+<span style="background-color: #ebdbb2;"> </span>   <span style="color: #076678;">test_loss</span>, <span style="color: #076678;">correct</span> = 0, 0
+
+<span style="background-color: #ebdbb2;"> </span>   <span style="color: #9d0006;">with</span> torch.no_grad():
+<span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   <span style="color: #9d0006;">for</span> X, y <span style="color: #9d0006;">in</span> dataloader:
+<span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   <span style="color: #076678;">pred</span> = model(X)
+<span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   <span style="color: #076678;">test_loss</span> += loss_fn(pred, y).item()
+<span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   <span style="color: #076678;">correct</span> += (pred.argmax(1) == y).<span style="color: #af3a03;">type</span>(torch.<span style="color: #af3a03;">float</span>).<span style="color: #af3a03;">sum</span>().item()
+
+<span style="background-color: #ebdbb2;"> </span>   <span style="color: #076678;">test_loss</span> /= num_batches
+<span style="background-color: #ebdbb2;"> </span>   <span style="color: #076678;">correct</span> /= size
+<span style="background-color: #ebdbb2;"> </span>   <span style="color: #9d0006;">print</span>(
+<span style="background-color: #ebdbb2;"> </span>   <span style="background-color: #ebdbb2;"> </span>   f<span style="color: #79740e;">"Test Error: \n Accuracy: {(100*correct):&gt;0.1f}%, Avg loss: {test_loss:&gt;8f} \n"</span>
+<span style="background-color: #ebdbb2;"> </span>   )
+
+
+<span style="color: #076678;">loss_fn</span> = nn.CrossEntropyLoss()
+<span style="color: #076678;">optimizer</span> = torch.optim.SGD(model.parameters(), lr=learning_rate)
+
+<span style="color: #076678;">epochs</span> = 10
+<span style="color: #9d0006;">for</span> t <span style="color: #9d0006;">in</span> <span style="color: #af3a03;">range</span>(epochs):
+<span style="background-color: #ebdbb2;"> </span>   <span style="color: #9d0006;">print</span>(f<span style="color: #79740e;">"Epoch {t+1}\n-------------------------------"</span>)
+<span style="background-color: #ebdbb2;"> </span>   train_loop(train_dataloader, model, loss_fn, optimizer)
+<span style="background-color: #ebdbb2;"> </span>   test_loop(test_dataloader, model, loss_fn)
+<span style="color: #9d0006;">print</span>(<span style="color: #79740e;">"Done!"</span>)
+</pre>
+</div></li>
+<li><p>
+输出如下
+</p>
+<pre class="example" id="org440a100">
+Epoch 1
+-------------------------------
+loss: 2.290681  [    0/60000]
+loss: 2.287182  [ 6400/60000]
+loss: 2.269812  [12800/60000]
+loss: 2.266142  [19200/60000]
+loss: 2.256343  [25600/60000]
+loss: 2.220319  [32000/60000]
+loss: 2.229174  [38400/60000]
+loss: 2.187555  [44800/60000]
+loss: 2.194004  [51200/60000]
+loss: 2.173015  [57600/60000]
+Test Error:
+ Accuracy: 45.8%, Avg loss: 2.157823
+
+Epoch 2
+-------------------------------
+loss: 2.159005  [    0/60000]
+loss: 2.162359  [ 6400/60000]
+loss: 2.105484  [12800/60000]
+loss: 2.121630  [19200/60000]
+loss: 2.078309  [25600/60000]
+loss: 2.014289  [32000/60000]
+loss: 2.043489  [38400/60000]
+loss: 1.956825  [44800/60000]
+loss: 1.975176  [51200/60000]
+loss: 1.920474  [57600/60000]
+Test Error:
+ Accuracy: 55.7%, Avg loss: 1.903461
+
+Epoch 3
+-------------------------------
+loss: 1.928488  [    0/60000]
+loss: 1.913021  [ 6400/60000]
+loss: 1.795003  [12800/60000]
+loss: 1.833542  [19200/60000]
+loss: 1.736217  [25600/60000]
+loss: 1.679621  [32000/60000]
+loss: 1.705046  [38400/60000]
+loss: 1.591978  [44800/60000]
+loss: 1.635176  [51200/60000]
+loss: 1.541151  [57600/60000]
+Test Error:
+ Accuracy: 59.6%, Avg loss: 1.542476
+
+Epoch 4
+-------------------------------
+loss: 1.602455  [    0/60000]
+loss: 1.576380  [ 6400/60000]
+loss: 1.420821  [12800/60000]
+loss: 1.492640  [19200/60000]
+loss: 1.386150  [25600/60000]
+loss: 1.369658  [32000/60000]
+loss: 1.383621  [38400/60000]
+loss: 1.293382  [44800/60000]
+loss: 1.349705  [51200/60000]
+loss: 1.254283  [57600/60000]
+Test Error:
+ Accuracy: 62.8%, Avg loss: 1.270659
+
+Epoch 5
+-------------------------------
+loss: 1.342015  [    0/60000]
+loss: 1.327567  [ 6400/60000]
+loss: 1.159419  [12800/60000]
+loss: 1.263751  [19200/60000]
+loss: 1.154799  [25600/60000]
+loss: 1.169653  [32000/60000]
+loss: 1.184060  [38400/60000]
+loss: 1.109008  [44800/60000]
+loss: 1.170164  [51200/60000]
+loss: 1.086842  [57600/60000]
+Test Error:
+ Accuracy: 64.7%, Avg loss: 1.101013
+
+Epoch 6
+-------------------------------
+loss: 1.168192  [    0/60000]
+loss: 1.168162  [ 6400/60000]
+loss: 0.987777  [12800/60000]
+loss: 1.118827  [19200/60000]
+loss: 1.011244  [25600/60000]
+loss: 1.035202  [32000/60000]
+loss: 1.060468  [38400/60000]
+loss: 0.991097  [44800/60000]
+loss: 1.054724  [51200/60000]
+loss: 0.981641  [57600/60000]
+Test Error:
+ Accuracy: 66.0%, Avg loss: 0.991141
+
+Epoch 7
+-------------------------------
+loss: 1.047844  [    0/60000]
+loss: 1.064381  [ 6400/60000]
+loss: 0.870337  [12800/60000]
+loss: 1.021567  [19200/60000]
+loss: 0.921638  [25600/60000]
+loss: 0.939490  [32000/60000]
+loss: 0.979135  [38400/60000]
+loss: 0.913901  [44800/60000]
+loss: 0.975232  [51200/60000]
+loss: 0.910894  [57600/60000]
+Test Error:
+ Accuracy: 67.3%, Avg loss: 0.916158
+
+Epoch 8
+-------------------------------
+loss: 0.959148  [    0/60000]
+loss: 0.992466  [ 6400/60000]
+loss: 0.786403  [12800/60000]
+loss: 0.952738  [19200/60000]
+loss: 0.862164  [25600/60000]
+loss: 0.869106  [32000/60000]
+loss: 0.921611  [38400/60000]
+loss: 0.862038  [44800/60000]
+loss: 0.917971  [51200/60000]
+loss: 0.860151  [57600/60000]
+Test Error:
+ Accuracy: 68.5%, Avg loss: 0.862315
+
+Epoch 9
+-------------------------------
+loss: 0.891266  [    0/60000]
+loss: 0.939044  [ 6400/60000]
+loss: 0.723808  [12800/60000]
+loss: 0.901962  [19200/60000]
+loss: 0.819886  [25600/60000]
+loss: 0.816061  [32000/60000]
+loss: 0.878376  [38400/60000]
+loss: 0.825895  [44800/60000]
+loss: 0.875392  [51200/60000]
+loss: 0.821557  [57600/60000]
+Test Error:
+ Accuracy: 69.7%, Avg loss: 0.821707
+
+Epoch 10
+-------------------------------
+loss: 0.837337  [    0/60000]
+loss: 0.896555  [ 6400/60000]
+loss: 0.675275  [12800/60000]
+loss: 0.863091  [19200/60000]
+loss: 0.787557  [25600/60000]
+loss: 0.775253  [32000/60000]
+loss: 0.844009  [38400/60000]
+loss: 0.799441  [44800/60000]
+loss: 0.842212  [51200/60000]
+loss: 0.790734  [57600/60000]
+Test Error:
+ Accuracy: 71.1%, Avg loss: 0.789619
+
+Done!
+</pre></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org32f9cbf" class="outline-2">
+<h2 id="org32f9cbf"><span class="section-number-2">8</span> Save and Load the Model</h2>
+<div class="outline-text-2" id="text-8">
+</div>
+<div id="outline-container-org595b05a" class="outline-3">
+<h3 id="org595b05a"><span class="section-number-3">8.1</span> Saving and Loading Model Weights</h3>
+<div class="outline-text-3" id="text-8-1">
+<ul class="org-ul">
+<li><p>
+pytorch会把学到的参数存储在内部的一个字典里面,叫做state_dict,我们可以只持久化存储这些参数
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #9d0006;">import</span> torch
+<span style="color: #9d0006;">import</span> torchvision.models <span style="color: #9d0006;">as</span> models
+
+<span style="color: #076678;">model</span> = models.vgg16(pretrained=<span style="color: #8f3f71;">True</span>)
+torc.save(model.state_dict(), <span style="color: #79740e;">'model_weights.pth'</span>)
+</pre>
+</div></li>
+<li><p>
+到用到的志恒,我们之间创建以一样的model,然后使用函数load_state_dict来load这些参数,当然要记得eval()后才能使用
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #076678;">model</span> = models.vgg16()
+model.load_state_dict(torch.load(<span style="color: #79740e;">'model_weights.pth'</span>))
+model.<span style="color: #af3a03;">eval</span>()
+</pre>
+</div></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org89d5d93" class="outline-3">
+<h3 id="org89d5d93"><span class="section-number-3">8.2</span> Saving and Loading Models with Shapes</h3>
+<div class="outline-text-3" id="text-8-2">
+<ul class="org-ul">
+<li><p>
+我们上面只save了model的参数,其实我们的model也可以和参数一块被save
+</p>
+<div class="org-src-container">
+<pre class="src src-python">torch.save(model, <span style="color: #79740e;">'model.pth'</span>)
+</pre>
+</div></li>
+<li><p>
+load的时候如下
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #076678;">model</span> = torch.load(<span style="color: #79740e;">'model.pth'</span>)
+</pre>
+</div></li>
+<li>这个方法的内部原理是使用了python的序列化库pickle,所以在load的时候要保证当前的python环境能够load到class definition</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: harrifeng@outlook.com</p>
+<p class="date">Created: 2021-11-18 Thu 19:25</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
