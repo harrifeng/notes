@@ -1,0 +1,1423 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2021-12-01 Wed 20:04 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ddia</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="harrifeng@outlook.com" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/readtheorg.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/js/readtheorg.js"></script>
+<script type="text/javascript">
+// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
+<!--/*--><![CDATA[/*><!--*/
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+    /*]]>*///-->
+// @license-end
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">ddia</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgf949e47">1. Chapter 1: Reliable, Scalable, and Maintainable Applications</a></li>
+<li><a href="#orga011c6e">2. Chapter 3: Storage and Retrieval</a>
+<ul>
+<li><a href="#orgcaef1e7">2.1. Data Structures That Power Your Database</a>
+<ul>
+<li><a href="#orgd732a7f">2.1.1. Hash Indexes</a></li>
+<li><a href="#org5dcd5b1">2.1.2. SSTables and LSM-Trees</a></li>
+<li><a href="#org2c60135">2.1.3. B-Trees</a></li>
+<li><a href="#org7ecdf09">2.1.4. Comparing B-Trees and LSM-Trees</a></li>
+<li><a href="#orgfb0e898">2.1.5. Other Indexing Structures</a></li>
+<li><a href="#org8055909">2.1.6. Transaction Processing or Analytics?</a></li>
+<li><a href="#org8cc3115">2.1.7. Data Warehousing</a></li>
+<li><a href="#orgf68ce45">2.1.8. Stars and Snowflakes: Schemas for Analytics</a></li>
+</ul>
+</li>
+<li><a href="#orgae815a3">2.2. Column-Oriented Storage</a>
+<ul>
+<li><a href="#orga73e5b6">2.2.1. Column Compression</a></li>
+<li><a href="#orgc3294cc">2.2.2. Writing to Column-Oriented Storage</a></li>
+<li><a href="#org7f1c8ed">2.2.3. Aggregation: Data Cubes and Materialized Views</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org36228da">3. Chapter 4: Encoding and Evolution</a>
+<ul>
+<li><a href="#org1b71f4f">3.1. Formats for Encoding Data</a>
+<ul>
+<li><a href="#org972c9f3">3.1.1. Language-Specific Formats</a></li>
+<li><a href="#org965bb5f">3.1.2. JSON,XML,and Binary Variants</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org1ff9b93">4. Chapter 5: Replication</a>
+<ul>
+<li><a href="#orgdb6956c">4.1. Leaders and Followers</a></li>
+</ul>
+</li>
+<li><a href="#org3010fcf">5. Chapter 10: Batch Processing</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgf949e47" class="outline-2">
+<h2 id="orgf949e47"><span class="section-number-2">1</span> Chapter 1: Reliable, Scalable, and Maintainable Applications</h2>
+<div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li>当前,很多的application都是data-intensive的,而不再是compute-intensive的了,换句话说,CPU power往往
+不再是application的瓶颈了.现在的瓶颈往往是:
+<ul class="org-ul">
+<li>data的数量</li>
+<li>data的复杂度</li>
+<li>data变化的速度</li>
+</ul></li>
+<li>所谓data-intensive application,通常来说,会提供如下通用功能:
+<ul class="org-ul">
+<li>存储数据,以便其他application以后来取:databases</li>
+<li>记住一些expensive操作的结果,来提升后续读取速度: caches</li>
+<li>允许用户通过关键字搜索: search indexes</li>
+<li>给另外一个process发送message,让对方异步处理: stream processing</li>
+<li>定期大量的处理堆积的数据: batach processing</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orga011c6e" class="outline-2">
+<h2 id="orga011c6e"><span class="section-number-2">2</span> Chapter 3: Storage and Retrieval</h2>
+<div class="outline-text-2" id="text-2">
+<ul class="org-ul">
+<li>对于一个数据库来说,其需要满足的最基本操作有两个:
+<ul class="org-ul">
+<li>存储数据</li>
+<li>查询刚才存储的数据</li>
+</ul></li>
+<li>工作中,我们不会自己去重新开发一个数据库engine, 我们一般会去市面上选取合适的数据库engine</li>
+<li>市面上不同的数据库engine,其设计的着重点不同:
+<ul class="org-ul">
+<li>有的为事务(transactional workload)进行了优化</li>
+<li>有的为分析(analytics)进行了优化</li>
+</ul></li>
+</ul>
+</div>
+<div id="outline-container-orgcaef1e7" class="outline-3">
+<h3 id="orgcaef1e7"><span class="section-number-3">2.1</span> Data Structures That Power Your Database</h3>
+<div class="outline-text-3" id="text-2-1">
+<ul class="org-ul">
+<li><p>
+我们可以自己实现一个最简单的数据库. 代码如下
+</p>
+<div class="org-src-container">
+<pre class="src src-sh"><span style="color: #a89984;">#</span><span style="color: #a89984;">!/bin/</span><span style="color: #9d0006;">bash</span>
+
+<span style="color: #b57614;">db_set</span> () {
+    <span style="color: #af3a03;">echo</span> <span style="color: #79740e;">"$1,$2"</span> &gt;&gt; database
+}
+
+<span style="color: #b57614;">db_get</span> () {
+    grep <span style="color: #79740e;">"^$1,"</span> database | sed -e <span style="color: #79740e;">"s/$1,//"</span> | tail -n 1
+}
+
+<span style="color: #a89984;"># </span><span style="color: #a89984;">&lt;===================OUTPUT===================&gt;</span>
+<span style="color: #a89984;"># </span><span style="color: #a89984;">$ db_set 12345 '{"name": "London"}'</span>
+<span style="color: #a89984;"># </span><span style="color: #a89984;">(3ENV) [fenghaoran@fenghaorandeMacBook-Pro ~/tmp/ddia-code] 09:34:04</span>
+<span style="color: #a89984;"># </span><span style="color: #a89984;">$ db_set 42 '{"name": "San Francisco"}'</span>
+<span style="color: #a89984;"># </span><span style="color: #a89984;">(3ENV) [fenghaoran@fenghaorandeMacBook-Pro ~/tmp/ddia-code] 09:34:19</span>
+<span style="color: #a89984;"># </span><span style="color: #a89984;">$ db_get 42</span>
+<span style="color: #a89984;"># </span><span style="color: #a89984;">{"name": "San Francisco"}</span>
+</pre>
+</div></li>
+<li><p>
+其原理很简单,就是把数据通过类似csv的格式存在database这个文件里面
+</p>
+<div class="org-src-container">
+<pre class="src src-sh">$ cat database
+12345,{<span style="color: #79740e;">"name"</span>: <span style="color: #79740e;">"London"</span>}
+42,{<span style="color: #79740e;">"name"</span>: <span style="color: #79740e;">"San Francisco"</span>}
+</pre>
+</div></li>
+<li>看似简单,但是实际上很多数据库都会内部使用这种直接append到文件的方式,称之为log.这里的log和web服务
+器打的application log不完全相同. 数据库的log有如下特征:
+<ul class="org-ul">
+<li>以append-only的方式写入文件(和application log一样)</li>
+<li>不一定是human-readable的,也可能是binary的(这个和application log不一样)</li>
+<li>会考虑并发,会考虑从头利用空间(放弃最早的记录),而不是一直写.</li>
+</ul></li>
+<li>虽然db_set效率还是可以的.我们的数据库db_get的效率实在是太低了,因为他的复杂度为O(n)</li>
+<li>为了提高db_get的效率,我们就必须引入另外一个数据结构index</li>
+<li>所谓index,就是一些在primary data之外的额外的metadata. 每一种index会加快一种查询,如果你希望多种
+不同的查询都快速,可能需要多种index</li>
+<li>index可以随时增加或删除,不影响primary data.只影响查询的速度.</li>
+<li>维护index需要额外的性能支出,特别是写入的情况下.因为新数据的写入会引起index的自我更新</li>
+<li>这就涉及到了storage系统的trade-off啦:
+<ul class="org-ul">
+<li>index会提高查询效率</li>
+<li>但是index会拖累每次的write</li>
+</ul></li>
+<li>所以数据库本身不会默认创建太多index,而是数据库管理员的我们,为了应对不同的业务场景,而选择创建不同
+的index.</li>
+</ul>
+</div>
+<div id="outline-container-orgd732a7f" class="outline-4">
+<h4 id="orgd732a7f"><span class="section-number-4">2.1.1</span> Hash Indexes</h4>
+<div class="outline-text-4" id="text-2-1-1">
+<ul class="org-ul">
+<li>让我们来创建key-value数据的index.这种index比较简单,但也是常见情形,而且还是其他复杂index的building block</li>
+<li>key-value存储如果是存储在内存里面就相当于编程语言的dictionary.</li>
+<li>编程语言的dictionary通常使用hashmap来实现.</li>
+<li>既然我们已经在编程语言里面(也就是内存里面)拥有了hashmap,那么我们自然而然的就想到使用内存里面的
+hashmap来index我们硬盘上的数据</li>
+<li>假设我们的数据只能往一个file后面append.那么最简单的index策略就是:
+<ul class="org-ul">
+<li>保存一个in-memory的hashmap</li>
+<li>这个hashmap的key就是key-value数据的key</li>
+<li>这个hashmap的value就是数据的byte offset</li>
+<li>每当你给这个file append一个新的key-value的时候,你也同时update你再内存里面的dictionary</li>
+<li>每当需要lookup某个key的时候,直接就可以找到这个key所在的byte offset,然后读取就可以了(读取到\n为止)</li>
+</ul></li>
+<li>上述过程的图示如下</li>
+<li>这个措施看起来简单, 但是确实一个可行的措施.实际上Bitcask(Riak的默认存储引擎)也是这么做的:把所有的index都保存在内存里面.</li>
+<li>类似Bitcask的存储引擎,适合如下情况:
+<ul class="org-ul">
+<li>key的数目不是特别多(毕竟你要在内存里面维护他们)</li>
+<li>每个key的写入次数很多.(不用担心原来的空间不够用,因为每次写入新的位置,使用新的空间,老的空间就不用了)</li>
+</ul></li>
+<li>我们之前假设我们的文件都是append的写入的,这样能够简化我们的模型,现在我们去掉这个假设来看下如何处理.</li>
+<li>一直append写入的一个最大问题,是硬盘终究会用完(因为只有最近一次写入的空间是有价值的,老的空间都被抛弃了).</li>
+<li>为了修复这个问题,我们想到的一个solution是把一个log分成多个segment,每个segment是fix size的.</li>
+<li>每当segment达到某个大小时,就关闭这个segment file.然后开一个新的segment file.</li>
+<li>每当一段时间,我们对这个segment进行一次compaction,所谓compaction,就是要把重复的key丢掉.只保留有
+用的,也就是每个key最近一次的记录.过程如下图</li>
+<li>如果每个key被overwrite的次数过多,那么compaction之后,segment的容量会迅速减小.这个时候,我们就可以
+在compaction的同时,把多个segment合并成一个segment,如下图</li>
+<li>由于segment在written之后不能改写,所以我们的merge都是写入到新文件的.</li>
+<li>对于不怎么用的frozen segment的merge和compaction可以以后台任务的形式运行,由于我们merge和compaction
+的结果,是要写入到新的文件里面.所以在整理的过程中,老的文件还是可以起作用</li>
+<li>当我们整理完成以后,我们就把read request指向新的整理过的新的segment,同时老的segment就可以删除了.</li>
+<li>由于每个segment都有内存的hash table,我们如果想查找某个key对应的offset,我们就先查找最新的segment,
+如果找不到,再去找下一个次新的segment以此类推.因为后台任务会不断合并整理segment,那么segment的总
+数目就不会太多.</li>
+<li>在实际处理的过程中,会有很多细节,值的注意的几个细节有:
+<ul class="org-ul">
+<li>file format: CSV对log来说,不是一个好的format.更快更简单的方式是二进制:首先吧string的长度encode成二进制,然后把raw字符串encode成二进制</li>
+<li>deleting record: 如果你想删除一个key和这个key相应的value,你要append一个特殊的delete record到文件里面.当log segment merge的时候,
+这个delete record会告诉merging process,所有delete record之前的value都扔掉</li>
+<li>crash recovery: 如果数据库重启,那么in-memory的 hash map就会丢失.理论上来说,你要恢复每个segment的hashmap的话,你要读取整个segment
+这样显然会非常慢.Bitcask为了提高recovery的速度,会把每个segment的hashmap在磁盘做snapshot</li>
+<li>partially written records: 数据库可能随时崩溃,包括append log到一半的时候,bitcask的文件都有checksum,会把这些corrupted的部分给删除掉</li>
+<li>concurrency control: 由于写入log文件有严格的顺序,所以一个最常见的实现方法就是只要一个writer thread.数据是append-only的,其他不append
+的地方都是immutable的,所以reader是可以有多个thread的</li>
+</ul></li>
+<li>Append-only log这种形式,咋看起来非常的浪费,因为观众回想:
+<ul class="org-ul">
+<li>你为什么不原地更新文件,使用新的内容替换老的内容</li>
+</ul></li>
+<li>但是其实append-only细细看起来还是一个很好的设计,有如下原因:
+<ul class="org-ul">
+<li>appending和segment merging都是线性操作,比如random write快</li>
+<li>Concurrency和crash recovery在segment file是append-only,外加immutable的情况下,非常的容易达到.如果是overwrite,那么一旦数据库crash
+就是留一半的旧数据还有一半的新数据</li>
+<li>不多的merging old segment还能有效防止数据fragmented</li>
+</ul></li>
+<li>当然了hash table index还有有很多的limitation:
+<ul class="org-ul">
+<li>第一个就是key的数目必须没那么多,否则没办法把hashmap放到内存里面.虽然从理论上说,可以使用硬盘hashmap,但是硬盘hashmap的效率不太可能高,因为hashmap
+有太多的random access I/O,而且当hashmap需要翻倍的时候,非常难以扩张</li>
+<li>第二个是range queries效率不高,比如你想搜索kitty00000和kitty99999之间的key,那么你必须分别找这些key</li>
+</ul></li>
+<li>下面一节我们会讲克服这些limitation的indexing结构</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org5dcd5b1" class="outline-4">
+<h4 id="org5dcd5b1"><span class="section-number-4">2.1.2</span> SSTables and LSM-Trees</h4>
+<div class="outline-text-4" id="text-2-1-2">
+<ul class="org-ul">
+<li>每个log-structured的storage segment都是一串key-value的pair.这些pair是按照写入的顺序存储的,和key-value本身的值是没有关系的.</li>
+<li>我们现在在原来这个存储方法的基础上,我们做些更改,让我们的pair存储的顺序:
+<ul class="org-ul">
+<li>不再是按照写入的顺序</li>
+<li>而是按照key的order</li>
+</ul></li>
+<li>猛地一看,这个要求会打破我们顺序写(sequential write)的优势,我们后面会详细讲解我们如何不破坏这个优势</li>
+<li>我们把这种key-value pair存储,按照key的字母顺序存放的方法叫做Sorted String Table(SSTable)</li>
+<li>SSTable还有一些更加细致的要求,比如在每个merged segment file里面一个key只能出现一次.</li>
+<li>SSTable相对于老的log segment with hash index有如下的优势:
+<ol class="org-ol">
+<li>Merging segment变得非常的简单和高效,每次我们只需要看多个input file的最头上的一个key:
+<ul class="org-ul">
+<li>如果这些key全部都一样,那么就挑选most recent segment里面的值,写入output file</li>
+<li>如果有一个key不一样,那么就按照字典顺序挑选顺序在前的,写入output file</li>
+</ul></li>
+<li>为了查找一个特定的key,你不需要把index of all the keys都存储在内存了:
+<ul class="org-ul">
+<li>比如你要查找handiwork,但是我们没有存储exactly handiwork的key-value</li>
+<li>但是我们存储了handbag和handsome的key-value,而且我们知道handiwork在handbag和handsome之间,那么
+我们就可以跳到handbag开始找,找三个就找到了handiwork</li>
+<li>如果我们找到handsome还没有找到handiwork,那么就意味着我们压根没有存储过handiwork</li>
+<li>所以我们不需要把所有的key的index都维护在内存里面了,我们可以选择其中第一部分就可以了.比如一
+千个key我们只需要维护一个在内存里面就可以了</li>
+<li>上述过程如图所示</li>
+</ul></li>
+<li>我们还可以把顺序的一部分key给压缩起来,比如前面的从handbag到handsome(之前)的这些key,我们可以压
+缩起来存储, 让handbag指向压缩的位置.压缩可以节省空间,减少I/O 带宽使用.</li>
+</ol></li>
+</ul>
+</div>
+<ol class="org-ol">
+<li><a id="org49454b1"></a>Constructing and maintaining SSTables<br />
+<div class="outline-text-5" id="text-2-1-2-1">
+<ul class="org-ul">
+<li>我们已经介绍了SSTable的优点,那么下面我们来看看SSTable如何具体实现(主要就是如何把数据按照key的顺序存储)</li>
+<li>即便是在硬盘里面维护sorted structure是可行的(比如后面的B-Trees),那么在内存里面维护sorted structure
+那就更简单了.有很多数据结构可以做到这一点,比如:
+<ul class="org-ul">
+<li>红黑树</li>
+<li>AVL树</li>
+</ul></li>
+<li>使用如上的数据结构,你可以以任意顺序插入,并且以sorted顺序读取.</li>
+<li>我们可以对我们的存储引擎做如下改动:
+<ul class="org-ul">
+<li>当write来的时候,把数据(key和value)加入内存里面的balanced treee(比如红黑树).这个内存里面维护的树叫做memtable</li>
+<li>当我们的memetable的体积超过一个阈值(比如几个MB)的情况下,把整个树写入到disk(成为SSTable file)
+这个SSTable file就是数据库中最新的一个segment.当SSTable存入磁盘的同时,其他write可以持续写入
+内存的memtable instance</li>
+<li>当read request来的时候,首先查找memtable,如果没有,则按顺序(最晚生成最先查找),查找硬盘上的segment</li>
+<li>定时在后台运行merging和compaction进程合并segment file</li>
+</ul></li>
+<li>这个策略的唯一问题,在于database crash的时候,那些写入到memtable还没有落盘的数据,是会丢失的.</li>
+<li>为了应对这个问题,我们保持一个独立的log在硬盘上,每当write写入到memtable之后,也写入一份到这个log里面.</li>
+<li>这个log不是有序的,它是append-only的,其作用仅仅是在crash之后,恢复memtable.每当memetable写入到disk
+的时候,这个log就可以丢弃.</li>
+</ul>
+</div>
+</li>
+<li><a id="orgd178f1b"></a>Making an LSM-tree out of SSTable<br />
+<div class="outline-text-5" id="text-2-1-2-2">
+<ul class="org-ul">
+<li>目前为止我们介绍的算法,是LevelDB和RocksDB所使用的key-value 存储引擎库,他们主要的目的是和其他application一起使用</li>
+<li>Cassandra和HBase也使用了类似的存储引擎,他们的灵感都来自于Google的Bigtable论文</li>
+<li>这种indexing的数据结构最招赛Patrick ONeil的论文Log-Structured Merge-Tree里面提到.所以市面上所有以merging和compacting
+sorted files的系统(LevelDB, RocksDB, HBase, Cassandra)都统称为LSM storage engine</li>
+<li>Lucence是一个全文indexing engine使用了相似的方法来存储term dictionary(在Lucence里面,term就是搜索的那个字符串, 用户输入
+term,希望得到一个包含term的文章列表)</li>
+<li>在Luncence里面,这个term和posting list的对应关系,也是存储在SSTable-like的sorted file里面,并且定
+期会进行merging和compaction处理</li>
+</ul>
+</div>
+</li>
+<li><a id="orgc8b645a"></a>Performance optimizations<br />
+<div class="outline-text-5" id="text-2-1-2-3">
+<ul class="org-ul">
+<li>在实践中,会有非常多的细节,来保证存储引擎的表现,比如LSM-tree算法的一个问题是,(在没有内存index的
+情况下)如果一个key不再数据库里面,那么查找这个key,并验证其不存在的过程就非常的复杂:
+<ul class="org-ul">
+<li>首先check memtable</li>
+<li>然后要查找所有的segment</li>
+</ul></li>
+<li>为了优化这种特例,存储引擎一般还会使用一个额外的布隆过滤器,你可以简单把布隆过滤器想成是一个大号
+的set,用他来过滤</li>
+<li>在何时,以何种顺序compact和merge SSTable,也是优化的方向之一.最常见的两个选择是:
+<ul class="org-ul">
+<li>size-tiered compaction: HBase 使用的size-tiered, Cassandra支持这个</li>
+<li>leveled compaction: LevelDB和RocksDB就是使用的这个, Cassandra也支持这个</li>
+</ul></li>
+<li>Size-tiered compaction比较简单,就是新的,小的SSTable顺序的merge到老的,大的SSTable里面</li>
+<li>Leveled compaction:稍微复杂一点,一个Memtable首先编程level0的SSTable, 然后level0的几个SSTable
+会merge成level1的一个SSTable</li>
+<li>尽管有很多的细节不同,但是LSM-tree的基本思路都是一样的,就是在后台merge SSTable.并且LSM-tree的结构都享有如下的优点:
+<ul class="org-ul">
+<li>在数据量大于内存的情况下能够继续工作</li>
+<li>因为按照key的顺序存储,所以range queries很快</li>
+<li>由于磁盘写入是sequential的,所以write吞吐量很高.</li>
+</ul></li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div id="outline-container-org2c60135" class="outline-4">
+<h4 id="org2c60135"><span class="section-number-4">2.1.3</span> B-Trees</h4>
+<div class="outline-text-4" id="text-2-1-3">
+<ul class="org-ul">
+<li>之前我们讨论的log-structured index看起来已经比较完善了,但是这种模式却不是最common的index类型,最
+common的index类型是B-tree, 几乎所有的关系型数据库都使用B-tree作为默认引擎</li>
+<li>SSTable类似,B-tree也保存了key-value对,并且这些对是按照key的顺序排序的.也只有排序过的key能够支
+持lookup和range query.</li>
+<li>SSTable和B-tree的相同之处也有只有这一处.其他的设计理念完全不同</li>
+<li>对比下存储方面的不同:
+<ul class="org-ul">
+<li>对于log-structured index来说,其把database分成固定大小的segment(大概几个MB), 然后一直线性写入这个segment</li>
+<li>B-tree把数据库分成大概4KB左右大小的block,每次读写这个page.这个设计更多的是为了迎合底层硬件,因为硬盘总是存储在
+fixed-size block</li>
+</ul></li>
+<li>我们下面来研究下page:
+<ul class="org-ul">
+<li>每个配置可以被address给定位到</li>
+<li>这个address(也叫location, 或者page reference)和指针类型,只不过不存在内存里面,存在硬盘里面.</li>
+<li>我们可以把这个address存储到page里面,从而构建出一颗tree of pages,如下图</li>
+</ul></li>
+<li>我们来解释下上图:
+<ul class="org-ul">
+<li>最上面的这个page叫做 root of the B-tree, 每当你搜索index里面的key的时候,你总是从这里开始</li>
+<li>这个page里面包含很多的key和这个key对应的ref(指向child page)</li>
+<li>每个child page负责一个range的数据</li>
+</ul></li>
+<li>我们来看看上图是如何找到key 251的:
+<ul class="org-ul">
+<li>我们在root page里面找到了251位于[200,300]这个区间里面,所以我们follow[200,300]这个ref指向的child page</li>
+<li>这个child page会把[200,300]这个区间再次分成几个subrange</li>
+<li>经过几次递归,我们最终找到了包含这个key的page</li>
+</ul></li>
+<li>一个child page里面包含的reference的数目叫做branching factor,比如上面例子的branching factor就是6,在实践中
+这个数字大多是几百</li>
+<li>我们再来看看更新的情况:
+<ul class="org-ul">
+<li>如果是update的话,那么很简单,我找到包含这个数据的leaf page,然后更改这个page,然后把这个page写回disk</li>
+<li>如果是insert的话,那么我们找到包含new key的page,把数据加进去:
+<ol class="org-ol">
+<li>如果这个page的空间够用,那么把这个page写回disk就可以了.</li>
+<li>如果这个page的空间不够用,那么就要把这个page分成两个half-full page,然后更新parent page,最终的效果如下图</li>
+</ol></li>
+</ul></li>
+<li>上述更新策略,能够保证这个tree一直是balanced,这也就能保证:拥有n个key的B-tree,其深度是O(logN).现
+代数据库能够保证B-tree在三层或者四层(四层的4KB page,branching factor是500的情况下,可以存储256TB的
+数据),这样,查询的最大深度也就是4</li>
+</ul>
+</div>
+<ol class="org-ol">
+<li><a id="org04b9fb5"></a>Making B-trees reliable<br />
+<div class="outline-text-5" id="text-2-1-3-1">
+<ul class="org-ul">
+<li>更新B-tree的最底层逻辑,是把新数据overwrite到disk上面,这个update不会更改page的location(即便split
+page也不会更改老的page ref的有效性),所有对这个page的reference都还是有效的</li>
+<li>这是和log-structured index不一样的,在log-structured里面,是不存在overwrite的,所有的操作都是append only</li>
+<li>overwrite page就是一个真正的硬盘操作,以普通机械键盘为例,这意味着移动disk头到正确位置,等待硬盘转到正确位置,
+然后更新这个数据</li>
+<li>有时候,一个operation会需要多个page同时被overwrite,比如如果你的page插入操作导致page满了,那么就会触发split
+page的情况,这时候你要更改两个新page,和这两个新page的parent page</li>
+<li>同时更改三个page是一个危险操作,因为如果只有部分page被更新了的情况下,数据库崩溃了,那么整个系统的数据是corrupted的</li>
+<li>为了能够让数据库在crash之后可以复原,几乎所有的B-tree实现都会引入一个额外的硬盘数据结构: WAL(write-ahead log),也叫redo log</li>
+<li>所谓WAL就是一个append-only的文件,在正式的写入page of tree之前,必须先写入这个log file,如果实在是发生了数据库
+crash,那么我们可以使用这个log文件俩restore我们的B-tree结构</li>
+<li>更新page面对的另外一个挑战是线程安全</li>
+<li>更新数据库的时候,经常有多个线程同时访问B-tree,这个时候,需要细致的访问控制,否则某些thread会看到inconsistent state的B-tree</li>
+<li>数据库一般使用轻量级的锁(lightweight lock: latch)来包含tree的数据结构</li>
+<li>相比之下,log-structured 就很简单了,他们是后台进行的merging,不需要和新的query打交道,而且swap是原子性的.</li>
+</ul>
+</div>
+</li>
+<li><a id="orgea4feb3"></a>B-tree optimizations<br />
+<div class="outline-text-5" id="text-2-1-3-2">
+<ul class="org-ul">
+<li>B-tree已经存在很长时间了,有很多在B-tree基础上的优化:
+<ul class="org-ul">
+<li>更改page的时候不再是本地更改,而是重新创建一个新的page,让parent指向这个新的page,这样多线程控制容易一些.LMDB使用了这个策略</li>
+<li>我们的page里面使用key来存储range,但是我们这个key不一定要存储完整的key,我们只要能够标识出key就可以了,可以使用比较短的数据,
+key短了,那么一个page存储的key多了,树的高度就矮了,查询就快了</li>
+<li>tree可能需要加一些额外的pointer</li>
+<li>B-tree的变体Fractal tree从log-structured借鉴了很多idea来减少disk seek</li>
+</ul></li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div id="outline-container-org7ecdf09" class="outline-4">
+<h4 id="org7ecdf09"><span class="section-number-4">2.1.4</span> Comparing B-Trees and LSM-Trees</h4>
+<div class="outline-text-4" id="text-2-1-4">
+<ul class="org-ul">
+<li>从读写这个角度上来说:
+<ul class="org-ul">
+<li>LSM-tree写起来更快</li>
+<li>B-tree读起来更快. LSM读起来慢是因为LSM要check多个不同的data structure</li>
+</ul></li>
+</ul>
+</div>
+<ol class="org-ol">
+<li><a id="org06111ad"></a>Advantages of LSM-trees<br />
+<div class="outline-text-5" id="text-2-1-4-1">
+<ul class="org-ul">
+<li>B-tree index每次写入data的时候,都最少要写两次:
+<ul class="org-ul">
+<li>一次写入WAL</li>
+<li>一次真正的写入tree page</li>
+<li>或许还有第三次,如果page split的话</li>
+</ul></li>
+<li>B-tree还有一点比较浪费,那就是即便一个page只有个别byte要修改,还是要更改整个page</li>
+<li>log-structured index也会写多次data,由于不停的压缩和merge SSTable</li>
+<li>所以一次真正的写入数据库所触发的硬盘操作次数有个专有的名词叫:write amplification</li>
+<li>在write-heavy应用中,系统的瓶颈可能就在能以多高的rate写入disk.这种情况下,write amplifiction的值就非常
+重要:storage engine需要写入disk的次数越多,那么在同等disk带宽下能够处理的请求就越小</li>
+<li>LSM-tree不仅仅比B-tree的写入快,而且能够承受更多的write throughtput,这是因为:
+<ul class="org-ul">
+<li>一来,LSM-tree拥有更低的wrte amplification</li>
+<li>二来,LSM-tree是线性写入SSTable,而不是在tree里面找到page去更新</li>
+</ul></li>
+<li>LSM-tree在压缩性上也要好很多,所以就能产生占用硬盘更小的文件.</li>
+<li>B-tree不仅不能压缩,还可能因为fragmentation而空余很多硬盘空间,比如一旦split page,那么磁盘有
+效占用率也就是50%左右. LSM-tree在磁盘利用率上肯定高,因为他不是page-oriented,并且会定时合并SSTable来减少fragmentation</li>
+<li>在很多SSD内部, 硬件会使用log-structured 算法,而吧random write变成sequential write. 这样一来B-tree的random write
+缺点被掩盖了一些.但是在SSD上,拥有如下优点的B-tree还是会受益匪浅
+<ul class="org-ul">
+<li>更低的write amplification</li>
+<li>更小的fragmentation</li>
+</ul></li>
+</ul>
+</div>
+</li>
+<li><a id="orgf91f2eb"></a>Downsides of LSM-trees<br />
+<div class="outline-text-5" id="text-2-1-4-2">
+<ul class="org-ul">
+<li>log-structured 的第一缺点,就是compaction process会影响正在进行的读写.</li>
+<li>这个影响是比较难以理解的,因为我们的storage engine:
+<ul class="org-ul">
+<li>总是增量的进行compact</li>
+<li>也没有影响并发访问</li>
+</ul></li>
+<li>但是无论怎样,disk的资源是有限的,所以可能会出现如下的情况:的去哪个disk在完成一个expensive的compact操作的时候,request就只能
+进行等待</li>
+<li>log-structured的这个特点不太影响吞吐和平均响应时间,但是特别影响P95(百分之95的用户耗时上限),P99(百分之99的用户耗时上限),一个
+表现就是:log-structured storage engine的响应时间很多时候都非常的高,而与之相反,B-tree的response time则更加稳定,也更容易预
+期(不会超过树的高度)</li>
+<li>另外,每当high write throughput伴随压缩的情况下,硬盘的带宽必须要在如下两者之间分享:
+<ul class="org-ul">
+<li>initial write(先写入WAL,然后写入到disk)</li>
+<li>后台运行的compaction thread</li>
+</ul></li>
+<li>这就意味着,当数据是空的时候,initial write能够占据百分之百的带宽,但是随着数据的增加,inital
+write所能使用的带宽数目,逐渐下降</li>
+<li>更严重的是,如果write throughput持续增高,但是压缩没有配置好,那么压缩可能跟不上incoming write的速率,这样一来:
+<ul class="org-ul">
+<li>没有merge的segment会快速耗尽硬盘</li>
+<li>如果没有及时merge,那么查找也会变得非常的slow</li>
+</ul></li>
+<li>对于SSD硬盘来说,由于写入带宽大,所以即便是压缩收到影响了,incoming write也没有减慢,这就更容易让人
+忽略系统的问题.所以对SSD硬盘来说,要明确监控压缩的情况.</li>
+<li>B-tree的一个优势,是每个key都只在index里面存在一个地方,但是log-structured存储引擎的方式可能会存在多个segment
+里面.这个优势,让B-tree能够更好的适应strong transactional的情景.</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div id="outline-container-orgfb0e898" class="outline-4">
+<h4 id="orgfb0e898"><span class="section-number-4">2.1.5</span> Other Indexing Structures</h4>
+<div class="outline-text-4" id="text-2-1-5">
+<ul class="org-ul">
+<li>目前为止,我们讨论的都只是key-value index,key-value index很像关系型数据库的主键.关系型数据库中的主键,可以唯一定位
+数据库中的某一行.数据库中的record可以凭借主键来refer 其他record</li>
+<li>除了key-value index以外,secondary index也很常见.在关系型数据库里面,你可以使用CREATE INDEX在同一个table上面
+创建多个secondary index</li>
+<li>secondary index能提高执行join的效率.比如我们join table的时候通常是where xxx_id = xxxx,这个xxx_id就是最常见的
+加secondary index的地方</li>
+<li>secondary index可以很方便的从key-value index来创建,因为两者的唯一不同,就是secondary index的key不是唯一的.比如一个
+posts table里面的user_id可能有很多record都是一个值</li>
+<li>我们可以通过如下的改动,让key-value index能够为secondary index服务:
+<ul class="org-ul">
+<li>比如让一个key对应一个list的value(类似倒排索引)</li>
+<li>比如让key后面加个后缀,以使得每个key都unique</li>
+</ul></li>
+</ul>
+</div>
+<ol class="org-ol">
+<li><a id="org58e6adf"></a>Storing values within the index<br />
+<div class="outline-text-5" id="text-2-1-5-1">
+<ul class="org-ul">
+<li>index中的key就是我们搜索的东西,但是index的value却可以是多种不同的东西:
+<ul class="org-ul">
+<li>可以是一个真正的row,document,vertex</li>
+<li>还可以是一个指向真正的row(document, vertex)的reference, 这种情况下真正的row一般存储在heap file</li>
+</ul></li>
+<li>上面的heap file的solution是一个非常常见的做法,因为这种做法能够avoid duplicating data:因为真正的数据
+只有一份,所有的index(无论primary index还是secondary index)的value都只是指向这个heap file的reference
+而已.</li>
+<li>我们再来看看heap file solution面对update时候的情况:
+<ul class="org-ul">
+<li>如果只更改value(并且新value比老value小,可以in place更改),那么heap file的solution是非常高效的,
+因为key(可能不止一个)不需要更改</li>
+<li>如果只更改value(但是新value比老value大,不可以in place更改),那么heap file的solution要稍微复杂
+一点,因为要选择一个新的地址来存储新value,那么有两种解决办法:
+<ol class="org-ol">
+<li>所有指向这个value的ref都要更改,也就是其他key(包括一个primary index,多个secondary index)都要更改</li>
+<li>在老的heap location所在的地方留一个forwarding pointer</li>
+</ol></li>
+</ul></li>
+<li>在老的heap loaction里面留forwarding pointer的做法在很多情况下性能是无法接受的,所以为了提高效率,我们把被
+index的那个row,直接存储在index的value里面.这就是所谓的clustered index.mysql的InnoDB存储引擎就是
+这样做的:
+<ul class="org-ul">
+<li>table的primary key就是一个clustered index</li>
+<li>secondary index也不是直接ref heap file,而是ref primary key</li>
+</ul></li>
+<li>我们可以把clustered index和nonclustered index中和一下,得到covering index,其核心就是在index里面
+存储table的部分column</li>
+<li>clustered index和covering index都能提高read效率,但是会降低write效率,同时要服务额外努力保证事务安全</li>
+<li>clustered index(聚簇索引) 顾名思义,其相近的值(比如ID为5,6,7)会极大概率的存储在同一个page(最多两个page),
+即便是两个page也会用双向指针联系起来,那么这些值就实现了聚簇!:
+<ul class="org-ul">
+<li>有很大概率能够减少读取page的个数,比如我们要读取ID为5,6的数据,可能两者就在一个page</li>
+<li>range query就很简单了,比如找5-100的值,我们找到5所在的page,一路向后读取,直到碰到100所在的page即可.</li>
+</ul></li>
+<li>我们可以把聚簇索引看成新华字典的按照A-Z的拼音排序,所以:
+<ul class="org-ul">
+<li>相近(或相同)读音的字必然放在一起</li>
+<li>也必然只能有一个聚簇索引,因为字典的物理顺序只能由一种(比如康熙字典就是用部首,而不是拼音,排序的)</li>
+</ul></li>
+<li>非聚簇索引可以看成是以部首的方式来查字典,同一个部首的不同字也是存在于不同的不连续的位置的.</li>
+</ul>
+</div>
+</li>
+<li><a id="org4d356eb"></a>Multi-column indexes<br />
+<div class="outline-text-5" id="text-2-1-5-2">
+<ul class="org-ul">
+<li>当前的讨论局限在map一个key到一个value.如果我们想搜索一个table的多个column的时候,仅仅靠这一种index是不够的,
+最高效的方法是需要组合索引(concatenated index)</li>
+<li>所谓组合索引,就是按照一定的顺序把多个field concatenated起来,组成一个key.注意这里的顺序,这个顺序会导致组合索引
+的使用范围,我们来举个例子:
+<ul class="org-ul">
+<li>假设数据库的table就是纸质电话簿</li>
+<li>纸质电话簿上面是以姓+名(两个column)的顺序来存储的</li>
+<li>我们可以认为纸质电话簿的这种姓+名的方法是一个组合索引,顺序是姓在前,名在后</li>
+<li>如果我们知道一个人的姓,那么组合索引有一定用处(能够缩小范围到某个姓,然后顺序查找)</li>
+<li>如果我们知道一个人的姓名,那么组合索引非常有用,因为能够限定在同名同姓的几个人</li>
+<li>如果我们知道一个人的名,那么这个组合索引就没有什么用处了.</li>
+</ul></li>
+<li>综上所述,组合索引在同时查找多个column(姓+名都有)的时候,非常有用.
+<ul class="org-ul">
+<li><p>
+但是这个同时查找的时候,必须是`=`,如下
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span style="color: #9d0006;">SELECT</span> * <span style="color: #9d0006;">FROM</span> phone_book <span style="color: #9d0006;">WHERE</span> first_name=<span style="color: #79740e;">'hello'</span> <span style="color: #9d0006;">AND</span> last_name=<span style="color: #79740e;">'world'</span>;
+</pre>
+</div></li>
+<li><p>
+如果查找这个组合的field的时候,每个field都是一个range,那么传统的使用B-Tree的组合索引就不怎么高效了,
+如下
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span style="color: #9d0006;">SELECT</span> * <span style="color: #9d0006;">FROM</span> restaurants <span style="color: #9d0006;">WHERE</span> latitude &gt; 51.4946 <span style="color: #9d0006;">AND</span> latitude &lt; 51.5079
+                                <span style="color: #9d0006;">AND</span> longitude &gt; -0.1162 <span style="color: #9d0006;">AND</span> longitude &lt; -0.1004;
+
+</pre>
+</div></li>
+<li>一个最直接的想法,就是把二维数组打平成一维数组</li>
+<li>更常见的做法是使用新的数据结构R-tree来存储地理位置数据</li>
+</ul></li>
+</ul>
+</div>
+</li>
+<li><a id="orgc8992c0"></a>Full-text search and fuzy indexes<br />
+<div class="outline-text-5" id="text-2-1-5-3">
+<ul class="org-ul">
+<li>到目前为止,所有的index都默认你有exact data,或者range of data,然后才能利用index的威力.</li>
+<li>但是这些index面对非exact data的情况,比如misspelled word的情况,就没有办法了.这种fuzzy querying
+需要不同的技术</li>
+<li>这种技术就是full-text search,一般全文搜索引擎可以搜索:
+<ul class="org-ul">
+<li>同义词</li>
+<li>语法变体,比如color和colour</li>
+<li>words with certain edit distance(比如edit distance为1,表示一个letter增加,修改或者被替换)</li>
+</ul></li>
+<li>Lucene就是这样一种全文搜索引擎, Lucence使用一种SSTable-like的结构,这个结构需要在内存里面维护一个index:
+<ul class="org-ul">
+<li>这个index的key包含所有的字符串</li>
+<li>和LevelDB不同,LevelDB里面的key是sparse的,不需要完整的key序列</li>
+</ul></li>
+</ul>
+</div>
+</li>
+<li><a id="org3734169"></a>Keeping everything in memory<br />
+<div class="outline-text-5" id="text-2-1-5-4">
+<ul class="org-ul">
+<li>随着内存价格的降低,我们有望把所有的数据放入内存,也就是in-memory database技术的诞生</li>
+<li>in-memory database相对于disk-based database的优势:
+<ul class="org-ul">
+<li>不在于不需要从硬盘取数据(disk-based数据库所在机器内存够大的话,数据库也不需要从内存)</li>
+<li>而在于不需要把本来在内存里面非常灵活的数据结果,设计的千奇百怪,以便能放入硬盘</li>
+</ul></li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div id="outline-container-org8055909" class="outline-4">
+<h4 id="org8055909"><span class="section-number-4">2.1.6</span> Transaction Processing or Analytics?</h4>
+<div class="outline-text-4" id="text-2-1-6">
+<ul class="org-ul">
+<li>在数据库的早期,一个对database的写入,就和一个商业事务(commercial transaction)没有什么区别,我们
+可以列举下早期数据库都有什么操作:
+<ul class="org-ul">
+<li>做一单生意</li>
+<li>为供应商提供一个订单</li>
+<li>付一下员工的薪水</li>
+</ul></li>
+<li><p>
+但是随着数据的领域慢慢的不再完全是和钱打交道的场景,我们的transation这个词开始代表一组读和写,而
+且这组读和写能组成一个逻辑实体
+</p>
+<pre class="example" id="org3861726">
+The term transaction begin to refer to a group of reads and writes that form a logical unit
+</pre></li>
+<li>虽然当前的数据库被应用到了不同的领域,但是基本的access pattern和处理business transaction的时候是
+一样的:
+<ul class="org-ul">
+<li>一个应用一般通过一些key(借助index的帮助)来look up一些记录</li>
+<li>通过用户的input,我们会插入或者更新record</li>
+</ul></li>
+<li>这样的交互式的操作被称之为OLTP (online transaction processing)</li>
+<li>但是,当前数据库开始被广泛的应用于data analytics,而数据分析则有着和传统数据库非常不同的access pattern:
+<ul class="org-ul">
+<li>通常情况的分析查询会scan非常多的数据</li>
+<li>但是每次只读取不多的column</li>
+<li>经常进行聚集计算(比如count, sum, average),而不是把raw data返回给用户</li>
+</ul></li>
+<li>一些产检的分析查询(analytic query)可能是:
+<ul class="org-ul">
+<li>一月份我们每个店铺的收入是多少</li>
+<li>上次我们促销之后,我们多买了多少香蕉</li>
+<li>和brand X一起被购买的哪种儿童食物最多</li>
+</ul></li>
+<li>这种查询通常都是数据分析师书写,并且把他们做成报告给公司的管理者,让管理者根据数据说出经营决策</li>
+<li>这种access pattern和传统的OLTP(online transaction Processing)不同,所以我们给它取了个新名字,叫做
+OLAP: online analytic processing</li>
+<li><p>
+下面是OLTP和OLAP的区别
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Property</th>
+<th scope="col" class="org-left">OLTP</th>
+<th scope="col" class="org-left">OLAP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Main read pattern</td>
+<td class="org-left">Small number of records per query, fetched by key</td>
+<td class="org-left">Aggregate over larget number of recards</td>
+</tr>
+
+<tr>
+<td class="org-left">Main write pattern</td>
+<td class="org-left">Random-access, low-latency writes from user input</td>
+<td class="org-left">Bulk import (ETL) or event stream</td>
+</tr>
+
+<tr>
+<td class="org-left">Primarily used by</td>
+<td class="org-left">End user/customer, via web application</td>
+<td class="org-left">Internal analyst, for decision support</td>
+</tr>
+
+<tr>
+<td class="org-left">What data represent</td>
+<td class="org-left">Latest state of data (current point in time)</td>
+<td class="org-left">History of events that happened over time</td>
+</tr>
+
+<tr>
+<td class="org-left">Dataset size</td>
+<td class="org-left">Gigabytes to terabytes</td>
+<td class="org-left">Terbytest to petabytes</td>
+</tr>
+</tbody>
+</table></li>
+<li>最初,一个数据库既用来做transaction processiong,又用来做analytic query.</li>
+<li>同时SQL也能同时为两种processing的情况工作</li>
+<li>从80年代末,90年代初,有一股风潮开始放弃OLTP,使用另外一套数据库来做数据分析,这个额外的数据库叫做
+数据仓库(data warehouse)</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org8cc3115" class="outline-4">
+<h4 id="org8cc3115"><span class="section-number-4">2.1.7</span> Data Warehousing</h4>
+<div class="outline-text-4" id="text-2-1-7">
+<ul class="org-ul">
+<li>一个公司里面的事务性处理系统会分成好几个:每个这种系统都和其他彼此保持独立</li>
+<li>而且这种OLTP系统需要高可用性,并且让事务处理获得低延时,这些对业务开展很重要.这也就意味着这些数据
+库的管理员会不太愿意让数据分析查询来时不时的跑一些临时查询,因为这些查询:
+<ul class="org-ul">
+<li>可能非常耗时</li>
+<li>会scan绝大部分的数据</li>
+<li>并且可能会抢占正在运行的其他事务的资源,影响其他事务的性能</li>
+</ul></li>
+<li>数据仓库非常好的应对了这个问题,它把公司里面的其他所有OLTP的数据库内容汇总到自己这里,做了一份
+readonly的copy</li>
+<li>数据是通过定时或者流式的方式从OLTP系统里面取出来,转换成analysis友好的schema,清洗之后,导入到
+数据仓库.这整个过程叫做ETL(Extract-Transform-Load)</li>
+<li>使用一个额外的数据仓库,而不是OLTP数据库的好处是,数据仓库可以为analytic access pattern做优化,
+因为我们前面讨论的index算法对于OLTP数据库是非常有效的,但是对于analytic query表现却不是很好.所以
+又出现了专门为数据分析而创建的storage engine</li>
+</ul>
+</div>
+<ol class="org-ol">
+<li><a id="orgacb68e5"></a>The divergence between OLTP databases and data warehouses<br />
+<div class="outline-text-5" id="text-2-1-7-1">
+<ul class="org-ul">
+<li>数据仓库的data model也大部分是relational的,所以SQL也是非常适应analytic query的</li>
+<li>由于都是用了SQL,所以在表面上看数据仓库和传统数据库看起来是很像的.但是这两者的内部系统设计却完全不一样:
+<ul class="org-ul">
+<li>一个是为了transaction processing优化</li>
+<li>一个是为了analytic workload优化</li>
+</ul></li>
+<li>当前市面上的数据只会选取一个优化方向,不会也很难两者兼顾.市面上的Microsoft SQL Server和SAP HANA
+都能在同一个产品里面完成transaction processing和data warehousing,其实其原因在于这些产品内部都
+有两套storage and query engine,只不过它们使用同一套的SQL interface</li>
+<li>Data warehouse界的商业玩家有:
+<ul class="org-ul">
+<li>Teradata</li>
+<li>Vertica</li>
+<li>ParAccel</li>
+<li>Amazon RedShift (host 版本的ParAccel)</li>
+</ul></li>
+<li>Data warehouse界的开源玩家主要是一些SQL-on-Hadoop项目,包括:
+<ul class="org-ul">
+<li>Apache Hive</li>
+<li>Spark SQL</li>
+<li>Cloudera Impala</li>
+<li>Facebook Presto</li>
+<li>Apache Tajo</li>
+<li>Apache Drill</li>
+<li>Google Dremel</li>
+</ul></li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div id="outline-container-orgf68ce45" class="outline-4">
+<h4 id="orgf68ce45"><span class="section-number-4">2.1.8</span> Stars and Snowflakes: Schemas for Analytics</h4>
+<div class="outline-text-4" id="text-2-1-8">
+<ul class="org-ul">
+<li>在transaction processing(OLTP)领域里,有非常多的data model,来应对不同特点的数据</li>
+<li>相反,在OLAP领域里面,则没有那么多的data model,绝大多数数据仓库都是使用的star scma,也叫做dimensional
+modeling</li>
+<li>下图就是一个会出现在零售店的数据仓库例子:
+<ul class="org-ul">
+<li>在最中间的schema叫做fact table(table名叫fact_sales), fact table的每一行都代表了在某个特定的时间
+发生了哪些event.这里是哪个时间用户买了什么东西,如果是其他情况下,比如网站访问监控,每行则是代表每个用户的
+page view</li>
+<li>通常来说,facts都是一些独立的event,因为这样能够最大限度的提升后期分析的灵活性.但这也意味着fact table
+可能非常的大.大的科技公司,比如Apple,eBay可能有PB级别的fact table</li>
+<li>fact table的某些column是attribute,比如,产品卖出的价格,或者是产品从供应商购买的价格,这些都是直接的数字</li>
+<li>fact table的其他一些column是foreign key,指向其他table的数据.这些其他table 叫做dimension table</li>
+<li>dimension table的每一行都代表了一个event, dimension代表了who, what, where, how, and why</li>
+<li>dimension在这个例子里面的一个代表是: 被sold的product,在dim_product表里面,每一行代表一个类型的product,
+这个类型有一些其他属性,比如:
+<ol class="org-ol">
+<li>SKU</li>
+<li>描述</li>
+<li>品牌</li>
+<li>类别</li>
+</ol></li>
+<li>fact table里面每发生一次交易,必然会卖出一类型的商品,那么fact table也会使用foreign key来指向dim_product
+里面的一行.为了方便起见,同一个用户每次购买多个不同的物品,我们需要每一个物品在fact table里面有一行.</li>
+<li>甚至,在OLTP数据库里面通常作为直接数字存储的日期,在这里也存到了dimension table,因为这会给date添加
+额外的信息,比如这个date是不是holiday</li>
+</ul></li>
+<li>star schema的来历是因为当我们把table relation当做一张图来看的时候,fact table会被放到中间,被不同的dimension
+table 所围绕.而这些dimension tables和fact table之间用线联系起来,就好像星星一样.</li>
+<li>start schema的一个变体叫做snowflake schema: 这种schema里面dimension会被继续分成subdimension,比如:
+<ul class="org-ul">
+<li>dim_product table里面也会有reference到其他table</li>
+</ul></li>
+<li>在数据仓库里面,table通常都是非常宽的: fact table通常都有超过100个column宽.而dimension的column也是比较多</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgae815a3" class="outline-3">
+<h3 id="orgae815a3"><span class="section-number-3">2.2</span> Column-Oriented Storage</h3>
+<div class="outline-text-3" id="text-2-2">
+<ul class="org-ul">
+<li>如果你有十亿行数据,并且有PT级别的数据,那么存储并且有效的查询这些数据就变得非常有挑战性:
+<ul class="org-ul">
+<li>一般来说,Dimension table顶多有百万级</li>
+<li>所以我们这里的挑战主要是针对fact table</li>
+</ul></li>
+<li>虽然大部分的fact table有多达100个column,但是统称每次用到的都是其中的4到5个column.
+<ul class="org-ul">
+<li>SELECT * 在分析的场景下很少用到</li>
+<li><p>
+下面就是一个典型的分析的SQL: 用来分析,根据是否是周末,用户更倾向于购买新鲜的蔬菜还是蛋糕
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span style="color: #9d0006;">SELECT</span>
+        dim_date.weekday, dim_product.category,
+        <span style="color: #af3a03;">SUM</span>(fact_sales.quantity) <span style="color: #9d0006;">AS</span> quantity_sold
+<span style="color: #9d0006;">FROM</span>
+        <span style="color: #9d0006;">JOIN</span> dim_date <span style="color: #9d0006;">ON</span> fact_sales.date_key = dim_date.date_key
+        <span style="color: #9d0006;">JOIN</span> dim_product <span style="color: #9d0006;">ON</span> fact_sales.product_sk = dim_product.product_sk
+<span style="color: #9d0006;">WHERE</span>
+        dim_date.<span style="color: #9d0006;">year</span> = 2013 <span style="color: #9d0006;">AND</span>
+        dim_product.category <span style="color: #9d0006;">IN</span> (<span style="color: #79740e;">'Fresh fruit'</span>, <span style="color: #79740e;">'Candy'</span>
+<span style="color: #9d0006;">GROUP</span> <span style="color: #9d0006;">BY</span>
+      dim_date.weekday, dim_product.category;
+</pre>
+</div></li>
+<li>上面的分析只用到了date_key, product_sk和quantity这三个column,其他的column都直接忽略了</li>
+<li>对于这种query,我们要做特别的优化,不同于OLTP的优化</li>
+</ul></li>
+<li>在OLTP数据库里面,存储是row-oriented的:一个table里面的row会和下一个row存储在一起.</li>
+<li>Document 数据库做的更绝: 一整个的docment一般来说都是连续的bytes</li>
+<li>对于上面的SQL,如果是OLTP系统的话,需要:
+<ul class="org-ul">
+<li>第一,必须在date_key和product_sk这两个column上面加索引</li>
+<li>第二,必须把所有的100多个column都load进来,虽然其中绝大部分不需要</li>
+<li>这种做法,显然非常的浪费时间和空间,于是为了OLAP,我们发明了column-oriented storage</li>
+</ul></li>
+<li>column-storage背后的逻辑在于:不把row连续的存储,而是把column连续的存储:
+<ul class="org-ul">
+<li>如果一个column都存在同一个文件,那么需要哪几个column的时候,读取某几个文件就可以了.</li>
+</ul></li>
+<li>下图是一个column-oriented storage如何存储的例子</li>
+<li>column-oriented能够成行的一个原因,在于每个column file里面所有的row都是按照相同的顺序存储的,这样
+一来,如果我们真的想把一个row比如id为26取出来(有100个attribute),那么我们就去100个column file里面
+找到第26个成员,把他们合成一个内容</li>
+</ul>
+</div>
+<div id="outline-container-orga73e5b6" class="outline-4">
+<h4 id="orga73e5b6"><span class="section-number-4">2.2.1</span> Column Compression</h4>
+<div class="outline-text-4" id="text-2-2-1">
+<ul class="org-ul">
+<li>由于column file的特殊设计,我们还能够通过压缩来减少对硬盘的消耗</li>
+<li>我们以下图为例来介绍下bitmap encoding</li>
+<li>图的最上方是column values,也就是column file里面按照顺序存储的row</li>
+<li>下方就是bitmap encoding的5个bitmap,每个bitmap的长度和column file成员个数相等,由于column的个数
+肯定是不会很多(比如一个县,顶多有100个乡镇,那么就是有100个row长度的bitmap),所以我们可以使用常数
+级别(比如100)个bitmap来存储所有的可能性</li>
+<li>比如上图中最多只有六种可能的数字,那么我们就维持6个bitmap,每个都是column file长度(当然可能很长)</li>
+<li>如果row很长的话,我们的bitmap每个也很长很长,但是由于这些bitmap都是稀疏的:
+<ul class="org-ul">
+<li>比如上面有六种可能,那么平均每个bitmap也就是1/6满,如果有100种,那么每个bitmap就是1/100满</li>
+<li>由于每个bitmap都是稀疏的,我们可以使用一些压缩方法,比如图最下面展示的run-length 算法</li>
+</ul></li>
+<li>Bitmap对如下的query的处理都非常优雅:
+<ul class="org-ul">
+<li>WHERE product_sk IN (30, 68, 69):
+直接把这三个bitmap product_sk = 30, product_sk = 68和product_sk进行bitwise OR操作,得到的bitmap
+里面有1的row,就是我们需要的值</li>
+<li>WHERE product_sk = 31 AND store_sk = 3:
+直接把bitmap product_sk = 31 和 product_sk = 3进行bitwise AND操作,得到的bitmap里面有1的row就
+是我们需要的值</li>
+</ul></li>
+</ul>
+</div>
+<ol class="org-ol">
+<li><a id="orge409275"></a>Memory bandwidth and vectorized processing<br />
+<div class="outline-text-5" id="text-2-2-1-1">
+<ul class="org-ul">
+<li>对于某些数据仓库来说,它需要scan over上百万行,这个时候的巨大的botteneck有:
+<ul class="org-ul">
+<li>从disk获取data到memory</li>
+<li>从memory获取data到cpu cache</li>
+</ul></li>
+<li>我们的column-oriented能够解决上述的问题:
+<ul class="org-ul">
+<li>首先,column-oriented的存储方式本来就压缩了需要传递的数据大小</li>
+<li>其次,column-oriented的存储方式还能有效利用CPU:比如
+<ol class="org-ol">
+<li>query engine可以根据CPU L1的大小,每次取这个大小的数据,让cpu处理,cpu很适合处理这种问题</li>
+<li>类似于AND和OR这种操作,cpu很容易处理,优化这种处理的过程,叫做vectorized processing</li>
+</ol></li>
+</ul></li>
+</ul>
+<p>
+** Sort Order in Column Storage
+</p>
+<ul class="org-ul">
+<li>在column store里面,通常来说以何种order存储row是不重要的,最简单的方法就是按照插入的顺序排序,这样
+一来,插入的过程,其实就是在不同的column file后面append数据</li>
+<li>实际存储可以按照insert的顺序,但是我们还是可以添加一个order,就像前面介绍的SSTable一样</li>
+<li>需要注意的是,这个order必须是全部数据的order,因为单独的一个column file的order是没有意义的,因为全
+部的column file的顺序都是统一的,每个column file的第Kth行合起来是一个row</li>
+<li>所以column store里面的排序是以整体来排序的,但是是选择了:
+<ul class="org-ul">
+<li>一个column作为first sort key, 选择哪个column这就要考验工程师对于业务的理解了</li>
+<li>一个column作为second sort key, 如果first sort key相同的情况下,使用second sort key来决定顺序</li>
+<li>一个column作为third sort key,在second sort key相等的情况下,决定顺序</li>
+<li>以此类推,但是基本只有三个sort key</li>
+</ul></li>
+<li>sorted order的一个巨大优势是会把first sort key相同(second或者third sort key就影响很小了)的row排
+在一起,这样就可以更好的使用压缩算法(比如run-length encoding)</li>
+</ul>
+</div>
+</li>
+<li><a id="org6a83828"></a>Several different sort orders<br />
+<div class="outline-text-5" id="text-2-2-1-2">
+<ul class="org-ul">
+<li><p>
+数据仓库公司Vertica扩展了"给column-store存储"增加order的这个想法,Vertica的做法是增加多个order,
+由于column-store存储的特殊性,每个order都要存储一个副本.副本的增加还提高了安全性
+</p>
+<pre class="example" id="orgc74fdd6">
+Data needs to be replicated to multiple machines anyway, so that you
+don't lose data if one machine fails
+</pre></li>
+<li>由于不同的order都是一个副本,你还可以在这些副本里面,额外存储点信息(当然这些信息对这个order有用),
+这样一来,使用这个order查询的时候,还能用到这些存储的信息</li>
+<li>column-oriented 存储里面的多种order存储和row-oriented里面的secondary index有点相似和不同:
+<ul class="org-ul">
+<li>相似是都能加快某种顺序的query</li>
+<li>不同是secondary index其实是存储的pointer,而column sotre则需要实打实的存储数据</li>
+</ul></li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div id="outline-container-orgc3294cc" class="outline-4">
+<h4 id="orgc3294cc"><span class="section-number-4">2.2.2</span> Writing to Column-Oriented Storage</h4>
+<div class="outline-text-4" id="text-2-2-2">
+<ul class="org-ul">
+<li>Column-Oriented的种种优化,都能够提高系统的Read(查询),但是Column-Oriented系统的写就变得没有那么
+有优势</li>
+<li>B-tree里面的,在本地进行更改,就不可能适用于压缩后的column,如果你在column-oriented存储下,执意要在
+一个sorted table中间插入数据,你就几乎要重写整个column file</li>
+<li>幸运的是,我们完全可以借鉴前面的LSM-tree的架构,所有的write首先写入到in-memory storage,在in-memory
+的时候是无所谓怎么存的,只需要有足够多的数据的时候,我们写入硬盘的时候,保证column-oriented的存储就
+可以了.</li>
+<li>当然了,LSM-tree的设计要求我们的query需要同时检查如下两个数据:
+<ul class="org-ul">
+<li>在disk上的column data</li>
+<li>在memory上的recent write</li>
+</ul></li>
+<li>当然了,由于有query优化器的存在,对于用户来说,查询就是使用SQL语句而已,内部复杂性被屏蔽了</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org7f1c8ed" class="outline-4">
+<h4 id="org7f1c8ed"><span class="section-number-4">2.2.3</span> Aggregation: Data Cubes and Materialized Views</h4>
+<div class="outline-text-4" id="text-2-2-3">
+<ul class="org-ul">
+<li>并不是所有的data warehouse都是column store的:传统的row-oriented数据库和其他的架构也是可行的.但
+是column storage确实能够提高ad-hoc分析查询的速度,所以很多流行起来</li>
+<li>另外一个值得讲的数据仓库的特性是Cache, 在很多的数据仓储里面,COUNT,SUM,AVG,MIN,MAX这种查询会经常
+的被用到,那么很自然的我们就想到了去Cache这些query经常用的数据,</li>
+<li>数据仓储中的Cache方法叫做物化视图(Materialized View),这里提到了视图,但是视图是一种cache是只有在
+数据仓储中才能体现的,因为数据仓储中的视图(物化视图),是真的把query result给存储起来了.</li>
+<li>而且传统数据库中的视图,没有cache结果,而是把SQL给cache起来,等用到的时候,临时展开这个sql,并且进行
+一次查询.</li>
+<li>无论是普通数据库的view还column store的materialized view,其展现形式是一致的,是一个table-like
+object,内容是一次查询的结果,只不过:
+<ul class="org-ul">
+<li>materialized view是生生存储下来的</li>
+<li>普通view是存储下来SQL的</li>
+</ul></li>
+<li>materialized view的缺点是它是直接存储的内容,所以每次数据更新,materialized view都要update,这种
+设计对write是不友好的.这也导致它主要存在于OLAP系统里面,很少出现在哎OLTP系统里面</li>
+<li>materialized view的一个主要变体是data cube(或者叫OLAP cube),它其实就是在不同的dimension上面预先
+计算了一些值(主要是aggregate值,比如下图)</li>
+<li>上图假设fact table只有两个成员: date和product</li>
+<li>那么我们可以画出上面的这种两维的table,每一行的最后和每一列的最后是在这个维度上的sum值</li>
+<li>真实的情况下,不会只有两个dimension,但是原理类似,如果有5个dimension,那么某一行就是其他四个dimension
+查询的组合</li>
+<li>data cube的缺点是不太灵活,比如我们上面的图就无法算出单间超过100块的产品比例,因为上图就没有price
+这个dimension.所以data cube只能作为加速某些query的boost</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org36228da" class="outline-2">
+<h2 id="org36228da"><span class="section-number-2">3</span> Chapter 4: Encoding and Evolution</h2>
+<div class="outline-text-2" id="text-3">
+<ul class="org-ul">
+<li>Application最终都会随着时间而变化:
+<ul class="org-ul">
+<li>应用会不断得添加feature</li>
+<li>用户的需求会逐渐被理解</li>
+<li>商业需求有了变动</li>
+</ul></li>
+<li>第一章我们提到了evolvability: 我们需要创建一个系统,能够容易得adapt to change</li>
+<li>在大多数情况下,app的feature改动,也意味着data的改动:
+<ul class="org-ul">
+<li>比如一个新的field需要被捕获</li>
+<li>已经存在得data需要以新的形式表达</li>
+</ul></li>
+<li>我们第二章讨论过几种不同的处理这种改动的办法:
+<ul class="org-ul">
+<li>relational database总体上来说,所有得data都要有一种schema</li>
+<li>schemaless database不需要遵守特定得schema,所以schemaless数据库可以有多种不同的data format</li>
+</ul></li>
+<li>如果schema改动,那么application code也要有相应的改动.比如,你在数据库里面增加一个字段,那么application code就可以读取这个字段了)</li>
+<li>但是,在大型application里面,code改动通常不是一下子完成的:
+<ul class="org-ul">
+<li>server-side 应用你通常需要做所谓得rolling upgrade(也叫staged rollout): 也就是先把new version发送到一部分node里面,检查下有没有
+问题,没有问题再往其他所有的node上面发送.这种发布方法能够在没有service downtime得的情况下发布,这样才能鼓励更频繁得发布和更好的演进</li>
+<li>client-side 应用需要考虑得是,用户并不会安装最新版本的APP, 所以你要考虑多个版本api的兼容性</li>
+</ul></li>
+<li>这就意味着在同一时间,老版本的代码和新版本的代码同时运行,老版本的数据和新版本的数据同时运行.为了能够应对这种情况下,我们需要在
+两个方向上都满足兼容性:
+<ul class="org-ul">
+<li>backward compatibility: 新代码能够读取老代码写的数据</li>
+<li>forward compatibility: 老代码能够读取新代码写得数据</li>
+</ul></li>
+<li>backward兼容性上非常正常得,并且不难实现: 因为作为新版本代码的开发者,你是知道older code的data数据的.</li>
+<li>forward兼容性就困难一点了,因为这要求older code要忽略newer code带来的额外信息.</li>
+<li>本章我们会了解如下几种encoding data:
+<ul class="org-ul">
+<li>JSON</li>
+<li>XML</li>
+<li>Protocol Buffers</li>
+<li>Thrift</li>
+<li>Avro</li>
+</ul></li>
+<li>我们会查看他们如何处理schema change,我们如何支持新老代码同时存在的情况.</li>
+<li>我们还会了解如下信息:
+<ul class="org-ul">
+<li>REST</li>
+<li>RPC</li>
+<li>actor and message queue</li>
+</ul></li>
+</ul>
+</div>
+<div id="outline-container-org1b71f4f" class="outline-3">
+<h3 id="org1b71f4f"><span class="section-number-3">3.1</span> Formats for Encoding Data</h3>
+<div class="outline-text-3" id="text-3-1">
+<ul class="org-ul">
+<li>程序至少会和两种不同形式的data进行工作:
+<ul class="org-ul">
+<li>在内存里面,data一般以数据结构的样式保存,比如object, struct, list, array, hash table等等,数据结构设计的重点算有效访问数据以及更容易的被CPU使用(通过指针)</li>
+<li>如果你想把data写入到文件里面,或者通过network传输,那么你必须使用某种方法encode成为某种byte.因为在这种情况下,指针不再有作用了,这一系列byte会和内存里面的不太一样</li>
+</ul></li>
+<li>我们需要一种在两种形式的data转换的方法:
+<ul class="org-ul">
+<li>从in-memory表达到byte sequence叫做encoding</li>
+<li>从byte sequence到in-memory表达,叫做decoding</li>
+</ul></li>
+</ul>
+</div>
+<div id="outline-container-org972c9f3" class="outline-4">
+<h4 id="org972c9f3"><span class="section-number-4">3.1.1</span> Language-Specific Formats</h4>
+<div class="outline-text-4" id="text-3-1-1">
+<ul class="org-ul">
+<li>很多编程语言自己就带一套内置的encoding support,比如:
+<ul class="org-ul">
+<li>java的java.io.Serializable</li>
+<li>ruby的Marshal</li>
+<li>python的pickle</li>
+</ul></li>
+<li>这种encoding library都非常的方便,因为他们允许in-memory object能够以最小的额外代码来完成encoding和decoding,但是也存在着很多问题:
+<ul class="org-ul">
+<li>encoding通常都和一个特定的programming language联系,使用其他语言读取都是非常困难的</li>
+<li>decoding的过程中可以创建任意的class,这就为安全开了口子</li>
+<li>兼容性不行</li>
+<li>性能不行</li>
+</ul></li>
+<li>由于有这么多的问题,所以总体来说,使用语言内置的encoding是一个坏主意(除了临时快速使用)</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org965bb5f" class="outline-4">
+<h4 id="org965bb5f"><span class="section-number-4">3.1.2</span> JSON,XML,and Binary Variants</h4>
+<div class="outline-text-4" id="text-3-1-2">
+<ul class="org-ul">
+<li>JSON和XML是最出名,最被广泛支持,也是最被广泛讨厌的编码方式</li>
+<li>XML比较啰嗦,且不必要的复杂</li>
+<li>JSON由于相比于XML简介,加上浏览器直接支持,获得了更高的市场占有率</li>
+<li>CSV也有一定市场,只是功能太单一</li>
+<li>JSON,XML,CSV都是文字format,所以人类可读(需要一定的语法)</li>
+<li>JSON,XML,CSV也有很多的缺点:
+<ul class="org-ul">
+<li>处理number的时候,有很多的模糊的地方,在XML和CSV中,你无法区分数字,和碰巧是数字的字符串.json倒是
+可以区分字符串和数字,但是不能区分整数和浮点数.json无法处理超过2^53的integer,twitter API通过
+加了一个字符串返回来避免问题</li>
+<li>JSON和XML能够很好的处理Unicode,但是他们无法处理binary strings (sequences of bytes without
+a character encoding)</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org1ff9b93" class="outline-2">
+<h2 id="org1ff9b93"><span class="section-number-2">4</span> Chapter 5: Replication</h2>
+<div class="outline-text-2" id="text-4">
+<ul class="org-ul">
+<li>所谓replication,就是不听的拷贝同样的数据到一个网络上的多台机器,有如下原因导致你希望replicate data:
+<ul class="org-ul">
+<li>让你的数据能够在物理位置上和用户接近(从而降低latency)</li>
+<li>允许system在某些部分失败的情况下,继续提供服务(从而提升availability)</li>
+<li>增加能够提供read query服务的机器数目(从而提高throughput)</li>
+</ul></li>
+<li>本章为了方便讨论,我们假设你的dataset足够小,能够在每台机器可以拥有一份全量数据</li>
+<li>第六章我们会relax这个assumption,然后使用partitioning(sharding)技术,来把一个特别大的数据给切分开,
+这里还会讨论partition时候会遇到的常见的错误</li>
+<li>如果你要replicate的数据不改动,那么replication的过程就很简单:你只需要把数据拷贝到各个node一次就可以了</li>
+<li>replication的困难在于处理这些change,这也是本章要讲的内容</li>
+<li>我们会讲三种流行的对付node间change的replication办法:
+<ul class="org-ul">
+<li>single-leader replication</li>
+<li>multi-leader replication</li>
+<li>leaderless replication</li>
+</ul></li>
+<li>而replication的时候,有许多的trade-off需要考虑:
+<ul class="org-ul">
+<li>使用同步repilcation还是一部replication</li>
+<li>如何处理失败的replica</li>
+</ul></li>
+<li>对于database来说,replication是一个老的topic,其原则在1970年代以后就没有太大的改动</li>
+<li>但是,在非研究领域的人,特别是很多developer一直assume数据库只有一个node,并且对replication有很多误解,本章会来解释这些问题</li>
+</ul>
+</div>
+<div id="outline-container-orgdb6956c" class="outline-3">
+<h3 id="orgdb6956c"><span class="section-number-3">4.1</span> Leaders and Followers</h3>
+</div>
+</div>
+<div id="outline-container-org3010fcf" class="outline-2">
+<h2 id="org3010fcf"><span class="section-number-2">5</span> Chapter 10: Batch Processing</h2>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: harrifeng@outlook.com</p>
+<p class="date">Created: 2021-12-01 Wed 20:04</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
