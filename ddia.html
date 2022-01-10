@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2021-12-01 Wed 20:04 -->
+<!-- 2022-01-10 Mon 14:07 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>ddia</title>
@@ -251,51 +251,105 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgf949e47">1. Chapter 1: Reliable, Scalable, and Maintainable Applications</a></li>
-<li><a href="#orga011c6e">2. Chapter 3: Storage and Retrieval</a>
+<li><a href="#org69ff0ab">1. Chapter 1: Reliable, Scalable, and Maintainable Applications</a>
 <ul>
-<li><a href="#orgcaef1e7">2.1. Data Structures That Power Your Database</a>
+<li><a href="#org7e3f863">1.1. Thinking About Data Systems</a></li>
+<li><a href="#org8a22a9f">1.2. Reliability</a>
 <ul>
-<li><a href="#orgd732a7f">2.1.1. Hash Indexes</a></li>
-<li><a href="#org5dcd5b1">2.1.2. SSTables and LSM-Trees</a></li>
-<li><a href="#org2c60135">2.1.3. B-Trees</a></li>
-<li><a href="#org7ecdf09">2.1.4. Comparing B-Trees and LSM-Trees</a></li>
-<li><a href="#orgfb0e898">2.1.5. Other Indexing Structures</a></li>
-<li><a href="#org8055909">2.1.6. Transaction Processing or Analytics?</a></li>
-<li><a href="#org8cc3115">2.1.7. Data Warehousing</a></li>
-<li><a href="#orgf68ce45">2.1.8. Stars and Snowflakes: Schemas for Analytics</a></li>
+<li><a href="#org02807c2">1.2.1. Hardware Faults</a></li>
+<li><a href="#orga74345f">1.2.2. Software Errors</a></li>
+<li><a href="#orgbb6fe51">1.2.3. Human Errors</a></li>
+<li><a href="#org28a49e8">1.2.4. How Important Is Reliability?</a></li>
 </ul>
 </li>
-<li><a href="#orgae815a3">2.2. Column-Oriented Storage</a>
+<li><a href="#org1cca66f">1.3. Scalability</a>
 <ul>
-<li><a href="#orga73e5b6">2.2.1. Column Compression</a></li>
-<li><a href="#orgc3294cc">2.2.2. Writing to Column-Oriented Storage</a></li>
-<li><a href="#org7f1c8ed">2.2.3. Aggregation: Data Cubes and Materialized Views</a></li>
+<li><a href="#orge767384">1.3.1. Describing Load</a></li>
+<li><a href="#org9f49eda">1.3.2. Describing Performance</a></li>
+<li><a href="#org6fc9ec2">1.3.3. Approaches for Coping with Load</a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li><a href="#org36228da">3. Chapter 4: Encoding and Evolution</a>
+<li><a href="#org5606b3f">1.4. Maintainability</a>
 <ul>
-<li><a href="#org1b71f4f">3.1. Formats for Encoding Data</a>
-<ul>
-<li><a href="#org972c9f3">3.1.1. Language-Specific Formats</a></li>
-<li><a href="#org965bb5f">3.1.2. JSON,XML,and Binary Variants</a></li>
+<li><a href="#orgf79153e">1.4.1. Operability: Making Life Easy for Operations</a></li>
+<li><a href="#orgd26520a">1.4.2. Simplicity: Managing Complexity</a></li>
+<li><a href="#org9488991">1.4.3. Evolavability: Making Change Easy</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org1ff9b93">4. Chapter 5: Replication</a>
+<li><a href="#orgd42f908">2. Chapter 2: Data Models and Query Languages</a>
 <ul>
-<li><a href="#orgdb6956c">4.1. Leaders and Followers</a></li>
+<li><a href="#org52450dd">2.1. Relational Model Versus Document Model</a>
+<ul>
+<li><a href="#org688b058">2.1.1. The Birth of NOSQL</a></li>
+<li><a href="#org3e48dac">2.1.2. The Object-Relational Mismatch</a></li>
+<li><a href="#orgca695e2">2.1.3. Many-to-One and Many-to-Many Relationships</a></li>
+<li><a href="#orgf67b7ad">2.1.4. Are Document Databases Repeating History?</a></li>
+<li><a href="#org70374d6">2.1.5. Relational Versus Document Databases Today</a></li>
 </ul>
 </li>
-<li><a href="#org3010fcf">5. Chapter 10: Batch Processing</a></li>
+<li><a href="#org81b5164">2.2. Query Languages for Data</a>
+<ul>
+<li><a href="#orgfaec064">2.2.1. Declarative Queries on the Web</a></li>
+<li><a href="#orgf66d430">2.2.2. MapReduce Querying</a></li>
+</ul>
+</li>
+<li><a href="#orgfa8baa3">2.3. Graph-Like Data Models</a>
+<ul>
+<li><a href="#org57be090">2.3.1. Property Graphs</a></li>
+<li><a href="#org7cd1cfa">2.3.2. The Cypher Query Language</a></li>
+<li><a href="#orgc5ed6af">2.3.3. Graph Queries in SQL</a></li>
+<li><a href="#orgb390b69">2.3.4. Triple-Stores and SPARQL</a></li>
+<li><a href="#orgd1809c8">2.3.5. THe Foundation: Datalog</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org720269a">3. Chapter 3: Storage and Retrieval</a>
+<ul>
+<li><a href="#org7eacac4">3.1. Data Structures That Power Your Database</a>
+<ul>
+<li><a href="#org5655337">3.1.1. Hash Indexes</a></li>
+<li><a href="#orgdd749bc">3.1.2. SSTables and LSM-Trees</a></li>
+<li><a href="#org266a7be">3.1.3. B-Trees</a></li>
+<li><a href="#orgee457be">3.1.4. Comparing B-Trees and LSM-Trees</a></li>
+<li><a href="#orgf8d5855">3.1.5. Other Indexing Structures</a></li>
+<li><a href="#orgfa65dda">3.1.6. Transaction Processing or Analytics?</a></li>
+<li><a href="#orgb7406d1">3.1.7. Data Warehousing</a></li>
+<li><a href="#org4c8779f">3.1.8. Stars and Snowflakes: Schemas for Analytics</a></li>
+</ul>
+</li>
+<li><a href="#org1cf5d3c">3.2. Column-Oriented Storage</a>
+<ul>
+<li><a href="#org3032a96">3.2.1. Column Compression</a></li>
+<li><a href="#orgd7827de">3.2.2. Writing to Column-Oriented Storage</a></li>
+<li><a href="#org17354de">3.2.3. Aggregation: Data Cubes and Materialized Views</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org2783c2b">4. Chapter 4: Encoding and Evolution</a>
+<ul>
+<li><a href="#org10b0f45">4.1. Formats for Encoding Data</a>
+<ul>
+<li><a href="#org273501d">4.1.1. Language-Specific Formats</a></li>
+<li><a href="#orgd61062f">4.1.2. JSON,XML,and Binary Variants</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgf067bb5">5. Chapter 5: Replication</a>
+<ul>
+<li><a href="#orge6fd3c6">5.1. Leaders and Followers</a></li>
+</ul>
+</li>
+<li><a href="#orgb552493">6. Chapter 10: Batch Processing</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgf949e47" class="outline-2">
-<h2 id="orgf949e47"><span class="section-number-2">1</span> Chapter 1: Reliable, Scalable, and Maintainable Applications</h2>
+<div id="outline-container-org69ff0ab" class="outline-2">
+<h2 id="org69ff0ab"><span class="section-number-2">1</span> Chapter 1: Reliable, Scalable, and Maintainable Applications</h2>
 <div class="outline-text-2" id="text-1">
 <ul class="org-ul">
 <li>当前,很多的application都是data-intensive的,而不再是compute-intensive的了,换句话说,CPU power往往
@@ -313,12 +367,1227 @@
 <li>给另外一个process发送message,让对方异步处理: stream processing</li>
 <li>定期大量的处理堆积的数据: batach processing</li>
 </ul></li>
+<li>上面的任何一个data-intensive application都有成熟的产品(比如mysql, redis),大多数的工程师不会从零
+开始写一个这样的系统出啦,而是利用这些已有的系统(mysql, redis等)</li>
+<li>但是这些已有的数据系统,却不是那么好用的:
+<ul class="org-ul">
+<li>有很多cache的方法</li>
+<li>很多index的方法</li>
+</ul></li>
+<li>如何正确的选择和使用这些数据系统(postgres,mysql,redis)成了难题.把这些数据系统组合起来,更是难上加难</li>
+<li>本书就是解决你们如何使用这些数据系统来构建一个data-intensive application的,我们将:
+<ul class="org-ul">
+<li>了解这些工具的相同点</li>
+<li>区分这些工具的不同</li>
+<li>介绍他们如何实现自己的特点</li>
+</ul></li>
+</ul>
+</div>
+<div id="outline-container-org7e3f863" class="outline-3">
+<h3 id="org7e3f863"><span class="section-number-3">1.1</span> Thinking About Data Systems</h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li>我们一般不把database,queue,cache当做是一类东西(虽然他们大体上都是存数据的),但是其访问方法和实现
+细节都是不一样的,所以根本不是一类东西</li>
+<li>我们本书却把database,queue,cache全部概括到data system下面来讨论,这是由于如下的原因:
+<ul class="org-ul">
+<li>存数据,之前是泾渭分明的事情,数据库就长期存储,cache就临时存储.但是近些年,这个趋势有所改变出现
+了传统分类无法覆盖的"多功能"选手:
+<ol class="org-ol">
+<li>Redis,既能做cache,还能做message queue</li>
+<li>Kafka,既能做message queue,还能持久化存储</li>
+</ol></li>
+<li>很多application无法使用一种tool就满足他的需求,一个application需要把多个tool的功能组合起来,对外
+提供服务:
+<ul class="org-ul">
+<li><p>
+假设在main database之外,你还有一个full-text search 系统,一个cache 系统,那么是你的application
+code来负责让你的search index和cache与main database保持同步,如图
+</p>
+
+<div id="org84dc094" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ddia/1-1.png" alt="1-1.png" />
+</p>
+<p><span class="figure-number">Figure 1: </span>ddia/1-1.png</p>
+</div></li>
+</ul></li>
+</ul></li>
+<li>本书我们关注软件的如下三个方面:
+<ol class="org-ol">
+<li>Reliability: 所谓reliability,就是说这个系统要能够持续的正确工作,哪怕遇到硬件软件问题或者人为的错误</li>
+<li>Scalability: 当系统增大时(容量提高,访问提高),需要有合理的应对增长的方式</li>
+<li>Maintainability: 某个系统在其长时间的运行当中,会有不同的人进行维护,我们的设计需要能让这些不同
+的人,高效的进行配合.</li>
+</ol></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orga011c6e" class="outline-2">
-<h2 id="orga011c6e"><span class="section-number-2">2</span> Chapter 3: Storage and Retrieval</h2>
+<div id="outline-container-org8a22a9f" class="outline-3">
+<h3 id="org8a22a9f"><span class="section-number-3">1.2</span> Reliability</h3>
+<div class="outline-text-3" id="text-1-2">
+<ul class="org-ul">
+<li>对于软件产品的reliability的期待,一般来说包括:
+<ul class="org-ul">
+<li>application能够完成用户期望的功能</li>
+<li>application能够忍耐用户的不正确使用</li>
+<li>application对于正常的压力能够有足够优秀的性能表现</li>
+<li>application对于任何没有授权的access要拒绝</li>
+</ul></li>
+<li><p>
+对于上面的情况,我们总结一句话就是
+</p>
+<pre class="example" id="orgfb9056f">
+application continuing to work correctly, even when things go wrong
+</pre></li>
+<li><p>
+things that can go wrong的就是fault啦. fault的定义是,系统的一部分不能正常工作(没有达到设计的要求).
+</p>
+<pre class="example" id="org54cf503">
+Fault: one component of the system deviating from its spec
+</pre></li>
+<li>我们不可能完全避免fault,所以应对办法是设计fault-tolerance极值来防止fault使我们的系统failure</li>
+<li><p>
+所谓failure,就是整个系统停止工作
+</p>
+<pre class="example" id="orgc04f2d4">
+Failure: is when the system as a whole stops providing the required service to the user
+</pre></li>
+</ul>
+</div>
+<div id="outline-container-org02807c2" class="outline-4">
+<h4 id="org02807c2"><span class="section-number-4">1.2.1</span> Hardware Faults</h4>
+<div class="outline-text-4" id="text-1-2-1">
+<ul class="org-ul">
+<li>硬件故障是最容易想到的故障,当有很多机器的时候,硬件故障随时都可能发生,比如:
+<ul class="org-ul">
+<li>硬盘坏了</li>
+<li>RAM出错了</li>
+<li>电源坏了</li>
+<li>网线被拔了</li>
+</ul></li>
+<li>对付硬件故障最直接的办法就是增加硬件备份:
+<ul class="org-ul">
+<li>硬盘配置RAID</li>
+<li>服务器有两个电源,两个网线</li>
+</ul></li>
+<li>硬件备份容易理解而且能够极大的提高单个服务器不间断的运行时间,在很多年里面,硬件备份都是默认选择.</li>
+<li>但是,随着云时代的来临,数据量太大,单个服务器完全不能满足需求,可能一个应用要部署在非常多的服务器上,
+服务器一多:
+<ul class="org-ul">
+<li>出错概率不变的情况下,硬件的数目多,出错的总数就多</li>
+<li>云时代的主机本来出错概率就高,硬件数目还多,那么总出错数就更多</li>
+</ul></li>
+<li>在云时代,就不太适合再使用"硬件备份"了,因为数目太多不划算.云时代,希望从软件方面进行改善,设计出一种
+"即便是某个机器完全被抛弃,也不影响整个系统"的架构</li>
+<li>这种tolerte-machine-failure的架构相比于single-server有一些优势,比如:
+<ul class="org-ul">
+<li>single-server需要在planned downtime重启机器,进行升级,打补丁等操作</li>
+<li>tolerte-machine-failure的架构可以每次重启其中一台机器,进行升级,循环就可以不停服升级完毕</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orga74345f" class="outline-4">
+<h4 id="orga74345f"><span class="section-number-4">1.2.2</span> Software Errors</h4>
+<div class="outline-text-4" id="text-1-2-2">
+<ul class="org-ul">
+<li>我们通常认为hardward fault是随机的,也就是说,某个机器的硬盘坏了,不代表另外一台机器的硬盘也会坏.
+换句话说,一台机器的硬盘坏了,不会预示着绝大部分机器的硬盘也会坏</li>
+<li>但是software error就不是了, 一台机器有了software error,那么其他大部分机器也可能会遇到software
+error.</li>
+<li>software error的例子有:
+<ul class="org-ul">
+<li>一个软件bug会导致异常输入会使当前server宕机,比如闰秒问题.</li>
+<li>一个process使用了太多的资源(CPU,内存等)</li>
+<li>系统依赖的另外的系统挂了</li>
+<li>级联故障(Cascading failure):一个component出了问题,影响到其他component,其他component再影响额外
+的component.逐渐扩大</li>
+</ul></li>
+<li>software error有可能在系统中存在很久而不被发现.因为software error发生通常是如下情况触发的:
+<ul class="org-ul">
+<li>software会对自己运行的环境做一个assumption</li>
+<li>平时这个assumption总是对的,所以software error不会被触发.某些时段,刚好这个assumption不再正确了,
+那么software error就爆发了</li>
+</ul></li>
+<li>减少software error的策略有:
+<ul class="org-ul">
+<li>认真思考assumption</li>
+<li>全面的测试</li>
+<li>process isolation</li>
+<li>measureing, monitoring, analyzing system behavior</li>
+</ul></li>
+<li>如果某个系统对外做出了某些承诺(比如对于队列系统,要求incoming message和outgoing message数目相同),
+那么最好监控这个承诺,一旦满足不了就报警.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgbb6fe51" class="outline-4">
+<h4 id="orgbb6fe51"><span class="section-number-4">1.2.3</span> Human Errors</h4>
+<div class="outline-text-4" id="text-1-2-3">
+<ul class="org-ul">
+<li>有调查表明,人类犯错误的概率是硬件的4到10倍</li>
+<li>既然人类是不可靠的,那么我们需要设计如下的系统来和不可靠的人类互动:
+<ul class="org-ul">
+<li>减少错误出现的机会.好的api设计能够让人做对的事情</li>
+<li>把人类容易犯错的地方和会导致failure的地方分开.在实践当中,提供全功能的non-production sandbox
+来帮助人们安全的体验</li>
+<li>使用各种测试,包括单元测试,集成测试和人工测试</li>
+<li>允许快速且简单的从human error中恢复</li>
+<li>建立详细和清晰的monitoring</li>
+<li>对人员进行培训</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org28a49e8" class="outline-4">
+<h4 id="org28a49e8"><span class="section-number-4">1.2.4</span> How Important Is Reliability?</h4>
+<div class="outline-text-4" id="text-1-2-4">
+<ul class="org-ul">
+<li>reliability不仅仅是为了核电站和飞机控制器,当前的网站如果宕机也会造成大量的损失</li>
+<li>如果是为了做demo,我们可以适当牺牲reliability</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org1cca66f" class="outline-3">
+<h3 id="org1cca66f"><span class="section-number-3">1.3</span> Scalability</h3>
+<div class="outline-text-3" id="text-1-3">
+<ul class="org-ul">
+<li>即便服务当前能够reliably的提供服务,不代表以后还能正常的提供服务.</li>
+<li>服务降级(service degradation)的常见原因就是增长的负载:
+<ul class="org-ul">
+<li>比如并发用户突然从1万长到了10万</li>
+</ul></li>
+<li><p>
+扩展性就是我们用来描述系统如何处理增长的负载的术语
+</p>
+<pre class="example" id="org1fa7aea">
+Scalability is the term we use to describe a system's ability to cope with increased load
+</pre></li>
+<li>扩展性不是一个单维度定性的说法,比如下面的说法都是没有意义的:
+<ul class="org-ul">
+<li>X is scalable</li>
+<li>Y is not scalable</li>
+</ul></li>
+<li>有意义的说法是: 如果某个系统在某个方向上面提高了负载,我们怎样处理这个增长的负载</li>
+</ul>
+</div>
+<div id="outline-container-orge767384" class="outline-4">
+<h4 id="orge767384"><span class="section-number-4">1.3.1</span> Describing Load</h4>
+<div class="outline-text-4" id="text-1-3-1">
+<ul class="org-ul">
+<li>我们可以使用load parameter来描述负载,根据业务不同load parameter可以有不同的表述:
+<ul class="org-ul">
+<li>QPS: 用来描述每秒访问web server的request</li>
+<li>对数据库的写入频率</li>
+<li>聊天室同时在线的人数</li>
+</ul></li>
+<li>我们使用twitter来作为例子,截止到2012年,twitter最主要的两个操作是:
+<ul class="org-ul">
+<li>Post tweet: 用户可以对他的follower发送新message, 这个操作平均的QPS是4.6k, 高峰值是13k</li>
+<li>Home timeline: 用户可以在主页查看他follow的其他人的信息(QPS是 300k)</li>
+</ul></li>
+<li>如果单独是处理12K qps的写入,不是那么困难的事情,但是Twitter 扩展性的难题在于其组织的扩散性特点:
+<ul class="org-ul">
+<li>每个用户都follow很多人</li>
+<li>每个人又被其他人所follow</li>
+</ul></li>
+<li>主要有两种方案来实现post tweet的写入和home timeline的读取:
+<ol class="org-ol">
+<li>方案1:
+<ul class="org-ul">
+<li>把tweet存入到global collection of tweet里面</li>
+<li>当用户请求home timeline的时候,查询所有他们follow的人,把这些人的tweet给找到,merge好,排序好</li>
+<li><p>
+在关系型数据库里面,如下sql可以表示
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span style="color: #D70000;">SELECT</span> tweets.*, users.* <span style="color: #D70000;">FROM</span> tweets
+  <span style="color: #D70000;">JOIN</span> users <span style="color: #D70000;">ON</span> tweets.sender_id = users.id
+  <span style="color: #D70000;">JOIN</span> follows <span style="color: #D70000;">ON</span> follows.followee_id = users.id
+  <span style="color: #D70000;">WHERE</span> follows.follower_id = <span style="color: #1F55A0;">current_user</span>
+</pre>
+</div></li>
+<li><p>
+图1-2
+</p>
+
+<div id="org9949d85" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ddia/1-2.png" alt="1-2.png" />
+</p>
+<p><span class="figure-number">Figure 2: </span>ddia/1-2.png</p>
+</div></li>
+</ul></li>
+<li>方案2:
+<ul class="org-ul">
+<li>为每个用户的home timeline准备一个cache</li>
+<li>这个cache类似电子邮件的收件箱,当user发布tweet的时候,所有关注这个user的其他follower,就会像
+收到mail一样,在自己的home timeline cache里面收到新tweet</li>
+<li>这样一来读取home timeline这个操作就非常cheap了,读取cache就可以</li>
+<li><p>
+图1-3
+</p>
+
+<div id="org0de9edd" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ddia/1-3.png" alt="1-3.png" />
+</p>
+<p><span class="figure-number">Figure 3: </span>ddia/1-3.png</p>
+</div></li>
+</ul></li>
+</ol></li>
+<li>第一个版本的twitter使用了方案1,但是很快就发现用户读取home timeline的操作每次会join两张表,并且qps
+巨大,很快就成为了系统瓶颈</li>
+<li>第二个版本的twitter就改用了方案2,并且效果比方案1好</li>
+<li>但是方案2也有致命的缺点:
+<ul class="org-ul">
+<li>平均一个user被75个人follow,所以4.6k qps的新twitter创建被扩展成了345k的qps</li>
+<li><p>
+但是有些user的follower多达3千万,对于这种用户,每次写入3千万个cache的操作实在是太费时间了,这无
+法满足twitter对自己的一个要求
+</p>
+<pre class="example" id="orgedaa7b4">
+Twitter希望在五秒之内将新的tweet分发给所有follower
+</pre></li>
+</ul></li>
+<li>最终版本的twitter使用了新的方案:将方案1和方案2结合:
+<ul class="org-ul">
+<li>写入方面:
+<ol class="org-ol">
+<li>大部分的user还是使用方案2:每次发布tweet,都像发送mail一样,把新tweet发送给自己每个follower的cache里面</li>
+<li>少部分user(follower特别多的名人)改用方案1:每次发布tweet,把这个tweet写入到全局的tweet表里面</li>
+</ol></li>
+<li>读取方面:
+<ol class="org-ol">
+<li>cache里面有普通作者的tweet</li>
+<li>全局的tweet有名人的tweet</li>
+<li>每次home timeline读取的时候,merge 1和2 的tweet,展示给用户</li>
+</ol></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org9f49eda" class="outline-4">
+<h4 id="org9f49eda"><span class="section-number-4">1.3.2</span> Describing Performance</h4>
+<div class="outline-text-4" id="text-1-3-2">
+<ul class="org-ul">
+<li>在批处理系统(batch processing system),比如Hadoop里面,我们通常关注吞吐量(throughput): 每秒我们能处理的记录的数目</li>
+<li>在在线系统(online system),比如web service里面,我们更关注响应时间(response time): 客户端发送request
+到接收到response之间的时间</li>
+<li>我们重点说下response time:
+<ul class="org-ul">
+<li>response time的一个特点是,即便是同样的request,发送多次的response time也不尽相同</li>
+<li>实践当中,我们不会把一次请求的reponse time作为有意义的结果,而是多次统计后,得出来一个response
+time的分布(distribution)</li>
+</ul></li>
+<li>如图:
+<ul class="org-ul">
+<li><p>
+图1-4
+</p>
+
+<div id="org190e7b4" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ddia/1-4.png" alt="1-4.png" />
+</p>
+<p><span class="figure-number">Figure 4: </span>ddia/1-4.png</p>
+</div></li>
+<li>每一个灰色代表一次请求,高度越高响应时间越长</li>
+<li>大部分的请求都很快完成,但是也偶有几个请求的响应时间比较长</li>
+</ul></li>
+<li>对response time一个最朴素的反映是使用average response time: 也就是所有的N个response time的总和
+加起来除以N,得到一个算术平均值</li>
+<li>但是实际上,平均值不是一个很好的metric,他无法告诉你多少用户实际上在体验delay</li>
+<li>常规情况下,最好使用百分比(percentiles),所谓percentiles:
+<ul class="org-ul">
+<li>把所有的response time列出来,然后排序,从最快到最慢</li>
+<li>在所有的排名当中,找最中间那个响应时间,就是median, 假设你的median response time是200ms,那么表
+示一半的用户请求响应时间小于200ms</li>
+<li>median也叫50th percentile, 简称为p50</li>
+<li>同理,还有p95(95% percentile), p99(99% percentile), p999(99.9% precentile)</li>
+<li>Amazon优化的目标是99.9% percentile,因为99.99% percentile优化起来太消耗资源了,投出产出比不高</li>
+</ul></li>
+<li>percentile经常出现在的地方是SLO和SLA:
+<ul class="org-ul">
+<li>SLO: service level objective: 是技术上要达到的指标</li>
+<li>SLA: service level agreements: 是商业上的合同,可以理解为SLA里面会规定达不到某个SLO,要对供应
+商进行罚款</li>
+</ul></li>
+<li>一个典型的SLO例子是这样的:
+<ul class="org-ul">
+<li>满足如下两个条件才表示服务是up的:
+<ol class="org-ol">
+<li>median response time 低于200 ms</li>
+<li>99% percentile 低于1秒</li>
+</ol></li>
+<li>服务必须在99.9%的时间内保持UP</li>
+</ul></li>
+<li>如图
+<ul class="org-ul">
+<li><p>
+图1-5
+</p>
+
+<div id="org62a188d" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ddia/1-5.png" alt="1-5.png" />
+</p>
+<p><span class="figure-number">Figure 5: </span>ddia/1-5.png</p>
+</div></li>
+<li>实践当中,并行调用的情况下,最终用户需要等待最慢的并行调用完成,比如上图</li>
+<li>如果终端用户需要多个后端调用,那么调用变慢的机会也会增加,所以多重调用的后端服务里面,high percentiles
+监控变得非常重要(比如一定要保持P99足够小)</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org6fc9ec2" class="outline-4">
+<h4 id="org6fc9ec2"><span class="section-number-4">1.3.3</span> Approaches for Coping with Load</h4>
+<div class="outline-text-4" id="text-1-3-3">
+<ul class="org-ul">
+<li>我们已经了解如何去描述负载,那么一旦负载提升了很大,我们如何去应对就成了我们要研究的问题</li>
+<li>应对增加的负载通常有两种方法:
+<ul class="org-ul">
+<li>纵向伸缩(scaling up), 也叫垂直伸缩(vertical scaling): 简单说就是使用配置跟高的机器</li>
+<li>横向伸缩(scaling out), 也叫水平伸缩(horizontal scaling): 简单的说将负载分布到多台小机器上.
+把负载分到多台机器上也叫shared-nothing架构</li>
+</ul></li>
+<li>在单台机器运行的系统肯定更简单,但是高端机器肯定也更贵,所以,非常密集的负载无可避免的要使用水平扩展</li>
+<li>有些系统是弹性(elastic)的,这意味着它可以在检测到负载增加时自动增加计算资源,但通常来说,手动伸缩
+系统更简单,并且意外操作可能会更少</li>
+<li>水平扩展如果部署的是无状态服务(stateless services)非常简单,但是如果水平扩展有状态的服务(stateful
+services)是非常复杂的,因为会引入很多额外的复杂度
+<ul class="org-ul">
+<li>易于以上原因,数据库这种stateful services通常放在单个节点上(垂直压缩),直到单机实在无法满足需求
+后才最终改为分布式</li>
+</ul></li>
+<li>stateful service(类似数据库)尽量使用垂直压缩这个经验,在分布式系统逐渐好用的今天,可能会有所改变:
+<ul class="org-ul">
+<li>以后分布式数据系统会变成默认选择</li>
+<li>今天的分布式系统将不仅仅是被迫的选择(scalability强大),而是在易用性和维护性上都很好</li>
+</ul></li>
+<li>处理海量数据的系统,其架构都是和application的特性相绑定的,没有适应各种application的万金油架构.
+不同的application可能会遇到不同的问题,比如:
+<ul class="org-ul">
+<li>读取的数量太多</li>
+<li>写入的数量太多</li>
+<li>存储的数量太多</li>
+<li>数据的复杂性太高</li>
+<li>response time要求很高</li>
+<li>以上不同问题的组合</li>
+</ul></li>
+<li>举个例子,如下两个系统处理的每秒数据量相同,但是架构肯定不一样:
+<ul class="org-ul">
+<li>QPS:100000, 每个request 1KB</li>
+<li>QPS:3, 每个request 2GB</li>
+</ul></li>
+<li>对于某个特定的application,scale良好的架构是基于负载参数(load parameter)的:
+<ul class="org-ul">
+<li>所谓负载参数,是指,对一个application特点的假设:哪些操作是常见的,哪些操作是罕见的</li>
+</ul></li>
+<li>如果负载参数弄错了(甚至弄反了),那么为scale所做的架构工作,就白费了</li>
+<li>另外在早期创业或者非正式产品中,快速迭代比想着如何scale架构要重要的多</li>
+<li>虽然好的,scalable的架构是因application而异的,但是scalable架构所依赖的都是一些通用的building block,
+我们本书就讨论这些building block的特性,并介绍他们使用的常规pattern</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org5606b3f" class="outline-3">
+<h3 id="org5606b3f"><span class="section-number-3">1.4</span> Maintainability</h3>
+<div class="outline-text-3" id="text-1-4">
+<ul class="org-ul">
+<li>一个常识就是,软件第一次开发不是开支最多的,而后续的维护则花费更多的钱</li>
+<li>遗憾的是,maintain一个系统,却不是开发人员喜欢的,因为这意味着:
+<ul class="org-ul">
+<li>更改其他人的bug</li>
+<li>系统使用技术已经过时</li>
+<li>系统需要做一些分外的工作</li>
+</ul></li>
+<li>我们可以在设计阶段做些努力,让我们以后的maintenance工作更轻松一点,为此,我们讲特别关注软件系统的三个设计原则:
+<ul class="org-ul">
+<li>Operability: 让运维团队能够保持系统平稳运行</li>
+<li>Simplicity: 尽可能的从系统中消除复杂度,使新工程师也能理解</li>
+<li>Evolvability: 使工程师在未来能够轻松地对系统进行更改</li>
+</ul></li>
+</ul>
+</div>
+<div id="outline-container-orgf79153e" class="outline-4">
+<h4 id="orgf79153e"><span class="section-number-4">1.4.1</span> Operability: Making Life Easy for Operations</h4>
+<div class="outline-text-4" id="text-1-4-1">
+<ul class="org-ul">
+<li>良好的运维可以绕开垃圾软件的局限性,但是再好的软件摊上垃圾运维也无法可靠运行</li>
+<li>虽然运维某些方面是可以自动化的,但是在最初建立政权运行的自动化机制,依然是靠人的</li>
+<li>一个优秀的运维团队的职责如下:
+<ul class="org-ul">
+<li>监控系统运行状况,并在服务状态不佳的时候恢复服务</li>
+<li>跟踪问题的原因:到底是system failure,还是性能下降</li>
+<li>保证软件和平台都是最新的,打安全补丁</li>
+<li>了解系统间的相互作用,以便在问题出现后加以解决</li>
+<li>预测未来问题,并在问题出现后接(比如容量规划)</li>
+<li>简历部署,配置,管理方面的良好实践</li>
+<li>执行复杂的maintenance task: 比如把applicaiton从一个平台移动到另外一个平台</li>
+<li>当configuration更改之后,维持系统的安全性</li>
+<li>定义工作流程,使得运维操作可预测并且维持production环境的stable</li>
+<li>维持组织对系统的了解</li>
+</ul></li>
+<li>良好的可操作性意味着日常工作更简单,进而让运维团队能偶focus自己专业的工作</li>
+<li>数据系统能够多很多事情,让我们的日常工作变得简单,包括:
+<ul class="org-ul">
+<li>通过良好的监控,提供对runtime behavior和internal of the system的visibility</li>
+<li>对自动化和集成化提供良好的支持,使用常规工具</li>
+<li>避免依赖单台机器</li>
+<li>提供良好的文档</li>
+<li>提供良好的默认行为,但是也让管理员能够自由覆盖默认值</li>
+<li>在有条件的情况,提供自我修复行为,大手也支持管理手动控制系统状态</li>
+<li>行为可预测,最大限度减少令人意外的行为</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgd26520a" class="outline-4">
+<h4 id="orgd26520a"><span class="section-number-4">1.4.2</span> Simplicity: Managing Complexity</h4>
+<div class="outline-text-4" id="text-1-4-2">
+<ul class="org-ul">
+<li>简单的软件拥有简单讨喜,不有表现力的代码,但是随着项目的增大,代码会变得非常复杂和难以理解</li>
+<li>复杂度(complexity): 有各种可能的症状:
+<ul class="org-ul">
+<li>state space激增</li>
+<li>模块之间紧密的耦合</li>
+<li>纠结的相互依赖关系</li>
+<li>不一致的命名和术语</li>
+<li>各种为了性能问题而写的hack代码</li>
+<li>各种需要绕开的特例(work around)</li>
+</ul></li>
+<li>复杂度高的危害有:
+<ul class="org-ul">
+<li>在复杂的软件中进行变更,引入错误风险也更大</li>
+<li>复杂的软件让开发人员难以理解的时候,如下的部分容易被忽略:
+<ul class="org-ul">
+<li>hidden assumption</li>
+<li>unintended consequences</li>
+<li>unexpected interaction</li>
+</ul></li>
+</ul></li>
+<li><p>
+复杂度和可维护性的联系就在于:降低福再度能够极大的提高软件的可维护性
+</p>
+<pre class="example" id="org03114d2">
+Reducign complexity greatly improves the maintainability of software
+</pre></li>
+<li>简化系统:
+<ul class="org-ul">
+<li>不意味着减少功能</li>
+<li>而意味着消除额外的复杂度,所谓额外的复杂度是说这个复杂度由implementation带来,而非问题本身带来</li>
+</ul></li>
+<li>用于消除额外复杂度的最好工具之一是抽象(abstraction): 一个好的抽象可以将大量实现细节隐藏在一个
+干净,简单易懂的外表下面:
+<ul class="org-ul">
+<li>高级编程语言是一种抽象: 隐藏了机器码,CPU寄存器和系统调用</li>
+<li>SQL是一种抽象:隐藏了on-disk和in-memory数据结构,客户端的并发请求和错误处理</li>
+</ul></li>
+<li>寻找好的抽象是非常困难的,在分布式系统领域,虽然有很多好的算法,但是我们如何打包这些算法到abstriction
+里面确实不太明确的事情</li>
+<li>本书关注如下优秀的抽象:
+<ul class="org-ul">
+<li>将大型系统中的一部分提取为可明确定义,可重用的component</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org9488991" class="outline-4">
+<h4 id="org9488991"><span class="section-number-4">1.4.3</span> Evolavability: Making Change Easy</h4>
+<div class="outline-text-4" id="text-1-4-3">
+<ul class="org-ul">
+<li>对于计算机系统来说,需求永远改变才是常态:
+<ul class="org-ul">
+<li>你可能会遇到新的fact</li>
+<li>原来没有预料到的use case发生了</li>
+<li>业务优先级发生了变化</li>
+<li>用户要求新功能</li>
+<li>新平台取代旧平台</li>
+<li>法律或者监管要求发生变化</li>
+<li>系统增长迫使架构变化</li>
+</ul></li>
+<li>在软件开发领域,有个词叫敏捷(Agile). Agile working pattern 提供了一种应对需求改变的framework</li>
+<li>大部分的Agile 技术着重讨论的领域都是非常小(同一个application里面的几个文件的改动). 而我们本书
+讨论的是提高整个系统的agility(可能包括多个application,比如如何将方案1和方案2融合,从而重构twitter)</li>
+<li>你的系统架构越简单,抽象的越好,你越容易修改数据系统,使其适应不断变化的需求</li>
+<li>在data system里面,我们使用新词来替代agility, 这个新词是:evolvability</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgd42f908" class="outline-2">
+<h2 id="orgd42f908"><span class="section-number-2">2</span> Chapter 2: Data Models and Query Languages</h2>
 <div class="outline-text-2" id="text-2">
+<ul class="org-ul">
+<li>对于开发软件来说,data model是最重要的部分,他们影响着如下两个部分:
+<ul class="org-ul">
+<li>软件如何编写</li>
+<li>我们解决问题的思路</li>
+</ul></li>
+<li>大部分的软件都是一层data model上面叠加一层data model,对每一层layer来说,最重要的问题是:它如何使用
+低一层数据模型来表示, 我们从高到低来介绍一下常见的data model layer:
+<ol class="org-ol">
+<li>作为application developer,你观察师姐(里面有人员,组织,货物等),并采用对象或者数据结构来建模.这些
+structure通常只为你的application服务的</li>
+<li>你会选择把这些data structure存储起来,你必须使用general-purpose的data model,比如:
+<ul class="org-ul">
+<li>JSON</li>
+<li>XML</li>
+<li>关系型数据库的table</li>
+<li>graph model</li>
+</ul></li>
+<li>假设你使用了关系型数据库存储,那么开发关系型数据库的工程师就要决定如何把用户的data以何种byte的
+形式存储起来,这种存储方式必须容易查询,搜索和多种方式处理</li>
+<li>最底层的是硬件,硬件工程师要考虑如何把bytes使用如下的方式表达:
+<ul class="org-ul">
+<li>电流</li>
+<li>光脉冲</li>
+<li>磁场</li>
+</ul></li>
+</ol></li>
+</ul>
+</div>
+<div id="outline-container-org52450dd" class="outline-3">
+<h3 id="org52450dd"><span class="section-number-3">2.1</span> Relational Model Versus Document Model</h3>
+<div class="outline-text-3" id="text-2-1">
+<ul class="org-ul">
+<li>当前,最为人们所熟知的data model是SQL</li>
+<li>SQL是Edgar Codd在1970年提出的:
+<ul class="org-ul">
+<li>数据以relation的方式所组织,每个relation叫做一个table</li>
+<li>每个relation都是以unordered collection of tuple组织的,每个tuple叫做一个row</li>
+</ul></li>
+<li>relation database的根基在于business data processiong: 这是六七十年代使用计算机的主力</li>
+<li>那个时代relational database的其他竞争对手关注于让开发者思考数据库的内部表达(internal representation),
+<ul class="org-ul">
+<li>而relational model则最大限度的要隐藏数据库实现细节</li>
+</ul></li>
+<li>从1970年开始,历次和relational database竞争的model有:
+<ul class="org-ul">
+<li>network model</li>
+<li>hierarchical model</li>
+</ul></li>
+<li>随着计算机的应用范围越来越广,relational database依然能够适应,说明了relational database异乎寻常
+的适应能力</li>
+</ul>
+</div>
+<div id="outline-container-org688b058" class="outline-4">
+<h4 id="org688b058"><span class="section-number-4">2.1.1</span> The Birth of NOSQL</h4>
+<div class="outline-text-4" id="text-2-1-1">
+<ul class="org-ul">
+<li>2010年开始,NoSQL是最近的一次,试图颠覆relational model的统治地位的技术</li>
+<li>NoSQL不是一种特定的技术,只是2009年的非关系数据库的meetup所使用的twitter hashtag,后来NoSQL被解释
+为Not Only SQL</li>
+<li>使用NoSQL数据库的很多驱动因素有:
+<ul class="org-ul">
+<li>需要比relational数据库更高的扩展性(scalability),包括更大的dataset,或者跟高的写入带宽</li>
+<li>更多免费的数据库(relational数据库收费的偏多)</li>
+<li>定制化的query operation,这个relational数据库支持的不好</li>
+<li>对于关系型数据的schema严格的要求表示失望,希望能有更加动态和表现力强的数据模型</li>
+</ul></li>
+<li>由于需求的不同,可以预见,在可见的未来,是NoSQL和关系型数据库共存的情况</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org3e48dac" class="outline-4">
+<h4 id="org3e48dac"><span class="section-number-4">2.1.2</span> The Object-Relational Mismatch</h4>
+<div class="outline-text-4" id="text-2-1-2">
+<ul class="org-ul">
+<li>现在大部分的application都是使用面向对象的编程语言开发的,这就导致了我们需要把如下两个事物进行翻
+译(通常是通过以translation layer):
+<ul class="org-ul">
+<li>application code里面的object</li>
+<li>database model里面的table, row, column</li>
+</ul></li>
+<li>这个翻译通常非常复杂,所以出现了很多ORM(Object-relational mapping)的框架来做这些事情,但是这些框
+架仅仅是减少了重复复杂的代码,并没有完全隐藏两个两种model的不同</li>
+<li>我们对LinkedIn比较熟悉,其主页就是一个resume(简历),介绍了某个人的姓名,教育经历和工作经历
+<ul class="org-ul">
+<li><p>
+图2-1
+</p>
+
+<div id="org06737a6" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ddia/2-1.png" alt="2-1.png" />
+</p>
+<p><span class="figure-number">Figure 6: </span>ddia/2-1.png</p>
+</div></li>
+</ul></li>
+<li>我们以resume这个对象来说明下不同的数据库如何存储:
+<ul class="org-ul">
+<li>在1999年以前,类似LinkedIn profile的resume通常是吧不同的信息,比如education, contact information,
+position放到不同的table里面,然后使用外键将这些table联系起来</li>
+<li>1999年后,SQL规范在一个row里面存储XML(也支持对xml数据进行查询和建立索引),后来部分数据库支持了JSON
+作为row的datatype</li>
+<li>最近NoSQL的流行,可以让我们把某个用户的jobs,education,contact info编码成一个JSON document,然后
+以text column的形式存储在数据库中.这种存储不能查询JSON里面的content.这是和SQL内置的JSON datatype
+不一样的地方</li>
+</ul></li>
+<li>对于resume类似的结构(其总体上是一个独立的内容),JSON可以很容易的进行表示.如果想使用NoSQL来把json
+存储成一个document,那么绝大多数Document-oriented数据库(Mongo, RethinkDB, CouchDB)都支持.</li>
+<li><p>
+resume以json形式表达如下
+</p>
+<div class="org-src-container">
+<pre class="src src-js"><span style="color: #1F55A0;">{</span>
+  <span style="color: #005F00;">"user_id"</span>: 251,
+  <span style="color: #005F00;">"first_name"</span>: <span style="color: #005F00;">"Bill"</span>,
+  <span style="color: #005F00;">"last_name"</span>: <span style="color: #005F00;">"Gates"</span>,
+  <span style="color: #005F00;">"summary"</span>: <span style="color: #005F00;">"Co-chair of Microsoft"</span>,
+  <span style="color: #005F00;">"region_id"</span>: <span style="color: #005F00;">"us:91"</span>,
+  <span style="color: #005F00;">"industry_id"</span>: 131,
+  <span style="color: #005F00;">"photo_url"</span>: <span style="color: #005F00;">"/p/7/000/253/05b/308dd6e.jpg"</span>,
+  <span style="color: #005F00;">"positions"</span>: <span style="color: #AF005F;">[</span>
+    <span style="color: #005F00;">{</span>
+      <span style="color: #005F00;">"job_title"</span>: <span style="color: #005F00;">"Co-chair"</span>,
+      <span style="color: #005F00;">"organization"</span>: <span style="color: #005F00;">"Bill &amp; Melinda Gates Foundation"</span>
+    <span style="color: #005F00;">}</span>,
+    <span style="color: #005F00;">{</span>
+      <span style="color: #005F00;">"job_title"</span>: <span style="color: #005F00;">"Co-founder, Chairman"</span>,
+      <span style="color: #005F00;">"organization"</span>: <span style="color: #005F00;">"Microsoft"</span>
+    <span style="color: #005F00;">}</span>
+  <span style="color: #AF005F;">]</span>,
+  <span style="color: #005F00;">"education"</span>: <span style="color: #AF005F;">[</span>
+    <span style="color: #005F00;">{</span>
+      <span style="color: #005F00;">"school_name"</span>: <span style="color: #005F00;">"Harvard University"</span>,
+      <span style="color: #005F00;">"start"</span>: 1973,
+      <span style="color: #005F00;">"end"</span>: 1975
+    <span style="color: #005F00;">}</span>,
+    <span style="color: #005F00;">{</span>
+      <span style="color: #005F00;">"school_name"</span>: <span style="color: #005F00;">"Lakeside School, Seattle"</span>,
+      <span style="color: #005F00;">"start"</span>: <span style="color: #AF005F;">null</span>,
+      <span style="color: #005F00;">"end"</span>: <span style="color: #AF005F;">null</span>
+    <span style="color: #005F00;">}</span>
+  <span style="color: #AF005F;">]</span>,
+  <span style="color: #005F00;">"contact_info"</span>: <span style="color: #AF005F;">{</span>
+    <span style="color: #005F00;">"blog"</span>: <span style="color: #005F00;">"http://thegatesnotes.com"</span>,
+    <span style="color: #005F00;">"twitter"</span>: <span style="color: #005F00;">"http://twitter.com/BillGates"</span>
+  <span style="color: #AF005F;">}</span>
+<span style="color: #1F55A0;">}</span>
+</pre>
+</div></li>
+<li>从开发者角度讲:
+<ul class="org-ul">
+<li>JSON的优势是其和application code之间的契合度很高,无需ORM.</li>
+<li>JSON的缺点是缺少一个schema</li>
+</ul></li>
+<li>JSON表达式相比于multi-table的schema,其优点在于其更好的局部性(locality):
+<ul class="org-ul">
+<li>你不需要像关系型数据库那样,为了查找用户的profile,需要进行额外的query,或者多表join</li>
+<li>在JSON 表达式里面,所有相关的信息都在一个地方,一次query就足够了.</li>
+</ul></li>
+<li>在resume例子中,user profile和如下的信息是典型的one-to-many关系:
+<ul class="org-ul">
+<li>positon</li>
+<li>education</li>
+<li>contact</li>
+</ul></li>
+<li>而JSON非常适合处理这种one-to-many的关系
+<ul class="org-ul">
+<li><p>
+图2-2
+</p>
+
+<div id="orga60f33b" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ddia/2-2.png" alt="2-2.png" />
+</p>
+<p><span class="figure-number">Figure 7: </span>ddia/2-2.png</p>
+</div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgca695e2" class="outline-4">
+<h4 id="orgca695e2"><span class="section-number-4">2.1.3</span> Many-to-One and Many-to-Many Relationships</h4>
+<div class="outline-text-4" id="text-2-1-3">
+<ul class="org-ul">
+<li>在上面的resume例子中,如果使用关系型数据库,那么地区:
+<ul class="org-ul">
+<li>使用了region_id: 91</li>
+<li>而不是名字: "Greater Seattle Area"</li>
+</ul></li>
+<li>使用标准化的地区表达方式(让用户从下拉列表选),而不是让用户自己填写,有如下优点:
+<ul class="org-ul">
+<li>整个产品内部的表达统一(比如首字母大写),另外还有拼写检查</li>
+<li>避免歧义(因为有很多次城市和省份同名)</li>
+<li>更新简单: 因为name都存储在一个地方</li>
+<li>本地化支持容易: 可以按照viewer的要求以不同的语言来展示地址</li>
+<li>更容易的搜索</li>
+</ul></li>
+<li>到底存储ID还是text,其实是duplication的问题:
+<ul class="org-ul">
+<li>如果你使用ID存储,那么对人类有意义的信息(比如西雅图),只存储在一个地方,其他所有用到的地方,都使
+用ID来ref</li>
+<li>如果使用text存储,那么你就在所有的record里面duplicate了对人类有意义的信息</li>
+</ul></li>
+<li>ID其优势的来源也是因为其对于human来说,无意义,由于无意义:
+<ul class="org-ul">
+<li>所以也不需要改变: 即便ID对应的信息改变了,ID也不需要改变</li>
+</ul></li>
+<li>对人类有意义的东西,总有改变的可能.一旦改变发生了,所有text存储的copy都要更新,这就会造成很多麻烦:
+<ul class="org-ul">
+<li>write overhead</li>
+<li>inconsistency的风险(有些更新了,另外的却没有更新)</li>
+</ul></li>
+<li><p>
+数据库正则化背后的核心理念就是去重这些重复
+</p>
+<pre class="example" id="org7f8ade1">
+Removing such duplication is the key idea behind normalization in databases.
+</pre></li>
+<li>如果我们想对position(地区)做正则化,那么我们就要用到many-to-one relationship:
+<ul class="org-ul">
+<li>很多人(many)都生活在一个(one)特定的region</li>
+</ul></li>
+<li>而many-to-one relationship则需要ID来refer其他row,也就是需要join的良好支持:
+<ul class="org-ul">
+<li>关系型数据库对join的支持很好.</li>
+<li>在document数据库里面,由于one-to-many的树形结构,join是不必须的,所以对join的支持也差.</li>
+</ul></li>
+<li>如果数据库不支持join,那么就需要application code来"模拟"join:
+<ul class="org-ul">
+<li>多次请求数据库的其他table</li>
+<li>把其他table的数据放在内存里面</li>
+<li>然后根据条件进行选取</li>
+</ul></li>
+<li>通常情况下,即便applicaiton在第一个版本的时候,非常适合join-free的document model,在后面的迭代中,
+随着特性被添加到applicaiton,数据之间的联系会更加紧密,比如下面两个新特性:
+<ul class="org-ul">
+<li>前面的resume例子中,organization和school_name都是字符串,如果我们想把这些都改成实体引用呢?每个
+组织,每个大学都可以有自己的网页.resume上面的链接可以转到相应的组织和学校</li>
+<li>假设一个用户可以给另外一个用户写推荐信,我们可以在resume页面看到其他人给这个人写的推荐信,并且
+看到这个人的头像,如果这个人头像更新,我们看到的头像图片也要更新</li>
+</ul></li>
+<li>如图
+<ul class="org-ul">
+<li><p>
+图2-4
+</p>
+
+<div id="orgf9fdef7" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ddia/2-4.png" alt="2-4.png" />
+</p>
+<p><span class="figure-number">Figure 8: </span>ddia/2-4.png</p>
+</div></li>
+<li>上图描述了新feature如何要求many-to-many relationship</li>
+<li>虚线内的数据可以组成一个document</li>
+<li>对organization,school和其他user的应用可以表示为reference,并且在查询的时候需要join</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgf67b7ad" class="outline-4">
+<h4 id="orgf67b7ad"><span class="section-number-4">2.1.4</span> Are Document Databases Repeating History?</h4>
+<div class="outline-text-4" id="text-2-1-4">
+<ul class="org-ul">
+<li>最早最受欢迎的数据库是IBM的hierarchical model(层次模型),这个model和json有点类似:
+<ul class="org-ul">
+<li>这个model会以tree of record的形式存储数据</li>
+<li>这个model对于one-to-many的relationship处理的很好</li>
+<li>但由于不支持join,这个model无法处理many-to-many的relationship</li>
+</ul></li>
+<li>鉴于hierarchial model的特点,当时的开发人员不得不决定如何处理duplication:
+<ul class="org-ul">
+<li>要么重复data (denormalize)</li>
+<li>手动解决一个记录到另一个记录的引用(application code模仿join)</li>
+</ul></li>
+<li>当时开发人员面临的困境和我们类似,当时出现了如下两种model:
+<ul class="org-ul">
+<li>network model</li>
+<li>relational model(最终获胜)</li>
+</ul></li>
+</ul>
+</div>
+<ol class="org-ol">
+<li><a id="orga16923d"></a>The network model<br />
+<div class="outline-text-5" id="text-2-1-4-1">
+<ul class="org-ul">
+<li>network model由CODASYL委员会标准化,也被称之为CODASYL model</li>
+<li>CODASYL model是对层次模型的一种改进:
+<ul class="org-ul">
+<li>在层次模型里面,每个record只有一个parent</li>
+<li>在network model里面,每个record可以有多个parent, 这就允许了many-to-one和many-to-many关系</li>
+</ul></li>
+<li>这里的record之间的link不是外键,而更像是c语言里面的pointer,只有一种方式找到一个record:
+<ul class="org-ul">
+<li>从root record开始,follow整个link,到达某个record. 这个叫做access path</li>
+</ul></li>
+<li>network model虽然解决了many-to-many的问题,但是由于其设计的原因,一旦出现many-to-many关系,每个
+record都会有多种path到达,那么这些path就需要程序开发人员自己进行track. 这是network model无法解
+决的痛点</li>
+</ul>
+</div>
+</li>
+<li><a id="org6a2e637"></a>The relational model<br />
+<div class="outline-text-5" id="text-2-1-4-2">
+<ul class="org-ul">
+<li>相比之下,relational model就是把所有的数据都公开的放置:
+<ul class="org-ul">
+<li>一个table就是一些row的collection</li>
+<li>没有复杂的嵌套结构</li>
+<li>如果想要查找数据,也没有复杂的access path</li>
+<li>插入数据不用担心和其他表的外键关系</li>
+</ul></li>
+<li>在关系型数据库里面,是由query optimizer自动决定:
+<ul class="org-ul">
+<li>哪些query以什么样的顺序进行执行</li>
+<li>查询使用哪个索引</li>
+</ul></li>
+<li>上面的操作其实就类似access path的作用,但是不同点在于:
+<ul class="org-ul">
+<li>relational model是由query optimizer来自动做出决定,而且query optimizer会随着数据库的升级而升
+级,能力会提高,但是我们不需要改动application代码</li>
+<li>network model是要application 代码来实现access path的作用,其通用性太低</li>
+</ul></li>
+</ul>
+</div>
+</li>
+<li><a id="orgd5a1f17"></a>Comparison to document databases<br />
+<div class="outline-text-5" id="text-2-1-4-3">
+<ul class="org-ul">
+<li>document database和层次模型比较起来:
+<ul class="org-ul">
+<li>相同点是:使用嵌套的方式,在parent record存储数据(one-to-many relationship), 而不是像relational
+model一样,存在单独的表中</li>
+<li>不同点是:document database没有再使用CODASYL的access path来处理many-to-one和many-to-many relationship,
+而是使用了document reference.所谓document reference其实就是一种unique id,而relational model
+的foreign key其实本质上也是一种unique id</li>
+</ul></li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div id="outline-container-org70374d6" class="outline-4">
+<h4 id="org70374d6"><span class="section-number-4">2.1.5</span> Relational Versus Document Databases Today</h4>
+<div class="outline-text-4" id="text-2-1-5">
+<ul class="org-ul">
+<li>选择document data model的原因有:
+<ul class="org-ul">
+<li>schema flexibility</li>
+<li>locality带来的良好性能</li>
+<li>更适合当前application的数据结构(nested structure)</li>
+</ul></li>
+<li>选择relational model的原因有:
+<ul class="org-ul">
+<li>join支持好</li>
+<li>many-to-one和many-to-many relationship支持的更好</li>
+</ul></li>
+</ul>
+</div>
+<ol class="org-ol">
+<li><a id="org6a67680"></a>Which data model leads to simpler applicaiton code?<br />
+<div class="outline-text-5" id="text-2-1-5-1">
+<ul class="org-ul">
+<li>如果你的数据有document-like的结构(比如是一个tree of one-to-many-relationship):
+<ul class="org-ul">
+<li>那么使用document model是一个好主意</li>
+<li>这种情况下使用relational model会产生出非常多的table,非常臃肿的schema和非常复杂的application
+code</li>
+</ul></li>
+<li><p>
+document model有其limitation: 你无法直接refer一个在document里面的nested item,你必须使用如下的
+逻辑来指定一个item(非常类似access path)
+</p>
+<pre class="example" id="org2e83459">
+The second item in the list of positions for user 251
+</pre></li>
+<li>document database对于join的支持很弱,但是有些application可能压根用不到many-to-many relationship,
+比如, 记录哪些event在何时发生的analytics applicaiton</li>
+<li>如果你的application code的确使用了many-to-many relationship,那么document model就没有那么吸引
+人了.</li>
+<li>如果可以denormalizing,那么document model还是可以处理many-to-many的relationship,但是问题就是维
+护denormalized data consistent的责任,落给了application code</li>
+<li>也可以不denormalized data,转而使用application code模拟join(通过发送多次request给database),同样
+的比起数据库内部专业的join, application code实现的join肯定是不高效且复杂的</li>
+<li>对于highly interconnected data:
+<ul class="org-ul">
+<li>document model是难以应付的</li>
+<li>relational model是可以应付的</li>
+<li>graph model是最合适的</li>
+</ul></li>
+</ul>
+</div>
+</li>
+<li><a id="orgda38900"></a>Schema flexibility in the document model<br />
+<div class="outline-text-5" id="text-2-1-5-2">
+<ul class="org-ul">
+<li>大多数document database,还有relational database里面的JSON支持,对data都没有施加任何的schema</li>
+<li>没有schema意味着任意的key和value都可以加入到document,所以读取的时候client无法确保自己得到的一
+定是某种类型的数据</li>
+<li>把document database叫做schemaless是准确的,其实document database的data也是有schema的,只不过database
+不会enforce</li>
+<li>所以,把document database叫做schema-on-read(读取的时候,使用方负责解释schema)更为准确</li>
+<li>对应的,relational database叫做schema-one-write(写入的时候,就要数据库来保证schema的正确性)</li>
+<li>和编程语言对比的话:
+<ul class="org-ul">
+<li>shcema-on-read类似动态编程语言(dynamic type checking language)</li>
+<li>schema-on-write类似静态编程语言(compile-time type checking language)</li>
+</ul></li>
+<li>schema-on-read和schema-one-write的区别在application希望改动的时候体现的更加明显,假设之前我们的
+应用存储的是应用的full name,有一天我们想把name分成first name和last name来存储:
+<ul class="org-ul">
+<li><p>
+对于document database来说,你的新document直接把name分成first name和last name来存储,然后由
+application code来处理历史遗留问题
+</p>
+<div class="org-src-container">
+<pre class="src src-js"><span style="color: #D70000;">if</span> <span style="color: #1F55A0;">(</span>user &amp;&amp; user.name &amp;&amp; !user.first_name<span style="color: #1F55A0;">)</span> <span style="color: #1F55A0;">{</span>
+  <span style="color: #4E4E4E; font-style: italic;">// </span><span style="color: #4E4E4E; font-style: italic;">Documents written before De 8, 2013 don't have first_name</span>
+  user.first_name = user.name.split<span style="color: #AF005F;">(</span><span style="color: #005F00;">" "</span><span style="color: #AF005F;">)[</span>0<span style="color: #AF005F;">]</span>;
+<span style="color: #1F55A0;">}</span>
+</pre>
+</div></li>
+<li><p>
+对于relational database来说,你需要修改schema,然后需要实施如下的migration(mysql)
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span style="color: #D70000;">ALTER</span> <span style="color: #D70000;">TABLE</span> <span style="color: #AF8700;">users</span> <span style="color: #D70000;">AND</span> <span style="color: #D70000;">COLUMN</span> first_name text;
+<span style="color: #D70000;">UPDATE</span> users <span style="color: #D70000;">SET</span> first_name = substring_index<span style="color: #1F55A0;">(</span><span style="color: #D70000;">name</span>, <span style="color: #005F00;">' '</span>, 1<span style="color: #1F55A0;">)</span>;
+</pre>
+</div></li>
+</ul></li>
+<li>relational database的schema change(ALTER)名声不太好:
+<ul class="org-ul">
+<li>ALTER操作时间太长,mysql的alter时间尤其长,因为mysql会在alter的时候把整个table给copy下来</li>
+<li>ALTER需要停机</li>
+</ul></li>
+<li>relational database完成ALTER之后,还要进行UPDATE,所有数据库进行UPDATE的时间都很长,因为所有的row
+都要更新</li>
+<li>如果表太大接受不了全部更新,那么我们新的column first_name里面老的数据的值都是默认值NULL,我们可
+以在读取这个field的时候,给数据库相关field赋上值</li>
+<li>如果collection的每个item由于各种原因,其内容可以不完全一致,那么schema-on-read approach就非常有
+优势了. 几种可能的原因如下:
+<ul class="org-ul">
+<li>有很多种不同类型的object,每个类型的object都创建一个table不太现实</li>
+<li>数据的structure是由external system决定的,当前application只能接受每个item的内容可能不一致</li>
+</ul></li>
+</ul>
+</div>
+</li>
+<li><a id="org9abfd43"></a>Data locality for queries<br />
+<div class="outline-text-5" id="text-2-1-5-3">
+<ul class="org-ul">
+<li>document存储方法是把字符串encoding成如下类型
+<ul class="org-ul">
+<li>JSON, XML(字符串编码)</li>
+<li>BSON(二进制编码)</li>
+</ul></li>
+<li>如果你的应用经常需要访问整个document,那么这种存储方式就会有performance advantage:
+<ul class="org-ul">
+<li>如果数据被分成多个table,那么要凑成一个document的话,需要多次查询(在index的帮助下),会涉及多次硬盘搜索</li>
+</ul></li>
+<li>locality advantage只有在你在同时需要document的绝大部分内容的时候有效:
+<ul class="org-ul">
+<li>因为数据库每次都会把整个document给load进内存,哪怕你每次只是访问其中的一小部分.</li>
+</ul></li>
+<li>document更新的时候,哪怕是document的一小部分更新,也会update整个document,这就意味着:
+<ul class="org-ul">
+<li>你的更改最好不要让整个document的体积增大,否则可能会要触发重新分配地址</li>
+</ul></li>
+<li>总结起来,就是要求一旦使用document database:
+<ul class="org-ul">
+<li>每个document必须足够小</li>
+<li>每次更新最好不要让document的提交增大</li>
+</ul></li>
+<li>上述两个要求,让document database的使用场景急剧减少</li>
+<li>需要注意的是,把相关联的data放在一起(locality)不仅仅局限在document model:
+<ul class="org-ul">
+<li>Google的Spanner database提供了同样的locality properties: 通过运行schema来声明table的row必须nested在一个parent table内部</li>
+<li>Oracle的multi-table index cluster table</li>
+<li>Bigtable data model的column-family concept</li>
+</ul></li>
+</ul>
+</div>
+</li>
+<li><a id="org23cd494"></a>Convergence of document and relational databases<br />
+<div class="outline-text-5" id="text-2-1-5-4">
+<ul class="org-ul">
+<li>关系型数据库方面,增加了很多功能,能让关系型数据库使用者体验document database的一些功能
+<ul class="org-ul">
+<li>绝大多数的关系型数据库(除了MySQL),都在2000年左右,支持了XML,这种支持包括:
+<ol class="org-ol">
+<li>能够部分的更改XML的function</li>
+<li>能够查询和索引XML内部的document</li>
+</ol></li>
+<li>PostgreSQL,MySQL,IBM DB2在最近也都添加了JSON document的支持</li>
+</ul></li>
+<li>document数据库方面:
+<ul class="org-ul">
+<li>RethinkDB支持ralational-like join</li>
+<li>某些MongoDB driver支持自动解析数据库ref</li>
+</ul></li>
+<li>总体看来,关系型数据库和document数据库彼此之间越来越像.也是未来数据库发展的趋势.</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org81b5164" class="outline-3">
+<h3 id="org81b5164"><span class="section-number-3">2.2</span> Query Languages for Data</h3>
+<div class="outline-text-3" id="text-2-2">
+<ul class="org-ul">
+<li>和关系型数据库一同有引入的,还有查询数据的新方式:SQL</li>
+<li>说SQL是新方式,原因在于SQL是一种declarative(宣言的) query language:
+<ul class="org-ul">
+<li>而IMS和CODASYL则是使用imperative(强制的)代码.</li>
+</ul></li>
+<li><p>
+imperative这个词,经常用来形容编程语言,因为编程需要需要你来强制的告诉我,唯一的做法是什么,比如我们
+想返回某种类别动物的数量,我们可以这样写
+</p>
+<div class="org-src-container">
+<pre class="src src-js">func getSharks<span style="color: #1F55A0;">()</span> <span style="color: #1F55A0;">{</span>
+  <span style="color: #D70000;">var</span> <span style="color: #004651;">sharks</span> = <span style="color: #AF005F;">[]</span>;
+  <span style="color: #D70000;">for</span> <span style="color: #AF005F;">(</span><span style="color: #D70000;">var</span> <span style="color: #004651;">i</span> = 0; i &lt; animals.length; i++<span style="color: #AF005F;">)</span> <span style="color: #AF005F;">{</span>
+    <span style="color: #D70000;">if</span> <span style="color: #005F00;">(</span>animals<span style="color: #8700AF;">[</span>i<span style="color: #8700AF;">]</span>.family === <span style="color: #005F00;">"Sharks"</span><span style="color: #005F00;">)</span> <span style="color: #005F00;">{</span>
+      sharks.push<span style="color: #8700AF;">(</span>animials<span style="color: #009B7C;">[</span>i<span style="color: #009B7C;">]</span><span style="color: #8700AF;">)</span>
+    <span style="color: #005F00;">}</span>
+  <span style="color: #AF005F;">}</span>
+  <span style="color: #D70000;">return</span> sharks;
+<span style="color: #1F55A0;">}</span>
+</pre>
+</div></li>
+<li><p>
+而在ralational数据库领域,你不需要罗列获取过程,只需要从定性上规定下你需要的东西,具体取的过程由engine
+来负责,从数学原理上,其实就是如下等式
+</p>
+\begin{equation}
+sharks = \sigma_{family = ''Sharks''^{(animals)}}
+\end{equation}</li>
+<li><p>
+将上述的数学公式转化为一个declarative的编程语言SQL后的结果如下
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span style="color: #D70000;">SELECT</span> * <span style="color: #D70000;">FROM</span> animals <span style="color: #D70000;">WHERE</span> family = <span style="color: #005F00;">'Sharks'</span>;
+</pre>
+</div></li>
+<li>imperative language会告诉计算机以何种顺序,做特定的事情.在imperative编程语言中,这通常意味着如下
+类似的步骤:
+<ul class="org-ul">
+<li>从头运行程序</li>
+<li>分析condition</li>
+<li>更新变量</li>
+<li>是否在loop中再多运行一次</li>
+</ul></li>
+<li>而declarative语言(SQL),你只需要明确你想要的data的pattern(结果要满足什么要求,我想让结果以什么样
+式展现给我,是sorted,grouped还是aggregated),就可以了.而不需要告诉计算机如何做到这一点(全部由数据库
+的query optimizer来决定), 这是和imperative language完全不一样的地方.</li>
+<li>这样看来,declarative query language更加吸引人,因为它有如下的优点:
+<ul class="org-ul">
+<li>更加简洁,更容易合作</li>
+<li>隐藏了数据库的实现细节,以后数据库更新,不需要更新代码就能获得性能提升</li>
+</ul></li>
+<li>我们举个例子来看下declarative的"通过升级,能够不断提高代码效率并且向后兼容"这个优点:
+<ul class="org-ul">
+<li>在imperative代码的例子中,我们获得了某个种类动物的list,这个list是有顺序的.某个时间点,如果数据库
+想利用剩余空间,会把数据移动到其他地方,那么有可能返回的数据总量不变,但是顺序就不一样了</li>
+<li>反观declarative,由于其并没有承诺顺序(得加order by才是承诺顺序),那么以什么顺序返回就不重要了,我
+们的query optimizer可以以任何的方式来提升我们的查询效率.</li>
+<li><p>
+SQL这种只给结果,不关注过程的做法,能够给数据库引擎以极大的自由度来做更加自动化的事情
+</p>
+<pre class="example" id="org314023d">
+The fact that SQL is more limited in functionality gives the database much
+more room for automatic optimizations.
+</pre></li>
+</ul></li>
+<li>还有一点优势就是,declarative language由于只指定了pattern of the result,其中的过程部门可以让query
+optimizer优化,优化的一个方向就是多线程.
+<ul class="org-ul">
+<li>而imperative language则特定难以利用多核,因为它指定了某些命令必须以某种order运行</li>
+</ul></li>
+</ul>
+</div>
+<div id="outline-container-orgfaec064" class="outline-4">
+<h4 id="orgfaec064"><span class="section-number-4">2.2.1</span> Declarative Queries on the Web</h4>
+<div class="outline-text-4" id="text-2-2-1">
+<ul class="org-ul">
+<li>不仅仅是在database领域,在其他领域declarative language也是有优势的,比如web browser</li>
+<li><p>
+假设当前页面有很多个动物,用户正在看的动物是Sharks
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #AF8700;">ul</span>&gt;
+  &lt;<span style="color: #AF8700;">li</span> <span style="color: #004651;">class</span>=<span style="color: #005F00;">"selected"</span>&gt;
+    &lt;<span style="color: #AF8700;">p</span>&gt;Sharks&lt;/<span style="color: #AF8700;">p</span>&gt; &lt;<span style="color: #AF8700;">ul</span>&gt;
+      &lt;<span style="color: #AF8700;">li</span>&gt;Great White Shark&lt;/<span style="color: #AF8700;">li</span>&gt; &lt;<span style="color: #AF8700;">li</span>&gt;Tiger Shark&lt;/<span style="color: #AF8700;">li</span>&gt; &lt;<span style="color: #AF8700;">li</span>&gt;Hammerhead Shark&lt;/<span style="color: #AF8700;">li</span>&gt;
+  &lt;/<span style="color: #AF8700;">ul</span>&gt; &lt;/<span style="color: #AF8700;">li</span>&gt;
+  &lt;<span style="color: #AF8700;">li</span>&gt; &lt;<span style="color: #AF8700;">p</span>&gt;Whales&lt;/<span style="color: #AF8700;">p</span>&gt;
+    &lt;<span style="color: #AF8700;">ul</span>&gt;
+      &lt;<span style="color: #AF8700;">li</span>&gt;Blue Whale&lt;/<span style="color: #AF8700;">li</span>&gt; &lt;<span style="color: #AF8700;">li</span>&gt;Humpback Whale&lt;/<span style="color: #AF8700;">li</span>&gt; &lt;<span style="color: #AF8700;">li</span>&gt;Fin Whale&lt;/<span style="color: #AF8700;">li</span>&gt;
+  &lt;/<span style="color: #AF8700;">ul</span>&gt; &lt;/<span style="color: #AF8700;">li</span>&gt;
+&lt;/<span style="color: #AF8700;">ul</span>&gt;
+</pre>
+</div></li>
+<li><p>
+如果你想让当前正在看的page拥有blue background,那么使用css的话,代码如下
+</p>
+<div class="org-src-container">
+<pre class="src src-css"><span style="color: #1F55A0;">li.selected &gt; p </span><span style="color: #1F55A0;">{</span>
+    <span style="color: #005F00;">background-color</span>: <span style="color: #ffffff; background-color: #0000ff;">blue</span>;
+<span style="color: #1F55A0;">}</span>
+</pre>
+</div></li>
+<li>这段代码中,背景色对Sharks起作用,对Whales不起作用(因为没有selected class),所以做到了只对选中的
+动物给与背景蓝色</li>
+<li><p>
+如果我们不用declarative的css,而用imperative的Javascript,那么这段代码就会改写为
+</p>
+<div class="org-src-container">
+<pre class="src src-js"><span style="color: #D70000;">var</span> <span style="color: #004651;">liElements</span> = document.getElementsByTagName<span style="color: #1F55A0;">(</span><span style="color: #005F00;">"li"</span><span style="color: #1F55A0;">)</span>;
+<span style="color: #D70000;">for</span> <span style="color: #1F55A0;">(</span><span style="color: #D70000;">var</span> <span style="color: #004651;">i</span> = 0; i &lt; liElements.length; i++<span style="color: #1F55A0;">)</span> <span style="color: #1F55A0;">{</span>
+  <span style="color: #D70000;">if</span> <span style="color: #AF005F;">(</span>liElements<span style="color: #005F00;">[</span>i<span style="color: #005F00;">]</span>.className === <span style="color: #005F00;">"selected"</span><span style="color: #AF005F;">)</span> <span style="color: #AF005F;">{</span>
+    <span style="color: #D70000;">var</span> <span style="color: #004651;">children</span> = liElements<span style="color: #005F00;">[</span>i<span style="color: #005F00;">]</span>.childNodes;
+    <span style="color: #D70000;">for</span> <span style="color: #005F00;">(</span><span style="color: #D70000;">var</span> <span style="color: #004651;">j</span> = 0; j &lt; children.length; j++<span style="color: #005F00;">)</span> <span style="color: #005F00;">{</span>
+      <span style="color: #D70000;">var</span> <span style="color: #004651;">child</span> = children<span style="color: #8700AF;">[</span>j<span style="color: #8700AF;">]</span>;
+      <span style="color: #D70000;">if</span> <span style="color: #8700AF;">(</span>child.nodeType === Node.ELEMENT_NODE &amp;&amp; child.tagName === <span style="color: #005F00;">"P"</span><span style="color: #8700AF;">)</span> <span style="color: #8700AF;">{</span>
+        child.setAttribute<span style="color: #009B7C;">(</span><span style="color: #005F00;">"style"</span>, <span style="color: #005F00;">"background-color: blue"</span><span style="color: #009B7C;">)</span>;
+      <span style="color: #8700AF;">}</span>
+    <span style="color: #005F00;">}</span>
+  <span style="color: #AF005F;">}</span>
+<span style="color: #1F55A0;">}</span>
+</pre>
+</div></li>
+<li>相比于css,上面的js代码不仅臃肿,而且又一些严重的问题:
+<ul class="org-ul">
+<li>即便selected换成其他动物了,蓝色背景也不会取消.因为js不会动态检查selected的更改,只能一次加载</li>
+<li>如果你想把选取到需要改变颜色item的代码改成 ,
+那么你要重写代码,但是使用CSS的情况下,浏览器engine就可以自动更新代码</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgf66d430" class="outline-4">
+<h4 id="orgf66d430"><span class="section-number-4">2.2.2</span> MapReduce Querying</h4>
+</div>
+</div>
+<div id="outline-container-orgfa8baa3" class="outline-3">
+<h3 id="orgfa8baa3"><span class="section-number-3">2.3</span> Graph-Like Data Models</h3>
+<div class="outline-text-3" id="text-2-3">
+</div>
+<div id="outline-container-org57be090" class="outline-4">
+<h4 id="org57be090"><span class="section-number-4">2.3.1</span> Property Graphs</h4>
+</div>
+<div id="outline-container-org7cd1cfa" class="outline-4">
+<h4 id="org7cd1cfa"><span class="section-number-4">2.3.2</span> The Cypher Query Language</h4>
+</div>
+<div id="outline-container-orgc5ed6af" class="outline-4">
+<h4 id="orgc5ed6af"><span class="section-number-4">2.3.3</span> Graph Queries in SQL</h4>
+</div>
+<div id="outline-container-orgb390b69" class="outline-4">
+<h4 id="orgb390b69"><span class="section-number-4">2.3.4</span> Triple-Stores and SPARQL</h4>
+</div>
+<div id="outline-container-orgd1809c8" class="outline-4">
+<h4 id="orgd1809c8"><span class="section-number-4">2.3.5</span> THe Foundation: Datalog</h4>
+</div>
+</div>
+</div>
+<div id="outline-container-org720269a" class="outline-2">
+<h2 id="org720269a"><span class="section-number-2">3</span> Chapter 3: Storage and Retrieval</h2>
+<div class="outline-text-2" id="text-3">
 <ul class="org-ul">
 <li>对于一个数据库来说,其需要满足的最基本操作有两个:
 <ul class="org-ul">
@@ -333,31 +1602,31 @@
 </ul></li>
 </ul>
 </div>
-<div id="outline-container-orgcaef1e7" class="outline-3">
-<h3 id="orgcaef1e7"><span class="section-number-3">2.1</span> Data Structures That Power Your Database</h3>
-<div class="outline-text-3" id="text-2-1">
+<div id="outline-container-org7eacac4" class="outline-3">
+<h3 id="org7eacac4"><span class="section-number-3">3.1</span> Data Structures That Power Your Database</h3>
+<div class="outline-text-3" id="text-3-1">
 <ul class="org-ul">
 <li><p>
 我们可以自己实现一个最简单的数据库. 代码如下
 </p>
 <div class="org-src-container">
-<pre class="src src-sh"><span style="color: #a89984;">#</span><span style="color: #a89984;">!/bin/</span><span style="color: #9d0006;">bash</span>
+<pre class="src src-sh"><span style="color: #4E4E4E; font-style: italic;">#</span><span style="color: #4E4E4E; font-style: italic;">!/bin/</span><span style="color: #D70000;">bash</span>
 
-<span style="color: #b57614;">db_set</span> () {
-    <span style="color: #af3a03;">echo</span> <span style="color: #79740e;">"$1,$2"</span> &gt;&gt; database
-}
+<span style="color: #AF8700;">db_set</span> <span style="color: #1F55A0;">()</span> <span style="color: #1F55A0;">{</span>
+    <span style="color: #1F55A0;">echo</span> <span style="color: #005F00;">"$1,$2"</span> &gt;&gt; database
+<span style="color: #1F55A0;">}</span>
 
-<span style="color: #b57614;">db_get</span> () {
-    grep <span style="color: #79740e;">"^$1,"</span> database | sed -e <span style="color: #79740e;">"s/$1,//"</span> | tail -n 1
-}
+<span style="color: #AF8700;">db_get</span> <span style="color: #1F55A0;">()</span> <span style="color: #1F55A0;">{</span>
+    grep <span style="color: #005F00;">"^$1,"</span> database | sed -e <span style="color: #005F00;">"s/$1,//"</span> | tail -n 1
+<span style="color: #1F55A0;">}</span>
 
-<span style="color: #a89984;"># </span><span style="color: #a89984;">&lt;===================OUTPUT===================&gt;</span>
-<span style="color: #a89984;"># </span><span style="color: #a89984;">$ db_set 12345 '{"name": "London"}'</span>
-<span style="color: #a89984;"># </span><span style="color: #a89984;">(3ENV) [fenghaoran@fenghaorandeMacBook-Pro ~/tmp/ddia-code] 09:34:04</span>
-<span style="color: #a89984;"># </span><span style="color: #a89984;">$ db_set 42 '{"name": "San Francisco"}'</span>
-<span style="color: #a89984;"># </span><span style="color: #a89984;">(3ENV) [fenghaoran@fenghaorandeMacBook-Pro ~/tmp/ddia-code] 09:34:19</span>
-<span style="color: #a89984;"># </span><span style="color: #a89984;">$ db_get 42</span>
-<span style="color: #a89984;"># </span><span style="color: #a89984;">{"name": "San Francisco"}</span>
+<span style="color: #4E4E4E; font-style: italic;"># </span><span style="color: #4E4E4E; font-style: italic;">&lt;===================OUTPUT===================&gt;</span>
+<span style="color: #4E4E4E; font-style: italic;"># </span><span style="color: #4E4E4E; font-style: italic;">$ db_set 12345 '{"name": "London"}'</span>
+<span style="color: #4E4E4E; font-style: italic;"># </span><span style="color: #4E4E4E; font-style: italic;">(3ENV) [fenghaoran@fenghaorandeMacBook-Pro ~/tmp/ddia-code] 09:34:04</span>
+<span style="color: #4E4E4E; font-style: italic;"># </span><span style="color: #4E4E4E; font-style: italic;">$ db_set 42 '{"name": "San Francisco"}'</span>
+<span style="color: #4E4E4E; font-style: italic;"># </span><span style="color: #4E4E4E; font-style: italic;">(3ENV) [fenghaoran@fenghaorandeMacBook-Pro ~/tmp/ddia-code] 09:34:19</span>
+<span style="color: #4E4E4E; font-style: italic;"># </span><span style="color: #4E4E4E; font-style: italic;">$ db_get 42</span>
+<span style="color: #4E4E4E; font-style: italic;"># </span><span style="color: #4E4E4E; font-style: italic;">{"name": "San Francisco"}</span>
 </pre>
 </div></li>
 <li><p>
@@ -365,8 +1634,8 @@
 </p>
 <div class="org-src-container">
 <pre class="src src-sh">$ cat database
-12345,{<span style="color: #79740e;">"name"</span>: <span style="color: #79740e;">"London"</span>}
-42,{<span style="color: #79740e;">"name"</span>: <span style="color: #79740e;">"San Francisco"</span>}
+12345,<span style="color: #1F55A0;">{</span><span style="color: #005F00;">"name"</span>: <span style="color: #005F00;">"London"</span><span style="color: #1F55A0;">}</span>
+42,<span style="color: #1F55A0;">{</span><span style="color: #005F00;">"name"</span>: <span style="color: #005F00;">"San Francisco"</span><span style="color: #1F55A0;">}</span>
 </pre>
 </div></li>
 <li>看似简单,但是实际上很多数据库都会内部使用这种直接append到文件的方式,称之为log.这里的log和web服务
@@ -391,9 +1660,9 @@
 的index.</li>
 </ul>
 </div>
-<div id="outline-container-orgd732a7f" class="outline-4">
-<h4 id="orgd732a7f"><span class="section-number-4">2.1.1</span> Hash Indexes</h4>
-<div class="outline-text-4" id="text-2-1-1">
+<div id="outline-container-org5655337" class="outline-4">
+<h4 id="org5655337"><span class="section-number-4">3.1.1</span> Hash Indexes</h4>
+<div class="outline-text-4" id="text-3-1-1">
 <ul class="org-ul">
 <li>让我们来创建key-value数据的index.这种index比较简单,但也是常见情形,而且还是其他复杂index的building block</li>
 <li>key-value存储如果是存储在内存里面就相当于编程语言的dictionary.</li>
@@ -462,9 +1731,9 @@ hashmap来index我们硬盘上的数据</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org5dcd5b1" class="outline-4">
-<h4 id="org5dcd5b1"><span class="section-number-4">2.1.2</span> SSTables and LSM-Trees</h4>
-<div class="outline-text-4" id="text-2-1-2">
+<div id="outline-container-orgdd749bc" class="outline-4">
+<h4 id="orgdd749bc"><span class="section-number-4">3.1.2</span> SSTables and LSM-Trees</h4>
+<div class="outline-text-4" id="text-3-1-2">
 <ul class="org-ul">
 <li>每个log-structured的storage segment都是一串key-value的pair.这些pair是按照写入的顺序存储的,和key-value本身的值是没有关系的.</li>
 <li>我们现在在原来这个存储方法的基础上,我们做些更改,让我们的pair存储的顺序:
@@ -498,8 +1767,8 @@ hashmap来index我们硬盘上的数据</li>
 </ul>
 </div>
 <ol class="org-ol">
-<li><a id="org49454b1"></a>Constructing and maintaining SSTables<br />
-<div class="outline-text-5" id="text-2-1-2-1">
+<li><a id="org110cd4a"></a>Constructing and maintaining SSTables<br />
+<div class="outline-text-5" id="text-3-1-2-1">
 <ul class="org-ul">
 <li>我们已经介绍了SSTable的优点,那么下面我们来看看SSTable如何具体实现(主要就是如何把数据按照key的顺序存储)</li>
 <li>即便是在硬盘里面维护sorted structure是可行的(比如后面的B-Trees),那么在内存里面维护sorted structure
@@ -525,8 +1794,8 @@ hashmap来index我们硬盘上的数据</li>
 </ul>
 </div>
 </li>
-<li><a id="orgd178f1b"></a>Making an LSM-tree out of SSTable<br />
-<div class="outline-text-5" id="text-2-1-2-2">
+<li><a id="org9284376"></a>Making an LSM-tree out of SSTable<br />
+<div class="outline-text-5" id="text-3-1-2-2">
 <ul class="org-ul">
 <li>目前为止我们介绍的算法,是LevelDB和RocksDB所使用的key-value 存储引擎库,他们主要的目的是和其他application一起使用</li>
 <li>Cassandra和HBase也使用了类似的存储引擎,他们的灵感都来自于Google的Bigtable论文</li>
@@ -539,8 +1808,8 @@ term,希望得到一个包含term的文章列表)</li>
 </ul>
 </div>
 </li>
-<li><a id="orgc8b645a"></a>Performance optimizations<br />
-<div class="outline-text-5" id="text-2-1-2-3">
+<li><a id="org0871599"></a>Performance optimizations<br />
+<div class="outline-text-5" id="text-3-1-2-3">
 <ul class="org-ul">
 <li>在实践中,会有非常多的细节,来保证存储引擎的表现,比如LSM-tree算法的一个问题是,(在没有内存index的
 情况下)如果一个key不再数据库里面,那么查找这个key,并验证其不存在的过程就非常的复杂:
@@ -569,9 +1838,9 @@ term,希望得到一个包含term的文章列表)</li>
 </li>
 </ol>
 </div>
-<div id="outline-container-org2c60135" class="outline-4">
-<h4 id="org2c60135"><span class="section-number-4">2.1.3</span> B-Trees</h4>
-<div class="outline-text-4" id="text-2-1-3">
+<div id="outline-container-org266a7be" class="outline-4">
+<h4 id="org266a7be"><span class="section-number-4">3.1.3</span> B-Trees</h4>
+<div class="outline-text-4" id="text-3-1-3">
 <ul class="org-ul">
 <li>之前我们讨论的log-structured index看起来已经比较完善了,但是这种模式却不是最common的index类型,最
 common的index类型是B-tree, 几乎所有的关系型数据库都使用B-tree作为默认引擎</li>
@@ -619,8 +1888,8 @@ fixed-size block</li>
 </ul>
 </div>
 <ol class="org-ol">
-<li><a id="org04b9fb5"></a>Making B-trees reliable<br />
-<div class="outline-text-5" id="text-2-1-3-1">
+<li><a id="org6432a76"></a>Making B-trees reliable<br />
+<div class="outline-text-5" id="text-3-1-3-1">
 <ul class="org-ul">
 <li>更新B-tree的最底层逻辑,是把新数据overwrite到disk上面,这个update不会更改page的location(即便split
 page也不会更改老的page ref的有效性),所有对这个page的reference都还是有效的</li>
@@ -640,8 +1909,8 @@ crash,那么我们可以使用这个log文件俩restore我们的B-tree结构</li
 </ul>
 </div>
 </li>
-<li><a id="orgea4feb3"></a>B-tree optimizations<br />
-<div class="outline-text-5" id="text-2-1-3-2">
+<li><a id="org01d9f6c"></a>B-tree optimizations<br />
+<div class="outline-text-5" id="text-3-1-3-2">
 <ul class="org-ul">
 <li>B-tree已经存在很长时间了,有很多在B-tree基础上的优化:
 <ul class="org-ul">
@@ -656,9 +1925,9 @@ key短了,那么一个page存储的key多了,树的高度就矮了,查询就快�
 </li>
 </ol>
 </div>
-<div id="outline-container-org7ecdf09" class="outline-4">
-<h4 id="org7ecdf09"><span class="section-number-4">2.1.4</span> Comparing B-Trees and LSM-Trees</h4>
-<div class="outline-text-4" id="text-2-1-4">
+<div id="outline-container-orgee457be" class="outline-4">
+<h4 id="orgee457be"><span class="section-number-4">3.1.4</span> Comparing B-Trees and LSM-Trees</h4>
+<div class="outline-text-4" id="text-3-1-4">
 <ul class="org-ul">
 <li>从读写这个角度上来说:
 <ul class="org-ul">
@@ -668,8 +1937,8 @@ key短了,那么一个page存储的key多了,树的高度就矮了,查询就快�
 </ul>
 </div>
 <ol class="org-ol">
-<li><a id="org06111ad"></a>Advantages of LSM-trees<br />
-<div class="outline-text-5" id="text-2-1-4-1">
+<li><a id="org82b41f8"></a>Advantages of LSM-trees<br />
+<div class="outline-text-5" id="text-3-1-4-1">
 <ul class="org-ul">
 <li>B-tree index每次写入data的时候,都最少要写两次:
 <ul class="org-ul">
@@ -699,8 +1968,8 @@ key短了,那么一个page存储的key多了,树的高度就矮了,查询就快�
 </ul>
 </div>
 </li>
-<li><a id="orgf91f2eb"></a>Downsides of LSM-trees<br />
-<div class="outline-text-5" id="text-2-1-4-2">
+<li><a id="orge2986f7"></a>Downsides of LSM-trees<br />
+<div class="outline-text-5" id="text-3-1-4-2">
 <ul class="org-ul">
 <li>log-structured 的第一缺点,就是compaction process会影响正在进行的读写.</li>
 <li>这个影响是比较难以理解的,因为我们的storage engine:
@@ -734,9 +2003,9 @@ write所能使用的带宽数目,逐渐下降</li>
 </li>
 </ol>
 </div>
-<div id="outline-container-orgfb0e898" class="outline-4">
-<h4 id="orgfb0e898"><span class="section-number-4">2.1.5</span> Other Indexing Structures</h4>
-<div class="outline-text-4" id="text-2-1-5">
+<div id="outline-container-orgf8d5855" class="outline-4">
+<h4 id="orgf8d5855"><span class="section-number-4">3.1.5</span> Other Indexing Structures</h4>
+<div class="outline-text-4" id="text-3-1-5">
 <ul class="org-ul">
 <li>目前为止,我们讨论的都只是key-value index,key-value index很像关系型数据库的主键.关系型数据库中的主键,可以唯一定位
 数据库中的某一行.数据库中的record可以凭借主键来refer 其他record</li>
@@ -754,8 +2023,8 @@ posts table里面的user_id可能有很多record都是一个值</li>
 </ul>
 </div>
 <ol class="org-ol">
-<li><a id="org58e6adf"></a>Storing values within the index<br />
-<div class="outline-text-5" id="text-2-1-5-1">
+<li><a id="org5ab670d"></a>Storing values within the index<br />
+<div class="outline-text-5" id="text-3-1-5-1">
 <ul class="org-ul">
 <li>index中的key就是我们搜索的东西,但是index的value却可以是多种不同的东西:
 <ul class="org-ul">
@@ -801,8 +2070,8 @@ index的那个row,直接存储在index的value里面.这就是所谓的clustered
 </ul>
 </div>
 </li>
-<li><a id="org4d356eb"></a>Multi-column indexes<br />
-<div class="outline-text-5" id="text-2-1-5-2">
+<li><a id="orgd285cb3"></a>Multi-column indexes<br />
+<div class="outline-text-5" id="text-3-1-5-2">
 <ul class="org-ul">
 <li>当前的讨论局限在map一个key到一个value.如果我们想搜索一个table的多个column的时候,仅仅靠这一种index是不够的,
 最高效的方法是需要组合索引(concatenated index)</li>
@@ -822,7 +2091,7 @@ index的那个row,直接存储在index的value里面.这就是所谓的clustered
 但是这个同时查找的时候,必须是`=`,如下
 </p>
 <div class="org-src-container">
-<pre class="src src-sql"><span style="color: #9d0006;">SELECT</span> * <span style="color: #9d0006;">FROM</span> phone_book <span style="color: #9d0006;">WHERE</span> first_name=<span style="color: #79740e;">'hello'</span> <span style="color: #9d0006;">AND</span> last_name=<span style="color: #79740e;">'world'</span>;
+<pre class="src src-sql"><span style="color: #D70000;">SELECT</span> * <span style="color: #D70000;">FROM</span> phone_book <span style="color: #D70000;">WHERE</span> first_name=<span style="color: #005F00;">'hello'</span> <span style="color: #D70000;">AND</span> last_name=<span style="color: #005F00;">'world'</span>;
 </pre>
 </div></li>
 <li><p>
@@ -830,8 +2099,8 @@ index的那个row,直接存储在index的value里面.这就是所谓的clustered
 如下
 </p>
 <div class="org-src-container">
-<pre class="src src-sql"><span style="color: #9d0006;">SELECT</span> * <span style="color: #9d0006;">FROM</span> restaurants <span style="color: #9d0006;">WHERE</span> latitude &gt; 51.4946 <span style="color: #9d0006;">AND</span> latitude &lt; 51.5079
-                                <span style="color: #9d0006;">AND</span> longitude &gt; -0.1162 <span style="color: #9d0006;">AND</span> longitude &lt; -0.1004;
+<pre class="src src-sql"><span style="color: #D70000;">SELECT</span> * <span style="color: #D70000;">FROM</span> restaurants <span style="color: #D70000;">WHERE</span> latitude &gt; 51.4946 <span style="color: #D70000;">AND</span> latitude &lt; 51.5079
+                                <span style="color: #D70000;">AND</span> longitude &gt; -0.1162 <span style="color: #D70000;">AND</span> longitude &lt; -0.1004;
 
 </pre>
 </div></li>
@@ -841,8 +2110,8 @@ index的那个row,直接存储在index的value里面.这就是所谓的clustered
 </ul>
 </div>
 </li>
-<li><a id="orgc8992c0"></a>Full-text search and fuzy indexes<br />
-<div class="outline-text-5" id="text-2-1-5-3">
+<li><a id="org49e1af1"></a>Full-text search and fuzy indexes<br />
+<div class="outline-text-5" id="text-3-1-5-3">
 <ul class="org-ul">
 <li>到目前为止,所有的index都默认你有exact data,或者range of data,然后才能利用index的威力.</li>
 <li>但是这些index面对非exact data的情况,比如misspelled word的情况,就没有办法了.这种fuzzy querying
@@ -861,8 +2130,8 @@ index的那个row,直接存储在index的value里面.这就是所谓的clustered
 </ul>
 </div>
 </li>
-<li><a id="org3734169"></a>Keeping everything in memory<br />
-<div class="outline-text-5" id="text-2-1-5-4">
+<li><a id="org84f811c"></a>Keeping everything in memory<br />
+<div class="outline-text-5" id="text-3-1-5-4">
 <ul class="org-ul">
 <li>随着内存价格的降低,我们有望把所有的数据放入内存,也就是in-memory database技术的诞生</li>
 <li>in-memory database相对于disk-based database的优势:
@@ -875,9 +2144,9 @@ index的那个row,直接存储在index的value里面.这就是所谓的clustered
 </li>
 </ol>
 </div>
-<div id="outline-container-org8055909" class="outline-4">
-<h4 id="org8055909"><span class="section-number-4">2.1.6</span> Transaction Processing or Analytics?</h4>
-<div class="outline-text-4" id="text-2-1-6">
+<div id="outline-container-orgfa65dda" class="outline-4">
+<h4 id="orgfa65dda"><span class="section-number-4">3.1.6</span> Transaction Processing or Analytics?</h4>
+<div class="outline-text-4" id="text-3-1-6">
 <ul class="org-ul">
 <li>在数据库的早期,一个对database的写入,就和一个商业事务(commercial transaction)没有什么区别,我们
 可以列举下早期数据库都有什么操作:
@@ -890,7 +2159,7 @@ index的那个row,直接存储在index的value里面.这就是所谓的clustered
 但是随着数据的领域慢慢的不再完全是和钱打交道的场景,我们的transation这个词开始代表一组读和写,而
 且这组读和写能组成一个逻辑实体
 </p>
-<pre class="example" id="org3861726">
+<pre class="example" id="orgb6bd0e1">
 The term transaction begin to refer to a group of reads and writes that form a logical unit
 </pre></li>
 <li>虽然当前的数据库被应用到了不同的领域,但是基本的access pattern和处理business transaction的时候是
@@ -974,9 +2243,9 @@ OLAP: online analytic processing</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org8cc3115" class="outline-4">
-<h4 id="org8cc3115"><span class="section-number-4">2.1.7</span> Data Warehousing</h4>
-<div class="outline-text-4" id="text-2-1-7">
+<div id="outline-container-orgb7406d1" class="outline-4">
+<h4 id="orgb7406d1"><span class="section-number-4">3.1.7</span> Data Warehousing</h4>
+<div class="outline-text-4" id="text-3-1-7">
 <ul class="org-ul">
 <li>一个公司里面的事务性处理系统会分成好几个:每个这种系统都和其他彼此保持独立</li>
 <li>而且这种OLTP系统需要高可用性,并且让事务处理获得低延时,这些对业务开展很重要.这也就意味着这些数据
@@ -996,8 +2265,8 @@ readonly的copy</li>
 </ul>
 </div>
 <ol class="org-ol">
-<li><a id="orgacb68e5"></a>The divergence between OLTP databases and data warehouses<br />
-<div class="outline-text-5" id="text-2-1-7-1">
+<li><a id="orgbea3b17"></a>The divergence between OLTP databases and data warehouses<br />
+<div class="outline-text-5" id="text-3-1-7-1">
 <ul class="org-ul">
 <li>数据仓库的data model也大部分是relational的,所以SQL也是非常适应analytic query的</li>
 <li>由于都是用了SQL,所以在表面上看数据仓库和传统数据库看起来是很像的.但是这两者的内部系统设计却完全不一样:
@@ -1030,9 +2299,9 @@ readonly的copy</li>
 </li>
 </ol>
 </div>
-<div id="outline-container-orgf68ce45" class="outline-4">
-<h4 id="orgf68ce45"><span class="section-number-4">2.1.8</span> Stars and Snowflakes: Schemas for Analytics</h4>
-<div class="outline-text-4" id="text-2-1-8">
+<div id="outline-container-org4c8779f" class="outline-4">
+<h4 id="org4c8779f"><span class="section-number-4">3.1.8</span> Stars and Snowflakes: Schemas for Analytics</h4>
+<div class="outline-text-4" id="text-3-1-8">
 <ul class="org-ul">
 <li>在transaction processing(OLTP)领域里,有非常多的data model,来应对不同特点的数据</li>
 <li>相反,在OLAP领域里面,则没有那么多的data model,绝大多数数据仓库都是使用的star scma,也叫做dimensional
@@ -1071,9 +2340,9 @@ table 所围绕.而这些dimension tables和fact table之间用线联系起来,�
 </div>
 </div>
 </div>
-<div id="outline-container-orgae815a3" class="outline-3">
-<h3 id="orgae815a3"><span class="section-number-3">2.2</span> Column-Oriented Storage</h3>
-<div class="outline-text-3" id="text-2-2">
+<div id="outline-container-org1cf5d3c" class="outline-3">
+<h3 id="org1cf5d3c"><span class="section-number-3">3.2</span> Column-Oriented Storage</h3>
+<div class="outline-text-3" id="text-3-2">
 <ul class="org-ul">
 <li>如果你有十亿行数据,并且有PT级别的数据,那么存储并且有效的查询这些数据就变得非常有挑战性:
 <ul class="org-ul">
@@ -1087,16 +2356,16 @@ table 所围绕.而这些dimension tables和fact table之间用线联系起来,�
 下面就是一个典型的分析的SQL: 用来分析,根据是否是周末,用户更倾向于购买新鲜的蔬菜还是蛋糕
 </p>
 <div class="org-src-container">
-<pre class="src src-sql"><span style="color: #9d0006;">SELECT</span>
+<pre class="src src-sql"><span style="color: #D70000;">SELECT</span>
         dim_date.weekday, dim_product.category,
-        <span style="color: #af3a03;">SUM</span>(fact_sales.quantity) <span style="color: #9d0006;">AS</span> quantity_sold
-<span style="color: #9d0006;">FROM</span>
-        <span style="color: #9d0006;">JOIN</span> dim_date <span style="color: #9d0006;">ON</span> fact_sales.date_key = dim_date.date_key
-        <span style="color: #9d0006;">JOIN</span> dim_product <span style="color: #9d0006;">ON</span> fact_sales.product_sk = dim_product.product_sk
-<span style="color: #9d0006;">WHERE</span>
-        dim_date.<span style="color: #9d0006;">year</span> = 2013 <span style="color: #9d0006;">AND</span>
-        dim_product.category <span style="color: #9d0006;">IN</span> (<span style="color: #79740e;">'Fresh fruit'</span>, <span style="color: #79740e;">'Candy'</span>
-<span style="color: #9d0006;">GROUP</span> <span style="color: #9d0006;">BY</span>
+        <span style="color: #1F55A0;">SUM</span><span style="color: #1F55A0;">(</span>fact_sales.quantity<span style="color: #1F55A0;">)</span> <span style="color: #D70000;">AS</span> quantity_sold
+<span style="color: #D70000;">FROM</span>
+        <span style="color: #D70000;">JOIN</span> dim_date <span style="color: #D70000;">ON</span> fact_sales.date_key = dim_date.date_key
+        <span style="color: #D70000;">JOIN</span> dim_product <span style="color: #D70000;">ON</span> fact_sales.product_sk = dim_product.product_sk
+<span style="color: #D70000;">WHERE</span>
+        dim_date.<span style="color: #D70000;">year</span> = 2013 <span style="color: #D70000;">AND</span>
+        dim_product.category <span style="color: #D70000;">IN</span> <span style="color: #1F55A0;">(</span><span style="color: #005F00;">'Fresh fruit'</span>, <span style="color: #005F00;">'Candy'</span>
+<span style="color: #D70000;">GROUP</span> <span style="color: #D70000;">BY</span>
       dim_date.weekday, dim_product.category;
 </pre>
 </div></li>
@@ -1121,9 +2390,9 @@ table 所围绕.而这些dimension tables和fact table之间用线联系起来,�
 找到第26个成员,把他们合成一个内容</li>
 </ul>
 </div>
-<div id="outline-container-orga73e5b6" class="outline-4">
-<h4 id="orga73e5b6"><span class="section-number-4">2.2.1</span> Column Compression</h4>
-<div class="outline-text-4" id="text-2-2-1">
+<div id="outline-container-org3032a96" class="outline-4">
+<h4 id="org3032a96"><span class="section-number-4">3.2.1</span> Column Compression</h4>
+<div class="outline-text-4" id="text-3-2-1">
 <ul class="org-ul">
 <li>由于column file的特殊设计,我们还能够通过压缩来减少对硬盘的消耗</li>
 <li>我们以下图为例来介绍下bitmap encoding</li>
@@ -1149,8 +2418,8 @@ table 所围绕.而这些dimension tables和fact table之间用线联系起来,�
 </ul>
 </div>
 <ol class="org-ol">
-<li><a id="orge409275"></a>Memory bandwidth and vectorized processing<br />
-<div class="outline-text-5" id="text-2-2-1-1">
+<li><a id="org8949d14"></a>Memory bandwidth and vectorized processing<br />
+<div class="outline-text-5" id="text-3-2-1-1">
 <ul class="org-ul">
 <li>对于某些数据仓库来说,它需要scan over上百万行,这个时候的巨大的botteneck有:
 <ul class="org-ul">
@@ -1188,14 +2457,14 @@ table 所围绕.而这些dimension tables和fact table之间用线联系起来,�
 </ul>
 </div>
 </li>
-<li><a id="org6a83828"></a>Several different sort orders<br />
-<div class="outline-text-5" id="text-2-2-1-2">
+<li><a id="org73165b8"></a>Several different sort orders<br />
+<div class="outline-text-5" id="text-3-2-1-2">
 <ul class="org-ul">
 <li><p>
 数据仓库公司Vertica扩展了"给column-store存储"增加order的这个想法,Vertica的做法是增加多个order,
 由于column-store存储的特殊性,每个order都要存储一个副本.副本的增加还提高了安全性
 </p>
-<pre class="example" id="orgc74fdd6">
+<pre class="example" id="orgd4a9b12">
 Data needs to be replicated to multiple machines anyway, so that you
 don't lose data if one machine fails
 </pre></li>
@@ -1211,9 +2480,9 @@ don't lose data if one machine fails
 </li>
 </ol>
 </div>
-<div id="outline-container-orgc3294cc" class="outline-4">
-<h4 id="orgc3294cc"><span class="section-number-4">2.2.2</span> Writing to Column-Oriented Storage</h4>
-<div class="outline-text-4" id="text-2-2-2">
+<div id="outline-container-orgd7827de" class="outline-4">
+<h4 id="orgd7827de"><span class="section-number-4">3.2.2</span> Writing to Column-Oriented Storage</h4>
+<div class="outline-text-4" id="text-3-2-2">
 <ul class="org-ul">
 <li>Column-Oriented的种种优化,都能够提高系统的Read(查询),但是Column-Oriented系统的写就变得没有那么
 有优势</li>
@@ -1231,9 +2500,9 @@ don't lose data if one machine fails
 </ul>
 </div>
 </div>
-<div id="outline-container-org7f1c8ed" class="outline-4">
-<h4 id="org7f1c8ed"><span class="section-number-4">2.2.3</span> Aggregation: Data Cubes and Materialized Views</h4>
-<div class="outline-text-4" id="text-2-2-3">
+<div id="outline-container-org17354de" class="outline-4">
+<h4 id="org17354de"><span class="section-number-4">3.2.3</span> Aggregation: Data Cubes and Materialized Views</h4>
+<div class="outline-text-4" id="text-3-2-3">
 <ul class="org-ul">
 <li>并不是所有的data warehouse都是column store的:传统的row-oriented数据库和其他的架构也是可行的.但
 是column storage确实能够提高ad-hoc分析查询的速度,所以很多流行起来</li>
@@ -1264,9 +2533,9 @@ object,内容是一次查询的结果,只不过:
 </div>
 </div>
 </div>
-<div id="outline-container-org36228da" class="outline-2">
-<h2 id="org36228da"><span class="section-number-2">3</span> Chapter 4: Encoding and Evolution</h2>
-<div class="outline-text-2" id="text-3">
+<div id="outline-container-org2783c2b" class="outline-2">
+<h2 id="org2783c2b"><span class="section-number-2">4</span> Chapter 4: Encoding and Evolution</h2>
+<div class="outline-text-2" id="text-4">
 <ul class="org-ul">
 <li>Application最终都会随着时间而变化:
 <ul class="org-ul">
@@ -1317,9 +2586,9 @@ object,内容是一次查询的结果,只不过:
 </ul></li>
 </ul>
 </div>
-<div id="outline-container-org1b71f4f" class="outline-3">
-<h3 id="org1b71f4f"><span class="section-number-3">3.1</span> Formats for Encoding Data</h3>
-<div class="outline-text-3" id="text-3-1">
+<div id="outline-container-org10b0f45" class="outline-3">
+<h3 id="org10b0f45"><span class="section-number-3">4.1</span> Formats for Encoding Data</h3>
+<div class="outline-text-3" id="text-4-1">
 <ul class="org-ul">
 <li>程序至少会和两种不同形式的data进行工作:
 <ul class="org-ul">
@@ -1333,9 +2602,9 @@ object,内容是一次查询的结果,只不过:
 </ul></li>
 </ul>
 </div>
-<div id="outline-container-org972c9f3" class="outline-4">
-<h4 id="org972c9f3"><span class="section-number-4">3.1.1</span> Language-Specific Formats</h4>
-<div class="outline-text-4" id="text-3-1-1">
+<div id="outline-container-org273501d" class="outline-4">
+<h4 id="org273501d"><span class="section-number-4">4.1.1</span> Language-Specific Formats</h4>
+<div class="outline-text-4" id="text-4-1-1">
 <ul class="org-ul">
 <li>很多编程语言自己就带一套内置的encoding support,比如:
 <ul class="org-ul">
@@ -1354,9 +2623,9 @@ object,内容是一次查询的结果,只不过:
 </ul>
 </div>
 </div>
-<div id="outline-container-org965bb5f" class="outline-4">
-<h4 id="org965bb5f"><span class="section-number-4">3.1.2</span> JSON,XML,and Binary Variants</h4>
-<div class="outline-text-4" id="text-3-1-2">
+<div id="outline-container-orgd61062f" class="outline-4">
+<h4 id="orgd61062f"><span class="section-number-4">4.1.2</span> JSON,XML,and Binary Variants</h4>
+<div class="outline-text-4" id="text-4-1-2">
 <ul class="org-ul">
 <li>JSON和XML是最出名,最被广泛支持,也是最被广泛讨厌的编码方式</li>
 <li>XML比较啰嗦,且不必要的复杂</li>
@@ -1376,9 +2645,9 @@ a character encoding)</li>
 </div>
 </div>
 </div>
-<div id="outline-container-org1ff9b93" class="outline-2">
-<h2 id="org1ff9b93"><span class="section-number-2">4</span> Chapter 5: Replication</h2>
-<div class="outline-text-2" id="text-4">
+<div id="outline-container-orgf067bb5" class="outline-2">
+<h2 id="orgf067bb5"><span class="section-number-2">5</span> Chapter 5: Replication</h2>
+<div class="outline-text-2" id="text-5">
 <ul class="org-ul">
 <li>所谓replication,就是不听的拷贝同样的数据到一个网络上的多台机器,有如下原因导致你希望replicate data:
 <ul class="org-ul">
@@ -1406,17 +2675,17 @@ a character encoding)</li>
 <li>但是,在非研究领域的人,特别是很多developer一直assume数据库只有一个node,并且对replication有很多误解,本章会来解释这些问题</li>
 </ul>
 </div>
-<div id="outline-container-orgdb6956c" class="outline-3">
-<h3 id="orgdb6956c"><span class="section-number-3">4.1</span> Leaders and Followers</h3>
+<div id="outline-container-orge6fd3c6" class="outline-3">
+<h3 id="orge6fd3c6"><span class="section-number-3">5.1</span> Leaders and Followers</h3>
 </div>
 </div>
-<div id="outline-container-org3010fcf" class="outline-2">
-<h2 id="org3010fcf"><span class="section-number-2">5</span> Chapter 10: Batch Processing</h2>
+<div id="outline-container-orgb552493" class="outline-2">
+<h2 id="orgb552493"><span class="section-number-2">6</span> Chapter 10: Batch Processing</h2>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: harrifeng@outlook.com</p>
-<p class="date">Created: 2021-12-01 Wed 20:04</p>
+<p class="date">Created: 2022-01-10 Mon 14:07</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
