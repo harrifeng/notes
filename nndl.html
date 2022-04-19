@@ -1,0 +1,1261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2022-04-19 Tue 11:51 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>nndl</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="harrifeng@outlook.com" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/readtheorg.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/js/readtheorg.js"></script>
+<script type="text/javascript">
+// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
+<!--/*--><![CDATA[/*><!--*/
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+    /*]]>*///-->
+// @license-end
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">nndl</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org53d7c97">1. 第一章 绪论</a>
+<ul>
+<li><a href="#org81fb44c">1.1. 人工智能</a>
+<ul>
+<li><a href="#org7d6992a">1.1.1. 人工智能发展历史</a></li>
+</ul>
+</li>
+<li><a href="#orgdbd48fb">1.2. 机器学习</a></li>
+<li><a href="#orga4a4608">1.3. 表示学习</a>
+<ul>
+<li><a href="#org8173493">1.3.1. 局部表示和分布式表示</a></li>
+<li><a href="#org246099f">1.3.2. 表示学习</a></li>
+</ul>
+</li>
+<li><a href="#orgdc387e7">1.4. 深度学习</a>
+<ul>
+<li><a href="#orga386d35">1.4.1. 端到端学习</a></li>
+</ul>
+</li>
+<li><a href="#org41298f7">1.5. 神经网络</a>
+<ul>
+<li><a href="#org31be8a7">1.5.1. 人脑神经网络</a></li>
+<li><a href="#org5823fc5">1.5.2. 人工神经网络</a></li>
+<li><a href="#orgb98a35b">1.5.3. 神经网络的发展历史</a></li>
+</ul>
+</li>
+<li><a href="#orgc953acb">1.6. 本书的知识体系</a></li>
+<li><a href="#org69ace8c">1.7. 常用的深度学习框架</a></li>
+</ul>
+</li>
+<li><a href="#orgf437917">2. 第二章 机器学习概述</a>
+<ul>
+<li><a href="#org2ca197c">2.1. 基本概念</a></li>
+<li><a href="#org9a7e8ea">2.2. 机器学习的三个基本要素</a>
+<ul>
+<li><a href="#org41961b2">2.2.1. 模型</a></li>
+<li><a href="#orgd2d43da">2.2.2. 学习准则</a></li>
+<li><a href="#org4977a13">2.2.3. 优化算法</a></li>
+</ul>
+</li>
+<li><a href="#orgae7ba43">2.3. 机器学习的简单示例&#x2013;线性回归</a>
+<ul>
+<li><a href="#orgc083204">2.3.1. 参数学习</a></li>
+</ul>
+</li>
+<li><a href="#orgbef96c8">2.4. 偏差-方差分解</a></li>
+<li><a href="#orgd1d5239">2.5. 机器学习算法的类型</a></li>
+<li><a href="#orgab135cb">2.6. 数据的特征表示</a>
+<ul>
+<li><a href="#org4fa33a6">2.6.1. 传统的特征学习</a></li>
+<li><a href="#orgeece735">2.6.2. 深度学习方法</a></li>
+</ul>
+</li>
+<li><a href="#orgda7e7ce">2.7. 评价指标</a></li>
+<li><a href="#org2d06d10">2.8. 理论和定理</a>
+<ul>
+<li><a href="#org6b8613e">2.8.1. PAC学习理论</a></li>
+<li><a href="#org0a5524a">2.8.2. 没有免费午餐定理</a></li>
+<li><a href="#org478488a">2.8.3. 奥卡姆剃刀原理</a></li>
+<li><a href="#org6b57b8e">2.8.4. 丑小鸭定理</a></li>
+<li><a href="#org7537711">2.8.5. 归纳偏置</a></li>
+</ul>
+</li>
+<li><a href="#org5a685c4">2.9. 总结和深度阅读</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org53d7c97" class="outline-2">
+<h2 id="org53d7c97"><span class="section-number-2">1</span> 第一章 绪论</h2>
+<div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li>从根源上讲,深度学习是机器学习的一个分支,两者的关系如下
+<ol class="org-ol">
+<li>深度学习问题是一个机器学习问题.所谓机器学习问题,就是指从有限样例中通过算法总结出一般性的规律,
+并可以应用到新的未知数据上. 比如可以从历史病例中总结出"症状"和"疾病"之间的规律,当有新病人的时
+候,可以利用这些规律,通过"症状"来判断病人得了什么疾病</li>
+<li><p>
+深度学习采用的模型一般比较复杂:样本的输入到输出目标之间的数据经过多个线性或者非线性的组件,每个
+组件都会对信息进行加工,并且会影响后续组件.所以当我们得到输出结果的时候,很难清楚每个组件的贡献度
+是多少,这叫做贡献度分配问题.在深度学习中贡献度分配问题是很关系的问题,关系到如何调整每个组件的参数
+</p>
+<pre class="example" id="orgd66f22c">
+贡献度分配问题也叫信用分配问题,或功劳分配问题
+</pre></li>
+</ol></li>
+<li>目前,比较好的解决贡献度分配问题的模型是人工神经网络(Artifical Neural Network, ANN),简称神经网络:
+<ul class="org-ul">
+<li>人脑神经系统可以将声音,视觉等信号,经过多层编码,从最低层特征不断加工,抽象,最终得到原始信号的语义表示</li>
+<li>和神经网络类似,人工神经网络有人工神经元和神经元之间的连接构成.
+<ul class="org-ul">
+<li>绝大部分的神经元都有输入和输出</li>
+<li>一小部分神经元负责从外部接收信息,只有输入,叫做Input神经元</li>
+<li>一小部分神经元负责输出信息,只有输出,叫Output神经元</li>
+<li>这样一来,神经网络可以看做是信息从输入到输出的信息处理系统</li>
+</ul></li>
+<li>神经网络还可以:
+<ul class="org-ul">
+<li>看做是由一组参数控制的复杂函数,并且用来处理一些模式识别的任务(比如语音识别,人脸识别),</li>
+<li>这个复杂函数的参数可以通过机器学习的方式来从数据中学习</li>
+<li>但是神经网络模型比较复杂,从输入到输出的信息传递路径比较长</li>
+<li>所以复杂神经网络的学习可以看成是一种深度的机器学习,即深度学习</li>
+</ul></li>
+</ul></li>
+<li>深度网络和深度学习并不等价,因为深度学习还可以采用其他模型(比如概率图模型),但是由于神经网络模型可以
+比较容易的解决贡献度分配问题,因此神经网络模型成为深度学习中主要采用的模型</li>
+<li>深度学习一开始用来解决机器学习中的学习问题,但是由于其能力强大,后来也会解决通用人工智能问题:
+<ul class="org-ul">
+<li>推理</li>
+<li>决策</li>
+</ul></li>
+</ul>
+</div>
+<div id="outline-container-org81fb44c" class="outline-3">
+<h3 id="org81fb44c"><span class="section-number-3">1.1</span> 人工智能</h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li>简单的讲,人工智能(Artificial Intelligence)就是让机器具有人类的智能,但是由于人们对大脑智能究竟是
+怎么产生的还知道的很少,所以,通过"复制"人脑来实现人工智能在目前阶段是不成功的.</li>
+<li><p>
+1950年,阿兰图灵提出了著名的图灵测试
+</p>
+<pre class="example" id="orgd04b4b0">
+一个人在不接触对方的情况下,通过一种特殊的方式和对方进行一系列的问答,如果在相当长时间内,他无法
+根据这些问题判断对方是人还是计算机,那么就可以认为这个计算机是智能的.
+</pre></li>
+<li>为了让计算机能够通过图灵测试,计算机就必须具备如下能力:
+<ul class="org-ul">
+<li>感知: 发展出了计算机视觉,语音信息处理</li>
+<li>学习: 模式识别,机器学习,强化学习</li>
+<li>语言: 自然语言处理</li>
+<li>记忆: 知识表示</li>
+<li>决策: 规划,数据挖掘</li>
+</ul></li>
+<li><p>
+1959年,John McCarthy提出了人工智能的定义
+</p>
+<pre class="example" id="orgd120dc2">
+人工智能就是要让机器的行为看起来就像是人所表现出的智能行为一样
+</pre></li>
+<li>人工智能主要领域大体分为如下几个方面:
+<ul class="org-ul">
+<li>感知: 语音信息处理,计算机</li>
+<li>学习: 监督学习,无监督学习,强化学习</li>
+<li>认知: 知识表示,自然语言处理,推理,规划,决策</li>
+</ul></li>
+</ul>
+</div>
+<div id="outline-container-org7d6992a" class="outline-4">
+<h4 id="org7d6992a"><span class="section-number-4">1.1.1</span> 人工智能发展历史</h4>
+<div class="outline-text-4" id="text-1-1-1">
+</div>
+<ol class="org-ol">
+<li><a id="orgfd7cbc3"></a>推理期<br />
+<div class="outline-text-5" id="text-1-1-1-1">
+<ul class="org-ul">
+<li>1956年之后的十几年,是人工智能黄金时期.大部分的研究者通过人类的经验,基于逻辑或者事实归纳出来一
+些规则,然后通过编写程序让计算机完成一个任务</li>
+<li>这个时期发明了一系列智能系统:
+<ul class="org-ul">
+<li>几何定理证明器</li>
+<li>语言翻译器</li>
+</ul></li>
+</ul>
+</div>
+</li>
+<li><a id="org6392340"></a>知识期<br />
+<div class="outline-text-5" id="text-1-1-1-2">
+<ul class="org-ul">
+<li>20世纪70年代,研究者意识到"知识"对于人工智能系统的重要性.对于一些复杂的任务,需要专家来构建知识库</li>
+<li>这一时期,出现了各种各样的专家系统(Expert System),专家系统必须具备三要素:
+<ol class="org-ol">
+<li>领域专家级知识</li>
+<li>模拟专家思维</li>
+<li>达到专家级的水平</li>
+</ol></li>
+</ul>
+</div>
+</li>
+<li><a id="org9dbc1f8"></a>学习期<br />
+<div class="outline-text-5" id="text-1-1-1-3">
+<ul class="org-ul">
+<li>专家系统的关键在于知识,但是对于人类的很多智能行为(语言理解,图像理解等),我们很难知道其中的原理,
+也无法描述这些行为的智能系统</li>
+<li>为了解决这类问题,研究者开始讲研究重点转向计算机从数据中自己学习,也就是计算机学习(Machine Learning)</li>
+<li>机器学习的主要目的是设计和分析一些学习算法,让计算机可以从数据中自动分析并且获得规律,之后利用学
+习到的规律对位置数据进行预测</li>
+<li>机器学习的研究内容涉及:
+<ul class="org-ul">
+<li>线性代数</li>
+<li>概率论</li>
+<li>统计学</li>
+<li>数学优化</li>
+<li>计算复杂性</li>
+</ul></li>
+<li>人工智能的流派主要分为两种:
+<ul class="org-ul">
+<li>符号主义:其有两个假设;a信息可以用符号来表示,b符号可以通过显式的规则(比如逻辑运算)来操作.人类
+的认知可以看做是符号操作的过程</li>
+<li>连接主义:其认为人类的认知过程,是由大量简单神经元构成的神经网络中的信息处理过程.不是符号运算</li>
+</ul></li>
+<li>符号主义的优点是可解释性,这也是是连接主义的缺点</li>
+<li>深度学习的主要模型神经网络就是一种连接主义模型,也就不太具有解释性</li>
+<li>当前越来越多的研究者开始关注如何融合符号主义和连接主义,建立高效,并且具有可解释性的模型</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orgdbd48fb" class="outline-3">
+<h3 id="orgdbd48fb"><span class="section-number-3">1.2</span> 机器学习</h3>
+<div class="outline-text-3" id="text-1-2">
+<ul class="org-ul">
+<li>机器学习是人工智能的重要分支,是指从有限的观测数据中学习出具有一般性的规律,并用这些规律对未知数据
+进行预测的方法</li>
+<li>传统的机器学习主要关注如何学习一个预测模型:
+<ul class="org-ul">
+<li>首先要将数据表示为一组特征(Feature)</li>
+<li>然后将特征输入到预测模型,得到预测结果</li>
+<li>这种学习方法可以看成是浅层学习(Shallow Learning),浅层学习的重要特点是不涉及特征学习,其特征主要
+靠人工经验或者特征转换方法来抽取</li>
+</ul></li>
+<li>机器学习解决实际任务时,会面对多种多样的数据形式,比如声音,图像,文本.这些数据有些计算机理解起来容
+易(比如图像),有些计算机理解起来困难(比如文字)</li>
+<li>所以对于机器学习来说,特征的处理会比较费事.一般来说机器学习的一个数据流程图如下:
+<ul class="org-ul">
+<li><p>
+图1-2
+</p>
+
+<div id="org8551919" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/nndl/1-2.png" alt="1-2.png" />
+</p>
+<p><span class="figure-number">Figure 1: </span>nndl/1-2.png</p>
+</div></li>
+<li>数据预处理: 对数据的原始形式机械能初步数据的清理(去掉冗余数据,去掉有缺失特征的数据),和加工(比
+如归一化)</li>
+<li>特征提取: 从数据的原始特征中提取一些对特定的机器学习任务有用的高质量特征,比如:
+<ul class="org-ul">
+<li>图像分类中提取边缘,尺度不变特征变换(Scale Invariant Feature Transform, SIFT)特征</li>
+<li>文本分类中取出stop word</li>
+</ul></li>
+<li>特征转换: 对数据进一步加工,比如:
+<ul class="org-ul">
+<li>降维:包括,特征抽取和特征选择</li>
+<li>升维</li>
+</ul></li>
+<li>预测: 机器学习的核心部分,学习一个函数并进行预测</li>
+</ul></li>
+<li>传统机器学习中,主要关心最后一步,也就是构建预测函数.但是实际操作中,不同预测模型的性能相差不多,而
+前三步中的特征处理对最终系统的准确性有十分关键的作用.</li>
+<li>特征处理一般偶需要人工干预完成,利用人类的经验来选取好的特征,并最终提高机器学习系统的性能,因此,很
+多机器学习问题变成了特征工程(Feature Engineering)问题</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orga4a4608" class="outline-3">
+<h3 id="orga4a4608"><span class="section-number-3">1.3</span> 表示学习</h3>
+<div class="outline-text-3" id="text-1-3">
+<ul class="org-ul">
+<li>为了提高机器学习系统的准确率,我们就需要将输入信息转换为有效的特征</li>
+<li>有效的特征更一般的称之为Representation(表示)</li>
+<li>如果有一种算法可以自动的学习出有效的特征,并提高最终机器学习模型的性能,那么这种学习就可以叫做表示学习</li>
+<li>表示学习中有两个核心问题:
+<ul class="org-ul">
+<li>什么是一个好的表示</li>
+<li>如何学习到好的表示</li>
+</ul></li>
+</ul>
+</div>
+<div id="outline-container-org8173493" class="outline-4">
+<h4 id="org8173493"><span class="section-number-4">1.3.1</span> 局部表示和分布式表示</h4>
+<div class="outline-text-4" id="text-1-3-1">
+<ul class="org-ul">
+<li>"好的表示"没有明确的标准,大概满足如下优点的,都算"好的表示":
+<ol class="org-ol">
+<li>一个好的表示应该具有很强的表示能力,即同样大小的向量可以表示更多信息</li>
+<li>一个好的表示应该使得后续学习任务变得简单,也就是需要包含更高层的语义信息</li>
+<li>一个好的表示应该具有一般性,也就是学到的东西可以比较容易的迁移到其他任务上</li>
+</ol></li>
+<li>在机器学习中,我们经常使用两种方式来表示特征:
+<ul class="org-ul">
+<li>局部表示: Local Representation</li>
+<li>分布式表示: Distributed Representation</li>
+</ul></li>
+<li>以颜色表示为例,颜色有,红,蓝,白,还有中国红,天蓝等表示方法.如果想在计算机里面表示颜色,一般有两种方法:
+<ul class="org-ul">
+<li>局部表示(也叫离散表示,符号表示):我们可以使用one-hot向量的形式,第i种颜色对应的值为1,其他为0</li>
+<li>分布式表示:我们可以使用RGB值来表示颜色,不同的颜色对应到RGB三维空间中的一个点</li>
+</ul></li>
+<li>局部表示有两个优点:
+<ul class="org-ul">
+<li>离散的表示方式具有很好的解释性</li>
+<li>得到的向量通常是稀疏二值向量,计算效率高</li>
+</ul></li>
+<li>局部表示有两个不足之处:
+<ul class="org-ul">
+<li>one-hot向量维数很高,无法扩展,新加一种颜色就需要增加一维来表示</li>
+<li>不同颜色之间的相似度都为0,也就是说,我们无法知道"红色"和"中国红"的相似度要高于"红色"和"黑色"的相似度</li>
+</ul></li>
+<li>和局部表示相比:
+<ul class="org-ul">
+<li>分布式表示的表示能力要强很多</li>
+<li>分布式表示的向量维度也比较低,值需要用三维的稠密向量就可以表示所有颜色</li>
+<li>分布式表示很容易表示新颜色</li>
+<li>分布式表示不同颜色的相似度很容易计算</li>
+</ul></li>
+<li><p>
+颜色的局部表示和分布式表示
+</p>
+
+<div id="org8b4536c" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/nndl/1-1.png" alt="1-1.png" />
+</p>
+<p><span class="figure-number">Figure 2: </span>nndl/1-1.png</p>
+</div></li>
+<li>所谓嵌入(Embedding),就是:
+<ul class="org-ul">
+<li>使用神经网络来将高维的局部表示 \(R^V\) 映射到一个非常低维的分布式表示空间 \(R^D\), 其中 \(D << R\)</li>
+<li>在这个低维空间中,特征不再是坐标轴上的点,而是分散在整个低维空间中</li>
+<li>嵌入通常指将一个度量空间中的一些对象映射到另一个低维的度量空间中,并尽可能保持不同对象之间的拓扑关系</li>
+</ul></li>
+<li>如图
+<ul class="org-ul">
+<li><p>
+图1-3
+</p>
+
+<div id="org9b7e0aa" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/nndl/1-3.png" alt="1-3.png" />
+</p>
+<p><span class="figure-number">Figure 3: </span>nndl/1-3.png</p>
+</div></li>
+<li>上图展示了一个三维one-hot向量和一个2维Embedding的对比</li>
+<li>在one-hot向量空间中,每个样本都位于坐标轴上,每个坐标轴上一个样本</li>
+<li>在低维Embedding空间中,每个样本都不在坐标轴上,样本之间可以计算相似度</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org246099f" class="outline-4">
+<h4 id="org246099f"><span class="section-number-4">1.3.2</span> 表示学习</h4>
+<div class="outline-text-4" id="text-1-3-2">
+<ul class="org-ul">
+<li>要学习到一种好的高层语义表示(比如分布式表示),通常需要从底层特征开始,经过多步非线性转换才能得到</li>
+<li>在传统机器学习中,也有很多特征学习的方法,比如:
+<ul class="org-ul">
+<li>主成分分析</li>
+<li>线性判别分析</li>
+<li>独立成分分析</li>
+</ul></li>
+<li>传统的特征学习是通过人为的设计一些准则,然后根据这些准则来选取有效的特征.这个特征学习和最终的预
+测模型的学习是分开进行的,因此学到的特征不一定可以提升最终模型的性能</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgdc387e7" class="outline-3">
+<h3 id="orgdc387e7"><span class="section-number-3">1.4</span> 深度学习</h3>
+<div class="outline-text-3" id="text-1-4">
+<ul class="org-ul">
+<li>深度学习是机器学习的一个子问题,其主要目的是从数据中自动学习到有效的特征表示</li>
+<li>所谓"深度",是指原始数据进行非线性特征转换的次数.深度学习能够让模型自动学习出好的特征表示</li>
+<li>如图
+<ul class="org-ul">
+<li>图1-4是深度学习的数据处理流程</li>
+<li>深度学习通过多层的特征转换,把原始数据变成更高层次,更抽象的表示</li>
+<li>这些学习到的表示可以替代人工设计的特征,从而避免"特征工程"</li>
+</ul></li>
+<li>深度学习是将原始的数据特征,经过多步的特征转换,得到一种特征表示,并进一步输入到预测函数得到最终结果</li>
+<li><p>
+和"浅层"学习不同,深度学习的关键在于解决"贡献度分配问题":
+</p>
+<pre class="example" id="orgcc32168">
+一个系统中不同的组件或其他参数对最终系统输出结果的贡献或影响
+</pre></li>
+<li>以下棋为例,每当下完一盘棋,最后的结果要么赢要么输,我们希望知道哪几步导致了最后的胜利,哪几步导致
+了最后的败局,以及每一步棋的贡献.这就是贡献度问题</li>
+<li>目前,深度学习采用的模型主要的是神经网络模型,主要原因是只有神经网络模型比较好的解决了贡献度分配问
+题(使用误差反向传播算法)</li>
+<li>超过一层的神经网络都会存在贡献度分配问题,因此可以将超过一层的神经网络看做深度学习模型</li>
+</ul>
+</div>
+<div id="outline-container-orga386d35" class="outline-4">
+<h4 id="orga386d35"><span class="section-number-4">1.4.1</span> 端到端学习</h4>
+<div class="outline-text-4" id="text-1-4-1">
+<ul class="org-ul">
+<li>在一些复杂的任务中,传统机器学习会:
+<ul class="org-ul">
+<li>将一个任务的输入和输出之间,人为的切割成很多子模块</li>
+<li>每个子模块分开学习</li>
+<li>比如一个NLP任务,需要,分词,词性标注,句法分析,语义分析,语义推理等步骤</li>
+</ul></li>
+<li>这种做法有很多问题:
+<ul class="org-ul">
+<li>每个模块都要单独优化,但是优化目标和任务总体目标并不能保证一致</li>
+<li>前一步的错误会对后续的模型造成很大的影响</li>
+</ul></li>
+<li>端到端学习,是指在学习过程中,不进行分模块或者分阶段训练,直接优化任务的总体目标:
+<ul class="org-ul">
+<li>一般不需要明确的给出不同模块或阶段的功能</li>
+<li>中间过程不需要人为干预</li>
+<li>训练数据为"输入-输出"对的形式,无需提供其他额外的信息</li>
+<li>端到端学习和深度学习一样,都是要解决贡献度分配问题</li>
+<li>大部分审计网络模型的深度学习也可以看做是一种端到端的学习</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org41298f7" class="outline-3">
+<h3 id="org41298f7"><span class="section-number-3">1.5</span> 神经网络</h3>
+<div class="outline-text-3" id="text-1-5">
+<ul class="org-ul">
+<li>受到人脑神经网络系统的启发,早期的神经科学家构造了一种模仿人脑神经系统的数学模型,称为人工神经网络,
+简称神经网络</li>
+</ul>
+</div>
+<div id="outline-container-org31be8a7" class="outline-4">
+<h4 id="org31be8a7"><span class="section-number-4">1.5.1</span> 人脑神经网络</h4>
+<div class="outline-text-4" id="text-1-5-1">
+<ul class="org-ul">
+<li>人脑是人体最复杂的器官,由如下部分组成:
+<ul class="org-ul">
+<li>神经元</li>
+<li>神经胶质细胞</li>
+<li>神经干细胞</li>
+<li>血管</li>
+</ul></li>
+<li>我们神经网络模拟的是其中的神经元,神经元的具体结构是:
+<ul class="org-ul">
+<li>细胞体(Soma): 细胞体主要是收到不同的刺激,产生两种结果:兴奋或抑制</li>
+<li>细胞突起: 细胞体延伸出来的细长部分,又可以分为:
+<ol class="org-ol">
+<li>树突(Dendrite): 可以接受刺激并且将兴奋传入细胞体,每个神经元可以有一个或者多个树突</li>
+<li>轴突(Axon): 可以把自身的兴奋状态从细胞体传送到另外一个神经元(或者其他组织),每个神经元只有
+一个轴突. 轴突的末端是突触,用来向下一个神经元(或者其他组织)传送状态</li>
+</ol></li>
+</ul></li>
+<li>下图就是典型的神经元结构
+<ul class="org-ul">
+<li><p>
+图1-5
+</p>
+
+<div id="org8d3a07a" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/nndl/1-5.png" alt="1-5.png" />
+</p>
+<p><span class="figure-number">Figure 4: </span>nndl/1-5.png</p>
+</div></li>
+<li>一个神经元被视为只有两种状态的细胞:兴奋和抑制</li>
+<li>神经元处于两种状态的哪一种取决于从其他神经细胞收到的输入信号量,以及突触的强度</li>
+<li>当信号量总和超过了某个阈值,细胞体就会兴奋,并产生电脉冲</li>
+<li>电脉冲沿着轴突并通过突触(突触在轴突的最末端)传递到其他神经元</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org5823fc5" class="outline-4">
+<h4 id="org5823fc5"><span class="section-number-4">1.5.2</span> 人工神经网络</h4>
+<div class="outline-text-4" id="text-1-5-2">
+<ul class="org-ul">
+<li>人工神经网络是模拟人脑神经网络而设计的计算模型:
+<ul class="org-ul">
+<li>人工神经网络的节点模拟的是神经元</li>
+<li>不同节点之间的连接被赋予了不同的权重,每个权重代表了一个节点对另一个节点的影响大小</li>
+<li>每个节点代表一种特定函数,这个函数的输入就是其他节点和自己的连接上的权重.函数负责把这些权重算出来</li>
+<li>函数算出来之后,还要经过一个激活函数,然后得到输出</li>
+</ul></li>
+<li>感知机是最早的具有机器学习思想的神经网络,但其学习方法无法扩展到多层神经网络</li>
+<li>直到1980年,反向传播法才能有效的解决多层神经网络的学习问题,并成为最流行的神经网络学习算法</li>
+<li>人工神经网络可以作为一个通用的函数逼近器,比如一个两层的神经网络可以逼近任意的函数.正是由于这个
+特质,我们可以把人工神经网络看做是一个可以学习的函数,并将其应用到机器学习中</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgb98a35b" class="outline-4">
+<h4 id="orgb98a35b"><span class="section-number-4">1.5.3</span> 神经网络的发展历史</h4>
+<div class="outline-text-4" id="text-1-5-3">
+<ul class="org-ul">
+<li>TODO</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgc953acb" class="outline-3">
+<h3 id="orgc953acb"><span class="section-number-3">1.6</span> 本书的知识体系</h3>
+<div class="outline-text-3" id="text-1-6">
+<ul class="org-ul">
+<li>如图
+<ul class="org-ul">
+<li><p>
+图1-6
+</p>
+
+<div id="orgc72ac92" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/nndl/1-6.png" alt="1-6.png" />
+</p>
+<p><span class="figure-number">Figure 5: </span>nndl/1-6.png</p>
+</div></li>
+<li>主要分三大块:
+<ul class="org-ul">
+<li>机器学习</li>
+<li>神经网络</li>
+<li>概览图模型</li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org69ace8c" class="outline-3">
+<h3 id="org69ace8c"><span class="section-number-3">1.7</span> 常用的深度学习框架</h3>
+<div class="outline-text-3" id="text-1-7">
+<ul class="org-ul">
+<li>深度学习中:
+<ul class="org-ul">
+<li>一般通过误差反向传播算法来进行参数学习,手工计算非常低效</li>
+<li>需要计算机资源多,且在cpu和gpu之间不停切换</li>
+<li>所以需要一些支持自动梯度计算,CPU和GPU切换的框架</li>
+</ul></li>
+<li>常见框架有:
+<ul class="org-ul">
+<li>Theano</li>
+<li>Caffe</li>
+<li>TensorFLow</li>
+<li>Pytorch</li>
+<li>PaddlePaddle</li>
+<li>Chainer</li>
+<li>MXNet</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgf437917" class="outline-2">
+<h2 id="orgf437917"><span class="section-number-2">2</span> 第二章 机器学习概述</h2>
+<div class="outline-text-2" id="text-2">
+<ul class="org-ul">
+<li>通俗的讲,机器学习,就是从观测数据中寻找规律,并利用学习到的规律(模型)对未知或无法观测的数据进行预测</li>
+<li>在早期的工程领域,机器学习也常被称为模式识别(Pattern Recognition)</li>
+<li>以手写体数字识别为例:
+<ul class="org-ul">
+<li>对人来说,手写数字识别很简单</li>
+<li>对计算机来说,手写数字识别却十分困难</li>
+<li>我们很难总结每个数字的手写体特征,所以这类问题,我们设计一套识别算法是一项几乎不可能的任务</li>
+<li>由于不可能通过启发式规则来设计算法,那么人们就开始采取另外一种思路:
+<ol class="org-ol">
+<li>即让计算机"看"大量的样本</li>
+<li>并从中学习到一些经验</li>
+<li>然后用这些经验来识别新的样本</li>
+</ol></li>
+</ul></li>
+</ul>
+</div>
+<div id="outline-container-org2ca197c" class="outline-3">
+<h3 id="org2ca197c"><span class="section-number-3">2.1</span> 基本概念</h3>
+<div class="outline-text-3" id="text-2-1">
+<ul class="org-ul">
+<li>我们以购买芒果来介绍机器学习的基本概念:
+<ul class="org-ul">
+<li>特征(Feature): 包括芒果的颜色,大小,形状,产地,品牌</li>
+<li>标签(Label): 连续值(芒果甜度,水分), 离散值("好","坏"等),标签通常用y来表示</li>
+<li>样本(Sample): 一对儿标记好的特征和标签的组合,也叫示例(Instance)</li>
+<li>数据集(Data Set): 一组样本构成的集合称之为数据集(Data Set),一般将数据集分成两部分:
+<ol class="org-ol">
+<li>训练集(Training Set): 用来训练模型</li>
+<li>测试集(Test Set): 用来检验模型好坏,也叫测试样本(Test Sample)</li>
+</ol></li>
+<li>特征向量: 我们通常用一个D维的向量 \(x = [x_1,x_2,\cdot\cdot\cdot,x_D]^T\) 来表示一个芒果所有的
+特征构成的向量,其中每一维表示一个特征.</li>
+</ul></li>
+<li><p>
+假设我们有个训练集D由N个样本组成,每个样本都是独立同分布的(Identically and Independently Distributed IID)
+</p>
+\begin{equation}
+D = \{ (x^{(1)},y^{(1)}),(x^{(2)},y^{(2)}),\cdot\cdot\cdot,(x^{(N)},y^{(N)}) \},\tag{2.1}
+\end{equation}</li>
+<li>对于上面给定的训练集D,我们希望让计算机从一个函数集合 \(F = \{f_1(x),f_2(x),\cdot\cdot\cdot\}\) 中
+自动寻找一个"最优"的函数 \(f^*(x)\) 来近似表达特性向量x和标签y之间的映射关系</li>
+<li><p>
+一旦求出了\(f^*(x)\) ,我们可以使用 \(f^*(x)\) 来预测标签值,预测的结果使用 \(\hat{y}\) 来表示
+</p>
+\begin{equation}
+\hat{y} = f^*(x),\tag{2.2}
+\end{equation}</li>
+<li><p>
+如果是标签概率,那么我们可以求当输入为x的时候,标签为y的概率 \(\hat{p}\)
+</p>
+\begin{equation}
+\hat{p}(y|x) = f_y^*(x),\tag{2.3}
+\end{equation}</li>
+<li>如何寻找这个"最优"的函数 \(f^*(x)\) 是机器学习的关键,寻找的过程通常称之为训练(Training)过程</li>
+<li><p>
+下次从市场上购买芒果(测试样本)的时候,可以更加芒果的特征,使用学习到的 \(f^*(x)\) 来预测芒果的好坏,
+假设我们抽取一组芒果作为测试集 D',测试集得到的预测准确率如下(I为指示函数, |D'|为测试集大小)
+</p>
+\begin{equation}
+Acc(f^*(x)) = \cfrac{1}{|D'|}\sum_{(x,y) \in D'} I(f^*(x) = y), \tag{2.4}
+\end{equation}</li>
+<li>如图
+<ul class="org-ul">
+<li>图2-2</li>
+<li>上图就是机器学习的基本流程</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org9a7e8ea" class="outline-3">
+<h3 id="org9a7e8ea"><span class="section-number-3">2.2</span> 机器学习的三个基本要素</h3>
+<div class="outline-text-3" id="text-2-2">
+</div>
+<div id="outline-container-org41961b2" class="outline-4">
+<h4 id="org41961b2"><span class="section-number-4">2.2.1</span> 模型</h4>
+<div class="outline-text-4" id="text-2-2-1">
+<ul class="org-ul">
+<li>对于机器学习任务,首先要确定输入空间x和输出空间y</li>
+<li>不同任务的输出空间不同:
+<ul class="org-ul">
+<li>二分类问题: y = {+1,-1}</li>
+<li>C分类问题: y = {1,2,&#x2026;,C}</li>
+<li>回归问题: y = Rc</li>
+</ul></li>
+<li>假定x和y之间的关系可以通过一个未知的真实映射函数y=g(x)或真实条件概率分布 \(p_r(y|x)\) 来描述</li>
+<li>那么,机器学习的目的就是要找到一个模型来近似真实的映射函数g(x)或者 \(p_r(y|x)\)</li>
+<li>由于我们不知道真实的映射函数g(x)或者 \(p_r(y|x)\) 的具体形式,因此我们只能根据经验来假设一个函数集合F,
+称之为假设空间(Hypothesis Space),我们通过对比集合中的不同函数在训练集D上的表现,从中选择一个理想
+的假设(Hypothesis)</li>
+<li><p>
+假设空间F通常为一个参数化的函数族如下
+</p>
+\begin{equation}
+F = \{f(x;\theta)|\theta \in R^D\},\tag{2.5}
+\end{equation}</li>
+<li>常见的假设空间分为线性和非线性两种,对应的模型f也分为线性模型和非线性模型</li>
+</ul>
+</div>
+<ol class="org-ol">
+<li><a id="org3126a7c"></a>线性模型<br />
+<div class="outline-text-5" id="text-2-2-1-1">
+<ul class="org-ul">
+<li><p>
+线性模型的假设空间为一个参数化的线性函数族,即
+</p>
+\begin{equation}
+f(x;\theta) = w^Tx+b;\tag{2.6}
+\end{equation}</li>
+<li>其中 \(\theta\) 包含了权重向量w和偏置b</li>
+</ul>
+</div>
+</li>
+<li><a id="orgba0005b"></a>非线性模型<br />
+<div class="outline-text-5" id="text-2-2-1-2">
+<ul class="org-ul">
+<li><p>
+广义的非线性模型可以写为多个非线性基函数 \(\phi(x)\) 的线性组合
+</p>
+\begin{equation}
+f(x;\theta) = w^T\phi(x) + b,\tag{2.7}
+\end{equation}</li>
+<li>其中 \(\phi(x)=[\phi_1(x),\phi_x(x),\cdot\cdot\cdot,\phi_K(x)]\) 为K个非线性基函数组成的向量,
+参数 \(\theta\) 包含了权重向量w和偏置b</li>
+<li><p>
+如果 \(\phi(x)\) 本身为可学习的基函数,比如
+</p>
+\begin{equation}
+\phi_k(x) = h(w_k^T\phi'(x) + b_k), \forall1 \le k \le K,\tag{2.8}
+\end{equation}</li>
+<li>其中h()为非线性函数, \(\phi'(x)\) 为另一组基函数, \(w_k, b_k\) 为可学习的参数,则 \(f(x;\theta)\)
+就等价于神经网络模型</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div id="outline-container-orgd2d43da" class="outline-4">
+<h4 id="orgd2d43da"><span class="section-number-4">2.2.2</span> 学习准则</h4>
+<div class="outline-text-4" id="text-2-2-2">
+<ul class="org-ul">
+<li>训练集D是由N个独立同分布的样本组成,也就是说:
+<ul class="org-ul">
+<li>每个样本(x,y)都是从X和Y的联合空间按照某个未知分布 \(p_r(x,y)\) 独立地随机产生的</li>
+<li>这里要求样本分布\(p_r(x,y)\) 必须是固定的(虽然可以是未知的),因为如果 \(p_r(x,y)\) 本身可变的话,就
+无法通过这些数据进行学习</li>
+</ul></li>
+<li>一个好的模型 \(f(x, \theta^*)\), 应该:
+<ul class="org-ul">
+<li><p>
+要么,所有的(x,y)的可能取值上与真实的映射函数 \(y = g(x)\) 一致,也就是
+</p>
+\begin{equation}
+| f(x, \theta^*) - y | < \epsilon \tag{2.9}
+\end{equation}</li>
+<li><p>
+要么,其与真实条件概率分布 \(p_r(y|x)\) 一致,也就是
+</p>
+\begin{equation}
+|f_y(x,\theta^*) - p_r(y|x)| < \epsilon \tag{2.10}
+\end{equation}</li>
+<li>其中 \(\epsilon\) 是一个很小的正数, \(f_y(x,\theta^*)\) 为模型预测的条件概率分布中y对应的概率</li>
+</ul></li>
+<li>那么怎么判断一个模型是一个好的模型呢?我们可以通过期望风险(Expected Risk)来衡量,
+<ul class="org-ul">
+<li><p>
+其定义为:
+</p>
+\begin{equation}
+\mathcal{R}(\theta) = \mathbb{E}_{(x,y) \sim p_r(x,y)}[\mathcal{L}(y, f(x;\theta))],
+\end{equation}</li>
+<li>其中 \(p_r(x,y)\) 为真实数据分布, \(\mathcal{L}(y, f(x;\theta))\) 为损失函数,用来量化两个变量之
+间的差异</li>
+</ul></li>
+</ul>
+</div>
+<ol class="org-ol">
+<li><a id="org241ec27"></a>损失函数<br />
+<div class="outline-text-5" id="text-2-2-2-1">
+<ul class="org-ul">
+<li>损失函数是一个非负实数函数,用来量化模型预测和真实标签之间的差异,常见的损失函数如下:
+<ul class="org-ul">
+<li>0-1损失函数:
+<ul class="org-ul">
+<li><p>
+公式如下:
+</p>
+\begin{equation}
+\mathcal{L}(y,f(x;\theta)) = \begin{cases}
+                                0 \mbox{ if } y = f(x;\theta) \\
+                                1 \mbox{ if } y \neq f(x;\theta) \\
+                             \end{cases}\tag{2.12}
+\end{equation}</li>
+<li>虽然0-1损失函数能够客观的评价模型的好坏,缺点是数学性质不好:不连续且导数为0,难以优化</li>
+<li>0-1损失函数经常用连续可微的损失函数替代</li>
+</ul></li>
+<li>平方损失函数:
+<ul class="org-ul">
+<li><p>
+公式如下
+</p>
+\begin{equation}
+\mathcal{L}(y,f(x;\theta)) = \cfrac{1}{2}(y - f(x;\theta))^2\tag{2.14}
+\end{equation}</li>
+<li>经常用在预测标签y为实数值的任务中</li>
+<li>平方损失函数一般不适用于分类问题</li>
+</ul></li>
+<li>交叉熵损失函数:
+<ul class="org-ul">
+<li><p>
+一般用于分类问题,假设样本标签 \(y \in \{1,\cdot\cdot\cdot,C\}\) 为离散值, 模型
+\(f(x;\theta) \in [0,1]^C\) 的输出为类别标签的条件概率分布,即
+</p>
+\begin{equation}
+p(y=c|x;\theta) = f_c(x;\theta) \tag{2.15}
+\end{equation}</li>
+<li><p>
+并且同时满足
+</p>
+\begin{equation}
+f_c(x;\theta) \in [0,1], \sum_{c=1}^Cf_c(x;\theta)=1 \tag{2.16}
+\end{equation}</li>
+<li>我们可以用一个C维的one-hot向量y来表示样本标签,假设样本的标签为k,那么向量y里面只有第k维的值
+为1,其他元素都是0.</li>
+<li>标签向量y可以看做样本标签的真实概率分布 \(p_r(y|x)\) ,也就是第c维是c的真实概率.假设样本类别
+为k,:
+<ol class="org-ol">
+<li>那么第k类的概率是1</li>
+<li>其他类的概率是0</li>
+</ol></li>
+<li><p>
+对于两个概率分布(也就是标签真实分布y和模型概率预测分布 \(f(x;\theta)\)) 之间的交叉熵为
+</p>
+\begin{equation}
+\mathcal{L}(y,f(x;\theta)) = -y^T\log f(x;\theta)
+\end{equation}</li>
+<li>我们可以举个例子来计算下上面的式子:
+<ul class="org-ul">
+<li>一个样本的标签向量为 \(y = [0,0,1]^T\)</li>
+<li>模型的预测标签分布为 \(f(x;\theta) = [0.3, 0.3, 0.4]^T\)</li>
+<li>则两者的交叉熵为 \(- (0 \times \log(0.3) + 0 \times \log(0.3) + 1 \times \log(0.4)) = - \log(0.4)\)</li>
+</ul></li>
+<li><p>
+上面的式子还可以写成, 也就是矩阵乘法的展开
+</p>
+\begin{equation}
+\mathcal{L}(y,f(x;\theta)) = -\sum_{c=1}^Cy_c \log f_c(x;\theta) \tag{2.18}
+\end{equation}</li>
+<li><p>
+式子2.18进一步改下成如下的式子, 其中 \(f_y(x;\theta)\)  可以看做真实类别y的似然函数,因此交
+叉熵损失函数也就是负对数似然函数(negative Log-Likelihood)
+</p>
+\begin{equation}
+\mathcal{L}(y,f(x;\theta)) = -\log f_y(x;\theta); \tag{2.19}
+\end{equation}</li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</li>
+<li><a id="org4265e09"></a>风险最小化准则<br />
+<div class="outline-text-5" id="text-2-2-2-2">
+<ul class="org-ul">
+<li>一个好的模型 \(f(x;\theta)\) 应当有一个比较小的期望错误,但是由于不知道真实的数据分布和映射函数,
+实际上无法计算其期望 \(\mathcal{R}(\theta)\) ,所以我们只能计算经验风险
+<ul class="org-ul">
+<li><p>
+所谓经验风险,是指在训练集上的平均损失,如下(假设训练集 \(D = \{(x^{(n)},y^{(n)})\}^N_{n=1}\) )
+</p>
+\begin{equation}
+\mathcal{R}_D^{emp}(\theta) = \frac{1}{N}\sum_{n=1}^N\mathcal{L}(y^{(n)},f(x^{(n)};\theta)).\tag{2.22}
+\end{equation}</li>
+<li>一个切实可行的学习准则是找到一组参数 \(\theta^*\) 使得经验风险最小</li>
+</ul></li>
+<li>根据大数定理可知,当训练集大小 \(|D|\) 趋向于无穷大的时候,经验风险就趋向于期望风险,然后通常情况下:
+<ul class="org-ul">
+<li>我们无法获取无限的训练样本</li>
+<li>训练样本往往是真实数据的一个很小的子集或者包含一定的噪声数据</li>
+<li>所以训练数据不能很好的反映全部数据的真实分布</li>
+</ul></li>
+<li>由于训练数据的局限性,经验风险最小化(就是找到一组参数使得经验风险最小)很容易导致模型在训练集上
+错误率很低,但是在未知数据上错误率很高,这就是所谓的过拟合</li>
+<li>过拟合问题往往是由于训练数据少,噪声,以及模型能力强等原因造成的</li>
+<li>为了解决过拟合问题,我们一般会在模型上下手,一般在经验风险最小化的基础上再引入参数的正则化来限制
+模型的能力,使其不要过度的最小化经验风险,这种做法叫做结构风险最小化(Structure Risk Minimizaiton, SRM)</li>
+<li>从贝叶斯学习的角度来讲,正则化是引入了参数的先验分布,使其不完全依赖训练数据</li>
+<li>和过拟合相反的概念是欠拟合,也就是模型不能很好的拟合训练数据,在训练集上的错误率就比较高.</li>
+<li>欠拟合是模型能力不足造成的.</li>
+<li>总之,机器学习中的学习准则并不仅仅是拟合训练集上的数据,同时也要使得泛化错误最低,泛化错误低的才
+能对未知样本进行更好的预测</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div id="outline-container-org4977a13" class="outline-4">
+<h4 id="org4977a13"><span class="section-number-4">2.2.3</span> 优化算法</h4>
+<div class="outline-text-4" id="text-2-2-3">
+<ul class="org-ul">
+<li>在确定了训练集D,假设空间F,以及学习准则后,如何找到最优的模型f(x),就成了最优化问题,机器学习的训练
+过程,就是最优化问题的求解过程</li>
+<li>在机器学习中,优化又开业分为:
+<ul class="org-ul">
+<li>参数优化</li>
+<li>超参数优化</li>
+</ul></li>
+<li>模型\(f(x;\theta)\) 中的 \(\theta\) 称之为模型的参数,可以通过优化算法进行学习</li>
+<li>还有一类参数是来定义模型结果或者优化策略的,这类参数叫做超参数(Hyper-Parameter),常见的超参数包括:
+<ul class="org-ul">
+<li>聚类算法中的类别个数</li>
+<li>梯度下降法中的步长</li>
+<li>正则化项的系数</li>
+<li>神经网络的层数</li>
+<li>SVM中的核函数等</li>
+</ul></li>
+<li>超参数的选取一般都是组合优化问题,很难通过优化算法自动学习.一般是按照人的经验设定,或者是不同组
+合进行试错</li>
+</ul>
+</div>
+<ol class="org-ol">
+<li><a id="org00867a2"></a>梯度下降法<br />
+<div class="outline-text-5" id="text-2-2-3-1">
+<ul class="org-ul">
+<li>凸优化中有很多高效成熟的优化算法,所以机器学习方法倾向于选择合适的模型和损失函数,构造一个凸函数
+作为优化目标.</li>
+<li>但是很多模型(比如神经网络)的优化目标是非凸的,只能退而求其次找到局部最优解</li>
+<li>在机器学习中,最简单,最常用的优化算法就是梯度下降法:
+<ul class="org-ul">
+<li>首先初始化参数 \(\theta_0\)</li>
+<li>如下公式来迭代计算训练集上风险函数的最小值 TODO</li>
+</ul></li>
+</ul>
+</div>
+</li>
+<li><a id="orgbdb5c41"></a>提前停止<br />
+<div class="outline-text-5" id="text-2-2-3-2">
+<ul class="org-ul">
+<li>针对梯度下降的优化算法,除了加正则化项之外,还可以通过提前停止来防止过拟合</li>
+<li>在梯度下降训练过程中,由于过拟合的原因,在训练样本上收敛的参数,并不一定在测试集上最优</li>
+<li><p>
+为了解决这个问题,有一种办法就是提前停止,怎样知道何时提前停止呢?这就用到了另外一个数据集:验证集
+</p>
+<pre class="example" id="org0bab164">
+所谓验证集,就是测试集上训练模型的过程中,每次迭代的时候,把模型在验证集上验证,验证错误率是否不再下降,
+如果不再下降,那么就停止迭代
+</pre></li>
+<li><p>
+换句话说,验证集是用来选择最佳时间,来防止"过度"训练的.
+</p>
+
+<div id="org1a17343" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/nndl/2-4.png" alt="2-4.png" />
+</p>
+<p><span class="figure-number">Figure 6: </span>nndl/2-4.png</p>
+</div></li>
+<li>如果没有验证集可以在训练集上划分出一个小比例的子集作为验证集</li>
+<li>这里验证集的作用是让选定的模型更"优秀"(不那么拟合),有时候验证集还会从多个模型中选个更好的模型.
+这里又有东西可以讲:
+<ul class="org-ul">
+<li>为什么不能直接使用训练集,凭借不同模型在训练集的表现(AUC)就判断哪个模型好呢?
+<ol class="org-ol">
+<li>因为AUC等只能代表在"已知数据"(训练集)中的好坏.</li>
+<li>我们想要在测试数据(未知)中的好坏,那么已知数据中的好坏肯定不能用来评价</li>
+<li>所以我们设计出一个验证集(validation set), 验证集在模型训练的时候是"未知"的,所以可以用这个
+"未知"的数据集,比较不同模型在"未知"数据上的表现</li>
+<li>如果某个模型在"较小的未知数据集"(validation set)上表现好,那么这个模型大概率在"更大的未知
+数据集"(test set)表现也会好</li>
+</ol></li>
+</ul></li>
+</ul>
+</div>
+</li>
+<li><a id="org954436d"></a>随机梯度下降法<br />
+<div class="outline-text-5" id="text-2-2-3-3">
+<ul class="org-ul">
+<li>在公式2.27的梯度下降法宗,目标函数是整个训练集上的风险函数,这种方式被称之为批量梯度下降法(Batch
+Gradient Descent, BGD)</li>
+<li>批量梯度下降法在每次迭代的时候需要计算每个样板上的损失函数并且求和,当训练集中的样本数量N很大的
+时候,空间复杂度比较高,每次迭代计算开销很大</li>
+<li>在机器学习中,我们假设每个样本都是独立同分布的从真实数据分布中随机抽取出来的,真正优化的目标是期
+望风险最小:
+<ul class="org-ul">
+<li>批量梯度下降法相当于是从真实数据分布中采集N个样本,并且由他们计算出来的经验风险的梯度来近似期
+望风险</li>
+<li>为了建设哦每次迭代的计算复杂度,我们可以在每次迭代的时候只采集一个样本(相当于把N减小到1),计算
+样本的损失函数的梯度并更新参数,这就是随机梯度下降法(Stochastic Gradient Descent,SGD),当经过
+足够次数的迭代时,随机梯度下降也可以收敛到局部最优解</li>
+</ul></li>
+</ul>
+</div>
+</li>
+<li><a id="org7792bee"></a>小批量梯度下降法<br /></li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orgae7ba43" class="outline-3">
+<h3 id="orgae7ba43"><span class="section-number-3">2.3</span> 机器学习的简单示例&#x2013;线性回归</h3>
+<div class="outline-text-3" id="text-2-3">
+</div>
+<div id="outline-container-orgc083204" class="outline-4">
+<h4 id="orgc083204"><span class="section-number-4">2.3.1</span> 参数学习</h4>
+<div class="outline-text-4" id="text-2-3-1">
+</div>
+<ol class="org-ol">
+<li><a id="org30b566a"></a>经验风险最小化<br /></li>
+<li><a id="orga893281"></a>结构风险最小化<br /></li>
+<li><a id="orgcf8620c"></a>最大似然估计<br /></li>
+<li><a id="orgd98786f"></a>最大后验估计<br /></li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orgbef96c8" class="outline-3">
+<h3 id="orgbef96c8"><span class="section-number-3">2.4</span> 偏差-方差分解</h3>
+</div>
+<div id="outline-container-orgd1d5239" class="outline-3">
+<h3 id="orgd1d5239"><span class="section-number-3">2.5</span> 机器学习算法的类型</h3>
+</div>
+<div id="outline-container-orgab135cb" class="outline-3">
+<h3 id="orgab135cb"><span class="section-number-3">2.6</span> 数据的特征表示</h3>
+<div class="outline-text-3" id="text-2-6">
+</div>
+<div id="outline-container-org4fa33a6" class="outline-4">
+<h4 id="org4fa33a6"><span class="section-number-4">2.6.1</span> 传统的特征学习</h4>
+<div class="outline-text-4" id="text-2-6-1">
+</div>
+<ol class="org-ol">
+<li><a id="org2916732"></a>特征选择<br /></li>
+<li><a id="org9f23648"></a>特征抽取<br /></li>
+</ol>
+</div>
+<div id="outline-container-orgeece735" class="outline-4">
+<h4 id="orgeece735"><span class="section-number-4">2.6.2</span> 深度学习方法</h4>
+</div>
+</div>
+<div id="outline-container-orgda7e7ce" class="outline-3">
+<h3 id="orgda7e7ce"><span class="section-number-3">2.7</span> 评价指标</h3>
+</div>
+<div id="outline-container-org2d06d10" class="outline-3">
+<h3 id="org2d06d10"><span class="section-number-3">2.8</span> 理论和定理</h3>
+<div class="outline-text-3" id="text-2-8">
+</div>
+<div id="outline-container-org6b8613e" class="outline-4">
+<h4 id="org6b8613e"><span class="section-number-4">2.8.1</span> PAC学习理论</h4>
+</div>
+<div id="outline-container-org0a5524a" class="outline-4">
+<h4 id="org0a5524a"><span class="section-number-4">2.8.2</span> 没有免费午餐定理</h4>
+</div>
+<div id="outline-container-org478488a" class="outline-4">
+<h4 id="org478488a"><span class="section-number-4">2.8.3</span> 奥卡姆剃刀原理</h4>
+</div>
+<div id="outline-container-org6b57b8e" class="outline-4">
+<h4 id="org6b57b8e"><span class="section-number-4">2.8.4</span> 丑小鸭定理</h4>
+</div>
+<div id="outline-container-org7537711" class="outline-4">
+<h4 id="org7537711"><span class="section-number-4">2.8.5</span> 归纳偏置</h4>
+</div>
+</div>
+<div id="outline-container-org5a685c4" class="outline-3">
+<h3 id="org5a685c4"><span class="section-number-3">2.9</span> 总结和深度阅读</h3>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: harrifeng@outlook.com</p>
+<p class="date">Created: 2022-04-19 Tue 11:51</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
