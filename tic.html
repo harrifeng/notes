@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-07-03 Sun 19:16 -->
+<!-- 2022-07-04 Mon 22:38 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>tic</title>
@@ -67,30 +67,33 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgbe3e348">1. Introduction to this book</a>
+<li><a href="#org98f4ae3">1. Introduction to this book</a>
 <ul>
-<li><a href="#org0afb12c">1.1. What is linear algebra and why learn it?</a></li>
-<li><a href="#orgf08c980">1.2. About this book</a></li>
-<li><a href="#org4eab5df">1.3. Prerequisites</a></li>
-<li><a href="#orga1f4fbb">1.4. Practice, exercises and code challenges</a></li>
-<li><a href="#orgb8a0309">1.5. Online and other resources</a></li>
+<li><a href="#org3e30377">1.1. What is linear algebra and why learn it?</a></li>
+<li><a href="#org37e67e4">1.2. About this book</a></li>
+<li><a href="#org44a99a2">1.3. Prerequisites</a></li>
+<li><a href="#orgd653606">1.4. Practice, exercises and code challenges</a></li>
+<li><a href="#orgef7a4bc">1.5. Online and other resources</a></li>
 </ul>
 </li>
-<li><a href="#orgc01e017">2. Vectors</a>
+<li><a href="#org761c8fd">2. Vectors</a>
 <ul>
-<li><a href="#org51dfe3a">2.1. Scalars</a></li>
-<li><a href="#org9ce1bfc">2.2. Vectors: geometry and algebra</a></li>
+<li><a href="#org9c0c95c">2.1. Scalars</a></li>
+<li><a href="#org8e7da33">2.2. Vectors: geometry and algebra</a></li>
+<li><a href="#org3834177">2.3. Transpose operation</a></li>
+<li><a href="#org1a8a064">2.4. Vector addition and subtraction</a></li>
+<li><a href="#orgf589621">2.5. Vector-scalar multiplication</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgbe3e348" class="outline-2">
-<h2 id="orgbe3e348"><span class="section-number-2">1</span> Introduction to this book</h2>
+<div id="outline-container-org98f4ae3" class="outline-2">
+<h2 id="org98f4ae3"><span class="section-number-2">1</span> Introduction to this book</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-org0afb12c" class="outline-3">
-<h3 id="org0afb12c"><span class="section-number-3">1.1</span> What is linear algebra and why learn it?</h3>
+<div id="outline-container-org3e30377" class="outline-3">
+<h3 id="org3e30377"><span class="section-number-3">1.1</span> What is linear algebra and why learn it?</h3>
 <div class="outline-text-3" id="text-1-1">
 <ul class="org-ul">
 <li>线性代数是数学中关于vector和matrix的分支</li>
@@ -104,8 +107,8 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-orgf08c980" class="outline-3">
-<h3 id="orgf08c980"><span class="section-number-3">1.2</span> About this book</h3>
+<div id="outline-container-org37e67e4" class="outline-3">
+<h3 id="org37e67e4"><span class="section-number-3">1.2</span> About this book</h3>
 <div class="outline-text-3" id="text-1-2">
 <ul class="org-ul">
 <li>本书对机器学习爱好者很有益处</li>
@@ -153,8 +156,8 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-org4eab5df" class="outline-3">
-<h3 id="org4eab5df"><span class="section-number-3">1.3</span> Prerequisites</h3>
+<div id="outline-container-org44a99a2" class="outline-3">
+<h3 id="org44a99a2"><span class="section-number-3">1.3</span> Prerequisites</h3>
 <div class="outline-text-3" id="text-1-3">
 <ul class="org-ul">
 <li>需要有学习线性代数的主动性</li>
@@ -167,8 +170,8 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-orga1f4fbb" class="outline-3">
-<h3 id="orga1f4fbb"><span class="section-number-3">1.4</span> Practice, exercises and code challenges</h3>
+<div id="outline-container-orgd653606" class="outline-3">
+<h3 id="orgd653606"><span class="section-number-3">1.4</span> Practice, exercises and code challenges</h3>
 <div class="outline-text-3" id="text-1-4">
 <ul class="org-ul">
 <li>为了真正理解线性代数,必须做题</li>
@@ -183,8 +186,8 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-orgb8a0309" class="outline-3">
-<h3 id="orgb8a0309"><span class="section-number-3">1.5</span> Online and other resources</h3>
+<div id="outline-container-orgef7a4bc" class="outline-3">
+<h3 id="orgef7a4bc"><span class="section-number-3">1.5</span> Online and other resources</h3>
 <div class="outline-text-3" id="text-1-5">
 <ul class="org-ul">
 <li>本书中的解释如果你理解不了,可以从网络上搜索从其他角度的解释来让你明白</li>
@@ -193,12 +196,12 @@
 </div>
 </div>
 </div>
-<div id="outline-container-orgc01e017" class="outline-2">
-<h2 id="orgc01e017"><span class="section-number-2">2</span> Vectors</h2>
+<div id="outline-container-org761c8fd" class="outline-2">
+<h2 id="org761c8fd"><span class="section-number-2">2</span> Vectors</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-org51dfe3a" class="outline-3">
-<h3 id="org51dfe3a"><span class="section-number-3">2.1</span> Scalars</h3>
+<div id="outline-container-org9c0c95c" class="outline-3">
+<h3 id="org9c0c95c"><span class="section-number-3">2.1</span> Scalars</h3>
 <div class="outline-text-3" id="text-2-1">
 <ul class="org-ul">
 <li>我们不是从向量(vector)开始,而是从标量(scalar)开始</li>
@@ -227,8 +230,8 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-org9ce1bfc" class="outline-3">
-<h3 id="org9ce1bfc"><span class="section-number-3">2.2</span> Vectors: geometry and algebra</h3>
+<div id="outline-container-org8e7da33" class="outline-3">
+<h3 id="org8e7da33"><span class="section-number-3">2.2</span> Vectors: geometry and algebra</h3>
 <div class="outline-text-3" id="text-2-2">
 <ul class="org-ul">
 <li><b>Geometry</b> vector是一个line,由两个属性决定:
@@ -243,7 +246,7 @@
 图2-2
 </p>
 
-<div id="org7722692" class="figure">
+<div id="orgd95b799" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/tic/2-2.png" alt="2-2.png" />
 </p>
 <p><span class="figure-number">Figure 1: </span>tic/2-2.png</p>
@@ -258,7 +261,7 @@
 所以,起点(英文叫tail,注意是尾巴的意思,英文认为终点的是箭头,起点是尾巴)为[0,0]的vector被叫做在他
 的standard position
 </p>
-<pre class="example" id="org9af7508">
+<pre class="example" id="orgb88f3bd">
 A vector with its tail at the origin is said to be in its standard position
 </pre></li>
 <li>如图
@@ -267,7 +270,7 @@ A vector with its tail at the origin is said to be in its standard position
 图2-3
 </p>
 
-<div id="org4bb4b8f" class="figure">
+<div id="org69321b4" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/tic/2-3.png" alt="2-3.png" />
 </p>
 <p><span class="figure-number">Figure 2: </span>tic/2-3.png</p>
@@ -295,13 +298,13 @@ plt.show<span style="color: #55b3cc;">()</span>
 <li><p>
 2D的vector例子
 </p>
-<pre class="example" id="org19440fa">
+<pre class="example" id="orge7fb80c">
 [1 -2], [4 1], [10000 0]
 </pre></li>
 <li><p>
 3D的vector例子
 </p>
-<pre class="example" id="orgd887548">
+<pre class="example" id="orgcf8cd64">
 [3.14 e 0], [3 1 4], [2 -7 8]
 </pre></li>
 </ul></li>
@@ -322,7 +325,7 @@ plt.show<span style="color: #55b3cc;">()</span>
 <li><p>
 vector的代数表示,却可以让我们在任何维度上,扩展vector,比如下面的公式就非常清晰的解释了什么是6D vector
 </p>
-<pre class="example" id="org803a4a7">
+<pre class="example" id="orgee145fb">
 [3 4 6 1 -4 5]
 </pre></li>
 <li><p>
@@ -358,7 +361,7 @@ matrix右边(作为被乘matrix,一个某个方向上只有一维的matrix)才�
 <li><p>
 在matrix中,使用空格分离是row vector, 使用`;`分离,是column vector
 </p>
-<pre class="example" id="org8136e6d">
+<pre class="example" id="org4cd7d63">
 v1 = [2 5 4 7] % row vector
 v2 = [2; 5; 4; 7] % column vector
 </pre></li>
@@ -392,11 +395,152 @@ zeros vector的magnitude为0,讨论一个magnitude为0的vector的direction是�
 </ul>
 </div>
 </div>
+<div id="outline-container-org3834177" class="outline-3">
+<h3 id="org3834177"><span class="section-number-3">2.3</span> Transpose operation</h3>
+<div class="outline-text-3" id="text-2-3">
+<ul class="org-ul">
+<li>把vector在column vector和row vector之间相互转换的操作,叫做transpose</li>
+<li>transpose只更改orientation,其他的element内容和排序都不变</li>
+<li>我们使用一个上标T来代表这个操作,那么就有如下三个例子:
+<ul class="org-ul">
+<li><p>
+row vector转换成 column vector
+</p>
+\begin{equation}
+ [7\;3\;5]^T  = \left[ {\begin{array}{cccc}
+7 \\
+3 \\
+5 \\
+\end{array} } \right]
+\end{equation}</li>
+<li><p>
+column vector转换成 row vector
+</p>
+\begin{equation}
+\left[ {\begin{array}{cccc}
+7 \\
+3 \\
+5 \\
+\end{array} } \right]^T = [7\;3\;5]
+\end{equation}</li>
+<li><p>
+两次TT操作,可以抵消
+</p>
+\begin{equation}
+[7\;3\;5]^{TT}=[7\;3\;5]
+\end{equation}</li>
+</ul></li>
+<li>我们之前说过,我们assume, vector是column vector,所以:
+<ul class="org-ul">
+<li>\(\mathbf{v}\) 就是column vector</li>
+<li>\(\mathbf{v}^T\) 就是row vector</li>
+</ul></li>
+<li>在印刷书籍中,在文字间写column vector非常不方便,所以文字书籍中往往是把column vector写成row vector
+的转置形式,比如 \(\mathbf{w} = [1\;2\;3]^T\)</li>
+<li><p>
+在代码中转置很方便
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #96CBFE; font-style: italic;">import</span> numpy <span style="color: #96CBFE; font-style: italic;">as</span> np
+
+<span style="color: #FFB8D1;">v1</span> = np.array<span style="color: #55b3cc;">(</span><span style="color: #FFB8D1;">[</span><span style="color: #C2FFDF;">[</span>2, 5, 4, 7<span style="color: #C2FFDF;">]</span><span style="color: #FFB8D1;">]</span><span style="color: #55b3cc;">)</span>  <span style="color: #E6C000;"># </span><span style="color: #E6C000;">row vector</span>
+<span style="color: #FFB8D1;">v2</span> = v1.T  <span style="color: #E6C000;"># </span><span style="color: #E6C000;">column vector</span>
+</pre>
+</div></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org1a8a064" class="outline-3">
+<h3 id="org1a8a064"><span class="section-number-3">2.4</span> Vector addition and subtraction</h3>
+<div class="outline-text-3" id="text-2-4">
+<ul class="org-ul">
+<li>*Geometry*我们主要通过下面的四个图来理解vector的加和减
+<ul class="org-ul">
+<li><p>
+图2-5
+</p>
+
+<div id="orgc744ba6" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/tic/2-5.png" alt="2-5.png" />
+</p>
+<p><span class="figure-number">Figure 3: </span>tic/2-5.png</p>
+</div></li>
+<li>第一幅图是介绍我们这次加减法的两个成员:
+<ol class="org-ol">
+<li>v1: [0 2]</li>
+<li>v2: [1 1]</li>
+</ol></li>
+<li>第二幅图是介绍如何计算加法: 把v2的起点从standard position移动到v1的终点,那么从v1的起点到v2的终
+点,就是新的vector</li>
+<li>第三幅图是介绍减法的第一种做法,就把v2乘以-1,变成[-1,-1], 那么v1-v2就成了v1 + (-1 * v2),加法计算
+方法和图二一致</li>
+<li>第四幅图是介绍减法的第二种做法,就是从被减数的终点(作为起点)引出一条vector,终点是减数的终点,其
+实就是v2 - v1 = v3 转换成v2 = v1 + v3</li>
+</ul></li>
+<li><p>
+vector的加法满足交换律,也就是说
+</p>
+\begin{equation}
+\mathbf{a}  + \mathbf{b} = \mathbf{b} + \mathbf{a}
+\end{equation}</li>
+<li><b>Algebra</b> 加法和减法的代数解释那就简单了,就是相对应的element进行加或者减:
+<ul class="org-ul">
+<li><p>
+比如
+</p>
+\begin{equation}
+[1\;2] + [3\;4] = [4\;6]
+\end{equation}</li>
+<li><p>
+用公式来解释就是
+</p>
+\begin{equation}
+\mathbf{c} = \mathbf{a} + \mathbf{b} = [a_1 + b_1 \; a_2 + b_2 \;...\; a_n + b_n]^T
+\end{equation}</li>
+</ul></li>
+<li><b>Important</b> 加法和减法有意义的前提是参与运算的两个vector有同样的维度</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgf589621" class="outline-3">
+<h3 id="orgf589621"><span class="section-number-3">2.5</span> Vector-scalar multiplication</h3>
+<div class="outline-text-3" id="text-2-5">
+<ul class="org-ul">
+<li><b>Geometry</b> Scaling一个vector,就是:
+<ul class="org-ul">
+<li>增加或者减少这个vector的长度</li>
+<li>并且不改变这个vector的angle</li>
+</ul></li>
+<li>scalar multiplication也不会改变原始的orientation</li>
+<li>当然,如果scalar为0的话,最后的结果全部变成0,但是这种情况下,vector转换成了一个point,我们不能说point
+有任何的的angle</li>
+<li><b>Algebra</b> Scalar-vector的乘法,就是把vector的每个成员都乘以scalar</li>
+<li><p>
+对于scalar \(\lambda\) 和 vector \(\mathbf{v}\) , 我们有如下的公式
+</p>
+\begin{equation}
+\lambda \mathbf{v} = [\lambda \mathbf{v}_1 \; \lambda \mathbf{v}_2 \; ... \; \lambda \mathbf{v}_n]^T \tag{2.3}
+\end{equation}</li>
+<li><p>
+一个简单的例子如下
+</p>
+<pre class="example" id="org07d8a34">
+3 [-1 3 0 2] = [-3 9 0 6]
+</pre></li>
+<li><p>
+scalar-vector multipleication满足交换律,也就是说
+</p>
+\begin{equation}
+\lambda \mathbf{v} =  \mathbf{v} \lambda
+\end{equation}</li>
+</ul>
+</div>
+</div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: harrifeng@outlook.com</p>
-<p class="date">Created: 2022-07-03 Sun 19:16</p>
+<p class="date">Created: 2022-07-04 Mon 22:38</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
