@@ -3,40 +3,18 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-08-25 Thu 19:44 -->
+<!-- 2022-10-09 Sun 15:32 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>tic</title>
-<meta name="generator" content="Org mode" />
 <meta name="author" content="harrifeng@outlook.com" />
+<meta name="generator" content="Org Mode" />
 <link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/htmlize.css"/>
 <link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/readtheorg.css"/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/lib/js/jquery.stickytableheaders.min.js"></script>
 <script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/js/readtheorg.js"></script>
-<script type="text/javascript">
-// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
-<!--/*--><![CDATA[/*><!--*/
-     function CodeHighlightOn(elem, id)
-     {
-       var target = document.getElementById(id);
-       if(null != target) {
-         elem.classList.add("code-highlighted");
-         target.classList.add("code-highlighted");
-       }
-     }
-     function CodeHighlightOff(elem, id)
-     {
-       var target = document.getElementById(id);
-       if(null != target) {
-         elem.classList.remove("code-highlighted");
-         target.classList.remove("code-highlighted");
-       }
-     }
-    /*]]>*///-->
-// @license-end
-</script>
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
         displayAlign: "center",
@@ -57,83 +35,94 @@
              }
 });
 </script>
-<script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
 </head>
 <body>
-<div id="content">
+<div id="content" class="content">
 <h1 class="title">tic</h1>
-<div id="table-of-contents">
+<div id="table-of-contents" role="doc-toc">
 <h2>Table of Contents</h2>
-<div id="text-table-of-contents">
+<div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgd30f171">1. Introduction to this book</a>
+<li><a href="#org7b7eccc">1. Introduction to this book</a>
 <ul>
-<li><a href="#org5e48e72">1.1. What is linear algebra and why learn it?</a></li>
-<li><a href="#org83bc0db">1.2. About this book</a></li>
-<li><a href="#orgd1205c3">1.3. Prerequisites</a></li>
-<li><a href="#org35dc458">1.4. Practice, exercises and code challenges</a></li>
-<li><a href="#org93365e2">1.5. Online and other resources</a></li>
+<li><a href="#orgf2b7249">1.1. What is linear algebra and why learn it?</a></li>
+<li><a href="#orgbe51c1b">1.2. About this book</a></li>
+<li><a href="#orgb4009bb">1.3. Prerequisites</a></li>
+<li><a href="#org7df10b9">1.4. Practice, exercises and code challenges</a></li>
+<li><a href="#org3687c26">1.5. Online and other resources</a></li>
 </ul>
 </li>
-<li><a href="#org3d042b5">2. Vectors</a>
+<li><a href="#org72fec3e">2. Vectors</a>
 <ul>
-<li><a href="#org1e3248d">2.1. Scalars</a></li>
-<li><a href="#orgcd80387">2.2. Vectors: geometry and algebra</a></li>
-<li><a href="#org7f60c3f">2.3. Transpose operation</a></li>
-<li><a href="#org20c1b3f">2.4. Vector addition and subtraction</a></li>
-<li><a href="#org959ca10">2.5. Vector-scalar multiplication</a></li>
+<li><a href="#org3f34acd">2.1. Scalars</a></li>
+<li><a href="#org56c4bdf">2.2. Vectors: geometry and algebra</a></li>
+<li><a href="#org5bc12a2">2.3. Transpose operation</a></li>
+<li><a href="#orge158b46">2.4. Vector addition and subtraction</a></li>
+<li><a href="#org9b2030d">2.5. Vector-scalar multiplication</a></li>
 </ul>
 </li>
-<li><a href="#orgd0b8b09">3. Vector multiplications</a>
+<li><a href="#org83b9400">3. Vector multiplications</a>
 <ul>
-<li><a href="#org019ae87">3.1. Vector dot product: Algebra</a></li>
-<li><a href="#orgf6b941a">3.2. Dot product properties</a>
+<li><a href="#org902dec5">3.1. Vector dot product: Algebra</a></li>
+<li><a href="#org6ea09d9">3.2. Dot product properties</a>
 <ul>
-<li><a href="#org9fadf17">3.2.1. vector product和scalar的结合律</a></li>
-<li><a href="#org00bc71f">3.2.2. vector product和vector的结合律</a></li>
-<li><a href="#orga77b542">3.2.3. commutative property</a></li>
-<li><a href="#org799b0f4">3.2.4. Distributive property</a></li>
+<li><a href="#org381125d">3.2.1. vector product和scalar的结合律</a></li>
+<li><a href="#orgb70a1bf">3.2.2. vector product和vector的结合律</a></li>
+<li><a href="#orgbe8b885">3.2.3. commutative property</a></li>
+<li><a href="#org1086da8">3.2.4. Distributive property</a></li>
 </ul>
 </li>
-<li><a href="#orgb16b577">3.3. Vector dot product: Geometry</a></li>
-<li><a href="#org9d239c3">3.4. Algebraic and geometric equivalence</a></li>
-<li><a href="#org2d2bfee">3.5. Linear weighted combination</a></li>
-<li><a href="#org71c2a34">3.6. The outer product</a></li>
-<li><a href="#org8ed05e2">3.7. Element-wise (Hadamard) vector product</a></li>
-<li><a href="#org638a449">3.8. Cross product</a></li>
-<li><a href="#orgc2c1c42">3.9. Unit vectors</a></li>
+<li><a href="#orgf42d19e">3.3. Vector dot product: Geometry</a></li>
+<li><a href="#orgf36a3a8">3.4. Algebraic and geometric equivalence</a></li>
+<li><a href="#org07750a3">3.5. Linear weighted combination</a></li>
+<li><a href="#org75c9bab">3.6. The outer product</a></li>
+<li><a href="#orgee214b1">3.7. Element-wise (Hadamard) vector product</a></li>
+<li><a href="#org9435752">3.8. Cross product</a></li>
+<li><a href="#orge52cfaa">3.9. Unit vectors</a></li>
 </ul>
 </li>
-<li><a href="#org295f3be">4. Vector Spaces</a>
+<li><a href="#org2176b54">4. Vector Spaces</a>
 <ul>
-<li><a href="#orgc2b4580">4.1. Dimensions and fields in linear algebra</a></li>
-<li><a href="#org94010e0">4.2. Vector spaces</a></li>
-<li><a href="#org39c6894">4.3. Subspaces and ambient spaces</a></li>
-<li><a href="#orgd12d772">4.4. Subsets</a></li>
-<li><a href="#org9021d4b">4.5. Span</a></li>
-<li><a href="#org121b007">4.6. Linear independence</a></li>
-<li><a href="#org9b56f1b">4.7. Basis</a></li>
+<li><a href="#orgccab6a2">4.1. Dimensions and fields in linear algebra</a></li>
+<li><a href="#org93aeb46">4.2. Vector spaces</a></li>
+<li><a href="#org97ea859">4.3. Subspaces and ambient spaces</a></li>
+<li><a href="#orgedbf3b4">4.4. Subsets</a></li>
+<li><a href="#orge22385a">4.5. Span</a></li>
+<li><a href="#orgd611f14">4.6. Linear independence</a></li>
+<li><a href="#org89c6ed0">4.7. Basis</a></li>
 </ul>
 </li>
-<li><a href="#org5866752">5. Matrices</a>
+<li><a href="#orgf90974e">5. Matrices</a>
 <ul>
-<li><a href="#org78bb2e7">5.1. Interpretations and uses of matrices</a></li>
-<li><a href="#org0613895">5.2. Matrix terminology and notation</a></li>
-<li><a href="#org888c84f">5.3. Matrix dimensionalities</a></li>
-<li><a href="#orgea1bbe9">5.4. The transpose opertion</a></li>
-<li><a href="#org208a9a8">5.5. Matrix zoology</a></li>
+<li><a href="#org296a6f0">5.1. Interpretations and uses of matrices</a></li>
+<li><a href="#orgcb9e4b6">5.2. Matrix terminology and notation</a></li>
+<li><a href="#org25b3bbe">5.3. Matrix dimensionalities</a></li>
+<li><a href="#orgcdceca1">5.4. The transpose opertion</a></li>
+<li><a href="#orgc3cd390">5.5. Matrix zoology</a></li>
+<li><a href="#org67cda5e">5.6. Matrix addition and subtraction</a></li>
+<li><a href="#orge83c505">5.7. Scalar-matrix multiplication</a></li>
+<li><a href="#orgc31920c">5.8. "Shifting" a matrix</a></li>
+<li><a href="#orga159f00">5.9. Diagonal and trace</a></li>
+<li><a href="#org0a1360a">5.10. "Standard" matrix multiplication</a>
+<ul>
+<li><a href="#org87384e5">5.10.1. The "element perspective"</a></li>
+<li><a href="#org91d15a2">5.10.2. The "layer perspective"</a></li>
+<li><a href="#org844986d">5.10.3. The "column perspective"</a></li>
+<li><a href="#org586d3a2">5.10.4. The "row perspective"</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgd30f171" class="outline-2">
-<h2 id="orgd30f171"><span class="section-number-2">1</span> Introduction to this book</h2>
+<div id="outline-container-org7b7eccc" class="outline-2">
+<h2 id="org7b7eccc"><span class="section-number-2">1.</span> Introduction to this book</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-org5e48e72" class="outline-3">
-<h3 id="org5e48e72"><span class="section-number-3">1.1</span> What is linear algebra and why learn it?</h3>
+<div id="outline-container-orgf2b7249" class="outline-3">
+<h3 id="orgf2b7249"><span class="section-number-3">1.1.</span> What is linear algebra and why learn it?</h3>
 <div class="outline-text-3" id="text-1-1">
 <ul class="org-ul">
 <li>线性代数是数学中关于vector和matrix的分支</li>
@@ -147,8 +136,8 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-org83bc0db" class="outline-3">
-<h3 id="org83bc0db"><span class="section-number-3">1.2</span> About this book</h3>
+<div id="outline-container-orgbe51c1b" class="outline-3">
+<h3 id="orgbe51c1b"><span class="section-number-3">1.2.</span> About this book</h3>
 <div class="outline-text-3" id="text-1-2">
 <ul class="org-ul">
 <li>本书对机器学习爱好者很有益处</li>
@@ -196,8 +185,8 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-orgd1205c3" class="outline-3">
-<h3 id="orgd1205c3"><span class="section-number-3">1.3</span> Prerequisites</h3>
+<div id="outline-container-orgb4009bb" class="outline-3">
+<h3 id="orgb4009bb"><span class="section-number-3">1.3.</span> Prerequisites</h3>
 <div class="outline-text-3" id="text-1-3">
 <ul class="org-ul">
 <li>需要有学习线性代数的主动性</li>
@@ -210,8 +199,8 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-org35dc458" class="outline-3">
-<h3 id="org35dc458"><span class="section-number-3">1.4</span> Practice, exercises and code challenges</h3>
+<div id="outline-container-org7df10b9" class="outline-3">
+<h3 id="org7df10b9"><span class="section-number-3">1.4.</span> Practice, exercises and code challenges</h3>
 <div class="outline-text-3" id="text-1-4">
 <ul class="org-ul">
 <li>为了真正理解线性代数,必须做题</li>
@@ -226,8 +215,8 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-org93365e2" class="outline-3">
-<h3 id="org93365e2"><span class="section-number-3">1.5</span> Online and other resources</h3>
+<div id="outline-container-org3687c26" class="outline-3">
+<h3 id="org3687c26"><span class="section-number-3">1.5.</span> Online and other resources</h3>
 <div class="outline-text-3" id="text-1-5">
 <ul class="org-ul">
 <li>本书中的解释如果你理解不了,可以从网络上搜索从其他角度的解释来让你明白</li>
@@ -236,12 +225,12 @@
 </div>
 </div>
 </div>
-<div id="outline-container-org3d042b5" class="outline-2">
-<h2 id="org3d042b5"><span class="section-number-2">2</span> Vectors</h2>
+<div id="outline-container-org72fec3e" class="outline-2">
+<h2 id="org72fec3e"><span class="section-number-2">2.</span> Vectors</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-org1e3248d" class="outline-3">
-<h3 id="org1e3248d"><span class="section-number-3">2.1</span> Scalars</h3>
+<div id="outline-container-org3f34acd" class="outline-3">
+<h3 id="org3f34acd"><span class="section-number-3">2.1.</span> Scalars</h3>
 <div class="outline-text-3" id="text-2-1">
 <ul class="org-ul">
 <li>我们不是从向量(vector)开始,而是从标量(scalar)开始</li>
@@ -264,14 +253,14 @@
 使用python来表示标量,就是一个变量
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #5699AF;">aScalar</span> = 5
+<pre class="src src-python"><span style="color: #f8f8f0;">aScalar</span> = 5
 </pre>
 </div></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgcd80387" class="outline-3">
-<h3 id="orgcd80387"><span class="section-number-3">2.2</span> Vectors: geometry and algebra</h3>
+<div id="outline-container-org56c4bdf" class="outline-3">
+<h3 id="org56c4bdf"><span class="section-number-3">2.2.</span> Vectors: geometry and algebra</h3>
 <div class="outline-text-3" id="text-2-2">
 <ul class="org-ul">
 <li><b>Geometry</b> vector是一个line,由两个属性决定:
@@ -286,7 +275,7 @@
 图2-2
 </p>
 
-<div id="orgc593397" class="figure">
+<div id="org9d15e08" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/tic/2-2.png" alt="2-2.png" />
 </p>
 <p><span class="figure-number">Figure 1: </span>tic/2-2.png</p>
@@ -301,7 +290,7 @@
 所以,起点(英文叫tail,注意是尾巴的意思,英文认为终点的是箭头,起点是尾巴)为[0,0]的vector被叫做在他
 的standard position
 </p>
-<pre class="example" id="orgd960a27">
+<pre class="example" id="org01b8446">
 A vector with its tail at the origin is said to be in its standard position
 </pre></li>
 <li>如图
@@ -310,7 +299,7 @@ A vector with its tail at the origin is said to be in its standard position
 图2-3
 </p>
 
-<div id="orgd110518" class="figure">
+<div id="org1e1685d" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/tic/2-3.png" alt="2-3.png" />
 </p>
 <p><span class="figure-number">Figure 2: </span>tic/2-3.png</p>
@@ -323,13 +312,13 @@ A vector with its tail at the origin is said to be in its standard position
 使用如下代码画vector
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #6c9ef8;">import</span> numpy <span style="color: #6c9ef8;">as</span> np
-<span style="color: #6c9ef8;">import</span> matplotlib.pyplot <span style="color: #6c9ef8;">as</span> plt
+<pre class="src src-python"><span style="color: #26a6a6;">import</span> numpy <span style="color: #26a6a6;">as</span> np
+<span style="color: #26a6a6;">import</span> matplotlib.pyplot <span style="color: #26a6a6;">as</span> plt
 
-<span style="color: #5699AF;">v</span> = np.array<span style="color: #6c9ef8;">(</span><span style="color: #b77fdb;">[</span>2, -1<span style="color: #b77fdb;">]</span><span style="color: #6c9ef8;">)</span>
-plt.plot<span style="color: #6c9ef8;">(</span><span style="color: #b77fdb;">[</span>0, v<span style="color: #60aa00;">[</span>0<span style="color: #60aa00;">]</span><span style="color: #b77fdb;">]</span>, <span style="color: #b77fdb;">[</span>0, v<span style="color: #60aa00;">[</span>1<span style="color: #60aa00;">]</span><span style="color: #b77fdb;">]</span><span style="color: #6c9ef8;">)</span>
-plt.axis<span style="color: #6c9ef8;">(</span><span style="color: #b77fdb;">[</span>-3, 3, -3, 3<span style="color: #b77fdb;">]</span><span style="color: #6c9ef8;">)</span>
-plt.show<span style="color: #6c9ef8;">()</span>
+<span style="color: #f8f8f0;">v</span> = np.array<span style="color: #51afef;">(</span><span style="color: #c678dd;">[</span>2, -1<span style="color: #c678dd;">]</span><span style="color: #51afef;">)</span>
+plt.plot<span style="color: #51afef;">(</span><span style="color: #c678dd;">[</span>0, v<span style="color: #98be65;">[</span>0<span style="color: #98be65;">]</span><span style="color: #c678dd;">]</span>, <span style="color: #c678dd;">[</span>0, v<span style="color: #98be65;">[</span>1<span style="color: #98be65;">]</span><span style="color: #c678dd;">]</span><span style="color: #51afef;">)</span>
+plt.axis<span style="color: #51afef;">(</span><span style="color: #c678dd;">[</span>-3, 3, -3, 3<span style="color: #c678dd;">]</span><span style="color: #51afef;">)</span>
+plt.show<span style="color: #51afef;">()</span>
 </pre>
 </div></li>
 <li><b>Algebra</b> 从代数的角度上说,vector就是一个ordered list(成员是number)</li>
@@ -338,13 +327,13 @@ plt.show<span style="color: #6c9ef8;">()</span>
 <li><p>
 2D的vector例子
 </p>
-<pre class="example" id="org3e0ee35">
+<pre class="example" id="org1a52bf8">
 [1 -2], [4 1], [10000 0]
 </pre></li>
 <li><p>
 3D的vector例子
 </p>
-<pre class="example" id="orga7f11d9">
+<pre class="example" id="orgdcaba4d">
 [3.14 e 0], [3 1 4], [2 -7 8]
 </pre></li>
 </ul></li>
@@ -365,7 +354,7 @@ plt.show<span style="color: #6c9ef8;">()</span>
 <li><p>
 vector的代数表示,却可以让我们在任何维度上,扩展vector,比如下面的公式就非常清晰的解释了什么是6D vector
 </p>
-<pre class="example" id="org851d62b">
+<pre class="example" id="org8e06407">
 [3 4 6 1 -4 5]
 </pre></li>
 <li><p>
@@ -401,7 +390,7 @@ matrix右边(作为被乘matrix,一个某个方向上只有一维的matrix)才�
 <li><p>
 在matrix中,使用空格分离是row vector, 使用`;`分离,是column vector
 </p>
-<pre class="example" id="orgac80e49">
+<pre class="example" id="orgf87e65f">
 v1 = [2 5 4 7] % row vector
 v2 = [2; 5; 4; 7] % column vector
 </pre></li>
@@ -410,10 +399,10 @@ v2 = [2; 5; 4; 7] % column vector
 时候,numpy要用比较麻烦的方式实现
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #5699AF;">v1</span> = <span style="color: #6c9ef8;">[</span>2, 5, 4, 7<span style="color: #6c9ef8;">]</span>               <span style="color: #808080; font-style: italic;"># </span><span style="color: #808080; font-style: italic;">list</span>
-<span style="color: #5699AF;">v2</span> = np.array<span style="color: #6c9ef8;">(</span><span style="color: #b77fdb;">[</span>2, 5, 4, 7<span style="color: #b77fdb;">]</span><span style="color: #6c9ef8;">)</span>     <span style="color: #808080; font-style: italic;"># </span><span style="color: #808080; font-style: italic;">array, no orientation</span>
-<span style="color: #5699AF;">v3</span> = np.array<span style="color: #6c9ef8;">(</span><span style="color: #b77fdb;">[</span><span style="color: #60aa00;">[</span>2<span style="color: #60aa00;">]</span>, <span style="color: #60aa00;">[</span>5<span style="color: #60aa00;">]</span>, <span style="color: #60aa00;">[</span>4<span style="color: #60aa00;">]</span>, <span style="color: #60aa00;">[</span>7<span style="color: #60aa00;">]</span><span style="color: #b77fdb;">]</span><span style="color: #6c9ef8;">)</span> <span style="color: #808080; font-style: italic;"># </span><span style="color: #808080; font-style: italic;">column vector</span>
-<span style="color: #5699AF;">v4</span> = np.array<span style="color: #6c9ef8;">(</span><span style="color: #b77fdb;">[</span><span style="color: #60aa00;">[</span>2, 5, 4, 7<span style="color: #60aa00;">]</span><span style="color: #b77fdb;">]</span><span style="color: #6c9ef8;">)</span>       <span style="color: #808080; font-style: italic;"># </span><span style="color: #808080; font-style: italic;">row vector</span>
+<pre class="src src-python"><span style="color: #f8f8f0;">v1</span> = <span style="color: #51afef;">[</span>2, 5, 4, 7<span style="color: #51afef;">]</span>               <span style="color: #5B6268;"># list</span>
+<span style="color: #f8f8f0;">v2</span> = np.array<span style="color: #51afef;">(</span><span style="color: #c678dd;">[</span>2, 5, 4, 7<span style="color: #c678dd;">]</span><span style="color: #51afef;">)</span>     <span style="color: #5B6268;"># array, no orientation</span>
+<span style="color: #f8f8f0;">v3</span> = np.array<span style="color: #51afef;">(</span><span style="color: #c678dd;">[</span><span style="color: #98be65;">[</span>2<span style="color: #98be65;">]</span>, <span style="color: #98be65;">[</span>5<span style="color: #98be65;">]</span>, <span style="color: #98be65;">[</span>4<span style="color: #98be65;">]</span>, <span style="color: #98be65;">[</span>7<span style="color: #98be65;">]</span><span style="color: #c678dd;">]</span><span style="color: #51afef;">)</span> <span style="color: #5B6268;"># column vector</span>
+<span style="color: #f8f8f0;">v4</span> = np.array<span style="color: #51afef;">(</span><span style="color: #c678dd;">[</span><span style="color: #98be65;">[</span>2, 5, 4, 7<span style="color: #98be65;">]</span><span style="color: #c678dd;">]</span><span style="color: #51afef;">)</span>       <span style="color: #5B6268;"># row vector</span>
 </pre>
 </div></li>
 <li><b>Notation</b> 在书面书写中,我们只需要boldface字母就可以表示vector了,比如 \(\mathbf{v}\), 但是如果是论
@@ -435,8 +424,8 @@ zeros vector的magnitude为0,讨论一个magnitude为0的vector的direction是�
 </ul>
 </div>
 </div>
-<div id="outline-container-org7f60c3f" class="outline-3">
-<h3 id="org7f60c3f"><span class="section-number-3">2.3</span> Transpose operation</h3>
+<div id="outline-container-org5bc12a2" class="outline-3">
+<h3 id="org5bc12a2"><span class="section-number-3">2.3.</span> Transpose operation</h3>
 <div class="outline-text-3" id="text-2-3">
 <ul class="org-ul">
 <li>把vector在column vector和row vector之间相互转换的操作,叫做transpose</li>
@@ -481,17 +470,17 @@ column vector转换成 row vector
 在代码中转置很方便
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #6c9ef8;">import</span> numpy <span style="color: #6c9ef8;">as</span> np
+<pre class="src src-python"><span style="color: #26a6a6;">import</span> numpy <span style="color: #26a6a6;">as</span> np
 
-<span style="color: #5699AF;">v1</span> = np.array<span style="color: #6c9ef8;">(</span><span style="color: #b77fdb;">[</span><span style="color: #60aa00;">[</span>2, 5, 4, 7<span style="color: #60aa00;">]</span><span style="color: #b77fdb;">]</span><span style="color: #6c9ef8;">)</span>  <span style="color: #808080; font-style: italic;"># </span><span style="color: #808080; font-style: italic;">row vector</span>
-<span style="color: #5699AF;">v2</span> = v1.T  <span style="color: #808080; font-style: italic;"># </span><span style="color: #808080; font-style: italic;">column vector</span>
+<span style="color: #f8f8f0;">v1</span> = np.array<span style="color: #51afef;">(</span><span style="color: #c678dd;">[</span><span style="color: #98be65;">[</span>2, 5, 4, 7<span style="color: #98be65;">]</span><span style="color: #c678dd;">]</span><span style="color: #51afef;">)</span>  <span style="color: #5B6268;"># row vector</span>
+<span style="color: #f8f8f0;">v2</span> = v1.T  <span style="color: #5B6268;"># column vector</span>
 </pre>
 </div></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org20c1b3f" class="outline-3">
-<h3 id="org20c1b3f"><span class="section-number-3">2.4</span> Vector addition and subtraction</h3>
+<div id="outline-container-orge158b46" class="outline-3">
+<h3 id="orge158b46"><span class="section-number-3">2.4.</span> Vector addition and subtraction</h3>
 <div class="outline-text-3" id="text-2-4">
 <ul class="org-ul">
 <li>*Geometry*我们主要通过下面的四个图来理解vector的加和减
@@ -500,7 +489,7 @@ column vector转换成 row vector
 图2-5
 </p>
 
-<div id="orgf7e8583" class="figure">
+<div id="org0d3401b" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/tic/2-5.png" alt="2-5.png" />
 </p>
 <p><span class="figure-number">Figure 3: </span>tic/2-5.png</p>
@@ -542,8 +531,8 @@ vector的加法满足交换律,也就是说
 </ul>
 </div>
 </div>
-<div id="outline-container-org959ca10" class="outline-3">
-<h3 id="org959ca10"><span class="section-number-3">2.5</span> Vector-scalar multiplication</h3>
+<div id="outline-container-org9b2030d" class="outline-3">
+<h3 id="org9b2030d"><span class="section-number-3">2.5.</span> Vector-scalar multiplication</h3>
 <div class="outline-text-3" id="text-2-5">
 <ul class="org-ul">
 <li><b>Geometry</b> Scaling一个vector,就是:
@@ -564,7 +553,7 @@ vector的加法满足交换律,也就是说
 <li><p>
 一个简单的例子如下
 </p>
-<pre class="example" id="orge2a5d33">
+<pre class="example" id="org29ef6b4">
 3 [-1 3 0 2] = [-3 9 0 6]
 </pre></li>
 <li><p>
@@ -577,8 +566,8 @@ scalar-vector multipleication满足交换律,也就是说
 </div>
 </div>
 </div>
-<div id="outline-container-orgd0b8b09" class="outline-2">
-<h2 id="orgd0b8b09"><span class="section-number-2">3</span> Vector multiplications</h2>
+<div id="outline-container-org83b9400" class="outline-2">
+<h2 id="org83b9400"><span class="section-number-2">3.</span> Vector multiplications</h2>
 <div class="outline-text-2" id="text-3">
 <ul class="org-ul">
 <li>有四种方法来对两个vector进行乘法:
@@ -591,8 +580,8 @@ scalar-vector multipleication满足交换律,也就是说
 <li>其中最重要的也是我们讲的最多的,就是dot product</li>
 </ul>
 </div>
-<div id="outline-container-org019ae87" class="outline-3">
-<h3 id="org019ae87"><span class="section-number-3">3.1</span> Vector dot product: Algebra</h3>
+<div id="outline-container-org902dec5" class="outline-3">
+<h3 id="org902dec5"><span class="section-number-3">3.1.</span> Vector dot product: Algebra</h3>
 <div class="outline-text-3" id="text-3-1">
 <ul class="org-ul">
 <li>dot product也叫做inner product, 是线性代数里面最重要的操作</li>
@@ -608,7 +597,7 @@ scalar-vector multipleication满足交换律,也就是说
 <li><p>
 由于两个vector的dot product结果是一个scalar, 所以dot product又称之为scalar product
 </p>
-<pre class="example" id="org1f32df0">
+<pre class="example" id="org89171c7">
 注意,是scalar product,而不是scalar-vector product
 </pre></li>
 <li>至于inner product,这是在"非欧几里得空间"里面对dot product的命名,在欧几里何空间,我们可以认为inner
@@ -630,7 +619,7 @@ dot product的过程可以使用如下公式表达,注意,公式中中间三个�
 <li><p>
 我们举个例子来计算一下
 </p>
-<pre class="example" id="org93e5626">
+<pre class="example" id="org22d0018">
 [1 2 3 4] * [5 6 7 8] = 1*5 + 2*6 + 3*7 + 4*8
                       = 5 + 12 + 21 + 32
                       = 70
@@ -652,24 +641,24 @@ magnitude-squared或者是sauared-norm</li>
 使用如下代码计算dot product
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #5699AF;">v1</span> = np.array<span style="color: #6c9ef8;">(</span><span style="color: #b77fdb;">[</span>2, 5, 4, 7<span style="color: #b77fdb;">]</span><span style="color: #6c9ef8;">)</span>
-<span style="color: #5699AF;">v2</span> = np.array<span style="color: #6c9ef8;">(</span><span style="color: #b77fdb;">[</span>4, 1, 0, 2<span style="color: #b77fdb;">]</span><span style="color: #6c9ef8;">)</span>
-<span style="color: #5699AF;">dp</span> = np.dot<span style="color: #6c9ef8;">(</span>v1, v2<span style="color: #6c9ef8;">)</span>
+<pre class="src src-python"><span style="color: #f8f8f0;">v1</span> = np.array<span style="color: #51afef;">(</span><span style="color: #c678dd;">[</span>2, 5, 4, 7<span style="color: #c678dd;">]</span><span style="color: #51afef;">)</span>
+<span style="color: #f8f8f0;">v2</span> = np.array<span style="color: #51afef;">(</span><span style="color: #c678dd;">[</span>4, 1, 0, 2<span style="color: #c678dd;">]</span><span style="color: #51afef;">)</span>
+<span style="color: #f8f8f0;">dp</span> = np.dot<span style="color: #51afef;">(</span>v1, v2<span style="color: #51afef;">)</span>
 </pre>
 </div></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgf6b941a" class="outline-3">
-<h3 id="orgf6b941a"><span class="section-number-3">3.2</span> Dot product properties</h3>
+<div id="outline-container-org6ea09d9" class="outline-3">
+<h3 id="org6ea09d9"><span class="section-number-3">3.2.</span> Dot product properties</h3>
 <div class="outline-text-3" id="text-3-2">
 <ul class="org-ul">
 <li><b>Associative property</b> 我们想看看结合律是否在dot production上面适用,需要从两个角度看,必须两个角
 度都满足才能说dot production 满足结合律</li>
 </ul>
 </div>
-<div id="outline-container-org9fadf17" class="outline-4">
-<h4 id="org9fadf17"><span class="section-number-4">3.2.1</span> vector product和scalar的结合律</h4>
+<div id="outline-container-org381125d" class="outline-4">
+<h4 id="org381125d"><span class="section-number-4">3.2.1.</span> vector product和scalar的结合律</h4>
 <div class="outline-text-4" id="text-3-2-1">
 <ul class="org-ul">
 <li>这种情况其实就是scalar-vector multiplication嵌套在dot product里面</li>
@@ -683,8 +672,8 @@ magnitude-squared或者是sauared-norm</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org00bc71f" class="outline-4">
-<h4 id="org00bc71f"><span class="section-number-4">3.2.2</span> vector product和vector的结合律</h4>
+<div id="outline-container-orgb70a1bf" class="outline-4">
+<h4 id="orgb70a1bf"><span class="section-number-4">3.2.2.</span> vector product和vector的结合律</h4>
 <div class="outline-text-4" id="text-3-2-2">
 <ul class="org-ul">
 <li>先说结论,这种情况下的结合律是不满足的</li>
@@ -770,8 +759,8 @@ magnitude-squared或者是sauared-norm</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orga77b542" class="outline-4">
-<h4 id="orga77b542"><span class="section-number-4">3.2.3</span> commutative property</h4>
+<div id="outline-container-orgbe8b885" class="outline-4">
+<h4 id="orgbe8b885"><span class="section-number-4">3.2.3.</span> commutative property</h4>
 <div class="outline-text-4" id="text-3-2-3">
 <ul class="org-ul">
 <li><p>
@@ -791,8 +780,8 @@ dot product 满足交换律是很显然的事情,因为dot production是在eleme
 </ul>
 </div>
 </div>
-<div id="outline-container-org799b0f4" class="outline-4">
-<h4 id="org799b0f4"><span class="section-number-4">3.2.4</span> Distributive property</h4>
+<div id="outline-container-org1086da8" class="outline-4">
+<h4 id="org1086da8"><span class="section-number-4">3.2.4.</span> Distributive property</h4>
 <div class="outline-text-4" id="text-3-2-4">
 <ul class="org-ul">
 <li>首先抛出结论: dot product是符合分配率的,符合分配率这件事情能让"代数表达"和"几何表达"联系起来</li>
@@ -900,7 +889,7 @@ dot product 满足交换律是很显然的事情,因为dot production是在eleme
 <li><p>
 用英语来说,上面的不等式就是说
 </p>
-<pre class="example" id="orga8fd1a7">
+<pre class="example" id="org7e3ca7a">
 两个vector的dot product的magnitude不会比这两个vector magitude的product值大
 </pre></li>
 <li>这个不等式的等于会在下面的情况下得到满足的时候,出现:
@@ -911,14 +900,14 @@ dot product 满足交换律是很显然的事情,因为dot production是在eleme
 </div>
 </div>
 </div>
-<div id="outline-container-orgb16b577" class="outline-3">
-<h3 id="orgb16b577"><span class="section-number-3">3.3</span> Vector dot product: Geometry</h3>
+<div id="outline-container-orgf42d19e" class="outline-3">
+<h3 id="orgf42d19e"><span class="section-number-3">3.3.</span> Vector dot product: Geometry</h3>
 <div class="outline-text-3" id="text-3-3">
 <ul class="org-ul">
 <li><p>
 从几何上来说
 </p>
-<pre class="example" id="org8bb0707">
+<pre class="example" id="org2a8d772">
 dot product就是两个vector之间的cosinec乘以这两个vector
 </pre></li>
 <li>其实,从几何和代数的方向上看这个公式,其实是使用不同的方式来表达同样的concept</li>
@@ -949,7 +938,7 @@ dot product 的几何定义
 <li><p>
 如果只考虑dot product的正负,那么我们可以得到一个结论:
 </p>
-<pre class="example" id="orgb6421c0">
+<pre class="example" id="org0bd2588">
 dot product的正负只由两个vector之间的夹角来决定
 </pre></li>
 <li>原因很简单 dot product是cosine乘以两个vector的长度,长度都是正数,那么它的乘积也是正数,在判断结果
@@ -970,8 +959,8 @@ dot product的正负只由两个vector之间的夹角来决定
 </ul>
 </div>
 </div>
-<div id="outline-container-org9d239c3" class="outline-3">
-<h3 id="org9d239c3"><span class="section-number-3">3.4</span> Algebraic and geometric equivalence</h3>
+<div id="outline-container-orgf36a3a8" class="outline-3">
+<h3 id="orgf36a3a8"><span class="section-number-3">3.4.</span> Algebraic and geometric equivalence</h3>
 <div class="outline-text-3" id="text-3-4">
 <ul class="org-ul">
 <li>对于dot product的解释,几何解释和代数解释非常的不同,但是实质上是一样的.我们本节就是
@@ -1047,8 +1036,8 @@ dot product的正负只由两个vector之间的夹角来决定
 </ul>
 </div>
 </div>
-<div id="outline-container-org2d2bfee" class="outline-3">
-<h3 id="org2d2bfee"><span class="section-number-3">3.5</span> Linear weighted combination</h3>
+<div id="outline-container-org07750a3" class="outline-3">
+<h3 id="org07750a3"><span class="section-number-3">3.5.</span> Linear weighted combination</h3>
 <div class="outline-text-3" id="text-3-5">
 <ul class="org-ul">
 <li>线性加权组合由于非常常见,所以我们也单独给了他一个章节</li>
@@ -1074,25 +1063,25 @@ dot product的正负只由两个vector之间的夹角来决定
 使用代码来实现linear weighted combination非常容易
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #6c9ef8;">import</span> numpy <span style="color: #6c9ef8;">as</span> np
+<pre class="src src-python"><span style="color: #26a6a6;">import</span> numpy <span style="color: #26a6a6;">as</span> np
 
-<span style="color: #5699AF;">l1</span> = 1
-<span style="color: #5699AF;">l2</span> = 2
-<span style="color: #5699AF;">l3</span> = -3
-<span style="color: #5699AF;">v1</span> = np.array<span style="color: #6c9ef8;">(</span><span style="color: #b77fdb;">[</span>4, 5, 1<span style="color: #b77fdb;">]</span><span style="color: #6c9ef8;">)</span>
-<span style="color: #5699AF;">v2</span> = np.array<span style="color: #6c9ef8;">(</span><span style="color: #b77fdb;">[</span>-4, 0, -4<span style="color: #b77fdb;">]</span><span style="color: #6c9ef8;">)</span>
-<span style="color: #5699AF;">v3</span> = np.array<span style="color: #6c9ef8;">(</span><span style="color: #b77fdb;">[</span>1, 3, 2<span style="color: #b77fdb;">]</span><span style="color: #6c9ef8;">)</span>
-<span style="color: #5699AF;">ret</span> = l1 * v1 + l2 * v2 + l3 * v3
-<span style="color: #6c9ef8;">print</span><span style="color: #6c9ef8;">(</span><span style="color: #d08928;">"""[ret] ==&gt;"""</span>, ret<span style="color: #6c9ef8;">)</span>
-<span style="color: #808080; font-style: italic;"># </span><span style="color: #808080; font-style: italic;">&lt;===================OUTPUT===================&gt;</span>
-<span style="color: #808080; font-style: italic;"># </span><span style="color: #808080; font-style: italic;">[ret] ==&gt; [ -7  -4 -13]</span>
+<span style="color: #f8f8f0;">l1</span> = 1
+<span style="color: #f8f8f0;">l2</span> = 2
+<span style="color: #f8f8f0;">l3</span> = -3
+<span style="color: #f8f8f0;">v1</span> = np.array<span style="color: #51afef;">(</span><span style="color: #c678dd;">[</span>4, 5, 1<span style="color: #c678dd;">]</span><span style="color: #51afef;">)</span>
+<span style="color: #f8f8f0;">v2</span> = np.array<span style="color: #51afef;">(</span><span style="color: #c678dd;">[</span>-4, 0, -4<span style="color: #c678dd;">]</span><span style="color: #51afef;">)</span>
+<span style="color: #f8f8f0;">v3</span> = np.array<span style="color: #51afef;">(</span><span style="color: #c678dd;">[</span>1, 3, 2<span style="color: #c678dd;">]</span><span style="color: #51afef;">)</span>
+<span style="color: #f8f8f0;">ret</span> = l1 * v1 + l2 * v2 + l3 * v3
+<span style="color: #26a6a6;">print</span><span style="color: #51afef;">(</span><span style="color: #bcd42a;">"""[ret] ==&gt;"""</span>, ret<span style="color: #51afef;">)</span>
+<span style="color: #5B6268;"># </span><span style="color: #5B6268;">&lt;===================OUTPUT===================&gt;</span>
+<span style="color: #5B6268;"># </span><span style="color: #5B6268;">[ret] ==&gt; [ -7  -4 -13]</span>
 </pre>
 </div></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org71c2a34" class="outline-3">
-<h3 id="org71c2a34"><span class="section-number-3">3.6</span> The outer product</h3>
+<div id="outline-container-org75c9bab" class="outline-3">
+<h3 id="org75c9bab"><span class="section-number-3">3.6.</span> The outer product</h3>
 <div class="outline-text-3" id="text-3-6">
 <ul class="org-ul">
 <li>所谓outer product,就是一种把两个vector合并,产生一个matrix的操作</li>
@@ -1115,7 +1104,7 @@ dot product的正负只由两个vector之间的夹角来决定
 从上帝视角,我们其实学过矩阵乘法了,从矩阵乘法的角度其实可以理解最后为什么结果一个是scalar,一个
 是matrix,因为
 </p>
-<pre class="example" id="orga6c0a0e">
+<pre class="example" id="org75fa0b8">
 Dot product and outer product are special cases of matrix multiplication.
 </pre></li>
 </ul></li>
@@ -1165,7 +1154,7 @@ product, outer product里面的每一列,都可以看做是一个scalar-vector m
 <li><p>
 同时,outer product的每个column都是left column vector 的scaled version
 </p>
-<pre class="example" id="org1d21612">
+<pre class="example" id="org7ac079c">
 Each column of the outer product matrix is a scaled version of the left column vector
 </pre></li>
 </ul></li>
@@ -1183,31 +1172,31 @@ vector的形式),那么我们就会发现新的两个matrix非常像,只不过ro
 <b>Code</b> 使用如下代码来完成out product的计算,顺便看一下上一条说的matrix的swap现象
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #6c9ef8;">import</span> numpy <span style="color: #6c9ef8;">as</span> np
+<pre class="src src-python"><span style="color: #26a6a6;">import</span> numpy <span style="color: #26a6a6;">as</span> np
 
-<span style="color: #5699AF;">v1</span> = np.array<span style="color: #6c9ef8;">(</span><span style="color: #b77fdb;">[</span>2, 5, 4, 7<span style="color: #b77fdb;">]</span><span style="color: #6c9ef8;">)</span>
-<span style="color: #5699AF;">v2</span> = np.array<span style="color: #6c9ef8;">(</span><span style="color: #b77fdb;">[</span>4, 1, 0, 2<span style="color: #b77fdb;">]</span><span style="color: #6c9ef8;">)</span>
-<span style="color: #5699AF;">op</span> = np.outer<span style="color: #6c9ef8;">(</span>v1, v2<span style="color: #6c9ef8;">)</span>
-<span style="color: #6c9ef8;">print</span><span style="color: #6c9ef8;">(</span>op<span style="color: #6c9ef8;">)</span>
-<span style="color: #5699AF;">op</span> = np.outer<span style="color: #6c9ef8;">(</span>v2, v1<span style="color: #6c9ef8;">)</span>
-<span style="color: #6c9ef8;">print</span><span style="color: #6c9ef8;">(</span>op<span style="color: #6c9ef8;">)</span>
+<span style="color: #f8f8f0;">v1</span> = np.array<span style="color: #51afef;">(</span><span style="color: #c678dd;">[</span>2, 5, 4, 7<span style="color: #c678dd;">]</span><span style="color: #51afef;">)</span>
+<span style="color: #f8f8f0;">v2</span> = np.array<span style="color: #51afef;">(</span><span style="color: #c678dd;">[</span>4, 1, 0, 2<span style="color: #c678dd;">]</span><span style="color: #51afef;">)</span>
+<span style="color: #f8f8f0;">op</span> = np.outer<span style="color: #51afef;">(</span>v1, v2<span style="color: #51afef;">)</span>
+<span style="color: #26a6a6;">print</span><span style="color: #51afef;">(</span>op<span style="color: #51afef;">)</span>
+<span style="color: #f8f8f0;">op</span> = np.outer<span style="color: #51afef;">(</span>v2, v1<span style="color: #51afef;">)</span>
+<span style="color: #26a6a6;">print</span><span style="color: #51afef;">(</span>op<span style="color: #51afef;">)</span>
 
-<span style="color: #808080; font-style: italic;"># </span><span style="color: #808080; font-style: italic;">&lt;===================OUTPUT===================&gt;</span>
-<span style="color: #808080; font-style: italic;"># </span><span style="color: #808080; font-style: italic;">[[ 8  2  0  4]</span>
-<span style="color: #808080; font-style: italic;">#  </span><span style="color: #808080; font-style: italic;">[20  5  0 10]</span>
-<span style="color: #808080; font-style: italic;">#  </span><span style="color: #808080; font-style: italic;">[16  4  0  8]</span>
-<span style="color: #808080; font-style: italic;">#  </span><span style="color: #808080; font-style: italic;">[28  7  0 14]]</span>
-<span style="color: #808080; font-style: italic;"># </span><span style="color: #808080; font-style: italic;">[[ 8 20 16 28]</span>
-<span style="color: #808080; font-style: italic;">#  </span><span style="color: #808080; font-style: italic;">[ 2  5  4  7]</span>
-<span style="color: #808080; font-style: italic;">#  </span><span style="color: #808080; font-style: italic;">[ 0  0  0  0]</span>
-<span style="color: #808080; font-style: italic;">#  </span><span style="color: #808080; font-style: italic;">[ 4 10  8 14]]</span>
+<span style="color: #5B6268;"># </span><span style="color: #5B6268;">&lt;===================OUTPUT===================&gt;</span>
+<span style="color: #5B6268;"># </span><span style="color: #5B6268;">[[ 8  2  0  4]</span>
+<span style="color: #5B6268;">#  </span><span style="color: #5B6268;">[20  5  0 10]</span>
+<span style="color: #5B6268;">#  </span><span style="color: #5B6268;">[16  4  0  8]</span>
+<span style="color: #5B6268;">#  </span><span style="color: #5B6268;">[28  7  0 14]]</span>
+<span style="color: #5B6268;"># </span><span style="color: #5B6268;">[[ 8 20 16 28]</span>
+<span style="color: #5B6268;">#  </span><span style="color: #5B6268;">[ 2  5  4  7]</span>
+<span style="color: #5B6268;">#  </span><span style="color: #5B6268;">[ 0  0  0  0]</span>
+<span style="color: #5B6268;">#  </span><span style="color: #5B6268;">[ 4 10  8 14]]</span>
 </pre>
 </div></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org8ed05e2" class="outline-3">
-<h3 id="org8ed05e2"><span class="section-number-3">3.7</span> Element-wise (Hadamard) vector product</h3>
+<div id="outline-container-orgee214b1" class="outline-3">
+<h3 id="orgee214b1"><span class="section-number-3">3.7.</span> Element-wise (Hadamard) vector product</h3>
 <div class="outline-text-3" id="text-3-7">
 <ul class="org-ul">
 <li><p>
@@ -1222,22 +1211,22 @@ vector的形式),那么我们就会发现新的两个matrix非常像,只不过ro
 <b>Code</b> 计算element-wise multiplication的代码如下
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #6c9ef8;">import</span> numpy <span style="color: #6c9ef8;">as</span> np
+<pre class="src src-python"><span style="color: #26a6a6;">import</span> numpy <span style="color: #26a6a6;">as</span> np
 
-<span style="color: #5699AF;">v1</span> = np.array<span style="color: #6c9ef8;">(</span><span style="color: #b77fdb;">[</span>2, 5, 4, 7<span style="color: #b77fdb;">]</span><span style="color: #6c9ef8;">)</span>
-<span style="color: #5699AF;">v2</span> = np.array<span style="color: #6c9ef8;">(</span><span style="color: #b77fdb;">[</span>4, 1, 0, 2<span style="color: #b77fdb;">]</span><span style="color: #6c9ef8;">)</span>
-<span style="color: #5699AF;">v3</span> = v1 * v2
-<span style="color: #6c9ef8;">print</span><span style="color: #6c9ef8;">(</span><span style="color: #d08928;">"""[v3] ==&gt;"""</span>, v3<span style="color: #6c9ef8;">)</span>
+<span style="color: #f8f8f0;">v1</span> = np.array<span style="color: #51afef;">(</span><span style="color: #c678dd;">[</span>2, 5, 4, 7<span style="color: #c678dd;">]</span><span style="color: #51afef;">)</span>
+<span style="color: #f8f8f0;">v2</span> = np.array<span style="color: #51afef;">(</span><span style="color: #c678dd;">[</span>4, 1, 0, 2<span style="color: #c678dd;">]</span><span style="color: #51afef;">)</span>
+<span style="color: #f8f8f0;">v3</span> = v1 * v2
+<span style="color: #26a6a6;">print</span><span style="color: #51afef;">(</span><span style="color: #bcd42a;">"""[v3] ==&gt;"""</span>, v3<span style="color: #51afef;">)</span>
 
-<span style="color: #808080; font-style: italic;"># </span><span style="color: #808080; font-style: italic;">&lt;===================OUTPUT===================&gt;</span>
-<span style="color: #808080; font-style: italic;"># </span><span style="color: #808080; font-style: italic;">[v3] ==&gt; [ 8  5  0 14]</span>
+<span style="color: #5B6268;"># </span><span style="color: #5B6268;">&lt;===================OUTPUT===================&gt;</span>
+<span style="color: #5B6268;"># </span><span style="color: #5B6268;">[v3] ==&gt; [ 8  5  0 14]</span>
 </pre>
 </div></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org638a449" class="outline-3">
-<h3 id="org638a449"><span class="section-number-3">3.8</span> Cross product</h3>
+<div id="outline-container-org9435752" class="outline-3">
+<h3 id="org9435752"><span class="section-number-3">3.8.</span> Cross product</h3>
 <div class="outline-text-3" id="text-3-8">
 <ul class="org-ul">
 <li>cross product的限定条件是:
@@ -1275,8 +1264,8 @@ cross product的magnitude等于参与乘法的两个vector的magnitude再乘以�
 </ul>
 </div>
 </div>
-<div id="outline-container-orgc2c1c42" class="outline-3">
-<h3 id="orgc2c1c42"><span class="section-number-3">3.9</span> Unit vectors</h3>
+<div id="outline-container-orge52cfaa" class="outline-3">
+<h3 id="orge52cfaa"><span class="section-number-3">3.9.</span> Unit vectors</h3>
 <div class="outline-text-3" id="text-3-9">
 <ul class="org-ul">
 <li>拥有长度为1的vector( \(\| \mathbf{v} \| = 1\)  ), 有时候是非常重要的</li>
@@ -1324,29 +1313,29 @@ cross product的magnitude等于参与乘法的两个vector的magnitude再乘以�
 <b>Code</b> 代码如下
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #6c9ef8;">import</span> numpy <span style="color: #6c9ef8;">as</span> np
+<pre class="src src-python"><span style="color: #26a6a6;">import</span> numpy <span style="color: #26a6a6;">as</span> np
 
-<span style="color: #5699AF;">v</span> = np.array<span style="color: #6c9ef8;">(</span><span style="color: #b77fdb;">[</span>2, 5, 4, 7<span style="color: #b77fdb;">]</span><span style="color: #6c9ef8;">)</span>
-<span style="color: #5699AF;">vMag</span> = np.linalg.norm<span style="color: #6c9ef8;">(</span>v<span style="color: #6c9ef8;">)</span>
-<span style="color: #6c9ef8;">print</span><span style="color: #6c9ef8;">(</span><span style="color: #d08928;">"""[vMag] ==&gt;"""</span>, vMag<span style="color: #6c9ef8;">)</span>
-<span style="color: #5699AF;">v_unit</span> = v / vMag
-<span style="color: #6c9ef8;">print</span><span style="color: #6c9ef8;">(</span><span style="color: #d08928;">"""[v_unit] ==&gt;"""</span>, v_unit<span style="color: #6c9ef8;">)</span>
+<span style="color: #f8f8f0;">v</span> = np.array<span style="color: #51afef;">(</span><span style="color: #c678dd;">[</span>2, 5, 4, 7<span style="color: #c678dd;">]</span><span style="color: #51afef;">)</span>
+<span style="color: #f8f8f0;">vMag</span> = np.linalg.norm<span style="color: #51afef;">(</span>v<span style="color: #51afef;">)</span>
+<span style="color: #26a6a6;">print</span><span style="color: #51afef;">(</span><span style="color: #bcd42a;">"""[vMag] ==&gt;"""</span>, vMag<span style="color: #51afef;">)</span>
+<span style="color: #f8f8f0;">v_unit</span> = v / vMag
+<span style="color: #26a6a6;">print</span><span style="color: #51afef;">(</span><span style="color: #bcd42a;">"""[v_unit] ==&gt;"""</span>, v_unit<span style="color: #51afef;">)</span>
 
-<span style="color: #808080; font-style: italic;"># </span><span style="color: #808080; font-style: italic;">&lt;===================OUTPUT===================&gt;</span>
-<span style="color: #808080; font-style: italic;"># </span><span style="color: #808080; font-style: italic;">[vMag] ==&gt; 9.695359714832659</span>
-<span style="color: #808080; font-style: italic;"># </span><span style="color: #808080; font-style: italic;">[v_unit] ==&gt; [0.20628425 0.51571062 0.4125685  0.72199487]</span>
+<span style="color: #5B6268;"># </span><span style="color: #5B6268;">&lt;===================OUTPUT===================&gt;</span>
+<span style="color: #5B6268;"># </span><span style="color: #5B6268;">[vMag] ==&gt; 9.695359714832659</span>
+<span style="color: #5B6268;"># </span><span style="color: #5B6268;">[v_unit] ==&gt; [0.20628425 0.51571062 0.4125685  0.72199487]</span>
 </pre>
 </div></li>
 </ul>
 </div>
 </div>
 </div>
-<div id="outline-container-org295f3be" class="outline-2">
-<h2 id="org295f3be"><span class="section-number-2">4</span> Vector Spaces</h2>
+<div id="outline-container-org2176b54" class="outline-2">
+<h2 id="org2176b54"><span class="section-number-2">4.</span> Vector Spaces</h2>
 <div class="outline-text-2" id="text-4">
 </div>
-<div id="outline-container-orgc2b4580" class="outline-3">
-<h3 id="orgc2b4580"><span class="section-number-3">4.1</span> Dimensions and fields in linear algebra</h3>
+<div id="outline-container-orgccab6a2" class="outline-3">
+<h3 id="orgccab6a2"><span class="section-number-3">4.1.</span> Dimensions and fields in linear algebra</h3>
 <div class="outline-text-3" id="text-4-1">
 <ul class="org-ul">
 <li><b>Dimension</b> 前面我们说过,dimension的定义很简单,就是vector里面有几个数字,就是几个dimension</li>
@@ -1397,8 +1386,8 @@ dimension,比如,如果说如下两个vector能够计算dot product的唯一可�
 </ul>
 </div>
 </div>
-<div id="outline-container-org94010e0" class="outline-3">
-<h3 id="org94010e0"><span class="section-number-3">4.2</span> Vector spaces</h3>
+<div id="outline-container-org93aeb46" class="outline-3">
+<h3 id="org93aeb46"><span class="section-number-3">4.2.</span> Vector spaces</h3>
 <div class="outline-text-3" id="text-4-2">
 <ul class="org-ul">
 <li>所谓的vector space,是指一系列对象,这些对象上面定义了addition 和 scalar multiplication</li>
@@ -1416,8 +1405,8 @@ dimension,比如,如果说如下两个vector能够计算dot product的唯一可�
 </ul>
 </div>
 </div>
-<div id="outline-container-org39c6894" class="outline-3">
-<h3 id="org39c6894"><span class="section-number-3">4.3</span> Subspaces and ambient spaces</h3>
+<div id="outline-container-org97ea859" class="outline-3">
+<h3 id="org97ea859"><span class="section-number-3">4.3.</span> Subspaces and ambient spaces</h3>
 <div class="outline-text-3" id="text-4-3">
 <ul class="org-ul">
 <li>vector subspace是所有线性代数高级概念的核心,其同样具有代数和几何两种方向上的理解</li>
@@ -1425,7 +1414,7 @@ dimension,比如,如果说如下两个vector能够计算dot product的唯一可�
 <b>Geometry</b> 从几何上来说,subspace是一系列point的集合,这些point可以通过延长(scalar multiplication)
 并且组合(addition)一系列的vector来达到
 </p>
-<pre class="example" id="org2dc260d">
+<pre class="example" id="orgbde134b">
 A subspace is the set of all points that you can reach by stretching and combining
 a collection of vector(that is, addition and scalar multiplication)
 </pre></li>
@@ -1451,7 +1440,7 @@ multiplication操作来生成,生成后把这些point收集起来就形成了这
 图4-5
 </p>
 
-<div id="org3d6a76b" class="figure">
+<div id="org898f7bb" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/tic/4-5.png" alt="4-5.png" />
 </p>
 <p><span class="figure-number">Figure 4: </span>tic/4-5.png</p>
@@ -1465,7 +1454,7 @@ multiplication操作来生成,生成后把这些point收集起来就形成了这
 图4-6
 </p>
 
-<div id="org1c53781" class="figure">
+<div id="orgc067453" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/tic/4-6.png" alt="4-6.png" />
 </p>
 <p><span class="figure-number">Figure 5: </span>tic/4-6.png</p>
@@ -1565,8 +1554,8 @@ subspace \(V\)</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgd12d772" class="outline-3">
-<h3 id="orgd12d772"><span class="section-number-3">4.4</span> Subsets</h3>
+<div id="outline-container-orgedbf3b4" class="outline-3">
+<h3 id="orgedbf3b4"><span class="section-number-3">4.4.</span> Subsets</h3>
 <div class="outline-text-3" id="text-4-4">
 <ul class="org-ul">
 <li>在线性代数里面,subset不是一个重要的概念,之所以拿出篇幅来介绍,是因为不想让如下两个概念相互混淆:
@@ -1590,8 +1579,8 @@ subspace \(V\)</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org9021d4b" class="outline-3">
-<h3 id="org9021d4b"><span class="section-number-3">4.5</span> Span</h3>
+<div id="outline-container-orge22385a" class="outline-3">
+<h3 id="orge22385a"><span class="section-number-3">4.5.</span> Span</h3>
 <div class="outline-text-3" id="text-4-5">
 <ul class="org-ul">
 <li><b>Geometry</b> span和subspace其实是非常相近的概念,我们可以使用语法的方式来区别两者:
@@ -1603,7 +1592,7 @@ linear combination</li>
 <li><p>
 总结起来可以说:
 </p>
-<pre class="example" id="org9c20ed7">
+<pre class="example" id="org9ad2725">
 A set of vectors spancs, and the result of their spanning is a subspace
 </pre></li>
 <li>举个例子, 所有的 \(\mathbb{R}^2\) 上的点定义的subspace,可以通过如下两个vector的span得到:
@@ -1629,13 +1618,13 @@ span(\{\mathbf{v_1},\cdot\cdot\cdot,\mathbf{v_n}\}) = \{\alpha_1 \mathbf{v_1} + 
 <li><p>
 <b>In the span?</b> 在线性代数里面最常见的问题就是是否一个vector 是被其他多个vector span来的?
 </p>
-<pre class="example" id="org6e0941d">
+<pre class="example" id="orgd67281e">
 Whether one vector is "in the span" of another vector or set of vectors
 </pre></li>
 <li><p>
 上面的数学说法,用大白话就是
 </p>
-<pre class="example" id="orgf22b9a8">
+<pre class="example" id="org3875aa3">
 对于特定的vector w,你是否可以通过scalar-multiplying and adding 其他vector(从set S)来得到
 </pre></li>
 <li>举个例子:
@@ -1719,7 +1708,7 @@ v \in span(S) \; because \; \begin{bmatrix}
 图4-8
 </p>
 
-<div id="orgcdf22f2" class="figure">
+<div id="org61c69b3" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/tic/4-8.png" alt="4-8.png" />
 </p>
 <p><span class="figure-number">Figure 6: </span>tic/4-8.png</p>
@@ -1731,7 +1720,7 @@ v \in span(S) \; because \; \begin{bmatrix}
 <li><p>
 还有一点要牢记在心,那就是set里面的某个vector也可以是set里面其他vector linear combination得来的
 </p>
-<pre class="example" id="orga1b6206">
+<pre class="example" id="org6cf00be">
 It doesn't matter if the vectors in the set are linear combinations of other vectors
 in that same set.
 </pre></li>
@@ -1799,8 +1788,8 @@ in that same set.
 </ul>
 </div>
 </div>
-<div id="outline-container-org121b007" class="outline-3">
-<h3 id="org121b007"><span class="section-number-3">4.6</span> Linear independence</h3>
+<div id="outline-container-orgd611f14" class="outline-3">
+<h3 id="orgd611f14"><span class="section-number-3">4.6.</span> Linear independence</h3>
 <div class="outline-text-3" id="text-4-6">
 <ul class="org-ul">
 <li>Linear independence(简称为indepence)对理解线性代数中的如下概念非常重要:
@@ -1812,7 +1801,7 @@ in that same set.
 <li><p>
 对于理解linear independence来说,最重要的是要理解到一个事实:线性无关是针对一组vector来说的
 </p>
-<pre class="example" id="org4bef76b">
+<pre class="example" id="orgcb362b5">
 Linear independence is a property of a set of vectors.
 </pre></li>
 <li>对于一个vector来说,linear independence与否无法成立</li>
@@ -1852,7 +1841,7 @@ dependent</li>
 当M&lt;=N的时候,就具备了linear indepedent的可能性,但是具体是否independent要看vectors自己的属性,
 举个极端的例子
 </p>
-<pre class="example" id="org2c71b9b">
+<pre class="example" id="org64d48a9">
 在 ambient $\mathbb{R}^25$ subspace里面,有一个set of 20个vector,但是这20个vector都是
 在同一个line里面,那么他们也就能组成一个1D subspace
 </pre></li>
@@ -1865,7 +1854,7 @@ dependent</li>
 <li><p>
 <b>Algebra</b> 从代数的角度上讲, 一系列的vector如果dependent的条件是:
 </p>
-<pre class="example" id="orgb396b01">
+<pre class="example" id="org96af432">
 至少一个vector (set中的)可以表示成其他vector的linear weighted combination形式
 </pre></li>
 <li>下面是两个dependent set的例子,每个vector里面都找到了能用其他vector combine(linear combination)成
@@ -2040,8 +2029,8 @@ combination的结果必然为0.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org9b56f1b" class="outline-3">
-<h3 id="org9b56f1b"><span class="section-number-3">4.7</span> Basis</h3>
+<div id="outline-container-org89c6ed0" class="outline-3">
+<h3 id="org89c6ed0"><span class="section-number-3">4.7.</span> Basis</h3>
 <div class="outline-text-3" id="text-4-7">
 <ul class="org-ul">
 <li>basis的定义是span和independence两个概念的组合:</li>
@@ -2146,7 +2135,7 @@ S_1 = \left\{
 <li><p>
 某些问题使用特定的basis更简单
 </p>
-<pre class="example" id="org8ae157d">
+<pre class="example" id="org11a34c6">
 Some problems are easier to solve in certain bases and harder to solve in other bases.
 </pre></li>
 <li>在multivariate data science, data compression等问题中,寻找最佳basis set是最重要的问题</li>
@@ -2154,7 +2143,7 @@ Some problems are easier to solve in certain bases and harder to solve in other 
 <li><p>
 除了线性代数,其他的科学里面也有basis的概念,其实basis就是一系列最小的能够表达其他事物的metrics
 </p>
-<pre class="example" id="org000045a">
+<pre class="example" id="org9e82a7a">
 A basis is the set of the minimum number of metrics needed to describe something.
 </pre></li>
 <li>比如在傅里叶转换中,正弦波就是basis function,因为所有的信号都能被解析为不同的正弦波(频率,周期,振
@@ -2163,12 +2152,12 @@ A basis is the set of the minimum number of metrics needed to describe something
 </div>
 </div>
 </div>
-<div id="outline-container-org5866752" class="outline-2">
-<h2 id="org5866752"><span class="section-number-2">5</span> Matrices</h2>
+<div id="outline-container-orgf90974e" class="outline-2">
+<h2 id="orgf90974e"><span class="section-number-2">5.</span> Matrices</h2>
 <div class="outline-text-2" id="text-5">
 </div>
-<div id="outline-container-org78bb2e7" class="outline-3">
-<h3 id="org78bb2e7"><span class="section-number-3">5.1</span> Interpretations and uses of matrices</h3>
+<div id="outline-container-org296a6f0" class="outline-3">
+<h3 id="org296a6f0"><span class="section-number-3">5.1.</span> Interpretations and uses of matrices</h3>
 <div class="outline-text-3" id="text-5-1">
 <ul class="org-ul">
 <li>本章主要是用来为矩阵入门,了解:
@@ -2203,8 +2192,8 @@ A basis is the set of the minimum number of metrics needed to describe something
 </ul>
 </div>
 </div>
-<div id="outline-container-org0613895" class="outline-3">
-<h3 id="org0613895"><span class="section-number-3">5.2</span> Matrix terminology and notation</h3>
+<div id="outline-container-orgcb9e4b6" class="outline-3">
+<h3 id="orgcb9e4b6"><span class="section-number-3">5.2.</span> Matrix terminology and notation</h3>
 <div class="outline-text-3" id="text-5-2">
 <ul class="org-ul">
 <li>我们首先来熟悉一下矩阵的术语(terminology):
@@ -2215,7 +2204,7 @@ A basis is the set of the minimum number of metrics needed to describe something
 下图让我们了解矩阵当中的如下几个属于: column, row, element, diagonal
 </p>
 
-<div id="org73e0192" class="figure">
+<div id="org37487ae" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/tic/5-1.png" alt="5-1.png" />
 </p>
 <p><span class="figure-number">Figure 7: </span>tic/5-1.png</p>
@@ -2229,7 +2218,7 @@ A basis is the set of the minimum number of metrics needed to describe something
 图5-2
 </p>
 
-<div id="orgfe24355" class="figure">
+<div id="org7617624" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/tic/5-2.png" alt="5-2.png" />
 </p>
 <p><span class="figure-number">Figure 8: </span>tic/5-2.png</p>
@@ -2245,14 +2234,14 @@ A basis is the set of the minimum number of metrics needed to describe something
 <li><p>
 我们可以使用一个词组来记住顺序:
 </p>
-<pre class="example" id="orge717757">
+<pre class="example" id="org41570f0">
 MR NiCe =&gt; M Row, N Column
 </pre></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org888c84f" class="outline-3">
-<h3 id="org888c84f"><span class="section-number-3">5.3</span> Matrix dimensionalities</h3>
+<div id="outline-container-org25b3bbe" class="outline-3">
+<h3 id="org25b3bbe"><span class="section-number-3">5.3.</span> Matrix dimensionalities</h3>
 <div class="outline-text-3" id="text-5-3">
 <ul class="org-ul">
 <li>相比vector的dimension的简洁(有几个element就有几个dimension), matrix的dimension就非常的灵活,从而也让人难以理解</li>
@@ -2266,14 +2255,14 @@ MR NiCe =&gt; M Row, N Column
 </ul>
 </div>
 </div>
-<div id="outline-container-orgea1bbe9" class="outline-3">
-<h3 id="orgea1bbe9"><span class="section-number-3">5.4</span> The transpose opertion</h3>
+<div id="outline-container-orgcdceca1" class="outline-3">
+<h3 id="orgcdceca1"><span class="section-number-3">5.4.</span> The transpose opertion</h3>
 <div class="outline-text-3" id="text-5-4">
 <ul class="org-ul">
 <li><p>
 本章会学习matrix 的transpose(转置)操作,其概念是和vector的transpose是一样的,都是颠倒rows和columns
 </p>
-<pre class="example" id="org2363755">
+<pre class="example" id="org16fb1c4">
 Swap rows for columns and vice-versa
 </pre></li>
 <li>matrix transpose的notation也和vector transpose的一样, transpose of A写作 \(\mathbf{A}^T\)</li>
@@ -2324,34 +2313,34 @@ matrix转置的转置还是自己,这是一个重要特性
 <b>Code</b> 使用python进行转置的代码如下
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #6c9ef8;">import</span> numpy <span style="color: #6c9ef8;">as</span> np
+<pre class="src src-python"><span style="color: #26a6a6;">import</span> numpy <span style="color: #26a6a6;">as</span> np
 
-<span style="color: #5699AF;">A</span> = np.array<span style="color: #6c9ef8;">(</span><span style="color: #b77fdb;">[</span><span style="color: #60aa00;">(</span>1, 2, 3<span style="color: #60aa00;">)</span>, <span style="color: #60aa00;">(</span>4, 5, 6<span style="color: #60aa00;">)</span><span style="color: #b77fdb;">]</span><span style="color: #6c9ef8;">)</span>
-<span style="color: #6c9ef8;">print</span><span style="color: #6c9ef8;">(</span><span style="color: #d08928;">'''[A] ==&gt;\n'''</span>, A<span style="color: #6c9ef8;">)</span>
-<span style="color: #5699AF;">At1</span> = A.T
-<span style="color: #6c9ef8;">print</span><span style="color: #6c9ef8;">(</span><span style="color: #d08928;">'''[At1] ==&gt;\n'''</span>, At1<span style="color: #6c9ef8;">)</span>
-<span style="color: #5699AF;">At2</span> = np.transpose<span style="color: #6c9ef8;">(</span>A<span style="color: #6c9ef8;">)</span>
-<span style="color: #6c9ef8;">print</span><span style="color: #6c9ef8;">(</span><span style="color: #d08928;">'''[At2] ==&gt;\n'''</span>, At2<span style="color: #6c9ef8;">)</span>
+<span style="color: #f8f8f0;">A</span> = np.array<span style="color: #51afef;">(</span><span style="color: #c678dd;">[</span><span style="color: #98be65;">(</span>1, 2, 3<span style="color: #98be65;">)</span>, <span style="color: #98be65;">(</span>4, 5, 6<span style="color: #98be65;">)</span><span style="color: #c678dd;">]</span><span style="color: #51afef;">)</span>
+<span style="color: #26a6a6;">print</span><span style="color: #51afef;">(</span><span style="color: #bcd42a;">'''[A] ==&gt;\n'''</span>, A<span style="color: #51afef;">)</span>
+<span style="color: #f8f8f0;">At1</span> = A.T
+<span style="color: #26a6a6;">print</span><span style="color: #51afef;">(</span><span style="color: #bcd42a;">'''[At1] ==&gt;\n'''</span>, At1<span style="color: #51afef;">)</span>
+<span style="color: #f8f8f0;">At2</span> = np.transpose<span style="color: #51afef;">(</span>A<span style="color: #51afef;">)</span>
+<span style="color: #26a6a6;">print</span><span style="color: #51afef;">(</span><span style="color: #bcd42a;">'''[At2] ==&gt;\n'''</span>, At2<span style="color: #51afef;">)</span>
 
-<span style="color: #808080; font-style: italic;"># </span><span style="color: #808080; font-style: italic;">&lt;===================OUTPUT===================&gt;</span>
-<span style="color: #808080; font-style: italic;"># </span><span style="color: #808080; font-style: italic;">[A] ==&gt;</span>
-<span style="color: #808080; font-style: italic;">#  </span><span style="color: #808080; font-style: italic;">[[1 2 3]</span>
-<span style="color: #808080; font-style: italic;">#  </span><span style="color: #808080; font-style: italic;">[4 5 6]]</span>
-<span style="color: #808080; font-style: italic;"># </span><span style="color: #808080; font-style: italic;">[At1] ==&gt;</span>
-<span style="color: #808080; font-style: italic;">#  </span><span style="color: #808080; font-style: italic;">[[1 4]</span>
-<span style="color: #808080; font-style: italic;">#  </span><span style="color: #808080; font-style: italic;">[2 5]</span>
-<span style="color: #808080; font-style: italic;">#  </span><span style="color: #808080; font-style: italic;">[3 6]]</span>
-<span style="color: #808080; font-style: italic;"># </span><span style="color: #808080; font-style: italic;">[At2] ==&gt;</span>
-<span style="color: #808080; font-style: italic;">#  </span><span style="color: #808080; font-style: italic;">[[1 4]</span>
-<span style="color: #808080; font-style: italic;">#  </span><span style="color: #808080; font-style: italic;">[2 5]</span>
-<span style="color: #808080; font-style: italic;">#  </span><span style="color: #808080; font-style: italic;">[3 6]]</span>
+<span style="color: #5B6268;"># </span><span style="color: #5B6268;">&lt;===================OUTPUT===================&gt;</span>
+<span style="color: #5B6268;"># </span><span style="color: #5B6268;">[A] ==&gt;</span>
+<span style="color: #5B6268;">#  </span><span style="color: #5B6268;">[[1 2 3]</span>
+<span style="color: #5B6268;">#  </span><span style="color: #5B6268;">[4 5 6]]</span>
+<span style="color: #5B6268;"># </span><span style="color: #5B6268;">[At1] ==&gt;</span>
+<span style="color: #5B6268;">#  </span><span style="color: #5B6268;">[[1 4]</span>
+<span style="color: #5B6268;">#  </span><span style="color: #5B6268;">[2 5]</span>
+<span style="color: #5B6268;">#  </span><span style="color: #5B6268;">[3 6]]</span>
+<span style="color: #5B6268;"># </span><span style="color: #5B6268;">[At2] ==&gt;</span>
+<span style="color: #5B6268;">#  </span><span style="color: #5B6268;">[[1 4]</span>
+<span style="color: #5B6268;">#  </span><span style="color: #5B6268;">[2 5]</span>
+<span style="color: #5B6268;">#  </span><span style="color: #5B6268;">[3 6]]</span>
 </pre>
 </div></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org208a9a8" class="outline-3">
-<h3 id="org208a9a8"><span class="section-number-3">5.5</span> Matrix zoology</h3>
+<div id="outline-container-orgc3cd390" class="outline-3">
+<h3 id="orgc3cd390"><span class="section-number-3">5.5.</span> Matrix zoology</h3>
 <div class="outline-text-3" id="text-5-5">
 <ul class="org-ul">
 <li>有很多特殊特点的matrix会以如下方式命名:
@@ -2399,7 +2388,7 @@ matrix转置的转置还是自己,这是一个重要特性
 <li><p>
 另外很显然的是,只有方阵才有可能是对阵矩阵
 </p>
-<pre class="example" id="orgaf0eef2">
+<pre class="example" id="org29aeb65">
 Only square matrices can be symmetric
 </pre></li>
 <li>也正是这个原因,vector不可能具有symmetric的性质</li>
@@ -2429,11 +2418,11 @@ Only square matrices can be symmetric
 我们可以使用很多方法从非对称(甚至是矩形)矩阵来创建对称矩阵,而且这是统计学和机器学习的核心,后面
 的章节就会介绍
 </p>
-<pre class="example" id="org6562b87">
+<pre class="example" id="org5b44a57">
 Indeed, creating symmetric from non-symmetric matrices is central to many statistics
 and machine learning applications
 </pre></li>
-<li><b>Skew-symmetric</b> 斜对称矩阵是说一个矩阵:
+<li><b>Skew-symmetric</b> 反对称矩阵是说一个矩阵:
 <ul class="org-ul">
 <li>以对角线为边界,上半部分每个成员是下半部分对应成员的值乘以-1</li>
 <li>对角线上必须都是0</li>
@@ -2500,24 +2489,24 @@ and machine learning applications
 <b>Code</b>, 使用如下代码来初始化单位矩阵,零矩阵,和vector
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #6c9ef8;">import</span> numpy <span style="color: #6c9ef8;">as</span> np
-<span style="color: #5699AF;">I</span> = np.eye<span style="color: #6c9ef8;">(</span>4<span style="color: #6c9ef8;">)</span>
-<span style="color: #6c9ef8;">print</span><span style="color: #6c9ef8;">(</span><span style="color: #d08928;">'''[I] ==&gt;'''</span>, I<span style="color: #6c9ef8;">)</span>
-<span style="color: #5699AF;">O</span> = np.ones<span style="color: #6c9ef8;">(</span>4<span style="color: #6c9ef8;">)</span>
-<span style="color: #6c9ef8;">print</span><span style="color: #6c9ef8;">(</span><span style="color: #d08928;">'''[O] ==&gt;'''</span>, O<span style="color: #6c9ef8;">)</span>
-<span style="color: #5699AF;">Z</span> = np.zeros<span style="color: #6c9ef8;">(</span><span style="color: #b77fdb;">(</span>4, 4<span style="color: #b77fdb;">)</span><span style="color: #6c9ef8;">)</span>
-<span style="color: #6c9ef8;">print</span><span style="color: #6c9ef8;">(</span><span style="color: #d08928;">'''[Z] ==&gt;'''</span>, Z<span style="color: #6c9ef8;">)</span>
+<pre class="src src-python"><span style="color: #26a6a6;">import</span> numpy <span style="color: #26a6a6;">as</span> np
+<span style="color: #f8f8f0;">I</span> = np.eye<span style="color: #51afef;">(</span>4<span style="color: #51afef;">)</span>
+<span style="color: #26a6a6;">print</span><span style="color: #51afef;">(</span><span style="color: #bcd42a;">'''[I] ==&gt;'''</span>, I<span style="color: #51afef;">)</span>
+<span style="color: #f8f8f0;">O</span> = np.ones<span style="color: #51afef;">(</span>4<span style="color: #51afef;">)</span>
+<span style="color: #26a6a6;">print</span><span style="color: #51afef;">(</span><span style="color: #bcd42a;">'''[O] ==&gt;'''</span>, O<span style="color: #51afef;">)</span>
+<span style="color: #f8f8f0;">Z</span> = np.zeros<span style="color: #51afef;">(</span><span style="color: #c678dd;">(</span>4, 4<span style="color: #c678dd;">)</span><span style="color: #51afef;">)</span>
+<span style="color: #26a6a6;">print</span><span style="color: #51afef;">(</span><span style="color: #bcd42a;">'''[Z] ==&gt;'''</span>, Z<span style="color: #51afef;">)</span>
 
-<span style="color: #808080; font-style: italic;"># </span><span style="color: #808080; font-style: italic;">&lt;===================OUTPUT===================&gt;</span>
-<span style="color: #808080; font-style: italic;"># </span><span style="color: #808080; font-style: italic;">[I] ==&gt; [[1. 0. 0. 0.]</span>
-<span style="color: #808080; font-style: italic;">#  </span><span style="color: #808080; font-style: italic;">[0. 1. 0. 0.]</span>
-<span style="color: #808080; font-style: italic;">#  </span><span style="color: #808080; font-style: italic;">[0. 0. 1. 0.]</span>
-<span style="color: #808080; font-style: italic;">#  </span><span style="color: #808080; font-style: italic;">[0. 0. 0. 1.]]</span>
-<span style="color: #808080; font-style: italic;"># </span><span style="color: #808080; font-style: italic;">[O] ==&gt; [1. 1. 1. 1.]</span>
-<span style="color: #808080; font-style: italic;"># </span><span style="color: #808080; font-style: italic;">[Z] ==&gt; [[0. 0. 0. 0.]</span>
-<span style="color: #808080; font-style: italic;">#  </span><span style="color: #808080; font-style: italic;">[0. 0. 0. 0.]</span>
-<span style="color: #808080; font-style: italic;">#  </span><span style="color: #808080; font-style: italic;">[0. 0. 0. 0.]</span>
-<span style="color: #808080; font-style: italic;">#  </span><span style="color: #808080; font-style: italic;">[0. 0. 0. 0.]]</span>
+<span style="color: #5B6268;"># </span><span style="color: #5B6268;">&lt;===================OUTPUT===================&gt;</span>
+<span style="color: #5B6268;"># </span><span style="color: #5B6268;">[I] ==&gt; [[1. 0. 0. 0.]</span>
+<span style="color: #5B6268;">#  </span><span style="color: #5B6268;">[0. 1. 0. 0.]</span>
+<span style="color: #5B6268;">#  </span><span style="color: #5B6268;">[0. 0. 1. 0.]</span>
+<span style="color: #5B6268;">#  </span><span style="color: #5B6268;">[0. 0. 0. 1.]]</span>
+<span style="color: #5B6268;"># </span><span style="color: #5B6268;">[O] ==&gt; [1. 1. 1. 1.]</span>
+<span style="color: #5B6268;"># </span><span style="color: #5B6268;">[Z] ==&gt; [[0. 0. 0. 0.]</span>
+<span style="color: #5B6268;">#  </span><span style="color: #5B6268;">[0. 0. 0. 0.]</span>
+<span style="color: #5B6268;">#  </span><span style="color: #5B6268;">[0. 0. 0. 0.]</span>
+<span style="color: #5B6268;">#  </span><span style="color: #5B6268;">[0. 0. 0. 0.]]</span>
 
 </pre>
 </div></li>
@@ -2581,19 +2570,879 @@ and machine learning applications
 <li>奇异值分解(singular value decomposition)</li>
 </ul></li>
 <li>大写字母 \(\mathbf{D}\) 常常用来表示对角矩阵,某些情况下 \(\mathbf{\Lambda}, \mathbf{\Sigma}\) 也会用来表示对角矩阵</li>
-<li>和对角矩阵相对(opposite)的是hollow matrix,它的特点是:
+<li>和对角矩阵相对(opposite)的是空心矩阵(hollow matrix),它的特点是:
 <ul class="org-ul">
-<li>对角线上全部是0</li>
-<li>其他位置上可能是0,也可能不是0</li>
+<li>对角线(从左上到右下)的位置上的数字全部为0</li>
+<li>只有其他位置上的数字可能为非0</li>
+</ul></li>
+<li>反对称矩阵 skew-symmetric也是空心矩阵</li>
+<li>空心矩阵常用来做distance matrix(因为每个node和自己的距离是0), 本书中不会再讨论空心矩阵</li>
+<li><p>
+<b>Code</b> 使用如下代码生成对角矩阵,或者获取对角矩阵的数据
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #26a6a6;">import</span> numpy <span style="color: #26a6a6;">as</span> np
+
+
+<span style="color: #f8f8f0;">D</span> = np.diag<span style="color: #51afef;">(</span><span style="color: #c678dd;">[</span>1, 2, 3, 5<span style="color: #c678dd;">]</span><span style="color: #51afef;">)</span>       <span style="color: #5B6268;"># &#21019;&#24314;&#19968;&#20010;&#23545;&#35282;&#30697;&#38453;</span>
+<span style="color: #26a6a6;">print</span><span style="color: #51afef;">(</span><span style="color: #bcd42a;">'''[D] ==&gt;'''</span>, D<span style="color: #51afef;">)</span>
+
+<span style="color: #f8f8f0;">R</span> = np.random.randn<span style="color: #51afef;">(</span>3, 4<span style="color: #51afef;">)</span>
+<span style="color: #26a6a6;">print</span><span style="color: #51afef;">(</span><span style="color: #bcd42a;">'''[R] ==&gt;'''</span>, R<span style="color: #51afef;">)</span>         <span style="color: #5B6268;"># &#38543;&#26426;&#29983;&#25104;&#19968;&#20010;3*4&#30697;&#38453;</span>
+
+<span style="color: #f8f8f0;">d</span> = np.diag<span style="color: #51afef;">(</span>R<span style="color: #51afef;">)</span>                  <span style="color: #5B6268;"># &#33719;&#21462;&#38543;&#26426;&#30697;&#38453;&#30340;&#23545;&#35282;&#32447;&#25968;&#25454;</span>
+<span style="color: #26a6a6;">print</span><span style="color: #51afef;">(</span><span style="color: #bcd42a;">'''[d] ==&gt;'''</span>, d<span style="color: #51afef;">)</span>
+
+<span style="color: #5B6268;"># </span><span style="color: #5B6268;">&lt;===================OUTPUT===================&gt;</span>
+<span style="color: #5B6268;"># </span><span style="color: #5B6268;">[D] ==&gt; [[1 0 0 0]</span>
+<span style="color: #5B6268;">#  </span><span style="color: #5B6268;">[0 2 0 0]</span>
+<span style="color: #5B6268;">#  </span><span style="color: #5B6268;">[0 0 3 0]</span>
+<span style="color: #5B6268;">#  </span><span style="color: #5B6268;">[0 0 0 5]]</span>
+<span style="color: #5B6268;"># </span><span style="color: #5B6268;">[R] ==&gt; [[-2.1938143  -0.85677168 -0.27007231 -1.22768217]</span>
+<span style="color: #5B6268;">#  </span><span style="color: #5B6268;">[-0.83367635  1.44634774  0.45579445  0.29923832]</span>
+<span style="color: #5B6268;">#  </span><span style="color: #5B6268;">[ 2.26729013 -0.65103393 -0.52931206 -0.39227102]]</span>
+<span style="color: #5B6268;"># </span><span style="color: #5B6268;">[d] ==&gt; [-2.1938143   1.44634774 -0.52931206]</span>
+</pre>
+</div></li>
+<li><p>
+<b>Augmented</b> 增广矩阵(augmented matrix)就是把两个矩阵在水平维度上面"加起来",如下
+</p>
+\begin{equation}
+\begin{bmatrix}
+  1 & 4 & 2 \\
+  3 & 1 & 9 \\
+  4 & 2 & 0 \\
+\end{bmatrix}
+\sqcup
+\begin{bmatrix}
+  7 & 2 \\
+  7 & 2 \\
+  7 & 1 \\
+\end{bmatrix}
+=
+\begin{bmatrix}
+  1 & 4 & 2 & 7 & 2 \\
+  3 & 1 & 9 & 7 & 2 \\
+  4 & 2 & 0 & 7 & 1 \\
+\end{bmatrix}
+\end{equation}</li>
+<li>两个matrix能够"增广"的前提,是两个matrix拥有相同的row</li>
+<li><p>
+<b>Code</b> 在python中,使用concatenate来代表augment这个操作
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #26a6a6;">import</span> numpy <span style="color: #26a6a6;">as</span> np
+
+<span style="color: #f8f8f0;">A</span> = np.random.randn<span style="color: #51afef;">(</span>3, 5<span style="color: #51afef;">)</span>
+<span style="color: #26a6a6;">print</span><span style="color: #51afef;">(</span><span style="color: #bcd42a;">"""[A] ==&gt;"""</span>, A<span style="color: #51afef;">)</span>
+<span style="color: #f8f8f0;">B</span> = np.random.randn<span style="color: #51afef;">(</span>3, 2<span style="color: #51afef;">)</span>
+<span style="color: #26a6a6;">print</span><span style="color: #51afef;">(</span><span style="color: #bcd42a;">"""[B] ==&gt;"""</span>, B<span style="color: #51afef;">)</span>
+<span style="color: #f8f8f0;">AB</span> = np.concatenate<span style="color: #51afef;">(</span><span style="color: #c678dd;">(</span>A, B<span style="color: #c678dd;">)</span>, axis=1<span style="color: #51afef;">)</span>
+<span style="color: #26a6a6;">print</span><span style="color: #51afef;">(</span><span style="color: #bcd42a;">"""[AB] ==&gt;"""</span>, AB<span style="color: #51afef;">)</span>
+
+<span style="color: #5B6268;"># </span><span style="color: #5B6268;">&lt;===================OUTPUT===================&gt;</span>
+<span style="color: #5B6268;"># </span><span style="color: #5B6268;">[A] ==&gt; [[-0.14425489 -1.22366268 -0.27740708  1.07126456  0.70006477]</span>
+<span style="color: #5B6268;">#  </span><span style="color: #5B6268;">[-1.28607063 -1.29396936  0.34630739  1.46735437  1.28085203]</span>
+<span style="color: #5B6268;">#  </span><span style="color: #5B6268;">[-0.61064391 -0.35512087 -0.83978548 -1.67325096 -0.03125103]]</span>
+<span style="color: #5B6268;"># </span><span style="color: #5B6268;">[B] ==&gt; [[ 2.56938822  0.08952084]</span>
+<span style="color: #5B6268;">#  </span><span style="color: #5B6268;">[-0.02576563  0.17668451]</span>
+<span style="color: #5B6268;">#  </span><span style="color: #5B6268;">[ 1.51715998 -1.43679035]]</span>
+<span style="color: #5B6268;"># </span><span style="color: #5B6268;">[AB] ==&gt; [[-0.14425489 -1.22366268 -0.27740708  1.07126456  0.70006477  2.56938822</span>
+<span style="color: #5B6268;">#    </span><span style="color: #5B6268;">0.08952084]</span>
+<span style="color: #5B6268;">#  </span><span style="color: #5B6268;">[-1.28607063 -1.29396936  0.34630739  1.46735437  1.28085203 -0.02576563</span>
+<span style="color: #5B6268;">#    </span><span style="color: #5B6268;">0.17668451]</span>
+<span style="color: #5B6268;">#  </span><span style="color: #5B6268;">[-0.61064391 -0.35512087 -0.83978548 -1.67325096 -0.03125103  1.51715998</span>
+<span style="color: #5B6268;">#   </span><span style="color: #5B6268;">-1.43679035]]</span>
+</pre>
+</div></li>
+<li><b>Triangular</b> 三角矩阵是对角矩阵和full matrix的一个中间状态</li>
+<li>它的有两种表现形式:
+<ol class="org-ol">
+<li>upper triangular
+<ul class="org-ul">
+<li>对角线(从左上到右下)的位置上方,包括对角线可能是非0</li>
+<li>其他位置上的数字全部为0</li>
+<li><p>
+例子如下
+</p>
+\begin{equation}
+\begin{bmatrix}
+  1 & 8 & 4 \\
+  0 & 2 & 1 \\
+  0 & 0 & 9 \\
+\end{bmatrix}
+\end{equation}</li>
+</ul></li>
+<li>lower triangular
+<ul class="org-ul">
+<li>对角线(从左上到右下)的位置下方,包括对角线可能是非0</li>
+<li>其他位置上的数字全部为0</li>
+<li><p>
+例子如下
+</p>
+\begin{equation}
+\begin{bmatrix}
+  1 & 0 & 0 & 0 \\
+  3 & 2 & 0 & 0 \\
+  6 & 5 & 9 & 0 \\
+  2 & 0 & 4 & 1 \\
+\end{bmatrix}
+\end{equation}</li>
+</ul></li>
+</ol></li>
+<li><p>
+上面的例子中三角矩阵都是方阵,但其实三角矩阵也可以是非方阵(rectangular),比如下面的例子
+</p>
+\begin{equation}
+\begin{bmatrix}
+  1 & 0 & 0 & 0 & 0 \\
+  3 & 2 & 0 & 0 & 0 \\
+  6 & 0 & 9 & 0 & 0 \\
+\end{bmatrix}
+\end{equation}</li>
+<li><p>
+很多时候,由于三角矩阵里面有一半是0,我们可以空着不写那为0的一般(另外一半可能为0的必须写出来,0不能省略)
+</p>
+\begin{equation}
+\begin{bmatrix}
+  1 & 3 & 2 & 1 \\
+    & 2 & 7 & 9 \\
+    &   & 0 & 5 \\
+    &   &   & 2 \\
+\end{bmatrix}
+\end{equation}</li>
+<li><p>
+<b>Code</b> 使用如下代码来把一个matrix变成upper triangle和lower triangle
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #26a6a6;">import</span> numpy <span style="color: #26a6a6;">as</span> np
+
+<span style="color: #f8f8f0;">A</span> = np.random.randn<span style="color: #51afef;">(</span>5, 5<span style="color: #51afef;">)</span>
+<span style="color: #26a6a6;">print</span><span style="color: #51afef;">(</span><span style="color: #bcd42a;">"""[A] ==&gt;"""</span>, A<span style="color: #51afef;">)</span>
+<span style="color: #f8f8f0;">L</span> = np.tril<span style="color: #51afef;">(</span>A<span style="color: #51afef;">)</span>
+<span style="color: #26a6a6;">print</span><span style="color: #51afef;">(</span><span style="color: #bcd42a;">"""[L] ==&gt;"""</span>, L<span style="color: #51afef;">)</span>
+<span style="color: #f8f8f0;">U</span> = np.triu<span style="color: #51afef;">(</span>A<span style="color: #51afef;">)</span>
+<span style="color: #26a6a6;">print</span><span style="color: #51afef;">(</span><span style="color: #bcd42a;">"""[U] ==&gt;"""</span>, U<span style="color: #51afef;">)</span>
+
+<span style="color: #5B6268;"># </span><span style="color: #5B6268;">&lt;===================OUTPUT===================&gt;</span>
+<span style="color: #5B6268;"># </span><span style="color: #5B6268;">[A] ==&gt; [[ 0.39866979 -1.22350387 -0.33729558 -1.0857667  -1.30051086]</span>
+<span style="color: #5B6268;">#  </span><span style="color: #5B6268;">[ 0.8020152  -0.35123035 -1.34653201  1.48667849 -0.34774193]</span>
+<span style="color: #5B6268;">#  </span><span style="color: #5B6268;">[-0.01468234  1.83371032  0.27659977 -0.97204034  0.51079151]</span>
+<span style="color: #5B6268;">#  </span><span style="color: #5B6268;">[ 1.01177767  0.35195454 -0.89955996  0.66733842 -0.46424685]</span>
+<span style="color: #5B6268;">#  </span><span style="color: #5B6268;">[-0.86648848  0.43285399 -1.91123781  0.07286382  0.18129945]]</span>
+<span style="color: #5B6268;"># </span><span style="color: #5B6268;">[L] ==&gt; [[ 0.39866979  0.          0.          0.          0.        ]</span>
+<span style="color: #5B6268;">#  </span><span style="color: #5B6268;">[ 0.8020152  -0.35123035  0.          0.          0.        ]</span>
+<span style="color: #5B6268;">#  </span><span style="color: #5B6268;">[-0.01468234  1.83371032  0.27659977  0.          0.        ]</span>
+<span style="color: #5B6268;">#  </span><span style="color: #5B6268;">[ 1.01177767  0.35195454 -0.89955996  0.66733842  0.        ]</span>
+<span style="color: #5B6268;">#  </span><span style="color: #5B6268;">[-0.86648848  0.43285399 -1.91123781  0.07286382  0.18129945]]</span>
+<span style="color: #5B6268;"># </span><span style="color: #5B6268;">[U] ==&gt; [[ 0.39866979 -1.22350387 -0.33729558 -1.0857667  -1.30051086]</span>
+<span style="color: #5B6268;">#  </span><span style="color: #5B6268;">[ 0.         -0.35123035 -1.34653201  1.48667849 -0.34774193]</span>
+<span style="color: #5B6268;">#  </span><span style="color: #5B6268;">[ 0.          0.          0.27659977 -0.97204034  0.51079151]</span>
+<span style="color: #5B6268;">#  </span><span style="color: #5B6268;">[ 0.          0.          0.          0.66733842 -0.46424685]</span>
+<span style="color: #5B6268;">#  </span><span style="color: #5B6268;">[ 0.          0.          0.          0.          0.18129945]]</span>
+</pre>
+</div></li>
+<li><b>Dense and sparse</b> 如果一个matrix的大部分或者全部element是非0的,那么我们给这个matrix起了如下两个名字:
+<ul class="org-ul">
+<li>dense matrix(稠密矩阵)</li>
+<li>full matrix</li>
+</ul></li>
+<li>dense matrix这个概念是要有上下文的,比如比较如下两个概念的时候:
+<ul class="org-ul">
+<li>对角矩阵</li>
+<li>稠密矩阵(dense matrix)</li>
+</ul></li>
+<li>稀疏矩阵(sparse matrix)是指一个矩阵里面大部分员为0,只有很少一部分成员不为0的矩阵</li>
+<li>稀疏矩阵计算效率超高,所以现代算法里面把稀疏矩阵作为重点来介绍</li>
+<li><p>
+下面10*10的稀疏矩阵,可以使用简单的列举非0成员而表示
+</p>
+\begin{equation}
+  \begin{bmatrix}
+    0 & 0 & 4 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+    0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+    0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+    0 & 0 & 0 & 0 & 0 & 8 & 0 & 0 & 0 & 0 \\
+    0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+    0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+    0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+    0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+    0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+    0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+  \end{bmatrix}
+  \Rightarrow
+  (1, 3)4,(4, 6)8
+\end{equation}</li>
+<li><b>Orthogonal</b> 正交矩阵是满足如下两个条件的矩阵:
+<ul class="org-ul">
+<li>我们把一个矩阵的每一列(column)看成是一个vector,那么正交矩阵的任意两列的vector的dot product都是0</li>
+<li>我们把一个矩阵的每一列(column)看成是一个vector,某个vector和自己的dot product 都是1</li>
+</ul></li>
+<li><p>
+一般来说,我们使用 \(\mathbf{Q}\) 来代表正交矩阵,正交矩阵的正式定义如下
+</p>
+\begin{equation}
+< \mathbf{Q_i}, \mathbf{Q_j} > =
+  \begin{cases}
+  1, if \; i == j \\
+  0, if \; j \ne j \\
+  \end{cases},\tag{5.8}
+\end{equation}</li>
+<li>注意,这里的&lt;&gt;是dot product的符号,我们这里每个成员都是一矩阵的一列</li>
+<li><p>
+公式5-8有一个更加专业的,只用矩阵乘法(后面会学到)的公式,如下
+</p>
+\begin{equation}
+\mathbf{Q}^T \mathbf{Q} = \mathbf{I},\tag{5.9}
+\end{equation}</li>
+<li><b>Toeplitz</b> 特布里茨矩阵(也叫常对角矩阵),是指每条对角线上的成员数字都一样的矩阵</li>
+<li><p>
+我们可以使用一个vector来生成常对角矩阵,如下
+</p>
+\begin{equation}
+\begin{bmatrix}
+a & b & c & d \\
+\end{bmatrix}
+\Rightarrow
+\begin{bmatrix}
+  a & b & c & d \\
+  b & a & b & c \\
+  c & b & a & b \\
+  d & c & b & a \\
+\end{bmatrix}
+\end{equation}</li>
+<li>其实上图很好理解,把初始的vector作为常对角矩阵的第一行(以及竖着的第一列),后面按照规则(每个对角线
+必须一致),继续添加就可以了.总体看起来就是:
+<ul class="org-ul">
+<li>vector的第一个成员是主对角线(main diagonal)上的数字</li>
+<li>vector的第N个成员是第N个对角线上的数字</li>
+</ul></li>
+<li>需要注意的是上面的例子是一个方阵,而且是对称矩阵(symmetric),但是其实常对角矩阵的定义只是要求对角
+线数据一致就可以,常对角矩阵既可以是非方阵,也当然可以是非对称的</li>
+<li><b>Hankel</b> 汉克矩阵,是指每条副对角线上的成员数字都一样的方阵:
+<ul class="org-ul">
+<li>汉克矩阵由于每个副对角线都一样,所以相对于对角线对称</li>
+</ul></li>
+<li>下面两个都是汉克矩阵:
+<ul class="org-ul">
+<li><p>
+使用一个vector生成的汉克矩阵,先固定好第一行第一列,后面自动生成.因为是副对角线
+</p>
+\begin{equation}
+\begin{bmatrix}
+a & b & c & d \\
+\end{bmatrix}
+\Rightarrow
+\begin{bmatrix}
+  a & b & c & d \\
+  b & c & d & 0 \\
+  c & d & 0 & 0 \\
+  d & 0 & 0 & 0 \\
+\end{bmatrix}
+\end{equation}</li>
+<li><p>
+甚至可以wrap abcd(每次wrap一个位置),最终生成的full matrix也是汉克矩阵
+</p>
+\begin{equation}
+\begin{bmatrix}
+  a & b & c & d \\
+  b & c & d & a \\
+  c & d & a & b \\
+  d & a & b & c \\
+\end{bmatrix}
+\end{equation}</li>
+</ul></li>
+<li><p>
+汉克矩阵的生成公式如下:
+</p>
+\begin{equation}
+  \mathbf{Y}_{i,j} = \mathbf{x}_{i+j-1}, \tag{5.10}
+\end{equation}</li>
+<li>其实上面两种汉克矩阵,从公式看,都可以看成是从vector生成的矩阵,只不过:
+<ul class="org-ul">
+<li>第一个例子abcd后面都是0,也就是说,我们的vector延长后就是[a b c d 0 0 0]</li>
+<li>第二个例子abcd后面就是不停的wrap,我们的vector延长后就是[a b c d a b c]</li>
+</ul></li>
+<li><p>
+<b>Code</b> 使用如下python代码来生成常对角矩阵和汉克矩阵
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #26a6a6;">from</span> scipy.linalg <span style="color: #26a6a6;">import</span> hankel, toeplitz
+
+<span style="color: #f8f8f0;">t</span> = <span style="color: #51afef;">[</span>1, 2, 3, 4<span style="color: #51afef;">]</span>
+<span style="color: #26a6a6;">print</span><span style="color: #51afef;">(</span><span style="color: #bcd42a;">"""[t] ==&gt;"""</span>, t<span style="color: #51afef;">)</span>
+<span style="color: #f8f8f0;">T</span> = toeplitz<span style="color: #51afef;">(</span>t<span style="color: #51afef;">)</span>
+<span style="color: #26a6a6;">print</span><span style="color: #51afef;">(</span><span style="color: #bcd42a;">"""[T] ==&gt;"""</span>, T<span style="color: #51afef;">)</span>
+<span style="color: #5B6268;"># </span><span style="color: #5B6268;">&#31532;&#19968;&#20010;&#21442;&#25968;&#26159;&#31532;&#19968;&#34892;, r&#36825;&#20010;&#21442;&#25968;&#26159;&#26368;&#21518;&#19968;&#34892;,&#22914;&#26524;&#19981;&#21152;r,&#37027;&#20040;&#19979;&#21322;&#37096;&#20998;&#37117;&#26159;0</span>
+<span style="color: #f8f8f0;">H</span> = hankel<span style="color: #51afef;">(</span>t, r=<span style="color: #c678dd;">[</span>2, 3, 4, 1<span style="color: #c678dd;">]</span><span style="color: #51afef;">)</span>
+<span style="color: #26a6a6;">print</span><span style="color: #51afef;">(</span><span style="color: #bcd42a;">"""[H] ==&gt;"""</span>, H<span style="color: #51afef;">)</span>
+
+<span style="color: #5B6268;"># </span><span style="color: #5B6268;">&lt;===================OUTPUT===================&gt;</span>
+<span style="color: #5B6268;"># </span><span style="color: #5B6268;">[t] ==&gt; [1, 2, 3, 4]</span>
+<span style="color: #5B6268;"># </span><span style="color: #5B6268;">[T] ==&gt; [[1 2 3 4]</span>
+<span style="color: #5B6268;">#  </span><span style="color: #5B6268;">[2 1 2 3]</span>
+<span style="color: #5B6268;">#  </span><span style="color: #5B6268;">[3 2 1 2]</span>
+<span style="color: #5B6268;">#  </span><span style="color: #5B6268;">[4 3 2 1]]</span>
+<span style="color: #5B6268;"># </span><span style="color: #5B6268;">[H] ==&gt; [[1 2 3 4]</span>
+<span style="color: #5B6268;">#  </span><span style="color: #5B6268;">[2 3 4 3]</span>
+<span style="color: #5B6268;">#  </span><span style="color: #5B6268;">[3 4 3 4]</span>
+<span style="color: #5B6268;">#  </span><span style="color: #5B6268;">[4 3 4 1]]</span>
+</pre>
+</div></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org67cda5e" class="outline-3">
+<h3 id="org67cda5e"><span class="section-number-3">5.6.</span> Matrix addition and subtraction</h3>
+<div class="outline-text-3" id="text-5-6">
+<ul class="org-ul">
+<li>matrix的加法是非常简单的,两个matrix相加,就是两个matrix对应位置的成员相加,所以matrix加法要求:
+<ul class="org-ul">
+<li>相加的两个matrix必须是一样的size,比如 \(M \times N\)</li>
+<li>相加的结果,也是同一个size,也就是\(M \times N\)</li>
+</ul></li>
+<li><p>
+下面是一个加法的例子
+</p>
+\begin{equation}
+\begin{bmatrix}
+  1 & 2 & 5 \\
+  9 & 8 & 7 \\
+\end{bmatrix}
++
+\begin{bmatrix}
+  -1 & 0 & -5 \\
+  3  & a & \pi \\
+\end{bmatrix}
+=
+\begin{bmatrix}
+  0  &   2   & 0 \\
+  12 & 8 + a & 7 + \pi \\
+\end{bmatrix}
+\end{equation}</li>
+<li>matrix减法和加法一样,只不过"+"换成"-",我们就不再赘述</li>
+<li><p>
+就像vector addition一样, matrix addition也满足交换律(commutative),也就是说,如下
+</p>
+\begin{equation}
+\mathbf{C} = \mathbf{A} + \mathbf{B} = \mathbf{B} + \mathbf{A}
+\end{equation}</li>
+<li>看起来非常显然的知识我们还是列出来了,是因为有些显然是成立的,有些不成立,比如matrix的乘法就不满足
+交换律</li>
+<li>matrix满足交换律对于生成symmetric matrix非常重要</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orge83c505" class="outline-3">
+<h3 id="orge83c505"><span class="section-number-3">5.7.</span> Scalar-matrix multiplication</h3>
+<div class="outline-text-3" id="text-5-7">
+<ul class="org-ul">
+<li>matrix multiplication非常重要,且内容繁多,我们将使用一整章来介绍,这里我们介绍相对简单的"乘法":
+scalar-matrix multiplication</li>
+<li><p>
+scalar-matrix multiplication简单来说,就是给matrix的每个成员乘以一个系数,和scalar-vector multiplication
+的原理是一样的,例子如下
+</p>
+\begin{equation}
+\delta
+\begin{bmatrix}
+  a & b \\
+  c & d \\
+\end{bmatrix}
+=
+\begin{bmatrix}
+  \delta a & \delta b \\
+  \delta c & \delta d \\
+\end{bmatrix}
+=
+\begin{bmatrix}
+  a \delta & b \delta \\
+  c \delta & d \delta \\
+\end{bmatrix}
+=
+\begin{bmatrix}
+  a & b \\
+  c & d \\
+\end{bmatrix}
+\delta
+\tag{5.12}
+\end{equation}</li>
+<li><p>
+由于scalar-matrix multiplication都是在element维度上面进行的,所以它也是满足交换律(commutative)的,
+所以scalar可以到处移动,这对于后面的很多证明都是非常重要的.scalar到处移动可以用公式表达为
+</p>
+\begin{equation}
+\lambda \mathbf{AB} = \mathbf{A} \lambda \mathbf{B} = \mathbf{AB} \lambda
+\end{equation}</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgc31920c" class="outline-3">
+<h3 id="orgc31920c"><span class="section-number-3">5.8.</span> "Shifting" a matrix</h3>
+<div class="outline-text-3" id="text-5-8">
+<ul class="org-ul">
+<li>我们可以把如下两个操作结合成shift操作,应用于一个matrix上:
+<ul class="org-ul">
+<li>matrix addition</li>
+<li>scalar-matrix multiplication</li>
+</ul></li>
+<li>shift操作是把一个identity matrix(单位矩阵)进行scalar之后,加到原来的matrix上面,所以原来的matrix也
+必须是方阵,因为identity matrix(单位矩阵)是方阵</li>
+<li><p>
+新生成的矩阵一般在字母上面加一个波浪线,比如 \(\tilde{\mathbf{A}}\). 下面就是shitfing a matrix操作的公式表达
+</p>
+\begin{equation}
+\tilde{\mathbf{A}} = \mathbf{A} + \lambda \mathbf{I}, \mathbf{A} \in \mathbb{R}^{M \times M}, \lambda \in \mathbb{R}, \tag{5.13}
+\end{equation}</li>
+<li><p>
+我们使用一个真实的例子来展现下shift操作
+</p>
+\begin{equation}
+\begin{bmatrix}
+  1 & 3 & 0 \\
+  1 & 3 & 0 \\
+  2 & 2 & 7 \\
+\end{bmatrix}
++ \; .1
+\begin{bmatrix}
+  1 & 0 & 0 \\
+  0 & 1 & 0 \\
+  0 & 0 & 1 \\
+\end{bmatrix}
+=
+\begin{bmatrix}
+  1.1 & 3 & 0 \\
+  1   & 3.1 & 0 \\
+  2   & 2 & 7.1 \\
+\end{bmatrix}
+\end{equation}</li>
+<li>从上面的例子,我们可以看到shifting操作的如下特性:
+<ul class="org-ul">
+<li>只有对角线上的成员受到影响,非对角线上的成员不受影响,因为单位矩阵的非对角线上都是0</li>
+<li>在shift之前矩阵的第一行和第二行是一样的,但是shift之后两者不一样了,所以shift matrix可以用来让
+矩阵中相同的行变的不太一样</li>
+<li>如果 \(\lambda\) 越接近0, 那么 $~{\mathbf{A}} 就和 \(\mathbf{A}\) 非常的接近, 极端情况下
+\(\lambda\) 为0的情况下, \(\tilde{\mathbf{A}} = \mathbf{A}\). 在实践当中,选择一个尽可能满足条件的
+足够小的 \(\lambda\) 是工作当中的重要工作</li>
+</ul></li>
+<li>shifting matrix有着广泛的应用,比如:
+<ul class="org-ul">
+<li>在统计学中为了让模型适应low-rank数据,通常要进行正则化(Regularization), 正则化的过程当中就设计shifting matrix</li>
+<li>另外shifting matrix可以把一个rank-deficient matrix转换成一个full-rank matrix</li>
+</ul></li>
+<li><p>
+<b>Code</b> shifting的代码包含scalar multiplication和addition,如下
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #26a6a6;">import</span> numpy <span style="color: #26a6a6;">as</span> np
+
+<span style="color: #f8f8f0;">l</span> = 0.01
+<span style="color: #f8f8f0;">I</span> = np.eye<span style="color: #51afef;">(</span>4<span style="color: #51afef;">)</span>
+<span style="color: #f8f8f0;">A</span> = np.random.randn<span style="color: #51afef;">(</span>4, 4<span style="color: #51afef;">)</span>
+<span style="color: #26a6a6;">print</span><span style="color: #51afef;">(</span><span style="color: #bcd42a;">"""[A] ==&gt;"""</span>, A<span style="color: #51afef;">)</span>
+<span style="color: #f8f8f0;">As</span> = A + l * I
+<span style="color: #26a6a6;">print</span><span style="color: #51afef;">(</span><span style="color: #bcd42a;">"""[As] ==&gt;"""</span>, As<span style="color: #51afef;">)</span>
+
+<span style="color: #5B6268;"># </span><span style="color: #5B6268;">&lt;===================OUTPUT===================&gt;</span>
+<span style="color: #5B6268;"># </span><span style="color: #5B6268;">[A] ==&gt; [[-1.57995308 -0.26785428 -0.2266074   1.11107041]</span>
+<span style="color: #5B6268;">#  </span><span style="color: #5B6268;">[-0.06172473  0.10330103 -0.4369862   1.35241956]</span>
+<span style="color: #5B6268;">#  </span><span style="color: #5B6268;">[-1.86982424  1.14082253  0.87677916  0.81019919]</span>
+<span style="color: #5B6268;">#  </span><span style="color: #5B6268;">[ 0.10328674  0.47264134  0.02081591  2.13364769]]</span>
+<span style="color: #5B6268;"># </span><span style="color: #5B6268;">[As] ==&gt; [[-1.56995308 -0.26785428 -0.2266074   1.11107041]</span>
+<span style="color: #5B6268;">#  </span><span style="color: #5B6268;">[-0.06172473  0.11330103 -0.4369862   1.35241956]</span>
+<span style="color: #5B6268;">#  </span><span style="color: #5B6268;">[-1.86982424  1.14082253  0.88677916  0.81019919]</span>
+<span style="color: #5B6268;">#  </span><span style="color: #5B6268;">[ 0.10328674  0.47264134  0.02081591  2.14364769]]</span>
+</pre>
+</div></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orga159f00" class="outline-3">
+<h3 id="orga159f00"><span class="section-number-3">5.9.</span> Diagonal and trace</h3>
+<div class="outline-text-3" id="text-5-9">
+<ul class="org-ul">
+<li>matrix对角线上的数据可以取出来,并且放到一个vector里面</li>
+<li>上面的操作在某些特定场景下有用,比如:
+<ul class="org-ul">
+<li>在统计学领域,covariance matrix(协方差矩阵)的对角线成员包含每个variable的variance(方差)</li>
+</ul></li>
+<li>注意,提取对角线数据的操作不要求操作对象是方阵</li>
+<li>如图:
+<ul class="org-ul">
+<li><p>
+图5-6
+</p>
+
+<div id="org6f4844a" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/tic/5-6.png" alt="5-6.png" />
+</p>
+<p><span class="figure-number">Figure 9: </span>tic/5-6.png</p>
+</div></li>
+</ul></li>
+<li><b>Trace</b> trace是把一个方阵(注意只能是方阵)的对角线数据加起来求和</li>
+<li><p>
+我们通常使用 \(tr(\mathbf{A})\) 来表示trace操作,公式如下
+</p>
+\begin{equation}
+tr(\mathbf{A}) = \sum_{i=1}^M a_{i,i},\tag{5.15}
+\end{equation}</li>
+<li>由于非对角线数据对于trace操作没有贡献,所以两个差距非常大的方阵可能trace相同</li>
+<li>trace操作对于机器学习非常重要:
+<ul class="org-ul">
+<li>它用来计算两个matrix的Frobenius norm(范数)</li>
+<li>范数用来度量两个matrix之间的距离</li>
+</ul></li>
+<li>trace操作只能用于方阵是由于"历史原因":
+<ul class="org-ul">
+<li>matrix的trace等于matrix 特征(eigenvalue)的综合</li>
+<li>特征分解只作用于方阵,所以从古时候开始,古代数学家就规定了只有方阵才能进行trace操作</li>
+</ul></li>
+<li><p>
+<b>Code</b> 使用如下代码进行trace操作
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #26a6a6;">import</span> numpy <span style="color: #26a6a6;">as</span> np
+
+<span style="color: #f8f8f0;">A</span> = np.random.randn<span style="color: #51afef;">(</span>4, 4<span style="color: #51afef;">)</span>
+<span style="color: #26a6a6;">print</span><span style="color: #51afef;">(</span><span style="color: #bcd42a;">"""[A] ==&gt;"""</span>, A<span style="color: #51afef;">)</span>
+<span style="color: #f8f8f0;">tr</span> = np.trace<span style="color: #51afef;">(</span>A<span style="color: #51afef;">)</span>
+<span style="color: #26a6a6;">print</span><span style="color: #51afef;">(</span><span style="color: #bcd42a;">"""[tr] ==&gt;"""</span>, tr<span style="color: #51afef;">)</span>
+
+<span style="color: #5B6268;"># </span><span style="color: #5B6268;">&lt;===================OUTPUT===================&gt;</span>
+<span style="color: #5B6268;"># </span><span style="color: #5B6268;">[A] ==&gt; [[ 0.59060411  1.20311925 -1.02348206 -0.46843217]</span>
+<span style="color: #5B6268;">#  </span><span style="color: #5B6268;">[ 0.21939289 -2.09379843 -1.20578246 -0.26266209]</span>
+<span style="color: #5B6268;">#  </span><span style="color: #5B6268;">[-1.47517321 -0.55440747  0.54005967 -1.51054155]</span>
+<span style="color: #5B6268;">#  </span><span style="color: #5B6268;">[-0.51872691  0.98704069  2.48983979  1.31954482]]</span>
+<span style="color: #5B6268;"># </span><span style="color: #5B6268;">[tr] ==&gt; 0.35641017102727246</span>
+</pre>
+</div></li>
+</ul>
+<p>
+-* Matrix multiplication
+</p>
+</div>
+</div>
+<div id="outline-container-org0a1360a" class="outline-3">
+<h3 id="org0a1360a"><span class="section-number-3">5.10.</span> "Standard" matrix multiplication</h3>
+<div class="outline-text-3" id="text-5-10">
+<ul class="org-ul">
+<li>两个matrix相乘的时候,如果没有明确的说明,那么我们就默认两个matrix进行的乘法(比如 \(\mathbf{AB}\) )
+是标准乘法(standard matrix multiplication)</li>
+<li><b>Terminology</b> 最先需要知道的是,matrix multiplication不满足交换律(not commutative),所以 \(\mathbf{AB} \neq \mathbf{BA}\)</li>
+<li>由于不满足交换律,所以矩阵乘法的定义非常麻烦,以 \(\mathbf{AB}\) 为例,其有如下五种英语表达方式:
+<ul class="org-ul">
+<li>A times B</li>
+<li>A left-multiplies B</li>
+<li>A pre-multiplies B</li>
+<li>B right-multiplies A</li>
+<li>B post-multiplies A</li>
+</ul></li>
+<li><b>Validity</b> 在了解如何进行乘法之前,我们先要了解什么样的两个矩阵可以进行相乘</li>
+<li>matrix mulitiplication只有在如下情况下valid: 两个matrix的inner dimension相同</li>
+<li>同时,新得到的matrix的size是由两个matrix的outer dimension决定的</li>
+<li>如图
+<ul class="org-ul">
+<li><p>
+图6-1
+</p>
+
+<div id="org40f41a9" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/tic/6-1.png" alt="6-1.png" />
+</p>
+<p><span class="figure-number">Figure 10: </span>tic/6-1.png</p>
+</div></li>
+<li>N就是两个矩阵的inner dimension,他们必须相同</li>
+<li>M和K是两个矩阵的outer dimension,他们不需要相同,但是矩阵乘法得到的新矩阵,其size由这两个dimension决定</li>
+</ul></li>
+<li>一旦理解了什么样的乘法是valid的,以及resulting matrix的size如何而来,我们就可以理解dot product和
+outer product的区别了
+<ul class="org-ul">
+<li><p>
+图6-2
+</p>
+
+<div id="org4642f51" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/tic/6-2.png" alt="6-2.png" />
+</p>
+<p><span class="figure-number">Figure 11: </span>tic/6-2.png</p>
+</div></li>
+<li>我们从这里就可以看到:
+<ol class="org-ol">
+<li>dot product的结果是一个数字,那么必然要用 \(\mathbf{V}^T \mathbf{W}\)</li>
+<li>out product的结果是一个矩阵,那么必然要用 \(\mathbf{V} \mathbf{W}^T}\)</li>
+</ol></li>
+</ul></li>
+<li><p>
+<b>Code</b> 使用如下python代码来代表矩阵乘法
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #26a6a6;">import</span> numpy <span style="color: #26a6a6;">as</span> np
+<span style="color: #f8f8f0;">M1</span> = np.random.randn<span style="color: #51afef;">(</span>4, 3<span style="color: #51afef;">)</span>
+<span style="color: #f8f8f0;">M2</span> = np.random.randn<span style="color: #51afef;">(</span>3, 5<span style="color: #51afef;">)</span>
+<span style="color: #f8f8f0;">C</span> = M1 @ M2
+<span style="color: #26a6a6;">print</span><span style="color: #51afef;">(</span><span style="color: #bcd42a;">'''[C] ==&gt;'''</span>, C<span style="color: #51afef;">)</span>
+
+<span style="color: #5B6268;"># </span><span style="color: #5B6268;">&lt;===================OUTPUT===================&gt;</span>
+<span style="color: #5B6268;"># </span><span style="color: #5B6268;">[C] ==&gt; [[-0.23848307 -1.54327638 -0.58576378  1.10745737  1.73813371]</span>
+<span style="color: #5B6268;">#  </span><span style="color: #5B6268;">[ 0.12136803  0.06643498 -1.03968181  1.2177658  -0.68164259]</span>
+<span style="color: #5B6268;">#  </span><span style="color: #5B6268;">[-0.10025755  1.3981402  -0.9935196  -0.1241486  -1.14903948]</span>
+<span style="color: #5B6268;">#  </span><span style="color: #5B6268;">[ 0.73051258 -1.08758839  0.74398132  1.40448759 -0.89103988]]</span>
+</pre>
+</div></li>
+<li>下面我们终于开始学习如何进行乘法了.有四种方法来思考如何实施矩阵乘法,四种计算方法得到的结果一样,
+但是提供了不同的视角来理解乘法</li>
+</ul>
+</div>
+<div id="outline-container-org87384e5" class="outline-4">
+<h4 id="org87384e5"><span class="section-number-4">5.10.1.</span> The "element perspective"</h4>
+<div class="outline-text-4" id="text-5-10-1">
+<ul class="org-ul">
+<li>公式 \(\mathbf{AB=C}\)</li>
+<li>其中每个成员 \(c_{ij}\) 都是如下两个矩阵的dot product
+<ul class="org-ul">
+<li>\(\mathbf{A}\) 的ith row</li>
+<li>\(\mathbf{B}\) 的jth column</li>
+</ul></li>
+<li><p>
+下面的例子解释了这个过程: top-left的成员如何获得
+</p>
+\begin{equation}
+  \begin{bmatrix}
+    1 & 2 \\
+    3 & 4 \\
+  \end{bmatrix}
+  \begin{bmatrix}
+    a & b \\
+    c & d \\
+  \end{bmatrix}
+  =
+  \begin{bmatrix}
+    1a+2c &  \\
+     &  \\
+  \end{bmatrix} \tag{6.1}
+\end{equation}</li>
+<li><p>
+下面是一个完整的例子
+</p>
+\begin{equation}
+\begin{bmatrix}
+  3  & 4 \\
+  -1 & 2 \\
+  0  & 4 \\
+\end{bmatrix}
+\begin{bmatrix}
+  5 & 1 \\
+  3 & 1 \\
+\end{bmatrix}
+=
+\begin{bmatrix}
+  3*5 + 4*3  & 3*1+4*1 \\
+  -1*5 + 2*3 & -1*1+2*1 \\
+  0*5 + 4*3  & 0*1+4*1 \\
+\end{bmatrix}
+=
+\begin{bmatrix}
+  27 & 7 \\
+  1  & 1 \\
+  12 & 4 \\
+\end{bmatrix}
+\end{equation}</li>
+<li>如图
+<ul class="org-ul">
+<li><p>
+图6-3-1
+</p>
+
+<div id="orgc318bc3" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/tic/6-3-1.png" alt="6-3-1.png" />
+</p>
+<p><span class="figure-number">Figure 12: </span>tic/6-3-1.png</p>
+</div></li>
+<li>我们把matrix的一行(或者一列)抽象成一个向量,从这方式我们可以看到matrix multiplication的三个特性:
+<ol class="org-ol">
+<li>matrix \(\mathbf{C}\) 的对角线上,包含了这样一些vector的dot product, 这些vector的下标( \(\mathbf{A}\)
+里面的i, \(\mathbf{B}\) 里面的j)相同</li>
+<li>matrix \(\mathbf{C}\) 的对角线下半部分,包含了这样一些vector的dot product, 这些vector的下标中,( \(\mathbf{A}\)
+里面的i 大于 \(\mathbf{B}\) 里面的j)</li>
+<li>matrix \(\mathbf{C}\) 的对角线上半部分,包含了这样一些vector的dot product, 这些vector的下标中,( \(\mathbf{A}\)
+里面的i 小于 \(\mathbf{B}\) 里面的j)</li>
+</ol></li>
 </ul></li>
 </ul>
+</div>
+</div>
+<div id="outline-container-org91d15a2" class="outline-4">
+<h4 id="org91d15a2"><span class="section-number-4">5.10.2.</span> The "layer perspective"</h4>
+<div class="outline-text-4" id="text-5-10-2">
+<ul class="org-ul">
+<li>上面的"element perspective"是每个element计算自己的,不同element中间是互相不干扰的</li>
+<li>layer perspective则完全不同, 它是把matrix multiplication的计算分成了多个层(而不是m*n个element),
+然后把这些个层叠加起来</li>
+<li>如图
+<ul class="org-ul">
+<li><p>
+图6-4
+</p>
+
+<div id="org0c0c005" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/tic/6-4.png" alt="6-4.png" />
+</p>
+<p><span class="figure-number">Figure 13: </span>tic/6-4.png</p>
+</div></li>
+<li>我们知道out product的结果都是一样的,所以把这些结果加起来就是matrix multiplication的product,
+就好比上图中多个透明纸上的图案叠加起来</li>
+</ul></li>
+<li><p>
+下面是一个使用outer product来计算matrix multiplication的过程
+</p>
+\begin{equation}
+\begin{bmatrix}
+  3  & 4 \\
+  -1 & 2 \\
+  0  & 4 \\
+\end{bmatrix}
+\begin{bmatrix}
+  5 & 1 \\
+  3 & 1 \\
+\end{bmatrix}
+=
+\begin{bmatrix}
+  15 & 3 \\
+  -5 & -1 \\
+  0  & 0 \\
+\end{bmatrix}
++
+\begin{bmatrix}
+  12 & 4 \\
+  6  & 2 \\
+  12 & 4 \\
+\end{bmatrix}
+=
+\begin{bmatrix}
+  27 & 7 \\
+  1  & 1 \\
+  12 & 4 \\
+\end{bmatrix}
+\end{equation}</li>
+<li>outer product有个特殊的点,我们可以通过下面的例子看到:
+<ul class="org-ul">
+<li><p>
+例子
+</p>
+\begin{equation}
+\begin{bmatrix}
+a \\
+b \\
+c \\
+\end{bmatrix}
+\begin{bmatrix}
+d e f  \\
+\end{bmatrix}
+=
+\begin{bmatrix}
+ad & ae & af & \\
+bd & be & bf & \\
+cd & ce & cf & \\
+\end{bmatrix}
+\end{equation}</li>
+<li>特点: 由于都是使用同样的前缀,那么很显然每个outer product得到的matrix里面的column vector都是
+dependent set</li>
+</ul></li>
+<li>那么很显然以layer perspective来看:
+<ul class="org-ul">
+<li>每个layer matrix的column都是dependent set</li>
+<li>但是,这些layer matrix的和(也就是matrix multiplication的结果缺是independent set)</li>
+</ul></li>
+<li>layer perspective的解释对于矩阵的spectral theorem非常有用</li>
+<li><p>
+所谓的谱定理(spectral theorem)是说: 任意的matrix都可以看成是一系列"秩为1矩阵"的和
+</p>
+<pre class="example" id="orga8dfaa4">
+Any matrix can be represented as a sum of rank-1 matrices
+</pre></li>
+<li>我们还没学到秩,但是我们可以简单的理解为所谓秩为1,是指只有一个column有意义,其他column都是这个有
+意义column的scaled version</li>
+<li>谱定理(spectral theorem)是奇异值分解(singular value decomposition)的基础,这个我们后面会介绍到</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org844986d" class="outline-4">
+<h4 id="org844986d"><span class="section-number-4">5.10.3.</span> The "column perspective"</h4>
+<div class="outline-text-4" id="text-5-10-3">
+<ul class="org-ul">
+<li>从column perspective来看,所有的matrix(无论是multiplying matrix还是product matrix),搜索可以看做
+是一系列column vector的set</li>
+<li>我们这里单看product matrix,它可以看做每次创建一个column:
+<ul class="org-ul">
+<li>product matrix里面的第一个column是一个linear weighted combination的治,这个linear weighted combination:
+<ol class="org-ol">
+<li>weight是right matrix的第一个column</li>
+<li>对应的vector是left matrix的vector set(每一个column是一个vector)</li>
+</ol></li>
+<li>product matrix里面的第二个column是一个linear weighted combination的治,这个linear weighted combination:
+<ol class="org-ol">
+<li>weight是right matrix的第二个column</li>
+<li>对应的vector是left matrix的vector set(每一个column是一个vector)</li>
+</ol></li>
+</ul></li>
+<li><p>
+上面的情况,我们使用例子更能深刻理解,如下
+</p>
+\begin{equation}
+\begin{bmatrix}
+1 & 2 \\
+3 & 4 \\
+\end{bmatrix}
+\begin{bmatrix}
+a & b \\
+c & d \\
+\end{bmatrix}
+=
+\left[
+a
+\begin{bmatrix}
+1 \\
+
+3 \\
+\end{bmatrix}
++
+c
+\begin{bmatrix}
+2 \\
+4 \\
+\end{bmatrix}
+\;b
+\begin{bmatrix}
+1 \\
+3 \\
+\end{bmatrix}
++
+d
+\begin{bmatrix}
+2 \\
+4 \\
+\end{bmatrix}
+\right],\tag{6.2}
+\end{equation}</li>
+<li>column perspective的解释在统计学中非常有用:
+<ul class="org-ul">
+<li>左侧matrix的column包含了一系列的regressor(data的简单模型)</li>
+<li>右侧matrix包含coefficient, coefficient包含了对于每个regressor的重要性评估</li>
+<li>统计学中的model-fitting其实就寻找最佳的coefficient,能够使得weighted combination of regressor
+能够更好的match data</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org586d3a2" class="outline-4">
+<h4 id="org586d3a2"><span class="section-number-4">5.10.4.</span> The "row perspective"</h4>
 </div>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: harrifeng@outlook.com</p>
-<p class="date">Created: 2022-08-25 Thu 19:44</p>
+<p class="date">Created: 2022-10-09 Sun 15:32</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
