@@ -1,0 +1,763 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2022-12-05 Mon 20:07 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>tic</title>
+<meta name="author" content="harrifeng@outlook.com" />
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/readtheorg.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/js/readtheorg.js"></script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">tic</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orgaaee244">1. Why Containers Matter</a>
+<ul>
+<li><a href="#orgc42bc3a">1.1. Modern Application Architecture</a>
+<ul>
+<li><a href="#orge947617">1.1.1. Attribute: Cloud Native</a></li>
+<li><a href="#org0d85ed8">1.1.2. Attribute: Modular</a></li>
+<li><a href="#org7ef03ce">1.1.3. Attribute: Microservice-Based</a></li>
+<li><a href="#orgec4a0c1">1.1.4. Benefit: Scalability</a></li>
+<li><a href="#org47a134c">1.1.5. Benefit: Reliability</a></li>
+<li><a href="#org70a8720">1.1.6. Benefit:Resilience</a></li>
+</ul>
+</li>
+<li><a href="#org1d204d6">1.2. Why Containers</a>
+<ul>
+<li><a href="#org1d62b99">1.2.1. Requirements for Contaienrs</a></li>
+<li><a href="#orgac40f7e">1.2.2. Requirements for Orchestration</a></li>
+</ul>
+</li>
+<li><a href="#orgaff42c0">1.3. Running Container</a>
+<ul>
+<li><a href="#org528921f">1.3.1. What Container Look Like</a></li>
+<li><a href="#org503caa1">1.3.2. Running a Container</a></li>
+<li><a href="#org05bb3ec">1.3.3. Images and Volume Mounts</a></li>
+<li><a href="#orgb86b80e">1.3.4. What Containers Really Are</a></li>
+</ul>
+</li>
+<li><a href="#orge41f1b5">1.4. Deploying Containers to Kubernetes</a>
+<ul>
+<li><a href="#orgf84bd2d">1.4.1. Talking to the Kubernetes Cluster</a></li>
+<li><a href="#org2271d02">1.4.2. Application Overview</a></li>
+<li><a href="#org5125175">1.4.3. Kubernetes Features</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orge2527d1">2. Process Isolation</a>
+<ul>
+<li><a href="#orgd3744bc">2.1. Understanding Isolation</a>
+<ul>
+<li><a href="#org83dbafc">2.1.1. Why Process Need Isolation</a></li>
+<li><a href="#org98cd696">2.1.2. File Permissions and Change Root</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgaaee244" class="outline-2">
+<h2 id="orgaaee244"><span class="section-number-2">1.</span> Why Containers Matter</h2>
+<div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li>本章,我们会介绍为什么container在package application和deploy application方面,是一个更好的选择</li>
+</ul>
+</div>
+<div id="outline-container-orgc42bc3a" class="outline-3">
+<h3 id="orgc42bc3a"><span class="section-number-3">1.1.</span> Modern Application Architecture</h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li>现代软件的关键特性是scale.本章的目的是我们的application需要做什么来达到和维持这种scale</li>
+<li>我们首先介绍下modern application的三个关键属性,然后会看看从这三个属性获得的三个收益</li>
+</ul>
+</div>
+<div id="outline-container-orge947617" class="outline-4">
+<h4 id="orge947617"><span class="section-number-4">1.1.1.</span> Attribute: Cloud Native</h4>
+<div class="outline-text-4" id="text-1-1-1">
+<ul class="org-ul">
+<li><p>
+cloud的核心是抽象
+</p>
+<pre class="example" id="orgfb5a495">
+At its heart, the cloud is an abstraction.
+</pre></li>
+<li>在cloud里面,所有的provider都是abstrct的,比如:
+<ul class="org-ul">
+<li>memory</li>
+<li>storage</li>
+<li>networking</li>
+</ul></li>
+<li>使用云服务的用户简单的声明自己的need就可以了,云服务商就可以满足他</li>
+<li>为了能够使用云服务,application必须不要把自己绑定在特定的host或者特定的network layout</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org0d85ed8" class="outline-4">
+<h4 id="org0d85ed8"><span class="section-number-4">1.1.2.</span> Attribute: Modular</h4>
+<div class="outline-text-4" id="text-1-1-2">
+<ul class="org-ul">
+<li>modular用一句话说就是"高内聚,低耦合"</li>
+<li>新时代的架构要求,每个module都有自己的process,不再和其他process通过filesystem或者shared memory,
+而是使用socket(也就是网络)进行通信</li>
+<li>使用socket通信看起来有些浪费(因为socket会把数据拷贝来,拷贝去),但是却有两个原因来更倾向于使用单独的process
+<ol class="org-ol">
+<li>由于当前的硬件非常的快, socket通信已经足够快了.使用内存沟通带来的性能提升并不明显(都有良好硬件的情况下)</li>
+<li>无论硬件多么的好,一台机器上面能运行的process是有限制的,也就是说'使用内存通信模型'的天花板更低</li>
+</ol></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org7ef03ce" class="outline-4">
+<h4 id="org7ef03ce"><span class="section-number-4">1.1.3.</span> Attribute: Microservice-Based</h4>
+<div class="outline-text-4" id="text-1-1-3">
+<ul class="org-ul">
+<li>微服务的架构,导致我们的服务由很多单独的非常小的process,每个process还会占用至少一台机器.</li>
+<li>把这些小的process部署到足够小的机器上面,每个process一个机器,是一个强需求. 而不是申请非常强大的少数机器</li>
+<li>把一个大的系统拆成多个小的系统,也便于开发团队的组织:把大系统拆成多个小系统,能够减少测试的复杂度,
+同时能够更好的组织大的团队开发</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgec4a0c1" class="outline-4">
+<h4 id="orgec4a0c1"><span class="section-number-4">1.1.4.</span> Benefit: Scalability</h4>
+<div class="outline-text-4" id="text-1-1-4">
+<ul class="org-ul">
+<li>假设我们有一个简单的executable,运行在单机上面,开始服务3个用户.如果用户激增,我们面临扩容,那么我
+们的扩容就必须是全方位的,包括并不限于:
+<ul class="org-ul">
+<li>机器</li>
+<li>网络</li>
+<li>数据库</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org47a134c" class="outline-4">
+<h4 id="org47a134c"><span class="section-number-4">1.1.5.</span> Benefit: Reliability</h4>
+<div class="outline-text-4" id="text-1-1-5">
+<ul class="org-ul">
+<li>我们刚才的例子中,只有一个server,一旦发生硬件错误,就是single point of failure</li>
+<li>cloud native microservice可以让我们克服这种问题</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org70a8720" class="outline-4">
+<h4 id="org70a8720"><span class="section-number-4">1.1.6.</span> Benefit:Resilience</h4>
+<div class="outline-text-4" id="text-1-1-6">
+<ul class="org-ul">
+<li>由于可以自动处理硬件和软件错误,所以cloud native还达到了resilience</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org1d204d6" class="outline-3">
+<h3 id="org1d204d6"><span class="section-number-3">1.2.</span> Why Containers</h3>
+<div class="outline-text-3" id="text-1-2">
+<ul class="org-ul">
+<li>前面说的,为了控制应用的复杂度,把一个大的应用分拆成很多个小应用.这些小应用容易测试,而且可以分给较
+小的团队,便于团队管理</li>
+<li>但是这种微服务的方法也有缺点,那就是:如何将翻倍了的,数目很多的小项目成功的发布和维护</li>
+<li>我们需要一个广泛应用的方法来为我们的microservice做如下事情:
+<ul class="org-ul">
+<li>deployment</li>
+<li>configuration</li>
+<li>maintenance of our microservice</li>
+</ul></li>
+</ul>
+</div>
+<div id="outline-container-org1d62b99" class="outline-4">
+<h4 id="org1d62b99"><span class="section-number-4">1.2.1.</span> Requirements for Contaienrs</h4>
+<div class="outline-text-4" id="text-1-2-1">
+<ul class="org-ul">
+<li>对于单个的microservice,我们需要如下功能:
+<ul class="org-ul">
+<li>Packaging: 能够打包整个应用(包括dependency),以便进行分发</li>
+<li>Verssioning: 全局来唯一性的确定版本,我们要经常更新微服务,要知道更新前是什么版本</li>
+<li>Isolation:然后微服务能够和其他微服务进行隔离</li>
+<li>Fast startup: 能够快速启动应用,这样才能应对scale和respond to failure</li>
+<li>Low overhead: 要让每个微服务自己占用的资源尽可能的小,这样才能在比较小的资源下运行.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgac40f7e" class="outline-4">
+<h4 id="orgac40f7e"><span class="section-number-4">1.2.2.</span> Requirements for Orchestration</h4>
+<div class="outline-text-4" id="text-1-2-2">
+<ul class="org-ul">
+<li>为了能够让多个微服务在一起工作,我们需要:
+<ul class="org-ul">
+<li>Clustering: 为跨server的container提供处理器,内存,硬盘</li>
+<li>Discovery:能够让一个微服务找到另外的微服务,我们的微服务可能会在cluster上的任意地方运行,还可能
+随时换地方运行</li>
+<li>Configuration:能够在不rebuild的情况下,配置我们的微服务</li>
+<li>Access control:能够控制哪些人才能创建container,保证正确的container运行</li>
+<li>Load balancing: 在wokring instance之间要自动分发request,不要让用户来负责记住所有的microservice
+instance</li>
+<li>Monitoring: 能够监控失败的instance</li>
+<li>Resilience: 一旦发现failure,要能自动recover,如果没有这个功能,那么一系列的failure就会让整个
+application崩溃</li>
+</ul></li>
+<li>类似K8s的系统,叫做container orchestration 环境,它能够让我们对待多个server就像是对待一个set的resource一样</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgaff42c0" class="outline-3">
+<h3 id="orgaff42c0"><span class="section-number-3">1.3.</span> Running Container</h3>
+<div class="outline-text-3" id="text-1-3">
+</div>
+<div id="outline-container-org528921f" class="outline-4">
+<h4 id="org528921f"><span class="section-number-4">1.3.1.</span> What Container Look Like</h4>
+<div class="outline-text-4" id="text-1-3-1">
+<ul class="org-ul">
+<li>在第二章,我们会区分如下两个概念:
+<ul class="org-ul">
+<li>container platform</li>
+<li>container runtime</li>
+</ul></li>
+<li>本章我们先使用container platform docker来做例子</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org503caa1" class="outline-4">
+<h4 id="org503caa1"><span class="section-number-4">1.3.2.</span> Running a Container</h4>
+<div class="outline-text-4" id="text-1-3-2">
+<ul class="org-ul">
+<li>container运行起来,就是和host是完全不一样的机器,在运行之前,我们先来看看host系统的情况
+<ul class="org-ul">
+<li><p>
+代码如下
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:/home/vagrant# cat /etc/os-release
+<span style="color: #f8f8f0;">NAME</span>=<span style="color: #bcd42a;">"Ubuntu"</span>
+<span style="color: #f8f8f0;">VERSION</span>=<span style="color: #bcd42a;">"20.04.5 LTS (Focal Fossa)"</span>
+<span style="color: #f8f8f0;">ID</span>=ubuntu
+<span style="color: #f8f8f0;">ID_LIKE</span>=debian
+<span style="color: #f8f8f0;">PRETTY_NAME</span>=<span style="color: #bcd42a;">"Ubuntu 20.04.5 LTS"</span>
+<span style="color: #f8f8f0;">VERSION_ID</span>=<span style="color: #bcd42a;">"20.04"</span>
+<span style="color: #f8f8f0;">HOME_URL</span>=<span style="color: #bcd42a;">"https://www.ubuntu.com/"</span>
+<span style="color: #f8f8f0;">SUPPORT_URL</span>=<span style="color: #bcd42a;">"https://help.ubuntu.com/"</span>
+<span style="color: #f8f8f0;">BUG_REPORT_URL</span>=<span style="color: #bcd42a;">"https://bugs.launchpad.net/ubuntu/"</span>
+<span style="color: #f8f8f0;">PRIVACY_POLICY_URL</span>=<span style="color: #bcd42a;">"https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"</span>
+<span style="color: #f8f8f0;">VERSION_CODENAME</span>=focal
+<span style="color: #f8f8f0;">UBUNTU_CODENAME</span>=focal
+root@host01:/home/vagrant# ps -ef | head
+UID          PID    PPID  C STIME TTY          TIME CMD
+root           1       0  0 06:06 ?        00:00:14 /sbin/init
+root           2       0  0 06:06 ?        00:00:00 <span style="color: #51afef;">[</span>kthreadd<span style="color: #51afef;">]</span>
+root           3       2  0 06:06 ?        00:00:00 <span style="color: #51afef;">[</span>rcu_gp<span style="color: #51afef;">]</span>
+root           4       2  0 06:06 ?        00:00:00 <span style="color: #51afef;">[</span>rcu_par_gp<span style="color: #51afef;">]</span>
+root           6       2  0 06:06 ?        00:00:00 <span style="color: #51afef;">[</span>kworker/0:0H-events_highpri<span style="color: #51afef;">]</span>
+root           8       2  0 06:06 ?        00:00:05 <span style="color: #51afef;">[</span>kworker/0:1H-events_highpri<span style="color: #51afef;">]</span>
+root           9       2  0 06:06 ?        00:00:00 <span style="color: #51afef;">[</span>mm_percpu_wq<span style="color: #51afef;">]</span>
+root          10       2  0 06:06 ?        00:00:18 <span style="color: #51afef;">[</span>ksoftirqd/0<span style="color: #51afef;">]</span>
+root          11       2  0 06:06 ?        00:00:04 <span style="color: #51afef;">[</span>rcu_sched<span style="color: #51afef;">]</span>
+root@host01:/home/vagrant# uname -v
+<span style="color: #5B6268;">#</span><span style="color: #5B6268;">148-Ubuntu SMP Mon Oct 17 16:02:06 UTC 2022</span>
+root@host01:/home/vagrant# ip addr | head -n 20
+1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host
+       valid_lft forever preferred_lft forever
+2: enp0s3: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether 02:1c:1b:07:d9:f7 brd ff:ff:ff:ff:ff:ff
+    inet 10.0.2.15/24 brd 10.0.2.255 scope global dynamic enp0s3
+       valid_lft 86394sec preferred_lft 86394sec
+    inet6 fe80::1c:1bff:fe07:d9f7/64 scope link
+       valid_lft forever preferred_lft forever
+3: enp0s8: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether 08:00:27:e1:2d:82 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.61.11/24 brd 192.168.61.255 scope global enp0s8
+       valid_lft forever preferred_lft forever
+    inet6 fe80::a00:27ff:fee1:2d82/64 scope link
+       valid_lft forever preferred_lft forever
+4: docker0: &lt;NO-CARRIER,BROADCAST,MULTICAST,UP&gt; mtu 1500 qdisc noqueue state DOWN group default
+    link/ether 02:42:c8:3f:6b:9a brd ff:ff:ff:ff:ff:ff
+</pre>
+</div></li>
+<li>/ect/os-release 用来说明Linux发行版的信息</li>
+<li>ip addr 用来获取ip信息,我们可以看到host的ip是192.168.61.11</li>
+</ul></li>
+<li>下面的例子是使用docker来运行一个rockylinux的命令行
+<ul class="org-ul">
+<li><p>
+命令如下
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:/home/vagrant# docker run -ti rockylinux:8
+Unable to find image <span style="color: #bcd42a;">'rockylinux:8'</span> locally
+8: Pulling from library/rockylinux
+0049b869cecb: Downloading <span style="color: #51afef;">[</span>==========================&gt;                        <span style="color: #51afef;">]</span>  38.19MB/71.92MB
+0049b869cecb: Pull complete
+Digest: sha256:afd392a691df0475390df77cb5486f226bc2b4cbaf87c41785115b9237f3203f
+Status: Downloaded newer image for rockylinux:8
+<span style="color: #51afef;">[</span>root@5a13b807526d /<span style="color: #51afef;">]</span># cat /etc/os-release
+<span style="color: #f8f8f0;">NAME</span>=<span style="color: #bcd42a;">"Rocky Linux"</span>
+<span style="color: #f8f8f0;">VERSION</span>=<span style="color: #bcd42a;">"8.6 (Green Obsidian)"</span>
+<span style="color: #f8f8f0;">ID</span>=<span style="color: #bcd42a;">"rocky"</span>
+<span style="color: #f8f8f0;">ID_LIKE</span>=<span style="color: #bcd42a;">"rhel centos fedora"</span>
+<span style="color: #f8f8f0;">VERSION_ID</span>=<span style="color: #bcd42a;">"8.6"</span>
+<span style="color: #f8f8f0;">PLATFORM_ID</span>=<span style="color: #bcd42a;">"platform:el8"</span>
+<span style="color: #f8f8f0;">PRETTY_NAME</span>=<span style="color: #bcd42a;">"Rocky Linux 8.6 (Green Obsidian)"</span>
+<span style="color: #f8f8f0;">ANSI_COLOR</span>=<span style="color: #bcd42a;">"0;32"</span>
+<span style="color: #f8f8f0;">CPE_NAME</span>=<span style="color: #bcd42a;">"cpe:/o:rocky:rocky:8:GA"</span>
+<span style="color: #f8f8f0;">HOME_URL</span>=<span style="color: #bcd42a;">"https://rockylinux.org/"</span>
+<span style="color: #f8f8f0;">BUG_REPORT_URL</span>=<span style="color: #bcd42a;">"https://bugs.rockylinux.org/"</span>
+<span style="color: #f8f8f0;">ROCKY_SUPPORT_PRODUCT</span>=<span style="color: #bcd42a;">"Rocky Linux"</span>
+<span style="color: #f8f8f0;">ROCKY_SUPPORT_PRODUCT_VERSION</span>=<span style="color: #bcd42a;">"8"</span>
+<span style="color: #f8f8f0;">REDHAT_SUPPORT_PRODUCT</span>=<span style="color: #bcd42a;">"Rocky Linux"</span>
+<span style="color: #f8f8f0;">REDHAT_SUPPORT_PRODUCT_VERSION</span>=<span style="color: #bcd42a;">"8"</span>
+<span style="color: #51afef;">[</span>root@5a13b807526d /<span style="color: #51afef;">]</span># yum install -y procps iproute
+
+Installed:
+  iproute-5.18.0-1.el8.x86_64       libbpf-0.5.0-1.el8.x86_64       libmnl-1.0.4-6.el8.x86_64       procps-ng-3.3.15-9.el8.x86_64       psmisc-23.1-5.el8.x86_64
+
+Complete!
+<span style="color: #51afef;">[</span>root@5a13b807526d /<span style="color: #51afef;">]</span># ps -ef
+UID          PID    PPID  C STIME TTY          TIME CMD
+root           1       0  0 11:41 pts/0    00:00:00 /bin/bash
+root          65       1  0 11:46 pts/0    00:00:00 ps -ef
+<span style="color: #51afef;">[</span>root@5a13b807526d /<span style="color: #51afef;">]</span># ip addr
+1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+19: eth0@if20: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc noqueue state UP group default
+    link/ether 02:42:ac:11:00:02 brd ff:ff:ff:ff:ff:ff link-netnsid 0
+    inet 172.17.0.2/16 brd 172.17.255.255 scope global eth0
+       valid_lft forever preferred_lft forever
+<span style="color: #51afef;">[</span>root@5a13b807526d /<span style="color: #51afef;">]</span># uname -v
+<span style="color: #5B6268;">#</span><span style="color: #5B6268;">148-Ubuntu SMP Mon Oct 17 16:02:06 UTC 2022</span>
+<span style="color: #51afef;">[</span>root@5a13b807526d /<span style="color: #51afef;">]</span># exit
+<span style="color: #26a6a6;">exit</span>
+root@host01:/home/vagrant#
+</pre>
+</div></li>
+<li>我们使用docker run来创建一个运行的容器,参数-ti表示我们要使用交互的shell</li>
+<li>/etc/os-release 这里就不再是ubuntu了,而是Rocky Linux</li>
+<li>yum安装网络相关的package</li>
+<li>在container里面ps显示出来的进程就很少了, 而且我们容器运行的命令bash就是PID为1</li>
+<li>IP和host也不一样了,也不再是192.168.61.11了</li>
+<li><p>
+需要非常注意的是,我们在container里面使用uname -v,返回值和之前在host里面的返回值一样,都是如下
+(这说明container和host也不是完全不一样的两个系统)
+</p>
+<pre class="example" id="orgd39fda8">
+#148-Ubuntu SMP Mon Oct 17 16:02:06 UTC 2022
+</pre></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org05bb3ec" class="outline-4">
+<h4 id="org05bb3ec"><span class="section-number-4">1.3.3.</span> Images and Volume Mounts</h4>
+<div class="outline-text-4" id="text-1-3-3">
+<ul class="org-ul">
+<li>第一眼看上去, container像是混合了常规的process和vritual machine的结合体</li>
+<li><p>
+我们再来看一个Alpine的例子,首先我们pull image,就像是下载虚拟机
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:/home/vagrant# docker pull alpine:3
+3: Pulling from library/alpine
+c158987b0551: Pull complete
+Digest: sha256:8914eb54f968791faf6a8638949e480fef81e697984fba772b3976835194c6d4
+Status: Downloaded newer image for alpine:3
+docker.io/library/alpine:3
+</pre>
+</div></li>
+<li>然后我们在docker身上实验两种操作:
+<ul class="org-ul">
+<li>和host共享某些文件夹: 这是运行virtual machine经常做的事情</li>
+<li>通过环境变量来传递写信息:这是运行process经常做的事情</li>
+<li><p>
+代码如下
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:/home/vagrant# docker run -ti -v /:/host -e <span style="color: #f8f8f0;">hello</span>=world alpine:3
+/ <span style="color: #5B6268;"># </span><span style="color: #5B6268;">hostname</span>
+9c84a63b5ff5
+</pre>
+</div></li>
+<li><p>
+/etc/os-release 还是会打印出发行版信息
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">/ <span style="color: #5B6268;"># </span><span style="color: #5B6268;">cat /etc/os-release</span>
+<span style="color: #f8f8f0;">NAME</span>=<span style="color: #bcd42a;">"Alpine Linux"</span>
+<span style="color: #f8f8f0;">ID</span>=alpine
+<span style="color: #f8f8f0;">VERSION_ID</span>=3.17.0
+<span style="color: #f8f8f0;">PRETTY_NAME</span>=<span style="color: #bcd42a;">"Alpine Linux v3.17"</span>
+<span style="color: #f8f8f0;">HOME_URL</span>=<span style="color: #bcd42a;">"https://alpinelinux.org/"</span>
+<span style="color: #f8f8f0;">BUG_REPORT_URL</span>=<span style="color: #bcd42a;">"https://gitlab.alpinelinux.org/alpine/aports/-/issues"</span>
+</pre>
+</div></li>
+<li><p>
+由于mount了host的文件系统,我们还能打印出host的/etc/os-release, 当然位置是在我们mount的地方/host
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">/ <span style="color: #5B6268;"># </span><span style="color: #5B6268;">cat /host/etc/os-release</span>
+<span style="color: #f8f8f0;">NAME</span>=<span style="color: #bcd42a;">"Ubuntu"</span>
+<span style="color: #f8f8f0;">VERSION</span>=<span style="color: #bcd42a;">"20.04.5 LTS (Focal Fossa)"</span>
+<span style="color: #f8f8f0;">ID</span>=ubuntu
+<span style="color: #f8f8f0;">ID_LIKE</span>=debian
+<span style="color: #f8f8f0;">PRETTY_NAME</span>=<span style="color: #bcd42a;">"Ubuntu 20.04.5 LTS"</span>
+<span style="color: #f8f8f0;">VERSION_ID</span>=<span style="color: #bcd42a;">"20.04"</span>
+<span style="color: #f8f8f0;">HOME_URL</span>=<span style="color: #bcd42a;">"https://www.ubuntu.com/"</span>
+<span style="color: #f8f8f0;">SUPPORT_URL</span>=<span style="color: #bcd42a;">"https://help.ubuntu.com/"</span>
+<span style="color: #f8f8f0;">BUG_REPORT_URL</span>=<span style="color: #bcd42a;">"https://bugs.launchpad.net/ubuntu/"</span>
+<span style="color: #f8f8f0;">PRIVACY_POLICY_URL</span>=<span style="color: #bcd42a;">"https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"</span>
+<span style="color: #f8f8f0;">VERSION_CODENAME</span>=focal
+<span style="color: #f8f8f0;">UBUNTU_CODENAME</span>=focal
+</pre>
+</div></li>
+<li><p>
+我们还可以打印传入的环境变量
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">/ <span style="color: #5B6268;"># </span><span style="color: #5B6268;">echo $hello</span>
+world
+</pre>
+</div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgb86b80e" class="outline-4">
+<h4 id="orgb86b80e"><span class="section-number-4">1.3.4.</span> What Containers Really Are</h4>
+<div class="outline-text-4" id="text-1-3-4">
+<ul class="org-ul">
+<li>虽然container有自己的hostname, filesystem, process space和networking,但是container它不是virtual
+machine, 因为它没有自己的kernel,所以它没有自己的kernel module或者device driver</li>
+<li>container虽然可以有多个process,但是这些额外的process必须explicitly的被PID为1的process(之前的例
+子中PID为1的都是bash)所启动</li>
+<li>绝大部分的container没有system service在后台运行,也就没有SSH server</li>
+<li>我们再来看一个nginx的例子,这个例子和前面的bash在前台运行不同,是整个container都在后台运行
+<ul class="org-ul">
+<li><p>
+代码如下
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:/home/vagrant# docker run -d -p 8080:80 nginx
+Unable to find image <span style="color: #bcd42a;">'nginx:latest'</span> locally
+latest: Pulling from library/nginx
+a603fa5e3b41: Pull complete
+c39e1cda007e: Pull complete
+90cfefba34d7: Pull complete
+a38226fb7aba: Pull complete
+62583498bae6: Pull complete
+9802a2cfdb8d: Pull complete
+Digest: sha256:e209ac2f37c70c1e0e9873a5f7231e91dcd83fdf1178d8ed36c2ec09974210ba
+Status: Downloaded newer image for nginx:latest
+d7b73a9beca876ada16a537c1d29149ca2ee1ff92dd557a1645507f37a50d2f0
+</pre>
+</div></li>
+<li>这里我们run跟的参数不再是`-ti`了,而是`-d`,意思是以daemon的形态在后台运行container,普通process
+也经常以这种形态运行</li>
+<li>`-p 8080:80`就是把container的端口80映射到host的8080,这种用法也是借鉴于virtual machine(vagrant
+里面就有类似的配置).这个配置成功后,我们可以通过host的8080来访问container的80端口</li>
+</ul></li>
+<li><p>
+一旦运行起来以后,我们使用docker ps来查看后台的container
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:/home/vagrant# docker ps
+CONTAINER ID   IMAGE     COMMAND                  CREATED         STATUS         PORTS                                   NAMES
+d7b73a9beca8   nginx     <span style="color: #bcd42a;">"/docker-entrypoint.&#8230;"</span>   4 minutes ago   Up 4 minutes   0.0.0.0:8080-&gt;80/tcp, :::8080-&gt;80/tcp   laughing_lehmann
+</pre>
+</div></li>
+<li><p>
+由于port forwarding,我们可以从host来访问container
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:/home/vagrant# curl http://localhost:8080/
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Welcome to nginx!&lt;/title&gt;
+&lt;style&gt;
+html <span style="color: #51afef;">{</span> color-scheme: light dark; <span style="color: #51afef;">}</span>
+body <span style="color: #51afef;">{</span> width: 35em; margin: 0 auto;
+font-family: Tahoma, Verdana, Arial, sans-serif; <span style="color: #51afef;">}</span>
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;Welcome to nginx!&lt;/h1&gt;
+&lt;p&gt;If you see this page, the nginx web server is successfully installed and
+working. Further configuration is required.&lt;/p&gt;
+
+&lt;p&gt;For online documentation and support please refer to
+&lt;a <span style="color: #f8f8f0;">href</span>=<span style="color: #bcd42a;">"http://nginx.org/"</span>&gt;nginx.org&lt;/a&gt;.&lt;br/&gt;
+Commercial support is available at
+&lt;a <span style="color: #f8f8f0;">href</span>=<span style="color: #bcd42a;">"http://nginx.com/"</span>&gt;nginx.com&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Thank you for using nginx.&lt;/em&gt;&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+</div></li>
+<li>从上面的例子我们可以看成,由于NGINX是被打包在container image里面的,所以我们可以使用一个命令就下
+载并且运行nginx,无论host是否装了和NGINX相冲突的软件或者库</li>
+<li>我们还可以在host上面通过ps来看到运行在container里面的nginx process,这再次证明container不是virtual
+machine.但是我们又不需要在host安装了nginx而运行nginx.换句话说,我们使用container之后,获取了virtual
+machine的优势,但是又没有承担virtual machine的负担</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orge41f1b5" class="outline-3">
+<h3 id="orge41f1b5"><span class="section-number-3">1.4.</span> Deploying Containers to Kubernetes</h3>
+<div class="outline-text-3" id="text-1-4">
+<ul class="org-ul">
+<li>为了能够让load balancing和resilience工作,我们需要一个编排的框架,最终的胜利者就是Kubernetes</li>
+<li>我们的例子就有web sever和数据库安装好了,我们后续可以学习这个例子</li>
+<li>为了使用编排容器,我们要放弃一些control:
+<ul class="org-ul">
+<li>我们不再是自己运行命令来启动容器</li>
+<li>而是,我们告诉k8s,我们需要什么样的容器.然后k8s帮我们启动,并且监控这些容器,并且在需要重启的时候,
+帮我们重启</li>
+<li>上述配置的方式叫做declarative</li>
+</ul></li>
+</ul>
+</div>
+<div id="outline-container-orgf84bd2d" class="outline-4">
+<h4 id="orgf84bd2d"><span class="section-number-4">1.4.1.</span> Talking to the Kubernetes Cluster</h4>
+<div class="outline-text-4" id="text-1-4-1">
+<ul class="org-ul">
+<li>k8s cluster自己有一个API server让用户来来获取其状态,并且更改其配置.</li>
+<li>正常情况下,我们使用kubectl这个client来和API server沟通,但是这里做demo的话,我们使用k3s内置的kubectl
+<ul class="org-ul">
+<li><p>
+代码如下
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:/home/vagrant# k3s kubectl version
+Client Version: version.Info<span style="color: #51afef;">{</span>Major:<span style="color: #bcd42a;">"1"</span>, Minor:<span style="color: #bcd42a;">"23"</span>, GitVersion:<span style="color: #bcd42a;">"v1.23.4+k3s1"</span>, GitCommit:<span style="color: #bcd42a;">"43b1cb48200d8f6af85c16ed944d68fcc96b6506"</span>, GitTreeState:<span style="color: #bcd42a;">"clean"</span>, BuildDate:<span style="color: #bcd42a;">"2022-02-24T22:38:17Z"</span>, GoVersion:<span style="color: #bcd42a;">"go1.17.5"</span>, Compiler:<span style="color: #bcd42a;">"gc"</span>, Platform:<span style="color: #bcd42a;">"linux/amd64"</span><span style="color: #51afef;">}</span>
+Server Version: version.Info<span style="color: #51afef;">{</span>Major:<span style="color: #bcd42a;">"1"</span>, Minor:<span style="color: #bcd42a;">"23"</span>, GitVersion:<span style="color: #bcd42a;">"v1.23.4+k3s1"</span>, GitCommit:<span style="color: #bcd42a;">"43b1cb48200d8f6af85c16ed944d68fcc96b6506"</span>, GitTreeState:<span style="color: #bcd42a;">"clean"</span>, BuildDate:<span style="color: #bcd42a;">"2022-02-24T22:38:17Z"</span>, GoVersion:<span style="color: #bcd42a;">"go1.17.5"</span>, Compiler:<span style="color: #bcd42a;">"gc"</span>, Platform:<span style="color: #bcd42a;">"linux/amd64"</span><span style="color: #51afef;">}</span>
+root@host01:/home/vagrant# k3s kubectl get nodes
+NAME     STATUS   ROLES                  AGE    VERSION
+host01   Ready    control-plane,master   3d4h   v1.23.4+k3s1
+</pre>
+</div></li>
+<li>第一个命令获取了k8s的client和server的版本</li>
+<li>第二个命令获取了当前所有node的信息(注意是cluster的node,并且不是高可用的,只是为了让大家方便感受kubectl)</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org2271d02" class="outline-4">
+<h4 id="org2271d02"><span class="section-number-4">1.4.2.</span> Application Overview</h4>
+<div class="outline-text-4" id="text-1-4-2">
+<ul class="org-ul">
+<li>我们的例子是一个todo list:
+<ul class="org-ul">
+<li>拥有web interface</li>
+<li>persistent storage</li>
+<li>我们可以在nginx启动以后,在运行vagrant的机器上面,访问如下URL就可以看到todo应用 <a href="https://localhost:48080/todo/">https://localhost:48080/todo/</a></li>
+</ul></li>
+<li>我们的例子也是有两种类型的pod:
+<ul class="org-ul">
+<li>运行PostgreSQL的container</li>
+<li>提供前后端服务的container</li>
+</ul></li>
+<li>我们使用get pods来让k8s提供pod列表,所谓pod是指一组(或者一个)container,k8s把pod看做是调度和监控
+的最小单位
+<ul class="org-ul">
+<li><p>
+使用get pods的代码如下
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:/home/vagrant# k3s kubectl get pods
+NAME                       READY   STATUS    RESTARTS      AGE
+todo-db-585649889f-8blkg   1/1     Running   2 <span style="color: #51afef;">(</span>19h ago<span style="color: #51afef;">)</span>   3d23h
+todo-6bd859fdd5-tstkt      1/1     Running   2 <span style="color: #51afef;">(</span>19h ago<span style="color: #51afef;">)</span>   3d23h
+todo-6bd859fdd5-dlbmx      1/1     Running   2 <span style="color: #51afef;">(</span>19h ago<span style="color: #51afef;">)</span>   3d23h
+todo-6bd859fdd5-92bm8      1/1     Running   3 <span style="color: #51afef;">(</span>19h ago<span style="color: #51afef;">)</span>   3d23h
+</pre>
+</div></li>
+<li>todo-db开头的,是PostgreSQL</li>
+<li>todo-开头的是Node.js 容器</li>
+<li>random字符后面会讲解,为了区分不同的容器</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org5125175" class="outline-4">
+<h4 id="org5125175"><span class="section-number-4">1.4.3.</span> Kubernetes Features</h4>
+<div class="outline-text-4" id="text-1-4-3">
+<ul class="org-ul">
+<li>如果仅仅是运行四个container,那么我们完全可以使用docker run,但是k8s的功能不仅于此</li>
+<li>除了运行container,但是k8s还可以监控容器, k8s会持续的保证让这三个instance保持running状态
+<ul class="org-ul">
+<li><p>
+我们可以destroy其中一个pod,然后会发现k8s会自动的recover
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:/home/vagrant# k3s kubectl get pods
+NAME                       READY   STATUS    RESTARTS      AGE
+todo-db-585649889f-8blkg   1/1     Running   2 <span style="color: #51afef;">(</span>19h ago<span style="color: #51afef;">)</span>   3d23h
+todo-6bd859fdd5-tstkt      1/1     Running   2 <span style="color: #51afef;">(</span>19h ago<span style="color: #51afef;">)</span>   3d23h
+todo-6bd859fdd5-dlbmx      1/1     Running   2 <span style="color: #51afef;">(</span>19h ago<span style="color: #51afef;">)</span>   3d23h
+todo-6bd859fdd5-92bm8      1/1     Running   3 <span style="color: #51afef;">(</span>19h ago<span style="color: #51afef;">)</span>   3d23h
+root@host01:/home/vagrant# k3s kubectl delete pod todo-6bd859fdd5-tstkt
+pod <span style="color: #bcd42a;">"todo-6bd859fdd5-tstkt"</span> deleted
+root@host01:/home/vagrant# k3s kubectl get pods
+NAME                       READY   STATUS    RESTARTS      AGE
+todo-db-585649889f-8blkg   1/1     Running   2 <span style="color: #51afef;">(</span>20h ago<span style="color: #51afef;">)</span>   4d
+todo-6bd859fdd5-dlbmx      1/1     Running   2 <span style="color: #51afef;">(</span>20h ago<span style="color: #51afef;">)</span>   4d
+todo-6bd859fdd5-92bm8      1/1     Running   3 <span style="color: #51afef;">(</span>20h ago<span style="color: #51afef;">)</span>   4d
+todo-6bd859fdd5-zlzkk      1/1     Running   0             16s
+</pre>
+</div></li>
+</ul></li>
+<li>k8s还可以自动的scale我们的application,我们当前使用明确的命令来扩容,但是后面会介绍k8s还可以自动
+的scale
+<ul class="org-ul">
+<li><p>
+手动scale的代码如下
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:/home/vagrant# k3s kubectl get pods
+NAME                       READY   STATUS    RESTARTS      AGE
+todo-db-585649889f-8blkg   1/1     Running   2 <span style="color: #51afef;">(</span>20h ago<span style="color: #51afef;">)</span>   4d
+todo-6bd859fdd5-dlbmx      1/1     Running   2 <span style="color: #51afef;">(</span>20h ago<span style="color: #51afef;">)</span>   4d
+todo-6bd859fdd5-92bm8      1/1     Running   3 <span style="color: #51afef;">(</span>20h ago<span style="color: #51afef;">)</span>   4d
+todo-6bd859fdd5-zlzkk      1/1     Running   0             9m30s
+root@host01:/home/vagrant# k3s kubectl scale --replicas=5 deployment todo
+deployment.apps/todo scaled
+root@host01:/home/vagrant# k3s kubectl get pods
+NAME                       READY   STATUS    RESTARTS      AGE
+todo-db-585649889f-8blkg   1/1     Running   2 <span style="color: #51afef;">(</span>20h ago<span style="color: #51afef;">)</span>   4d
+todo-6bd859fdd5-dlbmx      1/1     Running   2 <span style="color: #51afef;">(</span>20h ago<span style="color: #51afef;">)</span>   4d
+todo-6bd859fdd5-92bm8      1/1     Running   3 <span style="color: #51afef;">(</span>20h ago<span style="color: #51afef;">)</span>   4d
+todo-6bd859fdd5-zlzkk      1/1     Running   0             9m42s
+todo-6bd859fdd5-ctmjc      1/1     Running   0             5s
+todo-6bd859fdd5-b2mt8      1/1     Running   0             4s
+</pre>
+</div></li>
+<li>这里我们告诉k8s去scale deployment所控制的pod的个数到5</li>
+<li>到目前为止,你可以把deployment理解为pod的owner: deployment会monitor,并且控制pod</li>
+</ul></li>
+<li>为了能够让我们的请求能够水平的分配给不同的pod,我们需要一个类似load balancer的东西,在k8s里面,这
+个东西叫做Service
+<ul class="org-ul">
+<li><p>
+查询todo的service
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:/home/vagrant# k3s kubectl describe service todo
+Name:              todo
+Namespace:         default
+Labels:            <span style="color: #f8f8f0;">app</span>=todo
+Annotations:       &lt;none&gt;
+Selector:          <span style="color: #f8f8f0;">app</span>=todo
+Type:              ClusterIP
+IP Family Policy:  SingleStack
+IP Families:       IPv4
+IP:                10.43.99.105
+IPs:               10.43.99.105
+Port:              web  5000/TCP
+TargetPort:        5000/TCP
+Endpoints:         10.42.0.25:5000,10.42.0.27:5000,10.42.0.32:5000 + 2 more...
+Session Affinity:  None
+Events:            &lt;none&gt;
+</pre>
+</div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orge2527d1" class="outline-2">
+<h2 id="orge2527d1"><span class="section-number-2">2.</span> Process Isolation</h2>
+<div class="outline-text-2" id="text-2">
+<ul class="org-ul">
+<li>Container使用了Linux Kernel的基础功能,也就是namespace</li>
+<li>namespae会为创建如下的资源来隔离process:
+<ul class="org-ul">
+<li>process identifier</li>
+<li>user</li>
+<li>filesystem</li>
+<li>network interface</li>
+</ul></li>
+</ul>
+</div>
+<div id="outline-container-orgd3744bc" class="outline-3">
+<h3 id="orgd3744bc"><span class="section-number-3">2.1.</span> Understanding Isolation</h3>
+<div class="outline-text-3" id="text-2-1">
+<ul class="org-ul">
+<li>我们首先来看看process isolation的动机,为此我们先看看传统的process isolation,并且看看是什么导致了
+container使用的isolation功能</li>
+</ul>
+</div>
+<div id="outline-container-org83dbafc" class="outline-4">
+<h4 id="org83dbafc"><span class="section-number-4">2.1.1.</span> Why Process Need Isolation</h4>
+<div class="outline-text-4" id="text-2-1-1">
+<ul class="org-ul">
+<li>计算机的整体概念就是能够同时运行很多种的任务</li>
+<li>最开始的时候计算机是通过大家挨个提交card上的任务来分享计算机的</li>
+<li>后面计算机拥有了多任务系统,那么多个用户可以同时使用计算机,看起来好像是每个用户的任务都同时在执行</li>
+<li>当然了,既然有东西要分享,那么必须分享的公平,计算机既然分享也要分享的公平</li>
+<li>在同一台机器上面运行的process虽然拥有自己的CPU时间片,和自己的memory space,但是它们其实做不到公
+平的分享计算机. 这会导致如下的很多问题:
+<ul class="org-ul">
+<li>某个process使用了过多的CPU, memory, storage, 或者network</li>
+<li>覆写了其他process的内存,或者文件</li>
+<li>提取了其他process的secret信息</li>
+<li>给其他process发送了bad data导致其他的process的不良行为</li>
+<li>给其他process发送了过量的request,导致其他process失去响应</li>
+</ul></li>
+<li>由于有这么多的问题(很多还是严重的安全问题),我们必须要对不同给process进行隔离:
+<ul class="org-ul">
+<li>最安全的做法是进行物理隔离(每个process一台机器),但是这个做法的缺点是太昂贵</li>
+<li>virtual machine可以做到对不同的process,既操作系统隔离,又是硬件共享. 缺点是每个process都要运行
+一个操作系统,所以它的速度太慢了,扩展性也不好(虽然相比于物理隔离便宜了一点)</li>
+<li><p>
+最佳解决方案就是process还是老的proces,但是使用process isolation技术来减小对其他process的支持
+</p>
+<pre class="example" id="org9b34277">
+The solution is to run regular processes, but use process isolation
+to reduce the risk of affecting other processes.
+</pre></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org98cd696" class="outline-4">
+<h4 id="org98cd696"><span class="section-number-4">2.1.2.</span> File Permissions and Change Root</h4>
+<div class="outline-text-4" id="text-2-1-2">
+<ul class="org-ul">
+<li>process isolation的最大的诉求,就是阻止某个process看到他不该看到的东西.因为一旦process连看都看
+不到其他process的文件,那么他根本不可能有意或者无意的造成伤害</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: harrifeng@outlook.com</p>
+<p class="date">Created: 2022-12-05 Mon 20:07</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
