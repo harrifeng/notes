@@ -1,0 +1,755 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2023-03-12 Sun 22:24 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>pydata</title>
+<meta name="author" content="harrifeng@outlook.com" />
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/readtheorg.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/js/readtheorg.js"></script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">pydata</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orgb85df42">1. Chapter 4: NumPy Basics: Arrays and Vectorized Computation</a>
+<ul>
+<li><a href="#orgc1b7d08">1.1. The NumPy ndarray: A Multidimensional Array Object</a>
+<ul>
+<li><a href="#orgd929786">1.1.1. Creating ndarrays</a></li>
+<li><a href="#orgc7d5823">1.1.2. Data Types for ndarrays</a></li>
+<li><a href="#org664032b">1.1.3. Arithmetic with NumPy</a></li>
+<li><a href="#org573faf3">1.1.4. Basic Indexing and Slicing</a></li>
+<li><a href="#org3a40395">1.1.5. Boolean Indexing</a></li>
+<li><a href="#org9d3e619">1.1.6. Transposing Arrays</a></li>
+</ul>
+</li>
+<li><a href="#orge67acf1">1.2. Pseudorandom Number</a></li>
+<li><a href="#org9c17aa0">1.3. Universal Function:</a></li>
+<li><a href="#org8980645">1.4. Array-Oriented</a>
+<ul>
+<li><a href="#org4160d49">1.4.1. Expressing Conditional</a></li>
+<li><a href="#org1dd0876">1.4.2. Mathematical</a></li>
+<li><a href="#org8f78d75">1.4.3. Methods</a></li>
+<li><a href="#org8403614">1.4.4. Sorting</a></li>
+<li><a href="#org9489edb">1.4.5. Unique</a></li>
+</ul>
+</li>
+<li><a href="#org8f20d90">1.5. File Input</a></li>
+<li><a href="#org65ead99">1.6. Linear Algebra</a></li>
+<li><a href="#org5339c99">1.7. Example</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgb85df42" class="outline-2">
+<h2 id="orgb85df42"><span class="section-number-2">1.</span> Chapter 4: NumPy Basics: Arrays and Vectorized Computation</h2>
+<div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li>NumPy 是Numerical Python的简称,是python numerical 计算的最重要基础库</li>
+<li>很多计算包都使用NumPy的array object作为底层数据结构</li>
+<li>绝大多数NumPy的知识都是可以在pandas里面使用的</li>
+<li>在NumPy里面,你会有如下发现:
+<ul class="org-ul">
+<li>ndarray, 一个高效的多维数组,提供array维度高效的计算</li>
+<li>整体计算整个数组,还不需要循环的数学类的函数</li>
+<li>从硬盘读写数组的工具</li>
+<li>线性代数相关工具,随机数生产工具,傅里叶变换工具</li>
+<li>用来联系NumPy和library(其他语言,比如C/C++书写)的工具</li>
+</ul></li>
+<li>由于NumPy提供了完整而且文档详细的C API, 所以如下两件事情都变得很容易:
+<ul class="org-ul">
+<li>把data传递个外部的library(以C,C++书写)</li>
+<li>外部的library把数据以NumPy array的形式把数据返还给python</li>
+</ul></li>
+<li>上面的特性,让NumPy成为wrap legacy代码的绝佳选择</li>
+<li>虽然NumPy自己没有提供建模和科学计算的能力,但是理解NumPy array(包括array-rientd computing)会帮助我
+们使用如下tools(他们都是array computing semantic):
+<ul class="org-ul">
+<li>pandas</li>
+</ul></li>
+<li>NumPy有很多的高级特性(比如broadcasting)不影响本书后面内容的理解,所以我们只会在附录讨论</li>
+<li>对于大多数的data analysis application,本书主要关注的功能点有:
+<ul class="org-ul">
+<li>array-based operation, 用来做data munging, cleaning, subseting, filtering, transformation</li>
+<li>array 算法: 比如排序,唯一化,set操作</li>
+<li>有效的统计信息和总结信息</li>
+<li>数据对齐,relational data的操作(比如merge, join等)</li>
+<li>不再使用if-elif-else的办法,而是使用更加expressive的表达方式</li>
+<li>group-wise 操作: 比如aggregation, transformation</li>
+</ul></li>
+<li>对于statistics或者analytics方面的信息,虽然NumPy也有提供,但是大家通常会使用Pandas来完成这些操作</li>
+<li>NumPy的地位之所以这么重要,在于他设计之初就注重了在大array上面的超高效操作.能做到超高效率,原因在于:
+<ul class="org-ul">
+<li>NumPy内部使用整块连续内存存储data,和Python 内置的object完全没有关系. NumPy内置的函数不会对这些
+内存操作的时候,完全不进行type check,所以效率很高.同时NumPy array也比内置的Python sequance节省很多内存</li>
+<li><p>
+NumPy在对整个数组进行复杂操作的时候,没有使用for loop. 这个代码使用C语言编写,速度比Python内置代
+码快很多. 下面实验可以看到,速度可以快到100倍
+</p>
+<div class="org-src-container">
+<pre class="src src-python">In <span style="color: #268bd2;">[</span>11<span style="color: #268bd2;">]</span>:
+<span style="color: #859900; font-weight: bold;">import</span> numpy <span style="color: #859900; font-weight: bold;">as</span> np
+<span style="color: #268bd2;">my_arr</span> = np.arange<span style="color: #268bd2;">(</span>1_000_000<span style="color: #268bd2;">)</span>
+<span style="color: #268bd2;">my_list</span> = <span style="color: #d33682; font-style: italic;">list</span><span style="color: #268bd2;">(</span><span style="color: #d33682; font-style: italic;">range</span><span style="color: #d33682;">(</span>1_000_000<span style="color: #d33682;">)</span><span style="color: #268bd2;">)</span>
+
+In <span style="color: #268bd2;">[</span>12<span style="color: #268bd2;">]</span>:
+%timeit <span style="color: #268bd2;">my_arr2</span> = my_arr * 2
+582 &#181;s &#177; 6.21 &#181;s per loop <span style="color: #268bd2;">(</span>mean &#177; std. dev. of 7 runs, 1,000 loops each<span style="color: #268bd2;">)</span>
+
+In <span style="color: #268bd2;">[</span>13<span style="color: #268bd2;">]</span>:
+%timeit <span style="color: #268bd2;">my_list2</span> = <span style="color: #268bd2;">[</span>x * 2 <span style="color: #859900; font-weight: bold;">for</span> x <span style="color: #859900; font-weight: bold;">in</span> my_list<span style="color: #268bd2;">]</span>
+58 ms &#177; 413 &#181;s per loop <span style="color: #268bd2;">(</span>mean &#177; std. dev. of 7 runs, 10 loops each<span style="color: #268bd2;">)</span>
+</pre>
+</div></li>
+</ul></li>
+</ul>
+</div>
+<div id="outline-container-orgc1b7d08" class="outline-3">
+<h3 id="orgc1b7d08"><span class="section-number-3">1.1.</span> The NumPy ndarray: A Multidimensional Array Object</h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li>NumPy的最关键特性技术N-dimensional array object,叫做ndarray.</li>
+<li><p>
+我们对ndarray对象进行一个数学操作,就等于分别对ndarray内部的每个成员进行同样的数学操作,例子如下
+</p>
+<div class="org-src-container">
+<pre class="src src-python">In <span style="color: #268bd2;">[</span>14<span style="color: #268bd2;">]</span>:
+<span style="color: #859900; font-weight: bold;">import</span> numpy <span style="color: #859900; font-weight: bold;">as</span> np
+<span style="color: #268bd2;">data</span> = np.array<span style="color: #268bd2;">(</span><span style="color: #d33682;">[</span><span style="color: #859900;">[</span>1.5, -0.1, 3<span style="color: #859900;">]</span>, <span style="color: #859900;">[</span>0, -3, 6.5<span style="color: #859900;">]</span><span style="color: #d33682;">]</span><span style="color: #268bd2;">)</span>
+data
+Out <span style="color: #268bd2;">[</span>14<span style="color: #268bd2;">]</span>:
+array<span style="color: #268bd2;">(</span><span style="color: #d33682;">[</span><span style="color: #859900;">[</span> 1.5, -0.1,  3. <span style="color: #859900;">]</span>,
+       <span style="color: #859900;">[</span> 0. , -3. ,  6.5<span style="color: #859900;">]</span><span style="color: #d33682;">]</span><span style="color: #268bd2;">)</span>
+
+In <span style="color: #268bd2;">[</span>15<span style="color: #268bd2;">]</span>:
+data * 10
+Out <span style="color: #268bd2;">[</span>15<span style="color: #268bd2;">]</span>:
+array<span style="color: #268bd2;">(</span><span style="color: #d33682;">[</span><span style="color: #859900;">[</span> 15.,  -1.,  30.<span style="color: #859900;">]</span>,
+       <span style="color: #859900;">[</span>  0., -30.,  65.<span style="color: #859900;">]</span><span style="color: #d33682;">]</span><span style="color: #268bd2;">)</span>
+
+In <span style="color: #268bd2;">[</span>16<span style="color: #268bd2;">]</span>:
+data + data
+Out <span style="color: #268bd2;">[</span>16<span style="color: #268bd2;">]</span>:
+array<span style="color: #268bd2;">(</span><span style="color: #d33682;">[</span><span style="color: #859900;">[</span> 3. , -0.2,  6. <span style="color: #859900;">]</span>,
+       <span style="color: #859900;">[</span> 0. , -6. , 13. <span style="color: #859900;">]</span><span style="color: #d33682;">]</span><span style="color: #268bd2;">)</span>
+</pre>
+</div></li>
+<li><p>
+ndarray 是一个多维数组, 其每个维度上的数量由shape(一个tuple)来表示
+</p>
+<div class="org-src-container">
+<pre class="src src-python">In <span style="color: #268bd2;">[</span>6<span style="color: #268bd2;">]</span>:
+data.shape
+Out <span style="color: #268bd2;">[</span>6<span style="color: #268bd2;">]</span>:
+<span style="color: #268bd2;">(</span>2, 3<span style="color: #268bd2;">)</span>
+</pre>
+</div></li>
+<li><p>
+ndarray里面的成员都是同一种类型,这个类型通过dtype来表示
+</p>
+<div class="org-src-container">
+<pre class="src src-python">In <span style="color: #268bd2;">[</span>7<span style="color: #268bd2;">]</span>:
+data.dtype
+Out <span style="color: #268bd2;">[</span>7<span style="color: #268bd2;">]</span>:
+dtype<span style="color: #268bd2;">(</span><span style="color: #2aa198;">'float64'</span><span style="color: #268bd2;">)</span>
+</pre>
+</div></li>
+<li>在本书中如下单词都是ndarray的同义词:
+<ul class="org-ul">
+<li>array</li>
+<li>NumPy array</li>
+<li>ndarray</li>
+</ul></li>
+</ul>
+</div>
+<div id="outline-container-orgd929786" class="outline-4">
+<h4 id="orgd929786"><span class="section-number-4">1.1.1.</span> Creating ndarrays</h4>
+<div class="outline-text-4" id="text-1-1-1">
+<ul class="org-ul">
+<li><p>
+创建ndarray最简单的方法,就是使用array函数,这个函数接受sequence-like对象,返回值为一个numpy array,
+输入为普通list的例子如下
+</p>
+<div class="org-src-container">
+<pre class="src src-python">In <span style="color: #268bd2;">[</span>2<span style="color: #268bd2;">]</span>:
+<span style="color: #859900; font-weight: bold;">import</span> numpy <span style="color: #859900; font-weight: bold;">as</span> np
+<span style="color: #268bd2;">data1</span> = <span style="color: #268bd2;">[</span>6, 7.5, 8, 0, 1<span style="color: #268bd2;">]</span>
+<span style="color: #268bd2;">arr1</span> = np.array<span style="color: #268bd2;">(</span>data1<span style="color: #268bd2;">)</span>
+arr1
+Out <span style="color: #268bd2;">[</span>2<span style="color: #268bd2;">]</span>:
+array<span style="color: #268bd2;">(</span><span style="color: #d33682;">[</span>6. , 7.5, 8. , 0. , 1. <span style="color: #d33682;">]</span><span style="color: #268bd2;">)</span>
+</pre>
+</div></li>
+<li><p>
+如果输入是nested sequence,比如list里面嵌入list,那么得到的将是多维数组
+</p>
+<div class="org-src-container">
+<pre class="src src-python">In <span style="color: #268bd2;">[</span>4<span style="color: #268bd2;">]</span>:
+<span style="color: #268bd2;">data2</span> = <span style="color: #268bd2;">[</span><span style="color: #d33682;">[</span>1, 2, 3, 4<span style="color: #d33682;">]</span>, <span style="color: #d33682;">[</span>5, 6, 7, 8<span style="color: #d33682;">]</span><span style="color: #268bd2;">]</span>
+<span style="color: #268bd2;">arr2</span> = np.array<span style="color: #268bd2;">(</span>data2<span style="color: #268bd2;">)</span>
+arr2
+Out <span style="color: #268bd2;">[</span>4<span style="color: #268bd2;">]</span>:
+array<span style="color: #268bd2;">(</span><span style="color: #d33682;">[</span><span style="color: #859900;">[</span>1, 2, 3, 4<span style="color: #859900;">]</span>,
+       <span style="color: #859900;">[</span>5, 6, 7, 8<span style="color: #859900;">]</span><span style="color: #d33682;">]</span><span style="color: #268bd2;">)</span>
+</pre>
+</div></li>
+<li><p>
+多维数组除了有shape来告诉你多维数组整体的形状,还有一个参数叫ndim,意思是number of dimmension,其
+实就是shape tuple的第一个参数.也就是数组最外层有几个成员
+</p>
+<div class="org-src-container">
+<pre class="src src-python">In <span style="color: #268bd2;">[</span>5<span style="color: #268bd2;">]</span>:
+arr2.shape
+Out <span style="color: #268bd2;">[</span>5<span style="color: #268bd2;">]</span>:
+<span style="color: #268bd2;">(</span>2, 4<span style="color: #268bd2;">)</span>
+
+In <span style="color: #268bd2;">[</span>6<span style="color: #268bd2;">]</span>:
+arr2.ndim
+Out <span style="color: #268bd2;">[</span>6<span style="color: #268bd2;">]</span>:
+2
+</pre>
+</div></li>
+<li><p>
+除非明确指定,numpy.array函数会自动去判断新的ndarray的data type(因为整个ndarray内部所有成员的ndarray
+类型必须一致),比如上面的arr1由于有一个小数,所以所有其他成员也必须是浮点数.而arr2里面所有的数据
+都是整形,那么numpy.array就可以放心的赋一个整形给整个ndarray
+</p>
+<div class="org-src-container">
+<pre class="src src-python">In <span style="color: #268bd2;">[</span>12<span style="color: #268bd2;">]</span>:
+arr1.dtype
+Out <span style="color: #268bd2;">[</span>12<span style="color: #268bd2;">]</span>:
+dtype<span style="color: #268bd2;">(</span><span style="color: #2aa198;">'float64'</span><span style="color: #268bd2;">)</span>
+
+In <span style="color: #268bd2;">[</span>13<span style="color: #268bd2;">]</span>:
+arr2.dtype
+Out <span style="color: #268bd2;">[</span>13<span style="color: #268bd2;">]</span>:
+dtype<span style="color: #268bd2;">(</span><span style="color: #2aa198;">'int64'</span><span style="color: #268bd2;">)</span>
+</pre>
+</div></li>
+<li>除了numpy.array,还有很多其他的方法来创建新的ndarray,最常见的有三个:
+<ul class="org-ul">
+<li><p>
+np.zeros: 使用0来初始化函数,注意如果使用shape来初始化,shape是以tuple的形式传递进来的
+</p>
+<div class="org-src-container">
+<pre class="src src-python">In <span style="color: #268bd2;">[</span>16<span style="color: #268bd2;">]</span>:
+np.zeros<span style="color: #268bd2;">(</span>10<span style="color: #268bd2;">)</span>
+Out <span style="color: #268bd2;">[</span>16<span style="color: #268bd2;">]</span>:
+array<span style="color: #268bd2;">(</span><span style="color: #d33682;">[</span>0., 0., 0., 0., 0., 0., 0., 0., 0., 0.<span style="color: #d33682;">]</span><span style="color: #268bd2;">)</span>
+
+In <span style="color: #268bd2;">[</span>17<span style="color: #268bd2;">]</span>:
+np.zeros<span style="color: #268bd2;">(</span><span style="color: #d33682;">(</span>3, 6<span style="color: #d33682;">)</span><span style="color: #268bd2;">)</span>
+Out <span style="color: #268bd2;">[</span>17<span style="color: #268bd2;">]</span>:
+array<span style="color: #268bd2;">(</span><span style="color: #d33682;">[</span><span style="color: #859900;">[</span>0., 0., 0., 0., 0., 0.<span style="color: #859900;">]</span>,
+       <span style="color: #859900;">[</span>0., 0., 0., 0., 0., 0.<span style="color: #859900;">]</span>,
+       <span style="color: #859900;">[</span>0., 0., 0., 0., 0., 0.<span style="color: #859900;">]</span><span style="color: #d33682;">]</span><span style="color: #268bd2;">)</span>
+</pre>
+</div></li>
+<li><p>
+np.ones: 使用0来初始化函数,注意如果使用shape来初始化,shape是以tuple的形式传递进来的
+</p>
+<div class="org-src-container">
+<pre class="src src-python">In <span style="color: #268bd2;">[</span>18<span style="color: #268bd2;">]</span>:
+np.ones<span style="color: #268bd2;">(</span>3<span style="color: #268bd2;">)</span>
+Out <span style="color: #268bd2;">[</span>18<span style="color: #268bd2;">]</span>:
+array<span style="color: #268bd2;">(</span><span style="color: #d33682;">[</span>1., 1., 1.<span style="color: #d33682;">]</span><span style="color: #268bd2;">)</span>
+
+In <span style="color: #268bd2;">[</span>19<span style="color: #268bd2;">]</span>:
+np.ones<span style="color: #268bd2;">(</span><span style="color: #d33682;">(</span>2, 3<span style="color: #d33682;">)</span><span style="color: #268bd2;">)</span>
+Out <span style="color: #268bd2;">[</span>19<span style="color: #268bd2;">]</span>:
+array<span style="color: #268bd2;">(</span><span style="color: #d33682;">[</span><span style="color: #859900;">[</span>1., 1., 1.<span style="color: #859900;">]</span>,
+       <span style="color: #859900;">[</span>1., 1., 1.<span style="color: #859900;">]</span><span style="color: #d33682;">]</span><span style="color: #268bd2;">)</span>
+</pre>
+</div></li>
+<li><p>
+np.empty: 这个函数高级了,会返回未初始化的数据,注意,不是0, 是未初始化,只不过很多未初始化的区域
+为0而已.这个函数很危险,一般情况下不要使用
+</p>
+<div class="org-src-container">
+<pre class="src src-python">In <span style="color: #268bd2;">[</span>23<span style="color: #268bd2;">]</span>:
+np.empty<span style="color: #268bd2;">(</span><span style="color: #d33682;">(</span>2, 3, 2<span style="color: #d33682;">)</span><span style="color: #268bd2;">)</span>
+Out <span style="color: #268bd2;">[</span>23<span style="color: #268bd2;">]</span>:
+array<span style="color: #268bd2;">(</span><span style="color: #d33682;">[</span><span style="color: #859900;">[</span><span style="color: #6c71c4;">[</span>0.00000000e+000, 1.08221785e-312<span style="color: #6c71c4;">]</span>,
+        <span style="color: #6c71c4;">[</span>1.01855798e-312, 9.54898106e-313<span style="color: #6c71c4;">]</span>,
+        <span style="color: #6c71c4;">[</span>1.12465777e-312, 1.03977794e-312<span style="color: #6c71c4;">]</span><span style="color: #859900;">]</span>,
+
+       <span style="color: #859900;">[</span><span style="color: #6c71c4;">[</span>1.23075756e-312, 1.14587773e-312<span style="color: #6c71c4;">]</span>,
+        <span style="color: #6c71c4;">[</span>1.08221785e-312, 1.04718096e-142<span style="color: #6c71c4;">]</span>,
+        <span style="color: #6c71c4;">[</span>3.99914472e+252, 1.46030983e-319<span style="color: #6c71c4;">]</span><span style="color: #859900;">]</span><span style="color: #d33682;">]</span><span style="color: #268bd2;">)</span>
+</pre>
+</div></li>
+</ul></li>
+<li><p>
+python内置函数有range用来生成sequence,numpy有一个与之对应的ndarray版本,叫做numpy.arange
+</p>
+<div class="org-src-container">
+<pre class="src src-python">In <span style="color: #268bd2;">[</span>25<span style="color: #268bd2;">]</span>:
+np.arange<span style="color: #268bd2;">(</span>15<span style="color: #268bd2;">)</span>
+Out <span style="color: #268bd2;">[</span>25<span style="color: #268bd2;">]</span>:
+array<span style="color: #268bd2;">(</span><span style="color: #d33682;">[</span> 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14<span style="color: #d33682;">]</span><span style="color: #268bd2;">)</span>
+</pre>
+</div></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgc7d5823" class="outline-4">
+<h4 id="orgc7d5823"><span class="section-number-4">1.1.2.</span> Data Types for ndarrays</h4>
+<div class="outline-text-4" id="text-1-1-2">
+<ul class="org-ul">
+<li>在创建ndarray的时候,numpy会去检测成员的类型,以便给新的ndarray赋一个dtype(ndarray的每个成员都要
+遵守), 除了让numpy自己去判断(绝大部分情况下,只要不是全部为int64, numpy都会判断成float64,因为numpy
+主要用作科学计算).</li>
+<li><p>
+我们当然也可以指定dtype, 如果指定的类型精度不够,可能会损失精度:
+</p>
+<div class="org-src-container">
+<pre class="src src-python">In <span style="color: #268bd2;">[</span>30<span style="color: #268bd2;">]</span>:
+<span style="color: #268bd2;">arr1</span> = np.array<span style="color: #268bd2;">(</span><span style="color: #d33682;">[</span>1.1, 2.2, 3.3<span style="color: #d33682;">]</span><span style="color: #268bd2;">)</span>
+arr1, arr1.dtype
+Out <span style="color: #268bd2;">[</span>30<span style="color: #268bd2;">]</span>:
+<span style="color: #268bd2;">(</span>array<span style="color: #d33682;">(</span><span style="color: #859900;">[</span>1.1, 2.2, 3.3<span style="color: #859900;">]</span><span style="color: #d33682;">)</span>, dtype<span style="color: #d33682;">(</span><span style="color: #2aa198;">'float64'</span><span style="color: #d33682;">)</span><span style="color: #268bd2;">)</span>
+
+In <span style="color: #268bd2;">[</span>31<span style="color: #268bd2;">]</span>:
+<span style="color: #268bd2;">arr2</span> = np.array<span style="color: #268bd2;">(</span><span style="color: #d33682;">[</span>1.1, 2.2, 3.3<span style="color: #d33682;">]</span>, dtype=np.int32<span style="color: #268bd2;">)</span>
+arr2, arr2.dtype
+Out <span style="color: #268bd2;">[</span>31<span style="color: #268bd2;">]</span>:
+<span style="color: #268bd2;">(</span>array<span style="color: #d33682;">(</span><span style="color: #859900;">[</span>1, 2, 3<span style="color: #859900;">]</span>, dtype=int32<span style="color: #d33682;">)</span>, dtype<span style="color: #d33682;">(</span><span style="color: #2aa198;">'int32'</span><span style="color: #d33682;">)</span><span style="color: #268bd2;">)</span>
+</pre>
+</div></li>
+<li><p>
+这是创建的时候指定类型,如果一个ndarray已经创建了,也是可以更改类型的,需要使用numpy.ndarray.astype
+</p>
+<div class="org-src-container">
+<pre class="src src-python">In <span style="color: #268bd2;">[</span>32<span style="color: #268bd2;">]</span>:
+<span style="color: #268bd2;">arr</span> = np.array<span style="color: #268bd2;">(</span><span style="color: #d33682;">[</span>1, 2, 3, 4, 5<span style="color: #d33682;">]</span><span style="color: #268bd2;">)</span>
+arr.dtype
+Out <span style="color: #268bd2;">[</span>32<span style="color: #268bd2;">]</span>:
+dtype<span style="color: #268bd2;">(</span><span style="color: #2aa198;">'int64'</span><span style="color: #268bd2;">)</span>
+
+In <span style="color: #268bd2;">[</span>34<span style="color: #268bd2;">]</span>:
+<span style="color: #268bd2;">float_arr</span> = arr.astype<span style="color: #268bd2;">(</span>np.float64<span style="color: #268bd2;">)</span>
+float_arr
+Out <span style="color: #268bd2;">[</span>34<span style="color: #268bd2;">]</span>:
+array<span style="color: #268bd2;">(</span><span style="color: #d33682;">[</span>1., 2., 3., 4., 5.<span style="color: #d33682;">]</span><span style="color: #268bd2;">)</span>
+
+In <span style="color: #268bd2;">[</span>35<span style="color: #268bd2;">]</span>:
+float_arr.dtype
+Out <span style="color: #268bd2;">[</span>35<span style="color: #268bd2;">]</span>:
+dtype<span style="color: #268bd2;">(</span><span style="color: #2aa198;">'float64'</span><span style="color: #268bd2;">)</span>
+</pre>
+</div></li>
+<li><p>
+同样的如果astype到一个精度不足的类型,会损失精度
+</p>
+<div class="org-src-container">
+<pre class="src src-python">In <span style="color: #268bd2;">[</span>36<span style="color: #268bd2;">]</span>:
+<span style="color: #268bd2;">arr</span> = np.array<span style="color: #268bd2;">(</span><span style="color: #d33682;">[</span>3.7, -1.2, -2.6, 0.5, 12.9, 10.1<span style="color: #d33682;">]</span><span style="color: #268bd2;">)</span>
+arr
+Out <span style="color: #268bd2;">[</span>36<span style="color: #268bd2;">]</span>:
+array<span style="color: #268bd2;">(</span><span style="color: #d33682;">[</span> 3.7, -1.2, -2.6,  0.5, 12.9, 10.1<span style="color: #d33682;">]</span><span style="color: #268bd2;">)</span>
+
+In <span style="color: #268bd2;">[</span>37<span style="color: #268bd2;">]</span>:
+arr.astype<span style="color: #268bd2;">(</span>np.int32<span style="color: #268bd2;">)</span>
+Out <span style="color: #268bd2;">[</span>37<span style="color: #268bd2;">]</span>:
+array<span style="color: #268bd2;">(</span><span style="color: #d33682;">[</span> 3, -1, -2,  0, 12, 10<span style="color: #d33682;">]</span>, dtype=int32<span style="color: #268bd2;">)</span>
+</pre>
+</div></li>
+<li>如果原始数组是用string来表示number,那么我们可以用astype来把他们转换为numeric form
+<ul class="org-ul">
+<li><p>
+例子如下
+</p>
+<div class="org-src-container">
+<pre class="src src-python">In <span style="color: #268bd2;">[</span>38<span style="color: #268bd2;">]</span>:
+<span style="color: #268bd2;">numeric_strings</span> = np.array<span style="color: #268bd2;">(</span><span style="color: #d33682;">[</span><span style="color: #2aa198;">"1.25"</span>, <span style="color: #2aa198;">"-9.6"</span>, <span style="color: #2aa198;">"42"</span><span style="color: #d33682;">]</span>, dtype=np.string_<span style="color: #268bd2;">)</span>
+numeric_strings
+Out <span style="color: #268bd2;">[</span>38<span style="color: #268bd2;">]</span>:
+array<span style="color: #268bd2;">(</span><span style="color: #d33682;">[</span>b<span style="color: #2aa198;">'1.25'</span>, b<span style="color: #2aa198;">'-9.6'</span>, b<span style="color: #2aa198;">'42'</span><span style="color: #d33682;">]</span>, dtype=<span style="color: #2aa198;">'|S4'</span><span style="color: #268bd2;">)</span>
+
+In <span style="color: #268bd2;">[</span>41<span style="color: #268bd2;">]</span>:
+float_arr = numeric_strings.astype<span style="color: #268bd2;">(</span><span style="color: #d33682; font-style: italic;">float</span><span style="color: #268bd2;">)</span>
+float_arr, float_arr.dtype
+Out <span style="color: #268bd2;">[</span>41<span style="color: #268bd2;">]</span>:
+<span style="color: #268bd2;">(</span>array<span style="color: #d33682;">(</span><span style="color: #859900;">[</span> 1.25, -9.6 , 42.  <span style="color: #859900;">]</span><span style="color: #d33682;">)</span>, dtype<span style="color: #d33682;">(</span><span style="color: #2aa198;">'float64'</span><span style="color: #d33682;">)</span><span style="color: #268bd2;">)</span>
+</pre>
+</div></li>
+<li>上面的例子还使用了float(python里面的类型)来替代np.float64, numpy也接受了这种设置类型的方式</li>
+<li>注意,如果给定的字符串无法转成float64,那么会抛出ValueError</li>
+</ul></li>
+<li><p>
+很多时候我们想让两个ndarray拥有一样的dtype,那么使用类型A的dtype来作为astype的参数,用来转换类型
+B是可行的
+</p>
+<div class="org-src-container">
+<pre class="src src-python">In <span style="color: #268bd2;">[</span>43<span style="color: #268bd2;">]</span>:
+<span style="color: #268bd2;">int_array</span> = np.arange<span style="color: #268bd2;">(</span>10<span style="color: #268bd2;">)</span>
+<span style="color: #268bd2;">calibers</span> = np.array<span style="color: #268bd2;">(</span><span style="color: #d33682;">[</span>.22, .270, .357, .4, .50<span style="color: #d33682;">]</span>, dtype=np.float64<span style="color: #268bd2;">)</span>
+int_array.astype<span style="color: #268bd2;">(</span>calibers.dtype<span style="color: #268bd2;">)</span>
+Out <span style="color: #268bd2;">[</span>43<span style="color: #268bd2;">]</span>:
+array<span style="color: #268bd2;">(</span><span style="color: #d33682;">[</span>0., 1., 2., 3., 4., 5., 6., 7., 8., 9.<span style="color: #d33682;">]</span><span style="color: #268bd2;">)</span>
+</pre>
+</div></li>
+<li><p>
+我们可以使用shorthand code来替代冗长的类型写法,比如使用u4来替代uint32
+</p>
+<div class="org-src-container">
+<pre class="src src-python">In <span style="color: #268bd2;">[</span>45<span style="color: #268bd2;">]</span>:
+<span style="color: #268bd2;">zeros_uint32</span> = np.zeros<span style="color: #268bd2;">(</span>8, dtype=<span style="color: #2aa198;">"u4"</span><span style="color: #268bd2;">)</span>
+zeros_uint32
+Out <span style="color: #268bd2;">[</span>45<span style="color: #268bd2;">]</span>:
+array<span style="color: #268bd2;">(</span><span style="color: #d33682;">[</span>0, 0, 0, 0, 0, 0, 0, 0<span style="color: #d33682;">]</span>, dtype=uint32<span style="color: #268bd2;">)</span>
+</pre>
+</div></li>
+<li><p>
+调用astype的时候,总是创建新的array(一个新的copy), 即便新旧数据的类型是一样的
+</p>
+<pre class="example" id="org51e122d">
+Calling astype always creates a new array(a copy of the data), even if
+the new data type is the same as the old data type.
+</pre></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org664032b" class="outline-4">
+<h4 id="org664032b"><span class="section-number-4">1.1.3.</span> Arithmetic with NumPy</h4>
+<div class="outline-text-4" id="text-1-1-3">
+<ul class="org-ul">
+<li>ndarray之所以重要,是在于之前python内置array很多操作需要for循环,但是在ndarray这里不需要了:
+<ul class="org-ul">
+<li><p>
+如果是单目操作符(unary operation), 那么就是对所有ndarray的成员进行单目操作
+</p>
+<div class="org-src-container">
+<pre class="src src-python">In <span style="color: #268bd2;">[</span>19<span style="color: #268bd2;">]</span>:
+<span style="color: #268bd2;">arr</span> = np.array<span style="color: #268bd2;">(</span><span style="color: #d33682;">[</span><span style="color: #859900;">[</span>1., 2., 3.<span style="color: #859900;">]</span>, <span style="color: #859900;">[</span>4., 5., 6.<span style="color: #859900;">]</span><span style="color: #d33682;">]</span><span style="color: #268bd2;">)</span>
+<span style="color: #268bd2;">arr1</span> = arr * 10
+arr1
+Out <span style="color: #268bd2;">[</span>19<span style="color: #268bd2;">]</span>:
+array<span style="color: #268bd2;">(</span><span style="color: #d33682;">[</span><span style="color: #859900;">[</span>10., 20., 30.<span style="color: #859900;">]</span>,
+       <span style="color: #859900;">[</span>40., 50., 60.<span style="color: #859900;">]</span><span style="color: #d33682;">]</span><span style="color: #268bd2;">)</span>
+</pre>
+</div></li>
+<li><p>
+如果是双目操作符(binary operation), 参加的两个ndarray必须是维度相同的. 所进行的操作也是每个element
+分别进行操作
+</p>
+<div class="org-src-container">
+<pre class="src src-python">In <span style="color: #268bd2;">[</span>20<span style="color: #268bd2;">]</span>:
+<span style="color: #268bd2;">arr2</span> = arr * arr
+arr2
+Out <span style="color: #268bd2;">[</span>20<span style="color: #268bd2;">]</span>:
+array<span style="color: #268bd2;">(</span><span style="color: #d33682;">[</span><span style="color: #859900;">[</span> 1.,  4.,  9.<span style="color: #859900;">]</span>,
+       <span style="color: #859900;">[</span>16., 25., 36.<span style="color: #859900;">]</span><span style="color: #d33682;">]</span><span style="color: #268bd2;">)</span>
+</pre>
+</div></li>
+<li><p>
+如果是两个ndarray比较,比较的结果,也是一个ndarray
+</p>
+<div class="org-src-container">
+<pre class="src src-python">
+In <span style="color: #268bd2;">[</span>23<span style="color: #268bd2;">]</span>:
+<span style="color: #268bd2;">arr2</span> = np.array<span style="color: #268bd2;">(</span><span style="color: #d33682;">[</span><span style="color: #859900;">[</span>0., 4., 1.<span style="color: #859900;">]</span>, <span style="color: #859900;">[</span>7., 2., 12.<span style="color: #859900;">]</span><span style="color: #d33682;">]</span><span style="color: #268bd2;">)</span>
+arr2
+Out <span style="color: #268bd2;">[</span>23<span style="color: #268bd2;">]</span>:
+array<span style="color: #268bd2;">(</span><span style="color: #d33682;">[</span><span style="color: #859900;">[</span> 0.,  4.,  1.<span style="color: #859900;">]</span>,
+       <span style="color: #859900;">[</span> 7.,  2., 12.<span style="color: #859900;">]</span><span style="color: #d33682;">]</span><span style="color: #268bd2;">)</span>
+
+In <span style="color: #268bd2;">[</span>24<span style="color: #268bd2;">]</span>:
+arr
+Out <span style="color: #268bd2;">[</span>24<span style="color: #268bd2;">]</span>:
+array<span style="color: #268bd2;">(</span><span style="color: #d33682;">[</span><span style="color: #859900;">[</span>1., 2., 3.<span style="color: #859900;">]</span>,
+       <span style="color: #859900;">[</span>4., 5., 6.<span style="color: #859900;">]</span><span style="color: #d33682;">]</span><span style="color: #268bd2;">)</span>
+
+In <span style="color: #268bd2;">[</span>25<span style="color: #268bd2;">]</span>:
+arr2 &gt; arr
+Out <span style="color: #268bd2;">[</span>25<span style="color: #268bd2;">]</span>:
+array<span style="color: #268bd2;">(</span><span style="color: #d33682;">[</span><span style="color: #859900;">[</span><span style="color: #6c71c4; font-weight: bold;">False</span>,  <span style="color: #6c71c4; font-weight: bold;">True</span>, <span style="color: #6c71c4; font-weight: bold;">False</span><span style="color: #859900;">]</span>,
+       <span style="color: #859900;">[</span> <span style="color: #6c71c4; font-weight: bold;">True</span>, <span style="color: #6c71c4; font-weight: bold;">False</span>,  <span style="color: #6c71c4; font-weight: bold;">True</span><span style="color: #859900;">]</span><span style="color: #d33682;">]</span><span style="color: #268bd2;">)</span>
+</pre>
+</div></li>
+<li>在不同size ndarray之间进行的操作叫做broadcasting,不是本书讨论的内容</li>
+</ul></li>
+<li>这种不需要进行for循环,对ndarray全员进行的操作叫做vectorization</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org573faf3" class="outline-4">
+<h4 id="org573faf3"><span class="section-number-4">1.1.4.</span> Basic Indexing and Slicing</h4>
+<div class="outline-text-4" id="text-1-1-4">
+<ul class="org-ul">
+<li><p>
+ndarray的index是非常重要的topic,对于one-dimensional array来说,index很容易,而且和python的list index很像
+</p>
+<div class="org-src-container">
+<pre class="src src-python">In <span style="color: #268bd2;">[</span>1<span style="color: #268bd2;">]</span>:
+<span style="color: #859900; font-weight: bold;">import</span> numpy <span style="color: #859900; font-weight: bold;">as</span> np
+<span style="color: #268bd2;">arr</span> = np.arange<span style="color: #268bd2;">(</span>10<span style="color: #268bd2;">)</span>
+arr
+Out <span style="color: #268bd2;">[</span>1<span style="color: #268bd2;">]</span>:
+array<span style="color: #268bd2;">(</span><span style="color: #d33682;">[</span>0, 1, 2, 3, 4, 5, 6, 7, 8, 9<span style="color: #d33682;">]</span><span style="color: #268bd2;">)</span>
+
+In <span style="color: #268bd2;">[</span>2<span style="color: #268bd2;">]</span>:
+arr<span style="color: #268bd2;">[</span>5<span style="color: #268bd2;">]</span>
+Out <span style="color: #268bd2;">[</span>2<span style="color: #268bd2;">]</span>:
+5
+
+In <span style="color: #268bd2;">[</span>3<span style="color: #268bd2;">]</span>:
+arr<span style="color: #268bd2;">[</span>5:8<span style="color: #268bd2;">]</span>
+Out <span style="color: #268bd2;">[</span>3<span style="color: #268bd2;">]</span>:
+array<span style="color: #268bd2;">(</span><span style="color: #d33682;">[</span>5, 6, 7<span style="color: #d33682;">]</span><span style="color: #268bd2;">)</span>
+</pre>
+</div></li>
+<li>index虽然和python list很像,但是:
+<ul class="org-ul">
+<li><p>
+ndarray的slice可以被赋值
+</p>
+<div class="org-src-container">
+<pre class="src src-python">In <span style="color: #268bd2;">[</span>4<span style="color: #268bd2;">]</span>:
+<span style="color: #268bd2;">arr</span><span style="color: #268bd2;">[</span>5:8<span style="color: #268bd2;">]</span> = 12
+arr
+Out <span style="color: #268bd2;">[</span>4<span style="color: #268bd2;">]</span>:
+array<span style="color: #268bd2;">(</span><span style="color: #d33682;">[</span> 0,  1,  2,  3,  4, 12, 12, 12,  8,  9<span style="color: #d33682;">]</span><span style="color: #268bd2;">)</span>
+</pre>
+</div></li>
+<li><p>
+python list的slice是不能被赋值的
+</p>
+<div class="org-src-container">
+<pre class="src src-python">&gt;&gt;&gt; <span style="color: #268bd2;">a</span>  = <span style="color: #d33682; font-style: italic;">list</span><span style="color: #268bd2;">(</span><span style="color: #d33682; font-style: italic;">range</span><span style="color: #d33682;">(</span>10<span style="color: #d33682;">)</span><span style="color: #268bd2;">)</span>
+&gt;&gt;&gt; a<span style="color: #268bd2;">[</span>5:8<span style="color: #268bd2;">]</span>
+<span style="color: #268bd2;">[</span>5, 6, 7<span style="color: #268bd2;">]</span>
+&gt;&gt;&gt; <span style="color: #268bd2;">a</span><span style="color: #268bd2;">[</span>5:8<span style="color: #268bd2;">]</span> = 12
+Traceback <span style="color: #268bd2;">(</span>most recent call last<span style="color: #268bd2;">)</span>:
+  File <span style="color: #2aa198;">"&lt;stdin&gt;"</span>, line 1, <span style="color: #859900; font-weight: bold;">in</span> &lt;module&gt;
+<span style="color: #b58900; font-style: italic;">TypeError</span>: can only assign an iterable
+</pre>
+</div></li>
+</ul></li>
+<li>我们可以把ndarray的slice看成是view on the original array. 这就意味着数据不是copy的,一切对于view
+的改动最终都会反应在source ndarray上面</li>
+<li>之所以这么设计,是因为ndarray是为了超大数据设计的,频繁的拷贝肯定是对性能有影响的.另外我们可以看到
+slice长度不是一的情况下,赋了一个值竟然把整个slice的内容改变,这:
+<ul class="org-ul">
+<li>一来是为了ndarray设计的初衷:不要使用for循环</li>
+<li>二来也是不要改变数组的长度,因为这会让数据在内存上搬迁,显然也是效率不高的</li>
+</ul></li>
+<li><p>
+如果实在希望获得ndarray的拷贝,可以使用函数copy
+</p>
+<div class="org-src-container">
+<pre class="src src-python">In <span style="color: #268bd2;">[</span>14<span style="color: #268bd2;">]</span>:
+<span style="color: #268bd2;">arr_copy</span> = arr<span style="color: #268bd2;">[</span>6:9<span style="color: #268bd2;">]</span>.copy<span style="color: #268bd2;">()</span>
+arr_copy
+Out <span style="color: #268bd2;">[</span>14<span style="color: #268bd2;">]</span>:
+array<span style="color: #268bd2;">(</span><span style="color: #d33682;">[</span>12, 12,  8<span style="color: #d33682;">]</span><span style="color: #268bd2;">)</span>
+
+In <span style="color: #268bd2;">[</span>10<span style="color: #268bd2;">]</span>:
+arr
+Out <span style="color: #268bd2;">[</span>10<span style="color: #268bd2;">]</span>:
+array<span style="color: #268bd2;">(</span><span style="color: #d33682;">[</span> 0,  1,  2,  3,  4, 12, 12, 12,  8,  9<span style="color: #d33682;">]</span><span style="color: #268bd2;">)</span>
+
+In <span style="color: #268bd2;">[</span>15<span style="color: #268bd2;">]</span>:
+<span style="color: #268bd2;">arr_copy</span><span style="color: #268bd2;">[</span>:<span style="color: #268bd2;">]</span> = 15
+arr_copy
+Out <span style="color: #268bd2;">[</span>15<span style="color: #268bd2;">]</span>:
+array<span style="color: #268bd2;">(</span><span style="color: #d33682;">[</span>15, 15, 15<span style="color: #d33682;">]</span><span style="color: #268bd2;">)</span>
+
+In <span style="color: #268bd2;">[</span>16<span style="color: #268bd2;">]</span>:
+arr
+Out <span style="color: #268bd2;">[</span>16<span style="color: #268bd2;">]</span>:
+array<span style="color: #268bd2;">(</span><span style="color: #d33682;">[</span> 0,  1,  2,  3,  4, 12, 12, 12,  8,  9<span style="color: #d33682;">]</span><span style="color: #268bd2;">)</span>
+</pre>
+</div></li>
+<li><p>
+如果是多维的ndarray,那么复杂度就上来了.比如一个二维的ndarray,每个index的结果就不再是一个值,而是一个一维ndarray了
+</p>
+<div class="org-src-container">
+<pre class="src src-python">In <span style="color: #268bd2;">[</span>17<span style="color: #268bd2;">]</span>:
+<span style="color: #268bd2;">arr2d</span> = np.array<span style="color: #268bd2;">(</span><span style="color: #d33682;">[</span><span style="color: #859900;">[</span>1, 2, 3<span style="color: #859900;">]</span>, <span style="color: #859900;">[</span>4, 5, 6<span style="color: #859900;">]</span>, <span style="color: #859900;">[</span>7, 8, 9<span style="color: #859900;">]</span><span style="color: #d33682;">]</span><span style="color: #268bd2;">)</span>
+arr2d<span style="color: #268bd2;">[</span>2<span style="color: #268bd2;">]</span>
+Out <span style="color: #268bd2;">[</span>17<span style="color: #268bd2;">]</span>:
+array<span style="color: #268bd2;">(</span><span style="color: #d33682;">[</span>7, 8, 9<span style="color: #d33682;">]</span><span style="color: #268bd2;">)</span>
+</pre>
+</div></li>
+<li>如果想访问单独的element:
+<ul class="org-ul">
+<li><p>
+首先可以使用和python list一样的两次[]
+</p>
+<div class="org-src-container">
+<pre class="src src-python">In <span style="color: #268bd2;">[</span>18<span style="color: #268bd2;">]</span>:
+arr2d<span style="color: #268bd2;">[</span>0<span style="color: #268bd2;">][</span>2<span style="color: #268bd2;">]</span>
+Out <span style="color: #268bd2;">[</span>18<span style="color: #268bd2;">]</span>:
+3
+</pre>
+</div></li>
+<li><p>
+为了方便,ndarray还可以使用逗号来传递一个序列进来,对于超过两维的数组,这个写法更方便
+</p>
+<div class="org-src-container">
+<pre class="src src-python">In <span style="color: #268bd2;">[</span>19<span style="color: #268bd2;">]</span>:
+arr2d<span style="color: #268bd2;">[</span>0,2<span style="color: #268bd2;">]</span>
+Out <span style="color: #268bd2;">[</span>19<span style="color: #268bd2;">]</span>:
+3
+</pre>
+</div></li>
+</ul></li>
+<li>二位ndarray的index是一个一维ndarray, 那么对于n维ndarray:
+<ul class="org-ul">
+<li><p>
+其index肯定是一个n-1维的ndarray
+</p>
+<div class="org-src-container">
+<pre class="src src-python">In <span style="color: #268bd2;">[</span>24<span style="color: #268bd2;">]</span>:
+<span style="color: #268bd2;">arr3d</span> = np.array<span style="color: #268bd2;">(</span><span style="color: #d33682;">[</span><span style="color: #859900;">[</span><span style="color: #6c71c4;">[</span>1, 2, 3<span style="color: #6c71c4;">]</span>, <span style="color: #6c71c4;">[</span>4, 5,6<span style="color: #6c71c4;">]</span><span style="color: #859900;">]</span>, <span style="color: #859900;">[</span><span style="color: #6c71c4;">[</span>7,8,9<span style="color: #6c71c4;">]</span>, <span style="color: #6c71c4;">[</span>10, 11, 12<span style="color: #6c71c4;">]</span><span style="color: #859900;">]</span><span style="color: #d33682;">]</span><span style="color: #268bd2;">)</span>
+arr3d
+Out <span style="color: #268bd2;">[</span>24<span style="color: #268bd2;">]</span>:
+array<span style="color: #268bd2;">(</span><span style="color: #d33682;">[</span><span style="color: #859900;">[</span><span style="color: #6c71c4;">[</span> 1,  2,  3<span style="color: #6c71c4;">]</span>,
+        <span style="color: #6c71c4;">[</span> 4,  5,  6<span style="color: #6c71c4;">]</span><span style="color: #859900;">]</span>,
+
+       <span style="color: #859900;">[</span><span style="color: #6c71c4;">[</span> 7,  8,  9<span style="color: #6c71c4;">]</span>,
+        <span style="color: #6c71c4;">[</span>10, 11, 12<span style="color: #6c71c4;">]</span><span style="color: #859900;">]</span><span style="color: #d33682;">]</span><span style="color: #268bd2;">)</span>
+
+In <span style="color: #268bd2;">[</span>25<span style="color: #268bd2;">]</span>:
+arr3d<span style="color: #268bd2;">[</span>0<span style="color: #268bd2;">]</span>
+Out <span style="color: #268bd2;">[</span>25<span style="color: #268bd2;">]</span>:
+array<span style="color: #268bd2;">(</span><span style="color: #d33682;">[</span><span style="color: #859900;">[</span>1, 2, 3<span style="color: #859900;">]</span>,
+       <span style="color: #859900;">[</span>4, 5, 6<span style="color: #859900;">]</span><span style="color: #d33682;">]</span><span style="color: #268bd2;">)</span>
+</pre>
+</div></li>
+<li><p>
+其二维index肯定是一个n-2维ndarray
+</p>
+<div class="org-src-container">
+<pre class="src src-python">In <span style="color: #268bd2;">[</span>26<span style="color: #268bd2;">]</span>:
+arr3d<span style="color: #268bd2;">[</span>1,0<span style="color: #268bd2;">]</span>
+Out <span style="color: #268bd2;">[</span>26<span style="color: #268bd2;">]</span>:
+array<span style="color: #268bd2;">(</span><span style="color: #d33682;">[</span>7, 8, 9<span style="color: #d33682;">]</span><span style="color: #268bd2;">)</span>
+</pre>
+</div></li>
+<li>以此类推. 总结起来就是ndarray[i, j, k &#x2026;z]会返回所有以(i,j,k..z)开头的value.比如arr3d[1,0]就
+返回所有以(1,0)开头的value</li>
+</ul></li>
+<li>多维数组slice的结果也是多维ndarray的情况下,新的ndarray可以:
+<ul class="org-ul">
+<li><p>
+被赋值一个scalar
+</p>
+<div class="org-src-container">
+<pre class="src src-python">In <span style="color: #268bd2;">[</span>27<span style="color: #268bd2;">]</span>:
+arr3d<span style="color: #268bd2;">[</span>0<span style="color: #268bd2;">]</span>
+Out <span style="color: #268bd2;">[</span>27<span style="color: #268bd2;">]</span>:
+array<span style="color: #268bd2;">(</span><span style="color: #d33682;">[</span><span style="color: #859900;">[</span>1, 2, 3<span style="color: #859900;">]</span>,
+       <span style="color: #859900;">[</span>4, 5, 6<span style="color: #859900;">]</span><span style="color: #d33682;">]</span><span style="color: #268bd2;">)</span>
+
+In <span style="color: #268bd2;">[</span>28<span style="color: #268bd2;">]</span>:
+<span style="color: #268bd2;">old_values</span> = arr3d<span style="color: #268bd2;">[</span>0<span style="color: #268bd2;">]</span>.copy<span style="color: #268bd2;">()</span>
+old_values
+Out <span style="color: #268bd2;">[</span>28<span style="color: #268bd2;">]</span>:
+array<span style="color: #268bd2;">(</span><span style="color: #d33682;">[</span><span style="color: #859900;">[</span>1, 2, 3<span style="color: #859900;">]</span>,
+       <span style="color: #859900;">[</span>4, 5, 6<span style="color: #859900;">]</span><span style="color: #d33682;">]</span><span style="color: #268bd2;">)</span>
+
+In <span style="color: #268bd2;">[</span>29<span style="color: #268bd2;">]</span>:
+<span style="color: #268bd2;">arr3d</span><span style="color: #268bd2;">[</span>0<span style="color: #268bd2;">]</span> = 42
+arr3d
+Out <span style="color: #268bd2;">[</span>29<span style="color: #268bd2;">]</span>:
+array<span style="color: #268bd2;">(</span><span style="color: #d33682;">[</span><span style="color: #859900;">[</span><span style="color: #6c71c4;">[</span>42, 42, 42<span style="color: #6c71c4;">]</span>,
+        <span style="color: #6c71c4;">[</span>42, 42, 42<span style="color: #6c71c4;">]</span><span style="color: #859900;">]</span>,
+
+       <span style="color: #859900;">[</span><span style="color: #6c71c4;">[</span> 7,  8,  9<span style="color: #6c71c4;">]</span>,
+        <span style="color: #6c71c4;">[</span>10, 11, 12<span style="color: #6c71c4;">]</span><span style="color: #859900;">]</span><span style="color: #d33682;">]</span><span style="color: #268bd2;">)</span>
+</pre>
+</div></li>
+<li><p>
+也可以被赋值另外一个ndarray
+</p>
+<div class="org-src-container">
+<pre class="src src-python">In <span style="color: #268bd2;">[</span>30<span style="color: #268bd2;">]</span>:
+<span style="color: #268bd2;">arr3d</span><span style="color: #268bd2;">[</span>0<span style="color: #268bd2;">]</span> = old_values
+arr3d
+Out <span style="color: #268bd2;">[</span>30<span style="color: #268bd2;">]</span>:
+array<span style="color: #268bd2;">(</span><span style="color: #d33682;">[</span><span style="color: #859900;">[</span><span style="color: #6c71c4;">[</span> 1,  2,  3<span style="color: #6c71c4;">]</span>,
+        <span style="color: #6c71c4;">[</span> 4,  5,  6<span style="color: #6c71c4;">]</span><span style="color: #859900;">]</span>,
+
+       <span style="color: #859900;">[</span><span style="color: #6c71c4;">[</span> 7,  8,  9<span style="color: #6c71c4;">]</span>,
+        <span style="color: #6c71c4;">[</span>10, 11, 12<span style="color: #6c71c4;">]</span><span style="color: #859900;">]</span><span style="color: #d33682;">]</span><span style="color: #268bd2;">)</span>
+
+</pre>
+</div></li>
+</ul></li>
+</ul>
+</div>
+<ol class="org-ol">
+<li><a id="orga6381a4"></a>Indxing with slices<br /></li>
+</ol>
+</div>
+
+
+
+
+
+<div id="outline-container-org3a40395" class="outline-4">
+<h4 id="org3a40395"><span class="section-number-4">1.1.5.</span> Boolean Indexing</h4>
+</div>
+<div id="outline-container-org9d3e619" class="outline-4">
+<h4 id="org9d3e619"><span class="section-number-4">1.1.6.</span> Transposing Arrays</h4>
+</div>
+</div>
+<div id="outline-container-orge67acf1" class="outline-3">
+<h3 id="orge67acf1"><span class="section-number-3">1.2.</span> Pseudorandom Number</h3>
+</div>
+<div id="outline-container-org9c17aa0" class="outline-3">
+<h3 id="org9c17aa0"><span class="section-number-3">1.3.</span> Universal Function:</h3>
+</div>
+<div id="outline-container-org8980645" class="outline-3">
+<h3 id="org8980645"><span class="section-number-3">1.4.</span> Array-Oriented</h3>
+<div class="outline-text-3" id="text-1-4">
+</div>
+<div id="outline-container-org4160d49" class="outline-4">
+<h4 id="org4160d49"><span class="section-number-4">1.4.1.</span> Expressing Conditional</h4>
+</div>
+<div id="outline-container-org1dd0876" class="outline-4">
+<h4 id="org1dd0876"><span class="section-number-4">1.4.2.</span> Mathematical</h4>
+</div>
+<div id="outline-container-org8f78d75" class="outline-4">
+<h4 id="org8f78d75"><span class="section-number-4">1.4.3.</span> Methods</h4>
+</div>
+<div id="outline-container-org8403614" class="outline-4">
+<h4 id="org8403614"><span class="section-number-4">1.4.4.</span> Sorting</h4>
+</div>
+<div id="outline-container-org9489edb" class="outline-4">
+<h4 id="org9489edb"><span class="section-number-4">1.4.5.</span> Unique</h4>
+</div>
+</div>
+<div id="outline-container-org8f20d90" class="outline-3">
+<h3 id="org8f20d90"><span class="section-number-3">1.5.</span> File Input</h3>
+</div>
+<div id="outline-container-org65ead99" class="outline-3">
+<h3 id="org65ead99"><span class="section-number-3">1.6.</span> Linear Algebra</h3>
+</div>
+<div id="outline-container-org5339c99" class="outline-3">
+<h3 id="org5339c99"><span class="section-number-3">1.7.</span> Example</h3>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: harrifeng@outlook.com</p>
+<p class="date">Created: 2023-03-12 Sun 22:24</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
