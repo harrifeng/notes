@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-03-12 Sun 22:24 -->
+<!-- 2023-04-10 Mon 20:03 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>pydata</title>
@@ -23,39 +23,39 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgb85df42">1. Chapter 4: NumPy Basics: Arrays and Vectorized Computation</a>
+<li><a href="#orga48a8df">1. Chapter 4: NumPy Basics: Arrays and Vectorized Computation</a>
 <ul>
-<li><a href="#orgc1b7d08">1.1. The NumPy ndarray: A Multidimensional Array Object</a>
+<li><a href="#orga70038e">1.1. The NumPy ndarray: A Multidimensional Array Object</a>
 <ul>
-<li><a href="#orgd929786">1.1.1. Creating ndarrays</a></li>
-<li><a href="#orgc7d5823">1.1.2. Data Types for ndarrays</a></li>
-<li><a href="#org664032b">1.1.3. Arithmetic with NumPy</a></li>
-<li><a href="#org573faf3">1.1.4. Basic Indexing and Slicing</a></li>
-<li><a href="#org3a40395">1.1.5. Boolean Indexing</a></li>
-<li><a href="#org9d3e619">1.1.6. Transposing Arrays</a></li>
+<li><a href="#org6ce97e8">1.1.1. Creating ndarrays</a></li>
+<li><a href="#org7c86fa2">1.1.2. Data Types for ndarrays</a></li>
+<li><a href="#org85d45d0">1.1.3. Arithmetic with NumPy</a></li>
+<li><a href="#orga9e5a8b">1.1.4. Basic Indexing and Slicing</a></li>
+<li><a href="#orgbf89985">1.1.5. Boolean Indexing</a></li>
+<li><a href="#orgf480de0">1.1.6. Transposing Arrays</a></li>
 </ul>
 </li>
-<li><a href="#orge67acf1">1.2. Pseudorandom Number</a></li>
-<li><a href="#org9c17aa0">1.3. Universal Function:</a></li>
-<li><a href="#org8980645">1.4. Array-Oriented</a>
+<li><a href="#org50bb708">1.2. Pseudorandom Number</a></li>
+<li><a href="#orgd223a9b">1.3. Universal Function:</a></li>
+<li><a href="#org9646ad9">1.4. Array-Oriented</a>
 <ul>
-<li><a href="#org4160d49">1.4.1. Expressing Conditional</a></li>
-<li><a href="#org1dd0876">1.4.2. Mathematical</a></li>
-<li><a href="#org8f78d75">1.4.3. Methods</a></li>
-<li><a href="#org8403614">1.4.4. Sorting</a></li>
-<li><a href="#org9489edb">1.4.5. Unique</a></li>
+<li><a href="#org8940d83">1.4.1. Expressing Conditional</a></li>
+<li><a href="#org0dc398e">1.4.2. Mathematical</a></li>
+<li><a href="#orgd0a4a05">1.4.3. Methods</a></li>
+<li><a href="#org8e96e4c">1.4.4. Sorting</a></li>
+<li><a href="#orgcc4fc4a">1.4.5. Unique</a></li>
 </ul>
 </li>
-<li><a href="#org8f20d90">1.5. File Input</a></li>
-<li><a href="#org65ead99">1.6. Linear Algebra</a></li>
-<li><a href="#org5339c99">1.7. Example</a></li>
+<li><a href="#org06f3386">1.5. File Input</a></li>
+<li><a href="#org425f6a5">1.6. Linear Algebra</a></li>
+<li><a href="#org02b8cae">1.7. Example</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgb85df42" class="outline-2">
-<h2 id="orgb85df42"><span class="section-number-2">1.</span> Chapter 4: NumPy Basics: Arrays and Vectorized Computation</h2>
+<div id="outline-container-orga48a8df" class="outline-2">
+<h2 id="orga48a8df"><span class="section-number-2">1.</span> Chapter 4: NumPy Basics: Arrays and Vectorized Computation</h2>
 <div class="outline-text-2" id="text-1">
 <ul class="org-ul">
 <li>NumPy 是Numerical Python的简称,是python numerical 计算的最重要基础库</li>
@@ -117,8 +117,8 @@ In <span style="color: #268bd2;">[</span>13<span style="color: #268bd2;">]</span
 </ul></li>
 </ul>
 </div>
-<div id="outline-container-orgc1b7d08" class="outline-3">
-<h3 id="orgc1b7d08"><span class="section-number-3">1.1.</span> The NumPy ndarray: A Multidimensional Array Object</h3>
+<div id="outline-container-orga70038e" class="outline-3">
+<h3 id="orga70038e"><span class="section-number-3">1.1.</span> The NumPy ndarray: A Multidimensional Array Object</h3>
 <div class="outline-text-3" id="text-1-1">
 <ul class="org-ul">
 <li>NumPy的最关键特性技术N-dimensional array object,叫做ndarray.</li>
@@ -175,8 +175,8 @@ dtype<span style="color: #268bd2;">(</span><span style="color: #2aa198;">'float6
 </ul></li>
 </ul>
 </div>
-<div id="outline-container-orgd929786" class="outline-4">
-<h4 id="orgd929786"><span class="section-number-4">1.1.1.</span> Creating ndarrays</h4>
+<div id="outline-container-org6ce97e8" class="outline-4">
+<h4 id="org6ce97e8"><span class="section-number-4">1.1.1.</span> Creating ndarrays</h4>
 <div class="outline-text-4" id="text-1-1-1">
 <ul class="org-ul">
 <li><p>
@@ -305,8 +305,8 @@ array<span style="color: #268bd2;">(</span><span style="color: #d33682;">[</span
 </ul>
 </div>
 </div>
-<div id="outline-container-orgc7d5823" class="outline-4">
-<h4 id="orgc7d5823"><span class="section-number-4">1.1.2.</span> Data Types for ndarrays</h4>
+<div id="outline-container-org7c86fa2" class="outline-4">
+<h4 id="org7c86fa2"><span class="section-number-4">1.1.2.</span> Data Types for ndarrays</h4>
 <div class="outline-text-4" id="text-1-1-2">
 <ul class="org-ul">
 <li>在创建ndarray的时候,numpy会去检测成员的类型,以便给新的ndarray赋一个dtype(ndarray的每个成员都要
@@ -416,15 +416,15 @@ array<span style="color: #268bd2;">(</span><span style="color: #d33682;">[</span
 <li><p>
 调用astype的时候,总是创建新的array(一个新的copy), 即便新旧数据的类型是一样的
 </p>
-<pre class="example" id="org51e122d">
+<pre class="example" id="orgead4af8">
 Calling astype always creates a new array(a copy of the data), even if
 the new data type is the same as the old data type.
 </pre></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org664032b" class="outline-4">
-<h4 id="org664032b"><span class="section-number-4">1.1.3.</span> Arithmetic with NumPy</h4>
+<div id="outline-container-org85d45d0" class="outline-4">
+<h4 id="org85d45d0"><span class="section-number-4">1.1.3.</span> Arithmetic with NumPy</h4>
 <div class="outline-text-4" id="text-1-1-3">
 <ul class="org-ul">
 <li>ndarray之所以重要,是在于之前python内置array很多操作需要for循环,但是在ndarray这里不需要了:
@@ -486,8 +486,8 @@ array<span style="color: #268bd2;">(</span><span style="color: #d33682;">[</span
 </ul>
 </div>
 </div>
-<div id="outline-container-org573faf3" class="outline-4">
-<h4 id="org573faf3"><span class="section-number-4">1.1.4.</span> Basic Indexing and Slicing</h4>
+<div id="outline-container-orga9e5a8b" class="outline-4">
+<h4 id="orga9e5a8b"><span class="section-number-4">1.1.4.</span> Basic Indexing and Slicing</h4>
 <div class="outline-text-4" id="text-1-1-4">
 <ul class="org-ul">
 <li><p>
@@ -694,61 +694,507 @@ array<span style="color: #268bd2;">(</span><span style="color: #d33682;">[</span
 </ul>
 </div>
 <ol class="org-ol">
-<li><a id="orga6381a4"></a>Indxing with slices<br /></li>
+<li><a id="orgd48c4e5"></a>Indxing with slices<br />
+<div class="outline-text-5" id="text-1-1-4-1">
+<ul class="org-ul">
+<li>我们知道,python的list和ndarry都是可以使用slice作为参数的:
+<ul class="org-ul">
+<li><p>
+python的list传入一个slice
+</p>
+<div class="org-src-container">
+<pre class="src src-python">In <span style="color: #268bd2;">[</span>50<span style="color: #268bd2;">]</span>:
+<span style="color: #268bd2;">lst</span> = <span style="color: #d33682; font-style: italic;">list</span><span style="color: #268bd2;">(</span><span style="color: #d33682; font-style: italic;">range</span><span style="color: #d33682;">(</span>10<span style="color: #d33682;">)</span><span style="color: #268bd2;">)</span>
+
+In <span style="color: #268bd2;">[</span>51<span style="color: #268bd2;">]</span>:
+lst<span style="color: #268bd2;">[</span>:2<span style="color: #268bd2;">]</span>
+Out <span style="color: #268bd2;">[</span>51<span style="color: #268bd2;">]</span>:
+<span style="color: #268bd2;">[</span>0, 1<span style="color: #268bd2;">]</span>
+</pre>
+</div></li>
+<li><p>
+ndarray传入一个slice
+</p>
+<div class="org-src-container">
+<pre class="src src-python">In <span style="color: #268bd2;">[</span>48<span style="color: #268bd2;">]</span>:
+arr2d
+Out <span style="color: #268bd2;">[</span>48<span style="color: #268bd2;">]</span>:
+array<span style="color: #268bd2;">(</span><span style="color: #d33682;">[</span><span style="color: #859900;">[</span>1, 2, 3<span style="color: #859900;">]</span>,
+       <span style="color: #859900;">[</span>4, 5, 6<span style="color: #859900;">]</span>,
+       <span style="color: #859900;">[</span>7, 8, 9<span style="color: #859900;">]</span><span style="color: #d33682;">]</span><span style="color: #268bd2;">)</span>
+
+In <span style="color: #268bd2;">[</span>49<span style="color: #268bd2;">]</span>:
+arr2d<span style="color: #268bd2;">[</span>:2<span style="color: #268bd2;">]</span>
+Out <span style="color: #268bd2;">[</span>49<span style="color: #268bd2;">]</span>:
+array<span style="color: #268bd2;">(</span><span style="color: #d33682;">[</span><span style="color: #859900;">[</span>1, 2, 3<span style="color: #859900;">]</span>,
+       <span style="color: #859900;">[</span>4, 5, 6<span style="color: #859900;">]</span><span style="color: #d33682;">]</span><span style="color: #268bd2;">)</span>
+</pre>
+</div></li>
+</ul></li>
+<li>ndarray之前是支持传入两个index(以逗号分隔)来替代[index][index], 我们也可以传入两个slice,但是传入两个slice的效果和[slice][slice]是不一样的
+<ul class="org-ul">
+<li><p>
+[index][index]的结果和"逗号分隔的两个index"结果是一样的.
+</p>
+<div class="org-src-container">
+<pre class="src src-python">In <span style="color: #268bd2;">[</span>59<span style="color: #268bd2;">]</span>:
+arr2d<span style="color: #268bd2;">[</span>2<span style="color: #268bd2;">][</span>1<span style="color: #268bd2;">]</span>
+Out <span style="color: #268bd2;">[</span>59<span style="color: #268bd2;">]</span>:
+8
+
+In <span style="color: #268bd2;">[</span>60<span style="color: #268bd2;">]</span>:
+arr2d<span style="color: #268bd2;">[</span>2, 1<span style="color: #268bd2;">]</span>
+Out <span style="color: #268bd2;">[</span>60<span style="color: #268bd2;">]</span>:
+8
+</pre>
+</div></li>
+<li><p>
+[slice][slice]的结果和"两个逗号分隔的两个slice"的结果是不一样的,但是两者的"维度相同",我们可以把维度理解为"中括号的数目"
+</p>
+<div class="org-src-container">
+<pre class="src src-python">In <span style="color: #268bd2;">[</span>82<span style="color: #268bd2;">]</span>:
+arr2d<span style="color: #268bd2;">[</span>1, :2<span style="color: #268bd2;">]</span>
+Out <span style="color: #268bd2;">[</span>82<span style="color: #268bd2;">]</span>:
+array<span style="color: #268bd2;">(</span><span style="color: #d33682;">[</span>4, 5<span style="color: #d33682;">]</span><span style="color: #268bd2;">)</span>
+
+In <span style="color: #268bd2;">[</span>83<span style="color: #268bd2;">]</span>:
+arr2d<span style="color: #268bd2;">[</span>1, :2<span style="color: #268bd2;">]</span>.shape
+
+Out <span style="color: #268bd2;">[</span>83<span style="color: #268bd2;">]</span>:
+<span style="color: #268bd2;">(</span>2,<span style="color: #268bd2;">)</span>
+
+In <span style="color: #268bd2;">[</span>84<span style="color: #268bd2;">]</span>:
+arr2d<span style="color: #268bd2;">[</span>:2<span style="color: #268bd2;">][</span>1:<span style="color: #268bd2;">]</span>
+Out <span style="color: #268bd2;">[</span>84<span style="color: #268bd2;">]</span>:
+array<span style="color: #268bd2;">(</span><span style="color: #d33682;">[</span><span style="color: #859900;">[</span>4, 5, 6<span style="color: #859900;">]</span><span style="color: #d33682;">]</span><span style="color: #268bd2;">)</span>
+
+In <span style="color: #268bd2;">[</span>85<span style="color: #268bd2;">]</span>:
+arr2d<span style="color: #268bd2;">[</span>:2<span style="color: #268bd2;">][</span>1:<span style="color: #268bd2;">]</span>.shape
+
+Out <span style="color: #268bd2;">[</span>85<span style="color: #268bd2;">]</span>:
+<span style="color: #268bd2;">(</span>1, 3<span style="color: #268bd2;">)</span>
+</pre>
+</div></li>
+</ul></li>
+<li><p>
+更令人惊奇的是slice还能和index配合.这个时候你会发现ndarray"降维"了(每使用一次index就减少一个"中括号", 而使用slice不会减少"中括号")
+</p>
+<div class="org-src-container">
+<pre class="src src-python">In <span style="color: #268bd2;">[</span>93<span style="color: #268bd2;">]</span>:
+arr2d.shape
+Out <span style="color: #268bd2;">[</span>93<span style="color: #268bd2;">]</span>:
+<span style="color: #268bd2;">(</span>3, 3<span style="color: #268bd2;">)</span>
+
+In <span style="color: #268bd2;">[</span>94<span style="color: #268bd2;">]</span>:
+arr2d<span style="color: #268bd2;">[</span>:2, 1<span style="color: #268bd2;">]</span>
+Out <span style="color: #268bd2;">[</span>94<span style="color: #268bd2;">]</span>:
+array<span style="color: #268bd2;">(</span><span style="color: #d33682;">[</span>2, 5<span style="color: #d33682;">]</span><span style="color: #268bd2;">)</span>
+
+In <span style="color: #268bd2;">[</span>95<span style="color: #268bd2;">]</span>:
+arr2d<span style="color: #268bd2;">[</span>:2, 1<span style="color: #268bd2;">]</span>.shape
+Out <span style="color: #268bd2;">[</span>95<span style="color: #268bd2;">]</span>:
+<span style="color: #268bd2;">(</span>2,<span style="color: #268bd2;">)</span>
+</pre>
+</div></li>
+<li>下面我们来研究一下,为什么nda[index][index] <code>= nda[index, index] 但是nda[slice][slice] !</code> nda[slice:slice]却不一样了
+<ul class="org-ul">
+<li>我们首先应该相信,ndarray的设计是有统一性的,这不应该是一个bug</li>
+<li>我们先来定义一下[index(slice), index(slice), &#x2026;] 这种写法的内涵,这种写法的本质意义,在于对一
+个ndarry的第1维,第2维,第n维进行选取,既然是第几维度,那么必然是以整个ndarray为维度来思考的</li>
+<li>我们再来定义一下[index(slice)][index(slice)[&#x2026;], 每个[]都会诞生一个新的ndarray,这就产生了不同:
+<ol class="org-ol">
+<li><p>
+对于[index]来说,它会降维,所以arr2d[2][2],其实是对第1维操作得到新的ndarray,再对新的ndarray
+的第一维操作.所以第二个2其实是对第二维进行操作的,因为第一个2让ndarray减低了一维.而arr2d[2,2]
+也是对第一维取2,第二维取2
+</p>
+<div class="org-src-container">
+<pre class="src src-python">In <span style="color: #268bd2;">[</span>104<span style="color: #268bd2;">]</span>:
+arr2d.shape
+Out <span style="color: #268bd2;">[</span>104<span style="color: #268bd2;">]</span>:
+<span style="color: #268bd2;">(</span>3, 3<span style="color: #268bd2;">)</span>
+
+In <span style="color: #268bd2;">[</span>105<span style="color: #268bd2;">]</span>:
+arr2d<span style="color: #268bd2;">[</span>2<span style="color: #268bd2;">][</span>2<span style="color: #268bd2;">]</span>
+Out <span style="color: #268bd2;">[</span>105<span style="color: #268bd2;">]</span>:
+9
+
+In <span style="color: #268bd2;">[</span>106<span style="color: #268bd2;">]</span>:
+arr2d<span style="color: #268bd2;">[</span>2<span style="color: #268bd2;">]</span>.shape
+Out <span style="color: #268bd2;">[</span>106<span style="color: #268bd2;">]</span>:
+<span style="color: #268bd2;">(</span>3,<span style="color: #268bd2;">)</span>
+
+In <span style="color: #268bd2;">[</span>107<span style="color: #268bd2;">]</span>:
+arr2d<span style="color: #268bd2;">[</span>2,2<span style="color: #268bd2;">]</span>
+Out <span style="color: #268bd2;">[</span>107<span style="color: #268bd2;">]</span>:
+9
+</pre>
+</div></li>
+<li><p>
+对于[slice]来说,其不会降维,所以arr2d[:1][:1]的第二个2还是对第一维进行操作,而arr2d[:1, :1]
+的第二个2则是对第二维进行操作
+</p>
+<div class="org-src-container">
+<pre class="src src-python">In <span style="color: #268bd2;">[</span>114<span style="color: #268bd2;">]</span>:
+arr2d<span style="color: #268bd2;">[</span>:1,:1<span style="color: #268bd2;">]</span>
+Out <span style="color: #268bd2;">[</span>114<span style="color: #268bd2;">]</span>:
+array<span style="color: #268bd2;">(</span><span style="color: #d33682;">[</span><span style="color: #859900;">[</span>1<span style="color: #859900;">]</span><span style="color: #d33682;">]</span><span style="color: #268bd2;">)</span>
+
+In <span style="color: #268bd2;">[</span>115<span style="color: #268bd2;">]</span>:
+arr2d<span style="color: #268bd2;">[</span>:1,:1<span style="color: #268bd2;">]</span>.shape
+Out <span style="color: #268bd2;">[</span>115<span style="color: #268bd2;">]</span>:
+<span style="color: #268bd2;">(</span>1, 1<span style="color: #268bd2;">)</span>
+
+In <span style="color: #268bd2;">[</span>116<span style="color: #268bd2;">]</span>:
+arr2d<span style="color: #268bd2;">[</span>:1<span style="color: #268bd2;">][</span>:1<span style="color: #268bd2;">]</span>
+Out <span style="color: #268bd2;">[</span>116<span style="color: #268bd2;">]</span>:
+array<span style="color: #268bd2;">(</span><span style="color: #d33682;">[</span><span style="color: #859900;">[</span>1, 2, 3<span style="color: #859900;">]</span><span style="color: #d33682;">]</span><span style="color: #268bd2;">)</span>
+
+In <span style="color: #268bd2;">[</span>117<span style="color: #268bd2;">]</span>:
+arr2d<span style="color: #268bd2;">[</span>:1<span style="color: #268bd2;">][</span>:1<span style="color: #268bd2;">]</span>.shape
+Out <span style="color: #268bd2;">[</span>117<span style="color: #268bd2;">]</span>:
+<span style="color: #268bd2;">(</span>1, 3<span style="color: #268bd2;">)</span>
+</pre>
+</div></li>
+</ol></li>
+</ul></li>
+</ul>
+</div>
+</li>
 </ol>
 </div>
+<div id="outline-container-orgbf89985" class="outline-4">
+<h4 id="orgbf89985"><span class="section-number-4">1.1.5.</span> Boolean Indexing</h4>
+<div class="outline-text-4" id="text-1-1-5">
+<ul class="org-ul">
+<li>所谓boolean indexing:
+<ul class="org-ul">
+<li>并不是说boolean类型作为ndarray index内部的内容.</li>
+<li>而是说使用boolean组成一个ndarray, 然后把这个ndarray作为另外一个ndarray的index</li>
+</ul></li>
+<li>boolean类型的ndarrayB作为ndarrayA的index,其特殊的地方有两个:
+<ol class="org-ol">
+<li><p>
+要求是ndarryA和ndarrayB的长度(注意是length,不是shape,ndim)必须一样
+</p>
+<div class="org-src-container">
+<pre class="src src-python">In <span style="color: #268bd2;">[</span>62<span style="color: #268bd2;">]</span>:
+names
+Out <span style="color: #268bd2;">[</span>62<span style="color: #268bd2;">]</span>:
+array<span style="color: #268bd2;">(</span><span style="color: #d33682;">[</span><span style="color: #2aa198;">'Bob'</span>, <span style="color: #2aa198;">'Joe'</span>, <span style="color: #2aa198;">'Will'</span>, <span style="color: #2aa198;">'Bob'</span>, <span style="color: #2aa198;">'Will'</span>, <span style="color: #2aa198;">'Joe'</span>, <span style="color: #2aa198;">'Joe'</span><span style="color: #d33682;">]</span>, dtype=<span style="color: #2aa198;">'&lt;U4'</span><span style="color: #268bd2;">)</span>
+
+In <span style="color: #268bd2;">[</span>63<span style="color: #268bd2;">]</span>:
+data
+Out <span style="color: #268bd2;">[</span>63<span style="color: #268bd2;">]</span>:
+array<span style="color: #268bd2;">(</span><span style="color: #d33682;">[</span><span style="color: #859900;">[</span>  4,   7<span style="color: #859900;">]</span>,
+       <span style="color: #859900;">[</span>  0,   2<span style="color: #859900;">]</span>,
+       <span style="color: #859900;">[</span> -5,   6<span style="color: #859900;">]</span>,
+       <span style="color: #859900;">[</span>  0,   0<span style="color: #859900;">]</span>,
+       <span style="color: #859900;">[</span>  1,   2<span style="color: #859900;">]</span>,
+       <span style="color: #859900;">[</span>-12,  -4<span style="color: #859900;">]</span>,
+       <span style="color: #859900;">[</span>  3,   4<span style="color: #859900;">]</span><span style="color: #d33682;">]</span><span style="color: #268bd2;">)</span>
+
+In <span style="color: #268bd2;">[</span>64<span style="color: #268bd2;">]</span>:
+r = names == <span style="color: #2aa198;">"Bob"</span>
+r
+Out <span style="color: #268bd2;">[</span>64<span style="color: #268bd2;">]</span>:
+array<span style="color: #268bd2;">(</span><span style="color: #d33682;">[</span> <span style="color: #6c71c4; font-weight: bold;">True</span>, <span style="color: #6c71c4; font-weight: bold;">False</span>, <span style="color: #6c71c4; font-weight: bold;">False</span>,  <span style="color: #6c71c4; font-weight: bold;">True</span>, <span style="color: #6c71c4; font-weight: bold;">False</span>, <span style="color: #6c71c4; font-weight: bold;">False</span>, <span style="color: #6c71c4; font-weight: bold;">False</span><span style="color: #d33682;">]</span><span style="color: #268bd2;">)</span>
+
+In <span style="color: #268bd2;">[</span>65<span style="color: #268bd2;">]</span>:
+<span style="color: #d33682; font-style: italic;">len</span><span style="color: #268bd2;">(</span>data<span style="color: #268bd2;">)</span>, <span style="color: #d33682; font-style: italic;">len</span><span style="color: #268bd2;">(</span>r<span style="color: #268bd2;">)</span>
+Out <span style="color: #268bd2;">[</span>65<span style="color: #268bd2;">]</span>:
+<span style="color: #268bd2;">(</span>7, 7<span style="color: #268bd2;">)</span>
+
+In <span style="color: #268bd2;">[</span>66<span style="color: #268bd2;">]</span>:
+data<span style="color: #268bd2;">[</span>r<span style="color: #268bd2;">]</span>
+Out <span style="color: #268bd2;">[</span>66<span style="color: #268bd2;">]</span>:
+array<span style="color: #268bd2;">(</span><span style="color: #d33682;">[</span><span style="color: #859900;">[</span>4, 7<span style="color: #859900;">]</span>,
+       <span style="color: #859900;">[</span>0, 0<span style="color: #859900;">]</span><span style="color: #d33682;">]</span><span style="color: #268bd2;">)</span>
+</pre>
+</div></li>
+
+<li><p>
+有ndarrayB做index作用于ndarrayA后生成的新ndarray,如果赋值给了一个变量,那么效果等同于创建了一
+个新的copy,这个是和普通ndarray赋值给变量不一样的
+</p>
+<div class="org-src-container">
+<pre class="src src-python">In <span style="color: #268bd2;">[</span>82<span style="color: #268bd2;">]</span>:
+arr2d
+Out <span style="color: #268bd2;">[</span>82<span style="color: #268bd2;">]</span>:
+array<span style="color: #268bd2;">(</span><span style="color: #d33682;">[</span><span style="color: #859900;">[</span>1, 2, 3<span style="color: #859900;">]</span>,
+       <span style="color: #859900;">[</span>4, 5, 6<span style="color: #859900;">]</span>,
+       <span style="color: #859900;">[</span>7, 8, 9<span style="color: #859900;">]</span><span style="color: #d33682;">]</span><span style="color: #268bd2;">)</span>
+
+In <span style="color: #268bd2;">[</span>83<span style="color: #268bd2;">]</span>:
+<span style="color: #268bd2;">r1</span> = arr2d
+
+In <span style="color: #268bd2;">[</span>84<span style="color: #268bd2;">]</span>:
+r1
+Out <span style="color: #268bd2;">[</span>84<span style="color: #268bd2;">]</span>:
+array<span style="color: #268bd2;">(</span><span style="color: #d33682;">[</span><span style="color: #859900;">[</span>1, 2, 3<span style="color: #859900;">]</span>,
+       <span style="color: #859900;">[</span>4, 5, 6<span style="color: #859900;">]</span>,
+       <span style="color: #859900;">[</span>7, 8, 9<span style="color: #859900;">]</span><span style="color: #d33682;">]</span><span style="color: #268bd2;">)</span>
+
+In <span style="color: #268bd2;">[</span>85<span style="color: #268bd2;">]</span>:
+r1<span style="color: #268bd2;">[</span>0<span style="color: #268bd2;">]</span>
+Out <span style="color: #268bd2;">[</span>85<span style="color: #268bd2;">]</span>:
+array<span style="color: #268bd2;">(</span><span style="color: #d33682;">[</span>1, 2, 3<span style="color: #d33682;">]</span><span style="color: #268bd2;">)</span>
+
+In <span style="color: #268bd2;">[</span>86<span style="color: #268bd2;">]</span>:
+<span style="color: #268bd2;">r1</span><span style="color: #268bd2;">[</span>0<span style="color: #268bd2;">]</span> = 0
+
+In <span style="color: #268bd2;">[</span>87<span style="color: #268bd2;">]</span>:
+r1
+Out <span style="color: #268bd2;">[</span>87<span style="color: #268bd2;">]</span>:
+array<span style="color: #268bd2;">(</span><span style="color: #d33682;">[</span><span style="color: #859900;">[</span>0, 0, 0<span style="color: #859900;">]</span>,
+       <span style="color: #859900;">[</span>4, 5, 6<span style="color: #859900;">]</span>,
+       <span style="color: #859900;">[</span>7, 8, 9<span style="color: #859900;">]</span><span style="color: #d33682;">]</span><span style="color: #268bd2;">)</span>
+
+In <span style="color: #268bd2;">[</span>88<span style="color: #268bd2;">]</span>:
+arr2d
+Out <span style="color: #268bd2;">[</span>88<span style="color: #268bd2;">]</span>:
+array<span style="color: #268bd2;">(</span><span style="color: #d33682;">[</span><span style="color: #859900;">[</span>0, 0, 0<span style="color: #859900;">]</span>,
+       <span style="color: #859900;">[</span>4, 5, 6<span style="color: #859900;">]</span>,
+       <span style="color: #859900;">[</span>7, 8, 9<span style="color: #859900;">]</span><span style="color: #d33682;">]</span><span style="color: #268bd2;">)</span>
+
+In <span style="color: #268bd2;">[</span>89<span style="color: #268bd2;">]</span>:
+<span style="color: #268bd2;">b</span> = np.array<span style="color: #268bd2;">(</span><span style="color: #d33682;">[</span><span style="color: #6c71c4; font-weight: bold;">True</span>, <span style="color: #6c71c4; font-weight: bold;">False</span>, <span style="color: #6c71c4; font-weight: bold;">True</span><span style="color: #d33682;">]</span><span style="color: #268bd2;">)</span>
+b
+Out <span style="color: #268bd2;">[</span>89<span style="color: #268bd2;">]</span>:
+array<span style="color: #268bd2;">(</span><span style="color: #d33682;">[</span> <span style="color: #6c71c4; font-weight: bold;">True</span>, <span style="color: #6c71c4; font-weight: bold;">False</span>,  <span style="color: #6c71c4; font-weight: bold;">True</span><span style="color: #d33682;">]</span><span style="color: #268bd2;">)</span>
+
+In <span style="color: #268bd2;">[</span>90<span style="color: #268bd2;">]</span>:
+<span style="color: #268bd2;">r2</span> = arr2d<span style="color: #268bd2;">[</span>b<span style="color: #268bd2;">]</span>
+r2
+Out <span style="color: #268bd2;">[</span>90<span style="color: #268bd2;">]</span>:
+array<span style="color: #268bd2;">(</span><span style="color: #d33682;">[</span><span style="color: #859900;">[</span>0, 0, 0<span style="color: #859900;">]</span>,
+       <span style="color: #859900;">[</span>7, 8, 9<span style="color: #859900;">]</span><span style="color: #d33682;">]</span><span style="color: #268bd2;">)</span>
+
+In <span style="color: #268bd2;">[</span>91<span style="color: #268bd2;">]</span>:
+<span style="color: #268bd2;">r2</span><span style="color: #268bd2;">[</span>0<span style="color: #268bd2;">]</span> = 1
+r2
+Out <span style="color: #268bd2;">[</span>91<span style="color: #268bd2;">]</span>:
+array<span style="color: #268bd2;">(</span><span style="color: #d33682;">[</span><span style="color: #859900;">[</span>1, 1, 1<span style="color: #859900;">]</span>,
+       <span style="color: #859900;">[</span>7, 8, 9<span style="color: #859900;">]</span><span style="color: #d33682;">]</span><span style="color: #268bd2;">)</span>
+
+In <span style="color: #268bd2;">[</span>92<span style="color: #268bd2;">]</span>:
+arr2d
+Out <span style="color: #268bd2;">[</span>92<span style="color: #268bd2;">]</span>:
+array<span style="color: #268bd2;">(</span><span style="color: #d33682;">[</span><span style="color: #859900;">[</span>0, 0, 0<span style="color: #859900;">]</span>,
+       <span style="color: #859900;">[</span>4, 5, 6<span style="color: #859900;">]</span>,
+       <span style="color: #859900;">[</span>7, 8, 9<span style="color: #859900;">]</span><span style="color: #d33682;">]</span><span style="color: #268bd2;">)</span>
+</pre>
+</div></li>
+</ol></li>
+<li>我们前面讲过,ndarray的inex是支持逗号分隔的,分隔的是对不同维度的处理,比如arr[1维index,2维index,&#x2026;n维index]</li>
+<li><p>
+我们的Boolean index也能作为index逗号字符串里面的一个维度index,和slice index, integer index混用
+</p>
+<div class="org-src-container">
+<pre class="src src-python">In <span style="color: #268bd2;">[</span>67<span style="color: #268bd2;">]</span>:
+data<span style="color: #268bd2;">[</span>names == <span style="color: #2aa198;">"Bob"</span>, 1:<span style="color: #268bd2;">]</span>
+Out <span style="color: #268bd2;">[</span>67<span style="color: #268bd2;">]</span>:
+array<span style="color: #268bd2;">(</span><span style="color: #d33682;">[</span><span style="color: #859900;">[</span>7<span style="color: #859900;">]</span>,
+       <span style="color: #859900;">[</span>0<span style="color: #859900;">]</span><span style="color: #d33682;">]</span><span style="color: #268bd2;">)</span>
+
+In <span style="color: #268bd2;">[</span>68<span style="color: #268bd2;">]</span>:
+data<span style="color: #268bd2;">[</span>names == <span style="color: #2aa198;">"Bob"</span>, 1<span style="color: #268bd2;">]</span>
+Out <span style="color: #268bd2;">[</span>68<span style="color: #268bd2;">]</span>:
+array<span style="color: #268bd2;">(</span><span style="color: #d33682;">[</span>7, 0<span style="color: #d33682;">]</span><span style="color: #268bd2;">)</span>
+</pre>
+</div></li>
+<li><p>
+前面我们的boolean index都是一维的,但是其实我们也是可以生成多维的boolean index,比如下面的例子
+</p>
+<div class="org-src-container">
+<pre class="src src-python">In <span style="color: #268bd2;">[</span>90<span style="color: #268bd2;">]</span>:
+data
+Out <span style="color: #268bd2;">[</span>90<span style="color: #268bd2;">]</span>:
+array<span style="color: #268bd2;">(</span><span style="color: #d33682;">[</span><span style="color: #859900;">[</span>  4,   7<span style="color: #859900;">]</span>,
+       <span style="color: #859900;">[</span>  0,   2<span style="color: #859900;">]</span>,
+       <span style="color: #859900;">[</span> -5,   6<span style="color: #859900;">]</span>,
+       <span style="color: #859900;">[</span>  0,   0<span style="color: #859900;">]</span>,
+       <span style="color: #859900;">[</span>  1,   2<span style="color: #859900;">]</span>,
+       <span style="color: #859900;">[</span>-12,  -4<span style="color: #859900;">]</span>,
+       <span style="color: #859900;">[</span>  3,   4<span style="color: #859900;">]</span><span style="color: #d33682;">]</span><span style="color: #268bd2;">)</span>
+
+In <span style="color: #268bd2;">[</span>91<span style="color: #268bd2;">]</span>:
+data &lt; 0
+Out <span style="color: #268bd2;">[</span>91<span style="color: #268bd2;">]</span>:
+array<span style="color: #268bd2;">(</span><span style="color: #d33682;">[</span><span style="color: #859900;">[</span><span style="color: #6c71c4; font-weight: bold;">False</span>, <span style="color: #6c71c4; font-weight: bold;">False</span><span style="color: #859900;">]</span>,
+       <span style="color: #859900;">[</span><span style="color: #6c71c4; font-weight: bold;">False</span>, <span style="color: #6c71c4; font-weight: bold;">False</span><span style="color: #859900;">]</span>,
+       <span style="color: #859900;">[</span> <span style="color: #6c71c4; font-weight: bold;">True</span>, <span style="color: #6c71c4; font-weight: bold;">False</span><span style="color: #859900;">]</span>,
+       <span style="color: #859900;">[</span><span style="color: #6c71c4; font-weight: bold;">False</span>, <span style="color: #6c71c4; font-weight: bold;">False</span><span style="color: #859900;">]</span>,
+       <span style="color: #859900;">[</span><span style="color: #6c71c4; font-weight: bold;">False</span>, <span style="color: #6c71c4; font-weight: bold;">False</span><span style="color: #859900;">]</span>,
+       <span style="color: #859900;">[</span> <span style="color: #6c71c4; font-weight: bold;">True</span>,  <span style="color: #6c71c4; font-weight: bold;">True</span><span style="color: #859900;">]</span>,
+       <span style="color: #859900;">[</span><span style="color: #6c71c4; font-weight: bold;">False</span>, <span style="color: #6c71c4; font-weight: bold;">False</span><span style="color: #859900;">]</span><span style="color: #d33682;">]</span><span style="color: #268bd2;">)</span>
+</pre>
+</div></li>
+<li><p>
+多维boolean index作为index放到其他ndarray上面,当然也是要求boolean index和目标ndarray的长度一样
+了.为了保证一样,我们把boolean index放到生成它的源ndarray上面,例子如下
+</p>
+<div class="org-src-container">
+<pre class="src src-python">In <span style="color: #268bd2;">[</span>95<span style="color: #268bd2;">]</span>:
+data
+Out <span style="color: #268bd2;">[</span>95<span style="color: #268bd2;">]</span>:
+array<span style="color: #268bd2;">(</span><span style="color: #d33682;">[</span><span style="color: #859900;">[</span>4, 7<span style="color: #859900;">]</span>,
+       <span style="color: #859900;">[</span>0, 2<span style="color: #859900;">]</span>,
+       <span style="color: #859900;">[</span>0, 6<span style="color: #859900;">]</span>,
+       <span style="color: #859900;">[</span>0, 0<span style="color: #859900;">]</span>,
+       <span style="color: #859900;">[</span>1, 2<span style="color: #859900;">]</span>,
+       <span style="color: #859900;">[</span>0, 0<span style="color: #859900;">]</span>,
+       <span style="color: #859900;">[</span>3, 4<span style="color: #859900;">]</span><span style="color: #d33682;">]</span><span style="color: #268bd2;">)</span>
+
+In <span style="color: #268bd2;">[</span>96<span style="color: #268bd2;">]</span>:
+<span style="color: #268bd2;">data</span><span style="color: #268bd2;">[</span>data &lt; 0<span style="color: #268bd2;">]</span> = 0
+data
+Out <span style="color: #268bd2;">[</span>96<span style="color: #268bd2;">]</span>:
+array<span style="color: #268bd2;">(</span><span style="color: #d33682;">[</span><span style="color: #859900;">[</span>4, 7<span style="color: #859900;">]</span>,
+       <span style="color: #859900;">[</span>0, 2<span style="color: #859900;">]</span>,
+       <span style="color: #859900;">[</span>0, 6<span style="color: #859900;">]</span>,
+       <span style="color: #859900;">[</span>0, 0<span style="color: #859900;">]</span>,
+       <span style="color: #859900;">[</span>1, 2<span style="color: #859900;">]</span>,
+       <span style="color: #859900;">[</span>0, 0<span style="color: #859900;">]</span>,
+       <span style="color: #859900;">[</span>3, 4<span style="color: #859900;">]</span><span style="color: #d33682;">]</span><span style="color: #268bd2;">)</span>
+</pre>
+</div></li>
+<li><p>
+上面我们说了,只要长度一样, boolean index就可以起作用. 假设我们使用一维的boolean index来设置两
+维的ndarray,那么显然ndarray某个位次上的数据都会被更改,例子如下
+</p>
+<div class="org-src-container">
+<pre class="src src-python">In <span style="color: #268bd2;">[</span>103<span style="color: #268bd2;">]</span>:
+data
+Out <span style="color: #268bd2;">[</span>103<span style="color: #268bd2;">]</span>:
+array<span style="color: #268bd2;">(</span><span style="color: #d33682;">[</span><span style="color: #859900;">[</span>4, 7<span style="color: #859900;">]</span>,
+       <span style="color: #859900;">[</span>0, 2<span style="color: #859900;">]</span>,
+       <span style="color: #859900;">[</span>0, 6<span style="color: #859900;">]</span>,
+       <span style="color: #859900;">[</span>0, 0<span style="color: #859900;">]</span>,
+       <span style="color: #859900;">[</span>1, 2<span style="color: #859900;">]</span>,
+       <span style="color: #859900;">[</span>0, 0<span style="color: #859900;">]</span>,
+       <span style="color: #859900;">[</span>3, 4<span style="color: #859900;">]</span><span style="color: #d33682;">]</span><span style="color: #268bd2;">)</span>
+
+In <span style="color: #268bd2;">[</span>104<span style="color: #268bd2;">]</span>:
+<span style="color: #268bd2;">data</span><span style="color: #268bd2;">[</span>names != <span style="color: #2aa198;">"Joe"</span><span style="color: #268bd2;">]</span> = 7
+data
+Out <span style="color: #268bd2;">[</span>104<span style="color: #268bd2;">]</span>:
+array<span style="color: #268bd2;">(</span><span style="color: #d33682;">[</span><span style="color: #859900;">[</span>7, 7<span style="color: #859900;">]</span>,
+       <span style="color: #859900;">[</span>0, 2<span style="color: #859900;">]</span>,
+       <span style="color: #859900;">[</span>7, 7<span style="color: #859900;">]</span>,
+       <span style="color: #859900;">[</span>7, 7<span style="color: #859900;">]</span>,
+       <span style="color: #859900;">[</span>7, 7<span style="color: #859900;">]</span>,
+       <span style="color: #859900;">[</span>0, 0<span style="color: #859900;">]</span>,
+       <span style="color: #859900;">[</span>3, 4<span style="color: #859900;">]</span><span style="color: #d33682;">]</span><span style="color: #268bd2;">)</span>
+</pre>
+</div></li>
+<li>除了"<code>"和"!</code>"以外,我们还支持其他的操作符来生成boolean index:
+<ul class="org-ul">
+<li><p>
+比如用"~"来替代 "!="
+</p>
+<div class="org-src-container">
+<pre class="src src-python">In <span style="color: #268bd2;">[</span>105<span style="color: #268bd2;">]</span>:
+names == <span style="color: #2aa198;">"Bob"</span>
+Out <span style="color: #268bd2;">[</span>105<span style="color: #268bd2;">]</span>:
+array<span style="color: #268bd2;">(</span><span style="color: #d33682;">[</span> <span style="color: #6c71c4; font-weight: bold;">True</span>, <span style="color: #6c71c4; font-weight: bold;">False</span>, <span style="color: #6c71c4; font-weight: bold;">False</span>,  <span style="color: #6c71c4; font-weight: bold;">True</span>, <span style="color: #6c71c4; font-weight: bold;">False</span>, <span style="color: #6c71c4; font-weight: bold;">False</span>, <span style="color: #6c71c4; font-weight: bold;">False</span><span style="color: #d33682;">]</span><span style="color: #268bd2;">)</span>
+
+In <span style="color: #268bd2;">[</span>106<span style="color: #268bd2;">]</span>:
+~<span style="color: #268bd2;">(</span>names == <span style="color: #2aa198;">"Bob"</span><span style="color: #268bd2;">)</span>
+Out <span style="color: #268bd2;">[</span>106<span style="color: #268bd2;">]</span>:
+array<span style="color: #268bd2;">(</span><span style="color: #d33682;">[</span><span style="color: #6c71c4; font-weight: bold;">False</span>,  <span style="color: #6c71c4; font-weight: bold;">True</span>,  <span style="color: #6c71c4; font-weight: bold;">True</span>, <span style="color: #6c71c4; font-weight: bold;">False</span>,  <span style="color: #6c71c4; font-weight: bold;">True</span>,  <span style="color: #6c71c4; font-weight: bold;">True</span>,  <span style="color: #6c71c4; font-weight: bold;">True</span><span style="color: #d33682;">]</span><span style="color: #268bd2;">)</span>
+
+In <span style="color: #268bd2;">[</span>107<span style="color: #268bd2;">]</span>:
+cond = names == <span style="color: #2aa198;">"Bob"</span>
+cond
+Out <span style="color: #268bd2;">[</span>107<span style="color: #268bd2;">]</span>:
+array<span style="color: #268bd2;">(</span><span style="color: #d33682;">[</span> <span style="color: #6c71c4; font-weight: bold;">True</span>, <span style="color: #6c71c4; font-weight: bold;">False</span>, <span style="color: #6c71c4; font-weight: bold;">False</span>,  <span style="color: #6c71c4; font-weight: bold;">True</span>, <span style="color: #6c71c4; font-weight: bold;">False</span>, <span style="color: #6c71c4; font-weight: bold;">False</span>, <span style="color: #6c71c4; font-weight: bold;">False</span><span style="color: #d33682;">]</span><span style="color: #268bd2;">)</span>
+
+In <span style="color: #268bd2;">[</span>108<span style="color: #268bd2;">]</span>:
+~cond
+Out <span style="color: #268bd2;">[</span>108<span style="color: #268bd2;">]</span>:
+array<span style="color: #268bd2;">(</span><span style="color: #d33682;">[</span><span style="color: #6c71c4; font-weight: bold;">False</span>,  <span style="color: #6c71c4; font-weight: bold;">True</span>,  <span style="color: #6c71c4; font-weight: bold;">True</span>, <span style="color: #6c71c4; font-weight: bold;">False</span>,  <span style="color: #6c71c4; font-weight: bold;">True</span>,  <span style="color: #6c71c4; font-weight: bold;">True</span>,  <span style="color: #6c71c4; font-weight: bold;">True</span><span style="color: #d33682;">]</span><span style="color: #268bd2;">)</span>
+
+In <span style="color: #268bd2;">[</span>109<span style="color: #268bd2;">]</span>:
+data<span style="color: #268bd2;">[</span>~cond<span style="color: #268bd2;">]</span>
+Out <span style="color: #268bd2;">[</span>109<span style="color: #268bd2;">]</span>:
+array<span style="color: #268bd2;">(</span><span style="color: #d33682;">[</span><span style="color: #859900;">[</span>0, 2<span style="color: #859900;">]</span>,
+       <span style="color: #859900;">[</span>7, 7<span style="color: #859900;">]</span>,
+       <span style="color: #859900;">[</span>7, 7<span style="color: #859900;">]</span>,
+       <span style="color: #859900;">[</span>0, 0<span style="color: #859900;">]</span>,
+       <span style="color: #859900;">[</span>3, 4<span style="color: #859900;">]</span><span style="color: #d33682;">]</span><span style="color: #268bd2;">)</span>
+</pre>
+</div></li>
+<li><p>
+为了满足多个boolean condition,我们需要使用或(|), 与(&amp;), 这个和python里面的不一样(不能再使用or
+或者and)
+</p>
+<div class="org-src-container">
+<pre class="src src-python">In <span style="color: #268bd2;">[</span>110<span style="color: #268bd2;">]</span>:
+<span style="color: #268bd2;">mask</span> = <span style="color: #268bd2;">(</span>names == <span style="color: #2aa198;">"Bob"</span><span style="color: #268bd2;">)</span> | <span style="color: #268bd2;">(</span>names == <span style="color: #2aa198;">"Will"</span><span style="color: #268bd2;">)</span>
+mask
+Out <span style="color: #268bd2;">[</span>110<span style="color: #268bd2;">]</span>:
+array<span style="color: #268bd2;">(</span><span style="color: #d33682;">[</span> <span style="color: #6c71c4; font-weight: bold;">True</span>, <span style="color: #6c71c4; font-weight: bold;">False</span>,  <span style="color: #6c71c4; font-weight: bold;">True</span>,  <span style="color: #6c71c4; font-weight: bold;">True</span>,  <span style="color: #6c71c4; font-weight: bold;">True</span>, <span style="color: #6c71c4; font-weight: bold;">False</span>, <span style="color: #6c71c4; font-weight: bold;">False</span><span style="color: #d33682;">]</span><span style="color: #268bd2;">)</span>
+
+In <span style="color: #268bd2;">[</span>111<span style="color: #268bd2;">]</span>:
+data<span style="color: #268bd2;">[</span>mask<span style="color: #268bd2;">]</span>
+Out <span style="color: #268bd2;">[</span>111<span style="color: #268bd2;">]</span>:
+array<span style="color: #268bd2;">(</span><span style="color: #d33682;">[</span><span style="color: #859900;">[</span>7, 7<span style="color: #859900;">]</span>,
+       <span style="color: #859900;">[</span>7, 7<span style="color: #859900;">]</span>,
+       <span style="color: #859900;">[</span>7, 7<span style="color: #859900;">]</span>,
+       <span style="color: #859900;">[</span>7, 7<span style="color: #859900;">]</span><span style="color: #d33682;">]</span><span style="color: #268bd2;">)</span>
+</pre>
+</div></li>
+</ul></li>
+</ul>
+</div>
+</div>
 
 
-
-
-
-<div id="outline-container-org3a40395" class="outline-4">
-<h4 id="org3a40395"><span class="section-number-4">1.1.5.</span> Boolean Indexing</h4>
-</div>
-<div id="outline-container-org9d3e619" class="outline-4">
-<h4 id="org9d3e619"><span class="section-number-4">1.1.6.</span> Transposing Arrays</h4>
+<div id="outline-container-orgf480de0" class="outline-4">
+<h4 id="orgf480de0"><span class="section-number-4">1.1.6.</span> Transposing Arrays</h4>
 </div>
 </div>
-<div id="outline-container-orge67acf1" class="outline-3">
-<h3 id="orge67acf1"><span class="section-number-3">1.2.</span> Pseudorandom Number</h3>
+<div id="outline-container-org50bb708" class="outline-3">
+<h3 id="org50bb708"><span class="section-number-3">1.2.</span> Pseudorandom Number</h3>
 </div>
-<div id="outline-container-org9c17aa0" class="outline-3">
-<h3 id="org9c17aa0"><span class="section-number-3">1.3.</span> Universal Function:</h3>
+<div id="outline-container-orgd223a9b" class="outline-3">
+<h3 id="orgd223a9b"><span class="section-number-3">1.3.</span> Universal Function:</h3>
 </div>
-<div id="outline-container-org8980645" class="outline-3">
-<h3 id="org8980645"><span class="section-number-3">1.4.</span> Array-Oriented</h3>
+<div id="outline-container-org9646ad9" class="outline-3">
+<h3 id="org9646ad9"><span class="section-number-3">1.4.</span> Array-Oriented</h3>
 <div class="outline-text-3" id="text-1-4">
 </div>
-<div id="outline-container-org4160d49" class="outline-4">
-<h4 id="org4160d49"><span class="section-number-4">1.4.1.</span> Expressing Conditional</h4>
+<div id="outline-container-org8940d83" class="outline-4">
+<h4 id="org8940d83"><span class="section-number-4">1.4.1.</span> Expressing Conditional</h4>
 </div>
-<div id="outline-container-org1dd0876" class="outline-4">
-<h4 id="org1dd0876"><span class="section-number-4">1.4.2.</span> Mathematical</h4>
+<div id="outline-container-org0dc398e" class="outline-4">
+<h4 id="org0dc398e"><span class="section-number-4">1.4.2.</span> Mathematical</h4>
 </div>
-<div id="outline-container-org8f78d75" class="outline-4">
-<h4 id="org8f78d75"><span class="section-number-4">1.4.3.</span> Methods</h4>
+<div id="outline-container-orgd0a4a05" class="outline-4">
+<h4 id="orgd0a4a05"><span class="section-number-4">1.4.3.</span> Methods</h4>
 </div>
-<div id="outline-container-org8403614" class="outline-4">
-<h4 id="org8403614"><span class="section-number-4">1.4.4.</span> Sorting</h4>
+<div id="outline-container-org8e96e4c" class="outline-4">
+<h4 id="org8e96e4c"><span class="section-number-4">1.4.4.</span> Sorting</h4>
 </div>
-<div id="outline-container-org9489edb" class="outline-4">
-<h4 id="org9489edb"><span class="section-number-4">1.4.5.</span> Unique</h4>
+<div id="outline-container-orgcc4fc4a" class="outline-4">
+<h4 id="orgcc4fc4a"><span class="section-number-4">1.4.5.</span> Unique</h4>
 </div>
 </div>
-<div id="outline-container-org8f20d90" class="outline-3">
-<h3 id="org8f20d90"><span class="section-number-3">1.5.</span> File Input</h3>
+<div id="outline-container-org06f3386" class="outline-3">
+<h3 id="org06f3386"><span class="section-number-3">1.5.</span> File Input</h3>
 </div>
-<div id="outline-container-org65ead99" class="outline-3">
-<h3 id="org65ead99"><span class="section-number-3">1.6.</span> Linear Algebra</h3>
+<div id="outline-container-org425f6a5" class="outline-3">
+<h3 id="org425f6a5"><span class="section-number-3">1.6.</span> Linear Algebra</h3>
 </div>
-<div id="outline-container-org5339c99" class="outline-3">
-<h3 id="org5339c99"><span class="section-number-3">1.7.</span> Example</h3>
+<div id="outline-container-org02b8cae" class="outline-3">
+<h3 id="org02b8cae"><span class="section-number-3">1.7.</span> Example</h3>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: harrifeng@outlook.com</p>
-<p class="date">Created: 2023-03-12 Sun 22:24</p>
+<p class="date">Created: 2023-04-10 Mon 20:03</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
