@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-04-12 Wed 17:56 -->
+<!-- 2023-07-18 Tue 09:55 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>tic</title>
@@ -23,86 +23,174 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org0d57917">1. Why Containers Matter</a>
+<li><a href="#orga2a05af">1. Why Containers Matter</a>
 <ul>
-<li><a href="#orgf7a9548">1.1. Modern Application Architecture</a>
+<li><a href="#org364bed5">1.1. Modern Application Architecture</a>
 <ul>
-<li><a href="#orgc46d788">1.1.1. Attribute: Cloud Native</a></li>
-<li><a href="#org58e1037">1.1.2. Attribute: Modular</a></li>
-<li><a href="#org8baab54">1.1.3. Attribute: Microservice-Based</a></li>
-<li><a href="#org2850d40">1.1.4. Benefit: Scalability</a></li>
-<li><a href="#orgddddc93">1.1.5. Benefit: Reliability</a></li>
-<li><a href="#org00a8fa5">1.1.6. Benefit:Resilience</a></li>
+<li><a href="#orgf1889c5">1.1.1. Attribute: Cloud Native</a></li>
+<li><a href="#org5650d85">1.1.2. Attribute: Modular</a></li>
+<li><a href="#org281b640">1.1.3. Attribute: Microservice-Based</a></li>
+<li><a href="#org3187410">1.1.4. Benefit: Scalability</a></li>
+<li><a href="#org0cded5e">1.1.5. Benefit: Reliability</a></li>
+<li><a href="#orgcecb3f0">1.1.6. Benefit:Resilience</a></li>
 </ul>
 </li>
-<li><a href="#orgadd1aa9">1.2. Why Containers</a>
+<li><a href="#org591c90b">1.2. Why Containers</a>
 <ul>
-<li><a href="#org9648428">1.2.1. Requirements for Contaienrs</a></li>
-<li><a href="#orgfae788a">1.2.2. Requirements for Orchestration</a></li>
+<li><a href="#orgb9947c7">1.2.1. Requirements for Contaienrs</a></li>
+<li><a href="#org1f71399">1.2.2. Requirements for Orchestration</a></li>
 </ul>
 </li>
-<li><a href="#orgddc5c84">1.3. Running Container</a>
+<li><a href="#orgbda677c">1.3. Running Container</a>
 <ul>
-<li><a href="#orgdf98f54">1.3.1. What Container Look Like</a></li>
-<li><a href="#org696a129">1.3.2. Running a Container</a></li>
-<li><a href="#org3c1b2ee">1.3.3. Images and Volume Mounts</a></li>
-<li><a href="#org894f4e0">1.3.4. What Containers Really Are</a></li>
+<li><a href="#org5e55247">1.3.1. What Container Look Like</a></li>
+<li><a href="#orgbcbff9d">1.3.2. Running a Container</a></li>
+<li><a href="#orgddff9cf">1.3.3. Images and Volume Mounts</a></li>
+<li><a href="#org94e0a03">1.3.4. What Containers Really Are</a></li>
 </ul>
 </li>
-<li><a href="#orgf8fbe1f">1.4. Deploying Containers to Kubernetes</a>
+<li><a href="#org2af067d">1.4. Deploying Containers to Kubernetes</a>
 <ul>
-<li><a href="#org05054f2">1.4.1. Talking to the Kubernetes Cluster</a></li>
-<li><a href="#org9c0e046">1.4.2. Application Overview</a></li>
-<li><a href="#org25346e3">1.4.3. Kubernetes Features</a></li>
+<li><a href="#orgf26d911">1.4.1. Talking to the Kubernetes Cluster</a></li>
+<li><a href="#org69a355e">1.4.2. Application Overview</a></li>
+<li><a href="#org085b86a">1.4.3. Kubernetes Features</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org6b4df3b">2. Process Isolation</a>
+<li><a href="#org6a76ce9">2. Process Isolation</a>
 <ul>
-<li><a href="#org395fd63">2.1. Understanding Isolation</a>
+<li><a href="#orgc0efd1d">2.1. Understanding Isolation</a>
 <ul>
-<li><a href="#orga6158d4">2.1.1. Why Process Need Isolation</a></li>
-<li><a href="#orgf1589fe">2.1.2. File Permissions and Change Root</a></li>
-<li><a href="#orged81c4e">2.1.3. Container Isolation</a></li>
+<li><a href="#org5231eee">2.1.1. Why Process Need Isolation</a></li>
+<li><a href="#orgf6a3dd8">2.1.2. File Permissions and Change Root</a></li>
+<li><a href="#org3daa324">2.1.3. Container Isolation</a></li>
 </ul>
 </li>
-<li><a href="#org3c66d0f">2.2. Container Platforms and Container Runtimes</a>
+<li><a href="#org7018a69">2.2. Container Platforms and Container Runtimes</a>
 <ul>
-<li><a href="#orgc3553d4">2.2.1. Installing containerd</a></li>
-<li><a href="#orgac2a8b0">2.2.2. Using containerd</a></li>
-<li><a href="#org2b1959e">2.2.3. Introducing Linux Namespaces</a></li>
-<li><a href="#orgf2f951a">2.2.4. Containers and Namespaces in CRI-O</a></li>
+<li><a href="#org60d6e58">2.2.1. Installing containerd</a></li>
+<li><a href="#org1b5f122">2.2.2. Using containerd</a></li>
+<li><a href="#org9abcb67">2.2.3. Introducing Linux Namespaces</a></li>
+<li><a href="#orgb8bbb4b">2.2.4. Containers and Namespaces in CRI-O</a></li>
 </ul>
 </li>
+<li><a href="#org79aee1f">2.3. Running Processes in Namespaces Directly</a></li>
+</ul>
+</li>
+<li><a href="#org598c015">3. Chapter 3: Resource Limiting</a>
+<ul>
+<li><a href="#org124a505">3.1. CPU Priorities</a>
+<ul>
+<li><a href="#org8be0e73">3.1.1. Real-Time and Non-Real-Time Policies</a></li>
+<li><a href="#org81e3a4f">3.1.2. Setting Process Priorities</a></li>
+</ul>
+</li>
+<li><a href="#org76ec5fb">3.2. Linux Control Groups</a>
+<ul>
+<li><a href="#orge71577f">3.2.1. CPU Quotas with cgroups</a></li>
+<li><a href="#org223cd6d">3.2.2. CPU Quota with CRI-O and crictl</a></li>
+</ul>
+</li>
+<li><a href="#org65658e3">3.3. Memory Limits</a></li>
+<li><a href="#orgd43c80f">3.4. Network Bandwidth Limits</a></li>
+</ul>
+</li>
+<li><a href="#org1fc0ade">4. Chapter 4: Network Namespaces</a>
+<ul>
+<li><a href="#org47afbae">4.1. Network Isolation</a></li>
+<li><a href="#org5ef92e8">4.2. Network Namespaces</a>
+<ul>
+<li><a href="#orgc132cae">4.2.1. Inspecting Network Namespaces</a></li>
+<li><a href="#orgca0659f">4.2.2. Creating Network Namespaces</a></li>
+</ul>
+</li>
+<li><a href="#org61241b3">4.3. Bridge Interfaces</a>
+<ul>
+<li><a href="#org3df0c0b">4.3.1. Adding Interfaces to a Bridge</a></li>
+<li><a href="#org402d6c7">4.3.2. Tracking Traffic</a></li>
+</ul>
+</li>
+<li><a href="#org47a375e">4.4. Masquerade</a></li>
+</ul>
+</li>
+<li><a href="#orgd60264e">5. Chapter 5</a>
+<ul>
+<li><a href="#orgfa6b287">5.1. Filesystem Isolation</a>
+<ul>
+<li><a href="#orgc04c2d9">5.1.1. Container Image Contents</a></li>
+<li><a href="#orge836e52">5.1.2. Image Versions and Layers</a></li>
+</ul>
+</li>
+<li><a href="#org732a5d6">5.2. Building Container Images</a>
+<ul>
+<li><a href="#org10e1bf4">5.2.1. Using a Docerfile</a></li>
+<li><a href="#orgb41be7f">5.2.2. Tagging and Publishing Images</a></li>
+</ul>
+</li>
+<li><a href="#org185f872">5.3. Image and Container Storage</a>
+<ul>
+<li><a href="#org1e9d8b6">5.3.1. Overlay Filesystems</a></li>
+<li><a href="#org21d41d4">5.3.2. Understanding Container Layers</a></li>
+<li><a href="#orgc87ea48">5.3.3. Practical Image Building Advice</a></li>
+</ul>
+</li>
+<li><a href="#org1bca3df">5.4. Open Container Initiative</a></li>
+</ul>
+</li>
+<li><a href="#orgf98b169">6. Chapter 6: Why Kubernetes Matters</a>
+<ul>
+<li><a href="#orgbf2c9c4">6.1. Running Containers in a Cluster</a>
+<ul>
+<li><a href="#org723f062">6.1.1. Cross-Cutting Concerns</a></li>
+<li><a href="#orgbc6eceb">6.1.2. Kubernetes Concepts</a></li>
+</ul>
+</li>
+<li><a href="#org6df7f63">6.2. Cluster Deployment</a>
+<ul>
+<li><a href="#orgf7398a4">6.2.1. Prerequisite Packages</a></li>
+<li><a href="#org95c02a7">6.2.2. Kubernetes Packages</a></li>
+<li><a href="#orgec86c58">6.2.3. Cluster Initialization</a></li>
+<li><a href="#orge6c9997">6.2.4. Joining Nodes to the Cluster</a></li>
+</ul>
+</li>
+<li><a href="#org7e3a112">6.3. Installing Cluster Add-ons</a>
+<ul>
+<li><a href="#orgbcfd02c">6.3.1. Network Driver</a></li>
+<li><a href="#org733b6a0">6.3.2. Installing Storage</a></li>
+<li><a href="#orgcd4fbb7">6.3.3. Ingress Controller</a></li>
+<li><a href="#orgdbedad5">6.3.4. Metrics Server</a></li>
+</ul>
+</li>
+<li><a href="#orgc812c87">6.4. Exploring a Cluster</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org0d57917" class="outline-2">
-<h2 id="org0d57917"><span class="section-number-2">1.</span> Why Containers Matter</h2>
+<div id="outline-container-orga2a05af" class="outline-2">
+<h2 id="orga2a05af"><span class="section-number-2">1.</span> Why Containers Matter</h2>
 <div class="outline-text-2" id="text-1">
 <ul class="org-ul">
 <li>本章,我们会介绍为什么container在package application和deploy application方面,是一个更好的选择</li>
 </ul>
 </div>
-<div id="outline-container-orgf7a9548" class="outline-3">
-<h3 id="orgf7a9548"><span class="section-number-3">1.1.</span> Modern Application Architecture</h3>
+<div id="outline-container-org364bed5" class="outline-3">
+<h3 id="org364bed5"><span class="section-number-3">1.1.</span> Modern Application Architecture</h3>
 <div class="outline-text-3" id="text-1-1">
 <ul class="org-ul">
 <li>现代软件的关键特性是scale.本章的目的是我们的application需要做什么来达到和维持这种scale</li>
 <li>我们首先介绍下modern application的三个关键属性,然后会看看从这三个属性获得的三个收益</li>
 </ul>
 </div>
-<div id="outline-container-orgc46d788" class="outline-4">
-<h4 id="orgc46d788"><span class="section-number-4">1.1.1.</span> Attribute: Cloud Native</h4>
+<div id="outline-container-orgf1889c5" class="outline-4">
+<h4 id="orgf1889c5"><span class="section-number-4">1.1.1.</span> Attribute: Cloud Native</h4>
 <div class="outline-text-4" id="text-1-1-1">
 <ul class="org-ul">
 <li><p>
 cloud的核心是抽象
 </p>
-<pre class="example" id="orgb0cff0c">
+<pre class="example" id="org06dc24d">
 At its heart, the cloud is an abstraction.
 </pre></li>
 <li>在cloud里面,所有的provider都是abstrct的,比如:
@@ -116,8 +204,8 @@ At its heart, the cloud is an abstraction.
 </ul>
 </div>
 </div>
-<div id="outline-container-org58e1037" class="outline-4">
-<h4 id="org58e1037"><span class="section-number-4">1.1.2.</span> Attribute: Modular</h4>
+<div id="outline-container-org5650d85" class="outline-4">
+<h4 id="org5650d85"><span class="section-number-4">1.1.2.</span> Attribute: Modular</h4>
 <div class="outline-text-4" id="text-1-1-2">
 <ul class="org-ul">
 <li>modular用一句话说就是"高内聚,低耦合"</li>
@@ -131,8 +219,8 @@ At its heart, the cloud is an abstraction.
 </ul>
 </div>
 </div>
-<div id="outline-container-org8baab54" class="outline-4">
-<h4 id="org8baab54"><span class="section-number-4">1.1.3.</span> Attribute: Microservice-Based</h4>
+<div id="outline-container-org281b640" class="outline-4">
+<h4 id="org281b640"><span class="section-number-4">1.1.3.</span> Attribute: Microservice-Based</h4>
 <div class="outline-text-4" id="text-1-1-3">
 <ul class="org-ul">
 <li>微服务的架构,导致我们的服务由很多单独的非常小的process,每个process还会占用至少一台机器.</li>
@@ -142,8 +230,8 @@ At its heart, the cloud is an abstraction.
 </ul>
 </div>
 </div>
-<div id="outline-container-org2850d40" class="outline-4">
-<h4 id="org2850d40"><span class="section-number-4">1.1.4.</span> Benefit: Scalability</h4>
+<div id="outline-container-org3187410" class="outline-4">
+<h4 id="org3187410"><span class="section-number-4">1.1.4.</span> Benefit: Scalability</h4>
 <div class="outline-text-4" id="text-1-1-4">
 <ul class="org-ul">
 <li>假设我们有一个简单的executable,运行在单机上面,开始服务3个用户.如果用户激增,我们面临扩容,那么我
@@ -156,8 +244,8 @@ At its heart, the cloud is an abstraction.
 </ul>
 </div>
 </div>
-<div id="outline-container-orgddddc93" class="outline-4">
-<h4 id="orgddddc93"><span class="section-number-4">1.1.5.</span> Benefit: Reliability</h4>
+<div id="outline-container-org0cded5e" class="outline-4">
+<h4 id="org0cded5e"><span class="section-number-4">1.1.5.</span> Benefit: Reliability</h4>
 <div class="outline-text-4" id="text-1-1-5">
 <ul class="org-ul">
 <li>我们刚才的例子中,只有一个server,一旦发生硬件错误,就是single point of failure</li>
@@ -165,8 +253,8 @@ At its heart, the cloud is an abstraction.
 </ul>
 </div>
 </div>
-<div id="outline-container-org00a8fa5" class="outline-4">
-<h4 id="org00a8fa5"><span class="section-number-4">1.1.6.</span> Benefit:Resilience</h4>
+<div id="outline-container-orgcecb3f0" class="outline-4">
+<h4 id="orgcecb3f0"><span class="section-number-4">1.1.6.</span> Benefit:Resilience</h4>
 <div class="outline-text-4" id="text-1-1-6">
 <ul class="org-ul">
 <li>由于可以自动处理硬件和软件错误,所以cloud native还达到了resilience</li>
@@ -174,8 +262,8 @@ At its heart, the cloud is an abstraction.
 </div>
 </div>
 </div>
-<div id="outline-container-orgadd1aa9" class="outline-3">
-<h3 id="orgadd1aa9"><span class="section-number-3">1.2.</span> Why Containers</h3>
+<div id="outline-container-org591c90b" class="outline-3">
+<h3 id="org591c90b"><span class="section-number-3">1.2.</span> Why Containers</h3>
 <div class="outline-text-3" id="text-1-2">
 <ul class="org-ul">
 <li>前面说的,为了控制应用的复杂度,把一个大的应用分拆成很多个小应用.这些小应用容易测试,而且可以分给较
@@ -189,8 +277,8 @@ At its heart, the cloud is an abstraction.
 </ul></li>
 </ul>
 </div>
-<div id="outline-container-org9648428" class="outline-4">
-<h4 id="org9648428"><span class="section-number-4">1.2.1.</span> Requirements for Contaienrs</h4>
+<div id="outline-container-orgb9947c7" class="outline-4">
+<h4 id="orgb9947c7"><span class="section-number-4">1.2.1.</span> Requirements for Contaienrs</h4>
 <div class="outline-text-4" id="text-1-2-1">
 <ul class="org-ul">
 <li>对于单个的microservice,我们需要如下功能:
@@ -204,8 +292,8 @@ At its heart, the cloud is an abstraction.
 </ul>
 </div>
 </div>
-<div id="outline-container-orgfae788a" class="outline-4">
-<h4 id="orgfae788a"><span class="section-number-4">1.2.2.</span> Requirements for Orchestration</h4>
+<div id="outline-container-org1f71399" class="outline-4">
+<h4 id="org1f71399"><span class="section-number-4">1.2.2.</span> Requirements for Orchestration</h4>
 <div class="outline-text-4" id="text-1-2-2">
 <ul class="org-ul">
 <li>为了能够让多个微服务在一起工作,我们需要:
@@ -226,12 +314,12 @@ application崩溃</li>
 </div>
 </div>
 </div>
-<div id="outline-container-orgddc5c84" class="outline-3">
-<h3 id="orgddc5c84"><span class="section-number-3">1.3.</span> Running Container</h3>
+<div id="outline-container-orgbda677c" class="outline-3">
+<h3 id="orgbda677c"><span class="section-number-3">1.3.</span> Running Container</h3>
 <div class="outline-text-3" id="text-1-3">
 </div>
-<div id="outline-container-orgdf98f54" class="outline-4">
-<h4 id="orgdf98f54"><span class="section-number-4">1.3.1.</span> What Container Look Like</h4>
+<div id="outline-container-org5e55247" class="outline-4">
+<h4 id="org5e55247"><span class="section-number-4">1.3.1.</span> What Container Look Like</h4>
 <div class="outline-text-4" id="text-1-3-1">
 <ul class="org-ul">
 <li>在第二章,我们会区分如下两个概念:
@@ -243,8 +331,8 @@ application崩溃</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org696a129" class="outline-4">
-<h4 id="org696a129"><span class="section-number-4">1.3.2.</span> Running a Container</h4>
+<div id="outline-container-orgbcbff9d" class="outline-4">
+<h4 id="orgbcbff9d"><span class="section-number-4">1.3.2.</span> Running a Container</h4>
 <div class="outline-text-4" id="text-1-3-2">
 <ul class="org-ul">
 <li>container运行起来,就是和host是完全不一样的机器,在运行之前,我们先来看看host系统的情况
@@ -254,31 +342,31 @@ application崩溃</li>
 </p>
 <div class="org-src-container">
 <pre class="src src-shell">root@host01:/home/vagrant# cat /etc/os-release
-<span style="color: #268bd2;">NAME</span>=<span style="color: #2aa198;">"Ubuntu"</span>
-<span style="color: #268bd2;">VERSION</span>=<span style="color: #2aa198;">"20.04.5 LTS (Focal Fossa)"</span>
-<span style="color: #268bd2;">ID</span>=ubuntu
-<span style="color: #268bd2;">ID_LIKE</span>=debian
-<span style="color: #268bd2;">PRETTY_NAME</span>=<span style="color: #2aa198;">"Ubuntu 20.04.5 LTS"</span>
-<span style="color: #268bd2;">VERSION_ID</span>=<span style="color: #2aa198;">"20.04"</span>
-<span style="color: #268bd2;">HOME_URL</span>=<span style="color: #2aa198;">"https://www.ubuntu.com/"</span>
-<span style="color: #268bd2;">SUPPORT_URL</span>=<span style="color: #2aa198;">"https://help.ubuntu.com/"</span>
-<span style="color: #268bd2;">BUG_REPORT_URL</span>=<span style="color: #2aa198;">"https://bugs.launchpad.net/ubuntu/"</span>
-<span style="color: #268bd2;">PRIVACY_POLICY_URL</span>=<span style="color: #2aa198;">"https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"</span>
-<span style="color: #268bd2;">VERSION_CODENAME</span>=focal
-<span style="color: #268bd2;">UBUNTU_CODENAME</span>=focal
+<span style="color: color-30;">NAME</span>=<span style="color: color-22;">"Ubuntu"</span>
+<span style="color: color-30;">VERSION</span>=<span style="color: color-22;">"20.04.5 LTS (Focal Fossa)"</span>
+<span style="color: color-30;">ID</span>=ubuntu
+<span style="color: color-30;">ID_LIKE</span>=debian
+<span style="color: color-30;">PRETTY_NAME</span>=<span style="color: color-22;">"Ubuntu 20.04.5 LTS"</span>
+<span style="color: color-30;">VERSION_ID</span>=<span style="color: color-22;">"20.04"</span>
+<span style="color: color-30;">HOME_URL</span>=<span style="color: color-22;">"https://www.ubuntu.com/"</span>
+<span style="color: color-30;">SUPPORT_URL</span>=<span style="color: color-22;">"https://help.ubuntu.com/"</span>
+<span style="color: color-30;">BUG_REPORT_URL</span>=<span style="color: color-22;">"https://bugs.launchpad.net/ubuntu/"</span>
+<span style="color: color-30;">PRIVACY_POLICY_URL</span>=<span style="color: color-22;">"https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"</span>
+<span style="color: color-30;">VERSION_CODENAME</span>=focal
+<span style="color: color-30;">UBUNTU_CODENAME</span>=focal
 root@host01:/home/vagrant# ps -ef | head
 UID          PID    PPID  C STIME TTY          TIME CMD
 root           1       0  0 06:06 ?        00:00:14 /sbin/init
-root           2       0  0 06:06 ?        00:00:00 <span style="color: #268bd2;">[</span>kthreadd<span style="color: #268bd2;">]</span>
-root           3       2  0 06:06 ?        00:00:00 <span style="color: #268bd2;">[</span>rcu_gp<span style="color: #268bd2;">]</span>
-root           4       2  0 06:06 ?        00:00:00 <span style="color: #268bd2;">[</span>rcu_par_gp<span style="color: #268bd2;">]</span>
-root           6       2  0 06:06 ?        00:00:00 <span style="color: #268bd2;">[</span>kworker/0:0H-events_highpri<span style="color: #268bd2;">]</span>
-root           8       2  0 06:06 ?        00:00:05 <span style="color: #268bd2;">[</span>kworker/0:1H-events_highpri<span style="color: #268bd2;">]</span>
-root           9       2  0 06:06 ?        00:00:00 <span style="color: #268bd2;">[</span>mm_percpu_wq<span style="color: #268bd2;">]</span>
-root          10       2  0 06:06 ?        00:00:18 <span style="color: #268bd2;">[</span>ksoftirqd/0<span style="color: #268bd2;">]</span>
-root          11       2  0 06:06 ?        00:00:04 <span style="color: #268bd2;">[</span>rcu_sched<span style="color: #268bd2;">]</span>
+root           2       0  0 06:06 ?        00:00:00 <span style="color: color-25;">[</span>kthreadd<span style="color: color-25;">]</span>
+root           3       2  0 06:06 ?        00:00:00 <span style="color: color-25;">[</span>rcu_gp<span style="color: color-25;">]</span>
+root           4       2  0 06:06 ?        00:00:00 <span style="color: color-25;">[</span>rcu_par_gp<span style="color: color-25;">]</span>
+root           6       2  0 06:06 ?        00:00:00 <span style="color: color-25;">[</span>kworker/0:0H-events_highpri<span style="color: color-25;">]</span>
+root           8       2  0 06:06 ?        00:00:05 <span style="color: color-25;">[</span>kworker/0:1H-events_highpri<span style="color: color-25;">]</span>
+root           9       2  0 06:06 ?        00:00:00 <span style="color: color-25;">[</span>mm_percpu_wq<span style="color: color-25;">]</span>
+root          10       2  0 06:06 ?        00:00:18 <span style="color: color-25;">[</span>ksoftirqd/0<span style="color: color-25;">]</span>
+root          11       2  0 06:06 ?        00:00:04 <span style="color: color-25;">[</span>rcu_sched<span style="color: color-25;">]</span>
 root@host01:/home/vagrant# uname -v
-<span style="color: #96A7A9; font-style: italic;">#</span><span style="color: #96A7A9; font-style: italic;">148-Ubuntu SMP Mon Oct 17 16:02:06 UTC 2022</span>
+<span style="color: color-239; font-style: italic;">#</span><span style="color: color-239; font-style: italic;">148-Ubuntu SMP Mon Oct 17 16:02:06 UTC 2022</span>
 root@host01:/home/vagrant# ip addr | head -n 20
 1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
@@ -312,39 +400,39 @@ root@host01:/home/vagrant# ip addr | head -n 20
 </p>
 <div class="org-src-container">
 <pre class="src src-shell">root@host01:/home/vagrant# docker run -ti rockylinux:8
-Unable to find image <span style="color: #2aa198;">'rockylinux:8'</span> locally
+Unable to find image <span style="color: color-22;">'rockylinux:8'</span> locally
 8: Pulling from library/rockylinux
-0049b869cecb: Downloading <span style="color: #268bd2;">[</span>==========================&gt;                        <span style="color: #268bd2;">]</span>  38.19MB/71.92MB
+0049b869cecb: Downloading <span style="color: color-25;">[</span>==========================&gt;                        <span style="color: color-25;">]</span>  38.19MB/71.92MB
 0049b869cecb: Pull complete
 Digest: sha256:afd392a691df0475390df77cb5486f226bc2b4cbaf87c41785115b9237f3203f
 Status: Downloaded newer image for rockylinux:8
-<span style="color: #268bd2;">[</span>root@5a13b807526d /<span style="color: #268bd2;">]</span># cat /etc/os-release
-<span style="color: #268bd2;">NAME</span>=<span style="color: #2aa198;">"Rocky Linux"</span>
-<span style="color: #268bd2;">VERSION</span>=<span style="color: #2aa198;">"8.6 (Green Obsidian)"</span>
-<span style="color: #268bd2;">ID</span>=<span style="color: #2aa198;">"rocky"</span>
-<span style="color: #268bd2;">ID_LIKE</span>=<span style="color: #2aa198;">"rhel centos fedora"</span>
-<span style="color: #268bd2;">VERSION_ID</span>=<span style="color: #2aa198;">"8.6"</span>
-<span style="color: #268bd2;">PLATFORM_ID</span>=<span style="color: #2aa198;">"platform:el8"</span>
-<span style="color: #268bd2;">PRETTY_NAME</span>=<span style="color: #2aa198;">"Rocky Linux 8.6 (Green Obsidian)"</span>
-<span style="color: #268bd2;">ANSI_COLOR</span>=<span style="color: #2aa198;">"0;32"</span>
-<span style="color: #268bd2;">CPE_NAME</span>=<span style="color: #2aa198;">"cpe:/o:rocky:rocky:8:GA"</span>
-<span style="color: #268bd2;">HOME_URL</span>=<span style="color: #2aa198;">"https://rockylinux.org/"</span>
-<span style="color: #268bd2;">BUG_REPORT_URL</span>=<span style="color: #2aa198;">"https://bugs.rockylinux.org/"</span>
-<span style="color: #268bd2;">ROCKY_SUPPORT_PRODUCT</span>=<span style="color: #2aa198;">"Rocky Linux"</span>
-<span style="color: #268bd2;">ROCKY_SUPPORT_PRODUCT_VERSION</span>=<span style="color: #2aa198;">"8"</span>
-<span style="color: #268bd2;">REDHAT_SUPPORT_PRODUCT</span>=<span style="color: #2aa198;">"Rocky Linux"</span>
-<span style="color: #268bd2;">REDHAT_SUPPORT_PRODUCT_VERSION</span>=<span style="color: #2aa198;">"8"</span>
-<span style="color: #268bd2;">[</span>root@5a13b807526d /<span style="color: #268bd2;">]</span># yum install -y procps iproute
+<span style="color: color-25;">[</span>root@5a13b807526d /<span style="color: color-25;">]</span># cat /etc/os-release
+<span style="color: color-30;">NAME</span>=<span style="color: color-22;">"Rocky Linux"</span>
+<span style="color: color-30;">VERSION</span>=<span style="color: color-22;">"8.6 (Green Obsidian)"</span>
+<span style="color: color-30;">ID</span>=<span style="color: color-22;">"rocky"</span>
+<span style="color: color-30;">ID_LIKE</span>=<span style="color: color-22;">"rhel centos fedora"</span>
+<span style="color: color-30;">VERSION_ID</span>=<span style="color: color-22;">"8.6"</span>
+<span style="color: color-30;">PLATFORM_ID</span>=<span style="color: color-22;">"platform:el8"</span>
+<span style="color: color-30;">PRETTY_NAME</span>=<span style="color: color-22;">"Rocky Linux 8.6 (Green Obsidian)"</span>
+<span style="color: color-30;">ANSI_COLOR</span>=<span style="color: color-22;">"0;32"</span>
+<span style="color: color-30;">CPE_NAME</span>=<span style="color: color-22;">"cpe:/o:rocky:rocky:8:GA"</span>
+<span style="color: color-30;">HOME_URL</span>=<span style="color: color-22;">"https://rockylinux.org/"</span>
+<span style="color: color-30;">BUG_REPORT_URL</span>=<span style="color: color-22;">"https://bugs.rockylinux.org/"</span>
+<span style="color: color-30;">ROCKY_SUPPORT_PRODUCT</span>=<span style="color: color-22;">"Rocky Linux"</span>
+<span style="color: color-30;">ROCKY_SUPPORT_PRODUCT_VERSION</span>=<span style="color: color-22;">"8"</span>
+<span style="color: color-30;">REDHAT_SUPPORT_PRODUCT</span>=<span style="color: color-22;">"Rocky Linux"</span>
+<span style="color: color-30;">REDHAT_SUPPORT_PRODUCT_VERSION</span>=<span style="color: color-22;">"8"</span>
+<span style="color: color-25;">[</span>root@5a13b807526d /<span style="color: color-25;">]</span># yum install -y procps iproute
 
 Installed:
   iproute-5.18.0-1.el8.x86_64       libbpf-0.5.0-1.el8.x86_64       libmnl-1.0.4-6.el8.x86_64       procps-ng-3.3.15-9.el8.x86_64       psmisc-23.1-5.el8.x86_64
 
 Complete!
-<span style="color: #268bd2;">[</span>root@5a13b807526d /<span style="color: #268bd2;">]</span># ps -ef
+<span style="color: color-25;">[</span>root@5a13b807526d /<span style="color: color-25;">]</span># ps -ef
 UID          PID    PPID  C STIME TTY          TIME CMD
 root           1       0  0 11:41 pts/0    00:00:00 /bin/bash
 root          65       1  0 11:46 pts/0    00:00:00 ps -ef
-<span style="color: #268bd2;">[</span>root@5a13b807526d /<span style="color: #268bd2;">]</span># ip addr
+<span style="color: color-25;">[</span>root@5a13b807526d /<span style="color: color-25;">]</span># ip addr
 1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
     inet 127.0.0.1/8 scope host lo
@@ -353,10 +441,10 @@ root          65       1  0 11:46 pts/0    00:00:00 ps -ef
     link/ether 02:42:ac:11:00:02 brd ff:ff:ff:ff:ff:ff link-netnsid 0
     inet 172.17.0.2/16 brd 172.17.255.255 scope global eth0
        valid_lft forever preferred_lft forever
-<span style="color: #268bd2;">[</span>root@5a13b807526d /<span style="color: #268bd2;">]</span># uname -v
-<span style="color: #96A7A9; font-style: italic;">#</span><span style="color: #96A7A9; font-style: italic;">148-Ubuntu SMP Mon Oct 17 16:02:06 UTC 2022</span>
-<span style="color: #268bd2;">[</span>root@5a13b807526d /<span style="color: #268bd2;">]</span># exit
-<span style="color: #859900; font-weight: bold;">exit</span>
+<span style="color: color-25;">[</span>root@5a13b807526d /<span style="color: color-25;">]</span># uname -v
+<span style="color: color-239; font-style: italic;">#</span><span style="color: color-239; font-style: italic;">148-Ubuntu SMP Mon Oct 17 16:02:06 UTC 2022</span>
+<span style="color: color-25;">[</span>root@5a13b807526d /<span style="color: color-25;">]</span># exit
+<span style="color: color-160;">exit</span>
 root@host01:/home/vagrant#
 </pre>
 </div></li>
@@ -369,15 +457,15 @@ root@host01:/home/vagrant#
 需要非常注意的是,我们在container里面使用uname -v,返回值和之前在host里面的返回值一样,都是如下
 (这说明container和host也不是完全不一样的两个系统)
 </p>
-<pre class="example" id="org6611f4c">
+<pre class="example" id="org6bf0554">
 #148-Ubuntu SMP Mon Oct 17 16:02:06 UTC 2022
 </pre></li>
 </ul></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org3c1b2ee" class="outline-4">
-<h4 id="org3c1b2ee"><span class="section-number-4">1.3.3.</span> Images and Volume Mounts</h4>
+<div id="outline-container-orgddff9cf" class="outline-4">
+<h4 id="orgddff9cf"><span class="section-number-4">1.3.3.</span> Images and Volume Mounts</h4>
 <div class="outline-text-4" id="text-1-3-3">
 <ul class="org-ul">
 <li>第一眼看上去, container像是混合了常规的process和vritual machine的结合体</li>
@@ -401,8 +489,8 @@ docker.io/library/alpine:3
 代码如下
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">root@host01:/home/vagrant# docker run -ti -v /:/host -e <span style="color: #268bd2;">hello</span>=world alpine:3
-/ <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">hostname</span>
+<pre class="src src-shell">root@host01:/home/vagrant# docker run -ti -v /:/host -e <span style="color: color-30;">hello</span>=world alpine:3
+/ <span style="color: color-239; font-style: italic;"># </span><span style="color: color-239; font-style: italic;">hostname</span>
 9c84a63b5ff5
 </pre>
 </div></li>
@@ -410,39 +498,39 @@ docker.io/library/alpine:3
 /etc/os-release 还是会打印出发行版信息
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">/ <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">cat /etc/os-release</span>
-<span style="color: #268bd2;">NAME</span>=<span style="color: #2aa198;">"Alpine Linux"</span>
-<span style="color: #268bd2;">ID</span>=alpine
-<span style="color: #268bd2;">VERSION_ID</span>=3.17.0
-<span style="color: #268bd2;">PRETTY_NAME</span>=<span style="color: #2aa198;">"Alpine Linux v3.17"</span>
-<span style="color: #268bd2;">HOME_URL</span>=<span style="color: #2aa198;">"https://alpinelinux.org/"</span>
-<span style="color: #268bd2;">BUG_REPORT_URL</span>=<span style="color: #2aa198;">"https://gitlab.alpinelinux.org/alpine/aports/-/issues"</span>
+<pre class="src src-shell">/ <span style="color: color-239; font-style: italic;"># </span><span style="color: color-239; font-style: italic;">cat /etc/os-release</span>
+<span style="color: color-30;">NAME</span>=<span style="color: color-22;">"Alpine Linux"</span>
+<span style="color: color-30;">ID</span>=alpine
+<span style="color: color-30;">VERSION_ID</span>=3.17.0
+<span style="color: color-30;">PRETTY_NAME</span>=<span style="color: color-22;">"Alpine Linux v3.17"</span>
+<span style="color: color-30;">HOME_URL</span>=<span style="color: color-22;">"https://alpinelinux.org/"</span>
+<span style="color: color-30;">BUG_REPORT_URL</span>=<span style="color: color-22;">"https://gitlab.alpinelinux.org/alpine/aports/-/issues"</span>
 </pre>
 </div></li>
 <li><p>
 由于mount了host的文件系统,我们还能打印出host的/etc/os-release, 当然位置是在我们mount的地方/host
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">/ <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">cat /host/etc/os-release</span>
-<span style="color: #268bd2;">NAME</span>=<span style="color: #2aa198;">"Ubuntu"</span>
-<span style="color: #268bd2;">VERSION</span>=<span style="color: #2aa198;">"20.04.5 LTS (Focal Fossa)"</span>
-<span style="color: #268bd2;">ID</span>=ubuntu
-<span style="color: #268bd2;">ID_LIKE</span>=debian
-<span style="color: #268bd2;">PRETTY_NAME</span>=<span style="color: #2aa198;">"Ubuntu 20.04.5 LTS"</span>
-<span style="color: #268bd2;">VERSION_ID</span>=<span style="color: #2aa198;">"20.04"</span>
-<span style="color: #268bd2;">HOME_URL</span>=<span style="color: #2aa198;">"https://www.ubuntu.com/"</span>
-<span style="color: #268bd2;">SUPPORT_URL</span>=<span style="color: #2aa198;">"https://help.ubuntu.com/"</span>
-<span style="color: #268bd2;">BUG_REPORT_URL</span>=<span style="color: #2aa198;">"https://bugs.launchpad.net/ubuntu/"</span>
-<span style="color: #268bd2;">PRIVACY_POLICY_URL</span>=<span style="color: #2aa198;">"https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"</span>
-<span style="color: #268bd2;">VERSION_CODENAME</span>=focal
-<span style="color: #268bd2;">UBUNTU_CODENAME</span>=focal
+<pre class="src src-shell">/ <span style="color: color-239; font-style: italic;"># </span><span style="color: color-239; font-style: italic;">cat /host/etc/os-release</span>
+<span style="color: color-30;">NAME</span>=<span style="color: color-22;">"Ubuntu"</span>
+<span style="color: color-30;">VERSION</span>=<span style="color: color-22;">"20.04.5 LTS (Focal Fossa)"</span>
+<span style="color: color-30;">ID</span>=ubuntu
+<span style="color: color-30;">ID_LIKE</span>=debian
+<span style="color: color-30;">PRETTY_NAME</span>=<span style="color: color-22;">"Ubuntu 20.04.5 LTS"</span>
+<span style="color: color-30;">VERSION_ID</span>=<span style="color: color-22;">"20.04"</span>
+<span style="color: color-30;">HOME_URL</span>=<span style="color: color-22;">"https://www.ubuntu.com/"</span>
+<span style="color: color-30;">SUPPORT_URL</span>=<span style="color: color-22;">"https://help.ubuntu.com/"</span>
+<span style="color: color-30;">BUG_REPORT_URL</span>=<span style="color: color-22;">"https://bugs.launchpad.net/ubuntu/"</span>
+<span style="color: color-30;">PRIVACY_POLICY_URL</span>=<span style="color: color-22;">"https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"</span>
+<span style="color: color-30;">VERSION_CODENAME</span>=focal
+<span style="color: color-30;">UBUNTU_CODENAME</span>=focal
 </pre>
 </div></li>
 <li><p>
 我们还可以打印传入的环境变量
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">/ <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">echo $hello</span>
+<pre class="src src-shell">/ <span style="color: color-239; font-style: italic;"># </span><span style="color: color-239; font-style: italic;">echo $hello</span>
 world
 </pre>
 </div></li>
@@ -450,8 +538,8 @@ world
 </ul>
 </div>
 </div>
-<div id="outline-container-org894f4e0" class="outline-4">
-<h4 id="org894f4e0"><span class="section-number-4">1.3.4.</span> What Containers Really Are</h4>
+<div id="outline-container-org94e0a03" class="outline-4">
+<h4 id="org94e0a03"><span class="section-number-4">1.3.4.</span> What Containers Really Are</h4>
 <div class="outline-text-4" id="text-1-3-4">
 <ul class="org-ul">
 <li>虽然container有自己的hostname, filesystem, process space和networking,但是container它不是virtual
@@ -466,7 +554,7 @@ machine, 因为它没有自己的kernel,所以它没有自己的kernel module或
 </p>
 <div class="org-src-container">
 <pre class="src src-shell">root@host01:/home/vagrant# docker run -d -p 8080:80 nginx
-Unable to find image <span style="color: #2aa198;">'nginx:latest'</span> locally
+Unable to find image <span style="color: color-22;">'nginx:latest'</span> locally
 latest: Pulling from library/nginx
 a603fa5e3b41: Pull complete
 c39e1cda007e: Pull complete
@@ -490,7 +578,7 @@ d7b73a9beca876ada16a537c1d29149ca2ee1ff92dd557a1645507f37a50d2f0
 <div class="org-src-container">
 <pre class="src src-shell">root@host01:/home/vagrant# docker ps
 CONTAINER ID   IMAGE     COMMAND                  CREATED         STATUS         PORTS                                   NAMES
-d7b73a9beca8   nginx     <span style="color: #2aa198;">"/docker-entrypoint.&#8230;"</span>   4 minutes ago   Up 4 minutes   0.0.0.0:8080-&gt;80/tcp, :::8080-&gt;80/tcp   laughing_lehmann
+d7b73a9beca8   nginx     <span style="color: color-22;">"/docker-entrypoint.&#8230;"</span>   4 minutes ago   Up 4 minutes   0.0.0.0:8080-&gt;80/tcp, :::8080-&gt;80/tcp   laughing_lehmann
 </pre>
 </div></li>
 <li><p>
@@ -503,9 +591,9 @@ d7b73a9beca8   nginx     <span style="color: #2aa198;">"/docker-entrypoint.&#823
 &lt;head&gt;
 &lt;title&gt;Welcome to nginx!&lt;/title&gt;
 &lt;style&gt;
-html <span style="color: #268bd2;">{</span> color-scheme: light dark; <span style="color: #268bd2;">}</span>
-body <span style="color: #268bd2;">{</span> width: 35em; margin: 0 auto;
-font-family: Tahoma, Verdana, Arial, sans-serif; <span style="color: #268bd2;">}</span>
+html <span style="color: color-25;">{</span> color-scheme: light dark; <span style="color: color-25;">}</span>
+body <span style="color: color-25;">{</span> width: 35em; margin: 0 auto;
+font-family: Tahoma, Verdana, Arial, sans-serif; <span style="color: color-25;">}</span>
 &lt;/style&gt;
 &lt;/head&gt;
 &lt;body&gt;
@@ -514,16 +602,16 @@ font-family: Tahoma, Verdana, Arial, sans-serif; <span style="color: #268bd2;">}
 working. Further configuration is required.&lt;/p&gt;
 
 &lt;p&gt;For online documentation and support please refer to
-&lt;a <span style="color: #268bd2;">href</span>=<span style="color: #2aa198;">"http://nginx.org/"</span>&gt;nginx.org&lt;/a&gt;.&lt;br/&gt;
+&lt;a <span style="color: color-30;">href</span>=<span style="color: color-22;">"http://nginx.org/"</span>&gt;nginx.org&lt;/a&gt;.&lt;br/&gt;
 Commercial support is available at
-&lt;a <span style="color: #268bd2;">href</span>=<span style="color: #2aa198;">"http://nginx.com/"</span>&gt;nginx.com&lt;/a&gt;.&lt;/p&gt;
+&lt;a <span style="color: color-30;">href</span>=<span style="color: color-22;">"http://nginx.com/"</span>&gt;nginx.com&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;Thank you for using nginx.&lt;/em&gt;&lt;/p&gt;
 &lt;/body&gt;
 &lt;/html&gt;
 </pre>
 </div></li>
-<li>从上面的例子我们可以看成,由于NGINX是被打包在container image里面的,所以我们可以使用一个命令就下
+<li>从上面的例子我们可以看出,由于NGINX是被打包在container image里面的,所以我们可以使用一个命令就下
 载并且运行nginx,无论host是否装了和NGINX相冲突的软件或者库</li>
 <li>我们还可以在host上面通过ps来看到运行在container里面的nginx process,这再次证明container不是virtual
 machine.但是我们又不需要在host安装了nginx而运行nginx.换句话说,我们使用container之后,获取了virtual
@@ -532,8 +620,8 @@ machine的优势,但是又没有承担virtual machine的负担</li>
 </div>
 </div>
 </div>
-<div id="outline-container-orgf8fbe1f" class="outline-3">
-<h3 id="orgf8fbe1f"><span class="section-number-3">1.4.</span> Deploying Containers to Kubernetes</h3>
+<div id="outline-container-org2af067d" class="outline-3">
+<h3 id="org2af067d"><span class="section-number-3">1.4.</span> Deploying Containers to Kubernetes</h3>
 <div class="outline-text-3" id="text-1-4">
 <ul class="org-ul">
 <li>为了能够让load balancing和resilience工作,我们需要一个编排的框架,最终的胜利者就是Kubernetes</li>
@@ -547,8 +635,8 @@ machine的优势,但是又没有承担virtual machine的负担</li>
 </ul></li>
 </ul>
 </div>
-<div id="outline-container-org05054f2" class="outline-4">
-<h4 id="org05054f2"><span class="section-number-4">1.4.1.</span> Talking to the Kubernetes Cluster</h4>
+<div id="outline-container-orgf26d911" class="outline-4">
+<h4 id="orgf26d911"><span class="section-number-4">1.4.1.</span> Talking to the Kubernetes Cluster</h4>
 <div class="outline-text-4" id="text-1-4-1">
 <ul class="org-ul">
 <li>k8s cluster自己有一个API server让用户来来获取其状态,并且更改其配置.</li>
@@ -559,8 +647,8 @@ machine的优势,但是又没有承担virtual machine的负担</li>
 </p>
 <div class="org-src-container">
 <pre class="src src-shell">root@host01:/home/vagrant# k3s kubectl version
-Client Version: version.Info<span style="color: #268bd2;">{</span>Major:<span style="color: #2aa198;">"1"</span>, Minor:<span style="color: #2aa198;">"23"</span>, GitVersion:<span style="color: #2aa198;">"v1.23.4+k3s1"</span>, GitCommit:<span style="color: #2aa198;">"43b1cb48200d8f6af85c16ed944d68fcc96b6506"</span>, GitTreeState:<span style="color: #2aa198;">"clean"</span>, BuildDate:<span style="color: #2aa198;">"2022-02-24T22:38:17Z"</span>, GoVersion:<span style="color: #2aa198;">"go1.17.5"</span>, Compiler:<span style="color: #2aa198;">"gc"</span>, Platform:<span style="color: #2aa198;">"linux/amd64"</span><span style="color: #268bd2;">}</span>
-Server Version: version.Info<span style="color: #268bd2;">{</span>Major:<span style="color: #2aa198;">"1"</span>, Minor:<span style="color: #2aa198;">"23"</span>, GitVersion:<span style="color: #2aa198;">"v1.23.4+k3s1"</span>, GitCommit:<span style="color: #2aa198;">"43b1cb48200d8f6af85c16ed944d68fcc96b6506"</span>, GitTreeState:<span style="color: #2aa198;">"clean"</span>, BuildDate:<span style="color: #2aa198;">"2022-02-24T22:38:17Z"</span>, GoVersion:<span style="color: #2aa198;">"go1.17.5"</span>, Compiler:<span style="color: #2aa198;">"gc"</span>, Platform:<span style="color: #2aa198;">"linux/amd64"</span><span style="color: #268bd2;">}</span>
+Client Version: version.Info<span style="color: color-25;">{</span>Major:<span style="color: color-22;">"1"</span>, Minor:<span style="color: color-22;">"23"</span>, GitVersion:<span style="color: color-22;">"v1.23.4+k3s1"</span>, GitCommit:<span style="color: color-22;">"43b1cb48200d8f6af85c16ed944d68fcc96b6506"</span>, GitTreeState:<span style="color: color-22;">"clean"</span>, BuildDate:<span style="color: color-22;">"2022-02-24T22:38:17Z"</span>, GoVersion:<span style="color: color-22;">"go1.17.5"</span>, Compiler:<span style="color: color-22;">"gc"</span>, Platform:<span style="color: color-22;">"linux/amd64"</span><span style="color: color-25;">}</span>
+Server Version: version.Info<span style="color: color-25;">{</span>Major:<span style="color: color-22;">"1"</span>, Minor:<span style="color: color-22;">"23"</span>, GitVersion:<span style="color: color-22;">"v1.23.4+k3s1"</span>, GitCommit:<span style="color: color-22;">"43b1cb48200d8f6af85c16ed944d68fcc96b6506"</span>, GitTreeState:<span style="color: color-22;">"clean"</span>, BuildDate:<span style="color: color-22;">"2022-02-24T22:38:17Z"</span>, GoVersion:<span style="color: color-22;">"go1.17.5"</span>, Compiler:<span style="color: color-22;">"gc"</span>, Platform:<span style="color: color-22;">"linux/amd64"</span><span style="color: color-25;">}</span>
 root@host01:/home/vagrant# k3s kubectl get nodes
 NAME     STATUS   ROLES                  AGE    VERSION
 host01   Ready    control-plane,master   3d4h   v1.23.4+k3s1
@@ -572,8 +660,8 @@ host01   Ready    control-plane,master   3d4h   v1.23.4+k3s1
 </ul>
 </div>
 </div>
-<div id="outline-container-org9c0e046" class="outline-4">
-<h4 id="org9c0e046"><span class="section-number-4">1.4.2.</span> Application Overview</h4>
+<div id="outline-container-org69a355e" class="outline-4">
+<h4 id="org69a355e"><span class="section-number-4">1.4.2.</span> Application Overview</h4>
 <div class="outline-text-4" id="text-1-4-2">
 <ul class="org-ul">
 <li>我们的例子是一个todo list:
@@ -596,10 +684,10 @@ host01   Ready    control-plane,master   3d4h   v1.23.4+k3s1
 <div class="org-src-container">
 <pre class="src src-shell">root@host01:/home/vagrant# k3s kubectl get pods
 NAME                       READY   STATUS    RESTARTS      AGE
-todo-db-585649889f-8blkg   1/1     Running   2 <span style="color: #268bd2;">(</span>19h ago<span style="color: #268bd2;">)</span>   3d23h
-todo-6bd859fdd5-tstkt      1/1     Running   2 <span style="color: #268bd2;">(</span>19h ago<span style="color: #268bd2;">)</span>   3d23h
-todo-6bd859fdd5-dlbmx      1/1     Running   2 <span style="color: #268bd2;">(</span>19h ago<span style="color: #268bd2;">)</span>   3d23h
-todo-6bd859fdd5-92bm8      1/1     Running   3 <span style="color: #268bd2;">(</span>19h ago<span style="color: #268bd2;">)</span>   3d23h
+todo-db-585649889f-8blkg   1/1     Running   2 <span style="color: color-25;">(</span>19h ago<span style="color: color-25;">)</span>   3d23h
+todo-6bd859fdd5-tstkt      1/1     Running   2 <span style="color: color-25;">(</span>19h ago<span style="color: color-25;">)</span>   3d23h
+todo-6bd859fdd5-dlbmx      1/1     Running   2 <span style="color: color-25;">(</span>19h ago<span style="color: color-25;">)</span>   3d23h
+todo-6bd859fdd5-92bm8      1/1     Running   3 <span style="color: color-25;">(</span>19h ago<span style="color: color-25;">)</span>   3d23h
 </pre>
 </div></li>
 <li>todo-db开头的,是PostgreSQL</li>
@@ -609,8 +697,8 @@ todo-6bd859fdd5-92bm8      1/1     Running   3 <span style="color: #268bd2;">(</
 </ul>
 </div>
 </div>
-<div id="outline-container-org25346e3" class="outline-4">
-<h4 id="org25346e3"><span class="section-number-4">1.4.3.</span> Kubernetes Features</h4>
+<div id="outline-container-org085b86a" class="outline-4">
+<h4 id="org085b86a"><span class="section-number-4">1.4.3.</span> Kubernetes Features</h4>
 <div class="outline-text-4" id="text-1-4-3">
 <ul class="org-ul">
 <li>如果仅仅是运行四个container,那么我们完全可以使用docker run,但是k8s的功能不仅于此</li>
@@ -622,17 +710,17 @@ todo-6bd859fdd5-92bm8      1/1     Running   3 <span style="color: #268bd2;">(</
 <div class="org-src-container">
 <pre class="src src-shell">root@host01:/home/vagrant# k3s kubectl get pods
 NAME                       READY   STATUS    RESTARTS      AGE
-todo-db-585649889f-8blkg   1/1     Running   2 <span style="color: #268bd2;">(</span>19h ago<span style="color: #268bd2;">)</span>   3d23h
-todo-6bd859fdd5-tstkt      1/1     Running   2 <span style="color: #268bd2;">(</span>19h ago<span style="color: #268bd2;">)</span>   3d23h
-todo-6bd859fdd5-dlbmx      1/1     Running   2 <span style="color: #268bd2;">(</span>19h ago<span style="color: #268bd2;">)</span>   3d23h
-todo-6bd859fdd5-92bm8      1/1     Running   3 <span style="color: #268bd2;">(</span>19h ago<span style="color: #268bd2;">)</span>   3d23h
+todo-db-585649889f-8blkg   1/1     Running   2 <span style="color: color-25;">(</span>19h ago<span style="color: color-25;">)</span>   3d23h
+todo-6bd859fdd5-tstkt      1/1     Running   2 <span style="color: color-25;">(</span>19h ago<span style="color: color-25;">)</span>   3d23h
+todo-6bd859fdd5-dlbmx      1/1     Running   2 <span style="color: color-25;">(</span>19h ago<span style="color: color-25;">)</span>   3d23h
+todo-6bd859fdd5-92bm8      1/1     Running   3 <span style="color: color-25;">(</span>19h ago<span style="color: color-25;">)</span>   3d23h
 root@host01:/home/vagrant# k3s kubectl delete pod todo-6bd859fdd5-tstkt
-pod <span style="color: #2aa198;">"todo-6bd859fdd5-tstkt"</span> deleted
+pod <span style="color: color-22;">"todo-6bd859fdd5-tstkt"</span> deleted
 root@host01:/home/vagrant# k3s kubectl get pods
 NAME                       READY   STATUS    RESTARTS      AGE
-todo-db-585649889f-8blkg   1/1     Running   2 <span style="color: #268bd2;">(</span>20h ago<span style="color: #268bd2;">)</span>   4d
-todo-6bd859fdd5-dlbmx      1/1     Running   2 <span style="color: #268bd2;">(</span>20h ago<span style="color: #268bd2;">)</span>   4d
-todo-6bd859fdd5-92bm8      1/1     Running   3 <span style="color: #268bd2;">(</span>20h ago<span style="color: #268bd2;">)</span>   4d
+todo-db-585649889f-8blkg   1/1     Running   2 <span style="color: color-25;">(</span>20h ago<span style="color: color-25;">)</span>   4d
+todo-6bd859fdd5-dlbmx      1/1     Running   2 <span style="color: color-25;">(</span>20h ago<span style="color: color-25;">)</span>   4d
+todo-6bd859fdd5-92bm8      1/1     Running   3 <span style="color: color-25;">(</span>20h ago<span style="color: color-25;">)</span>   4d
 todo-6bd859fdd5-zlzkk      1/1     Running   0             16s
 </pre>
 </div></li>
@@ -646,17 +734,17 @@ todo-6bd859fdd5-zlzkk      1/1     Running   0             16s
 <div class="org-src-container">
 <pre class="src src-shell">root@host01:/home/vagrant# k3s kubectl get pods
 NAME                       READY   STATUS    RESTARTS      AGE
-todo-db-585649889f-8blkg   1/1     Running   2 <span style="color: #268bd2;">(</span>20h ago<span style="color: #268bd2;">)</span>   4d
-todo-6bd859fdd5-dlbmx      1/1     Running   2 <span style="color: #268bd2;">(</span>20h ago<span style="color: #268bd2;">)</span>   4d
-todo-6bd859fdd5-92bm8      1/1     Running   3 <span style="color: #268bd2;">(</span>20h ago<span style="color: #268bd2;">)</span>   4d
+todo-db-585649889f-8blkg   1/1     Running   2 <span style="color: color-25;">(</span>20h ago<span style="color: color-25;">)</span>   4d
+todo-6bd859fdd5-dlbmx      1/1     Running   2 <span style="color: color-25;">(</span>20h ago<span style="color: color-25;">)</span>   4d
+todo-6bd859fdd5-92bm8      1/1     Running   3 <span style="color: color-25;">(</span>20h ago<span style="color: color-25;">)</span>   4d
 todo-6bd859fdd5-zlzkk      1/1     Running   0             9m30s
 root@host01:/home/vagrant# k3s kubectl scale --replicas=5 deployment todo
 deployment.apps/todo scaled
 root@host01:/home/vagrant# k3s kubectl get pods
 NAME                       READY   STATUS    RESTARTS      AGE
-todo-db-585649889f-8blkg   1/1     Running   2 <span style="color: #268bd2;">(</span>20h ago<span style="color: #268bd2;">)</span>   4d
-todo-6bd859fdd5-dlbmx      1/1     Running   2 <span style="color: #268bd2;">(</span>20h ago<span style="color: #268bd2;">)</span>   4d
-todo-6bd859fdd5-92bm8      1/1     Running   3 <span style="color: #268bd2;">(</span>20h ago<span style="color: #268bd2;">)</span>   4d
+todo-db-585649889f-8blkg   1/1     Running   2 <span style="color: color-25;">(</span>20h ago<span style="color: color-25;">)</span>   4d
+todo-6bd859fdd5-dlbmx      1/1     Running   2 <span style="color: color-25;">(</span>20h ago<span style="color: color-25;">)</span>   4d
+todo-6bd859fdd5-92bm8      1/1     Running   3 <span style="color: color-25;">(</span>20h ago<span style="color: color-25;">)</span>   4d
 todo-6bd859fdd5-zlzkk      1/1     Running   0             9m42s
 todo-6bd859fdd5-ctmjc      1/1     Running   0             5s
 todo-6bd859fdd5-b2mt8      1/1     Running   0             4s
@@ -675,9 +763,9 @@ todo-6bd859fdd5-b2mt8      1/1     Running   0             4s
 <pre class="src src-shell">root@host01:/home/vagrant# k3s kubectl describe service todo
 Name:              todo
 Namespace:         default
-Labels:            <span style="color: #268bd2;">app</span>=todo
+Labels:            <span style="color: color-30;">app</span>=todo
 Annotations:       &lt;none&gt;
-Selector:          <span style="color: #268bd2;">app</span>=todo
+Selector:          <span style="color: color-30;">app</span>=todo
 Type:              ClusterIP
 IP Family Policy:  SingleStack
 IP Families:       IPv4
@@ -696,8 +784,8 @@ Events:            &lt;none&gt;
 </div>
 </div>
 </div>
-<div id="outline-container-org6b4df3b" class="outline-2">
-<h2 id="org6b4df3b"><span class="section-number-2">2.</span> Process Isolation</h2>
+<div id="outline-container-org6a76ce9" class="outline-2">
+<h2 id="org6a76ce9"><span class="section-number-2">2.</span> Process Isolation</h2>
 <div class="outline-text-2" id="text-2">
 <ul class="org-ul">
 <li>Container使用了Linux Kernel的基础功能,也就是namespace</li>
@@ -710,16 +798,16 @@ Events:            &lt;none&gt;
 </ul></li>
 </ul>
 </div>
-<div id="outline-container-org395fd63" class="outline-3">
-<h3 id="org395fd63"><span class="section-number-3">2.1.</span> Understanding Isolation</h3>
+<div id="outline-container-orgc0efd1d" class="outline-3">
+<h3 id="orgc0efd1d"><span class="section-number-3">2.1.</span> Understanding Isolation</h3>
 <div class="outline-text-3" id="text-2-1">
 <ul class="org-ul">
 <li>我们首先来看看process isolation的动机,为此我们先看看传统的process isolation,并且看看是什么导致了
 container使用的isolation功能</li>
 </ul>
 </div>
-<div id="outline-container-orga6158d4" class="outline-4">
-<h4 id="orga6158d4"><span class="section-number-4">2.1.1.</span> Why Process Need Isolation</h4>
+<div id="outline-container-org5231eee" class="outline-4">
+<h4 id="org5231eee"><span class="section-number-4">2.1.1.</span> Why Process Need Isolation</h4>
 <div class="outline-text-4" id="text-2-1-1">
 <ul class="org-ul">
 <li>计算机的整体概念就是能够同时运行很多种的任务</li>
@@ -743,7 +831,7 @@ container使用的isolation功能</li>
 <li><p>
 最佳解决方案就是process还是老的proces,但是使用process isolation技术来减小对其他process的支持
 </p>
-<pre class="example" id="org9c5f94a">
+<pre class="example" id="orgb81a573">
 The solution is to run regular processes, but use process isolation
 to reduce the risk of affecting other processes.
 </pre></li>
@@ -751,8 +839,8 @@ to reduce the risk of affecting other processes.
 </ul>
 </div>
 </div>
-<div id="outline-container-orgf1589fe" class="outline-4">
-<h4 id="orgf1589fe"><span class="section-number-4">2.1.2.</span> File Permissions and Change Root</h4>
+<div id="outline-container-orgf6a3dd8" class="outline-4">
+<h4 id="orgf6a3dd8"><span class="section-number-4">2.1.2.</span> File Permissions and Change Root</h4>
 <div class="outline-text-4" id="text-2-1-2">
 <ul class="org-ul">
 <li>process isolation的最大的诉求,就是阻止某个process看到他不该看到的东西.因为一旦process连看都看
@@ -761,7 +849,7 @@ to reduce the risk of affecting other processes.
 <ul class="org-ul">
 <li>visibility control最重要的是filesystem permission: linux有owner和group的概念,并且能够控制两
 者的读,写,运行.这套机制有效的防止process看到不该看的文件</li>
-<li>这套系统的问题在于,每个process都药运行在拥有必要的权限的用户之下,并且用户要在恰当的group:为了
+<li>这套系统的问题在于,每个process都要运行在拥有必要的权限的用户之下,并且用户要在恰当的group:为了
 做到这一点,在linux里面通常是每个服务(比如supervisor)定义一个自己的用户和组(通常是supervisor用
 户,supervisor组), 而且通常不给这个用户(supervisor用户)任何的login shell,防止其他人利用这个账
 号登录后,做坏事情</li>
@@ -815,7 +903,7 @@ drwxrwxr-x 8 root syslog 4096 Dec  6 12:26 .
 vagrant@host01:/var/log$ ls -ald private
 drwx------ 2 root root 4096 Dec  3 12:32 private
 vagrant@host01:/var/log$ ls -al private
-ls: cannot open directory <span style="color: #2aa198;">'private'</span>: Permission denied
+ls: cannot open directory <span style="color: color-22;">'private'</span>: Permission denied
 vagrant@host01:/var/log$ cd private
 bash: cd: private: Permission denied
 </pre>
@@ -853,7 +941,7 @@ root@host01:~# cp --parents /bin/bash /bin/ls /tmp/newroot
 只拷贝二进制是不能运行的,还需要拷贝二进制所依赖的动态链接库,代码如下
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">root@host01:~# ldd /bin/bash /bin/ls | grep <span style="color: #2aa198;">'=&gt;'</span> | awk <span style="color: #2aa198;">'{print $3}'</span>
+<pre class="src src-shell">root@host01:~# ldd /bin/bash /bin/ls | grep <span style="color: color-22;">'=&gt;'</span> | awk <span style="color: color-22;">'{print $3}'</span>
 /lib/x86_64-linux-gnu/libtinfo.so.6
 /lib/x86_64-linux-gnu/libdl.so.2
 /lib/x86_64-linux-gnu/libc.so.6
@@ -862,9 +950,9 @@ root@host01:~# cp --parents /bin/bash /bin/ls /tmp/newroot
 /lib/x86_64-linux-gnu/libpcre2-8.so.0
 /lib/x86_64-linux-gnu/libdl.so.2
 /lib/x86_64-linux-gnu/libpthread.so.0
-root@host01:~# cp --parents /lib64/ld-linux-x86-64.so.2 $<span style="color: #268bd2;">(</span><span style="color: #268bd2; font-weight: bold;">ldd /bin/bash /bin/ls | grep '=&gt;' | awk '{print $3}'</span><span style="color: #268bd2;">)</span> /tmp/newroot
-cp: warning: source file <span style="color: #2aa198;">'/lib/x86_64-linux-gnu/libc.so.6'</span> specified more than once
-cp: warning: source file <span style="color: #2aa198;">'/lib/x86_64-linux-gnu/libdl.so.2'</span> specified more than once
+root@host01:~# cp --parents /lib64/ld-linux-x86-64.so.2 $<span style="color: color-25;">(</span><span style="color: color-25; font-weight: bold;">ldd /bin/bash /bin/ls | grep '=&gt;' | awk '{print $3}'</span><span style="color: color-25;">)</span> /tmp/newroot
+cp: warning: source file <span style="color: color-22;">'/lib/x86_64-linux-gnu/libc.so.6'</span> specified more than once
+cp: warning: source file <span style="color: color-22;">'/lib/x86_64-linux-gnu/libdl.so.2'</span> specified more than once
 </pre>
 </div></li>
 <li><p>
@@ -904,8 +992,8 @@ total 1296
 </ul>
 </div>
 </div>
-<div id="outline-container-orged81c4e" class="outline-4">
-<h4 id="orged81c4e"><span class="section-number-4">2.1.3.</span> Container Isolation</h4>
+<div id="outline-container-org3daa324" class="outline-4">
+<h4 id="org3daa324"><span class="section-number-4">2.1.3.</span> Container Isolation</h4>
 <div class="outline-text-4" id="text-2-1-3">
 <ul class="org-ul">
 <li>虽然一个运行的container拥有如下的配置,但是它其实只不过是一个常规的linux process,运行在isolation
@@ -930,8 +1018,8 @@ total 1296
 </div>
 </div>
 </div>
-<div id="outline-container-org3c66d0f" class="outline-3">
-<h3 id="org3c66d0f"><span class="section-number-3">2.2.</span> Container Platforms and Container Runtimes</h3>
+<div id="outline-container-org7018a69" class="outline-3">
+<h3 id="org7018a69"><span class="section-number-3">2.2.</span> Container Platforms and Container Runtimes</h3>
 <div class="outline-text-3" id="text-2-2">
 <ul class="org-ul">
 <li>如果每次我们自己像上面一样处理需要的二进制,library文件等等,那么整个工作就会非常的繁琐,幸运的是
@@ -950,8 +1038,8 @@ total 1296
 <li>为了让我们有更加直观的理解,我们会使用两种container runtime来启动container</li>
 </ul>
 </div>
-<div id="outline-container-orgc3553d4" class="outline-4">
-<h4 id="orgc3553d4"><span class="section-number-4">2.2.1.</span> Installing containerd</h4>
+<div id="outline-container-org60d6e58" class="outline-4">
+<h4 id="org60d6e58"><span class="section-number-4">2.2.1.</span> Installing containerd</h4>
 <div class="outline-text-4" id="text-2-2-1">
 <ul class="org-ul">
 <li><p>
@@ -971,8 +1059,8 @@ REF TYPE DIGEST SIZE PLATFORMS LABELS
 </ul>
 </div>
 </div>
-<div id="outline-container-orgac2a8b0" class="outline-4">
-<h4 id="orgac2a8b0"><span class="section-number-4">2.2.2.</span> Using containerd</h4>
+<div id="outline-container-org1b5f122" class="outline-4">
+<h4 id="org1b5f122"><span class="section-number-4">2.2.2.</span> Using containerd</h4>
 <div class="outline-text-4" id="text-2-2-2">
 <ul class="org-ul">
 <li><p>
@@ -986,9 +1074,9 @@ index-sha256:3b3128d9df6bbbcc92e2358e596c9fbd722a437a62bafbc51607970e9e3b8869:  
 manifest-sha256:d345780059f4b200c1ebfbcfb141c67212e1ad4ea7538dcff759895bfcf99e6e: done           |++++++++++++++++++++++++++++++++++++++|
 layer-sha256:45a0cdc5c8d3d10ce3d26eec586f3c1f770f373d604c268343518f27d59dc2fb:    done           |++++++++++++++++++++++++++++++++++++++|
 config-sha256:334e4a014c81bd4050daa78c7dfd2ae87855e9052721c164ea9d9d9a416ebdd3:   done           |++++++++++++++++++++++++++++++++++++++|
-elapsed: 9.0 s                                                                    total:   0.0 B <span style="color: #268bd2;">(</span>0.0 B/s<span style="color: #268bd2;">)</span>
+elapsed: 9.0 s                                                                    total:   0.0 B <span style="color: color-25;">(</span>0.0 B/s<span style="color: color-25;">)</span>
 unpacking linux/amd64 sha256:3b3128d9df6bbbcc92e2358e596c9fbd722a437a62bafbc51607970e9e3b8869...
-<span style="color: #859900; font-weight: bold;">done</span>: 6.719451ms
+<span style="color: color-160;">done</span>: 6.719451ms
 root@host01:~# ctr images ls
 REF                              TYPE                                                      DIGEST                                                                  SIZE    PLATFORMS                                                                                                                          LABELS
 docker.io/library/busybox:latest application/vnd.docker.distribution.manifest.list.v2+json sha256:3b3128d9df6bbbcc92e2358e596c9fbd722a437a62bafbc51607970e9e3b8869 2.5 MiB linux/386,linux/amd64,linux/arm/v5,linux/arm/v6,linux/arm/v7,linux/arm64/v8,linux/mips64le,linux/ppc64le,linux/riscv64,linux/s390x -
@@ -999,7 +1087,7 @@ docker.io/library/busybox:latest application/vnd.docker.distribution.manifest.li
 </p>
 <div class="org-src-container">
 <pre class="src src-shell">root@host01:~# ctr run -t --rm  docker.io/library/busybox:latest v1
-/ <span style="color: #96A7A9; font-style: italic;">#</span>
+/ <span style="color: color-239; font-style: italic;">#</span>
 </pre>
 </div></li>
 <li>我们看看这个container,由于process和network的isolation,我们已经可以不让host system的其他process发现他们了
@@ -1008,7 +1096,7 @@ docker.io/library/busybox:latest application/vnd.docker.distribution.manifest.li
 ctr创建的container拥有isolated process space
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">/ <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">ps -ef</span>
+<pre class="src src-shell">/ <span style="color: color-239; font-style: italic;"># </span><span style="color: color-239; font-style: italic;">ps -ef</span>
 ps -ef
 PID   USER     TIME  COMMAND
     1 root      0:00 sh
@@ -1019,7 +1107,7 @@ PID   USER     TIME  COMMAND
 ctr创建的container拥有isolated network,并且只有一个loopback interface.
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">/ <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">ip a</span>
+<pre class="src src-shell">/ <span style="color: color-239; font-style: italic;"># </span><span style="color: color-239; font-style: italic;">ip a</span>
 ip a
 1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue qlen 1000
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
@@ -1036,8 +1124,8 @@ to a bridge. 能够attached to a bridge 是非常重要的,因为这意味着con
 </ul>
 </div>
 </div>
-<div id="outline-container-org2b1959e" class="outline-4">
-<h4 id="org2b1959e"><span class="section-number-4">2.2.3.</span> Introducing Linux Namespaces</h4>
+<div id="outline-container-org9abcb67" class="outline-4">
+<h4 id="org9abcb67"><span class="section-number-4">2.2.3.</span> Introducing Linux Namespaces</h4>
 <div class="outline-text-4" id="text-2-2-3">
 <ul class="org-ul">
 <li>所有的container runtime都会使用Linux内核的特性叫做namespace 来隔离container里面的process</li>
@@ -1090,8 +1178,8 @@ root       85409   85385  0 11:38 pts/0    00:00:00 sh
 </ul>
 </div>
 </div>
-<div id="outline-container-orgf2f951a" class="outline-4">
-<h4 id="orgf2f951a"><span class="section-number-4">2.2.4.</span> Containers and Namespaces in CRI-O</h4>
+<div id="outline-container-orgb8bbb4b" class="outline-4">
+<h4 id="orgb8bbb4b"><span class="section-number-4">2.2.4.</span> Containers and Namespaces in CRI-O</h4>
 <div class="outline-text-4" id="text-2-2-4">
 <ul class="org-ul">
 <li>除了containerd以外, kubernetes还支持其他的container runtime</li>
@@ -1121,14 +1209,14 @@ timeout: 10
 </p>
 <div class="org-src-container">
 <pre class="src src-yaml">root@host01:~# cat /opt/pod.yaml
-<span style="color: #96A7A9; font-style: italic;">---</span>
-<span style="color: #268bd2;">metadata</span>:
-  <span style="color: #268bd2;">name</span>: busybox
-  <span style="color: #268bd2;">namespace</span>: crio
-<span style="color: #268bd2;">linux</span>:
-  <span style="color: #268bd2;">security_context</span>:
-    <span style="color: #268bd2;">namespace_options</span>:
-      <span style="color: #268bd2;">network</span>: 2
+<span style="color: color-239; font-style: italic;">---</span>
+<span style="color: color-30;">metadata</span>:
+  <span style="color: color-30;">name</span>: busybox
+  <span style="color: color-30;">namespace</span>: crio
+<span style="color: color-30;">linux</span>:
+  <span style="color: color-30;">security_context</span>:
+    <span style="color: color-30;">namespace_options</span>:
+      <span style="color: color-30;">network</span>: 2
 </pre>
 </div></li>
 <li><p>
@@ -1142,8 +1230,8 @@ metadata:
 image:
   image: docker.io/library/busybox:latest
 args:
-  - <span style="color: #2aa198;">"/bin/sleep"</span>
-  - <span style="color: #2aa198;">"36000"</span>
+  - <span style="color: color-22;">"/bin/sleep"</span>
+  - <span style="color: color-22;">"36000"</span>
 </pre>
 </div></li>
 </ul></li>
@@ -1154,12 +1242,12 @@ args:
 <pre class="src src-shell">root@host01:~# crictl pull docker.io/library/busybox:latest
 Image is up to date for docker.io/library/busybox@sha256:3b3128d9df6bbbcc92e2358e596c9fbd722a437a62bafbc51607970e9e3b8869
 root@host01:~# cd /opt
-root@host01:/opt# <span style="color: #268bd2;">POD_ID</span>=$<span style="color: #268bd2;">(</span><span style="color: #268bd2; font-weight: bold;">crictl runp pod.yaml</span><span style="color: #268bd2;">)</span>
+root@host01:/opt# <span style="color: color-30;">POD_ID</span>=$<span style="color: color-25;">(</span><span style="color: color-25; font-weight: bold;">crictl runp pod.yaml</span><span style="color: color-25;">)</span>
 root@host01:/opt# crictl pods
 POD ID              CREATED             STATE               NAME                NAMESPACE           ATTEMPT             RUNTIME
-e1f87e86b4b8b       3 seconds ago       Ready               busybox             crio                0                   <span style="color: #268bd2;">(</span>default<span style="color: #268bd2;">)</span>
-root@host01:/opt# <span style="color: #268bd2;">CONTAINER_ID</span>=$<span style="color: #268bd2;">(</span><span style="color: #268bd2; font-weight: bold;">crictl create $POD_ID container.yaml pod.yaml</span><span style="color: #268bd2;">)</span>
-root@host01:/opt# crictl start $<span style="color: #268bd2;">CONTAINER_ID</span>
+e1f87e86b4b8b       3 seconds ago       Ready               busybox             crio                0                   <span style="color: color-25;">(</span>default<span style="color: color-25;">)</span>
+root@host01:/opt# <span style="color: color-30;">CONTAINER_ID</span>=$<span style="color: color-25;">(</span><span style="color: color-25; font-weight: bold;">crictl create $POD_ID container.yaml pod.yaml</span><span style="color: color-25;">)</span>
+root@host01:/opt# crictl start $<span style="color: color-30;">CONTAINER_ID</span>
 5944fe3b7e8d34f028c38266ba31ad6582ee7ba9608a1331b39f1eb8092a53a3
 root@host01:/opt# crictl ps
 CONTAINER           IMAGE                              CREATED             STATE               NAME                ATTEMPT             POD ID
@@ -1172,8 +1260,8 @@ CONTAINER           IMAGE                              CREATED             STATE
 代码如下
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">root@host01:/opt# crictl exec -ti  $<span style="color: #268bd2;">CONTAINER_ID</span> /bin/sh
-/ <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">ip a</span>
+<pre class="src src-shell">root@host01:/opt# crictl exec -ti  $<span style="color: color-30;">CONTAINER_ID</span> /bin/sh
+/ <span style="color: color-239; font-style: italic;"># </span><span style="color: color-239; font-style: italic;">ip a</span>
 ip a
 1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue qlen 1000
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
@@ -1193,14 +1281,14 @@ ip a
        valid_lft forever preferred_lft forever
     inet6 fe80::a00:27ff:fee6:b582/64 scope link
        valid_lft forever preferred_lft forever
-/ <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">ps -ef</span>
+/ <span style="color: color-239; font-style: italic;"># </span><span style="color: color-239; font-style: italic;">ps -ef</span>
 ps -ef
 PID   USER     TIME  COMMAND
     1 root      0:00 /pause
     7 root      0:00 /bin/sleep 36000
    12 root      0:00 /bin/sh
    20 root      0:00 ps -ef
-/ <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">exit</span>
+/ <span style="color: color-239; font-style: italic;"># </span><span style="color: color-239; font-style: italic;">exit</span>
 </pre>
 </div></li>
 <li>和containerd不同的地方有:
@@ -1214,11 +1302,2640 @@ PID   USER     TIME  COMMAND
 </div>
 </div>
 </div>
+<div id="outline-container-org79aee1f" class="outline-3">
+<h3 id="org79aee1f"><span class="section-number-3">2.3.</span> Running Processes in Namespaces Directly</h3>
+<div class="outline-text-3" id="text-2-3">
+<ul class="org-ul">
+<li>在容器里面运行的最主要困难工作在于让PID为1的process能够履行其责任</li>
+<li>为了能够理解这一点,我们不让我们的container runtime为我们创建namespace,而是使用command line来让Linux
+kernel把我们的process运行在一个namespace里面(container runtime也是同样的做法,只不过它使用API,而
+不是命令行)</li>
+<li>我们使用unshare来创建namespace,并且运行进程:
+<ul class="org-ul">
+<li><p>
+在terminal1运行如下命令
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:~# unshare -f -p --mount-proc -- /bin/sh -c /bin/bash
+</pre>
+</div></li>
+<li>-p 表示我们要创建新的PID namespace</li>
+<li>&#x2013;mount-proc,告诉我们要添加新的mount namespace,并且保证/proc能够正确使用</li>
+</ul></li>
+<li>运行完unshare之后,我们的terminal1就进入了这个新的namespace里面
+<ul class="org-ul">
+<li><p>
+我们可以通过运行ps -ef来看下当前的情形
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:~# ps -ef
+UID          PID    PPID  C STIME TTY          TIME CMD
+root           1       0  0 11:53 pts/2    00:00:00 /bin/sh -c /bin/bash
+root           2       1  0 11:53 pts/2    00:00:00 /bin/bash
+root           9       2  0 11:53 pts/2    00:00:00 ps -ef
+</pre>
+</div></li>
+<li>可以发现,只有三个进程,说明是在namespace里面</li>
+</ul></li>
+<li><p>
+我们还可以再terminal1里面看看我们的/proc信息,查找自己的pid,并且加上-l参数,可以看到我们的namespace
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:~# ls -l /proc/self/ns/pid
+lrwxrwxrwx 1 root root 0 Apr 12 11:54 /proc/self/ns/pid -&gt; <span style="color: color-22;">'pid:[4026532190]'</span>
+</pre>
+</div></li>
+<li>这个时候,我们另外开一个terminal2, 在里面运行lsns列举所有的namespace
+<ul class="org-ul">
+<li><p>
+代码如下
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:~# lsns
+        NS TYPE   NPROCS   PID USER            COMMAND
+4026531835 cgroup    120     1 root            /sbin/init
+4026531836 pid       118     1 root            /sbin/init
+4026531837 user      120     1 root            /sbin/init
+4026531838 uts       118     1 root            /sbin/init
+4026531839 ipc       120     1 root            /sbin/init
+4026531840 mnt       110     1 root            /sbin/init
+4026531860 mnt         1    22 root            kdevtmpfs
+4026531992 net       120     1 root            /sbin/init
+4026532173 mnt         1   386 root            /lib/systemd/systemd-udevd
+4026532174 uts         1   386 root            /lib/systemd/systemd-udevd
+4026532176 mnt         1  1867 systemd-network /lib/systemd/systemd-networkd
+4026532186 mnt         1   603 systemd-resolve /lib/systemd/systemd-resolved
+4026532187 mnt         1   766 root            /usr/sbin/ModemManager
+4026532189 mnt         3 14035 root            unshare -f -p --mount-proc -- /bin/sh
+4026532190 pid         2 14036 root            /bin/sh -c /bin/bash
+4026532243 mnt         1   701 root            /usr/sbin/irqbalance --foreground
+4026532244 mnt         1   713 root            /lib/systemd/systemd-logind
+4026532245 uts         1   713 root            /lib/systemd/systemd-logind
+</pre>
+</div></li>
+<li>我们可以发现,如下两个就是我们自己创建的namespace:
+<ol class="org-ol">
+<li><p>
+mnt namespace, 保证我们的shell能够看到正确的/proc(只看到自己和自己的child,不能看到host信息)
+</p>
+<pre class="example" id="org6bc4b17">
+4026532189 mnt         3 14035 root            unshare -f -p --mount-proc -- /bin/sh
+</pre></li>
+<li><p>
+pid namespace
+</p>
+<pre class="example" id="orgd40cd17">
+4026532190 pid         2 14036 root            /bin/sh -c /bin/bash
+</pre></li>
+</ol></li>
+</ul></li>
+<li>上面的例子我们看到pid namespace的拥有者是sh command,而且其id为1,那么就意味着sh有责任管理好它所有
+的child process.</li>
+<li><p>
+我们在terminal2里面杀掉我们找到的sh的process
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:~# kill -9 14036
+</pre>
+</div></li>
+<li><p>
+在terminal1里面会得到如下的输出,证明我们的bash接到了kill的signal
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:~# Killed
+</pre>
+</div></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org598c015" class="outline-2">
+<h2 id="org598c015"><span class="section-number-2">3.</span> Chapter 3: Resource Limiting</h2>
+<div class="outline-text-2" id="text-3">
+<ul class="org-ul">
+<li>在前面一章做的process isolation非常重要,因为这样一来,process无法对它都看不到的其他process"作恶"</li>
+<li>本章要继续解决的问题是,process还是能看到全量的如下资源.我们要想办法控制,或者让它只看到"适量",而
+不是"全量"(因为一旦process看到全量的资源,可能会恶意使用资源让其他process无法获取足够运行的资源)
+<ul class="org-ul">
+<li>cpu</li>
+<li>memory</li>
+<li>network</li>
+</ul></li>
+<li>其实除了上面的三个资源还有一个共享的资源也很重要,那就是storage.不过k8s这种平台,storage是分布式的,
+资源是某个集群共享固定容量.和上面三个资源是host上面的容器共享不一样.</li>
+</ul>
+</div>
+<div id="outline-container-org124a505" class="outline-3">
+<h3 id="org124a505"><span class="section-number-3">3.1.</span> CPU Priorities</h3>
+<div class="outline-text-3" id="text-3-1">
+<ul class="org-ul">
+<li>为了理解CPU limit,我们首先要理解Linux kernel如何决定哪个process运行,以及哪个process运行多长的时间:
+<ul class="org-ul">
+<li>在Linux内核里面有个部分叫scheduler</li>
+<li>scheduler会维护几个列表:
+<ol class="org-ol">
+<li>一个列表是所有的process</li>
+<li>还有列表是所有准备好运行的process</li>
+</ol></li>
+<li>scheduler还会记录每个process最近都使用了多少cpu time</li>
+<li>scheduler的结构,让它很容易创建一个优先队列来决定哪个process先运行</li>
+<li>scheduler的设计原则就是尽可能的让所有的process都有机会运行,同时scheduler也接受来自外界的输入,
+以便决定哪些process的优先级更高</li>
+</ul></li>
+</ul>
+</div>
+<div id="outline-container-org8be0e73" class="outline-4">
+<h4 id="org8be0e73"><span class="section-number-4">3.1.1.</span> Real-Time and Non-Real-Time Policies</h4>
+<div class="outline-text-4" id="text-3-1-1">
+<ul class="org-ul">
+<li>scheduler支持很多种的policy,我们可以简单的分成两种:
+<ul class="org-ul">
+<li>real-time policy</li>
+<li>non-real-time policy</li>
+</ul></li>
+<li>realtime意味着这个event对于process来说非常紧急,并且设置了处理的deadline,process必须在deadline
+之前处理完毕,否则就会发生问题.比如:
+<ul class="org-ul">
+<li>我们要从嵌入式设备读取数据,嵌入式设备里面的硬件buffer会在某个时间点之后overflow,那么这个时间
+点就是deadline,我们必须要在这个deadline之前处理完毕</li>
+</ul></li>
+<li>换句话说real-time process当需要cpu的时候,必须马上给它.</li>
+<li>为了满足real-time process的需求,Linux要求任意real-time process的优先级高于non-real-time policy</li>
+<li>Linux的ps命令告诉我们某个process使用的特定的policy:
+<ul class="org-ul">
+<li><p>
+例子如下
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:~# ps -e -o pid,class,rtprio,ni,comm
+    PID CLS RTPRIO  NI COMMAND
+      1 TS       -   0 systemd
+      2 TS       -   0 kthreadd
+      ...
+      6 TS       - -20 kworker/0:0H-events_highpri
+      ...
+     12 FF      99   - migration/0
+     13 FF      50   - idle_inject/0
+      ...
+     86 FF      99   - watchdogd
+      ...
+    500 RR      99   - multipathd
+      ...
+   6534 TS       -   0 ps
+</pre>
+</div></li>
+<li>-e 参数等于-A,意思是读取所有的process</li>
+<li>-o 参数能让我们提供自定义信息输出这里我们就写了如下几个信息:
+<ul class="org-ul">
+<li>pid: 显示就是PID, 意思是进程的ID号</li>
+<li>class: 显示是CLS, 意思是调度策略分类:
+<ol class="org-ol">
+<li>绝大部分进程的CLS是TS(Time-Sharing), 这个是默认的,non-real-time policy, 比如我们的ps就是TS,systemd也是TS</li>
+<li>FIFO是(first in-first out)的缩写,这个是real-time policy的一种,比如watchdogd,这个是用来
+探测系统中出现了严重的问题,让kernel重启系统的服务</li>
+<li>RR是(round-robin)的缩写,这个也是real-time policy的一种,比如multipathd,这个是探测设备更改
+的,必须在其他process访问前配置好设备</li>
+</ol></li>
+<li>rtprio: 显示是RTPRIO,意思是real-time process的priority</li>
+<li>ni: 显示是NI(nice的缩写),意思是non-real-time process的nice的程度(越nice,优先级越低),这个值的区间是-20到19</li>
+<li>comm: 显示是COMMAND,就是运行这个进程的命令</li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org81e3a4f" class="outline-4">
+<h4 id="org81e3a4f"><span class="section-number-4">3.1.2.</span> Setting Process Priorities</h4>
+<div class="outline-text-4" id="text-3-1-2">
+<ul class="org-ul">
+<li>linux允许我们给process配置priority,我们下面来尝试使用priority来控制CPU使用:
+<ul class="org-ul">
+<li>我们使用了一个叫做stress的程序来尽可能的消耗cpu</li>
+<li>我们使用了CRI-O容器版本的stress</li>
+<li>我们没有进入容器,是在host上面进行各种测量</li>
+</ul></li>
+<li>为了让CRI-O能够运行,我们需要两个yaml文件:
+<ul class="org-ul">
+<li><p>
+pod的配置文件po-nolim.yaml
+</p>
+<div class="org-src-container">
+<pre class="src src-yaml"><span style="color: color-239; font-style: italic;">---</span>
+<span style="color: color-30;">metadata</span>:
+  <span style="color: color-30;">name</span>: stress
+  <span style="color: color-30;">namespace</span>: crio
+<span style="color: color-30;">linux</span>:
+  <span style="color: color-30;">security_context</span>:
+    <span style="color: color-30;">namespace_options</span>:
+      <span style="color: color-30;">network</span>: 2
+</pre>
+</div></li>
+<li><p>
+container的配置文件co-nolim.yaml
+</p>
+<div class="org-src-container">
+<pre class="src src-yaml"><span style="color: color-239; font-style: italic;">---</span>
+<span style="color: color-30;">metadata</span>:
+  <span style="color: color-30;">name</span>: stress
+<span style="color: color-30;">image</span>:
+  <span style="color: color-30;">image</span>: docker.io/bookofkubernetes/stress:stable
+<span style="color: color-30;">args</span>:
+  - <span style="color: color-22;">"--cpu"</span>
+  - <span style="color: color-22;">"1"</span>
+  - <span style="color: color-22;">"-v"</span>
+</pre>
+</div></li>
+</ul></li>
+<li>在host01上面已经安装了CRI-O,我们就可以按照下面的步骤先做实验,看看通过renice的方法,是否能控制cpu的使用
+<ul class="org-ul">
+<li><p>
+首先要启动容器,代码如下
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:~# crictl pull docker.io/bookofkubernetes/stress:stable
+Image is up to date for docker.io/bookofkubernetes/stress@sha256:0da7b65f89e2473df7845ea171a286501d710e0d5634c15a8ebe7e8ade2d2097
+root@host01:~# cd /opt
+root@host01:/opt# <span style="color: color-30;">PUL_ID</span>=$<span style="color: color-25;">(</span><span style="color: color-25; font-weight: bold;">crictl runp po-nolim.yaml</span><span style="color: color-25;">)</span>
+root@host01:/opt# <span style="color: color-30;">CUL_ID</span>=$<span style="color: color-25;">(</span><span style="color: color-25; font-weight: bold;">crictl create $PUL_ID co-nolim.yaml po-nolim.yaml</span><span style="color: color-25;">)</span>
+root@host01:/opt# crictl start $<span style="color: color-30;">CUL_ID</span>
+6431626fb14b1be38bdb716f5204945ea2d0837b16e163bf9196d427ef64967e
+root@host01:/opt# crictl ps
+CONTAINER           IMAGE                                      CREATED             STATE               NAME                ATTEMPT             POD ID
+6431626fb14b1       docker.io/bookofkubernetes/stress:stable   19 seconds ago      Running             stress              0                   4ceda49e3274f
+</pre>
+</div></li>
+<li><p>
+之后我们*不需要*进入容器,在host就能查看进程信息,下面命令的关键,是使用$(pgrep -d , stress)获取stress在host主机的pid, 注意这里有两个stress,因为它运行的时候fork了
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:/opt# top -b -n 1 -p $<span style="color: color-25;">(</span><span style="color: color-25; font-weight: bold;">pgrep -d , stress</span><span style="color: color-25;">)</span>
+top - 02:22:09 up 1 day,  2:16,  1 user,  load average: 0.53, 0.15, 0.05
+Tasks:   2 total,   1 running,   1 sleeping,   0 stopped,   0 zombie
+%Cpu<span style="color: color-25;">(</span>s<span style="color: color-25;">)</span>: 50.0 us,  0.0 sy,  0.0 ni, 50.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   1983.2 total,    127.7 free,    213.1 used,   1642.3 buff/cache
+MiB Swap:      0.0 total,      0.0 free,      0.0 used.   1595.1 avail Mem
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+ 105111 root      20   0   23148   3456   1816 R 100.0   0.2   0:48.50 stress-ng
+ 105080 root      20   0   23148   4316   4064 S   0.0   0.2   0:00.00 stress-ng
+</pre>
+</div></li>
+<li>我们看到没有任何优待的stress-ng的优先级(PR)为20, nice值(NI)为0, 它使用了100%的cpu</li>
+<li><p>
+我们实验一下给stress-ng调低优先级,其是否可能减少下cpu使用率
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:/opt# renice -n 19 -p $<span style="color: color-25;">(</span><span style="color: color-25; font-weight: bold;">pgrep -d ' ' stress</span><span style="color: color-25;">)</span>
+<span style="color: color-136;">105080</span> <span style="color: color-25;">(</span>process ID<span style="color: color-25;">)</span> old priority 0, new priority 19
+<span style="color: color-136;">105111</span> <span style="color: color-25;">(</span>process ID<span style="color: color-25;">)</span> old priority 0, new priority 19
+root@host01:/opt# top -b -n 1 -p $<span style="color: color-25;">(</span><span style="color: color-25; font-weight: bold;">pgrep -d , stress</span><span style="color: color-25;">)</span>
+top - 02:39:33 up 1 day,  2:34,  1 user,  load average: 1.03, 1.00, 0.73
+Tasks:   2 total,   1 running,   1 sleeping,   0 stopped,   0 zombie
+%Cpu<span style="color: color-25;">(</span>s<span style="color: color-25;">)</span>:  0.0 us,  0.0 sy, 48.3 ni, 51.7 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   1983.2 total,    132.0 free,    207.8 used,   1643.4 buff/cache
+MiB Swap:      0.0 total,      0.0 free,      0.0 used.   1610.7 avail Mem
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+ 105111 root      39  19   23148   3456   1816 R 100.0   0.2  18:11.87 stress-ng
+ 105080 root      39  19   23148   4316   4064 S   0.0   0.2   0:00.00 stress-ng
+</pre>
+</div></li>
+<li>我们可以看到nice值成功的改成了最低的19 (most nice),但是stress还是使用了100% cpu. 原因在于我
+们的优先级是一个相对概念,虽然stress的优先级低,但是在容器环境里面,只有它一个进程,所以它还是优
+先级最高的,还是会尽可能的吃掉能得到的cpu资源(单线程就是100%)</li>
+</ul></li>
+<li>上面的例子告诉我们,在容器里面使用优先级不能够控制进程对host主机cpu的消耗.这就导致这个技术没法
+用在容器调度环境里面.原因有二:
+<ul class="org-ul">
+<li>对于容器调度环境(k8s)来说,我不能以优先级来确定使用cpu的排序,因为一个host(甚至一个集群)上面有
+很多容器(也就有很多的进程),我们不可能统一的去协调(并且校准)这些容器(进程)的priority</li>
+<li>进程使用cpu的多少必须有一个客观可衡量的绝对值(而不是优先级这种相对值),否则我们不知道要把一个
+容器调度到哪个host上去.万一一个host上面的容器都是非常消耗cpu的,那么这多个容器相互抢占cpu,最终
+就会导致整个host变慢</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org76ec5fb" class="outline-3">
+<h3 id="org76ec5fb"><span class="section-number-3">3.2.</span> Linux Control Groups</h3>
+<div class="outline-text-3" id="text-3-2">
+<ul class="org-ul">
+<li>前面讲了linux的priority无法满足k8s的要求,所以势必要找到新的方法来精确控制进程使用的cpu比例.这个
+方法就是Linux Control Group</li>
+<li>Linux Control Group的设计,吸取了real-time process调度的经验:
+<ul class="org-ul">
+<li>对于real-time进程来说,即便它不是compute intensive的(绝大部分都不是compute intensive的,否则rt
+调度算法也没办法执行),但是只要它需要cpu的时候,它就必须得到</li>
+<li>为了保证所有的real-time 进程都能及时获得cpu,一个普遍的做法是为每个rt进程都预留一点cpu,所谓预留
+就是用到的时候给rt进程,不用的时候就空转(这时候我们就理解了为什么rt进程基本都不是compute intensive
+的,因为预留也不可能预留多)</li>
+</ul></li>
+<li>Linux Control Group就是把rt进程的cpu预留法应用到了non-rt进程上面,这样的话一个non-rt进程如果预留
+给它50%的cpu的情况下,即便没有其他竞争者,也无法使用全部cpu(最多只能用到50%)</li>
+<li>Linux Control Group不仅仅能控制cpu,其能控制如下三种资源.一旦一个进程在某个cgroup里面,那么linux
+内核会自动施加资源限制给这个进程(在cgroup里面的多个进程共享一套限制):
+<ul class="org-ul">
+<li>CPU</li>
+<li>Memory</li>
+<li>Block Device</li>
+</ul></li>
+<li>cgroup的创建是通过在特定位置(/sys/fs/cgroup)创建特定的文件,同时这些文件也包含了cgroup的配置信息</li>
+<li><p>
+我们进入到/sys/fs/cgroup会看到这个文件夹下面有很多子文件夹,每个子文件夹都是一个可以被限制的资源类型
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:~# ls -alF /sys/fs/cgroup
+total 0
+drwxr-xr-x 15 root root 380 Apr 27 08:29 ./
+drwxr-xr-x 10 root root   0 Apr 27 08:29 ../
+dr-xr-xr-x  5 root root   0 Apr 27 08:29 blkio/
+lrwxrwxrwx  1 root root  11 Apr 27 08:29 cpu -&gt; cpu,cpuacct/
+lrwxrwxrwx  1 root root  11 Apr 27 08:29 cpuacct -&gt; cpu,cpuacct/
+dr-xr-xr-x  5 root root   0 Apr 27 08:29 cpu,cpuacct/
+dr-xr-xr-x  3 root root   0 Apr 27 08:29 cpuset/
+dr-xr-xr-x  5 root root   0 Apr 27 08:29 devices/
+dr-xr-xr-x  4 root root   0 Apr 27 08:29 freezer/
+dr-xr-xr-x  3 root root   0 Apr 27 08:29 hugetlb/
+dr-xr-xr-x  5 root root   0 Apr 27 08:29 memory/
+lrwxrwxrwx  1 root root  16 Apr 27 08:29 net_cls -&gt; net_cls,net_prio/
+dr-xr-xr-x  3 root root   0 Apr 27 08:29 net_cls,net_prio/
+lrwxrwxrwx  1 root root  16 Apr 27 08:29 net_prio -&gt; net_cls,net_prio/
+dr-xr-xr-x  3 root root   0 Apr 27 08:29 perf_event/
+dr-xr-xr-x  5 root root   0 Apr 27 08:29 pids/
+dr-xr-xr-x  2 root root   0 Apr 27 08:29 rdma/
+dr-xr-xr-x  5 root root   0 Apr 27 08:29 systemd/
+dr-xr-xr-x  5 root root   0 Apr 27 08:29 unified/
+</pre>
+</div></li>
+<li>我们只关注cpu这一个文件夹:
+<ul class="org-ul">
+<li><p>
+我们可以看到这个文件夹里面有很多文件和文件夹,其中文件就是这个cgroup的各种限制
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:~# cd /sys/fs/cgroup/cpu
+root@host01:/sys/fs/cgroup/cpu# ls -F
+cgroup.clone_children  cgroup.sane_behavior  cpuacct.usage      cpuacct.usage_percpu      cpuacct.usage_percpu_user  cpuacct.usage_user  cpu.cfs_quota_us  cpu.stat     notify_on_release  system.slice/  user.slice/
+cgroup.procs           cpuacct.stat          cpuacct.usage_all  cpuacct.usage_percpu_sys  cpuacct.usage_sys          cpu.cfs_period_us   cpu.shares        init.scope/  release_agent      tasks
+
+</pre>
+</div></li>
+<li><p>
+另外的文件夹就是另外一个cgroup,它里面有自己的子文件来配置具体限制
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:/sys/fs/cgroup/cpu# cd user.slice/
+root@host01:/sys/fs/cgroup/cpu/user.slice# ls -F
+cgroup.clone_children  cpuacct.stat   cpuacct.usage_all     cpuacct.usage_percpu_sys   cpuacct.usage_sys   cpu.cfs_period_us  cpu.shares  cpu.uclamp.max  notify_on_release
+cgroup.procs           cpuacct.usage  cpuacct.usage_percpu  cpuacct.usage_percpu_user  cpuacct.usage_user  cpu.cfs_quota_us   cpu.stat    cpu.uclamp.min  tasks
+</pre>
+</div></li>
+</ul></li>
+</ul>
+</div>
+<div id="outline-container-orge71577f" class="outline-4">
+<h4 id="orge71577f"><span class="section-number-4">3.2.1.</span> CPU Quotas with cgroups</h4>
+<div class="outline-text-4" id="text-3-2-1">
+<ul class="org-ul">
+<li><p>
+我们下面来看看如何配置cgroup,首先看看之前的cpu使用率信息,还是100%
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:/sys/fs/cgroup/cpu# top -b -n 1 -p $<span style="color: color-25;">(</span><span style="color: color-25; font-weight: bold;">pgrep -d , stress</span><span style="color: color-25;">)</span>
+top - 06:53:02 up 1 day,  6:47,  1 user,  load average: 1.00, 1.00, 1.00
+Tasks:   2 total,   1 running,   1 sleeping,   0 stopped,   0 zombie
+%Cpu<span style="color: color-25;">(</span>s<span style="color: color-25;">)</span>:  0.0 us,  0.0 sy, 50.0 ni, 50.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   1983.2 total,    131.7 free,    213.7 used,   1637.8 buff/cache
+MiB Swap:      0.0 total,      0.0 free,      0.0 used.   1604.8 avail Mem
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+ 105111 root      39  19   23148   3456   1816 R 100.0   0.2 271:34.78 stress-ng
+ 105080 root      39  19   23148   4316   4064 S   0.0   0.2   0:00.00 stress-ng
+</pre>
+</div></li>
+<li><p>
+下面就是查找一下,我们的两个进程存在于哪些文件里面,我们可以使用grep来查找
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:/sys/fs/cgroup/cpu# pgrep stress-ng
+105080
+105111
+root@host01:/sys/fs/cgroup/cpu# grep -R 105080
+system.slice/runc-6431626fb14b1be38bdb716f5204945ea2d0837b16e163bf9196d427ef64967e.scope/cgroup.procs:105080
+system.slice/runc-6431626fb14b1be38bdb716f5204945ea2d0837b16e163bf9196d427ef64967e.scope/tasks:105080
+root@host01:/sys/fs/cgroup/cpu# grep -R 105111
+system.slice/runc-6431626fb14b1be38bdb716f5204945ea2d0837b16e163bf9196d427ef64967e.scope/cgroup.procs:105111
+system.slice/runc-6431626fb14b1be38bdb716f5204945ea2d0837b16e163bf9196d427ef64967e.scope/tasks:105111
+</pre>
+</div></li>
+<li><p>
+我们进入到这个文件夹后发现,这个文件夹下面有和/sys/fs/cgroup/cpu下面一样的配置文件,说明这也是一个cgroup
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:/sys/fs/cgroup/cpu# crictl ps
+CONTAINER           IMAGE                                      CREATED             STATE               NAME                ATTEMPT             POD ID
+6431626fb14b1       docker.io/bookofkubernetes/stress:stable   5 hours ago         Running             stress              0                   4ceda49e3274f
+root@host01:/sys/fs/cgroup/cpu# cd system.slice/runc-$<span style="color: color-25;">{</span><span style="color: color-30;">CUL_ID</span><span style="color: color-25;">}</span>.scope
+root@host01:/sys/fs/cgroup/cpu/system.slice/runc-6431626fb14b1be38bdb716f5204945ea2d0837b16e163bf9196d427ef64967e.scope# ls -F
+cgroup.clone_children  cpuacct.stat   cpuacct.usage_all     cpuacct.usage_percpu_sys   cpuacct.usage_sys   cpu.cfs_period_us  cpu.shares  cpu.uclamp.max  notify_on_release
+cgroup.procs           cpuacct.usage  cpuacct.usage_percpu  cpuacct.usage_percpu_user  cpuacct.usage_user  cpu.cfs_quota_us   cpu.stat    cpu.uclamp.min  tasks
+</pre>
+</div></li>
+<li>下面我们就看看这些配置文件都是配置什么的,比较重要的几个有:
+<ul class="org-ul">
+<li>cgroup.procs 存储进程的id</li>
+<li>cpu.shares 存储cpu slice</li>
+<li><p>
+cpu.cfs_periods_us, 存储period的长度,以us(microsecond微秒)为单位,这个例子中cfs_period_us的值为100000us
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:/sys/fs/cgroup/cpu/system.slice/runc-6431626fb14b1be38bdb716f5204945ea2d0837b16e163bf9196d427ef64967e.scope# cat cpu.cfs_period_us
+100000
+</pre>
+</div></li>
+<li><p>
+cpu.cfs_quota_us, 存储period中当前的cgroup可以使用的CPU时间,以ms为单位, 这个例子中,默认的cfs_quota_us值为-1,表示可以使用整个period
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:/sys/fs/cgroup/cpu/system.slice/runc-6431626fb14b1be38bdb716f5204945ea2d0837b16e163bf9196d427ef64967e.scope# cat cpu.cfs_quota_us
+-1
+</pre>
+</div></li>
+</ul></li>
+<li>我们可以设置cfs_quota_us为cfs_period_us值的一半,这样就可以保证cpu的使用率也只有一半
+<ul class="org-ul">
+<li><p>
+设置方法如下
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:/sys/fs/cgroup/cpu/system.slice/runc-6431626fb14b1be38bdb716f5204945ea2d0837b16e163bf9196d427ef64967e.scope# echo <span style="color: color-22;">"50000"</span> &gt;  cpu.cfs_quota_us
+root@host01:/sys/fs/cgroup/cpu/system.slice/runc-6431626fb14b1be38bdb716f5204945ea2d0837b16e163bf9196d427ef64967e.scope# cat cpu.cfs_quota_us
+50000
+</pre>
+</div></li>
+<li><p>
+设置效果如下,由于top测量是两次refresh之间的cpu使用率,所以结果并不是非常精确的50%,但是总体而言是可以达到50%的
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:/sys/fs/cgroup/cpu/system.slice/runc-6431626fb14b1be38bdb716f5204945ea2d0837b16e163bf9196d427ef64967e.scope# top -b -n 1 -p $<span style="color: color-25;">(</span><span style="color: color-25; font-weight: bold;">pgrep -d , stress</span><span style="color: color-25;">)</span>
+top - 07:10:23 up 1 day,  7:05,  1 user,  load average: 0.92, 0.98, 0.99
+Tasks:   2 total,   1 running,   1 sleeping,   0 stopped,   0 zombie
+%Cpu<span style="color: color-25;">(</span>s<span style="color: color-25;">)</span>:  0.0 us,  0.0 sy, 26.7 ni, 73.3 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   1983.2 total,    129.6 free,    213.2 used,   1640.3 buff/cache
+MiB Swap:      0.0 total,      0.0 free,      0.0 used.   1605.3 avail Mem
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+ 105111 root      39  19   23148   3456   1816 R  53.3   0.2 288:43.09 stress-ng
+ 105080 root      39  19   23148   4316   4064 S   0.0   0.2   0:00.00 stress-ng
+</pre>
+</div></li>
+</ul></li>
+<li><p>
+配置成功了,但是每次更改配置文件是非常麻烦的,下一节我们会讲到如何在yaml文件里面配置这些限制,所以当前要关闭掉正在运行的stress容器
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:/opt# crictl stop $<span style="color: color-30;">CUL_ID</span>
+6431626fb14b1be38bdb716f5204945ea2d0837b16e163bf9196d427ef64967e
+root@host01:/opt# crictl rm $<span style="color: color-30;">CUL_ID</span>
+6431626fb14b1be38bdb716f5204945ea2d0837b16e163bf9196d427ef64967e
+root@host01:/opt# crictl stopp $<span style="color: color-30;">PUL_ID</span>
+Stopped sandbox 4ceda49e3274f22b17c7636b6a57d74b1e5a4298d4df319b9c39bfabf8a094fa
+root@host01:/opt# crictl rmp $<span style="color: color-30;">PUL_ID</span>
+Removed sandbox 4ceda49e3274f22b17c7636b6a57d74b1e5a4298d4df319b9c39bfabf8a094fa
+</pre>
+</div></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org223cd6d" class="outline-4">
+<h4 id="org223cd6d"><span class="section-number-4">3.2.2.</span> CPU Quota with CRI-O and crictl</h4>
+<div class="outline-text-4" id="text-3-2-2">
+<ul class="org-ul">
+<li>本节我们就介绍把cgroup配置写到yaml文件里面,比如
+<ul class="org-ul">
+<li><p>
+新的pod配置文件(po-clim.yaml)为
+</p>
+<div class="org-src-container">
+<pre class="src src-yaml">
+<span style="color: color-239; font-style: italic;">---</span>
+<span style="color: color-30;">metadata</span>:
+  <span style="color: color-30;">name</span>: stress1
+  <span style="color: color-30;">namespace</span>: crio
+<span style="color: color-30;">linux</span>:
+  <span style="color: color-30;">cgroup_parent</span>: pod.slice
+  <span style="color: color-30;">security_context</span>:
+    <span style="color: color-30;">namespace_options</span>:
+      <span style="color: color-30;">network</span>: 2
+</pre>
+</div></li>
+<li>新的pod配置文件专门增加了我们创建cgroup的位置</li>
+<li>真正添加资源限制配置的地方在container 配置文件里面设置了如下两个值:
+<ol class="org-ol">
+<li>cpu_period对应上一节的cpu.cfs_period_us</li>
+<li>cpu_quota对应上一节的cpu.cfs_quota_us</li>
+</ol></li>
+<li><p>
+新的container配置文件(co-clim.yaml)为
+</p>
+<div class="org-src-container">
+<pre class="src src-yaml"><span style="color: color-239; font-style: italic;">---</span>
+<span style="color: color-30;">metadata</span>:
+  <span style="color: color-30;">name</span>: stress1
+<span style="color: color-30;">image</span>:
+  <span style="color: color-30;">image</span>: docker.io/bookofkubernetes/stress:stable
+<span style="color: color-30;">args</span>:
+  - <span style="color: color-22;">"--cpu"</span>
+  - <span style="color: color-22;">"1"</span>
+  - <span style="color: color-22;">"-v"</span>
+<span style="color: color-30;">linux</span>:
+  <span style="color: color-30;">resources</span>:
+    <span style="color: color-30;">cpu_period</span>: 100000
+    <span style="color: color-30;">cpu_quota</span>: 10000
+</pre>
+</div></li>
+<li>通过配置我们大概可以猜出新的进程的cpu使用率在10%左右</li>
+<li><p>
+我们通过如下命令先启动新的容器
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:/opt# <span style="color: color-30;">PCL_ID</span>=$<span style="color: color-25;">(</span><span style="color: color-25; font-weight: bold;">crictl runp po-clim.yaml</span><span style="color: color-25;">)</span>
+root@host01:/opt# <span style="color: color-30;">CCL_ID</span>=$<span style="color: color-25;">(</span><span style="color: color-25; font-weight: bold;">crictl create $PCL_ID co-clim.yaml po-clim.yaml</span><span style="color: color-25;">)</span>
+root@host01:/opt# crictl start $<span style="color: color-30;">CCL_ID</span>
+c224019f75f69b7affe53a6bfb8720b0eb335eda64c97624160fda414ac30bfa
+root@host01:/opt# crictl ps
+CONTAINER           IMAGE                                      CREATED             STATE               NAME                ATTEMPT             POD ID
+c224019f75f69       docker.io/bookofkubernetes/stress:stable   12 seconds ago      Running             stress1             0                   828d59eebd2e3
+</pre>
+</div></li>
+<li><p>
+然后验证下,平均cpu使用率确实是在10%左右
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:/opt# top -b -n 1 -p $<span style="color: color-25;">(</span><span style="color: color-25; font-weight: bold;">pgrep -d, stress</span><span style="color: color-25;">)</span>
+top - 13:10:33 up 1 day, 13:05,  1 user,  load average: 0.05, 0.11, 0.09
+Tasks:   2 total,   1 running,   1 sleeping,   0 stopped,   0 zombie
+%Cpu<span style="color: color-25;">(</span>s<span style="color: color-25;">)</span>:  2.6 us,  0.0 sy,  0.0 ni, 97.4 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   1983.2 total,    110.0 free,    208.2 used,   1665.0 buff/cache
+MiB Swap:      0.0 total,      0.0 free,      0.0 used.   1610.4 avail Mem
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+ 134750 root      20   0   23148   3548   1920 R  10.5   0.2   4:20.87 stress-ng
+ 134718 root      20   0   23148   4236   3988 S   0.0   0.2   0:00.00 stress-ng
+</pre>
+</div></li>
+</ul></li>
+<li><p>
+我们可以去host的cgroup文件夹看看是不是成功设置了配置
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:/opt# cd /sys/fs/cgroup/cpu
+root@host01:/sys/fs/cgroup/cpu# ls
+cgroup.clone_children  cgroup.sane_behavior  cpuacct.usage      cpuacct.usage_percpu      cpuacct.usage_percpu_user  cpuacct.usage_user  cpu.cfs_quota_us  cpu.stat    notify_on_release  release_agent  tasks
+cgroup.procs           cpuacct.stat          cpuacct.usage_all  cpuacct.usage_percpu_sys  cpuacct.usage_sys          cpu.cfs_period_us   cpu.shares        init.scope  pod.slice          system.slice   user.slice
+root@host01:/sys/fs/cgroup/cpu# cd pod.slice/
+root@host01:/sys/fs/cgroup/cpu/pod.slice# ls
+cgroup.clone_children  cpuacct.usage         cpuacct.usage_percpu_sys   cpuacct.usage_user  cpu.shares      cpu.uclamp.min                                                               notify_on_release
+cgroup.procs           cpuacct.usage_all     cpuacct.usage_percpu_user  cpu.cfs_period_us   cpu.stat        crio-828d59eebd2e388f2c385f169919033366cc4228740d3816d28c35a891508b1a.scope  tasks
+cpuacct.stat           cpuacct.usage_percpu  cpuacct.usage_sys          cpu.cfs_quota_us    cpu.uclamp.max  crio-c224019f75f69b7affe53a6bfb8720b0eb335eda64c97624160fda414ac30bfa.scope
+root@host01:/sys/fs/cgroup/cpu/pod.slice# echo $<span style="color: color-30;">CCL_ID</span>
+c224019f75f69b7affe53a6bfb8720b0eb335eda64c97624160fda414ac30bfa
+root@host01:/sys/fs/cgroup/cpu/pod.slice# cat crio-$<span style="color: color-30;">CCL_ID</span>.scope/cpu.cfs_quota_us
+10000
+root@host01:/sys/fs/cgroup/cpu/pod.slice# cat crio-$<span style="color: color-30;">CCL_ID</span>.scope/cpu.cfs_period_us
+100000
+</pre>
+</div></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org65658e3" class="outline-3">
+<h3 id="org65658e3"><span class="section-number-3">3.3.</span> Memory Limits</h3>
+<div class="outline-text-3" id="text-3-3">
+<ul class="org-ul">
+<li>内存是另外一个对进程来说非常重要的资源</li>
+<li>如果系统没有足够的内存,那么进程申请内存的request会失败,这会导致进程发挥不佳,甚至直接退出</li>
+<li>这里插一句,很多Linux系统都会使用硬盘的一部分来做swap space,从而让memory 内容临时换到硬盘里面,这
+样系统的可用内存看起来大了一下,但是代价是系统性能下降</li>
+<li>出于优化性能的考虑,k8s host不使用swap</li>
+<li>确定了swap不再使用后,k8s要解决的另外一个问题,就是如何给一个进程限制其内存的总体使用数量,这样依赖
+有两个好处:
+<ul class="org-ul">
+<li>一来可以不必让一个进程获取太多的内存从而影响同一个host的其他容器</li>
+<li>二来可以让我们知道某个容器是否可以调度到其他host上去,因为知道当前进程的内存上限和其他host的内
+存剩余</li>
+</ul></li>
+<li>k8s本来可以直接使用linux继承自Unix的system resource limit方法,这种方法只需要在命令行配置即可:
+<ul class="org-ul">
+<li><p>
+比如
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:~# ulimit -v 262144
+</pre>
+</div></li>
+<li>上面的代码就限制了,所有从当前shell启动的进程,其virtual memory的总使用量不能超过256MB</li>
+<li><p>
+我们可以使用如下的代码来测试下我们的配置是否起效:
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:~# cat /dev/zero | head -c 500m | tail
+tail: memory exhausted
+</pre>
+</div></li>
+<li>可以看到,我们尝试读取500MB zero到进程里来,结果失败了</li>
+</ul></li>
+<li>这种limit只能配置到一个process或者一个user,不是很适应k8s的要求,更重要的是,cgroup除了能够控制cpu
+还能控制内存,那么显然已经使用cgroup控制cpu的k8s,没必要再选择第二个技术来控制内存</li>
+<li>我们还是以之前的stress来做实验, 如果我们再启动了stress之后再施加memory limit,那么可能来不及了,
+因为程序启动的时候就已经申请了超过limit的内存了.</li>
+<li>我们的办法是在yaml文件里面直接配置这个限制:
+<ul class="org-ul">
+<li><p>
+container yaml代码如下
+</p>
+<div class="org-src-container">
+<pre class="src src-yaml"><span style="color: color-239; font-style: italic;">---</span>
+<span style="color: color-30;">metadata</span>:
+  <span style="color: color-30;">name</span>: stress2
+<span style="color: color-30;">image</span>:
+  <span style="color: color-30;">image</span>: docker.io/bookofkubernetes/stress:stable
+<span style="color: color-30;">args</span>:
+  - <span style="color: color-22;">"--vm"</span>
+  - <span style="color: color-22;">"1"</span>
+  - <span style="color: color-22;">"--vm-bytes"</span>
+  - <span style="color: color-22;">"512M"</span>
+  - <span style="color: color-22;">"-v"</span>
+<span style="color: color-30;">linux</span>:
+  <span style="color: color-30;">resources</span>:
+    <span style="color: color-30;">memory_limit_in_bytes</span>: 268435456
+    <span style="color: color-30;">cpu_period</span>: 100000
+    <span style="color: color-30;">cpu_quota</span>: 10000
+</pre>
+</div></li>
+<li>注意这里的memory_limit_in_bytes: 268435456,就是我们对整个cgroup设置的内存限制</li>
+<li>同时我们又让我们的stress启动的时候,就申请512MB内存,使用 &#x2013;vm-bytes 512M这个配置</li>
+</ul></li>
+<li><p>
+同时我们还需要一个pod的配置,如下
+</p>
+<div class="org-src-container">
+<pre class="src src-yaml"><span style="color: color-239; font-style: italic;">---</span>
+<span style="color: color-30;">metadata</span>:
+  <span style="color: color-30;">name</span>: stress2
+  <span style="color: color-30;">namespace</span>: crio
+<span style="color: color-30;">linux</span>:
+  <span style="color: color-30;">cgroup_parent</span>: pod.slice
+  <span style="color: color-30;">security_context</span>:
+    <span style="color: color-30;">namespace_options</span>:
+      <span style="color: color-30;">network</span>: 2
+</pre>
+</div></li>
+<li><p>
+我们按照下面的代码启动整个pod
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:/opt# <span style="color: color-30;">PML_ID</span>=$<span style="color: color-25;">(</span><span style="color: color-25; font-weight: bold;">crictl runp po-mlim.yaml</span><span style="color: color-25;">)</span>
+root@host01:/opt# <span style="color: color-30;">CML_ID</span>=$<span style="color: color-25;">(</span><span style="color: color-25; font-weight: bold;">crictl create $PML_ID co-mlim.yaml po-mlim.yaml</span><span style="color: color-25;">)</span>
+root@host01:/opt# crictl start $<span style="color: color-30;">CML_ID</span>
+6bc98cb013e9e1521150907313b59050950e81ec4346f05b6b6c39a76c8ed4d2
+root@host01:/opt# crictl ps
+CONTAINER           IMAGE                                      CREATED             STATE               NAME                ATTEMPT             POD ID
+6bc98cb013e9e       docker.io/bookofkubernetes/stress:stable   10 seconds ago      Running             stress2             0                   7a08f5dd2a778
+</pre>
+</div></li>
+<li><p>
+我们看到crictl ps的结果中stress已经进入了Running状态,但是其实stress只是在不停的申请内存而已,并没
+有真正的启动,我们可以通过log来看下stress真正发生了什么
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:/opt# crictl logs $<span style="color: color-30;">CML_ID</span>
+stress-ng: debug: <span style="color: color-25;">[</span>7<span style="color: color-25;">]</span> stress-ng 0.13.05
+stress-ng: debug: <span style="color: color-25;">[</span>7<span style="color: color-25;">]</span> system: Linux host01 5.4.0-148-generic <span style="color: color-239; font-style: italic;">#</span><span style="color: color-239; font-style: italic;">165-Ubuntu SMP Tue Apr 18 08:53:12 UTC 2023 x86_64</span>
+stress-ng: debug: <span style="color: color-25;">[</span>7<span style="color: color-25;">]</span> RAM total: 1.9G, RAM free: 1.3G, swap free: 0.0
+stress-ng: debug: <span style="color: color-25;">[</span>7<span style="color: color-25;">]</span> 2 processors online, 2 processors configured
+stress-ng: debug: <span style="color: color-25;">[</span>7<span style="color: color-25;">]</span> main: can<span style="color: color-22;">'t set oom_score_adj</span>
+<span style="color: color-22;">stress-ng: info:  [7] defaulting to a 86400 second (1 day, 0.00 secs) run per stressor</span>
+<span style="color: color-22;">stress-ng: info:  [7] dispatching hogs: 1 vm</span>
+<span style="color: color-22;">stress-ng: debug: [7] cache allocate: shared cache buffer size: 6144K</span>
+<span style="color: color-22;">stress-ng: debug: [7] starting stressors</span>
+<span style="color: color-22;">stress-ng: debug: [7] 1 stressor started</span>
+<span style="color: color-22;">stress-ng: debug: [12] stress-ng-vm: can'</span>t set oom_score_adj
+stress-ng: debug: <span style="color: color-25;">[</span>12<span style="color: color-25;">]</span> stress-ng-vm: started <span style="color: color-25;">[</span>12<span style="color: color-25;">]</span> <span style="color: color-25;">(</span>instance 0<span style="color: color-25;">)</span>
+stress-ng: debug: <span style="color: color-25;">[</span>12<span style="color: color-25;">]</span> stress-ng-vm using method <span style="color: color-22;">'all'</span>
+stress-ng: debug: <span style="color: color-25;">[</span>12<span style="color: color-25;">]</span> stress-ng-vm: child died: signal 9 <span style="color: color-22;">'SIGKILL'</span> <span style="color: color-25;">(</span>instance 0<span style="color: color-25;">)</span>
+stress-ng: debug: <span style="color: color-25;">[</span>12<span style="color: color-25;">]</span> stress-ng-vm: assuming killed by OOM killer, restarting again <span style="color: color-25;">(</span>instance 0<span style="color: color-25;">)</span>
+stress-ng: debug: <span style="color: color-25;">[</span>12<span style="color: color-25;">]</span> stress-ng-vm: child died: signal 9 <span style="color: color-22;">'SIGKILL'</span> <span style="color: color-25;">(</span>instance 0<span style="color: color-25;">)</span>
+stress-ng: debug: <span style="color: color-25;">[</span>12<span style="color: color-25;">]</span> stress-ng-vm: assuming killed by OOM killer, restarting again <span style="color: color-25;">(</span>instance 0<span style="color: color-25;">)</span>
+stress-ng: debug: <span style="color: color-25;">[</span>12<span style="color: color-25;">]</span> stress-ng-vm: child died: signal 9 <span style="color: color-22;">'SIGKILL'</span> <span style="color: color-25;">(</span>instance 0<span style="color: color-25;">)</span>
+stress-ng: debug: <span style="color: color-25;">[</span>12<span style="color: color-25;">]</span> stress-ng-vm: assuming killed by OOM killer, restarting again <span style="color: color-25;">(</span>instance 0<span style="color: color-25;">)</span>
+stress-ng: debug: <span style="color: color-25;">[</span>12<span style="color: color-25;">]</span> stress-ng-vm: child died: signal 9 <span style="color: color-22;">'SIGKILL'</span> <span style="color: color-25;">(</span>instance 0<span style="color: color-25;">)</span>
+stress-ng: debug: <span style="color: color-25;">[</span>12<span style="color: color-25;">]</span> stress-ng-vm: assuming killed by OOM killer, restarting again <span style="color: color-25;">(</span>instance 0<span style="color: color-25;">)</span>
+stress-ng: debug: <span style="color: color-25;">[</span>12<span style="color: color-25;">]</span> stress-ng-vm: child died: signal 9 <span style="color: color-22;">'SIGKILL'</span> <span style="color: color-25;">(</span>instance 0<span style="color: color-25;">)</span>
+stress-ng: debug: <span style="color: color-25;">[</span>12<span style="color: color-25;">]</span> stress-ng-vm: assuming killed by OOM killer, restarting again <span style="color: color-25;">(</span>instance 0<span style="color: color-25;">)</span>
+</pre>
+</div></li>
+<li>从日志我们可以看到,系统一直在用OOM killer来关闭stress</li>
+<li>OOM killer是Linux的一个特性,一般是用来在系统整体内存比较少的时候,kill 一个或者多个进程来保护系
+统的,它通常会发送SIGKILL来关闭进程. SIGKILL这个信号是告诉进程你需要马上结束,甚至不需要做任何的cleanup</li>
+<li>需要注意的是,cgroup在进程超过内存的情况下,有多种处理选择,不一定使用OOM killer.</li>
+<li>换句话说,使用OOM killer是k8s根据自身的特点做的选择.</li>
+<li>k8s的自身特点是什么呢?那就是在一个application里面,每个container都不是特别重要的,每个container不
+小心被删掉了(或者关闭了),都是经常发生,不被在意的事情(因为同时有多个container在一个load balancer
+后面,类似aws的ec2,也是出问题的概率高达5%)</li>
+<li>既然一个container被kill掉都是经常发生的问题,那么内存满了,直接kill掉容器也是可以理解的.毕竟内存满
+也是常见bug</li>
+<li>另外把一个内存不够用的容器删掉,总比它运行着却什么也不做要好</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgd43c80f" class="outline-3">
+<h3 id="orgd43c80f"><span class="section-number-3">3.4.</span> Network Bandwidth Limits</h3>
+<div class="outline-text-3" id="text-3-4">
+<ul class="org-ul">
+<li>cpu资源是由kernel直接控制每个进程用多少的,所以限制起来很容易</li>
+<li>对于内存资源,kernel虽然不能从进程里面扣除内存,但是可以在内存申请的时候进行控制</li>
+<li><p>
+我们这一节要讨论的网络,是最难以控制limit的,因为Linux的cgroup没法有效的控制网络用量:
+</p>
+<pre class="example" id="orgceb5df3">
+Although Linux does provide some cgroup capability for network
+interfaces, these would only help us prioritize and classify
+network traffic
+</pre></li>
+<li>既然不能使用cgroup,那么,我们只好直接配置linux kernel的traffic control功能来控制网络使用量</li>
+<li>整个实验分三步:
+<ul class="org-ul">
+<li><p>
+第一步,我们使用iperf3来测试下两个机器之间的网速,我们可以看到是一个Gbit网络
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:/opt# iperf3 -c 192.168.61.12
+Connecting to host 192.168.61.12, port 5201
+<span style="color: color-25;">[</span>  5<span style="color: color-25;">]</span> local 192.168.61.11 port 55532 connected to 192.168.61.12 port 5201
+<span style="color: color-25;">[</span> ID<span style="color: color-25;">]</span> Interval           Transfer     Bitrate         Retr  Cwnd
+<span style="color: color-25;">[</span>  5<span style="color: color-25;">]</span>   0.00-1.00   sec   495 MBytes  4.15 Gbits/sec  3080    235 KBytes
+<span style="color: color-25;">[</span>  5<span style="color: color-25;">]</span>   1.00-2.00   sec   496 MBytes  4.16 Gbits/sec  3557    215 KBytes
+<span style="color: color-25;">[</span>  5<span style="color: color-25;">]</span>   2.00-3.00   sec   506 MBytes  4.25 Gbits/sec  2944    212 KBytes
+<span style="color: color-25;">[</span>  5<span style="color: color-25;">]</span>   3.00-4.00   sec   494 MBytes  4.14 Gbits/sec  2626    222 KBytes
+<span style="color: color-25;">[</span>  5<span style="color: color-25;">]</span>   4.00-5.00   sec   498 MBytes  4.17 Gbits/sec  2825    246 KBytes
+<span style="color: color-25;">[</span>  5<span style="color: color-25;">]</span>   5.00-6.00   sec   504 MBytes  4.23 Gbits/sec  2332    236 KBytes
+<span style="color: color-25;">[</span>  5<span style="color: color-25;">]</span>   6.00-7.00   sec   496 MBytes  4.16 Gbits/sec  2293    182 KBytes
+<span style="color: color-25;">[</span>  5<span style="color: color-25;">]</span>   7.00-8.00   sec   509 MBytes  4.27 Gbits/sec  2909    219 KBytes
+<span style="color: color-25;">[</span>  5<span style="color: color-25;">]</span>   8.00-9.00   sec   504 MBytes  4.23 Gbits/sec  2809    171 KBytes
+<span style="color: color-25;">[</span>  5<span style="color: color-25;">]</span>   9.00-10.00  sec   504 MBytes  4.23 Gbits/sec  2737    235 KBytes
+- - - - - - - - - - - - - - - - - - - - - - - - -
+<span style="color: color-25;">[</span> ID<span style="color: color-25;">]</span> Interval           Transfer     Bitrate         Retr
+<span style="color: color-25;">[</span>  5<span style="color: color-25;">]</span>   0.00-10.00  sec  4.89 GBytes  4.20 Gbits/sec  28112             sender
+<span style="color: color-25;">[</span>  5<span style="color: color-25;">]</span>   0.00-10.00  sec  4.88 GBytes  4.20 Gbits/sec                  receiver
+
+iperf Done.
+</pre>
+</div></li>
+<li><p>
+第二步,我们使用tc来创建limit,期间用ip addr来确定要限制的network card名字
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:/opt# <span style="color: color-30;">IFACE</span>=$<span style="color: color-25;">(</span><span style="color: color-25; font-weight: bold;">ip -o addr | grep 192.168.61.11 | awk '{print $2}'</span><span style="color: color-25;">)</span>
+root@host01:/opt# echo $<span style="color: color-30;">IFACE</span>
+enp0s8
+root@host01:/opt# tc qdisc add dev $<span style="color: color-30;">IFACE</span> root tbf rate 100mbit burst 256kbit latency 400ms
+</pre>
+</div></li>
+<li><p>
+第三步,我们再用iperf3来测试下两个机器之间的网速,我们可以看到,只有100Mbit左右了
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:/opt# iperf3 -c 192.168.61.12
+Connecting to host 192.168.61.12, port 5201
+<span style="color: color-25;">[</span>  5<span style="color: color-25;">]</span> local 192.168.61.11 port 52802 connected to 192.168.61.12 port 5201
+<span style="color: color-25;">[</span> ID<span style="color: color-25;">]</span> Interval           Transfer     Bitrate         Retr  Cwnd
+<span style="color: color-25;">[</span>  5<span style="color: color-25;">]</span>   0.00-1.00   sec  11.9 MBytes  99.9 Mbits/sec    0    137 KBytes
+<span style="color: color-25;">[</span>  5<span style="color: color-25;">]</span>   1.00-2.00   sec  11.2 MBytes  93.8 Mbits/sec    0    137 KBytes
+<span style="color: color-25;">[</span>  5<span style="color: color-25;">]</span>   2.00-3.00   sec  10.6 MBytes  88.6 Mbits/sec    0    137 KBytes
+<span style="color: color-25;">[</span>  5<span style="color: color-25;">]</span>   3.00-4.00   sec  10.9 MBytes  91.3 Mbits/sec    0    137 KBytes
+<span style="color: color-25;">[</span>  5<span style="color: color-25;">]</span>   4.00-5.00   sec  11.5 MBytes  96.4 Mbits/sec    0    137 KBytes
+<span style="color: color-25;">[</span>  5<span style="color: color-25;">]</span>   5.00-6.00   sec  11.2 MBytes  93.8 Mbits/sec    0    137 KBytes
+<span style="color: color-25;">[</span>  5<span style="color: color-25;">]</span>   6.00-7.00   sec  11.2 MBytes  93.8 Mbits/sec    0    137 KBytes
+<span style="color: color-25;">[</span>  5<span style="color: color-25;">]</span>   7.00-8.00   sec  11.2 MBytes  93.8 Mbits/sec    0    137 KBytes
+<span style="color: color-25;">[</span>  5<span style="color: color-25;">]</span>   8.00-9.00   sec  11.2 MBytes  93.8 Mbits/sec    0    137 KBytes
+<span style="color: color-25;">[</span>  5<span style="color: color-25;">]</span>   9.00-10.00  sec  11.2 MBytes  93.8 Mbits/sec    0    137 KBytes
+- - - - - - - - - - - - - - - - - - - - - - - - -
+<span style="color: color-25;">[</span> ID<span style="color: color-25;">]</span> Interval           Transfer     Bitrate         Retr
+<span style="color: color-25;">[</span>  5<span style="color: color-25;">]</span>   0.00-10.00  sec   112 MBytes  93.9 Mbits/sec    0             sender
+<span style="color: color-25;">[</span>  5<span style="color: color-25;">]</span>   0.00-10.01  sec   111 MBytes  93.3 Mbits/sec                  receiver
+
+iperf Done.
+</pre>
+</div></li>
+</ul></li>
+<li>因为我们是通过限制network card来达到限速目的的,那么我们就要保证进程只使用特定的network card,这个下
+一章会研究</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org1fc0ade" class="outline-2">
+<h2 id="org1fc0ade"><span class="section-number-2">4.</span> Chapter 4: Network Namespaces</h2>
+<div class="outline-text-2" id="text-4">
+<ul class="org-ul">
+<li>容器化的微服务里面,最难的就是理解container network,原因有下:
+<ul class="org-ul">
+<li>即便没有容器,网络也是最复杂的部分,即便是物理机器之间的ping,都是包含了很多层的抽象</li>
+<li>容器引入后,网络就更加复杂了,因为每个容器都有自己的虚拟network device</li>
+<li>容器的编排框架(k8s)会增加一个overlay network(容器会在这个网络相互通信), 这个overlay network会增加
+额外的复杂度</li>
+</ul></li>
+</ul>
+</div>
+<div id="outline-container-org47afbae" class="outline-3">
+<h3 id="org47afbae"><span class="section-number-3">4.1.</span> Network Isolation</h3>
+<div class="outline-text-3" id="text-4-1">
+<ul class="org-ul">
+<li>在第二章我们学习了isolation的重要性:因为process通常不能影响他们看不到的东西</li>
+<li>不影响其他process当然是network也选择isolation的原因,但是还有其他原因,那就是配置的便捷性:
+<ul class="org-ul">
+<li>如果只有一个网络的话,那么两个process要非常小心才能不让自己的port冲突</li>
+<li>使用了network isolation之后,每个container都有一个独立的virtual network interface(独立的ip),那么
+这个容器选择使用任何端口提供服务,都不会和其他容器冲突的</li>
+</ul></li>
+<li>下面我们来看个两个容器可以使用相同端口的例子(ip不同)
+<ul class="org-ul">
+<li><p>
+例子如下
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">
+root@host01:/opt# cd /opt/
+root@host01:/opt# source nginx.sh
+Image is up to date for docker.io/library/nginx@sha256:6b06964cdbbc517102ce5e0cef95152f3c6a7ef703e4057cb574539de91f72e6
+09fe9a0ea1f7af3b4214e5551975e0daba6285c793631fa48a4fad7f5a5fe805
+0bf98ff9540df4c902854daa3acd35e1823b4983c511fa0bfb2395f28e7554bf
+root@host01:/opt# crictl ps
+CONTAINER           IMAGE                            CREATED             STATE               NAME                ATTEMPT             POD ID
+0bf98ff9540df       docker.io/library/nginx:latest   12 seconds ago      Running             nginx2              0                   3de48a321fdf7
+09fe9a0ea1f7a       docker.io/library/nginx:latest   12 seconds ago      Running             nginx1              0                   d90e09319975a
+root@host01:/opt# crictl exec $<span style="color: color-30;">N1C_ID</span> cat /proc/net/tcp
+  sl  local_address rem_address   st tx_queue rx_queue tr tm-&gt;when retrnsmt   uid  timeout inode
+   0: 00000000:0050 00000000:0000 0A 00000000:00000000 00:00000000 00000000     0        0 33667 1 0000000000000000 100 0 0 10 0
+root@host01:/opt# crictl exec $<span style="color: color-30;">N2C_ID</span> cat /proc/net/tcp
+  sl  local_address rem_address   st tx_queue rx_queue tr tm-&gt;when retrnsmt   uid  timeout inode
+   0: 00000000:0050 00000000:0000 0A 00000000:00000000 00:00000000 00000000     0        0 34840 1 0000000000000000 100 0 0 10 0
+</pre>
+</div></li>
+<li>上面例子使用cat 每个容器的/proc/net/tcp来获取网络信息,这是因为普通容器里面是没有netstat命令的:这
+是因为每个容器都有自己的mnt namespac,它不会把host的所有二进制都放进来. 只放了必要的,比如cat,ls等</li>
+<li>cat /proc/net/tcp的结果是容器的端口是十六进制的50,也就是十进制的80,符合预期</li>
+</ul></li>
+<li>我们再来看看另外一个例子,我们新创建一个busybox的容器,进入这个容器的内部,看看网络情况
+<ul class="org-ul">
+<li><p>
+例子如下
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:/opt#
+root@host01:/opt# source busybox.sh
+Image is up to date for docker.io/library/busybox@sha256:560af6915bfc8d7630e50e212e08242d37b63bd5c1ccf9bd4acccf116e262d5b
+5ac8a8a393503ff6f550aead6391497915626e569027f25ae96b38c442056dd1
+root@host01:/opt# crictl ps
+CONTAINER           IMAGE                              CREATED             STATE               NAME                ATTEMPT             POD ID
+5ac8a8a393503       docker.io/library/busybox:latest   9 seconds ago       Running             busybox             0                   4bccdb251c298
+0bf98ff9540df       docker.io/library/nginx:latest     19 minutes ago      Running             nginx2              0                   3de48a321fdf7
+09fe9a0ea1f7a       docker.io/library/nginx:latest     19 minutes ago      Running             nginx1              0                   d90e09319975a
+root@host01:/opt# crictl exec -ti $<span style="color: color-30;">B1C_ID</span> /bin/sh
+/ <span style="color: color-239; font-style: italic;"># </span><span style="color: color-239; font-style: italic;">ip addr</span>
+1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host
+       valid_lft forever preferred_lft forever
+3: eth0@if7: &lt;BROADCAST,MULTICAST,UP,LOWER_UP,M-DOWN&gt; mtu 1500 qdisc noqueue
+    link/ether ba:39:25:25:d7:2a brd ff:ff:ff:ff:ff:ff
+    inet 10.85.0.4/16 brd 10.85.255.255 scope global eth0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::b839:25ff:fe25:d72a/64 scope link
+       valid_lft forever preferred_lft forever
+/ <span style="color: color-239; font-style: italic;"># </span><span style="color: color-239; font-style: italic;">ping -c 1 192.168.61.11</span>
+PING 192.168.61.11 <span style="color: color-25;">(</span>192.168.61.11<span style="color: color-25;">)</span>: 56 data bytes
+64 bytes from 192.168.61.11: <span style="color: color-30;">seq</span>=0 <span style="color: color-30;">ttl</span>=64 <span style="color: color-30;">time</span>=0.240 ms
+
+--- 192.168.61.11 ping statistics ---
+1 packets transmitted, 1 packets received, 0% packet loss
+round-trip min/avg/max = 0.240/0.240/0.240 ms
+/ <span style="color: color-239; font-style: italic;"># </span><span style="color: color-239; font-style: italic;">ip route</span>
+default via 10.85.0.1 dev eth0
+10.85.0.0/16 dev eth0 scope link  src 10.85.0.4
+/ <span style="color: color-239; font-style: italic;">#</span>
+</pre>
+</div></li>
+<li>我们创建新的busybox容器后进入容器的shell,使用 ip addr命令得到网络情况.排除loopback网络的话,我们可
+以看到容器真正的ip地址是10.85.0.4</li>
+<li>我们host的地址是192.168.61.11, 按理说host和容器是网络不通的,但是这里ping却成功了,这是由于路由表里
+面增加了中转的一个entity,让两个网络认识了,这个entity通过ip route命令可以看到是10.85.0.1</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org5ef92e8" class="outline-3">
+<h3 id="org5ef92e8"><span class="section-number-3">4.2.</span> Network Namespaces</h3>
+<div class="outline-text-3" id="text-4-2">
+<ul class="org-ul">
+<li>CRI-O 使用了Linux network namespace来创建isolation,我们在第二章已经见识到过了,这里是更详细的介绍</li>
+<li>我们可以使用lsns命令来列出所有的network namespace
+<ul class="org-ul">
+<li><p>
+代码如下
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:/opt# lsns -t net
+        NS TYPE NPROCS   PID USER    NETNSID NSFS                                            COMMAND
+4026531992 net     120     1 root unassigned                                                 /sbin/init
+4026532199 net       4  2817 root          0 /run/netns/000a5bb5-2258-42ed-a969-0c9acbacad41 /pause
+4026532273 net       4  2951 root          1 /run/netns/d06d38dc-073c-456f-8d45-fa810ffbc03d /pause
+4026532338 net       2  4114 root          2 /run/netns/7a511363-9a8b-4e60-8fa1-12bac58bce21 /pause
+</pre>
+</div></li>
+<li>我们可以看到第一个是为所有进程服务的namespace,不是容器的</li>
+<li>另外的三个network namespace都是为容器服务的,每个Pod一个namespace(Pod是容器的上级)</li>
+<li>Pod的network namespace都是使用了/pause命令,这让这些namespace一直存在,哪怕Pod里面的容器不停的变化</li>
+</ul></li>
+</ul>
+</div>
+<div id="outline-container-orgc132cae" class="outline-4">
+<h4 id="orgc132cae"><span class="section-number-4">4.2.1.</span> Inspecting Network Namespaces</h4>
+<div class="outline-text-4" id="text-4-2-1">
+<ul class="org-ul">
+<li>我们还可以使用ip nets命令来列出network namespace
+<ul class="org-ul">
+<li><p>
+代码如下
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:/opt# ip netns list
+<span style="color: color-136;">7a511363-9a8b-4e60-8fa1-12bac58bce21</span> <span style="color: color-25;">(</span>id: 2<span style="color: color-25;">)</span>
+<span style="color: color-136;">d06d38dc-073c-456f-8d45-fa810ffbc03d</span> <span style="color: color-25;">(</span>id: 1<span style="color: color-25;">)</span>
+<span style="color: color-136;">000a5bb5-2258-42ed-a969-0c9acbacad41</span> <span style="color: color-25;">(</span>id: 0<span style="color: color-25;">)</span>
+</pre>
+</div></li>
+<li>我们看到这里由于配置文件访问的不同,这里没有全局的network namespace啦</li>
+<li>这里的id为2的network namespace由于是最晚创建的,那么应该是busybox 容器的network namespace,我们后
+面通过其他命令验证了我们的想法</li>
+</ul></li>
+<li>crictl inspect和jq的组合,可以把容器的详细信息打印出来,获取各种详细的信息
+<ul class="org-ul">
+<li><p>
+我们这里只提取关于network namespace的信息
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:/opt# <span style="color: color-30;">NETNS_PATH</span>=$<span style="color: color-25;">(</span><span style="color: color-25; font-weight: bold;">crictl inspectp $B1P_ID | jq -r '.info.runtimeSpec.linux.namespaces[]|select(.type=="network"</span><span style="color: color-22;">).path'</span><span style="color: color-25;">)</span>
+root@host01:/opt# echo $<span style="color: color-30;">NETNS_PATH</span>
+/var/run/netns/7a511363-9a8b-4e60-8fa1-12bac58bce21
+root@host01:/opt# <span style="color: color-30;">NETNS</span>=$<span style="color: color-25;">(</span><span style="color: color-25; font-weight: bold;">basename $NETNS_PATH</span><span style="color: color-25;">)</span>
+root@host01:/opt# echo $<span style="color: color-30;">NETNS</span>
+7a511363-9a8b-4e60-8fa1-12bac58bce21
+</pre>
+</div></li>
+<li>注意,这里用了jq来解析crictl inspectp 返回的json信息,并且找到network namespace的path并且赋值给NETNS_PATH</li>
+<li>我们再把这个full path通过basename来获取其文件名</li>
+</ul></li>
+<li>得到network namespace之后,我们可以有很多用法:
+<ul class="org-ul">
+<li><p>
+获取这个namespace里面的进程id
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:/opt# ip netns pids $<span style="color: color-30;">NETNS</span>
+4114
+4152
+</pre>
+</div></li>
+<li><p>
+获取到这些id后,可以通过ps来查看他们的信息
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:/opt# ps --pid $<span style="color: color-25;">(</span><span style="color: color-25; font-weight: bold;">ip netns pids $NETNS</span><span style="color: color-25;">)</span>
+    PID TTY      STAT   TIME COMMAND
+   4114 ?        Ss     0:00 /pause
+   4152 ?        Ss     0:00 /bin/sleep 36000
+</pre>
+</div></li>
+<li><p>
+我们还可以使用ip netns来查看这个namespace里面的网卡信息
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:/opt# ip netns exec $<span style="color: color-30;">NETNS</span> ip addr
+1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host
+       valid_lft forever preferred_lft forever
+3: eth0@if7: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc noqueue state UP group default
+    link/ether 4e:5b:69:d4:78:b6 brd ff:ff:ff:ff:ff:ff link-netnsid 0
+    inet 10.85.0.7/16 brd 10.85.255.255 scope global eth0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::4c5b:69ff:fed4:78b6/64 scope link
+       valid_lft forever preferred_lft forever
+</pre>
+</div></li>
+<li>注意,ip netns看到的网卡信息,和我们进入到busybox容器,然后ip a的结果是一样的. 这些网卡都是CRI-O创建
+之后,放入到network namespace里面的. 我们后面会体验如何创建network namespce和它里面的网卡</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgca0659f" class="outline-4">
+<h4 id="orgca0659f"><span class="section-number-4">4.2.2.</span> Creating Network Namespaces</h4>
+<div class="outline-text-4" id="text-4-2-2">
+<ul class="org-ul">
+<li><p>
+你可以使用如下命令来创建一个network namespace,创建后可以马上查找到
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:/opt# ip netns add myns
+root@host01:/opt# ip netns list
+myns
+<span style="color: color-136;">6ff41cbb-8930-4553-a719-3fd54cbf5e62</span> <span style="color: color-25;">(</span>id: 2<span style="color: color-25;">)</span>
+<span style="color: color-136;">1f6170da-8d13-49d6-a987-36f00f6a74f8</span> <span style="color: color-25;">(</span>id: 1<span style="color: color-25;">)</span>
+<span style="color: color-136;">97552f2a-3285-447e-b019-96a17068ed1b</span> <span style="color: color-25;">(</span>id: 0<span style="color: color-25;">)</span>
+</pre>
+</div></li>
+<li><p>
+刚刚创建好的network namespace只有一个loopback的interface, 而且状态还是DOWN的
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:/opt# ip netns exec myns ip addr
+1: lo: &lt;LOOPBACK&gt; mtu 65536 qdisc noop state DOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+</pre>
+</div></li>
+<li><p>
+我们启动loopback,并且验证其是否启动(我们可以看到状态变成了UNKNOWN),如下
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:/opt# ip netns exec myns ip link set dev lo up
+root@host01:/opt# ip netns exec myns ip addr
+1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host
+       valid_lft forever preferred_lft forever
+</pre>
+</div></li>
+<li><p>
+虽然是UNKNOWN,但是其实是可以用的,我们ping的通127.0.0.1啦
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:/opt# ip netns exec myns ping -c 1 127.0.0.1
+PING 127.0.0.1 <span style="color: color-25;">(</span>127.0.0.1<span style="color: color-25;">)</span> 56<span style="color: color-25;">(</span>84<span style="color: color-25;">)</span> bytes of data.
+64 bytes from 127.0.0.1: <span style="color: color-30;">icmp_seq</span>=1 <span style="color: color-30;">ttl</span>=64 <span style="color: color-30;">time</span>=0.022 ms
+
+--- 127.0.0.1 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.022/0.022/0.022/0.000 ms
+</pre>
+</div></li>
+<li>能够ping通loopback非常重要,这桌面我们有能力发送和接受packet</li>
+<li>但是想让网络更加的有用,我们必须创建一个新的network device(当然是在这个network namespace里面啦),让这
+个device和host能够联通,进而和万维网联通. 为了做到这点,我们需要创建一个叫做veth(virtual Ethernet)的设备</li>
+<li>veth虽然名字叫虚拟以太网,但是这个以太网里面只有两个设备.我们把veth想象成网线更容易理解(veth也就常被
+称之为veth pair):
+<ul class="org-ul">
+<li>网线有两个节点</li>
+<li>一个节点有数据进入,网线的另外一个节点里面有数据流出</li>
+</ul></li>
+<li>我们使用如下命令来创建veth pair:
+<ul class="org-ul">
+<li><p>
+代码如下
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:/opt# ip link add myveth-host type veth peer myveth-myns netns myns
+</pre>
+</div></li>
+<li>上述命令做了三件事:
+<ol class="org-ol">
+<li>创建veth device myveth-host</li>
+<li>创建veth device myveth-myns</li>
+<li>把myveth-myns放入到network space myns里面</li>
+</ol></li>
+</ul></li>
+<li><p>
+三件事情不包括把myveth-host放入到myns里面,所以我们再host机器上ip addr能发现myveth-host的身影
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:/opt# ip addr
+...
+5: vethb01d2292@if3: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc noqueue master cni0 state UP group default
+    link/ether 7e:a1:99:b4:28:46 brd ff:ff:ff:ff:ff:ff link-netns 97552f2a-3285-447e-b019-96a17068ed1b
+    inet6 fe80::7ca1:99ff:feb4:2846/64 scope link
+       valid_lft forever preferred_lft forever
+6: vetha00e83bc@if3: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc noqueue master cni0 state UP group default
+    link/ether f6:3c:26:db:5b:16 brd ff:ff:ff:ff:ff:ff link-netns 1f6170da-8d13-49d6-a987-36f00f6a74f8
+    inet6 fe80::f43c:26ff:fedb:5b16/64 scope link
+       valid_lft forever preferred_lft forever
+7: veth2dd66dba@if3: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc noqueue master cni0 state UP group default
+    link/ether 1a:39:2d:2e:8f:1b brd ff:ff:ff:ff:ff:ff link-netns 6ff41cbb-8930-4553-a719-3fd54cbf5e62
+    inet6 fe80::1839:2dff:fe2e:8f1b/64 scope link
+       valid_lft forever preferred_lft forever
+8: myveth-host@if2: &lt;BROADCAST,MULTICAST&gt; mtu 1500 qdisc noop state DOWN group default qlen 1000
+    link/ether ea:6b:3c:4f:92:ce brd ff:ff:ff:ff:ff:ff link-netns myns
+</pre>
+</div></li>
+<li><p>
+我们可以看到在host上面可见的myveth-host是和network namespace myns相连的,看这句
+</p>
+<pre class="example" id="orgb18fc32">
+link-netns myns
+</pre></li>
+<li><p>
+我们也猛然发现其他的veth设备都链接了一个network namespace,也就是我们前面看到的三个namespace(uuid一样)
+</p>
+<pre class="example" id="orgf18e0d9">
+link-netns 97552f2a-3285-447e-b019-96a17068ed1b
+link-netns 1f6170da-8d13-49d6-a987-36f00f6a74f8
+link-netns 6ff41cbb-8930-4553-a719-3fd54cbf5e62
+</pre></li>
+<li><p>
+我们使用ip netns exec 可以看到在myns network namespace里面已经有veth pair的另外一个设备myveth-myns了
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:/opt# ip netns exec myns ip addr
+1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host
+       valid_lft forever preferred_lft forever
+2: myveth-myns@if8: &lt;BROADCAST,MULTICAST&gt; mtu 1500 qdisc noop state DOWN group default qlen 1000
+    link/ether ee:22:d6:84:75:67 brd ff:ff:ff:ff:ff:ff link-netnsid 0
+</pre>
+</div></li>
+<li>可以看到state还是DOWN的,我们要给这个设备赋ip,然后启动它
+<ul class="org-ul">
+<li><p>
+赋ip命令如下
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:/opt# ip netns exec myns ip addr add 10.85.0.254/16 dev myveth-myns
+</pre>
+</div></li>
+<li><p>
+启动network namespace里面的myveth-myns
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:/opt# ip netns exec myns ip link set dev myveth-myns up
+</pre>
+</div></li>
+<li><p>
+启动host上的myveth-host
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:/opt# ip link set dev myveth-host up
+</pre>
+</div></li>
+</ul></li>
+<li>完成上述操作后,我们马上运行命令去检查设置的结果
+<ul class="org-ul">
+<li><p>
+在network namespace内部已经UP
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:/opt# ip netns exec myns ip addr
+1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host
+       valid_lft forever preferred_lft forever
+2: myveth-myns@if8: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc noqueue state UP group default qlen 1000
+    link/ether ee:22:d6:84:75:67 brd ff:ff:ff:ff:ff:ff link-netnsid 0
+    inet 10.85.0.254/16 scope global myveth-myns
+       valid_lft forever preferred_lft forever
+    inet6 fe80::ec22:d6ff:fe84:7567/64 scope link
+       valid_lft forever preferred_lft forever
+</pre>
+</div></li>
+<li><p>
+在host内部也UP了
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:/opt# ip addr
+...
+8: myveth-host@if2: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc noqueue state UP group default qlen 1000
+    link/ether ea:6b:3c:4f:92:ce brd ff:ff:ff:ff:ff:ff link-netns myns
+    inet6 fe80::e86b:3cff:fe4f:92ce/64 scope link
+       valid_lft forever preferred_lft forever
+</pre>
+</div></li>
+<li><p>
+我们从network namespace内部ping 10.85.0.254成功了.这个是显然的,因为我们再network namespace内部已经成功启动了这个ip
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:/opt# ip netns exec myns ping -c 1 10.85.0.254
+PING 10.85.0.254 <span style="color: color-25;">(</span>10.85.0.254<span style="color: color-25;">)</span> 56<span style="color: color-25;">(</span>84<span style="color: color-25;">)</span> bytes of data.
+64 bytes from 10.85.0.254: <span style="color: color-30;">icmp_seq</span>=1 <span style="color: color-30;">ttl</span>=64 <span style="color: color-30;">time</span>=0.075 ms
+
+--- 10.85.0.254 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.075/0.075/0.075/0.000 ms
+</pre>
+</div></li>
+<li><p>
+但是我们从host内部ping 10.85.0.254却失败了.原因是两个设备虽然都启动了,但是没有connect起来
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:/opt# ping -c 1 10.85.0.254
+PING 10.85.0.254 <span style="color: color-25;">(</span>10.85.0.254<span style="color: color-25;">)</span> 56<span style="color: color-25;">(</span>84<span style="color: color-25;">)</span> bytes of data.
+From 10.85.0.1 <span style="color: color-30;">icmp_seq</span>=1 Destination Host Unreachable
+
+--- 10.85.0.254 ping statistics ---
+1 packets transmitted, 0 received, +1 errors, 100% packet loss, time 0ms
+</pre>
+</div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org61241b3" class="outline-3">
+<h3 id="org61241b3"><span class="section-number-3">4.3.</span> Bridge Interfaces</h3>
+<div class="outline-text-3" id="text-4-3">
+<ul class="org-ul">
+<li>host 的veth当前没有连接到任何的其他veth,那么怎么才能连接到network namespace里面的其他veth呢?我们先
+研究下其他的容器是怎么做的:
+<ul class="org-ul">
+<li><p>
+首先看看容器busybox的veth
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:/opt# ip addr
+...
+7: veth2dd66dba@if3: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc noqueue master cni0 state UP group default
+    link/ether 1a:39:2d:2e:8f:1b brd ff:ff:ff:ff:ff:ff link-netns 6ff41cbb-8930-4553-a719-3fd54cbf5e62
+    inet6 fe80::1839:2dff:fe2e:8f1b/64 scope link
+       valid_lft forever preferred_lft forever
+</pre>
+</div></li>
+<li>我们可以看到,这个veth有一个设置为master cni0,这个设置的意思是这个veth属于一个network bridge</li>
+<li>network bridge是把多个interface链接起来的device,你可以把它想成是真实世界的以太网switch,network
+bridge根据MAC地址来route traffice</li>
+<li><p>
+我们再来看看这个cni0的信息
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:/opt# ip addr
+...
+4: cni0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc noqueue state UP group default qlen 1000
+    link/ether 22:fc:68:2d:4b:ce brd ff:ff:ff:ff:ff:ff
+    inet 10.85.0.1/16 brd 10.85.255.255 scope global cni0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::20fc:68ff:fe2d:4bce/64 scope link
+       valid_lft forever preferred_lft forever
+</pre>
+</div></li>
+<li>这个network bridge有个ip是10.85.0.1, 而属于这个network bridge的busybox的veth却没有ip</li>
+</ul></li>
+</ul>
+</div>
+<div id="outline-container-org3df0c0b" class="outline-4">
+<h4 id="org3df0c0b"><span class="section-number-4">4.3.1.</span> Adding Interfaces to a Bridge</h4>
+<div class="outline-text-4" id="text-4-3-1">
+<ul class="org-ul">
+<li>为了能够让host的veth能够和network namespace里面的veth互通,我们显然是要把host的veth加入到cni0这个network
+bridge里面:
+<ul class="org-ul">
+<li><p>
+首先我们使用brctl show来查看当前的network bridge都有谁
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:/opt# brctl show
+bridge name     bridge id               STP enabled     interfaces
+cni0            8000.22fc682d4bce       no              veth2dd66dba
+                                                        vetha00e83bc
+                                                        vethb01d2292
+</pre>
+</div></li>
+<li><p>
+然后我们通过brctl addif来给某个network bridge添加veth
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:/opt# brctl addif cnio myveth-host
+bridge cnio does not exist!
+root@host01:/opt# brctl addif cni0 myveth-host
+root@host01:/opt# brctl show
+bridge name     bridge id               STP enabled     interfaces
+cni0            8000.22fc682d4bce       no              myveth-host
+                                                        veth2dd66dba
+                                                        vetha00e83bc
+                                                        vethb01d2292
+</pre>
+</div></li>
+</ul></li>
+<li><p>
+host的veth加入到network bridge之后,我们从host就能ping通network namespace里面的ip
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:/opt# ping -c 1 10.85.0.254
+PING 10.85.0.254 <span style="color: color-25;">(</span>10.85.0.254<span style="color: color-25;">)</span> 56<span style="color: color-25;">(</span>84<span style="color: color-25;">)</span> bytes of data.
+64 bytes from 10.85.0.254: <span style="color: color-30;">icmp_seq</span>=1 <span style="color: color-30;">ttl</span>=64 <span style="color: color-30;">time</span>=0.104 ms
+
+--- 10.85.0.254 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.104/0.104/0.104/0.000 ms
+</pre>
+</div></li>
+<li>我们已经成功建立了host veth和network bridge的connection,也就让host和network namespace联通了网络,后
+面我们通过例子来看看traffic是如何flow的</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org402d6c7" class="outline-4">
+<h4 id="org402d6c7"><span class="section-number-4">4.3.2.</span> Tracking Traffic</h4>
+<div class="outline-text-4" id="text-4-3-2">
+<ul class="org-ul">
+<li><p>
+我们首先在后台开启一个命令,不停的ping 10.85.0.254,并且把输出抛弃(可以使用killall ping命令来删除所有
+后台运行的ping命令)
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:/opt# ping 10.85.0.254 &gt; /dev/null 2&gt;&amp;1 &amp;
+<span style="color: color-25;">[</span>1<span style="color: color-25;">]</span> 6234
+</pre>
+</div></li>
+<li>然后我们用如下命令来获取traffic的详细信息
+<ul class="org-ul">
+<li><p>
+命令如下
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:/opt# timeout 1s tcpdump -i any -n icmp
+tcpdump: verbose output suppressed, use -v or -vv for full protocol decode
+listening on any, link-type LINUX_SLL <span style="color: color-25;">(</span>Linux cooked v1<span style="color: color-25;">)</span>, capture size 262144 bytes
+09:34:10.833058 IP 10.85.0.1 &gt; 10.85.0.254: ICMP echo request, id 3, seq 15, length 64
+09:34:10.833073 IP 10.85.0.1 &gt; 10.85.0.254: ICMP echo request, id 3, seq 15, length 64
+09:34:10.833088 IP 10.85.0.254 &gt; 10.85.0.1: ICMP echo reply, id 3, seq 15, length 64
+09:34:10.833088 IP 10.85.0.254 &gt; 10.85.0.1: ICMP echo reply, id 3, seq 15, length 64
+
+4 packets captured
+7 packets received by filter
+0 packets dropped by kernel
+</pre>
+</div></li>
+<li>timeout 1s在这里是只让tcpdump运行一秒钟的意思</li>
+<li>tcpdump -i any是指的监听所有端口</li>
+<li>tcpdump -n是指不把主机的网络地址转换为名字</li>
+<li>tcpdump icmp是指只输出icmp数据</li>
+<li>从上面的数据我们可以看出,要到10.85.0.254的数据,都是从10.85.0.1(也就是cni0, bridge interface)流向
+10.85.0.254</li>
+<li><p>
+之所以从bridge interface流出,是由于host的路由表如下(目标为10.85.0.0/16的机器,都通过10.85.0.1)
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:/opt# ip route
+default via 10.0.2.2 dev enp0s3 proto dhcp src 10.0.2.15 metric 100
+10.0.2.0/24 dev enp0s3 proto kernel scope link src 10.0.2.15
+10.0.2.2 dev enp0s3 proto dhcp scope link src 10.0.2.15 metric 100
+10.85.0.0/16 dev cni0 proto kernel scope link src 10.85.0.1
+192.168.61.0/24 dev enp0s8 proto kernel scope link src 192.168.61.11
+</pre>
+</div></li>
+</ul></li>
+<li>我们再来看看从network namespace里面ping host是否成功
+<ul class="org-ul">
+<li><p>
+命令如下,我们可以看到ping没有成功
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:/opt# ip netns exec myns ping -c 1 192.168.61.11
+ping: connect: Network is unreachable
+</pre>
+</div></li>
+<li><p>
+原因在于,虽然host veth和container veth连接起来了(可以理解为物理连接起来了),但是container veth不
+知道怎么寻找192.168.61.11,因为container的路由表没有数据,我们可以通过如下命令添加
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:/opt# ip netns exec myns ip route add default via 10.85.0.1
+</pre>
+</div></li>
+<li><p>
+添加成功后,从network namespace可以访问到192.168.61.11了,如下
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:/opt# ip netns exec myns ping -c 1 192.168.61.11
+PING 192.168.61.11 <span style="color: color-25;">(</span>192.168.61.11<span style="color: color-25;">)</span> 56<span style="color: color-25;">(</span>84<span style="color: color-25;">)</span> bytes of data.
+64 bytes from 192.168.61.11: <span style="color: color-30;">icmp_seq</span>=1 <span style="color: color-30;">ttl</span>=64 <span style="color: color-30;">time</span>=0.035 ms
+
+--- 192.168.61.11 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.035/0.035/0.035/0.000 ms
+</pre>
+</div></li>
+</ul></li>
+<li>我们已经更改了很多设置,但是我们自己配置的network namespace距离真正的容器网络配置还有一点没有做到,
+那就是从容器里面访问host01以外的网络(这里的例子是host02, ip为192.168.61.12)
+<ul class="org-ul">
+<li><p>
+我们首先看看容器里面是可以访问的到host02的
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:/opt# crictl ps
+CONTAINER           IMAGE                              CREATED             STATE               NAME                ATTEMPT             POD ID
+1d763855358fa       docker.io/library/busybox:latest   51 minutes ago      Running             busybox             0                   4d9c69c701ccf
+7c05c9b6fdd8e       docker.io/library/nginx:latest     52 minutes ago      Running             nginx2              0                   5e320641249e2
+4c2dae8e0fbac       docker.io/library/nginx:latest     52 minutes ago      Running             nginx1              0                   501c3d1ad87a0
+
+root@host01:/opt# crictl exec 1d763855358fa ping -c 1 192.168.61.12
+PING 192.168.61.12 <span style="color: color-25;">(</span>192.168.61.12<span style="color: color-25;">)</span>: 56 data bytes
+64 bytes from 192.168.61.12: <span style="color: color-30;">seq</span>=0 <span style="color: color-30;">ttl</span>=63 <span style="color: color-30;">time</span>=0.644 ms
+
+--- 192.168.61.12 ping statistics ---
+1 packets transmitted, 1 packets received, 0% packet loss
+round-trip min/avg/max = 0.644/0.644/0.644 ms
+</pre>
+</div></li>
+<li><p>
+但是我们自己的network namespace是访问不到的
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:/opt# ip netns exec myns ping -c 1 192.168.61.12
+PING 192.168.61.12 <span style="color: color-25;">(</span>192.168.61.12<span style="color: color-25;">)</span> 56<span style="color: color-25;">(</span>84<span style="color: color-25;">)</span> bytes of data.
+
+--- 192.168.61.12 ping statistics ---
+1 packets transmitted, 0 received, 100% packet loss, time 0ms
+</pre>
+</div></li>
+<li>我们之前设置过,所有从容器出来的流量都要经过cni0,也就是10.85.0.1,cni0知道192.168.61.11,进而也可能知道
+192.168.61.12. 但是流量是相互的192.168.61.12是不知道cni0的,那么reply的流量显然是无法到达我们创建
+的network namespace的</li>
+<li>所以ping不到192.168.61.12是合理的,那么我们下面就是要解决为什么busybox container能够访问到192.168.61.12了.
+答案就是下一节要讲的masquerade</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org47a375e" class="outline-3">
+<h3 id="org47a375e"><span class="section-number-3">4.4.</span> Masquerade</h3>
+<div class="outline-text-3" id="text-4-4">
+<ul class="org-ul">
+<li>Masquerade,也叫NAT(Network Address Translation),是网络上常用的技术.
+<ul class="org-ul">
+<li><p>
+其核心目的就是:
+</p>
+<pre class="example" id="orga5d829a">
+一个以太网内的多个设备共享以太网出口路由的一个IP.这样可以让我们仅仅为一个路
+由器赋一个万维网可解析的IP即可.而不需要为这个以太网内的所有设备赋一个万维网
+可解析的地址
+</pre></li>
+<li>其为达到目的做了如下两件事(通过路由器):
+<ol class="org-ol">
+<li>在流量流出的时候更改sourceIP为路由器IP,以便对方reply的时候能够可寻址</li>
+<li>在流量进入的时候,根据自己的记录,更改reply的detinationIP,以便数据能够到达以太网内的具体设备</li>
+</ol></li>
+</ul></li>
+<li>busybox 容器是实现了Masquerade的,我们可以通过例子看出
+<ul class="org-ul">
+<li><p>
+首先在busybox后台启动一个ping服务
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:/opt# crictl exec $<span style="color: color-30;">B1C_ID</span> ping 192.168.61.12 &gt; /dev/null 2&gt;&amp;1 &amp;
+<span style="color: color-25;">[</span>1<span style="color: color-25;">]</span> 4956
+</pre>
+</div></li>
+<li><p>
+运行1秒的tcpdump,抓取icmp
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:/opt# timeout 1s tcpdump -i any -n icmp
+tcpdump: verbose output suppressed, use -v or -vv for full protocol decode
+listening on any, link-type LINUX_SLL <span style="color: color-25;">(</span>Linux cooked v1<span style="color: color-25;">)</span>, capture size 262144 bytes
+03:12:19.179635 IP 10.85.0.13 &gt; 192.168.61.12: ICMP echo request, id 12, seq 10, length 64
+03:12:19.179635 IP 10.85.0.13 &gt; 192.168.61.12: ICMP echo request, id 12, seq 10, length 64
+03:12:19.179662 IP 192.168.61.11 &gt; 192.168.61.12: ICMP echo request, id 12, seq 10, length 64
+03:12:19.179970 IP 192.168.61.12 &gt; 192.168.61.11: ICMP echo reply, id 12, seq 10, length 64
+03:12:19.179980 IP 192.168.61.12 &gt; 10.85.0.13: ICMP echo reply, id 12, seq 10, length 64
+03:12:19.179984 IP 192.168.61.12 &gt; 10.85.0.13: ICMP echo reply, id 12, seq 10, length 64
+</pre>
+</div></li>
+<li>当前busybox容器的ip是10.85.0.13, 最开始的:
+<ol class="org-ol">
+<li>source是10.85.0.13</li>
+<li>destination是192.168.61.12</li>
+</ol></li>
+<li>经过masquerade之后:
+<ol class="org-ol">
+<li>source变成了192.168.61.11</li>
+<li>destination还是192.168.61.12</li>
+</ol></li>
+<li>ICMP reply最开始:
+<ol class="org-ol">
+<li>source是192.168.61.12</li>
+<li>destination是192.168.61.11</li>
+</ol></li>
+<li>ICMP经过masquerade之后
+<ol class="org-ol">
+<li>source还是是192.168.61.12</li>
+<li>destination变成了10.85.0.13</li>
+</ol></li>
+</ul></li>
+<li>我们自己的network namespace的目的就是达到busybox的效果,为此我们需要使用iptables命令,我们先用iptable
+来看看其他容器是如何设置的
+<ul class="org-ul">
+<li><p>
+我们先看看busybox等容器的iptable配置
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:/opt# iptables -t nat -n -L
+Chain PREROUTING <span style="color: color-25;">(</span>policy ACCEPT<span style="color: color-25;">)</span>
+target     prot opt source               destination
+
+Chain INPUT <span style="color: color-25;">(</span>policy ACCEPT<span style="color: color-25;">)</span>
+target     prot opt source               destination
+
+Chain OUTPUT <span style="color: color-25;">(</span>policy ACCEPT<span style="color: color-25;">)</span>
+target     prot opt source               destination
+
+Chain POSTROUTING <span style="color: color-25;">(</span>policy ACCEPT<span style="color: color-25;">)</span>
+target     prot opt source               destination
+CNI-2f6196b6cf7f0a19d48ad251  all  --  10.85.0.8            0.0.0.0/0            /* name: <span style="color: color-22;">"crio"</span> id: <span style="color: color-22;">"501c3d1ad87a09fc26cf9432be1861229225af3832c0ba2e274469c3201870d3"</span> */
+CNI-430d2454234ecb5e4b41effb  all  --  10.85.0.9            0.0.0.0/0            /* name: <span style="color: color-22;">"crio"</span> id: <span style="color: color-22;">"5e320641249e2570e91dfc7aa1fdfdfcfb8b87d8b7ecb762698fadcefbf278bf"</span> */
+CNI-1270384b3b4eced2e7366c2b  all  --  10.85.0.10           0.0.0.0/0            /* name: <span style="color: color-22;">"crio"</span> id: <span style="color: color-22;">"4d9c69c701ccfce2b4781a217dd23102acfca3dc9a249ca2aa732c10d46738ea"</span> */
+
+Chain CNI-1270384b3b4eced2e7366c2b <span style="color: color-25;">(</span>1 references<span style="color: color-25;">)</span>
+target     prot opt source               destination
+ACCEPT     all  --  0.0.0.0/0            10.85.0.0/16         /* name: <span style="color: color-22;">"crio"</span> id: <span style="color: color-22;">"4d9c69c701ccfce2b4781a217dd23102acfca3dc9a249ca2aa732c10d46738ea"</span> */
+MASQUERADE  all  --  0.0.0.0/0           !224.0.0.0/4          /* name: <span style="color: color-22;">"crio"</span> id: <span style="color: color-22;">"4d9c69c701ccfce2b4781a217dd23102acfca3dc9a249ca2aa732c10d46738ea"</span> */
+
+Chain CNI-2f6196b6cf7f0a19d48ad251 <span style="color: color-25;">(</span>1 references<span style="color: color-25;">)</span>
+target     prot opt source               destination
+ACCEPT     all  --  0.0.0.0/0            10.85.0.0/16         /* name: <span style="color: color-22;">"crio"</span> id: <span style="color: color-22;">"501c3d1ad87a09fc26cf9432be1861229225af3832c0ba2e274469c3201870d3"</span> */
+MASQUERADE  all  --  0.0.0.0/0           !224.0.0.0/4          /* name: <span style="color: color-22;">"crio"</span> id: <span style="color: color-22;">"501c3d1ad87a09fc26cf9432be1861229225af3832c0ba2e274469c3201870d3"</span> */
+
+Chain CNI-430d2454234ecb5e4b41effb <span style="color: color-25;">(</span>1 references<span style="color: color-25;">)</span>
+target     prot opt source               destination
+ACCEPT     all  --  0.0.0.0/0            10.85.0.0/16         /* name: <span style="color: color-22;">"crio"</span> id: <span style="color: color-22;">"5e320641249e2570e91dfc7aa1fdfdfcfb8b87d8b7ecb762698fadcefbf278bf"</span> */
+MASQUERADE  all  --  0.0.0.0/0           !224.0.0.0/4          /* name: <span style="color: color-22;">"crio"</span> id: <span style="color: color-22;">"5e320641249e2570e91dfc7aa1fdfdfcfb8b87d8b7ecb762698fadcefbf278bf"</span> */
+
+Chain KUBE-MARK-MASQ <span style="color: color-25;">(</span>0 references<span style="color: color-25;">)</span>
+target     prot opt source               destination
+</pre>
+</div></li>
+<li>上例中有三个CNI-chain,分别对应三个pod,配置一致. 三个CNI-chain,都是为某个destination(都是容器的内部IP)服务的:
+<ol class="org-ol">
+<li>CNI-2f6196b6cf7f0a19d48ad251  为IP 10.85.0.8 服务</li>
+<li>CNI-430d2454234ecb5e4b41effb  为IP 10.85.0.9 服务</li>
+<li>CNI-1270384b3b4eced2e7366c2b  为IP 10.85.0.10 服务</li>
+</ol></li>
+<li>每个CNI-chain都是做了这么两件事情:
+<ol class="org-ol">
+<li>首先ACCEPT所有的local流量(也就是和机器在同一个以太网的流量,这个例子就是10.85.0.0/16)</li>
+<li>除了local流量以外的所有地址(除了224.0.0.0/4,这个地址是广播地址,无法处理)都进行masquerade</li>
+</ol></li>
+</ul></li>
+<li>我们为了能够让我们的network namespace能够达到上面的效果,我们要为10.85.254创建一个Chain POSTEROUTING和一个Chain CNI
+<ul class="org-ul">
+<li><p>
+首先创建Chain CNI
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:/opt# iptables -t nat -N chain-myns
+</pre>
+</div></li>
+<li><p>
+然后模拟其他容器,让所有的内部流量都直接ACCEPT(不要进行masquerade)
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:/opt# iptables -t nat -A chain-myns -d 10.85.0.0/16 -j ACCEPT
+</pre>
+</div></li>
+<li><p>
+模拟其他容器,让非内部流量的所有其他流量(除了224.0.0.0/4以外),都被masquerade
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:/opt# iptables -t nat -A chain-myns ! -d 224.0.0.0/4 -j MASQUERADE
+</pre>
+</div></li>
+<li><p>
+设置好Chain CNI之后,设定这个Chain CNI为ip 10.85.0.254服务
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:/opt# iptables -t nat -A POSTROUTING -s 10.85.0.254 -j chain-myns
+</pre>
+</div></li>
+<li><p>
+所有都创建之后,我们确认下配置是写入成功的
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:/opt# iptables -t nat -n -L
+Chain PREROUTING <span style="color: color-25;">(</span>policy ACCEPT<span style="color: color-25;">)</span>
+target     prot opt source               destination
+
+Chain INPUT <span style="color: color-25;">(</span>policy ACCEPT<span style="color: color-25;">)</span>
+target     prot opt source               destination
+
+Chain OUTPUT <span style="color: color-25;">(</span>policy ACCEPT<span style="color: color-25;">)</span>
+target     prot opt source               destination
+
+Chain POSTROUTING <span style="color: color-25;">(</span>policy ACCEPT<span style="color: color-25;">)</span>
+target     prot opt source               destination
+CNI-2f6196b6cf7f0a19d48ad251  all  --  10.85.0.8            0.0.0.0/0            /* name: <span style="color: color-22;">"crio"</span> id: <span style="color: color-22;">"501c3d1ad87a09fc26cf9432be1861229225af3832c0ba2e274469c3201870d3"</span> */
+CNI-430d2454234ecb5e4b41effb  all  --  10.85.0.9            0.0.0.0/0            /* name: <span style="color: color-22;">"crio"</span> id: <span style="color: color-22;">"5e320641249e2570e91dfc7aa1fdfdfcfb8b87d8b7ecb762698fadcefbf278bf"</span> */
+CNI-1270384b3b4eced2e7366c2b  all  --  10.85.0.10           0.0.0.0/0            /* name: <span style="color: color-22;">"crio"</span> id: <span style="color: color-22;">"4d9c69c701ccfce2b4781a217dd23102acfca3dc9a249ca2aa732c10d46738ea"</span> */
+chain-myns  all  --  10.85.0.254          0.0.0.0/0
+
+Chain CNI-1270384b3b4eced2e7366c2b <span style="color: color-25;">(</span>1 references<span style="color: color-25;">)</span>
+target     prot opt source               destination
+ACCEPT     all  --  0.0.0.0/0            10.85.0.0/16         /* name: <span style="color: color-22;">"crio"</span> id: <span style="color: color-22;">"4d9c69c701ccfce2b4781a217dd23102acfca3dc9a249ca2aa732c10d46738ea"</span> */
+MASQUERADE  all  --  0.0.0.0/0           !224.0.0.0/4          /* name: <span style="color: color-22;">"crio"</span> id: <span style="color: color-22;">"4d9c69c701ccfce2b4781a217dd23102acfca3dc9a249ca2aa732c10d46738ea"</span> */
+
+Chain CNI-2f6196b6cf7f0a19d48ad251 <span style="color: color-25;">(</span>1 references<span style="color: color-25;">)</span>
+target     prot opt source               destination
+ACCEPT     all  --  0.0.0.0/0            10.85.0.0/16         /* name: <span style="color: color-22;">"crio"</span> id: <span style="color: color-22;">"501c3d1ad87a09fc26cf9432be1861229225af3832c0ba2e274469c3201870d3"</span> */
+MASQUERADE  all  --  0.0.0.0/0           !224.0.0.0/4          /* name: <span style="color: color-22;">"crio"</span> id: <span style="color: color-22;">"501c3d1ad87a09fc26cf9432be1861229225af3832c0ba2e274469c3201870d3"</span> */
+
+Chain CNI-430d2454234ecb5e4b41effb <span style="color: color-25;">(</span>1 references<span style="color: color-25;">)</span>
+target     prot opt source               destination
+ACCEPT     all  --  0.0.0.0/0            10.85.0.0/16         /* name: <span style="color: color-22;">"crio"</span> id: <span style="color: color-22;">"5e320641249e2570e91dfc7aa1fdfdfcfb8b87d8b7ecb762698fadcefbf278bf"</span> */
+MASQUERADE  all  --  0.0.0.0/0           !224.0.0.0/4          /* name: <span style="color: color-22;">"crio"</span> id: <span style="color: color-22;">"5e320641249e2570e91dfc7aa1fdfdfcfb8b87d8b7ecb762698fadcefbf278bf"</span> */
+
+Chain KUBE-MARK-MASQ <span style="color: color-25;">(</span>0 references<span style="color: color-25;">)</span>
+target     prot opt source               destination
+
+Chain chain-myns <span style="color: color-25;">(</span>1 references<span style="color: color-25;">)</span>
+target     prot opt source               destination
+ACCEPT     all  --  0.0.0.0/0            10.85.0.0/16
+MASQUERADE  all  --  0.0.0.0/0           !224.0.0.0/4
+</pre>
+</div></li>
+<li><p>
+确认配置写入成功后,我们从我们的network namespace去ping host2(192.168.61.12)这次是成功了
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:/opt# ip netns exec myns ping -c 1 192.168.61.12
+PING 192.168.61.12 <span style="color: color-25;">(</span>192.168.61.12<span style="color: color-25;">)</span> 56<span style="color: color-25;">(</span>84<span style="color: color-25;">)</span> bytes of data.
+64 bytes from 192.168.61.12: <span style="color: color-30;">icmp_seq</span>=1 <span style="color: color-30;">ttl</span>=63 <span style="color: color-30;">time</span>=0.559 ms
+
+--- 192.168.61.12 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.559/0.559/0.559/0.000 ms
+root@host01:/opt#
+</pre>
+</div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgd60264e" class="outline-2">
+<h2 id="orgd60264e"><span class="section-number-2">5.</span> Chapter 5</h2>
+<div class="outline-text-2" id="text-5">
+<ul class="org-ul">
+<li>为了能够让process运行,我们需要存储process的依赖.而容器化的软件,其最大的优势就是能够把application和
+其dependency一起打包</li>
+<li>这些dependency包括:
+<ul class="org-ul">
+<li>shared library</li>
+<li>configuration flie</li>
+<li>log</li>
+<li>进程需要操作的data</li>
+</ul></li>
+<li>所有的这些dependency和executable都要和其他的容器隔离,否则会影响到其他容器或者host</li>
+<li>所有以上的对容器的要求,都会需要巨大的存储空间,这也意味着容器引擎要提供一些特性来更有效率的进行存储,
+进而节省硬盘空间和网络带宽</li>
+<li>本章我们就会看到容器镜像通过layered filesystem来达到更有效率的存储的目的.</li>
+</ul>
+</div>
+<div id="outline-container-orgfa6b287" class="outline-3">
+<h3 id="orgfa6b287"><span class="section-number-3">5.1.</span> Filesystem Isolation</h3>
+<div class="outline-text-3" id="text-5-1">
+<ul class="org-ul">
+<li>在第二章,我们看到了如何通过chroot来创建一个只包含进程,已经进程所需要的依赖的文件夹系统,在这个文件系统
+内部运行进程不会影响其他进程,而且所需要的文件是刚刚好的.</li>
+<li>在chroot例子中,我们是在host上面创建隔离的文件系统的,但是这个在容器使用方面不是很合适,容器的做法,是
+把一个isolated filesystem打包成container image</li>
+</ul>
+</div>
+<div id="outline-container-orgc04c2d9" class="outline-4">
+<h4 id="orgc04c2d9"><span class="section-number-4">5.1.1.</span> Container Image Contents</h4>
+<div class="outline-text-4" id="text-5-1-1">
+<ul class="org-ul">
+<li>本节我们会看看NGINX 容器里面的内容,我们这里使用最常见的容器工具docker</li>
+<li><p>
+我们首先通过docker pull从一个image registry上面下载nginx image
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:~# docker pull nginx
+Using default tag: latest
+latest: Pulling from library/nginx
+5b5fe70539cd: Pull complete
+441a1b465367: Pull complete
+3b9543f2b500: Pull complete
+ca89ed5461a9: Pull complete
+b0e1283145af: Pull complete
+4b98867cde79: Pull complete
+4a85ce26214d: Pull complete
+Digest: sha256:593dac25b7733ffb7afe1a72649a43e574778bf025ad60514ef40f6b5d606247
+Status: Downloaded newer image for nginx:latest
+docker.io/library/nginx:latest
+</pre>
+</div></li>
+<li>然后我们可以通过docker images命令来查看本机上的所有的image
+<ul class="org-ul">
+<li><p>
+例子如下
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:~# docker images
+REPOSITORY   TAG       IMAGE ID       CREATED        SIZE
+nginx        latest    eb4a57159180   12 days ago    187MB
+</pre>
+</div></li>
+<li>我们可以看到SIZE来表示这个容器的大小是187MB</li>
+<li>IMAGE ID是一个唯一标识容器的UUID,这个ID每个版本都会有所不同</li>
+<li>这个image的size不是仅仅nginx的二进制和其依赖库的大小,还包括了一个小的linux发行版(这里是Debian)</li>
+</ul></li>
+<li>我们通过下面的例子来看看Debian内部的情况
+<ul class="org-ul">
+<li><p>
+首先需要启动一个容器
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:~# docker run --name nginx -d nginx
+ec8c798c45e8043f69612604a98d89c8b21dade272a6e7cdde5cfbf44d9bd8dc
+root@host01:~# docker ps
+CONTAINER ID   IMAGE     COMMAND                  CREATED         STATUS        PORTS     NAMES
+ec8c798c45e8   nginx     <span style="color: color-22;">"/docker-entrypoint.&#8230;"</span>   2 seconds ago   Up 1 second   80/tcp    nginx
+</pre>
+</div></li>
+<li>docker run里面的参数其中&#x2013;name用来给container一个友好的名字 -d表示让容器在后台运行</li>
+<li><p>
+然后我们就可以进入到容器内部查看容器的情况
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:~# docker exec -ti nginx /bin/bash
+root@ec8c798c45e8:/# ldd $<span style="color: color-25;">(</span><span style="color: color-25; font-weight: bold;">which nginx</span><span style="color: color-25;">)</span>
+        linux-vdso.so.1 <span style="color: color-25;">(</span>0x00007ffd7d5a4000<span style="color: color-25;">)</span>
+        libcrypt.so.1 =&gt; /lib/x86_64-linux-gnu/libcrypt.so.1 <span style="color: color-25;">(</span>0x00007f84928f6000<span style="color: color-25;">)</span>
+        libpcre2-8.so.0 =&gt; /lib/x86_64-linux-gnu/libpcre2-8.so.0 <span style="color: color-25;">(</span>0x00007f849285c000<span style="color: color-25;">)</span>
+        libssl.so.3 =&gt; /lib/x86_64-linux-gnu/libssl.so.3 <span style="color: color-25;">(</span>0x00007f84927b3000<span style="color: color-25;">)</span>
+        libcrypto.so.3 =&gt; /lib/x86_64-linux-gnu/libcrypto.so.3 <span style="color: color-25;">(</span>0x00007f8492332000<span style="color: color-25;">)</span>
+        libz.so.1 =&gt; /lib/x86_64-linux-gnu/libz.so.1 <span style="color: color-25;">(</span>0x00007f8492313000<span style="color: color-25;">)</span>
+        libc.so.6 =&gt; /lib/x86_64-linux-gnu/libc.so.6 <span style="color: color-25;">(</span>0x00007f8492130000<span style="color: color-25;">)</span>
+        /lib64/ld-linux-x86-64.so.2 <span style="color: color-25;">(</span>0x00007f8492b6e000<span style="color: color-25;">)</span>
+</pre>
+</div></li>
+<li>我们可以看到,所有的nginx以来的库,都是我们容器的一部分,所以nginx可以不依赖host上的任何资源就能成功运行</li>
+<li><p>
+我们再运行一下会发现,不仅仅是nginx运行所必须的文件会包含在image里面,nginx运行不需要的也被引入了
+image,比如systemd相关文件(容器完全不能运行systemd)
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@ec8c798c45e8:/# ls -l /etc
+total 308
+-rw-r--r-- 1 root root    3040 May 25 15:54 adduser.conf
+drwxr-xr-x 2 root root    4096 Jun 12 00:00 alternatives
+drwxr-xr-x 1 root root    4096 Jun 12 00:00 apt
+-rw-r--r-- 1 root root    1994 Apr 23 21:23 bash.bashrc
+-rw-r--r-- 1 root root     367 Sep 22  2022 bindresvport.blacklist
+drwxr-xr-x 3 root root    4096 Jun 14 07:16 ca-certificates
+-rw-r--r-- 1 root root    5989 Jun 14 07:16 ca-certificates.conf
+drwxr-xr-x 2 root root    4096 Jun 12 00:00 cron.d
+drwxr-xr-x 2 root root    4096 Jun 12 00:00 cron.daily
+-rw-r--r-- 1 root root    2969 Jan  8 21:50 debconf.conf
+-rw-r--r-- 1 root root       5 Mar  2 09:00 debian_version
+drwxr-xr-x 1 root root    4096 Jun 14 07:16 default
+-rw-r--r-- 1 root root    1706 May 25 15:54 deluser.conf
+drwxr-xr-x 4 root root    4096 Jun 12 00:00 dpkg
+...
+drwxr-xr-x 1 root root    4096 Sep 18  2022 systemd
+...
+</pre>
+</div></li>
+<li>之所以同时包含这些用不到的文件,基于如下两个原因:
+<ol class="org-ol">
+<li>很多人进程源代码在编译的时候,是assume某些文件必须在的</li>
+<li>这些额外的文件(比如systemd)是linux distrubution基础镜像就带着的,而我们从基础镜像编译自己的镜像很明显更容易</li>
+</ol></li>
+<li><p>
+运行着的容器里面的文件系统也是可写的,我们可以试着用dd命令写入10MB的文件到/tmp文件夹
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@ec8c798c45e8:/# dd <span style="color: color-30;">if</span>=/dev/urandom <span style="color: color-30;">of</span>=/tmp/data <span style="color: color-30;">bs</span>=1M <span style="color: color-30;">count</span>=10
+10+0 records<span style="color: color-160;"> in</span>
+10+0 records out
+10485760 bytes <span style="color: color-25;">(</span>10 MB, 10 MiB<span style="color: color-25;">)</span> copied, 0.0355285 s, 295 MB/s
+root@ec8c798c45e8:/# ls -alh /tmp/data
+-rw-r--r-- 1 root root 10M Jun 27 01:35 /tmp/data
+root@ec8c798c45e8:/# exit
+</pre>
+</div></li>
+<li><p>
+从容器内部退出后,我们可以使用docker inspect命令来查看当前容器的大小
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:~# docker inspect -s nginx | jq <span style="color: color-22;">'.[0].SizeRw'</span>
+10486955
+</pre>
+</div></li>
+<li>这里的-s告诉docker inspect要获取容器size</li>
+<li>docker inspect返回的json很长,我们使用jq来进行选取相应内容</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orge836e52" class="outline-4">
+<h4 id="orge836e52"><span class="section-number-4">5.1.2.</span> Image Versions and Layers</h4>
+<div class="outline-text-4" id="text-5-1-2">
+<ul class="org-ul">
+<li>docker还可以通过tag来区分不同版本的redis,我们来看一个两个版本redis的例子:
+<ul class="org-ul">
+<li><p>
+首先通过docker pull命令来下载两个不同版本的redis镜像
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:~# docker pull redis:6.0.13-alpine
+6.0.13-alpine: Pulling from library/redis
+540db60ca938: Pull complete
+29712d301e8c: Pull complete
+8173c12df40f: Pull complete
+2e184ab6a377: Pull complete
+57f8e2c13cfc: Pull complete
+63122aa9c3e3: Pull complete
+Digest: sha256:43f89b3cdf9bc609f32dd62662422cb97b3cffc2a5bf7b29afe3a54c283ab02f
+Status: Downloaded newer image for redis:6.0.13-alpine
+docker.io/library/redis:6.0.13-alpine
+root@host01:~# docker pull redis:6.2.3-alpine
+6.2.3-alpine: Pulling from library/redis
+540db60ca938: Already exists
+29712d301e8c: Already exists
+8173c12df40f: Already exists
+a77b7ddf4978: Pull complete
+3f34a000c6b3: Pull complete
+275dfaedaf41: Pull complete
+Digest: sha256:f8f0e809a4281714c33edf86f6da6cc2d4058c8549e44d8c83303c28b3123072
+Status: Downloaded newer image for redis:6.2.3-alpine
+docker.io/library/redis:6.2.3-alpine
+</pre>
+</div></li>
+<li>冒号后面的字符,就是image tag,在容器里面扮演着版本的作用.</li>
+<li>如果冒号后面没有image tag,那么,就是默认的image tag,叫做 latest</li>
+<li>使用image tag的好处,在于即便是新的版本出现了,我们还是可以坚持使用老版本的redis</li>
+<li>image tag不像版本那么的死板,可以包含任意字符,所以可以有很多额外的信息,比如这里的iamge tag最后的-alpine
+就表示这个image是基于Alpine Linux的</li>
+<li><p>
+另外一个有趣的现象就是,我们下载第二个redis的时候,很多地方显示了Already exists,如下
+</p>
+<pre class="example" id="org7f1441f">
+540db60ca938: Already exists
+29712d301e8c: Already exists
+8173c12df40f: Already exists
+</pre></li>
+<li><p>
+这些uuid也存在于第一个redis的下载列表中
+</p>
+<pre class="example" id="orgc654fce">
+540db60ca938: Pull complete
+29712d301e8c: Pull complete
+8173c12df40f: Pull complete
+</pre></li>
+<li><p>
+这每一个uuid在image里面叫做一个layer,如果两个image共用一个layer,那么我们可以只下次一次,并且只存储
+一份,我们可以通过查看容器的共享容量来确认这一点
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:~# docker images | grep redis
+redis        6.0.13-alpine   a556c77d3dce   2 years ago    31.3MB
+redis        6.2.3-alpine    efb4fa30f1cf   2 years ago    32.3MB
+root@host01:~# docker system df -v
+Images space usage:
+
+REPOSITORY   TAG             IMAGE ID       CREATED        SIZE      SHARED SIZE   UNIQUE SIZE   CONTAINERS
+redis        6.0.13-alpine   a556c77d3dce   2 years ago    31.33MB   6.905MB       24.42MB       0
+redis        6.2.3-alpine    efb4fa30f1cf   2 years ago    32.31MB   6.905MB       25.4MB        0
+</pre>
+</div></li>
+<li><p>
+不同版本的redis可以同时运行相互不影响
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:~# docker run -d --name redis1 redis:6.0.13-alpine
+e1efb9c0433767dc20c6311669cf917c541bc0b930446fa71b7f8c6d8d69e274
+root@host01:~# docker run -d --name redis2 redis:6.2.3-alpine
+f23a2dac3496d402dda2b2b36ed7c96f182e41ba3397981ece2c1ffac093fe6b
+root@host01:~# docker logs redis1 | grep version
+1:C 27 Jun 2023 01:42:29.293 <span style="color: color-239; font-style: italic;"># </span><span style="color: color-239; font-style: italic;">Redis version=6.0.13, bits=64, commit=00000000, modified=0, pid=1, just started</span>
+root@host01:~# docker logs redis2 | grep version
+1:C 27 Jun 2023 01:42:36.014 <span style="color: color-239; font-style: italic;"># </span><span style="color: color-239; font-style: italic;">Redis version=6.2.3, bits=64, commit=00000000, modified=0, pid=1, just started</span>
+</pre>
+</div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org732a5d6" class="outline-3">
+<h3 id="org732a5d6"><span class="section-number-3">5.2.</span> Building Container Images</h3>
+<div class="outline-text-3" id="text-5-2">
+<ul class="org-ul">
+<li>前面的例子我们看到,两个不同版本redis的容器镜像共享了layer. 其实任意两个容器镜像都可以共享layer,并不需要是同一种软件(redis)的容器</li>
+<li>每个容器镜像都是从base image(一个已经build好的image)来的. 每当在base image里面运行一个build step,就会创建一个layer, 这个layer只包含这个build step引入的文件改变</li>
+<li>base image是一个已经build好的image, 也会从其他base image开始build,最终会落到一个最原始的base image,一般是不同的Linux发行商提供的</li>
+</ul>
+</div>
+<div id="outline-container-org10e1bf4" class="outline-4">
+<h4 id="org10e1bf4"><span class="section-number-4">5.2.1.</span> Using a Docerfile</h4>
+<div class="outline-text-4" id="text-5-2-1">
+<ul class="org-ul">
+<li>最常见的创建image的方法是使用Dockerfile
+<ul class="org-ul">
+<li><p>
+下面就是一个Dockerfile的例子
+</p>
+<div class="org-src-container">
+<pre class="src src-dockerfile"><span style="color: color-160;">FROM</span> <span style="color: color-25; font-weight: bold;">nginx</span>
+
+<span style="color: color-239; font-style: italic;"># </span><span style="color: color-239; font-style: italic;">Add index.html</span>
+<span style="color: color-160;">RUN</span> echo <span style="color: color-22;">"&lt;html&gt;&lt;body&gt;&lt;h1&gt;Hello World!&lt;/h1&gt;&lt;/body&gt;&lt;/html&gt;"</span> <span style="color: color-22;">\</span>
+    &gt;/usr/share/nginx/html/index.html
+</pre>
+</div></li>
+<li>FROM: 用来指示这次build的base image</li>
+<li>RUN: 在容器内部运行一个命令</li>
+<li>COPY: 把文件拷贝进容器</li>
+<li>ENV: 指定一个环境变量</li>
+<li>ENTRYPOINT: 配置容器的启动进程</li>
+<li>CMD: 设置启动进程的默认参数</li>
+</ul></li>
+<li>我们使用docker build来把Dockerfile变成一个image
+<ul class="org-ul">
+<li><p>
+例子如下
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:~# cd /opt/hello/
+root@host01:/opt/hello# docker build -t hello .
+Sending build context to Docker daemon  2.048kB
+Step 1/2 : FROM nginx
+ ---&gt; eb4a57159180
+Step 2/2 : RUN echo <span style="color: color-22;">"&lt;html&gt;&lt;body&gt;&lt;h1&gt;Hello World!&lt;/h1&gt;&lt;/body&gt;&lt;/html&gt;"</span>     &gt;/usr/share/nginx/html/index.html
+ ---&gt; Running<span style="color: color-160;"> in</span> 27a6e2113e3d
+Removing intermediate container 27a6e2113e3d
+ ---&gt; f5d37eccfe26
+Successfully built f5d37eccfe26
+Successfully tagged hello:latest
+</pre>
+</div></li>
+<li>`-t` 参数是给新的image取名字的意思,这里没有给image tag,默认使用latest,所以最后的名字是hello:latest</li>
+<li>我们从上面编译的文字说明可以看到image编译的步骤:
+<ol class="org-ol">
+<li>Docker会把build context传送给docker daemon(所以具体的操作都是在docker daemon里面完成的).所谓
+docker context,就是一个文件夹以及这个文件夹下的所有子文件和子文件夹(在这里例子里面就是当前文
+件夹"."), 注意我们COPY命令所有可达的数据只有build context的内容(COPY ..这种操作是不会成功的).</li>
+<li>Docker会识别出我们的base image是nginx</li>
+<li>docker执行RUN指示的命令,这些命令其实都是在nginx base image里面运行的,只有这个image里面有的命令,才能执行</li>
+</ol></li>
+<li><p>
+编译出来的image可以像其他image一样运行,这里我们可以看到我们成功使用curl命令确认了容器成功运行
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:/opt/hello# docker images | grep hello
+hello        latest          f5d37eccfe26   50 seconds ago   187MB
+root@host01:/opt/hello# docker run -d -p 8080:80 hello
+597ef1a2dedb5b5771c2b0ffa54a4e0e095b7f830dd1938c74f5461f00f9d125
+root@host01:/opt/hello# curl http://localhost:8080/
+&lt;html&gt;&lt;body&gt;&lt;h1&gt;Hello World!&lt;/h1&gt;&lt;/body&gt;&lt;/html&gt;
+</pre>
+</div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgb41be7f" class="outline-4">
+<h4 id="orgb41be7f"><span class="section-number-4">5.2.2.</span> Tagging and Publishing Images</h4>
+<div class="outline-text-4" id="text-5-2-2">
+<ul class="org-ul">
+<li>image的build的介绍就结束了,下面介绍发布步骤</li>
+<li>为了能够让image可以发布,我们必须给它一个全网唯一的名字,这就会在我们原来名字的基础上加上两个部分:
+<ol class="org-ol">
+<li>full registry host</li>
+<li>full registry path</li>
+</ol></li>
+<li>比如我们举个例子, quay.io/quay/busybox:latest, 其中:
+<ul class="org-ul">
+<li>quay.io/就是full registry host</li>
+<li>quay/就是full registry path</li>
+<li>busybox:lastest 就是容器名加容器tag</li>
+</ul></li>
+<li><p>
+上面我们介绍的quay.io下载下来的busybox和我们默认host和path(其实就是docker.io/library)下载下来的容器是不一样的
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:/opt/hello# docker pull quay.io/quay/busybox
+Using default tag: latest
+latest: Pulling from quay/busybox
+9c075fe2c773: Pull complete
+ee780d08a5b4: Pull complete
+Digest: sha256:92f3298bf80a1ba949140d77987f5de081f010337880cd771f7e7fc928f8c74d
+Status: Downloaded newer image for quay.io/quay/busybox:latest
+quay.io/quay/busybox:latest
+root@host01:/opt/hello# docker pull busybox
+Using default tag: latest
+latest: Pulling from library/busybox
+71d064a1ac7d: Pull complete
+Digest: sha256:6e494387c901caf429c1bf77bd92fb82b33a68c0e19f6d1aa6a3ac8d27a7049d
+Status: Downloaded newer image for busybox:latest
+docker.io/library/busybox:latest
+root@host01:/opt/hello# docker images | grep busybox
+busybox                latest          b539af69bc01   2 weeks ago     4.86MB
+quay.io/quay/busybox   latest          e3121c769e39   2 years ago     1.22MB
+</pre>
+</div></li>
+<li><p>
+所以我们的hello:latest如果我们不改名的话,其实就是docker.io/library/hello:latest, 但是显然我们是没有
+权限push到这个地址的,所以我们要改名,我们本地刚好起了一个registry.local的registry server,于是就有
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:/opt/hello# docker start registry
+registry
+root@host01:/opt/hello# docker ps
+CONTAINER ID   IMAGE                 COMMAND                  CREATED          STATUS          PORTS                                             NAMES
+597ef1a2dedb   hello                 <span style="color: color-22;">"/docker-entrypoint.&#8230;"</span>   3 minutes ago    Up 3 minutes    0.0.0.0:8080-&gt;80/tcp, :::8080-&gt;80/tcp             priceless_visvesvaraya
+f23a2dac3496   redis:6.2.3-alpine    <span style="color: color-22;">"docker-entrypoint.s&#8230;"</span>   13 minutes ago   Up 13 minutes   6379/tcp                                          redis2
+e1efb9c04337   redis:6.0.13-alpine   <span style="color: color-22;">"docker-entrypoint.s&#8230;"</span>   13 minutes ago   Up 13 minutes   6379/tcp                                          redis1
+ec8c798c45e8   nginx                 <span style="color: color-22;">"/docker-entrypoint.&#8230;"</span>   22 minutes ago   Up 22 minutes   80/tcp                                            nginx
+1ba1abb1546e   registry:2            <span style="color: color-22;">"/entrypoint.sh /etc&#8230;"</span>   6 months ago     Up 1 second     0.0.0.0:443-&gt;443/tcp, :::443-&gt;443/tcp, 5000/tcp   registry
+root@host01:/opt/hello# docker tag hello registry.local/hello
+root@host01:/opt/hello# docker push registry.local/hello
+Using default tag: latest
+The push refers to repository <span style="color: color-25;">[</span>registry.local/hello<span style="color: color-25;">]</span>
+ca1db7cb22af: Pushed
+9e96226c58e7: Pushed
+12a568acc014: Pushed
+7757099e19d2: Pushed
+bf8b62fb2f13: Pushed
+4ca29ffc4a01: Pushed
+a83110139647: Pushed
+ac4d164fef90: Pushed
+latest: digest: sha256:bfc98b9c04b13a46310d0a0f729be0a8548958f8e829bc446985041aa2bcc252 size: 1985
+</pre>
+</div></li>
+<li>由于我们的registry.local开始是空的,所以所有layer都没有,第一次所有layer都得全部上传,但是我们再tag好
+包含已有layer的image再传的时候,已有layer就不需要再传了</li>
+<li><p>
+也不是只有自己build的可以retag, 非自己build的也能retag并且上传,比如我们的官方busybox,可以被我们retag并上传
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:/opt/hello# docker tag busybox registry.local/busybox
+root@host01:/opt/hello# docker push registry.local/busybox
+Using default tag: latest
+The push refers to repository <span style="color: color-25;">[</span>registry.local/busybox<span style="color: color-25;">]</span>
+0b7d464440dc: Pushed
+latest: digest: sha256:1b0a26bd07a3d17473d8d8468bea84015e27f87124b283b91d781bce13f61370 size: 528
+</pre>
+</div></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org185f872" class="outline-3">
+<h3 id="org185f872"><span class="section-number-3">5.3.</span> Image and Container Storage</h3>
+<div class="outline-text-3" id="text-5-3">
+</div>
+<div id="outline-container-org1e9d8b6" class="outline-4">
+<h4 id="org1e9d8b6"><span class="section-number-4">5.3.1.</span> Overlay Filesystems</h4>
+<div class="outline-text-4" id="text-5-3-1">
+<ul class="org-ul">
+<li>当我们运行容器的时候,我们在容器内部看到的文件系统是一体的,并没有区分出不同的layer,这是拜overlay
+filesystem所赐</li>
+<li>一个overlay filesystem有三个部分:
+<ul class="org-ul">
+<li>lower directory, 这里存储着base layer(可能有很多个lower directory)</li>
+<li>upper directory, 这里存储着overlay layer(所谓overlay layer,就是从lower directory拷贝过来改动的layer)</li>
+<li>mount directory, 这里是lower directory和upper directory组合起来以后的样子,这个layer是展示给用户的</li>
+</ul></li>
+<li>我们的overlay filesystem的原理就是,所有对mount directory的改动,其实都是改动的upper directory.</li>
+<li><p>
+而upper directory是把lower directory的东西先拷贝再改动,俗称Copy On Write, 这样做的好处是: lower directory
+的东西从来不变,可以和其他容器分享.
+</p>
+<pre class="example" id="org41a7a60">
+Multiple users can share the lower directory without conflict because it is only read from, never written to.
+</pre></li>
+<li>overlay filesystem不仅仅对容器有用,其实我们的路由器就是用的overlay filesystem: 不变的部分被写入到firmware,
+后续的所有改动,都在upper directory,如果一旦出现问题需要回滚到最初的已知的状态(firmware的状态),那么就
+reset:清空upper directory,回到最初的firmware状态</li>
+<li>overlay filesystem是linux 内核提供的功能,性能很高,我们下面来看看一个overlay filesystem的例子
+<ul class="org-ul">
+<li><p>
+首先我们创建四个文件夹(其中三个我们会涉及到, work文件夹是overlay filesystem用来做临时文件用的),并
+且在其中的lower和upper创建两个文件
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:/tmp# cd
+root@host01:~# mkdir /tmp/<span style="color: color-25;">{</span>lower,upper,work,mount<span style="color: color-25;">}</span>
+root@host01:~# echo <span style="color: color-22;">"hello1"</span> &gt; /tmp/lower/hello1
+root@host01:~# echo <span style="color: color-22;">"hello2"</span> &gt; /tmp/upper/hello2
+</pre>
+</div></li>
+<li><p>
+然后我们通过mount命令来创建overlay filesystem
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:~# mount -t overlay -o rw,<span style="color: color-30;">lowerdir</span>=/tmp/lower,<span style="color: color-30;">upperdir</span>=/tmp/upper,<span style="color: color-30;">workdir</span>=/tmp/work overlay /tmp/mount
+</pre>
+</div></li>
+<li><p>
+当前/tmp/mount文件夹就是merged 内容
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:~# ls -l /tmp/mount
+total 8
+-rw-r--r-- 1 root root 7 Jul  1 09:15 hello1
+-rw-r--r-- 1 root root 7 Jul  1 09:15 hello2
+root@host01:~# cat /tmp/mount/hello1
+hello1
+root@host01:~# cat /tmp/mount/hello2
+hello2
+</pre>
+</div></li>
+<li><p>
+所有对mount location的改动,都会在upper directory里面提现,但是lower一直保持不变
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:~# echo <span style="color: color-22;">"hello3"</span> &gt; /tmp/mount/hello3
+root@host01:~# ls -l /tmp/mount
+total 12
+-rw-r--r-- 1 root root 7 Jul  1 09:15 hello1
+-rw-r--r-- 1 root root 7 Jul  1 09:15 hello2
+-rw-r--r-- 1 root root 7 Jul  1 09:16 hello3
+root@host01:~# ls -l /tmp/lower
+total 4
+-rw-r--r-- 1 root root 7 Jul  1 09:15 hello1
+root@host01:~# ls -l /tmp/upper
+total 8
+-rw-r--r-- 1 root root 7 Jul  1 09:15 hello2
+-rw-r--r-- 1 root root 7 Jul  1 09:16 hello3
+</pre>
+</div></li>
+<li><p>
+即便是我们删除文件,也不会影响lower directory
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:~# rm /tmp/mount/hello1
+root@host01:~# ls -l /tmp/mount
+total 8
+-rw-r--r-- 1 root root 7 Jul  1 09:15 hello2
+-rw-r--r-- 1 root root 7 Jul  1 09:16 hello3
+root@host01:~# ls -l /tmp/lower
+total 4
+-rw-r--r-- 1 root root 7 Jul  1 09:15 hello1
+root@host01:~# ls -l /tmp/upper
+total 8
+c--------- 1 root root 0, 0 Jul  1 09:17 hello1
+-rw-r--r-- 1 root root    7 Jul  1 09:15 hello2
+-rw-r--r-- 1 root root    7 Jul  1 09:16 hello3
+root@host01:~#
+</pre>
+</div></li>
+<li>注意,上面的c是character special file的意思,linux为了不让这个文件展示在mount directory里面,给他设
+置了一个标志,意思是不要merge这个文件到mount directory了</li>
+<li><p>
+由于可以重用lower directory,我们可以使用如下命令来创建新的mount2 ,但是重用lower.我们会发现lower
+文件夹下的hello1还是会出现(因为一直都是只读,从来没有动过lower里面的hello1)
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:~# mkdir /tmp/<span style="color: color-25;">{</span>upper2,work2,mount2<span style="color: color-25;">}</span>
+root@host01:~# mount -t overlay -o rw,<span style="color: color-30;">lowerdir</span>=/tmp/lower,<span style="color: color-30;">upperdir</span>=/tmp/upper2,<span style="color: color-30;">workdir</span>=/tmp/work2 overlay /tmp/mount2
+root@host01:~# ls -l /tmp/mount2
+total 4
+-rw-r--r-- 1 root root 7 Jul  1 09:15 hello1
+root@host01:~#
+</pre>
+</div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org21d41d4" class="outline-4">
+<h4 id="org21d41d4"><span class="section-number-4">5.3.2.</span> Understanding Container Layers</h4>
+<div class="outline-text-4" id="text-5-3-2">
+<ul class="org-ul">
+<li>理解了overlay filesystem,我们可以探索下我们运行中的nginx容器的filesystem
+<ul class="org-ul">
+<li><p>
+首先查找正在运行的nginx的filesystem
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:~# <span style="color: color-30;">ROOT</span>=$<span style="color: color-25;">(</span><span style="color: color-25; font-weight: bold;">docker inspect nginx | jq -r '.[0].GraphDriver.Data.MergedDir'</span><span style="color: color-25;">)</span>
+root@host01:~# echo $<span style="color: color-30;">ROOT</span>
+/var/lib/docker/overlay2/e7966cd9fe73d8ebcee4bc1069d5eea6496d968e951781bdd9600427d9153b1d/merged
+</pre>
+</div></li>
+<li>我们还是使用jq来选择我们希望查找我们想要的field,这里查找到的是最终mount point的位置,在容器里面叫merged</li>
+<li><p>
+我们再来看看这个mount point对应的lowerdir, upperdir, workdir地址
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:~# mount | grep $<span style="color: color-30;">ROOT</span> | tr <span style="color: color-25;">[</span>:,<span style="color: color-25;">]</span> <span style="color: color-22;">'\n'</span>
+overlay on /var/lib/docker/overlay2/e7966cd9fe73d8ebcee4bc1069d5eea6496d968e951781bdd9600427d9153b1d/merged type overlay <span style="color: color-25;">(</span>rw
+relatime
+<span style="color: color-30;">lowerdir</span>=/var/lib/docker/overlay2/l/BBJDCJ5XARDOSESCMCL6X2QDGD
+/var/lib/docker/overlay2/l/CAZCAOGD7UFIT2IFX5AWSV5CIU
+/var/lib/docker/overlay2/l/GZX2CMXOG6VFMCUB3UACD5KZLM
+/var/lib/docker/overlay2/l/2KIUAYH3TMRBF7NQNDVQZPPEOI
+/var/lib/docker/overlay2/l/GW6ABLHCXLFHDRZYWQ3EIMQ6G6
+/var/lib/docker/overlay2/l/DDIJ2BJFQTG24FHAEK3VIVY4W2
+/var/lib/docker/overlay2/l/VWZXOYJQ3F26BMTDVBQXTQ6B5W
+/var/lib/docker/overlay2/l/S54SMZR7FJK4SVY6MQJLCQ3XRC
+<span style="color: color-30;">upperdir</span>=/var/lib/docker/overlay2/e7966cd9fe73d8ebcee4bc1069d5eea6496d968e951781bdd9600427d9153b1d/diff
+<span style="color: color-30;">workdir</span>=/var/lib/docker/overlay2/e7966cd9fe73d8ebcee4bc1069d5eea6496d968e951781bdd9600427d9153b1d/work
+<span style="color: color-30;">xino</span>=off<span style="color: color-25;">)</span>
+</pre>
+</div></li>
+<li>注意,上面的tr命令,是把分号和逗号都变成新的一行来使得多个lowerdir更容易查看</li>
+<li><p>
+我们之前创建了一个10MB的data文件,这个文件显示在mountdir,其实是存储在upperdir(也就是上面
+的/var/lib/docker/overlay2/e7966cd9fe73d8ebcee4bc1069d5eea6496d968e951781bdd9600427d9153b1d/diff)
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:~# ls -l $<span style="color: color-30;">ROOT</span>/tmp/data
+-rw-r--r-- 1 root root 10485760 Jun 27 01:35 /var/lib/docker/overlay2/e7966cd9fe73d8ebcee4bc1069d5eea6496d968e951781bdd9600427d9153b1d/merged/tmp/data
+root@host01:~# ls -l $<span style="color: color-30;">ROOT</span>/../diff/tmp/data
+-rw-r--r-- 1 root root 10485760 Jun 27 01:35 /var/lib/docker/overlay2/e7966cd9fe73d8ebcee4bc1069d5eea6496d968e951781bdd9600427d9153b1d/merged/../diff/tmp/data
+</pre>
+</div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgc87ea48" class="outline-4">
+<h4 id="orgc87ea48"><span class="section-number-4">5.3.3.</span> Practical Image Building Advice</h4>
+<div class="outline-text-4" id="text-5-3-3">
+<ul class="org-ul">
+<li>由于容器使用了overlay filesystem,我们在build image的时候,就有如下的最佳实践:
+<ul class="org-ul">
+<li>由于overlay filesystem有多个lower directory(但是整个的merge过程性能损失极小), 所以我们可以模块化
+的创建image: 在一个base image的基础上,安装不同的软件,获得不同的新的image</li>
+<li>由于在upper layer删除存在于lower layer的文件其实并没有真的删除(因为要保证lower layer文件的只读性)
+所以我们在创建lower layer(每个Dockerfile的RUN命令都会创建一个layer)的时候要非常小心:
+<ol class="org-ol">
+<li>如果RUN(COPY)创建了大的临时文件,必须在RUN(COPY)这一行就删除,否则RUN(COPY)这一行就已经建立了一个
+lowerdir,后续的RUN即便是删除也不会改变临时文件已经占据一层lowdir的事实</li>
+<li>不要使用COPY(ENV)把机密的文件或者参数传入image,如果不再COPY(ENV)这一行删除,那么这个机密文件(参
+数)就会变成image的一个lowerdir</li>
+</ol></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org1bca3df" class="outline-3">
+<h3 id="org1bca3df"><span class="section-number-3">5.4.</span> Open Container Initiative</h3>
+<div class="outline-text-3" id="text-5-4">
+<ul class="org-ul">
+<li>container image不仅仅包括之前讲的overlay filesystem,它还包括一些metadata,比如:
+<ul class="org-ul">
+<li>初始化运行的命令(CMD)</li>
+<li>程序所需要的环境变量(ENV)</li>
+</ul></li>
+<li><p>
+这些metadata的信息存储有一个固定的格式,就是OCI format. skopeo命令就是能把内置的docker image转换为
+OCI format文件夹
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:~# skopeo copy docker-daemon:busybox:latest oci:busybox:latest
+Getting image source signatures
+Copying blob 0b7d464440dc done
+Copying config 75e92172e5 done
+Writing manifest to image destination
+Storing signatures
+</pre>
+</div></li>
+<li><p>
+OCI format 文件夹内容如下
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:~# ls -l busybox
+total 12
+drwxr-xr-x 3 root root 4096 Jul  1 16:08 blobs
+-rw-r--r-- 1 root root  247 Jul  1 16:08 index.json
+-rw-r--r-- 1 root root   31 Jul  1 16:08 oci-layout
+</pre>
+</div></li>
+<li><p>
+oci-layout显示了image使用的OCI version
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:~# jq . busybox/oci-layout
+<span style="color: color-25;">{</span>
+  <span style="color: color-22;">"imageLayoutVersion"</span>: <span style="color: color-22;">"1.0.0"</span>
+<span style="color: color-25;">}</span>
+</pre>
+</div></li>
+<li><p>
+index.json介绍了image的具体信息
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:~# jq . busybox/index.json
+<span style="color: color-25;">{</span>
+  <span style="color: color-22;">"schemaVersion"</span>: 2,
+  <span style="color: color-22;">"manifests"</span>: <span style="color: color-125;">[</span>
+    <span style="color: color-22;">{</span>
+      <span style="color: color-22;">"mediaType"</span>: <span style="color: color-22;">"application/vnd.oci.image.manifest.v1+json"</span>,
+      <span style="color: color-22;">"digest"</span>: <span style="color: color-22;">"sha256:2b71f601f021f9f0e1c57cf7ee13eee44c39b1595ca00a08180549e4c387ead0"</span>,
+      <span style="color: color-22;">"size"</span>: 348,
+      <span style="color: color-22;">"annotations"</span>: <span style="color: color-91;">{</span>
+        <span style="color: color-22;">"org.opencontainers.image.ref.name"</span>: <span style="color: color-22;">"latest"</span>
+      <span style="color: color-91;">}</span>
+    <span style="color: color-22;">}</span>
+  <span style="color: color-125;">]</span>
+<span style="color: color-25;">}</span>
+</pre>
+</div></li>
+<li>实际的文件是以每个layer为一个tar文件,存储在blob文件夹里面的,我们的busybox只有一个layer,也就只有一个
+tar文件.我们下面就来查看下这个tar文件
+<ul class="org-ul">
+<li><p>
+index.json里面的sha256文件,其实是整个image的manifest文件,我们先找到这个文件
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:~# <span style="color: color-30;">MANIFEST</span>=$<span style="color: color-25;">(</span><span style="color: color-25; font-weight: bold;">jq -r .manifests</span><span style="color: color-125; font-weight: bold;">[</span><span style="color: color-25; font-weight: bold;">0</span><span style="color: color-125; font-weight: bold;">]</span><span style="color: color-25; font-weight: bold;">.digest busybox/index.json | sed -e 's/sha256://'</span><span style="color: color-25;">)</span>
+root@host01:~# echo $<span style="color: color-30;">MANIFEST</span>
+2b71f601f021f9f0e1c57cf7ee13eee44c39b1595ca00a08180549e4c387ead0
+root@host01:~# jq . busybox/blobs/sha256/$<span style="color: color-30;">MANIFEST</span>
+<span style="color: color-25;">{</span>
+  <span style="color: color-22;">"schemaVersion"</span>: 2,
+  <span style="color: color-22;">"config"</span>: <span style="color: color-125;">{</span>
+    <span style="color: color-22;">"mediaType"</span>: <span style="color: color-22;">"application/vnd.oci.image.config.v1+json"</span>,
+    <span style="color: color-22;">"digest"</span>: <span style="color: color-22;">"sha256:75e92172e5cd78fe6f944333403b5709eaccbec868c455f2f0913c66aa272e02"</span>,
+    <span style="color: color-22;">"size"</span>: 575
+  <span style="color: color-125;">}</span>,
+  <span style="color: color-22;">"layers"</span>: <span style="color: color-125;">[</span>
+    <span style="color: color-22;">{</span>
+      <span style="color: color-22;">"mediaType"</span>: <span style="color: color-22;">"application/vnd.oci.image.layer.v1.tar+gzip"</span>,
+      <span style="color: color-22;">"digest"</span>: <span style="color: color-22;">"sha256:4262504e0aaf2e52231efa124ad2062f3bbbf601ad311971ff2f91bf76fdebbd"</span>,
+      <span style="color: color-22;">"size"</span>: 2657131
+    <span style="color: color-22;">}</span>
+  <span style="color: color-125;">]</span>
+<span style="color: color-25;">}</span>
+</pre>
+</div></li>
+<li>我们可以看到,这个文件其实是一个metadata json文件,这个metadata文件里面两个sha256文件:
+<ol class="org-ol">
+<li><p>
+第一个sha256是容器的命令和环境变量等信息
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:~# jq . busybox/blobs/sha256/75e92172e5cd78fe6f944333403b5709eaccbec868c455f2f0913c66aa272e02
+<span style="color: color-25;">{</span>
+  <span style="color: color-22;">"created"</span>: <span style="color: color-22;">"2023-06-10T00:19:54.795108463Z"</span>,
+  <span style="color: color-22;">"architecture"</span>: <span style="color: color-22;">"amd64"</span>,
+  <span style="color: color-22;">"os"</span>: <span style="color: color-22;">"linux"</span>,
+  <span style="color: color-22;">"config"</span>: <span style="color: color-125;">{</span>
+    <span style="color: color-22;">"Env"</span>: <span style="color: color-22;">[</span>
+      <span style="color: color-22;">"PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"</span>
+    <span style="color: color-22;">]</span>,
+    <span style="color: color-22;">"Cmd"</span>: <span style="color: color-22;">[</span>
+      <span style="color: color-22;">"sh"</span>
+    <span style="color: color-22;">]</span>
+  <span style="color: color-125;">}</span>,
+  <span style="color: color-22;">"rootfs"</span>: <span style="color: color-125;">{</span>
+    <span style="color: color-22;">"type"</span>: <span style="color: color-22;">"layers"</span>,
+    <span style="color: color-22;">"diff_ids"</span>: <span style="color: color-22;">[</span>
+      <span style="color: color-22;">"sha256:0b7d464440dc672e08617a7520ac064ba1d6db2c855c185a2a71f1b20e728875"</span>
+    <span style="color: color-22;">]</span>
+  <span style="color: color-125;">}</span>,
+  <span style="color: color-22;">"history"</span>: <span style="color: color-125;">[</span>
+    <span style="color: color-22;">{</span>
+      <span style="color: color-22;">"created"</span>: <span style="color: color-22;">"2023-06-10T00:19:54.657258095Z"</span>,
+      <span style="color: color-22;">"created_by"</span>: <span style="color: color-22;">"/bin/sh -c #(nop) ADD file:06946025f3ffea04544a154140a48acf32ddfec8205c9b8b5bc7e94abb0c2879 in / "</span>
+    <span style="color: color-22;">}</span>,
+    <span style="color: color-22;">{</span>
+      <span style="color: color-22;">"created"</span>: <span style="color: color-22;">"2023-06-10T00:19:54.795108463Z"</span>,
+      <span style="color: color-22;">"created_by"</span>: <span style="color: color-22;">"/bin/sh -c #(nop)  CMD [\"sh\"]"</span>,
+      <span style="color: color-22;">"empty_layer"</span>: true
+    <span style="color: color-22;">}</span>
+  <span style="color: color-125;">]</span>
+<span style="color: color-25;">}</span>
+</pre>
+</div></li>
+<li>第二个sha256文件就是我们的tar文件</li>
+</ol></li>
+<li><p>
+我们把第二个tar文件提取出来,如下
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:~# <span style="color: color-30;">LAYER</span>=$<span style="color: color-25;">(</span><span style="color: color-25; font-weight: bold;">jq -r .layers</span><span style="color: color-125; font-weight: bold;">[</span><span style="color: color-25; font-weight: bold;">0</span><span style="color: color-125; font-weight: bold;">]</span><span style="color: color-25; font-weight: bold;">.digest busybox/blobs/sha256/$MANIFEST | sed -e 's/sha256://'</span><span style="color: color-25;">)</span>
+root@host01:~# echo $<span style="color: color-30;">LAYER</span>
+4262504e0aaf2e52231efa124ad2062f3bbbf601ad311971ff2f91bf76fdebbd
+</pre>
+</div></li>
+<li><p>
+再用tar tvf 命令把tar文件的解压出来,详细信息如下
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">root@host01:~# tar tvf busybox/blobs/sha256/$<span style="color: color-30;">LAYER</span>
+drwxr-xr-x 0/0               0 2023-06-08 23:48 bin/
+-rwxr-xr-x 0/0         1033728 2023-06-08 23:48 bin/<span style="color: color-25;">[</span>
+hrwxr-xr-x 0/0               0 2023-06-08 23:48 bin/<span style="color: color-125;">[</span><span style="color: color-22;">[</span> link to bin/<span style="color: color-91;">[</span>
+hrwxr-xr-x 0/0               0 2023-06-08 23:48 bin/acpid link to bin/<span style="color: color-36;">[</span>
+hrwxr-xr-x 0/0               0 2023-06-08 23:48 bin/add-shell link to bin/<span style="color: color-25;">[</span>
+hrwxr-xr-x 0/0               0 2023-06-08 23:48 bin/addgroup link to bin/<span style="color: color-125;">[</span>
+...
+-rw-r--r-- 0/0           93000 2023-04-19 21:17 lib/libresolv.so.2
+lrwxrwxrwx 0/0               0 2023-06-08 23:48 lib64 -&gt; lib
+drwx------ 0/0               0 2023-06-08 23:48 root/
+drwxrwxrwt 0/0               0 2023-06-08 23:48 tmp/
+drwxr-xr-x 0/0               0 2023-06-08 23:48 usr/
+drwxr-xr-x 0/0               0 2023-06-08 23:48 usr/bin/
+lrwxrwxrwx 0/0               0 2023-06-08 23:48 usr/bin/env -&gt; ../../bin/env
+drwxr-xr-x 1/1               0 2023-06-08 23:48 usr/sbin/
+drwxr-xr-x 0/0               0 2023-06-08 23:48 var/
+drwxr-xr-x 0/0               0 2023-06-08 23:48 var/spool/
+drwxr-xr-x 8/8               0 2023-06-08 23:48 var/spool/mail/
+drwxr-xr-x 0/0               0 2023-06-08 23:48 var/www/
+</pre>
+</div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgf98b169" class="outline-2">
+<h2 id="orgf98b169"><span class="section-number-2">6.</span> Chapter 6: Why Kubernetes Matters</h2>
+<div class="outline-text-2" id="text-6">
+<ul class="org-ul">
+<li>容器允许我们改变之前打包和部署application的方式</li>
+<li>但是这还不够,我们还需要一个容器编排的框架来帮我们在一个集群内调度容器.这样才能满足优秀架构的如下三个特性:
+<ul class="org-ul">
+<li>scalability</li>
+<li>reliability</li>
+<li>resiliency</li>
+</ul></li>
+</ul>
+</div>
+<div id="outline-container-orgbf2c9c4" class="outline-3">
+<h3 id="orgbf2c9c4"><span class="section-number-3">6.1.</span> Running Containers in a Cluster</h3>
+<div class="outline-text-3" id="text-6-1">
+<ul class="org-ul">
+<li>现代的网络应用,在多个server之间调度application是非常迫切想需求:
+<ul class="org-ul">
+<li>一来可以保证扩展性和可靠性,分散load</li>
+<li>二来可以避免单点故障</li>
+</ul></li>
+<li>前面我们已经讲了在容器里面运行application,但是这并没有保证容器能够在多个server运行以规避单点故障</li>
+<li>只有容器编排框架能够解决这个问题: 因为容器编排框架可以跨server调度容器</li>
+<li>这也给了容器编排框架一个巨大的难题: 容器编排框架需要在多个机器之间调度任意类型的容器</li>
+</ul>
+</div>
+<div id="outline-container-org723f062" class="outline-4">
+<h4 id="org723f062"><span class="section-number-4">6.1.1.</span> Cross-Cutting Concerns</h4>
+<div class="outline-text-4" id="text-6-1-1">
+<ul class="org-ul">
+<li>在任意机器山运行任意的container让我们的灵活性得到了巨大提高,但是极大的增加了k8s的复杂度:
+<ul class="org-ul">
+<li>k8s事前不知道它被要求运行什么类型的容器</li>
+<li>容器的workload随着新的应用的加入或者离开,而不停的在改变</li>
+</ul></li>
+<li>除了上面的问题,k8s还需要满足如下的design pattern:
+<ul class="org-ul">
+<li>Dynamic scheduling: 新的容器必须分配给server,而且还能根据配置的改变,而改变容器所在的server</li>
+<li>Distributed state: 整个集群必须知道哪些容器,在哪里运行,即便是硬件或网络错误期间</li>
+<li>Multitenancy: 单个机器可以运行多个application</li>
+<li>Hardware isolation: 集群可以运行在cloud环境,也可以运行在用户的机器上面,要和不同的运行环境解耦</li>
+</ul></li>
+<li>上面的这些个design pattern整合起来用一个术语来表达,就是cross-cutting concern</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgbc6eceb" class="outline-4">
+<h4 id="orgbc6eceb"><span class="section-number-4">6.1.2.</span> Kubernetes Concepts</h4>
+<div class="outline-text-4" id="text-6-1-2">
+<ul class="org-ul">
+<li>为了达到cross-cutting concern, k8s架构需要允许所有的东西随时来,随时走:这里说到了所有的东西,那么就不
+仅仅是容器化之后的app可以随时来随时走. 甚至是包括底层的硬件,比如:
+<ul class="org-ul">
+<li>server</li>
+<li>network</li>
+<li>storage</li>
+</ul></li>
+</ul>
+</div>
+<ol class="org-ol">
+<li><a id="org3b51058"></a>Separate Control Plane<br />
+<div class="outline-text-5" id="text-6-1-2-1">
+<ul class="org-ul">
+<li>k8s作为编排框架,首先需要能够运行容器. 具体做这项工作的是一系列的worker机器,叫做node</li>
+<li>每个node上面都会运行一个kubelet service,用来和底层的container runtime进行通信,并且监控容器</li>
+<li>k8s 为了管理node和在node上面的容器,也编写了一系列的core software component, 它们统一叫做control plane</li>
+<li>这些core software component 通常都和worker node 分开部署,这也就意味着一个有趣的现象: 我们可以使用worker node
+上面的容器来运行这些control plane</li>
+<li>独立的control plane意味着k8s有更高的可配置性,比如cloud controller manager组件就是用来部署k8s到cloud
+provider的,这个组件提高了hardware isolation</li>
+</ul>
+</div>
+</li>
+<li><a id="org7f837cd"></a>Declarative API<br />
+<div class="outline-text-5" id="text-6-1-2-2">
+<ul class="org-ul">
+<li>k8s的API是声明式的,也就是说其endpoint是如create, read, update, delete, 但是具体的参数从cluster configuration中获取</li>
+<li>声明式API的优点是可以设计幂等(idempotence)类型的API,所谓幂等,就是API无论运行多少次,都是一次的效果.
+这在网络和硬件不稳定的分布式系统中,很受欢迎</li>
+</ul>
+</div>
+</li>
+<li><a id="orge791c13"></a>Self-Healing<br />
+<div class="outline-text-5" id="text-6-1-2-3">
+<ul class="org-ul">
+<li>在声明式API的帮助下,k8s被设计成了自我治愈(self-healing)的架构</li>
+<li>所谓自我治愈架构,是说control plane实时监控如下两个事情,并且确保它们一直是对的齐的:
+<ul class="org-ul">
+<li>cluster configuration</li>
+<li>cluster state</li>
+</ul></li>
+<li>k8s的这种把configuration和state分离的做法让k8s非常大的弹性(resilient,或者翻译成修复力),举个例子:
+<ul class="org-ul">
+<li>假设开始有一个容器在Running的状态正常运行</li>
+<li>如果control plane失去了和这个容器的server之间的联系, 那么control plane立马就设置容器status为Unknown,
+然后,要么尝试重连,要么重建一个容器</li>
+</ul></li>
+<li>k8s的这种声明式API和自我治愈架构,会带来一个不太寻常的体验:
+<ul class="org-ul">
+<li>我们发送给k8s的一个success的反馈,只是说cluster configuration改变了,而不是说cluster的state改变了.
+它俩是分开的,k8s需要一段时间达到align configuration和state的效果</li>
+<li>所有我们在获取success反馈后,还要实时监控容器的状态,看看control plane align的时候有什么问题</li>
+</ul></li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org6df7f63" class="outline-3">
+<h3 id="org6df7f63"><span class="section-number-3">6.2.</span> Cluster Deployment</h3>
+<div class="outline-text-3" id="text-6-2">
+<ul class="org-ul">
+<li>第一章我们使用了prebuilt的k8s发行版来部署,这是生产环境最好的选择</li>
+<li>本章我们为了理解,我们会自己部署vanilla k8s, 使用kubeadm管理工具</li>
+<li>我们自己的k8s集群会部署在四台virtual machine,分别是:
+<ul class="org-ul">
+<li>host01</li>
+<li>host02</li>
+<li>host03</li>
+<li>host04</li>
+</ul></li>
+<li>我们使用其中的前三台(host01,host02,host03)来作为control plane component,因为这是高可用cluster最低机器数目的要求.</li>
+<li>host04作为唯一的一台worker</li>
+<li>本例子中,我们会使用control plane node来运行常规容器,但是注意在生产环境中这是需要避免的.</li>
+<li>我们使用vagrant初始化机器的过程当中,就已经设置了containerd(容器平台)和crictl</li>
+</ul>
+</div>
+<div id="outline-container-orgf7398a4" class="outline-4">
+<h4 id="orgf7398a4"><span class="section-number-4">6.2.1.</span> Prerequisite Packages</h4>
+</div>
+<div id="outline-container-org95c02a7" class="outline-4">
+<h4 id="org95c02a7"><span class="section-number-4">6.2.2.</span> Kubernetes Packages</h4>
+</div>
+<div id="outline-container-orgec86c58" class="outline-4">
+<h4 id="orgec86c58"><span class="section-number-4">6.2.3.</span> Cluster Initialization</h4>
+</div>
+<div id="outline-container-orge6c9997" class="outline-4">
+<h4 id="orge6c9997"><span class="section-number-4">6.2.4.</span> Joining Nodes to the Cluster</h4>
+</div>
+</div>
+<div id="outline-container-org7e3a112" class="outline-3">
+<h3 id="org7e3a112"><span class="section-number-3">6.3.</span> Installing Cluster Add-ons</h3>
+<div class="outline-text-3" id="text-6-3">
+</div>
+<div id="outline-container-orgbcfd02c" class="outline-4">
+<h4 id="orgbcfd02c"><span class="section-number-4">6.3.1.</span> Network Driver</h4>
+</div>
+<div id="outline-container-org733b6a0" class="outline-4">
+<h4 id="org733b6a0"><span class="section-number-4">6.3.2.</span> Installing Storage</h4>
+</div>
+<div id="outline-container-orgcd4fbb7" class="outline-4">
+<h4 id="orgcd4fbb7"><span class="section-number-4">6.3.3.</span> Ingress Controller</h4>
+</div>
+<div id="outline-container-orgdbedad5" class="outline-4">
+<h4 id="orgdbedad5"><span class="section-number-4">6.3.4.</span> Metrics Server</h4>
+</div>
+</div>
+<div id="outline-container-orgc812c87" class="outline-3">
+<h3 id="orgc812c87"><span class="section-number-3">6.4.</span> Exploring a Cluster</h3>
+</div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: harrifeng@outlook.com</p>
-<p class="date">Created: 2023-04-12 Wed 17:56</p>
+<p class="date">Created: 2023-07-18 Tue 09:55</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
