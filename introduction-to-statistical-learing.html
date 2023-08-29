@@ -3,224 +3,24 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2021-08-02 Mon 17:08 -->
+<!-- 2023-08-29 �ܶ� 20:44 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>introduction-to-statistical-learning</title>
-<meta name="generator" content="Org mode" />
 <meta name="author" content="harrifeng@outlook.com" />
-<style type="text/css">
- <!--/*--><![CDATA[/*><!--*/
-  .title  { text-align: center;
-             margin-bottom: .2em; }
-  .subtitle { text-align: center;
-              font-size: medium;
-              font-weight: bold;
-              margin-top:0; }
-  .todo   { font-family: monospace; color: red; }
-  .done   { font-family: monospace; color: green; }
-  .priority { font-family: monospace; color: orange; }
-  .tag    { background-color: #eee; font-family: monospace;
-            padding: 2px; font-size: 80%; font-weight: normal; }
-  .timestamp { color: #bebebe; }
-  .timestamp-kwd { color: #5f9ea0; }
-  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
-  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
-  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
-  .underline { text-decoration: underline; }
-  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
-  p.verse { margin-left: 3%; }
-  pre {
-    border: 1px solid #ccc;
-    box-shadow: 3px 3px 3px #eee;
-    padding: 8pt;
-    font-family: monospace;
-    overflow: auto;
-    margin: 1.2em;
-  }
-  pre.src {
-    position: relative;
-    overflow: auto;
-    padding-top: 1.2em;
-  }
-  pre.src:before {
-    display: none;
-    position: absolute;
-    background-color: white;
-    top: -10px;
-    right: 10px;
-    padding: 3px;
-    border: 1px solid black;
-  }
-  pre.src:hover:before { display: inline; margin-top: 14px;}
-  /* Languages per Org manual */
-  pre.src-asymptote:before { content: 'Asymptote'; }
-  pre.src-awk:before { content: 'Awk'; }
-  pre.src-C:before { content: 'C'; }
-  /* pre.src-C++ doesn't work in CSS */
-  pre.src-clojure:before { content: 'Clojure'; }
-  pre.src-css:before { content: 'CSS'; }
-  pre.src-D:before { content: 'D'; }
-  pre.src-ditaa:before { content: 'ditaa'; }
-  pre.src-dot:before { content: 'Graphviz'; }
-  pre.src-calc:before { content: 'Emacs Calc'; }
-  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
-  pre.src-fortran:before { content: 'Fortran'; }
-  pre.src-gnuplot:before { content: 'gnuplot'; }
-  pre.src-haskell:before { content: 'Haskell'; }
-  pre.src-hledger:before { content: 'hledger'; }
-  pre.src-java:before { content: 'Java'; }
-  pre.src-js:before { content: 'Javascript'; }
-  pre.src-latex:before { content: 'LaTeX'; }
-  pre.src-ledger:before { content: 'Ledger'; }
-  pre.src-lisp:before { content: 'Lisp'; }
-  pre.src-lilypond:before { content: 'Lilypond'; }
-  pre.src-lua:before { content: 'Lua'; }
-  pre.src-matlab:before { content: 'MATLAB'; }
-  pre.src-mscgen:before { content: 'Mscgen'; }
-  pre.src-ocaml:before { content: 'Objective Caml'; }
-  pre.src-octave:before { content: 'Octave'; }
-  pre.src-org:before { content: 'Org mode'; }
-  pre.src-oz:before { content: 'OZ'; }
-  pre.src-plantuml:before { content: 'Plantuml'; }
-  pre.src-processing:before { content: 'Processing.js'; }
-  pre.src-python:before { content: 'Python'; }
-  pre.src-R:before { content: 'R'; }
-  pre.src-ruby:before { content: 'Ruby'; }
-  pre.src-sass:before { content: 'Sass'; }
-  pre.src-scheme:before { content: 'Scheme'; }
-  pre.src-screen:before { content: 'Gnu Screen'; }
-  pre.src-sed:before { content: 'Sed'; }
-  pre.src-sh:before { content: 'shell'; }
-  pre.src-sql:before { content: 'SQL'; }
-  pre.src-sqlite:before { content: 'SQLite'; }
-  /* additional languages in org.el's org-babel-load-languages alist */
-  pre.src-forth:before { content: 'Forth'; }
-  pre.src-io:before { content: 'IO'; }
-  pre.src-J:before { content: 'J'; }
-  pre.src-makefile:before { content: 'Makefile'; }
-  pre.src-maxima:before { content: 'Maxima'; }
-  pre.src-perl:before { content: 'Perl'; }
-  pre.src-picolisp:before { content: 'Pico Lisp'; }
-  pre.src-scala:before { content: 'Scala'; }
-  pre.src-shell:before { content: 'Shell Script'; }
-  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
-  /* additional language identifiers per "defun org-babel-execute"
-       in ob-*.el */
-  pre.src-cpp:before  { content: 'C++'; }
-  pre.src-abc:before  { content: 'ABC'; }
-  pre.src-coq:before  { content: 'Coq'; }
-  pre.src-groovy:before  { content: 'Groovy'; }
-  /* additional language identifiers from org-babel-shell-names in
-     ob-shell.el: ob-shell is the only babel language using a lambda to put
-     the execution function name together. */
-  pre.src-bash:before  { content: 'bash'; }
-  pre.src-csh:before  { content: 'csh'; }
-  pre.src-ash:before  { content: 'ash'; }
-  pre.src-dash:before  { content: 'dash'; }
-  pre.src-ksh:before  { content: 'ksh'; }
-  pre.src-mksh:before  { content: 'mksh'; }
-  pre.src-posh:before  { content: 'posh'; }
-  /* Additional Emacs modes also supported by the LaTeX listings package */
-  pre.src-ada:before { content: 'Ada'; }
-  pre.src-asm:before { content: 'Assembler'; }
-  pre.src-caml:before { content: 'Caml'; }
-  pre.src-delphi:before { content: 'Delphi'; }
-  pre.src-html:before { content: 'HTML'; }
-  pre.src-idl:before { content: 'IDL'; }
-  pre.src-mercury:before { content: 'Mercury'; }
-  pre.src-metapost:before { content: 'MetaPost'; }
-  pre.src-modula-2:before { content: 'Modula-2'; }
-  pre.src-pascal:before { content: 'Pascal'; }
-  pre.src-ps:before { content: 'PostScript'; }
-  pre.src-prolog:before { content: 'Prolog'; }
-  pre.src-simula:before { content: 'Simula'; }
-  pre.src-tcl:before { content: 'tcl'; }
-  pre.src-tex:before { content: 'TeX'; }
-  pre.src-plain-tex:before { content: 'Plain TeX'; }
-  pre.src-verilog:before { content: 'Verilog'; }
-  pre.src-vhdl:before { content: 'VHDL'; }
-  pre.src-xml:before { content: 'XML'; }
-  pre.src-nxml:before { content: 'XML'; }
-  /* add a generic configuration mode; LaTeX export needs an additional
-     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
-  pre.src-conf:before { content: 'Configuration File'; }
-
-  table { border-collapse:collapse; }
-  caption.t-above { caption-side: top; }
-  caption.t-bottom { caption-side: bottom; }
-  td, th { vertical-align:top;  }
-  th.org-right  { text-align: center;  }
-  th.org-left   { text-align: center;   }
-  th.org-center { text-align: center; }
-  td.org-right  { text-align: right;  }
-  td.org-left   { text-align: left;   }
-  td.org-center { text-align: center; }
-  dt { font-weight: bold; }
-  .footpara { display: inline; }
-  .footdef  { margin-bottom: 1em; }
-  .figure { padding: 1em; }
-  .figure p { text-align: center; }
-  .equation-container {
-    display: table;
-    text-align: center;
-    width: 100%;
-  }
-  .equation {
-    vertical-align: middle;
-  }
-  .equation-label {
-    display: table-cell;
-    text-align: right;
-    vertical-align: middle;
-  }
-  .inlinetask {
-    padding: 10px;
-    border: 2px solid gray;
-    margin: 10px;
-    background: #ffffcc;
-  }
-  #org-div-home-and-up
-   { text-align: right; font-size: 70%; white-space: nowrap; }
-  textarea { overflow-x: auto; }
-  .linenr { font-size: smaller }
-  .code-highlighted { background-color: #ffff00; }
-  .org-info-js_info-navigation { border-style: none; }
-  #org-info-js_console-label
-    { font-size: 10px; font-weight: bold; white-space: nowrap; }
-  .org-info-js_search-highlight
-    { background-color: #ffff00; color: #000000; font-weight: bold; }
-  .org-svg { width: 90%; }
-  /*]]>*/-->
-</style>
+<meta name="generator" content="Org Mode" />
 <link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/htmlize.css"/>
 <link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/readtheorg.css"/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/lib/js/jquery.stickytableheaders.min.js"></script>
 <script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/js/readtheorg.js"></script>
-<script type="text/javascript">
-// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
-<!--/*--><![CDATA[/*><!--*/
-     function CodeHighlightOn(elem, id)
-     {
-       var target = document.getElementById(id);
-       if(null != target) {
-         elem.classList.add("code-highlighted");
-         target.classList.add("code-highlighted");
-       }
-     }
-     function CodeHighlightOff(elem, id)
-     {
-       var target = document.getElementById(id);
-       if(null != target) {
-         elem.classList.remove("code-highlighted");
-         target.classList.remove("code-highlighted");
-       }
-     }
-    /*]]>*///-->
-// @license-end
-</script>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/readtheorg.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/js/readtheorg.js"></script>
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
         displayAlign: "center",
@@ -241,108 +41,157 @@
              }
 });
 </script>
-<script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
 </head>
 <body>
-<div id="content">
+<div id="content" class="content">
 <h1 class="title">introduction-to-statistical-learning</h1>
-<div id="table-of-contents">
+<div id="table-of-contents" role="doc-toc">
 <h2>Table of Contents</h2>
-<div id="text-table-of-contents">
+<div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org7a8b694">1. Chapter 1: Introduction</a>
+<li><a href="#org950cf20">1. Chapter 1: Introduction</a>
 <ul>
-<li><a href="#org451e3fe">1.1. An Overview of Statistical Learning</a>
+<li><a href="#orgb5290f0">1.1. An Overview of Statistical Learning</a>
 <ul>
-<li><a href="#orgb0e948a">1.1.1. Wage Data</a></li>
-<li><a href="#orgabb5658">1.1.2. Stock Market Data</a></li>
-<li><a href="#org9891323">1.1.3. Gene Expression Data</a></li>
+<li><a href="#org143d397">1.1.1. Wage Data</a></li>
+<li><a href="#org0d4371d">1.1.2. Stock Market Data</a></li>
+<li><a href="#orgbe21d2b">1.1.3. Gene Expression Data</a></li>
 </ul>
 </li>
-<li><a href="#org149fd27">1.2. A Brief History of Statistical Learning</a></li>
-<li><a href="#org9cab812">1.3. This Book</a></li>
-<li><a href="#org451edb6">1.4. Who Should Read This Book?</a></li>
-<li><a href="#org6785919">1.5. Notation and Simple Matrix Algebra</a></li>
+<li><a href="#org7d33c21">1.2. A Brief History of Statistical Learning</a></li>
+<li><a href="#org6c56c3a">1.3. This Book</a></li>
+<li><a href="#org66e0a75">1.4. Who Should Read This Book?</a></li>
+<li><a href="#org0bc0a8c">1.5. Notation and Simple Matrix Algebra</a></li>
 </ul>
 </li>
-<li><a href="#org33aff0a">2. Chapter 2: Statistical Learning</a>
+<li><a href="#orgcccbc8c">2. Chapter 2: Statistical Learning</a>
 <ul>
-<li><a href="#org38b8616">2.1. What Is Statistical Learning?</a>
+<li><a href="#orge8d037c">2.1. What Is Statistical Learning?</a>
 <ul>
-<li><a href="#orgf17774b">2.1.1. Why Estimate f?</a></li>
-<li><a href="#org90c19c4">2.1.2. How Do We Estimate f?</a></li>
-<li><a href="#orgb4751e5">2.1.3. The Trade-Off Between Prediction Accuracy and Model Interpretability</a></li>
-<li><a href="#org3f5f842">2.1.4. Supervised Versus Unsupervised Learning</a></li>
-<li><a href="#org2e4cf56">2.1.5. Regression Versus Classification Problems</a></li>
+<li><a href="#org68f8152">2.1.1. Why Estimate f?</a></li>
+<li><a href="#org90395e5">2.1.2. How Do We Estimate f?</a></li>
+<li><a href="#org9fed118">2.1.3. The Trade-Off Between Prediction Accuracy and Model Interpretability</a></li>
+<li><a href="#orgf6fc2b5">2.1.4. Supervised Versus Unsupervised Learning</a></li>
+<li><a href="#org8294b2d">2.1.5. Regression Versus Classification Problems</a></li>
 </ul>
 </li>
-<li><a href="#org737482d">2.2. Assessing Model Accuracy</a>
+<li><a href="#orge780837">2.2. Assessing Model Accuracy</a>
 <ul>
-<li><a href="#orgb8f7696">2.2.1. Measuring the Quality of Fit</a></li>
-<li><a href="#orgba14c7f">2.2.2. The Bias-Variance Trade-Off</a></li>
-<li><a href="#org9947e36">2.2.3. The Classification Setting</a></li>
+<li><a href="#org61d67da">2.2.1. Measuring the Quality of Fit</a></li>
+<li><a href="#orga2730fe">2.2.2. The Bias-Variance Trade-Off</a></li>
+<li><a href="#org1630992">2.2.3. The Classification Setting</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org0a531f2">3. Chapter 3: Linear Regression</a>
+<li><a href="#org0260ce2">3. Chapter 3: Linear Regression</a>
 <ul>
-<li><a href="#org348c5c7">3.1. Simple Linear Regression</a>
+<li><a href="#org8a47d5c">3.1. Simple Linear Regression</a>
 <ul>
-<li><a href="#org923aba1">3.1.1. Estimating the Coefficients</a></li>
-<li><a href="#orgcbeedb6">3.1.2. Assessing the Accuracy of the Coefficient Estimates</a></li>
-<li><a href="#org4ff9e8e">3.1.3. Assessing the Accuracy of the Model</a></li>
+<li><a href="#org849aad2">3.1.1. Estimating the Coefficients</a></li>
+<li><a href="#org97dd9f3">3.1.2. Assessing the Accuracy of the Coefficient Estimates</a></li>
+<li><a href="#orge4fd700">3.1.3. Assessing the Accuracy of the Model</a></li>
 </ul>
 </li>
-<li><a href="#orga620484">3.2. Multiple Linear Regression</a>
+<li><a href="#org0f973b6">3.2. Multiple Linear Regression</a>
 <ul>
-<li><a href="#orgd47b089">3.2.1. Estimating the Regression Coefficients</a></li>
-<li><a href="#org55ede2c">3.2.2. Some Important Questions</a></li>
+<li><a href="#orgc7964f6">3.2.1. Estimating the Regression Coefficients</a></li>
+<li><a href="#org6833422">3.2.2. Some Important Questions</a></li>
 </ul>
 </li>
-<li><a href="#org74ad490">3.3. Other Considerations in the Regression Model</a>
+<li><a href="#org7212140">3.3. Other Considerations in the Regression Model</a>
 <ul>
-<li><a href="#org9d11bd7">3.3.1. Qualitative Predictors</a></li>
-<li><a href="#orgf47e405">3.3.2. Predictors with Only Two Levels</a></li>
-<li><a href="#org4cd49a4">3.3.3. Qualitative Predictors with More than Two Levels</a></li>
-<li><a href="#org669fd33">3.3.4. Extensions of the Linear Model</a></li>
-<li><a href="#org3c39ab8">3.3.5. Potential Problems</a></li>
+<li><a href="#orgb81cadd">3.3.1. Qualitative Predictors</a></li>
+<li><a href="#orgc9f69d3">3.3.2. Predictors with Only Two Levels</a></li>
+<li><a href="#org47f0cc4">3.3.3. Qualitative Predictors with More than Two Levels</a></li>
+<li><a href="#orgf39078e">3.3.4. Extensions of the Linear Model</a></li>
+<li><a href="#org973c2ae">3.3.5. Potential Problems</a></li>
 </ul>
 </li>
-<li><a href="#orgc375e18">3.4. The Marketing Plan</a>
+<li><a href="#orgc6e4926">3.4. The Marketing Plan</a>
 <ul>
-<li><a href="#orgffa73b3">3.4.1. Is there a relationship between advertising sales and budget?</a></li>
-<li><a href="#orga7a685b">3.4.2. How strongis the relationship?</a></li>
-<li><a href="#org4c9e7cb">3.4.3. Which media contribute to sales?</a></li>
-<li><a href="#org7ccf082">3.4.4. How large is the effect of each medium on seles?</a></li>
-<li><a href="#org654b2ae">3.4.5. How accurately can we predict future sales?</a></li>
-<li><a href="#org8855759">3.4.6. Is the relationship linear?</a></li>
-<li><a href="#org0d6fab2">3.4.7. Is there synergy among the advertising media?</a></li>
+<li><a href="#org3b75b30">3.4.1. Is there a relationship between advertising sales and budget?</a></li>
+<li><a href="#orgb646876">3.4.2. How strongis the relationship?</a></li>
+<li><a href="#orgf4608f9">3.4.3. Which media contribute to sales?</a></li>
+<li><a href="#org4bf462b">3.4.4. How large is the effect of each medium on seles?</a></li>
+<li><a href="#org3a41324">3.4.5. How accurately can we predict future sales?</a></li>
+<li><a href="#org8b95c7a">3.4.6. Is the relationship linear?</a></li>
+<li><a href="#org9f6c31c">3.4.7. Is there synergy among the advertising media?</a></li>
 </ul>
 </li>
-<li><a href="#org7aa7434">3.5. Comparison of Linear Regression</a></li>
-<li><a href="#org4deb032">3.6. Lab: Linear Regression</a></li>
+<li><a href="#org1d8f340">3.5. Comparison of Linear Regression</a></li>
+<li><a href="#orgf70aba0">3.6. Lab: Linear Regression</a></li>
 </ul>
 </li>
-<li><a href="#orgb0731e4">4. Chapter 4: Classification</a>
+<li><a href="#org52e8bc8">4. Chapter 4: Classification</a>
 <ul>
-<li><a href="#orgbbb3d67">4.1. An Overview of Classification</a></li>
-<li><a href="#org018533d">4.2. Why Not Linear Regression?</a></li>
-<li><a href="#org7663a18">4.3. Logistic Regression</a>
+<li><a href="#orgfe8ab59">4.1. An Overview of Classification</a></li>
+<li><a href="#org8af2708">4.2. Why Not Linear Regression?</a></li>
+<li><a href="#org92abfbc">4.3. Logistic Regression</a>
 <ul>
-<li><a href="#orgf0b80b1">4.3.1. The Logistic Model</a></li>
-<li><a href="#orgf479e0b">4.3.2. Estimating the Regression Coefficients</a></li>
-<li><a href="#org32d0d2e">4.3.3. Making Predictions</a></li>
-<li><a href="#org9ba5830">4.3.4. Multiple Logistic Regression</a></li>
-<li><a href="#orgbd89f03">4.3.5. Logistic Regression for &gt; 2 Response Classes</a></li>
+<li><a href="#orgae2aae1">4.3.1. The Logistic Model</a></li>
+<li><a href="#org91dcdec">4.3.2. Estimating the Regression Coefficients</a></li>
+<li><a href="#org695d05f">4.3.3. Making Predictions</a></li>
+<li><a href="#org59c16cd">4.3.4. Multiple Logistic Regression</a></li>
+<li><a href="#orge8ea61f">4.3.5. Logistic Regression for &gt; 2 Response Classes</a></li>
 </ul>
 </li>
-<li><a href="#org95e71fc">4.4. Linear Discriminant Analysis</a>
+<li><a href="#orgf067726">4.4. Linear Discriminant Analysis</a>
 <ul>
-<li><a href="#org7cf65de">4.4.1. Using Bayes' Theorem for Classification</a></li>
-<li><a href="#org907a8a9">4.4.2. Linear Discriminant Analysis for p = 1</a></li>
-<li><a href="#org926564f">4.4.3. Linear Discriminant Analysis for p &gt; 1</a></li>
+<li><a href="#orgb0aabbe">4.4.1. Using Bayes' Theorem for Classification</a></li>
+<li><a href="#org9d21c72">4.4.2. Linear Discriminant Analysis for p = 1</a></li>
+<li><a href="#orgc5cdef8">4.4.3. Linear Discriminant Analysis for p &gt; 1</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgbb6f844">5. Chapter 5: Resampling Method</a>
+<ul>
+<li><a href="#orgc4694ed">5.1. Cross-Validation</a>
+<ul>
+<li><a href="#org4d1102d">5.1.1. The Validation Set Approach</a></li>
+<li><a href="#orgd0243c8">5.1.2. Leave-One-Out Cross-Validation</a></li>
+<li><a href="#orga5282f7">5.1.3. K-Fold Cross-Validation</a></li>
+<li><a href="#orgb27462f">5.1.4. Bias-Variance Trade-Off for k-Fold Cross-Validation</a></li>
+<li><a href="#orgd309ba1">5.1.5. Cross-Validation on Classification Problems</a></li>
+</ul>
+</li>
+<li><a href="#org1b78f4d">5.2. Bootstrap</a></li>
+</ul>
+</li>
+<li><a href="#orgc44a234">6. Chapter 6: Linear Model Selection and Regularization</a>
+<ul>
+<li><a href="#org68214c6">6.1. Subset Selection</a>
+<ul>
+<li><a href="#org801cd93">6.1.1. Best Subset Selection</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org3571fbb">7. Chapter 8: Tree-Based Methods</a>
+<ul>
+<li><a href="#org6a084ee">7.1. The Basics of Decision Trees</a>
+<ul>
+<li><a href="#orgd8da673">7.1.1. Regression Trees</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org691844f">8. Chapter 9: Suppport Vector Machines</a>
+<ul>
+<li><a href="#orge58dcf1">8.1. Maximal Margin Classifier</a>
+<ul>
+<li><a href="#org673f552">8.1.1. What is a Hyperplane?</a></li>
+<li><a href="#org2351863">8.1.2. Classification Using a Separating Hyperplane</a></li>
+<li><a href="#orgd92b146">8.1.3. The Maximal Margin Classifier</a></li>
+<li><a href="#orgf04de60">8.1.4. Construction of the Maximal Margin Classifier</a></li>
+<li><a href="#orga5df7f8">8.1.5. The Non-separable Case</a></li>
+</ul>
+</li>
+<li><a href="#orgb858ba5">8.2. Support Vector Classifiers</a>
+<ul>
+<li><a href="#org603c340">8.2.1. Overview of the Support Vector Classifier</a></li>
 </ul>
 </li>
 </ul>
@@ -350,12 +199,12 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-org7a8b694" class="outline-2">
-<h2 id="org7a8b694"><span class="section-number-2">1</span> Chapter 1: Introduction</h2>
+<div id="outline-container-org950cf20" class="outline-2">
+<h2 id="org950cf20"><span class="section-number-2">1.</span> Chapter 1: Introduction</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-org451e3fe" class="outline-3">
-<h3 id="org451e3fe"><span class="section-number-3">1.1</span> An Overview of Statistical Learning</h3>
+<div id="outline-container-orgb5290f0" class="outline-3">
+<h3 id="orgb5290f0"><span class="section-number-3">1.1.</span> An Overview of Statistical Learning</h3>
 <div class="outline-text-3" id="text-1-1">
 <ul class="org-ul">
 <li>statistical learning 代表一系列理解数据的工具,这些工具可以分为:
@@ -373,8 +222,8 @@
 <li>为了我们的讲述更加的容易理解,我们简短的介绍下实际生活的三个data set</li>
 </ul>
 </div>
-<div id="outline-container-orgb0e948a" class="outline-4">
-<h4 id="orgb0e948a"><span class="section-number-4">1.1.1</span> Wage Data</h4>
+<div id="outline-container-org143d397" class="outline-4">
+<h4 id="org143d397"><span class="section-number-4">1.1.1.</span> Wage Data</h4>
 <div class="outline-text-4" id="text-1-1-1">
 <ul class="org-ul">
 <li>在这本书里面,我们会把这个例子叫成是Wage data set</li>
@@ -385,7 +234,7 @@
 图1-1:
 </p>
 
-<div id="org1c73f0f" class="figure">
+<div id="org40c93d5" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/isl/1-1.png" alt="1-1.png" />
 </p>
 <p><span class="figure-number">Figure 1: </span>isl/1-1.png</p>
@@ -407,8 +256,8 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-orgabb5658" class="outline-4">
-<h4 id="orgabb5658"><span class="section-number-4">1.1.2</span> Stock Market Data</h4>
+<div id="outline-container-org0d4371d" class="outline-4">
+<h4 id="org0d4371d"><span class="section-number-4">1.1.2.</span> Stock Market Data</h4>
 <div class="outline-text-4" id="text-1-1-2">
 <ul class="org-ul">
 <li>Wage data包含预测如下两种value, 这些问题也被称之为回归问题(regression problem):
@@ -432,7 +281,7 @@ daily movement,这就是一个non-numerical的分类问题,因为我们只需要
 图1-2
 </p>
 
-<div id="org9f4fc42" class="figure">
+<div id="org9789c8f" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/isl/1-2.png" alt="1-2.png" />
 </p>
 <p><span class="figure-number">Figure 2: </span>isl/1-2.png</p>
@@ -448,8 +297,8 @@ daily movement,这就是一个non-numerical的分类问题,因为我们只需要
 </ul>
 </div>
 </div>
-<div id="outline-container-org9891323" class="outline-4">
-<h4 id="org9891323"><span class="section-number-4">1.1.3</span> Gene Expression Data</h4>
+<div id="outline-container-orgbe21d2b" class="outline-4">
+<h4 id="orgbe21d2b"><span class="section-number-4">1.1.3.</span> Gene Expression Data</h4>
 <div class="outline-text-4" id="text-1-1-3">
 <ul class="org-ul">
 <li>前面两组数据都是input和output兼有,另外还有一种重要的数据就只有input,没有output</li>
@@ -468,7 +317,7 @@ variable的情况</li>
 图1-4
 </p>
 
-<div id="orgb82e2d4" class="figure">
+<div id="org57ee7d3" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/isl/1-4.png" alt="1-4.png" />
 </p>
 <p><span class="figure-number">Figure 3: </span>isl/1-4.png</p>
@@ -483,8 +332,8 @@ variable的情况</li>
 </div>
 </div>
 </div>
-<div id="outline-container-org149fd27" class="outline-3">
-<h3 id="org149fd27"><span class="section-number-3">1.2</span> A Brief History of Statistical Learning</h3>
+<div id="outline-container-org7d33c21" class="outline-3">
+<h3 id="org7d33c21"><span class="section-number-3">1.2.</span> A Brief History of Statistical Learning</h3>
 <div class="outline-text-3" id="text-1-2">
 <ul class="org-ul">
 <li>虽然statistical learning是一个比较新的概念,但是很多概念已经存在了很久</li>
@@ -508,14 +357,14 @@ model selection</li>
 <li><p>
 从那以后,statistical learning开始在machine learning的帮助下,聚焦在如下领域
 </p>
-<pre class="example" id="org4bd061b">
+<pre class="example" id="org6e1dc2c">
 supervised and unsupervised modeling and prediction
 </pre></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org9cab812" class="outline-3">
-<h3 id="org9cab812"><span class="section-number-3">1.3</span> This Book</h3>
+<div id="outline-container-org6c56c3a" class="outline-3">
+<h3 id="org6c56c3a"><span class="section-number-3">1.3.</span> This Book</h3>
 <div class="outline-text-3" id="text-1-3">
 <ul class="org-ul">
 <li>ESL大而全,比较专业</li>
@@ -530,16 +379,16 @@ supervised and unsupervised modeling and prediction
 </ul>
 </div>
 </div>
-<div id="outline-container-org451edb6" class="outline-3">
-<h3 id="org451edb6"><span class="section-number-3">1.4</span> Who Should Read This Book?</h3>
+<div id="outline-container-org66e0a75" class="outline-3">
+<h3 id="org66e0a75"><span class="section-number-3">1.4.</span> Who Should Read This Book?</h3>
 <div class="outline-text-3" id="text-1-4">
 <ul class="org-ul">
 <li>所有希望使用statistical method来使用数据,完成模型和预测的人</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org6785919" class="outline-3">
-<h3 id="org6785919"><span class="section-number-3">1.5</span> Notation and Simple Matrix Algebra</h3>
+<div id="outline-container-org0bc0a8c" class="outline-3">
+<h3 id="org0bc0a8c"><span class="section-number-3">1.5.</span> Notation and Simple Matrix Algebra</h3>
 <div class="outline-text-3" id="text-1-5">
 <ul class="org-ul">
 <li>教材选择正确的notation很难,我们本书和ESL使用同样的notation</li>
@@ -721,12 +570,12 @@ AB的详细结果计算如下
 </div>
 </div>
 </div>
-<div id="outline-container-org33aff0a" class="outline-2">
-<h2 id="org33aff0a"><span class="section-number-2">2</span> Chapter 2: Statistical Learning</h2>
+<div id="outline-container-orgcccbc8c" class="outline-2">
+<h2 id="orgcccbc8c"><span class="section-number-2">2.</span> Chapter 2: Statistical Learning</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-org38b8616" class="outline-3">
-<h3 id="org38b8616"><span class="section-number-3">2.1</span> What Is Statistical Learning?</h3>
+<div id="outline-container-orge8d037c" class="outline-3">
+<h3 id="orge8d037c"><span class="section-number-3">2.1.</span> What Is Statistical Learning?</h3>
 <div class="outline-text-3" id="text-2-1">
 <ul class="org-ul">
 <li>为了能够刺激我们对于statistical learning的学习,我们先从简单的例子开始,假设我
@@ -739,7 +588,7 @@ AB的详细结果计算如下
 图-2.1
 </p>
 
-<div id="org5af082c" class="figure">
+<div id="org7ab1314" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/isl/2-1.png" alt="2-1.png" />
 </p>
 <p><span class="figure-number">Figure 4: </span>isl/2-1.png</p>
@@ -790,7 +639,7 @@ Y = f(X) + \varepsilon\tag{2.1}
 图2-2的
 </p>
 
-<div id="org6806f9a" class="figure">
+<div id="orga99ffad" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/isl/2-2.png" alt="2-2.png" />
 </p>
 <p><span class="figure-number">Figure 5: </span>isl/2-2.png</p>
@@ -803,7 +652,7 @@ Y = f(X) + \varepsilon\tag{2.1}
 <li><p>
 这个图显示给我们的信息是:我们可以通过year of education来预测income,但是预测所需要的function f通常是未知的
 </p>
-<pre class="example" id="org9518252">
+<pre class="example" id="org2ee6ef5">
 The function f that connects the input variable to the output
 variable is in general unknown
 </pre></li>
@@ -817,7 +666,7 @@ variable is in general unknown
 图2-3
 </p>
 
-<div id="org8dd470c" class="figure">
+<div id="org722937c" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/isl/2-3.png" alt="2-3.png" />
 </p>
 <p><span class="figure-number">Figure 6: </span>isl/2-3.png</p>
@@ -836,8 +685,8 @@ variable is in general unknown
 </ul></li>
 </ul>
 </div>
-<div id="outline-container-orgf17774b" class="outline-4">
-<h4 id="orgf17774b"><span class="section-number-4">2.1.1</span> Why Estimate f?</h4>
+<div id="outline-container-org68f8152" class="outline-4">
+<h4 id="org68f8152"><span class="section-number-4">2.1.1.</span> Why Estimate f?</h4>
 <div class="outline-text-4" id="text-2-1-1">
 <ul class="org-ul">
 <li>那么我们为什么需要来estimate f呢?</li>
@@ -849,7 +698,7 @@ variable is in general unknown
 </ul>
 </div>
 <ol class="org-ol">
-<li><a id="org7639c38"></a>Prediction<br />
+<li><a id="org18b918a"></a>Prediction<br />
 <div class="outline-text-5" id="text-2-1-1-1">
 <ul class="org-ul">
 <li><p>
@@ -891,7 +740,7 @@ irreducible error,注意无论我们怎么完美的estimate f,我们都无法减
 </ul>
 </div>
 </li>
-<li><a id="org214cfbe"></a>Inference<br />
+<li><a id="org6b7a8b0"></a>Inference<br />
 <div class="outline-text-5" id="text-2-1-1-2">
 <ul class="org-ul">
 <li>inference比prediction进了一步:
@@ -942,8 +791,8 @@ method来estimate f:
 </li>
 </ol>
 </div>
-<div id="outline-container-org90c19c4" class="outline-4">
-<h4 id="org90c19c4"><span class="section-number-4">2.1.2</span> How Do We Estimate f?</h4>
+<div id="outline-container-org90395e5" class="outline-4">
+<h4 id="org90395e5"><span class="section-number-4">2.1.2.</span> How Do We Estimate f?</h4>
 <div class="outline-text-4" id="text-2-1-2">
 <ul class="org-ul">
 <li>本书会介绍很多linear和non-linear办法来estimating f,无论linear与否,这些method都有很多
@@ -965,7 +814,7 @@ method来estimate f:
 </ul>
 </div>
 <ol class="org-ol">
-<li><a id="orgde202fc"></a>Parametric Methods<br />
+<li><a id="orgf8f9d38"></a>Parametric Methods<br />
 <div class="outline-text-5" id="text-2-1-2-1">
 <ul class="org-ul">
 <li>parametric method包含two-step model-based approach:
@@ -995,7 +844,7 @@ estimating这些parameter( \\(\beta_0, \beta_1, ...\beta_p\) )</li>
 前面图2-3的情况如果我们最开始假设的model是linear的话,我们会先有一个公式
 </p>
 
-<div id="org1ebf6b5" class="figure">
+<div id="org07bf6cd" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/isl/2-3.png" alt="2-3.png" />
 </p>
 <p><span class="figure-number">Figure 7: </span>isl/2-3.png</p>
@@ -1005,7 +854,7 @@ estimating这些parameter( \\(\beta_0, \beta_1, ...\beta_p\) )</li>
 之后我们得到了图2-4
 </p>
 
-<div id="org6aa8fc3" class="figure">
+<div id="org8c10d52" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/isl/2-4.png" alt="2-4.png" />
 </p>
 <p><span class="figure-number">Figure 8: </span>isl/2-4.png</p>
@@ -1019,7 +868,7 @@ estimating这些parameter( \\(\beta_0, \beta_1, ...\beta_p\) )</li>
 </ul>
 </div>
 </li>
-<li><a id="org409a028"></a>Non-parametric Methods<br />
+<li><a id="org0f0a3fa"></a>Non-parametric Methods<br />
 <div class="outline-text-5" id="text-2-1-2-2">
 <ul class="org-ul">
 <li>non-parameter method不会去明确的assume f的form</li>
@@ -1027,7 +876,7 @@ estimating这些parameter( \\(\beta_0, \beta_1, ...\beta_p\) )</li>
 由于开始没有去assume一个form,那么non-parameter就有一个相对的,非常大的优势,那就是:
 non-parameter method有可能能够非常精确的fit一系列的可能性form(of f)
 </p>
-<pre class="example" id="org040e0ac">
+<pre class="example" id="org285320e">
 Non-parameter method have the potential to accurately fit a wider range of
 possible shapes of f
 </pre></li>
@@ -1039,7 +888,7 @@ possible shapes of f
 图2-5
 </p>
 
-<div id="org4e61403" class="figure">
+<div id="orgf368273" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/isl/2-5.png" alt="2-5.png" />
 </p>
 <p><span class="figure-number">Figure 9: </span>isl/2-5.png</p>
@@ -1051,7 +900,7 @@ possible shapes of f
 图2-6
 </p>
 
-<div id="orgc540528" class="figure">
+<div id="org8963056" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/isl/2-6.png" alt="2-6.png" />
 </p>
 <p><span class="figure-number">Figure 10: </span>isl/2-6.png</p>
@@ -1066,8 +915,8 @@ possible shapes of f
 </li>
 </ol>
 </div>
-<div id="outline-container-orgb4751e5" class="outline-4">
-<h4 id="orgb4751e5"><span class="section-number-4">2.1.3</span> The Trade-Off Between Prediction Accuracy and Model Interpretability</h4>
+<div id="outline-container-org9fed118" class="outline-4">
+<h4 id="org9fed118"><span class="section-number-4">2.1.3.</span> The Trade-Off Between Prediction Accuracy and Model Interpretability</h4>
 <div class="outline-text-4" id="text-2-1-3">
 <ul class="org-ul">
 <li>我们这本书里面会遇到的method总体分为两种:
@@ -1090,7 +939,7 @@ possible shapes of f
 图2-7
 </p>
 
-<div id="orgf75d8a6" class="figure">
+<div id="orgdc62ee1" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/isl/2-7.png" alt="2-7.png" />
 </p>
 <p><span class="figure-number">Figure 11: </span>isl/2-7.png</p>
@@ -1115,15 +964,15 @@ learning method</li>
 flexible的model就可以了呢?答案是否定的,我们往往使用less flexible的model会取得
 比较accurate的prediction,原因在于
 </p>
-<pre class="example" id="orgd30c8a6">
+<pre class="example" id="org032911a">
 Hilly flexible 的method,也有更多可能会过拟合(overfitting)
 </pre></li>
 </ul></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org3f5f842" class="outline-4">
-<h4 id="org3f5f842"><span class="section-number-4">2.1.4</span> Supervised Versus Unsupervised Learning</h4>
+<div id="outline-container-orgf6fc2b5" class="outline-4">
+<h4 id="orgf6fc2b5"><span class="section-number-4">2.1.4.</span> Supervised Versus Unsupervised Learning</h4>
 <div class="outline-text-4" id="text-2-1-4">
 <ul class="org-ul">
 <li>大多数的statistical learning问题分为两个大类:
@@ -1148,8 +997,8 @@ Hilly flexible 的method,也有更多可能会过拟合(overfitting)
 </ul>
 </div>
 </div>
-<div id="outline-container-org2e4cf56" class="outline-4">
-<h4 id="org2e4cf56"><span class="section-number-4">2.1.5</span> Regression Versus Classification Problems</h4>
+<div id="outline-container-org8294b2d" class="outline-4">
+<h4 id="org8294b2d"><span class="section-number-4">2.1.5.</span> Regression Versus Classification Problems</h4>
 <div class="outline-text-4" id="text-2-1-5">
 <ul class="org-ul">
 <li>variable可以被分为两类:
@@ -1181,8 +1030,8 @@ Hilly flexible 的method,也有更多可能会过拟合(overfitting)
 </div>
 </div>
 </div>
-<div id="outline-container-org737482d" class="outline-3">
-<h3 id="org737482d"><span class="section-number-3">2.2</span> Assessing Model Accuracy</h3>
+<div id="outline-container-orge780837" class="outline-3">
+<h3 id="orge780837"><span class="section-number-3">2.2.</span> Assessing Model Accuracy</h3>
 <div class="outline-text-3" id="text-2-2">
 <ul class="org-ul">
 <li>本书的一大目的,就是介绍一系列statistical learning method,而不仅仅是linear regression approach</li>
@@ -1191,7 +1040,7 @@ Hilly flexible 的method,也有更多可能会过拟合(overfitting)
 <li><p>
 答案是不行,也没有所谓"最好"的模型:没有一个method能够在所有的data sets上面击败所有对手
 </p>
-<pre class="example" id="org5f9069a">
+<pre class="example" id="orgef3594e">
 There is no free lunch in statistics
 </pre></li>
 <li>对某个特定的data set, 一个method可能工作的最好,但是data set稍微变一变,可能最好的method
@@ -1200,8 +1049,8 @@ There is no free lunch in statistics
 <li>本节,我们会讨论一些在选取statistical learning method过程中最重要的一些概念</li>
 </ul>
 </div>
-<div id="outline-container-orgb8f7696" class="outline-4">
-<h4 id="orgb8f7696"><span class="section-number-4">2.2.1</span> Measuring the Quality of Fit</h4>
+<div id="outline-container-org61d67da" class="outline-4">
+<h4 id="org61d67da"><span class="section-number-4">2.2.1.</span> Measuring the Quality of Fit</h4>
 <div class="outline-text-4" id="text-2-2-1">
 <ul class="org-ul">
 <li>为了验证在一个given data set上面某些statistical learning method的performance,我们需要
@@ -1242,7 +1091,7 @@ MSE = \cfrac{1}{n}\displaystyle\sum_{i=1}^n{(y_i  - \hat{f}(x_i))^2},\tag{2.5}
 没有test数据集的情况下,很多人试图缩小training MSE从而期望test MSE也能相应的减小.这其实是错误的
 想法
 </p>
-<pre class="example" id="org653e3f2">
+<pre class="example" id="org37fe949">
 There is no guarantee that the method with the lowest training MSE
 will also have the lowest test MSE.
 </pre></li>
@@ -1252,7 +1101,7 @@ will also have the lowest test MSE.
 图2-9
 </p>
 
-<div id="orga66fbfd" class="figure">
+<div id="org3dd701c" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/isl/2-9.png" alt="2-9.png" />
 </p>
 <p><span class="figure-number">Figure 12: </span>isl/2-9.png</p>
@@ -1291,7 +1140,7 @@ training MSE(test MSE)的对应点,横轴是flibility,纵轴是MSE</li>
 上述是statistical learning的fundamental property,无论什么样的data set,也无论什么样的method,
 都有这个现象:
 </p>
-<pre class="example" id="org1d317e9">
+<pre class="example" id="org1dfa322">
 As model flexibility increases, training MSE will decrease, but the test MSE may not.
 </pre></li>
 <li>当一个method产生了small training MSE,但是获得了large test MSE,那么我们就说,这个model
@@ -1311,7 +1160,7 @@ overfitting了当前的数据</li>
 图2-10
 </p>
 
-<div id="org23ea046" class="figure">
+<div id="org7903e99" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/isl/2-10.png" alt="2-10.png" />
 </p>
 <p><span class="figure-number">Figure 13: </span>isl/2-10.png</p>
@@ -1327,7 +1176,7 @@ overfitting了当前的数据</li>
 图2-11
 </p>
 
-<div id="org6e0ff22" class="figure">
+<div id="orga1b0b70" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/isl/2-11.png" alt="2-11.png" />
 </p>
 <p><span class="figure-number">Figure 14: </span>isl/2-11.png</p>
@@ -1343,8 +1192,8 @@ overfitting了当前的数据</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgba14c7f" class="outline-4">
-<h4 id="orgba14c7f"><span class="section-number-4">2.2.2</span> The Bias-Variance Trade-Off</h4>
+<div id="outline-container-orga2730fe" class="outline-4">
+<h4 id="orga2730fe"><span class="section-number-4">2.2.2.</span> The Bias-Variance Trade-Off</h4>
 <div class="outline-text-4" id="text-2-2-2">
 <ul class="org-ul">
 <li>上面的图2-9到图2-11中的U-shape其实是统计学习方法的两个competing property</li>
@@ -1404,7 +1253,7 @@ data都会让f^剧烈的改变,因为f^试图和每个点都配合的紧密</li>
 图2-12
 </p>
 
-<div id="orgbc06394" class="figure">
+<div id="org89f3d95" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/isl/2-12.png" alt="2-12.png" />
 </p>
 <p><span class="figure-number">Figure 15: </span>isl/2-12.png</p>
@@ -1439,8 +1288,8 @@ bias-variance trade-off:
 </ul>
 </div>
 </div>
-<div id="outline-container-org9947e36" class="outline-4">
-<h4 id="org9947e36"><span class="section-number-4">2.2.3</span> The Classification Setting</h4>
+<div id="outline-container-org1630992" class="outline-4">
+<h4 id="org1630992"><span class="section-number-4">2.2.3.</span> The Classification Setting</h4>
 <div class="outline-text-4" id="text-2-2-3">
 <ul class="org-ul">
 <li>目前为止,我们对模型准确率的讨论还是集中在regression setting,但是很多概念(如下)都可以应用到
@@ -1476,7 +1325,7 @@ Ave(I(y_0 \ne \hat{y_0})),\tag{2.9}
 </ul>
 </div>
 <ol class="org-ol">
-<li><a id="org7175850"></a>The Bayes Classifier<br />
+<li><a id="orgfa4056a"></a>The Bayes Classifier<br />
 <div class="outline-text-5" id="text-2-2-3-1">
 <ul class="org-ul">
 <li>虽然定理的证明已经超出了本书的范畴,但是我们还是可以直接抛出结论:
@@ -1486,7 +1335,7 @@ Ave(I(y_0 \ne \hat{y_0})),\tag{2.9}
 <li><p>
 换句话说就是:全局(平均)的最小值的获得,可以分解为,每个成员选择对自己来说的最优选择就可以.
 </p>
-<pre class="example" id="orgc646776">
+<pre class="example" id="org1e64a21">
 The test error rate given in (2.9) is minimized, on average, by a very simple classifier
 that assigns each observation to the most likely class,given it predictor value
 </pre></li>
@@ -1520,7 +1369,7 @@ Pr(Y = j | X= x_0)\tag{2.10}
 </ul>
 </div>
 </li>
-<li><a id="org40ac8d2"></a>K-Nearest Neighbors<br />
+<li><a id="org5d63bed"></a>K-Nearest Neighbors<br />
 <div class="outline-text-5" id="text-2-2-3-2">
 <ul class="org-ul">
 <li>理论上来说,我们应该一直使用贝叶斯分类器,但是实际情况是,我们不知道某个observation(X)属于哪个类
@@ -1586,8 +1435,8 @@ Pr(Y = j | X = x_0) = \frac{1}{K}\sum_{i \in N_0}I(y_i = j)\tag{2.12}
 </div>
 </div>
 </div>
-<div id="outline-container-org0a531f2" class="outline-2">
-<h2 id="org0a531f2"><span class="section-number-2">3</span> Chapter 3: Linear Regression</h2>
+<div id="outline-container-org0260ce2" class="outline-2">
+<h2 id="org0260ce2"><span class="section-number-2">3.</span> Chapter 3: Linear Regression</h2>
 <div class="outline-text-2" id="text-3">
 <ul class="org-ul">
 <li>线性模型是一种在监督学习中非常简单的模型,对于预测quantitative response非常有用</li>
@@ -1636,8 +1485,8 @@ association必须要有,而且证明association存在的证据要明显,否则�
 <li>linear regression可以用来回答上面的所有问题,我们先大体上回复下上面的问题,然后会在3.4部分详细解释</li>
 </ul>
 </div>
-<div id="outline-container-org348c5c7" class="outline-3">
-<h3 id="org348c5c7"><span class="section-number-3">3.1</span> Simple Linear Regression</h3>
+<div id="outline-container-org8a47d5c" class="outline-3">
+<h3 id="org8a47d5c"><span class="section-number-3">3.1.</span> Simple Linear Regression</h3>
 <div class="outline-text-3" id="text-3-1">
 <ul class="org-ul">
 <li>Simple Linear Regression是非常简单的一种预测工具:
@@ -1654,7 +1503,7 @@ Y \thickapprox \beta_0 + \beta_1X,\tag{3.1}
 <li><p>
 我们称之为在X上回归Y
 </p>
-<pre class="example" id="orgbd92f2b">
+<pre class="example" id="org19b3c08">
 We are regressing Y on X
 </pre></li>
 <li>上面的公式中,\(\beta_0\) 和 \(\beta_1\) 都是未知的常量,其中:
@@ -1682,8 +1531,8 @@ We are regressing Y on X
 </ul></li>
 </ul>
 </div>
-<div id="outline-container-org923aba1" class="outline-4">
-<h4 id="org923aba1"><span class="section-number-4">3.1.1</span> Estimating the Coefficients</h4>
+<div id="outline-container-org849aad2" class="outline-4">
+<h4 id="org849aad2"><span class="section-number-4">3.1.1.</span> Estimating the Coefficients</h4>
 <div class="outline-text-4" id="text-3-1-1">
 <ul class="org-ul">
 <li>实践当中,如果想要获得coefficient( \(\beta_0, \beta_1\) )才能做出prediction</li>
@@ -1691,7 +1540,7 @@ We are regressing Y on X
 获取coefficient的方法是通过如下数据估算:每个数据都是对X或者Y的一次measurement,也就是一个input
 和output的pair
 </p>
-<pre class="example" id="orgd78adc2">
+<pre class="example" id="org82bbf25">
 (x1,y1),(x2,y2),...,(xn,yn)
 </pre></li>
 <li>在Advertising data例子中,这个xn,yn的数据就是200个点(在二维坐标里面),我们要求出来一个( \(\beta_0, \beta_1\) )的组
@@ -1734,8 +1583,8 @@ RSS = (y_1 - \hat{\beta_0} - \hat{\beta_1}x_1)^2 + (y_2 - \hat{\beta_0} - \hat{\
 </ul>
 </div>
 </div>
-<div id="outline-container-orgcbeedb6" class="outline-4">
-<h4 id="orgcbeedb6"><span class="section-number-4">3.1.2</span> Assessing the Accuracy of the Coefficient Estimates</h4>
+<div id="outline-container-org97dd9f3" class="outline-4">
+<h4 id="org97dd9f3"><span class="section-number-4">3.1.2.</span> Assessing the Accuracy of the Coefficient Estimates</h4>
 <div class="outline-text-4" id="text-3-1-2">
 <ul class="org-ul">
 <li>第二章我们学过,X和Y之间的true relationship可以使用  \(Y = f(x) + \varepsilon\) 来表示,其中的:
@@ -1754,7 +1603,7 @@ RSS = (y_1 - \hat{\beta_0} - \hat{\beta_1}x_1)^2 + (y_2 - \hat{\beta_0} - \hat{\
 图3-3
 </p>
 
-<div id="org5dbe7dd" class="figure">
+<div id="orgcb47a00" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/isl/3-3.png" alt="3-3.png" />
 </p>
 <p><span class="figure-number">Figure 16: </span>isl/3-3.png</p>
@@ -1768,7 +1617,7 @@ RSS = (y_1 - \hat{\beta_0} - \hat{\beta_1}x_1)^2 + (y_2 - \hat{\beta_0} - \hat{\
 <li><p>
 这两个概念来源于standard statistical approach里面的一个用法
 </p>
-<pre class="example" id="org46602e8">
+<pre class="example" id="org218b2b6">
 使用sample信息来estimate large population特征
 </pre></li>
 <li>比如,我们想了解population的某个variable Y的平均值 \(\mu\):
@@ -1783,7 +1632,7 @@ RSS = (y_1 - \hat{\beta_0} - \hat{\beta_1}x_1)^2 + (y_2 - \hat{\beta_0} - \hat{\
 <li><p>
 sample mean和population mean肯定是不一样的,但是总体上来说,sample mean也能提供一个好的estimate
 </p>
-<pre class="example" id="orga036ecc">
+<pre class="example" id="orgf438864">
 In general the sample mean will provide a good estimate of the population mean
 </pre></li>
 </ul></li>
@@ -1807,7 +1656,7 @@ In general the sample mean will provide a good estimate of the population mean
 如果我们的有非常多个observation, 每次我们都计算来一个 \(\hat{\mu_i}\) , 这非常多个 \(\hat{\mu_i}\)
 的平均值,我们可以认为等于 \(\mu\)
 </p>
-<pre class="example" id="orge4a1048">
+<pre class="example" id="orgb5003b2">
 If we could average a huge number of estimates of μ
 obtained from a huge number of sets of observations,
 then this average would exactly equal μ
@@ -1819,7 +1668,7 @@ then this average would exactly equal μ
 <li><p>
 求这多个 \(\hat{\beta_0}\) 和 \(\hat{\beta_1}\) 的平均值,那么平均值就可以认为等于 \(\beta_0\) 和 \(\beta_1\)
 </p>
-<pre class="example" id="org5d95185">
+<pre class="example" id="org540fe66">
 If we estimate B0 and B1 on the basis of a particular data set, then
 our estimates won't be exactly equalt to B0 and B1.
 But if we could average the estimates obtained over a huge number of
@@ -1847,7 +1696,7 @@ Var\left(\hat{\mu}\right) = SE\left(\hat{\mu}\right)^2 = \frac{\sigma^2}{n},\tag
 这里的 \(\sigma\) 就是Y中每个population的标准方差,也就是我们的预测和true f的平均差距,由于true f都是知道的
 所以我们的 \(\sigma\) 也unknown的
 </p>
-<pre class="example" id="orgb3b2e48">
+<pre class="example" id="org0b866f6">
 标准方差是一组数值自平均值分散开来的程度的一种测量观念。一个较大的标准差，
 代表大部分的数值和其平均值之间差异较大；一个较小的标准差，代表这些数值较接近平均值。
 </pre></li>
@@ -1888,7 +1737,7 @@ RSE = \sqrt{RSS/(n-2)},\tag={3.8}
 <li><p>
 统计学上常用95%置信度区间,所谓95%置信度区间,是指:我们定义一个区间的数据,在95%的概率下,这个区间会包含真正的,未知的,参数的值
 </p>
-<pre class="example" id="org9df7c77">
+<pre class="example" id="org89c8220">
 A 95% confidence interval is defined as a range of values such that with
 95% probability, the range will contain the true unknown value of the parameter
 </pre></li>
@@ -1901,7 +1750,7 @@ A 95% confidence interval is defined as a range of values such that with
 <li><p>
 经过计算 \(\beta_1\) 的95%置信区间如下:
 </p>
-<pre class="example" id="org09d007d">
+<pre class="example" id="org8d6a4cc">
 [0.042,0.053]
 </pre></li>
 <li><p>
@@ -1913,19 +1762,19 @@ A 95% confidence interval is defined as a range of values such that with
 <li><p>
 经过计算 \(\beta_0\) 的95%置信区间如下:
 </p>
-<pre class="example" id="org6018c1c">
+<pre class="example" id="org301512d">
 [6.130,7.935]
 </pre></li>
 <li><p>
 有了这两个公式,我们就知道了,在没有任何的广告投入的情况下(x为0),商品的销售量在如下区间
 </p>
-<pre class="example" id="orga1a57eb">
+<pre class="example" id="org105aeaa">
 [6130,7940]
 </pre></li>
 <li><p>
 每当我们投入1000美金广告,那么,我们的销量提升空间为
 </p>
-<pre class="example" id="org8bd4b09">
+<pre class="example" id="orga8f6da8">
 [42, 53]
 </pre></li>
 <li>除了置信区间以外,standard error还可以用来对coefficient做hypothesis test(假设检验)</li>
@@ -1934,13 +1783,13 @@ A 95% confidence interval is defined as a range of values such that with
 <li><p>
 null hypothesis:
 </p>
-<pre class="example" id="orgd9e9153">
+<pre class="example" id="orgc5d791c">
 H0: There is not relationship between X and Y
 </pre></li>
 <li><p>
 alternative hypothesis:
 </p>
-<pre class="example" id="org935474f">
+<pre class="example" id="org5c2a433">
 Ha: There is some relationship between X and Y
 </pre></li>
 </ul></li>
@@ -1987,15 +1836,15 @@ t = \frac{\hat{\beta_1} - 0}{SE(\hat{\beta_1})},\tag={3.14}
 </ul>
 </div>
 </div>
-<div id="outline-container-org4ff9e8e" class="outline-4">
-<h4 id="org4ff9e8e"><span class="section-number-4">3.1.3</span> Assessing the Accuracy of the Model</h4>
+<div id="outline-container-orge4fd700" class="outline-4">
+<h4 id="orge4fd700"><span class="section-number-4">3.1.3.</span> Assessing the Accuracy of the Model</h4>
 <div class="outline-text-4" id="text-3-1-3">
 <ul class="org-ul">
 <li><p>
 一旦我们reject了null hypothesis(选择了alternative hypothesis),那么我们下一步就要量化我们的model
 有多fit我们的data
 </p>
-<pre class="example" id="orgbefccf7">
+<pre class="example" id="orga600e3f">
 quantify the extent to which the model fits the data
 </pre></li>
 <li>对于linear regression来说,我们量化模型好还是差的方法有两种:
@@ -2006,7 +1855,7 @@ quantify the extent to which the model fits the data
 </ul>
 </div>
 <ol class="org-ol">
-<li><a id="orga52b144"></a>Residual Standard Error<br />
+<li><a id="org4760ccd"></a>Residual Standard Error<br />
 <div class="outline-text-5" id="text-3-1-3-1">
 <ul class="org-ul">
 <li>我们从公式3.5( \(Y = \beta_0 + \beta_1X + \varepsilon\))可以看到,每个observation都要有一个error term \(\varepsilon\)</li>
@@ -2015,7 +1864,7 @@ quantify the extent to which the model fits the data
 <li><p>
 我们这里的RSE其实就是求 \(\varepsilon\) 的标准差,准确定义就是
 </p>
-<pre class="example" id="orga82276a">
+<pre class="example" id="orge4715c4">
 RSE is the average amount that the response will deviate from the true regression line
 </pre></li>
 <li><p>
@@ -2035,7 +1884,7 @@ RSE = \sqrt{\frac{1}{n-2}RSS}=\sqrt{\frac{1}{n-2}\displaystyle\sum_{i=1}^n (y_i 
 </ul>
 </div>
 </li>
-<li><a id="org296a6f0"></a>\(R^2\) Statistic<br />
+<li><a id="org41774f1"></a>\(R^2\) Statistic<br />
 <div class="outline-text-5" id="text-3-1-3-2">
 <ul class="org-ul">
 <li>RSE 提供了和model的差距的绝对值,但是他的缺点是他是以Y为度量单位的,就不免难以界定这个RSE是好还是坏</li>
@@ -2087,8 +1936,8 @@ RSS = \sum_{i=1}^n(y_i - \hat{y_i})^2
 </ol>
 </div>
 </div>
-<div id="outline-container-orga620484" class="outline-3">
-<h3 id="orga620484"><span class="section-number-3">3.2</span> Multiple Linear Regression</h3>
+<div id="outline-container-org0f973b6" class="outline-3">
+<h3 id="org0f973b6"><span class="section-number-3">3.2.</span> Multiple Linear Regression</h3>
 <div class="outline-text-3" id="text-3-2">
 <ul class="org-ul">
 <li>Simple Linear regression 对于单一input (predictor variable)是非常好的,但是在实践中,我们往往不止
@@ -2264,15 +2113,15 @@ Y = \beta_0 + \beta_1X_1 + \beta_2X_2 + \cdot\cdot\cdot + \beta_pX_p + \varepsil
 <li><p>
 我们使用 \(\beta_j\) 的时候,要assume其他predictor都是fixed的
 </p>
-<pre class="example" id="org94e23f5">
+<pre class="example" id="org96cbc95">
 We interpret Bj as the average effect on Y of a one unit increase in Xj,
 holding all other predictors fixed.
 </pre></li>
 </ul></li>
 </ul>
 </div>
-<div id="outline-container-orgd47b089" class="outline-4">
-<h4 id="orgd47b089"><span class="section-number-4">3.2.1</span> Estimating the Regression Coefficients</h4>
+<div id="outline-container-orgc7964f6" class="outline-4">
+<h4 id="orgc7964f6"><span class="section-number-4">3.2.1.</span> Estimating the Regression Coefficients</h4>
 <div class="outline-text-4" id="text-3-2-1">
 <ul class="org-ul">
 <li>就像simple regression里面的设置一样, \(\beta_0,\beta_1,...,\beta_p\) 都是unknown的,我们必须estimate
@@ -2347,7 +2196,7 @@ holding all other predictors fixed.
 <li><p>
 我们要这样解读multiple linear regression
 </p>
-<pre class="example" id="orgd7bfbbb">
+<pre class="example" id="org6b091a9">
 在TV和newspaper的预算固定的情况下,每额外提高1000美元预算在radio上面,可以得到189单位
 </pre></li>
 <li>我们可以看到, 在两种linear regression情况下, TV和radio的coefficient相差不多:
@@ -2363,7 +2212,7 @@ holding all other predictors fixed.
 <li><p>
 那么我们下面的情况是合理的么?:
 </p>
-<pre class="example" id="org57e3e2f">
+<pre class="example" id="org15f2ca0">
 在multiple linear regression里面, sales和newspaper是没有关系的,但是在single linear regression
 里面sales和newspaper是有关系的
 </pre></li>
@@ -2456,8 +2305,8 @@ newspaper沾了radio的光)</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org55ede2c" class="outline-4">
-<h4 id="org55ede2c"><span class="section-number-4">3.2.2</span> Some Important Questions</h4>
+<div id="outline-container-org6833422" class="outline-4">
+<h4 id="org6833422"><span class="section-number-4">3.2.2.</span> Some Important Questions</h4>
 <div class="outline-text-4" id="text-3-2-2">
 <ul class="org-ul">
 <li>当你运行multiple linear regression的时候,你要问一下如下几个问题:
@@ -2471,7 +2320,7 @@ newspaper沾了radio的光)</li>
 </ul>
 </div>
 <ol class="org-ol">
-<li><a id="orga0ba029"></a>Is There a Relationship Between the Response and Predictors?<br />
+<li><a id="org9303a69"></a>Is There a Relationship Between the Response and Predictors?<br />
 <div class="outline-text-5" id="text-3-2-2-1">
 <ul class="org-ul">
 <li>在multiple regression里面:
@@ -2609,7 +2458,7 @@ F = \frac{(RSS_0 - RSS)/q}{RSS/(n-p-1)},\tag{3.24}
 <li><p>
 每个predictor的t-statistic和p-value,叫做加入这个variable到model后的部分作用,用英文描述就是
 </p>
-<pre class="example" id="orgfcbe1f4">
+<pre class="example" id="orgd88457f">
 Partial effect of adding that variable to the model
 </pre></li>
 <li>既然我们已经有每个predictor是否对response有影响的数据了,那么我们看一眼这些数据,如果其中有一个predictor
@@ -2618,7 +2467,7 @@ Partial effect of adding that variable to the model
 <li><p>
 这里就出现了一个logic:
 </p>
-<pre class="example" id="orgee94047">
+<pre class="example" id="org1cde936">
 If any one of the p-value for the individual variables is very small, then
 at least one of the predictors is related to the response.
 </pre></li>
@@ -2631,7 +2480,7 @@ at least one of the predictors is related to the response.
 <li><p>
 但是F-statistic就没有这个问题了,因为F-statistic已经校准(adjust)过predictor参数数量了,也就是说
 </p>
-<pre class="example" id="org23c236c">
+<pre class="example" id="orgabf65a8">
 如果 H0 = true , 无论predictor有多少(或者observation有多少),我们的F-statistic只会有5%的可能得到一个
 低于0.05的p-value.我们出错的概率只有5%,而上面错误的logic,错误的概率在p=100的情况下,几乎是100%
 </pre></li>
@@ -2644,7 +2493,7 @@ at least one of the predictors is related to the response.
 </ul>
 </div>
 </li>
-<li><a id="orge7547c8"></a>Two: Deciding on Important Variables<br />
+<li><a id="orgf0b1ccd"></a>Two: Deciding on Important Variables<br />
 <div class="outline-text-5" id="text-3-2-2-2">
 <ul class="org-ul">
 <li>正如前面讨论的,multiple regression分析的第一步是计算所有variable的F-statistic</li>
@@ -2700,7 +2549,7 @@ at least one of the predictors is related to the response.
 </ul>
 </div>
 </li>
-<li><a id="orgd38d1e5"></a>Three: Model Fit<br />
+<li><a id="orgb078311"></a>Three: Model Fit<br />
 <div class="outline-text-5" id="text-3-2-2-3">
 <ul class="org-ul">
 <li>最常见的数字化measure就是两个,计算方法multiple和simple linear regression一致:
@@ -2732,7 +2581,7 @@ TV和radio的model比单纯使用TV的model要好</li>
 <li><p>
 除了上面讨论的RSE和 \(R^2\), 我们还可以把data给打印(plot)出来,因为图像会给我们更好的揭示问题
 </p>
-<pre class="example" id="org7574fa0">
+<pre class="example" id="orga8d389f">
 Graphical summaries can reveal problems with a model that are not
 visible from numerical statistics.
 </pre></li>
@@ -2742,7 +2591,7 @@ visible from numerical statistics.
 图3-5
 </p>
 
-<div id="orga919263" class="figure">
+<div id="org503619b" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/isl/3-5.png" alt="3-5.png" />
 </p>
 <p><span class="figure-number">Figure 17: </span>isl/3-5.png</p>
@@ -2759,7 +2608,7 @@ visible from numerical statistics.
 </ul>
 </div>
 </li>
-<li><a id="org673881e"></a>Four: Predictions<br />
+<li><a id="orga2ff104"></a>Four: Predictions<br />
 <div class="outline-text-5" id="text-3-2-2-4">
 <ul class="org-ul">
 <li>一旦我们确定了使用multiple regression model了,那么下一步就是在一堆predictor \(X_1,X_2,\cdot\cdot\cdot,X_p\)
@@ -2818,12 +2667,12 @@ sale,比如花费100000在TV广告,另外花费20000在radio广告上,我们的c
 </ol>
 </div>
 </div>
-<div id="outline-container-org74ad490" class="outline-3">
-<h3 id="org74ad490"><span class="section-number-3">3.3</span> Other Considerations in the Regression Model</h3>
+<div id="outline-container-org7212140" class="outline-3">
+<h3 id="org7212140"><span class="section-number-3">3.3.</span> Other Considerations in the Regression Model</h3>
 <div class="outline-text-3" id="text-3-3">
 </div>
-<div id="outline-container-org9d11bd7" class="outline-4">
-<h4 id="org9d11bd7"><span class="section-number-4">3.3.1</span> Qualitative Predictors</h4>
+<div id="outline-container-orgb81cadd" class="outline-4">
+<h4 id="orgb81cadd"><span class="section-number-4">3.3.1.</span> Qualitative Predictors</h4>
 <div class="outline-text-4" id="text-3-3-1">
 <ul class="org-ul">
 <li>截止目前的讨论,我们assume linear regression model里面所有的variable都是quantitative(定量的)</li>
@@ -2834,7 +2683,7 @@ sale,比如花费100000在TV广告,另外花费20000在radio广告上,我们的c
 图3-6
 </p>
 
-<div id="org95d7593" class="figure">
+<div id="org969aec0" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/isl/3-6.png" alt="3-6.png" />
 </p>
 <p><span class="figure-number">Figure 18: </span>isl/3-6.png</p>
@@ -2853,8 +2702,8 @@ sale,比如花费100000在TV广告,另外花费20000在radio广告上,我们的c
 </ul>
 </div>
 </div>
-<div id="outline-container-orgf47e405" class="outline-4">
-<h4 id="orgf47e405"><span class="section-number-4">3.3.2</span> Predictors with Only Two Levels</h4>
+<div id="outline-container-orgc9f69d3" class="outline-4">
+<h4 id="orgc9f69d3"><span class="section-number-4">3.3.2.</span> Predictors with Only Two Levels</h4>
 <div class="outline-text-4" id="text-3-3-2">
 <ul class="org-ul">
 <li>假设我们希望调查如下两者的关系(忽略其他的variable):
@@ -2965,7 +2814,7 @@ y_i = \beta_0 + \beta_1x_i + \varepsilon_i =
 <li><p>
 再次强调,无论dummy variable更改成什么形式, predition的结果都是不变的!
 </p>
-<pre class="example" id="orge690f1b">
+<pre class="example" id="org63c8829">
 The final predictions for the credit balances of males and females
 will be identical regardless of the coding scheme used. The only
 difference is in the way that the coefficients are interpreted
@@ -2973,8 +2822,8 @@ difference is in the way that the coefficients are interpreted
 </ul>
 </div>
 </div>
-<div id="outline-container-org4cd49a4" class="outline-4">
-<h4 id="org4cd49a4"><span class="section-number-4">3.3.3</span> Qualitative Predictors with More than Two Levels</h4>
+<div id="outline-container-org47f0cc4" class="outline-4">
+<h4 id="org47f0cc4"><span class="section-number-4">3.3.3.</span> Qualitative Predictors with More than Two Levels</h4>
 <div class="outline-text-4" id="text-3-3-3">
 <ul class="org-ul">
 <li>当我们的qualitative predictor拥有超过两个level(多个可能的值)的时候,我们就不能用一个dummy variable
@@ -3097,8 +2946,8 @@ H_0 : \beta_1 = \beta_2 = 0
 </ul>
 </div>
 </div>
-<div id="outline-container-org669fd33" class="outline-4">
-<h4 id="org669fd33"><span class="section-number-4">3.3.4</span> Extensions of the Linear Model</h4>
+<div id="outline-container-orgf39078e" class="outline-4">
+<h4 id="orgf39078e"><span class="section-number-4">3.3.4.</span> Extensions of the Linear Model</h4>
 <div class="outline-text-4" id="text-3-3-4">
 <ul class="org-ul">
 <li>标准的linear regression(公式3-19),提供了可解释的result,并且在很多real-world问题上面工作的很好,
@@ -3118,7 +2967,7 @@ H_0 : \beta_1 = \beta_2 = 0
 </ul>
 </div>
 <ol class="org-ol">
-<li><a id="org26da0d7"></a>Removing the Additive Assumption<br />
+<li><a id="orge86586a"></a>Removing the Additive Assumption<br />
 <div class="outline-text-5" id="text-3-3-4-1">
 <ul class="org-ul">
 <li>在前面的Advertising data的分析当中,我们总结到TV和radio都和sales有关系</li>
@@ -3248,7 +3097,7 @@ H_a : \beta_3 \neq 0
 但是在很多情况下,interaction term的p-value很低,但是main effect却不低.即便是这种情况下,我们的
 模型还是要包括main effect.这是由hierarchical principle决定的
 </p>
-<pre class="example" id="orgf58975e">
+<pre class="example" id="orgd94fdb1">
 Hierarchical principle states that if we include an interaction in a model,
 we should also include the main effects, even if the p-values associated
 with their coefficients are not significant.
@@ -3257,7 +3106,7 @@ with their coefficients are not significant.
 </ul>
 </div>
 </li>
-<li><a id="orgad594e8"></a>Non-linear Relationships<br />
+<li><a id="org72190e3"></a>Non-linear Relationships<br />
 <div class="outline-text-5" id="text-3-3-4-2">
 <ul class="org-ul">
 <li>前面的假设之一是additive,假设之二就是linear,也就是说我们认定我们的predictor和response之间是线
@@ -3269,7 +3118,7 @@ with their coefficients are not significant.
 图3-8
 </p>
 
-<div id="org494e8dc" class="figure">
+<div id="org36895c7" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/isl/3-8.png" alt="3-8.png" />
 </p>
 <p><span class="figure-number">Figure 19: </span>isl/3-8.png</p>
@@ -3312,8 +3161,8 @@ mpg = \beta_0 + \beta_1 \times horsepower + \beta_2 \times horsepower^2 + \varep
 </li>
 </ol>
 </div>
-<div id="outline-container-org3c39ab8" class="outline-4">
-<h4 id="org3c39ab8"><span class="section-number-4">3.3.5</span> Potential Problems</h4>
+<div id="outline-container-org973c2ae" class="outline-4">
+<h4 id="org973c2ae"><span class="section-number-4">3.3.5.</span> Potential Problems</h4>
 <div class="outline-text-4" id="text-3-3-5">
 <ul class="org-ul">
 <li>当使用linear regression model来fit一个特定的data set 的时候,很多问题都会发生,最常见的问题有:
@@ -3329,7 +3178,7 @@ mpg = \beta_0 + \beta_1 \times horsepower + \beta_2 \times horsepower^2 + \varep
 </ul>
 </div>
 <ol class="org-ol">
-<li><a id="org14d0f40"></a>Non-linearity of the Data<br />
+<li><a id="orga061177"></a>Non-linearity of the Data<br />
 <div class="outline-text-5" id="text-3-3-5-1">
 <ul class="org-ul">
 <li>linear regression model的成功,有一个假设:在predictor和response之间,存在的是straight-line
@@ -3353,7 +3202,7 @@ relationship</li>
 图3-9
 </p>
 
-<div id="org9917079" class="figure">
+<div id="orgb44e164" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/isl/3-9.png" alt="3-9.png" />
 </p>
 <p><span class="figure-number">Figure 20: </span>isl/3-9.png</p>
@@ -3366,7 +3215,7 @@ transformation,比如 \(logX, \sqrt{X}, X^2\)</li>
 </ul>
 </div>
 </li>
-<li><a id="org0b588c2"></a>Correlation of Error Terms<br />
+<li><a id="orgbb7570a"></a>Correlation of Error Terms<br />
 <div class="outline-text-5" id="text-3-3-5-2">
 <ul class="org-ul">
 <li>对线性模型来说,一个重要的assumption是error term( \(\varepsilon_1, \varepsilon_2,...\varepsilon_n\)) 之间是uncorrelated的.这就意味着:
@@ -3375,7 +3224,7 @@ transformation,比如 \(logX, \sqrt{X}, X^2\)</li>
 如果error term( \(\varepsilon_1, \varepsilon_2,...\varepsilon_n\)) 之间是uncorrelated的,那么
 \(\varepslionj_i\) 是positive,就不能为 \(\varepslionj_i+1\) 是正还是负提供任何的帮助
 </p>
-<pre class="example" id="orgd74f870">
+<pre class="example" id="orgcc16001">
 If the errors are uncorrelated, then the fact that e_i is positive provides little or
 no information about the sign of e_i+1
 </pre></li>
@@ -3399,7 +3248,7 @@ no information about the sign of e_i+1
 图3-10
 </p>
 
-<div id="orgc101375" class="figure">
+<div id="org7402a38" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/isl/3-10.png" alt="3-10.png" />
 </p>
 <p><span class="figure-number">Figure 21: </span>isl/3-10.png</p>
@@ -3416,7 +3265,7 @@ no information about the sign of e_i+1
 </ul>
 </div>
 </li>
-<li><a id="org912275e"></a>Non-constant Variance of Error Terms<br />
+<li><a id="org9ba94f9"></a>Non-constant Variance of Error Terms<br />
 <div class="outline-text-5" id="text-3-3-5-3">
 <ul class="org-ul">
 <li>linear regression model的另外一个重要的assumption是error term的方差为常数(constant variance)
@@ -3434,7 +3283,7 @@ no information about the sign of e_i+1
 图3-11
 </p>
 
-<div id="org2ce61ed" class="figure">
+<div id="org9a73ba4" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/isl/3-11.png" alt="3-11.png" />
 </p>
 <p><span class="figure-number">Figure 22: </span>isl/3-11.png</p>
@@ -3447,7 +3296,7 @@ no information about the sign of e_i+1
 </ul>
 </div>
 </li>
-<li><a id="orgb543131"></a>Outliers<br />
+<li><a id="org8bac1c0"></a>Outliers<br />
 <div class="outline-text-5" id="text-3-3-5-4">
 <ul class="org-ul">
 <li>所谓outlier,就是 \(y_i\) 和predicted value之间的距离</li>
@@ -3458,7 +3307,7 @@ no information about the sign of e_i+1
 图3-12
 </p>
 
-<div id="orga118a09" class="figure">
+<div id="org60db108" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/isl/3-12.png" alt="3-12.png" />
 </p>
 <p><span class="figure-number">Figure 23: </span>isl/3-12.png</p>
@@ -3469,7 +3318,7 @@ no information about the sign of e_i+1
 <li><p>
 这种情况下,去除outlier,并没有改变least square line太多.这种情况是正常的
 </p>
-<pre class="example" id="org3aa78b1">
+<pre class="example" id="org8f58946">
 It is typical for an outlier that does not have an unusual predictor value to
 have little effect on the least squares fit.
 </pre></li>
@@ -3487,7 +3336,7 @@ studentized residual值大于6的通常被认为是outlier</li>
 studentized residual value之所以能够有明确的范围,因为他是使用residual除以standard error,这样
 一来使用standard error作为了基数,翻译起来就是
 </p>
-<pre class="example" id="org96d4830">
+<pre class="example" id="orgc7f17d8">
 超过standard error六倍的residual都被认为是outlier
 </pre></li>
 </ul></li>
@@ -3496,7 +3345,7 @@ studentized residual value之所以能够有明确的范围,因为他是使用re
 </ul>
 </div>
 </li>
-<li><a id="org577d319"></a>High Leverage Points<br />
+<li><a id="org3a544d9"></a>High Leverage Points<br />
 <div class="outline-text-5" id="text-3-3-5-5">
 <ul class="org-ul">
 <li>前面讲过,对于某个response \(y_i\) 的observertion比较反常的的情况叫做outlier</li>
@@ -3507,7 +3356,7 @@ studentized residual value之所以能够有明确的范围,因为他是使用re
 图3-13
 </p>
 
-<div id="org4f4af21" class="figure">
+<div id="org7fce393" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/isl/3-13.png" alt="3-13.png" />
 </p>
 <p><span class="figure-number">Figure 24: </span>isl/3-13.png</p>
@@ -3552,7 +3401,7 @@ h_i = \frac{1}{n} + \frac{(x_i - \overline{x})^2}{\sum_{i'=1}^n(x_{i'}-\overline
 </ul>
 </div>
 </li>
-<li><a id="orgb84b01a"></a>Collinearity<br />
+<li><a id="org4adc25d"></a>Collinearity<br />
 <div class="outline-text-5" id="text-3-3-5-6">
 <ul class="org-ul">
 <li>Collinearity是说两个或者两个以上的predictor variable是相互联系的</li>
@@ -3562,7 +3411,7 @@ h_i = \frac{1}{n} + \frac{(x_i - \overline{x})^2}{\sum_{i'=1}^n(x_{i'}-\overline
 图3-14
 </p>
 
-<div id="orgd25be2e" class="figure">
+<div id="org11c12cf" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/isl/3-14.png" alt="3-14.png" />
 </p>
 <p><span class="figure-number">Figure 25: </span>isl/3-14.png</p>
@@ -3587,7 +3436,7 @@ t-statistic的降低</li>
 由于t-statistic的降低,我们的 \(H_0 : \beta_j = 0\) 可能会成立.换句话说,non-zero coefficient的可
 能性被collinearity降低了
 </p>
-<pre class="example" id="org9516da1">
+<pre class="example" id="orgdd079b2">
 The probability of correctly detecting a non-zero coefficient is reduced by collinearity
 </pre></li>
 <li>下面的图展示了两种不同的multiple regression model的coefficient
@@ -3684,15 +3533,15 @@ The probability of correctly detecting a non-zero coefficient is reduced by coll
 </ol>
 </div>
 </div>
-<div id="outline-container-orgc375e18" class="outline-3">
-<h3 id="orgc375e18"><span class="section-number-3">3.4</span> The Marketing Plan</h3>
+<div id="outline-container-orgc6e4926" class="outline-3">
+<h3 id="orgc6e4926"><span class="section-number-3">3.4.</span> The Marketing Plan</h3>
 <div class="outline-text-3" id="text-3-4">
 <ul class="org-ul">
 <li>我们现在回到开头的关于Advertising data的七个问题</li>
 </ul>
 </div>
-<div id="outline-container-orgffa73b3" class="outline-4">
-<h4 id="orgffa73b3"><span class="section-number-4">3.4.1</span> Is there a relationship between advertising sales and budget?</h4>
+<div id="outline-container-org3b75b30" class="outline-4">
+<h4 id="org3b75b30"><span class="section-number-4">3.4.1.</span> Is there a relationship between advertising sales and budget?</h4>
 <div class="outline-text-4" id="text-3-4-1">
 <ul class="org-ul">
 <li>想要回答这个问题,我们就需要创建一个multiple regression model:
@@ -3711,8 +3560,8 @@ H_0 : \beta_{tv} = \beta_{radio} = \beta_{newspaper} = 0
 </ul>
 </div>
 </div>
-<div id="outline-container-orga7a685b" class="outline-4">
-<h4 id="orga7a685b"><span class="section-number-4">3.4.2</span> How strongis the relationship?</h4>
+<div id="outline-container-orgb646876" class="outline-4">
+<h4 id="orgb646876"><span class="section-number-4">3.4.2.</span> How strongis the relationship?</h4>
 <div class="outline-text-4" id="text-3-4-2">
 <ul class="org-ul">
 <li>我们本章学习了两种方法来计算模型的accuracy:
@@ -3725,8 +3574,8 @@ H_0 : \beta_{tv} = \beta_{radio} = \beta_{newspaper} = 0
 </ul>
 </div>
 </div>
-<div id="outline-container-org4c9e7cb" class="outline-4">
-<h4 id="org4c9e7cb"><span class="section-number-4">3.4.3</span> Which media contribute to sales?</h4>
+<div id="outline-container-orgf4608f9" class="outline-4">
+<h4 id="orgf4608f9"><span class="section-number-4">3.4.3.</span> Which media contribute to sales?</h4>
 <div class="outline-text-4" id="text-3-4-3">
 <ul class="org-ul">
 <li>解释这个问题的法宝是predictor t-statistic的p-value</li>
@@ -3738,8 +3587,8 @@ H_0 : \beta_{tv} = \beta_{radio} = \beta_{newspaper} = 0
 </ul>
 </div>
 </div>
-<div id="outline-container-org7ccf082" class="outline-4">
-<h4 id="org7ccf082"><span class="section-number-4">3.4.4</span> How large is the effect of each medium on seles?</h4>
+<div id="outline-container-org4bf462b" class="outline-4">
+<h4 id="org4bf462b"><span class="section-number-4">3.4.4.</span> How large is the effect of each medium on seles?</h4>
 <div class="outline-text-4" id="text-3-4-4">
 <ul class="org-ul">
 <li>我们可以使用standard error of \(\hat{\beta_j}\) 来组建 \(\beta_j\) 的confidence interval</li>
@@ -3765,8 +3614,8 @@ H_0 : \beta_{tv} = \beta_{radio} = \beta_{newspaper} = 0
 </ul>
 </div>
 </div>
-<div id="outline-container-org654b2ae" class="outline-4">
-<h4 id="org654b2ae"><span class="section-number-4">3.4.5</span> How accurately can we predict future sales?</h4>
+<div id="outline-container-org3a41324" class="outline-4">
+<h4 id="org3a41324"><span class="section-number-4">3.4.5.</span> How accurately can we predict future sales?</h4>
 <div class="outline-text-4" id="text-3-4-5">
 <ul class="org-ul">
 <li><p>
@@ -3784,8 +3633,8 @@ H_0 : \beta_{tv} = \beta_{radio} = \beta_{newspaper} = 0
 </ul>
 </div>
 </div>
-<div id="outline-container-org8855759" class="outline-4">
-<h4 id="org8855759"><span class="section-number-4">3.4.6</span> Is the relationship linear?</h4>
+<div id="outline-container-org8b95c7a" class="outline-4">
+<h4 id="org8b95c7a"><span class="section-number-4">3.4.6.</span> Is the relationship linear?</h4>
 <div class="outline-text-4" id="text-3-4-6">
 <ul class="org-ul">
 <li>我们学到了使用residual plot来判断non-linearity:
@@ -3798,14 +3647,14 @@ H_0 : \beta_{tv} = \beta_{radio} = \beta_{newspaper} = 0
 </ul>
 </div>
 </div>
-<div id="outline-container-org0d6fab2" class="outline-4">
-<h4 id="org0d6fab2"><span class="section-number-4">3.4.7</span> Is there synergy among the advertising media?</h4>
+<div id="outline-container-org9f6c31c" class="outline-4">
+<h4 id="org9f6c31c"><span class="section-number-4">3.4.7.</span> Is there synergy among the advertising media?</h4>
 <div class="outline-text-4" id="text-3-4-7">
 <ul class="org-ul">
 <li><p>
 standard linear regression model有一个假设就是: additive relationship between predictor and response:
 </p>
-<pre class="example" id="orgf9de1bc">
+<pre class="example" id="orgdcfceb3">
 Additive model是非常容易解释的,其含义就是每个predictor对于response的贡献值是和其他predictor没有关系的
 </pre></li>
 <li>对于特定的数据集, additive assumption可能非常的不现实,我们介绍了如何引入一个interaction term来降低non-additive relationship</li>
@@ -3815,8 +3664,8 @@ Additive model是非常容易解释的,其含义就是每个predictor对于respo
 </div>
 </div>
 </div>
-<div id="outline-container-org7aa7434" class="outline-3">
-<h3 id="org7aa7434"><span class="section-number-3">3.5</span> Comparison of Linear Regression</h3>
+<div id="outline-container-org1d8f340" class="outline-3">
+<h3 id="org1d8f340"><span class="section-number-3">3.5.</span> Comparison of Linear Regression</h3>
 <div class="outline-text-3" id="text-3-5">
 <ul class="org-ul">
 <li>正如第二章讲的,linear regression是一种parametric approach,因为它成立有一个假设,就是假设你服从一
@@ -3864,7 +3713,7 @@ method: KNN regression(K-nearest neighbors regression)</li>
 在什么情况下, least squares linear regression这种parametric approach会超过non-parametric
 approach(比如KNN),答案很简单:那就是如果我们的parameteric form和true form更接近
 </p>
-<pre class="example" id="orgc712649">
+<pre class="example" id="orgec87093">
 The answer is simple: the parametric approach will outperform the non-parametric approach
 if the parametric form that has been selected is cloe to the true form of f
 </pre></li>
@@ -3879,14 +3728,14 @@ if the parametric form that has been selected is cloe to the true form of f
 </ul>
 </div>
 </div>
-<div id="outline-container-org4deb032" class="outline-3">
-<h3 id="org4deb032"><span class="section-number-3">3.6</span> Lab: Linear Regression</h3>
+<div id="outline-container-orgf70aba0" class="outline-3">
+<h3 id="orgf70aba0"><span class="section-number-3">3.6.</span> Lab: Linear Regression</h3>
 <div class="outline-text-3" id="text-3-6">
 </div>
 </div>
 </div>
-<div id="outline-container-orgb0731e4" class="outline-2">
-<h2 id="orgb0731e4"><span class="section-number-2">4</span> Chapter 4: Classification</h2>
+<div id="outline-container-org52e8bc8" class="outline-2">
+<h2 id="org52e8bc8"><span class="section-number-2">4.</span> Chapter 4: Classification</h2>
 <div class="outline-text-2" id="text-4">
 <ul class="org-ul">
 <li>第三章介绍的response variable都是quantitative的,但是很多时候,我们的response是qualitative的,比如
@@ -3913,8 +3762,8 @@ if the parametric form that has been selected is cloe to the true form of f
 </ul></li>
 </ul>
 </div>
-<div id="outline-container-orgbbb3d67" class="outline-3">
-<h3 id="orgbbb3d67"><span class="section-number-3">4.1</span> An Overview of Classification</h3>
+<div id="outline-container-orgfe8ab59" class="outline-3">
+<h3 id="orgfe8ab59"><span class="section-number-3">4.1.</span> An Overview of Classification</h3>
 <div class="outline-text-3" id="text-4-1">
 <ul class="org-ul">
 <li>分类问题,比线性回归问题发生的更普遍,下面是几个例子:
@@ -3960,8 +3809,8 @@ if the parametric form that has been selected is cloe to the true form of f
 </ul>
 </div>
 </div>
-<div id="outline-container-org018533d" class="outline-3">
-<h3 id="org018533d"><span class="section-number-3">4.2</span> Why Not Linear Regression?</h3>
+<div id="outline-container-org8af2708" class="outline-3">
+<h3 id="org8af2708"><span class="section-number-3">4.2.</span> Why Not Linear Regression?</h3>
 <div class="outline-text-3" id="text-4-2">
 <ul class="org-ul">
 <li>首先来解释下为什么linear regression对于qualitative response不合适</li>
@@ -4027,8 +3876,8 @@ Y = \begin{cases}
 </ul>
 </div>
 </div>
-<div id="outline-container-org7663a18" class="outline-3">
-<h3 id="org7663a18"><span class="section-number-3">4.3</span> Logistic Regression</h3>
+<div id="outline-container-org92abfbc" class="outline-3">
+<h3 id="org92abfbc"><span class="section-number-3">4.3.</span> Logistic Regression</h3>
 <div class="outline-text-3" id="text-4-3">
 <ul class="org-ul">
 <li>我们再来看看Default data set,其response值default(违约)分成了两个category:
@@ -4039,7 +3888,7 @@ Y = \begin{cases}
 <li><p>
 如果是linear regression,那么就会直接model这个response了,而logistic regression model的方向是:
 </p>
-<pre class="example" id="org456fbf3">
+<pre class="example" id="org3dc1d0e">
 Y 属于某个category的概率
 </pre></li>
 <li><p>
@@ -4057,8 +3906,8 @@ Pr(\text{default = Yes} | \text{balance})
 </ul></li>
 </ul>
 </div>
-<div id="outline-container-orgf0b80b1" class="outline-4">
-<h4 id="orgf0b80b1"><span class="section-number-4">4.3.1</span> The Logistic Model</h4>
+<div id="outline-container-orgae2aae1" class="outline-4">
+<h4 id="orgae2aae1"><span class="section-number-4">4.3.1.</span> The Logistic Model</h4>
 <div class="outline-text-4" id="text-4-3-1">
 <ul class="org-ul">
 <li>确定了最终形态之后,我们就要想如何model如下两个部分了:
@@ -4110,8 +3959,8 @@ log\bigg(\cfrac{p(X)}{1-p(X)}\bigg) = \beta_0 + \beta_1X,\tag{4.4}
 </ul>
 </div>
 </div>
-<div id="outline-container-orgf479e0b" class="outline-4">
-<h4 id="orgf479e0b"><span class="section-number-4">4.3.2</span> Estimating the Regression Coefficients</h4>
+<div id="outline-container-org91dcdec" class="outline-4">
+<h4 id="org91dcdec"><span class="section-number-4">4.3.2.</span> Estimating the Regression Coefficients</h4>
 <div class="outline-text-4" id="text-4-3-2">
 <ul class="org-ul">
 <li>linear regression需要使用最小二乘法(least square approach)来计算coefficient</li>
@@ -4179,8 +4028,8 @@ l(\beta_0, \beta_1) = \prod_{i:y_i=1} p(x_i) \prod_{i':y_{i'}=0} (1 - p(x_{i'}))
 </ul>
 </div>
 </div>
-<div id="outline-container-org32d0d2e" class="outline-4">
-<h4 id="org32d0d2e"><span class="section-number-4">4.3.3</span> Making Predictions</h4>
+<div id="outline-container-org695d05f" class="outline-4">
+<h4 id="org695d05f"><span class="section-number-4">4.3.3.</span> Making Predictions</h4>
 <div class="outline-text-4" id="text-4-3-3">
 <ul class="org-ul">
 <li>一旦有了coefficient之后,我们再把balance带入后,可以得到不同balance的预测值:
@@ -4191,8 +4040,8 @@ l(\beta_0, \beta_1) = \prod_{i:y_i=1} p(x_i) \prod_{i':y_{i'}=0} (1 - p(x_{i'}))
 </ul>
 </div>
 </div>
-<div id="outline-container-org9ba5830" class="outline-4">
-<h4 id="org9ba5830"><span class="section-number-4">4.3.4</span> Multiple Logistic Regression</h4>
+<div id="outline-container-org59c16cd" class="outline-4">
+<h4 id="org59c16cd"><span class="section-number-4">4.3.4.</span> Multiple Logistic Regression</h4>
 <div class="outline-text-4" id="text-4-3-4">
 <ul class="org-ul">
 <li><p>
@@ -4210,8 +4059,8 @@ p(X) = \cfrac{e^{\beta_0 + \beta_1X_1+\cdot\cdot\cdot + \beta_pX_p}}{1+e^{\beta_
 </ul>
 </div>
 </div>
-<div id="outline-container-orgbd89f03" class="outline-4">
-<h4 id="orgbd89f03"><span class="section-number-4">4.3.5</span> Logistic Regression for &gt; 2 Response Classes</h4>
+<div id="outline-container-orge8ea61f" class="outline-4">
+<h4 id="orge8ea61f"><span class="section-number-4">4.3.5.</span> Logistic Regression for &gt; 2 Response Classes</h4>
 <div class="outline-text-4" id="text-4-3-5">
 <ul class="org-ul">
 <li>我们一般不使用最大似然法来处理超过两种response的情况</li>
@@ -4220,8 +4069,8 @@ p(X) = \cfrac{e^{\beta_0 + \beta_1X_1+\cdot\cdot\cdot + \beta_pX_p}}{1+e^{\beta_
 </div>
 </div>
 </div>
-<div id="outline-container-org95e71fc" class="outline-3">
-<h3 id="org95e71fc"><span class="section-number-3">4.4</span> Linear Discriminant Analysis</h3>
+<div id="outline-container-orgf067726" class="outline-3">
+<h3 id="orgf067726"><span class="section-number-3">4.4.</span> Linear Discriminant Analysis</h3>
 <div class="outline-text-3" id="text-4-4">
 <ul class="org-ul">
 <li>前面讲了Logistic regression如何进行分类（主要是two response class分类）:
@@ -4252,8 +4101,8 @@ p(X) = \cfrac{e^{\beta_0 + \beta_1X_1+\cdot\cdot\cdot + \beta_pX_p}}{1+e^{\beta_
 </ul></li>
 </ul>
 </div>
-<div id="outline-container-org7cf65de" class="outline-4">
-<h4 id="org7cf65de"><span class="section-number-4">4.4.1</span> Using Bayes' Theorem for Classification</h4>
+<div id="outline-container-orgb0aabbe" class="outline-4">
+<h4 id="orgb0aabbe"><span class="section-number-4">4.4.1.</span> Using Bayes' Theorem for Classification</h4>
 <div class="outline-text-4" id="text-4-4-1">
 <ul class="org-ul">
 <li>假设我们想把一个observation分到K个类里面(其中K&gt;=2)</li>
@@ -4261,7 +4110,7 @@ p(X) = \cfrac{e^{\beta_0 + \beta_1X_1+\cdot\cdot\cdot + \beta_pX_p}}{1+e^{\beta_
 <li><p>
 那么,我们就让 \(\pi_k\) 来代表
 </p>
-<pre class="example" id="org0ac3eb3">
+<pre class="example" id="org64f6d75">
 随便找一个observation,这个observation刚好在第k个类别,这种情况的先验概率(prior probability)
 </pre></li>
 <li>先验概率很容易算,我们统计所有的obervation的数目,然后假设是N,其中属于class k的obervation的数目是x,那么 \(\pi_k = \cfrac{x}{N}\)</li>
@@ -4295,8 +4144,8 @@ Pr(Y=k|X=x) = \cfrac{\pi_kf_k(x)}{\sum_{l=1}^K\pi_lf_l(x)},\tag{4.10}
 </ul>
 </div>
 </div>
-<div id="outline-container-org907a8a9" class="outline-4">
-<h4 id="org907a8a9"><span class="section-number-4">4.4.2</span> Linear Discriminant Analysis for p = 1</h4>
+<div id="outline-container-org9d21c72" class="outline-4">
+<h4 id="org9d21c72"><span class="section-number-4">4.4.2.</span> Linear Discriminant Analysis for p = 1</h4>
 <div class="outline-text-4" id="text-4-4-2">
 <ul class="org-ul">
 <li>我们假设 p=1,也就是只有一个 predictor 的情况下,我们如何通过 estimate \(f_k(x)\) 来预估 \(p_k(x)\)</li>
@@ -4362,7 +4211,7 @@ x = \cfrac{\mu_1^2 - \mu_2^2}{2(\mu_1 - \mu_2)} = \cfrac{\mu_1 + \mu_2}{2},\tag{
 图4-4
 </p>
 
-<div id="org8cdfe57" class="figure">
+<div id="org385193e" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/isl/4-4.png" alt="4-4.png" />
 </p>
 <p><span class="figure-number">Figure 26: </span>isl/4-4.png</p>
@@ -4442,7 +4291,7 @@ x = \cfrac{\mu_1^2 - \mu_2^2}{2(\mu_1 - \mu_2)} = \cfrac{\mu_1 + \mu_2}{2},\tag{
 图4-4
 </p>
 
-<div id="org745a0c9" class="figure">
+<div id="org5955d2f" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/isl/4-4.png" alt="4-4.png" />
 </p>
 <p><span class="figure-number">Figure 27: </span>isl/4-4.png</p>
@@ -4464,15 +4313,767 @@ boundary在上图是黑色实线表示(这个实线来自能使4.17最大的取�
 </ul>
 </div>
 </div>
-<div id="outline-container-org926564f" class="outline-4">
-<h4 id="org926564f"><span class="section-number-4">4.4.3</span> Linear Discriminant Analysis for p &gt; 1</h4>
+<div id="outline-container-orgc5cdef8" class="outline-4">
+<h4 id="orgc5cdef8"><span class="section-number-4">4.4.3.</span> Linear Discriminant Analysis for p &gt; 1</h4>
+<div class="outline-text-4" id="text-4-4-3">
+<ul class="org-ul">
+<li>本节我们会把LDA classifier推广到多个predictor</li>
+<li>TODO</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgbb6f844" class="outline-2">
+<h2 id="orgbb6f844"><span class="section-number-2">5.</span> Chapter 5: Resampling Method</h2>
+<div class="outline-text-2" id="text-5">
+<ul class="org-ul">
+<li>重采样(Resampling Method)是现代统计学不可或缺的工具</li>
+<li>重采样包括从training set里面不断的提取sample,并且根据这个sample不停的训练不同的model,因为这样可以
+获取额外的信息</li>
+<li>重采样可能会计算起来非常的繁重,因为他们会使用training data的一个部分,然后反复fit同一个statistical method</li>
+<li>但是,由于近些年来计算机算力的提高,计算力已经不算太大的问题</li>
+<li>本章我们会讨论两种最常见的重采样的方法:
+<ul class="org-ul">
+<li>cross-validation</li>
+<li>bootstrap</li>
+</ul></li>
+<li>这两种方法在实践当中,都是非常重要的工具,比如:
+<ul class="org-ul">
+<li>cross-validation可以用来估计一个statistical learning method的test error,用来评估性能,或者选择flexibility的级别</li>
+</ul></li>
+<li>evaluating一个model的performance的过程叫做model assessment(模型评估)</li>
+<li>selecting一个model的level of flexibility的过程叫做model selection(模型选择)</li>
+<li>bootstrap可以用到多个context:
+<ul class="org-ul">
+<li>为某个特定的parameter estimate提供measure of accuracy</li>
+<li>为某个特定的statistical learning method提供measure of accuracy</li>
+</ul></li>
+</ul>
+</div>
+<div id="outline-container-orgc4694ed" class="outline-3">
+<h3 id="orgc4694ed"><span class="section-number-3">5.1.</span> Cross-Validation</h3>
+<div class="outline-text-3" id="text-5-1">
+<ul class="org-ul">
+<li>第二章我们讨论了test eror rate和training error rate之间的区别:
+<ul class="org-ul">
+<li>test error是使用statistical learning method来predict新的obervation产生的平均error(注意这些新的
+observation在training set是不存在的)</li>
+</ul></li>
+<li>对于一个给定的date set,某个一个statistical learning method被批准使用的前提,是这个method的test error足够低</li>
+<li>在数量比较大的test set已经定的情况下, test erro可以很轻易的算出来.但是确定test set并不容易</li>
+<li><p>
+training error的计算方法,是把statistical learning method应用到training使用的这些observation.正
+如第二章所说
+</p>
+<pre class="example" id="orgb47e255">
+training error rate通常和test error rate的值不一致: 经常来说training error rate会低于test error rate
+</pre></li>
+<li>在没有数据量庞大的test set的情况下,可以使用很多其他的方法来estimate这个数值(借用training data)</li>
+</ul>
+</div>
+<div id="outline-container-org4d1102d" class="outline-4">
+<h4 id="org4d1102d"><span class="section-number-4">5.1.1.</span> The Validation Set Approach</h4>
+<div class="outline-text-4" id="text-5-1-1">
+<ul class="org-ul">
+<li>假设我们的工作如下:
+<ol class="org-ol">
+<li>fitting一个statistical learning method到一系列的observation上去</li>
+<li>估算这个statistical learning method的test error</li>
+</ol></li>
+<li>那么我们的工作很适合使用validation set approach:
+<ul class="org-ul">
+<li><p>
+图5-1
+</p>
+
+<div id="orgb607e92" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/isl/5-1.png" alt="5-1.png" />
+</p>
+<p><span class="figure-number">Figure 28: </span>isl/5-1.png</p>
+</div></li>
+<li>validation set approach的第一步是随机的吧oversvation分成两个部分:
+<ol class="org-ol">
+<li>training st: 图中蓝色部分</li>
+<li>validation set(或者叫做hold-out set): 图中米黄色部分</li>
+</ol></li>
+<li>我们的model在fitting的时候,是使用validation set</li>
+<li>已经fitted model在计算test error rate(主要是使用MSE),是使用validation set</li>
+</ul></li>
+<li>我们使用Auto data set来介绍下validation set approach:
+<ul class="org-ul">
+<li>前面讲了在 Auto data set中,mpg和horsepower好像不是线性关系</li>
+<li>所以我们使用mpg和 \(horsepower^2\) 来提供更好的model</li>
+<li>二项式提供了更好的model,那么很自然的,我们会想,三项式,乃至更多项式会不会提供更好的model</li>
+<li>我们之前是使用p-value来比较二项式,三项式,N项式的fit结果</li>
+<li>但是我们也可以使用validation set approach来做这件事</li>
+</ul></li>
+<li>如图
+<ul class="org-ul">
+<li><p>
+图5-2
+</p>
+
+<div id="orge08b1f2" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/isl/5-2.png" alt="5-2.png" />
+</p>
+<p><span class="figure-number">Figure 29: </span>isl/5-2.png</p>
+</div></li>
+<li>上图左边我们可以看到:
+<ol class="org-ol">
+<li>二项式test error(MSE)会比线性的 test error(MSE)小很多</li>
+<li>但是三项式的test error就又比二项式的test error高了.所以,引入三项式并不能提高prediction</li>
+</ol></li>
+</ul></li>
+<li>整个过程中,获取training set和validation set的过程都是自动的:
+<ul class="org-ul">
+<li>每次按比例"随机"的划分一部分数据到training set,另外一部分数据到test set</li>
+</ul></li>
+<li>如果我们重复上面的过程N次,那么N次获得的training set数目一致,但是内容不一致.</li>
+<li>同样validation set数目一致,内容不一致.</li>
+<li>两组内容不一致的training set和validation set,我们还是会得到N个不同model,和N个不同的testMSE</li>
+<li>以Auto data set为例:
+<ul class="org-ul">
+<li><p>
+图5-2
+</p>
+
+<div id="org39e6d78" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/isl/5-2.png" alt="5-2.png" />
+</p>
+<p><span class="figure-number">Figure 30: </span>isl/5-2.png</p>
+</div></li>
+<li>右图是N=10的情况下,得到的十次test MSE曲线(每个点代表horsepower取了x次项)</li>
+<li>十次的曲线都证明,二次horsepower模型好于一次horsepower模型</li>
+</ul></li>
+<li>validation set approach从概念上来说比较简单,而且容易实现,但是它有如下两个潜在的缺点:
+<ul class="org-ul">
+<li>如图5-2右边所示,由于选取training set, validation set的不同,算出来的test error rate会有区别</li>
+<li>只有一部分的observation作用于model(就是那些进了training set的observation).而对于statistical
+method来说,数据越多越好,部分的数据训练模型相比于全量数据训练的模型效果要差</li>
+</ul></li>
+<li>下面讲的cross-validtion,会解决上面两个问题</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgd0243c8" class="outline-4">
+<h4 id="orgd0243c8"><span class="section-number-4">5.1.2.</span> Leave-One-Out Cross-Validation</h4>
+<div class="outline-text-4" id="text-5-1-2">
+<ul class="org-ul">
+<li>Leave-one-out cross-validation(LOOCV)和上一节的 validation set approach类似,但是是为了解决上面
+一节 validation set approach的缺点的</li>
+<li>和validation set approach类似, LOOCV也要把observation分成两个部分,但是和validation set approach
+不同的是:
+<ul class="org-ul">
+<li>LOOCV并不是把observation平分成两个相等的set(training set和validation set)</li>
+<li>LOOCV的validation set就一个obervation \((x_1, y_1)\) ,剩下的部分 \({(x_2, y_2),\cdot\cdot\cdot,(x_n, y_n)\) 做training set</li>
+</ul></li>
+<li>如图
+<ul class="org-ul">
+<li><p>
+图5-3
+</p>
+
+<div id="orgcb0c480" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/isl/5-3.png" alt="5-3.png" />
+</p>
+<p><span class="figure-number">Figure 31: </span>isl/5-3.png</p>
+</div></li>
+<li>如上图,LOOCV每次都是选取一个作为validation set,一共要选取n次</li>
+</ul></li>
+<li>我们的statistical learning method,在训练的时候,是使用n-1次的observation</li>
+<li>预测的时候,就使用validation set里面唯一的值类计算prediction \(\hat{y}\),比如把 \((x_1, y_1)\) 作为
+validation set的时候,计算获得的prediction就是 \(\hat{y}_1\) ,那么 \(MSE_1 = (y_1 - \hat{y}_1)\)</li>
+<li>\(MSE_1\) 虽然是unbiased的(因为它的training set占据绝大部分observation),但是由于validation太少(只
+有一个),所以 \(MSE_1\) 是high variable的</li>
+<li>为了解决 \(MSE_1\) high variable的问题,我们要重复上面的过程:
+<ul class="org-ul">
+<li>选择 \((x_2, y_2)\) 作为validation set,然后选择 \((x_3, y_3)\) &#x2026;直到 \((x_n, y_n)\)</li>
+<li>然后依次得到 \(MSE_1, MSE_2, MSE_3, \cdot\cdot\cdot, MSE_n\)</li>
+<li><p>
+LOOCV最终计算MSE的方法是把所有得到的MSE求平均值
+</p>
+\begin{equation}
+CV_{(n)} = \cfrac{1}{n}\sum_{i=1}^nMSE_i
+\end{equation}</li>
+</ul></li>
+<li>LOOCV相比于validation set approach有很多优点:
+<ul class="org-ul">
+<li>LOOCV的bias更低,因为我们几乎使用了整个observation来进行训练,相比较而言validation set approach
+只使用了一半的observation. 由于bias更低, LOOCV的test error rate在真的prediction的时候,也不是
+overestimate的很厉害</li>
+<li>validation set approach每次是随机评分training set和validation set,所以会导致算出来的模型也好
+test error rate也好,每次都不一样. 而LOOCV每次算出来的值是一样的,没有随机性</li>
+</ul></li>
+<li>我们使用LOOCV来预测一下Auto data set
+<ul class="org-ul">
+<li><p>
+图5-4
+</p>
+
+<div id="org7e660e2" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/isl/5-4.png" alt="5-4.png" />
+</p>
+<p><span class="figure-number">Figure 32: </span>isl/5-4.png</p>
+</div></li>
+</ul></li>
+<li>LOOCV有可能会非常的expensive,因为model需要fit n次,如果n非常大,并且model fit很慢的情况下,整个流
+程下来,非常费时间.</li>
+<li><p>
+对于least squareslinear 或者polynomial regression, LOOCV有个快捷计算方式(注意这个公式里面的 \(\hat{y}\)
+是之前的least square fit的得到的值
+</p>
+\begin{equation}
+CV_{(n)} = \cfrac{1}{n}\sum_{i=1}^n(\cfrac{y_i - \hat{y}_i}{1 - h_i})
+\end{equation}</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orga5282f7" class="outline-4">
+<h4 id="orga5282f7"><span class="section-number-4">5.1.3.</span> K-Fold Cross-Validation</h4>
+<div class="outline-text-4" id="text-5-1-3">
+<ul class="org-ul">
+<li>对LOCV的一个替代者是k-fold CV. k-fold CV approach包括:
+<ul class="org-ul">
+<li>随机的把observation分到k个group(也叫fold),然后每个fold的大小基本相同</li>
+<li>第一个fold作为validation set</li>
+<li>statistical method会在剩下的k-1个fold上面进行训练</li>
+<li>\(MSE_1\) 会在第一个fold上面计算</li>
+</ul></li>
+<li><p>
+上面的流程重复k次会得到k个MSE,k-fold CV就是计算这些MSE的平均值
+</p>
+\begin{equation}
+CV_{(k)} = \cfrac{1}{k}\sum_{i=1}^kMSE_i\tag{5.3}
+\end{equation}</li>
+<li>我们不难发现LOOCV是一种特殊情况(k=n)下的k-fold CV</li>
+<li>k一般选择5或者10.运行10次fitting显然比n次(n比较大的情况下),看起来可行</li>
+<li>如图
+<ul class="org-ul">
+<li><p>
+图5-4
+</p>
+
+<div id="org3a90b5b" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/isl/5-4.png" alt="5-4.png" />
+</p>
+<p><span class="figure-number">Figure 33: </span>isl/5-4.png</p>
+</div></li>
+<li>上图的右侧是使用Auto data set, 进行了9次10-fold CV后画出来的效果图</li>
+<li>我们可以看到k-fold还是有一些variability,但是远比validation set approach稳定</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgb27462f" class="outline-4">
+<h4 id="orgb27462f"><span class="section-number-4">5.1.4.</span> Bias-Variance Trade-Off for k-Fold Cross-Validation</h4>
+<div class="outline-text-4" id="text-5-1-4">
+<ul class="org-ul">
+<li>上一节我们讲了, k-fold CV(k小于n)相比于LOOCV有计算上面的优势</li>
+<li>其实,除了计算优势,另外一个更重要(但不显著)的优势是,k-fold CV能给出对test error rate来说,更加accurate
+的estimate.原因在于bias-variance trade-off:
+<ul class="org-ul">
+<li>从bias reduction的角度考虑,LOOCV肯定比k-fold CV要好</li>
+<li>从variance的角度上来说, LOOCV又比k-fold要差</li>
+</ul></li>
+<li>LOOCV的bias太好,vairance太差,而且不能变通,但是k-fold通过k的改动,能够实现bias-variance的trade-off:
+<ul class="org-ul">
+<li>想要bias少,就增大k,想要variance少,就减少k.最终达到一个平衡</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgd309ba1" class="outline-4">
+<h4 id="orgd309ba1"><span class="section-number-4">5.1.5.</span> Cross-Validation on Classification Problems</h4>
+<div class="outline-text-4" id="text-5-1-5">
+<ul class="org-ul">
+<li>cross-validation除了能够用子啊 regression问题里面,还能用在分类问题里面</li>
+<li><p>
+在分类问题里面,不能再用MSE来确定test error了,而是要使用misclassified observation.比如,在分类问
+题里面,LOOCV error rate使用如下公式
+</p>
+\begin{equation}
+CV_{(n)} = \cfrac{1}{n}\sum_{i=1}^nErr_i,\tag{5.4}
+\end{equation}</li>
+<li>其中 \(Err_i = I(y_i \neq \hat{y}_i\))</li>
+<li>如图
+<ul class="org-ul">
+<li><p>
+图5-7
+</p>
+
+<div id="orgb8dfe01" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/isl/5-7.png" alt="5-7.png" />
+</p>
+<p><span class="figure-number">Figure 34: </span>isl/5-7.png</p>
+</div></li>
+<li>黑色实线代表standard logistic regression model估计出来的decision boundary</li>
+<li>紫色实线代表Bayes估计出来的decision boundary</li>
+<li>这个数据集是simulated的,所以我们可以计算出Degree=1时:
+<ol class="org-ol">
+<li>standard logistic regression的test error rate是0.201</li>
+<li>Bayes的test error rate是0.133</li>
+</ol></li>
+<li>很显然,线性的logistic regression没有足够的flexibility来model bayes decision boundary,所以我们
+要扩展logistic regression到polynomial function</li>
+<li>我们看Degree=2(二项式函数)的图,这时候的test error rate只提高了一点点,到了0.197</li>
+<li>Degree=3(三项式函数)的图,test error rate相比于Degree=2,提高了很多,达到了0.160</li>
+<li>Degree=4(四项式函数)的图,test error rate相比于Degree=3,提高了很少</li>
+</ul></li>
+<li>在实践中,对于真实的数据,对于一个模型,如下两个值是不可能知道的:
+<ul class="org-ul">
+<li>Bayes decision boundary</li>
+<li>test error rate</li>
+</ul></li>
+<li>所以在实践当中,我们就是去算cross-validation,取一个test error rate最低的模型</li>
+<li>如图
+<ul class="org-ul">
+<li><p>
+图5-8
+</p>
+
+<div id="org56bbf9f" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/isl/5-8.png" alt="5-8.png" />
+</p>
+<p><span class="figure-number">Figure 35: </span>isl/5-8.png</p>
+</div></li>
+<li>左边的图使用model是logisitic regression(使用不同项式的function):
+<ol class="org-ol">
+<li>true test error 使用黄色标识</li>
+<li>training error使用蓝色标识</li>
+<li>10-fold CV error使用黑色标识</li>
+</ol></li>
+<li>左边图中可以看出,对于trainig error来说,随着flexibility的提高,training error是不断降低的</li>
+<li>左图可以看出,和trainig error不同, true, test error则是呈现出一个U-shape(先低后高), 而10-fold
+CV error rate非常漂亮的模拟了这个U-shape(虽然值有差异)</li>
+<li>左图可以看出:
+<ol class="org-ol">
+<li>当使用三次方函数的时候,true test error rate达到了最低值</li>
+<li>当使用四次方函数的时候,10-fold CV error rate也达到了最低值,而且和三次方时候的true test error rate相差不多</li>
+<li>综合起来,使用四次方函数最好,首先10-fold CV error rate在四次方获得最小值,其次true test error
+rate虽然在三次方得到最小值,但是在四次方的时候true test error rate也就是大一点点</li>
+</ol></li>
+<li>右边的图使用model是KNN(使用不同数目的K):
+<ol class="org-ol">
+<li>true test error 使用黄色标识</li>
+<li>training error使用蓝色标识</li>
+<li>10-fold CV error使用黑色标识</li>
+</ol></li>
+<li>右边的图依然可以看出, training error rate也是随着method的flexibility的提高而降低,这也就意味着
+我们不能通过training error rate来选择最优化的K</li>
+<li>右图可以看出,我们的cross-validation error还是很好的模拟了true test error rate 的图形(虽然数值有些低估)</li>
+<li>右图可以看出,cross-validation 的最小值也和true error rate的最小值接近. 所以我们可以使用cross-validation
+的结果来选择最优的K(true error rate是最理想的选择K的方法,但是实际情况下,true error rate未知)</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org1b78f4d" class="outline-3">
+<h3 id="org1b78f4d"><span class="section-number-3">5.2.</span> Bootstrap</h3>
+<div class="outline-text-3" id="text-5-2">
+</div>
+</div>
+</div>
+<div id="outline-container-orgc44a234" class="outline-2">
+<h2 id="orgc44a234"><span class="section-number-2">6.</span> Chapter 6: Linear Model Selection and Regularization</h2>
+<div class="outline-text-2" id="text-6">
+<ul class="org-ul">
+<li><p>
+在regression中,如下的standard linear model会被广泛使用在response Y和variable \(X_1,X_2,\cdot\cdot\cdot,X_p\)
+</p>
+\begin{equation}
+Y = \beta_0 + \beta_1X_1 + \cdot\cdot\cdot + \beta_pX_p + \varepsilon\tag{6.1}
+\end{equation}</li>
+<li>我们可以使用least square来匹配这个model</li>
+<li>本章会介绍新的fitting procedure来替代least square,新的fitting procedure有如下优点:
+<ul class="org-ul">
+<li>Prediction Accuracy:
+<ol class="org-ol">
+<li>假设true relationship就是linear的,least square的estimate会有low bias</li>
+<li>如果n(observation数目)远大于p(variable个数),那么,least square的estimate还会有low variance,
+从而会在test observation上有好的表现</li>
+<li>但是如果n比p大的不多,那么least square fit就会有很多variability,会导致overfitting,并且在后续
+prediction的时候表现糟糕</li>
+<li>极端情况下,如果n小于p,那么就不存在unique lest square coefficient estimate,换句话说就是variance
+是infinite的,那么这个leaset square method就根本没法用</li>
+<li>我们可以通过减少待评估coefficient的方法来降低variance,代价是提高bias</li>
+</ol></li>
+<li>Model Interpretability:
+<ol class="org-ol">
+<li>一个普遍现象就是regression model里面的variable很多都是没有用的:包含这些irrelevant variable会
+导致模型unnecessry complexity</li>
+<li>上述问题可以通过设置irrelevant variable对应的coefficient为0来解决</li>
+<li>但是问题在于least squre非处不可能把某个coefficient设置为0</li>
+<li>本章会有些approach就是用来帮助regression model来去除irrelevant variable的(这个过程也叫variable
+selection或者feature selection)</li>
+</ol></li>
+</ul></li>
+<li>本章会介绍least square的替代者用来fit 公式6-1,这些approach包括:
+<ul class="org-ul">
+<li>Subset Selection: 这个approach重点是把p个predictor中真正有用的x个predictor给识别出来,然后用这个
+x个predictor来匹配least square</li>
+<li>Shrinkage: 这个approach会使用全部p个predictor,但是这个p个predictor会朝0的方向进行缩减(或者叫正
+则化),由于coefficient可能会缩小到zero,所以Shrinkage也可以用来做variable selection</li>
+<li>Dimension Reduction: 这里的策略是通过投射(projecting),把p个predictor缩小到M个(M&lt;p). 原理是通过
+排列组合,从p个predictor里面选择M个predictor,然后用这个M个predictor适配least square</li>
+</ul></li>
+</ul>
+</div>
+<div id="outline-container-org68214c6" class="outline-3">
+<h3 id="org68214c6"><span class="section-number-3">6.1.</span> Subset Selection</h3>
+<div class="outline-text-3" id="text-6-1">
+<ul class="org-ul">
+<li>本节我们会介绍选取predictor的一部分的方法,包括:
+<ul class="org-ul">
+<li>best subset</li>
+<li>stepwise model selection</li>
+</ul></li>
+</ul>
+</div>
+<div id="outline-container-org801cd93" class="outline-4">
+<h4 id="org801cd93"><span class="section-number-4">6.1.1.</span> Best Subset Selection</h4>
+<div class="outline-text-4" id="text-6-1-1">
+<ul class="org-ul">
+<li>这个过程比较复杂,假设我们总共有p个predictor:
+<ul class="org-ul">
+<li>我们每1个predictor作为input,产生p个model</li>
+<li>我们每2个predictor作为input,产生p/2个model</li>
+<li>我们每x个predictor作为input,产生p/x个model</li>
+</ul></li>
+<li>这个方法总共会产生 \(2^p\) 个model,然后选择最好的model,当然选择最好的过程有些复杂.我们整理为Algorithm-6.1</li>
+<li>Algorithm-6.1 Best subset selection:
+<ol class="org-ol">
+<li>让 \(M_0\) 代表null model,这个model没有predictor,这个model的predict的结果是每个observation的sample mean</li>
+<li>对于k=1,2,&#x2026;p的情况:
+<ul class="org-ul">
+<li>首先每k个predictor组成一个predictor,那么会有 \(\binom{p}{k}\) 种组合,也就有 \(\binom{p}{k}\) 种model</li>
+<li>从这 \(\binom{p}{k}\) 个model里面,选择最好的一个model,起名叫做 \(M_k\), 这里的最好的定义是拥有最低的RSS</li>
+</ul></li>
+<li>从 \(M_0,\cdot\cdot\cdot,M_p\) 里面通过cross-validated prediction error, \(C_p(AIC)\), BIC, 或者 adjusted \(R^2\) 选择最好的model</li>
+</ol></li>
+<li>上面算法的第2步其实就是选择好了p+1个possible的候选model</li>
+<li>为了选择最佳model,我们其实就是在这p+1个候选model里面选择.这个task需要非常小心:
+<ul class="org-ul">
+<li>随着predictor个数的增多,RSS会单调递减,$R^2$会单调递增.所以,我们不能使用这些参数来选择model,否
+则predictor最多的肯定是最后的胜利者</li>
+<li>其中的原因在于Low RSS或者 High \(R^2\) 代表的是low training error,而我们选的best的定义是lowest
+test error</li>
+<li>第三步我们就使用能够判断出test error高低的方法啦,比如:cross-validated prediction error, \(C_p(AIC)\),
+BIC, 或者 adjusted \(R^2\)</li>
+</ul></li>
+<li>虽然best subset selection看上去简单,并且方法有感染力,但是由于其计算量过大,使用的时候还是有很多限制</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org3571fbb" class="outline-2">
+<h2 id="org3571fbb"><span class="section-number-2">7.</span> Chapter 8: Tree-Based Methods</h2>
+<div class="outline-text-2" id="text-7">
+<ul class="org-ul">
+<li>本章我们描述为regression和classification准备的tree-based method,这个method的原理,就是把predictor
+space给分成不同的region(这个过程叫做stratifying或者segmenting)</li>
+<li>用来spliting segment的规则可以总结为一棵树,所以这类approach被叫做decision tree</li>
+<li>tree-base method在准确性方面并不擅长,其特点是容易解释(useful for interpretation)</li>
+<li>为了提高准确性(同时也会丢失一定的解释性),我们会把多个tree创造出来,用来预测一个数据集.这些方法有:
+<ul class="org-ul">
+<li>bagging</li>
+<li>random forests</li>
+<li>boosting</li>
+</ul></li>
+</ul>
+</div>
+<div id="outline-container-org6a084ee" class="outline-3">
+<h3 id="org6a084ee"><span class="section-number-3">7.1.</span> The Basics of Decision Trees</h3>
+<div class="outline-text-3" id="text-7-1">
+<ul class="org-ul">
+<li>decision tree可以在regression和classification上面使用,我们先看regression上的例子,然后看classification
+的例子</li>
+</ul>
+</div>
+<div id="outline-container-orgd8da673" class="outline-4">
+<h4 id="orgd8da673"><span class="section-number-4">7.1.1.</span> Regression Trees</h4>
+<div class="outline-text-4" id="text-7-1-1">
+</div>
+<ol class="org-ol">
+<li><a id="org7fcaeee"></a>Predicting Baseball Players' Salaries Using Regression Trees<br />
+<div class="outline-text-5" id="text-7-1-1-1">
+<ul class="org-ul">
+<li>我们使用Hitters data set来预测球员的工资,根据:
+<ul class="org-ul">
+<li>Years: 入行年限</li>
+<li>Hits: 去年击打数目</li>
+</ul></li>
+<li>我们首先处理没有Salary的数据</li>
+<li>然后我们处理下Salary(开根号),因为Salary数目太大</li>
+<li>下面就是我们成功算出来的model的效果(推导model的过程在后面):
+<ul class="org-ul">
+<li><p>
+图8-1
+</p>
+
+<div id="org40915b9" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/isl/8-1.png" alt="8-1.png" />
+</p>
+<p><span class="figure-number">Figure 36: </span>isl/8-1.png</p>
+</div></li>
+<li>上图就是一个用regression tree来fit data的例子</li>
+<li>tree的最开始是一个分支:
+<ol class="org-ol">
+<li>工作小于4.5年的被分在左分支</li>
+<li>工作大于4.5年的被分在右分支</li>
+</ol></li>
+<li>对于Year&lt;4.5的球员,其平均工资(开根号后)是5.107,所以我们的预测值是 \(e^{5.107} k\) 美元,也就是
+165,174美元</li>
+<li>对于Year&gt;4.5的球员,我们被分到了右子树</li>
+<li>右子树又会分成两个部分,根据Hit的数目又分成两个子树</li>
+<li>经过如上的两次分支,最终分成了三个region:
+<ol class="org-ol">
+<li>R1 = {X| Years&lt;4.5}</li>
+<li>R2 = {X| Years&gt;=4.5,Hits&lt;117.5}</li>
+<li>R3 = {X| Years&gt;=4.5,Hits&gt;=117.5}</li>
+</ol></li>
+</ul></li>
+<li>如图
+<ul class="org-ul">
+<li><p>
+图8-2
+</p>
+
+<div id="orgc60813d" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/isl/8-2.png" alt="8-2.png" />
+</p>
+<p><span class="figure-number">Figure 37: </span>isl/8-2.png</p>
+</div></li>
+<li>上图可以看我们如何使用两条线把这两次个branch给表示出来</li>
+<li>R1, R2, R3的薪水如下:
+<ol class="org-ol">
+<li>R1 \(e^{5.107}\)</li>
+<li>R2 \(e^{5.999}\)</li>
+<li>R1 \(e^{6.740}\)</li>
+</ol></li>
+</ul></li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="outline-container-org691844f" class="outline-2">
+<h2 id="org691844f"><span class="section-number-2">8.</span> Chapter 9: Suppport Vector Machines</h2>
+<div class="outline-text-2" id="text-8">
+<ul class="org-ul">
+<li>本章我们讨论SVM(support vector machine),这是一个用来进行分类的approach,于1990年代在计算机界发明</li>
+<li>SVM在多项指标中表现都很好,被认为是非常有创意的classifier</li>
+<li>SVM不是一下想出来的,而是经过如下几个过程迭代过来的:
+<ul class="org-ul">
+<li>maximal margin classifier,是一个简单的,直觉上就能想出来的分类器,虽然优雅而又简单,但是这个classifier
+不能应用到大部分的data set,因为他需要class必须使用linear boundary来区分</li>
+<li>针对maximal margin classifier的缺点,诞生了support vector classifier,它能够应用到更广泛的case上
+要求必须以linear boundary来区分</li>
+<li>对support vector classifier进行改进后,诞生了support vector machine,其对boundary的要求不再是linear
+的了.当然最开始support vector machine只能分两类</li>
+<li>后面介绍的对support vector machine的extension,是可以分成多于两类的</li>
+<li>最后我们会讨论support vector machine和其他的statistical method(比如logistic regression)之间的紧密联系</li>
+</ul></li>
+<li>很多人会把如下三个概念统称为SVM,但是我们还是会细致的区分它们:
+<ul class="org-ul">
+<li>maximal margin classifier</li>
+<li>support vector classifier</li>
+<li>support vector machine</li>
+</ul></li>
+</ul>
+</div>
+<div id="outline-container-orge58dcf1" class="outline-3">
+<h3 id="orge58dcf1"><span class="section-number-3">8.1.</span> Maximal Margin Classifier</h3>
+<div class="outline-text-3" id="text-8-1">
+</div>
+<div id="outline-container-org673f552" class="outline-4">
+<h4 id="org673f552"><span class="section-number-4">8.1.1.</span> What is a Hyperplane?</h4>
+<div class="outline-text-4" id="text-8-1-1">
+<ul class="org-ul">
+<li>超平面(hyprplane)是为了p很大的p维空间上面,我们描述p-1维事物方便而设计的概念:
+<ul class="org-ul">
+<li>对应二维空间来说,它的超平面就是一条直线(直线只有一维)</li>
+<li>对于三维空间来说,它的超平面就是一个平面(平面只有两维)</li>
+<li>对于p维空间来说,他的超平面就是一个p-1维的事物,人类不太容易想象</li>
+</ul></li>
+<li><p>
+对于超平面的数学表示我们可以先看一个一维的情况(也就是直线)
+</p>
+\begin{equation}
+\beta_0 + \beta_1X_1 + \beta_2X_2 = 0,\tag{9.1}
+\end{equation}</li>
+<li><p>
+使得公式9-1成立的任意 \(X=(X_1,X_2)^T\) (注意,我们的X无论成员多少,都是一个vector,也就是一个列向量,
+所以用到T来表示对行向量进行转置)都是超平面上的一个点!,这个理念对于理解超平面非常重要
+</p>
+<pre class="example" id="orgfe2293b">
+When we say that 9.1 "efines" the hyperplane, we mean that any
+X = (X1,X2) for whith 9.1 holds is a point on the hyperplane
+</pre></li>
+<li>注意,这里虽然是X1, X2,其实你可以看成x, y,这样就容易理解了</li>
+<li><p>
+从直线理解了超平面之后,我们很容易把公式9-1扩展成公式9-2,如下
+</p>
+\begin{equation}
+\beta_0 + \beta_1X_1 + \beta_2X_2 + \cdot\cdot\cdot + \beta_pX_p = 0,\tag{9.2}
+\end{equation}</li>
+<li>我们还可以扩展如下两个公式:
+<ul class="org-ul">
+<li><p>
+如果 \(X = (X_1,X_2,\cdot\cdot\cdot,X_p)^T\) 在超平面的一侧,可以得到
+</p>
+\begin{equation}
+\beta_0 + \beta_1X_1 + \beta_2X_2 + \cdot\cdot\cdot + \beta_pX_p > 0,\tag{9.3}
+\end{equation}</li>
+<li><p>
+如果 \(X = (X_1,X_2,\cdot\cdot\cdot,X_p)^T\) 在超平面的另外一侧,可以得到
+</p>
+\begin{equation}
+\beta_0 + \beta_1X_1 + \beta_2X_2 + \cdot\cdot\cdot + \beta_pX_p < 0,\tag{9.4}
+\end{equation}</li>
+</ul></li>
+<li>也就是说,超平面把整个p-维空间分成了两部分,把X(X是p-1个的列向量)带入公式9-2,可以知道,这
+个point是在超平面的哪一侧(还是就在超平面上)</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org2351863" class="outline-4">
+<h4 id="org2351863"><span class="section-number-4">8.1.2.</span> Classification Using a Separating Hyperplane</h4>
+<div class="outline-text-4" id="text-8-1-2">
+<ul class="org-ul">
+<li>假设我们有一个 \(n \times p\) 的矩阵,包含n个training observation,每个observation里面有一个p-dimensional
+space(p个参数)</li>
+<li>然后这些observations会有两种结果:
+<ul class="org-ul">
+<li>-1,表示class</li>
+<li>1表示另外一个class</li>
+</ul></li>
+<li>我们同时也有test observation,是一个p-vector \(x^* = (x_1^* \cdot\cdot\cdot x_p^*)^T\)</li>
+<li>我们的目标是根据training data开发一个classifier,能够正确的吧test observation分类成功.这种依靠超
+平面来进行分类的方法,叫做separating hyperplane</li>
+<li><p>
+如图
+</p>
+
+<div id="org83f09ca" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/isl/9-2.png" alt="9-2.png" />
+</p>
+<p><span class="figure-number">Figure 38: </span>isl/9-2.png</p>
+</div>
+<ul class="org-ul">
+<li>上图中有三条线,都能成功把数据分成两个部分</li>
+<li>我们只需要计算 \(f(x^*) = \beta_0 + \beta_1x^*_1+ \beta_2x^*_2+ \cdot\cdot\cdot+\beta_px^*_p\)  ,就可以通过结果的正负值来确认test observation的预测值是蓝色还是粉色</li>
+<li>\(f(x^*)\) 的大小也很重要,如果 \(f(x^*)\) 越大,那么我们对我们的分类结果就越自信</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgd92b146" class="outline-4">
+<h4 id="orgd92b146"><span class="section-number-4">8.1.3.</span> The Maximal Margin Classifier</h4>
+<div class="outline-text-4" id="text-8-1-3">
+<ul class="org-ul">
+<li>总体上来说,如果存在一个能够完美区分当前空间的超平面,那么实际上会存在无穷多个这种超平面,比如图9-2
+里面就画出来三个,但其实稍微移动一下直线(又不改变分类结果),就会有新的直线</li>
+<li>我们必须要有一个办法来确定,如何在这infinite个可能的超平面里面,确定一个最好的超平面是我们下面要研究的</li>
+<li>一个很自然的想法,就是maximal margin hyperplane:
+<ul class="org-ul">
+<li>所谓margin,是training set里面单个point到超平面的最短距离</li>
+<li>对于特定的超平面, 我们计算所有trainig set里面每个point的margin的和.</li>
+<li>如果某个超平面拥最大的margin和,那么这个超平面就是最好的选择</li>
+<li>我们会使用得到的maximal margin hyperplane来对test set进行预测.绝大多数时候,效果都是不错的,但
+是对于p很大的情况,maximal margin hyperplane会有过拟合(overfitting)的情况</li>
+</ul></li>
+<li>如果 \(\beta_0,\beta_1,\cdot\cdot\cdot,\beta_p\) 是maximal margin hyperplane的coefficient,那么对
+于新的test observation \(x^*\) , 我们就使用如下的计算方法判断其类型 \(f(x^*) = \beta_0 + \beta_1x^*_1 + \cdot\cdot\cdot + \beta_2x^*_p\)</li>
+<li>如图
+<ul class="org-ul">
+<li><p>
+图9-3
+</p>
+
+<div id="org09e5c03" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/isl/9-3.png" alt="9-3.png" />
+</p>
+<p><span class="figure-number">Figure 39: </span>isl/9-3.png</p>
+</div></li>
+<li>上图展示的是, 图9-2的数据得来的maximal margin hyperplane</li>
+<li>从图中我们可以看到(其实也可以想到),我们的超平面是一个"平板"的"中线"(因为中线能够保证和两个边
+的距离最大),这个"平板"是能够插入两个类中间的,最大的"平板"</li>
+<li>观察上图,我们会发现三个点刚好落在虚线上,这个虚线就是最大"平板"的边界. 这种落在最大"平板"边界
+的observation叫做support vectors</li>
+<li>support vector的名字来源于:
+<ol class="org-ol">
+<li>首先他们是vector(这里是二维向量)</li>
+<li>其次,他们是support整个maximal margin hyperplane的,因为他们稍微动一下,maximal margin hyperplane
+就需要改变!而其他的vector轻微动一下(只要不越过虚线),不影响maximal margin hyperplane</li>
+</ol></li>
+</ul></li>
+<li>maximal margin hyperplane其实只受一小部分observation影响,是其重要特性,我们后面会讲到</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgf04de60" class="outline-4">
+<h4 id="orgf04de60"><span class="section-number-4">8.1.4.</span> Construction of the Maximal Margin Classifier</h4>
+<div class="outline-text-4" id="text-8-1-4">
+<ul class="org-ul">
+<li>我们现在考虑如何计算maximal margin hyperplane,有如下数据:
+<ul class="org-ul">
+<li>n个trainig observation: \(x_1, \cdot\cdot\cdot, x_n \in \Re^p\)</li>
+<li>p个对应的label: \(y_1,\cdot\cdot\cdot,y_n \in \{-1, 1\}\)</li>
+</ul></li>
+<li>根据以上数据,计算得到下面公式的最优化解,就是maximal margin classifier:
+<ul class="org-ul">
+<li>公式9-9</li>
+<li>公式9-10</li>
+<li>公式9-11</li>
+</ul></li>
+<li>如何计算这三个公式的最优解不是本书讨论的范畴,故此处不再讲解</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orga5df7f8" class="outline-4">
+<h4 id="orga5df7f8"><span class="section-number-4">8.1.5.</span> The Non-separable Case</h4>
+<div class="outline-text-4" id="text-8-1-5">
+<ul class="org-ul">
+<li>在separating hyperplane 存在的情况下,maximal margin classifier是一个非常自然的选择.</li>
+<li>但是有很多种情况下,没有separating hyperplane存在,也就没有maximal margin classifier. 在这种情况
+下, 最优解问题(公式9.9-公式9.11)没有M&gt;0的解</li>
+<li>下图就是没有separate两个class的情况
+<ul class="org-ul">
+<li><p>
+图9-4
+</p>
+
+<div id="org787443b" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/isl/9-4.png" alt="9-4.png" />
+</p>
+<p><span class="figure-number">Figure 40: </span>isl/9-4.png</p>
+</div></li>
+</ul></li>
+<li>下一节,我们会扩展separating hyperplane的概念,找到almost separate class的hyperplane,使用soft
+margin的概念</li>
+<li>把maximal margin classifier扩展到non-separable case的情形,就叫做support vector classifier</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgb858ba5" class="outline-3">
+<h3 id="orgb858ba5"><span class="section-number-3">8.2.</span> Support Vector Classifiers</h3>
+<div class="outline-text-3" id="text-8-2">
+</div>
+<div id="outline-container-org603c340" class="outline-4">
+<h4 id="org603c340"><span class="section-number-4">8.2.1.</span> Overview of the Support Vector Classifier</h4>
 </div>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: harrifeng@outlook.com</p>
-<p class="date">Created: 2021-08-02 Mon 17:08</p>
+<p class="date">Created: 2023-08-29 �ܶ� 20:44</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
