@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2024-01-15 Mon 14:43 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>tic</title>
+<meta name="author" content="harrifeng@outlook.com" />
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/readtheorg.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/js/readtheorg.js"></script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">tic</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org11e72ff">1. 天降奇兵</a>
+<ul>
+<li><a href="#org6b59ff7">1.1. Prometheus简介</a>
+<ul>
+<li><a href="#orgd11e652">1.1.1. 监控的目标</a></li>
+<li><a href="#org0650f6d">1.1.2. 与常见监控系统比较</a></li>
+<li><a href="#org065bee0">1.1.3. Prometheus的优势</a></li>
+</ul>
+</li>
+<li><a href="#org64d9c0a">1.2. 初识Prometheus</a>
+<ul>
+<li><a href="#org45cc12c">1.2.1. 安装Prometheus Server</a></li>
+<li><a href="#orgff7cbef">1.2.2. 使用Node Exporter采集主机数据</a></li>
+<li><a href="#orgd6a3b3e">1.2.3. 使用PromQL查询监控数据</a></li>
+<li><a href="#org1e9379e">1.2.4. 监控数据可视化</a></li>
+</ul>
+</li>
+<li><a href="#orgc815bea">1.3. 任务和实例</a></li>
+<li><a href="#orgcc035a1">1.4. Prometheus核心组件</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org11e72ff" class="outline-2">
+<h2 id="org11e72ff"><span class="section-number-2">1.</span> 天降奇兵</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-org6b59ff7" class="outline-3">
+<h3 id="org6b59ff7"><span class="section-number-3">1.1.</span> Prometheus简介</h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li>Prometheus受启发于Google的Brogmon系统,两者的关系就像k8s受启发于Google的Brog</li>
+<li>Prometheus在2016年成功CNCF基金会项目,是目前监控的事实标准</li>
+</ul>
+</div>
+<div id="outline-container-orgd11e652" class="outline-4">
+<h4 id="orgd11e652"><span class="section-number-4">1.1.1.</span> 监控的目标</h4>
+<div class="outline-text-4" id="text-1-1-1">
+<ul class="org-ul">
+<li>&lt;SRE: Google运维解密&gt; 这本书里面指出,监控系统需要能够有效的支持白盒监控和黑盒监控:
+<ul class="org-ul">
+<li>通过白盒监控能够了解其内部的实际运行状态, 通过对监控指标的观察能够预判可能出现的问题</li>
+<li>通过黑盒监控(比如HTTP探针,TCP探针),可以在系统或者服务发生故障的时候,快速通知相关人员进行处理</li>
+</ul></li>
+<li>建立完整的监控系统有如下优点:
+<ul class="org-ul">
+<li>长期趋势分析: 通过对监控羊毛数据的搜集和统计,能够提前预测在什么时间点上需要对资源进行扩容</li>
+<li>对照分析: 对比两个版本的系统资源使用情况的差异</li>
+<li>告警: 当系统出现(或者即将出现)故障时,监控系统更需要迅速反应并且通知管理员</li>
+<li>故障分析与定位: 当问题发生后,需要对问题进行调查和处理,通过不同监控和历史数据的分析,能够快速定位问题</li>
+<li>数据可视化: 可以通过图来直观的查看系统运行的状态. 图的好处是人类可以一下子发现用数字发现不了的问
+题,从而判断系统是否在正常状态</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org0650f6d" class="outline-4">
+<h4 id="org0650f6d"><span class="section-number-4">1.1.2.</span> 与常见监控系统比较</h4>
+<div class="outline-text-4" id="text-1-1-2">
+<ul class="org-ul">
+<li>在Prometheus之前的流行监控系统有:
+<ul class="org-ul">
+<li>Nagios</li>
+<li>Zabbix</li>
+</ul></li>
+<li>这些系统主要针对如下几个方面进行监控:
+<ul class="org-ul">
+<li>系统服务</li>
+<li>资源状态</li>
+<li>应用程序可用性</li>
+</ul></li>
+<li>上述这些监控粒度过大,比如只能通过系统负载来产生告警,而不能了解程序内部的真实情况.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org065bee0" class="outline-4">
+<h4 id="org065bee0"><span class="section-number-4">1.1.3.</span> Prometheus的优势</h4>
+<div class="outline-text-4" id="text-1-1-3">
+<ul class="org-ul">
+<li>Prometheus已经是事实上的行业标准了,其相对于传统方案的优势比较多,我们下面做详细分析</li>
+</ul>
+</div>
+<ol class="org-ol">
+<li><a id="org452762d"></a>易于管理:<br />
+<div class="outline-text-5" id="text-1-1-3-1">
+<ul class="org-ul">
+<li>Prometheus只有一个单独二进制,不依赖其他的库,部署简单.自身出问题的概率低.</li>
+<li>同时Prometheus是Pull模式,这个模式其实不能说易于管理,只是说对监控的客户端消耗的比较小(只需要应对服
+务端的pull请求就可以). 一旦新增了客户端的数量,还需要服务发现去让服务端知道.相比直线Push模式就没有
+这个问题. <b>所以这里列Pull模式易于管理其实存疑</b></li>
+</ul>
+</div>
+</li>
+<li><a id="org51a54ee"></a>监控服务的内部运行状态<br />
+<div class="outline-text-5" id="text-1-1-3-2">
+<ul class="org-ul">
+<li>基于Prometheus丰富的Client库,用户可以轻松的在应用程序中添加对Prometheus的支持</li>
+</ul>
+</div>
+</li>
+<li><a id="orgc228898"></a>强大的数据模型<br />
+<div class="outline-text-5" id="text-1-1-3-3">
+<ul class="org-ul">
+<li>所有采集的数据都以Metric的形式保存在内置的TSDB(Time Sequance DataBase)中.
+<ul class="org-ul">
+<li><p>
+单个Metric的例子如下
+</p>
+<pre class="example" id="org2c2a1f5">
+http_request_status{code='200',content_path='/api/path', environment='produment'} =&gt; [value1@timestamp1,value2@timestamp2...]
+</pre></li>
+<li>所有metric按照时间先后顺序存储</li>
+<li>每个Metric由如下几个部分组成:
+<ol class="org-ol">
+<li>单个指标名字: 比如http_request_status</li>
+<li>一系列Label标识: 比如code=200,environment=production. 已经这些label,我们可以方便的过滤,剪裁甚至聚合数据</li>
+</ol></li>
+</ul></li>
+</ul>
+</div>
+</li>
+<li><a id="orgb74b9a3"></a>强大的查询语言PromQL<br />
+<div class="outline-text-5" id="text-1-1-3-4">
+<ul class="org-ul">
+<li>内置的PromQL可以:
+<ul class="org-ul">
+<li>对监控的数据进行查询,聚合</li>
+<li>和数据可视化应用(比如Grafana)合作</li>
+<li>提供告警支持</li>
+</ul></li>
+</ul>
+</div>
+</li>
+<li><a id="org3dc8273"></a>高效<br />
+<div class="outline-text-5" id="text-1-1-3-5">
+<ul class="org-ul">
+<li>对于监控系统来说,大量的监控任务必然带来海量的数据,Prometheus的处理能力非常的高,它可以:
+<ul class="org-ul">
+<li>处理数以百万的监控指标</li>
+<li>每秒处理数十万的数据点</li>
+</ul></li>
+</ul>
+</div>
+</li>
+<li><a id="orge1183a8"></a>可扩展<br />
+<div class="outline-text-5" id="text-1-1-3-6">
+<ul class="org-ul">
+<li>当单例Prometheus Server处理不过来的时候,可以通过使用功能分区+联邦集群对其进行扩展</li>
+</ul>
+</div>
+</li>
+<li><a id="org6b86deb"></a>易于集成<br />
+<div class="outline-text-5" id="text-1-1-3-7">
+<ul class="org-ul">
+<li>基于prometheus的客户端SDK,可以快速让应用接纳到Prometheus监控当中,prometheus客户端SDK支持的语言有:
+<ul class="org-ul">
+<li>Java</li>
+<li>JMX</li>
+<li>Python</li>
+<li>Go</li>
+<li>Ruby</li>
+<li>.Net</li>
+<li>Node.js</li>
+</ul></li>
+<li>Prometheus社区还支持将很多其他的系统的监控"转换为"Prometheus数据(专业名词叫Exporter),这些Exporter
+支持的系统有:
+<ul class="org-ul">
+<li>EC2</li>
+<li>MySQL</li>
+<li>PostgresSQL</li>
+<li>Django</li>
+<li>Redis</li>
+</ul></li>
+</ul>
+</div>
+</li>
+<li><a id="org5a8606f"></a>可视化<br />
+<div class="outline-text-5" id="text-1-1-3-8">
+<ul class="org-ul">
+<li>Prometheus Server自带Prometheus UI</li>
+<li>Prometheus 还可以基于Grafana创建更加精美的监控</li>
+</ul>
+</div>
+</li>
+<li><a id="org2f42c1b"></a>开放性<br />
+<div class="outline-text-5" id="text-1-1-3-9">
+<ul class="org-ul">
+<li>Prometheus的客户端SDK产生的数据,可以让任何服务端使用,不止Prometheus Server</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org64d9c0a" class="outline-3">
+<h3 id="org64d9c0a"><span class="section-number-3">1.2.</span> 初识Prometheus</h3>
+<div class="outline-text-3" id="text-1-2">
+<ul class="org-ul">
+<li>本节会实际部署一次Promethus, Node Exporter和Grafana</li>
+</ul>
+</div>
+<div id="outline-container-org45cc12c" class="outline-4">
+<h4 id="org45cc12c"><span class="section-number-4">1.2.1.</span> 安装Prometheus Server</h4>
+<div class="outline-text-4" id="text-1-2-1">
+<ul class="org-ul">
+<li>只介绍非docker安装, 由于是二进制部署,Prometheus的docker安装原理比较简单,就不再赘述</li>
+<li><p>
+在Mac arm64下,需要使用如下命令下载
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">curl -LO https://github.com/prometheus/prometheus/releases/download/v2.45.2/prometheus-2.45.2.darwin-arm64.tar.gz
+</pre>
+</div></li>
+<li><p>
+解压后,可以看到第一层文件夹下就有配置文件prometheus.yml,内容如下
+</p>
+<div class="org-src-container">
+<pre class="src src-yaml"><span style="color: #4E4E4E; font-style: italic;"># </span><span style="color: #4E4E4E; font-style: italic;">my global config</span>
+<span style="color: #004651;">global</span>:
+  <span style="color: #004651;">scrape_interval</span>: 15s <span style="color: #4E4E4E; font-style: italic;"># </span><span style="color: #4E4E4E; font-style: italic;">Set the scrape interval to every 15 seconds. Default is every 1 minute.</span>
+  <span style="color: #004651;">evaluation_interval</span>: 15s <span style="color: #4E4E4E; font-style: italic;"># </span><span style="color: #4E4E4E; font-style: italic;">Evaluate rules every 15 seconds. The default is every 1 minute.</span>
+  <span style="color: #4E4E4E; font-style: italic;"># </span><span style="color: #4E4E4E; font-style: italic;">scrape_timeout is set to the global default (10s).</span>
+
+<span style="color: #4E4E4E; font-style: italic;"># </span><span style="color: #4E4E4E; font-style: italic;">Alertmanager configuration</span>
+<span style="color: #004651;">alerting</span>:
+  <span style="color: #004651;">alertmanagers</span>:
+    - <span style="color: #004651;">static_configs</span>:
+        - <span style="color: #004651;">targets</span>:
+          <span style="color: #4E4E4E; font-style: italic;"># </span><span style="color: #4E4E4E; font-style: italic;">- alertmanager:9093</span>
+
+<span style="color: #4E4E4E; font-style: italic;"># </span><span style="color: #4E4E4E; font-style: italic;">Load rules once and periodically evaluate them according to the global 'evaluation_interval'.</span>
+<span style="color: #004651;">rule_files</span>:
+  <span style="color: #4E4E4E; font-style: italic;"># </span><span style="color: #4E4E4E; font-style: italic;">- "first_rules.yml"</span>
+  <span style="color: #4E4E4E; font-style: italic;"># </span><span style="color: #4E4E4E; font-style: italic;">- "second_rules.yml"</span>
+
+<span style="color: #4E4E4E; font-style: italic;"># </span><span style="color: #4E4E4E; font-style: italic;">A scrape configuration containing exactly one endpoint to scrape:</span>
+<span style="color: #4E4E4E; font-style: italic;"># </span><span style="color: #4E4E4E; font-style: italic;">Here it's Prometheus itself.</span>
+<span style="color: #004651;">scrape_configs</span>:
+  <span style="color: #4E4E4E; font-style: italic;"># </span><span style="color: #4E4E4E; font-style: italic;">The job name is added as a label `job=&lt;job_name&gt;` to any timeseries scraped from this config.</span>
+  - <span style="color: #004651;">job_name</span>: <span style="color: #005F00;">"prometheus"</span>
+
+    <span style="color: #4E4E4E; font-style: italic;"># </span><span style="color: #4E4E4E; font-style: italic;">metrics_path defaults to '/metrics'</span>
+    <span style="color: #4E4E4E; font-style: italic;"># </span><span style="color: #4E4E4E; font-style: italic;">scheme defaults to 'http'.</span>
+
+    <span style="color: #004651;">static_configs</span>:
+      - <span style="color: #004651;">targets</span>: [<span style="color: #005F00;">"localhost:9090"</span>]
+</pre>
+</div></li>
+<li><p>
+直接运行二进制就可以启动prometheus
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">$ ./prometheus
+<span style="color: #004651;">ts</span>=2024-01-15T06:36:04.768Z <span style="color: #004651;">caller</span>=main.go:491 <span style="color: #004651;">level</span>=info <span style="color: #004651;">msg</span>=<span style="color: #005F00;">"No time or size retention was set so using the default time retention"</span> <span style="color: #004651;">duration</span>=15d
+<span style="color: #004651;">ts</span>=2024-01-15T06:36:04.768Z <span style="color: #004651;">caller</span>=main.go:535 <span style="color: #004651;">level</span>=info <span style="color: #004651;">msg</span>=<span style="color: #005F00;">"Starting Prometheus Server"</span> <span style="color: #004651;">mode</span>=server <span style="color: #004651;">version</span>=<span style="color: #005F00;">"(version=2.37.0, branch=HEAD, revision=b41e0750abf5cc18d8233161560731de05199330)"</span>
+<span style="color: #004651;">ts</span>=2024-01-15T06:36:04.768Z <span style="color: #004651;">caller</span>=main.go:540 <span style="color: #004651;">level</span>=info <span style="color: #004651;">build_context</span>=<span style="color: #005F00;">"(go=go1.18.4, user=root@04e08efba15f, date=20220714-15:19:24)"</span>
+<span style="color: #004651;">ts</span>=2024-01-15T06:36:04.768Z <span style="color: #004651;">caller</span>=main.go:541 <span style="color: #004651;">level</span>=info <span style="color: #004651;">host_details</span>=<span style="color: #1F55A0;">(</span>darwin<span style="color: #1F55A0;">)</span>
+<span style="color: #004651;">ts</span>=2024-01-15T06:36:04.768Z <span style="color: #004651;">caller</span>=main.go:542 <span style="color: #004651;">level</span>=info <span style="color: #004651;">fd_limits</span>=<span style="color: #005F00;">"(soft=256, hard=unlimited)"</span>
+<span style="color: #004651;">ts</span>=2024-01-15T06:36:04.768Z <span style="color: #004651;">caller</span>=main.go:543 <span style="color: #004651;">level</span>=info <span style="color: #004651;">vm_limits</span>=<span style="color: #005F00;">"(soft=unlimited, hard=unlimited)"</span>
+<span style="color: #004651;">ts</span>=2024-01-15T06:36:04.769Z <span style="color: #004651;">caller</span>=web.go:553 <span style="color: #004651;">level</span>=info <span style="color: #004651;">component</span>=web <span style="color: #004651;">msg</span>=<span style="color: #005F00;">"Start listening for connections"</span> <span style="color: #004651;">address</span>=0.0.0.0:9090
+<span style="color: #004651;">ts</span>=2024-01-15T06:36:04.770Z <span style="color: #004651;">caller</span>=main.go:972 <span style="color: #004651;">level</span>=info <span style="color: #004651;">msg</span>=<span style="color: #005F00;">"Starting TSDB ..."</span>
+<span style="color: #004651;">ts</span>=2024-01-15T06:36:04.770Z <span style="color: #004651;">caller</span>=tls_config.go:195 <span style="color: #004651;">level</span>=info <span style="color: #004651;">component</span>=web <span style="color: #004651;">msg</span>=<span style="color: #005F00;">"TLS is disabled."</span> <span style="color: #004651;">http2</span>=false
+<span style="color: #004651;">ts</span>=2024-01-15T06:36:04.773Z <span style="color: #004651;">caller</span>=head.go:493 <span style="color: #004651;">level</span>=info <span style="color: #004651;">component</span>=tsdb <span style="color: #004651;">msg</span>=<span style="color: #005F00;">"Replaying on-disk memory mappable chunks if any"</span>
+<span style="color: #004651;">ts</span>=2024-01-15T06:36:04.773Z <span style="color: #004651;">caller</span>=head.go:536 <span style="color: #004651;">level</span>=info <span style="color: #004651;">component</span>=tsdb <span style="color: #004651;">msg</span>=<span style="color: #005F00;">"On-disk memory mappable chunks replay completed"</span> <span style="color: #004651;">duration</span>=23.542&#181;s
+<span style="color: #004651;">ts</span>=2024-01-15T06:36:04.773Z <span style="color: #004651;">caller</span>=head.go:542 <span style="color: #004651;">level</span>=info <span style="color: #004651;">component</span>=tsdb <span style="color: #004651;">msg</span>=<span style="color: #005F00;">"Replaying WAL, this may take a while"</span>
+<span style="color: #004651;">ts</span>=2024-01-15T06:36:04.773Z <span style="color: #004651;">caller</span>=head.go:613 <span style="color: #004651;">level</span>=info <span style="color: #004651;">component</span>=tsdb <span style="color: #004651;">msg</span>=<span style="color: #005F00;">"WAL segment loaded"</span> <span style="color: #004651;">segment</span>=0 <span style="color: #004651;">maxSegment</span>=0
+<span style="color: #004651;">ts</span>=2024-01-15T06:36:04.773Z <span style="color: #004651;">caller</span>=head.go:619 <span style="color: #004651;">level</span>=info <span style="color: #004651;">component</span>=tsdb <span style="color: #004651;">msg</span>=<span style="color: #005F00;">"WAL replay completed"</span> <span style="color: #004651;">checkpoint_replay_duration</span>=195.875&#181;s <span style="color: #004651;">wal_replay_duration</span>=216.792&#181;s <span style="color: #004651;">total_replay_duration</span>=447.041&#181;s
+<span style="color: #004651;">ts</span>=2024-01-15T06:36:04.774Z <span style="color: #004651;">caller</span>=main.go:993 <span style="color: #004651;">level</span>=info <span style="color: #004651;">fs_type</span>=1a
+<span style="color: #004651;">ts</span>=2024-01-15T06:36:04.774Z <span style="color: #004651;">caller</span>=main.go:996 <span style="color: #004651;">level</span>=info <span style="color: #004651;">msg</span>=<span style="color: #005F00;">"TSDB started"</span>
+<span style="color: #004651;">ts</span>=2024-01-15T06:36:04.774Z <span style="color: #004651;">caller</span>=main.go:1177 <span style="color: #004651;">level</span>=info <span style="color: #004651;">msg</span>=<span style="color: #005F00;">"Loading configuration file"</span> <span style="color: #004651;">filename</span>=prometheus.yml
+<span style="color: #004651;">ts</span>=2024-01-15T06:36:08.454Z <span style="color: #004651;">caller</span>=main.go:1214 <span style="color: #004651;">level</span>=info <span style="color: #004651;">msg</span>=<span style="color: #005F00;">"Completed loading of configuration file"</span> <span style="color: #004651;">filename</span>=prometheus.yml <span style="color: #004651;">totalDuration</span>=3.680289875s <span style="color: #004651;">db_storage</span>=375ns <span style="color: #004651;">remote_storage</span>=958ns <span style="color: #004651;">web_handler</span>=292ns <span style="color: #004651;">query_engine</span>=375ns <span style="color: #004651;">scrape</span>=3.679639208s <span style="color: #004651;">scrape_sd</span>=124.042&#181;s <span style="color: #004651;">notify</span>=129.208&#181;s <span style="color: #004651;">notify_sd</span>=47&#181;s <span style="color: #004651;">rules</span>=5.209&#181;s <span style="color: #004651;">tracing</span>=82&#181;s
+<span style="color: #004651;">ts</span>=2024-01-15T06:36:08.454Z <span style="color: #004651;">caller</span>=main.go:957 <span style="color: #004651;">level</span>=info <span style="color: #004651;">msg</span>=<span style="color: #005F00;">"Server is ready to receive web requests."</span>
+<span style="color: #004651;">ts</span>=2024-01-15T06:36:08.455Z <span style="color: #004651;">caller</span>=manager.go:941 <span style="color: #004651;">level</span>=info <span style="color: #004651;">component</span>=<span style="color: #005F00;">"rule manager"</span> <span style="color: #004651;">msg</span>=<span style="color: #005F00;">"Starting rule manager..."</span>
+</pre>
+</div></li>
+<li><p>
+直接运行起来以后,会在本地创建一个data文件夹
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">$ find data
+data
+data/wal
+data/wal/00000000
+data/lock
+data/chunks_head
+data/queries.active
+</pre>
+</div></li>
+<li>访问浏览器<a href="http://localhost:9090">http://localhost:9090</a> 可以看到Prometheus内置的UI</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgff7cbef" class="outline-4">
+<h4 id="orgff7cbef"><span class="section-number-4">1.2.2.</span> 使用Node Exporter采集主机数据</h4>
+</div>
+<div id="outline-container-orgd6a3b3e" class="outline-4">
+<h4 id="orgd6a3b3e"><span class="section-number-4">1.2.3.</span> 使用PromQL查询监控数据</h4>
+</div>
+<div id="outline-container-org1e9379e" class="outline-4">
+<h4 id="org1e9379e"><span class="section-number-4">1.2.4.</span> 监控数据可视化</h4>
+</div>
+</div>
+<div id="outline-container-orgc815bea" class="outline-3">
+<h3 id="orgc815bea"><span class="section-number-3">1.3.</span> 任务和实例</h3>
+</div>
+<div id="outline-container-orgcc035a1" class="outline-3">
+<h3 id="orgcc035a1"><span class="section-number-3">1.4.</span> Prometheus核心组件</h3>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: harrifeng@outlook.com</p>
+<p class="date">Created: 2024-01-15 Mon 14:43</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
