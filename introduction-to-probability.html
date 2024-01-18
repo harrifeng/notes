@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-12-23 六 23:52 -->
+<!-- 2024-01-18 Thu 23:53 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>introduction-to-statistical-learning</title>
@@ -55,47 +55,57 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org960f3d4">1. Chapter 1: Sample Space and Probability</a>
+<li><a href="#org4255e11">1. Chapter 1: Sample Space and Probability</a>
 <ul>
-<li><a href="#org2000787">1.1. SETS</a>
+<li><a href="#org234f410">1.1. SETS</a>
 <ul>
-<li><a href="#org23a4eb4">1.1.1. Set Operations</a></li>
-<li><a href="#org850b664">1.1.2. The Algebra of Sets</a></li>
+<li><a href="#org7bb5ab4">1.1.1. Set Operations</a></li>
+<li><a href="#org5c9af33">1.1.2. The Algebra of Sets</a></li>
 </ul>
 </li>
-<li><a href="#org4860969">1.2. Probabilistic Models</a>
+<li><a href="#org3f8d46a">1.2. Probabilistic Models</a>
 <ul>
-<li><a href="#org7b2df42">1.2.1. Sample Spaces and Events</a></li>
-<li><a href="#org82b6c1d">1.2.2. Choosing an Appropriate Sample Space</a></li>
-<li><a href="#org0fa5a14">1.2.3. Sequential Models</a></li>
-<li><a href="#org187743f">1.2.4. Probability Laws</a></li>
+<li><a href="#org21f0e82">1.2.1. Sample Spaces and Events</a></li>
+<li><a href="#org3837aaa">1.2.2. Choosing an Appropriate Sample Space</a></li>
+<li><a href="#org67ea2e0">1.2.3. Sequential Models</a></li>
+<li><a href="#org744dc3f">1.2.4. Probability Laws</a></li>
+<li><a href="#orgabb7324">1.2.5. Discrete Models</a></li>
 </ul>
 </li>
+<li><a href="#orgf66eee2">1.3. Conditional Probability</a>
+<ul>
+<li><a href="#org66aed74">1.3.1. Properties of Probability Laws</a></li>
+</ul>
+</li>
+<li><a href="#org108ab4e">1.4. Conditional Probability</a></li>
+<li><a href="#org4288fc4">1.5. Total Probability Theorem And Byes' Rule</a></li>
+<li><a href="#orgb67e81e">1.6. Independence</a></li>
+<li><a href="#orgd1b7902">1.7. Counting</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org960f3d4" class="outline-2">
-<h2 id="org960f3d4"><span class="section-number-2">1.</span> Chapter 1: Sample Space and Probability</h2>
+<div id="outline-container-org4255e11" class="outline-2">
+<h2 id="org4255e11"><span class="section-number-2">1.</span> Chapter 1: Sample Space and Probability</h2>
 <div class="outline-text-2" id="text-1">
 <ul class="org-ul">
 <li>Probability是一个非常有用的concept,但是却可以以很多种方式被解释,下面就是一个例子:一个病人住院了,
 需要在护士的监督下服用一种药.于是,在护士和病人的亲戚之间发生了如下对话:
 <ul class="org-ul">
-<li>亲戚:这个药有多大的概率能够工作</li>
+<li>家属:这个药有多大的概率能够工作</li>
 <li>护士:我希望它工作,但是要到明天才知道</li>
-<li>亲戚:我知道,但是我想知道的是概率,概率是多少</li>
+<li>家属:我知道,但是我想知道的是概率,概率是多少</li>
 <li>护士:每个case都不同,我们要等待</li>
-<li>亲戚:让我们简化一下,假设有100个相同情况的病人,吃了这个药,那么你们期待能有几个人能够治好?</li>
+<li>家属:让我们简化一下,假设有100个相同情况的病人,吃了这个药,那么你们期待能有几个人能够治好?</li>
 <li>护士(有点烦了):我告诉你了,每个人都是不同的,有些人吃药管用,有些人吃药不管用</li>
-<li>亲戚(非常坚持):好吧,那我们再换个角度,如果让你打赌,你是愿意赌这个药起作用还是不起作用</li>
+<li>家属(非常坚持):好吧,那我们再换个角度,如果让你打赌,你是愿意赌这个药起作用还是不起作用</li>
 <li>护士(庆祝了一下):我赌药物能够工作</li>
-<li>亲戚(放心了一点):那么你是否接受如下的方案: 如果药物工作那么得到1美元,如果药物不工作,那么损失2美元?</li>
+<li>家属(放心了一点):那么你是否接受如下的方案: 如果药物工作那么得到1美元,如果药物不工作,那么损失2美元?</li>
 <li>护士(被激怒了):多么病态的想法,你再浪费我的时间</li>
 </ul></li>
-<li>在这个例子中,亲戚希望使用概率的概念来讨论一些不确定的场景(uncertain situation)</li>
-<li>护士的第一反应,说明概率(probability)不是那么被大众所理解,所以亲戚试图以例子而不是concept来提问:
+<li>在这个例子中,家属希望使用概率的概念来讨论一些不确定的场景(uncertain situation)</li>
+<li>护士的第一反应,说明概率(probability)不是那么被大众所理解,所以家属试图以例子而不是concept来提问:
 <ul class="org-ul">
 <li>第一次的例子尝试,是把probability定义为发生的概率(frequency of occurrence):在足够数量的相似情况下,
 事情发生的次数,比如我们扔一百次硬币,大概50次朝上,50次朝下</li>
@@ -124,8 +134,8 @@
 </ul></li>
 </ul>
 </div>
-<div id="outline-container-org2000787" class="outline-3">
-<h3 id="org2000787"><span class="section-number-3">1.1.</span> SETS</h3>
+<div id="outline-container-org234f410" class="outline-3">
+<h3 id="org234f410"><span class="section-number-3">1.1.</span> SETS</h3>
 <div class="outline-text-3" id="text-1-1">
 <ul class="org-ul">
 <li>set是一系列object的collection,这些object又被称为set的element.</li>
@@ -176,8 +186,8 @@ S = \{ x | x \; \mbox{satisfies} \; P \} \notag
 <li>为了方便,我们还可以引入一个universal set,表示包含所有的,我们在当前情况下感兴趣的object,写作 \(\Omega\)</li>
 </ul>
 </div>
-<div id="outline-container-org23a4eb4" class="outline-4">
-<h4 id="org23a4eb4"><span class="section-number-4">1.1.1.</span> Set Operations</h4>
+<div id="outline-container-org7bb5ab4" class="outline-4">
+<h4 id="org7bb5ab4"><span class="section-number-4">1.1.1.</span> Set Operations</h4>
 <div class="outline-text-4" id="text-1-1-1">
 <ul class="org-ul">
 <li>补集(complement)
@@ -220,14 +230,18 @@ S和T的合集,写作 \(S \cap T\), 等价于
 S \cap T = \{ x | x \in S \; \mbox{and} \; x \in T \} \notag
 \end{equation}</li>
 </ul></li>
-<li>合集和交集还可以应用到多个(甚至无数个)set上面:
-<ul class="org-ul">
 <li><p>
-多个set的合集
+合集和交集还可以应用到多个(甚至无数个)set上面:
 </p>
-\begin{equation}
-\bigcup\limits_{n=1}^\infty S_n = S_1 \cup S_2 \cup \cdot\cdot\cdot = \{x|x \in S_n  \; \mbox{for some} \; n \} \notag
-\end{equation}</li>
+<ul class="org-ul">
+<li>多个set的合集</li>
+</ul>
+<p>
+n    \begin{equation}
+   \bigcup\limits<sub>n=1</sub>^&infin; S<sub>n</sub> = S<sub>1</sub> &cup; S<sub>2</sub> &cup; &sdot;&sdot;&sdot; = \{x|x &isin; S<sub>n</sub>  \; \mbox{for some} \; n \} \notag
+   \end{equation}
+</p>
+<ul class="org-ul">
 <li><p>
 多个set的交集
 </p>
@@ -261,8 +275,8 @@ S \cap T = \{ x | x \in S \; \mbox{and} \; x \in T \} \notag
 </ul>
 </div>
 </div>
-<div id="outline-container-org850b664" class="outline-4">
-<h4 id="org850b664"><span class="section-number-4">1.1.2.</span> The Algebra of Sets</h4>
+<div id="outline-container-org5c9af33" class="outline-4">
+<h4 id="org5c9af33"><span class="section-number-4">1.1.2.</span> The Algebra of Sets</h4>
 <div class="outline-text-4" id="text-1-1-2">
 <ul class="org-ul">
 <li>Set operation有很多的特性,常见的有:
@@ -295,11 +309,11 @@ S \cap T = \{ x | x \in S \; \mbox{and} \; x \in T \} \notag
 </div>
 </div>
 </div>
-<div id="outline-container-org4860969" class="outline-3">
-<h3 id="org4860969"><span class="section-number-3">1.2.</span> Probabilistic Models</h3>
+<div id="outline-container-org3f8d46a" class="outline-3">
+<h3 id="org3f8d46a"><span class="section-number-3">1.2.</span> Probabilistic Models</h3>
 <div class="outline-text-3" id="text-1-2">
 <ul class="org-ul">
-<li>probabilistic model是对uncertain situation的数学表达. probabilistic model的两个组成元素如下:
+<li>probabilistic model(model在本书中统一翻译为模型)是对uncertain situation的数学表达. probabilistic model的两个组成元素如下:
 <ul class="org-ul">
 <li>样本空间 \(\Omega\): 一个实验所有可能的结果组成的集合</li>
 <li>probability law: 为试验结果的集合A赋一个非负数P(A), 这个P(A)代表Event A出现的概率</li>
@@ -307,8 +321,8 @@ S \cap T = \{ x | x \in S \; \mbox{and} \; x \in T \} \notag
 <li>上述以图1-2表示</li>
 </ul>
 </div>
-<div id="outline-container-org7b2df42" class="outline-4">
-<h4 id="org7b2df42"><span class="section-number-4">1.2.1.</span> Sample Spaces and Events</h4>
+<div id="outline-container-org21f0e82" class="outline-4">
+<h4 id="org21f0e82"><span class="section-number-4">1.2.1.</span> Sample Spaces and Events</h4>
 <div class="outline-text-4" id="text-1-2-1">
 <ul class="org-ul">
 <li>每一个probabilistic model都包含一个underlying process,叫做experiment.这个experiment产生并且只会
@@ -331,8 +345,8 @@ S \cap T = \{ x | x \in S \; \mbox{and} \; x \in T \} \notag
 </ul>
 </div>
 </div>
-<div id="outline-container-org82b6c1d" class="outline-4">
-<h4 id="org82b6c1d"><span class="section-number-4">1.2.2.</span> Choosing an Appropriate Sample Space</h4>
+<div id="outline-container-org3837aaa" class="outline-4">
+<h4 id="org3837aaa"><span class="section-number-4">1.2.2.</span> Choosing an Appropriate Sample Space</h4>
 <div class="outline-text-4" id="text-1-2-2">
 <ul class="org-ul">
 <li>无论数目是多少,sample space里面的的element必须是:
@@ -365,22 +379,39 @@ S \cap T = \{ x | x \in S \; \mbox{and} \; x \in T \} \notag
 </ul>
 </div>
 </div>
-<div id="outline-container-org0fa5a14" class="outline-4">
-<h4 id="org0fa5a14"><span class="section-number-4">1.2.3.</span> Sequential Models</h4>
+<div id="outline-container-org67ea2e0" class="outline-4">
+<h4 id="org67ea2e0"><span class="section-number-4">1.2.3.</span> Sequential Models</h4>
 <div class="outline-text-4" id="text-1-2-3">
 <ul class="org-ul">
+<li>顺序模型,是我们要介绍的第一种概率模型.顺序是其重要特点,顺序不一样的两个event会是两个event</li>
 <li>很多experiment有内在的有序化(sequantial character),也就是数据出现的前后顺序是有意义的,比如:
 <ul class="org-ul">
-<li>扔三次硬币</li>
+<li>扔三次硬币得到的顺序(注意是顺序,如果是扔硬币正面朝上的次数,没有顺序的概念就不是顺序模型,后面离散
+模型也会以扔硬币为例,不要混淆)</li>
 <li>股价连续五天的变化</li>
 </ul></li>
 <li>顺序有意义的情况下,我们可以使用tree-based sequential description来描述experiment和对应的sample
-space.如图1-3</li>
+space.如下图
+<ul class="org-ul">
+<li><p>
+图1-3
+</p>
+
+<div id="orgef49309" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/itp/1-3.png" alt="1-3.png" />
+</p>
+<p><span class="figure-number">Figure 1: </span>itp/1-3.png</p>
+</div></li>
+<li>上图左边表示我们扔两次四面色子得到的sample space</li>
+<li>上图右边表示用tree-based来描述sequential model(因为tree的层级表示第一次,比如第一层是第一次色子的
+结果,第二层是第二次色子的结果</li>
+<li>由于顺序模型的顺序有意义,所以(2,3)和(3,2)两个色子结果不是一回事</li>
+</ul></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org187743f" class="outline-4">
-<h4 id="org187743f"><span class="section-number-4">1.2.4.</span> Probability Laws</h4>
+<div id="outline-container-org744dc3f" class="outline-4">
+<h4 id="org744dc3f"><span class="section-number-4">1.2.4.</span> Probability Laws</h4>
 <div class="outline-text-4" id="text-1-2-4">
 <ul class="org-ul">
 <li>假设我们已经确定了sample space \(\Omega\) 以及其内部的所有的experiment,为了完成我们的,probabilistic model,我们必须引入probability law:
@@ -404,15 +435,247 @@ Normalization: probability of \(\Omega\) is 1
 \mathbf{P}(\Omega) = 1 \notag
 \end{equation}</li>
 </ol></li>
+<li>为了能够可视化的理解probability law,我们可以把sample space看成是一些被质点(unit of mass)组成的区域:
+<ul class="org-ul">
+<li>P(A)就是这个event里面所有的质点合起来的总质量</li>
+<li>前面讲的additivity定律也非常直观了:不想交的event的总质量,等于各个event的质量之和</li>
+</ul></li>
+<li>probability的一个更加具象(concrete)的解释是:相对频率(relative frequency):
+<ul class="org-ul">
+<li>P(A) = 2/3 经常代表一个信念: 那就是event A会在大量的重复实验中,以每三次实验出现两次的频率发生</li>
+<li>上述解释,虽然不总是很合适,但是可以让我们能更直观的理解.我们会在第五章重新审视这个解释</li>
+</ul></li>
+<li>上面我们对probability law讲了三个axiom(公理),从上面的公理可以推导出很多theorem(定理),比如:
+<ul class="org-ul">
+<li><p>
+sample space的概率为1
+</p>
+\begin{equation}
+1 = \mathbf{P}(\Omega) = \mathbf{P}(\Omega \cup \varnothing) = \mathbf{P}(\Omega) + \mathbf{P}(\varnothing) = 1 + \mathbf{P}(\varnothing) \notag
+\end{equation}</li>
+<li><p>
+空集的概率为0
+</p>
+\begin{equation}
+\mathbf{P}(\varnothing) = 0 \notag
+\end{equation}</li>
+<li><p>
+disjoint events"和的概率"等于各个event"概率的和"
+</p>
+\begin{equation}
+  \begin{split}
+  \mathbf{P}(A_1 \cup A_2 \cup A_3) &= \mathbf{P}(A_1 \cup (A_2 \cup A_3)) \\
+                                   &= \mathbf{P}(A_1) + \mathbf{P}(A_2 \cup A_3) \\
+                                   &= \mathbf{P}(A_1) + \mathbf{P}(A_2) + \mathbf{P}(A_3) \notag
+  \end{split}
+\end{equation}</li>
+</ul></li>
 </ul>
 </div>
 </div>
+<div id="outline-container-orgabb7324" class="outline-4">
+<h4 id="orgabb7324"><span class="section-number-4">1.2.5.</span> Discrete Models</h4>
+<div class="outline-text-4" id="text-1-2-5">
+<ul class="org-ul">
+<li>我们下面来看看第二种probabilistic model: 离散模型(discrete model)</li>
+<li>我们用一个硬币(绝对对称)的例子来介绍离散模型.</li>
+</ul>
+</div>
+<ol class="org-ol">
+<li><a id="orgf73315e"></a>硬币抛一次的例子<br />
+<div class="outline-text-5" id="text-1-2-5-1">
+<ul class="org-ul">
+<li>首先我们抛一次硬币(仅仅抛一次),那么:
+<ul class="org-ul">
+<li>我们抛一次的outcome有两种:
+<ol class="org-ol">
+<li>head(H)</li>
+<li>tail(T)</li>
+</ol></li>
+<li>我们的sample space是 \(\Omega = \{H,T\}\)</li>
+<li>我们的event有如下四个:
+<ol class="org-ol">
+<li>\(\{H,T\}\)</li>
+<li>\(\{H\}\)</li>
+<li>\(\{T\}\)</li>
+<li>\(\varnothing\)</li>
+</ol></li>
+<li><p>
+我们也可以得到这种情况的probability law
+</p>
+\begin{equation}
+\mathbf{P}(\{H,T \}) = 1, \mathbf{P}(\{H,\}) = 0.5, \mathbf{P}(\{T\}) = 0.5, \mathbf{P}(\varnothing) = 1 \notag
+\end{equation}</li>
+</ul></li>
+</ul>
+</div>
+</li>
+<li><a id="org84d8dd6"></a>硬币抛多次的例子<br />
+<div class="outline-text-5" id="text-1-2-5-2">
+<ul class="org-ul">
+<li>我们再来看一个抛三次硬币的实验:
+<ul class="org-ul">
+<li><p>
+我们的sample space就很大了
+</p>
+\begin{equation}
+\Omega = \{ HHH, HHT, HTH, HTT, THH, THT, TTH, TTT\} \notag
+\end{equation}</li>
+<li>每种outcome的概率都是1/8, 一个event有几种outcome,就是1/8 乘以几. 这也就是我们的probability law</li>
+</ul></li>
+</ul>
+</div>
+</li>
+<li><a id="org2338a7d"></a>Discrete Uniform Probability Law<br />
+<div class="outline-text-5" id="text-1-2-5-3">
+<ul class="org-ul">
+<li><p>
+根据前面的例子,我们就得到了: 如果sample space包含了N中outcome,并且每种outcome的概率相等,那么一个event的probability如下
+</p>
+\begin{equation}
+\mathbf{P}(A) = \frac{ \mbox{number of elements of A} }{n} \notag
+\end{equation}</li>
+<li>我们举个discrte uniform probability law的例子
+<ul class="org-ul">
+<li><p>
+<b>Example 1.3</b>
+</p>
+
+<div id="orgfcdbcb6" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/itp/1-4.png" alt="1-4.png" />
+</p>
+<p><span class="figure-number">Figure 2: </span>itp/1-4.png</p>
+</div></li>
+<li>如上图,我们有一个四面色子,每次的结果是1,2,3,4,我们抛两次,就有可能有16种outcome,每种outcome的概率都是1/16</li>
+<li><p>
+要计算一个event的概率,就是要计算这个event里面有几个outcome,然后几乘以1/16,下面是几个例子
+</p>
+\begin{equation}
+  \begin{split}
+    \mathbf{P} ( \{ \mbox{the sum of the rolls is even} \}) = 8/16 = 1/2 \\
+    \mathbf{P} ( \{ \mbox{the sum of the rolls is odd} \}) = 8/16 = 1/2 \\
+    \mathbf{P} ( \{ \mbox{the first roll is equal to the second} \}) = 4/16 = 1/4 \\
+    \mathbf{P} ( \{ \mbox{the first roll is larger than the second} \}) = 6/16 = 3/8 \\
+    \mathbf{P} ( \{ \mbox{at least one roll is equal to 4} \}) = 8/16 = 7/16 \\ \notag
+   \end{split}
+\end{equation}</li>
+</ul></li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orgf66eee2" class="outline-3">
+<h3 id="orgf66eee2"><span class="section-number-3">1.3.</span> Conditional Probability</h3>
+<div class="outline-text-3" id="text-1-3">
+<ul class="org-ul">
+<li><p>
+当我们的sample space是continuous sample space的时候,我们的probabilistic model就和discrete sample
+space时候的不一样了.主要表现在: 单独一个element的event不会足以改变probability law的特性
+</p>
+<pre class="example" id="orge149715">
+Single-element events may not be sufficient to characterize the probability law
+</pre></li>
+<li>我们用一个例子来介绍continuous model,并且介绍在continuous model sample的情况下如何计算probability law
+<ul class="org-ul">
+<li><b>Example 1.4</b></li>
+<li>幸运大转轮是一种可以产生0到1之间任意数字的游戏,所以这个experiment可能的outcome就在[0,1]之间,换句
+话说就是 \(\Omega = [0, 1]\)</li>
+<li>假设这个wheel是公平的, 那么每个数字被转到的概率都是相同的.如此一来,单个element被转到的概率是多少呢?
+<ol class="org-ol">
+<li>这个概率不可能是整数,因为如果是正数,那么更具additivity axiom,足够量的event加起来就会超过1</li>
+<li>又犹豫概率是大于等于0的,所以单个event被转到的概率就是0</li>
+</ol></li>
+<li>在转轮这个情境下,计算一个[a,b]区间的概率是合理的需求.我们可以通过计算这个区间的"长度"来获得其概
+率(除以[0,1]的长度)</li>
+</ul></li>
+<li>再来看看另外一个例子
+<ul class="org-ul">
+<li><p>
+<b>Example 1.5</b>
+</p>
+
+<div id="org489108b" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/itp/1-5.png" alt="1-5.png" />
+</p>
+<p><span class="figure-number">Figure 3: </span>itp/1-5.png</p>
+</div></li>
+<li>罗密欧和朱丽叶决定在一个特定的时间约会,但是两个人都可能迟到0-60分钟(可能性均等),每个先到的,会等
+后来的15分钟,那么求这两个人遇到的概率</li>
+<li><p>
+看上图,我们使用正方形来做sample space. 而这个正方形里面的pair,就是罗密欧和朱丽叶可能来的时间点对,比如
+</p>
+<pre class="example" id="org79288cd">
+(0.25, 0.15)意思就是说,罗密欧迟到0.25小时后来,朱丽叶迟到0.15小时后来
+</pre></li>
+<li>我们题目中的"equally likely"意思就是说,图中的面积就是event的概率</li>
+<li>罗密欧和朱丽叶能够相见的概率,就是上图阴影部分,经过计算是1-(3/4)*(3/4) = 7/16</li>
+</ul></li>
+</ul>
+</div>
+<div id="outline-container-org66aed74" class="outline-4">
+<h4 id="org66aed74"><span class="section-number-4">1.3.1.</span> Properties of Probability Laws</h4>
+<div class="outline-text-4" id="text-1-3-1">
+<ul class="org-ul">
+<li><p>
+probability law有许多的特性,这些特性可以从axiom中得来,具体如下
+</p>
+\begin{equation}
+    \begin{split}
+      \mbox{If} \; A \subset B, \mbox{then} \; \mathbf{P}(A) \leqslant \mathbf{P}(B) \\
+      \mathbf{P} (A \cup B) = \mathbf{P} (A)  + \mathbf{P} (B) - \mathbf{P} (A \cap B) \\
+      \mathbf{P} (A \cup B) \leqslant \mathbf{P} (A)  + \mathbf{P} (B)  \\
+      \mathbf{P} (A \cup B \cup C) = \mathbf{P} (A)  + \mathbf{P} (A^c \cap B) + \mathbf{P} (A^c \cap B^c \cap C)  \notag
+    \end{split}
+\end{equation}</li>
+<li>上面的这些特性,如果有维恩图,那么就非常容易看出来
+<ul class="org-ul">
+<li><p>
+图1-6
+</p>
+
+<div id="org3960ad7" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/itp/1-6.png" alt="1-6.png" />
+</p>
+<p><span class="figure-number">Figure 4: </span>itp/1-6.png</p>
+</div></li>
+<li>对于a图来说,由于 \(A \subset B\), 所以event B就是 如下两个event的union:
+<ol class="org-ol">
+<li>A</li>
+<li>\(A^c \cap B\)</li>
+</ol></li>
+<li><p>
+那么由additivity axiom得到如下公式
+</p>
+\begin{equation}
+\mathbf{P}(B) = \mathbf{P}(A^c \cap B) \geqslant \mathbf{P}(A) \notag
+\end{equation}</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+
+<div id="outline-container-org108ab4e" class="outline-3">
+<h3 id="org108ab4e"><span class="section-number-3">1.4.</span> Conditional Probability</h3>
+</div>
+<div id="outline-container-org4288fc4" class="outline-3">
+<h3 id="org4288fc4"><span class="section-number-3">1.5.</span> Total Probability Theorem And Byes' Rule</h3>
+</div>
+<div id="outline-container-orgb67e81e" class="outline-3">
+<h3 id="orgb67e81e"><span class="section-number-3">1.6.</span> Independence</h3>
+</div>
+<div id="outline-container-orgd1b7902" class="outline-3">
+<h3 id="orgd1b7902"><span class="section-number-3">1.7.</span> Counting</h3>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: harrifeng@outlook.com</p>
-<p class="date">Created: 2023-12-23 六 23:52</p>
+<p class="date">Created: 2024-01-18 Thu 23:53</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
