@@ -1,0 +1,2650 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2024-02-22 Thu 20:31 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>tic</title>
+<meta name="author" content="harrifeng@outlook.com" />
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/readtheorg.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/js/readtheorg.js"></script>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">tic</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org5299a96">1. Python 入门</a>
+<ul>
+<li><a href="#org4ef5a90">1.1. Python是什么</a></li>
+<li><a href="#orga782b2b">1.2. Python的安装</a>
+<ul>
+<li><a href="#org2c63537">1.2.1. Python版本</a></li>
+<li><a href="#orgdc0f925">1.2.2. 使用的外部库</a></li>
+<li><a href="#orgdc721e9">1.2.3. Anaconda发行版</a></li>
+</ul>
+</li>
+<li><a href="#orge7e85dc">1.3. Python解释器</a>
+<ul>
+<li><a href="#orgf15864c">1.3.1. 算术计算</a></li>
+<li><a href="#org34ea17f">1.3.2. 数据类型</a></li>
+<li><a href="#org5f7dc0d">1.3.3. 变量</a></li>
+<li><a href="#org0b2a2d5">1.3.4. 列表</a></li>
+<li><a href="#org1b08e43">1.3.5. 字典</a></li>
+<li><a href="#orgfb18191">1.3.6. 布尔型</a></li>
+<li><a href="#org0e973bd">1.3.7. if 语句</a></li>
+<li><a href="#org772f44b">1.3.8. for 语句</a></li>
+<li><a href="#org5d42dcf">1.3.9. 函数</a></li>
+</ul>
+</li>
+<li><a href="#org7308127">1.4. Python脚本文件</a>
+<ul>
+<li><a href="#org84fecf9">1.4.1. 保存为文件</a></li>
+<li><a href="#org56842eb">1.4.2. 类</a></li>
+</ul>
+</li>
+<li><a href="#orgba0541a">1.5. NumPy</a>
+<ul>
+<li><a href="#org83bbd34">1.5.1. 导入NumPy</a></li>
+<li><a href="#orge5adb55">1.5.2. 生成NumPy数组</a></li>
+<li><a href="#org9e571c0">1.5.3. NumPy的算术运算</a></li>
+<li><a href="#org9887416">1.5.4. NumPy的N维数组</a></li>
+<li><a href="#orgfcea566">1.5.5. 广播</a></li>
+<li><a href="#org1ed6fe6">1.5.6. 访问元素</a></li>
+</ul>
+</li>
+<li><a href="#org79346ff">1.6. Matplotlib</a>
+<ul>
+<li><a href="#orgfb57396">1.6.1. 绘制简单图形</a></li>
+<li><a href="#orga88982b">1.6.2. pyplot的功能</a></li>
+<li><a href="#orgfbb9d84">1.6.3. 显示图像</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org9d7c718">2. 感知机</a>
+<ul>
+<li><a href="#orgd3bc1eb">2.1. 感知机是什么</a></li>
+<li><a href="#orgd6e63e9">2.2. 简单的逻辑电路</a>
+<ul>
+<li><a href="#org40f2384">2.2.1. 与门</a></li>
+<li><a href="#orgfc16f0a">2.2.2. 与非门和或门</a></li>
+</ul>
+</li>
+<li><a href="#org6f9a28d">2.3. 感知机的实现</a>
+<ul>
+<li><a href="#org27af72b">2.3.1. 简单的实现</a></li>
+<li><a href="#org3ed8e98">2.3.2. 导入权重和偏置</a></li>
+<li><a href="#org9c97541">2.3.3. 使用权重和偏置的实现</a></li>
+</ul>
+</li>
+<li><a href="#org0728c89">2.4. 感知机的局限性</a>
+<ul>
+<li><a href="#org8aa8bec">2.4.1. 异或门</a></li>
+<li><a href="#org994aeba">2.4.2. 线性和非线性</a></li>
+</ul>
+</li>
+<li><a href="#org3853505">2.5. 多层感知机</a>
+<ul>
+<li><a href="#org69ba6b8">2.5.1. 已有门电路组合</a></li>
+<li><a href="#org1b37e85">2.5.2. 异或门的实现</a></li>
+</ul>
+</li>
+<li><a href="#org37a82c1">2.6. 从与非门到计算机</a></li>
+</ul>
+</li>
+<li><a href="#orgc6d57d7">3. 神经网络</a>
+<ul>
+<li><a href="#org17a13aa">3.1. 从感知机到神经网络</a>
+<ul>
+<li><a href="#orgc6f294d">3.1.1. 神经网路的例子</a></li>
+<li><a href="#org85d2e00">3.1.2. 复习感知机</a></li>
+<li><a href="#orgb0b7cc1">3.1.3. 激活函数登场</a></li>
+</ul>
+</li>
+<li><a href="#orgcf99bc3">3.2. 激活函数</a>
+<ul>
+<li><a href="#orgef2ae63">3.2.1. sigmoid函数</a></li>
+<li><a href="#org26c0c3a">3.2.2. 阶跃函数的实现</a></li>
+<li><a href="#org7a73607">3.2.3. 阶跃函数的图形</a></li>
+<li><a href="#orga25462b">3.2.4. sigmoid 函数的实现</a></li>
+<li><a href="#org1573bc0">3.2.5. sigmoid函数和阶跃函数的比较</a></li>
+<li><a href="#orgf7373c4">3.2.6. 非线性函数</a></li>
+<li><a href="#org202550d">3.2.7. ReLU函数</a></li>
+</ul>
+</li>
+<li><a href="#org7877113">3.3. 多维数组的运算</a>
+<ul>
+<li><a href="#orgcf1b8de">3.3.1. 多维数组</a></li>
+<li><a href="#orgab0d8ac">3.3.2. 矩阵乘法</a></li>
+<li><a href="#orgee62771">3.3.3. 神经网络的内机</a></li>
+</ul>
+</li>
+<li><a href="#org42b9324">3.4. 3层神经网络的实现</a>
+<ul>
+<li><a href="#orgd1e1956">3.4.1. 符号确认</a></li>
+<li><a href="#org93995ff">3.4.2. 各层间信号传递的实现</a></li>
+<li><a href="#org548c415">3.4.3. 代码现小结</a></li>
+</ul>
+</li>
+<li><a href="#orgcb834e0">3.5. 输出层的设计</a></li>
+</ul>
+</li>
+<li><a href="#orgf2e58f2">4. 神经网络的学习</a></li>
+<li><a href="#org22128c6">5. 误差反向传播法</a></li>
+<li><a href="#org0fb5146">6. 与学习相关的技巧</a></li>
+<li><a href="#org9cee23b">7. 卷积神经网络</a></li>
+<li><a href="#org665605c">8. 深度学习</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org5299a96" class="outline-2">
+<h2 id="org5299a96"><span class="section-number-2">1.</span> Python 入门</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-org4ef5a90" class="outline-3">
+<h3 id="org4ef5a90"><span class="section-number-3">1.1.</span> Python是什么</h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li>Python是机器学习事实上的默认语言</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orga782b2b" class="outline-3">
+<h3 id="orga782b2b"><span class="section-number-3">1.2.</span> Python的安装</h3>
+<div class="outline-text-3" id="text-1-2">
+</div>
+<div id="outline-container-org2c63537" class="outline-4">
+<h4 id="org2c63537"><span class="section-number-4">1.2.1.</span> Python版本</h4>
+<div class="outline-text-4" id="text-1-2-1">
+<ul class="org-ul">
+<li>本书使用Python3.x版本</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgdc0f925" class="outline-4">
+<h4 id="orgdc0f925"><span class="section-number-4">1.2.2.</span> 使用的外部库</h4>
+<div class="outline-text-4" id="text-1-2-2">
+<ul class="org-ul">
+<li>本书目标是从零实现深度学习,所以只会依赖如下两个库:
+<ul class="org-ul">
+<li>NumPy: 便利我们进行科学技术和矩阵计算</li>
+<li>Matplotlib: 用来画图的库</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgdc721e9" class="outline-4">
+<h4 id="orgdc721e9"><span class="section-number-4">1.2.3.</span> Anaconda发行版</h4>
+<div class="outline-text-4" id="text-1-2-3">
+<ul class="org-ul">
+<li>推荐安装Anaconda发行版,这个发行版侧重于数据分析,已经包含了前面讲的,本书依赖的两个库NumPy和Matplotlib</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orge7e85dc" class="outline-3">
+<h3 id="orge7e85dc"><span class="section-number-3">1.3.</span> Python解释器</h3>
+<div class="outline-text-3" id="text-1-3">
+<ul class="org-ul">
+<li><p>
+使用如下代码确认安装的python版本
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">$ python --version
+Python 3.10.8
+</pre>
+</div></li>
+<li><p>
+python是动态语言,这种语言一般都会有REPL(Read-Eval-Print-Loop),可以实时查看运行结果
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">$ python -i
+Python 3.10.8 <span style="color: #1F55A0;">(</span>main, Nov 24 2022, 08:08:27<span style="color: #1F55A0;">)</span> <span style="color: #1F55A0;">[</span>Clang 14.0.6 <span style="color: #1F55A0;">]</span> on darwin
+Type <span style="color: #005F00;">"help"</span>, <span style="color: #005F00;">"copyright"</span>, <span style="color: #005F00;">"credits"</span> or <span style="color: #005F00;">"license"</span> for more information.
+&gt;&gt;&gt; 1 + 2
+3
+</pre>
+</div></li>
+</ul>
+</div>
+<div id="outline-container-orgf15864c" class="outline-4">
+<h4 id="orgf15864c"><span class="section-number-4">1.3.1.</span> 算术计算</h4>
+<div class="outline-text-4" id="text-1-3-1">
+<ul class="org-ul">
+<li><p>
+一些简单的计算可用直接在REPL中进行
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">&gt;&gt;&gt; 1 - 2
+-1
+&gt;&gt;&gt; 4 * 5
+20
+&gt;&gt;&gt; 7 / 5
+1.4
+&gt;&gt;&gt; 3 ** 2
+9
+</pre>
+</div></li>
+<li>需要注意的是python3整数除以整数得到的是浮点数</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org34ea17f" class="outline-4">
+<h4 id="org34ea17f"><span class="section-number-4">1.3.2.</span> 数据类型</h4>
+<div class="outline-text-4" id="text-1-3-2">
+<ul class="org-ul">
+<li><p>
+Python中可以使用type来判断数据的类型
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">&gt;&gt;&gt; type<span style="color: #1F55A0;">(</span>10<span style="color: #1F55A0;">)</span>
+&lt;class <span style="color: #005F00;">'int'</span>&gt;
+&gt;&gt;&gt; type<span style="color: #1F55A0;">(</span>2.718<span style="color: #1F55A0;">)</span>
+&lt;class <span style="color: #005F00;">'float'</span>&gt;
+&gt;&gt;&gt; type<span style="color: #1F55A0;">(</span><span style="color: #005F00;">"hello"</span><span style="color: #1F55A0;">)</span>
+&lt;class <span style="color: #005F00;">'str'</span>&gt;
+</pre>
+</div></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org5f7dc0d" class="outline-4">
+<h4 id="org5f7dc0d"><span class="section-number-4">1.3.3.</span> 变量</h4>
+<div class="outline-text-4" id="text-1-3-3">
+<ul class="org-ul">
+<li><p>
+Python中变量例子如下
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">&gt;&gt;&gt; x = 10
+&gt;&gt;&gt; print<span style="color: #1F55A0;">(</span>x<span style="color: #1F55A0;">)</span>
+10
+&gt;&gt;&gt; x = 100
+&gt;&gt;&gt; print<span style="color: #1F55A0;">(</span>x<span style="color: #1F55A0;">)</span>
+100
+&gt;&gt;&gt; y = 3.14
+&gt;&gt;&gt; x * y
+314.0
+&gt;&gt;&gt; type<span style="color: #1F55A0;">(</span>x*y<span style="color: #1F55A0;">)</span>
+&lt;class <span style="color: #005F00;">'float'</span>&gt;
+</pre>
+</div></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org0b2a2d5" class="outline-4">
+<h4 id="org0b2a2d5"><span class="section-number-4">1.3.4.</span> 列表</h4>
+<div class="outline-text-4" id="text-1-3-4">
+<ul class="org-ul">
+<li><p>
+列表是Python当中非常重要的类型,而且支持slicing,非常好用
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">&gt;&gt;&gt; a = <span style="color: #1F55A0;">[</span>1, 2, 3, 4,5<span style="color: #1F55A0;">]</span>
+&gt;&gt;&gt; print<span style="color: #1F55A0;">(</span>a<span style="color: #1F55A0;">)</span>
+<span style="color: #1F55A0;">[</span>1, 2, 3, 4, 5<span style="color: #1F55A0;">]</span>
+&gt;&gt;&gt; len<span style="color: #1F55A0;">(</span>a<span style="color: #1F55A0;">)</span>
+5
+&gt;&gt;&gt; a<span style="color: #1F55A0;">[</span>0<span style="color: #1F55A0;">]</span>
+1
+&gt;&gt;&gt; a<span style="color: #1F55A0;">[</span>0:2<span style="color: #1F55A0;">]</span>
+<span style="color: #1F55A0;">[</span>1, 2<span style="color: #1F55A0;">]</span>
+&gt;&gt;&gt; a<span style="color: #1F55A0;">[</span>1:<span style="color: #1F55A0;">]</span>
+<span style="color: #1F55A0;">[</span>2, 3, 4, 5<span style="color: #1F55A0;">]</span>
+&gt;&gt;&gt; a<span style="color: #1F55A0;">[</span>:-2<span style="color: #1F55A0;">]</span>
+<span style="color: #1F55A0;">[</span>1, 2, 3<span style="color: #1F55A0;">]</span>
+</pre>
+</div></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org1b08e43" class="outline-4">
+<h4 id="org1b08e43"><span class="section-number-4">1.3.5.</span> 字典</h4>
+<div class="outline-text-4" id="text-1-3-5">
+<ul class="org-ul">
+<li><p>
+python中的哈希表叫做字典,字典基本是最常用数据结构了
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">&gt;&gt;&gt; me = <span style="color: #1F55A0;">{</span><span style="color: #005F00;">"height"</span>: 180<span style="color: #1F55A0;">}</span>
+&gt;&gt;&gt; me<span style="color: #1F55A0;">[</span><span style="color: #005F00;">"height"</span><span style="color: #1F55A0;">]</span>
+180
+&gt;&gt;&gt; me<span style="color: #1F55A0;">[</span><span style="color: #005F00;">"weight"</span><span style="color: #1F55A0;">]</span> = 70
+&gt;&gt;&gt; print<span style="color: #1F55A0;">(</span>me<span style="color: #1F55A0;">)</span>
+<span style="color: #1F55A0;">{</span><span style="color: #005F00;">'height'</span>: 180, <span style="color: #005F00;">'weight'</span>: 70<span style="color: #1F55A0;">}</span>
+</pre>
+</div></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgfb18191" class="outline-4">
+<h4 id="orgfb18191"><span class="section-number-4">1.3.6.</span> 布尔型</h4>
+<div class="outline-text-4" id="text-1-3-6">
+<ul class="org-ul">
+<li>Python中的bool值为首字母大写的True和False</li>
+<li>针对bool类型运算符有:
+<ul class="org-ul">
+<li>and</li>
+<li>or</li>
+<li>not</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org0e973bd" class="outline-4">
+<h4 id="org0e973bd"><span class="section-number-4">1.3.7.</span> if 语句</h4>
+<div class="outline-text-4" id="text-1-3-7">
+<ul class="org-ul">
+<li>if语句为级别逻辑语句</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org772f44b" class="outline-4">
+<h4 id="org772f44b"><span class="section-number-4">1.3.8.</span> for 语句</h4>
+<div class="outline-text-4" id="text-1-3-8">
+<ul class="org-ul">
+<li>for语句为级别循环语句</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org5d42dcf" class="outline-4">
+<h4 id="org5d42dcf"><span class="section-number-4">1.3.9.</span> 函数</h4>
+<div class="outline-text-4" id="text-1-3-9">
+<ul class="org-ul">
+<li>python中使用def来定义函数</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org7308127" class="outline-3">
+<h3 id="org7308127"><span class="section-number-3">1.4.</span> Python脚本文件</h3>
+<div class="outline-text-3" id="text-1-4">
+</div>
+<div id="outline-container-org84fecf9" class="outline-4">
+<h4 id="org84fecf9"><span class="section-number-4">1.4.1.</span> 保存为文件</h4>
+<div class="outline-text-4" id="text-1-4-1">
+<ul class="org-ul">
+<li>前面都是在解释器里面运行,但是真正的Python代码一般是保存在一个文件里面(一般以py结尾),然后运行</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org56842eb" class="outline-4">
+<h4 id="org56842eb"><span class="section-number-4">1.4.2.</span> 类</h4>
+<div class="outline-text-4" id="text-1-4-2">
+<ul class="org-ul">
+<li>Python中使用class来定义新的类型</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgba0541a" class="outline-3">
+<h3 id="orgba0541a"><span class="section-number-3">1.5.</span> NumPy</h3>
+<div class="outline-text-3" id="text-1-5">
+</div>
+<div id="outline-container-org83bbd34" class="outline-4">
+<h4 id="org83bbd34"><span class="section-number-4">1.5.1.</span> 导入NumPy</h4>
+<div class="outline-text-4" id="text-1-5-1">
+<ul class="org-ul">
+<li><p>
+numpy是事实上的科学计算标准,但是它不再python的标注库里面,我们通常以如下代码引入numpy
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">&gt;&gt;&gt; import numpy as np
+</pre>
+</div></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orge5adb55" class="outline-4">
+<h4 id="orge5adb55"><span class="section-number-4">1.5.2.</span> 生成NumPy数组</h4>
+<div class="outline-text-4" id="text-1-5-2">
+<ul class="org-ul">
+<li><p>
+Python的数组我们前面讲过了,叫做列表. 而NumPy的数组就叫NumPy数组,它需要使用list作为参数创建(当然也有
+其他创建方式)
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">&gt;&gt;&gt; x = np.array<span style="color: #1F55A0;">(</span><span style="color: #AF005F;">[</span>1.0,2.0,3.0<span style="color: #AF005F;">]</span><span style="color: #1F55A0;">)</span>
+&gt;&gt;&gt; print<span style="color: #1F55A0;">(</span>x<span style="color: #1F55A0;">)</span>
+<span style="color: #1F55A0;">[</span>1. 2. 3.<span style="color: #1F55A0;">]</span>
+&gt;&gt;&gt; type<span style="color: #1F55A0;">(</span>x<span style="color: #1F55A0;">)</span>
+&lt;class <span style="color: #005F00;">'numpy.ndarray'</span>&gt;
+</pre>
+</div></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org9e571c0" class="outline-4">
+<h4 id="org9e571c0"><span class="section-number-4">1.5.3.</span> NumPy的算术运算</h4>
+<div class="outline-text-4" id="text-1-5-3">
+<ul class="org-ul">
+<li>NumPy的运算都是element-wise的:
+<ul class="org-ul">
+<li><p>
+如果两个numpy array进行运算,那么就是对应位置的element相互进行运算
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">&gt;&gt;&gt; x = np.array<span style="color: #1F55A0;">(</span><span style="color: #AF005F;">[</span>1.0, 2.0, 3.0<span style="color: #AF005F;">]</span><span style="color: #1F55A0;">)</span>
+&gt;&gt;&gt; y = np.array<span style="color: #1F55A0;">(</span><span style="color: #AF005F;">[</span>2.0, 4.0, 6.0<span style="color: #AF005F;">]</span><span style="color: #1F55A0;">)</span>
+&gt;&gt;&gt; x + y
+<span style="color: #AF8700;">array</span><span style="color: #1F55A0;">(</span><span style="color: #AF005F;">[</span>3., 6., 9.<span style="color: #AF005F;">]</span><span style="color: #1F55A0;">)</span>
+&gt;&gt;&gt; x * y
+<span style="color: #AF8700;">array</span><span style="color: #1F55A0;">(</span><span style="color: #AF005F;">[</span> 2.,  8., 18.<span style="color: #AF005F;">]</span><span style="color: #1F55A0;">)</span>
+&gt;&gt;&gt; x / y
+<span style="color: #AF8700;">array</span><span style="color: #1F55A0;">(</span><span style="color: #AF005F;">[</span>0.5, 0.5, 0.5<span style="color: #AF005F;">]</span><span style="color: #1F55A0;">)</span>
+</pre>
+</div></li>
+<li><p>
+如果一个numpy array和一个数值(标量)进行运算,那么就是array的每个element和标量进行运算
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">&gt;&gt;&gt; x = np.array<span style="color: #1F55A0;">(</span><span style="color: #AF005F;">[</span>1.0, 2.0, 3.0<span style="color: #AF005F;">]</span><span style="color: #1F55A0;">)</span>
+&gt;&gt;&gt; x / 2.0
+<span style="color: #AF8700;">array</span><span style="color: #1F55A0;">(</span><span style="color: #AF005F;">[</span>0.5, 1. , 1.5<span style="color: #AF005F;">]</span><span style="color: #1F55A0;">)</span>
+</pre>
+</div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org9887416" class="outline-4">
+<h4 id="org9887416"><span class="section-number-4">1.5.4.</span> NumPy的N维数组</h4>
+<div class="outline-text-4" id="text-1-5-4">
+<ul class="org-ul">
+<li>NumPy还可以生成多维数组,比如下面是一个二维数组的例子
+<ul class="org-ul">
+<li><p>
+例子如下
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">&gt;&gt;&gt; A = np.array<span style="color: #1F55A0;">(</span><span style="color: #AF005F;">[</span><span style="color: #005F00;">[</span>1,2<span style="color: #005F00;">]</span>, <span style="color: #005F00;">[</span>3,4<span style="color: #005F00;">]</span><span style="color: #AF005F;">]</span><span style="color: #1F55A0;">)</span>
+&gt;&gt;&gt; print<span style="color: #1F55A0;">(</span>A<span style="color: #1F55A0;">)</span>
+<span style="color: #1F55A0;">[</span><span style="color: #AF005F;">[</span>1 2<span style="color: #AF005F;">]</span>
+ <span style="color: #AF005F;">[</span>3 4<span style="color: #AF005F;">]</span><span style="color: #1F55A0;">]</span>
+&gt;&gt;&gt; A.shape
+<span style="color: #1F55A0;">(</span>2, 2<span style="color: #1F55A0;">)</span>
+&gt;&gt;&gt; A.dtype
+<span style="color: #AF8700;">dtype</span><span style="color: #1F55A0;">(</span><span style="color: #005F00;">'int64'</span><span style="color: #1F55A0;">)</span>
+</pre>
+</div></li>
+<li><p>
+我们可以使用shape来查看矩阵的形状, 如果是一维数组,那么只有一个维度的长度
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">&gt;&gt;&gt; a = np.array<span style="color: #1F55A0;">(</span><span style="color: #AF005F;">[</span>1, 2, 3<span style="color: #AF005F;">]</span><span style="color: #1F55A0;">)</span>
+&gt;&gt;&gt; a
+<span style="color: #AF8700;">array</span><span style="color: #1F55A0;">(</span><span style="color: #AF005F;">[</span>1, 2, 3<span style="color: #AF005F;">]</span><span style="color: #1F55A0;">)</span>
+&gt;&gt;&gt; a.shape
+<span style="color: #1F55A0;">(</span>3,<span style="color: #1F55A0;">)</span>
+</pre>
+</div></li>
+<li>我们还可以使用dtype查看成员的数据类型(这里就需要numpy array的所有成员的类型一致)</li>
+</ul></li>
+<li>和一维数组的是运算一样, 多维NumPy数组的运算也是element-wise的:
+<ul class="org-ul">
+<li><p>
+一个多维数组和一个维度相同的多维数组运算和一位数组相同
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">&gt;&gt;&gt; print<span style="color: #1F55A0;">(</span>A<span style="color: #1F55A0;">)</span>
+<span style="color: #1F55A0;">[</span><span style="color: #AF005F;">[</span>1 2<span style="color: #AF005F;">]</span>
+ <span style="color: #AF005F;">[</span>3 4<span style="color: #AF005F;">]</span><span style="color: #1F55A0;">]</span>
+&gt;&gt;&gt; B = np.array<span style="color: #1F55A0;">(</span><span style="color: #AF005F;">[</span><span style="color: #005F00;">[</span>3,0<span style="color: #005F00;">]</span>,<span style="color: #005F00;">[</span>0,6<span style="color: #005F00;">]</span><span style="color: #AF005F;">]</span><span style="color: #1F55A0;">)</span>
+&gt;&gt;&gt; A + B
+<span style="color: #AF8700;">array</span><span style="color: #1F55A0;">(</span><span style="color: #AF005F;">[</span><span style="color: #005F00;">[</span> 4,  2<span style="color: #005F00;">]</span>,
+       <span style="color: #005F00;">[</span> 3, 10<span style="color: #005F00;">]</span><span style="color: #AF005F;">]</span><span style="color: #1F55A0;">)</span>
+&gt;&gt;&gt; A * B
+<span style="color: #AF8700;">array</span><span style="color: #1F55A0;">(</span><span style="color: #AF005F;">[</span><span style="color: #005F00;">[</span> 3,  0<span style="color: #005F00;">]</span>,
+       <span style="color: #005F00;">[</span> 0, 24<span style="color: #005F00;">]</span><span style="color: #AF005F;">]</span><span style="color: #1F55A0;">)</span>
+</pre>
+</div></li>
+<li><p>
+一个多维数组和一个标量进行运算也和一维数组相同
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">&gt;&gt;&gt; print<span style="color: #1F55A0;">(</span>A<span style="color: #1F55A0;">)</span>
+<span style="color: #1F55A0;">[</span><span style="color: #AF005F;">[</span>1 2<span style="color: #AF005F;">]</span>
+ <span style="color: #AF005F;">[</span>3 4<span style="color: #AF005F;">]</span><span style="color: #1F55A0;">]</span>
+&gt;&gt;&gt; A * 10
+<span style="color: #AF8700;">array</span><span style="color: #1F55A0;">(</span><span style="color: #AF005F;">[</span><span style="color: #005F00;">[</span>10, 20<span style="color: #005F00;">]</span>,
+       <span style="color: #005F00;">[</span>30, 40<span style="color: #005F00;">]</span><span style="color: #AF005F;">]</span><span style="color: #1F55A0;">)</span>
+</pre>
+</div></li>
+</ul></li>
+<li>数学上,会有一些特别的名字,比如:
+<ul class="org-ul">
+<li>单一的数值叫做: 标量(scalar)</li>
+<li>一维数组叫做: 向量(vector)</li>
+<li>二维数组叫做: 矩阵(matrix)</li>
+<li>三维及以上数组叫做: 张量(tensor)</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgfcea566" class="outline-4">
+<h4 id="orgfcea566"><span class="section-number-4">1.5.5.</span> 广播</h4>
+<div class="outline-text-4" id="text-1-5-5">
+<ul class="org-ul">
+<li><p>
+之前我们看到过,一维或者多维数组都可以和自己维度不同的标量进行乘(除)法运算(加减法不行),其原理是NumPy
+把标量扩展成了对应的形状.比如下面的例子,标量10就被扩展成了2*2的形状
+</p>
+
+<div id="orgc11fdc0" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/dlfs/1-1.png" alt="1-1.png" />
+</p>
+<p><span class="figure-number">Figure 1: </span>dlfs/1-1.png</p>
+</div></li>
+<li>这种把乘数扩展后再和被乘数进行乘法(除法)计算的方法,就叫做广播(broadcast)</li>
+<li>广播定义之所以是把"乘数"扩展,而不是把标量扩展,是因为广播还支持非标量
+<ul class="org-ul">
+<li><p>
+比如如下代码乘数是一维vector,也是支持广播操作的
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">&gt;&gt;&gt; A = np.array<span style="color: #1F55A0;">(</span><span style="color: #AF005F;">[</span><span style="color: #005F00;">[</span>1,2<span style="color: #005F00;">]</span>,<span style="color: #005F00;">[</span>3,4<span style="color: #005F00;">]</span><span style="color: #AF005F;">]</span><span style="color: #1F55A0;">)</span>
+&gt;&gt;&gt; B = np.array<span style="color: #1F55A0;">(</span><span style="color: #AF005F;">[</span>10,20<span style="color: #AF005F;">]</span><span style="color: #1F55A0;">)</span>
+&gt;&gt;&gt; A * B
+<span style="color: #AF8700;">array</span><span style="color: #1F55A0;">(</span><span style="color: #AF005F;">[</span><span style="color: #005F00;">[</span>10, 40<span style="color: #005F00;">]</span>,
+       <span style="color: #005F00;">[</span>30, 80<span style="color: #005F00;">]</span><span style="color: #AF005F;">]</span><span style="color: #1F55A0;">)</span>
+</pre>
+</div></li>
+<li><p>
+我们可以从下图看到,一维vector是如何被扩展的
+</p>
+
+<div id="orga7ce66a" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/dlfs/1-2.png" alt="1-2.png" />
+</p>
+<p><span class="figure-number">Figure 2: </span>dlfs/1-2.png</p>
+</div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org1ed6fe6" class="outline-4">
+<h4 id="org1ed6fe6"><span class="section-number-4">1.5.6.</span> 访问元素</h4>
+<div class="outline-text-4" id="text-1-5-6">
+<ul class="org-ul">
+<li><p>
+numpy数组也是从0开始,对于多维数组的访问,也是多增加几次的[]操作
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">&gt;&gt;&gt; X = np.array<span style="color: #1F55A0;">(</span><span style="color: #AF005F;">[</span><span style="color: #005F00;">[</span>51,55<span style="color: #005F00;">]</span>, <span style="color: #005F00;">[</span>14,19<span style="color: #005F00;">]</span>, <span style="color: #005F00;">[</span>0, 4<span style="color: #005F00;">]</span><span style="color: #AF005F;">]</span><span style="color: #1F55A0;">)</span>
+&gt;&gt;&gt; print<span style="color: #1F55A0;">(</span>X<span style="color: #1F55A0;">)</span>
+<span style="color: #1F55A0;">[</span><span style="color: #AF005F;">[</span>51 55<span style="color: #AF005F;">]</span>
+ <span style="color: #AF005F;">[</span>14 19<span style="color: #AF005F;">]</span>
+ <span style="color: #AF005F;">[</span> 0  4<span style="color: #AF005F;">]</span><span style="color: #1F55A0;">]</span>
+&gt;&gt;&gt; X<span style="color: #1F55A0;">[</span>0<span style="color: #1F55A0;">]</span>
+<span style="color: #AF8700;">array</span><span style="color: #1F55A0;">(</span><span style="color: #AF005F;">[</span>51, 55<span style="color: #AF005F;">]</span><span style="color: #1F55A0;">)</span>
+&gt;&gt;&gt; X<span style="color: #1F55A0;">[</span>0<span style="color: #1F55A0;">][</span>1<span style="color: #1F55A0;">]</span>
+55
+</pre>
+</div></li>
+<li>numpy的`[]`里面还可以放置其他的非int值,比如:
+<ul class="org-ul">
+<li><p>
+可以放置一个numpy 数组,比如这里我们要取第1, 3, 5位的数据
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">&gt;&gt;&gt; a = np.array<span style="color: #1F55A0;">(</span><span style="color: #AF005F;">[</span>0, 10, 20, 30, 40, 50<span style="color: #AF005F;">]</span><span style="color: #1F55A0;">)</span>
+&gt;&gt;&gt; print<span style="color: #1F55A0;">(</span>a<span style="color: #1F55A0;">)</span>
+<span style="color: #1F55A0;">[</span> 0 10 20 30 40 50<span style="color: #1F55A0;">]</span>
+&gt;&gt;&gt; a<span style="color: #1F55A0;">[</span>np.array<span style="color: #AF005F;">(</span><span style="color: #005F00;">[</span>1, 3, 5<span style="color: #005F00;">]</span><span style="color: #AF005F;">)</span><span style="color: #1F55A0;">]</span>
+<span style="color: #AF8700;">array</span><span style="color: #1F55A0;">(</span><span style="color: #AF005F;">[</span>10, 30, 50<span style="color: #AF005F;">]</span><span style="color: #1F55A0;">)</span>
+</pre>
+</div></li>
+<li><p>
+可以放置一个bool数组,我们只取其中为True的部分
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">&gt;&gt;&gt; a<span style="color: #1F55A0;">[</span>np.array<span style="color: #AF005F;">(</span><span style="color: #005F00;">[</span>True, True, False, False, False, True<span style="color: #005F00;">]</span><span style="color: #AF005F;">)</span><span style="color: #1F55A0;">]</span>
+<span style="color: #AF8700;">array</span><span style="color: #1F55A0;">(</span><span style="color: #AF005F;">[</span> 0, 10, 50<span style="color: #AF005F;">]</span><span style="color: #1F55A0;">)</span>
+</pre>
+</div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org79346ff" class="outline-3">
+<h3 id="org79346ff"><span class="section-number-3">1.6.</span> Matplotlib</h3>
+<div class="outline-text-3" id="text-1-6">
+</div>
+<div id="outline-container-orgfb57396" class="outline-4">
+<h4 id="orgfb57396"><span class="section-number-4">1.6.1.</span> 绘制简单图形</h4>
+<div class="outline-text-4" id="text-1-6-1">
+<ul class="org-ul">
+<li>最简答的绘制sin函数曲线的例子
+<ul class="org-ul">
+<li><p>
+代码如下
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #D70000;">import</span> numpy <span style="color: #D70000;">as</span> np
+<span style="color: #D70000;">import</span> matplotlib.pyplot <span style="color: #D70000;">as</span> plt
+
+
+<span style="color: #004651;">x</span> = np.arange<span style="color: #1F55A0;">(</span>0, 6, 0.1<span style="color: #1F55A0;">)</span>
+<span style="color: #004651;">y</span> = np.sin<span style="color: #1F55A0;">(</span>x<span style="color: #1F55A0;">)</span>
+plt.plot<span style="color: #1F55A0;">(</span>x, y<span style="color: #1F55A0;">)</span>
+plt.show<span style="color: #1F55A0;">()</span>
+</pre>
+</div></li>
+<li><p>
+结果如下
+</p>
+
+<div id="orgfb75a08" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/dlfs/1-3.png" alt="1-3.png" />
+</p>
+<p><span class="figure-number">Figure 3: </span>dlfs/1-3.png</p>
+</div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orga88982b" class="outline-4">
+<h4 id="orga88982b"><span class="section-number-4">1.6.2.</span> pyplot的功能</h4>
+<div class="outline-text-4" id="text-1-6-2">
+<ul class="org-ul">
+<li>我们还可以在上图中加上一些标题,x轴签名等等
+<ul class="org-ul">
+<li><p>
+代码如下
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #D70000;">import</span> numpy <span style="color: #D70000;">as</span> np
+<span style="color: #D70000;">import</span> matplotlib.pyplot <span style="color: #D70000;">as</span> plt
+
+
+<span style="color: #004651;">x</span> = np.arange<span style="color: #1F55A0;">(</span>0, 6, 0.1<span style="color: #1F55A0;">)</span>
+<span style="color: #004651;">y1</span> = np.sin<span style="color: #1F55A0;">(</span>x<span style="color: #1F55A0;">)</span>
+<span style="color: #004651;">y2</span> = np.cos<span style="color: #1F55A0;">(</span>x<span style="color: #1F55A0;">)</span>
+plt.plot<span style="color: #1F55A0;">(</span>x, y1, label=<span style="color: #005F00;">"sin"</span><span style="color: #1F55A0;">)</span>
+plt.plot<span style="color: #1F55A0;">(</span>x, y2, linestyle=<span style="color: #005F00;">"--"</span>, label=<span style="color: #005F00;">"cos"</span><span style="color: #1F55A0;">)</span>
+plt.xlabel<span style="color: #1F55A0;">(</span><span style="color: #005F00;">"x"</span><span style="color: #1F55A0;">)</span>
+plt.ylabel<span style="color: #1F55A0;">(</span><span style="color: #005F00;">"y"</span><span style="color: #1F55A0;">)</span>
+plt.show<span style="color: #1F55A0;">()</span>
+</pre>
+</div></li>
+<li><p>
+结果如下
+</p>
+
+<div id="org68d98f1" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/dlfs/1-4.png" alt="1-4.png" />
+</p>
+<p><span class="figure-number">Figure 4: </span>dlfs/1-4.png</p>
+</div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgfbb9d84" class="outline-4">
+<h4 id="orgfbb9d84"><span class="section-number-4">1.6.3.</span> 显示图像</h4>
+<div class="outline-text-4" id="text-1-6-3">
+<ul class="org-ul">
+<li>matplotlib还可以使用imread()方法读入图像</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org9d7c718" class="outline-2">
+<h2 id="org9d7c718"><span class="section-number-2">2.</span> 感知机</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-orgd3bc1eb" class="outline-3">
+<h3 id="orgd3bc1eb"><span class="section-number-3">2.1.</span> 感知机是什么</h3>
+<div class="outline-text-3" id="text-2-1">
+<ul class="org-ul">
+<li>所谓感知机,是指接收多个输入信号,输出一个信号.</li>
+<li>这里的信号可以想象成电流或者河流那样具备"流动性"的东西.和实际的电流不同,感知机的信号只有"流/不流"两
+种取值,本书中:
+<ul class="org-ul">
+<li>0对应"不传递信号"</li>
+<li>1对应"传递信号"</li>
+</ul></li>
+<li>下图是一个感知机接收两个输入信号的例子:
+<ul class="org-ul">
+<li><p>
+图2-1
+</p>
+
+<div id="orgef2d1b6" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/dlfs/2-1.png" alt="2-1.png" />
+</p>
+<p><span class="figure-number">Figure 5: </span>dlfs/2-1.png</p>
+</div></li>
+<li>x1,x2是输入信号</li>
+<li>y是输出信号</li>
+<li>w1,w2是权重(w是weight的首字母). 感知机的多个输入信号都有各自固有的权重,权重越大,对应该权重的信号
+重要性就越高</li>
+<li>图中的圆形为"神经元"或者"节点"</li>
+<li>输入信号被送往神经元的时候会被乘以固定的权重(w1x1,w2x2), 神经元会计算传过来的信号的总和,当这个总
+和超过某个界限(称之为阈值)时,才会输出1.输出1也被称之为"神经元被激活"</li>
+<li><p>
+我们把上面的图用公式表达出来就是
+</p>
+\begin{equation}
+y =
+   \begin{cases}
+    0 & (w_1 x_1 + w_2 x_2 \leqslant \theta) \\
+    1 & (w_1 x_1 + w_2 x_2 > \theta) \tag{2.1}
+   \end{cases}
+\end{equation}</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgd6e63e9" class="outline-3">
+<h3 id="orgd6e63e9"><span class="section-number-3">2.2.</span> 简单的逻辑电路</h3>
+<div class="outline-text-3" id="text-2-2">
+</div>
+<div id="outline-container-org40f2384" class="outline-4">
+<h4 id="org40f2384"><span class="section-number-4">2.2.1.</span> 与门</h4>
+<div class="outline-text-4" id="text-2-2-1">
+<ul class="org-ul">
+<li>我们先考虑用感知机来解决简单的问题,比如我们用感知机来实现一下逻辑电路的与门(AND gate)</li>
+<li><p>
+所谓与门,是指两个输入都为1的情况下,输出为1,其他情况下输入都是0, 如下图
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">x1</th>
+<th scope="col" class="org-right">x2</th>
+<th scope="col" class="org-right">y</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">0</td>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">1</td>
+<td class="org-right">1</td>
+</tr>
+</tbody>
+</table></li>
+<li>从我们的公式2.1分析,我们其实只要设置好 \(w_1, w_2,\theta\) 的值就可以.</li>
+<li>实际上,我们肉眼就能找到很多这样的值,比如:
+<ul class="org-ul">
+<li>\((w_1, w_2,\theta) = (0.5,0.5,0.7)\)</li>
+<li>\((w_1, w_2,\theta) = (0.5,0.5,0.8)\)</li>
+<li>\((w_1, w_2,\theta) = (1.0,1.0,1.0)\)</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgfc16f0a" class="outline-4">
+<h4 id="orgfc16f0a"><span class="section-number-4">2.2.2.</span> 与非门和或门</h4>
+<div class="outline-text-4" id="text-2-2-2">
+<ul class="org-ul">
+<li><p>
+我们再来看看另外的逻辑电路,比如与非门(NAND gate), 与非门,就是"结果颠倒了的与门",如图
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">x1</th>
+<th scope="col" class="org-right">x2</th>
+<th scope="col" class="org-right">y</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">1</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+<td class="org-right">1</td>
+</tr>
+
+<tr>
+<td class="org-right">0</td>
+<td class="org-right">1</td>
+<td class="org-right">1</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+</tr>
+</tbody>
+</table></li>
+<li>对应的\(w_1, w_2,\theta\) 的值也很容易选(其实把与门的参数取反就可以),比如:
+<ul class="org-ul">
+<li>\((w_1, w_2,\theta) = (-0.5,-0.5,-0.7)\)</li>
+<li>\((w_1, w_2,\theta) = (-0.5,-0.5,-0.8)\)</li>
+<li>\((w_1, w_2,\theta) = (-1.0,-1.0,-1.0)\)</li>
+</ul></li>
+<li><p>
+同样的,我们还可以设置或门(OR gate),其为两个输入都是0的情况下,才返回0,其他情况都返回1
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">x1</th>
+<th scope="col" class="org-right">x2</th>
+<th scope="col" class="org-right">y</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+<td class="org-right">1</td>
+</tr>
+
+<tr>
+<td class="org-right">0</td>
+<td class="org-right">1</td>
+<td class="org-right">1</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">1</td>
+<td class="org-right">1</td>
+</tr>
+</tbody>
+</table></li>
+<li>实际上,我们肉眼就也能找到很多这样的值,比如:
+<ul class="org-ul">
+<li>\((w_1, w_2,\theta) = (0.5,0.5,-0.2)\)</li>
+<li>\((w_1, w_2,\theta) = (0.5,0.5,-0.3)\)</li>
+<li>\((w_1, w_2,\theta) = (1.0,1.0,-0.9)\)</li>
+</ul></li>
+<li>我们不厌其烦的展示了三种逻辑电路,就是想说明:
+<ul class="org-ul">
+<li>这三种逻辑电路的感知机构造是一样的</li>
+<li>我们只需要适当的调整参数,就能把一个感知机改造成不同的角色: 与门,与非门,或门</li>
+</ul></li>
+<li>提前剧透一下,感知机和机器学习的不通:
+<ul class="org-ul">
+<li>感知机是"人类"通过看真值表,确定感知器参数</li>
+<li>机器学习是让"计算机"自动的决定这些参数.所谓"学习",就是确定这是参数的过程</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org6f9a28d" class="outline-3">
+<h3 id="org6f9a28d"><span class="section-number-3">2.3.</span> 感知机的实现</h3>
+<div class="outline-text-3" id="text-2-3">
+</div>
+<div id="outline-container-org27af72b" class="outline-4">
+<h4 id="org27af72b"><span class="section-number-4">2.3.1.</span> 简单的实现</h4>
+<div class="outline-text-4" id="text-2-3-1">
+<ul class="org-ul">
+<li><p>
+我们先用代码来实现一下刚才的与门
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #D70000;">def</span> <span style="color: #AF8700;">AND</span><span style="color: #1F55A0;">(</span>x1, x2<span style="color: #1F55A0;">)</span>:
+    <span style="color: #004651;">w1</span>, <span style="color: #004651;">w2</span>, <span style="color: #004651;">theta</span> = 0.5, 0.5, 0.7
+    <span style="color: #004651;">tmp</span> = x1 * w1 + x2 * w2
+    <span style="color: #D70000;">if</span> tmp &lt;= theta:
+        <span style="color: #D70000;">return</span> 0
+    <span style="color: #D70000;">elif</span> tmp &gt; theta:
+        <span style="color: #D70000;">return</span> 1
+
+
+<span style="color: #D70000;">if</span> <span style="color: #1F55A0;">__name__</span> == <span style="color: #005F00;">"__main__"</span>:
+    <span style="color: #1F55A0;">print</span><span style="color: #1F55A0;">(</span>AND<span style="color: #AF005F;">(</span>0, 0<span style="color: #AF005F;">)</span><span style="color: #1F55A0;">)</span>
+    <span style="color: #1F55A0;">print</span><span style="color: #1F55A0;">(</span>AND<span style="color: #AF005F;">(</span>1, 0<span style="color: #AF005F;">)</span><span style="color: #1F55A0;">)</span>
+    <span style="color: #1F55A0;">print</span><span style="color: #1F55A0;">(</span>AND<span style="color: #AF005F;">(</span>0, 1<span style="color: #AF005F;">)</span><span style="color: #1F55A0;">)</span>
+    <span style="color: #1F55A0;">print</span><span style="color: #1F55A0;">(</span>AND<span style="color: #AF005F;">(</span>1, 1<span style="color: #AF005F;">)</span><span style="color: #1F55A0;">)</span>
+
+<span style="color: #4E4E4E; font-style: italic;"># </span><span style="color: #4E4E4E; font-style: italic;">&lt;====================OUTPUT====================&gt;</span>
+<span style="color: #4E4E4E; font-style: italic;"># </span><span style="color: #4E4E4E; font-style: italic;">0</span>
+<span style="color: #4E4E4E; font-style: italic;"># </span><span style="color: #4E4E4E; font-style: italic;">0</span>
+<span style="color: #4E4E4E; font-style: italic;"># </span><span style="color: #4E4E4E; font-style: italic;">0</span>
+<span style="color: #4E4E4E; font-style: italic;"># </span><span style="color: #4E4E4E; font-style: italic;">1</span>
+</pre>
+</div></li>
+<li>与非门和或门的实现是类似的,区别只是权重参数的值.不过我们为了更好的抽象问题,我们准备改一下我们的公
+式,也顺便改一下我们的实现</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org3ed8e98" class="outline-4">
+<h4 id="org3ed8e98"><span class="section-number-4">2.3.2.</span> 导入权重和偏置</h4>
+<div class="outline-text-4" id="text-2-3-2">
+<ul class="org-ul">
+<li>我们为了更好的抽象问题,把 \(\theta\) 换成 \(-b\)
+<ul class="org-ul">
+<li><p>
+于是得到公式2.2
+</p>
+\begin{equation}
+y =
+   \begin{cases}
+    0 & (b + w_1 x_1 + w_2 x_2 \leqslant 0) \\
+    1 & (b + w_1 x_1 + w_2 x_2 > 0) \tag{2.2}
+   \end{cases}
+\end{equation}</li>
+<li>公式2.2和公式2.1虽然有一个符号不同,但是表单是内容却是完全相同的</li>
+<li>这里的b称之为偏置(bias). 偏置的值决定了神经元被激活的容易程度,比如-0.1的bias肯定比-20的bias更容易激活</li>
+<li>w1,w2称之为权重(weight). 权重的值控制不同输入信号的重要性</li>
+<li><b>NOTE</b> 有些上下文会把b,w1,w2统称为权重</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org9c97541" class="outline-4">
+<h4 id="org9c97541"><span class="section-number-4">2.3.3.</span> 使用权重和偏置的实现</h4>
+<div class="outline-text-4" id="text-2-3-3">
+<ul class="org-ul">
+<li>更改了公式的同时,我们也使用NumPy来实现感知机
+<ul class="org-ul">
+<li><p>
+代码如下
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #D70000;">import</span> numpy <span style="color: #D70000;">as</span> np
+
+
+<span style="color: #D70000;">def</span> <span style="color: #AF8700;">AND</span><span style="color: #1F55A0;">(</span>x1, x2<span style="color: #1F55A0;">)</span>:
+    <span style="color: #004651;">x</span> = np.array<span style="color: #1F55A0;">(</span><span style="color: #AF005F;">[</span>x1, x2<span style="color: #AF005F;">]</span><span style="color: #1F55A0;">)</span>
+    <span style="color: #004651;">w</span> = np.array<span style="color: #1F55A0;">(</span><span style="color: #AF005F;">[</span>0.5, 0.5<span style="color: #AF005F;">]</span><span style="color: #1F55A0;">)</span>
+    <span style="color: #004651;">b</span> = -0.7
+    <span style="color: #004651;">tmp</span> = np.<span style="color: #1F55A0;">sum</span><span style="color: #1F55A0;">(</span>w * x<span style="color: #1F55A0;">)</span> + b
+    <span style="color: #D70000;">if</span> tmp &lt;= 0:
+        <span style="color: #D70000;">return</span> 0
+    <span style="color: #D70000;">else</span>:
+        <span style="color: #D70000;">return</span> 1
+
+
+<span style="color: #D70000;">if</span> <span style="color: #1F55A0;">__name__</span> == <span style="color: #005F00;">"__main__"</span>:
+    <span style="color: #1F55A0;">print</span><span style="color: #1F55A0;">(</span>AND<span style="color: #AF005F;">(</span>0, 0<span style="color: #AF005F;">)</span><span style="color: #1F55A0;">)</span>
+    <span style="color: #1F55A0;">print</span><span style="color: #1F55A0;">(</span>AND<span style="color: #AF005F;">(</span>1, 0<span style="color: #AF005F;">)</span><span style="color: #1F55A0;">)</span>
+    <span style="color: #1F55A0;">print</span><span style="color: #1F55A0;">(</span>AND<span style="color: #AF005F;">(</span>0, 1<span style="color: #AF005F;">)</span><span style="color: #1F55A0;">)</span>
+    <span style="color: #1F55A0;">print</span><span style="color: #1F55A0;">(</span>AND<span style="color: #AF005F;">(</span>1, 1<span style="color: #AF005F;">)</span><span style="color: #1F55A0;">)</span>
+
+<span style="color: #4E4E4E; font-style: italic;"># </span><span style="color: #4E4E4E; font-style: italic;">&lt;====================OUTPUT====================&gt;</span>
+<span style="color: #4E4E4E; font-style: italic;"># </span><span style="color: #4E4E4E; font-style: italic;">0</span>
+<span style="color: #4E4E4E; font-style: italic;"># </span><span style="color: #4E4E4E; font-style: italic;">0</span>
+<span style="color: #4E4E4E; font-style: italic;"># </span><span style="color: #4E4E4E; font-style: italic;">0</span>
+<span style="color: #4E4E4E; font-style: italic;"># </span><span style="color: #4E4E4E; font-style: italic;">1</span>
+</pre>
+</div></li>
+<li>这里权重和参数都是numpy array,他们相乘就是element-wise的相乘</li>
+<li>相乘结果再用np.sum把结果累加,就实现了之前2-1中x1 * w1 + x2 * w2的效果</li>
+<li>最后加上偏置,再和0比大小即可</li>
+</ul></li>
+<li><p>
+我们用同样的方式可以创建成功与非门
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #D70000;">import</span> numpy <span style="color: #D70000;">as</span> np
+
+
+<span style="color: #D70000;">def</span> <span style="color: #AF8700;">NAND</span><span style="color: #1F55A0;">(</span>x1, x2<span style="color: #1F55A0;">)</span>:
+    <span style="color: #004651;">x</span> = np.array<span style="color: #1F55A0;">(</span><span style="color: #AF005F;">[</span>x1, x2<span style="color: #AF005F;">]</span><span style="color: #1F55A0;">)</span>
+    <span style="color: #004651;">w</span> = np.array<span style="color: #1F55A0;">(</span><span style="color: #AF005F;">[</span>-0.5, -0.5<span style="color: #AF005F;">]</span><span style="color: #1F55A0;">)</span>
+    <span style="color: #004651;">b</span> = 0.7
+    <span style="color: #004651;">tmp</span> = np.<span style="color: #1F55A0;">sum</span><span style="color: #1F55A0;">(</span>w * x<span style="color: #1F55A0;">)</span> + b
+    <span style="color: #D70000;">if</span> tmp &lt;= 0:
+        <span style="color: #D70000;">return</span> 0
+    <span style="color: #D70000;">else</span>:
+        <span style="color: #D70000;">return</span> 1
+
+
+<span style="color: #D70000;">if</span> <span style="color: #1F55A0;">__name__</span> == <span style="color: #005F00;">"__main__"</span>:
+    <span style="color: #1F55A0;">print</span><span style="color: #1F55A0;">(</span>NAND<span style="color: #AF005F;">(</span>0, 0<span style="color: #AF005F;">)</span><span style="color: #1F55A0;">)</span>
+    <span style="color: #1F55A0;">print</span><span style="color: #1F55A0;">(</span>NAND<span style="color: #AF005F;">(</span>1, 0<span style="color: #AF005F;">)</span><span style="color: #1F55A0;">)</span>
+    <span style="color: #1F55A0;">print</span><span style="color: #1F55A0;">(</span>NAND<span style="color: #AF005F;">(</span>0, 1<span style="color: #AF005F;">)</span><span style="color: #1F55A0;">)</span>
+    <span style="color: #1F55A0;">print</span><span style="color: #1F55A0;">(</span>NAND<span style="color: #AF005F;">(</span>1, 1<span style="color: #AF005F;">)</span><span style="color: #1F55A0;">)</span>
+
+<span style="color: #4E4E4E; font-style: italic;"># </span><span style="color: #4E4E4E; font-style: italic;">&lt;====================OUTPUT====================&gt;</span>
+<span style="color: #4E4E4E; font-style: italic;"># </span><span style="color: #4E4E4E; font-style: italic;">1</span>
+<span style="color: #4E4E4E; font-style: italic;"># </span><span style="color: #4E4E4E; font-style: italic;">1</span>
+<span style="color: #4E4E4E; font-style: italic;"># </span><span style="color: #4E4E4E; font-style: italic;">1</span>
+<span style="color: #4E4E4E; font-style: italic;"># </span><span style="color: #4E4E4E; font-style: italic;">0</span>
+</pre>
+</div></li>
+<li><p>
+最后是同样的方式创建好或门
+</p>
+<div class="org-src-container">
+<pre class="src src-python">
+<span style="color: #D70000;">import</span> numpy <span style="color: #D70000;">as</span> np
+
+
+<span style="color: #D70000;">def</span> <span style="color: #AF8700;">OR</span><span style="color: #1F55A0;">(</span>x1, x2<span style="color: #1F55A0;">)</span>:
+    <span style="color: #004651;">x</span> = np.array<span style="color: #1F55A0;">(</span><span style="color: #AF005F;">[</span>x1, x2<span style="color: #AF005F;">]</span><span style="color: #1F55A0;">)</span>
+    <span style="color: #004651;">w</span> = np.array<span style="color: #1F55A0;">(</span><span style="color: #AF005F;">[</span>0.5, 0.5<span style="color: #AF005F;">]</span><span style="color: #1F55A0;">)</span>
+    <span style="color: #004651;">b</span> = -0.2
+    <span style="color: #004651;">tmp</span> = np.<span style="color: #1F55A0;">sum</span><span style="color: #1F55A0;">(</span>w * x<span style="color: #1F55A0;">)</span> + b
+    <span style="color: #D70000;">if</span> tmp &lt;= 0:
+        <span style="color: #D70000;">return</span> 0
+    <span style="color: #D70000;">else</span>:
+        <span style="color: #D70000;">return</span> 1
+
+
+<span style="color: #D70000;">if</span> <span style="color: #1F55A0;">__name__</span> == <span style="color: #005F00;">"__main__"</span>:
+    <span style="color: #1F55A0;">print</span><span style="color: #1F55A0;">(</span>OR<span style="color: #AF005F;">(</span>0, 0<span style="color: #AF005F;">)</span><span style="color: #1F55A0;">)</span>
+    <span style="color: #1F55A0;">print</span><span style="color: #1F55A0;">(</span>OR<span style="color: #AF005F;">(</span>1, 0<span style="color: #AF005F;">)</span><span style="color: #1F55A0;">)</span>
+    <span style="color: #1F55A0;">print</span><span style="color: #1F55A0;">(</span>OR<span style="color: #AF005F;">(</span>0, 1<span style="color: #AF005F;">)</span><span style="color: #1F55A0;">)</span>
+    <span style="color: #1F55A0;">print</span><span style="color: #1F55A0;">(</span>OR<span style="color: #AF005F;">(</span>1, 1<span style="color: #AF005F;">)</span><span style="color: #1F55A0;">)</span>
+
+<span style="color: #4E4E4E; font-style: italic;"># </span><span style="color: #4E4E4E; font-style: italic;">&lt;====================OUTPUT====================&gt;</span>
+<span style="color: #4E4E4E; font-style: italic;"># </span><span style="color: #4E4E4E; font-style: italic;">0</span>
+<span style="color: #4E4E4E; font-style: italic;"># </span><span style="color: #4E4E4E; font-style: italic;">1</span>
+<span style="color: #4E4E4E; font-style: italic;"># </span><span style="color: #4E4E4E; font-style: italic;">1</span>
+<span style="color: #4E4E4E; font-style: italic;"># </span><span style="color: #4E4E4E; font-style: italic;">1</span>
+</pre>
+</div></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org0728c89" class="outline-3">
+<h3 id="org0728c89"><span class="section-number-3">2.4.</span> 感知机的局限性</h3>
+<div class="outline-text-3" id="text-2-4">
+<ul class="org-ul">
+<li>到目前为止,我们已经知道,感知机可以实现与门,与非门,或门,三种逻辑,现在我们考虑下异或门</li>
+</ul>
+</div>
+<div id="outline-container-org8aa8bec" class="outline-4">
+<h4 id="org8aa8bec"><span class="section-number-4">2.4.1.</span> 异或门</h4>
+<div class="outline-text-4" id="text-2-4-1">
+<ul class="org-ul">
+<li><p>
+所谓异或门,是指仅当x1或x2中一方为1时,才会输出1,如表格
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">x1</th>
+<th scope="col" class="org-right">x2</th>
+<th scope="col" class="org-right">y</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+<td class="org-right">1</td>
+</tr>
+
+<tr>
+<td class="org-right">0</td>
+<td class="org-right">1</td>
+<td class="org-right">1</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+</tr>
+</tbody>
+</table></li>
+<li><p>
+我们再次尝试使用之前的方法来寻找一个权重和偏移的组合,我们发现我们找不到这样一个组合,实际的情况是
+</p>
+<pre class="example" id="org156501b">
+用感知机是无法实现异或门的
+</pre></li>
+<li>为什么感知机无法实现异或门,我们可以用下面的例子来讲解一下
+<ul class="org-ul">
+<li><p>
+我们首先将或门具体化,我们把一组可行的权重参数(b,w1,w2)=(-0.5,1.0,1.0) 带入到公式2.2,得到公式2.3
+</p>
+\begin{equation}
+y =
+   \begin{cases}
+    0 & (-0.5 + w_1 x_1 + w_2 x_2 \leqslant 0) \\
+    1 & (-0.5 + w_1 x_1 + w_2 x_2 > 0) \tag{2.3}
+   \end{cases}
+\end{equation}</li>
+<li><p>
+我们如果把x2看成是y的话,我们会得到这么一条直线y=-x+0.5,如图
+</p>
+
+<div id="org21f48d6" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/dlfs/2-6.png" alt="2-6.png" />
+</p>
+<p><span class="figure-number">Figure 6: </span>dlfs/2-6.png</p>
+</div></li>
+<li>这条直线把整个平面分成了两个部分:
+<ol class="org-ol">
+<li>灰色部分是感知机输出0的区域,我们看到(0,0)也在这个位置(圆圈)</li>
+<li>白色部分是感知机输出1的区域,我们看到(0,1),(1,0),(1,1)都在这个区域(三角形)</li>
+</ol></li>
+<li><p>
+我们来如法炮制,把异或门需要分开的四个点(两个圆圈,两个三角)也列在下图,我们会发现,我们找不到一个直
+线能欧分割图中的圆圈和三角
+</p>
+
+<div id="orge0766b4" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/dlfs/2-7.png" alt="2-7.png" />
+</p>
+<p><span class="figure-number">Figure 7: </span>dlfs/2-7.png</p>
+</div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org994aeba" class="outline-4">
+<h4 id="org994aeba"><span class="section-number-4">2.4.2.</span> 线性和非线性</h4>
+<div class="outline-text-4" id="text-2-4-2">
+<ul class="org-ul">
+<li><p>
+图2-7是无法用一个直线来分割圆圈和三角,但是将"直线"这个限制去掉,就可以实现了,比如下图,我们使用曲线
+来完成了这个区分
+</p>
+
+<div id="orga3ca488" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/dlfs/2-8.png" alt="2-8.png" />
+</p>
+<p><span class="figure-number">Figure 8: </span>dlfs/2-8.png</p>
+</div></li>
+<li>上图这种由曲线分割的区域就叫做非线性空间.之前用直线分割的区域自然就叫线性空间啦</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org3853505" class="outline-3">
+<h3 id="org3853505"><span class="section-number-3">2.5.</span> 多层感知机</h3>
+<div class="outline-text-3" id="text-2-5">
+<ul class="org-ul">
+<li><p>
+感知机无法表示异或门让人遗憾,但是感知机可以通过"叠加层"来完成这个任务
+</p>
+<pre class="example" id="org4d91f14">
+准确的是说,应该是"单层感知机"无法表示异或门
+</pre></li>
+<li>我们下面通过电路来理解一下,什么是叠加层</li>
+</ul>
+</div>
+<div id="outline-container-org69ba6b8" class="outline-4">
+<h4 id="org69ba6b8"><span class="section-number-4">2.5.1.</span> 已有门电路组合</h4>
+<div class="outline-text-4" id="text-2-5-1">
+<ul class="org-ul">
+<li>异或门有很多种制作方法,其中最经典的做法是组合我们前面学到的三种门:与门,与非门和或门
+<ul class="org-ul">
+<li><p>
+我们首先以下图来表示与门,与非门和或门
+</p>
+
+<div id="org7b0aa9d" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/dlfs/2-9.png" alt="2-9.png" />
+</p>
+<p><span class="figure-number">Figure 9: </span>dlfs/2-9.png</p>
+</div></li>
+<li><p>
+异或门就可以使用上面的元器件,如下进行组合配置,最终实现异或门
+</p>
+
+<div id="org5ba59b7" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/dlfs/2-11.png" alt="2-11.png" />
+</p>
+<p><span class="figure-number">Figure 10: </span>dlfs/2-11.png</p>
+</div></li>
+<li><p>
+我们可以使用如下的真值表来确认我们的配置正确.
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">x1</th>
+<th scope="col" class="org-right">x2</th>
+<th scope="col" class="org-right">s1</th>
+<th scope="col" class="org-right">s2</th>
+<th scope="col" class="org-right">y</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+<td class="org-right">1</td>
+<td class="org-right">1</td>
+<td class="org-right">1</td>
+</tr>
+
+<tr>
+<td class="org-right">0</td>
+<td class="org-right">1</td>
+<td class="org-right">1</td>
+<td class="org-right">1</td>
+<td class="org-right">1</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+</tr>
+</tbody>
+</table></li>
+<li>上表中:x1,x2与非得到s1, x1,x2或得到s2, s1,s2与得到y</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org1b37e85" class="outline-4">
+<h4 id="org1b37e85"><span class="section-number-4">2.5.2.</span> 异或门的实现</h4>
+<div class="outline-text-4" id="text-2-5-2">
+<ul class="org-ul">
+<li><p>
+我们使用代码来实现2-11所示的异或门
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #D70000;">import</span> numpy <span style="color: #D70000;">as</span> np
+
+
+<span style="color: #D70000;">def</span> <span style="color: #AF8700;">AND</span><span style="color: #1F55A0;">(</span>x1, x2<span style="color: #1F55A0;">)</span>:
+    <span style="color: #004651;">x</span> = np.array<span style="color: #1F55A0;">(</span><span style="color: #AF005F;">[</span>x1, x2<span style="color: #AF005F;">]</span><span style="color: #1F55A0;">)</span>
+    <span style="color: #004651;">w</span> = np.array<span style="color: #1F55A0;">(</span><span style="color: #AF005F;">[</span>0.5, 0.5<span style="color: #AF005F;">]</span><span style="color: #1F55A0;">)</span>
+    <span style="color: #004651;">b</span> = -0.7
+    <span style="color: #004651;">tmp</span> = np.<span style="color: #1F55A0;">sum</span><span style="color: #1F55A0;">(</span>w * x<span style="color: #1F55A0;">)</span> + b
+    <span style="color: #D70000;">if</span> tmp &lt;= 0:
+        <span style="color: #D70000;">return</span> 0
+    <span style="color: #D70000;">else</span>:
+        <span style="color: #D70000;">return</span> 1
+
+
+<span style="color: #D70000;">def</span> <span style="color: #AF8700;">NAND</span><span style="color: #1F55A0;">(</span>x1, x2<span style="color: #1F55A0;">)</span>:
+    <span style="color: #004651;">x</span> = np.array<span style="color: #1F55A0;">(</span><span style="color: #AF005F;">[</span>x1, x2<span style="color: #AF005F;">]</span><span style="color: #1F55A0;">)</span>
+    <span style="color: #004651;">w</span> = np.array<span style="color: #1F55A0;">(</span><span style="color: #AF005F;">[</span>-0.5, -0.5<span style="color: #AF005F;">]</span><span style="color: #1F55A0;">)</span>
+    <span style="color: #004651;">b</span> = 0.7
+    <span style="color: #004651;">tmp</span> = np.<span style="color: #1F55A0;">sum</span><span style="color: #1F55A0;">(</span>w * x<span style="color: #1F55A0;">)</span> + b
+    <span style="color: #D70000;">if</span> tmp &lt;= 0:
+        <span style="color: #D70000;">return</span> 0
+    <span style="color: #D70000;">else</span>:
+        <span style="color: #D70000;">return</span> 1
+
+
+<span style="color: #D70000;">def</span> <span style="color: #AF8700;">OR</span><span style="color: #1F55A0;">(</span>x1, x2<span style="color: #1F55A0;">)</span>:
+    <span style="color: #004651;">x</span> = np.array<span style="color: #1F55A0;">(</span><span style="color: #AF005F;">[</span>x1, x2<span style="color: #AF005F;">]</span><span style="color: #1F55A0;">)</span>
+    <span style="color: #004651;">w</span> = np.array<span style="color: #1F55A0;">(</span><span style="color: #AF005F;">[</span>0.5, 0.5<span style="color: #AF005F;">]</span><span style="color: #1F55A0;">)</span>
+    <span style="color: #004651;">b</span> = -0.2
+    <span style="color: #004651;">tmp</span> = np.<span style="color: #1F55A0;">sum</span><span style="color: #1F55A0;">(</span>w * x<span style="color: #1F55A0;">)</span> + b
+    <span style="color: #D70000;">if</span> tmp &lt;= 0:
+        <span style="color: #D70000;">return</span> 0
+    <span style="color: #D70000;">else</span>:
+        <span style="color: #D70000;">return</span> 1
+
+
+<span style="color: #D70000;">def</span> <span style="color: #AF8700;">XOR</span><span style="color: #1F55A0;">(</span>x1, x2<span style="color: #1F55A0;">)</span>:
+    <span style="color: #004651;">s1</span> = NAND<span style="color: #1F55A0;">(</span>x1, x2<span style="color: #1F55A0;">)</span>
+    <span style="color: #004651;">s2</span> = OR<span style="color: #1F55A0;">(</span>x1, x2<span style="color: #1F55A0;">)</span>
+    <span style="color: #004651;">y</span> = AND<span style="color: #1F55A0;">(</span>s1, s2<span style="color: #1F55A0;">)</span>
+    <span style="color: #D70000;">return</span> y
+
+
+<span style="color: #D70000;">if</span> <span style="color: #1F55A0;">__name__</span> == <span style="color: #005F00;">"__main__"</span>:
+    <span style="color: #1F55A0;">print</span><span style="color: #1F55A0;">(</span>XOR<span style="color: #AF005F;">(</span>0, 0<span style="color: #AF005F;">)</span><span style="color: #1F55A0;">)</span>
+    <span style="color: #1F55A0;">print</span><span style="color: #1F55A0;">(</span>XOR<span style="color: #AF005F;">(</span>1, 0<span style="color: #AF005F;">)</span><span style="color: #1F55A0;">)</span>
+    <span style="color: #1F55A0;">print</span><span style="color: #1F55A0;">(</span>XOR<span style="color: #AF005F;">(</span>0, 1<span style="color: #AF005F;">)</span><span style="color: #1F55A0;">)</span>
+    <span style="color: #1F55A0;">print</span><span style="color: #1F55A0;">(</span>XOR<span style="color: #AF005F;">(</span>1, 1<span style="color: #AF005F;">)</span><span style="color: #1F55A0;">)</span>
+
+<span style="color: #4E4E4E; font-style: italic;"># </span><span style="color: #4E4E4E; font-style: italic;">&lt;====================OUTPUT====================&gt;</span>
+<span style="color: #4E4E4E; font-style: italic;"># </span><span style="color: #4E4E4E; font-style: italic;">0</span>
+<span style="color: #4E4E4E; font-style: italic;"># </span><span style="color: #4E4E4E; font-style: italic;">1</span>
+<span style="color: #4E4E4E; font-style: italic;"># </span><span style="color: #4E4E4E; font-style: italic;">1</span>
+<span style="color: #4E4E4E; font-style: italic;"># </span><span style="color: #4E4E4E; font-style: italic;">0</span>
+</pre>
+</div></li>
+<li>我们试着把电路图转换为感知机来表示
+<ul class="org-ul">
+<li><p>
+如图2-13
+</p>
+
+<div id="org867e81c" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/dlfs/2-13.png" alt="2-13.png" />
+</p>
+<p><span class="figure-number">Figure 11: </span>dlfs/2-13.png</p>
+</div></li>
+<li><p>
+上图和前面的与门,与非门,或门的感知机图不同.事实上之前的图都是单层感知机,而异或门是2层感知机
+</p>
+<pre class="example" id="org6eb9a24">
+也有文献把这个叫做3层感知机, 这取决于如何看待最后y是不是一层
+</pre></li>
+<li>这种2层感知机可以看做是流水线的组装作业.第一层的工人对传送过来的零件进行加工,完成后再传送给第二层
+的工人.第二层的工作对第一层工人传递过来的零件进行加工,完成后出货(输出)</li>
+<li><p>
+通过这样的2层结构,感知机得以实现异或门.换句话说,就是
+</p>
+<pre class="example" id="org08a711e">
+单层感知机无法表达的东西,通过增加一层就可以解决.也就是说,通过增加层,感知机能进行更加灵活的表示
+</pre></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org37a82c1" class="outline-3">
+<h3 id="org37a82c1"><span class="section-number-3">2.6.</span> 从与非门到计算机</h3>
+<div class="outline-text-3" id="text-2-6">
+<ul class="org-ul">
+<li>人们通常认为计算机很复杂,但是令人惊讶的是,仅仅通过与非门(NAND)一个逻辑电路的不同组合,就能实现.</li>
+<li>这也就说明理论上,感知机(多层)也可以表示计算机.我们只需要记住这个结论就好</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgc6d57d7" class="outline-2">
+<h2 id="orgc6d57d7"><span class="section-number-2">3.</span> 神经网络</h2>
+<div class="outline-text-2" id="text-3">
+<ul class="org-ul">
+<li>上一章我们学习了感知机,关于感知机既有好消息,也有坏消息:
+<ul class="org-ul">
+<li>好消息是: 即便对于复杂函数,感知机也是可以通过增加层的方式来表达出来</li>
+<li>坏消息是: 设定权重的工作,还是由人工进行的</li>
+</ul></li>
+<li>神经网络的出现,就是Eileen解决刚才的坏消息.具体来说就是,神经网络可以自动的从数据中学习到合适的权重
+参数</li>
+</ul>
+</div>
+<div id="outline-container-org17a13aa" class="outline-3">
+<h3 id="org17a13aa"><span class="section-number-3">3.1.</span> 从感知机到神经网络</h3>
+<div class="outline-text-3" id="text-3-1">
+</div>
+<div id="outline-container-orgc6f294d" class="outline-4">
+<h4 id="orgc6f294d"><span class="section-number-4">3.1.1.</span> 神经网路的例子</h4>
+<div class="outline-text-4" id="text-3-1-1">
+<ul class="org-ul">
+<li>我们用图来表示神经网路
+<ul class="org-ul">
+<li><p>
+图3-1
+</p>
+
+<div id="orgbfb7f94" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/dlfs/3-1.png" alt="3-1.png" />
+</p>
+<p><span class="figure-number">Figure 12: </span>dlfs/3-1.png</p>
+</div></li>
+<li>上图中最左边一层是输入层.本书称之为第0层</li>
+<li>最右边一层是输出层.本书称之为第1层</li>
+<li>中间一层是隐藏层,"隐藏"一词的意思是,隐藏层中的神经元(和输入层,输出层不同)肉眼看不到.本书称之为第2层</li>
+<li>上图中一共有三层神经网络构成,但是只有两岑神经网络有权重,所以我们本书称之为"2层网络",本书之后都是
+这种做法: 根据实质上拥有权重的层数来确定名称(也就是,输入层,隐藏层,输出层总数减去1)</li>
+<li><b>Note</b> 有些书会把上图的叫做"3层网络"</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org85d2e00" class="outline-4">
+<h4 id="org85d2e00"><span class="section-number-4">3.1.2.</span> 复习感知机</h4>
+<div class="outline-text-4" id="text-3-1-2">
+<ul class="org-ul">
+<li>在观察神经网络中信号的传递方法之前,我们先复习一下感知机
+<ul class="org-ul">
+<li><p>
+感知机如图
+</p>
+
+<div id="orgacf917f" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/dlfs/3-2.png" alt="3-2.png" />
+</p>
+<p><span class="figure-number">Figure 13: </span>dlfs/3-2.png</p>
+</div></li>
+<li><p>
+图中的感知机公式如下
+</p>
+\begin{equation}
+y =
+   \begin{cases}
+    0 & (b + w_1 x_1 + w_2 x_2 \leqslant 0) \\
+    1 & (b + w_1 x_1 + w_2 x_2 > 0) \tag{3.1}
+   \end{cases}
+\end{equation}</li>
+<li>w1,w2是权重参数,b是偏置参数</li>
+<li><p>
+在图3-2中,并没有画出偏置b,如果要画出b,可以向下图一样,让b和w1,w2一个地位, 1和x1,x2一个地址
+</p>
+
+<div id="orgb039e1c" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/dlfs/3-3.png" alt="3-3.png" />
+</p>
+<p><span class="figure-number">Figure 14: </span>dlfs/3-3.png</p>
+</div></li>
+</ul></li>
+<li>公式3.1有两个条件,看起来不够直观(主要是 \(b+w_1x_1+w_2x_2\) 重复了两次. 现在我们把公式3.1改写一下,改
+成如下两个公式:
+<ul class="org-ul">
+<li><p>
+公式3.2,重复部分写到一块
+</p>
+\begin{equation}
+y = h(b+w_1x_1+w_2x_2) \tag{3.2}
+\end{equation}</li>
+<li><p>
+公式3.3, x指代 \(b+w_1x_1+w_2x_2\)
+</p>
+\begin{equation}
+h(x) =
+   \begin{cases}
+    0 & (x \leqslant 0) \\
+    1 & (x > 0) \tag{3.3}
+   \end{cases}
+\end{equation}</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgb0b7cc1" class="outline-4">
+<h4 id="orgb0b7cc1"><span class="section-number-4">3.1.3.</span> 激活函数登场</h4>
+<div class="outline-text-4" id="text-3-1-3">
+<ul class="org-ul">
+<li>刚才登场的函数h(x)会将输入信号的总和转换为输出信号,这种函数一般称之为激活函数(activation function)</li>
+<li>我们把上面的公式3.2再次进行拆分,得到如下两个公式:
+<ul class="org-ul">
+<li><p>
+公式3.2的右边拆分得到公式3.4
+</p>
+\begin{equation}
+a = b + w_1 x_1 + w_2 x_2 \tag{3.4}
+\end{equation}</li>
+<li><p>
+公式3.2的左边拆分得到公式3.5
+</p>
+\begin{equation}
+y = h(a) \tag{3.5}
+\end{equation}</li>
+<li>改成两个公式后我们可以证明理解: 权重和偏置总和记为a(3.4), 然后h()函数将a输出为y.h()函数是针对于a
+的函数(而不是针对于w或者x)</li>
+<li><p>
+有了公式3.4和和3.5后,我们的神经元内部也可以画出内容来了,如下
+</p>
+
+<div id="org630d3f1" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/dlfs/3-4.png" alt="3-4.png" />
+</p>
+<p><span class="figure-number">Figure 15: </span>dlfs/3-4.png</p>
+</div></li>
+<li>下图是神经元前后两种画法的对比,下面的图告诉我们,神经元不一定是最后一个才有这种h()函数,作为中间神经元也可以</li>
+</ul></li>
+<li>下一节我们会详细介绍激活函数.激活函数是链接感知机和神经网络的桥梁:
+<ul class="org-ul">
+<li>感知机这个词,绝大多数情况下是指的"朴素感知机",其特点是是单层网络,且使用"阶跃函数"(突然发生跳变的
+函数,比如公式3.3)作为激活函数</li>
+<li>而使用多层网络,并且使用"sigmoid函数"作为激活函数的多层感知机,绝大多数情况下会使用"神经网络"这个词</li>
+</ul></li>
+<li><p>
+我们再多提一句,上一节介绍的多层网络,其激活函数还是普通"阶跃函数". 这种多层感知机是为了理解让我们理
+解如下概念,其实不具有实用性
+</p>
+<pre class="example" id="orgd117b13">
+多层感知机能够进行非线性表示
+</pre></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgcf99bc3" class="outline-3">
+<h3 id="orgcf99bc3"><span class="section-number-3">3.2.</span> 激活函数</h3>
+<div class="outline-text-3" id="text-3-2">
+<ul class="org-ul">
+<li><p>
+上一章说到,朴素感知机使用的激活函数为阶跃函数(公式3.3就是一个阶跃函数), 所谓阶跃函数, 其定义如下.
+</p>
+<pre class="example" id="orgbf33b30">
+阶跃函数，指函数值突然发生跳变的函数。例如从0突然变成100，从0突然变成正无穷，
+从负无穷突然变成正无穷，都可以叫阶跃函数。
+</pre></li>
+<li>朴素感知机如果使用了其他函数作为激活函数会怎样? 从定义看来,如果使用了非阶跃函数作为激活函数,那么就
+不能再叫朴素感知机了,而是应该叫神经网络了(当然如果层数在多一层,神经网络的名字,就更准确了)</li>
+<li>作为激活函数的非阶跃函数,最出名的,就是sigmoid函数了</li>
+</ul>
+</div>
+<div id="outline-container-orgef2ae63" class="outline-4">
+<h4 id="orgef2ae63"><span class="section-number-4">3.2.1.</span> sigmoid函数</h4>
+<div class="outline-text-4" id="text-3-2-1">
+<ul class="org-ul">
+<li>神经网络中最经常使用的一个激活函数就是sigmoid函数:
+<ul class="org-ul">
+<li><p>
+公式如下
+</p>
+\begin{equation}
+h(x) = \frac{1}{1 + \exp(-x)} \tag{3.6}
+\end{equation}</li>
+<li>公式中的 \(\exp(-x)\) 是 \(e^{-x}\) 的意思</li>
+<li>e是纳皮尔常数2.7182&#x2026;</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org26c0c3a" class="outline-4">
+<h4 id="org26c0c3a"><span class="section-number-4">3.2.2.</span> 阶跃函数的实现</h4>
+<div class="outline-text-4" id="text-3-2-2">
+<ul class="org-ul">
+<li><p>
+前面已经说了,公式3.3就是阶跃函数,我们可以使用python很容易的实现这个阶跃函数
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #D70000;">def</span> <span style="color: #AF8700;">step_function</span><span style="color: #1F55A0;">(</span>x<span style="color: #1F55A0;">)</span>:
+    <span style="color: #D70000;">if</span> x &gt; 0:
+        <span style="color: #D70000;">return</span> 1
+    <span style="color: #D70000;">else</span>:
+        <span style="color: #D70000;">return</span> 0
+</pre>
+</div></li>
+<li>我们后面要把激活函数打印出来,那么输入就必须要支持数组(这里是numpy数组),所以我们要升级下我们的函数
+让它支持numpy数组作为参数.当然输出也就是相同长度的numpy数组啦
+<ul class="org-ul">
+<li><p>
+代码如下
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #D70000;">import</span> numpy <span style="color: #D70000;">as</span> np
+
+
+<span style="color: #D70000;">def</span> <span style="color: #AF8700;">step_function</span><span style="color: #1F55A0;">(</span>x<span style="color: #1F55A0;">)</span>:
+    <span style="color: #004651;">y</span> = x &gt; 0
+    <span style="color: #D70000;">return</span> y.astype<span style="color: #1F55A0;">(</span>np.int64<span style="color: #1F55A0;">)</span>
+
+
+<span style="color: #D70000;">if</span> <span style="color: #1F55A0;">__name__</span> == <span style="color: #005F00;">"__main__"</span>:
+    <span style="color: #004651;">x</span> = np.array<span style="color: #1F55A0;">(</span><span style="color: #AF005F;">[</span>-1.0, 1.0, 2.0<span style="color: #AF005F;">]</span><span style="color: #1F55A0;">)</span>
+    <span style="color: #1F55A0;">print</span><span style="color: #1F55A0;">(</span><span style="color: #005F00;">"""|x|=&gt;"""</span>, x<span style="color: #1F55A0;">)</span>
+    <span style="color: #004651;">y</span> = x &gt; 0
+    <span style="color: #1F55A0;">print</span><span style="color: #1F55A0;">(</span><span style="color: #005F00;">"""|y|=&gt;"""</span>, y<span style="color: #1F55A0;">)</span>
+    <span style="color: #004651;">z</span> = y.astype<span style="color: #1F55A0;">(</span>np.int64<span style="color: #1F55A0;">)</span>
+    <span style="color: #1F55A0;">print</span><span style="color: #1F55A0;">(</span><span style="color: #005F00;">"""|z|=&gt;"""</span>, z<span style="color: #1F55A0;">)</span>
+
+    <span style="color: #1F55A0;">print</span><span style="color: #1F55A0;">(</span><span style="color: #005F00;">"""|step_function(x)|=&gt;"""</span>, step_function<span style="color: #AF005F;">(</span>x<span style="color: #AF005F;">)</span><span style="color: #1F55A0;">)</span>
+</pre>
+</div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org7a73607" class="outline-4">
+<h4 id="org7a73607"><span class="section-number-4">3.2.3.</span> 阶跃函数的图形</h4>
+<div class="outline-text-4" id="text-3-2-3">
+<ul class="org-ul">
+<li>我们现在就使用matplotlib库来打印阶跃函数的图形(刚才的支持numpy array输入就起到作用了)
+<ul class="org-ul">
+<li><p>
+代码如下
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #D70000;">import</span> numpy <span style="color: #D70000;">as</span> np
+<span style="color: #D70000;">import</span> matplotlib.pyplot <span style="color: #D70000;">as</span> plt
+
+
+<span style="color: #D70000;">def</span> <span style="color: #AF8700;">step_function</span><span style="color: #1F55A0;">(</span>x<span style="color: #1F55A0;">)</span>:
+    <span style="color: #D70000;">return</span> np.array<span style="color: #1F55A0;">(</span>x &gt; 0, dtype=np.int64<span style="color: #1F55A0;">)</span>
+
+
+<span style="color: #004651;">x</span> = np.arange<span style="color: #1F55A0;">(</span>-5.0, 5.0, 0.1<span style="color: #1F55A0;">)</span>
+<span style="color: #004651;">y</span> = step_function<span style="color: #1F55A0;">(</span>x<span style="color: #1F55A0;">)</span>
+plt.plot<span style="color: #1F55A0;">(</span>x, y<span style="color: #1F55A0;">)</span>
+plt.ylim<span style="color: #1F55A0;">(</span>-0.1, 1.1<span style="color: #1F55A0;">)</span>  <span style="color: #4E4E4E; font-style: italic;"># </span><span style="color: #4E4E4E; font-style: italic;">range for y-axis</span>
+plt.show<span style="color: #1F55A0;">()</span>
+</pre>
+</div></li>
+<li><p>
+图形如下
+</p>
+
+<div id="orgcb75fd4" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/dlfs/3-6.png" alt="3-6.png" />
+</p>
+<p><span class="figure-number">Figure 16: </span>dlfs/3-6.png</p>
+</div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orga25462b" class="outline-4">
+<h4 id="orga25462b"><span class="section-number-4">3.2.4.</span> sigmoid 函数的实现</h4>
+<div class="outline-text-4" id="text-3-2-4">
+<ul class="org-ul">
+<li>我们还可以使用类似代码来完成sigmod的图形
+<ul class="org-ul">
+<li><p>
+代码如下,注意标量(1)和numpy array无论进行加法还是除法都可以"先把标量扩展成向量"在和向量进行计算.
+这是numpy库的广播特性其了作用
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #D70000;">import</span> numpy <span style="color: #D70000;">as</span> np
+<span style="color: #D70000;">import</span> matplotlib.pyplot <span style="color: #D70000;">as</span> plt
+
+
+<span style="color: #D70000;">def</span> <span style="color: #AF8700;">sigmoid</span><span style="color: #1F55A0;">(</span>x<span style="color: #1F55A0;">)</span>:
+    <span style="color: #D70000;">return</span> 1 / <span style="color: #1F55A0;">(</span>1 + np.exp<span style="color: #AF005F;">(</span>-x<span style="color: #AF005F;">)</span><span style="color: #1F55A0;">)</span>
+
+
+<span style="color: #004651;">x</span> = np.arange<span style="color: #1F55A0;">(</span>-5.0, 5.0, 0.1<span style="color: #1F55A0;">)</span>
+<span style="color: #004651;">y</span> = sigmoid<span style="color: #1F55A0;">(</span>x<span style="color: #1F55A0;">)</span>
+plt.plot<span style="color: #1F55A0;">(</span>x, y<span style="color: #1F55A0;">)</span>
+plt.ylim<span style="color: #1F55A0;">(</span>-0.1, 1.1<span style="color: #1F55A0;">)</span>  <span style="color: #4E4E4E; font-style: italic;"># </span><span style="color: #4E4E4E; font-style: italic;">range for y-axis</span>
+plt.show<span style="color: #1F55A0;">()</span>
+</pre>
+</div></li>
+
+<li><p>
+图形如下
+</p>
+
+<div id="orge4e6aa2" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/dlfs/3-7.png" alt="3-7.png" />
+</p>
+<p><span class="figure-number">Figure 17: </span>dlfs/3-7.png</p>
+</div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org1573bc0" class="outline-4">
+<h4 id="org1573bc0"><span class="section-number-4">3.2.5.</span> sigmoid函数和阶跃函数的比较</h4>
+<div class="outline-text-4" id="text-3-2-5">
+<ul class="org-ul">
+<li>我们现在比较一下sigmod函数和阶跃函数
+<ul class="org-ul">
+<li><p>
+把两者的图放到同一个坐标后如下
+</p>
+
+<div id="org0ffb73c" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/dlfs/3-8.png" alt="3-8.png" />
+</p>
+<p><span class="figure-number">Figure 18: </span>dlfs/3-8.png</p>
+</div></li>
+<li>首先注意到的是,两者的"平滑性"不同:
+<ul class="org-ul">
+<li>阶跃函数以0为界,输出发生剧烈变化</li>
+<li>sigmoid函数是一条平滑的曲线,输出随着输入发生连续性的变化. sigmoid函数的平滑性对于神经网络的学
+习有重要的意义</li>
+</ul></li>
+<li>两者另外的不同在于返回值:
+<ul class="org-ul">
+<li>阶跃函数只能返回1,0,使用阶跃函数的感知机中神经元之间流动的是二元信号(0,1)</li>
+<li>sigmoid函数能够返回0.731, 0.880等实数,使用sigmoid的神经网络中神经元之间流动的就是连续的实数的
+信号</li>
+</ul></li>
+<li><p>
+两者的第一个共同点在于其形状相似,两者都能做到
+</p>
+<pre class="example" id="org50e27d1">
+输入小时,输出接近0(为0), 随着输入增大,输出像1靠近(变成1)
+</pre></li>
+<li>两者的第二个共同点是不管输入信号多大或者多小,输出信号的值都在0和1之间</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgf7373c4" class="outline-4">
+<h4 id="orgf7373c4"><span class="section-number-4">3.2.6.</span> 非线性函数</h4>
+<div class="outline-text-4" id="text-3-2-6">
+<ul class="org-ul">
+<li>阶跃函数和sigmoid函数的最重要相同点,是他们都是非线性函数</li>
+<li><p>
+我们定义一下线性函数,那么为什么阶跃函数和sigmoid函数都是非线性函数就很明显了
+</p>
+<pre class="example" id="org325e7fa">
+所谓线性函数,就是输出值是输入值的常数倍,比如人h(x)=cx.因此线性函数是一条笔直的直线
+</pre></li>
+<li>由于阶跃函数和sigmoid函数都没有像线性函数一样"呈现出一条直线",所以他们都是非线性函数</li>
+<li>神经网络的激活函数必须使用非线性函数,换句话说,在神经网络里,激活函数不能使用线性函数</li>
+<li>为什么会有这个规定呢?
+<ul class="org-ul">
+<li>首先神经网络的定义,就是必须要多层的感知机,一层的是朴素感知机(朴素感知机是可以使用线性函数的)</li>
+<li>多层肯定是为了表达能力更强,但是如果使用了线性函数的话,加深神经网络的层数就没有意义了</li>
+</ul></li>
+<li>为什么使用了线性函数加深网络层数就没有意义了呢?
+<ul class="org-ul">
+<li>我们举个反例,假设把线性函数 \(h(x) = cx\) 作为激活函数,把 \(y(x)=h(h(h(x)))\) 运算,对应3层神经网络,
+这个就相当于 \(y(x) = c \times c \times c \times x\) , 那其实就是 \(y(x)=ax (a = c^3)\)</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org202550d" class="outline-4">
+<h4 id="org202550d"><span class="section-number-4">3.2.7.</span> ReLU函数</h4>
+<div class="outline-text-4" id="text-3-2-7">
+<ul class="org-ul">
+<li>神经网络的发展史上,早期使用sigmoid函数比较多,而最近则主要使用ReLU函数</li>
+<li>ReLU函数在输入大于0的时候,直接输出该值,在输入小于等于0的时候,输出0
+<ul class="org-ul">
+<li><p>
+其公式如下
+</p>
+\begin{equation}
+h(x) =
+   \begin{cases}
+    x & (x > 0) \\
+    0 & (x \leqslant 0) \tag{3.7}
+   \end{cases}
+\end{equation}</li>
+<li><p>
+其python实现如下
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #D70000;">import</span> numpy <span style="color: #D70000;">as</span> np
+
+
+<span style="color: #D70000;">def</span> <span style="color: #AF8700;">relu</span><span style="color: #1F55A0;">(</span>x<span style="color: #1F55A0;">)</span>:
+    <span style="color: #D70000;">return</span> np.maximum<span style="color: #1F55A0;">(</span>0, x<span style="color: #1F55A0;">)</span>
+</pre>
+</div></li>
+<li><p>
+其绘图如下
+</p>
+
+<div id="org515d624" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/dlfs/3-9.png" alt="3-9.png" />
+</p>
+<p><span class="figure-number">Figure 19: </span>dlfs/3-9.png</p>
+</div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org7877113" class="outline-3">
+<h3 id="org7877113"><span class="section-number-3">3.3.</span> 多维数组的运算</h3>
+<div class="outline-text-3" id="text-3-3">
+<ul class="org-ul">
+<li>numpy的多维数组运算能够高效的实现神经网络,所以我们这里停下来先学习一下numpy多维数组的运算</li>
+</ul>
+</div>
+<div id="outline-container-orgcf1b8de" class="outline-4">
+<h4 id="orgcf1b8de"><span class="section-number-4">3.3.1.</span> 多维数组</h4>
+<div class="outline-text-4" id="text-3-3-1">
+<ul class="org-ul">
+<li>超过1维的数组就是多维数组.但是为了实现的一致性,从1维到n维,numpy的接口都是一样的,比如:
+<ul class="org-ul">
+<li>都有shape函数,返回一个tuple,来获取多维数组在某个维度上面成员的数目,对于一维数组也是返回元祖,只不
+过,这个元祖只有一个成员</li>
+<li>都有可以通过np.ndim()函数(或者ndim成员变量)获取其维度</li>
+<li><p>
+一维数组例子如下
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">&gt;&gt;&gt; import numpy as np
+&gt;&gt;&gt; A = np.array<span style="color: #1F55A0;">(</span><span style="color: #AF005F;">[</span>1, 2, 3, 4<span style="color: #AF005F;">]</span><span style="color: #1F55A0;">)</span>
+&gt;&gt;&gt; print<span style="color: #1F55A0;">(</span>A<span style="color: #1F55A0;">)</span>
+<span style="color: #1F55A0;">[</span>1 2 3 4<span style="color: #1F55A0;">]</span>
+&gt;&gt;&gt; A.ndim
+1
+&gt;&gt;&gt; np.ndim<span style="color: #1F55A0;">(</span>A<span style="color: #1F55A0;">)</span>
+1
+&gt;&gt;&gt; A.shape
+<span style="color: #1F55A0;">(</span>4,<span style="color: #1F55A0;">)</span>
+&gt;&gt;&gt; A.shape<span style="color: #1F55A0;">[</span>0<span style="color: #1F55A0;">]</span>
+4
+</pre>
+</div></li>
+<li><p>
+二维数组的例子如下
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">&gt;&gt;&gt; B = np.array<span style="color: #1F55A0;">(</span><span style="color: #AF005F;">[</span><span style="color: #005F00;">[</span>1, 2<span style="color: #005F00;">]</span>, <span style="color: #005F00;">[</span>3, 4<span style="color: #005F00;">]</span>, <span style="color: #005F00;">[</span>5, 6<span style="color: #005F00;">]</span><span style="color: #AF005F;">]</span><span style="color: #1F55A0;">)</span>
+&gt;&gt;&gt; print<span style="color: #1F55A0;">(</span>B<span style="color: #1F55A0;">)</span>
+<span style="color: #1F55A0;">[</span><span style="color: #AF005F;">[</span>1 2<span style="color: #AF005F;">]</span>
+ <span style="color: #AF005F;">[</span>3 4<span style="color: #AF005F;">]</span>
+ <span style="color: #AF005F;">[</span>5 6<span style="color: #AF005F;">]</span><span style="color: #1F55A0;">]</span>
+&gt;&gt;&gt; np.ndim<span style="color: #1F55A0;">(</span>B<span style="color: #1F55A0;">)</span>
+2
+&gt;&gt;&gt; B.ndim
+2
+&gt;&gt;&gt; B.shape
+<span style="color: #1F55A0;">(</span>3, 2<span style="color: #1F55A0;">)</span>&gt;&gt;&gt; B = np.array<span style="color: #1F55A0;">(</span><span style="color: #AF005F;">[</span><span style="color: #005F00;">[</span>1, 2<span style="color: #005F00;">]</span>, <span style="color: #005F00;">[</span>3, 4<span style="color: #005F00;">]</span>, <span style="color: #005F00;">[</span>5, 6<span style="color: #005F00;">]</span><span style="color: #AF005F;">]</span><span style="color: #1F55A0;">)</span>
+&gt;&gt;&gt; print<span style="color: #1F55A0;">(</span>B<span style="color: #1F55A0;">)</span>
+<span style="color: #1F55A0;">[</span><span style="color: #AF005F;">[</span>1 2<span style="color: #AF005F;">]</span>
+ <span style="color: #AF005F;">[</span>3 4<span style="color: #AF005F;">]</span>
+ <span style="color: #AF005F;">[</span>5 6<span style="color: #AF005F;">]</span><span style="color: #1F55A0;">]</span>
+&gt;&gt;&gt; np.ndim<span style="color: #1F55A0;">(</span>B<span style="color: #1F55A0;">)</span>
+2
+&gt;&gt;&gt; B.ndim
+2
+&gt;&gt;&gt; B.shape
+<span style="color: #1F55A0;">(</span>3, 2<span style="color: #1F55A0;">)</span>
+</pre>
+</div></li>
+<li>这里生成了一个 \(3 \times 2\) 的数组. \(3 \times 2\) 的数组表示第一个维度有3个成员,第二个维度有2个成
+员.</li>
+<li><p>
+二维数组也称为矩阵(matrix),横向为行(row),纵向为列(column),如下图
+</p>
+
+<div id="orge121c99" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/dlfs/3-10.png" alt="3-10.png" />
+</p>
+<p><span class="figure-number">Figure 20: </span>dlfs/3-10.png</p>
+</div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgab0d8ac" class="outline-4">
+<h4 id="orgab0d8ac"><span class="section-number-4">3.3.2.</span> 矩阵乘法</h4>
+<div class="outline-text-4" id="text-3-3-2">
+<ul class="org-ul">
+<li>下面我们来介绍矩阵(二维数组)乘法
+<ul class="org-ul">
+<li><p>
+如图3-11,就是两个 \(2 \times 2\) 的矩阵相乘
+</p>
+
+<div id="orgd5d1ad1" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/dlfs/3-11.png" alt="3-11.png" />
+</p>
+<p><span class="figure-number">Figure 21: </span>dlfs/3-11.png</p>
+</div></li>
+<li>本书中矩阵使用黑色斜体大写表示,比如矩阵 \(\boldsymbol{A}\) 和矩阵 \(\boldsymbol{B}\)</li>
+<li>matrix乘法的第M行第N列是由 $\boldsymbol{A}$的第M行乘以$\boldsymbol{B}$的第N列得到的结果.比如
+\(\boldsymbol{A}\) 的第2行和 \(\boldsymbol{B}\) 的第1列相乘,就是新矩阵的第2行第1列的元素</li>
+<li><p>
+上述过程用python表示如下
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">Type <span style="color: #005F00;">"help"</span>, <span style="color: #005F00;">"copyright"</span>, <span style="color: #005F00;">"credits"</span> or <span style="color: #005F00;">"license"</span> for more information.
+&gt;&gt;&gt; import numpy as np
+&gt;&gt;&gt; A = np.array<span style="color: #1F55A0;">(</span><span style="color: #AF005F;">[</span><span style="color: #005F00;">[</span>1, 2<span style="color: #005F00;">]</span>, <span style="color: #005F00;">[</span>3, 4<span style="color: #005F00;">]</span><span style="color: #AF005F;">]</span><span style="color: #1F55A0;">)</span>
+&gt;&gt;&gt; A.shape
+<span style="color: #1F55A0;">(</span>2, 2<span style="color: #1F55A0;">)</span>
+&gt;&gt;&gt; B = np.array<span style="color: #1F55A0;">(</span><span style="color: #AF005F;">[</span><span style="color: #005F00;">[</span>5, 6<span style="color: #005F00;">]</span>, <span style="color: #005F00;">[</span>7,8<span style="color: #005F00;">]</span><span style="color: #AF005F;">]</span><span style="color: #1F55A0;">)</span>
+&gt;&gt;&gt; B.shape
+<span style="color: #1F55A0;">(</span>2, 2<span style="color: #1F55A0;">)</span>
+&gt;&gt;&gt; np.dot<span style="color: #1F55A0;">(</span>A,B<span style="color: #1F55A0;">)</span>
+<span style="color: #AF8700;">array</span><span style="color: #1F55A0;">(</span><span style="color: #AF005F;">[</span><span style="color: #005F00;">[</span>19, 22<span style="color: #005F00;">]</span>,
+       <span style="color: #005F00;">[</span>43, 50<span style="color: #005F00;">]</span><span style="color: #AF005F;">]</span><span style="color: #1F55A0;">)</span>
+&gt;&gt;&gt;
+</pre>
+</div></li>
+</ul></li>
+<li>上面的例子是相乘的两个矩阵的shape完全一致的情况,但是很多时候相乘的矩阵的shape是不一致的.不一样shape
+的两个矩阵只有一种情况可以相乘: 那就是第一个矩阵Shape的最后一个维度,要和下一个矩阵的第一个维度相同
+<ul class="org-ul">
+<li><p>
+矩阵A是 \(3 \times 2\), 矩阵B是 \(2 \times 3\), 两者可以相乘
+</p>
+
+<div id="org5823eac" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/dlfs/3-12.png" alt="3-12.png" />
+</p>
+<p><span class="figure-number">Figure 22: </span>dlfs/3-12.png</p>
+</div></li>
+</ul></li>
+<li>第二个例子就比较特别了,那就是当矩阵A是二维矩阵,而B是一个一维数组的情况.
+<ul class="org-ul">
+<li><p>
+先看图
+</p>
+
+<div id="orgd013728" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/dlfs/3-13.png" alt="3-13.png" />
+</p>
+<p><span class="figure-number">Figure 23: </span>dlfs/3-13.png</p>
+</div></li>
+<li><p>
+再看代码
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">&gt;&gt;&gt; A = np.array<span style="color: #1F55A0;">(</span><span style="color: #AF005F;">[</span><span style="color: #005F00;">[</span>1,2<span style="color: #005F00;">]</span>, <span style="color: #005F00;">[</span>3,4<span style="color: #005F00;">]</span>, <span style="color: #005F00;">[</span>5,6<span style="color: #005F00;">]</span><span style="color: #AF005F;">]</span><span style="color: #1F55A0;">)</span>
+&gt;&gt;&gt; A.shape
+<span style="color: #1F55A0;">(</span>3, 2<span style="color: #1F55A0;">)</span>
+&gt;&gt;&gt; B = np.array<span style="color: #1F55A0;">(</span><span style="color: #AF005F;">[</span>7,8<span style="color: #AF005F;">]</span><span style="color: #1F55A0;">)</span>
+&gt;&gt;&gt; B.shape
+<span style="color: #1F55A0;">(</span>2,<span style="color: #1F55A0;">)</span>
+&gt;&gt;&gt; np.dot<span style="color: #1F55A0;">(</span>A, B<span style="color: #1F55A0;">)</span>
+<span style="color: #AF8700;">array</span><span style="color: #1F55A0;">(</span><span style="color: #AF005F;">[</span>23, 53, 83<span style="color: #AF005F;">]</span><span style="color: #1F55A0;">)</span>
+</pre>
+</div></li>
+</ul></li>
+<li>上面的这个二维矩阵和一位数组相乘的例子看似简单,但是其实隐藏着numpy的非常重要的内部逻辑,我们需要详
+细说一下</li>
+<li><p>
+其实对于矩阵来说,只能是矩阵和矩阵相乘.比如shape为(3,2)的只能和(2,x)的相乘,那么上面的例子中A和B就
+不能相乘,A只能和一个shape为(2,x)的C相乘,例子如下
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">&gt;&gt;&gt; A
+<span style="color: #AF8700;">array</span><span style="color: #1F55A0;">(</span><span style="color: #AF005F;">[</span><span style="color: #005F00;">[</span>1, 2<span style="color: #005F00;">]</span>,
+       <span style="color: #005F00;">[</span>3, 4<span style="color: #005F00;">]</span>,
+       <span style="color: #005F00;">[</span>5, 6<span style="color: #005F00;">]</span><span style="color: #AF005F;">]</span><span style="color: #1F55A0;">)</span>
+&gt;&gt;&gt; A.shape
+<span style="color: #1F55A0;">(</span>3, 2<span style="color: #1F55A0;">)</span>
+&gt;&gt;&gt; C = np.array<span style="color: #1F55A0;">(</span><span style="color: #AF005F;">[</span><span style="color: #005F00;">[</span>7<span style="color: #005F00;">]</span>,<span style="color: #005F00;">[</span>8<span style="color: #005F00;">]</span><span style="color: #AF005F;">]</span><span style="color: #1F55A0;">)</span>
+&gt;&gt;&gt; C
+<span style="color: #AF8700;">array</span><span style="color: #1F55A0;">(</span><span style="color: #AF005F;">[</span><span style="color: #005F00;">[</span>7<span style="color: #005F00;">]</span>,
+       <span style="color: #005F00;">[</span>8<span style="color: #005F00;">]</span><span style="color: #AF005F;">]</span><span style="color: #1F55A0;">)</span>
+&gt;&gt;&gt; C.shape
+<span style="color: #1F55A0;">(</span>2, 1<span style="color: #1F55A0;">)</span>
+&gt;&gt;&gt; np.dot<span style="color: #1F55A0;">(</span>A,C<span style="color: #1F55A0;">)</span>
+<span style="color: #AF8700;">array</span><span style="color: #1F55A0;">(</span><span style="color: #AF005F;">[</span><span style="color: #005F00;">[</span>23<span style="color: #005F00;">]</span>,
+       <span style="color: #005F00;">[</span>53<span style="color: #005F00;">]</span>,
+       <span style="color: #005F00;">[</span>83<span style="color: #005F00;">]</span><span style="color: #AF005F;">]</span><span style="color: #1F55A0;">)</span>
+&gt;&gt;&gt; np.dot<span style="color: #1F55A0;">(</span>A,C<span style="color: #1F55A0;">)</span>.shape
+<span style="color: #1F55A0;">(</span>3, 1<span style="color: #1F55A0;">)</span>
+</pre>
+</div></li>
+<li>但是这样就太不方便了,我们的一维数组要转换成shape为(N,1)的二维数组.然后再乘以(X,N)的矩阵.我们的numpy
+是不答应的.numpy想了一个办法,更改了规则:
+<ul class="org-ul">
+<li><p>
+数学角度讲,需要两个维度(就是ndim属性)相同的张量,且第一个张量的最后一位等于第二个张量第一位的两个张量相乘
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">&gt;&gt;&gt; A
+<span style="color: #AF8700;">array</span><span style="color: #1F55A0;">(</span><span style="color: #AF005F;">[</span><span style="color: #005F00;">[</span>1, 2<span style="color: #005F00;">]</span>,
+       <span style="color: #005F00;">[</span>3, 4<span style="color: #005F00;">]</span>,
+       <span style="color: #005F00;">[</span>5, 6<span style="color: #005F00;">]</span><span style="color: #AF005F;">]</span><span style="color: #1F55A0;">)</span>
+&gt;&gt;&gt; A.ndim
+2
+&gt;&gt;&gt; A.shape
+<span style="color: #1F55A0;">(</span>3, 2<span style="color: #1F55A0;">)</span>
+&gt;&gt;&gt; C
+<span style="color: #AF8700;">array</span><span style="color: #1F55A0;">(</span><span style="color: #AF005F;">[</span><span style="color: #005F00;">[</span>7<span style="color: #005F00;">]</span>,
+       <span style="color: #005F00;">[</span>8<span style="color: #005F00;">]</span><span style="color: #AF005F;">]</span><span style="color: #1F55A0;">)</span>
+&gt;&gt;&gt; C.ndim
+2
+&gt;&gt;&gt; C.shape
+<span style="color: #1F55A0;">(</span>2, 1<span style="color: #1F55A0;">)</span>
+&gt;&gt;&gt; R = np.dot<span style="color: #1F55A0;">(</span>A, C<span style="color: #1F55A0;">)</span>
+&gt;&gt;&gt; R.shape
+<span style="color: #1F55A0;">(</span>3, 1<span style="color: #1F55A0;">)</span>
+&gt;&gt;&gt; R.ndim
+2
+</pre>
+</div></li>
+<li><p>
+numpy从自己的角度讲, 把"需要两个维度(ndim)相同"这个前提条件给去掉了.只需要第二个条件"第一个张
+量的最后一位等于第二个张量第一位", 那么我就可以举一个例子了ndim为3的张量和ndim为2的矩阵的乘法
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">&gt;&gt;&gt; A
+<span style="color: #AF8700;">array</span><span style="color: #1F55A0;">(</span><span style="color: #AF005F;">[</span><span style="color: #005F00;">[</span>1, 2<span style="color: #005F00;">]</span>,
+       <span style="color: #005F00;">[</span>3, 4<span style="color: #005F00;">]</span>,
+       <span style="color: #005F00;">[</span>5, 6<span style="color: #005F00;">]</span><span style="color: #AF005F;">]</span><span style="color: #1F55A0;">)</span>
+&gt;&gt;&gt; A.ndim
+2
+&gt;&gt;&gt; A.shape
+<span style="color: #1F55A0;">(</span>3, 2<span style="color: #1F55A0;">)</span>
+&gt;&gt;&gt; D = np.ones<span style="color: #1F55A0;">(</span><span style="color: #AF005F;">(</span>3, 3, 3<span style="color: #AF005F;">)</span>, <span style="color: #004651;">dtype</span>=int<span style="color: #1F55A0;">)</span>
+&gt;&gt;&gt; D
+<span style="color: #AF8700;">array</span><span style="color: #1F55A0;">(</span><span style="color: #AF005F;">[</span><span style="color: #005F00;">[</span><span style="color: #8700AF;">[</span>1, 1, 1<span style="color: #8700AF;">]</span>,
+        <span style="color: #8700AF;">[</span>1, 1, 1<span style="color: #8700AF;">]</span>,
+        <span style="color: #8700AF;">[</span>1, 1, 1<span style="color: #8700AF;">]</span><span style="color: #005F00;">]</span>,
+
+       <span style="color: #005F00;">[</span><span style="color: #8700AF;">[</span>1, 1, 1<span style="color: #8700AF;">]</span>,
+        <span style="color: #8700AF;">[</span>1, 1, 1<span style="color: #8700AF;">]</span>,
+        <span style="color: #8700AF;">[</span>1, 1, 1<span style="color: #8700AF;">]</span><span style="color: #005F00;">]</span>,
+
+       <span style="color: #005F00;">[</span><span style="color: #8700AF;">[</span>1, 1, 1<span style="color: #8700AF;">]</span>,
+        <span style="color: #8700AF;">[</span>1, 1, 1<span style="color: #8700AF;">]</span>,
+        <span style="color: #8700AF;">[</span>1, 1, 1<span style="color: #8700AF;">]</span><span style="color: #005F00;">]</span><span style="color: #AF005F;">]</span><span style="color: #1F55A0;">)</span>
+&gt;&gt;&gt; D.ndim
+3
+&gt;&gt;&gt; D.shape
+<span style="color: #1F55A0;">(</span>3, 3, 3<span style="color: #1F55A0;">)</span>
+&gt;&gt;&gt; np.dot<span style="color: #1F55A0;">(</span>D, A<span style="color: #1F55A0;">)</span>
+<span style="color: #AF8700;">array</span><span style="color: #1F55A0;">(</span><span style="color: #AF005F;">[</span><span style="color: #005F00;">[</span><span style="color: #8700AF;">[</span> 9, 12<span style="color: #8700AF;">]</span>,
+        <span style="color: #8700AF;">[</span> 9, 12<span style="color: #8700AF;">]</span>,
+        <span style="color: #8700AF;">[</span> 9, 12<span style="color: #8700AF;">]</span><span style="color: #005F00;">]</span>,
+
+       <span style="color: #005F00;">[</span><span style="color: #8700AF;">[</span> 9, 12<span style="color: #8700AF;">]</span>,
+        <span style="color: #8700AF;">[</span> 9, 12<span style="color: #8700AF;">]</span>,
+        <span style="color: #8700AF;">[</span> 9, 12<span style="color: #8700AF;">]</span><span style="color: #005F00;">]</span>,
+
+       <span style="color: #005F00;">[</span><span style="color: #8700AF;">[</span> 9, 12<span style="color: #8700AF;">]</span>,
+        <span style="color: #8700AF;">[</span> 9, 12<span style="color: #8700AF;">]</span>,
+        <span style="color: #8700AF;">[</span> 9, 12<span style="color: #8700AF;">]</span><span style="color: #005F00;">]</span><span style="color: #AF005F;">]</span><span style="color: #1F55A0;">)</span>
+
+
+&gt;&gt;&gt; np.dot<span style="color: #1F55A0;">(</span>D, A<span style="color: #1F55A0;">)</span>.ndim
+3
+&gt;&gt;&gt; np.dot<span style="color: #1F55A0;">(</span>D, A<span style="color: #1F55A0;">)</span>.shape
+<span style="color: #1F55A0;">(</span>3, 3, 2<span style="color: #1F55A0;">)</span>
+</pre>
+</div></li>
+</ul></li>
+<li>把"需要两个维度(ndim)相同"这个前提条件给去掉了之后,受到实惠最大的是shape长度我1的一维数组,因为它shape
+只有一个成员:
+<ul class="org-ul">
+<li><p>
+既可以作为第一位和前面的numpy array进行匹配
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">&gt;&gt;&gt; A
+<span style="color: #AF8700;">array</span><span style="color: #1F55A0;">(</span><span style="color: #AF005F;">[</span><span style="color: #005F00;">[</span>1, 2<span style="color: #005F00;">]</span>,
+       <span style="color: #005F00;">[</span>3, 4<span style="color: #005F00;">]</span>,
+       <span style="color: #005F00;">[</span>5, 6<span style="color: #005F00;">]</span><span style="color: #AF005F;">]</span><span style="color: #1F55A0;">)</span>
+&gt;&gt;&gt; A.ndim
+2
+&gt;&gt;&gt; A.shape
+<span style="color: #1F55A0;">(</span>3, 2<span style="color: #1F55A0;">)</span>
+&gt;&gt;&gt; B = np.array<span style="color: #1F55A0;">(</span><span style="color: #AF005F;">[</span>7,8<span style="color: #AF005F;">]</span><span style="color: #1F55A0;">)</span>
+&gt;&gt;&gt; B
+<span style="color: #AF8700;">array</span><span style="color: #1F55A0;">(</span><span style="color: #AF005F;">[</span>7, 8<span style="color: #AF005F;">]</span><span style="color: #1F55A0;">)</span>
+&gt;&gt;&gt; B.ndim
+1
+&gt;&gt;&gt; B.shape
+<span style="color: #1F55A0;">(</span>2,<span style="color: #1F55A0;">)</span>
+&gt;&gt;&gt; np.dot<span style="color: #1F55A0;">(</span>A,B<span style="color: #1F55A0;">)</span>
+<span style="color: #AF8700;">array</span><span style="color: #1F55A0;">(</span><span style="color: #AF005F;">[</span>23, 53, 83<span style="color: #AF005F;">]</span><span style="color: #1F55A0;">)</span>
+&gt;&gt;&gt; np.dot<span style="color: #1F55A0;">(</span>A,B<span style="color: #1F55A0;">)</span>.ndim
+1
+&gt;&gt;&gt; np.dot<span style="color: #1F55A0;">(</span>A,B<span style="color: #1F55A0;">)</span>.shape
+<span style="color: #1F55A0;">(</span>3,<span style="color: #1F55A0;">)</span>
+</pre>
+</div></li>
+<li><p>
+也可以作为最后一位和后面的numpy array进行匹配
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">&gt;&gt;&gt; B
+<span style="color: #AF8700;">array</span><span style="color: #1F55A0;">(</span><span style="color: #AF005F;">[</span>7, 8<span style="color: #AF005F;">]</span><span style="color: #1F55A0;">)</span>
+&gt;&gt;&gt; B.ndim
+1
+&gt;&gt;&gt; B.shape
+<span style="color: #1F55A0;">(</span>2,<span style="color: #1F55A0;">)</span>
+&gt;&gt;&gt; C = np.array<span style="color: #1F55A0;">(</span><span style="color: #AF005F;">[</span><span style="color: #005F00;">[</span>1, 2, 3<span style="color: #005F00;">]</span>, <span style="color: #005F00;">[</span>4, 5, 6<span style="color: #005F00;">]</span><span style="color: #AF005F;">]</span><span style="color: #1F55A0;">)</span>
+&gt;&gt;&gt; C
+<span style="color: #AF8700;">array</span><span style="color: #1F55A0;">(</span><span style="color: #AF005F;">[</span><span style="color: #005F00;">[</span>1, 2, 3<span style="color: #005F00;">]</span>,
+       <span style="color: #005F00;">[</span>4, 5, 6<span style="color: #005F00;">]</span><span style="color: #AF005F;">]</span><span style="color: #1F55A0;">)</span>
+&gt;&gt;&gt; C.ndim
+2
+&gt;&gt;&gt; C.shape
+<span style="color: #1F55A0;">(</span>2, 3<span style="color: #1F55A0;">)</span>
+&gt;&gt;&gt; np.dot<span style="color: #1F55A0;">(</span>B, C<span style="color: #1F55A0;">)</span>
+<span style="color: #AF8700;">array</span><span style="color: #1F55A0;">(</span><span style="color: #AF005F;">[</span>39, 54, 69<span style="color: #AF005F;">]</span><span style="color: #1F55A0;">)</span>
+&gt;&gt;&gt; np.dot<span style="color: #1F55A0;">(</span>B, C<span style="color: #1F55A0;">)</span>.ndim
+1
+&gt;&gt;&gt; np.dot<span style="color: #1F55A0;">(</span>B, C<span style="color: #1F55A0;">)</span>.shape
+<span style="color: #1F55A0;">(</span>3,<span style="color: #1F55A0;">)</span>
+&gt;&gt;&gt;
+</pre>
+</div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgee62771" class="outline-4">
+<h4 id="orgee62771"><span class="section-number-4">3.3.3.</span> 神经网络的内机</h4>
+<div class="outline-text-4" id="text-3-3-3">
+<ul class="org-ul">
+<li>理解了numpy的乘法机制,以及其对乘法的优化(放弃相乘两者必须是同一个ndim).那么对如何使用numpy矩阵来实
+现神经网络就十分轻松了.</li>
+<li>下面的例子省略了偏置和激活函数,主要为了让大家理解如何将 \(x_n\) 和 \(w_n\) 进行匹配的
+<ul class="org-ul">
+<li><p>
+如图
+</p>
+
+<div id="org27a8676" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/dlfs/3-14.png" alt="3-14.png" />
+</p>
+<p><span class="figure-number">Figure 24: </span>dlfs/3-14.png</p>
+</div></li>
+<li>我们注意到矩阵X的shape是(2,), 那么它这里就作为最后一位和后面的矩阵W的第一位匹配即可</li>
+<li>最终得到的结果矩阵Y其shape是(3,)</li>
+<li><p>
+代码如下
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">&gt;&gt;&gt; X = np.array<span style="color: #1F55A0;">(</span><span style="color: #AF005F;">[</span>1,2<span style="color: #AF005F;">]</span><span style="color: #1F55A0;">)</span>
+&gt;&gt;&gt; X.shape
+<span style="color: #1F55A0;">(</span>2,<span style="color: #1F55A0;">)</span>
+&gt;&gt;&gt; W = np.array<span style="color: #1F55A0;">(</span><span style="color: #AF005F;">[</span><span style="color: #005F00;">[</span>1, 3, 5<span style="color: #005F00;">]</span>, <span style="color: #005F00;">[</span>2, 4, 6<span style="color: #005F00;">]</span><span style="color: #AF005F;">]</span><span style="color: #1F55A0;">)</span>
+&gt;&gt;&gt; W
+<span style="color: #AF8700;">array</span><span style="color: #1F55A0;">(</span><span style="color: #AF005F;">[</span><span style="color: #005F00;">[</span>1, 3, 5<span style="color: #005F00;">]</span>,
+       <span style="color: #005F00;">[</span>2, 4, 6<span style="color: #005F00;">]</span><span style="color: #AF005F;">]</span><span style="color: #1F55A0;">)</span>
+&gt;&gt;&gt; W.shape
+<span style="color: #1F55A0;">(</span>2, 3<span style="color: #1F55A0;">)</span>
+&gt;&gt;&gt; Y = np.dot<span style="color: #1F55A0;">(</span>X, W<span style="color: #1F55A0;">)</span>
+&gt;&gt;&gt; Y
+<span style="color: #AF8700;">array</span><span style="color: #1F55A0;">(</span><span style="color: #AF005F;">[</span> 5, 11, 17<span style="color: #AF005F;">]</span><span style="color: #1F55A0;">)</span>
+&gt;&gt;&gt; Y.shape
+<span style="color: #1F55A0;">(</span>3,<span style="color: #1F55A0;">)</span>
+</pre>
+</div></li>
+<li>通过上面的例子我们知道,即便矩阵Y有一千个元素,那么仅仅通过一次运算也就算出来了.这极大的简化了运算,
+在实现上面有巨大意义</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org42b9324" class="outline-3">
+<h3 id="org42b9324"><span class="section-number-3">3.4.</span> 3层神经网络的实现</h3>
+<div class="outline-text-3" id="text-3-4">
+<ul class="org-ul">
+<li>神经网络问题(或者更广义上的机器学习问题),可以分成如下两个阶段:
+<ul class="org-ul">
+<li>学习:首先,在学习阶段,就是进行模型的学习. 所谓模型的学习,就是使用已知的训练数据自动调参得到无数浮
+点参数组成的模型</li>
+<li>推理:然后,在推理阶段,用学到的模型对未知的数据进行推理(回归或者分类)</li>
+</ul></li>
+<li>本章我们先了解一下"推理"阶段,这个阶段理解起来比较直接."推理"阶段在"学习"阶段之后,自然我们是已经在
+已知数据上面习得了新的模型(浮点数参数集合).</li>
+<li>新的模型存储在numpy数组里面,我们要推理的数据,也在numpy数组里面,通过我们上节学到的numpy数组的计算,
+最终得到推理的结果(回归或者分类)</li>
+<li>我们的例子是一个三层神经网络
+<ul class="org-ul">
+<li><p>
+如图
+</p>
+
+<div id="org0e53203" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/dlfs/3-15.png" alt="3-15.png" />
+</p>
+<p><span class="figure-number">Figure 25: </span>dlfs/3-15.png</p>
+</div></li>
+</ul></li>
+</ul>
+</div>
+<div id="outline-container-orgd1e1956" class="outline-4">
+<h4 id="orgd1e1956"><span class="section-number-4">3.4.1.</span> 符号确认</h4>
+<div class="outline-text-4" id="text-3-4-1">
+<ul class="org-ul">
+<li>为了能够清晰的理解推理过程,我们给参数进行了一些特殊定义:
+<ul class="org-ul">
+<li><p>
+如图
+</p>
+
+<div id="org50ce41f" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/dlfs/3-16.png" alt="3-16.png" />
+</p>
+<p><span class="figure-number">Figure 26: </span>dlfs/3-16.png</p>
+</div></li>
+<li>权重(w)和隐藏层神经元的右上角有一个"(1)", 这个表示权重(w)和神经元的层号</li>
+<li>权重的右下角有两个数组: 第一个是后一层神经元的index, 第二个是前一层神经元的index,比如 \(w_{12}^{(1)}\)
+表示前一层的第2个神经元 \(x_2\) 到 后一层第1个神经元 \(a_1^{(1)}\) 的权重</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org93995ff" class="outline-4">
+<h4 id="org93995ff"><span class="section-number-4">3.4.2.</span> 各层间信号传递的实现</h4>
+<div class="outline-text-4" id="text-3-4-2">
+<ul class="org-ul">
+<li>我们现在看一下从输入层到第一层第一个神经元的信号传递过程
+<ul class="org-ul">
+<li><p>
+如图
+</p>
+
+<div id="orgc60b3aa" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/dlfs/3-17.png" alt="3-17.png" />
+</p>
+<p><span class="figure-number">Figure 27: </span>dlfs/3-17.png</p>
+</div></li>
+<li>图中增加了表示偏置(bias)的神经元"1", 注意偏置的右下角只有一个标记(也就是目的地), 因为偏置神经元(神经
+元"1")只有一个</li>
+<li>上面偏置右下角只有一个标记,这也就解释了为什么权重要把目的地写前面了(一般目的地都写后面)&#x2013;因为偏置
+只有目的地, 为了偏置和权重使用一套符号,所以把目的地写第一个位置</li>
+<li><p>
+上图所谓的第一层第一个神经元,用我们的符号表示的话,其实就是 \(a_1^{(1)}\), 我们使用数学公式来表达下
+计算第一层第一个神经元的公式
+</p>
+\begin{equation}
+a_1^{(1)} = w_{11}^{(1)} x_1 + w_{12}^{(1)} x_2 + b_1^{(1)} \tag{3.8}
+\end{equation}</li>
+</ul></li>
+<li>有了第一层第一个神经元的计算公式,我们可以进一步把第一层的计算方式列出来:
+<ul class="org-ul">
+<li><p>
+总体公式如下
+</p>
+\begin{equation}
+\boldsymbol{A}^{(1)} = \boldsymbol{X} \boldsymbol{W}^{(1)} + \boldsymbol{B}^{(1)} \tag{3.9}
+\end{equation}</li>
+<li><p>
+其中 \(\boldsymbol{A}^{(1)}\) 如下
+</p>
+\begin{equation}
+\boldsymbol{A}^{(1)} = \left(a_1^{(1)} \; a_2^{(1)} \; a_3^{(1)} \right) \notag
+\end{equation}</li>
+<li><p>
+其中 \(\boldsymbol{X}\) 如下
+</p>
+\begin{equation}
+\boldsymbol{X} = \left( x_1, x_2 \right) \notag
+\end{equation}</li>
+<li><p>
+其中 \(\boldsymbol{B}^{(1)}\) 如下
+</p>
+\begin{equation}
+\boldsymbol{B}^{(1)} = \left(b_1^{(1)} \; b_2^{(1)} \; b_3^{(1)} \right) \notag
+\end{equation}</li>
+<li><p>
+其中 \(\boldsymbol{W}^{(1)}\) 如下
+</p>
+\begin{equation}
+\boldsymbol{W}^{(1)} = \begin{pmatrix}
+                           w_{11}^{(1)} & w_{21}^{(1)} & w_{31}^{(1)} \\
+                           w_{12}^{(1)} & w_{22}^{(1)} & w_{32}^{(1)}
+                       \end{pmatrix} \notag
+\end{equation}</li>
+<li><p>
+最后,我们使用numpy多维数组来实现公式3.9,其中权重,偏置,X值都是随机的
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #D70000;">import</span> numpy <span style="color: #D70000;">as</span> np
+
+<span style="color: #004651;">X</span> = np.array<span style="color: #1F55A0;">(</span><span style="color: #AF005F;">[</span>1.0, 0.5<span style="color: #AF005F;">]</span><span style="color: #1F55A0;">)</span>
+<span style="color: #004651;">W1</span> = np.array<span style="color: #1F55A0;">(</span><span style="color: #AF005F;">[</span><span style="color: #005F00;">[</span>0.1, 0.3, 0.5<span style="color: #005F00;">]</span>, <span style="color: #005F00;">[</span>0.2, 0.4, 0.6<span style="color: #005F00;">]</span><span style="color: #AF005F;">]</span><span style="color: #1F55A0;">)</span>
+<span style="color: #004651;">B1</span> = np.array<span style="color: #1F55A0;">(</span><span style="color: #AF005F;">[</span>0.1, 0.2, 0.3<span style="color: #AF005F;">]</span><span style="color: #1F55A0;">)</span>
+
+
+<span style="color: #1F55A0;">print</span><span style="color: #1F55A0;">(</span>W1.shape<span style="color: #1F55A0;">)</span>
+<span style="color: #1F55A0;">print</span><span style="color: #1F55A0;">(</span>X.shape<span style="color: #1F55A0;">)</span>
+<span style="color: #1F55A0;">print</span><span style="color: #1F55A0;">(</span>B1.shape<span style="color: #1F55A0;">)</span>
+
+<span style="color: #004651;">A1</span> = np.dot<span style="color: #1F55A0;">(</span>X, W1<span style="color: #1F55A0;">)</span> + B1
+</pre>
+</div></li>
+</ul></li>
+<li>下面我们来看看激活过程
+<ul class="org-ul">
+<li><p>
+如图
+</p>
+
+<div id="orgafb6ea0" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/dlfs/3-18.png" alt="3-18.png" />
+</p>
+<p><span class="figure-number">Figure 28: </span>dlfs/3-18.png</p>
+</div></li>
+<li>隐藏层的加权和(加权信号和偏置的总和)用a表示</li>
+<li>被激活函数转换后的信号用z表示</li>
+<li><p>
+\(h()\) 表示激活函数,我们这里使用的是sigmoid函数,从输入到激活成功的总体代码如下
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #D70000;">import</span> numpy <span style="color: #D70000;">as</span> np
+
+
+<span style="color: #D70000;">def</span> <span style="color: #AF8700;">sigmoid</span><span style="color: #1F55A0;">(</span>x<span style="color: #1F55A0;">)</span>:
+    <span style="color: #D70000;">return</span> 1 / <span style="color: #1F55A0;">(</span>1 + np.exp<span style="color: #AF005F;">(</span>-x<span style="color: #AF005F;">)</span><span style="color: #1F55A0;">)</span>
+
+
+<span style="color: #004651;">X</span> = np.array<span style="color: #1F55A0;">(</span><span style="color: #AF005F;">[</span>1.0, 0.5<span style="color: #AF005F;">]</span><span style="color: #1F55A0;">)</span>
+<span style="color: #004651;">W1</span> = np.array<span style="color: #1F55A0;">(</span><span style="color: #AF005F;">[</span><span style="color: #005F00;">[</span>0.1, 0.3, 0.5<span style="color: #005F00;">]</span>, <span style="color: #005F00;">[</span>0.2, 0.4, 0.6<span style="color: #005F00;">]</span><span style="color: #AF005F;">]</span><span style="color: #1F55A0;">)</span>
+<span style="color: #004651;">B1</span> = np.array<span style="color: #1F55A0;">(</span><span style="color: #AF005F;">[</span>0.1, 0.2, 0.3<span style="color: #AF005F;">]</span><span style="color: #1F55A0;">)</span>
+
+
+<span style="color: #1F55A0;">print</span><span style="color: #1F55A0;">(</span>W1.shape<span style="color: #1F55A0;">)</span>
+<span style="color: #1F55A0;">print</span><span style="color: #1F55A0;">(</span>X.shape<span style="color: #1F55A0;">)</span>
+<span style="color: #1F55A0;">print</span><span style="color: #1F55A0;">(</span>B1.shape<span style="color: #1F55A0;">)</span>
+
+<span style="color: #004651;">A1</span> = np.dot<span style="color: #1F55A0;">(</span>X, W1<span style="color: #1F55A0;">)</span> + B1
+<span style="color: #1F55A0;">print</span><span style="color: #1F55A0;">(</span>A1<span style="color: #1F55A0;">)</span>
+
+
+<span style="color: #004651;">Z1</span> = sigmoid<span style="color: #1F55A0;">(</span>A1<span style="color: #1F55A0;">)</span>
+<span style="color: #1F55A0;">print</span><span style="color: #1F55A0;">(</span>Z1<span style="color: #1F55A0;">)</span>
+
+<span style="color: #4E4E4E; font-style: italic;"># </span><span style="color: #4E4E4E; font-style: italic;">&lt;====================OUTPUT====================&gt;</span>
+<span style="color: #4E4E4E; font-style: italic;"># </span><span style="color: #4E4E4E; font-style: italic;">(2, 3)</span>
+<span style="color: #4E4E4E; font-style: italic;"># </span><span style="color: #4E4E4E; font-style: italic;">(2,)</span>
+<span style="color: #4E4E4E; font-style: italic;"># </span><span style="color: #4E4E4E; font-style: italic;">(3,)</span>
+<span style="color: #4E4E4E; font-style: italic;"># </span><span style="color: #4E4E4E; font-style: italic;">[0.3 0.7 1.1]</span>
+<span style="color: #4E4E4E; font-style: italic;"># </span><span style="color: #4E4E4E; font-style: italic;">[0.57444252 0.66818777 0.75026011]</span>
+</pre>
+</div></li>
+</ul></li>
+<li>下面再来看看第一层到第二层的信号传递
+<ul class="org-ul">
+<li><p>
+如图
+</p>
+
+<div id="org1de6e1c" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/dlfs/3-19.png" alt="3-19.png" />
+</p>
+<p><span class="figure-number">Figure 29: </span>dlfs/3-19.png</p>
+</div></li>
+<li><p>
+代码和前面只有些许不同, 把一层的输出Z作为了第二层的输入
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #D70000;">import</span> numpy <span style="color: #D70000;">as</span> np
+
+
+<span style="color: #D70000;">def</span> <span style="color: #AF8700;">sigmoid</span><span style="color: #1F55A0;">(</span>x<span style="color: #1F55A0;">)</span>:
+    <span style="color: #D70000;">return</span> 1 / <span style="color: #1F55A0;">(</span>1 + np.exp<span style="color: #AF005F;">(</span>-x<span style="color: #AF005F;">)</span><span style="color: #1F55A0;">)</span>
+
+
+<span style="color: #004651;">X</span> = np.array<span style="color: #1F55A0;">(</span><span style="color: #AF005F;">[</span>1.0, 0.5<span style="color: #AF005F;">]</span><span style="color: #1F55A0;">)</span>
+<span style="color: #004651;">W1</span> = np.array<span style="color: #1F55A0;">(</span><span style="color: #AF005F;">[</span><span style="color: #005F00;">[</span>0.1, 0.3, 0.5<span style="color: #005F00;">]</span>, <span style="color: #005F00;">[</span>0.2, 0.4, 0.6<span style="color: #005F00;">]</span><span style="color: #AF005F;">]</span><span style="color: #1F55A0;">)</span>
+<span style="color: #004651;">B1</span> = np.array<span style="color: #1F55A0;">(</span><span style="color: #AF005F;">[</span>0.1, 0.2, 0.3<span style="color: #AF005F;">]</span><span style="color: #1F55A0;">)</span>
+
+
+<span style="color: #004651;">A1</span> = np.dot<span style="color: #1F55A0;">(</span>X, W1<span style="color: #1F55A0;">)</span> + B1
+<span style="color: #004651;">Z1</span> = sigmoid<span style="color: #1F55A0;">(</span>A1<span style="color: #1F55A0;">)</span>
+
+<span style="color: #004651;">W2</span> = np.array<span style="color: #1F55A0;">(</span><span style="color: #AF005F;">[</span><span style="color: #005F00;">[</span>0.1, 0.4<span style="color: #005F00;">]</span>, <span style="color: #005F00;">[</span>0.2, 0.5<span style="color: #005F00;">]</span>, <span style="color: #005F00;">[</span>0.3, 0.6<span style="color: #005F00;">]</span><span style="color: #AF005F;">]</span><span style="color: #1F55A0;">)</span>
+<span style="color: #004651;">B2</span> = np.array<span style="color: #1F55A0;">(</span><span style="color: #AF005F;">[</span>0.1, 0.2<span style="color: #AF005F;">]</span><span style="color: #1F55A0;">)</span>
+
+<span style="color: #1F55A0;">print</span><span style="color: #1F55A0;">(</span>Z1.shape<span style="color: #1F55A0;">)</span>
+<span style="color: #1F55A0;">print</span><span style="color: #1F55A0;">(</span>W2.shape<span style="color: #1F55A0;">)</span>
+<span style="color: #1F55A0;">print</span><span style="color: #1F55A0;">(</span>B2.shape<span style="color: #1F55A0;">)</span>
+
+<span style="color: #004651;">A2</span> = np.dot<span style="color: #1F55A0;">(</span>Z1, W2<span style="color: #1F55A0;">)</span> + B2
+<span style="color: #004651;">Z2</span> = sigmoid<span style="color: #1F55A0;">(</span>A2<span style="color: #1F55A0;">)</span>
+<span style="color: #1F55A0;">print</span><span style="color: #1F55A0;">(</span>A2<span style="color: #1F55A0;">)</span>
+<span style="color: #1F55A0;">print</span><span style="color: #1F55A0;">(</span>Z2<span style="color: #1F55A0;">)</span>
+
+<span style="color: #4E4E4E; font-style: italic;"># </span><span style="color: #4E4E4E; font-style: italic;">&lt;====================OUTPUT====================&gt;</span>
+<span style="color: #4E4E4E; font-style: italic;"># </span><span style="color: #4E4E4E; font-style: italic;">(3,)</span>
+<span style="color: #4E4E4E; font-style: italic;"># </span><span style="color: #4E4E4E; font-style: italic;">(3, 2)</span>
+<span style="color: #4E4E4E; font-style: italic;"># </span><span style="color: #4E4E4E; font-style: italic;">(2,)</span>
+<span style="color: #4E4E4E; font-style: italic;"># </span><span style="color: #4E4E4E; font-style: italic;">[0.51615984 1.21402696]</span>
+<span style="color: #4E4E4E; font-style: italic;"># </span><span style="color: #4E4E4E; font-style: italic;">[0.62624937 0.7710107 ]</span>
+</pre>
+</div></li>
+</ul></li>
+<li>最后一步是第2层到输出层的信号传递
+<ul class="org-ul">
+<li><p>
+如图
+</p>
+
+<div id="org3402093" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/dlfs/3-20.png" alt="3-20.png" />
+</p>
+<p><span class="figure-number">Figure 30: </span>dlfs/3-20.png</p>
+</div></li>
+<li><p>
+代码如下
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #D70000;">import</span> numpy <span style="color: #D70000;">as</span> np
+
+
+<span style="color: #D70000;">def</span> <span style="color: #AF8700;">sigmoid</span><span style="color: #1F55A0;">(</span>x<span style="color: #1F55A0;">)</span>:
+    <span style="color: #D70000;">return</span> 1 / <span style="color: #1F55A0;">(</span>1 + np.exp<span style="color: #AF005F;">(</span>-x<span style="color: #AF005F;">)</span><span style="color: #1F55A0;">)</span>
+
+
+<span style="color: #004651;">X</span> = np.array<span style="color: #1F55A0;">(</span><span style="color: #AF005F;">[</span>1.0, 0.5<span style="color: #AF005F;">]</span><span style="color: #1F55A0;">)</span>
+<span style="color: #004651;">W1</span> = np.array<span style="color: #1F55A0;">(</span><span style="color: #AF005F;">[</span><span style="color: #005F00;">[</span>0.1, 0.3, 0.5<span style="color: #005F00;">]</span>, <span style="color: #005F00;">[</span>0.2, 0.4, 0.6<span style="color: #005F00;">]</span><span style="color: #AF005F;">]</span><span style="color: #1F55A0;">)</span>
+<span style="color: #004651;">B1</span> = np.array<span style="color: #1F55A0;">(</span><span style="color: #AF005F;">[</span>0.1, 0.2, 0.3<span style="color: #AF005F;">]</span><span style="color: #1F55A0;">)</span>
+
+
+<span style="color: #004651;">A1</span> = np.dot<span style="color: #1F55A0;">(</span>X, W1<span style="color: #1F55A0;">)</span> + B1
+<span style="color: #004651;">Z1</span> = sigmoid<span style="color: #1F55A0;">(</span>A1<span style="color: #1F55A0;">)</span>
+
+<span style="color: #004651;">W2</span> = np.array<span style="color: #1F55A0;">(</span><span style="color: #AF005F;">[</span><span style="color: #005F00;">[</span>0.1, 0.4<span style="color: #005F00;">]</span>, <span style="color: #005F00;">[</span>0.2, 0.5<span style="color: #005F00;">]</span>, <span style="color: #005F00;">[</span>0.3, 0.6<span style="color: #005F00;">]</span><span style="color: #AF005F;">]</span><span style="color: #1F55A0;">)</span>
+<span style="color: #004651;">B2</span> = np.array<span style="color: #1F55A0;">(</span><span style="color: #AF005F;">[</span>0.1, 0.2<span style="color: #AF005F;">]</span><span style="color: #1F55A0;">)</span>
+
+<span style="color: #1F55A0;">print</span><span style="color: #1F55A0;">(</span>Z1.shape<span style="color: #1F55A0;">)</span>
+<span style="color: #1F55A0;">print</span><span style="color: #1F55A0;">(</span>W2.shape<span style="color: #1F55A0;">)</span>
+<span style="color: #1F55A0;">print</span><span style="color: #1F55A0;">(</span>B2.shape<span style="color: #1F55A0;">)</span>
+
+<span style="color: #004651;">A2</span> = np.dot<span style="color: #1F55A0;">(</span>Z1, W2<span style="color: #1F55A0;">)</span> + B2
+<span style="color: #004651;">Z2</span> = sigmoid<span style="color: #1F55A0;">(</span>A2<span style="color: #1F55A0;">)</span>
+<span style="color: #1F55A0;">print</span><span style="color: #1F55A0;">(</span>A2<span style="color: #1F55A0;">)</span>
+<span style="color: #1F55A0;">print</span><span style="color: #1F55A0;">(</span>Z2<span style="color: #1F55A0;">)</span>
+
+
+<span style="color: #D70000;">def</span> <span style="color: #AF8700;">identity_function</span><span style="color: #1F55A0;">(</span>x<span style="color: #1F55A0;">)</span>:
+    <span style="color: #D70000;">return</span> x
+
+<span style="color: #004651;">W3</span> = np.array<span style="color: #1F55A0;">(</span><span style="color: #AF005F;">[</span><span style="color: #005F00;">[</span>0.1, 0.3<span style="color: #005F00;">]</span>, <span style="color: #005F00;">[</span>0.2, 0.4<span style="color: #005F00;">]</span><span style="color: #AF005F;">]</span><span style="color: #1F55A0;">)</span>
+<span style="color: #004651;">B3</span> = np.array<span style="color: #1F55A0;">(</span><span style="color: #AF005F;">[</span>0.1, 0.2<span style="color: #AF005F;">]</span><span style="color: #1F55A0;">)</span>
+
+<span style="color: #004651;">A3</span> = np.dot<span style="color: #1F55A0;">(</span>Z2, W3<span style="color: #1F55A0;">)</span> + B3
+<span style="color: #004651;">Y</span> = identity_function<span style="color: #1F55A0;">(</span>A3<span style="color: #1F55A0;">)</span>
+
+<span style="color: #4E4E4E; font-style: italic;"># </span><span style="color: #4E4E4E; font-style: italic;">&lt;====================OUTPUT====================&gt;</span>
+<span style="color: #4E4E4E; font-style: italic;"># </span><span style="color: #4E4E4E; font-style: italic;">(3,)</span>
+<span style="color: #4E4E4E; font-style: italic;"># </span><span style="color: #4E4E4E; font-style: italic;">(3, 2)</span>
+<span style="color: #4E4E4E; font-style: italic;"># </span><span style="color: #4E4E4E; font-style: italic;">(2,)</span>
+<span style="color: #4E4E4E; font-style: italic;"># </span><span style="color: #4E4E4E; font-style: italic;">[0.51615984 1.21402696]</span>
+<span style="color: #4E4E4E; font-style: italic;"># </span><span style="color: #4E4E4E; font-style: italic;">[0.62624937 0.7710107 ]</span>
+</pre>
+</div></li>
+<li>这里Z2是输入</li>
+<li>我们这里定义了identity_function()函数,并且作为输出层的激活函数.这个函数其实什么都没干,我们也只是
+为了和之前的流程保持一致,所以加了这个函数.</li>
+<li>输出层所用的激活函数,要根据求解问题的性质决定:
+<ol class="org-ol">
+<li>回归问题可以用恒等函数,因为回顾问题本来就是求一个浮点数</li>
+<li>二元分类问题可以使用sigmoid函数</li>
+<li>多元分类问题可以使用softmax函数</li>
+</ol></li>
+<li><p>
+identity_function()这个函数对应于图3-20中的 \(\sigma()\)
+</p>
+
+<div id="orge43d333" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/dlfs/3-20.png" alt="3-20.png" />
+</p>
+<p><span class="figure-number">Figure 31: </span>dlfs/3-20.png</p>
+</div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org548c415" class="outline-4">
+<h4 id="org548c415"><span class="section-number-4">3.4.3.</span> 代码现小结</h4>
+<div class="outline-text-4" id="text-3-4-3">
+<ul class="org-ul">
+<li>我们可以把前面几个步骤重新整理一下
+<ul class="org-ul">
+<li><p>
+完整的代码如下
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #D70000;">import</span> numpy <span style="color: #D70000;">as</span> np
+
+
+<span style="color: #D70000;">def</span> <span style="color: #AF8700;">sigmoid</span><span style="color: #1F55A0;">(</span>x<span style="color: #1F55A0;">)</span>:
+    <span style="color: #D70000;">return</span> 1 / <span style="color: #1F55A0;">(</span>1 + np.exp<span style="color: #AF005F;">(</span>-x<span style="color: #AF005F;">)</span><span style="color: #1F55A0;">)</span>
+
+
+<span style="color: #D70000;">def</span> <span style="color: #AF8700;">identity_function</span><span style="color: #1F55A0;">(</span>x<span style="color: #1F55A0;">)</span>:
+    <span style="color: #D70000;">return</span> x
+
+
+<span style="color: #D70000;">def</span> <span style="color: #AF8700;">init_network</span><span style="color: #1F55A0;">()</span>:
+    <span style="color: #004651;">network</span> = <span style="color: #1F55A0;">{}</span>
+    <span style="color: #004651;">network</span><span style="color: #1F55A0;">[</span><span style="color: #005F00;">"W1"</span><span style="color: #1F55A0;">]</span> = np.array<span style="color: #1F55A0;">(</span><span style="color: #AF005F;">[</span><span style="color: #005F00;">[</span>0.1, 0.3, 0.5<span style="color: #005F00;">]</span>, <span style="color: #005F00;">[</span>0.2, 0.4, 0.6<span style="color: #005F00;">]</span><span style="color: #AF005F;">]</span><span style="color: #1F55A0;">)</span>
+    <span style="color: #004651;">network</span><span style="color: #1F55A0;">[</span><span style="color: #005F00;">"b1"</span><span style="color: #1F55A0;">]</span> = np.array<span style="color: #1F55A0;">(</span><span style="color: #AF005F;">[</span>0.1, 0.2, 0.3<span style="color: #AF005F;">]</span><span style="color: #1F55A0;">)</span>
+    <span style="color: #004651;">network</span><span style="color: #1F55A0;">[</span><span style="color: #005F00;">"W2"</span><span style="color: #1F55A0;">]</span> = np.array<span style="color: #1F55A0;">(</span><span style="color: #AF005F;">[</span><span style="color: #005F00;">[</span>0.1, 0.4<span style="color: #005F00;">]</span>, <span style="color: #005F00;">[</span>0.2, 0.5<span style="color: #005F00;">]</span>, <span style="color: #005F00;">[</span>0.3, 0.6<span style="color: #005F00;">]</span><span style="color: #AF005F;">]</span><span style="color: #1F55A0;">)</span>
+    <span style="color: #004651;">network</span><span style="color: #1F55A0;">[</span><span style="color: #005F00;">"b2"</span><span style="color: #1F55A0;">]</span> = np.array<span style="color: #1F55A0;">(</span><span style="color: #AF005F;">[</span>0.1, 0.2<span style="color: #AF005F;">]</span><span style="color: #1F55A0;">)</span>
+    <span style="color: #004651;">network</span><span style="color: #1F55A0;">[</span><span style="color: #005F00;">"W3"</span><span style="color: #1F55A0;">]</span> = np.array<span style="color: #1F55A0;">(</span><span style="color: #AF005F;">[</span><span style="color: #005F00;">[</span>0.1, 0.3<span style="color: #005F00;">]</span>, <span style="color: #005F00;">[</span>0.2, 0.4<span style="color: #005F00;">]</span><span style="color: #AF005F;">]</span><span style="color: #1F55A0;">)</span>
+    <span style="color: #004651;">network</span><span style="color: #1F55A0;">[</span><span style="color: #005F00;">"b3"</span><span style="color: #1F55A0;">]</span> = np.array<span style="color: #1F55A0;">(</span><span style="color: #AF005F;">[</span>0.1, 0.2<span style="color: #AF005F;">]</span><span style="color: #1F55A0;">)</span>
+    <span style="color: #D70000;">return</span> network
+
+
+<span style="color: #D70000;">def</span> <span style="color: #AF8700;">forward</span><span style="color: #1F55A0;">(</span>network, x<span style="color: #1F55A0;">)</span>:
+    <span style="color: #004651;">W1</span>, <span style="color: #004651;">W2</span>, <span style="color: #004651;">W3</span> = network<span style="color: #1F55A0;">[</span><span style="color: #005F00;">"W1"</span><span style="color: #1F55A0;">]</span>, network<span style="color: #1F55A0;">[</span><span style="color: #005F00;">"W2"</span><span style="color: #1F55A0;">]</span>, network<span style="color: #1F55A0;">[</span><span style="color: #005F00;">"W3"</span><span style="color: #1F55A0;">]</span>
+    <span style="color: #004651;">b1</span>, <span style="color: #004651;">b2</span>, <span style="color: #004651;">b3</span> = network<span style="color: #1F55A0;">[</span><span style="color: #005F00;">"b1"</span><span style="color: #1F55A0;">]</span>, network<span style="color: #1F55A0;">[</span><span style="color: #005F00;">"b2"</span><span style="color: #1F55A0;">]</span>, network<span style="color: #1F55A0;">[</span><span style="color: #005F00;">"b3"</span><span style="color: #1F55A0;">]</span>
+
+    <span style="color: #004651;">a1</span> = np.dot<span style="color: #1F55A0;">(</span>x, W1<span style="color: #1F55A0;">)</span> + b1
+    <span style="color: #004651;">z1</span> = sigmoid<span style="color: #1F55A0;">(</span>a1<span style="color: #1F55A0;">)</span>
+    <span style="color: #004651;">a2</span> = np.dot<span style="color: #1F55A0;">(</span>z1, W2<span style="color: #1F55A0;">)</span> + b2
+    <span style="color: #004651;">z2</span> = sigmoid<span style="color: #1F55A0;">(</span>a2<span style="color: #1F55A0;">)</span>
+    <span style="color: #004651;">a3</span> = np.dot<span style="color: #1F55A0;">(</span>z2, W3<span style="color: #1F55A0;">)</span> + b3
+    <span style="color: #004651;">y</span> = identity_function<span style="color: #1F55A0;">(</span>a3<span style="color: #1F55A0;">)</span>
+
+    <span style="color: #D70000;">return</span> y
+
+
+<span style="color: #004651;">network</span> = init_network<span style="color: #1F55A0;">()</span>
+<span style="color: #004651;">x</span> = np.array<span style="color: #1F55A0;">(</span><span style="color: #AF005F;">[</span>1.0, 0.5<span style="color: #AF005F;">]</span><span style="color: #1F55A0;">)</span>
+<span style="color: #004651;">y</span> = forward<span style="color: #1F55A0;">(</span>network, x<span style="color: #1F55A0;">)</span>
+<span style="color: #1F55A0;">print</span><span style="color: #1F55A0;">(</span>y<span style="color: #1F55A0;">)</span>
+
+<span style="color: #4E4E4E; font-style: italic;"># </span><span style="color: #4E4E4E; font-style: italic;">&lt;====================OUTPUT====================&gt;</span>
+<span style="color: #4E4E4E; font-style: italic;"># </span><span style="color: #4E4E4E; font-style: italic;">[0.31682708 0.69627909]</span>
+</pre>
+</div></li>
+<li>我们这里引入了init_network()函数来初始化权重和偏置</li>
+<li>这里的forward()函数则封装了将输入信号转换为输出信号的过程. forward的前项,指的是从输入到输出方向的
+传递处理.后面在介绍"训练"阶段的时候,我们将介绍backward(后向:从输出到输入)的处理</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgcb834e0" class="outline-3">
+<h3 id="orgcb834e0"><span class="section-number-3">3.5.</span> 输出层的设计</h3>
+</div>
+</div>
+<div id="outline-container-orgf2e58f2" class="outline-2">
+<h2 id="orgf2e58f2"><span class="section-number-2">4.</span> 神经网络的学习</h2>
+</div>
+<div id="outline-container-org22128c6" class="outline-2">
+<h2 id="org22128c6"><span class="section-number-2">5.</span> 误差反向传播法</h2>
+</div>
+<div id="outline-container-org0fb5146" class="outline-2">
+<h2 id="org0fb5146"><span class="section-number-2">6.</span> 与学习相关的技巧</h2>
+</div>
+<div id="outline-container-org9cee23b" class="outline-2">
+<h2 id="org9cee23b"><span class="section-number-2">7.</span> 卷积神经网络</h2>
+</div>
+<div id="outline-container-org665605c" class="outline-2">
+<h2 id="org665605c"><span class="section-number-2">8.</span> 深度学习</h2>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: harrifeng@outlook.com</p>
+<p class="date">Created: 2024-02-22 Thu 20:31</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
