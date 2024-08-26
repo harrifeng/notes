@@ -1,0 +1,2036 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2024-08-26 Mon 17:45 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>jtdg</title>
+<meta name="author" content="harrifeng@outlook.com" />
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="src/readtheorg_theme/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="src/readtheorg_theme/css/readtheorg.css"/>
+<script type="text/javascript" src="src/lib/js/jquery.min.js"></script>
+<script type="text/javascript" src="src/lib/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="src/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="src/readtheorg_theme/js/readtheorg.js"></script>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">jtdg</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org85fe345">1. Chapter 1: Introduction to JavaScript</a>
+<ul>
+<li><a href="#org2d6da17">1.1. Exploring JavaScript</a></li>
+<li><a href="#org523a84c">1.2. Hello World</a></li>
+</ul>
+</li>
+<li><a href="#org2d3c010">2. Chapter 2: Lexical Structure</a>
+<ul>
+<li><a href="#org3b61fa0">2.1. The Text of a JavaScript Program</a></li>
+<li><a href="#org492ed9a">2.2. Comments</a></li>
+<li><a href="#org2574082">2.3. Literals</a></li>
+<li><a href="#orgdc693f1">2.4. Identifiers and Reserved Words</a>
+<ul>
+<li><a href="#orgef682d6">2.4.1. Reserved Words</a></li>
+</ul>
+</li>
+<li><a href="#orge01e233">2.5. Unicode</a>
+<ul>
+<li><a href="#org76bbb98">2.5.1. Unicode Escape Sequence</a></li>
+<li><a href="#org40509ff">2.5.2. Unicode Normalization</a></li>
+</ul>
+</li>
+<li><a href="#org9f40c37">2.6. Optional Semicolons</a></li>
+</ul>
+</li>
+<li><a href="#org5039616">3. Chapter 3: Types, Values, and Variables</a>
+<ul>
+<li><a href="#org5558fe6">3.1. Overview and Definitions</a></li>
+<li><a href="#org94b716a">3.2. Numbers</a>
+<ul>
+<li><a href="#org17ee909">3.2.1. Integer Literals</a></li>
+<li><a href="#org21ea359">3.2.2. Floating-Point Literals</a></li>
+<li><a href="#org6d9da47">3.2.3. Arithmetic in JavaScript</a></li>
+<li><a href="#orgfa7f2c3">3.2.4. Binary Floating-Point and ROunding Errors</a></li>
+<li><a href="#org57a8982">3.2.5. Arbitrary Precision Integers with BigInt</a></li>
+<li><a href="#org9c28949">3.2.6. Dates and Times</a></li>
+</ul>
+</li>
+<li><a href="#orga8140e4">3.3. Text</a>
+<ul>
+<li><a href="#org941d455">3.3.1. String Literals</a></li>
+<li><a href="#orga095ae5">3.3.2. Escape Sequence in String Literals</a></li>
+<li><a href="#orgd92552e">3.3.3. Working with Strings</a></li>
+<li><a href="#org862ceed">3.3.4. Template Literals</a></li>
+<li><a href="#org9df2cf5">3.3.5. Pattern Matching</a></li>
+</ul>
+</li>
+<li><a href="#orgd5634cc">3.4. Boolean Values</a></li>
+<li><a href="#org446541f">3.5. null and undefined</a>
+<ul>
+<li><a href="#org23b8953">3.5.1. null</a></li>
+<li><a href="#org28d6307">3.5.2. undefined</a></li>
+<li><a href="#orgeaf5291">3.5.3. 两者的联系</a></li>
+</ul>
+</li>
+<li><a href="#org8f41122">3.6. Symbols</a></li>
+<li><a href="#org61d6db9">3.7. The Global Object</a></li>
+<li><a href="#orge67831f">3.8. Immutable Primitive Values and Mutable Object References</a></li>
+<li><a href="#org434dde9">3.9. Type Conversions</a>
+<ul>
+<li><a href="#org956a9c1">3.9.1. Conversions and Equality</a></li>
+<li><a href="#org0799dbc">3.9.2. Explicit Conversions</a></li>
+</ul>
+</li>
+<li><a href="#orgbdeef3c">3.10. Variable Declaration and Assignment</a>
+<ul>
+<li><a href="#orgac7acb7">3.10.1. Declarations with let and const</a></li>
+<li><a href="#org9e2103c">3.10.2. Variable Declarations with var</a></li>
+<li><a href="#org9df3448">3.10.3. Destructuring Assignment</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org85fe345" class="outline-2">
+<h2 id="org85fe345"><span class="section-number-2">1.</span> Chapter 1: Introduction to JavaScript</h2>
+<div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li>JavaScript是世界上部署最多的语言</li>
+<li>最近十年,Node.js让Javascript从浏览器扩展到更广的领域</li>
+<li>如果你有其他编程语言的经验,你会发现JavaScript是一个适配如下两种pattern的语言:
+<ul class="org-ul">
+<li>object-oriented programming</li>
+<li>functional programming</li>
+</ul></li>
+<li>JavaScript的:
+<ul class="org-ul">
+<li>编程思想"first-class function",来源于Scheme</li>
+<li>prototype based Inheritance是来自于编程语言Self</li>
+</ul></li>
+<li>JavaScript其实和Java的关系并不大</li>
+<li>关于JavaScript的名字,版本,Mode有一些必须要详细的说明:
+<ul class="org-ul">
+<li>JavaScript是由Netscape公司发明的,所以JavaScript是Netscape公司的注册商标(现在Netscape是Oracle公司的一部分)</li>
+<li>由于JavaScript为Oracle的注册商标,所以JavaScript的标准不能带有JavaScript的名字,而是叫做ECMAScript</li>
+<li>本书每当想要说关于"标准","版本"的事宜的时候,会使用ECAMScript,ES来指代JavaScript</li>
+<li>从2010年以来,几乎所有的浏览器都已经支持了ECMAScript Version 5,所以本书把ECMAScript Version 5当做兼容的底线,不再讨论之前的版本</li>
+<li>2015年发布的ES6提供了class和module支持,这个对JavaScript来说,非常重要,将JavaScript变成一个严肃的语言</li>
+<li>从ES6开始, ECMAScript的版本开始以年来命名,比如 ES2016, ES2017&#x2026;ES2020</li>
+<li>在ES5之前的版本中,JavaScript存在非常多的错误,而我们不可能在新的版本中直接不支持这些错误.ES的做法是提供了一个叫做strict mode的
+东西.如果你的代码开启了strict mode,那么ES5之前版本的错误将会报错.</li>
+<li>ES6开始,将strict mode设置为了默认</li>
+</ul></li>
+<li>对于大部分语言来说,都会在标准库里面包含如下部分:
+<ul class="org-ul">
+<li>和字符串,数字打交道的辅助函数</li>
+<li>内置的数据结构,比如map</li>
+<li>基本的输入输出</li>
+</ul></li>
+<li>但是对于JavaScript来说,它定义了前两项,没有定义第三项. 在JavaScript世界里面,第三项(标准输入和输出)是"host environment"的责任</li>
+<li>对于JavaScript来说,最开始也是当前最主要的host environment是浏览器,浏览器做到了:
+<ul class="org-ul">
+<li>把用户的鼠标和键盘的input,以及HTTP请求作为基本输入</li>
+<li>把JavaScript代码展示的内容通过HTML和CSS输出给用户</li>
+</ul></li>
+<li>从2010年开始,在之前浏览器的基础上,JavaScript又多了一个host environment,那就是Node. Node做到了:
+<ul class="org-ul">
+<li>让JavaScript像其他编程语言一样,自己的读取操作系统上的文件,自己发送HTTP请求,也就是Node让JavaScript自己掌握了输入输出</li>
+</ul></li>
+<li>本书绝大部分篇章是关于JavaScript本身的,标准库的部分只有如下三章:
+<ul class="org-ul">
+<li>第11章介绍标准库(不包括输入输出)</li>
+<li>第15章介绍host environment的浏览器(其中有浏览器代替JavaScript进行输入输出的部分)</li>
+<li>第16章介绍host environment的Node 环境(这里JavaScript就有能力自己进行输入输出了)</li>
+</ul></li>
+</ul>
+</div>
+<div id="outline-container-org2d6da17" class="outline-3">
+<h3 id="org2d6da17"><span class="section-number-3">1.1.</span> Exploring JavaScript</h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li>要想学习一个语言,需要有一个可以任意修改代码的环境.最简答的代码环境就是浏览器了,如下方法打开Console Tab:
+<ul class="org-ul">
+<li>F12 (windows)</li>
+<li>Ctrl-Shift-I (Linux)</li>
+<li>Command-Option-I (Mac)</li>
+</ul></li>
+<li><p>
+另外我们可以下载Node,然后在命令行直接打node,就会得到和浏览器console一样的interpreter
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">$ node
+Welcome to Node.js v22.5.1.
+Type <span style="color: #2d9574;">".help"</span> for more information.
+&gt; .help
+.help
+.break    Sometimes you get stuck, this gets you out
+.clear    Alias for .break
+.editor   Enter editor mode
+.exit     Exit the REPL
+.help     Print this help message
+.load     Load JS from a file into the REPL session
+.save     Save all evaluated commands<span style="color: #3a81c3; font-weight: bold;"> in</span> this REPL session to a file
+
+Press Ctrl+C to abort current expression, Ctrl+D to exit the REPL
+&gt; let x = 2, y = 3;
+<span style="color: #3a81c3;">let</span> x = 2, y = 3;
+undefined
+&gt; x + y
+x + y
+5
+</pre>
+</div></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org523a84c" class="outline-3">
+<h3 id="org523a84c"><span class="section-number-3">1.2.</span> Hello World</h3>
+<div class="outline-text-3" id="text-1-2">
+<ul class="org-ul">
+<li><p>
+无论是在Node还是在浏览器,我们都可以运行如下的最基础代码
+</p>
+<div class="org-src-container">
+<pre class="src src-js">console.log<span style="color: #3a81c3;">(</span><span style="color: #2d9574;">"Hello World!"</span><span style="color: #3a81c3;">)</span>;
+</pre>
+</div></li>
+<li>Node里面我们直接使用node hello.js运行</li>
+<li>在浏览器里面,我们需要:
+<ul class="org-ul">
+<li><p>
+一个~/hello.html文件,其内容包含
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #6c3163; font-weight: bold;">script</span> <span style="color: #715ab1;">src</span>=<span style="color: #2d9574;">"hello.js"</span>&gt;&lt;/<span style="color: #6c3163; font-weight: bold;">script</span>&gt;
+</pre>
+</div></li>
+<li>一个~/hello.js代码,注意两者相对位置</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org2d3c010" class="outline-2">
+<h2 id="org2d3c010"><span class="section-number-2">2.</span> Chapter 2: Lexical Structure</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-org3b61fa0" class="outline-3">
+<h3 id="org3b61fa0"><span class="section-number-3">2.1.</span> The Text of a JavaScript Program</h3>
+<div class="outline-text-3" id="text-2-1">
+<ul class="org-ul">
+<li>JavaScript是一个case-sensitive的语言</li>
+<li>JavaScript会忽略所有的space以及line break(行尾的line break在没有分号的时候会被解析成分号)</li>
+<li>除了space character(\u0020), JavaScript也会吧tabs, ASCII controll characters作为空格对待.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org492ed9a" class="outline-3">
+<h3 id="org492ed9a"><span class="section-number-3">2.2.</span> Comments</h3>
+<div class="outline-text-3" id="text-2-2">
+<ul class="org-ul">
+<li>JavaScript支持两种注释:
+<ul class="org-ul">
+<li>使用//注释一样</li>
+<li>使用/**/注释一段</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org2574082" class="outline-3">
+<h3 id="org2574082"><span class="section-number-3">2.3.</span> Literals</h3>
+<div class="outline-text-3" id="text-2-3">
+<ul class="org-ul">
+<li><p>
+literal就是直接出现在程序里面的data value,下面全部都是literal的例子
+</p>
+<div class="org-src-container">
+<pre class="src src-js">12
+1.2
+<span style="color: #2d9574;">"hello world"</span>
+<span style="color: #2d9574;">'Hi'</span>
+<span style="color: #4e3163;">true</span>
+<span style="color: #4e3163;">false</span>
+<span style="color: #4e3163;">null</span>
+</pre>
+</div></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgdc693f1" class="outline-3">
+<h3 id="orgdc693f1"><span class="section-number-3">2.4.</span> Identifiers and Reserved Words</h3>
+<div class="outline-text-3" id="text-2-4">
+<ul class="org-ul">
+<li>JavaScript的变量必须以如下三种情况开头:
+<ul class="org-ul">
+<li>letter</li>
+<li>underscore(_)</li>
+<li>dollar sign($)</li>
+</ul></li>
+<li>和其他语言一样,"保留关键字"是不能作为变量名的</li>
+</ul>
+</div>
+<div id="outline-container-orgef682d6" class="outline-4">
+<h4 id="orgef682d6"><span class="section-number-4">2.4.1.</span> Reserved Words</h4>
+<div class="outline-text-4" id="text-2-4-1">
+<ul class="org-ul">
+<li><p>
+当前已经使用的关键字
+</p>
+<pre class="example" id="org4611c75">
+as       void        async    while    await    with        break
+yield    case        catch    class    const    continue    debugger   default
+delete   do          else     export   extends  false       finally    for
+from     function    get      null     target
+if       of          this     import   return   throw
+in       set         true     instanceof        static      try
+let      super       typeof   new      switch   var
+</pre></li>
+<li>为将来预留的关键字:
+<ul class="org-ul">
+<li>enum</li>
+<li>implements</li>
+<li>interface</li>
+<li>package</li>
+<li>private</li>
+<li>protected</li>
+<li>public</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orge01e233" class="outline-3">
+<h3 id="orge01e233"><span class="section-number-3">2.5.</span> Unicode</h3>
+<div class="outline-text-3" id="text-2-5">
+<ul class="org-ul">
+<li>JavaScript是支持Unicode的</li>
+</ul>
+</div>
+<div id="outline-container-org76bbb98" class="outline-4">
+<h4 id="org76bbb98"><span class="section-number-4">2.5.1.</span> Unicode Escape Sequence</h4>
+<div class="outline-text-4" id="text-2-5-1">
+<ul class="org-ul">
+<li><p>
+有些硬件和软件无法正确显示所有Unicode character, 为了应对这个情况, JavaScript确定了escape sequence
+机制.
+</p>
+<pre class="example" id="orgf897bd5">
+所谓escape sequence,就是指允许用户只使用ASCII character来表达Unicode character
+</pre></li>
+<li>JavaScript的escape sequence有两种写法,都是以\u:
+<ul class="org-ul">
+<li>使用固定四位的十六进制数字,早期版本只支持这一种escape sequence</li>
+<li>使用{}包裹的,1到6位的十六进制数据,从ES6才开始支持这种escape sequence</li>
+<li><p>
+下例中分别就是:1直接写和两种escape sequence的例子
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">&gt; let caf&#233; = 1;
+<span style="color: #3a81c3;">let</span> caf&#233; = 1;
+undefined
+&gt; caf\u00e9
+caf\u00e9
+1
+&gt; caf\u<span style="color: #3a81c3;">{</span>E9<span style="color: #3a81c3;">}</span>
+caf\u<span style="color: #3a81c3;">{</span>E9<span style="color: #3a81c3;">}</span>
+1
+</pre>
+</div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org40509ff" class="outline-4">
+<h4 id="org40509ff"><span class="section-number-4">2.5.2.</span> Unicode Normalization</h4>
+<div class="outline-text-4" id="text-2-5-2">
+<ul class="org-ul">
+<li><p>
+一旦使用Unicode,那么就要注意Unicode中的一个难以发现的问题:
+</p>
+<pre class="example" id="orgcbc193b">
+两个看起来完全相同的变量,由于是由不同的Unicode创建的,所以会被认为是不同的变量
+</pre></li>
+<li>比如é ,其可以有如下两种组成方式:
+<ul class="org-ul">
+<li>由\u00E9一个character组成</li>
+<li>由e这个character,外加另外一个character \u0301(用来表示"尖音符组合符号"),一共两个character</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org9f40c37" class="outline-3">
+<h3 id="org9f40c37"><span class="section-number-3">2.6.</span> Optional Semicolons</h3>
+<div class="outline-text-3" id="text-2-6">
+<ul class="org-ul">
+<li>和许多语言一样,JavaScript是使用分号来分割statement的</li>
+<li>如果两个statement是写在了单独的行,那么你可以省略分号</li>
+<li>如果JavaScript无法把下一行解析为前一行的"继续",那么JavaScript总是把line break解析成分号</li>
+<li>但是有些情况下,即便JavaScript知道下面一行是前一行的"继续",它依然会把line break解析成分号
+<ol class="org-ol">
+<li>第一个例外和return, throw, yield, break, continue等关键字相关.这三个关键字后面的line break永远
+是分号</li>
+<li>++ 和 &#x2013; 前后的line break也都强制解析成分号,所以想用这些符号,必须和前后的变量在同一行</li>
+<li>箭头函数的"=&gt;"和"参数列表"必须在同一行</li>
+</ol></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org5039616" class="outline-2">
+<h2 id="org5039616"><span class="section-number-2">3.</span> Chapter 3: Types, Values, and Variables</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-org5558fe6" class="outline-3">
+<h3 id="org5558fe6"><span class="section-number-3">3.1.</span> Overview and Definitions</h3>
+<div class="outline-text-3" id="text-3-1">
+<ul class="org-ul">
+<li>JavaScript的type可以分成如下两类:
+<ul class="org-ul">
+<li>primitive type: 包括number, string boolean等</li>
+<li>object type</li>
+</ul></li>
+<li>如下两个特殊的JavaScript value,也是primitive,但是他们不是number,string和boolean.它们被认为是自己类
+型里面的唯一一个value:
+<ul class="org-ul">
+<li>null</li>
+<li>undefined</li>
+</ul></li>
+<li>ES6添加了一个新的特殊用途的primitive类型,叫做Symbol(用来保证兼容性的情况下,定义语言扩展)</li>
+<li><p>
+以上都是对primitive type成员的罗列,那么所有不属于primitive类型的value都是object类型
+</p>
+<pre class="example" id="orgcefeee8">
+Any JavaScript value that is not a number, a string, a boolean, a symbol, null,
+or undefined is an object
+</pre></li>
+<li>object type类型的每个变量都是一个object,每个object都是一系列的property的组合,并且每个property都有:
+<ul class="org-ul">
+<li>一个name</li>
+<li>一个value: 可以是primitive类型,也可以是object类型</li>
+</ul></li>
+<li>数组其实也是一个object,只不过:
+<ul class="org-ul">
+<li>它的name是0,1,2, 它的value是一样的</li>
+<li>由于name是0,1,2,所以数组是ordered of numbered values,而普通object是unordered of named values</li>
+</ul></li>
+<li>我们由一个全局的object,叫做global object会在后面讨论</li>
+<li>除了上面说的basic object和array, object type的还有:
+<ul class="org-ul">
+<li>Set object</li>
+<li>Map object</li>
+<li>RegExp type object</li>
+<li>Date type object</li>
+<li>Error type object</li>
+<li>function object</li>
+<li>class object</li>
+</ul></li>
+<li>JavaScript解释器会自动进行GC,所以JS开发者不需要关系value的destruction</li>
+<li><p>
+JavaScript同时支持面向对象编程:也就是说,不再使用全局的function来进行数据处理,而是在type内部就定义
+函数,这些function只能处理type内部的数据.这种只能处理type内部数据的function,我们也叫method,比如下面
+是a.sort()就是一个method
+</p>
+<div class="org-src-container">
+<pre class="src src-js">a = <span style="color: #3a81c3;">[</span>5, 1, 2, 3<span style="color: #3a81c3;">]</span>;
+a.sort<span style="color: #3a81c3;">()</span>;
+console.log<span style="color: #3a81c3;">(</span>a<span style="color: #3a81c3;">)</span>;
+
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">&lt;====================OUTPUT====================&gt;</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">[ 1, 2, 3, 5 ]</span>
+</pre>
+</div></li>
+<li>在JavaScript中:
+<ul class="org-ul">
+<li>所有的object数据都拥有method</li>
+<li>所有的number, strings, boolean, symbol value看上去好像能调用method,但是这是语法糖的效果</li>
+<li>null和undefined完全无法触发method</li>
+</ul></li>
+<li>JavaScript的object type是mutable的,而primitive type是immutable的:
+<ul class="org-ul">
+<li>对于object,你可以更改他的property,对于array,你可以更改它的element</li>
+<li>但是你无法更改number, boolean, symbol, string</li>
+</ul></li>
+<li>JavaScript比较难以理解的语法在于其"隐式转换"类型的能力,比如:
+<ul class="org-ul">
+<li>你的程序希望获得一个string类型,但是你提供过来一个number,那么JavaScript会自动转换:把number转换为string</li>
+<li>你的程序希望获得一个boolean类型,但是你提供了一个其他类型,那么JavaScript会自动转换:把其他类型转换为boolean</li>
+</ul></li>
+<li>JavaScript世界中的等于判断,就包含了是否有"隐式转换":
+<ul class="org-ul">
+<li>"=="" equality operator就是会在判断的时候遇到不匹配的type,主动进行类型转换后再比较</li>
+<li>"<code>=</code>" 直接进行比较,不进行类型转换</li>
+</ul></li>
+<li>如果不考虑"赋值"的话,所有的的"声明"在JavaScript里面都是untype的:
+<ul class="org-ul">
+<li>我们使用const声明一个常量的时候不会指定类型</li>
+<li>我们使用let(或者老版本的js使用var)声明一个变量的时候不会指定类型</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org94b716a" class="outline-3">
+<h3 id="org94b716a"><span class="section-number-3">3.2.</span> Numbers</h3>
+<div class="outline-text-3" id="text-3-2">
+<ul class="org-ul">
+<li>JavaScript的number类型是64-bit的floating-point format</li>
+<li>当一个number直接出现在JavaScript代码中的时候,就叫做numeric literal, JavaScript支持多种格式的numeric
+literal,下面会介绍</li>
+</ul>
+</div>
+<div id="outline-container-org17ee909" class="outline-4">
+<h4 id="org17ee909"><span class="section-number-4">3.2.1.</span> Integer Literals</h4>
+<div class="outline-text-4" id="text-3-2-1">
+<ul class="org-ul">
+<li><p>
+在JavaScript中, base-10 整数是最直观的存在,比如
+</p>
+<pre class="example" id="orgb5a678e">
+0
+3
+10000000
+</pre></li>
+<li><p>
+对于程序开发人员,十六进制的表达也很常见(以0x或者0X开头)
+</p>
+<pre class="example" id="org78af8b5">
+0xff
+0XBADCAFE
+</pre></li>
+<li>在ES6之后,我们还可以使用base2和base8两种整数表示
+<ul class="org-ul">
+<li><p>
+以0b开头表示base2
+</p>
+<pre class="example" id="orgd621cb8">
+0b10101
+</pre></li>
+<li><p>
+以0o开头表示base8
+</p>
+<pre class="example" id="orgb22fa1d">
+0o377
+</pre></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org21ea359" class="outline-4">
+<h4 id="org21ea359"><span class="section-number-4">3.2.2.</span> Floating-Point Literals</h4>
+<div class="outline-text-4" id="text-3-2-2">
+<ul class="org-ul">
+<li><p>
+我们可以以下面的公式来表示floating-point literal
+</p>
+<pre class="example" id="orge8c5555">
+[digits][.digits][(E|e)[(+|-)]digits]
+</pre></li>
+<li><p>
+下面是几个floating-pint literal的例子
+</p>
+<pre class="example" id="orgbb2f5b6">
+3.14
+2345.6789
+.3333333333333
+6.02e23
+1.4738223E-32
+</pre></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org6d9da47" class="outline-4">
+<h4 id="org6d9da47"><span class="section-number-4">3.2.3.</span> Arithmetic in JavaScript</h4>
+<div class="outline-text-4" id="text-3-2-3">
+<ul class="org-ul">
+<li>在JavaScript中,如下的"加减乘除"和"余数"肯定是非常早期就支持了
+<ul class="org-ul">
+<li>addition(+)</li>
+<li>subtraction(-)</li>
+<li>multiplication(*)</li>
+<li>division(/)</li>
+<li>modulo(%)</li>
+</ul></li>
+<li>ES6开始还支持了指数(**)</li>
+<li>除此以外JavaScript还通过Math object的method和constant定义了很多复杂的操作数和操作符,比如:
+<ul class="org-ul">
+<li><p>
+乘方
+</p>
+<div class="org-src-container">
+<pre class="src src-js">Math.pow<span style="color: #3a81c3;">(</span>2, 53<span style="color: #3a81c3;">)</span>
+</pre>
+</div></li>
+<li><p>
+绝对值
+</p>
+<div class="org-src-container">
+<pre class="src src-js">Math.abs<span style="color: #3a81c3;">(</span>-5<span style="color: #3a81c3;">)</span>
+</pre>
+</div></li>
+<li><p>
+圆周率
+</p>
+<div class="org-src-container">
+<pre class="src src-js">Math.PI
+</pre>
+</div></li>
+</ul></li>
+<li>ES6在Math object上定义了更多的method和const
+<ul class="org-ul">
+<li><p>
+立方根
+</p>
+<div class="org-src-container">
+<pre class="src src-js">Math.cbrt<span style="color: #3a81c3;">(</span>27<span style="color: #3a81c3;">)</span>
+</pre>
+</div></li>
+<li><p>
+去掉浮点数的小数部分,直接返回整数部分
+</p>
+<div class="org-src-container">
+<pre class="src src-js">Math.trunc<span style="color: #3a81c3;">(</span>3.9<span style="color: #3a81c3;">)</span>
+</pre>
+</div></li>
+</ul></li>
+<li>JavaScript在如下的极端情况下,都不会报错:
+<ul class="org-ul">
+<li>overflow</li>
+<li>underflow</li>
+<li>division by zero</li>
+</ul></li>
+<li>不会报错,但是会返回一些特殊的值:
+<ul class="org-ul">
+<li>如果计算结果比JavaScript可以表示的最大的值还大(Overflow的一种),那么返回Infinity</li>
+<li>如果计算结果比JavaScript可以表示的最小的值还小(Overflow的另外一种),那么返回-Infinity</li>
+<li>如果计算结果非常接近0,且大于0(Underflow的一种),那么JavaScript直接返回0</li>
+<li><p>
+如果计算结果非常接近0,且小于0(Underflow的另外一种),那么JavaScript直接返回"negative zero"(-0),
+"-0"和"0"是两个不同的数字.
+</p>
+<div class="org-src-container">
+<pre class="src src-js"><span style="color: #3a81c3; font-weight: bold;">let</span> <span style="color: #715ab1;">negativeZero</span> = -1 / <span style="color: #4e3163;">Infinity</span>;
+console.log<span style="color: #3a81c3;">(</span>negativeZero<span style="color: #3a81c3;">)</span>;
+
+<span style="color: #3a81c3; font-weight: bold;">let</span> <span style="color: #715ab1;">x</span> = -0;
+console.log<span style="color: #3a81c3;">(</span>Object.is<span style="color: #6c3163;">(</span>x, -0<span style="color: #6c3163;">)</span><span style="color: #3a81c3;">)</span>;
+console.log<span style="color: #3a81c3;">(</span>Object.is<span style="color: #6c3163;">(</span>x, 0<span style="color: #6c3163;">)</span><span style="color: #3a81c3;">)</span>;
+
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">&lt;====================OUTPUT====================&gt;</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">-0</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">true</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">false</span>
+</pre>
+</div></li>
+<li><p>
+"-0"和"0"是两个不同的数字,但是他们的值却相等,而Infinity和-Infinity却不相等
+</p>
+<div class="org-src-container">
+<pre class="src src-js"><span style="color: #3a81c3; font-weight: bold;">let</span> <span style="color: #715ab1;">zero</span> = 0;
+<span style="color: #3a81c3; font-weight: bold;">let</span> <span style="color: #715ab1;">negz</span> = -0;
+console.log<span style="color: #3a81c3;">(</span>zero === negz<span style="color: #3a81c3;">)</span>;
+
+console.log<span style="color: #3a81c3;">(</span>1 / zero<span style="color: #3a81c3;">)</span>;
+console.log<span style="color: #3a81c3;">(</span>1 / negz<span style="color: #3a81c3;">)</span>;
+console.log<span style="color: #3a81c3;">(</span>1 / zero === 1 / negz<span style="color: #3a81c3;">)</span>;
+
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">&lt;====================OUTPUT====================&gt;</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">true</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">Infinity</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">-Infinity</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">false</span>
+</pre>
+</div></li>
+<li>Division by zero其实要分两种情况考虑:
+<ol class="org-ol">
+<li>如果是普通的正数或负数初以0,那么得到infinity或者negative infinity</li>
+<li>如果是0除以0,那么得到NaN</li>
+</ol></li>
+<li>NaN也会在如下情况下出现,感觉是表达了一种对计算结果的"无奈"(NaN是Not a Number的缩写):
+<ol class="org-ol">
+<li>使用infinity初以infinity</li>
+<li>为负数开方</li>
+<li>对使用"数学操作符"操作"non-number操作数",结果肯定是non-number的,只能用NaN表示</li>
+</ol></li>
+</ul></li>
+<li><p>
+Infinity和NaN在JavaScript里面是global constant,但是其实这两个也存在于Number object里面
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">$ node
+Welcome to Node.js v22.5.1.
+Type <span style="color: #2d9574;">".help"</span> for more information.
+&gt; Infinity
+Infinity
+&gt; Number.POSITIVE_INFINITY
+Infinity
+&gt; -Infinity
+-Infinity
+&gt; Number.NEGATIVE_INFINITY
+-Infinity
+&gt; NaN
+NaN
+&gt; Number.NaN
+NaN
+</pre>
+</div></li>
+<li>NaN有一个特别的特性:
+<ul class="org-ul">
+<li><p>
+它和谁进行比较都得到false,包括它自己
+</p>
+<pre class="example" id="orgd88c546">
+NaN dose not compare qual to any other value, including itself
+</pre></li>
+<li><p>
+这也就意味着,我们要判断一个数是不是NaN只能使用如下两种方法:
+</p>
+<div class="org-src-container">
+<pre class="src src-js">Number.isNaN<span style="color: #3a81c3;">(</span>x<span style="color: #3a81c3;">)</span>
+x != x
+</pre>
+</div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgfa7f2c3" class="outline-4">
+<h4 id="orgfa7f2c3"><span class="section-number-4">3.2.4.</span> Binary Floating-Point and ROunding Errors</h4>
+<div class="outline-text-4" id="text-3-2-4">
+<ul class="org-ul">
+<li>实数其实是无穷的,但是JavaScript能表达的数字个数确是有穷的.那么这就意味着我们的数字其实只可能是真实
+数字的一个接近值</li>
+<li>JavaScript使用的浮点数规范是IEEE-754,这是一种binary representation,这种表达方式能够精确的表达1/2,
+1/8等,但是我们日常生活中常用的确实decimal reprsentation,比如1/10, 1/100这就导致binary representation
+连0.1都无法准确的表达.
+<ul class="org-ul">
+<li><p>
+比如下面的例子
+</p>
+<div class="org-src-container">
+<pre class="src src-js"><span style="color: #3a81c3; font-weight: bold;">let</span> <span style="color: #715ab1;">x</span> = 0.3 - 0.2;
+<span style="color: #3a81c3; font-weight: bold;">let</span> <span style="color: #715ab1;">y</span> = 0.2 - 0.1;
+console.log<span style="color: #3a81c3;">(</span>x === y<span style="color: #3a81c3;">)</span>;
+console.log<span style="color: #3a81c3;">(</span>x<span style="color: #3a81c3;">)</span>;
+console.log<span style="color: #3a81c3;">(</span>y<span style="color: #3a81c3;">)</span>;
+
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">&lt;====================OUTPUT====================&gt;</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">false</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">0.09999999999999998</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">0.1</span>
+</pre>
+</div></li>
+<li>我们可以看到由于"近似取数字"带来的误差,如下两个近似的大小不同:
+<ol class="org-ol">
+<li>.3和.2之间是不到.1的是0.09999999999999998</li>
+<li>.2和.1直接是刚好.1</li>
+</ol></li>
+</ul></li>
+<li>注意浮点数的不精确是所有编程语言都存在的问题.之所以在JS里面比较令人诟病是因为JS之前只有Number类型,我们
+无法通过放大浮点数为整数,来准确的实现一些计算,从而模拟浮点数真实的计算</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org57a8982" class="outline-4">
+<h4 id="org57a8982"><span class="section-number-4">3.2.5.</span> Arbitrary Precision Integers with BigInt</h4>
+<div class="outline-text-4" id="text-3-2-5">
+<ul class="org-ul">
+<li>JavaScript最新的特性,就是添加了一个新的numeric type叫做BigInt,这种类型的诞生,能够让JS和其他编程语言
+和API进行兼容</li>
+<li>JavaScript的BigInt是一种64-bit的整数实现,可以表达非常大的数.</li>
+<li>Big literal看起来就是string of digits并且在最后加上 一个n作为后缀:
+<ul class="org-ul">
+<li><p>
+10进制的情况
+</p>
+<div class="org-src-container">
+<pre class="src src-js">1234n
+</pre>
+</div></li>
+<li><p>
+二进制的情况
+</p>
+<div class="org-src-container">
+<pre class="src src-js">0b111111n
+</pre>
+</div></li>
+<li><p>
+八进制的情况
+</p>
+<div class="org-src-container">
+<pre class="src src-js">0o7777n
+</pre>
+</div></li>
+</ul></li>
+<li><p>
+你可以使用BigInt()来将普通的JavaScript number或者string转换为BigInt value
+</p>
+<div class="org-src-container">
+<pre class="src src-js">console.log<span style="color: #3a81c3;">(</span>BigInt<span style="color: #6c3163;">(</span>Number.MAX_SAFE_INTEGER<span style="color: #6c3163;">)</span><span style="color: #3a81c3;">)</span>;
+<span style="color: #3a81c3; font-weight: bold;">let</span> <span style="color: #715ab1;">string</span> = <span style="color: #2d9574;">"1"</span> + <span style="color: #2d9574;">"0"</span>.repeat<span style="color: #3a81c3;">(</span>100<span style="color: #3a81c3;">)</span>;
+console.log<span style="color: #3a81c3;">(</span>string<span style="color: #3a81c3;">)</span>;
+console.log<span style="color: #3a81c3;">(</span>BigInt<span style="color: #6c3163;">(</span>string<span style="color: #6c3163;">)</span><span style="color: #3a81c3;">)</span>;
+
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">&lt;====================OUTPUT====================&gt;</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">9007199254740991n</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000n</span>
+</pre>
+</div></li>
+<li><p>
+BigInt的行为和其他语言的整数类型一致,加减正常,除法会抛弃掉余数
+</p>
+<div class="org-src-container">
+<pre class="src src-js">console.log<span style="color: #3a81c3;">(</span>1000n + 2000n<span style="color: #3a81c3;">)</span>;
+console.log<span style="color: #3a81c3;">(</span>3000n - 2000n<span style="color: #3a81c3;">)</span>;
+console.log<span style="color: #3a81c3;">(</span>2000n * 3000n<span style="color: #3a81c3;">)</span>;
+console.log<span style="color: #3a81c3;">(</span>3000n / 997n<span style="color: #3a81c3;">)</span>;
+console.log<span style="color: #3a81c3;">(</span>3000n % 997n<span style="color: #3a81c3;">)</span>;
+
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">&lt;====================OUTPUT====================&gt;</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">3000n</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">1000n</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">6000000n</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">3n</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">9n</span>
+</pre>
+</div></li>
+<li>由于BigInt其实只是用64-bit来表达整数,而number是用64-bit来表达浮点数.所以两者没有谁更强,所以如果把
+这两者进行如下的运算(加减乘除和取余),得到的结果应该包容两者优点.但是由于JavaScript里面没有这种类型,
+所以JavaScript直接不允许这两者混合着进行如下运算:
+<ul class="org-ul">
+<li>addition(+)</li>
+<li>subtraction(-)</li>
+<li>multiplication(*)</li>
+<li>division(/)</li>
+<li>modulo(%)</li>
+</ul></li>
+<li><p>
+我们可以混合BigInt和Number进行比较
+</p>
+<div class="org-src-container">
+<pre class="src src-shell"> &gt; 1 &lt; 2n
+true
+&gt; 2 &gt; 1n
+true
+&gt; 0 == 0n                       <span style="color: #2aa1ae; background-color: #ecf3ec;"># </span><span style="color: #2aa1ae; background-color: #ecf3ec;">convert before check</span>
+true
+&gt; 0 === 0n                      <span style="color: #2aa1ae; background-color: #ecf3ec;"># </span><span style="color: #2aa1ae; background-color: #ecf3ec;">check type equality as well</span>
+false
+</pre>
+</div></li>
+<li>Math object的不接受BigInt数字作为参数的</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org9c28949" class="outline-4">
+<h4 id="org9c28949"><span class="section-number-4">3.2.6.</span> Dates and Times</h4>
+<div class="outline-text-4" id="text-3-2-6">
+<ul class="org-ul">
+<li>JavaScript定义了Date class用来表示日期和时间</li>
+<li><p>
+JavaScript Date是object type,但是它是可以通过函数转换为number表达的:millisecond单位的Unixtime
+</p>
+<div class="org-src-container">
+<pre class="src src-js"><span style="color: #3a81c3; font-weight: bold;">let</span> <span style="color: #715ab1;">timestamp</span> = Date.now<span style="color: #3a81c3;">()</span>;
+console.log<span style="color: #3a81c3;">(</span>timestamp<span style="color: #3a81c3;">)</span>;
+
+<span style="color: #3a81c3; font-weight: bold;">let</span> <span style="color: #715ab1;">now</span> = <span style="color: #3a81c3; font-weight: bold;">new</span> <span style="color: #ba2f59; font-weight: bold;">Date</span><span style="color: #3a81c3;">()</span>;
+console.log<span style="color: #3a81c3;">(</span>now<span style="color: #3a81c3;">)</span>;
+<span style="color: #3a81c3; font-weight: bold;">let</span> <span style="color: #715ab1;">ms</span> = now.getTime<span style="color: #3a81c3;">()</span>;
+console.log<span style="color: #3a81c3;">(</span>ms<span style="color: #3a81c3;">)</span>;
+
+<span style="color: #3a81c3; font-weight: bold;">let</span> <span style="color: #715ab1;">iso</span> = now.toISOString<span style="color: #3a81c3;">()</span>;
+console.log<span style="color: #3a81c3;">(</span>iso<span style="color: #3a81c3;">)</span>;
+
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">&lt;====================OUTPUT====================&gt;</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">1723124985815</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">2024-08-08T13:49:45.821Z</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">1723124985821</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">2024-08-08T13:49:45.821Z</span>
+</pre>
+</div></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orga8140e4" class="outline-3">
+<h3 id="orga8140e4"><span class="section-number-3">3.3.</span> Text</h3>
+<div class="outline-text-3" id="text-3-3">
+<ul class="org-ul">
+<li>JavaScript中,表示文本的类型是string</li>
+<li>string是一个immutable ordered sequence</li>
+<li>string的成员都是16-bit value,每个都是一个Unicode character</li>
+<li>string的长度,就是16-bit的character的个数</li>
+<li>JavaScript Text系统和其他编程语言不一样的地方在于,它没有表示单个字符的类型(比如golang里面的char),
+而是只有string. 如果要表示单个16-bit value,那么就用长度为1的string</li>
+<li>Javascript是支持Unicode的,绝大部分的Unicode用16bit就完美支持了.少部分Unicode可能需要两个16bit.这种
+情况下我们的string长度可能是2,但是仅仅展示出一个unicode character</li>
+<li>在ES6中, for loop的单位是character,而不是16-bit value</li>
+</ul>
+</div>
+<div id="outline-container-org941d455" class="outline-4">
+<h4 id="org941d455"><span class="section-number-4">3.3.1.</span> String Literals</h4>
+<div class="outline-text-4" id="text-3-3-1">
+<ul class="org-ul">
+<li>在JavaScript中,有三种字符串的表达形式:
+<ul class="org-ul">
+<li>单引号</li>
+<li>双引号</li>
+<li>反引号: ES6中引入</li>
+</ul></li>
+<li>在ES5之后,如果你的文档非常长,需要多行展示但是不想中间由换行符的话,你需要 "\" 来进行(这也是之前bash命令的多行显示手段).</li>
+<li>如果你想要在单行里面引入"换行",那么就要用"\n", 或者使用ES6引入的反括号:
+<ul class="org-ul">
+<li><p>
+反括号内部的换行符也是字符串的一部分
+</p>
+<div class="org-src-container">
+<pre class="src src-js">line = <span style="color: #2d9574;">`the newline character at the end of this line</span>
+<span style="color: #2d9574;">is included literally in this string`</span>;
+console.log<span style="color: #3a81c3;">(</span>line<span style="color: #3a81c3;">)</span>;
+
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">&lt;====================OUTPUT====================&gt;</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">the newline character at the end of this line</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">is included literally in this string</span>
+</pre>
+</div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orga095ae5" class="outline-4">
+<h4 id="orga095ae5"><span class="section-number-4">3.3.2.</span> Escape Sequence in String Literals</h4>
+<div class="outline-text-4" id="text-3-3-2">
+<ul class="org-ul">
+<li>像其他Unix下的语言一样, JavaScript使用\来作为转义符(英文名叫escape sequence,也就是escape后面字符本来的意义的意思):
+<ul class="org-ul">
+<li>\n表示newline</li>
+<li>\'表示撇号,在字符串包裹的英文中如果需要I'm 这种撇号,需要加转义符</li>
+<li>\x后面可以加两个十六进制数,表示小的Unicode</li>
+<li>\u后面可以跟四个十六进制数,表示大范围的Unicode</li>
+<li>\u后面跟{},在{}里面输入最多可以表示到\u{10FFFF},也就是最大范围的Unicode</li>
+</ul></li>
+<li><p>
+如果没有定义过这个转义字符,那么加上\的效果就是没有任何效果
+</p>
+<div class="org-src-container">
+<pre class="src src-js">a = <span style="color: #2d9574;">"#"</span>;
+b = <span style="color: #2d9574;">"#"</span>;
+console.log<span style="color: #3a81c3;">(</span>a<span style="color: #3a81c3;">)</span>;
+console.log<span style="color: #3a81c3;">(</span>b<span style="color: #3a81c3;">)</span>;
+console.log<span style="color: #3a81c3;">(</span>a === b<span style="color: #3a81c3;">)</span>;
+
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">&lt;====================OUTPUT====================&gt;</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">#</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">#</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">true</span>
+</pre>
+</div></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgd92552e" class="outline-4">
+<h4 id="orgd92552e"><span class="section-number-4">3.3.3.</span> Working with Strings</h4>
+<div class="outline-text-4" id="text-3-3-3">
+<ul class="org-ul">
+<li><p>
+JavaScript的内置特性是使用+来把不同的string进行连接
+</p>
+<div class="org-src-container">
+<pre class="src src-js"><span style="color: #3a81c3; font-weight: bold;">let</span> <span style="color: #715ab1;">msg</span> = <span style="color: #2d9574;">"Hello, "</span> +<span style="color: #2d9574;">"world"</span>;
+console.log<span style="color: #3a81c3;">(</span>msg<span style="color: #3a81c3;">)</span>
+
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">&lt;====================OUTPUT====================&gt;</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">Hello, world</span>
+</pre>
+</div></li>
+<li>我们可以使用===和!==对两个字符串进行对比是否相同</li>
+<li>我们也可以使用如下操作符进行比较,比较的方法,其实就是挨个比较16-bit value
+<ol class="org-ol">
+<li>&lt;</li>
+<li>&lt;=</li>
+<li>&gt;</li>
+<li>&gt;=</li>
+</ol></li>
+<li>我们使用length method来计算string的长度,计算方法是计算string里面16-bit value的个数</li>
+<li>在JavaScript里面,针对string有非常多的method:
+<ul class="org-ul">
+<li>substring</li>
+<li>slice</li>
+<li>split</li>
+<li>indexOf</li>
+<li>startsWith</li>
+<li>replace</li>
+<li>toUpperCase</li>
+</ul></li>
+<li>我们的JavaScript中的string是immutable的,所以上面的replace()和toUpperCase()方法会返回新的字符串,而
+不会改变这些字符串</li>
+<li><p>
+String可以被看做是read-only array,所以你可以通过如下方法access 每个单独的character
+</p>
+<div class="org-src-container">
+<pre class="src src-js"><span style="color: #3a81c3; font-weight: bold;">let</span> <span style="color: #715ab1;">s</span> = <span style="color: #2d9574;">"hello, world"</span>;
+console.log<span style="color: #3a81c3;">(</span>s<span style="color: #6c3163;">[</span>0<span style="color: #6c3163;">]</span><span style="color: #3a81c3;">)</span>;
+console.log<span style="color: #3a81c3;">(</span>s<span style="color: #6c3163;">[</span>s.length - 1<span style="color: #6c3163;">]</span><span style="color: #3a81c3;">)</span>;
+
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">&lt;====================OUTPUT====================&gt;</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">h</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">d</span>
+</pre>
+</div></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org862ceed" class="outline-4">
+<h4 id="org862ceed"><span class="section-number-4">3.3.4.</span> Template Literals</h4>
+<div class="outline-text-4" id="text-3-3-4">
+<ul class="org-ul">
+<li><p>
+在ES6之后,string lietras可以使用反引号来创建,比如
+</p>
+<div class="org-src-container">
+<pre class="src src-js"><span style="color: #3a81c3; font-weight: bold;">let</span> <span style="color: #715ab1;">s</span> = <span style="color: #2d9574;">`hello world`</span>;
+</pre>
+</div></li>
+<li>这种字符串比ES6之前的字符串要"高级":
+<ul class="org-ul">
+<li><p>
+他可以是一种template literal,可以包含任意的JavaScript表达式
+</p>
+<div class="org-src-container">
+<pre class="src src-js"><span style="color: #3a81c3; font-weight: bold;">let</span> <span style="color: #715ab1;">name</span> = <span style="color: #2d9574;">"Bill"</span>;
+<span style="color: #3a81c3; font-weight: bold;">let</span> <span style="color: #715ab1;">greeting</span> = <span style="color: #2d9574;">`hello ${name}.`</span>;
+console.log<span style="color: #3a81c3;">(</span>greeting<span style="color: #3a81c3;">)</span>
+
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">&lt;====================OUTPUT====================&gt;</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">hello Bill.</span>
+</pre>
+</div></li>
+<li><p>
+类似于python里面的"f"开头的字符串
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #715ab1;">name</span> = <span style="color: #2d9574;">"Bill"</span>
+<span style="color: #715ab1;">greeting</span> = f<span style="color: #2d9574;">"Hello </span>{name}<span style="color: #2d9574;">"</span>
+
+<span style="color: #3a81c3;">print</span><span style="color: #3a81c3;">(</span><span style="color: #2d9574;">"""|greeting|=&gt;"""</span>, greeting<span style="color: #3a81c3;">)</span>
+
+<span style="color: #2aa1ae; background-color: #ecf3ec;"># </span><span style="color: #2aa1ae; background-color: #ecf3ec;">&lt;====================OUTPUT====================&gt;</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;"># </span><span style="color: #2aa1ae; background-color: #ecf3ec;">|greeting|=&gt; Hello Bill</span>
+</pre>
+</div></li>
+</ul></li>
+<li>ES6有一个内置的处理raw函数的function叫做String.raw():
+<ul class="org-ul">
+<li>用例代码如下</li>
+<li>我们可以看到,这个函数最明显的特点是调用的时候,不用(),直接和template string相结合</li>
+<li>第二个特点就是通过返回值观察到,这个函数返回值不会转义,所以'\n'在String.raw这里长度就是2,而普通字
+符串'\n'转义成换行符,长度就是1</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org9df2cf5" class="outline-4">
+<h4 id="org9df2cf5"><span class="section-number-4">3.3.5.</span> Pattern Matching</h4>
+<div class="outline-text-4" id="text-3-3-5">
+<ul class="org-ul">
+<li>正则表达式也是JS已经具备的功能.在JS里面两个"/"之间的字符串就是正则表达式,例子如下:
+<ul class="org-ul">
+<li><p>
+匹配所有以HTML开头的字符串
+</p>
+<div class="org-src-container">
+<pre class="src src-js"><span style="color: #2d9574;">/^HTML/</span>
+</pre>
+</div></li>
+<li><p>
+匹配"javascript"这个小写字母
+</p>
+<div class="org-src-container">
+<pre class="src src-js"><span style="color: #2d9574;">/\bjavascript\b/</span>i
+</pre>
+</div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgd5634cc" class="outline-3">
+<h3 id="orgd5634cc"><span class="section-number-3">3.4.</span> Boolean Values</h3>
+<div class="outline-text-3" id="text-3-4">
+<ul class="org-ul">
+<li>boolean在JS里面只有两个可能的值:
+<ul class="org-ul">
+<li>true</li>
+<li>false</li>
+</ul></li>
+<li>JavaScript value可以convert成boolean值,比如下面的值就等同于false:
+<ul class="org-ul">
+<li>undefined</li>
+<li>null</li>
+<li>0</li>
+<li>-0</li>
+<li>NaN</li>
+<li>""</li>
+</ul></li>
+<li>这六个value加上false是起到"否"的作用,其他所有值都是起到"是"的作用</li>
+<li>和其他语言一样JavaScript也有如下的操作:
+<ul class="org-ul">
+<li>&amp;&amp;: 与</li>
+<li>||: 或</li>
+<li>!: Not</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org446541f" class="outline-3">
+<h3 id="org446541f"><span class="section-number-3">3.5.</span> null and undefined</h3>
+<div class="outline-text-3" id="text-3-5">
+</div>
+<div id="outline-container-org23b8953" class="outline-4">
+<h4 id="org23b8953"><span class="section-number-4">3.5.1.</span> null</h4>
+<div class="outline-text-4" id="text-3-5-1">
+<ul class="org-ul">
+<li>null用来说明一种value absent的状态,null是关键字</li>
+<li>如果对null使用typeof的话,会发现返回值为object,这说明null可以被认为是一种特殊的object:"no object"</li>
+<li>实践当中,我们不把null作为object类型,而是把他作为null type. null也就是null type的唯一数据</li>
+<li>null和python中的None类似</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org28d6307" class="outline-4">
+<h4 id="org28d6307"><span class="section-number-4">3.5.2.</span> undefined</h4>
+<div class="outline-text-4" id="text-3-5-2">
+<ul class="org-ul">
+<li>undefind也是用来说明一种value absent状态的,不过它是定义在global域的一个const</li>
+<li>如果对undefind进行typeof,就会发现返回undefined.</li>
+<li>undefined也是undefined type的唯一value</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgeaf5291" class="outline-4">
+<h4 id="orgeaf5291"><span class="section-number-4">3.5.3.</span> 两者的联系</h4>
+<div class="outline-text-4" id="text-3-5-3">
+<ul class="org-ul">
+<li>如果用equality operator(==)的话,两者相等.</li>
+<li>如果用strict euqality operator(<code>=</code>),两者就不会相等了,因为类型不一样.</li>
+<li>两者在if后面都表示false</li>
+<li>两者都没有任何的method,试图使用"."或者"[]"在这两者身上都会造成TypeError</li>
+<li>两者在编译语义方面真正的区别:
+<ul class="org-ul">
+<li><p>
+undefined代表了一种unexpected的error的数据缺席
+</p>
+<pre class="example" id="orga363554">
+undefined to represent a system-level, unexpected, or error-like absensence of value
+</pre></li>
+<li><p>
+null则代表了一种expected的数据缺席
+</p>
+<pre class="example" id="orgedd1e39">
+null to represent a program-level, normal, or expected absense of value
+</pre></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org8f41122" class="outline-3">
+<h3 id="org8f41122"><span class="section-number-3">3.6.</span> Symbols</h3>
+<div class="outline-text-3" id="text-3-6">
+<ul class="org-ul">
+<li>symbol是在ES6中才被引入的,用来作为object类型中property的name的类型:
+<ul class="org-ul">
+<li>注意,在ES6之前,object类型的property的name是string类型</li>
+</ul></li>
+<li><p>
+Symbol作为property的name比stirng好的地方在于,使用Symbol()函数创建的Symbol值是唯一的,即便使用相同的
+参数创建他们. 由于Symbol的唯一性,可以避免不同代码库直接不同模块之间的属性名称冲突
+</p>
+<div class="org-src-container">
+<pre class="src src-js"><span style="color: #3a81c3; font-weight: bold;">const</span> <span style="color: #715ab1;">sym1</span> = Symbol<span style="color: #3a81c3;">(</span><span style="color: #2d9574;">"description"</span><span style="color: #3a81c3;">)</span>;
+<span style="color: #3a81c3; font-weight: bold;">const</span> <span style="color: #715ab1;">sym2</span> = Symbol<span style="color: #3a81c3;">(</span><span style="color: #2d9574;">"description"</span><span style="color: #3a81c3;">)</span>;
+console.log<span style="color: #3a81c3;">(</span>sym1 === sym2<span style="color: #3a81c3;">)</span>;
+
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">&lt;====================OUTPUT====================&gt;</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">const sym1 = Symbol("description")</span>
+</pre>
+</div></li>
+<li>Symbol.iterator可以定义对象的迭代行为</li>
+<li>可以使用Symbol.for()和Symbol.keyFor()在全局Symbol注册表中恭喜Symbol</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org61d6db9" class="outline-3">
+<h3 id="org61d6db9"><span class="section-number-3">3.7.</span> The Global Object</h3>
+<div class="outline-text-3" id="text-3-7">
+<ul class="org-ul">
+<li>有一个object类型的value非常重要,那就是global object</li>
+<li>每当JavaScript解释器启动(比如浏览器加载了一个新的页面),那么就会创建一个global object,并且给这个
+global object初始化了如下的property:
+<ul class="org-ul">
+<li>全局const,比如:undefined, Infinity, NaN</li>
+<li>全局函数,比如: isNaN(), parseInt(), eval()</li>
+<li>Constructor函数,比如: Date(), RegExp(), String(), Object(), Array()</li>
+<li>全局Object,比如Math, JSON</li>
+</ul></li>
+<li>global object最开始的这些property不是"保留关键字",但是实践当中,他们都被赋予了"保留关键字"的地位</li>
+<li>Node里面global object有一个property的名字叫做global,global指向global object自己,所以你可以在Node代
+码中访问global object</li>
+<li>在浏览器领域和Node中global对应的property名字叫做window. 但是浏览器里面的global object会额外定义很多
+浏览器特定的property</li>
+<li><p>
+ES2020最终决定使用关键字globalThis来指代global object.globalThis和之前的global,window一样,访问自己就是返回自己
+</p>
+<div class="org-src-container">
+<pre class="src src-js">console.log<span style="color: #3a81c3;">(</span>globalThis === globalThis.globalThis<span style="color: #3a81c3;">)</span>;
+
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">&lt;====================OUTPUT====================&gt;</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">true</span>
+</pre>
+</div></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orge67831f" class="outline-3">
+<h3 id="orge67831f"><span class="section-number-3">3.8.</span> Immutable Primitive Values and Mutable Object References</h3>
+<div class="outline-text-3" id="text-3-8">
+<ul class="org-ul">
+<li><p>
+在JavaScript里面primitive value(undefined, null, boolean, number, string)和object(包括array,function)有本质上的不同:
+</p>
+<pre class="example" id="orge871a81">
+primitive类型的数据是immutable的, 你没办法更改一个primitive value
+</pre></li>
+<li>对于number和boolean来说,immutable是很直观且容易理解的.但是人们普遍认为string是一个char的array,那么
+我岂不是可以更改这个array里面的char,从而间接更改了string?</li>
+<li><p>
+事实恰恰相反,JavaScript里面所有更改字符串的函数,都是返回一个新的字符串,老的字符串保持不变
+</p>
+<div class="org-src-container">
+<pre class="src src-js"><span style="color: #3a81c3; font-weight: bold;">let</span> <span style="color: #715ab1;">s</span> = <span style="color: #2d9574;">"hello"</span>;
+console.log<span style="color: #3a81c3;">(</span>s.toUpperCase<span style="color: #6c3163;">()</span><span style="color: #3a81c3;">)</span>;
+console.log<span style="color: #3a81c3;">(</span>s<span style="color: #3a81c3;">)</span>;
+
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">&lt;====================OUTPUT====================&gt;</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">HELLO</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">hello</span>
+</pre>
+</div></li>
+<li>primivite和object对于值的比价也是不一样的:
+<ul class="org-ul">
+<li><p>
+primitive的比较是比较值:两个string只要内容一样,那么必然一样
+</p>
+<div class="org-src-container">
+<pre class="src src-js"><span style="color: #3a81c3; font-weight: bold;">let</span> <span style="color: #715ab1;">s1</span> = <span style="color: #2d9574;">"hello world"</span>;
+<span style="color: #3a81c3; font-weight: bold;">let</span> <span style="color: #715ab1;">s2</span> = <span style="color: #2d9574;">"hello world"</span>;
+console.log<span style="color: #3a81c3;">(</span>s1 === s2<span style="color: #3a81c3;">)</span>;
+
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">&lt;====================OUTPUT====================&gt;</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">true</span>
+</pre>
+</div></li>
+<li><p>
+object的比较是比较reference,而不是值:两个数组即便是内部数据完全一样,也有可能比较结果为false,只有
+两个变量底层指向的object是同一个地址的时候,两者才能相等
+</p>
+<div class="org-src-container">
+<pre class="src src-js"><span style="color: #3a81c3; font-weight: bold;">let</span> <span style="color: #715ab1;">a</span> = <span style="color: #3a81c3;">[</span>1, 2, 3<span style="color: #3a81c3;">]</span>;
+<span style="color: #3a81c3; font-weight: bold;">let</span> <span style="color: #715ab1;">b</span> = <span style="color: #3a81c3;">[</span>1, 2, 3<span style="color: #3a81c3;">]</span>;
+
+console.log<span style="color: #3a81c3;">(</span>a === b<span style="color: #3a81c3;">)</span>;
+
+sa = a.join<span style="color: #3a81c3;">(</span><span style="color: #2d9574;">""</span><span style="color: #3a81c3;">)</span>;
+sb = b.join<span style="color: #3a81c3;">(</span><span style="color: #2d9574;">""</span><span style="color: #3a81c3;">)</span>;
+console.log<span style="color: #3a81c3;">(</span>sa === sb<span style="color: #3a81c3;">)</span>;
+
+<span style="color: #3a81c3; font-weight: bold;">let</span> <span style="color: #715ab1;">c</span> = b;
+console.log<span style="color: #3a81c3;">(</span>c === b<span style="color: #3a81c3;">)</span>;
+
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">&lt;====================OUTPUT====================&gt;</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">false</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">true</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">true</span>
+</pre>
+</div></li>
+</ul></li>
+<li>object通过reference来进行比较的特性让有一些麻烦的地方:
+<ul class="org-ul">
+<li>如果我们把object赋值给另外一个object,它其实没有创建新的copy,如果需要创建新的copy,那么需要用for函数依次创建</li>
+<li>如果想比较两个地址不一样的对象,其内容是否一致,那么也需要for函数依次比较</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org434dde9" class="outline-3">
+<h3 id="org434dde9"><span class="section-number-3">3.9.</span> Type Conversions</h3>
+<div class="outline-text-3" id="text-3-9">
+<ul class="org-ul">
+<li>我们前面看到过,JavaScript其实有很方便的自动类型转换,比如很多类型能够直接转换为boolean类型</li>
+<li>JavaScript另外一个特点,就是一旦两个不同类型数据相加,它甚至会自动帮你转换类型.而且这个过程当中,很多意
+想不到,且没有规律. 我们这里就介绍一些非常常见的例子:
+<ul class="org-ul">
+<li><p>
+无论什么类型,和string一旦相加,就会变成string.所以string的"魅力"是比较强的
+</p>
+<div class="org-src-container">
+<pre class="src src-js">console.log<span style="color: #3a81c3;">(</span><span style="color: #2d9574;">"string and number"</span><span style="color: #3a81c3;">)</span>;
+console.log<span style="color: #3a81c3;">(</span>1 + <span style="color: #2d9574;">"2"</span><span style="color: #3a81c3;">)</span>;
+console.log<span style="color: #3a81c3;">(</span>2 + <span style="color: #2d9574;">"1"</span><span style="color: #3a81c3;">)</span>;
+
+console.log<span style="color: #3a81c3;">(</span><span style="color: #2d9574;">"string and boolean"</span><span style="color: #3a81c3;">)</span>;
+console.log<span style="color: #3a81c3;">(</span><span style="color: #2d9574;">"1"</span> + <span style="color: #4e3163;">true</span><span style="color: #3a81c3;">)</span>;
+console.log<span style="color: #3a81c3;">(</span><span style="color: #2d9574;">"1"</span> + <span style="color: #4e3163;">false</span><span style="color: #3a81c3;">)</span>;
+
+console.log<span style="color: #3a81c3;">(</span><span style="color: #2d9574;">"string and null"</span><span style="color: #3a81c3;">)</span>;
+console.log<span style="color: #3a81c3;">(</span><span style="color: #2d9574;">"1"</span> + <span style="color: #4e3163;">null</span><span style="color: #3a81c3;">)</span>;
+
+console.log<span style="color: #3a81c3;">(</span><span style="color: #2d9574;">"string and undefined"</span><span style="color: #3a81c3;">)</span>;
+console.log<span style="color: #3a81c3;">(</span><span style="color: #2d9574;">"1"</span> + <span style="color: #4e3163;">undefined</span><span style="color: #3a81c3;">)</span>;
+
+console.log<span style="color: #3a81c3;">(</span><span style="color: #2d9574;">"string and object"</span><span style="color: #3a81c3;">)</span>;
+obj = <span style="color: #3a81c3;">{}</span>
+console.log<span style="color: #3a81c3;">(</span>obj + 1<span style="color: #3a81c3;">)</span>
+</pre>
+</div></li>
+<li><p>
+Number的魅力稍弱,但是遇到boolean和null还是能将其转换.不弱在遇到undefine的时候,两者最终得到NaN
+</p>
+<div class="org-src-container">
+<pre class="src src-js">console.log<span style="color: #3a81c3;">(</span><span style="color: #2d9574;">"number and boolean"</span><span style="color: #3a81c3;">)</span>;
+console.log<span style="color: #3a81c3;">(</span>1 + <span style="color: #4e3163;">true</span><span style="color: #3a81c3;">)</span>;
+console.log<span style="color: #3a81c3;">(</span>1 + <span style="color: #4e3163;">false</span><span style="color: #3a81c3;">)</span>;
+
+console.log<span style="color: #3a81c3;">(</span><span style="color: #2d9574;">"number and null"</span><span style="color: #3a81c3;">)</span>;
+console.log<span style="color: #3a81c3;">(</span>1 + <span style="color: #4e3163;">null</span><span style="color: #3a81c3;">)</span>;
+
+console.log<span style="color: #3a81c3;">(</span><span style="color: #2d9574;">"number and undefined"</span><span style="color: #3a81c3;">)</span>;
+console.log<span style="color: #3a81c3;">(</span>1 + <span style="color: #4e3163;">undefined</span><span style="color: #3a81c3;">)</span>;
+
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">&lt;====================OUTPUT====================&gt;</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">number and boolean</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">2</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">1</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">number and null</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">1</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">number and undefined</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">NaN</span>
+</pre>
+</div></li>
+<li><p>
+undefined和其他类型转换的时候,"力量"也很高,但是"魅力"不足,最终经常可以将对方和自己打造成NaN,而不是undefined
+</p>
+<div class="org-src-container">
+<pre class="src src-js">console.log<span style="color: #3a81c3;">(</span><span style="color: #2d9574;">"number and undefind"</span><span style="color: #3a81c3;">)</span>;
+console.log<span style="color: #3a81c3;">(</span>1 + <span style="color: #4e3163;">undefined</span><span style="color: #3a81c3;">)</span>;
+
+console.log<span style="color: #3a81c3;">(</span><span style="color: #2d9574;">"boolean and undefined"</span><span style="color: #3a81c3;">)</span>;
+console.log<span style="color: #3a81c3;">(</span><span style="color: #4e3163;">true</span> + <span style="color: #4e3163;">undefined</span><span style="color: #3a81c3;">)</span>;
+
+console.log<span style="color: #3a81c3;">(</span><span style="color: #2d9574;">"null and undefined"</span><span style="color: #3a81c3;">)</span>;
+console.log<span style="color: #3a81c3;">(</span><span style="color: #4e3163;">null</span> + <span style="color: #4e3163;">undefined</span><span style="color: #3a81c3;">)</span>;
+
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">&lt;====================OUTPUT====================&gt;</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">number and undefind</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">NaN</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">boolean and undefined</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">NaN</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">null and undefined</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">NaN</span>
+</pre>
+</div></li>
+</ul></li>
+</ul>
+</div>
+<div id="outline-container-org956a9c1" class="outline-4">
+<h4 id="org956a9c1"><span class="section-number-4">3.9.1.</span> Conversions and Equality</h4>
+<div class="outline-text-4" id="text-3-9-1">
+<ul class="org-ul">
+<li>JavaScript有两个测试value是否相等的符号:
+<ul class="org-ul">
+<li>strict equality operator: 首先保证类型相同,然后再做判断,不会为操作数进行类型转换</li>
+<li><p>
+equality operator: 类型不同的情况下,会为操作数进行类型转换,然后做等值判断
+</p>
+<div class="org-src-container">
+<pre class="src src-js">console.log<span style="color: #3a81c3;">(</span><span style="color: #4e3163;">null</span> == <span style="color: #4e3163;">undefined</span><span style="color: #3a81c3;">)</span>;
+console.log<span style="color: #3a81c3;">(</span><span style="color: #2d9574;">"0"</span> == 0<span style="color: #3a81c3;">)</span>;
+console.log<span style="color: #3a81c3;">(</span>0 == <span style="color: #4e3163;">false</span><span style="color: #3a81c3;">)</span>;
+console.log<span style="color: #3a81c3;">(</span><span style="color: #2d9574;">"0"</span> == <span style="color: #4e3163;">false</span><span style="color: #3a81c3;">)</span>;
+
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">&lt;====================OUTPUT====================&gt;</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">true</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">true</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">true</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">true</span>
+</pre>
+</div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org0799dbc" class="outline-4">
+<h4 id="org0799dbc"><span class="section-number-4">3.9.2.</span> Explicit Conversions</h4>
+<div class="outline-text-4" id="text-3-9-2">
+<ul class="org-ul">
+<li>虽然JavaScript有implicit的conversion,但是使用explicit的转换很显然能带来更加清晰的代码</li>
+<li><p>
+最常见的显式转换的代码是使用Boolean(), Number()和String()函数,如下:
+</p>
+<div class="org-src-container">
+<pre class="src src-js">console.log<span style="color: #3a81c3;">(</span>Number<span style="color: #6c3163;">(</span><span style="color: #2d9574;">"3"</span><span style="color: #6c3163;">)</span><span style="color: #3a81c3;">)</span>;
+console.log<span style="color: #3a81c3;">(</span>String<span style="color: #6c3163;">(</span><span style="color: #4e3163;">false</span><span style="color: #6c3163;">)</span><span style="color: #3a81c3;">)</span>;
+console.log<span style="color: #3a81c3;">(</span>Boolean<span style="color: #6c3163;">(</span><span style="color: #2d9574;">[]</span><span style="color: #6c3163;">)</span><span style="color: #3a81c3;">)</span>;
+
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">&lt;====================OUTPUT====================&gt;</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">3</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">false</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">true</span>
+</pre>
+</div></li>
+<li><p>
+注意, 这几个函数还有和new的配合方法,我们遵循书中的如下建议
+</p>
+<pre class="example" id="org78d631b">
+使用new 和Boolean(), Number(), String()函数创建wrapper object的特性,已经不再推荐使用
+</pre></li>
+<li><p>
+number class的toString()函数其地位和golang里面的String()函数是一样的
+</p>
+<div class="org-src-container">
+<pre class="src src-go"><span style="color: #3a81c3; font-weight: bold;">package</span> main
+
+<span style="color: #3a81c3; font-weight: bold;">import</span> <span style="color: #3a81c3;">(</span>
+        <span style="color: #2d9574;">"fmt"</span>
+<span style="color: #3a81c3;">)</span>
+
+<span style="color: #3a81c3; font-weight: bold;">type</span> <span style="color: #ba2f59; font-weight: bold;">User</span> <span style="color: #3a81c3; font-weight: bold;">struct</span> <span style="color: #3a81c3;">{</span>
+        Name <span style="color: #ba2f59; font-weight: bold;">string</span>
+<span style="color: #3a81c3;">}</span>
+
+<span style="color: #3a81c3; font-weight: bold;">func</span> <span style="color: #3a81c3;">(</span><span style="color: #715ab1;">u</span> <span style="color: #ba2f59; font-weight: bold;">User</span><span style="color: #3a81c3;">)</span> <span style="color: #6c3163; font-weight: bold;">String</span><span style="color: #3a81c3;">()</span> <span style="color: #ba2f59; font-weight: bold;">string</span> <span style="color: #3a81c3;">{</span>
+        <span style="color: #3a81c3; font-weight: bold;">return</span> fmt.<span style="color: #6c3163; font-weight: bold;">Sprintf</span><span style="color: #6c3163;">(</span><span style="color: #2d9574;">"User:[%v]"</span>, u.Name<span style="color: #6c3163;">)</span>
+<span style="color: #3a81c3;">}</span>
+
+<span style="color: #3a81c3; font-weight: bold;">func</span> <span style="color: #6c3163; font-weight: bold;">main</span><span style="color: #3a81c3;">()</span> <span style="color: #3a81c3;">{</span>
+        fmt.<span style="color: #6c3163; font-weight: bold;">Println</span><span style="color: #6c3163;">(</span><span style="color: #2d9574;">"Results:"</span><span style="color: #6c3163;">)</span>
+
+        <span style="color: #715ab1;">u</span> := <span style="color: #ba2f59; font-weight: bold;">User</span><span style="color: #6c3163;">{</span><span style="color: #2d9574;">"alice"</span><span style="color: #6c3163;">}</span>
+
+        fmt.<span style="color: #6c3163; font-weight: bold;">Println</span><span style="color: #6c3163;">(</span>u<span style="color: #6c3163;">)</span>
+<span style="color: #3a81c3;">}</span>
+
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">&lt;====================OUTPUT====================&gt;</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">Results:</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">User:[alice]</span>
+</pre>
+</div></li>
+<li>JavaScript中的toStriong()函数,几乎所有的类型都有,但是有些继承后更改了参数,具体如下:
+<ul class="org-ul">
+<li><p>
+对象的toStirng(),没有参数
+</p>
+<div class="org-src-container">
+<pre class="src src-js"><span style="color: #3a81c3; font-weight: bold;">let</span> <span style="color: #715ab1;">obj</span> = <span style="color: #3a81c3;">{}</span>;
+console.log<span style="color: #3a81c3;">(</span>obj.toString<span style="color: #6c3163;">()</span><span style="color: #3a81c3;">)</span>;
+
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">&lt;====================OUTPUT====================&gt;</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">[object Object]</span>
+</pre>
+</div></li>
+<li><p>
+数组的toString()也没有参数,返回逗号分隔的字符串
+</p>
+<div class="org-src-container">
+<pre class="src src-js"><span style="color: #3a81c3; font-weight: bold;">let</span> <span style="color: #715ab1;">arr</span> = <span style="color: #3a81c3;">[</span>1, 2, 3<span style="color: #3a81c3;">]</span>;
+console.log<span style="color: #3a81c3;">(</span>arr.toString<span style="color: #6c3163;">()</span><span style="color: #3a81c3;">)</span>;
+
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">&lt;====================OUTPUT====================&gt;</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">1,2,3</span>
+</pre>
+</div></li>
+<li><p>
+数字的toString()可以使用一个参数来指定"进制",什么都不加的时候(空参数)表示"十进制".这个特性在日常
+生活中非常有用,可以临时用node的repl来处理很多转换的问题
+</p>
+<div class="org-src-container">
+<pre class="src src-js"><span style="color: #3a81c3; font-weight: bold;">let</span> <span style="color: #715ab1;">num</span> = 123;
+console.log<span style="color: #3a81c3;">(</span>num.toString<span style="color: #6c3163;">()</span><span style="color: #3a81c3;">)</span>;
+console.log<span style="color: #3a81c3;">(</span>num.toString<span style="color: #6c3163;">(</span>10<span style="color: #6c3163;">)</span><span style="color: #3a81c3;">)</span>;
+console.log<span style="color: #3a81c3;">(</span>num.toString<span style="color: #6c3163;">(</span>2<span style="color: #6c3163;">)</span><span style="color: #3a81c3;">)</span>;
+console.log<span style="color: #3a81c3;">(</span>num.toString<span style="color: #6c3163;">(</span>16<span style="color: #6c3163;">)</span><span style="color: #3a81c3;">)</span>;
+
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">&lt;====================OUTPUT====================&gt;</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">123</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">123</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">1111011</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">7b</span>
+</pre>
+</div></li>
+</ul></li>
+<li>JavaSctipt中还有将字符串转换为数字的函数,最常用的就是parseInt. parseInt有非常多的参数选择:
+<ul class="org-ul">
+<li><p>
+最有用的,是两个参数版本:和刚才的toString("x进制")相对应的是下面的用法,parseInt()第一个参数为字符串,
+第二个参数为想要如何解释第一个参数的"进制",这样可以把字符串反设置为整型
+</p>
+<div class="org-src-container">
+<pre class="src src-js">console.log<span style="color: #3a81c3;">(</span>parseInt<span style="color: #6c3163;">(</span><span style="color: #2d9574;">"11"</span>, 2<span style="color: #6c3163;">)</span><span style="color: #3a81c3;">)</span>;
+console.log<span style="color: #3a81c3;">(</span>parseInt<span style="color: #6c3163;">(</span><span style="color: #2d9574;">"ff"</span>, 16<span style="color: #6c3163;">)</span><span style="color: #3a81c3;">)</span>;
+console.log<span style="color: #3a81c3;">(</span>parseInt<span style="color: #6c3163;">(</span><span style="color: #2d9574;">"zz"</span>, 36<span style="color: #6c3163;">)</span><span style="color: #3a81c3;">)</span>;
+console.log<span style="color: #3a81c3;">(</span>parseInt<span style="color: #6c3163;">(</span><span style="color: #2d9574;">"077"</span>, 8<span style="color: #6c3163;">)</span><span style="color: #3a81c3;">)</span>;
+console.log<span style="color: #3a81c3;">(</span>parseInt<span style="color: #6c3163;">(</span><span style="color: #2d9574;">"077"</span>, 10<span style="color: #6c3163;">)</span><span style="color: #3a81c3;">)</span>;
+
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">&lt;====================OUTPUT====================&gt;</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">3</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">255</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">1295</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">63</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">77</span>
+</pre>
+</div></li>
+<li><p>
+最常用的,则是一个参数的版本. 这个版本里面parseInt()会尽最大努力的去解析字符串
+</p>
+<div class="org-src-container">
+<pre class="src src-js">console.log<span style="color: #3a81c3;">(</span>parseInt<span style="color: #6c3163;">(</span><span style="color: #2d9574;">" 3.14 meters"</span><span style="color: #6c3163;">)</span><span style="color: #3a81c3;">)</span>;
+console.log<span style="color: #3a81c3;">(</span>parseInt<span style="color: #6c3163;">(</span><span style="color: #2d9574;">"3 blind mice"</span><span style="color: #6c3163;">)</span><span style="color: #3a81c3;">)</span>;
+console.log<span style="color: #3a81c3;">(</span>parseInt<span style="color: #6c3163;">(</span><span style="color: #2d9574;">"-12.34"</span><span style="color: #6c3163;">)</span><span style="color: #3a81c3;">)</span>;
+
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">&lt;====================OUTPUT====================&gt;</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">3</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">3</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">-12</span>
+</pre>
+</div></li>
+<li>我们看到字符串如下的"不合适"都会被parseInt所克服:
+<ol class="org-ol">
+<li>字符串开始的空格被忽略</li>
+<li>字符串后面剩余的不是数字的文字被忽略</li>
+<li>符号被正确的处理</li>
+</ol></li>
+<li><p>
+那么如果有些字符串特别"过分"的情况下怎么办呢?parseInt会返回NaN
+</p>
+<div class="org-src-container">
+<pre class="src src-js">console.log<span style="color: #3a81c3;">(</span>parseInt<span style="color: #6c3163;">(</span><span style="color: #2d9574;">".1"</span><span style="color: #6c3163;">)</span><span style="color: #3a81c3;">)</span>;
+console.log<span style="color: #3a81c3;">(</span>parseInt<span style="color: #6c3163;">(</span><span style="color: #2d9574;">"$1.2"</span><span style="color: #6c3163;">)</span><span style="color: #3a81c3;">)</span>;
+
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">&lt;====================OUTPUT====================&gt;</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">NaN</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">NaN</span>
+</pre>
+</div></li>
+</ul></li>
+<li>由于Javascript的number类型本质上是float类型,所以Javascript自然也准备了和parseInt类似的parseFloat函数
+<ul class="org-ul">
+<li><p>
+parseFloat能够对"不过分"的字符串进行解析
+</p>
+<div class="org-src-container">
+<pre class="src src-js">console.log<span style="color: #3a81c3;">(</span>parseFloat<span style="color: #6c3163;">(</span><span style="color: #2d9574;">".1"</span><span style="color: #6c3163;">)</span><span style="color: #3a81c3;">)</span>;
+console.log<span style="color: #3a81c3;">(</span>parseFloat<span style="color: #6c3163;">(</span><span style="color: #2d9574;">"-12.3"</span><span style="color: #6c3163;">)</span><span style="color: #3a81c3;">)</span>;
+
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">&lt;====================OUTPUT====================&gt;</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">0.1</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">-12.3</span>
+</pre>
+</div></li>
+<li><p>
+parseFloat对"过分"的字符串,也是返回NaN
+</p>
+<div class="org-src-container">
+<pre class="src src-js">console.log<span style="color: #3a81c3;">(</span>parseFloat<span style="color: #6c3163;">(</span><span style="color: #2d9574;">"$1.23"</span><span style="color: #6c3163;">)</span><span style="color: #3a81c3;">)</span>;
+
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">&lt;====================OUTPUT====================&gt;</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">NaN</span>
+</pre>
+</div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgbdeef3c" class="outline-3">
+<h3 id="orgbdeef3c"><span class="section-number-3">3.10.</span> Variable Declaration and Assignment</h3>
+<div class="outline-text-3" id="text-3-10">
+<ul class="org-ul">
+<li>计算机编程最基础的操作,就是创造了变量:我们使用一个name来代表value,把一个name和一个value给绑定起来
+就让我们能够在程序中使用他们.在编程中,通常有两种name:
+<ul class="org-ul">
+<li>如果我们把这个name叫做variable(变量),那么很显然这个name指向的数据是会变的,也就是新的value可以赋给这个name</li>
+<li>如果我们把这个name叫做const(常量),那么就是说这个name和这个value永远绑定,无法赋一个新value给这个name</li>
+</ul></li>
+<li>在ES6之后:
+<ul class="org-ul">
+<li>变量用let声明变量</li>
+<li>常量用const声明常量</li>
+</ul></li>
+<li>在ES6之前,只有一种声明方式(不支持常量),那就是var</li>
+</ul>
+</div>
+<div id="outline-container-orgac7acb7" class="outline-4">
+<h4 id="orgac7acb7"><span class="section-number-4">3.10.1.</span> Declarations with let and const</h4>
+<div class="outline-text-4" id="text-3-10-1">
+<ul class="org-ul">
+<li>我们先来看看ES6之后的let使用方法:
+<ul class="org-ul">
+<li><p>
+使用let单独来declare一个变量,但是不进行初始化,这种情况下,由于没有初始化值,所以变量的值是undefined,
+直到有新的值赋予给这个变量
+</p>
+<div class="org-src-container">
+<pre class="src src-js"><span style="color: #3a81c3; font-weight: bold;">let</span> <span style="color: #715ab1;">i</span>;
+console.log<span style="color: #3a81c3;">(</span>i<span style="color: #3a81c3;">)</span>;
+
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">&lt;====================OUTPUT====================&gt;</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">undefined</span>
+</pre>
+</div></li>
+<li><p>
+使用let单独来declare一个变量,然后马上进行初始化.这样变量就在声明的一瞬间就有了初始化值
+</p>
+<div class="org-src-container">
+<pre class="src src-js"><span style="color: #3a81c3; font-weight: bold;">let</span> <span style="color: #715ab1;">message</span> = <span style="color: #2d9574;">"hello"</span>;
+console.log<span style="color: #3a81c3;">(</span>message<span style="color: #3a81c3;">)</span>;
+
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">&lt;====================OUTPUT====================&gt;</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">hello</span>
+</pre>
+</div></li>
+<li><p>
+let声明后马上赋值,在for循环中非常常见,比如
+</p>
+<div class="org-src-container">
+<pre class="src src-js"><span style="color: #3a81c3; font-weight: bold;">for</span> <span style="color: #3a81c3;">(</span><span style="color: #3a81c3; font-weight: bold;">let</span> <span style="color: #715ab1;">i</span> = 0, <span style="color: #715ab1;">len</span> = 3; i &lt; len; i++<span style="color: #3a81c3;">)</span> <span style="color: #3a81c3;">{</span>
+  console.log<span style="color: #6c3163;">(</span>i<span style="color: #6c3163;">)</span>;
+<span style="color: #3a81c3;">}</span>
+
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">&lt;====================OUTPUT====================&gt;</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">0</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">1</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">2</span>
+</pre>
+</div></li>
+</ul></li>
+<li><p>
+常量需要使用const来声明并且初始化(之所以说"声明并初始化",因为常量不能"先声明",然后"初始化",必须一气呵成)
+</p>
+<div class="org-src-container">
+<pre class="src src-js"><span style="color: #3a81c3; font-weight: bold;">const</span> <span style="color: #715ab1;">H</span> = 75;
+<span style="color: #3a81c3; font-weight: bold;">const</span> <span style="color: #715ab1;">AU</span> = 1.596e8;
+
+console.log<span style="color: #3a81c3;">(</span>H<span style="color: #3a81c3;">)</span>;
+console.log<span style="color: #3a81c3;">(</span>AU<span style="color: #3a81c3;">)</span>;
+
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">&lt;====================OUTPUT====================&gt;</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">75</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">159600000</span>
+</pre>
+</div></li>
+<li>我们也注意到常量"一般来说"都是用全大写的字母组成的</li>
+<li><p>
+任何试图更改const的行为都会造成TypeError
+</p>
+<div class="org-src-container">
+<pre class="src src-js"><span style="color: #3a81c3; font-weight: bold;">const</span> <span style="color: #715ab1;">C</span> = 299.58;
+C = 300;
+
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">&lt;====================OUTPUT====================&gt;</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">C = 300;</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">//   </span><span style="color: #2aa1ae; background-color: #ecf3ec;">^</span>
+
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">TypeError: Assignment to constant variable.</span>
+</pre>
+</div></li>
+<li>let和const对于常量和变量的定义是有scope的.这个scope的范围和其他编程语言差不多,如下情况都是一个scope:
+<ul class="org-ul">
+<li>class 结构体内</li>
+<li>function 结构体内</li>
+<li>if/else 结构体内</li>
+<li>while 结构体内</li>
+<li>for 结构体内</li>
+</ul></li>
+<li>需要注意的是,虽然上面的scope都是结构体内,但是在for或者while的括号里面使用let,const定义的变量,也算在
+这个结构体内</li>
+<li>如果声明出现在所有的block以外,我们就叫他们global variable, global const. global在Javascript的不同领
+域有不同设置:
+<ul class="org-ul">
+<li>如果是Node文件,那么在js文件所有的函数外就是global,那么这个变量或者常量,在这个文件里面是随处可见的.
+但是其他文件就不知道它了</li>
+<li>如果是传统的HTML文件,在一个&lt;script&gt;里面定义出来的常量或者变量,在其他&lt;script&gt;里面也是可见的.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org9e2103c" class="outline-4">
+<h4 id="org9e2103c"><span class="section-number-4">3.10.2.</span> Variable Declarations with var</h4>
+<div class="outline-text-4" id="text-3-10-2">
+<ul class="org-ul">
+<li>在ES6之前,唯一定义变量的方法就是var.而在ES6之前是无法定义常量的,所以可以理解为var就是let的古早版本</li>
+<li>var定义变量有很多"反直觉"的地方,在ES6之后,我们不应该再使用var定义变量.我们这里介绍var是为了向前兼容</li>
+<li>我们这里着重介绍下var和let的不同点:
+<ol class="org-ol">
+<li>作用域(scope):
+<ul class="org-ul">
+<li><p>
+var只是在函数内部是局部变量. if等scope无法限制var定义的变量,var总会"上升"到最近的function里面
+</p>
+<div class="org-src-container">
+<pre class="src src-js"><span style="color: #3a81c3; font-weight: bold;">function</span> <span style="color: #6c3163; font-weight: bold;">testVar</span><span style="color: #3a81c3;">()</span> <span style="color: #3a81c3;">{</span>
+  <span style="color: #3a81c3; font-weight: bold;">if</span> <span style="color: #6c3163;">(</span><span style="color: #4e3163;">true</span><span style="color: #6c3163;">)</span> <span style="color: #6c3163;">{</span>
+    <span style="color: #3a81c3; font-weight: bold;">var</span> <span style="color: #715ab1;">x</span> = 1;
+  <span style="color: #6c3163;">}</span>
+  console.log<span style="color: #6c3163;">(</span>x<span style="color: #6c3163;">)</span>;
+<span style="color: #3a81c3;">}</span>
+
+testVar<span style="color: #3a81c3;">()</span>;
+
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">&lt;====================OUTPUT====================&gt;</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">1</span>
+</pre>
+</div></li>
+<li><p>
+let是作用域比较清晰,就在自己定义的作用域里面,所定义的变量是局部的,复合现代编程语言的"直觉"
+</p>
+<div class="org-src-container">
+<pre class="src src-js"><span style="color: #3a81c3; font-weight: bold;">function</span> <span style="color: #6c3163; font-weight: bold;">testLet</span><span style="color: #3a81c3;">()</span> <span style="color: #3a81c3;">{</span>
+  <span style="color: #3a81c3; font-weight: bold;">if</span> <span style="color: #6c3163;">(</span><span style="color: #4e3163;">true</span><span style="color: #6c3163;">)</span> <span style="color: #6c3163;">{</span>
+    <span style="color: #3a81c3; font-weight: bold;">let</span> <span style="color: #715ab1;">x</span> = 1;
+  <span style="color: #6c3163;">}</span>
+  console.log<span style="color: #6c3163;">(</span>x<span style="color: #6c3163;">)</span>;
+<span style="color: #3a81c3;">}</span>
+
+testLet<span style="color: #3a81c3;">()</span>;
+
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">&lt;====================OUTPUT====================&gt;</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">//   </span><span style="color: #2aa1ae; background-color: #ecf3ec;">console.log(x);</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">//               </span><span style="color: #2aa1ae; background-color: #ecf3ec;">^</span>
+
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">ReferenceError: x is not defined</span>
+</pre>
+</div></li>
+</ul></li>
+<li>变量提升(Hoisting)
+<ul class="org-ul">
+<li><p>
+var会变量提升,在代码执行之前,var声明的变量会被提升到作用域(var的作用域本来就奇怪,在function内部)
+的顶部,但不会初始化
+</p>
+<div class="org-src-container">
+<pre class="src src-js">console.log<span style="color: #3a81c3;">(</span>a<span style="color: #3a81c3;">)</span>;
+<span style="color: #3a81c3; font-weight: bold;">var</span> <span style="color: #715ab1;">a</span> = 2;
+console.log<span style="color: #3a81c3;">(</span>a<span style="color: #3a81c3;">)</span>;
+
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">&lt;====================OUTPUT====================&gt;</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">undefined</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">2</span>
+</pre>
+</div></li>
+<li><p>
+let不会变量提升:在let声明变量之前,无法使用这个变量
+</p>
+<div class="org-src-container">
+<pre class="src src-js">console.log<span style="color: #3a81c3;">(</span>b<span style="color: #3a81c3;">)</span>;
+<span style="color: #3a81c3; font-weight: bold;">let</span> <span style="color: #715ab1;">b</span> = 2;
+
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">&lt;====================OUTPUT====================&gt;</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">console.log(b)</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">//             </span><span style="color: #2aa1ae; background-color: #ecf3ec;">^</span>
+
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">ReferenceError: Cannot access 'b' before initialization</span>
+</pre>
+</div></li>
+</ul></li>
+<li>重复声明(Redeclaration)
+<ul class="org-ul">
+<li><p>
+var: 允许在同一作用域内重复声明变量
+</p>
+<div class="org-src-container">
+<pre class="src src-js"><span style="color: #3a81c3; font-weight: bold;">var</span> <span style="color: #715ab1;">a</span> = 1;
+console.log<span style="color: #3a81c3;">(</span>a<span style="color: #3a81c3;">)</span>;
+<span style="color: #3a81c3; font-weight: bold;">var</span> <span style="color: #715ab1;">a</span> = 2;
+console.log<span style="color: #3a81c3;">(</span>a<span style="color: #3a81c3;">)</span>;
+
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">&lt;====================OUTPUT====================&gt;</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">1</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">2</span>
+</pre>
+</div></li>
+<li><p>
+let: 不允许在同一作用域里面重复声明变量
+</p>
+<div class="org-src-container">
+<pre class="src src-js"><span style="color: #3a81c3; font-weight: bold;">let</span> <span style="color: #715ab1;">b</span> = 1;
+<span style="color: #3a81c3; font-weight: bold;">let</span> <span style="color: #715ab1;">b</span> = 2;
+
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">&lt;====================OUTPUT====================&gt;</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">let b = 2;</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">//     </span><span style="color: #2aa1ae; background-color: #ecf3ec;">^</span>
+
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">SyntaxError: Identifier 'b' has already been declared</span>
+</pre>
+</div></li>
+</ul></li>
+<li>全局对象属性(Global Object Property)
+<ul class="org-ul">
+<li><p>
+var: 在全局作用域中声明的对象会成为全局对象(window)的property(曾经在早期版本node里面也会成为global的property)
+</p>
+<pre class="example" id="orgf0af9f7">
+window.x
+undefined
+var x = 123;
+undefined
+window.x
+123
+</pre></li>
+<li><p>
+let: 不会成为全局对象的属性
+</p>
+<pre class="example" id="orgbe4675f">
+let y = 2
+undefined
+window.y
+undefined
+</pre></li>
+</ul></li>
+</ol></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org9df3448" class="outline-4">
+<h4 id="org9df3448"><span class="section-number-4">3.10.3.</span> Destructuring Assignment</h4>
+<div class="outline-text-4" id="text-3-10-3">
+<ul class="org-ul">
+<li>解构赋值是ES6引入的一种全新语法,允许从数组和对象中取值,并且将值赋给变量,这种语法使得代码简洁易读</li>
+<li><p>
+最基本的例子如下,从数组赋值
+</p>
+<div class="org-src-container">
+<pre class="src src-js"><span style="color: #3a81c3; font-weight: bold;">let</span> <span style="color: #3a81c3;">[</span><span style="color: #715ab1;">x</span>, <span style="color: #715ab1;">y</span><span style="color: #3a81c3;">]</span> = <span style="color: #3a81c3;">[</span>1, 2<span style="color: #3a81c3;">]</span>;
+console.log<span style="color: #3a81c3;">(</span>x, y<span style="color: #3a81c3;">)</span>;
+<span style="color: #3a81c3;">[</span>x, y<span style="color: #3a81c3;">]</span> = <span style="color: #3a81c3;">[</span>x + 1, y + 1<span style="color: #3a81c3;">]</span>;
+console.log<span style="color: #3a81c3;">(</span>x, y<span style="color: #3a81c3;">)</span>;
+<span style="color: #3a81c3;">[</span>x, y<span style="color: #3a81c3;">]</span> = <span style="color: #3a81c3;">[</span>y, x<span style="color: #3a81c3;">]</span>;
+console.log<span style="color: #3a81c3;">(</span>x, y<span style="color: #3a81c3;">)</span>;
+
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">&lt;====================OUTPUT====================&gt;</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">1 2</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">2 3</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">3 2</span>
+</pre>
+</div></li>
+<li><p>
+最基本的例子稍微扩展一点,就是在函数返回值里面返回多个值的情况,可以返回一个数组.然后使用解构赋值读取
+</p>
+<div class="org-src-container">
+<pre class="src src-js"><span style="color: #3a81c3; font-weight: bold;">function</span> <span style="color: #6c3163; font-weight: bold;">toPolar</span><span style="color: #3a81c3;">(</span><span style="color: #715ab1;">x</span>, <span style="color: #715ab1;">y</span><span style="color: #3a81c3;">)</span> <span style="color: #3a81c3;">{</span>
+  <span style="color: #3a81c3; font-weight: bold;">return</span> <span style="color: #6c3163;">[</span>Math.sqrt<span style="color: #2d9574;">(</span>x * x + y * y<span style="color: #2d9574;">)</span>, Math.atan2<span style="color: #2d9574;">(</span>y, x<span style="color: #2d9574;">)</span><span style="color: #6c3163;">]</span>;
+<span style="color: #3a81c3;">}</span>
+
+<span style="color: #3a81c3; font-weight: bold;">let</span> <span style="color: #3a81c3;">[</span><span style="color: #715ab1;">r</span>, <span style="color: #715ab1;">theta</span><span style="color: #3a81c3;">]</span> = toPolar<span style="color: #3a81c3;">(</span>1.0, 1.0<span style="color: #3a81c3;">)</span>;
+console.log<span style="color: #3a81c3;">(</span>r, theta<span style="color: #3a81c3;">)</span>;
+
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">&lt;====================OUTPUT====================&gt;</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">1.4142135623730951 0.7853981633974483</span>
+</pre>
+</div></li>
+<li><p>
+我们可以在for循环里面使用解构赋值
+</p>
+<div class="org-src-container">
+<pre class="src src-js"><span style="color: #3a81c3; font-weight: bold;">let</span> <span style="color: #715ab1;">o</span> = <span style="color: #3a81c3;">{</span> x: 1, y: 2 <span style="color: #3a81c3;">}</span>;
+<span style="color: #3a81c3; font-weight: bold;">for</span> <span style="color: #3a81c3;">(</span><span style="color: #3a81c3; font-weight: bold;">const</span> <span style="color: #6c3163;">[</span><span style="color: #715ab1;">name</span>, <span style="color: #715ab1;">value</span><span style="color: #6c3163;">]</span> <span style="color: #3a81c3; font-weight: bold;">of</span> Object.entries<span style="color: #6c3163;">(</span>o<span style="color: #6c3163;">)</span><span style="color: #3a81c3;">)</span> <span style="color: #3a81c3;">{</span>
+  console.log<span style="color: #6c3163;">(</span>name, value<span style="color: #6c3163;">)</span>;
+<span style="color: #3a81c3;">}</span>
+
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">&lt;====================OUTPUT====================&gt;</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">x 1</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">y 2</span>
+</pre>
+</div></li>
+<li>解构赋值的左右两边可以数量不等:
+<ul class="org-ul">
+<li><p>
+如果左边的参数多了,那么没轮上赋值的就是undefined
+</p>
+<div class="org-src-container">
+<pre class="src src-js"><span style="color: #3a81c3; font-weight: bold;">let</span> <span style="color: #3a81c3;">[</span><span style="color: #715ab1;">x</span>, <span style="color: #715ab1;">y</span><span style="color: #3a81c3;">]</span> = <span style="color: #3a81c3;">[</span>1<span style="color: #3a81c3;">]</span>;
+console.log<span style="color: #3a81c3;">(</span>x, y<span style="color: #3a81c3;">)</span>;
+
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">&lt;====================OUTPUT====================&gt;</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">1 undefined</span>
+</pre>
+</div></li>
+<li><p>
+如果右边多了,那么就有些右边参数没有赋值给变量而已
+</p>
+<div class="org-src-container">
+<pre class="src src-js"><span style="color: #3a81c3; font-weight: bold;">let</span> <span style="color: #3a81c3;">[</span><span style="color: #715ab1;">x</span>, <span style="color: #715ab1;">y</span><span style="color: #3a81c3;">]</span> = <span style="color: #3a81c3;">[</span>1, 2, 3<span style="color: #3a81c3;">]</span>;
+console.log<span style="color: #3a81c3;">(</span>x, y<span style="color: #3a81c3;">)</span>;
+
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">&lt;====================OUTPUT====================&gt;</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">1 2</span>
+</pre>
+</div></li>
+<li><p>
+我们甚至可以跳过一些值,只把部分值赋值给左边
+</p>
+<div class="org-src-container">
+<pre class="src src-js"><span style="color: #3a81c3; font-weight: bold;">let</span> <span style="color: #3a81c3;">[</span>, <span style="color: #715ab1;">x</span>, , <span style="color: #715ab1;">y</span><span style="color: #3a81c3;">]</span> = <span style="color: #3a81c3;">[</span>1, 2, 3, 4<span style="color: #3a81c3;">]</span>;
+console.log<span style="color: #3a81c3;">(</span>x, y<span style="color: #3a81c3;">)</span>;
+
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">&lt;====================OUTPUT====================&gt;</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">2 4</span>
+</pre>
+</div></li>
+<li><p>
+如果右边参数多了,左边少了.配对到最后,左边只剩一个,右边多个,我们想把右边的多个赋值给左边的一个,那
+么我们可以如下配置
+</p>
+<div class="org-src-container">
+<pre class="src src-js"><span style="color: #3a81c3; font-weight: bold;">let</span> <span style="color: #3a81c3;">[</span>x, ...y<span style="color: #3a81c3;">]</span> = <span style="color: #3a81c3;">[</span>1, 2, 3, 4<span style="color: #3a81c3;">]</span>;
+console.log<span style="color: #3a81c3;">(</span>x, y<span style="color: #3a81c3;">)</span>;
+
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">&lt;====================OUTPUT====================&gt;</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">1 [ 2, 3, 4 ]</span>
+</pre>
+</div></li>
+</ul></li>
+<li><p>
+解构赋值还可以做嵌入式的array赋值
+</p>
+<div class="org-src-container">
+<pre class="src src-js"><span style="color: #3a81c3; font-weight: bold;">let</span> <span style="color: #3a81c3;">[</span><span style="color: #715ab1;">a</span>, <span style="color: #6c3163;">[</span><span style="color: #715ab1;">b</span>, <span style="color: #715ab1;">c</span><span style="color: #6c3163;">]</span><span style="color: #3a81c3;">]</span> = <span style="color: #3a81c3;">[</span>1, <span style="color: #6c3163;">[</span>2, 2.5<span style="color: #6c3163;">]</span>, 3<span style="color: #3a81c3;">]</span>;
+console.log<span style="color: #3a81c3;">(</span>a, b, c<span style="color: #3a81c3;">)</span>;
+
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">&lt;====================OUTPUT====================&gt;</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">1 2 2.5</span>
+</pre>
+</div></li>
+<li><p>
+解构赋值的右边不需要是数组,可以使用任何的iterable object,比如字符串
+</p>
+<div class="org-src-container">
+<pre class="src src-js"><span style="color: #3a81c3; font-weight: bold;">let</span> <span style="color: #3a81c3;">[</span>first, ...rest<span style="color: #3a81c3;">]</span> = <span style="color: #2d9574;">"Hello"</span>;
+
+console.log<span style="color: #3a81c3;">(</span>first, rest<span style="color: #3a81c3;">)</span>;
+
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">&lt;====================OUTPUT====================&gt;</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">H [ 'e', 'l', 'l', 'o' ]</span>
+</pre>
+</div></li>
+<li><p>
+解构赋值的左边甚至可以不是数组(那么当然右边也不是数组啦), 左右替代数组的是对象,这种解构赋值就更加
+的灵活
+</p>
+<pre class="example" id="org97c1a69">
+这种解构的灵活性来源于结构体结构可以使用key,而数组解构只能利用index
+</pre></li>
+<li>成员变量肯定是最常见的结构体解构赋值的
+<ul class="org-ul">
+<li><p>
+例子如下
+</p>
+<div class="org-src-container">
+<pre class="src src-js"><span style="color: #3a81c3; font-weight: bold;">let</span> <span style="color: #715ab1;">transparent</span> = <span style="color: #3a81c3;">{</span> r: 0.0, g: 0.0, b: 0.0, a: 1.0 <span style="color: #3a81c3;">}</span>;
+<span style="color: #3a81c3; font-weight: bold;">let</span> <span style="color: #3a81c3;">{</span> r, g, b <span style="color: #3a81c3;">}</span> = transparent;
+console.log<span style="color: #3a81c3;">(</span>r, g, b<span style="color: #3a81c3;">)</span>;
+
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">&lt;====================OUTPUT====================&gt;</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">0 0 0</span>
+</pre>
+</div></li>
+<li>我们注意到上面的transparent object肯定不止这三个成员变量,那么其他没有被左边"提起到"的成员(比如a),
+就不会被赋值啦</li>
+</ul></li>
+<li>成员函数也是可以被解构赋值的
+<ul class="org-ul">
+<li><p>
+例子如下
+</p>
+<div class="org-src-container">
+<pre class="src src-js"><span style="color: #3a81c3; font-weight: bold;">const</span> <span style="color: #3a81c3;">{</span> sin, cos, tan <span style="color: #3a81c3;">}</span> = Math;
+
+console.log<span style="color: #3a81c3;">(</span>sin<span style="color: #3a81c3;">)</span>;
+console.log<span style="color: #3a81c3;">(</span>cos<span style="color: #3a81c3;">)</span>;
+console.log<span style="color: #3a81c3;">(</span>tan<span style="color: #3a81c3;">)</span>;
+
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">&lt;====================OUTPUT====================&gt;</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">[Function: sin]</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">[Function: cos]</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">[Function: tan]</span>
+</pre>
+</div></li>
+<li>我们注意到上面的Math object肯定不止这三个成员函数,那么其他没有被左边"提起到"的成员,就不会被赋值啦</li>
+<li><p>
+如果左边变量"提起到"的成员,不是右边的成员,那么左边的这些变量直接就是undefined
+</p>
+<div class="org-src-container">
+<pre class="src src-js"><span style="color: #3a81c3; font-weight: bold;">const</span> <span style="color: #3a81c3;">{</span> sin, cos, tan, somename <span style="color: #3a81c3;">}</span> = Math;
+
+console.log<span style="color: #3a81c3;">(</span>somename<span style="color: #3a81c3;">)</span>;
+
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">&lt;====================OUTPUT====================&gt;</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">undefined</span>
+</pre>
+</div></li>
+</ul></li>
+<li>结构体解构还有其他高阶的用法,但是鉴于这些用法既难写,又难读,所以作者不建议我们使用,我们就不继续进行
+介绍了</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: harrifeng@outlook.com</p>
+<p class="date">Created: 2024-08-26 Mon 17:45</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
