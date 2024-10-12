@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2024-10-10 Thu 17:26 -->
+<!-- 2024-10-12 Sat 16:35 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>dlfs</title>
@@ -15,37 +15,38 @@
 <script type="text/javascript" src="src/lib/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="src/lib/js/jquery.stickytableheaders.min.js"></script>
 <script type="text/javascript" src="src/readtheorg_theme/js/readtheorg.js"></script>
+<script id="MathJax-script" async src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/mathjax/3.2.0/es5/tex-mml-chtml.js"></script>
 <script>
- window.MathJax = {
-   tex: {
-     ams: {
-       multlineWidth: '85%'
-     },
-     tags: 'ams',
-     tagSide: 'right',
-     tagIndent: '.8em'
-   },
-   chtml: {
-     scale: 1.0,
-     displayAlign: 'center',
-     displayIndent: '0em'
-   },
-   svg: {
-     scale: 1.0,
-     displayAlign: 'center',
-     displayIndent: '0em'
-   },
-   output: {
-     font: 'mathjax-modern',
-     displayOverflow: 'overflow'
-   }
- };
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
 </script>
 
 <script
   id="MathJax-script"
   async
-  src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/mathjax/3.2.0/es5/tex-mml-chtml.js">
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
 </script>
 </head>
 <body>
@@ -55,208 +56,214 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgec2137a">1. Python 入门</a>
+<li><a href="#org6f3d645">1. Python 入门</a>
 <ul>
-<li><a href="#orga7e0ee7">1.1. Python是什么</a></li>
-<li><a href="#org3f226fc">1.2. Python的安装</a>
+<li><a href="#org0c7dcf0">1.1. Python是什么</a></li>
+<li><a href="#org57eeff2">1.2. Python的安装</a>
 <ul>
-<li><a href="#org71743f9">1.2.1. Python版本</a></li>
-<li><a href="#orgdb46d71">1.2.2. 使用的外部库</a></li>
-<li><a href="#org2307ef0">1.2.3. Anaconda发行版</a></li>
+<li><a href="#orgc07e63d">1.2.1. Python版本</a></li>
+<li><a href="#org0625e46">1.2.2. 使用的外部库</a></li>
+<li><a href="#orga2c71fe">1.2.3. Anaconda发行版</a></li>
 </ul>
 </li>
-<li><a href="#orgdb50273">1.3. Python解释器</a>
+<li><a href="#orga079ae8">1.3. Python解释器</a>
 <ul>
-<li><a href="#org3ecc983">1.3.1. 算术计算</a></li>
-<li><a href="#orge2fa4b9">1.3.2. 数据类型</a></li>
-<li><a href="#org4178a8d">1.3.3. 变量</a></li>
-<li><a href="#org1f5ec4e">1.3.4. 列表</a></li>
-<li><a href="#org30ca080">1.3.5. 字典</a></li>
-<li><a href="#org1ac8c53">1.3.6. 布尔型</a></li>
-<li><a href="#org7dbc843">1.3.7. if 语句</a></li>
-<li><a href="#orgec0fdb9">1.3.8. for 语句</a></li>
-<li><a href="#org8d5035c">1.3.9. 函数</a></li>
+<li><a href="#orgb370833">1.3.1. 算术计算</a></li>
+<li><a href="#orgaed18f1">1.3.2. 数据类型</a></li>
+<li><a href="#org1d18216">1.3.3. 变量</a></li>
+<li><a href="#org3a0b687">1.3.4. 列表</a></li>
+<li><a href="#org7ae1bb7">1.3.5. 字典</a></li>
+<li><a href="#orgf425928">1.3.6. 布尔型</a></li>
+<li><a href="#org00535f0">1.3.7. if 语句</a></li>
+<li><a href="#org4f75590">1.3.8. for 语句</a></li>
+<li><a href="#org61c431a">1.3.9. 函数</a></li>
 </ul>
 </li>
-<li><a href="#org4bc42f6">1.4. Python脚本文件</a>
+<li><a href="#orgd005e44">1.4. Python脚本文件</a>
 <ul>
-<li><a href="#org62a0a67">1.4.1. 保存为文件</a></li>
-<li><a href="#orgb4b62fe">1.4.2. 类</a></li>
+<li><a href="#org3f9f363">1.4.1. 保存为文件</a></li>
+<li><a href="#org25413d2">1.4.2. 类</a></li>
 </ul>
 </li>
-<li><a href="#org6eb691d">1.5. NumPy</a>
+<li><a href="#org4af9410">1.5. NumPy</a>
 <ul>
-<li><a href="#orgfab2d6b">1.5.1. 导入NumPy</a></li>
-<li><a href="#org73f9bd5">1.5.2. 生成NumPy数组</a></li>
-<li><a href="#org0a6b55c">1.5.3. NumPy的算术运算</a></li>
-<li><a href="#org36ed73e">1.5.4. NumPy的N维数组</a></li>
-<li><a href="#org498d550">1.5.5. 广播</a></li>
-<li><a href="#org6606d34">1.5.6. 访问元素</a></li>
+<li><a href="#org9f6dfea">1.5.1. 导入NumPy</a></li>
+<li><a href="#orgf21a532">1.5.2. 生成NumPy数组</a></li>
+<li><a href="#org516a374">1.5.3. NumPy的算术运算</a></li>
+<li><a href="#org89ca952">1.5.4. NumPy的N维数组</a></li>
+<li><a href="#org693ee10">1.5.5. 广播</a></li>
+<li><a href="#orgdb3cf00">1.5.6. 访问元素</a></li>
 </ul>
 </li>
-<li><a href="#org5fe8790">1.6. Matplotlib</a>
+<li><a href="#orge709dea">1.6. Matplotlib</a>
 <ul>
-<li><a href="#org12718e9">1.6.1. 绘制简单图形</a></li>
-<li><a href="#orgf2a475e">1.6.2. pyplot的功能</a></li>
-<li><a href="#org8ff077b">1.6.3. 显示图像</a></li>
+<li><a href="#org5ba7027">1.6.1. 绘制简单图形</a></li>
+<li><a href="#org887e900">1.6.2. pyplot的功能</a></li>
+<li><a href="#org5ff5b4b">1.6.3. 显示图像</a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li><a href="#org89530a4">2. 感知机</a>
+<li><a href="#orgecc0d53">1.7. Understanding Broadcasting in NumPy</a>
 <ul>
-<li><a href="#orgeda71c0">2.1. 感知机是什么</a></li>
-<li><a href="#org1e752da">2.2. 简单的逻辑电路</a>
-<ul>
-<li><a href="#orge47bbdf">2.2.1. 与门</a></li>
-<li><a href="#orgffc6c27">2.2.2. 与非门和或门</a></li>
-</ul>
-</li>
-<li><a href="#orgaddd7b8">2.3. 感知机的实现</a>
-<ul>
-<li><a href="#org5398757">2.3.1. 简单的实现</a></li>
-<li><a href="#org6fa0dcb">2.3.2. 导入权重和偏置</a></li>
-<li><a href="#org00ad4b5">2.3.3. 使用权重和偏置的实现</a></li>
-</ul>
-</li>
-<li><a href="#org2b68428">2.4. 感知机的局限性</a>
-<ul>
-<li><a href="#org11f379a">2.4.1. 异或门</a></li>
-<li><a href="#orgafca20c">2.4.2. 线性和非线性</a></li>
-</ul>
-</li>
-<li><a href="#orgba79bb3">2.5. 多层感知机</a>
-<ul>
-<li><a href="#orgfd99fd7">2.5.1. 已有门电路组合</a></li>
-<li><a href="#org43fc911">2.5.2. 异或门的实现</a></li>
-</ul>
-</li>
-<li><a href="#org9e5be24">2.6. 从与非门到计算机</a></li>
-</ul>
-</li>
-<li><a href="#org2e9cf41">3. 神经网络</a>
-<ul>
-<li><a href="#org5cae72f">3.1. 从感知机到神经网络</a>
-<ul>
-<li><a href="#org6c17938">3.1.1. 神经网路的例子</a></li>
-<li><a href="#orgb2713ec">3.1.2. 复习感知机</a></li>
-<li><a href="#org4b5fcf2">3.1.3. 激活函数登场</a></li>
-</ul>
-</li>
-<li><a href="#org384ecd8">3.2. 激活函数</a>
-<ul>
-<li><a href="#org5fefade">3.2.1. sigmoid函数</a></li>
-<li><a href="#org08b66a3">3.2.2. 阶跃函数的实现</a></li>
-<li><a href="#org7aaffa9">3.2.3. 阶跃函数的图形</a></li>
-<li><a href="#org96237d9">3.2.4. sigmoid 函数的实现</a></li>
-<li><a href="#orgc13e558">3.2.5. sigmoid函数和阶跃函数的比较</a></li>
-<li><a href="#org5e3cd61">3.2.6. 非线性函数</a></li>
-<li><a href="#org2c0a9d1">3.2.7. ReLU函数</a></li>
-</ul>
-</li>
-<li><a href="#org88940b5">3.3. 多维数组的运算</a>
-<ul>
-<li><a href="#orgdab7f60">3.3.1. 多维数组</a></li>
-<li><a href="#orga1a4533">3.3.2. 矩阵乘法</a></li>
-<li><a href="#org47298d4">3.3.3. 神经网络的内机</a></li>
-</ul>
-</li>
-<li><a href="#org22fde56">3.4. 3层神经网络的实现</a>
-<ul>
-<li><a href="#org0246dd8">3.4.1. 符号确认</a></li>
-<li><a href="#org519c63e">3.4.2. 各层间信号传递的实现</a></li>
-<li><a href="#org50645b2">3.4.3. 代码现小结</a></li>
-</ul>
-</li>
-<li><a href="#orgf160bc2">3.5. 输出层的设计</a>
-<ul>
-<li><a href="#orgff00b1a">3.5.1. 恒等函数和softmax函数</a></li>
-<li><a href="#org8c25494">3.5.2. 实现softmax函数时的注意事项</a></li>
-<li><a href="#org489651c">3.5.3. softmax函数的特征</a></li>
-<li><a href="#org3cd9544">3.5.4. 输出层的神经元数量</a></li>
-</ul>
-</li>
-<li><a href="#orgaf758d8">3.6. 手写数字识别</a>
-<ul>
-<li><a href="#orgd2a8302">3.6.1. MNIST数据集</a></li>
-<li><a href="#org13a4e68">3.6.2. 神经网络的推理处理</a></li>
-<li><a href="#org60f9763">3.6.3. 批处理</a></li>
+<li><a href="#orgf2bf01c">1.7.1. What is Broadcasting?</a></li>
+<li><a href="#org661ee37">1.7.2. The Broadcasting Rules</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orgd0fcc3c">4. 神经网络的学习</a>
+<li><a href="#org2d51dba">2. 感知机</a>
 <ul>
-<li><a href="#orge76e1d6">4.1. 从数据中学习</a>
+<li><a href="#org1c11883">2.1. 感知机是什么</a></li>
+<li><a href="#orgf619c58">2.2. 简单的逻辑电路</a>
 <ul>
-<li><a href="#org6a1544c">4.1.1. 数据驱动</a></li>
-<li><a href="#org0d40100">4.1.2. 训练数据和测试数据</a></li>
+<li><a href="#orgda4a237">2.2.1. 与门</a></li>
+<li><a href="#orgef4c0d8">2.2.2. 与非门和或门</a></li>
 </ul>
 </li>
-<li><a href="#org16eb716">4.2. 损失函数</a>
+<li><a href="#org0430e14">2.3. 感知机的实现</a>
 <ul>
-<li><a href="#org8aea2b1">4.2.1. 均方误差</a></li>
-<li><a href="#org48c115f">4.2.2. 交叉熵误差</a></li>
-<li><a href="#org8f092ad">4.2.3. mini-batch学习</a></li>
-<li><a href="#org75e52d6">4.2.4. mini-batch版交叉熵误差的实现</a></li>
-<li><a href="#org3c65921">4.2.5. 为何要设定损失函数</a></li>
+<li><a href="#org0397cee">2.3.1. 简单的实现</a></li>
+<li><a href="#org7736b83">2.3.2. 导入权重和偏置</a></li>
+<li><a href="#org40565cc">2.3.3. 使用权重和偏置的实现</a></li>
 </ul>
 </li>
-<li><a href="#org3e04a72">4.3. 数值微分</a>
+<li><a href="#org88cb836">2.4. 感知机的局限性</a>
 <ul>
-<li><a href="#org5cbcd6c">4.3.1. 导数</a></li>
-<li><a href="#orgcebc8b7">4.3.2. 数值微分的例子</a></li>
-<li><a href="#orgd2693d6">4.3.3. 偏导数</a></li>
+<li><a href="#orgec2bc55">2.4.1. 异或门</a></li>
+<li><a href="#org5077df6">2.4.2. 线性和非线性</a></li>
 </ul>
 </li>
-<li><a href="#orgd977d0a">4.4. 梯度</a>
+<li><a href="#org852dea4">2.5. 多层感知机</a>
 <ul>
-<li><a href="#orgb359ff1">4.4.1. 梯度法</a></li>
-<li><a href="#orgbf3ccf3">4.4.2. 神经网络的梯度</a></li>
+<li><a href="#org909c99a">2.5.1. 已有门电路组合</a></li>
+<li><a href="#org17215c3">2.5.2. 异或门的实现</a></li>
 </ul>
 </li>
-<li><a href="#org5218008">4.5. 学习算法的实现</a>
+<li><a href="#org769d742">2.6. 从与非门到计算机</a></li>
+</ul>
+</li>
+<li><a href="#org40b2aa4">3. 神经网络</a>
 <ul>
-<li><a href="#org471dfcb">4.5.1. 2层神经网络的类</a></li>
-<li><a href="#org50568bc">4.5.2. mini-batch的实现</a></li>
-<li><a href="#org8d3c9fa">4.5.3. 基于测试数据的评价</a></li>
+<li><a href="#orgd39bf95">3.1. 从感知机到神经网络</a>
+<ul>
+<li><a href="#org5222e46">3.1.1. 神经网路的例子</a></li>
+<li><a href="#org6c9426b">3.1.2. 复习感知机</a></li>
+<li><a href="#orgc89a809">3.1.3. 激活函数登场</a></li>
+</ul>
+</li>
+<li><a href="#org4e89120">3.2. 激活函数</a>
+<ul>
+<li><a href="#orgd39d59f">3.2.1. sigmoid函数</a></li>
+<li><a href="#org3c69f2c">3.2.2. 阶跃函数的实现</a></li>
+<li><a href="#org0a3ac7c">3.2.3. 阶跃函数的图形</a></li>
+<li><a href="#org73415b4">3.2.4. sigmoid 函数的实现</a></li>
+<li><a href="#org944f4bf">3.2.5. sigmoid函数和阶跃函数的比较</a></li>
+<li><a href="#org0aeae32">3.2.6. 非线性函数</a></li>
+<li><a href="#org8fdbec3">3.2.7. ReLU函数</a></li>
+</ul>
+</li>
+<li><a href="#org00845ae">3.3. 多维数组的运算</a>
+<ul>
+<li><a href="#orgeb3217e">3.3.1. 多维数组</a></li>
+<li><a href="#org29263e9">3.3.2. 矩阵乘法</a></li>
+<li><a href="#org9ded2f5">3.3.3. 神经网络的内机</a></li>
+</ul>
+</li>
+<li><a href="#orgb258e64">3.4. 3层神经网络的实现</a>
+<ul>
+<li><a href="#org88aaec1">3.4.1. 符号确认</a></li>
+<li><a href="#org711c8f3">3.4.2. 各层间信号传递的实现</a></li>
+<li><a href="#orgecdc9fa">3.4.3. 代码现小结</a></li>
+</ul>
+</li>
+<li><a href="#orgbe17e8e">3.5. 输出层的设计</a>
+<ul>
+<li><a href="#org66ea344">3.5.1. 恒等函数和softmax函数</a></li>
+<li><a href="#orgebb9cfe">3.5.2. 实现softmax函数时的注意事项</a></li>
+<li><a href="#org583ff23">3.5.3. softmax函数的特征</a></li>
+<li><a href="#orgdf7f235">3.5.4. 输出层的神经元数量</a></li>
+</ul>
+</li>
+<li><a href="#org214015f">3.6. 手写数字识别</a>
+<ul>
+<li><a href="#org072b2ab">3.6.1. MNIST数据集</a></li>
+<li><a href="#org3fbe52d">3.6.2. 神经网络的推理处理</a></li>
+<li><a href="#orgd005525">3.6.3. 批处理</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org1905191">5. 误差反向传播法</a></li>
-<li><a href="#org0c8a4a8">6. 与学习相关的技巧</a></li>
-<li><a href="#org0727760">7. 卷积神经网络</a></li>
-<li><a href="#org324de53">8. 深度学习</a></li>
+<li><a href="#orgf6d9a7c">4. 神经网络的学习</a>
+<ul>
+<li><a href="#org22fa3f0">4.1. 从数据中学习</a>
+<ul>
+<li><a href="#orgc3766e6">4.1.1. 数据驱动</a></li>
+<li><a href="#org0eea262">4.1.2. 训练数据和测试数据</a></li>
+</ul>
+</li>
+<li><a href="#org99273a3">4.2. 损失函数</a>
+<ul>
+<li><a href="#orgaa702e2">4.2.1. 均方误差</a></li>
+<li><a href="#orgcc89145">4.2.2. 交叉熵误差</a></li>
+<li><a href="#orgdc4d9de">4.2.3. mini-batch学习</a></li>
+<li><a href="#org89ba5e2">4.2.4. mini-batch版交叉熵误差的实现</a></li>
+<li><a href="#org46a80ce">4.2.5. 为何要设定损失函数</a></li>
+</ul>
+</li>
+<li><a href="#org3102080">4.3. 数值微分</a>
+<ul>
+<li><a href="#org4479074">4.3.1. 导数</a></li>
+<li><a href="#orgc4e5b97">4.3.2. 数值微分的例子</a></li>
+<li><a href="#org8e93783">4.3.3. 偏导数</a></li>
+</ul>
+</li>
+<li><a href="#orgbaa99a9">4.4. 梯度</a>
+<ul>
+<li><a href="#org84b94d1">4.4.1. 梯度法</a></li>
+<li><a href="#orga20cc0d">4.4.2. 神经网络的梯度</a></li>
+</ul>
+</li>
+<li><a href="#org53a150c">4.5. 学习算法的实现</a>
+<ul>
+<li><a href="#org8f14d8c">4.5.1. 2层神经网络的类</a></li>
+<li><a href="#org197a9ba">4.5.2. mini-batch的实现</a></li>
+<li><a href="#orgcb63a04">4.5.3. 基于测试数据的评价</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org4c49ac2">5. 误差反向传播法</a></li>
+<li><a href="#orgf70898f">6. 与学习相关的技巧</a></li>
+<li><a href="#org4528fbd">7. 卷积神经网络</a></li>
+<li><a href="#org9ee4db4">8. 深度学习</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgec2137a" class="outline-2">
-<h2 id="orgec2137a"><span class="section-number-2">1.</span> Python 入门</h2>
+<div id="outline-container-org6f3d645" class="outline-2">
+<h2 id="org6f3d645"><span class="section-number-2">1.</span> Python 入门</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-orga7e0ee7" class="outline-3">
-<h3 id="orga7e0ee7"><span class="section-number-3">1.1.</span> Python是什么</h3>
+<div id="outline-container-org0c7dcf0" class="outline-3">
+<h3 id="org0c7dcf0"><span class="section-number-3">1.1.</span> Python是什么</h3>
 <div class="outline-text-3" id="text-1-1">
 <ul class="org-ul">
 <li>Python是机器学习事实上的默认语言</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org3f226fc" class="outline-3">
-<h3 id="org3f226fc"><span class="section-number-3">1.2.</span> Python的安装</h3>
+<div id="outline-container-org57eeff2" class="outline-3">
+<h3 id="org57eeff2"><span class="section-number-3">1.2.</span> Python的安装</h3>
 <div class="outline-text-3" id="text-1-2">
 </div>
-<div id="outline-container-org71743f9" class="outline-4">
-<h4 id="org71743f9"><span class="section-number-4">1.2.1.</span> Python版本</h4>
+<div id="outline-container-orgc07e63d" class="outline-4">
+<h4 id="orgc07e63d"><span class="section-number-4">1.2.1.</span> Python版本</h4>
 <div class="outline-text-4" id="text-1-2-1">
 <ul class="org-ul">
 <li>本书使用Python3.x版本</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgdb46d71" class="outline-4">
-<h4 id="orgdb46d71"><span class="section-number-4">1.2.2.</span> 使用的外部库</h4>
+<div id="outline-container-org0625e46" class="outline-4">
+<h4 id="org0625e46"><span class="section-number-4">1.2.2.</span> 使用的外部库</h4>
 <div class="outline-text-4" id="text-1-2-2">
 <ul class="org-ul">
 <li>本书目标是从零实现深度学习,所以只会依赖如下两个库:
@@ -267,8 +274,8 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-org2307ef0" class="outline-4">
-<h4 id="org2307ef0"><span class="section-number-4">1.2.3.</span> Anaconda发行版</h4>
+<div id="outline-container-orga2c71fe" class="outline-4">
+<h4 id="orga2c71fe"><span class="section-number-4">1.2.3.</span> Anaconda发行版</h4>
 <div class="outline-text-4" id="text-1-2-3">
 <ul class="org-ul">
 <li>推荐安装Anaconda发行版,这个发行版侧重于数据分析,已经包含了前面讲的,本书依赖的两个库NumPy和Matplotlib</li>
@@ -276,8 +283,8 @@
 </div>
 </div>
 </div>
-<div id="outline-container-orgdb50273" class="outline-3">
-<h3 id="orgdb50273"><span class="section-number-3">1.3.</span> Python解释器</h3>
+<div id="outline-container-orga079ae8" class="outline-3">
+<h3 id="orga079ae8"><span class="section-number-3">1.3.</span> Python解释器</h3>
 <div class="outline-text-3" id="text-1-3">
 <ul class="org-ul">
 <li><p>
@@ -301,8 +308,8 @@ Type <span style="color: #2d9574;">"help"</span>, <span style="color: #2d9574;">
 </div></li>
 </ul>
 </div>
-<div id="outline-container-org3ecc983" class="outline-4">
-<h4 id="org3ecc983"><span class="section-number-4">1.3.1.</span> 算术计算</h4>
+<div id="outline-container-orgb370833" class="outline-4">
+<h4 id="orgb370833"><span class="section-number-4">1.3.1.</span> 算术计算</h4>
 <div class="outline-text-4" id="text-1-3-1">
 <ul class="org-ul">
 <li><p>
@@ -323,8 +330,8 @@ Type <span style="color: #2d9574;">"help"</span>, <span style="color: #2d9574;">
 </ul>
 </div>
 </div>
-<div id="outline-container-orge2fa4b9" class="outline-4">
-<h4 id="orge2fa4b9"><span class="section-number-4">1.3.2.</span> 数据类型</h4>
+<div id="outline-container-orgaed18f1" class="outline-4">
+<h4 id="orgaed18f1"><span class="section-number-4">1.3.2.</span> 数据类型</h4>
 <div class="outline-text-4" id="text-1-3-2">
 <ul class="org-ul">
 <li><p>
@@ -342,8 +349,8 @@ Python中可以使用type来判断数据的类型
 </ul>
 </div>
 </div>
-<div id="outline-container-org4178a8d" class="outline-4">
-<h4 id="org4178a8d"><span class="section-number-4">1.3.3.</span> 变量</h4>
+<div id="outline-container-org1d18216" class="outline-4">
+<h4 id="org1d18216"><span class="section-number-4">1.3.3.</span> 变量</h4>
 <div class="outline-text-4" id="text-1-3-3">
 <ul class="org-ul">
 <li><p>
@@ -366,8 +373,8 @@ Python中变量例子如下
 </ul>
 </div>
 </div>
-<div id="outline-container-org1f5ec4e" class="outline-4">
-<h4 id="org1f5ec4e"><span class="section-number-4">1.3.4.</span> 列表</h4>
+<div id="outline-container-org3a0b687" class="outline-4">
+<h4 id="org3a0b687"><span class="section-number-4">1.3.4.</span> 列表</h4>
 <div class="outline-text-4" id="text-1-3-4">
 <ul class="org-ul">
 <li><p>
@@ -392,8 +399,8 @@ Python中变量例子如下
 </ul>
 </div>
 </div>
-<div id="outline-container-org30ca080" class="outline-4">
-<h4 id="org30ca080"><span class="section-number-4">1.3.5.</span> 字典</h4>
+<div id="outline-container-org7ae1bb7" class="outline-4">
+<h4 id="org7ae1bb7"><span class="section-number-4">1.3.5.</span> 字典</h4>
 <div class="outline-text-4" id="text-1-3-5">
 <ul class="org-ul">
 <li><p>
@@ -411,8 +418,8 @@ python中的哈希表叫做字典,字典基本是最常用数据结构了
 </ul>
 </div>
 </div>
-<div id="outline-container-org1ac8c53" class="outline-4">
-<h4 id="org1ac8c53"><span class="section-number-4">1.3.6.</span> 布尔型</h4>
+<div id="outline-container-orgf425928" class="outline-4">
+<h4 id="orgf425928"><span class="section-number-4">1.3.6.</span> 布尔型</h4>
 <div class="outline-text-4" id="text-1-3-6">
 <ul class="org-ul">
 <li>Python中的bool值为首字母大写的True和False</li>
@@ -425,24 +432,24 @@ python中的哈希表叫做字典,字典基本是最常用数据结构了
 </ul>
 </div>
 </div>
-<div id="outline-container-org7dbc843" class="outline-4">
-<h4 id="org7dbc843"><span class="section-number-4">1.3.7.</span> if 语句</h4>
+<div id="outline-container-org00535f0" class="outline-4">
+<h4 id="org00535f0"><span class="section-number-4">1.3.7.</span> if 语句</h4>
 <div class="outline-text-4" id="text-1-3-7">
 <ul class="org-ul">
 <li>if语句为级别逻辑语句</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgec0fdb9" class="outline-4">
-<h4 id="orgec0fdb9"><span class="section-number-4">1.3.8.</span> for 语句</h4>
+<div id="outline-container-org4f75590" class="outline-4">
+<h4 id="org4f75590"><span class="section-number-4">1.3.8.</span> for 语句</h4>
 <div class="outline-text-4" id="text-1-3-8">
 <ul class="org-ul">
 <li>for语句为级别循环语句</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org8d5035c" class="outline-4">
-<h4 id="org8d5035c"><span class="section-number-4">1.3.9.</span> 函数</h4>
+<div id="outline-container-org61c431a" class="outline-4">
+<h4 id="org61c431a"><span class="section-number-4">1.3.9.</span> 函数</h4>
 <div class="outline-text-4" id="text-1-3-9">
 <ul class="org-ul">
 <li>python中使用def来定义函数</li>
@@ -450,20 +457,20 @@ python中的哈希表叫做字典,字典基本是最常用数据结构了
 </div>
 </div>
 </div>
-<div id="outline-container-org4bc42f6" class="outline-3">
-<h3 id="org4bc42f6"><span class="section-number-3">1.4.</span> Python脚本文件</h3>
+<div id="outline-container-orgd005e44" class="outline-3">
+<h3 id="orgd005e44"><span class="section-number-3">1.4.</span> Python脚本文件</h3>
 <div class="outline-text-3" id="text-1-4">
 </div>
-<div id="outline-container-org62a0a67" class="outline-4">
-<h4 id="org62a0a67"><span class="section-number-4">1.4.1.</span> 保存为文件</h4>
+<div id="outline-container-org3f9f363" class="outline-4">
+<h4 id="org3f9f363"><span class="section-number-4">1.4.1.</span> 保存为文件</h4>
 <div class="outline-text-4" id="text-1-4-1">
 <ul class="org-ul">
 <li>前面都是在解释器里面运行,但是真正的Python代码一般是保存在一个文件里面(一般以py结尾),然后运行</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgb4b62fe" class="outline-4">
-<h4 id="orgb4b62fe"><span class="section-number-4">1.4.2.</span> 类</h4>
+<div id="outline-container-org25413d2" class="outline-4">
+<h4 id="org25413d2"><span class="section-number-4">1.4.2.</span> 类</h4>
 <div class="outline-text-4" id="text-1-4-2">
 <ul class="org-ul">
 <li>Python中使用class来定义新的类型</li>
@@ -471,12 +478,12 @@ python中的哈希表叫做字典,字典基本是最常用数据结构了
 </div>
 </div>
 </div>
-<div id="outline-container-org6eb691d" class="outline-3">
-<h3 id="org6eb691d"><span class="section-number-3">1.5.</span> NumPy</h3>
+<div id="outline-container-org4af9410" class="outline-3">
+<h3 id="org4af9410"><span class="section-number-3">1.5.</span> NumPy</h3>
 <div class="outline-text-3" id="text-1-5">
 </div>
-<div id="outline-container-orgfab2d6b" class="outline-4">
-<h4 id="orgfab2d6b"><span class="section-number-4">1.5.1.</span> 导入NumPy</h4>
+<div id="outline-container-org9f6dfea" class="outline-4">
+<h4 id="org9f6dfea"><span class="section-number-4">1.5.1.</span> 导入NumPy</h4>
 <div class="outline-text-4" id="text-1-5-1">
 <ul class="org-ul">
 <li><p>
@@ -489,8 +496,8 @@ numpy是事实上的科学计算标准,但是它不再python的标注库里面,�
 </ul>
 </div>
 </div>
-<div id="outline-container-org73f9bd5" class="outline-4">
-<h4 id="org73f9bd5"><span class="section-number-4">1.5.2.</span> 生成NumPy数组</h4>
+<div id="outline-container-orgf21a532" class="outline-4">
+<h4 id="orgf21a532"><span class="section-number-4">1.5.2.</span> 生成NumPy数组</h4>
 <div class="outline-text-4" id="text-1-5-2">
 <ul class="org-ul">
 <li><p>
@@ -508,8 +515,8 @@ Python的数组我们前面讲过了,叫做列表. 而NumPy的数组就叫NumPy�
 </ul>
 </div>
 </div>
-<div id="outline-container-org0a6b55c" class="outline-4">
-<h4 id="org0a6b55c"><span class="section-number-4">1.5.3.</span> NumPy的算术运算</h4>
+<div id="outline-container-org516a374" class="outline-4">
+<h4 id="org516a374"><span class="section-number-4">1.5.3.</span> NumPy的算术运算</h4>
 <div class="outline-text-4" id="text-1-5-3">
 <ul class="org-ul">
 <li>NumPy的运算都是element-wise的:
@@ -541,8 +548,8 @@ Python的数组我们前面讲过了,叫做列表. 而NumPy的数组就叫NumPy�
 </ul>
 </div>
 </div>
-<div id="outline-container-org36ed73e" class="outline-4">
-<h4 id="org36ed73e"><span class="section-number-4">1.5.4.</span> NumPy的N维数组</h4>
+<div id="outline-container-org89ca952" class="outline-4">
+<h4 id="org89ca952"><span class="section-number-4">1.5.4.</span> NumPy的N维数组</h4>
 <div class="outline-text-4" id="text-1-5-4">
 <ul class="org-ul">
 <li>NumPy还可以生成多维数组,比如下面是一个二维数组的例子
@@ -615,8 +622,8 @@ Python的数组我们前面讲过了,叫做列表. 而NumPy的数组就叫NumPy�
 </ul>
 </div>
 </div>
-<div id="outline-container-org498d550" class="outline-4">
-<h4 id="org498d550"><span class="section-number-4">1.5.5.</span> 广播</h4>
+<div id="outline-container-org693ee10" class="outline-4">
+<h4 id="org693ee10"><span class="section-number-4">1.5.5.</span> 广播</h4>
 <div class="outline-text-4" id="text-1-5-5">
 <ul class="org-ul">
 <li><p>
@@ -624,7 +631,7 @@ Python的数组我们前面讲过了,叫做列表. 而NumPy的数组就叫NumPy�
 把标量扩展成了对应的形状.比如下面的例子,标量10就被扩展成了2*2的形状
 </p>
 
-<div id="org9ec1977" class="figure">
+<div id="orge764066" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/dlfs/1-1.png" alt="1-1.png" />
 </p>
 <p><span class="figure-number">Figure 1: </span>dlfs/1-1.png</p>
@@ -647,7 +654,7 @@ Python的数组我们前面讲过了,叫做列表. 而NumPy的数组就叫NumPy�
 我们可以从下图看到,一维vector是如何被扩展的
 </p>
 
-<div id="org3d06598" class="figure">
+<div id="orgf673979" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/dlfs/1-2.png" alt="1-2.png" />
 </p>
 <p><span class="figure-number">Figure 2: </span>dlfs/1-2.png</p>
@@ -656,8 +663,8 @@ Python的数组我们前面讲过了,叫做列表. 而NumPy的数组就叫NumPy�
 </ul>
 </div>
 </div>
-<div id="outline-container-org6606d34" class="outline-4">
-<h4 id="org6606d34"><span class="section-number-4">1.5.6.</span> 访问元素</h4>
+<div id="outline-container-orgdb3cf00" class="outline-4">
+<h4 id="orgdb3cf00"><span class="section-number-4">1.5.6.</span> 访问元素</h4>
 <div class="outline-text-4" id="text-1-5-6">
 <ul class="org-ul">
 <li><p>
@@ -701,12 +708,12 @@ numpy数组也是从0开始,对于多维数组的访问,也是多增加几次的
 </div>
 </div>
 </div>
-<div id="outline-container-org5fe8790" class="outline-3">
-<h3 id="org5fe8790"><span class="section-number-3">1.6.</span> Matplotlib</h3>
+<div id="outline-container-orge709dea" class="outline-3">
+<h3 id="orge709dea"><span class="section-number-3">1.6.</span> Matplotlib</h3>
 <div class="outline-text-3" id="text-1-6">
 </div>
-<div id="outline-container-org12718e9" class="outline-4">
-<h4 id="org12718e9"><span class="section-number-4">1.6.1.</span> 绘制简单图形</h4>
+<div id="outline-container-org5ba7027" class="outline-4">
+<h4 id="org5ba7027"><span class="section-number-4">1.6.1.</span> 绘制简单图形</h4>
 <div class="outline-text-4" id="text-1-6-1">
 <ul class="org-ul">
 <li>最简答的绘制sin函数曲线的例子
@@ -729,7 +736,7 @@ plt.show<span style="color: #3a81c3;">()</span>
 结果如下
 </p>
 
-<div id="orgb6c06db" class="figure">
+<div id="orge0f326a" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/dlfs/1-3.png" alt="1-3.png" />
 </p>
 <p><span class="figure-number">Figure 3: </span>dlfs/1-3.png</p>
@@ -738,8 +745,8 @@ plt.show<span style="color: #3a81c3;">()</span>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgf2a475e" class="outline-4">
-<h4 id="orgf2a475e"><span class="section-number-4">1.6.2.</span> pyplot的功能</h4>
+<div id="outline-container-org887e900" class="outline-4">
+<h4 id="org887e900"><span class="section-number-4">1.6.2.</span> pyplot的功能</h4>
 <div class="outline-text-4" id="text-1-6-2">
 <ul class="org-ul">
 <li>我们还可以在上图中加上一些标题,x轴签名等等
@@ -766,7 +773,7 @@ plt.show<span style="color: #3a81c3;">()</span>
 结果如下
 </p>
 
-<div id="org76f63dd" class="figure">
+<div id="org47eec13" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/dlfs/1-4.png" alt="1-4.png" />
 </p>
 <p><span class="figure-number">Figure 4: </span>dlfs/1-4.png</p>
@@ -775,8 +782,8 @@ plt.show<span style="color: #3a81c3;">()</span>
 </ul>
 </div>
 </div>
-<div id="outline-container-org8ff077b" class="outline-4">
-<h4 id="org8ff077b"><span class="section-number-4">1.6.3.</span> 显示图像</h4>
+<div id="outline-container-org5ff5b4b" class="outline-4">
+<h4 id="org5ff5b4b"><span class="section-number-4">1.6.3.</span> 显示图像</h4>
 <div class="outline-text-4" id="text-1-6-3">
 <ul class="org-ul">
 <li>matplotlib还可以使用imread()方法读入图像</li>
@@ -784,13 +791,153 @@ plt.show<span style="color: #3a81c3;">()</span>
 </div>
 </div>
 </div>
+<div id="outline-container-orgecc0d53" class="outline-3">
+<h3 id="orgecc0d53"><span class="section-number-3">1.7.</span> Understanding Broadcasting in NumPy</h3>
+<div class="outline-text-3" id="text-1-7">
 </div>
-<div id="outline-container-org89530a4" class="outline-2">
-<h2 id="org89530a4"><span class="section-number-2">2.</span> 感知机</h2>
+<div id="outline-container-orgf2bf01c" class="outline-4">
+<h4 id="orgf2bf01c"><span class="section-number-4">1.7.1.</span> What is Broadcasting?</h4>
+<div class="outline-text-4" id="text-1-7-1">
+<ul class="org-ul">
+<li>从本质上说, broadcasting是NumPy的一种在算术计算的过程中,扩展"较小array"到"较大array"的能力.这种能力
+使得我们不必在计算之前,手动的对array进行reshape.</li>
+<li>注意本节所有的array都是指的NumPy array</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org661ee37" class="outline-4">
+<h4 id="org661ee37"><span class="section-number-4">1.7.2.</span> The Broadcasting Rules</h4>
+<div class="outline-text-4" id="text-1-7-2">
+<ul class="org-ul">
+<li>Broadcasting Rules总结起来有如下五点:
+<ol class="org-ol">
+<li>Dimension Matching: NumPy在Broadcasting之前首先比较array的shape(我们可以认为shape是一个元组,而元
+组的每个成员是dimension),顺序是从最右边的dimension开始,依次向左</li>
+<li>Compatibility: 两个dimension被认为是相等的情况是:
+<ul class="org-ul">
+<li>要么两者相等</li>
+<li>要么两者不相等,但是其中一个是1</li>
+</ul></li>
+<li>Broadcastig Axis: 如果"两者不相等,但是其中一个是1"的情况出现,那么较小的dimension自动增长为较大的
+dimension相同的值</li>
+<li>Rank Adjustment: 所谓rank是指dimension的数目,如果两个array的rank都不相同,那么从右到左比较的过程
+当中,会为缺失的array补齐一个wrapper dimension,数值为1(这个dimension 1后面会根据对应的dimension
+进行增长或保持不变)</li>
+<li>ValueError: 如果上面的过程不能进行下去,那么Broadcasting过程失败,NumPy会抛出ValueError异常</li>
+</ol></li>
+<li>下面我们详细的讲解上面的过程</li>
+</ul>
+</div>
+<ol class="org-ol">
+<li><a id="orgf452fe4"></a>Dimension Matching<br />
+<div class="outline-text-5" id="text-1-7-2-1">
+<ul class="org-ul">
+<li><p>
+我们首先看一个例子
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #3a81c3; font-weight: bold;">import</span> numpy <span style="color: #3a81c3; font-weight: bold;">as</span> np
+
+<span style="color: #715ab1;">arr1</span> = np.array<span style="color: #3a81c3;">(</span><span style="color: #6c3163;">[</span><span style="color: #2d9574;">[</span>1, 2, 3<span style="color: #2d9574;">]</span>, <span style="color: #2d9574;">[</span>4, 4, 6<span style="color: #2d9574;">]</span><span style="color: #6c3163;">]</span><span style="color: #3a81c3;">)</span>
+<span style="color: #3a81c3;">print</span><span style="color: #3a81c3;">(</span><span style="color: #2d9574;">"""|arr1.shape|=&gt;"""</span>, arr1.shape<span style="color: #3a81c3;">)</span>
+<span style="color: #715ab1;">arr2</span> = np.array<span style="color: #3a81c3;">(</span><span style="color: #6c3163;">[</span>10, 20, 30<span style="color: #6c3163;">]</span><span style="color: #3a81c3;">)</span>
+<span style="color: #3a81c3;">print</span><span style="color: #3a81c3;">(</span><span style="color: #2d9574;">"""|arr2.shape|=&gt;"""</span>, arr2.shape<span style="color: #3a81c3;">)</span>
+
+
+<span style="color: #2aa1ae; background-color: #ecf3ec;"># </span><span style="color: #2aa1ae; background-color: #ecf3ec;">&lt;====================OUTPUT====================&gt;</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;"># </span><span style="color: #2aa1ae; background-color: #ecf3ec;">|arr1.shape|=&gt; (2, 3)</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;"># </span><span style="color: #2aa1ae; background-color: #ecf3ec;">|arr2.shape|=&gt; (3,)</span>
+</pre>
+</div></li>
+<li>Dimension Matching(也可以理解为Broadcasting Check)上面例子的步骤如下:
+<ol class="org-ol">
+<li><p>
+我们比较两个shape, (2, 3)和(3,),从最后的dimension开始比较,两者相同,都是3.
+</p>
+<pre class="example" id="org2a9e21b">
+注意(3,)这是元组为为了和set进行区分而发明的一个写法:元组即便是一个元素也要加个','在最后
+</pre></li>
+<li>我们左移一位,继续比较shape的倒数第二个dimension,这时候我们发现arr2没有倒数第二位,那么NumPy就自动
+添加一位数值为1的dimension,那么arr2的shape变成了(1,3)</li>
+<li>arr2改变shape之后,进行比较arr1的2和arr2的1是通过了check的.Broadcasting check通过. 如果上面的过程
+中Broadcasting Check没有通过,那么会抛出ValueError异常</li>
+</ol></li>
+<li><p>
+一旦Broadcasting check成功,那么就要开始真正的进行Broadcasting了,上面这个例子中NumPy会把arr2的第一
+row进行复制.复制后的计算过程如上
+</p>
+<pre class="example" id="orgec765b4">
+[[1, 2, 3],    +    [[10, 20, 30],      = [[11, 22, 33],
+ [4, 5, 6],          [10, 20, 30]]         [14, 25, 36]]
+</pre></li>
+<li>其实复制的过程也很容易理解,特别是你知道其实自己是从(1,3)扩展到(2,3),那么很显然是把第一个维度的数据
+复制,比较难的,是理解NumPy把array从(3,)扩展成(1,3)</li>
+</ul>
+</div>
+</li>
+<li><a id="org18661e1"></a>Rank Adjustment<br />
+<div class="outline-text-5" id="text-1-7-2-2">
+<ul class="org-ul">
+<li><p>
+我们再来看一个例子,这个例子更加复杂
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #3a81c3; font-weight: bold;">import</span> numpy <span style="color: #3a81c3; font-weight: bold;">as</span> np
+
+<span style="color: #715ab1;">arr1</span> = np.array<span style="color: #3a81c3;">(</span><span style="color: #6c3163;">[</span>1, 2, 3<span style="color: #6c3163;">]</span><span style="color: #3a81c3;">)</span>
+<span style="color: #3a81c3;">print</span><span style="color: #3a81c3;">(</span><span style="color: #2d9574;">"""|arr1.shape|=&gt;"""</span>, arr1.shape<span style="color: #3a81c3;">)</span>
+<span style="color: #715ab1;">arr2</span> = np.array<span style="color: #3a81c3;">(</span><span style="color: #6c3163;">[</span><span style="color: #2d9574;">[</span>4<span style="color: #2d9574;">]</span>, <span style="color: #2d9574;">[</span>5<span style="color: #2d9574;">]</span><span style="color: #6c3163;">]</span><span style="color: #3a81c3;">)</span>
+<span style="color: #3a81c3;">print</span><span style="color: #3a81c3;">(</span><span style="color: #2d9574;">"""|arr2.shape|=&gt;"""</span>, arr2.shape<span style="color: #3a81c3;">)</span>
+<span style="color: #715ab1;">result</span> = arr1 + arr2
+
+<span style="color: #3a81c3;">print</span><span style="color: #3a81c3;">(</span><span style="color: #2d9574;">"""|result.shape|=&gt;"""</span>, result.shape<span style="color: #3a81c3;">)</span>
+<span style="color: #3a81c3;">print</span><span style="color: #3a81c3;">(</span><span style="color: #2d9574;">"""|result|=&gt;"""</span>, result<span style="color: #3a81c3;">)</span>
+
+
+<span style="color: #2aa1ae; background-color: #ecf3ec;"># </span><span style="color: #2aa1ae; background-color: #ecf3ec;">&lt;====================OUTPUT====================&gt;</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;"># </span><span style="color: #2aa1ae; background-color: #ecf3ec;">|arr1.shape|=&gt; (3,)</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;"># </span><span style="color: #2aa1ae; background-color: #ecf3ec;">|arr2.shape|=&gt; (2, 1)</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;"># </span><span style="color: #2aa1ae; background-color: #ecf3ec;">|result.shape|=&gt; (2, 3)</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;"># </span><span style="color: #2aa1ae; background-color: #ecf3ec;">|result|=&gt; [[5 6 7]</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">#  </span><span style="color: #2aa1ae; background-color: #ecf3ec;">[6 7 8]]</span>
+</pre>
+</div></li>
+<li>我们按照上一个例子的步骤来进行一下Broadcasting Check
+<ol class="org-ol">
+<li>我们比较两个shape, (3,)和(2,1), 从最后的dimension开始比较,两虽然不相等,但是其中一个是1,所以较小
+的dimension升级(通过Broadcasting Axis),也就是说(2,1)=&gt;(2,3)</li>
+<li>我们左移一位,会发现arr1已经没有dimension了,所以添加一个位数为1的dimension(通过Rank Adjustment),所以
+arr1变成了(1,3)</li>
+<li>我比较arr1的最左dimension(数值为1)和arr2的最左dimension(数组为2),我们发现两种虽然不相等,但是其中
+一个是1,所以较小的dimension升级(通过Broadcasting Axis),也就是说(1,3)=&gt;(2,3)</li>
+<li>经过上面的步骤arr1和arr2都进行了扩充,最后都扩充到了(2,3).</li>
+<li><p>
+很显然(3,)要水平方向复制(2,1)要竖着方向复制,总体的过程如下
+</p>
+<pre class="example" id="org7944f22">
+arr1:         [1, 2, 3]      -&gt;   [[1, 2, 3],         (broadcast along axis 0)
+                                   [1, 2, 3]]
++
+arr2:         [[4],          -&gt;   [[4, 4, 4],         (broadcast along axis 1)
+               [5]]                [5, 5, 5]]
+
+result:       [[5, 6, 7],
+               [5, 7, 8]]
+</pre></li>
+</ol></li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="outline-container-org2d51dba" class="outline-2">
+<h2 id="org2d51dba"><span class="section-number-2">2.</span> 感知机</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-orgeda71c0" class="outline-3">
-<h3 id="orgeda71c0"><span class="section-number-3">2.1.</span> 感知机是什么</h3>
+<div id="outline-container-org1c11883" class="outline-3">
+<h3 id="org1c11883"><span class="section-number-3">2.1.</span> 感知机是什么</h3>
 <div class="outline-text-3" id="text-2-1">
 <ul class="org-ul">
 <li>所谓感知机,是指接收多个输入信号,输出一个信号.</li>
@@ -806,7 +953,7 @@ plt.show<span style="color: #3a81c3;">()</span>
 图2-1
 </p>
 
-<div id="org6675ec2" class="figure">
+<div id="org84a5fad" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/dlfs/2-1.png" alt="2-1.png" />
 </p>
 <p><span class="figure-number">Figure 5: </span>dlfs/2-1.png</p>
@@ -832,12 +979,12 @@ y =
 </ul>
 </div>
 </div>
-<div id="outline-container-org1e752da" class="outline-3">
-<h3 id="org1e752da"><span class="section-number-3">2.2.</span> 简单的逻辑电路</h3>
+<div id="outline-container-orgf619c58" class="outline-3">
+<h3 id="orgf619c58"><span class="section-number-3">2.2.</span> 简单的逻辑电路</h3>
 <div class="outline-text-3" id="text-2-2">
 </div>
-<div id="outline-container-orge47bbdf" class="outline-4">
-<h4 id="orge47bbdf"><span class="section-number-4">2.2.1.</span> 与门</h4>
+<div id="outline-container-orgda4a237" class="outline-4">
+<h4 id="orgda4a237"><span class="section-number-4">2.2.1.</span> 与门</h4>
 <div class="outline-text-4" id="text-2-2-1">
 <ul class="org-ul">
 <li>我们先考虑用感知机来解决简单的问题,比如我们用感知机来实现一下逻辑电路的与门(AND gate)</li>
@@ -897,8 +1044,8 @@ y =
 </ul>
 </div>
 </div>
-<div id="outline-container-orgffc6c27" class="outline-4">
-<h4 id="orgffc6c27"><span class="section-number-4">2.2.2.</span> 与非门和或门</h4>
+<div id="outline-container-orgef4c0d8" class="outline-4">
+<h4 id="orgef4c0d8"><span class="section-number-4">2.2.2.</span> 与非门和或门</h4>
 <div class="outline-text-4" id="text-2-2-2">
 <ul class="org-ul">
 <li><p>
@@ -1019,12 +1166,12 @@ y =
 </div>
 </div>
 </div>
-<div id="outline-container-orgaddd7b8" class="outline-3">
-<h3 id="orgaddd7b8"><span class="section-number-3">2.3.</span> 感知机的实现</h3>
+<div id="outline-container-org0430e14" class="outline-3">
+<h3 id="org0430e14"><span class="section-number-3">2.3.</span> 感知机的实现</h3>
 <div class="outline-text-3" id="text-2-3">
 </div>
-<div id="outline-container-org5398757" class="outline-4">
-<h4 id="org5398757"><span class="section-number-4">2.3.1.</span> 简单的实现</h4>
+<div id="outline-container-org0397cee" class="outline-4">
+<h4 id="org0397cee"><span class="section-number-4">2.3.1.</span> 简单的实现</h4>
 <div class="outline-text-4" id="text-2-3-1">
 <ul class="org-ul">
 <li><p>
@@ -1058,8 +1205,8 @@ y =
 </ul>
 </div>
 </div>
-<div id="outline-container-org6fa0dcb" class="outline-4">
-<h4 id="org6fa0dcb"><span class="section-number-4">2.3.2.</span> 导入权重和偏置</h4>
+<div id="outline-container-org7736b83" class="outline-4">
+<h4 id="org7736b83"><span class="section-number-4">2.3.2.</span> 导入权重和偏置</h4>
 <div class="outline-text-4" id="text-2-3-2">
 <ul class="org-ul">
 <li>我们为了更好的抽象问题,把 \(\theta\) 换成 \(-b\)
@@ -1082,8 +1229,8 @@ y =
 </ul>
 </div>
 </div>
-<div id="outline-container-org00ad4b5" class="outline-4">
-<h4 id="org00ad4b5"><span class="section-number-4">2.3.3.</span> 使用权重和偏置的实现</h4>
+<div id="outline-container-org40565cc" class="outline-4">
+<h4 id="org40565cc"><span class="section-number-4">2.3.3.</span> 使用权重和偏置的实现</h4>
 <div class="outline-text-4" id="text-2-3-3">
 <ul class="org-ul">
 <li>更改了公式的同时,我们也使用NumPy来实现感知机
@@ -1190,15 +1337,15 @@ y =
 </div>
 </div>
 </div>
-<div id="outline-container-org2b68428" class="outline-3">
-<h3 id="org2b68428"><span class="section-number-3">2.4.</span> 感知机的局限性</h3>
+<div id="outline-container-org88cb836" class="outline-3">
+<h3 id="org88cb836"><span class="section-number-3">2.4.</span> 感知机的局限性</h3>
 <div class="outline-text-3" id="text-2-4">
 <ul class="org-ul">
 <li>到目前为止,我们已经知道,感知机可以实现与门,与非门,或门,三种逻辑,现在我们考虑下异或门</li>
 </ul>
 </div>
-<div id="outline-container-org11f379a" class="outline-4">
-<h4 id="org11f379a"><span class="section-number-4">2.4.1.</span> 异或门</h4>
+<div id="outline-container-orgec2bc55" class="outline-4">
+<h4 id="orgec2bc55"><span class="section-number-4">2.4.1.</span> 异或门</h4>
 <div class="outline-text-4" id="text-2-4-1">
 <ul class="org-ul">
 <li><p>
@@ -1250,7 +1397,7 @@ y =
 <li><p>
 我们再次尝试使用之前的方法来寻找一个权重和偏移的组合,我们发现我们找不到这样一个组合,实际的情况是
 </p>
-<pre class="example" id="org1b15cd2">
+<pre class="example" id="org8fc5758">
 用感知机是无法实现异或门的
 </pre></li>
 <li>为什么感知机无法实现异或门,我们可以用下面的例子来讲解一下
@@ -1269,7 +1416,7 @@ y =
 我们如果把x2看成是y的话,我们会得到这么一条直线y=-x+0.5,如图
 </p>
 
-<div id="orgbf60de8" class="figure">
+<div id="orgfabed71" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/dlfs/2-6.png" alt="2-6.png" />
 </p>
 <p><span class="figure-number">Figure 6: </span>dlfs/2-6.png</p>
@@ -1284,7 +1431,7 @@ y =
 线能欧分割图中的圆圈和三角
 </p>
 
-<div id="org3a1b11e" class="figure">
+<div id="orgc9a313c" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/dlfs/2-7.png" alt="2-7.png" />
 </p>
 <p><span class="figure-number">Figure 7: </span>dlfs/2-7.png</p>
@@ -1293,8 +1440,8 @@ y =
 </ul>
 </div>
 </div>
-<div id="outline-container-orgafca20c" class="outline-4">
-<h4 id="orgafca20c"><span class="section-number-4">2.4.2.</span> 线性和非线性</h4>
+<div id="outline-container-org5077df6" class="outline-4">
+<h4 id="org5077df6"><span class="section-number-4">2.4.2.</span> 线性和非线性</h4>
 <div class="outline-text-4" id="text-2-4-2">
 <ul class="org-ul">
 <li><p>
@@ -1302,7 +1449,7 @@ y =
 来完成了这个区分
 </p>
 
-<div id="org7420a74" class="figure">
+<div id="org110ebd9" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/dlfs/2-8.png" alt="2-8.png" />
 </p>
 <p><span class="figure-number">Figure 8: </span>dlfs/2-8.png</p>
@@ -1312,21 +1459,21 @@ y =
 </div>
 </div>
 </div>
-<div id="outline-container-orgba79bb3" class="outline-3">
-<h3 id="orgba79bb3"><span class="section-number-3">2.5.</span> 多层感知机</h3>
+<div id="outline-container-org852dea4" class="outline-3">
+<h3 id="org852dea4"><span class="section-number-3">2.5.</span> 多层感知机</h3>
 <div class="outline-text-3" id="text-2-5">
 <ul class="org-ul">
 <li><p>
 感知机无法表示异或门让人遗憾,但是感知机可以通过"叠加层"来完成这个任务
 </p>
-<pre class="example" id="org20b20d3">
+<pre class="example" id="org6fb4889">
 准确的是说,应该是"单层感知机"无法表示异或门
 </pre></li>
 <li>我们下面通过电路来理解一下,什么是叠加层</li>
 </ul>
 </div>
-<div id="outline-container-orgfd99fd7" class="outline-4">
-<h4 id="orgfd99fd7"><span class="section-number-4">2.5.1.</span> 已有门电路组合</h4>
+<div id="outline-container-org909c99a" class="outline-4">
+<h4 id="org909c99a"><span class="section-number-4">2.5.1.</span> 已有门电路组合</h4>
 <div class="outline-text-4" id="text-2-5-1">
 <ul class="org-ul">
 <li>异或门有很多种制作方法,其中最经典的做法是组合我们前面学到的三种门:与门,与非门和或门
@@ -1335,7 +1482,7 @@ y =
 我们首先以下图来表示与门,与非门和或门
 </p>
 
-<div id="orgded872d" class="figure">
+<div id="org7da5932" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/dlfs/2-9.png" alt="2-9.png" />
 </p>
 <p><span class="figure-number">Figure 9: </span>dlfs/2-9.png</p>
@@ -1344,7 +1491,7 @@ y =
 异或门就可以使用上面的元器件,如下进行组合配置,最终实现异或门
 </p>
 
-<div id="org569ea0a" class="figure">
+<div id="orgbeef87c" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/dlfs/2-11.png" alt="2-11.png" />
 </p>
 <p><span class="figure-number">Figure 10: </span>dlfs/2-11.png</p>
@@ -1414,8 +1561,8 @@ y =
 </ul>
 </div>
 </div>
-<div id="outline-container-org43fc911" class="outline-4">
-<h4 id="org43fc911"><span class="section-number-4">2.5.2.</span> 异或门的实现</h4>
+<div id="outline-container-org17215c3" class="outline-4">
+<h4 id="org17215c3"><span class="section-number-4">2.5.2.</span> 异或门的实现</h4>
 <div class="outline-text-4" id="text-2-5-2">
 <ul class="org-ul">
 <li><p>
@@ -1484,7 +1631,7 @@ y =
 如图2-13
 </p>
 
-<div id="org2cb6928" class="figure">
+<div id="org4e99549" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/dlfs/2-13.png" alt="2-13.png" />
 </p>
 <p><span class="figure-number">Figure 11: </span>dlfs/2-13.png</p>
@@ -1492,7 +1639,7 @@ y =
 <li><p>
 上图和前面的与门,与非门,或门的感知机图不同.事实上之前的图都是单层感知机,而异或门是2层感知机
 </p>
-<pre class="example" id="org79bb41a">
+<pre class="example" id="org73f2c1c">
 也有文献把这个叫做3层感知机, 这取决于如何看待最后y是不是一层
 </pre></li>
 <li>这种2层感知机可以看做是流水线的组装作业.第一层的工人对传送过来的零件进行加工,完成后再传送给第二层
@@ -1500,7 +1647,7 @@ y =
 <li><p>
 通过这样的2层结构,感知机得以实现异或门.换句话说,就是
 </p>
-<pre class="example" id="orgfeb8fe3">
+<pre class="example" id="org84a001f">
 单层感知机无法表达的东西,通过增加一层就可以解决.也就是说,通过增加层,感知机能进行更加灵活的表示
 </pre></li>
 </ul></li>
@@ -1508,8 +1655,8 @@ y =
 </div>
 </div>
 </div>
-<div id="outline-container-org9e5be24" class="outline-3">
-<h3 id="org9e5be24"><span class="section-number-3">2.6.</span> 从与非门到计算机</h3>
+<div id="outline-container-org769d742" class="outline-3">
+<h3 id="org769d742"><span class="section-number-3">2.6.</span> 从与非门到计算机</h3>
 <div class="outline-text-3" id="text-2-6">
 <ul class="org-ul">
 <li>人们通常认为计算机很复杂,但是令人惊讶的是,仅仅通过与非门(NAND)一个逻辑电路的不同组合,就能实现.</li>
@@ -1518,8 +1665,8 @@ y =
 </div>
 </div>
 </div>
-<div id="outline-container-org2e9cf41" class="outline-2">
-<h2 id="org2e9cf41"><span class="section-number-2">3.</span> 神经网络</h2>
+<div id="outline-container-org40b2aa4" class="outline-2">
+<h2 id="org40b2aa4"><span class="section-number-2">3.</span> 神经网络</h2>
 <div class="outline-text-2" id="text-3">
 <ul class="org-ul">
 <li>上一章我们学习了感知机,关于感知机既有好消息,也有坏消息:
@@ -1531,12 +1678,12 @@ y =
 参数</li>
 </ul>
 </div>
-<div id="outline-container-org5cae72f" class="outline-3">
-<h3 id="org5cae72f"><span class="section-number-3">3.1.</span> 从感知机到神经网络</h3>
+<div id="outline-container-orgd39bf95" class="outline-3">
+<h3 id="orgd39bf95"><span class="section-number-3">3.1.</span> 从感知机到神经网络</h3>
 <div class="outline-text-3" id="text-3-1">
 </div>
-<div id="outline-container-org6c17938" class="outline-4">
-<h4 id="org6c17938"><span class="section-number-4">3.1.1.</span> 神经网路的例子</h4>
+<div id="outline-container-org5222e46" class="outline-4">
+<h4 id="org5222e46"><span class="section-number-4">3.1.1.</span> 神经网路的例子</h4>
 <div class="outline-text-4" id="text-3-1-1">
 <ul class="org-ul">
 <li>我们用图来表示神经网路
@@ -1545,7 +1692,7 @@ y =
 图3-1
 </p>
 
-<div id="org7ce60eb" class="figure">
+<div id="org81bb72a" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/dlfs/3-1.png" alt="3-1.png" />
 </p>
 <p><span class="figure-number">Figure 12: </span>dlfs/3-1.png</p>
@@ -1560,8 +1707,8 @@ y =
 </ul>
 </div>
 </div>
-<div id="outline-container-orgb2713ec" class="outline-4">
-<h4 id="orgb2713ec"><span class="section-number-4">3.1.2.</span> 复习感知机</h4>
+<div id="outline-container-org6c9426b" class="outline-4">
+<h4 id="org6c9426b"><span class="section-number-4">3.1.2.</span> 复习感知机</h4>
 <div class="outline-text-4" id="text-3-1-2">
 <ul class="org-ul">
 <li>在观察神经网络中信号的传递方法之前,我们先复习一下感知机
@@ -1570,7 +1717,7 @@ y =
 感知机如图
 </p>
 
-<div id="orge5bd002" class="figure">
+<div id="org6a2a5e3" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/dlfs/3-2.png" alt="3-2.png" />
 </p>
 <p><span class="figure-number">Figure 13: </span>dlfs/3-2.png</p>
@@ -1590,7 +1737,7 @@ y =
 在图3-2中,并没有画出偏置b,如果要画出b,可以向下图一样,让b和w1,w2一个地位, 1和x1,x2一个地址
 </p>
 
-<div id="org4eba5ea" class="figure">
+<div id="orgf8c57d4" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/dlfs/3-3.png" alt="3-3.png" />
 </p>
 <p><span class="figure-number">Figure 14: </span>dlfs/3-3.png</p>
@@ -1619,8 +1766,8 @@ h(x) =
 </ul>
 </div>
 </div>
-<div id="outline-container-org4b5fcf2" class="outline-4">
-<h4 id="org4b5fcf2"><span class="section-number-4">3.1.3.</span> 激活函数登场</h4>
+<div id="outline-container-orgc89a809" class="outline-4">
+<h4 id="orgc89a809"><span class="section-number-4">3.1.3.</span> 激活函数登场</h4>
 <div class="outline-text-4" id="text-3-1-3">
 <ul class="org-ul">
 <li>刚才登场的函数h(x)会将输入信号的总和转换为输出信号,这种函数一般称之为激活函数(activation function)</li>
@@ -1644,7 +1791,7 @@ y = h(a) \tag{3.5}
 有了公式3.4和和3.5后,我们的神经元内部也可以画出内容来了,如下
 </p>
 
-<div id="org37bd188" class="figure">
+<div id="org752faee" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/dlfs/3-4.png" alt="3-4.png" />
 </p>
 <p><span class="figure-number">Figure 15: </span>dlfs/3-4.png</p>
@@ -1661,21 +1808,21 @@ y = h(a) \tag{3.5}
 我们再多提一句,上一节介绍的多层网络,其激活函数还是普通"阶跃函数". 这种多层感知机是为了理解让我们理
 解如下概念,其实不具有实用性
 </p>
-<pre class="example" id="orgc857520">
+<pre class="example" id="orgd35fde4">
 多层感知机能够进行非线性表示
 </pre></li>
 </ul>
 </div>
 </div>
 </div>
-<div id="outline-container-org384ecd8" class="outline-3">
-<h3 id="org384ecd8"><span class="section-number-3">3.2.</span> 激活函数</h3>
+<div id="outline-container-org4e89120" class="outline-3">
+<h3 id="org4e89120"><span class="section-number-3">3.2.</span> 激活函数</h3>
 <div class="outline-text-3" id="text-3-2">
 <ul class="org-ul">
 <li><p>
 上一章说到,朴素感知机使用的激活函数为阶跃函数(公式3.3就是一个阶跃函数), 所谓阶跃函数, 其定义如下.
 </p>
-<pre class="example" id="orga89b921">
+<pre class="example" id="orga333094">
 阶跃函数，指函数值突然发生跳变的函数。例如从0突然变成100，从0突然变成正无穷，
 从负无穷突然变成正无穷，都可以叫阶跃函数。
 </pre></li>
@@ -1684,8 +1831,8 @@ y = h(a) \tag{3.5}
 <li>作为激活函数的非阶跃函数,最出名的,就是sigmoid函数了</li>
 </ul>
 </div>
-<div id="outline-container-org5fefade" class="outline-4">
-<h4 id="org5fefade"><span class="section-number-4">3.2.1.</span> sigmoid函数</h4>
+<div id="outline-container-orgd39d59f" class="outline-4">
+<h4 id="orgd39d59f"><span class="section-number-4">3.2.1.</span> sigmoid函数</h4>
 <div class="outline-text-4" id="text-3-2-1">
 <ul class="org-ul">
 <li>神经网络中最经常使用的一个激活函数就是sigmoid函数:
@@ -1702,8 +1849,8 @@ h(x) = \frac{1}{1 + \exp(-x)} \tag{3.6}
 </ul>
 </div>
 </div>
-<div id="outline-container-org08b66a3" class="outline-4">
-<h4 id="org08b66a3"><span class="section-number-4">3.2.2.</span> 阶跃函数的实现</h4>
+<div id="outline-container-org3c69f2c" class="outline-4">
+<h4 id="org3c69f2c"><span class="section-number-4">3.2.2.</span> 阶跃函数的实现</h4>
 <div class="outline-text-4" id="text-3-2-2">
 <ul class="org-ul">
 <li><p>
@@ -1747,8 +1894,8 @@ h(x) = \frac{1}{1 + \exp(-x)} \tag{3.6}
 </ul>
 </div>
 </div>
-<div id="outline-container-org7aaffa9" class="outline-4">
-<h4 id="org7aaffa9"><span class="section-number-4">3.2.3.</span> 阶跃函数的图形</h4>
+<div id="outline-container-org0a3ac7c" class="outline-4">
+<h4 id="org0a3ac7c"><span class="section-number-4">3.2.3.</span> 阶跃函数的图形</h4>
 <div class="outline-text-4" id="text-3-2-3">
 <ul class="org-ul">
 <li>我们现在就使用matplotlib库来打印阶跃函数的图形(刚才的支持numpy array输入就起到作用了)
@@ -1776,7 +1923,7 @@ plt.show<span style="color: #3a81c3;">()</span>
 图形如下
 </p>
 
-<div id="orgf0217c3" class="figure">
+<div id="org5288cef" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/dlfs/3-6.png" alt="3-6.png" />
 </p>
 <p><span class="figure-number">Figure 16: </span>dlfs/3-6.png</p>
@@ -1785,8 +1932,8 @@ plt.show<span style="color: #3a81c3;">()</span>
 </ul>
 </div>
 </div>
-<div id="outline-container-org96237d9" class="outline-4">
-<h4 id="org96237d9"><span class="section-number-4">3.2.4.</span> sigmoid 函数的实现</h4>
+<div id="outline-container-org73415b4" class="outline-4">
+<h4 id="org73415b4"><span class="section-number-4">3.2.4.</span> sigmoid 函数的实现</h4>
 <div class="outline-text-4" id="text-3-2-4">
 <ul class="org-ul">
 <li>我们还可以使用类似代码来完成sigmod的图形
@@ -1816,7 +1963,7 @@ plt.show<span style="color: #3a81c3;">()</span>
 图形如下
 </p>
 
-<div id="orga2abfde" class="figure">
+<div id="org6fc04c3" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/dlfs/3-7.png" alt="3-7.png" />
 </p>
 <p><span class="figure-number">Figure 17: </span>dlfs/3-7.png</p>
@@ -1825,8 +1972,8 @@ plt.show<span style="color: #3a81c3;">()</span>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgc13e558" class="outline-4">
-<h4 id="orgc13e558"><span class="section-number-4">3.2.5.</span> sigmoid函数和阶跃函数的比较</h4>
+<div id="outline-container-org944f4bf" class="outline-4">
+<h4 id="org944f4bf"><span class="section-number-4">3.2.5.</span> sigmoid函数和阶跃函数的比较</h4>
 <div class="outline-text-4" id="text-3-2-5">
 <ul class="org-ul">
 <li>我们现在比较一下sigmod函数和阶跃函数
@@ -1835,7 +1982,7 @@ plt.show<span style="color: #3a81c3;">()</span>
 把两者的图放到同一个坐标后如下
 </p>
 
-<div id="orgc8c0833" class="figure">
+<div id="org9a80525" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/dlfs/3-8.png" alt="3-8.png" />
 </p>
 <p><span class="figure-number">Figure 18: </span>dlfs/3-8.png</p>
@@ -1855,7 +2002,7 @@ plt.show<span style="color: #3a81c3;">()</span>
 <li><p>
 两者的第一个共同点在于其形状相似,两者都能做到
 </p>
-<pre class="example" id="org5f7a453">
+<pre class="example" id="org488575b">
 输入小时,输出接近0(为0), 随着输入增大,输出像1靠近(变成1)
 </pre></li>
 <li>两者的第二个共同点是不管输入信号多大或者多小,输出信号的值都在0和1之间</li>
@@ -1863,15 +2010,15 @@ plt.show<span style="color: #3a81c3;">()</span>
 </ul>
 </div>
 </div>
-<div id="outline-container-org5e3cd61" class="outline-4">
-<h4 id="org5e3cd61"><span class="section-number-4">3.2.6.</span> 非线性函数</h4>
+<div id="outline-container-org0aeae32" class="outline-4">
+<h4 id="org0aeae32"><span class="section-number-4">3.2.6.</span> 非线性函数</h4>
 <div class="outline-text-4" id="text-3-2-6">
 <ul class="org-ul">
 <li>阶跃函数和sigmoid函数的最重要相同点,是他们都是非线性函数</li>
 <li><p>
 我们定义一下线性函数,那么为什么阶跃函数和sigmoid函数都是非线性函数就很明显了
 </p>
-<pre class="example" id="org76ca3da">
+<pre class="example" id="org15bbb77">
 所谓线性函数,就是输出值是输入值的常数倍,比如人h(x)=cx.因此线性函数是一条笔直的直线
 </pre></li>
 <li>由于阶跃函数和sigmoid函数都没有像线性函数一样"呈现出一条直线",所以他们都是非线性函数</li>
@@ -1889,8 +2036,8 @@ plt.show<span style="color: #3a81c3;">()</span>
 </ul>
 </div>
 </div>
-<div id="outline-container-org2c0a9d1" class="outline-4">
-<h4 id="org2c0a9d1"><span class="section-number-4">3.2.7.</span> ReLU函数</h4>
+<div id="outline-container-org8fdbec3" class="outline-4">
+<h4 id="org8fdbec3"><span class="section-number-4">3.2.7.</span> ReLU函数</h4>
 <div class="outline-text-4" id="text-3-2-7">
 <ul class="org-ul">
 <li>神经网络的发展史上,早期使用sigmoid函数比较多,而最近则主要使用ReLU函数</li>
@@ -1921,7 +2068,7 @@ h(x) =
 其绘图如下
 </p>
 
-<div id="org2b17a1e" class="figure">
+<div id="org1f45b5d" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/dlfs/3-9.png" alt="3-9.png" />
 </p>
 <p><span class="figure-number">Figure 19: </span>dlfs/3-9.png</p>
@@ -1931,15 +2078,15 @@ h(x) =
 </div>
 </div>
 </div>
-<div id="outline-container-org88940b5" class="outline-3">
-<h3 id="org88940b5"><span class="section-number-3">3.3.</span> 多维数组的运算</h3>
+<div id="outline-container-org00845ae" class="outline-3">
+<h3 id="org00845ae"><span class="section-number-3">3.3.</span> 多维数组的运算</h3>
 <div class="outline-text-3" id="text-3-3">
 <ul class="org-ul">
 <li>numpy的多维数组运算能够高效的实现神经网络,所以我们这里停下来先学习一下numpy多维数组的运算</li>
 </ul>
 </div>
-<div id="outline-container-orgdab7f60" class="outline-4">
-<h4 id="orgdab7f60"><span class="section-number-4">3.3.1.</span> 多维数组</h4>
+<div id="outline-container-orgeb3217e" class="outline-4">
+<h4 id="orgeb3217e"><span class="section-number-4">3.3.1.</span> 多维数组</h4>
 <div class="outline-text-4" id="text-3-3-1">
 <ul class="org-ul">
 <li>超过1维的数组就是多维数组.但是为了实现的一致性,从1维到n维,numpy的接口都是一样的,比如:
@@ -1998,7 +2145,7 @@ h(x) =
 二维数组也称为矩阵(matrix),横向为行(row),纵向为列(column),如下图
 </p>
 
-<div id="org15e9adb" class="figure">
+<div id="orgedcd922" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/dlfs/3-10.png" alt="3-10.png" />
 </p>
 <p><span class="figure-number">Figure 20: </span>dlfs/3-10.png</p>
@@ -2007,8 +2154,8 @@ h(x) =
 </ul>
 </div>
 </div>
-<div id="outline-container-orga1a4533" class="outline-4">
-<h4 id="orga1a4533"><span class="section-number-4">3.3.2.</span> 矩阵乘法</h4>
+<div id="outline-container-org29263e9" class="outline-4">
+<h4 id="org29263e9"><span class="section-number-4">3.3.2.</span> 矩阵乘法</h4>
 <div class="outline-text-4" id="text-3-3-2">
 <ul class="org-ul">
 <li>下面我们来介绍矩阵(二维数组)乘法
@@ -2017,7 +2164,7 @@ h(x) =
 如图3-11,就是两个 \(2 \times 2\) 的矩阵相乘
 </p>
 
-<div id="org78fae53" class="figure">
+<div id="orgfe0fdd5" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/dlfs/3-11.png" alt="3-11.png" />
 </p>
 <p><span class="figure-number">Figure 21: </span>dlfs/3-11.png</p>
@@ -2051,7 +2198,7 @@ h(x) =
 矩阵A是 \(3 \times 2\), 矩阵B是 \(2 \times 3\), 两者可以相乘
 </p>
 
-<div id="orgdbcc8d8" class="figure">
+<div id="org4374286" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/dlfs/3-12.png" alt="3-12.png" />
 </p>
 <p><span class="figure-number">Figure 22: </span>dlfs/3-12.png</p>
@@ -2063,7 +2210,7 @@ h(x) =
 先看图
 </p>
 
-<div id="org6ca3057" class="figure">
+<div id="orgd56d2ff" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/dlfs/3-13.png" alt="3-13.png" />
 </p>
 <p><span class="figure-number">Figure 23: </span>dlfs/3-13.png</p>
@@ -2251,8 +2398,8 @@ numpy从自己的角度讲, 把"需要两个维度(ndim)相同"这个前提条�
 </ul>
 </div>
 </div>
-<div id="outline-container-org47298d4" class="outline-4">
-<h4 id="org47298d4"><span class="section-number-4">3.3.3.</span> 神经网络的内机</h4>
+<div id="outline-container-org9ded2f5" class="outline-4">
+<h4 id="org9ded2f5"><span class="section-number-4">3.3.3.</span> 神经网络的内机</h4>
 <div class="outline-text-4" id="text-3-3-3">
 <ul class="org-ul">
 <li>理解了numpy的乘法机制,以及其对乘法的优化(放弃相乘两者必须是同一个ndim).那么对如何使用numpy矩阵来实
@@ -2263,7 +2410,7 @@ numpy从自己的角度讲, 把"需要两个维度(ndim)相同"这个前提条�
 如图
 </p>
 
-<div id="org3d75533" class="figure">
+<div id="orged4570c" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/dlfs/3-14.png" alt="3-14.png" />
 </p>
 <p><span class="figure-number">Figure 24: </span>dlfs/3-14.png</p>
@@ -2297,8 +2444,8 @@ numpy从自己的角度讲, 把"需要两个维度(ndim)相同"这个前提条�
 </div>
 </div>
 </div>
-<div id="outline-container-org22fde56" class="outline-3">
-<h3 id="org22fde56"><span class="section-number-3">3.4.</span> 3层神经网络的实现</h3>
+<div id="outline-container-orgb258e64" class="outline-3">
+<h3 id="orgb258e64"><span class="section-number-3">3.4.</span> 3层神经网络的实现</h3>
 <div class="outline-text-3" id="text-3-4">
 <ul class="org-ul">
 <li>神经网络问题(或者更广义上的机器学习问题),可以分成如下两个阶段:
@@ -2317,7 +2464,7 @@ numpy从自己的角度讲, 把"需要两个维度(ndim)相同"这个前提条�
 如图
 </p>
 
-<div id="org4fcb529" class="figure">
+<div id="orgfb3bd71" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/dlfs/3-15.png" alt="3-15.png" />
 </p>
 <p><span class="figure-number">Figure 25: </span>dlfs/3-15.png</p>
@@ -2325,8 +2472,8 @@ numpy从自己的角度讲, 把"需要两个维度(ndim)相同"这个前提条�
 </ul></li>
 </ul>
 </div>
-<div id="outline-container-org0246dd8" class="outline-4">
-<h4 id="org0246dd8"><span class="section-number-4">3.4.1.</span> 符号确认</h4>
+<div id="outline-container-org88aaec1" class="outline-4">
+<h4 id="org88aaec1"><span class="section-number-4">3.4.1.</span> 符号确认</h4>
 <div class="outline-text-4" id="text-3-4-1">
 <ul class="org-ul">
 <li>为了能够清晰的理解推理过程,我们给参数进行了一些特殊定义:
@@ -2335,7 +2482,7 @@ numpy从自己的角度讲, 把"需要两个维度(ndim)相同"这个前提条�
 如图
 </p>
 
-<div id="orgb326c38" class="figure">
+<div id="org10ded44" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/dlfs/3-16.png" alt="3-16.png" />
 </p>
 <p><span class="figure-number">Figure 26: </span>dlfs/3-16.png</p>
@@ -2347,8 +2494,8 @@ numpy从自己的角度讲, 把"需要两个维度(ndim)相同"这个前提条�
 </ul>
 </div>
 </div>
-<div id="outline-container-org519c63e" class="outline-4">
-<h4 id="org519c63e"><span class="section-number-4">3.4.2.</span> 各层间信号传递的实现</h4>
+<div id="outline-container-org711c8f3" class="outline-4">
+<h4 id="org711c8f3"><span class="section-number-4">3.4.2.</span> 各层间信号传递的实现</h4>
 <div class="outline-text-4" id="text-3-4-2">
 <ul class="org-ul">
 <li>我们现在看一下从输入层到第一层第一个神经元的信号传递过程
@@ -2357,7 +2504,7 @@ numpy从自己的角度讲, 把"需要两个维度(ndim)相同"这个前提条�
 如图
 </p>
 
-<div id="orgf90d042" class="figure">
+<div id="orgc55573e" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/dlfs/3-17.png" alt="3-17.png" />
 </p>
 <p><span class="figure-number">Figure 27: </span>dlfs/3-17.png</p>
@@ -2434,7 +2581,7 @@ a_1^{(1)} = w_{11}^{(1)} x_1 + w_{12}^{(1)} x_2 + b_1^{(1)} \tag{3.8}
 如图
 </p>
 
-<div id="org701271b" class="figure">
+<div id="orgad7e00b" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/dlfs/3-18.png" alt="3-18.png" />
 </p>
 <p><span class="figure-number">Figure 28: </span>dlfs/3-18.png</p>
@@ -2483,7 +2630,7 @@ a_1^{(1)} = w_{11}^{(1)} x_1 + w_{12}^{(1)} x_2 + b_1^{(1)} \tag{3.8}
 如图
 </p>
 
-<div id="orgf57f43c" class="figure">
+<div id="org1ff6997" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/dlfs/3-19.png" alt="3-19.png" />
 </p>
 <p><span class="figure-number">Figure 29: </span>dlfs/3-19.png</p>
@@ -2534,7 +2681,7 @@ a_1^{(1)} = w_{11}^{(1)} x_1 + w_{12}^{(1)} x_2 + b_1^{(1)} \tag{3.8}
 如图
 </p>
 
-<div id="orgf6efa6c" class="figure">
+<div id="org10c9064" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/dlfs/3-20.png" alt="3-20.png" />
 </p>
 <p><span class="figure-number">Figure 30: </span>dlfs/3-20.png</p>
@@ -2602,8 +2749,8 @@ a_1^{(1)} = w_{11}^{(1)} x_1 + w_{12}^{(1)} x_2 + b_1^{(1)} \tag{3.8}
 </ul>
 </div>
 </div>
-<div id="outline-container-org50645b2" class="outline-4">
-<h4 id="org50645b2"><span class="section-number-4">3.4.3.</span> 代码现小结</h4>
+<div id="outline-container-orgecdc9fa" class="outline-4">
+<h4 id="orgecdc9fa"><span class="section-number-4">3.4.3.</span> 代码现小结</h4>
 <div class="outline-text-4" id="text-3-4-3">
 <ul class="org-ul">
 <li>我们可以把前面几个步骤重新整理一下
@@ -2665,8 +2812,8 @@ a_1^{(1)} = w_{11}^{(1)} x_1 + w_{12}^{(1)} x_2 + b_1^{(1)} \tag{3.8}
 </div>
 </div>
 </div>
-<div id="outline-container-orgf160bc2" class="outline-3">
-<h3 id="orgf160bc2"><span class="section-number-3">3.5.</span> 输出层的设计</h3>
+<div id="outline-container-orgbe17e8e" class="outline-3">
+<h3 id="orgbe17e8e"><span class="section-number-3">3.5.</span> 输出层的设计</h3>
 <div class="outline-text-3" id="text-3-5">
 <ul class="org-ul">
 <li>神经网络可以用在如下两种问题上:
@@ -2676,8 +2823,8 @@ a_1^{(1)} = w_{11}^{(1)} x_1 + w_{12}^{(1)} x_2 + b_1^{(1)} \tag{3.8}
 </ul></li>
 </ul>
 </div>
-<div id="outline-container-orgff00b1a" class="outline-4">
-<h4 id="orgff00b1a"><span class="section-number-4">3.5.1.</span> 恒等函数和softmax函数</h4>
+<div id="outline-container-org66ea344" class="outline-4">
+<h4 id="org66ea344"><span class="section-number-4">3.5.1.</span> 恒等函数和softmax函数</h4>
 <div class="outline-text-4" id="text-3-5-1">
 <ul class="org-ul">
 <li>恒等函数就非常直接了,在输出层使用恒等函数的时候,输入信号会原封不动地被输出
@@ -2686,7 +2833,7 @@ a_1^{(1)} = w_{11}^{(1)} x_1 + w_{12}^{(1)} x_2 + b_1^{(1)} \tag{3.8}
 如图
 </p>
 
-<div id="org576fb35" class="figure">
+<div id="org3fb7bdf" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/dlfs/3-21.png" alt="3-21.png" />
 </p>
 <p><span class="figure-number">Figure 31: </span>dlfs/3-21.png</p>
@@ -2709,7 +2856,7 @@ a_1^{(1)} = w_{11}^{(1)} x_1 + w_{12}^{(1)} x_2 + b_1^{(1)} \tag{3.8}
 用图表示如下
 </p>
 
-<div id="org1b25a0b" class="figure">
+<div id="orga3276fb" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/dlfs/3-22.png" alt="3-22.png" />
 </p>
 <p><span class="figure-number">Figure 32: </span>dlfs/3-22.png</p>
@@ -2758,8 +2905,8 @@ a_1^{(1)} = w_{11}^{(1)} x_1 + w_{12}^{(1)} x_2 + b_1^{(1)} \tag{3.8}
 </ul>
 </div>
 </div>
-<div id="outline-container-org8c25494" class="outline-4">
-<h4 id="org8c25494"><span class="section-number-4">3.5.2.</span> 实现softmax函数时的注意事项</h4>
+<div id="outline-container-orgebb9cfe" class="outline-4">
+<h4 id="orgebb9cfe"><span class="section-number-4">3.5.2.</span> 实现softmax函数时的注意事项</h4>
 <div class="outline-text-4" id="text-3-5-2">
 <ul class="org-ul">
 <li>上面的softmax函数的实现虽然正确的描述了公式3.10, 但是在计算的时候有一定的缺陷,因为函数的中间值可能
@@ -2842,8 +2989,8 @@ y_k    = \frac{\exp(a_k)}{\displaystyle \sum_{i=1}^{n} \exp(a_i)} &= \frac{\math
 </ul>
 </div>
 </div>
-<div id="outline-container-org489651c" class="outline-4">
-<h4 id="org489651c"><span class="section-number-4">3.5.3.</span> softmax函数的特征</h4>
+<div id="outline-container-org583ff23" class="outline-4">
+<h4 id="org583ff23"><span class="section-number-4">3.5.3.</span> softmax函数的特征</h4>
 <div class="outline-text-4" id="text-3-5-3">
 <ul class="org-ul">
 <li>我们模拟一个输入[0.3, 2.9, 4.0], 看看softmax函数的输出有什么特点
@@ -2865,7 +3012,7 @@ y_k    = \frac{\exp(a_k)}{\displaystyle \sum_{i=1}^{n} \exp(a_i)} &= \frac{\math
 softmax函数的输出值总和是1."输出值总和为1"是softmax函数的重要特征,正因为有了这个特征,我们才可以
 把softmax邯郸的输出解释为"概率",比如上面的例子就可以从概率的角度解释为
 </p>
-<pre class="example" id="orgb25d5d7">
+<pre class="example" id="org331a0c4">
 有74%的概率是第2个类别,有25%的概率是第一个类别,有1%的概率是第0个类别
 </pre></li>
 <li>这里需要注意的是,即便使用了softmax函数,各个元素之间的大小关系也不会改变,因为指数函数( \(y = \exp(x)\) )
@@ -2881,14 +3028,14 @@ softmax函数的输出值总和是1."输出值总和为1"是softmax函数的重�
 </ul>
 </div>
 </div>
-<div id="outline-container-org3cd9544" class="outline-4">
-<h4 id="org3cd9544"><span class="section-number-4">3.5.4.</span> 输出层的神经元数量</h4>
+<div id="outline-container-orgdf7f235" class="outline-4">
+<h4 id="orgdf7f235"><span class="section-number-4">3.5.4.</span> 输出层的神经元数量</h4>
 <div class="outline-text-4" id="text-3-5-4">
 <ul class="org-ul">
 <li><p>
 输出层神经元的数量要根据待解决的问题来定:
 </p>
-<pre class="example" id="org0821337">
+<pre class="example" id="orgf1166f2">
 对于分类问题,输出层的神经元数量一般设定为类别的数量
 </pre></li>
 <li>比如对于某个输入图像,预测图中数字是0-9中哪个数字的问题,我们将输出层神经元设定为10个
@@ -2897,7 +3044,7 @@ softmax函数的输出值总和是1."输出值总和为1"是softmax函数的重�
 如图
 </p>
 
-<div id="orgd39b803" class="figure">
+<div id="org79912a3" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/dlfs/3-23.png" alt="3-23.png" />
 </p>
 <p><span class="figure-number">Figure 33: </span>dlfs/3-23.png</p>
@@ -2910,21 +3057,21 @@ softmax函数的输出值总和是1."输出值总和为1"是softmax函数的重�
 </div>
 </div>
 </div>
-<div id="outline-container-orgaf758d8" class="outline-3">
-<h3 id="orgaf758d8"><span class="section-number-3">3.6.</span> 手写数字识别</h3>
+<div id="outline-container-org214015f" class="outline-3">
+<h3 id="org214015f"><span class="section-number-3">3.6.</span> 手写数字识别</h3>
 <div class="outline-text-3" id="text-3-6">
 <ul class="org-ul">
 <li><p>
 我们本节来看一个神经网络的例子. 这个例子假设神经网络的"学习阶段"已经完成(也就是模型参数也存储下来了),
 我们利用存储下来的模型参数来进行"推理阶段",推理一个模型没见过的新的输入.
 </p>
-<pre class="example" id="orgd0fa87c">
+<pre class="example" id="orgaae9aef">
 已知模型参数,对位置问题进行推理的过程,也被称为神经网络的前向传播(forward progagation)
 </pre></li>
 </ul>
 </div>
-<div id="outline-container-orgd2a8302" class="outline-4">
-<h4 id="orgd2a8302"><span class="section-number-4">3.6.1.</span> MNIST数据集</h4>
+<div id="outline-container-org072b2ab" class="outline-4">
+<h4 id="org072b2ab"><span class="section-number-4">3.6.1.</span> MNIST数据集</h4>
 <div class="outline-text-4" id="text-3-6-1">
 <ul class="org-ul">
 <li>MNIST数据集是由0到9的数字图像构成,其中:
@@ -2937,7 +3084,7 @@ softmax函数的输出值总和是1."输出值总和为1"是softmax函数的重�
 每个数据都相应的标记了"7","2", "1"等标签,如下图
 </p>
 
-<div id="orga5b9852" class="figure">
+<div id="orgc4dbf4a" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/dlfs/3-24.png" alt="3-24.png" />
 </p>
 <p><span class="figure-number">Figure 34: </span>dlfs/3-24.png</p>
@@ -3116,7 +3263,7 @@ softmax函数的输出值总和是1."输出值总和为1"是softmax函数的重�
 <li><p>
 这个例子第一次会下载数据到本地，也就是如下几个压缩文件
 </p>
-<pre class="example" id="org23ea7cc">
+<pre class="example" id="orgf355d36">
 t10k-images-idx3-ubyte.gz
 t10k-labels-idx1-ubyte.gz
 train-images-idx3-ubyte.gz
@@ -3125,7 +3272,7 @@ train-labels-idx1-ubyte.gz
 <li><p>
 然后，程序还会把这些压缩文件存储到pickle文件（这是python默认的二进制导出文件）
 </p>
-<pre class="example" id="orgf82c669">
+<pre class="example" id="orgfbab47e">
 mnist.pkl
 </pre></li>
 </ul></li>
@@ -3292,8 +3439,8 @@ mnist.pkl
 </ul>
 </div>
 </div>
-<div id="outline-container-org13a4e68" class="outline-4">
-<h4 id="org13a4e68"><span class="section-number-4">3.6.2.</span> 神经网络的推理处理</h4>
+<div id="outline-container-org3fbe52d" class="outline-4">
+<h4 id="org3fbe52d"><span class="section-number-4">3.6.2.</span> 神经网络的推理处理</h4>
 <div class="outline-text-4" id="text-3-6-2">
 <ul class="org-ul">
 <li>我们下面对这个MNIST数据集进行推理处理:
@@ -3563,8 +3710,8 @@ mnist.pkl
 </ul>
 </div>
 </div>
-<div id="outline-container-org60f9763" class="outline-4">
-<h4 id="org60f9763"><span class="section-number-4">3.6.3.</span> 批处理</h4>
+<div id="outline-container-orgd005525" class="outline-4">
+<h4 id="orgd005525"><span class="section-number-4">3.6.3.</span> 批处理</h4>
 <div class="outline-text-4" id="text-3-6-3">
 <ul class="org-ul">
 <li>上述是一次性处理一个image的情况,最终的输出是一个一维数组,长度是10,分别代表image为0-9的概率
@@ -3573,7 +3720,7 @@ mnist.pkl
 一次性处理一个image的参数列表如下
 </p>
 
-<div id="org6c49dbe" class="figure">
+<div id="org37da93c" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/dlfs/3-26.png" alt="3-26.png" />
 </p>
 <p><span class="figure-number">Figure 35: </span>dlfs/3-26.png</p>
@@ -3584,7 +3731,7 @@ mnist.pkl
 变了,变成了100*10,如下图
 </p>
 
-<div id="org09508b5" class="figure">
+<div id="org2e6c9d3" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/dlfs/3-27.png" alt="3-27.png" />
 </p>
 <p><span class="figure-number">Figure 36: </span>dlfs/3-27.png</p>
@@ -3826,12 +3973,12 @@ agrmax()这里也多了一个参数axis=1,也就是要沿着第1维的方向找�
 </div>
 </div>
 </div>
-<div id="outline-container-orgd0fcc3c" class="outline-2">
-<h2 id="orgd0fcc3c"><span class="section-number-2">4.</span> 神经网络的学习</h2>
+<div id="outline-container-orgf6d9a7c" class="outline-2">
+<h2 id="orgf6d9a7c"><span class="section-number-2">4.</span> 神经网络的学习</h2>
 <div class="outline-text-2" id="text-4">
 </div>
-<div id="outline-container-orge76e1d6" class="outline-3">
-<h3 id="orge76e1d6"><span class="section-number-3">4.1.</span> 从数据中学习</h3>
+<div id="outline-container-org22fa3f0" class="outline-3">
+<h3 id="org22fa3f0"><span class="section-number-3">4.1.</span> 从数据中学习</h3>
 <div class="outline-text-3" id="text-4-1">
 <ul class="org-ul">
 <li>神经网络的特征就是可以从数据中学习.所谓"从数据中学习",是指可以由数据自动决定"参数"</li>
@@ -3839,8 +3986,8 @@ agrmax()这里也多了一个参数axis=1,也就是要沿着第1维的方向找�
 数.比机器学习更"深",所以叫"深度学习"</li>
 </ul>
 </div>
-<div id="outline-container-org6a1544c" class="outline-4">
-<h4 id="org6a1544c"><span class="section-number-4">4.1.1.</span> 数据驱动</h4>
+<div id="outline-container-orgc3766e6" class="outline-4">
+<h4 id="orgc3766e6"><span class="section-number-4">4.1.1.</span> 数据驱动</h4>
 <div class="outline-text-4" id="text-4-1-1">
 <ul class="org-ul">
 <li>我们要解决的问题是识别图片:
@@ -3858,7 +4005,7 @@ agrmax()这里也多了一个参数axis=1,也就是要沿着第1维的方向找�
 如图
 </p>
 
-<div id="org346779d" class="figure">
+<div id="org9c9747f" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/dlfs/4-2.png" alt="4-2.png" />
 </p>
 <p><span class="figure-number">Figure 37: </span>dlfs/4-2.png</p>
@@ -3874,8 +4021,8 @@ agrmax()这里也多了一个参数axis=1,也就是要沿着第1维的方向找�
 </ul>
 </div>
 </div>
-<div id="outline-container-org0d40100" class="outline-4">
-<h4 id="org0d40100"><span class="section-number-4">4.1.2.</span> 训练数据和测试数据</h4>
+<div id="outline-container-org0eea262" class="outline-4">
+<h4 id="org0eea262"><span class="section-number-4">4.1.2.</span> 训练数据和测试数据</h4>
 <div class="outline-text-4" id="text-4-1-2">
 <ul class="org-ul">
 <li>机器学习中,一般将数据分为如下两个部分:
@@ -3894,8 +4041,8 @@ agrmax()这里也多了一个参数axis=1,也就是要沿着第1维的方向找�
 </div>
 </div>
 </div>
-<div id="outline-container-org16eb716" class="outline-3">
-<h3 id="org16eb716"><span class="section-number-3">4.2.</span> 损失函数</h3>
+<div id="outline-container-org99273a3" class="outline-3">
+<h3 id="org99273a3"><span class="section-number-3">4.2.</span> 损失函数</h3>
 <div class="outline-text-3" id="text-4-2">
 <ul class="org-ul">
 <li>如果有人问你现在有多幸福
@@ -3906,7 +4053,7 @@ agrmax()这里也多了一个参数axis=1,也就是要沿着第1维的方向找�
 <li><p>
 其实神经网络就是在做同样的事情:
 </p>
-<pre class="example" id="orgb91112b">
+<pre class="example" id="org414b0fa">
 通过某个指标来表示当前的状态,然后,以这个指标为基准,寻找最优权重参数
 </pre></li>
 <li>神经网络的"某个指标",其实是一个损失函数(loss function), 通常使用如下两种函数:
@@ -3922,8 +4069,8 @@ agrmax()这里也多了一个参数axis=1,也就是要沿着第1维的方向找�
 <li>损失函数可以使用任意函数,但一般使用均方误差和交叉熵误差等函数</li>
 </ul>
 </div>
-<div id="outline-container-org8aea2b1" class="outline-4">
-<h4 id="org8aea2b1"><span class="section-number-4">4.2.1.</span> 均方误差</h4>
+<div id="outline-container-orgaa702e2" class="outline-4">
+<h4 id="orgaa702e2"><span class="section-number-4">4.2.1.</span> 均方误差</h4>
 <div class="outline-text-4" id="text-4-2-1">
 <ul class="org-ul">
 <li>损失函数中最有名的就是均方误差(mean sauared error)
@@ -3995,8 +4142,8 @@ E = \frac{1}{2} \sum_{k} \left( y_{k} - t_{k} \right)^{2}
 </ul>
 </div>
 </div>
-<div id="outline-container-org48c115f" class="outline-4">
-<h4 id="org48c115f"><span class="section-number-4">4.2.2.</span> 交叉熵误差</h4>
+<div id="outline-container-orgcc89145" class="outline-4">
+<h4 id="orgcc89145"><span class="section-number-4">4.2.2.</span> 交叉熵误差</h4>
 <div class="outline-text-4" id="text-4-2-2">
 <ul class="org-ul">
 <li>除了均方误差外,交叉熵误差(cross entropy error)也经常被用作损失函数:
@@ -4036,7 +4183,7 @@ E = - \sum_{k} t_{k} \log y_{k}, \tag{4.2}
 如下图
 </p>
 
-<div id="orgf37373d" class="figure">
+<div id="org0375c57" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/dlfs/4-3.png" alt="4-3.png" />
 </p>
 <p><span class="figure-number">Figure 38: </span>dlfs/4-3.png</p>
@@ -4088,8 +4235,8 @@ E = - \sum_{k} t_{k} \log y_{k}, \tag{4.2}
 </ul>
 </div>
 </div>
-<div id="outline-container-org8f092ad" class="outline-4">
-<h4 id="org8f092ad"><span class="section-number-4">4.2.3.</span> mini-batch学习</h4>
+<div id="outline-container-orgdc4d9de" class="outline-4">
+<h4 id="orgdc4d9de"><span class="section-number-4">4.2.3.</span> mini-batch学习</h4>
 <div class="outline-text-4" id="text-4-2-3">
 <ul class="org-ul">
 <li>机器学习使用训练数据进行学习,损失函数也应该是将所有的训练数据作为对象,也就是说,如果训练数据有100个
@@ -4109,7 +4256,7 @@ E = - \frac{1}{N} \sum_{n} \sum_{k} t_{nk} \log y_{nk}, \tag{4.3}
 当数据集比较小的时候,我们把数据整体的损失算出来再除以N还能接受,如果遇到大数据,数据量会有百万千万级,
 这种情况下以全部数据为对象计算损失函数是不现实的.这种情况下我们的应对方案是
 </p>
-<pre class="example" id="orgd893efe">
+<pre class="example" id="org5c5bf6b">
 从全部数据中选出一部分,作为全部数据的"近似"
 </pre></li>
 <li>从训练数据中选出小批量的数据进行学习,就叫做mini-batch学习,因为mini-batch就是小批量的意思
@@ -4141,8 +4288,8 @@ E = - \frac{1}{N} \sum_{n} \sum_{k} t_{nk} \log y_{nk}, \tag{4.3}
 </ul>
 </div>
 </div>
-<div id="outline-container-org75e52d6" class="outline-4">
-<h4 id="org75e52d6"><span class="section-number-4">4.2.4.</span> mini-batch版交叉熵误差的实现</h4>
+<div id="outline-container-org89ba5e2" class="outline-4">
+<h4 id="org89ba5e2"><span class="section-number-4">4.2.4.</span> mini-batch版交叉熵误差的实现</h4>
 <div class="outline-text-4" id="text-4-2-4">
 <ul class="org-ul">
 <li>为了能够实现mini-batch的交叉熵误差,我们需要改良一下之前的代码:
@@ -4173,14 +4320,14 @@ shape为(1,size)的格式,方便后面用同样的逻辑进行计算
 </ul>
 </div>
 </div>
-<div id="outline-container-org3c65921" class="outline-4">
-<h4 id="org3c65921"><span class="section-number-4">4.2.5.</span> 为何要设定损失函数</h4>
+<div id="outline-container-org46a80ce" class="outline-4">
+<h4 id="org46a80ce"><span class="section-number-4">4.2.5.</span> 为何要设定损失函数</h4>
 <div class="outline-text-4" id="text-4-2-5">
 <ul class="org-ul">
 <li><p>
 我们之所以要设计损失函数,是因为识别精度不能作为指标,总结起来就是
 </p>
-<pre class="example" id="org6ca2999">
+<pre class="example" id="orgd07b442">
 在进行神经网络的学习时,不能将识别精度作为指标,因为如果以识别精度为指标,
 则参数的导数在大多数地方都会变为0
 </pre></li>
@@ -4190,7 +4337,7 @@ shape为(1,size)的格式,方便后面用同样的逻辑进行计算
 如下图. 阶跃函数的导数在绝大多数地方均为0
 </p>
 
-<div id="org1dd3f70" class="figure">
+<div id="org3614974" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/dlfs/4-4.png" alt="4-4.png" />
 </p>
 <p><span class="figure-number">Figure 39: </span>dlfs/4-4.png</p>
@@ -4202,12 +4349,12 @@ shape为(1,size)的格式,方便后面用同样的逻辑进行计算
 </div>
 </div>
 </div>
-<div id="outline-container-org3e04a72" class="outline-3">
-<h3 id="org3e04a72"><span class="section-number-3">4.3.</span> 数值微分</h3>
+<div id="outline-container-org3102080" class="outline-3">
+<h3 id="org3102080"><span class="section-number-3">4.3.</span> 数值微分</h3>
 <div class="outline-text-3" id="text-4-3">
 </div>
-<div id="outline-container-org5cbcd6c" class="outline-4">
-<h4 id="org5cbcd6c"><span class="section-number-4">4.3.1.</span> 导数</h4>
+<div id="outline-container-org4479074" class="outline-4">
+<h4 id="org4479074"><span class="section-number-4">4.3.1.</span> 导数</h4>
 <div class="outline-text-4" id="text-4-3-1">
 <ul class="org-ul">
 <li>加入你是全程马拉松选手,在最开始的十分钟内跑了两千米,我们想计算速度,那就是2/10=0.2[千米/分]</li>
@@ -4265,7 +4412,7 @@ np.float32<span style="color: #3a81c3;">(</span>0.0<span style="color: #3a81c3;"
 第二个问题是我们能提高计算的"导数"的精度:我们计算的导数其实是有误差的,如下图
 </p>
 
-<div id="org5bcd42e" class="figure">
+<div id="orgd271812" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/dlfs/4-5.png" alt="4-5.png" />
 </p>
 <p><span class="figure-number">Figure 40: </span>dlfs/4-5.png</p>
@@ -4285,8 +4432,8 @@ np.float32<span style="color: #3a81c3;">(</span>0.0<span style="color: #3a81c3;"
 </ul>
 </div>
 </div>
-<div id="outline-container-orgcebc8b7" class="outline-4">
-<h4 id="orgcebc8b7"><span class="section-number-4">4.3.2.</span> 数值微分的例子</h4>
+<div id="outline-container-orgc4e5b97" class="outline-4">
+<h4 id="orgc4e5b97"><span class="section-number-4">4.3.2.</span> 数值微分的例子</h4>
 <div class="outline-text-4" id="text-4-3-2">
 <ul class="org-ul">
 <li>我们通过一个例子来加深一下"使用python来计算导数"这件事的印象:
@@ -4296,7 +4443,7 @@ np.float32<span style="color: #3a81c3;">(</span>0.0<span style="color: #3a81c3;"
 打印出来的图像如下
 </p>
 
-<div id="orgd180dd7" class="figure">
+<div id="org071dd38" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/dlfs/4-6.png" alt="4-6.png" />
 </p>
 <p><span class="figure-number">Figure 41: </span>dlfs/4-6.png</p>
@@ -4346,8 +4493,8 @@ y = 0.01x^2 + 0.1x \tag{4.5}
 </ul>
 </div>
 </div>
-<div id="outline-container-orgd2693d6" class="outline-4">
-<h4 id="orgd2693d6"><span class="section-number-4">4.3.3.</span> 偏导数</h4>
+<div id="outline-container-org8e93783" class="outline-4">
+<h4 id="org8e93783"><span class="section-number-4">4.3.3.</span> 偏导数</h4>
 <div class="outline-text-4" id="text-4-3-3">
 <ul class="org-ul">
 <li>所谓偏导数,是指"多个变量函数的导数"</li>
@@ -4399,7 +4546,7 @@ plt.show<span style="color: #3a81c3;">()</span>
 用python打印出来的三维图像如下
 </p>
 
-<div id="org0091176" class="figure">
+<div id="org3abafda" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/dlfs/4-8.png" alt="4-8.png" />
 </p>
 <p><span class="figure-number">Figure 42: </span>dlfs/4-8.png</p>
@@ -4469,49 +4616,66 @@ plt.show<span style="color: #3a81c3;">()</span>
 </div>
 </div>
 </div>
-
-<div id="outline-container-orgd977d0a" class="outline-3">
-<h3 id="orgd977d0a"><span class="section-number-3">4.4.</span> 梯度</h3>
+<div id="outline-container-orgbaa99a9" class="outline-3">
+<h3 id="orgbaa99a9"><span class="section-number-3">4.4.</span> 梯度</h3>
 <div class="outline-text-3" id="text-4-4">
+<ul class="org-ul">
+<li>本节我们学习梯度,梯度是建立在偏导数上的一个新的概念
+<ul class="org-ul">
+<li><p>
+其定义如下:
+</p>
+<pre class="example" id="org092db79">
+所谓梯度(gradient),是指由全部变量的偏导数汇总而成的向量
+</pre></li>
+<li>比如上一节我们研究的函数 \(f(x_0, x_1) = x_0^2 + x_1^2\), 其有两个变量 \(x_0, x_1\), 我们把这两个变
+量的偏导数组合起来,得到的向量 \((\frac{\partial f}{\partial x_0},\frac{\partial f}{\partial x_1})\) 就称之为梯度</li>
+</ul></li>
+<li>我们用python来实现一下梯度
+<ul class="org-ul">
+<li>代码如下:</li>
+</ul></li>
+</ul>
 </div>
-<div id="outline-container-orgb359ff1" class="outline-4">
-<h4 id="orgb359ff1"><span class="section-number-4">4.4.1.</span> 梯度法</h4>
+
+<div id="outline-container-org84b94d1" class="outline-4">
+<h4 id="org84b94d1"><span class="section-number-4">4.4.1.</span> 梯度法</h4>
 </div>
-<div id="outline-container-orgbf3ccf3" class="outline-4">
-<h4 id="orgbf3ccf3"><span class="section-number-4">4.4.2.</span> 神经网络的梯度</h4>
+<div id="outline-container-orga20cc0d" class="outline-4">
+<h4 id="orga20cc0d"><span class="section-number-4">4.4.2.</span> 神经网络的梯度</h4>
 </div>
 </div>
-<div id="outline-container-org5218008" class="outline-3">
-<h3 id="org5218008"><span class="section-number-3">4.5.</span> 学习算法的实现</h3>
+<div id="outline-container-org53a150c" class="outline-3">
+<h3 id="org53a150c"><span class="section-number-3">4.5.</span> 学习算法的实现</h3>
 <div class="outline-text-3" id="text-4-5">
 </div>
-<div id="outline-container-org471dfcb" class="outline-4">
-<h4 id="org471dfcb"><span class="section-number-4">4.5.1.</span> 2层神经网络的类</h4>
+<div id="outline-container-org8f14d8c" class="outline-4">
+<h4 id="org8f14d8c"><span class="section-number-4">4.5.1.</span> 2层神经网络的类</h4>
 </div>
-<div id="outline-container-org50568bc" class="outline-4">
-<h4 id="org50568bc"><span class="section-number-4">4.5.2.</span> mini-batch的实现</h4>
+<div id="outline-container-org197a9ba" class="outline-4">
+<h4 id="org197a9ba"><span class="section-number-4">4.5.2.</span> mini-batch的实现</h4>
 </div>
-<div id="outline-container-org8d3c9fa" class="outline-4">
-<h4 id="org8d3c9fa"><span class="section-number-4">4.5.3.</span> 基于测试数据的评价</h4>
+<div id="outline-container-orgcb63a04" class="outline-4">
+<h4 id="orgcb63a04"><span class="section-number-4">4.5.3.</span> 基于测试数据的评价</h4>
 </div>
 </div>
 </div>
-<div id="outline-container-org1905191" class="outline-2">
-<h2 id="org1905191"><span class="section-number-2">5.</span> 误差反向传播法</h2>
+<div id="outline-container-org4c49ac2" class="outline-2">
+<h2 id="org4c49ac2"><span class="section-number-2">5.</span> 误差反向传播法</h2>
 </div>
-<div id="outline-container-org0c8a4a8" class="outline-2">
-<h2 id="org0c8a4a8"><span class="section-number-2">6.</span> 与学习相关的技巧</h2>
+<div id="outline-container-orgf70898f" class="outline-2">
+<h2 id="orgf70898f"><span class="section-number-2">6.</span> 与学习相关的技巧</h2>
 </div>
-<div id="outline-container-org0727760" class="outline-2">
-<h2 id="org0727760"><span class="section-number-2">7.</span> 卷积神经网络</h2>
+<div id="outline-container-org4528fbd" class="outline-2">
+<h2 id="org4528fbd"><span class="section-number-2">7.</span> 卷积神经网络</h2>
 </div>
-<div id="outline-container-org324de53" class="outline-2">
-<h2 id="org324de53"><span class="section-number-2">8.</span> 深度学习</h2>
+<div id="outline-container-org9ee4db4" class="outline-2">
+<h2 id="org9ee4db4"><span class="section-number-2">8.</span> 深度学习</h2>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: harrifeng@outlook.com</p>
-<p class="date">Created: 2024-10-10 Thu 17:26</p>
+<p class="date">Created: 2024-10-12 Sat 16:35</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
