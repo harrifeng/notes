@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-03-19 Wed 15:27 -->
+<!-- 2025-03-27 Thu 10:58 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>lts</title>
@@ -23,193 +23,219 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgd1e7bd3">1. Chapter 1: From JavaScript to TypeScript</a>
+<li><a href="#orgd18478a">1. Chapter 1: From JavaScript to TypeScript</a>
 <ul>
-<li><a href="#org4fe4f4c">1.1. History of JavaScript</a></li>
-<li><a href="#org1a7b514">1.2. Vanilla JavaScript's Pitfalls</a>
+<li><a href="#org232e99d">1.1. History of JavaScript</a></li>
+<li><a href="#orgd8986d5">1.2. Vanilla JavaScript's Pitfalls</a>
 <ul>
-<li><a href="#org8041a89">1.2.1. Costly Freedom</a></li>
-<li><a href="#orge59e787">1.2.2. Losse Documentation</a></li>
-<li><a href="#org5c4f92c">1.2.3. Weaker Developer Tooling</a></li>
+<li><a href="#orgaae8232">1.2.1. Costly Freedom</a></li>
+<li><a href="#orgd26559b">1.2.2. Losse Documentation</a></li>
+<li><a href="#orgdc0fbda">1.2.3. Weaker Developer Tooling</a></li>
 </ul>
 </li>
-<li><a href="#orgdc60ffe">1.3. Typescript!</a></li>
-<li><a href="#orgea5d683">1.4. Getting Started in the TypeScript Playground</a>
+<li><a href="#org11a82a7">1.3. Typescript!</a></li>
+<li><a href="#org4c0f737">1.4. Getting Started in the TypeScript Playground</a>
 <ul>
-<li><a href="#org61443d2">1.4.1. TypeScript in Action</a></li>
-<li><a href="#orga7ab9a3">1.4.2. Freedom Through Restriction</a></li>
-<li><a href="#org851792d">1.4.3. Precise Documentation</a></li>
-<li><a href="#org0d19cfa">1.4.4. Stronger Developer Tooling</a></li>
-<li><a href="#orgeae7933">1.4.5. Compiling Syntax</a></li>
+<li><a href="#orgc63e706">1.4.1. TypeScript in Action</a></li>
+<li><a href="#org808ca24">1.4.2. Freedom Through Restriction</a></li>
+<li><a href="#org1c8e8af">1.4.3. Precise Documentation</a></li>
+<li><a href="#org8d5b433">1.4.4. Stronger Developer Tooling</a></li>
+<li><a href="#org8305851">1.4.5. Compiling Syntax</a></li>
 </ul>
 </li>
-<li><a href="#org1584103">1.5. Getting Started Locally</a>
+<li><a href="#orgdd429e3">1.5. Getting Started Locally</a>
 <ul>
-<li><a href="#orga1a004b">1.5.1. Running Locally</a></li>
-<li><a href="#orgea8dfd6">1.5.2. Editor Features</a></li>
+<li><a href="#org2c69159">1.5.1. Running Locally</a></li>
+<li><a href="#orga83325b">1.5.2. Editor Features</a></li>
 </ul>
 </li>
-<li><a href="#org3ff895d">1.6. What TypeScript is Not</a>
+<li><a href="#org30d913a">1.6. What TypeScript is Not</a>
 <ul>
-<li><a href="#orgcce7f91">1.6.1. A Remedy for Bad Code</a></li>
-<li><a href="#org52e718c">1.6.2. Extensions to JavaScript(Mostly)</a></li>
-<li><a href="#org29d4b93">1.6.3. SLower Than JavaScript</a></li>
-<li><a href="#orgc16d2b5">1.6.4. Finished Evolving</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#org1d306a4">2. Chapter 2: The Type System</a>
-<ul>
-<li><a href="#orgcbe95e7">2.1. What's in a Type?</a>
-<ul>
-<li><a href="#org27dc656">2.1.1. Type Systems</a></li>
-<li><a href="#orgef6b176">2.1.2. Kinds of Errors</a></li>
-</ul>
-</li>
-<li><a href="#org83b7601">2.2. Assignability</a>
-<ul>
-<li><a href="#orgf7d89fb">2.2.1. Understanding Assignability Errors</a></li>
-</ul>
-</li>
-<li><a href="#org749e024">2.3. Type Annotations</a>
-<ul>
-<li><a href="#org5a4fc62">2.3.1. Unnecessary Type Annotaions</a></li>
-</ul>
-</li>
-<li><a href="#org9faa744">2.4. Type Shapes</a>
-<ul>
-<li><a href="#org154c4ac">2.4.1. Modules</a></li>
+<li><a href="#org99aa33b">1.6.1. A Remedy for Bad Code</a></li>
+<li><a href="#org1850ef4">1.6.2. Extensions to JavaScript(Mostly)</a></li>
+<li><a href="#orgd240324">1.6.3. SLower Than JavaScript</a></li>
+<li><a href="#org6e2f265">1.6.4. Finished Evolving</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org69ce066">3. Chapter 3: Unions and Literals</a>
+<li><a href="#org6c41740">2. Chapter 2: The Type System</a>
 <ul>
-<li><a href="#orgfab469a">3.1. Union Types</a>
+<li><a href="#orgf54d5a3">2.1. What's in a Type?</a>
 <ul>
-<li><a href="#org922becf">3.1.1. Declaring Union Types</a></li>
-<li><a href="#org986ff59">3.1.2. Union Preperties</a></li>
+<li><a href="#orgf655f99">2.1.1. Type Systems</a></li>
+<li><a href="#org651855f">2.1.2. Kinds of Errors</a></li>
 </ul>
 </li>
-<li><a href="#org69cf02b">3.2. Narrowing</a>
+<li><a href="#org75d8a4f">2.2. Assignability</a>
 <ul>
-<li><a href="#orgba6caa1">3.2.1. Assignment Narrowing</a></li>
-<li><a href="#org51f8d50">3.2.2. Conditional Checks</a></li>
-<li><a href="#org291282b">3.2.3. Typeof Checks</a></li>
+<li><a href="#org3989188">2.2.1. Understanding Assignability Errors</a></li>
 </ul>
 </li>
-<li><a href="#orgadcbb20">3.3. Literal Types</a>
+<li><a href="#org995dbe6">2.3. Type Annotations</a>
 <ul>
-<li><a href="#orgecefc5d">3.3.1. Literal Assignability</a></li>
+<li><a href="#org0e92385">2.3.1. Unnecessary Type Annotaions</a></li>
 </ul>
 </li>
-<li><a href="#orgc989163">3.4. Strict Null Checking</a>
+<li><a href="#org2057475">2.4. Type Shapes</a>
 <ul>
-<li><a href="#orgbfb224e">3.4.1. The Billion-Dollar Mistake</a></li>
-<li><a href="#org69ad0c4">3.4.2. Truthiness Narrowing</a></li>
-<li><a href="#orgb3655f3">3.4.3. Variables Without Initial Values</a></li>
-</ul>
-</li>
-<li><a href="#orgb7e5cb5">3.5. Type Aliases</a>
-<ul>
-<li><a href="#org03d3c18">3.5.1. Type Aliases Are Not JavaScript</a></li>
-<li><a href="#orgb4402c4">3.5.2. Combining Type Aliases</a></li>
+<li><a href="#org5bd02d4">2.4.1. Modules</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org06b6b39">4. Chapter 4: Objects</a>
+<li><a href="#orge4428b5">3. Chapter 3: Unions and Literals</a>
 <ul>
-<li><a href="#org08d83d4">4.1. Object Types</a>
+<li><a href="#org704454c">3.1. Union Types</a>
 <ul>
-<li><a href="#org15e65dd">4.1.1. Declaring Object Types</a></li>
-<li><a href="#org9ea7a77">4.1.2. Aliased Object Types</a></li>
+<li><a href="#org98d5094">3.1.1. Declaring Union Types</a></li>
+<li><a href="#orgf5ba7e8">3.1.2. Union Preperties</a></li>
 </ul>
 </li>
-<li><a href="#orgcb06bf6">4.2. Structural Typing</a>
+<li><a href="#org1349f82">3.2. Narrowing</a>
 <ul>
-<li><a href="#orgee6c2dc">4.2.1. Usage Checking</a></li>
-<li><a href="#org78904ef">4.2.2. Excess Property Checking</a></li>
-<li><a href="#org0d9d073">4.2.3. Nested Object Types</a></li>
-<li><a href="#orgb94e470">4.2.4. Optional Properties</a></li>
+<li><a href="#org3e29043">3.2.1. Assignment Narrowing</a></li>
+<li><a href="#org62141ad">3.2.2. Conditional Checks</a></li>
+<li><a href="#orge24943e">3.2.3. Typeof Checks</a></li>
 </ul>
 </li>
-<li><a href="#orgcfce899">4.3. Unions of Object Types</a>
+<li><a href="#orgd66e898">3.3. Literal Types</a>
 <ul>
-<li><a href="#org8821849">4.3.1. Inferred Object-Type Unions</a></li>
-<li><a href="#orge9373b3">4.3.2. Explicit Object-Type Unions</a></li>
-<li><a href="#org3fb9e64">4.3.3. Narrowing Object Types</a></li>
-<li><a href="#org249b647">4.3.4. Discriminated Unions</a></li>
+<li><a href="#org0c8bd20">3.3.1. Literal Assignability</a></li>
 </ul>
 </li>
-<li><a href="#org11a1a04">4.4. Intersection Types</a>
+<li><a href="#org4d7094e">3.4. Strict Null Checking</a>
 <ul>
-<li><a href="#org9b777ef">4.4.1. Dangers of Intersection Types</a></li>
+<li><a href="#org5263d19">3.4.1. The Billion-Dollar Mistake</a></li>
+<li><a href="#org3611fda">3.4.2. Truthiness Narrowing</a></li>
+<li><a href="#org87df15e">3.4.3. Variables Without Initial Values</a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li><a href="#org457e699">5. Chapter 5: Functions</a>
+<li><a href="#orgae05808">3.5. Type Aliases</a>
 <ul>
-<li><a href="#org11e47c9">5.1. Function Parameters</a>
-<ul>
-<li><a href="#org88a65bf">5.1.1. Required Parameters</a></li>
-<li><a href="#org057f9bb">5.1.2. Optional Parameters</a></li>
-<li><a href="#orge9d9d96">5.1.3. Default Parameters</a></li>
-<li><a href="#orgc2ac3b6">5.1.4. Rest Parameters</a></li>
-</ul>
-</li>
-<li><a href="#orgc92a4d2">5.2. Return Types</a>
-<ul>
-<li><a href="#org7fded24">5.2.1. Explicit Return Types</a></li>
-</ul>
-</li>
-<li><a href="#orgba73af3">5.3. Function Types</a>
-<ul>
-<li><a href="#orgf200a1d">5.3.1. Function Type Parentheses</a></li>
-<li><a href="#orgc9d60a9">5.3.2. Parameter Type Inferences</a></li>
-<li><a href="#orgd91e3dc">5.3.3. Function Type Aliases</a></li>
-</ul>
-</li>
-<li><a href="#org50950e1">5.4. More Return Types</a>
-<ul>
-<li><a href="#orgf4a28e6">5.4.1. Void Returns</a></li>
-<li><a href="#org17031ce">5.4.2. Never Returns</a></li>
-</ul>
-</li>
-<li><a href="#orgbb57753">5.5. Function Overloads</a>
-<ul>
-<li><a href="#org7a45df4">5.5.1. Call-Signature Compatibility</a></li>
+<li><a href="#orge5fe355">3.5.1. Type Aliases Are Not JavaScript</a></li>
+<li><a href="#orgaacdd68">3.5.2. Combining Type Aliases</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org8cfd30e">6. Chapter 6: Arrays</a>
+<li><a href="#org10467d1">4. Chapter 4: Objects</a>
 <ul>
-<li><a href="#orga251540">6.1. Array Types</a>
+<li><a href="#org8bb2f5e">4.1. Object Types</a>
 <ul>
-<li><a href="#org73d0784">6.1.1. Array and Function Types</a></li>
-<li><a href="#org0dffc00">6.1.2. Union Type Arrays</a></li>
-<li><a href="#orgb132e50">6.1.3. Evolving Any Arrays</a></li>
-<li><a href="#org58e2bdd">6.1.4. Multidimensional Arrays</a></li>
+<li><a href="#org975b89b">4.1.1. Declaring Object Types</a></li>
+<li><a href="#org9126c28">4.1.2. Aliased Object Types</a></li>
 </ul>
 </li>
-<li><a href="#org3edb3cc">6.2. Array Members</a>
+<li><a href="#orgcbf2e93">4.2. Structural Typing</a>
 <ul>
-<li><a href="#org321fcec">6.2.1. Caveat: Unsound Members</a></li>
+<li><a href="#org2d0034b">4.2.1. Usage Checking</a></li>
+<li><a href="#org7441f17">4.2.2. Excess Property Checking</a></li>
+<li><a href="#org7aa72ec">4.2.3. Nested Object Types</a></li>
+<li><a href="#org3b7999a">4.2.4. Optional Properties</a></li>
 </ul>
 </li>
-<li><a href="#org9e1de8b">6.3. Spreads and Rests</a>
+<li><a href="#org69524be">4.3. Unions of Object Types</a>
 <ul>
-<li><a href="#orga61d8d1">6.3.1. Spreads</a></li>
-<li><a href="#org3fa7b3c">6.3.2. Spreading Rest Parameters</a></li>
+<li><a href="#org81409bc">4.3.1. Inferred Object-Type Unions</a></li>
+<li><a href="#org1cc6ac3">4.3.2. Explicit Object-Type Unions</a></li>
+<li><a href="#orgc9a85e0">4.3.3. Narrowing Object Types</a></li>
+<li><a href="#orgad64fb1">4.3.4. Discriminated Unions</a></li>
 </ul>
 </li>
-<li><a href="#orgb4a3924">6.4. Tuples</a>
+<li><a href="#orgc1706d2">4.4. Intersection Types</a>
 <ul>
-<li><a href="#org1d4459a">6.4.1. Tuple Assignability</a></li>
-<li><a href="#org3d18bdf">6.4.2. Tuple Inferences</a></li>
+<li><a href="#org3cb2459">4.4.1. Dangers of Intersection Types</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org33f3dff">5. Chapter 5: Functions</a>
+<ul>
+<li><a href="#org1857d3e">5.1. Function Parameters</a>
+<ul>
+<li><a href="#orgc279c65">5.1.1. Required Parameters</a></li>
+<li><a href="#org2df0ffd">5.1.2. Optional Parameters</a></li>
+<li><a href="#org05974fc">5.1.3. Default Parameters</a></li>
+<li><a href="#orgfd17a1f">5.1.4. Rest Parameters</a></li>
+</ul>
+</li>
+<li><a href="#orge054fa0">5.2. Return Types</a>
+<ul>
+<li><a href="#org6ee3455">5.2.1. Explicit Return Types</a></li>
+</ul>
+</li>
+<li><a href="#orgb982fba">5.3. Function Types</a>
+<ul>
+<li><a href="#org5acad59">5.3.1. Function Type Parentheses</a></li>
+<li><a href="#org1ad536e">5.3.2. Parameter Type Inferences</a></li>
+<li><a href="#orgdc717e4">5.3.3. Function Type Aliases</a></li>
+</ul>
+</li>
+<li><a href="#org5d21c91">5.4. More Return Types</a>
+<ul>
+<li><a href="#org4670b4b">5.4.1. Void Returns</a></li>
+<li><a href="#org639e7b5">5.4.2. Never Returns</a></li>
+</ul>
+</li>
+<li><a href="#org8bf5b5e">5.5. Function Overloads</a>
+<ul>
+<li><a href="#orgb3f0bde">5.5.1. Call-Signature Compatibility</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orga912e60">6. Chapter 6: Arrays</a>
+<ul>
+<li><a href="#orgb44d4b4">6.1. Array Types</a>
+<ul>
+<li><a href="#org1109f5d">6.1.1. Array and Function Types</a></li>
+<li><a href="#org8ab0817">6.1.2. Union Type Arrays</a></li>
+<li><a href="#org49e43d8">6.1.3. Evolving Any Arrays</a></li>
+<li><a href="#orgc425901">6.1.4. Multidimensional Arrays</a></li>
+</ul>
+</li>
+<li><a href="#orgffcaf25">6.2. Array Members</a>
+<ul>
+<li><a href="#orgab669fd">6.2.1. Caveat: Unsound Members</a></li>
+</ul>
+</li>
+<li><a href="#orgdbc408b">6.3. Spreads and Rests</a>
+<ul>
+<li><a href="#org8a39350">6.3.1. Spreads</a></li>
+<li><a href="#orga18d930">6.3.2. Spreading Rest Parameters</a></li>
+</ul>
+</li>
+<li><a href="#org1b2c9ee">6.4. Tuples</a>
+<ul>
+<li><a href="#orgd77a9f6">6.4.1. Tuple Assignability</a></li>
+<li><a href="#org79b9985">6.4.2. Tuple Inferences</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org718e7b3">7. Chapter 7: Interfaces</a>
+<ul>
+<li><a href="#org4099eeb">7.1. Type Aliases Versus Intrfaces</a></li>
+<li><a href="#org0f9270c">7.2. Type of Proprties</a>
+<ul>
+<li><a href="#org62ece3d">7.2.1. Optional Properties</a></li>
+<li><a href="#orgf1ec6b3">7.2.2. Read-Only Properties</a></li>
+<li><a href="#org1f97a98">7.2.3. Functions and Methods</a></li>
+<li><a href="#org9a98dc8">7.2.4. Call Signatures</a></li>
+<li><a href="#org10cf8fe">7.2.5. Index Signatures</a></li>
+<li><a href="#orgee471d5">7.2.6. Nested Interfaces</a></li>
+</ul>
+</li>
+<li><a href="#org8c36bad">7.3. Interface Extensions</a>
+<ul>
+<li><a href="#orgaf74dde">7.3.1. Overridden Properties</a></li>
+<li><a href="#org9cdd0f4">7.3.2. Extending Multiple Interfaces</a></li>
+</ul>
+</li>
+<li><a href="#org722a274">7.4. Interface Merging</a>
+<ul>
+<li><a href="#orgdd0e722">7.4.1. Member Naming Conflicts</a></li>
 </ul>
 </li>
 </ul>
@@ -217,12 +243,12 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-orgd1e7bd3" class="outline-2">
-<h2 id="orgd1e7bd3"><span class="section-number-2">1.</span> Chapter 1: From JavaScript to TypeScript</h2>
+<div id="outline-container-orgd18478a" class="outline-2">
+<h2 id="orgd18478a"><span class="section-number-2">1.</span> Chapter 1: From JavaScript to TypeScript</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-org4fe4f4c" class="outline-3">
-<h3 id="org4fe4f4c"><span class="section-number-3">1.1.</span> History of JavaScript</h3>
+<div id="outline-container-org232e99d" class="outline-3">
+<h3 id="org232e99d"><span class="section-number-3">1.1.</span> History of JavaScript</h3>
 <div class="outline-text-3" id="text-1-1">
 <ul class="org-ul">
 <li>javascript是Brendan Eich在1995年用十天时间发明的语言,由于时间仓促,javascript有很多奇怪的地方</li>
@@ -231,16 +257,16 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-org1a7b514" class="outline-3">
-<h3 id="org1a7b514"><span class="section-number-3">1.2.</span> Vanilla JavaScript's Pitfalls</h3>
+<div id="outline-container-orgd8986d5" class="outline-3">
+<h3 id="orgd8986d5"><span class="section-number-3">1.2.</span> Vanilla JavaScript's Pitfalls</h3>
 <div class="outline-text-3" id="text-1-2">
 <ul class="org-ul">
 <li>开发者把没有使用任何框架的javascript叫做vanilla(因为香草味是最常见的味道)</li>
 <li>实际上很少有项目使用vanilla javascript,因为原生javascript的陷阱实在是太多了,这也是为什么Typescript会诞生的原因</li>
 </ul>
 </div>
-<div id="outline-container-org8041a89" class="outline-4">
-<h4 id="org8041a89"><span class="section-number-4">1.2.1.</span> Costly Freedom</h4>
+<div id="outline-container-orgaae8232" class="outline-4">
+<h4 id="orgaae8232"><span class="section-number-4">1.2.1.</span> Costly Freedom</h4>
 <div class="outline-text-4" id="text-1-2-1">
 <ul class="org-ul">
 <li>javascript太过于自由了,导致有很多的问题.
@@ -262,8 +288,8 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-orge59e787" class="outline-4">
-<h4 id="orge59e787"><span class="section-number-4">1.2.2.</span> Losse Documentation</h4>
+<div id="outline-container-orgd26559b" class="outline-4">
+<h4 id="orgd26559b"><span class="section-number-4">1.2.2.</span> Losse Documentation</h4>
 <div class="outline-text-4" id="text-1-2-2">
 <ul class="org-ul">
 <li>由于是动态语言,所以维持js代码的文档是非常困难的,因为:
@@ -276,8 +302,8 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-org5c4f92c" class="outline-4">
-<h4 id="org5c4f92c"><span class="section-number-4">1.2.3.</span> Weaker Developer Tooling</h4>
+<div id="outline-container-orgdc0fbda" class="outline-4">
+<h4 id="orgdc0fbda"><span class="section-number-4">1.2.3.</span> Weaker Developer Tooling</h4>
 <div class="outline-text-4" id="text-1-2-3">
 <ul class="org-ul">
 <li>Js作为动态语言,天然的没有太多开发者支持工具,比如重命名成员和跳转到定义等</li>
@@ -285,8 +311,8 @@
 </div>
 </div>
 </div>
-<div id="outline-container-orgdc60ffe" class="outline-3">
-<h3 id="orgdc60ffe"><span class="section-number-3">1.3.</span> Typescript!</h3>
+<div id="outline-container-org11a82a7" class="outline-3">
+<h3 id="org11a82a7"><span class="section-number-3">1.3.</span> Typescript!</h3>
 <div class="outline-text-3" id="text-1-3">
 <ul class="org-ul">
 <li>Typescript由C#,Pascal语言的作者 Anders Hejlsberg在2010年发明,并在2012年开源</li>
@@ -300,15 +326,15 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-orgea5d683" class="outline-3">
-<h3 id="orgea5d683"><span class="section-number-3">1.4.</span> Getting Started in the TypeScript Playground</h3>
+<div id="outline-container-org4c0f737" class="outline-3">
+<h3 id="org4c0f737"><span class="section-number-3">1.4.</span> Getting Started in the TypeScript Playground</h3>
 <div class="outline-text-3" id="text-1-4">
 <ul class="org-ul">
 <li>TypeScript主页包含了一个在线的编辑器,叫TypeScript Playground,地址如下 <a href="https://www.typescriptlang.org/play">https://www.typescriptlang.org/play</a></li>
 </ul>
 </div>
-<div id="outline-container-org61443d2" class="outline-4">
-<h4 id="org61443d2"><span class="section-number-4">1.4.1.</span> TypeScript in Action</h4>
+<div id="outline-container-orgc63e706" class="outline-4">
+<h4 id="orgc63e706"><span class="section-number-4">1.4.1.</span> TypeScript in Action</h4>
 <div class="outline-text-4" id="text-1-4-1">
 <ul class="org-ul">
 <li><p>
@@ -323,7 +349,7 @@
 <li><p>
 我们把这段代码贴到Typescript Playground,我们会发现,ts作为language service会帮我们分析到
 </p>
-<pre class="example" id="org896b0bb">
+<pre class="example" id="orgd4d2032">
 This expression is not callable.
   Type 'Number' has no call signatures. ts(2349)
 </pre></li>
@@ -331,8 +357,8 @@ This expression is not callable.
 </ul>
 </div>
 </div>
-<div id="outline-container-orga7ab9a3" class="outline-4">
-<h4 id="orga7ab9a3"><span class="section-number-4">1.4.2.</span> Freedom Through Restriction</h4>
+<div id="outline-container-org808ca24" class="outline-4">
+<h4 id="org808ca24"><span class="section-number-4">1.4.2.</span> Freedom Through Restriction</h4>
 <div class="outline-text-4" id="text-1-4-2">
 <ul class="org-ul">
 <li>ts允许我们选定参数和变量能够使用的类型</li>
@@ -340,8 +366,8 @@ This expression is not callable.
 </ul>
 </div>
 </div>
-<div id="outline-container-org851792d" class="outline-4">
-<h4 id="org851792d"><span class="section-number-4">1.4.3.</span> Precise Documentation</h4>
+<div id="outline-container-org1c8e8af" class="outline-4">
+<h4 id="org1c8e8af"><span class="section-number-4">1.4.3.</span> Precise Documentation</h4>
 <div class="outline-text-4" id="text-1-4-3">
 <ul class="org-ul">
 <li><p>
@@ -360,16 +386,16 @@ This expression is not callable.
 </ul>
 </div>
 </div>
-<div id="outline-container-org0d19cfa" class="outline-4">
-<h4 id="org0d19cfa"><span class="section-number-4">1.4.4.</span> Stronger Developer Tooling</h4>
+<div id="outline-container-org8d5b433" class="outline-4">
+<h4 id="org8d5b433"><span class="section-number-4">1.4.4.</span> Stronger Developer Tooling</h4>
 <div class="outline-text-4" id="text-1-4-4">
 <ul class="org-ul">
 <li>Typescript 自己就能为vs code 提供自动补全等功能</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgeae7933" class="outline-4">
-<h4 id="orgeae7933"><span class="section-number-4">1.4.5.</span> Compiling Syntax</h4>
+<div id="outline-container-org8305851" class="outline-4">
+<h4 id="org8305851"><span class="section-number-4">1.4.5.</span> Compiling Syntax</h4>
 <div class="outline-text-4" id="text-1-4-5">
 <ul class="org-ul">
 <li>Typescript不仅能把ts编译成js,还能把新版本的js编译成老版本的js</li>
@@ -378,8 +404,8 @@ This expression is not callable.
 </div>
 </div>
 </div>
-<div id="outline-container-org1584103" class="outline-3">
-<h3 id="org1584103"><span class="section-number-3">1.5.</span> Getting Started Locally</h3>
+<div id="outline-container-orgdd429e3" class="outline-3">
+<h3 id="orgdd429e3"><span class="section-number-3">1.5.</span> Getting Started Locally</h3>
 <div class="outline-text-3" id="text-1-5">
 <ul class="org-ul">
 <li><p>
@@ -399,8 +425,8 @@ Version 5.0.4
 </div></li>
 </ul>
 </div>
-<div id="outline-container-orga1a004b" class="outline-4">
-<h4 id="orga1a004b"><span class="section-number-4">1.5.1.</span> Running Locally</h4>
+<div id="outline-container-org2c69159" class="outline-4">
+<h4 id="org2c69159"><span class="section-number-4">1.5.1.</span> Running Locally</h4>
 <div class="outline-text-4" id="text-1-5-1">
 <ul class="org-ul">
 <li><p>
@@ -471,8 +497,8 @@ $ cat index.js
 </ul>
 </div>
 </div>
-<div id="outline-container-orgea8dfd6" class="outline-4">
-<h4 id="orgea8dfd6"><span class="section-number-4">1.5.2.</span> Editor Features</h4>
+<div id="outline-container-orga83325b" class="outline-4">
+<h4 id="orga83325b"><span class="section-number-4">1.5.2.</span> Editor Features</h4>
 <div class="outline-text-4" id="text-1-5-2">
 <ul class="org-ul">
 <li>tsconfig.json配置文件的巨大作用,在于让vs code(或者其他编辑器,IDE)能够识别出ts project root folder</li>
@@ -480,23 +506,23 @@ $ cat index.js
 </div>
 </div>
 </div>
-<div id="outline-container-org3ff895d" class="outline-3">
-<h3 id="org3ff895d"><span class="section-number-3">1.6.</span> What TypeScript is Not</h3>
+<div id="outline-container-org30d913a" class="outline-3">
+<h3 id="org30d913a"><span class="section-number-3">1.6.</span> What TypeScript is Not</h3>
 <div class="outline-text-3" id="text-1-6">
 <ul class="org-ul">
 <li>每个工具都有其优点,也有其局限性. ts的局限性总计起来就是</li>
 </ul>
 </div>
-<div id="outline-container-orgcce7f91" class="outline-4">
-<h4 id="orgcce7f91"><span class="section-number-4">1.6.1.</span> A Remedy for Bad Code</h4>
+<div id="outline-container-org99aa33b" class="outline-4">
+<h4 id="org99aa33b"><span class="section-number-4">1.6.1.</span> A Remedy for Bad Code</h4>
 <div class="outline-text-4" id="text-1-6-1">
 <ul class="org-ul">
 <li>ts只会enforce type safety,它不会强制你使用任何的structure(比如class等)</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org52e718c" class="outline-4">
-<h4 id="org52e718c"><span class="section-number-4">1.6.2.</span> Extensions to JavaScript(Mostly)</h4>
+<div id="outline-container-org1850ef4" class="outline-4">
+<h4 id="org1850ef4"><span class="section-number-4">1.6.2.</span> Extensions to JavaScript(Mostly)</h4>
 <div class="outline-text-4" id="text-1-6-2">
 <ul class="org-ul">
 <li>ts的设计目标说,it should:
@@ -507,16 +533,16 @@ $ cat index.js
 </ul>
 </div>
 </div>
-<div id="outline-container-org29d4b93" class="outline-4">
-<h4 id="org29d4b93"><span class="section-number-4">1.6.3.</span> SLower Than JavaScript</h4>
+<div id="outline-container-orgd240324" class="outline-4">
+<h4 id="orgd240324"><span class="section-number-4">1.6.3.</span> SLower Than JavaScript</h4>
 <div class="outline-text-4" id="text-1-6-3">
 <ul class="org-ul">
 <li>关于ts比js慢的观点,是不准确,而且有诱导性的,因为ts慢是因为它首先要转成js,而且编译的时候有类型检查</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgc16d2b5" class="outline-4">
-<h4 id="orgc16d2b5"><span class="section-number-4">1.6.4.</span> Finished Evolving</h4>
+<div id="outline-container-org6e2f265" class="outline-4">
+<h4 id="org6e2f265"><span class="section-number-4">1.6.4.</span> Finished Evolving</h4>
 <div class="outline-text-4" id="text-1-6-4">
 <ul class="org-ul">
 <li>随着web的继续发展,ts也会不断演进</li>
@@ -525,12 +551,12 @@ $ cat index.js
 </div>
 </div>
 </div>
-<div id="outline-container-org1d306a4" class="outline-2">
-<h2 id="org1d306a4"><span class="section-number-2">2.</span> Chapter 2: The Type System</h2>
+<div id="outline-container-org6c41740" class="outline-2">
+<h2 id="org6c41740"><span class="section-number-2">2.</span> Chapter 2: The Type System</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-orgcbe95e7" class="outline-3">
-<h3 id="orgcbe95e7"><span class="section-number-3">2.1.</span> What's in a Type?</h3>
+<div id="outline-container-orgf54d5a3" class="outline-3">
+<h3 id="orgf54d5a3"><span class="section-number-3">2.1.</span> What's in a Type?</h3>
 <div class="outline-text-3" id="text-2-1">
 <ul class="org-ul">
 <li>所谓的shape,是指有哪些property和method在一个value上,也可以理解为内置的typeof操作符对这个value的解释</li>
@@ -553,8 +579,8 @@ $ cat index.js
 </ul></li>
 </ul>
 </div>
-<div id="outline-container-org27dc656" class="outline-4">
-<h4 id="org27dc656"><span class="section-number-4">2.1.1.</span> Type Systems</h4>
+<div id="outline-container-orgf655f99" class="outline-4">
+<h4 id="orgf655f99"><span class="section-number-4">2.1.1.</span> Type Systems</h4>
 <div class="outline-text-4" id="text-2-1-1">
 <ul class="org-ul">
 <li>TypeScript的type system总体上是安装如下流程工作的:
@@ -588,8 +614,8 @@ firstName.length<span style="color: #3a81c3;">()</span>;
 </ul>
 </div>
 </div>
-<div id="outline-container-orgef6b176" class="outline-4">
-<h4 id="orgef6b176"><span class="section-number-4">2.1.2.</span> Kinds of Errors</h4>
+<div id="outline-container-org651855f" class="outline-4">
+<h4 id="org651855f"><span class="section-number-4">2.1.2.</span> Kinds of Errors</h4>
 <div class="outline-text-4" id="text-2-1-2">
 <ul class="org-ul">
 <li>在ts里面一般会遇到两种错误:
@@ -611,8 +637,8 @@ lastName = <span style="color: #4e3163;">true</span>;
 </div>
 </div>
 </div>
-<div id="outline-container-org83b7601" class="outline-3">
-<h3 id="org83b7601"><span class="section-number-3">2.2.</span> Assignability</h3>
+<div id="outline-container-org75d8a4f" class="outline-3">
+<h3 id="org75d8a4f"><span class="section-number-3">2.2.</span> Assignability</h3>
 <div class="outline-text-3" id="text-2-2">
 <ul class="org-ul">
 <li><p>
@@ -627,8 +653,8 @@ lastName = <span style="color: #4e3163;">true</span>;
 </div></li>
 </ul>
 </div>
-<div id="outline-container-orgf7d89fb" class="outline-4">
-<h4 id="orgf7d89fb"><span class="section-number-4">2.2.1.</span> Understanding Assignability Errors</h4>
+<div id="outline-container-org3989188" class="outline-4">
+<h4 id="org3989188"><span class="section-number-4">2.2.1.</span> Understanding Assignability Errors</h4>
 <div class="outline-text-4" id="text-2-2-1">
 <ul class="org-ul">
 <li>我们要试着理解Type Error报警:
@@ -640,8 +666,8 @@ lastName = <span style="color: #4e3163;">true</span>;
 </div>
 </div>
 </div>
-<div id="outline-container-org749e024" class="outline-3">
-<h3 id="org749e024"><span class="section-number-3">2.3.</span> Type Annotations</h3>
+<div id="outline-container-org995dbe6" class="outline-3">
+<h3 id="org995dbe6"><span class="section-number-3">2.3.</span> Type Annotations</h3>
 <div class="outline-text-3" id="text-2-3">
 <ul class="org-ul">
 <li>如果一个变量没有设置初始化的值,那么ts显然不能assume它的类型,这种情况下,ts认为这个变量的类型是any</li>
@@ -695,8 +721,8 @@ rocker = <span style="color: #2d9574;">"Joan Jett"</span>;
 </ul></li>
 </ul>
 </div>
-<div id="outline-container-org5a4fc62" class="outline-4">
-<h4 id="org5a4fc62"><span class="section-number-4">2.3.1.</span> Unnecessary Type Annotaions</h4>
+<div id="outline-container-org0e92385" class="outline-4">
+<h4 id="org0e92385"><span class="section-number-4">2.3.1.</span> Unnecessary Type Annotaions</h4>
 <div class="outline-text-4" id="text-2-3-1">
 <ul class="org-ul">
 <li>只有在没有初始化值的情况下才需要type annotation,否则:
@@ -708,8 +734,8 @@ rocker = <span style="color: #2d9574;">"Joan Jett"</span>;
 </div>
 </div>
 </div>
-<div id="outline-container-org9faa744" class="outline-3">
-<h3 id="org9faa744"><span class="section-number-3">2.4.</span> Type Shapes</h3>
+<div id="outline-container-org2057475" class="outline-3">
+<h3 id="org2057475"><span class="section-number-3">2.4.</span> Type Shapes</h3>
 <div class="outline-text-3" id="text-2-4">
 <ul class="org-ul">
 <li>typescript不仅仅能检查赋值的时候类型是否匹配,还会理解object的shape</li>
@@ -720,8 +746,8 @@ rocker = <span style="color: #2d9574;">"Joan Jett"</span>;
 </ul></li>
 </ul>
 </div>
-<div id="outline-container-org154c4ac" class="outline-4">
-<h4 id="org154c4ac"><span class="section-number-4">2.4.1.</span> Modules</h4>
+<div id="outline-container-org5bd02d4" class="outline-4">
+<h4 id="org5bd02d4"><span class="section-number-4">2.4.1.</span> Modules</h4>
 <div class="outline-text-4" id="text-2-4-1">
 <ul class="org-ul">
 <li>js自己是没有包版本管理系统的,直到2015年ECMAScript添加了ECMAScript modules(ESM),标准化了如下两个命令:
@@ -817,8 +843,8 @@ moduleB里面import那肯定不行,比如下面的例子),这也是module的魅�
 </div>
 </div>
 </div>
-<div id="outline-container-org69ce066" class="outline-2">
-<h2 id="org69ce066"><span class="section-number-2">3.</span> Chapter 3: Unions and Literals</h2>
+<div id="outline-container-orge4428b5" class="outline-2">
+<h2 id="orge4428b5"><span class="section-number-2">3.</span> Chapter 3: Unions and Literals</h2>
 <div class="outline-text-2" id="text-3">
 <ul class="org-ul">
 <li>本章主要介绍如下两个特性:
@@ -828,8 +854,8 @@ moduleB里面import那肯定不行,比如下面的例子),这也是module的魅�
 </ul></li>
 </ul>
 </div>
-<div id="outline-container-orgfab469a" class="outline-3">
-<h3 id="orgfab469a"><span class="section-number-3">3.1.</span> Union Types</h3>
+<div id="outline-container-org704454c" class="outline-3">
+<h3 id="org704454c"><span class="section-number-3">3.1.</span> Union Types</h3>
 <div class="outline-text-3" id="text-3-1">
 <ul class="org-ul">
 <li>有种情况,某个类型可能是多种类型
@@ -855,8 +881,8 @@ Typescript的编译器会分析出来,并且给出mathematician的类型判断�
 </ul></li>
 </ul>
 </div>
-<div id="outline-container-org922becf" class="outline-4">
-<h4 id="org922becf"><span class="section-number-4">3.1.1.</span> Declaring Union Types</h4>
+<div id="outline-container-org98d5094" class="outline-4">
+<h4 id="org98d5094"><span class="section-number-4">3.1.1.</span> Declaring Union Types</h4>
 <div class="outline-text-4" id="text-3-1-1">
 <ul class="org-ul">
 <li><p>
@@ -875,8 +901,8 @@ union type的定义例子如下: 虽然thinker已经有了初始化值null,但�
 </ul>
 </div>
 </div>
-<div id="outline-container-org986ff59" class="outline-4">
-<h4 id="org986ff59"><span class="section-number-4">3.1.2.</span> Union Preperties</h4>
+<div id="outline-container-orgf5ba7e8" class="outline-4">
+<h4 id="orgf5ba7e8"><span class="section-number-4">3.1.2.</span> Union Preperties</h4>
 <div class="outline-text-4" id="text-3-1-2">
 <ul class="org-ul">
 <li><p>
@@ -909,8 +935,8 @@ type:这个过程叫做narrowing</li>
 </div>
 </div>
 </div>
-<div id="outline-container-org69cf02b" class="outline-3">
-<h3 id="org69cf02b"><span class="section-number-3">3.2.</span> Narrowing</h3>
+<div id="outline-container-org1349f82" class="outline-3">
+<h3 id="org1349f82"><span class="section-number-3">3.2.</span> Narrowing</h3>
 <div class="outline-text-3" id="text-3-2">
 <ul class="org-ul">
 <li>narrowing的方法有两种:
@@ -920,8 +946,8 @@ type:这个过程叫做narrowing</li>
 </ul></li>
 </ul>
 </div>
-<div id="outline-container-orgba6caa1" class="outline-4">
-<h4 id="orgba6caa1"><span class="section-number-4">3.2.1.</span> Assignment Narrowing</h4>
+<div id="outline-container-org3e29043" class="outline-4">
+<h4 id="org3e29043"><span class="section-number-4">3.2.1.</span> Assignment Narrowing</h4>
 <div class="outline-text-4" id="text-3-2-1">
 <ul class="org-ul">
 <li>assignment narrowing又有两种情况:
@@ -963,8 +989,8 @@ physicist.<span style="color: #6c3163; font-weight: bold;">toUpperCase</span><sp
 </ul>
 </div>
 </div>
-<div id="outline-container-org51f8d50" class="outline-4">
-<h4 id="org51f8d50"><span class="section-number-4">3.2.2.</span> Conditional Checks</h4>
+<div id="outline-container-org62141ad" class="outline-4">
+<h4 id="org62141ad"><span class="section-number-4">3.2.2.</span> Conditional Checks</h4>
 <div class="outline-text-4" id="text-3-2-2">
 <ul class="org-ul">
 <li><p>
@@ -988,8 +1014,8 @@ ts非常聪明,能够判定if statement里面的变量当前是什么类型.下�
 </ul>
 </div>
 </div>
-<div id="outline-container-org291282b" class="outline-4">
-<h4 id="org291282b"><span class="section-number-4">3.2.3.</span> Typeof Checks</h4>
+<div id="outline-container-orge24943e" class="outline-4">
+<h4 id="orge24943e"><span class="section-number-4">3.2.3.</span> Typeof Checks</h4>
 <div class="outline-text-4" id="text-3-2-3">
 <ul class="org-ul">
 <li>除了用直接的等于(<code>=</code>)判断,typescript还支持typeof的结果</li>
@@ -1032,8 +1058,8 @@ typeof也可以判断false的情况
 </div>
 </div>
 </div>
-<div id="outline-container-orgadcbb20" class="outline-3">
-<h3 id="orgadcbb20"><span class="section-number-3">3.3.</span> Literal Types</h3>
+<div id="outline-container-orgd66e898" class="outline-3">
+<h3 id="orgd66e898"><span class="section-number-3">3.3.</span> Literal Types</h3>
 <div class="outline-text-3" id="text-3-3">
 <ul class="org-ul">
 <li>先来看个例子
@@ -1050,7 +1076,7 @@ typeof也可以判断false的情况
 <li><p>
 这种"更具体的类型",就是literal type,具体点说就是
 </p>
-<pre class="example" id="org42a5593">
+<pre class="example" id="org769c48a">
 The type of a value that is known to be a specific value of a primitive,
 rather than any of those primitive's value at all
 </pre></li>
@@ -1071,7 +1097,7 @@ mathematician的类型就是 "Mark Goldberg"
 <li><p>
 你可以把每个primitive type都看成是所有可能的literal value的union
 </p>
-<pre class="example" id="org4a215cc">
+<pre class="example" id="org0997511">
 You can think of each primitive type as a union of every possible matching literal value
 </pre></li>
 <li><p>
@@ -1091,8 +1117,8 @@ lifespan = <span style="color: #2d9574;">"ongoing"</span>;            <span styl
 </div></li>
 </ul>
 </div>
-<div id="outline-container-orgecefc5d" class="outline-4">
-<h4 id="orgecefc5d"><span class="section-number-4">3.3.1.</span> Literal Assignability</h4>
+<div id="outline-container-org0c8bd20" class="outline-4">
+<h4 id="org0c8bd20"><span class="section-number-4">3.3.1.</span> Literal Assignability</h4>
 <div class="outline-text-4" id="text-3-3-1">
 <ul class="org-ul">
 <li>literal type可不是简单说说一下,它真的是一个类型:
@@ -1174,15 +1200,15 @@ something = smile
 </div>
 </div>
 </div>
-<div id="outline-container-orgc989163" class="outline-3">
-<h3 id="orgc989163"><span class="section-number-3">3.4.</span> Strict Null Checking</h3>
+<div id="outline-container-org4d7094e" class="outline-3">
+<h3 id="org4d7094e"><span class="section-number-3">3.4.</span> Strict Null Checking</h3>
 <div class="outline-text-3" id="text-3-4">
 <ul class="org-ul">
 <li>narrowed union在加上literal能够让ts非常从容的处理strict null checking</li>
 </ul>
 </div>
-<div id="outline-container-orgbfb224e" class="outline-4">
-<h4 id="orgbfb224e"><span class="section-number-4">3.4.1.</span> The Billion-Dollar Mistake</h4>
+<div id="outline-container-org5263d19" class="outline-4">
+<h4 id="org5263d19"><span class="section-number-4">3.4.1.</span> The Billion-Dollar Mistake</h4>
 <div class="outline-text-4" id="text-3-4-1">
 <ul class="org-ul">
 <li>所谓的billion-dollar mistake是指, null value的发明者认为这不是一个好的发明,把null value引入编程语言
@@ -1215,8 +1241,8 @@ something = smile
 </ul>
 </div>
 </div>
-<div id="outline-container-org69ad0c4" class="outline-4">
-<h4 id="org69ad0c4"><span class="section-number-4">3.4.2.</span> Truthiness Narrowing</h4>
+<div id="outline-container-org3611fda" class="outline-4">
+<h4 id="org3611fda"><span class="section-number-4">3.4.2.</span> Truthiness Narrowing</h4>
 <div class="outline-text-4" id="text-3-4-2">
 <ul class="org-ul">
 <li>在js里面,判断一个变量是否为true原理如下:变量只要不是如下值,那么它们就是true:
@@ -1258,8 +1284,8 @@ something = smile
 </ul>
 </div>
 </div>
-<div id="outline-container-orgb3655f3" class="outline-4">
-<h4 id="orgb3655f3"><span class="section-number-4">3.4.3.</span> Variables Without Initial Values</h4>
+<div id="outline-container-org87df15e" class="outline-4">
+<h4 id="org87df15e"><span class="section-number-4">3.4.3.</span> Variables Without Initial Values</h4>
 <div class="outline-text-4" id="text-3-4-3">
 <ul class="org-ul">
 <li>在js里面,如果一个变量声明之后,没有给初始化值,那么这个变量就会初始化成undefined</li>
@@ -1314,8 +1340,8 @@ mathematician.length;
 </div>
 </div>
 </div>
-<div id="outline-container-orgb7e5cb5" class="outline-3">
-<h3 id="orgb7e5cb5"><span class="section-number-3">3.5.</span> Type Aliases</h3>
+<div id="outline-container-orgae05808" class="outline-3">
+<h3 id="orgae05808"><span class="section-number-3">3.5.</span> Type Aliases</h3>
 <div class="outline-text-3" id="text-3-5">
 <ul class="org-ul">
 <li><p>
@@ -1341,8 +1367,8 @@ mathematician.length;
 </div></li>
 </ul>
 </div>
-<div id="outline-container-org03d3c18" class="outline-4">
-<h4 id="org03d3c18"><span class="section-number-4">3.5.1.</span> Type Aliases Are Not JavaScript</h4>
+<div id="outline-container-orge5fe355" class="outline-4">
+<h4 id="orge5fe355"><span class="section-number-4">3.5.1.</span> Type Aliases Are Not JavaScript</h4>
 <div class="outline-text-4" id="text-3-5-1">
 <ul class="org-ul">
 <li>type alias不会编译成javascript,它只存在于typescript里面</li>
@@ -1361,8 +1387,8 @@ mathematician.length;
 </ul>
 </div>
 </div>
-<div id="outline-container-orgb4402c4" class="outline-4">
-<h4 id="orgb4402c4"><span class="section-number-4">3.5.2.</span> Combining Type Aliases</h4>
+<div id="outline-container-orgaacdd68" class="outline-4">
+<h4 id="orgaacdd68"><span class="section-number-4">3.5.2.</span> Combining Type Aliases</h4>
 <div class="outline-text-4" id="text-3-5-2">
 <ul class="org-ul">
 <li><p>
@@ -1387,12 +1413,12 @@ type alias还可以互相引用
 </div>
 </div>
 </div>
-<div id="outline-container-org06b6b39" class="outline-2">
-<h2 id="org06b6b39"><span class="section-number-2">4.</span> Chapter 4: Objects</h2>
+<div id="outline-container-org10467d1" class="outline-2">
+<h2 id="org10467d1"><span class="section-number-2">4.</span> Chapter 4: Objects</h2>
 <div class="outline-text-2" id="text-4">
 </div>
-<div id="outline-container-org08d83d4" class="outline-3">
-<h3 id="org08d83d4"><span class="section-number-3">4.1.</span> Object Types</h3>
+<div id="outline-container-org8bb2f5e" class="outline-3">
+<h3 id="org8bb2f5e"><span class="section-number-3">4.1.</span> Object Types</h3>
 <div class="outline-text-3" id="text-4-1">
 <ul class="org-ul">
 <li>在ts/js里面,有种创建object的方法叫做object literal
@@ -1458,8 +1484,8 @@ console.log<span style="color: #3a81c3;">(</span><span style="color: #3a81c3; fo
 </div></li>
 </ul>
 </div>
-<div id="outline-container-org15e65dd" class="outline-4">
-<h4 id="org15e65dd"><span class="section-number-4">4.1.1.</span> Declaring Object Types</h4>
+<div id="outline-container-org975b89b" class="outline-4">
+<h4 id="org975b89b"><span class="section-number-4">4.1.1.</span> Declaring Object Types</h4>
 <div class="outline-text-4" id="text-4-1-1">
 <ul class="org-ul">
 <li>ts作为一个静态的类型系统语言,当然会提供"显式"定义object type的功能
@@ -1490,8 +1516,8 @@ poetLater = <span style="color: #3a81c3;">{</span>
 </ul>
 </div>
 </div>
-<div id="outline-container-org9ea7a77" class="outline-4">
-<h4 id="org9ea7a77"><span class="section-number-4">4.1.2.</span> Aliased Object Types</h4>
+<div id="outline-container-org9126c28" class="outline-4">
+<h4 id="org9126c28"><span class="section-number-4">4.1.2.</span> Aliased Object Types</h4>
 <div class="outline-text-4" id="text-4-1-2">
 <ul class="org-ul">
 <li>我们发现上一节讲到的ts的类型名字都是这样的type '{ born: number; name: string; }', 这种名字是类似"匿名"
@@ -1525,15 +1551,15 @@ poetLater = <span style="color: #3a81c3;">{</span>
 </div>
 </div>
 </div>
-<div id="outline-container-orgcb06bf6" class="outline-3">
-<h3 id="orgcb06bf6"><span class="section-number-3">4.2.</span> Structural Typing</h3>
+<div id="outline-container-orgcbf2e93" class="outline-3">
+<h3 id="orgcbf2e93"><span class="section-number-3">4.2.</span> Structural Typing</h3>
 <div class="outline-text-3" id="text-4-2">
 <ul class="org-ul">
 <li><p>
 TypeScript的类型系统叫做structurally typed: 所谓structurally type,是说一个value"刚好"能满足一个类型,
 那么就可以作为这个类型的value. 换句话说就是golang的所谓类型推断(Type inference),不需要显式的类型声明
 </p>
-<pre class="example" id="orgb5124c9">
+<pre class="example" id="org2e08fef">
 Structurally typing means: any value that happens to satisfy a type is a allowed to be used
 as a value of that type.
 </pre></li>
@@ -1579,8 +1605,8 @@ as a value of that type.
 </ul></li>
 </ul>
 </div>
-<div id="outline-container-orgee6c2dc" class="outline-4">
-<h4 id="orgee6c2dc"><span class="section-number-4">4.2.1.</span> Usage Checking</h4>
+<div id="outline-container-org2d0034b" class="outline-4">
+<h4 id="org2d0034b"><span class="section-number-4">4.2.1.</span> Usage Checking</h4>
 <div class="outline-text-4" id="text-4-2-1">
 <ul class="org-ul">
 <li>当我们在为一个value标记object type的时候,typescript会去check这个value是否满足了目标标记的type所需要
@@ -1638,8 +1664,8 @@ as a value of that type.
 </ul>
 </div>
 </div>
-<div id="outline-container-org78904ef" class="outline-4">
-<h4 id="org78904ef"><span class="section-number-4">4.2.2.</span> Excess Property Checking</h4>
+<div id="outline-container-org7441f17" class="outline-4">
+<h4 id="org7441f17"><span class="section-number-4">4.2.2.</span> Excess Property Checking</h4>
 <div class="outline-text-4" id="text-4-2-2">
 <ul class="org-ul">
 <li>我们对Typescript的structural typing印象深刻,一来是不需要声明,二来是成员满足即可,成员多了也能赋值成功</li>
@@ -1685,8 +1711,8 @@ as a value of that type.
 </ul>
 </div>
 </div>
-<div id="outline-container-org0d9d073" class="outline-4">
-<h4 id="org0d9d073"><span class="section-number-4">4.2.3.</span> Nested Object Types</h4>
+<div id="outline-container-org7aa72ec" class="outline-4">
+<h4 id="org7aa72ec"><span class="section-number-4">4.2.3.</span> Nested Object Types</h4>
 <div class="outline-text-4" id="text-4-2-3">
 <ul class="org-ul">
 <li>由于Javascript object可以nest很多其他的object, typescript也就必须能够表达nested object.</li>
@@ -1758,8 +1784,8 @@ as a value of that type.
 </ul>
 </div>
 </div>
-<div id="outline-container-orgb94e470" class="outline-4">
-<h4 id="orgb94e470"><span class="section-number-4">4.2.4.</span> Optional Properties</h4>
+<div id="outline-container-org3b7999a" class="outline-4">
+<h4 id="org3b7999a"><span class="section-number-4">4.2.4.</span> Optional Properties</h4>
 <div class="outline-text-4" id="text-4-2-4">
 <ul class="org-ul">
 <li>Object type可以包含一些"可选"成员,这些成员可以不出现,使用`?`标记
@@ -1823,15 +1849,15 @@ as a value of that type.
 </div>
 </div>
 </div>
-<div id="outline-container-orgcfce899" class="outline-3">
-<h3 id="orgcfce899"><span class="section-number-3">4.3.</span> Unions of Object Types</h3>
+<div id="outline-container-org69524be" class="outline-3">
+<h3 id="org69524be"><span class="section-number-3">4.3.</span> Unions of Object Types</h3>
 <div class="outline-text-3" id="text-4-3">
 <ul class="org-ul">
 <li>既然普通类型有union,那么object类型的union需求也是合理的</li>
 </ul>
 </div>
-<div id="outline-container-org8821849" class="outline-4">
-<h4 id="org8821849"><span class="section-number-4">4.3.1.</span> Inferred Object-Type Unions</h4>
+<div id="outline-container-org81409bc" class="outline-4">
+<h4 id="org81409bc"><span class="section-number-4">4.3.1.</span> Inferred Object-Type Unions</h4>
 <div class="outline-text-4" id="text-4-3-1">
 <ul class="org-ul">
 <li>如果我们不明确的"声明"类型,而是直接赋值(通过?:),那么Typescript会自动的为我们创建union type
@@ -1869,8 +1895,8 @@ as a value of that type.
 </ul>
 </div>
 </div>
-<div id="outline-container-orge9373b3" class="outline-4">
-<h4 id="orge9373b3"><span class="section-number-4">4.3.2.</span> Explicit Object-Type Unions</h4>
+<div id="outline-container-org1cc6ac3" class="outline-4">
+<h4 id="org1cc6ac3"><span class="section-number-4">4.3.2.</span> Explicit Object-Type Unions</h4>
 <div class="outline-text-4" id="text-4-3-2">
 <ul class="org-ul">
 <li>explicit的把类型列出来做union,而不是让Typescript帮我们创建union是最高的选择,代码清晰,逻辑自然
@@ -1926,8 +1952,8 @@ as a value of that type.
 </ul>
 </div>
 </div>
-<div id="outline-container-org3fb9e64" class="outline-4">
-<h4 id="org3fb9e64"><span class="section-number-4">4.3.3.</span> Narrowing Object Types</h4>
+<div id="outline-container-orgc9a85e0" class="outline-4">
+<h4 id="orgc9a85e0"><span class="section-number-4">4.3.3.</span> Narrowing Object Types</h4>
 <div class="outline-text-4" id="text-4-3-3">
 <ul class="org-ul">
 <li>有union,那么很显然也会有narrow,只不过object narrow的方法有所不同
@@ -1986,8 +2012,8 @@ as a value of that type.
 </ul>
 </div>
 </div>
-<div id="outline-container-org249b647" class="outline-4">
-<h4 id="org249b647"><span class="section-number-4">4.3.4.</span> Discriminated Unions</h4>
+<div id="outline-container-orgad64fb1" class="outline-4">
+<h4 id="orgad64fb1"><span class="section-number-4">4.3.4.</span> Discriminated Unions</h4>
 <div class="outline-text-4" id="text-4-3-4">
 <ul class="org-ul">
 <li>discriminated union是一个在Javascript和Typescript里面都适用的概念,就是专门加一个property(通常是string)
@@ -2049,8 +2075,8 @@ as a value of that type.
 </div>
 </div>
 </div>
-<div id="outline-container-org11a1a04" class="outline-3">
-<h3 id="org11a1a04"><span class="section-number-3">4.4.</span> Intersection Types</h3>
+<div id="outline-container-orgc1706d2" class="outline-3">
+<h3 id="orgc1706d2"><span class="section-number-3">4.4.</span> Intersection Types</h3>
 <div class="outline-text-3" id="text-4-4">
 <ul class="org-ul">
 <li>在集合里面中:
@@ -2138,8 +2164,8 @@ as a value of that type.
 </ul></li>
 </ul>
 </div>
-<div id="outline-container-org9b777ef" class="outline-4">
-<h4 id="org9b777ef"><span class="section-number-4">4.4.1.</span> Dangers of Intersection Types</h4>
+<div id="outline-container-org3cb2459" class="outline-4">
+<h4 id="org3cb2459"><span class="section-number-4">4.4.1.</span> Dangers of Intersection Types</h4>
 <div class="outline-text-4" id="text-4-4-1">
 <ul class="org-ul">
 <li>intersection type会让作者和编译器都困惑,我们最好不要使用这个特性</li>
@@ -2148,12 +2174,12 @@ as a value of that type.
 </div>
 </div>
 </div>
-<div id="outline-container-org457e699" class="outline-2">
-<h2 id="org457e699"><span class="section-number-2">5.</span> Chapter 5: Functions</h2>
+<div id="outline-container-org33f3dff" class="outline-2">
+<h2 id="org33f3dff"><span class="section-number-2">5.</span> Chapter 5: Functions</h2>
 <div class="outline-text-2" id="text-5">
 </div>
-<div id="outline-container-org11e47c9" class="outline-3">
-<h3 id="org11e47c9"><span class="section-number-3">5.1.</span> Function Parameters</h3>
+<div id="outline-container-org1857d3e" class="outline-3">
+<h3 id="org1857d3e"><span class="section-number-3">5.1.</span> Function Parameters</h3>
 <div class="outline-text-3" id="text-5-1">
 <ul class="org-ul">
 <li>对于typescript来说,函数参数也必须声明类型,否则会报错
@@ -2181,8 +2207,8 @@ as a value of that type.
 </ul></li>
 </ul>
 </div>
-<div id="outline-container-org88a65bf" class="outline-4">
-<h4 id="org88a65bf"><span class="section-number-4">5.1.1.</span> Required Parameters</h4>
+<div id="outline-container-orgc279c65" class="outline-4">
+<h4 id="orgc279c65"><span class="section-number-4">5.1.1.</span> Required Parameters</h4>
 <div class="outline-text-4" id="text-5-1-1">
 <ul class="org-ul">
 <li>javascript的function并没有参数检查,你可以使用任意数目的参数来调用函数.即便这个数目和你声明的不一样
@@ -2247,8 +2273,8 @@ greet<span style="color: #3a81c3;">(</span><span style="color: #2d9574;">"Alice"
 </ul>
 </div>
 </div>
-<div id="outline-container-org057f9bb" class="outline-4">
-<h4 id="org057f9bb"><span class="section-number-4">5.1.2.</span> Optional Parameters</h4>
+<div id="outline-container-org2df0ffd" class="outline-4">
+<h4 id="org2df0ffd"><span class="section-number-4">5.1.2.</span> Optional Parameters</h4>
 <div class="outline-text-4" id="text-5-1-2">
 <ul class="org-ul">
 <li>在javascript里面,如果一个function parameter没有被提供,那么在使用的时候,其argument就是undefined</li>
@@ -2324,8 +2350,8 @@ greet<span style="color: #3a81c3;">(</span><span style="color: #2d9574;">"Alice"
 </ul>
 </div>
 </div>
-<div id="outline-container-orge9d9d96" class="outline-4">
-<h4 id="orge9d9d96"><span class="section-number-4">5.1.3.</span> Default Parameters</h4>
+<div id="outline-container-org05974fc" class="outline-4">
+<h4 id="org05974fc"><span class="section-number-4">5.1.3.</span> Default Parameters</h4>
 <div class="outline-text-4" id="text-5-1-3">
 <ul class="org-ul">
 <li>参数默认值是比optional parameter更好的一种选择,它可以让我们的parameter在没有argument的情况下给一个默认值
@@ -2388,8 +2414,8 @@ parameter一样的union类型(number | undefiend).
 </ul>
 </div>
 </div>
-<div id="outline-container-orgc2ac3b6" class="outline-4">
-<h4 id="orgc2ac3b6"><span class="section-number-4">5.1.4.</span> Rest Parameters</h4>
+<div id="outline-container-orgfd17a1f" class="outline-4">
+<h4 id="orgfd17a1f"><span class="section-number-4">5.1.4.</span> Rest Parameters</h4>
 <div class="outline-text-4" id="text-5-1-4">
 <ul class="org-ul">
 <li>rest parametr也叫不定参数,是只最后一个参数可以是0个或者多个的情况
@@ -2426,8 +2452,8 @@ parameter一样的union类型(number | undefiend).
 </div>
 </div>
 </div>
-<div id="outline-container-orgc92a4d2" class="outline-3">
-<h3 id="orgc92a4d2"><span class="section-number-3">5.2.</span> Return Types</h3>
+<div id="outline-container-orge054fa0" class="outline-3">
+<h3 id="orge054fa0"><span class="section-number-3">5.2.</span> Return Types</h3>
 <div class="outline-text-3" id="text-5-2">
 <ul class="org-ul">
 <li>TypeScript可以理解一个函数的所有可能返回值,并且给与其类型(多种返回值类型就是union类型)
@@ -2453,8 +2479,8 @@ parameter一样的union类型(number | undefiend).
 </ul></li>
 </ul>
 </div>
-<div id="outline-container-org7fded24" class="outline-4">
-<h4 id="org7fded24"><span class="section-number-4">5.2.1.</span> Explicit Return Types</h4>
+<div id="outline-container-org6ee3455" class="outline-4">
+<h4 id="org6ee3455"><span class="section-number-4">5.2.1.</span> Explicit Return Types</h4>
 <div class="outline-text-4" id="text-5-2-1">
 <ul class="org-ul">
 <li>虽然typescript最佳实践就是不要给function明确的标记返回值类型.但是有几种特殊的情况下还是建议把返回值
@@ -2512,8 +2538,8 @@ parameter一样的union类型(number | undefiend).
 </div>
 </div>
 </div>
-<div id="outline-container-orgba73af3" class="outline-3">
-<h3 id="orgba73af3"><span class="section-number-3">5.3.</span> Function Types</h3>
+<div id="outline-container-orgb982fba" class="outline-3">
+<h3 id="orgb982fba"><span class="section-number-3">5.3.</span> Function Types</h3>
 <div class="outline-text-3" id="text-5-3">
 <ul class="org-ul">
 <li>Javascript的函数是一等公民,可以把function作为value到处传递,那么我们的function也必须要有自己的类型</li>
@@ -2577,8 +2603,8 @@ inputAndOutput函数有一个必选参数string[]类型的songs,一个可选参�
 </ul></li>
 </ul>
 </div>
-<div id="outline-container-orgf200a1d" class="outline-4">
-<h4 id="orgf200a1d"><span class="section-number-4">5.3.1.</span> Function Type Parentheses</h4>
+<div id="outline-container-org5acad59" class="outline-4">
+<h4 id="org5acad59"><span class="section-number-4">5.3.1.</span> Function Type Parentheses</h4>
 <div class="outline-text-4" id="text-5-3-1">
 <ul class="org-ul">
 <li>function type是一个比较复杂的称谓(这个称谓的中间还有空格),所以我们需要在有些情况下在function type外面加上括号</li>
@@ -2602,8 +2628,8 @@ inputAndOutput函数有一个必选参数string[]类型的songs,一个可选参�
 </ul>
 </div>
 </div>
-<div id="outline-container-orgc9d60a9" class="outline-4">
-<h4 id="orgc9d60a9"><span class="section-number-4">5.3.2.</span> Parameter Type Inferences</h4>
+<div id="outline-container-org1ad536e" class="outline-4">
+<h4 id="org1ad536e"><span class="section-number-4">5.3.2.</span> Parameter Type Inferences</h4>
 <div class="outline-text-4" id="text-5-3-2">
 <ul class="org-ul">
 <li>typescript可以聪明的让我们在类型明确的情况下,少些后续的类型.
@@ -2668,8 +2694,8 @@ songs.<span style="color: #6c3163; font-weight: bold;">forEach</span><span style
 </ul>
 </div>
 </div>
-<div id="outline-container-orgd91e3dc" class="outline-4">
-<h4 id="orgd91e3dc"><span class="section-number-4">5.3.3.</span> Function Type Aliases</h4>
+<div id="outline-container-orgdc717e4" class="outline-4">
+<h4 id="orgdc717e4"><span class="section-number-4">5.3.3.</span> Function Type Aliases</h4>
 <div class="outline-text-4" id="text-5-3-3">
 <ul class="org-ul">
 <li>type aliases 本来是实现"一人千面"作用的. 但是同时也能将复杂的类型转换成一个"看起来简单的类型"</li>
@@ -2723,12 +2749,12 @@ stringToNumber = <span style="color: #3a81c3;">(</span>input<span style="color: 
 </div>
 </div>
 </div>
-<div id="outline-container-org50950e1" class="outline-3">
-<h3 id="org50950e1"><span class="section-number-3">5.4.</span> More Return Types</h3>
+<div id="outline-container-org5d21c91" class="outline-3">
+<h3 id="org5d21c91"><span class="section-number-3">5.4.</span> More Return Types</h3>
 <div class="outline-text-3" id="text-5-4">
 </div>
-<div id="outline-container-orgf4a28e6" class="outline-4">
-<h4 id="orgf4a28e6"><span class="section-number-4">5.4.1.</span> Void Returns</h4>
+<div id="outline-container-org4670b4b" class="outline-4">
+<h4 id="org4670b4b"><span class="section-number-4">5.4.1.</span> Void Returns</h4>
 <div class="outline-text-4" id="text-5-4-1">
 <ul class="org-ul">
 <li>void return是绝大多数typescript都有的特性,其主要处理如下两种情况:
@@ -2871,8 +2897,8 @@ songLogger = <span style="color: #3a81c3;">(</span><span style="color: #715ab1;"
 </ul>
 </div>
 </div>
-<div id="outline-container-org17031ce" class="outline-4">
-<h4 id="org17031ce"><span class="section-number-4">5.4.2.</span> Never Returns</h4>
+<div id="outline-container-org639e7b5" class="outline-4">
+<h4 id="org639e7b5"><span class="section-number-4">5.4.2.</span> Never Returns</h4>
 <div class="outline-text-4" id="text-5-4-2">
 <ul class="org-ul">
 <li>never return是处理如下两种情况:
@@ -2905,8 +2931,8 @@ songLogger = <span style="color: #3a81c3;">(</span><span style="color: #715ab1;"
 </div>
 </div>
 </div>
-<div id="outline-container-orgbb57753" class="outline-3">
-<h3 id="orgbb57753"><span class="section-number-3">5.5.</span> Function Overloads</h3>
+<div id="outline-container-org8bf5b5e" class="outline-3">
+<h3 id="org8bf5b5e"><span class="section-number-3">5.5.</span> Function Overloads</h3>
 <div class="outline-text-3" id="text-5-5">
 <ul class="org-ul">
 <li>函数重载是编程语言经典的特性.typescript自然也是支持的
@@ -2952,8 +2978,8 @@ songLogger = <span style="color: #3a81c3;">(</span><span style="color: #715ab1;"
 </ul></li>
 </ul>
 </div>
-<div id="outline-container-org7a45df4" class="outline-4">
-<h4 id="org7a45df4"><span class="section-number-4">5.5.1.</span> Call-Signature Compatibility</h4>
+<div id="outline-container-orgb3f0bde" class="outline-4">
+<h4 id="orgb3f0bde"><span class="section-number-4">5.5.1.</span> Call-Signature Compatibility</h4>
 <div class="outline-text-4" id="text-5-5-1">
 <ul class="org-ul">
 <li>由于typescript的重载办法,是在编译成javascript的时候,依靠逻辑来重写代码.那么我们就要求参数必须能够
@@ -2984,12 +3010,12 @@ songLogger = <span style="color: #3a81c3;">(</span><span style="color: #715ab1;"
 </div>
 </div>
 </div>
-<div id="outline-container-org8cfd30e" class="outline-2">
-<h2 id="org8cfd30e"><span class="section-number-2">6.</span> Chapter 6: Arrays</h2>
+<div id="outline-container-orga912e60" class="outline-2">
+<h2 id="orga912e60"><span class="section-number-2">6.</span> Chapter 6: Arrays</h2>
 <div class="outline-text-2" id="text-6">
 </div>
-<div id="outline-container-orga251540" class="outline-3">
-<h3 id="orga251540"><span class="section-number-3">6.1.</span> Array Types</h3>
+<div id="outline-container-orgb44d4b4" class="outline-3">
+<h3 id="orgb44d4b4"><span class="section-number-3">6.1.</span> Array Types</h3>
 <div class="outline-text-3" id="text-6-1">
 <ul class="org-ul">
 <li>变量一般声明的时候,都是没有value的.array也同样,所以我们必须为"空的array"创建一个声明样式
@@ -3007,8 +3033,8 @@ arrayOfNumbbers = <span style="color: #3a81c3;">[</span>1, 2, 3, 4, 5<span style
 </ul></li>
 </ul>
 </div>
-<div id="outline-container-org73d0784" class="outline-4">
-<h4 id="org73d0784"><span class="section-number-4">6.1.1.</span> Array and Function Types</h4>
+<div id="outline-container-org1109f5d" class="outline-4">
+<h4 id="org1109f5d"><span class="section-number-4">6.1.1.</span> Array and Function Types</h4>
 <div class="outline-text-4" id="text-6-1-1">
 <ul class="org-ul">
 <li>我们之前说过,本身function type由于其类型过长,就容易需要配合(). 如果function type再加上array,那么使
@@ -3032,8 +3058,8 @@ arrayOfNumbbers = <span style="color: #3a81c3;">[</span>1, 2, 3, 4, 5<span style
 </ul>
 </div>
 </div>
-<div id="outline-container-org0dffc00" class="outline-4">
-<h4 id="org0dffc00"><span class="section-number-4">6.1.2.</span> Union Type Arrays</h4>
+<div id="outline-container-org8ab0817" class="outline-4">
+<h4 id="org8ab0817"><span class="section-number-4">6.1.2.</span> Union Type Arrays</h4>
 <div class="outline-text-4" id="text-6-1-2">
 <ul class="org-ul">
 <li>array里面可以使用union type来明确array里面的成员可以是union中的一种.这种情况下,()的使用概率也很高:
@@ -3073,8 +3099,8 @@ arrayOfNumbbers = <span style="color: #3a81c3;">[</span>1, 2, 3, 4, 5<span style
 </ul>
 </div>
 </div>
-<div id="outline-container-orgb132e50" class="outline-4">
-<h4 id="orgb132e50"><span class="section-number-4">6.1.3.</span> Evolving Any Arrays</h4>
+<div id="outline-container-org49e43d8" class="outline-4">
+<h4 id="org49e43d8"><span class="section-number-4">6.1.3.</span> Evolving Any Arrays</h4>
 <div class="outline-text-4" id="text-6-1-3">
 <ul class="org-ul">
 <li>如果声明数组的时候,没有写具体的类型,那么就相当于是any[]</li>
@@ -3094,8 +3120,8 @@ values<span style="color: #3a81c3;">[</span>0<span style="color: #3a81c3;">]</sp
 </ul>
 </div>
 </div>
-<div id="outline-container-org58e2bdd" class="outline-4">
-<h4 id="org58e2bdd"><span class="section-number-4">6.1.4.</span> Multidimensional Arrays</h4>
+<div id="outline-container-orgc425901" class="outline-4">
+<h4 id="orgc425901"><span class="section-number-4">6.1.4.</span> Multidimensional Arrays</h4>
 <div class="outline-text-4" id="text-6-1-4">
 <ul class="org-ul">
 <li>作为2D数组,我们会有两个[]
@@ -3129,8 +3155,8 @@ arrayOfArraysOfNumbers = <span style="color: #3a81c3;">[</span>
 </div>
 </div>
 </div>
-<div id="outline-container-org3edb3cc" class="outline-3">
-<h3 id="org3edb3cc"><span class="section-number-3">6.2.</span> Array Members</h3>
+<div id="outline-container-orgffcaf25" class="outline-3">
+<h3 id="orgffcaf25"><span class="section-number-3">6.2.</span> Array Members</h3>
 <div class="outline-text-3" id="text-6-2">
 <ul class="org-ul">
 <li>typescript可以理解数组[index]得到的数据的类型:
@@ -3159,8 +3185,8 @@ arrayOfArraysOfNumbers = <span style="color: #3a81c3;">[</span>
 </ul></li>
 </ul>
 </div>
-<div id="outline-container-org321fcec" class="outline-4">
-<h4 id="org321fcec"><span class="section-number-4">6.2.1.</span> Caveat: Unsound Members</h4>
+<div id="outline-container-orgab669fd" class="outline-4">
+<h4 id="orgab669fd"><span class="section-number-4">6.2.1.</span> Caveat: Unsound Members</h4>
 <div class="outline-text-4" id="text-6-2-1">
 <ul class="org-ul">
 <li>有个术语叫做unsound,意思就是说类型判断大多数情况下是准确的,但不是每次都是准确的. Typescript的type
@@ -3189,8 +3215,8 @@ system就是unsound的
 </div>
 </div>
 </div>
-<div id="outline-container-org9e1de8b" class="outline-3">
-<h3 id="org9e1de8b"><span class="section-number-3">6.3.</span> Spreads and Rests</h3>
+<div id="outline-container-orgdbc408b" class="outline-3">
+<h3 id="orgdbc408b"><span class="section-number-3">6.3.</span> Spreads and Rests</h3>
 <div class="outline-text-3" id="text-6-3">
 <ul class="org-ul">
 <li>前面我们用过"&#x2026;"这个操作符,其在typescript里面和javascript的左右是一样的.:
@@ -3226,8 +3252,8 @@ rest parameter
 </ul></li>
 </ul>
 </div>
-<div id="outline-container-orga61d8d1" class="outline-4">
-<h4 id="orga61d8d1"><span class="section-number-4">6.3.1.</span> Spreads</h4>
+<div id="outline-container-org8a39350" class="outline-4">
+<h4 id="org8a39350"><span class="section-number-4">6.3.1.</span> Spreads</h4>
 <div class="outline-text-4" id="text-6-3-1">
 <ul class="org-ul">
 <li>Typescript足够聪明,可以知道两个不同类型的数组spread在一块得到的新数组,其类型是两个类型的union
@@ -3247,8 +3273,8 @@ rest parameter
 </ul>
 </div>
 </div>
-<div id="outline-container-org3fa7b3c" class="outline-4">
-<h4 id="org3fa7b3c"><span class="section-number-4">6.3.2.</span> Spreading Rest Parameters</h4>
+<div id="outline-container-orga18d930" class="outline-4">
+<h4 id="orga18d930"><span class="section-number-4">6.3.2.</span> Spreading Rest Parameters</h4>
 <div class="outline-text-4" id="text-6-3-2">
 <ul class="org-ul">
 <li>如果"&#x2026;"作为rest parameters,那么我们的typescript就会进行严格检查了,不符合规定的实参传递不进去
@@ -3286,8 +3312,8 @@ rest parameter
 </div>
 </div>
 </div>
-<div id="outline-container-orgb4a3924" class="outline-3">
-<h3 id="orgb4a3924"><span class="section-number-3">6.4.</span> Tuples</h3>
+<div id="outline-container-org1b2c9ee" class="outline-3">
+<h3 id="org1b2c9ee"><span class="section-number-3">6.4.</span> Tuples</h3>
 <div class="outline-text-3" id="text-6-4">
 <ul class="org-ul">
 <li>所谓tuple,就是fixed size array. 在python中也有tuple这个概念,typescript是对这个概念的增强:因为typescript
@@ -3346,8 +3372,8 @@ yearAndWarrier = <span style="color: #3a81c3;">[</span>530, <span style="color: 
 </ul></li>
 </ul>
 </div>
-<div id="outline-container-org1d4459a" class="outline-4">
-<h4 id="org1d4459a"><span class="section-number-4">6.4.1.</span> Tuple Assignability</h4>
+<div id="outline-container-orgd77a9f6" class="outline-4">
+<h4 id="orgd77a9f6"><span class="section-number-4">6.4.1.</span> Tuple Assignability</h4>
 <div class="outline-text-4" id="text-6-4-1">
 <ul class="org-ul">
 <li>由于tuple的类型信息里面包括了每个index的类型,所以tuple是比array更加specific的类型,那么我们很显然是
@@ -3429,8 +3455,8 @@ yearAndWarrier = <span style="color: #3a81c3;">[</span>530, <span style="color: 
 </ul>
 </div>
 </div>
-<div id="outline-container-org3d18bdf" class="outline-4">
-<h4 id="org3d18bdf"><span class="section-number-4">6.4.2.</span> Tuple Inferences</h4>
+<div id="outline-container-org79b9985" class="outline-4">
+<h4 id="org79b9985"><span class="section-number-4">6.4.2.</span> Tuple Inferences</h4>
 <div class="outline-text-4" id="text-6-4-2">
 <ul class="org-ul">
 <li>Typescript总体上,如果不特殊配置,都是把"[]"的代码都解释为variable length array的,而不是tuple
@@ -3462,7 +3488,7 @@ yearAndWarrier = <span style="color: #3a81c3;">[</span>530, <span style="color: 
 </ul>
 </div>
 <ol class="org-ol">
-<li><a id="org51ee65f"></a>Explicit tuple types<br />
+<li><a id="orgc02c0cf"></a>Explicit tuple types<br />
 <div class="outline-text-5" id="text-6-4-2-1">
 <ul class="org-ul">
 <li>如果一个函数的返回值明确的描述了自己要返回一个tuple type,并且代码里面使用了array literal(也就是"[]")
@@ -3486,7 +3512,7 @@ yearAndWarrier = <span style="color: #3a81c3;">[</span>530, <span style="color: 
 </ul>
 </div>
 </li>
-<li><a id="org5b9865b"></a>Const asserted tuples<br />
+<li><a id="org4e4cb3b"></a>Const asserted tuples<br />
 <div class="outline-text-5" id="text-6-4-2-2">
 <ul class="org-ul">
 <li>如果每次都把类型明确的写出来,不仅非常的累,而且在更新代码的时候,还要同时更新这些类型,所以Typescript
@@ -3572,10 +3598,743 @@ pairMutable<span style="color: #3a81c3;">[</span>0<span style="color: #3a81c3;">
 </div>
 </div>
 </div>
+<div id="outline-container-org718e7b3" class="outline-2">
+<h2 id="org718e7b3"><span class="section-number-2">7.</span> Chapter 7: Interfaces</h2>
+<div class="outline-text-2" id="text-7">
+<ul class="org-ul">
+<li>我们前面主要介绍了type,其主要功能是describe object shape</li>
+<li>而本章介绍的interface,其主要功能也是describe shape,interface的功能和type基本一致,但是多数情况下,
+interface更应该被Typescript开发者所选择,因为其:
+<ul class="org-ul">
+<li>错误信息更加友好</li>
+<li>编译器能更加快速编译</li>
+<li>和class更好的进行配合</li>
+</ul></li>
+</ul>
+</div>
+<div id="outline-container-org4099eeb" class="outline-3">
+<h3 id="org4099eeb"><span class="section-number-3">7.1.</span> Type Aliases Versus Intrfaces</h3>
+<div class="outline-text-3" id="text-7-1">
+<ul class="org-ul">
+<li>我们用下面的代码来对比下type和Interface
+<ul class="org-ul">
+<li><p>
+示例如下
+</p>
+<div class="org-src-container">
+<pre class="src src-typescript"><span style="color: #3a81c3; font-weight: bold;">type</span> <span style="color: #ba2f59; font-weight: bold;">Poet1</span> = <span style="color: #3a81c3;">{</span>
+  born: <span style="color: #3a81c3; font-weight: bold;">number</span>;
+  name: <span style="color: #3a81c3; font-weight: bold;">string</span>;
+<span style="color: #3a81c3;">}</span>;
+
+<span style="color: #3a81c3; font-weight: bold;">interface</span> <span style="color: #ba2f59; font-weight: bold;">Poet2</span> <span style="color: #3a81c3;">{</span>
+  born: <span style="color: #3a81c3; font-weight: bold;">number</span>;
+  name: <span style="color: #3a81c3; font-weight: bold;">string</span>;
+<span style="color: #3a81c3;">}</span>
+</pre>
+</div></li>
+<li>我们可以看到,两者的syntax基本一致</li>
+<li>但是type的最后有分号,而interface最后没有.这个可以从javascript的规范来推导:
+<ol class="org-ol">
+<li>javascript里面创建一个变量是加分号的</li>
+<li>javascript里面创建一个class或者function是不加分号的</li>
+</ol></li>
+</ul></li>
+<li>Type和interface有如下根本上的不同:
+<ul class="org-ul">
+<li>interface是可以把多个interface合成一个的</li>
+<li>interface是可以type check class 声明的,但是type不行</li>
+<li>interface的编译更快</li>
+<li>interface被编译器认为是"named object", 而type被编译器认为是"alias for an unnamed object literal",
+所以显然interface的错误信息更易读</li>
+</ul></li>
+<li><p>
+上面虽然都是区别,但是很显然凸显出interface的优势.最佳实践中,我们会默认使用interface,直到你遇到必须
+使用type的情况,比如union type(required)或者是function type(cleaner syntax)
+</p>
+<pre class="example" id="orgb7a66aa">
+Use interfaces whenever possible, until you need features such as union types(required)
+or function type (cleaner syntax)
+</pre></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org0f9270c" class="outline-3">
+<h3 id="org0f9270c"><span class="section-number-3">7.2.</span> Type of Proprties</h3>
+<div class="outline-text-3" id="text-7-2">
+<ul class="org-ul">
+<li>真实世界的javascript object非常灵活(比如可选的property, setter和getter等), 为了能够适配这些灵活的情况,
+typescript创建了一系列的type system tool</li>
+<li>下面会介绍这些system tool,多说一句,这些tool竟然都能在type上面使用.可见type和interface有多相似.</li>
+</ul>
+</div>
+<div id="outline-container-org62ece3d" class="outline-4">
+<h4 id="org62ece3d"><span class="section-number-4">7.2.1.</span> Optional Properties</h4>
+<div class="outline-text-4" id="text-7-2-1">
+<ul class="org-ul">
+<li>我们前面介绍object type的时候介绍过,某个object满足某个type可以有"可选的property",interface也同样拥有这个特性
+<ul class="org-ul">
+<li><p>
+示例如下,任何object只需要pages存在,既可以被认为是Book interface
+</p>
+<div class="org-src-container">
+<pre class="src src-typescript"><span style="color: #3a81c3; font-weight: bold;">interface</span> <span style="color: #ba2f59; font-weight: bold;">Book</span> <span style="color: #3a81c3;">{</span>
+  author?: <span style="color: #3a81c3; font-weight: bold;">string</span>;
+  pages: <span style="color: #3a81c3; font-weight: bold;">number</span>;
+<span style="color: #3a81c3;">}</span>
+
+<span style="color: #3a81c3; font-weight: bold;">const</span> <span style="color: #715ab1;">ok</span>: <span style="color: #ba2f59; font-weight: bold;">Book</span> = <span style="color: #3a81c3;">{</span>
+  author: <span style="color: #2d9574;">"Rita Dove"</span>,
+  pages: 80,
+<span style="color: #3a81c3;">}</span>;
+
+<span style="color: #3a81c3; font-weight: bold;">const</span> <span style="color: #715ab1;">missing</span>: <span style="color: #ba2f59; font-weight: bold;">Book</span> = <span style="color: #3a81c3;">{</span>
+  pages: 80,
+<span style="color: #3a81c3;">}</span>;
+</pre>
+</div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgf1ec6b3" class="outline-4">
+<h4 id="orgf1ec6b3"><span class="section-number-4">7.2.2.</span> Read-Only Properties</h4>
+<div class="outline-text-4" id="text-7-2-2">
+<ul class="org-ul">
+<li>typescript的interface可以设置某些property为readonly,一旦设置,那么实现这个interface的object的相应
+property不能在初始化之后再被赋值
+<ul class="org-ul">
+<li><p>
+示例如下
+</p>
+<div class="org-src-container">
+<pre class="src src-typescript"><span style="color: #3a81c3; font-weight: bold;">interface</span> <span style="color: #ba2f59; font-weight: bold;">Page</span> <span style="color: #3a81c3;">{</span>
+  <span style="color: #3a81c3; font-weight: bold;">readonly</span> text: <span style="color: #3a81c3; font-weight: bold;">string</span>;
+<span style="color: #3a81c3;">}</span>
+
+<span style="color: #3a81c3; font-weight: bold;">function</span> <span style="color: #6c3163; font-weight: bold;">read</span><span style="color: #3a81c3;">(</span><span style="color: #715ab1;">page</span>: <span style="color: #ba2f59; font-weight: bold;">Page</span><span style="color: #3a81c3;">)</span> <span style="color: #3a81c3;">{</span>
+  <span style="color: #ba2f59; font-weight: bold;">console</span>.<span style="color: #6c3163; font-weight: bold;">log</span><span style="color: #6c3163;">(</span>page.text<span style="color: #6c3163;">)</span>;
+
+  <span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">TSError: &#10799; Unable to compile TypeScript:</span>
+  <span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">main.ts:8:8 - error TS2540: Cannot assign to 'text' because it is a read-only property.</span>
+
+  <span style="color: #2aa1ae; background-color: #ecf3ec;">///////////////////////</span>
+  <span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">page.text += "!"; //</span>
+  <span style="color: #2aa1ae; background-color: #ecf3ec;">///////////////////////</span>
+<span style="color: #3a81c3;">}</span>
+</pre>
+</div></li>
+<li>需要注意的是,readonly这个标签,只有像上面例子一样,某个object"显式地"和某个interface发生映射关系的
+时候才起作用. 下面例子中的page2 虽然也"隐式"的符合interface Page,但是在没有被read函数"显式"的指派
+给Page interface之前,是可以随便改动text的</li>
+</ul></li>
+<li>需要理解的是,readonly这个特性是类型系统的typescript才有的,目的也是在编译阶段进行检查,最终编译成javascript
+之后,就不存在这个特性了</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org1f97a98" class="outline-4">
+<h4 id="org1f97a98"><span class="section-number-4">7.2.3.</span> Functions and Methods</h4>
+<div class="outline-text-4" id="text-7-2-3">
+<ul class="org-ul">
+<li>在javascript里面function作为object的member是很正常的事情, 所以作为object的抽象interface,其也会允许
+声明interface member的类型为function type</li>
+<li>typescript提供了两种声明interface function memeber 的方式,其实是映射了两种javascript定义function的
+方式(arrow和非arrow):
+<ul class="org-ul">
+<li>method syntax:对应常规函数,this会在调用时候动态绑定,适合class的instance使用</li>
+<li>property syntax:对应箭头函数,this在创建时候就绑定,除了class的instance以外的情况都使用这个</li>
+</ul></li>
+<li>我们来看一个interface的例子,其中混合使用了两种function member的声明方式:
+<ul class="org-ul">
+<li><p>
+示例如下
+</p>
+<div class="org-src-container">
+<pre class="src src-typescript"><span style="color: #3a81c3; font-weight: bold;">interface</span> <span style="color: #ba2f59; font-weight: bold;">HasBothFunctionTypes</span> <span style="color: #3a81c3;">{</span>
+  property: <span style="color: #6c3163;">()</span> <span style="color: #3a81c3; font-weight: bold;">=&gt;</span> <span style="color: #3a81c3; font-weight: bold;">string</span>;
+  <span style="color: #6c3163; font-weight: bold;">method</span><span style="color: #6c3163;">()</span>: <span style="color: #3a81c3; font-weight: bold;">string</span>;
+<span style="color: #3a81c3;">}</span>
+
+<span style="color: #3a81c3; font-weight: bold;">const</span> <span style="color: #715ab1;">hasBoth</span>: <span style="color: #ba2f59; font-weight: bold;">HasBothFunctionTypes</span> = <span style="color: #3a81c3;">{</span>
+  property: <span style="color: #6c3163;">()</span> <span style="color: #3a81c3; font-weight: bold;">=&gt;</span> <span style="color: #2d9574;">"property return"</span>,
+  <span style="color: #6c3163; font-weight: bold;">method</span><span style="color: #6c3163;">()</span> <span style="color: #6c3163;">{</span>
+    <span style="color: #3a81c3; font-weight: bold;">return</span> <span style="color: #2d9574;">"method return"</span>;
+  <span style="color: #6c3163;">}</span>,
+<span style="color: #3a81c3;">}</span>;
+
+<span style="color: #ba2f59; font-weight: bold;">console</span>.<span style="color: #6c3163; font-weight: bold;">log</span><span style="color: #3a81c3;">(</span>hasBoth.<span style="color: #6c3163; font-weight: bold;">property</span><span style="color: #6c3163;">()</span><span style="color: #3a81c3;">)</span>;
+<span style="color: #ba2f59; font-weight: bold;">console</span>.<span style="color: #6c3163; font-weight: bold;">log</span><span style="color: #3a81c3;">(</span>hasBoth.<span style="color: #6c3163; font-weight: bold;">method</span><span style="color: #6c3163;">()</span><span style="color: #3a81c3;">)</span>;
+
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">&lt;====================OUTPUT====================&gt;</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">property return</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">method return</span>
+</pre>
+</div></li>
+<li><p>
+上面的每种形式也支持使用?来配置成optional参数
+</p>
+<div class="org-src-container">
+<pre class="src src-typescript"><span style="color: #3a81c3; font-weight: bold;">interface</span> <span style="color: #ba2f59; font-weight: bold;">OptionalFunctions</span> <span style="color: #3a81c3;">{</span>
+  property?: <span style="color: #6c3163;">()</span> <span style="color: #3a81c3; font-weight: bold;">=&gt;</span> <span style="color: #3a81c3; font-weight: bold;">string</span>;
+  method?<span style="color: #6c3163;">()</span>: <span style="color: #3a81c3; font-weight: bold;">string</span>;
+<span style="color: #3a81c3;">}</span>
+</pre>
+</div></li>
+<li><p>
+readonly只能在method 声明上面使用
+</p>
+<div class="org-src-container">
+<pre class="src src-typescript">jinterface ReadonlyFunctions <span style="color: #3a81c3;">{</span>
+  <span style="color: #3a81c3; font-weight: bold;">readonly</span> property: <span style="color: #6c3163;">()</span> <span style="color: #3a81c3; font-weight: bold;">=&gt;</span> <span style="color: #3a81c3; font-weight: bold;">string</span>;
+  <span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">TSError: &#10799; Unable to compile TypeScript:</span>
+  <span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">main.ts:3:3 - error TS1024: 'readonly' modifier can only appear on a property declaration or index signature.</span>
+
+  <span style="color: #2aa1ae; background-color: #ecf3ec;">////////////////////////////////</span>
+  <span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">readonly method(): string; //</span>
+  <span style="color: #2aa1ae; background-color: #ecf3ec;">////////////////////////////////</span>
+<span style="color: #3a81c3;">}</span>
+</pre>
+</div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org9a98dc8" class="outline-4">
+<h4 id="org9a98dc8"><span class="section-number-4">7.2.4.</span> Call Signatures</h4>
+<div class="outline-text-4" id="text-7-2-4">
+<ul class="org-ul">
+<li>call signature是一个非常重要的特性,其用来描述一个value是如何能被像function一样调用的</li>
+<li>上面这句定义非常难懂,其实也没有什么意义.我们通过例子来了解call signature在interface的三个主要使用
+场景:
+<ul class="org-ul">
+<li><p>
+interface通常描述一个类型,但是有时候interface描述的本身就是一个function(function也是一个类型)
+</p>
+<div class="org-src-container">
+<pre class="src src-typescript"><span style="color: #3a81c3; font-weight: bold;">interface</span> <span style="color: #ba2f59; font-weight: bold;">StringToNumberConverter</span> <span style="color: #3a81c3;">{</span>
+  <span style="color: #6c3163;">(</span>input: <span style="color: #3a81c3; font-weight: bold;">string</span><span style="color: #6c3163;">)</span>: <span style="color: #3a81c3; font-weight: bold;">number</span>;
+<span style="color: #3a81c3;">}</span>
+
+<span style="color: #3a81c3; font-weight: bold;">const</span> <span style="color: #715ab1;">stringLength</span>: <span style="color: #ba2f59; font-weight: bold;">StringToNumberConverter</span> = <span style="color: #3a81c3;">(</span><span style="color: #715ab1;">input</span><span style="color: #3a81c3;">)</span> <span style="color: #3a81c3; font-weight: bold;">=&gt;</span> <span style="color: #3a81c3;">{</span>
+  <span style="color: #3a81c3; font-weight: bold;">return</span> input.length;
+<span style="color: #3a81c3;">}</span>
+
+<span style="color: #ba2f59; font-weight: bold;">console</span>.<span style="color: #6c3163; font-weight: bold;">log</span><span style="color: #3a81c3;">(</span><span style="color: #6c3163; font-weight: bold;">stringLength</span><span style="color: #6c3163;">(</span><span style="color: #2d9574;">"Hello"</span><span style="color: #6c3163;">)</span><span style="color: #3a81c3;">)</span>
+
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">&lt;====================OUTPUT====================&gt;</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">5</span>
+</pre>
+</div></li>
+<li><p>
+interface通常描述一个类型,很多的时候,这个类型是一个对象,那么这个对象里面就得有对应的函数才行.这个
+时候call signature要有函数名
+</p>
+<div class="org-src-container">
+<pre class="src src-typescript"><span style="color: #3a81c3; font-weight: bold;">interface</span> <span style="color: #ba2f59; font-weight: bold;">PriceCalculator</span> <span style="color: #3a81c3;">{</span>
+  calculatePrice: <span style="color: #6c3163;">(</span>quantity: <span style="color: #3a81c3; font-weight: bold;">number</span>, pricePerUnit: <span style="color: #3a81c3; font-weight: bold;">number</span><span style="color: #6c3163;">)</span> <span style="color: #3a81c3; font-weight: bold;">=&gt;</span> <span style="color: #3a81c3; font-weight: bold;">number</span>;
+<span style="color: #3a81c3;">}</span>
+
+<span style="color: #3a81c3; font-weight: bold;">const</span> <span style="color: #715ab1;">calculator</span>: <span style="color: #ba2f59; font-weight: bold;">PriceCalculator</span> = <span style="color: #3a81c3;">{</span>
+  calculatePrice: <span style="color: #6c3163;">(</span><span style="color: #715ab1;">quantity</span>, <span style="color: #715ab1;">pricePreUnit</span><span style="color: #6c3163;">)</span> <span style="color: #3a81c3; font-weight: bold;">=&gt;</span> <span style="color: #6c3163;">{</span>
+    <span style="color: #3a81c3; font-weight: bold;">return</span> quantity * pricePreUnit;
+  <span style="color: #6c3163;">}</span>,
+<span style="color: #3a81c3;">}</span>;
+
+<span style="color: #ba2f59; font-weight: bold;">console</span>.<span style="color: #6c3163; font-weight: bold;">log</span><span style="color: #3a81c3;">(</span>calculator.<span style="color: #6c3163; font-weight: bold;">calculatePrice</span><span style="color: #6c3163;">(</span>5, 10<span style="color: #6c3163;">)</span><span style="color: #3a81c3;">)</span>;
+
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">&lt;====================OUTPUT====================&gt;</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">50</span>
+</pre>
+</div></li>
+<li><p>
+interface描述的本身就是一个function,然后这个function还有一些自己的变量.这属于第一种情况的扩展
+</p>
+<div class="org-src-container">
+<pre class="src src-typescript"><span style="color: #3a81c3; font-weight: bold;">interface</span> <span style="color: #ba2f59; font-weight: bold;">Logger</span> <span style="color: #3a81c3;">{</span>
+  <span style="color: #6c3163;">(</span>message: <span style="color: #3a81c3; font-weight: bold;">string</span><span style="color: #6c3163;">)</span>: <span style="color: #3a81c3; font-weight: bold;">void</span>;
+  logLevel: <span style="color: #3a81c3; font-weight: bold;">string</span>;
+<span style="color: #3a81c3;">}</span>
+
+<span style="color: #3a81c3; font-weight: bold;">const</span> <span style="color: #715ab1;">myLogger</span>: <span style="color: #ba2f59; font-weight: bold;">Logger</span> = <span style="color: #3a81c3;">(</span><span style="color: #715ab1;">message</span>: <span style="color: #3a81c3; font-weight: bold;">string</span><span style="color: #3a81c3;">)</span> <span style="color: #3a81c3; font-weight: bold;">=&gt;</span> <span style="color: #3a81c3;">{</span>
+  <span style="color: #ba2f59; font-weight: bold;">console</span>.<span style="color: #6c3163; font-weight: bold;">log</span><span style="color: #6c3163;">(</span><span style="color: #2d9574;">`[</span><span style="color: #3a81c3; font-weight: bold;">${</span><span style="color: #655370; background-color: #fbf8ef;">myLogger.logLevel</span><span style="color: #3a81c3; font-weight: bold;">}</span><span style="color: #2d9574;">] </span><span style="color: #3a81c3; font-weight: bold;">${</span><span style="color: #655370; background-color: #fbf8ef;">message</span><span style="color: #3a81c3; font-weight: bold;">}</span><span style="color: #2d9574;">`</span><span style="color: #6c3163;">)</span>;
+<span style="color: #3a81c3;">}</span>;
+myLogger.logLevel = <span style="color: #2d9574;">"INFO"</span>;
+
+<span style="color: #6c3163; font-weight: bold;">myLogger</span><span style="color: #3a81c3;">(</span><span style="color: #2d9574;">"This is a log message."</span><span style="color: #3a81c3;">)</span>;
+
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">&lt;====================OUTPUT====================&gt;</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">[INFO] This is a log message.</span>
+</pre>
+</div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org10cf8fe" class="outline-4">
+<h4 id="org10cf8fe"><span class="section-number-4">7.2.5.</span> Index Signatures</h4>
+<div class="outline-text-4" id="text-7-2-5">
+<ul class="org-ul">
+<li>有时候,你无法提前知道某个类型所有属性的名字,但是你知道这些属性值的类型(属性通常是字符串或者能转换成
+字符串的类型,比如字符串,symbol, 所以这里强调属性值的类型)</li>
+<li>在这种情况下,你可以使用index signature(索引签名)去描述可能的key和value的类型
+<ul class="org-ul">
+<li><p>
+示例如下,只有number类型的value可以赋值成功
+</p>
+<div class="org-src-container">
+<pre class="src src-typescript"><span style="color: #3a81c3; font-weight: bold;">interface</span> <span style="color: #ba2f59; font-weight: bold;">WordCounts</span> <span style="color: #3a81c3;">{</span>
+  <span style="color: #6c3163;">[</span>i: <span style="color: #3a81c3; font-weight: bold;">string</span><span style="color: #6c3163;">]</span>: <span style="color: #3a81c3; font-weight: bold;">number</span>;
+<span style="color: #3a81c3;">}</span>
+
+<span style="color: #3a81c3; font-weight: bold;">const</span> <span style="color: #715ab1;">counts</span>: <span style="color: #ba2f59; font-weight: bold;">WordCounts</span> = <span style="color: #3a81c3;">{}</span>;
+counts.apple = 0;
+counts.banana = 1;
+
+<span style="color: #ba2f59; font-weight: bold;">console</span>.<span style="color: #6c3163; font-weight: bold;">log</span><span style="color: #3a81c3;">(</span>counts<span style="color: #6c3163;">[</span><span style="color: #2d9574;">"apple"</span><span style="color: #6c3163;">]</span><span style="color: #3a81c3;">)</span>;
+<span style="color: #ba2f59; font-weight: bold;">console</span>.<span style="color: #6c3163; font-weight: bold;">log</span><span style="color: #3a81c3;">(</span>counts<span style="color: #6c3163;">[</span><span style="color: #2d9574;">"banana"</span><span style="color: #6c3163;">]</span><span style="color: #3a81c3;">)</span>;
+
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">&lt;====================OUTPUT====================&gt;</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">0</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">1</span>
+
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">TSError: &#10799; Unable to compile TypeScript:</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">main.ts:12:1 - error TS2322: Type 'boolean' is not assignable to type 'number'.</span>
+
+<span style="color: #2aa1ae; background-color: #ecf3ec;">////////////////////////////</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">counts.cherry = false; //</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">////////////////////////////</span>
+</pre>
+</div></li>
+</ul></li>
+<li><p>
+Index signature的存在的意义是:一个对象必须返回一个value,不管对象触发的property是什么.所以index signature
+的重点,在于"不管触发的property是什么",而不在于typesafe
+</p>
+<pre class="example" id="org1fc3190">
+Index Signature indicates that an object should give back a value no matter
+what proprty is being accessed
+</pre></li>
+<li>下面例子就是这样一种情况, publishDate的Beloved明明没设置,但是还是返回值了(undefined)
+<ul class="org-ul">
+<li><p>
+示例如下
+</p>
+<div class="org-src-container">
+<pre class="src src-typescript"><span style="color: #3a81c3; font-weight: bold;">interface</span> <span style="color: #ba2f59; font-weight: bold;">DatesByName</span> <span style="color: #3a81c3;">{</span>
+  <span style="color: #6c3163;">[</span>i: <span style="color: #3a81c3; font-weight: bold;">string</span><span style="color: #6c3163;">]</span>: <span style="color: #ba2f59; font-weight: bold;">Date</span>;
+<span style="color: #3a81c3;">}</span>
+
+<span style="color: #3a81c3; font-weight: bold;">const</span> <span style="color: #715ab1;">publishDates</span>: <span style="color: #ba2f59; font-weight: bold;">DatesByName</span> = <span style="color: #3a81c3;">{</span>
+  Frankenstein: <span style="color: #3a81c3; font-weight: bold;">new</span> <span style="color: #ba2f59; font-weight: bold;">Date</span><span style="color: #6c3163;">(</span><span style="color: #2d9574;">"1 January 1818"</span><span style="color: #6c3163;">)</span>,
+<span style="color: #3a81c3;">}</span>;
+
+<span style="color: #ba2f59; font-weight: bold;">console</span>.<span style="color: #6c3163; font-weight: bold;">log</span><span style="color: #3a81c3;">(</span>publishDates.Frankenstein<span style="color: #3a81c3;">)</span>;
+
+<span style="color: #ba2f59; font-weight: bold;">console</span>.<span style="color: #6c3163; font-weight: bold;">log</span><span style="color: #3a81c3;">(</span>publishDates.Beloved<span style="color: #3a81c3;">)</span>;
+
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">&lt;====================OUTPUT====================&gt;</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">1817-12-31T15:54:17.000Z</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">undefined</span>
+</pre>
+</div></li>
+<li>上面这种情况下更应该的选择是Map</li>
+</ul></li>
+</ul>
+</div>
+<ol class="org-ol">
+<li><a id="org912d1a6"></a>Mixing properties and index signatures<br />
+<div class="outline-text-5" id="text-7-2-5-1">
+<ul class="org-ul">
+<li><p>
+interface 甚至可以把index signature和一个具体的named property并列的列出来. 但是需要注意的是:
+</p>
+<pre class="example" id="org5ec3617">
+这个named property的key和value,必须能够assign给index signature
+</pre></li>
+<li>换句话说,就是named property列出大的范围, named property是这个大的范围里面的一个特例.这个特例也要符
+合大的范围,并且object是必须要有property满足这个特例的,其他的property满足大范围就可以了
+<ul class="org-ul">
+<li><p>
+完全匹配的例子(完全匹配必然可以assign)如下. 注意这例子中的`i`是一个占位符,其可以随意更改,必须改成`key`,这里写成`i`是因为这里代表index signature
+</p>
+<div class="org-src-container">
+<pre class="src src-typescript"><span style="color: #3a81c3; font-weight: bold;">interface</span> <span style="color: #ba2f59; font-weight: bold;">HistorialNovels</span> <span style="color: #3a81c3;">{</span>
+  Oroonoko: <span style="color: #3a81c3; font-weight: bold;">number</span>;
+  <span style="color: #6c3163;">[</span>i: <span style="color: #3a81c3; font-weight: bold;">string</span><span style="color: #6c3163;">]</span>: <span style="color: #3a81c3; font-weight: bold;">number</span>;
+<span style="color: #3a81c3;">}</span>
+
+<span style="color: #3a81c3; font-weight: bold;">const</span> <span style="color: #715ab1;">novels</span>: <span style="color: #ba2f59; font-weight: bold;">HistorialNovels</span> = <span style="color: #3a81c3;">{</span>
+  Outlander: 1991,
+  Oroonoko: 1688,
+<span style="color: #3a81c3;">}</span>;
+
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">TSError: &#10799; Unable to compile TypeScript:</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">main.ts:11:7 - error TS2741: Property 'Oroonoko' is missing in type '{ Outlander: number; }' but required in type 'HistorialNovels'.</span>
+
+<span style="color: #2aa1ae; background-color: #ecf3ec;">////////////////////////////////////////////////</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">const missingOroonoko: HistorialNovels = { //</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">//   </span><span style="color: #2aa1ae; background-color: #ecf3ec;">Outlander: 1991,                         //</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">};                                         //</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">////////////////////////////////////////////////</span>
+</pre>
+</div></li>
+<li><p>
+不完全匹配,但是可以assign的例子如下(0作为primitive是可以assign给number的,类似的还有literal可以assign给string)
+</p>
+<div class="org-src-container">
+<pre class="src src-typescript"><span style="color: #3a81c3; font-weight: bold;">interface</span> <span style="color: #ba2f59; font-weight: bold;">ChapterStarts</span> <span style="color: #3a81c3;">{</span>
+  preface: 0;
+  <span style="color: #6c3163;">[</span>i: <span style="color: #3a81c3; font-weight: bold;">string</span><span style="color: #6c3163;">]</span>: <span style="color: #3a81c3; font-weight: bold;">number</span>;
+<span style="color: #3a81c3;">}</span>
+
+<span style="color: #3a81c3; font-weight: bold;">const</span> <span style="color: #715ab1;">correctPreface</span>: <span style="color: #ba2f59; font-weight: bold;">ChapterStarts</span> = <span style="color: #3a81c3;">{</span>
+  preface: 0,
+  night: 1,
+  shopping: 5,
+<span style="color: #3a81c3;">}</span>;
+
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">TSError: &#10799; Unable to compile TypeScript:</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">main.ts:13:3 - error TS2322: Type '1' is not assignable to type '0'.</span>
+
+<span style="color: #2aa1ae; background-color: #ecf3ec;">///////////////////////////////////////////</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">const wrongPreface: ChapterStarts = { //</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">//   </span><span style="color: #2aa1ae; background-color: #ecf3ec;">preface: 1,                         //</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">};                                    //</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">///////////////////////////////////////////</span>
+</pre>
+</div></li>
+</ul></li>
+</ul>
+</div>
+</li>
+<li><a id="orgebf893d"></a>Numeric index signatures<br />
+<div class="outline-text-5" id="text-7-2-5-2">
+<ul class="org-ul">
+<li>虽然绝大部分情况下,我们使用string来作为object的key(因为javascript其实是隐式的将object key转换为string
+的),但是也有时候,特别是在typescript里面,我们会以number来作为key.</li>
+<li>不过这个number key其地位是类似named property,是一个特例,其还是要在string key限定的范围里面
+<ul class="org-ul">
+<li><p>
+示例如下, [i:number]: string 是一个特例,类似上面的preface:0, 其value类型string必须能赋给catchall的string index
+</p>
+<div class="org-src-container">
+<pre class="src src-typescript"><span style="color: #3a81c3; font-weight: bold;">interface</span> <span style="color: #ba2f59; font-weight: bold;">MoreNarrowNumbers</span> <span style="color: #3a81c3;">{</span>
+  <span style="color: #6c3163;">[</span>i: <span style="color: #3a81c3; font-weight: bold;">string</span><span style="color: #6c3163;">]</span>: <span style="color: #3a81c3; font-weight: bold;">string</span>;
+  <span style="color: #6c3163;">[</span>i: <span style="color: #3a81c3; font-weight: bold;">number</span><span style="color: #6c3163;">]</span>: <span style="color: #3a81c3; font-weight: bold;">string</span> | <span style="color: #4e3163;">undefined</span>;
+<span style="color: #3a81c3;">}</span>
+
+<span style="color: #3a81c3; font-weight: bold;">const</span> <span style="color: #715ab1;">mixesNumberAndString</span>: <span style="color: #ba2f59; font-weight: bold;">MoreNarrowNumbers</span> = <span style="color: #3a81c3;">{</span>
+  0: <span style="color: #2d9574;">""</span>,
+  key1: <span style="color: #2d9574;">""</span>,
+  key2: <span style="color: #4e3163;">undefined</span>,
+<span style="color: #3a81c3;">}</span>;
+
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">TSError: &#10799; Unable to compile TypeScript:</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">main.ts:3:3 - error TS2413: 'number' index type 'string | undefined' is not assignable to 'string' index type 'string'.</span>
+
+<span style="color: #2aa1ae; background-color: #ecf3ec;">////////////////////////////////////////</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">interface MoreNarrowStrings {      //</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">//   </span><span style="color: #2aa1ae; background-color: #ecf3ec;">[i: number]: string | undefined; //</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">//   </span><span style="color: #2aa1ae; background-color: #ecf3ec;">[i: string]: string;             //</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">}                                  //</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">////////////////////////////////////////</span>
+</pre>
+</div></li>
+</ul></li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div id="outline-container-orgee471d5" class="outline-4">
+<h4 id="orgee471d5"><span class="section-number-4">7.2.6.</span> Nested Interfaces</h4>
+<div class="outline-text-4" id="text-7-2-6">
+<ul class="org-ul">
+<li>就像object typeA可以nested成为 object typeB的property, interfaceA也能作为其他interface的property
+<ul class="org-ul">
+<li><p>
+示例如下
+</p>
+<div class="org-src-container">
+<pre class="src src-typescript"><span style="color: #3a81c3; font-weight: bold;">interface</span> <span style="color: #ba2f59; font-weight: bold;">Novel</span> <span style="color: #3a81c3;">{</span>
+  author: <span style="color: #6c3163;">{</span>
+    name: <span style="color: #3a81c3; font-weight: bold;">string</span>;
+  <span style="color: #6c3163;">}</span>;
+  setting: <span style="color: #ba2f59; font-weight: bold;">Settings</span>;
+<span style="color: #3a81c3;">}</span>
+
+<span style="color: #3a81c3; font-weight: bold;">interface</span> <span style="color: #ba2f59; font-weight: bold;">Settings</span> <span style="color: #3a81c3;">{</span>
+  place: <span style="color: #3a81c3; font-weight: bold;">string</span>;
+  year: <span style="color: #3a81c3; font-weight: bold;">number</span>;
+<span style="color: #3a81c3;">}</span>
+
+<span style="color: #3a81c3; font-weight: bold;">let</span> <span style="color: #715ab1;">myNovel</span>: <span style="color: #ba2f59; font-weight: bold;">Novel</span>;
+
+myNovel = <span style="color: #3a81c3;">{</span>
+  author: <span style="color: #6c3163;">{</span>
+    name: <span style="color: #2d9574;">"Jane Austen"</span>,
+  <span style="color: #6c3163;">}</span>,
+  setting: <span style="color: #6c3163;">{</span>
+    place: <span style="color: #2d9574;">"England"</span>,
+    year: 1812,
+  <span style="color: #6c3163;">}</span>,
+<span style="color: #3a81c3;">}</span>;
+
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">TSError: &#10799; Unable to compile TypeScript:</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">main.ts:29:3 - error TS2741: Property 'year' is missing in type '{ place: string; }' but required in type 'Settings'.</span>
+
+<span style="color: #2aa1ae; background-color: #ecf3ec;">//////////////////////////////////</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">myNovel = {                  //</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">//   </span><span style="color: #2aa1ae; background-color: #ecf3ec;">author: {                  //</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">//     </span><span style="color: #2aa1ae; background-color: #ecf3ec;">name: "Emilly Bronte",   //</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">//   </span><span style="color: #2aa1ae; background-color: #ecf3ec;">},                         //</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">//   </span><span style="color: #2aa1ae; background-color: #ecf3ec;">setting: {                 //</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">//     </span><span style="color: #2aa1ae; background-color: #ecf3ec;">place: "West Yorkshire", //</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">//   </span><span style="color: #2aa1ae; background-color: #ecf3ec;">},                         //</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">};                           //</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">//////////////////////////////////</span>
+</pre>
+</div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org8c36bad" class="outline-3">
+<h3 id="org8c36bad"><span class="section-number-3">7.3.</span> Interface Extensions</h3>
+<div class="outline-text-3" id="text-7-3">
+<ul class="org-ul">
+<li>和java一样typescript的interface可以进行"继承",方法就是使用extends关键字
+<ul class="org-ul">
+<li><p>
+示例如下
+</p>
+<div class="org-src-container">
+<pre class="src src-typescript"><span style="color: #3a81c3; font-weight: bold;">interface</span> <span style="color: #ba2f59; font-weight: bold;">Writing</span> <span style="color: #3a81c3;">{</span>
+  title: <span style="color: #3a81c3; font-weight: bold;">string</span>;
+<span style="color: #3a81c3;">}</span>
+
+<span style="color: #3a81c3; font-weight: bold;">interface</span> <span style="color: #ba2f59; font-weight: bold;">Novella</span> <span style="color: #3a81c3; font-weight: bold;">extends</span> <span style="color: #ba2f59; font-weight: bold;">Writing</span> <span style="color: #3a81c3;">{</span>
+  pages: <span style="color: #3a81c3; font-weight: bold;">number</span>;
+<span style="color: #3a81c3;">}</span>
+
+<span style="color: #3a81c3; font-weight: bold;">let</span> <span style="color: #715ab1;">myNovella</span>: <span style="color: #ba2f59; font-weight: bold;">Novella</span> = <span style="color: #3a81c3;">{</span>
+  pages: 195,
+  title: <span style="color: #2d9574;">"Ethan Frome"</span>,
+<span style="color: #3a81c3;">}</span>;
+
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">TSError: &#10799; Unable to compile TypeScript:</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">main.ts:14:5 - error TS2741: Property 'pages' is missing in type '{ title: string; }' but required in type 'Novella'.</span>
+
+<span style="color: #2aa1ae; background-color: #ecf3ec;">///////////////////////////////////</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">let missingPages: Novella = { //</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">//   </span><span style="color: #2aa1ae; background-color: #ecf3ec;">title: "The Awakening",     //</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">};                            //</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">///////////////////////////////////</span>
+</pre>
+</div></li>
+</ul></li>
+</ul>
+</div>
+<div id="outline-container-orgaf74dde" class="outline-4">
+<h4 id="orgaf74dde"><span class="section-number-4">7.3.1.</span> Overridden Properties</h4>
+<div class="outline-text-4" id="text-7-3-1">
+<ul class="org-ul">
+<li>derive interface 可以override base interface的property.这里的override和cpp里面的override是不一样的,
+这里的override是说新的overridden property,比如能够assign 给base property:</li>
+<li>assignable的方法一般有两种:
+<ul class="org-ul">
+<li><p>
+使用subset of a typeo union
+</p>
+<div class="org-src-container">
+<pre class="src src-typescript"><span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">&#29238;&#25509;&#21475;</span>
+<span style="color: #3a81c3; font-weight: bold;">interface</span> <span style="color: #ba2f59; font-weight: bold;">Base</span> <span style="color: #3a81c3;">{</span>
+  status: <span style="color: #2d9574;">"active"</span> | <span style="color: #2d9574;">"inactive"</span> | <span style="color: #2d9574;">"archived"</span>; <span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">&#32852;&#21512;&#31867;&#22411;</span>
+<span style="color: #3a81c3;">}</span>
+
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">&#27966;&#29983;&#25509;&#21475;</span>
+<span style="color: #3a81c3; font-weight: bold;">interface</span> <span style="color: #ba2f59; font-weight: bold;">Derived</span> <span style="color: #3a81c3; font-weight: bold;">extends</span> <span style="color: #ba2f59; font-weight: bold;">Base</span> <span style="color: #3a81c3;">{</span>
+  status: <span style="color: #2d9574;">"active"</span> | <span style="color: #2d9574;">"inactive"</span>; <span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">&#26356;&#20855;&#20307;&#30340;&#23376;&#38598;&#31867;&#22411;</span>
+<span style="color: #3a81c3;">}</span>
+
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">&#31034;&#20363;&#20351;&#29992;</span>
+<span style="color: #3a81c3; font-weight: bold;">const</span> <span style="color: #715ab1;">item1</span>: <span style="color: #ba2f59; font-weight: bold;">Derived</span> = <span style="color: #3a81c3;">{</span>
+  status: <span style="color: #2d9574;">"active"</span>, <span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">&#21512;&#27861;</span>
+<span style="color: #3a81c3;">}</span>;
+
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">TSError: &#10799; Unable to compile TypeScript:</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">main.ts:17:3 - error TS2322: Type '"archived"' is not assignable to type '"active" | "inactive"'.</span>
+
+<span style="color: #2aa1ae; background-color: #ecf3ec;">//////////////////////////////</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">const item2: Derived = { //</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">//   </span><span style="color: #2aa1ae; background-color: #ecf3ec;">status: "archived",    //</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">};                       //</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">//////////////////////////////</span>
+</pre>
+</div></li>
+<li><p>
+使用从base interface type extend出来的type
+</p>
+<div class="org-src-container">
+<pre class="src src-typescript"><span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">&#29238;&#25509;&#21475;</span>
+<span style="color: #3a81c3; font-weight: bold;">interface</span> <span style="color: #ba2f59; font-weight: bold;">Base</span> <span style="color: #3a81c3;">{</span>
+  details: <span style="color: #6c3163;">{</span>
+    id: <span style="color: #3a81c3; font-weight: bold;">number</span>;
+  <span style="color: #6c3163;">}</span>; <span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">&#22522;&#30784;&#31867;&#22411;</span>
+<span style="color: #3a81c3;">}</span>
+
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">&#27966;&#29983;&#25509;&#21475;</span>
+<span style="color: #3a81c3; font-weight: bold;">interface</span> <span style="color: #ba2f59; font-weight: bold;">Derived</span> <span style="color: #3a81c3; font-weight: bold;">extends</span> <span style="color: #ba2f59; font-weight: bold;">Base</span> <span style="color: #3a81c3;">{</span>
+  details: <span style="color: #6c3163;">{</span>
+    id: <span style="color: #3a81c3; font-weight: bold;">number</span>;
+    name: <span style="color: #3a81c3; font-weight: bold;">string</span>; <span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">&#26032;&#22686;&#23383;&#27573;</span>
+  <span style="color: #6c3163;">}</span>; <span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">&#25193;&#23637;&#31867;&#22411;</span>
+<span style="color: #3a81c3;">}</span>
+
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">&#31034;&#20363;&#20351;&#29992;</span>
+<span style="color: #3a81c3; font-weight: bold;">const</span> <span style="color: #715ab1;">item1</span>: <span style="color: #ba2f59; font-weight: bold;">Derived</span> = <span style="color: #3a81c3;">{</span>
+  details: <span style="color: #6c3163;">{</span>
+    id: 1,
+    name: <span style="color: #2d9574;">"Item 1"</span>, <span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">&#21512;&#27861;&#65292;&#22240;&#20026;&#27966;&#29983;&#25509;&#21475;&#25193;&#23637;&#20102;&#29238;&#25509;&#21475;&#30340;&#23646;&#24615;</span>
+  <span style="color: #6c3163;">}</span>,
+<span style="color: #3a81c3;">}</span>;
+
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">TSError: &#10799; Unable to compile TypeScript:</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">main.ts:25:3 - error TS2741: Property 'name' is missing in type '{ id: number; }' but required in type '{ id: number; name: string; }'.</span>
+
+<span style="color: #2aa1ae; background-color: #ecf3ec;">//////////////////////////////</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">const item2: Derived = { //</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">//   </span><span style="color: #2aa1ae; background-color: #ecf3ec;">details: {             //</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">//     </span><span style="color: #2aa1ae; background-color: #ecf3ec;">id: 2,               //</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">//     </span><span style="color: #2aa1ae; background-color: #ecf3ec;">// name &#32570;&#22833;         //</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">//   </span><span style="color: #2aa1ae; background-color: #ecf3ec;">},                     //</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">};                       //</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">//////////////////////////////</span>
+</pre>
+</div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org9cdd0f4" class="outline-4">
+<h4 id="org9cdd0f4"><span class="section-number-4">7.3.2.</span> Extending Multiple Interfaces</h4>
+<div class="outline-text-4" id="text-7-3-2">
+<ul class="org-ul">
+<li>interface的extends可以extends多个不同的interface,用","隔开
+<ul class="org-ul">
+<li><p>
+示例如下
+</p>
+<div class="org-src-container">
+<pre class="src src-typescript"><span style="color: #3a81c3; font-weight: bold;">interface</span> <span style="color: #ba2f59; font-weight: bold;">GivesNumber</span> <span style="color: #3a81c3;">{</span>
+  <span style="color: #6c3163; font-weight: bold;">giveNumber</span><span style="color: #6c3163;">()</span>: <span style="color: #3a81c3; font-weight: bold;">number</span>;
+<span style="color: #3a81c3;">}</span>
+
+<span style="color: #3a81c3; font-weight: bold;">interface</span> <span style="color: #ba2f59; font-weight: bold;">GivesString</span> <span style="color: #3a81c3;">{</span>
+  <span style="color: #6c3163; font-weight: bold;">giveString</span><span style="color: #6c3163;">()</span>: <span style="color: #3a81c3; font-weight: bold;">string</span>;
+<span style="color: #3a81c3;">}</span>
+
+<span style="color: #3a81c3; font-weight: bold;">interface</span> <span style="color: #ba2f59; font-weight: bold;">GivesBothAndEither</span> <span style="color: #3a81c3; font-weight: bold;">extends</span> <span style="color: #ba2f59; font-weight: bold;">GivesNumber</span>, GivesString <span style="color: #3a81c3;">{</span>
+  <span style="color: #6c3163; font-weight: bold;">giveEither</span><span style="color: #6c3163;">()</span>: <span style="color: #3a81c3; font-weight: bold;">number</span> | <span style="color: #3a81c3; font-weight: bold;">string</span>;
+<span style="color: #3a81c3;">}</span>
+
+<span style="color: #3a81c3; font-weight: bold;">function</span> <span style="color: #6c3163; font-weight: bold;">useGivesBoth</span><span style="color: #3a81c3;">(</span><span style="color: #715ab1;">instance</span>: <span style="color: #ba2f59; font-weight: bold;">GivesBothAndEither</span><span style="color: #3a81c3;">)</span> <span style="color: #3a81c3;">{</span>
+  instance.<span style="color: #6c3163; font-weight: bold;">giveEither</span><span style="color: #6c3163;">()</span>;
+  instance.<span style="color: #6c3163; font-weight: bold;">giveNumber</span><span style="color: #6c3163;">()</span>;
+  instance.<span style="color: #6c3163; font-weight: bold;">giveString</span><span style="color: #6c3163;">()</span>;
+<span style="color: #3a81c3;">}</span>
+</pre>
+</div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org722a274" class="outline-3">
+<h3 id="org722a274"><span class="section-number-3">7.4.</span> Interface Merging</h3>
+<div class="outline-text-3" id="text-7-4">
+<ul class="org-ul">
+<li>Interface Merging是typescript中非常特殊的特性,在其他语言中很少见.interface merging是说在同一个scope
+定义的两个名字相同的interface,那么他们自动合并成一个更大的interface
+<ul class="org-ul">
+<li><p>
+示例如下
+</p>
+<div class="org-src-container">
+<pre class="src src-typescript"><span style="color: #3a81c3; font-weight: bold;">interface</span> <span style="color: #ba2f59; font-weight: bold;">Merged</span> <span style="color: #3a81c3;">{</span>
+  fromFirst: <span style="color: #3a81c3; font-weight: bold;">string</span>;
+<span style="color: #3a81c3;">}</span>
+
+<span style="color: #3a81c3; font-weight: bold;">interface</span> <span style="color: #ba2f59; font-weight: bold;">Merged</span> <span style="color: #3a81c3;">{</span>
+  fromSecond: <span style="color: #3a81c3; font-weight: bold;">number</span>;
+<span style="color: #3a81c3;">}</span>
+
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">Equivalent to</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">///////////////////////////</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">interface Merged {    //</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">//   </span><span style="color: #2aa1ae; background-color: #ecf3ec;">fromFirst: string;  //</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">//   </span><span style="color: #2aa1ae; background-color: #ecf3ec;">fromSecond: number; //</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">}                     //</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">///////////////////////////</span>
+</pre>
+</div></li>
+</ul></li>
+<li>注意:Interface merging是一个让代码不容易被人理解的特性,普通程序不建议使用</li>
+</ul>
+</div>
+<div id="outline-container-orgdd0e722" class="outline-4">
+<h4 id="orgdd0e722"><span class="section-number-4">7.4.1.</span> Member Naming Conflicts</h4>
+<div class="outline-text-4" id="text-7-4-1">
+<ul class="org-ul">
+<li>虽然我们不会太使用interface merging,但是我们这里还是介绍一下interface merging在property和method方
+面的一个不同:
+<ul class="org-ul">
+<li><p>
+在不同的merging interfaces里面是不能定义"名字相同,但是类型不同的"property的(arrow function)
+</p>
+<div class="org-src-container">
+<pre class="src src-typescript"><span style="color: #3a81c3; font-weight: bold;">interface</span> <span style="color: #ba2f59; font-weight: bold;">MergedProperties</span> <span style="color: #3a81c3;">{</span>
+  same: <span style="color: #6c3163;">(</span>input: <span style="color: #3a81c3; font-weight: bold;">boolean</span><span style="color: #6c3163;">)</span> <span style="color: #3a81c3; font-weight: bold;">=&gt;</span> <span style="color: #3a81c3; font-weight: bold;">string</span>;
+  different: <span style="color: #6c3163;">(</span>input: <span style="color: #3a81c3; font-weight: bold;">string</span><span style="color: #6c3163;">)</span> <span style="color: #3a81c3; font-weight: bold;">=&gt;</span> <span style="color: #3a81c3; font-weight: bold;">string</span>;
+<span style="color: #3a81c3;">}</span>
+
+<span style="color: #3a81c3; font-weight: bold;">interface</span> <span style="color: #ba2f59; font-weight: bold;">MergedProperties</span> <span style="color: #3a81c3;">{</span>
+  same: <span style="color: #6c3163;">(</span>input: <span style="color: #3a81c3; font-weight: bold;">boolean</span><span style="color: #6c3163;">)</span> <span style="color: #3a81c3; font-weight: bold;">=&gt;</span> <span style="color: #3a81c3; font-weight: bold;">string</span>;
+
+  <span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">TSError: &#10799; Unable to compile TypeScript:</span>
+  <span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">main.ts:8:3 - error TS2717: Subsequent property declarations must have the same type.  Property 'different' must be of type '(input: string) =&gt; string', but here has type '(input: number) =&gt; string'.</span>
+
+  <span style="color: #2aa1ae; background-color: #ecf3ec;">///////////////////////////////////////////</span>
+  <span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">different: (input: number) =&gt; string; //</span>
+  <span style="color: #2aa1ae; background-color: #ecf3ec;">///////////////////////////////////////////</span>
+<span style="color: #3a81c3;">}</span>
+</pre>
+</div></li>
+<li><p>
+在不同的merging interfaces里面是可以定义"名字相同,但是类型不同的"method的(非arrow function)
+</p>
+<div class="org-src-container">
+<pre class="src src-typescript"><span style="color: #3a81c3; font-weight: bold;">interface</span> <span style="color: #ba2f59; font-weight: bold;">MergedMethods</span> <span style="color: #3a81c3;">{</span>
+  <span style="color: #6c3163; font-weight: bold;">different</span><span style="color: #6c3163;">(</span><span style="color: #715ab1;">input</span>: <span style="color: #3a81c3; font-weight: bold;">string</span><span style="color: #6c3163;">)</span>: <span style="color: #3a81c3; font-weight: bold;">string</span>;
+<span style="color: #3a81c3;">}</span>
+
+<span style="color: #3a81c3; font-weight: bold;">interface</span> <span style="color: #ba2f59; font-weight: bold;">MergedMethods</span> <span style="color: #3a81c3;">{</span>
+  <span style="color: #6c3163; font-weight: bold;">different</span><span style="color: #6c3163;">(</span><span style="color: #715ab1;">input</span>: <span style="color: #3a81c3; font-weight: bold;">number</span><span style="color: #6c3163;">)</span>: <span style="color: #3a81c3; font-weight: bold;">string</span>;
+<span style="color: #3a81c3;">}</span>
+</pre>
+</div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: harrifeng@outlook.com</p>
-<p class="date">Created: 2025-03-19 Wed 15:27</p>
+<p class="date">Created: 2025-03-27 Thu 10:58</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
