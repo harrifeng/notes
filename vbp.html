@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-04-30 Wed 17:38 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>vbp</title>
+<meta name="author" content="harrifeng@outlook.com" />
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="src/readtheorg_theme/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="src/readtheorg_theme/css/readtheorg.css"/>
+<script type="text/javascript" src="src/lib/js/jquery.min.js"></script>
+<script type="text/javascript" src="src/lib/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="src/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="src/readtheorg_theme/js/readtheorg.js"></script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">vbp</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orge33d0c6">1. Chapter 01: Vue.js概述</a>
+<ul>
+<li><a href="#org6b08cde">1.1. 六何分析Vue</a>
+<ul>
+<li><a href="#org15e5c68">1.1.1. Vue是什么</a></li>
+<li><a href="#orgeb3a140">1.1.2. Vue是由谁开发的</a></li>
+<li><a href="#org53887c6">1.1.3. Vue的发展历程</a></li>
+<li><a href="#org5db906a">1.1.4. Vue用在哪些项目的开发中</a></li>
+<li><a href="#org2a13afa">1.1.5. 为什么要选择Vue</a></li>
+</ul>
+</li>
+<li><a href="#org8b34c9e">1.2. Vue3的新特性</a>
+<ul>
+<li><a href="#org4308f94">1.2.1. 内在核心的变化</a></li>
+<li><a href="#orga4c81d2">1.2.2. 渲染引擎的改进</a></li>
+<li><a href="#orga438253">1.2.3. 新的内置组件</a></li>
+<li><a href="#org4034b1f">1.2.4. API的修改</a></li>
+</ul>
+</li>
+<li><a href="#org614afc8">1.3. Vue3的运行环境</a>
+<ul>
+<li><a href="#orgf1747ca">1.3.1. 运行环境搭建</a></li>
+<li><a href="#org00352cf">1.3.2. Vue开发者调试工具</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orge33d0c6" class="outline-2">
+<h2 id="orge33d0c6"><span class="section-number-2">1.</span> Chapter 01: Vue.js概述</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-org6b08cde" class="outline-3">
+<h3 id="org6b08cde"><span class="section-number-3">1.1.</span> 六何分析Vue</h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li>所谓六何分析就是了解如下六个方面:
+<ul class="org-ul">
+<li>事件对象(What)</li>
+<li>事件相关人员(Who)</li>
+<li>事件发作历程(When)</li>
+<li>事件应用场景(Where)</li>
+<li>时间原因(Why)</li>
+<li>如何了解应用与掌握该事件(How)</li>
+</ul></li>
+</ul>
+</div>
+<div id="outline-container-org15e5c68" class="outline-4">
+<h4 id="org15e5c68"><span class="section-number-4">1.1.1.</span> Vue是什么</h4>
+<div class="outline-text-4" id="text-1-1-1">
+<ul class="org-ul">
+<li>Vue是一款渐进式JavaScript框架</li>
+<li>Vue还有如下著名的官方插件:
+<ul class="org-ul">
+<li>Pinia</li>
+<li>Vuex</li>
+<li>VueRouter</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgeb3a140" class="outline-4">
+<h4 id="orgeb3a140"><span class="section-number-4">1.1.2.</span> Vue是由谁开发的</h4>
+<div class="outline-text-4" id="text-1-1-2">
+<ul class="org-ul">
+<li>Vue的主要作者是尤雨溪领导的开发团队</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org53887c6" class="outline-4">
+<h4 id="org53887c6"><span class="section-number-4">1.1.3.</span> Vue的发展历程</h4>
+<div class="outline-text-4" id="text-1-1-3">
+<ul class="org-ul">
+<li>Vue的发展历程如下
+<ul class="org-ul">
+<li>2015年10月26日, 1.0.0发布</li>
+<li>2016年10月1日, 2.0.0发布</li>
+<li>2020年9月18日, 3.0.0发布</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org5db906a" class="outline-4">
+<h4 id="org5db906a"><span class="section-number-4">1.1.4.</span> Vue用在哪些项目的开发中</h4>
+<div class="outline-text-4" id="text-1-1-4">
+<ul class="org-ul">
+<li>中国国内的互联网公司使用Vue较多</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org2a13afa" class="outline-4">
+<h4 id="org2a13afa"><span class="section-number-4">1.1.5.</span> 为什么要选择Vue</h4>
+<div class="outline-text-4" id="text-1-1-5">
+<ul class="org-ul">
+<li>Vue的优势有如下:
+<ul class="org-ul">
+<li>入门简单</li>
+<li>功能强大</li>
+<li>适应性强</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org8b34c9e" class="outline-3">
+<h3 id="org8b34c9e"><span class="section-number-3">1.2.</span> Vue3的新特性</h3>
+<div class="outline-text-3" id="text-1-2">
+<ul class="org-ul">
+<li>Vue2是以JavaScript为开发基础的.而Vue3是以TypeScript为基础开发的</li>
+<li>Vue3借鉴了其他框架和库的功能与优势,成功实现了API的高度抽象</li>
+</ul>
+</div>
+<div id="outline-container-org4308f94" class="outline-4">
+<h4 id="org4308f94"><span class="section-number-4">1.2.1.</span> 内在核心的变化</h4>
+<div class="outline-text-4" id="text-1-2-1">
+<ul class="org-ul">
+<li>Vue3采用了浏览器中的一些新特性,比如Proxy,Reflect</li>
+<li>Vue3选择了使用Typescript开发</li>
+<li>Vue3将数据响应式从defineProperty更替为了Proxy</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orga4c81d2" class="outline-4">
+<h4 id="orga4c81d2"><span class="section-number-4">1.2.2.</span> 渲染引擎的改进</h4>
+<div class="outline-text-4" id="text-1-2-2">
+<ul class="org-ul">
+<li>Vue3对底层渲染引擎进行了改进,采用了新的虚拟DOM算法</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orga438253" class="outline-4">
+<h4 id="orga438253"><span class="section-number-4">1.2.3.</span> 新的内置组件</h4>
+<div class="outline-text-4" id="text-1-2-3">
+<ul class="org-ul">
+<li>Vue3新增了一些内置组件,开发人员可以利用它们来解决一些常见的问题,我们下面分别来介绍</li>
+</ul>
+</div>
+<ol class="org-ol">
+<li><a id="orgca4fcda"></a>Fragment<br />
+<div class="outline-text-5" id="text-1-2-3-1">
+<ul class="org-ul">
+<li><p>
+在 Vue 2 中，每个组件的模板都必须有一个唯一的根节点，像这样:
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #721045;">template</span>&gt;
+  &lt;<span style="color: #721045;">div</span>&gt;
+    &lt;<span style="color: #721045;">h1</span>&gt;<span style="font-weight: bold; text-decoration: underline;">&#26631;&#39064;</span>&lt;/<span style="color: #721045;">h1</span>&gt;
+    &lt;<span style="color: #721045;">p</span>&gt;&#20869;&#23481;&lt;/<span style="color: #721045;">p</span>&gt;
+  &lt;/<span style="color: #721045;">div</span>&gt;
+&lt;/<span style="color: #721045;">template</span>&gt;
+</pre>
+</div></li>
+<li><p>
+如果你试图写多个根节点vue2会报错,因为它要求模版中只能由一个根节点
+</p>
+<div class="org-src-container">
+<pre class="src src-html"><span style="color: #7f0000;">&lt;!-- </span><span style="color: #7f0000;">vue2 error</span><span style="color: #7f0000;"> --&gt;</span>
+&lt;<span style="color: #721045;">template</span>&gt;
+  &lt;<span style="color: #721045;">h1</span>&gt;<span style="font-weight: bold; text-decoration: underline;">&#26631;&#39064;</span>&lt;/<span style="color: #721045;">h1</span>&gt;
+  &lt;<span style="color: #721045;">p</span>&gt;&#20869;&#23481;&lt;/<span style="color: #721045;">p</span>&gt;
+&lt;/<span style="color: #721045;">template</span>&gt;
+</pre>
+</div></li>
+<li>Vue3提供了Fragment来解决这个问题:
+<ul class="org-ul">
+<li><p>
+Fragment的最终效果是这样的,注意和上面报错的代码一致,只是vue3里面不报错了
+</p>
+<div class="org-src-container">
+<pre class="src src-html"><span style="color: #7f0000;">&lt;!-- </span><span style="color: #7f0000;">vue3 ok</span><span style="color: #7f0000;"> --&gt;</span>
+&lt;<span style="color: #721045;">template</span>&gt;
+  &lt;<span style="color: #721045;">h1</span>&gt;<span style="font-weight: bold; text-decoration: underline;">&#26631;&#39064;</span>&lt;/<span style="color: #721045;">h1</span>&gt;
+  &lt;<span style="color: #721045;">p</span>&gt;&#20869;&#23481;&lt;/<span style="color: #721045;">p</span>&gt;
+&lt;/<span style="color: #721045;">template</span>&gt;
+</pre>
+</div></li>
+<li><p>
+上面其实是一个如下的代码的缩写,只不过Fragment tag可以省略
+</p>
+<div class="org-src-container">
+<pre class="src src-html"><span style="color: #7f0000;">&lt;!-- </span><span style="color: #7f0000;">vue3 ok</span><span style="color: #7f0000;"> --&gt;</span>
+&lt;<span style="color: #721045;">template</span>&gt;
+  &lt;<span style="color: #721045;">Fragment</span>&gt;
+    &lt;<span style="color: #721045;">h1</span>&gt;<span style="font-weight: bold; text-decoration: underline;">&#26631;&#39064;</span>&lt;/<span style="color: #721045;">h1</span>&gt;
+    &lt;<span style="color: #721045;">p</span>&gt;&#20869;&#23481;&lt;/<span style="color: #721045;">p</span>&gt;
+  &lt;/<span style="color: #721045;">Fragment</span>&gt;
+&lt;/<span style="color: #721045;">template</span>&gt;
+</pre>
+</div></li>
+</ul></li>
+</ul>
+</div>
+</li>
+<li><a id="orgb0758da"></a>Teleport<br />
+<div class="outline-text-5" id="text-1-2-3-2">
+<ul class="org-ul">
+<li>Teleport 是 Vue 3 提供的一个内置组件，它允许你将某些 DOM 节点从当前组件的渲染位置“传送”（或者说移动）
+到其他的 DOM 容器中，比如 body 或某个特定的 div。这在某些场景中非常有用，比如模态框（modal）、
+弹窗（popup）、通知框等，它们通常需要被渲染在 body 或其他全局容器中，而不是嵌套在父组件的 DOM 结构中。
+<ul class="org-ul">
+<li><p>
+下面是一个teleport的例子,把内容渲染到body,而不是嵌套在&lt;div&gt;内
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #721045;">template</span>&gt;
+  &lt;<span style="color: #721045;">div</span>&gt;
+    &lt;<span style="color: #721045;">h1</span>&gt;<span style="font-weight: bold; text-decoration: underline;">&#24403;&#21069;&#32452;&#20214;&#20869;&#23481;</span>&lt;/<span style="color: #721045;">h1</span>&gt;
+    &lt;<span style="color: #721045;">teleport</span> <span style="color: #005e8b;">to</span>=<span style="color: #3548cf;">"body"</span>&gt;
+      &lt;<span style="color: #721045;">div</span> <span style="color: #005e8b;">class</span>=<span style="color: #3548cf;">"modal"</span>&gt;
+        &#25105;&#26159;&#34987;&#20256;&#36865;&#21040; body &#30340;&#20869;&#23481;&#65281;
+      &lt;/<span style="color: #721045;">div</span>&gt;
+    &lt;/<span style="color: #721045;">teleport</span>&gt;
+  &lt;/<span style="color: #721045;">div</span>&gt;
+&lt;/<span style="color: #721045;">template</span>&gt;
+</pre>
+</div></li>
+</ul></li>
+<li>我们上面的to其实可以由三种常见的值:
+<ul class="org-ul">
+<li>"body": 将内容传递到body</li>
+<li>"#app": 将内容传递到id为app的元素</li>
+<li>.modal-container: 传送到某个类为modal-container的元素</li>
+</ul></li>
+</ul>
+</div>
+</li>
+<li><a id="orga1f081e"></a>Suspense<br />
+<div class="outline-text-5" id="text-1-2-3-3">
+<ul class="org-ul">
+<li>Suspense 是 Vue 3 提供的一个异步组件加载工具，它允许你在等待异步内容加载时显示备用内容（也叫“占位内容”）。
+等异步操作完成后，实际的内容会替换掉占位内容。
+<ul class="org-ul">
+<li><p>
+示例如下
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #721045;">template</span>&gt;
+  &lt;<span style="color: #721045;">Suspense</span>&gt;
+    <span style="color: #7f0000;">&lt;!-- </span><span style="color: #7f0000;">&#24322;&#27493;&#20869;&#23481;</span><span style="color: #7f0000;"> --&gt;</span>
+    &lt;<span style="color: #721045;">template</span> #default&gt;
+      &lt;<span style="color: #721045;">AsyncComponent</span> /&gt;
+    &lt;/<span style="color: #721045;">template</span>&gt;
+
+    <span style="color: #7f0000;">&lt;!-- </span><span style="color: #7f0000;">&#21344;&#20301;&#20869;&#23481;</span><span style="color: #7f0000;"> --&gt;</span>
+    &lt;<span style="color: #721045;">template</span> #fallback&gt;
+      &lt;<span style="color: #721045;">div</span>&gt;&#21152;&#36733;&#20013;...&lt;/<span style="color: #721045;">div</span>&gt;
+    &lt;/<span style="color: #721045;">template</span>&gt;
+  &lt;/<span style="color: #721045;">Suspense</span>&gt;
+&lt;/<span style="color: #721045;">template</span>&gt;
+
+&lt;<span style="color: #721045;">script</span>&gt;
+  import { defineAsyncComponent } from "vue";
+
+  const AsyncComponent = defineAsyncComponent(
+    () =&gt; import("./components/MyAsyncComponent.vue"),
+  );
+
+  export default {
+    components: {
+      AsyncComponent,
+    },
+  };
+&lt;/<span style="color: #721045;">script</span>&gt;
+</pre>
+</div></li>
+</ul></li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div id="outline-container-org4034b1f" class="outline-4">
+<h4 id="org4034b1f"><span class="section-number-4">1.2.4.</span> API的修改</h4>
+<div class="outline-text-4" id="text-1-2-4">
+<ul class="org-ul">
+<li>Vue3中的变化主要体现在三个方面:
+<ul class="org-ul">
+<li>新添加了一些语法, 比如: 组合式API(ref, reactive), 初始化应用createApp</li>
+<li>删除了一些API,比如: 将过滤器替换为计算属性</li>
+<li>更新了一些API: 比如v-for和v-of的优先级</li>
+</ul></li>
+<li>下面具体介绍一些重点改进</li>
+</ul>
+</div>
+<ol class="org-ol">
+<li><a id="org5a739dc"></a>组合式API<br />
+<div class="outline-text-5" id="text-1-2-4-1">
+<ul class="org-ul">
+<li>组合式API是Vue3中最为重大的一个升级内容.也即是把代码的数据和函数"组合到一个地方"进行开发</li>
+<li>组合到的那个地方,叫做setup</li>
+<li>注意,组合式API存在,但是传统的选项API也依然可以使用(但是已经不再被推荐了)</li>
+</ul>
+</div>
+</li>
+<li><a id="org4c76e93"></a>filter过滤器的摒弃<br />
+<div class="outline-text-5" id="text-1-2-4-2">
+<ul class="org-ul">
+<li>Vue2中经常使用过滤器功能,Vue3已经不再提供</li>
+</ul>
+</div>
+</li>
+<li><a id="org34f83d0"></a>bus总线移除<br />
+<div class="outline-text-5" id="text-1-2-4-3">
+<ul class="org-ul">
+<li>Vue3中已经移除了bus总线</li>
+</ul>
+</div>
+</li>
+<li><a id="org69232d7"></a>不再有全局Vue实例的$mount方法<br />
+<div class="outline-text-5" id="text-1-2-4-4">
+<ul class="org-ul">
+<li>不再使用$mount方法,改为使用createApp命令</li>
+</ul>
+</div>
+</li>
+<li><a id="org4961876"></a>v-model<br />
+<div class="outline-text-5" id="text-1-2-4-5">
+<ul class="org-ul">
+<li>Vue3的组件可以进行多次v-model的双向数据绑定处理</li>
+</ul>
+</div>
+</li>
+<li><a id="orgc67da20"></a>样式的强化<br />
+<div class="outline-text-5" id="text-1-2-4-6">
+<ul class="org-ul">
+<li>Vue3中增加了新的操作样式的方法</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org614afc8" class="outline-3">
+<h3 id="org614afc8"><span class="section-number-3">1.3.</span> Vue3的运行环境</h3>
+<div class="outline-text-3" id="text-1-3">
+</div>
+<div id="outline-container-orgf1747ca" class="outline-4">
+<h4 id="orgf1747ca"><span class="section-number-4">1.3.1.</span> 运行环境搭建</h4>
+<div class="outline-text-4" id="text-1-3-1">
+<ul class="org-ul">
+<li>Vue3有两种方式搭建运行环境,分别是页面直接引用和通过脚手架创建Vue项目</li>
+</ul>
+</div>
+<ol class="org-ol">
+<li><a id="orgc936ef3"></a>页面直接引入Vue库<br />
+<div class="outline-text-5" id="text-1-3-1-1">
+<ul class="org-ul">
+<li>我们通过cdn直接引入Vue到script标签内.这种方法对于快速实验很有帮助
+<ul class="org-ul">
+<li><p>
+示例代码如下
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #531ab6;">!doctype</span> html&gt;
+&lt;<span style="color: #721045;">html</span> <span style="color: #005e8b;">lang</span>=<span style="color: #3548cf;">"en"</span>&gt;
+  &lt;<span style="color: #721045;">head</span>&gt;
+    &lt;<span style="color: #721045;">meta</span> <span style="color: #005e8b;">charset</span>=<span style="color: #3548cf;">"UTF-8"</span> /&gt;
+    &lt;<span style="color: #721045;">meta</span> <span style="color: #005e8b;">name</span>=<span style="color: #3548cf;">"viewport"</span> <span style="color: #005e8b;">content</span>=<span style="color: #3548cf;">"width=device-width, initial-scale=1.0"</span> /&gt;
+    &lt;<span style="color: #721045;">title</span>&gt;<span style="font-weight: bold; text-decoration: underline;">Vue 3 CDN &#31034;&#20363; - &#32452;&#21512;&#24335;API</span>&lt;/<span style="color: #721045;">title</span>&gt;
+    <span style="color: #7f0000;">&lt;!-- </span><span style="color: #7f0000;">&#24341;&#20837; Vue 3 &#30340; CDN</span><span style="color: #7f0000;"> --&gt;</span>
+    &lt;<span style="color: #721045;">script</span> <span style="color: #005e8b;">src</span>=<span style="color: #3548cf;">"https://unpkg.com/vue@3/dist/vue.global.js"</span>&gt;&lt;/<span style="color: #721045;">script</span>&gt;
+  &lt;/<span style="color: #721045;">head</span>&gt;
+  &lt;<span style="color: #721045;">body</span>&gt;
+    &lt;<span style="color: #721045;">div</span> <span style="color: #005e8b;">id</span>=<span style="color: #3548cf;">"app"</span>&gt;
+      <span style="color: #7f0000;">&lt;!-- </span><span style="color: #7f0000;">Vue &#27169;&#26495;</span><span style="color: #7f0000;"> --&gt;</span>
+      &lt;<span style="color: #721045;">h1</span>&gt;<span style="font-weight: bold; text-decoration: underline;">{{ message }}</span>&lt;/<span style="color: #721045;">h1</span>&gt;
+      &lt;<span style="color: #721045;">button</span> @click=<span style="color: #3548cf;">"updateMessage"</span>&gt;&#28857;&#20987;&#25105;&#26356;&#26032;&#28040;&#24687;&lt;/<span style="color: #721045;">button</span>&gt;
+    &lt;/<span style="color: #721045;">div</span>&gt;
+
+    &lt;<span style="color: #721045;">script</span>&gt;
+      const { createApp, ref } = Vue; // &#20174; Vue &#20013;&#35299;&#26500;&#20986;&#38656;&#35201;&#30340;API
+
+      // &#21019;&#24314; Vue &#24212;&#29992;
+      const app = createApp({
+        setup() {
+          // &#20351;&#29992; ref &#21019;&#24314;&#21709;&#24212;&#24335;&#21464;&#37327;
+          const message = ref("Hello, Vue 3 (Composition API)!");
+
+          // &#23450;&#20041;&#19968;&#20010;&#26041;&#27861;&#26469;&#26356;&#26032;&#28040;&#24687;
+          const updateMessage = () =&gt; {
+            message.value = "&#20320;&#28857;&#20987;&#20102;&#25353;&#38062;&#65292;&#28040;&#24687;&#24050;&#26356;&#26032;&#65281;&#65288;&#32452;&#21512;&#24335;API&#65289;";
+          };
+
+          // &#36820;&#22238;&#27169;&#26495;&#20013;&#38656;&#35201;&#20351;&#29992;&#30340;&#25968;&#25454;&#21644;&#26041;&#27861;
+          return {
+            message,
+            updateMessage,
+          };
+        },
+      });
+
+      // &#25346;&#36733;&#21040; #app
+      app.mount("#app");
+    &lt;/<span style="color: #721045;">script</span>&gt;
+  &lt;/<span style="color: #721045;">body</span>&gt;
+&lt;/<span style="color: #721045;">html</span>&gt;
+</pre>
+</div></li>
+</ul></li>
+</ul>
+</div>
+</li>
+<li><a id="orgf6717ed"></a>通过脚手架创建Vue项目<br />
+<div class="outline-text-5" id="text-1-3-1-2">
+<ul class="org-ul">
+<li>SPA项目显然要有自己的npm项目,这种情况下如果要创建Vue项目可以:
+<ul class="org-ul">
+<li>使用vue cli (已经不再被推荐使用了)</li>
+<li><p>
+使用vite: 这是推荐的创建Vue3项目的方法,示例如下
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">npm init vue@latest
+</pre>
+</div></li>
+</ul></li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div id="outline-container-org00352cf" class="outline-4">
+<h4 id="org00352cf"><span class="section-number-4">1.3.2.</span> Vue开发者调试工具</h4>
+<div class="outline-text-4" id="text-1-3-2">
+<ul class="org-ul">
+<li>可以在各大浏览器市场搜索并下载vue-devtools使用.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: harrifeng@outlook.com</p>
+<p class="date">Created: 2025-04-30 Wed 17:38</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
