@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-05-06 Tue 16:40 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>peb</title>
+<meta name="author" content="harrifeng@outlook.com" />
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="src/readtheorg_theme/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="src/readtheorg_theme/css/readtheorg.css"/>
+<script type="text/javascript" src="src/lib/js/jquery.min.js"></script>
+<script type="text/javascript" src="src/lib/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="src/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="src/readtheorg_theme/js/readtheorg.js"></script>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">peb</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org6888f06">1. Chapter 1: Combinatorics</a>
+<ul>
+<li><a href="#orga5eceff">1.1. Factorials</a></li>
+<li><a href="#orgc4af3b0">1.2. Permutations</a>
+<ul>
+<li><a href="#orga320b56">1.2.1. One object</a></li>
+<li><a href="#orgb8acb72">1.2.2. Two objects</a></li>
+<li><a href="#orgdef2d5d">1.2.3. Three objects</a></li>
+</ul>
+</li>
+<li><a href="#org4046dec">1.3. Ordered sets, repetitions allowed</a></li>
+<li><a href="#org62bf631">1.4. Ordered sets, repetitions not allowed</a></li>
+<li><a href="#org635b04d">1.5. Unordered sets, repetitions not allowed</a></li>
+<li><a href="#org2179508">1.6. What we know so far</a></li>
+<li><a href="#orgcaf79eb">1.7. Unordered sets, repetitions allowed</a></li>
+<li><a href="#org89ce2ed">1.8. Binomial coefficients</a>
+<ul>
+<li><a href="#org629306c">1.8.1. Cons and Pascal's triangle</a></li>
+<li><a href="#orgecf6b5d">1.8.2. (a+b)^n and Pascal's triangle</a></li>
+<li><a href="#orga762e07">1.8.3. Properties of Pascal's triangle</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org6888f06" class="outline-2">
+<h2 id="org6888f06"><span class="section-number-2">1.</span> Chapter 1: Combinatorics</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-orga5eceff" class="outline-3">
+<h3 id="orga5eceff"><span class="section-number-3">1.1.</span> Factorials</h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li>每当我们遇到一个正整数N,那么我们通常会考虑1到N的乘积,这个乘积就是"N factorial", 用数学表示就是"N!"</li>
+<li>当N增长的时候,N!就会增长的非常的快,比如10!=3,628,800, 20!=2.43*10^18</li>
+<li>我们需要从原理上面认定0!=1,虽然0!没有意义,但是需要这个定义存在</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgc4af3b0" class="outline-3">
+<h3 id="orgc4af3b0"><span class="section-number-3">1.2.</span> Permutations</h3>
+<div class="outline-text-3" id="text-1-2">
+<ul class="org-ul">
+<li>permutaion是用来order一系列object的方法.比如我们有三个人Alice,Bob,Carol,那么下面每一列都是一种permutation(一共六种):
+<ul class="org-ul">
+<li>Alice,Bob,Carol</li>
+<li>Alice,Carol,Bob</li>
+<li>Bob,Alice,Carol</li>
+<li>Bob,Carol,Alice</li>
+<li>Carol,Alice,Bob</li>
+<li>Carol,Bob,Alice</li>
+</ul></li>
+<li>我们下面会详细介绍如何count permutation</li>
+</ul>
+</div>
+<div id="outline-container-orga320b56" class="outline-4">
+<h4 id="orga320b56"><span class="section-number-4">1.2.1.</span> One object</h4>
+<div class="outline-text-4" id="text-1-2-1">
+<ul class="org-ul">
+<li>如果我们只有一个object,那么显然只有一种方式来order它.</li>
+<li>如果我们使用 \(P_N\) 来代表N个object所拥有的permutation的数量,那么 \(P_1 = 1\)</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgb8acb72" class="outline-4">
+<h4 id="orgb8acb72"><span class="section-number-4">1.2.2.</span> Two objects</h4>
+<div class="outline-text-4" id="text-1-2-2">
+<ul class="org-ul">
+<li>两个对象后,稍微复杂了一点,但是也只是一点,比如如果我们使用1,2来代表两个object,那么我们可以把这两个object order如下:
+<ul class="org-ul">
+<li>12</li>
+<li>21</li>
+</ul></li>
+<li>那么我们就有 \(P_2 = 2\)</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgdef2d5d" class="outline-4">
+<h4 id="orgdef2d5d"><span class="section-number-4">1.2.3.</span> Three objects</h4>
+<div class="outline-text-4" id="text-1-2-3">
+<ul class="org-ul">
+<li>三个对象之后,情形就复杂了,我们使用1,2,3来代表三个object,那么order的方式有六种,换句话说就是 \(P_3=6\) :
+<ul class="org-ul">
+<li>123,132</li>
+<li>213,231</li>
+<li>312,321</li>
+</ul></li>
+<li>注意,我们这里把六个oder分成了三组,每组的特点是最开头的数字一样.我们后面会看到,这样group的便利性</li>
+</ul>
+</div>
+<ol class="org-ol">
+<li><a id="org6fc2e23"></a>Four objects<br />
+<div class="outline-text-5" id="text-1-2-3-1">
+<ul class="org-ul">
+<li>一旦有四个对象,那么列举起来就费事了很多,但是我们借鉴三个对象时候的方法,把列举分成四组(每组的开头字
+符是一样的),那么我们就得到了最终的24个permutation
+<ul class="org-ul">
+<li>1234,1243,1324,1342,1432,1423</li>
+<li>2134,2143,2314,2341,2431,2413</li>
+<li>3214,3241,3124,3142,3412,3421</li>
+<li>4231,4213,4321,4312,4132,4123</li>
+</ul></li>
+<li>我们以最后一行为例,如果我们把4去掉,那么剩下的231,213,321,312,132,123其实就是一个3 objects的
+permutation的全部数据.其他三行去掉最开始一个数字也是相同效果</li>
+</ul>
+</div>
+</li>
+<li><a id="org5e18d38"></a>Five objects<br />
+<div class="outline-text-5" id="text-1-2-3-2">
+<ul class="org-ul">
+<li>我们一旦理解了上面的做法,那么显然我们只需要在1,2,3,4,5后面每个都添加上上诉24个permutation,那么最终
+的结果就是 \(P_5 = 120\)</li>
+<li><p>
+最终我们就可以得到N个object的排列数目,等于N的阶乘
+</p>
+\begin{equation}
+  P_N = N! \tag{1.3}
+\end{equation}</li>
+</ul>
+</div>
+</li>
+<li><a id="org957a5c9"></a>Question<br />
+<div class="outline-text-5" id="text-1-2-3-3">
+<ul class="org-ul">
+<li>一共有九个客人,同时有九个位置.这九个位置分为两组,A组5个座位,B组4个座位,请问一共有多少种方法来把座
+位分配给客人</li>
+</ul>
+</div>
+</li>
+<li><a id="org820e36b"></a>Solution<br />
+<div class="outline-text-5" id="text-1-2-3-4">
+<ul class="org-ul">
+<li>有五种方式把一个人放到A组的位置,所以有5!种方式把五个人放到A组的位置</li>
+<li>有四种方式把一个人放到B组的位置,所以有4!种方式把五个人放到B组的位置</li>
+<li><p>
+所以总共有2880种方式分配位置:
+</p>
+\begin{equation}
+5! \times 4! = 2880 \notag
+\end{equation}</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org4046dec" class="outline-3">
+<h3 id="org4046dec"><span class="section-number-3">1.3.</span> Ordered sets, repetitions allowed</h3>
+<div class="outline-text-3" id="text-1-3">
+<ul class="org-ul">
+<li>所谓ordered set,repetitions allowed是指这么一类实验
+<ul class="org-ul">
+<li>假设我们有一个盒子,里面有五个标记为A,B,C,D,E的球</li>
+<li>我们伸手去拿一个球,并且写下球商的字母</li>
+<li>然后我们把球放回盒子里,摇晃一下(放回去说明是允许重复的),</li>
+<li>然后在拿第二个球(可能和第一个球相同,说明顺序很重要),并将这个字母写在第一个字母旁边</li>
+<li>这样重复N次,得到的就是我们想要的ordered set,repetitions allowed</li>
+</ul></li>
+<li>如果N为2,那么整个过程,我们也可以用下面的步骤来做,效果是一样的:
+<ul class="org-ul">
+<li>我们想象有两个盒子(一个左边盒子,一个右边盒子)</li>
+<li>每个盒子都有一组相同的,标记为A,B,C,D,E的球</li>
+<li>我们从每个盒子中去一个球.</li>
+</ul></li>
+<li>上面两种说法都有如下的三个关键点:
+<ul class="org-ul">
+<li>identical trails</li>
+<li>with replacement</li>
+<li>repetitions allowed</li>
+</ul></li>
+<li>想要做到identical trails,你需要把你选到的球放回去(也就是with replacement).这意味着未来抽出的球可能
+和之前已经抽出的球重复(repetitions allowed). 这样一句话就把前面三个特点给总结了</li>
+<li>当然,对于骰子和硬币这样的食物而言,trail本身就是天然的identical的,这意味着重复是自动允许的,因此,我们
+不需要特别的讨论"放回"的问题.因为你在投骰子时,不会把上面的点数擦掉!</li>
+<li>上面的五个球的例子中,如果重复被允许,且顺序被重视,我们可以选出多少种可能的字母对(pair)?更一般的说,如
+果我们不只是进行两次实验,而是进行n次实验,同时我们有N个球,而不是5个球,那么又会有多少种不同的有序字母组合?</li>
+<li>在N=5个球,且n=2次实验的情况下
+<ul class="org-ul">
+<li><p>
+各种可能性如下
+</p>
+<pre class="example" id="org21a7801">
+AA AB AC AD AE
+BA BB BC BD BE
+CA CB CC CD CE
+DA DB DC DD DE
+EA EB EC ED EE
+</pre></li>
+<li>第一次抽取有五种可能性,然后对每一种可能性,第二次抽取又有五种可能性,因此总共有5*5=25种可能的字母对</li>
+</ul></li>
+<li>在N=5个球,且n=3次实验的情况下,上面的"正方形"会变成"立方体",也就会有 \(5^3=125\) 种可能的字母列表</li>
+<li>在N=5个球,且n=4次实验的情况下,已经不太好进行visualize了,但是也可以得到 \(5^4=625\) 种可能的字母列表</li>
+<li>在N=5个球,且n=5次实验的情况下,可以得到 \(5^4=625\) 种可能的字母列表,我们已经不需要在增加n的个数,直接
+就可以得到结论:当我们进行n次尝试,从一个5-letter的box里面获取字母的时候(每次会放回字母,且顺序有关系),
+总共会有 \(5^n\) 种可能的取法</li>
+<li>更一般的,如果我们是N个letter,而不是五个,那么所有的可能性就是 \(N^n\) 种可能取法</li>
+</ul>
+</div>
+<ol class="org-ol">
+<li><a id="org6727c85"></a>Question<br />
+<div class="outline-text-5" id="text-1-3-0-1">
+<ul class="org-ul">
+<li>有一个标准的六面骰子,我们投掷两次,能够得到多少种不同的结果(不同order视为不同结果)</li>
+</ul>
+</div>
+</li>
+<li><a id="org0154170"></a>Solution<br />
+<div class="outline-text-5" id="text-1-3-0-2">
+<ul class="org-ul">
+<li>由于order是有关系的,所以2,5和5,2不是一种结果,又由于每次都有6种结果(且不存在放回问题,骰子永远放回),
+所以两次投递的所有不同结果数目为 \(6^2=36\)</li>
+</ul>
+</div>
+</li>
+<li><a id="orgb6d2e44"></a>Question<br />
+<div class="outline-text-5" id="text-1-3-0-3">
+<ul class="org-ul">
+<li>如果投掷一个标准的硬币四次,那么讷讷够得到多少种不同的结果(不同order视为不同结果)</li>
+</ul>
+</div>
+</li>
+<li><a id="org45d4c51"></a>Solution<br />
+<div class="outline-text-5" id="text-1-3-0-4">
+<ul class="org-ul">
+<li>思路和上面的题目类似,答案为 \(2^4=16\)</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div id="outline-container-org62bf631" class="outline-3">
+<h3 id="org62bf631"><span class="section-number-3">1.4.</span> Ordered sets, repetitions not allowed</h3>
+</div>
+<div id="outline-container-org635b04d" class="outline-3">
+<h3 id="org635b04d"><span class="section-number-3">1.5.</span> Unordered sets, repetitions not allowed</h3>
+</div>
+<div id="outline-container-org2179508" class="outline-3">
+<h3 id="org2179508"><span class="section-number-3">1.6.</span> What we know so far</h3>
+</div>
+<div id="outline-container-orgcaf79eb" class="outline-3">
+<h3 id="orgcaf79eb"><span class="section-number-3">1.7.</span> Unordered sets, repetitions allowed</h3>
+</div>
+<div id="outline-container-org89ce2ed" class="outline-3">
+<h3 id="org89ce2ed"><span class="section-number-3">1.8.</span> Binomial coefficients</h3>
+<div class="outline-text-3" id="text-1-8">
+</div>
+<div id="outline-container-org629306c" class="outline-4">
+<h4 id="org629306c"><span class="section-number-4">1.8.1.</span> Cons and Pascal's triangle</h4>
+</div>
+<div id="outline-container-orgecf6b5d" class="outline-4">
+<h4 id="orgecf6b5d"><span class="section-number-4">1.8.2.</span> (a+b)^n and Pascal's triangle</h4>
+</div>
+<div id="outline-container-orga762e07" class="outline-4">
+<h4 id="orga762e07"><span class="section-number-4">1.8.3.</span> Properties of Pascal's triangle</h4>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: harrifeng@outlook.com</p>
+<p class="date">Created: 2025-05-06 Tue 16:40</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
