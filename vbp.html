@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-04-30 Wed 17:38 -->
+<!-- 2025-05-15 Thu 15:14 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>vbp</title>
@@ -23,42 +23,140 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orge33d0c6">1. Chapter 01: Vue.js概述</a>
+<li><a href="#orgc771083">1. Chapter 01: Vue.js概述</a>
 <ul>
-<li><a href="#org6b08cde">1.1. 六何分析Vue</a>
+<li><a href="#orgd48acee">1.1. 六何分析Vue</a>
 <ul>
-<li><a href="#org15e5c68">1.1.1. Vue是什么</a></li>
-<li><a href="#orgeb3a140">1.1.2. Vue是由谁开发的</a></li>
-<li><a href="#org53887c6">1.1.3. Vue的发展历程</a></li>
-<li><a href="#org5db906a">1.1.4. Vue用在哪些项目的开发中</a></li>
-<li><a href="#org2a13afa">1.1.5. 为什么要选择Vue</a></li>
+<li><a href="#org7d1d602">1.1.1. Vue是什么</a></li>
+<li><a href="#orgd870815">1.1.2. Vue是由谁开发的</a></li>
+<li><a href="#org8439030">1.1.3. Vue的发展历程</a></li>
+<li><a href="#org83e52a4">1.1.4. Vue用在哪些项目的开发中</a></li>
+<li><a href="#orgf5c7b88">1.1.5. 为什么要选择Vue</a></li>
 </ul>
 </li>
-<li><a href="#org8b34c9e">1.2. Vue3的新特性</a>
+<li><a href="#orgb5fca74">1.2. Vue3的新特性</a>
 <ul>
-<li><a href="#org4308f94">1.2.1. 内在核心的变化</a></li>
-<li><a href="#orga4c81d2">1.2.2. 渲染引擎的改进</a></li>
-<li><a href="#orga438253">1.2.3. 新的内置组件</a></li>
-<li><a href="#org4034b1f">1.2.4. API的修改</a></li>
+<li><a href="#org67f4e16">1.2.1. 内在核心的变化</a></li>
+<li><a href="#org9c2d6cf">1.2.2. 渲染引擎的改进</a></li>
+<li><a href="#org85e2789">1.2.3. 新的内置组件</a></li>
+<li><a href="#orgf443ad9">1.2.4. API的修改</a></li>
 </ul>
 </li>
-<li><a href="#org614afc8">1.3. Vue3的运行环境</a>
+<li><a href="#org1204b38">1.3. Vue3的运行环境</a>
 <ul>
-<li><a href="#orgf1747ca">1.3.1. 运行环境搭建</a></li>
-<li><a href="#org00352cf">1.3.2. Vue开发者调试工具</a></li>
+<li><a href="#org405264d">1.3.1. 运行环境搭建</a></li>
+<li><a href="#org61afac0">1.3.2. Vue开发者调试工具</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li><a href="#org176e796">2. Chapter 02: 核心语法</a>
+<ul>
+<li><a href="#org044f660">2.1. 模板语法</a>
+<ul>
+<li><a href="#org1dc5af7">2.1.1. 插值语法</a></li>
+<li><a href="#org47dec8b">2.1.2. 指令语法</a></li>
+<li><a href="#org07fedeb">2.1.3. data和methods配置项</a></li>
+</ul>
+</li>
+<li><a href="#org3c02592">2.2. 计算属性</a>
+<ul>
+<li><a href="#org7beb21d">2.2.1. 计算属性的基本使用</a></li>
+<li><a href="#org84126cd">2.2.2. 计算属性和method方法</a></li>
+<li><a href="#org9e59aad">2.2.3. 计算属性的setter</a></li>
+</ul>
+</li>
+<li><a href="#org6f6eef0">2.3. 监听</a>
+<ul>
+<li><a href="#orgef9a1fc">2.3.1. 监听的基本使用</a></li>
+</ul>
+</li>
+<li><a href="#org03b5d23">2.4. 绑定动态样式</a>
+<ul>
+<li><a href="#org20e8170">2.4.1. 字符串绑定</a></li>
+<li><a href="#org510658e">2.4.2. 对象绑定</a></li>
+<li><a href="#org08ea180">2.4.3. 绑定数组</a></li>
+</ul>
+</li>
+<li><a href="#orgb6317a3">2.5. 条件渲染指令</a>
+<ul>
+<li><a href="#org3783c5c">2.5.1. v-if相关指令</a></li>
+<li><a href="#orgb0cbbea">2.5.2. v-show指令</a></li>
+<li><a href="#org9165c6a">2.5.3. 比较v-if和v-show指令</a></li>
+</ul>
+</li>
+<li><a href="#org5b50d09">2.6. 列表渲染指令</a>
+<ul>
+<li><a href="#orga68fc2a">2.6.1. 列表的动态渲染</a></li>
+<li><a href="#org2e02a27">2.6.2. 列表的增,删,改</a></li>
+<li><a href="#orge32409f">2.6.3. 列表的过滤</a></li>
+<li><a href="#orgec42e18">2.6.4. 列表的排序</a></li>
+</ul>
+</li>
+<li><a href="#org680e4d4">2.7. 事件处理</a>
+<ul>
+<li><a href="#org4192255">2.7.1. 绑定事件监听</a></li>
+<li><a href="#org458ba34">2.7.2. 事件修饰符</a></li>
+<li><a href="#org8db7ebb">2.7.3. 按键修饰符</a></li>
+</ul>
+</li>
+<li><a href="#orgf58f458">2.8. 收集表单数据</a>
+<ul>
+<li><a href="#org439676a">2.8.1. 使用v-model指令</a></li>
+<li><a href="#orgcedae49">2.8.2. 相关指令修饰符</a></li>
+</ul>
+</li>
+<li><a href="#org630f4df">2.9. Vue实例的生命周期</a></li>
+<li><a href="#org936374b">2.10. 过渡与动画</a></li>
+<li><a href="#org3c4cae9">2.11. 内置指令</a>
+<ul>
+<li><a href="#org47e9180">2.11.1. v-text和v-html指令</a></li>
+<li><a href="#org2c9f786">2.11.2. v-pre指令</a></li>
+<li><a href="#org084983a">2.11.3. v-once指令</a></li>
+<li><a href="#org82c691f">2.11.4. v-memo指令</a></li>
+<li><a href="#org890c3ee">2.11.5. v-cloak指令</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org54ec0b5">3. Chapter 03: Vue3新语法</a>
+<ul>
+<li><a href="#orga248e4c">3.1. 组合式API的了解</a></li>
+<li><a href="#org1bd39f8">3.2. 利用ref函数定义响应式数据</a></li>
+<li><a href="#org0a1e40c">3.3. 利用reactive函数定义响应式数据</a></li>
+<li><a href="#org1042ddd">3.4. toRefs与toRef函数</a></li>
+<li><a href="#org5ec7750">3.5. readonly与shallowReadonly函数</a>
+<ul>
+<li><a href="#org9e8af1c">3.5.1. readonly</a></li>
+<li><a href="#org4009804">3.5.2. shallowReadonly</a></li>
+</ul>
+</li>
+<li><a href="#orgc360c54">3.6. shallowRef与shallowReactive函数</a>
+<ul>
+<li><a href="#org8c1540a">3.6.1. shallowRef</a></li>
+<li><a href="#org74e4ed9">3.6.2. shallowReactive</a></li>
+</ul>
+</li>
+<li><a href="#org0738a21">3.7. toRaw与markRaw函数</a>
+<ul>
+<li><a href="#orgaf7663c">3.7.1. toRaw</a></li>
+<li><a href="#orge03f093">3.7.2. markRaw</a></li>
+</ul>
+</li>
+<li><a href="#orgcf7f200">3.8. computed函数</a></li>
+<li><a href="#org7c04241">3.9. watch函数</a></li>
+<li><a href="#org8464346">3.10. 生命周期钩子函数</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orge33d0c6" class="outline-2">
-<h2 id="orge33d0c6"><span class="section-number-2">1.</span> Chapter 01: Vue.js概述</h2>
+<div id="outline-container-orgc771083" class="outline-2">
+<h2 id="orgc771083"><span class="section-number-2">1.</span> Chapter 01: Vue.js概述</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-org6b08cde" class="outline-3">
-<h3 id="org6b08cde"><span class="section-number-3">1.1.</span> 六何分析Vue</h3>
+<div id="outline-container-orgd48acee" class="outline-3">
+<h3 id="orgd48acee"><span class="section-number-3">1.1.</span> 六何分析Vue</h3>
 <div class="outline-text-3" id="text-1-1">
 <ul class="org-ul">
 <li>所谓六何分析就是了解如下六个方面:
@@ -72,8 +170,8 @@
 </ul></li>
 </ul>
 </div>
-<div id="outline-container-org15e5c68" class="outline-4">
-<h4 id="org15e5c68"><span class="section-number-4">1.1.1.</span> Vue是什么</h4>
+<div id="outline-container-org7d1d602" class="outline-4">
+<h4 id="org7d1d602"><span class="section-number-4">1.1.1.</span> Vue是什么</h4>
 <div class="outline-text-4" id="text-1-1-1">
 <ul class="org-ul">
 <li>Vue是一款渐进式JavaScript框架</li>
@@ -86,16 +184,16 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-orgeb3a140" class="outline-4">
-<h4 id="orgeb3a140"><span class="section-number-4">1.1.2.</span> Vue是由谁开发的</h4>
+<div id="outline-container-orgd870815" class="outline-4">
+<h4 id="orgd870815"><span class="section-number-4">1.1.2.</span> Vue是由谁开发的</h4>
 <div class="outline-text-4" id="text-1-1-2">
 <ul class="org-ul">
 <li>Vue的主要作者是尤雨溪领导的开发团队</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org53887c6" class="outline-4">
-<h4 id="org53887c6"><span class="section-number-4">1.1.3.</span> Vue的发展历程</h4>
+<div id="outline-container-org8439030" class="outline-4">
+<h4 id="org8439030"><span class="section-number-4">1.1.3.</span> Vue的发展历程</h4>
 <div class="outline-text-4" id="text-1-1-3">
 <ul class="org-ul">
 <li>Vue的发展历程如下
@@ -107,16 +205,16 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-org5db906a" class="outline-4">
-<h4 id="org5db906a"><span class="section-number-4">1.1.4.</span> Vue用在哪些项目的开发中</h4>
+<div id="outline-container-org83e52a4" class="outline-4">
+<h4 id="org83e52a4"><span class="section-number-4">1.1.4.</span> Vue用在哪些项目的开发中</h4>
 <div class="outline-text-4" id="text-1-1-4">
 <ul class="org-ul">
 <li>中国国内的互联网公司使用Vue较多</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org2a13afa" class="outline-4">
-<h4 id="org2a13afa"><span class="section-number-4">1.1.5.</span> 为什么要选择Vue</h4>
+<div id="outline-container-orgf5c7b88" class="outline-4">
+<h4 id="orgf5c7b88"><span class="section-number-4">1.1.5.</span> 为什么要选择Vue</h4>
 <div class="outline-text-4" id="text-1-1-5">
 <ul class="org-ul">
 <li>Vue的优势有如下:
@@ -129,16 +227,16 @@
 </div>
 </div>
 </div>
-<div id="outline-container-org8b34c9e" class="outline-3">
-<h3 id="org8b34c9e"><span class="section-number-3">1.2.</span> Vue3的新特性</h3>
+<div id="outline-container-orgb5fca74" class="outline-3">
+<h3 id="orgb5fca74"><span class="section-number-3">1.2.</span> Vue3的新特性</h3>
 <div class="outline-text-3" id="text-1-2">
 <ul class="org-ul">
 <li>Vue2是以JavaScript为开发基础的.而Vue3是以TypeScript为基础开发的</li>
 <li>Vue3借鉴了其他框架和库的功能与优势,成功实现了API的高度抽象</li>
 </ul>
 </div>
-<div id="outline-container-org4308f94" class="outline-4">
-<h4 id="org4308f94"><span class="section-number-4">1.2.1.</span> 内在核心的变化</h4>
+<div id="outline-container-org67f4e16" class="outline-4">
+<h4 id="org67f4e16"><span class="section-number-4">1.2.1.</span> 内在核心的变化</h4>
 <div class="outline-text-4" id="text-1-2-1">
 <ul class="org-ul">
 <li>Vue3采用了浏览器中的一些新特性,比如Proxy,Reflect</li>
@@ -147,23 +245,23 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-orga4c81d2" class="outline-4">
-<h4 id="orga4c81d2"><span class="section-number-4">1.2.2.</span> 渲染引擎的改进</h4>
+<div id="outline-container-org9c2d6cf" class="outline-4">
+<h4 id="org9c2d6cf"><span class="section-number-4">1.2.2.</span> 渲染引擎的改进</h4>
 <div class="outline-text-4" id="text-1-2-2">
 <ul class="org-ul">
 <li>Vue3对底层渲染引擎进行了改进,采用了新的虚拟DOM算法</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orga438253" class="outline-4">
-<h4 id="orga438253"><span class="section-number-4">1.2.3.</span> 新的内置组件</h4>
+<div id="outline-container-org85e2789" class="outline-4">
+<h4 id="org85e2789"><span class="section-number-4">1.2.3.</span> 新的内置组件</h4>
 <div class="outline-text-4" id="text-1-2-3">
 <ul class="org-ul">
 <li>Vue3新增了一些内置组件,开发人员可以利用它们来解决一些常见的问题,我们下面分别来介绍</li>
 </ul>
 </div>
 <ol class="org-ol">
-<li><a id="orgca4fcda"></a>Fragment<br />
+<li><a id="org2d53299"></a>Fragment<br />
 <div class="outline-text-5" id="text-1-2-3-1">
 <ul class="org-ul">
 <li><p>
@@ -219,7 +317,7 @@ Fragment的最终效果是这样的,注意和上面报错的代码一致,只是v
 </ul>
 </div>
 </li>
-<li><a id="orgb0758da"></a>Teleport<br />
+<li><a id="orgd05a53f"></a>Teleport<br />
 <div class="outline-text-5" id="text-1-2-3-2">
 <ul class="org-ul">
 <li>Teleport 是 Vue 3 提供的一个内置组件，它允许你将某些 DOM 节点从当前组件的渲染位置“传送”（或者说移动）
@@ -252,7 +350,7 @@ Fragment的最终效果是这样的,注意和上面报错的代码一致,只是v
 </ul>
 </div>
 </li>
-<li><a id="orga1f081e"></a>Suspense<br />
+<li><a id="org79f0576"></a>Suspense<br />
 <div class="outline-text-5" id="text-1-2-3-3">
 <ul class="org-ul">
 <li>Suspense 是 Vue 3 提供的一个异步组件加载工具，它允许你在等待异步内容加载时显示备用内容（也叫“占位内容”）。
@@ -297,8 +395,8 @@ Fragment的最终效果是这样的,注意和上面报错的代码一致,只是v
 </li>
 </ol>
 </div>
-<div id="outline-container-org4034b1f" class="outline-4">
-<h4 id="org4034b1f"><span class="section-number-4">1.2.4.</span> API的修改</h4>
+<div id="outline-container-orgf443ad9" class="outline-4">
+<h4 id="orgf443ad9"><span class="section-number-4">1.2.4.</span> API的修改</h4>
 <div class="outline-text-4" id="text-1-2-4">
 <ul class="org-ul">
 <li>Vue3中的变化主要体现在三个方面:
@@ -311,7 +409,7 @@ Fragment的最终效果是这样的,注意和上面报错的代码一致,只是v
 </ul>
 </div>
 <ol class="org-ol">
-<li><a id="org5a739dc"></a>组合式API<br />
+<li><a id="orgaa358f6"></a>组合式API<br />
 <div class="outline-text-5" id="text-1-2-4-1">
 <ul class="org-ul">
 <li>组合式API是Vue3中最为重大的一个升级内容.也即是把代码的数据和函数"组合到一个地方"进行开发</li>
@@ -320,35 +418,35 @@ Fragment的最终效果是这样的,注意和上面报错的代码一致,只是v
 </ul>
 </div>
 </li>
-<li><a id="org4c76e93"></a>filter过滤器的摒弃<br />
+<li><a id="orgf1a3227"></a>filter过滤器的摒弃<br />
 <div class="outline-text-5" id="text-1-2-4-2">
 <ul class="org-ul">
 <li>Vue2中经常使用过滤器功能,Vue3已经不再提供</li>
 </ul>
 </div>
 </li>
-<li><a id="org34f83d0"></a>bus总线移除<br />
+<li><a id="org77e118e"></a>bus总线移除<br />
 <div class="outline-text-5" id="text-1-2-4-3">
 <ul class="org-ul">
 <li>Vue3中已经移除了bus总线</li>
 </ul>
 </div>
 </li>
-<li><a id="org69232d7"></a>不再有全局Vue实例的$mount方法<br />
+<li><a id="org292823a"></a>不再有全局Vue实例的$mount方法<br />
 <div class="outline-text-5" id="text-1-2-4-4">
 <ul class="org-ul">
 <li>不再使用$mount方法,改为使用createApp命令</li>
 </ul>
 </div>
 </li>
-<li><a id="org4961876"></a>v-model<br />
+<li><a id="orga3c20dc"></a>v-model<br />
 <div class="outline-text-5" id="text-1-2-4-5">
 <ul class="org-ul">
 <li>Vue3的组件可以进行多次v-model的双向数据绑定处理</li>
 </ul>
 </div>
 </li>
-<li><a id="orgc67da20"></a>样式的强化<br />
+<li><a id="org1ac1163"></a>样式的强化<br />
 <div class="outline-text-5" id="text-1-2-4-6">
 <ul class="org-ul">
 <li>Vue3中增加了新的操作样式的方法</li>
@@ -358,19 +456,19 @@ Fragment的最终效果是这样的,注意和上面报错的代码一致,只是v
 </ol>
 </div>
 </div>
-<div id="outline-container-org614afc8" class="outline-3">
-<h3 id="org614afc8"><span class="section-number-3">1.3.</span> Vue3的运行环境</h3>
+<div id="outline-container-org1204b38" class="outline-3">
+<h3 id="org1204b38"><span class="section-number-3">1.3.</span> Vue3的运行环境</h3>
 <div class="outline-text-3" id="text-1-3">
 </div>
-<div id="outline-container-orgf1747ca" class="outline-4">
-<h4 id="orgf1747ca"><span class="section-number-4">1.3.1.</span> 运行环境搭建</h4>
+<div id="outline-container-org405264d" class="outline-4">
+<h4 id="org405264d"><span class="section-number-4">1.3.1.</span> 运行环境搭建</h4>
 <div class="outline-text-4" id="text-1-3-1">
 <ul class="org-ul">
 <li>Vue3有两种方式搭建运行环境,分别是页面直接引用和通过脚手架创建Vue项目</li>
 </ul>
 </div>
 <ol class="org-ol">
-<li><a id="orgc936ef3"></a>页面直接引入Vue库<br />
+<li><a id="org3b460ae"></a>页面直接引入Vue库<br />
 <div class="outline-text-5" id="text-1-3-1-1">
 <ul class="org-ul">
 <li>我们通过cdn直接引入Vue到script标签内.这种方法对于快速实验很有帮助
@@ -428,7 +526,7 @@ Fragment的最终效果是这样的,注意和上面报错的代码一致,只是v
 </ul>
 </div>
 </li>
-<li><a id="orgf6717ed"></a>通过脚手架创建Vue项目<br />
+<li><a id="org006634d"></a>通过脚手架创建Vue项目<br />
 <div class="outline-text-5" id="text-1-3-1-2">
 <ul class="org-ul">
 <li>SPA项目显然要有自己的npm项目,这种情况下如果要创建Vue项目可以:
@@ -447,8 +545,8 @@ Fragment的最终效果是这样的,注意和上面报错的代码一致,只是v
 </li>
 </ol>
 </div>
-<div id="outline-container-org00352cf" class="outline-4">
-<h4 id="org00352cf"><span class="section-number-4">1.3.2.</span> Vue开发者调试工具</h4>
+<div id="outline-container-org61afac0" class="outline-4">
+<h4 id="org61afac0"><span class="section-number-4">1.3.2.</span> Vue开发者调试工具</h4>
 <div class="outline-text-4" id="text-1-3-2">
 <ul class="org-ul">
 <li>可以在各大浏览器市场搜索并下载vue-devtools使用.</li>
@@ -457,10 +555,3282 @@ Fragment的最终效果是这样的,注意和上面报错的代码一致,只是v
 </div>
 </div>
 </div>
+<div id="outline-container-org176e796" class="outline-2">
+<h2 id="org176e796"><span class="section-number-2">2.</span> Chapter 02: 核心语法</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-org044f660" class="outline-3">
+<h3 id="org044f660"><span class="section-number-3">2.1.</span> 模板语法</h3>
+<div class="outline-text-3" id="text-2-1">
+<ul class="org-ul">
+<li>Vue使用了一种基于HTML的模版语法,使用户能够生命式地将组件实例的数据绑定到呈现的DOM上</li>
+<li>模版中除了HTML的结构,还包括两个Vue模版特有的语法:
+<ul class="org-ul">
+<li>插值: 只有一个功能,就是向标签中插入一个动态的值</li>
+<li>指令: 用来操作其所在的标签,比如制动动态属性值,绑定事件监听,控制显示隐藏等</li>
+</ul></li>
+<li>底层机制中,Vue会将模版编译成高度优化的JavaScript代码,结合响应式系统,当应用状态数据变更时,Vue能够自
+动更新需要变化的DOM节点,并且做到最小化更新</li>
+</ul>
+</div>
+<div id="outline-container-org1dc5af7" class="outline-4">
+<h4 id="org1dc5af7"><span class="section-number-4">2.1.1.</span> 插值语法</h4>
+<div class="outline-text-4" id="text-2-1-1">
+<ul class="org-ul">
+<li>插值语法用来向标签中插入一个动态的值.格式很固定,就是一个双大括号包含一个JavaScript值
+<ul class="org-ul">
+<li><p>
+示例如下
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #531ab6;">!doctype</span> html&gt;
+&lt;<span style="color: #721045;">html</span> <span style="color: #005e8b;">lang</span>=<span style="color: #3548cf;">"en"</span>&gt;
+  &lt;<span style="color: #721045;">head</span>&gt;
+    &lt;<span style="color: #721045;">meta</span> <span style="color: #005e8b;">charset</span>=<span style="color: #3548cf;">"UTF-8"</span> /&gt;
+    &lt;<span style="color: #721045;">meta</span> <span style="color: #005e8b;">name</span>=<span style="color: #3548cf;">"viewport"</span> <span style="color: #005e8b;">content</span>=<span style="color: #3548cf;">"width=device-width, initial-scale=1.0"</span> /&gt;
+    &lt;<span style="color: #721045;">title</span>&gt;<span style="font-weight: bold; text-decoration: underline;">&#25554;&#20540;&#35821;&#27861;</span>&lt;/<span style="color: #721045;">title</span>&gt;
+    &lt;<span style="color: #721045;">script</span> <span style="color: #005e8b;">src</span>=<span style="color: #3548cf;">"https://unpkg.com/vue@3/dist/vue.global.js"</span>&gt;&lt;/<span style="color: #721045;">script</span>&gt;
+  &lt;/<span style="color: #721045;">head</span>&gt;
+  &lt;<span style="color: #721045;">body</span>&gt;
+    &lt;<span style="color: #721045;">div</span> <span style="color: #005e8b;">id</span>=<span style="color: #3548cf;">"app"</span>&gt;
+      <span style="color: #7f0000;">&lt;!-- </span><span style="color: #7f0000;">Vue &#27169;&#26495;</span><span style="color: #7f0000;"> --&gt;</span>
+      &lt;<span style="color: #721045;">h1</span>&gt;<span style="font-weight: bold; text-decoration: underline;">{{ 123 }}</span>&lt;/<span style="color: #721045;">h1</span>&gt;
+      &lt;<span style="color: #721045;">h1</span>&gt;<span style="font-weight: bold; text-decoration: underline;">{{ message }}</span>&lt;/<span style="color: #721045;">h1</span>&gt;
+      &lt;<span style="color: #721045;">h1</span>&gt;<span style="font-weight: bold; text-decoration: underline;">{{ message.toUpperCase() }}</span>&lt;/<span style="color: #721045;">h1</span>&gt;
+      &lt;<span style="color: #721045;">h1</span>&gt;<span style="font-weight: bold; text-decoration: underline;">{{ score }}</span>&lt;/<span style="color: #721045;">h1</span>&gt;
+      &lt;<span style="color: #721045;">h1</span>&gt;<span style="font-weight: bold; text-decoration: underline;">{{ score &gt; 60 ? 'Passed!' : 'Failed' }}</span>&lt;/<span style="color: #721045;">h1</span>&gt;
+    &lt;/<span style="color: #721045;">div</span>&gt;
+
+    &lt;<span style="color: #721045;">script</span>&gt;
+      const { createApp, ref } = Vue; // &#20174; Vue &#20013;&#35299;&#26500;&#20986;&#38656;&#35201;&#30340;API
+
+      // &#21019;&#24314; Vue &#24212;&#29992;
+      const app = createApp({
+        setup() {
+          const message = "Hello World";
+          const score = 61;
+
+          // &#36820;&#22238;&#27169;&#26495;&#20013;&#38656;&#35201;&#20351;&#29992;&#30340;&#25968;&#25454;
+          return {
+            message,
+            score,
+          };
+        },
+      });
+
+      // &#25346;&#36733;&#21040; #app
+      app.mount("#app");
+    &lt;/<span style="color: #721045;">script</span>&gt;
+  &lt;/<span style="color: #721045;">body</span>&gt;
+&lt;/<span style="color: #721045;">html</span>&gt;
+</pre>
+</div></li>
+<li>从上面的例子我们可以看到,双大括号里面可以包含任意的JavaScript表达式,可以是一个常量,一个变量,一个
+变量的方法调用,甚至是一个三目表达式</li>
+<li>还需要注意的是,插值语法只可以作为一个标签的文本,不能作为一个表情的属性值!</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org47dec8b" class="outline-4">
+<h4 id="org47dec8b"><span class="section-number-4">2.1.2.</span> 指令语法</h4>
+<div class="outline-text-4" id="text-2-1-2">
+<ul class="org-ul">
+<li>指令(Directive)是带有"v-"前缀的Vue自定义标签属性,其属性值一般是一个JavaScript表达式</li>
+<li>Vue包含了不同的功能指令,比如:
+<ul class="org-ul">
+<li>v-bind用来动态指定属性值</li>
+<li>v-on用来给标签绑定事件监听</li>
+<li>v-if和v-show用来控制标签是否显示</li>
+</ul></li>
+<li>指令的作用域始终是这个指令属性所在的标签</li>
+<li>我们下面以v-bind和v-on举一个例子
+<ul class="org-ul">
+<li><p>
+示例如下
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #531ab6;">!doctype</span> html&gt;
+&lt;<span style="color: #721045;">html</span> <span style="color: #005e8b;">lang</span>=<span style="color: #3548cf;">"en"</span>&gt;
+  &lt;<span style="color: #721045;">head</span>&gt;
+    &lt;<span style="color: #721045;">meta</span> <span style="color: #005e8b;">charset</span>=<span style="color: #3548cf;">"UTF-8"</span> /&gt;
+    &lt;<span style="color: #721045;">meta</span> <span style="color: #005e8b;">name</span>=<span style="color: #3548cf;">"viewport"</span> <span style="color: #005e8b;">content</span>=<span style="color: #3548cf;">"width=device-width, initial-scale=1.0"</span> /&gt;
+    &lt;<span style="color: #721045;">title</span>&gt;<span style="font-weight: bold; text-decoration: underline;">&#25351;&#20196;&#35821;&#27861;</span>&lt;/<span style="color: #721045;">title</span>&gt;
+    &lt;<span style="color: #721045;">script</span> <span style="color: #005e8b;">src</span>=<span style="color: #3548cf;">"https://unpkg.com/vue@3/dist/vue.global.js"</span>&gt;&lt;/<span style="color: #721045;">script</span>&gt;
+  &lt;/<span style="color: #721045;">head</span>&gt;
+  &lt;<span style="color: #721045;">body</span>&gt;
+    &lt;<span style="color: #721045;">div</span> <span style="color: #005e8b;">id</span>=<span style="color: #3548cf;">"app"</span>&gt;
+      <span style="color: #7f0000;">&lt;!-- </span><span style="color: #7f0000;">Vue &#27169;&#26495;</span><span style="color: #7f0000;"> --&gt;</span>
+      &lt;<span style="color: #721045;">a</span> <span style="color: #8f0075;">v-bind</span>:<span style="color: #005e8b;">href</span>=<span style="color: #3548cf;">"url"</span>&gt;Bing to search&lt;/<span style="color: #721045;">a</span>&gt;
+      &lt;<span style="color: #721045;">br</span> /&gt;
+      &lt;<span style="color: #721045;">button</span> <span style="color: #8f0075;">v-on</span>:<span style="color: #005e8b;">click</span>=<span style="color: #3548cf;">"confirm"</span>&gt;Confirm&lt;/<span style="color: #721045;">button</span>&gt;
+    &lt;/<span style="color: #721045;">div</span>&gt;
+
+    &lt;<span style="color: #721045;">script</span>&gt;
+      const { createApp } = Vue; // &#20174; Vue &#20013;&#35299;&#26500;&#20986;&#38656;&#35201;&#30340;API
+
+      // &#21019;&#24314; Vue &#24212;&#29992;
+      const app = createApp({
+        setup() {
+          const url = "https://bing.com";
+          function confirm() {
+            if (window.confirm("Are you sure?")) {
+              window.location.href = "https://www.baidu.com";
+            }
+          }
+
+          // &#36820;&#22238;&#27169;&#26495;&#20013;&#38656;&#35201;&#20351;&#29992;&#30340;&#25968;&#25454;
+          return {
+            url,
+            confirm,
+          };
+        },
+      });
+
+      // &#25346;&#36733;&#21040; #app
+      app.mount("#app");
+    &lt;/<span style="color: #721045;">script</span>&gt;
+  &lt;/<span style="color: #721045;">body</span>&gt;
+&lt;/<span style="color: #721045;">html</span>&gt;
+</pre>
+</div></li>
+<li>上例中用法v-bind使用总结,`v-bind:&lt;属性名&gt;="&lt;JavaScript表达式&gt;"`</li>
+<li>上例中用法v-on使用总结,`v-on:&lt;事件名&gt;"&lt;方法名表达式&gt;"`</li>
+<li>注意,无论是v-bind还是v-on,一旦使用之后,在双引号里面就可以书写JavaScript代码了.</li>
+<li>更为重要的是,我们由于v-bind和v-on使用频率很高,我们会对他们进行简化:
+<ol class="org-ol">
+<li>`v-bind:&lt;属性名&gt;="&lt;JavaScript表达式&gt;"`简化成`:&lt;属性名&gt;="&lt;JavaScript表达式&gt;"`</li>
+<li>`v-on:&lt;事件名&gt;"&lt;方法名表达式&gt;"`简化成`@&lt;事件名&gt;"&lt;方法名表达式&gt;"`</li>
+</ol></li>
+<li><p>
+上面代码也就可以改成如下
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #531ab6;">!doctype</span> html&gt;
+&lt;<span style="color: #721045;">html</span> <span style="color: #005e8b;">lang</span>=<span style="color: #3548cf;">"en"</span>&gt;
+  &lt;<span style="color: #721045;">head</span>&gt;
+    &lt;<span style="color: #721045;">meta</span> <span style="color: #005e8b;">charset</span>=<span style="color: #3548cf;">"UTF-8"</span> /&gt;
+    &lt;<span style="color: #721045;">meta</span> <span style="color: #005e8b;">name</span>=<span style="color: #3548cf;">"viewport"</span> <span style="color: #005e8b;">content</span>=<span style="color: #3548cf;">"width=device-width, initial-scale=1.0"</span> /&gt;
+    &lt;<span style="color: #721045;">title</span>&gt;<span style="font-weight: bold; text-decoration: underline;">&#25351;&#20196;&#35821;&#27861;</span>&lt;/<span style="color: #721045;">title</span>&gt;
+    &lt;<span style="color: #721045;">script</span> <span style="color: #005e8b;">src</span>=<span style="color: #3548cf;">"https://unpkg.com/vue@3/dist/vue.global.js"</span>&gt;&lt;/<span style="color: #721045;">script</span>&gt;
+  &lt;/<span style="color: #721045;">head</span>&gt;
+  &lt;<span style="color: #721045;">body</span>&gt;
+    &lt;<span style="color: #721045;">div</span> <span style="color: #005e8b;">id</span>=<span style="color: #3548cf;">"app"</span>&gt;
+      <span style="color: #7f0000;">&lt;!-- </span><span style="color: #7f0000;">Vue &#27169;&#26495;</span><span style="color: #7f0000;"> --&gt;</span>
+      &lt;<span style="color: #721045;">a</span> :href=<span style="color: #3548cf;">"url"</span>&gt;Bing to search&lt;/<span style="color: #721045;">a</span>&gt;
+      &lt;<span style="color: #721045;">br</span> /&gt;
+      &lt;<span style="color: #721045;">button</span> @click=<span style="color: #3548cf;">"confirm"</span>&gt;Confirm&lt;/<span style="color: #721045;">button</span>&gt;
+    &lt;/<span style="color: #721045;">div</span>&gt;
+
+    &lt;<span style="color: #721045;">script</span>&gt;
+      const { createApp } = Vue; // &#20174; Vue &#20013;&#35299;&#26500;&#20986;&#38656;&#35201;&#30340;API
+
+      // &#21019;&#24314; Vue &#24212;&#29992;
+      const app = createApp({
+        setup() {
+          const url = "https://bing.com";
+          function confirm() {
+            if (window.confirm("Are you sure?")) {
+              window.location.href = "https://www.baidu.com";
+            }
+          }
+
+          // &#36820;&#22238;&#27169;&#26495;&#20013;&#38656;&#35201;&#20351;&#29992;&#30340;&#25968;&#25454;
+          return {
+            url,
+            confirm,
+          };
+        },
+      });
+
+      // &#25346;&#36733;&#21040; #app
+      app.mount("#app");
+    &lt;/<span style="color: #721045;">script</span>&gt;
+  &lt;/<span style="color: #721045;">body</span>&gt;
+&lt;/<span style="color: #721045;">html</span>&gt;
+</pre>
+</div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org07fedeb" class="outline-4">
+<h4 id="org07fedeb"><span class="section-number-4">2.1.3.</span> data和methods配置项</h4>
+<div class="outline-text-4" id="text-2-1-3">
+<ul class="org-ul">
+<li>我们前面的例子,在createAp里面都是使用setup()来创建对象和函数,这是Vue3的推荐做法(也就是所谓的组合式API),
+但是Vue3为了向前兼容,也要介绍下Vue2中主力使用,Vue3中还支持,但是不再推荐的选项式API</li>
+<li>选项式API的核心,就是createApp函数"第一次参数对象"里面的两个属性(property),就是data和methods</li>
+<li>先看第一个属性,也就是data属性.这个属性是一个"返回对象的函数",它必须是函数的原因是:
+<ul class="org-ul">
+<li>每个 Vue 组件实例都需要有自己独立的数据状态。如果 data 是一个对象，那么所有的组件实例会共享同一个数据对象（因为对象是引用类型）</li>
+<li>如果 data 是一个函数，每次创建组件实例时，都会调用这个函数，返回一个全新的数据对象，从而使每个实例的数据是独立的</li>
+</ul></li>
+<li>再看第二个属性,也就是method.这个属性是一个普通的对象,这个对象的每个成员都是一个函数.每个函数中都可
+以通过this.xxx来读取data对象中的属性(其中xxx在data属性中定义并返回)</li>
+<li>下面我们通过一个例子来看下data和methods如何使用
+<ul class="org-ul">
+<li><p>
+示例如下,这个例子中我们很清晰的能看出data是一个function,它返回一个对象. method是一个对象,成员都是对象
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #531ab6;">!doctype</span> html&gt;
+
+&lt;<span style="color: #721045;">html</span> <span style="color: #005e8b;">lang</span>=<span style="color: #3548cf;">"en"</span>&gt;
+  &lt;<span style="color: #721045;">head</span>&gt;
+    &lt;<span style="color: #721045;">meta</span> <span style="color: #005e8b;">charset</span>=<span style="color: #3548cf;">"UTF-8"</span> /&gt;
+    &lt;<span style="color: #721045;">meta</span> <span style="color: #005e8b;">name</span>=<span style="color: #3548cf;">"viewport"</span> <span style="color: #005e8b;">content</span>=<span style="color: #3548cf;">"width=device-width, initial-scale=1.0"</span> /&gt;
+    &lt;<span style="color: #721045;">title</span>&gt;<span style="font-weight: bold; text-decoration: underline;">&#36873;&#39033;&#24335;API</span>&lt;/<span style="color: #721045;">title</span>&gt;
+    &lt;<span style="color: #721045;">script</span> <span style="color: #005e8b;">src</span>=<span style="color: #3548cf;">"https://unpkg.com/vue@3/dist/vue.global.js"</span>&gt;&lt;/<span style="color: #721045;">script</span>&gt;
+  &lt;/<span style="color: #721045;">head</span>&gt;
+  &lt;<span style="color: #721045;">body</span>&gt;
+    &lt;<span style="color: #721045;">div</span> <span style="color: #005e8b;">id</span>=<span style="color: #3548cf;">"app"</span>&gt;
+      &lt;<span style="color: #721045;">h2</span>&gt;<span style="font-weight: bold; font-style: italic; text-decoration: underline;">count: {{ count }}</span>&lt;/<span style="color: #721045;">h2</span>&gt;
+      &lt;<span style="color: #721045;">button</span> @click=<span style="color: #3548cf;">"updateCount"</span>&gt;UpdateCount&lt;/<span style="color: #721045;">button</span>&gt;
+    &lt;/<span style="color: #721045;">div</span>&gt;
+
+    &lt;<span style="color: #721045;">script</span>&gt;
+      const { createApp } = Vue; // &#20174; Vue &#20013;&#35299;&#26500;&#20986;&#38656;&#35201;&#30340;API
+
+      // &#21019;&#24314; Vue &#24212;&#29992;
+      const app = createApp({
+        data: function () {
+          return {
+            count: 0,
+          };
+        },
+        methods: {
+          updateCount: function () {
+            this.count += 1;
+          },
+        },
+      });
+
+      // &#25346;&#36733;&#21040; #app
+      app.mount("#app");
+    &lt;/<span style="color: #721045;">script</span>&gt;
+  &lt;/<span style="color: #721045;">body</span>&gt;
+&lt;/<span style="color: #721045;">html</span>&gt;
+</pre>
+</div></li>
+<li><p>
+上面是es5的写法,容易看出在对象中的"函数属性",比如data,写成如下
+</p>
+<div class="org-src-container">
+<pre class="src src-js"><span style="color: #721045;">data</span>: <span style="color: #531ab6;">function</span> <span style="color: #000000;">()</span> <span style="color: #000000;">{</span>
+  <span style="color: #531ab6;">return</span> <span style="color: #dd22dd;">{</span>
+    count: 0,
+  <span style="color: #dd22dd;">}</span>;
+<span style="color: #000000;">}</span>
+</pre>
+</div></li>
+<li><p>
+从es6开始,Javascript支持对象方法的简写语法.那么data就可以如下书写了
+</p>
+<div class="org-src-container">
+<pre class="src src-js">data<span style="color: #000000;">()</span> <span style="color: #000000;">{</span>
+  <span style="color: #531ab6;">return</span> <span style="color: #dd22dd;">{</span>
+    count: 0,
+  <span style="color: #dd22dd;">}</span>;
+<span style="color: #000000;">}</span>
+</pre>
+</div></li>
+<li><p>
+那么,使用简写语法更改data和updateCount之后的代码如下
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #531ab6;">!doctype</span> html&gt;
+
+&lt;<span style="color: #721045;">html</span> <span style="color: #005e8b;">lang</span>=<span style="color: #3548cf;">"en"</span>&gt;
+  &lt;<span style="color: #721045;">head</span>&gt;
+    &lt;<span style="color: #721045;">meta</span> <span style="color: #005e8b;">charset</span>=<span style="color: #3548cf;">"UTF-8"</span> /&gt;
+    &lt;<span style="color: #721045;">meta</span> <span style="color: #005e8b;">name</span>=<span style="color: #3548cf;">"viewport"</span> <span style="color: #005e8b;">content</span>=<span style="color: #3548cf;">"width=device-width, initial-scale=1.0"</span> /&gt;
+    &lt;<span style="color: #721045;">title</span>&gt;<span style="font-weight: bold; text-decoration: underline;">&#36873;&#39033;&#24335;API</span>&lt;/<span style="color: #721045;">title</span>&gt;
+    &lt;<span style="color: #721045;">script</span> <span style="color: #005e8b;">src</span>=<span style="color: #3548cf;">"https://unpkg.com/vue@3/dist/vue.global.js"</span>&gt;&lt;/<span style="color: #721045;">script</span>&gt;
+  &lt;/<span style="color: #721045;">head</span>&gt;
+  &lt;<span style="color: #721045;">body</span>&gt;
+    &lt;<span style="color: #721045;">div</span> <span style="color: #005e8b;">id</span>=<span style="color: #3548cf;">"app"</span>&gt;
+      &lt;<span style="color: #721045;">h2</span>&gt;<span style="font-weight: bold; font-style: italic; text-decoration: underline;">count: {{ count }}</span>&lt;/<span style="color: #721045;">h2</span>&gt;
+      &lt;<span style="color: #721045;">button</span> @click=<span style="color: #3548cf;">"updateCount"</span>&gt;UpdateCount&lt;/<span style="color: #721045;">button</span>&gt;
+    &lt;/<span style="color: #721045;">div</span>&gt;
+
+    &lt;<span style="color: #721045;">script</span>&gt;
+      const { createApp } = Vue; // &#20174; Vue &#20013;&#35299;&#26500;&#20986;&#38656;&#35201;&#30340;API
+
+      // &#21019;&#24314; Vue &#24212;&#29992;
+      const app = createApp({
+        data() {
+          return {
+            count: 0,
+          };
+        },
+        methods: {
+          updateCount() {
+            this.count += 1;
+          },
+        },
+      });
+
+      // &#25346;&#36733;&#21040; #app
+      app.mount("#app");
+    &lt;/<span style="color: #721045;">script</span>&gt;
+  &lt;/<span style="color: #721045;">body</span>&gt;
+&lt;/<span style="color: #721045;">html</span>&gt;
+</pre>
+</div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org3c02592" class="outline-3">
+<h3 id="org3c02592"><span class="section-number-3">2.2.</span> 计算属性</h3>
+<div class="outline-text-3" id="text-2-2">
+</div>
+<div id="outline-container-org7beb21d" class="outline-4">
+<h4 id="org7beb21d"><span class="section-number-4">2.2.1.</span> 计算属性的基本使用</h4>
+<div class="outline-text-4" id="text-2-2-1">
+<ul class="org-ul">
+<li><p>
+之前我们看到过用三元表达式动态判断data中的score值
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #721045;">h1</span>&gt;<span style="font-weight: bold; text-decoration: underline;">{{ score &gt; 60 ? 'Passed!' : 'Failed' }}</span>&lt;/<span style="color: #721045;">h1</span>&gt;
+</pre>
+</div></li>
+<li>上述方法首先看起来不直观,其次,如果这个逻辑需要在多处展示,那么显然我们把一段逻辑复制到各处就违反了DRY
+原则.</li>
+<li>对此,Vue给出的解决方案是计算属性,在createApp的对象参数中,其名字是computed</li>
+<li>在Vue2中,使用computed的体验有些奇怪.因为computed和methods一样是一个"对象属性,且成员都是函数",但是
+computed的函数在插值语法中使用的时候,是不加括号的.尽管有各种各样的解释,但是这确实猛一看令人费解,在
+后面Vue3里面,我们会看到computed在setup()里面使用显然更加容易理解
+<ul class="org-ul">
+<li><p>
+示例如下
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #531ab6;">!doctype</span> html&gt;
+
+&lt;<span style="color: #721045;">html</span> <span style="color: #005e8b;">lang</span>=<span style="color: #3548cf;">"en"</span>&gt;
+  &lt;<span style="color: #721045;">head</span>&gt;
+    &lt;<span style="color: #721045;">meta</span> <span style="color: #005e8b;">charset</span>=<span style="color: #3548cf;">"UTF-8"</span> /&gt;
+    &lt;<span style="color: #721045;">meta</span> <span style="color: #005e8b;">name</span>=<span style="color: #3548cf;">"viewport"</span> <span style="color: #005e8b;">content</span>=<span style="color: #3548cf;">"width=device-width, initial-scale=1.0"</span> /&gt;
+    &lt;<span style="color: #721045;">title</span>&gt;<span style="font-weight: bold; text-decoration: underline;">&#35745;&#31639;&#23646;&#24615;</span>&lt;/<span style="color: #721045;">title</span>&gt;
+    &lt;<span style="color: #721045;">script</span> <span style="color: #005e8b;">src</span>=<span style="color: #3548cf;">"https://unpkg.com/vue@3/dist/vue.global.js"</span>&gt;&lt;/<span style="color: #721045;">script</span>&gt;
+  &lt;/<span style="color: #721045;">head</span>&gt;
+  &lt;<span style="color: #721045;">body</span>&gt;
+    &lt;<span style="color: #721045;">div</span> <span style="color: #005e8b;">id</span>=<span style="color: #3548cf;">"app"</span>&gt;
+      &lt;<span style="color: #721045;">h1</span>&gt;<span style="font-weight: bold; text-decoration: underline;">{{ score }}</span>&lt;/<span style="color: #721045;">h1</span>&gt;
+      &lt;<span style="color: #721045;">h1</span>&gt;<span style="font-weight: bold; text-decoration: underline;">{{ examMessage }}</span>&lt;/<span style="color: #721045;">h1</span>&gt;
+    &lt;/<span style="color: #721045;">div</span>&gt;
+
+    &lt;<span style="color: #721045;">script</span>&gt;
+      const { createApp } = Vue; // &#20174; Vue &#20013;&#35299;&#26500;&#20986;&#38656;&#35201;&#30340;API
+
+      // &#21019;&#24314; Vue &#24212;&#29992;
+      const app = createApp({
+        data() {
+          return {
+            score: 61,
+          };
+        },
+        computed: {
+          examMessage() {
+            const message = this.score &gt; 60 ? "Passed!" : "Failed";
+            return message;
+          },
+        },
+      });
+
+      // &#25346;&#36733;&#21040; #app
+      app.mount("#app");
+    &lt;/<span style="color: #721045;">script</span>&gt;
+  &lt;/<span style="color: #721045;">body</span>&gt;
+&lt;/<span style="color: #721045;">html</span>&gt;
+</pre>
+</div></li>
+<li>注意,我们这里使用this来访问score</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org84126cd" class="outline-4">
+<h4 id="org84126cd"><span class="section-number-4">2.2.2.</span> 计算属性和method方法</h4>
+<div class="outline-text-4" id="text-2-2-2">
+<ul class="org-ul">
+<li>其实methods能实现和computed完全相同的功能
+<ul class="org-ul">
+<li><p>
+示例如下,注意methods是要带()调用的,computed不需要
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #531ab6;">!doctype</span> html&gt;
+
+&lt;<span style="color: #721045;">html</span> <span style="color: #005e8b;">lang</span>=<span style="color: #3548cf;">"en"</span>&gt;
+  &lt;<span style="color: #721045;">head</span>&gt;
+    &lt;<span style="color: #721045;">meta</span> <span style="color: #005e8b;">charset</span>=<span style="color: #3548cf;">"UTF-8"</span> /&gt;
+    &lt;<span style="color: #721045;">meta</span> <span style="color: #005e8b;">name</span>=<span style="color: #3548cf;">"viewport"</span> <span style="color: #005e8b;">content</span>=<span style="color: #3548cf;">"width=device-width, initial-scale=1.0"</span> /&gt;
+    &lt;<span style="color: #721045;">title</span>&gt;<span style="font-weight: bold; text-decoration: underline;">&#35745;&#31639;&#23646;&#24615;</span>&lt;/<span style="color: #721045;">title</span>&gt;
+    &lt;<span style="color: #721045;">script</span> <span style="color: #005e8b;">src</span>=<span style="color: #3548cf;">"https://unpkg.com/vue@3/dist/vue.global.js"</span>&gt;&lt;/<span style="color: #721045;">script</span>&gt;
+  &lt;/<span style="color: #721045;">head</span>&gt;
+  &lt;<span style="color: #721045;">body</span>&gt;
+    &lt;<span style="color: #721045;">div</span> <span style="color: #005e8b;">id</span>=<span style="color: #3548cf;">"app"</span>&gt;
+      &lt;<span style="color: #721045;">h1</span>&gt;<span style="font-weight: bold; text-decoration: underline;">{{ score }}</span>&lt;/<span style="color: #721045;">h1</span>&gt;
+      &lt;<span style="color: #721045;">h1</span>&gt;<span style="font-weight: bold; text-decoration: underline;">{{ examMessage }}</span>&lt;/<span style="color: #721045;">h1</span>&gt;
+      &lt;<span style="color: #721045;">h1</span>&gt;<span style="font-weight: bold; text-decoration: underline;">{{ examMessage }}</span>&lt;/<span style="color: #721045;">h1</span>&gt;
+      &lt;<span style="color: #721045;">h1</span>&gt;<span style="font-weight: bold; text-decoration: underline;">{{ examMessage }}</span>&lt;/<span style="color: #721045;">h1</span>&gt;
+      &lt;<span style="color: #721045;">h1</span>&gt;<span style="font-weight: bold; text-decoration: underline;">{{ examMethod() }}</span>&lt;/<span style="color: #721045;">h1</span>&gt;
+      &lt;<span style="color: #721045;">h1</span>&gt;<span style="font-weight: bold; text-decoration: underline;">{{ examMethod() }}</span>&lt;/<span style="color: #721045;">h1</span>&gt;
+      &lt;<span style="color: #721045;">h1</span>&gt;<span style="font-weight: bold; text-decoration: underline;">{{ examMethod() }}</span>&lt;/<span style="color: #721045;">h1</span>&gt;
+    &lt;/<span style="color: #721045;">div</span>&gt;
+
+    &lt;<span style="color: #721045;">script</span>&gt;
+      const { createApp } = Vue; // &#20174; Vue &#20013;&#35299;&#26500;&#20986;&#38656;&#35201;&#30340;API
+
+      // &#21019;&#24314; Vue &#24212;&#29992;
+      const app = createApp({
+        data() {
+          return {
+            score: 61,
+          };
+        },
+        computed: {
+          examMessage() {
+            console.log("computed");
+            const message = this.score &gt; 60 ? "Passed!" : "Failed";
+            return message;
+          },
+        },
+        methods: {
+          examMethod() {
+            console.log("methods");
+            const message = this.score &gt; 60 ? "Passed!" : "Failed";
+            return message;
+          },
+        },
+      });
+
+      // &#25346;&#36733;&#21040; #app
+      app.mount("#app");
+    &lt;/<span style="color: #721045;">script</span>&gt;
+  &lt;/<span style="color: #721045;">body</span>&gt;
+&lt;/<span style="color: #721045;">html</span>&gt;
+
+</pre>
+</div></li>
+
+<li><p>
+methods和computed区别在于computed会有缓存,多次展示的情况下,计算属性只计算了一次,而method执行了三次,如下
+</p>
+<pre class="example" id="org86b4a26">
+computed
+methods
+methods
+methods
+</pre></li>
+<li>因此,当有可能存在结果数据需要显示多次的情况时,明显应该选择计算属性</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org9e59aad" class="outline-4">
+<h4 id="org9e59aad"><span class="section-number-4">2.2.3.</span> 计算属性的setter</h4>
+<div class="outline-text-4" id="text-2-2-3">
+<ul class="org-ul">
+<li>默认情况下,computed属性是只读的,如果希望修改computed属性,我们需要把写入和读取在computd里面分开属性
+<ul class="org-ul">
+<li><p>
+示例如下
+</p>
+<div class="org-src-container">
+<pre class="src src-js">computed: <span style="color: #000000;">{</span>
+  fullName: <span style="color: #dd22dd;">{</span>
+    get<span style="color: #008899;">()</span> <span style="color: #008899;">{</span>
+      <span style="color: #7f0000;">// </span><span style="color: #7f0000;">read logic</span>
+    <span style="color: #008899;">}</span>,
+    set <span style="color: #008899;">(</span>value<span style="color: #008899;">)</span> <span style="color: #008899;">{</span>
+      <span style="color: #7f0000;">// </span><span style="color: #7f0000;">write logic</span>
+    <span style="color: #008899;">}</span>
+  <span style="color: #dd22dd;">}</span>
+<span style="color: #000000;">}</span>
+</pre>
+</div></li>
+</ul></li>
+<li>具体使用方法我们会在组合式API中进行介绍</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org6f6eef0" class="outline-3">
+<h3 id="org6f6eef0"><span class="section-number-3">2.3.</span> 监听</h3>
+<div class="outline-text-3" id="text-2-3">
+<ul class="org-ul">
+<li>有些时候,在依赖数据发生变化时,我们需要让其产生一些"副作用",比如更新其他数据,此时,我们可以使用Vue的监听语法</li>
+</ul>
+</div>
+<div id="outline-container-orgef9a1fc" class="outline-4">
+<h4 id="orgef9a1fc"><span class="section-number-4">2.3.1.</span> 监听的基本使用</h4>
+<div class="outline-text-4" id="text-2-3-1">
+<ul class="org-ul">
+<li>其实和computed的类似,需要一个watch的property
+<ul class="org-ul">
+<li><p>
+示例如下
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #531ab6;">!doctype</span> html&gt;
+
+&lt;<span style="color: #721045;">html</span> <span style="color: #005e8b;">lang</span>=<span style="color: #3548cf;">"en"</span>&gt;
+  &lt;<span style="color: #721045;">head</span>&gt;
+    &lt;<span style="color: #721045;">meta</span> <span style="color: #005e8b;">charset</span>=<span style="color: #3548cf;">"UTF-8"</span> /&gt;
+    &lt;<span style="color: #721045;">meta</span> <span style="color: #005e8b;">name</span>=<span style="color: #3548cf;">"viewport"</span> <span style="color: #005e8b;">content</span>=<span style="color: #3548cf;">"width=device-width, initial-scale=1.0"</span> /&gt;
+    &lt;<span style="color: #721045;">title</span>&gt;<span style="font-weight: bold; text-decoration: underline;">&#35745;&#31639;&#23646;&#24615;</span>&lt;/<span style="color: #721045;">title</span>&gt;
+    &lt;<span style="color: #721045;">script</span> <span style="color: #005e8b;">src</span>=<span style="color: #3548cf;">"https://unpkg.com/vue@3/dist/vue.global.js"</span>&gt;&lt;/<span style="color: #721045;">script</span>&gt;
+  &lt;/<span style="color: #721045;">head</span>&gt;
+  &lt;<span style="color: #721045;">body</span>&gt;
+    &lt;<span style="color: #721045;">div</span> <span style="color: #005e8b;">id</span>=<span style="color: #3548cf;">"app"</span>&gt;
+      &lt;<span style="color: #721045;">h1</span>&gt;<span style="font-weight: bold; text-decoration: underline;">Vue 3 &#36873;&#39033;&#24335; API - watch &#31034;&#20363;</span>&lt;/<span style="color: #721045;">h1</span>&gt;
+      &lt;<span style="color: #721045;">p</span>&gt;&#36755;&#20837;&#26694;&#20013;&#30340;&#20540;&#65306;{{ inputValue }}&lt;/<span style="color: #721045;">p</span>&gt;
+      &lt;<span style="color: #721045;">input</span> <span style="color: #005e8b;">v-model</span>=<span style="color: #3548cf;">"inputValue"</span> <span style="color: #005e8b;">placeholder</span>=<span style="color: #3548cf;">"&#35831;&#36755;&#20837;&#20869;&#23481;"</span> /&gt;
+      &lt;<span style="color: #721045;">p</span>&gt;&#36755;&#20837;&#26694;&#30340;&#38271;&#24230;&#65306;{{ inputLength }}&lt;/<span style="color: #721045;">p</span>&gt;
+    &lt;/<span style="color: #721045;">div</span>&gt;
+
+    &lt;<span style="color: #721045;">script</span>&gt;
+      const { createApp } = Vue; // &#20174; Vue &#20013;&#35299;&#26500;&#20986;&#38656;&#35201;&#30340;API
+
+      // &#21019;&#24314; Vue &#24212;&#29992;
+      const app = createApp({
+        data() {
+          return {
+            inputValue: "", // &#36755;&#20837;&#26694;&#30340;&#20540;
+            inputLength: 0, // &#36755;&#20837;&#26694;&#30340;&#38271;&#24230;
+          };
+        },
+        watch: {
+          // &#30417;&#21548; inputValue &#30340;&#21464;&#21270;
+          inputValue(newValue) {
+            // &#24403; inputValue &#21457;&#29983;&#21464;&#21270;&#26102;&#65292;&#26356;&#26032; inputLength
+            this.inputLength = newValue.length;
+            console.log(`&#26032;&#30340;&#20540;&#26159;: ${newValue}`);
+          },
+        },
+      });
+
+      // &#25346;&#36733;&#21040; #app
+      app.mount("#app");
+    &lt;/<span style="color: #721045;">script</span>&gt;
+  &lt;/<span style="color: #721045;">body</span>&gt;
+&lt;/<span style="color: #721045;">html</span>&gt;
+</pre>
+</div></li>
+<li>具体使用方法在组合式API中讲解</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org03b5d23" class="outline-3">
+<h3 id="org03b5d23"><span class="section-number-3">2.4.</span> 绑定动态样式</h3>
+<div class="outline-text-3" id="text-2-4">
+<ul class="org-ul">
+<li>项目开发中,动态页面除了数据需要动态,其样式也要动态.</li>
+<li>在模版中,给标签绑定动态样式有两种方式:
+<ul class="org-ul">
+<li>class绑定</li>
+<li>style绑定</li>
+</ul></li>
+<li>在HTML中,两种绑定方式都是字符串类型,Vue专门增强了class和style的绑定语法,除了字符串还支持对象和数组
+类型值</li>
+</ul>
+</div>
+<div id="outline-container-org20e8170" class="outline-4">
+<h4 id="org20e8170"><span class="section-number-4">2.4.1.</span> 字符串绑定</h4>
+<div class="outline-text-4" id="text-2-4-1">
+<ul class="org-ul">
+<li>这是最传统的方式，也就是直接在模板中绑定动态字符串值
+<ul class="org-ul">
+<li><p>
+示例如下
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #721045;">template</span>&gt;
+  &lt;<span style="color: #721045;">div</span> :class=<span style="color: #3548cf;">"dynamicClass"</span> :style=<span style="color: #3548cf;">"dynamicStyle"</span>&gt;&#21160;&#24577;&#23383;&#31526;&#20018;&#32465;&#23450;&lt;/<span style="color: #721045;">div</span>&gt;
+&lt;/<span style="color: #721045;">template</span>&gt;
+
+&lt;<span style="color: #721045;">script</span>&gt;
+export default {
+  data() {
+    return {
+      dynamicClass: "box active", // &#21160;&#24577; class &#20540;
+      dynamicStyle: "color: red; font-size: 16px;" // &#21160;&#24577; style &#20540;
+    };
+  }
+};
+&lt;/<span style="color: #721045;">script</span>&gt;
+</pre>
+</div></li>
+
+<li>注意,上面的":class"其实就是"v-bind:class"的缩写</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org510658e" class="outline-4">
+<h4 id="org510658e"><span class="section-number-4">2.4.2.</span> 对象绑定</h4>
+<div class="outline-text-4" id="text-2-4-2">
+<ul class="org-ul">
+<li>Vue 支持使用对象的形式来绑定 class 和 style，从而更灵活地控制条件样式。
+<ul class="org-ul">
+<li><p>
+示例如下
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #721045;">template</span>&gt;
+  &lt;<span style="color: #721045;">div</span> :class=<span style="color: #3548cf;">"classObject"</span> :style=<span style="color: #3548cf;">"styleObject"</span>&gt;&#23545;&#35937;&#32465;&#23450;&lt;/<span style="color: #721045;">div</span>&gt;
+&lt;/<span style="color: #721045;">template</span>&gt;
+
+&lt;<span style="color: #721045;">script</span>&gt;
+export default {
+  data() {
+    return {
+      classObject: {
+        box: true, // &#22914;&#26524;&#20026; true&#65292;&#21017;&#20250;&#24212;&#29992;&#35813; class
+        active: false, // &#22914;&#26524;&#20026; false&#65292;&#21017;&#19981;&#20250;&#24212;&#29992;&#35813; class
+        warning: true // &#21160;&#24577;&#28155;&#21152;&#19968;&#20010; class
+      },
+      styleObject: {
+        color: "blue", // &#21160;&#24577;&#35774;&#32622;&#39068;&#33394;
+        fontSize: "20px", // &#21160;&#24577;&#35774;&#32622;&#23383;&#20307;&#22823;&#23567;
+        border: "1px solid black" // &#21160;&#24577;&#22686;&#21152;&#36793;&#26694;
+      }
+    };
+  }
+};
+&lt;/<span style="color: #721045;">script</span>&gt;
+</pre>
+</div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org08ea180" class="outline-4">
+<h4 id="org08ea180"><span class="section-number-4">2.4.3.</span> 绑定数组</h4>
+<div class="outline-text-4" id="text-2-4-3">
+<ul class="org-ul">
+<li>Vue 还支持使用数组的方式来绑定 class 和 style，适用于多个 class 或 style 的动态组合。
+<ul class="org-ul">
+<li><p>
+示例如下
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #721045;">template</span>&gt;
+  &lt;<span style="color: #721045;">div</span> :class=<span style="color: #3548cf;">"classArray"</span> :style=<span style="color: #3548cf;">"styleArray"</span>&gt;&#25968;&#32452;&#32465;&#23450;&lt;/<span style="color: #721045;">div</span>&gt;
+&lt;/<span style="color: #721045;">template</span>&gt;
+
+&lt;<span style="color: #721045;">script</span>&gt;
+export default {
+  data() {
+    return {
+      classArray: ["box", "active", dynamicClassName()], // &#21160;&#24577;&#32452;&#21512;&#22810;&#20010; class
+      styleArray: [
+        { color: "green" }, // &#26679;&#24335;1
+        { fontSize: "18px" }, // &#26679;&#24335;2
+        dynamicStyle() // &#21160;&#24577;&#26679;&#24335;
+      ]
+    };
+  },
+  methods: {
+    dynamicClassName() {
+      return "warning"; // &#21160;&#24577;&#36820;&#22238;&#19968;&#20010; class
+    },
+    dynamicStyle() {
+      return { backgroundColor: "yellow" }; // &#21160;&#24577;&#36820;&#22238;&#19968;&#20010;&#26679;&#24335;
+    }
+  }
+};
+&lt;/<span style="color: #721045;">script</span>&gt;
+</pre>
+</div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgb6317a3" class="outline-3">
+<h3 id="orgb6317a3"><span class="section-number-3">2.5.</span> 条件渲染指令</h3>
+<div class="outline-text-3" id="text-2-5">
+<ul class="org-ul">
+<li>实际项目中时候有两种场景很常见:
+<ul class="org-ul">
+<li>局部页面需要在满足某种条件后显示</li>
+<li>在多个不同页面直接进行切换显示</li>
+</ul></li>
+<li>上面两种场景都可以通过v-if和v-show指令实现</li>
+</ul>
+</div>
+<div id="outline-container-org3783c5c" class="outline-4">
+<h4 id="org3783c5c"><span class="section-number-4">2.5.1.</span> v-if相关指令</h4>
+<div class="outline-text-4" id="text-2-5-1">
+<ul class="org-ul">
+<li>v-if相关指令其实是如下三个:
+<ul class="org-ul">
+<li>v-if: 只有一个逻辑的时候使用</li>
+<li>v-else: 只有两个逻辑的时候使用</li>
+<li>v-else-if: 超过两个逻辑的时候使用</li>
+</ul></li>
+<li>下面是一个例子,有三个逻辑,所以把上面三个指令都使用了
+<ul class="org-ul">
+<li><p>
+示例如下
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #531ab6;">!doctype</span> html&gt;
+
+&lt;<span style="color: #721045;">html</span> <span style="color: #005e8b;">lang</span>=<span style="color: #3548cf;">"en"</span>&gt;
+  &lt;<span style="color: #721045;">head</span>&gt;
+    &lt;<span style="color: #721045;">meta</span> <span style="color: #005e8b;">charset</span>=<span style="color: #3548cf;">"UTF-8"</span> /&gt;
+    &lt;<span style="color: #721045;">meta</span> <span style="color: #005e8b;">name</span>=<span style="color: #3548cf;">"viewport"</span> <span style="color: #005e8b;">content</span>=<span style="color: #3548cf;">"width=device-width, initial-scale=1.0"</span> /&gt;
+    &lt;<span style="color: #721045;">title</span>&gt;<span style="font-weight: bold; text-decoration: underline;">v-if</span>&lt;/<span style="color: #721045;">title</span>&gt;
+    &lt;<span style="color: #721045;">script</span> <span style="color: #005e8b;">src</span>=<span style="color: #3548cf;">"https://unpkg.com/vue@3/dist/vue.global.js"</span>&gt;&lt;/<span style="color: #721045;">script</span>&gt;
+  &lt;/<span style="color: #721045;">head</span>&gt;
+  &lt;<span style="color: #721045;">body</span>&gt;
+    &lt;<span style="color: #721045;">div</span> <span style="color: #005e8b;">id</span>=<span style="color: #3548cf;">"app"</span>&gt;
+      &lt;<span style="color: #721045;">h1</span>&gt;<span style="font-weight: bold; text-decoration: underline;">Vue 3 &#26465;&#20214;&#28210;&#26579;&#31034;&#20363;</span>&lt;/<span style="color: #721045;">h1</span>&gt;
+      &lt;<span style="color: #721045;">button</span> @click=<span style="color: #3548cf;">"setCondition(1)"</span>&gt;&#26174;&#31034;&#20869;&#23481; 1&lt;/<span style="color: #721045;">button</span>&gt;
+      &lt;<span style="color: #721045;">button</span> @click=<span style="color: #3548cf;">"setCondition(2)"</span>&gt;&#26174;&#31034;&#20869;&#23481; 2&lt;/<span style="color: #721045;">button</span>&gt;
+      &lt;<span style="color: #721045;">button</span> @click=<span style="color: #3548cf;">"setCondition(3)"</span>&gt;&#26174;&#31034;&#20869;&#23481; 3&lt;/<span style="color: #721045;">button</span>&gt;
+
+      <span style="color: #7f0000;">&lt;!-- </span><span style="color: #7f0000;">&#26465;&#20214;&#28210;&#26579;</span><span style="color: #7f0000;"> --&gt;</span>
+      &lt;<span style="color: #721045;">div</span> <span style="color: #005e8b;">v-if</span>=<span style="color: #3548cf;">"condition === 1"</span>&gt;
+        &lt;<span style="color: #721045;">p</span>&gt;&#36825;&#26159;&#36890;&#36807; &lt;<span style="color: #721045;">strong</span>&gt;<span style="font-weight: bold;">v-if</span>&lt;/<span style="color: #721045;">strong</span>&gt; &#28210;&#26579;&#30340;&#20869;&#23481;&#65288;&#26465;&#20214; 1&#65289;&#12290;&lt;/<span style="color: #721045;">p</span>&gt;
+      &lt;/<span style="color: #721045;">div</span>&gt;
+      &lt;<span style="color: #721045;">div</span> <span style="color: #005e8b;">v-else-if</span>=<span style="color: #3548cf;">"condition === 2"</span>&gt;
+        &lt;<span style="color: #721045;">p</span>&gt;&#36825;&#26159;&#36890;&#36807; &lt;<span style="color: #721045;">strong</span>&gt;<span style="font-weight: bold;">v-else-if</span>&lt;/<span style="color: #721045;">strong</span>&gt; &#28210;&#26579;&#30340;&#20869;&#23481;&#65288;&#26465;&#20214; 2&#65289;&#12290;&lt;/<span style="color: #721045;">p</span>&gt;
+      &lt;/<span style="color: #721045;">div</span>&gt;
+      &lt;<span style="color: #721045;">div</span> v-else&gt;
+        &lt;<span style="color: #721045;">p</span>&gt;&#36825;&#26159;&#36890;&#36807; &lt;<span style="color: #721045;">strong</span>&gt;<span style="font-weight: bold;">v-else</span>&lt;/<span style="color: #721045;">strong</span>&gt; &#28210;&#26579;&#30340;&#20869;&#23481;&#65288;&#20854;&#20182;&#26465;&#20214;&#65289;&#12290;&lt;/<span style="color: #721045;">p</span>&gt;
+      &lt;/<span style="color: #721045;">div</span>&gt;
+    &lt;/<span style="color: #721045;">div</span>&gt;
+    &lt;<span style="color: #721045;">script</span>&gt;
+      const { createApp } = Vue; // &#20174; Vue &#20013;&#35299;&#26500;&#20986;&#38656;&#35201;&#30340;API
+
+      // &#21019;&#24314; Vue &#24212;&#29992;
+      const app = createApp({
+        data() {
+          return {
+            condition: 1, // &#29992;&#20110;&#25511;&#21046;&#26174;&#31034;&#30340;&#26465;&#20214;
+          };
+        },
+        methods: {
+          setCondition(value) {
+            this.condition = value; // &#21160;&#24577;&#35774;&#32622;&#26465;&#20214;
+          },
+        },
+      });
+      // &#25346;&#36733;&#21040; #app
+      app.mount("#app");
+    &lt;/<span style="color: #721045;">script</span>&gt;
+  &lt;/<span style="color: #721045;">body</span>&gt;
+&lt;/<span style="color: #721045;">html</span>&gt;
+</pre>
+</div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgb0cbbea" class="outline-4">
+<h4 id="orgb0cbbea"><span class="section-number-4">2.5.2.</span> v-show指令</h4>
+<div class="outline-text-4" id="text-2-5-2">
+<ul class="org-ul">
+<li>v-show也可以做到"隐藏-显示"内容
+<ul class="org-ul">
+<li><p>
+示例如下
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #531ab6;">!doctype</span> html&gt;
+
+&lt;<span style="color: #721045;">html</span> <span style="color: #005e8b;">lang</span>=<span style="color: #3548cf;">"en"</span>&gt;
+  &lt;<span style="color: #721045;">head</span>&gt;
+    &lt;<span style="color: #721045;">meta</span> <span style="color: #005e8b;">charset</span>=<span style="color: #3548cf;">"UTF-8"</span> /&gt;
+    &lt;<span style="color: #721045;">meta</span> <span style="color: #005e8b;">name</span>=<span style="color: #3548cf;">"viewport"</span> <span style="color: #005e8b;">content</span>=<span style="color: #3548cf;">"width=device-width, initial-scale=1.0"</span> /&gt;
+    &lt;<span style="color: #721045;">title</span>&gt;<span style="font-weight: bold; text-decoration: underline;">v-show</span>&lt;/<span style="color: #721045;">title</span>&gt;
+    &lt;<span style="color: #721045;">script</span> <span style="color: #005e8b;">src</span>=<span style="color: #3548cf;">"https://unpkg.com/vue@3/dist/vue.global.js"</span>&gt;&lt;/<span style="color: #721045;">script</span>&gt;
+  &lt;/<span style="color: #721045;">head</span>&gt;
+  &lt;<span style="color: #721045;">body</span>&gt;
+    &lt;<span style="color: #721045;">div</span> <span style="color: #005e8b;">id</span>=<span style="color: #3548cf;">"app"</span>&gt;
+      &lt;<span style="color: #721045;">h1</span>&gt;<span style="font-weight: bold; text-decoration: underline;">Vue 3 &#26465;&#20214;&#26174;&#31034;&#31034;&#20363; - &#20351;&#29992; v-show</span>&lt;/<span style="color: #721045;">h1</span>&gt;
+      &lt;<span style="color: #721045;">button</span> @click=<span style="color: #3548cf;">"toggleVisibility"</span>&gt;&#20999;&#25442;&#26174;&#31034;&#29366;&#24577;&lt;/<span style="color: #721045;">button</span>&gt;
+
+      <span style="color: #7f0000;">&lt;!-- </span><span style="color: #7f0000;">&#20351;&#29992; v-show &#25511;&#21046;&#20803;&#32032;&#26174;&#31034;/&#38544;&#34255;</span><span style="color: #7f0000;"> --&gt;</span>
+      &lt;<span style="color: #721045;">p</span> <span style="color: #005e8b;">v-show</span>=<span style="color: #3548cf;">"isVisible"</span>&gt;
+        &#36825;&#26159;&#36890;&#36807; &lt;<span style="color: #721045;">strong</span>&gt;<span style="font-weight: bold;">v-show</span>&lt;/<span style="color: #721045;">strong</span>&gt; &#25511;&#21046;&#26174;&#31034;&#30340;&#20869;&#23481;&#12290;
+      &lt;/<span style="color: #721045;">p</span>&gt;
+    &lt;/<span style="color: #721045;">div</span>&gt;
+    &lt;<span style="color: #721045;">script</span>&gt;
+      const { createApp } = Vue; // &#20174; Vue &#20013;&#35299;&#26500;&#20986;&#38656;&#35201;&#30340;API
+
+      // &#21019;&#24314; Vue &#24212;&#29992;
+      const app = createApp({
+        data() {
+          return {
+            isVisible: true, // &#25511;&#21046;&#26174;&#31034;&#30340;&#24067;&#23572;&#20540;
+          };
+        },
+        methods: {
+          toggleVisibility() {
+            this.isVisible = !this.isVisible; // &#20999;&#25442;&#26174;&#31034;&#29366;&#24577;
+          },
+        },
+      });
+      // &#25346;&#36733;&#21040; #app
+      app.mount("#app");
+    &lt;/<span style="color: #721045;">script</span>&gt;
+  &lt;/<span style="color: #721045;">body</span>&gt;
+&lt;/<span style="color: #721045;">html</span>&gt;
+</pre>
+</div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org9165c6a" class="outline-4">
+<h4 id="org9165c6a"><span class="section-number-4">2.5.3.</span> 比较v-if和v-show指令</h4>
+<div class="outline-text-4" id="text-2-5-3">
+<ul class="org-ul">
+<li>v-if和v-show的效果是非常相似的,但是实现机制完全不同:
+<ul class="org-ul">
+<li>v-if 是按需渲染，只有条件满足时才会在 DOM 中插入或移除元素</li>
+<li>v-show 是基于 CSS 的显示/隐藏，通过修改 display 样式控制元素的显示，而不会移除 DOM 元素</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org5b50d09" class="outline-3">
+<h3 id="org5b50d09"><span class="section-number-3">2.6.</span> 列表渲染指令</h3>
+<div class="outline-text-3" id="text-2-6">
+<ul class="org-ul">
+<li>在项目开发的页面中,有很多列表效果需要动态显示,在Vue中被称之为列表渲染,可以通过v-for指令来实现</li>
+<li>通过v-for指令可以遍历多种类型数据:
+<ul class="org-ul">
+<li>数组(最为常见)</li>
+<li>对象</li>
+<li>数值</li>
+</ul></li>
+</ul>
+</div>
+<div id="outline-container-orga68fc2a" class="outline-4">
+<h4 id="orga68fc2a"><span class="section-number-4">2.6.1.</span> 列表的动态渲染</h4>
+<div class="outline-text-4" id="text-2-6-1">
+<ul class="org-ul">
+<li>v-for指令在数组中有两种形式:
+<ul class="org-ul">
+<li><p>
+完整形式,会有index,不太常用
+</p>
+<div class="org-src-container">
+<pre class="src src-html"><span style="color: #005e8b;">v-for</span>="(item, index) in array"
+</pre>
+</div></li>
+<li><p>
+只有item,没有index,比较常用
+</p>
+<div class="org-src-container">
+<pre class="src src-html"><span style="color: #005e8b;">v-for</span>="item in array"
+</pre>
+</div></li>
+</ul></li>
+<li>v-for指令在对象中也有两种形式:
+<ul class="org-ul">
+<li><p>
+完整形式,value在前,name在后
+</p>
+<div class="org-src-container">
+<pre class="src src-html"><span style="color: #005e8b;">v-for</span>="(value, name) in obj"
+</pre>
+</div></li>
+<li><p>
+也可以只用value,不用name
+</p>
+<div class="org-src-container">
+<pre class="src src-html"><span style="color: #005e8b;">v-for</span>="value in obj"
+</pre>
+</div></li>
+</ul></li>
+<li>v-for指令的目标也可以是一个正整数n,其一般用于让当前模板在1-n取值范围内重复产生n次
+<ul class="org-ul">
+<li><p>
+完整写法如下
+</p>
+<div class="org-src-container">
+<pre class="src src-html"><span style="color: #005e8b;">v-for</span>="value in n"
+</pre>
+</div></li>
+</ul></li>
+<li>我们把前面三种情况都放到一个例子里面展示
+<ul class="org-ul">
+<li><p>
+示例如下
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #531ab6;">!doctype</span> html&gt;
+
+&lt;<span style="color: #721045;">html</span> <span style="color: #005e8b;">lang</span>=<span style="color: #3548cf;">"en"</span>&gt;
+  &lt;<span style="color: #721045;">head</span>&gt;
+    &lt;<span style="color: #721045;">meta</span> <span style="color: #005e8b;">charset</span>=<span style="color: #3548cf;">"UTF-8"</span> /&gt;
+    &lt;<span style="color: #721045;">meta</span> <span style="color: #005e8b;">name</span>=<span style="color: #3548cf;">"viewport"</span> <span style="color: #005e8b;">content</span>=<span style="color: #3548cf;">"width=device-width, initial-scale=1.0"</span> /&gt;
+    &lt;<span style="color: #721045;">title</span>&gt;<span style="font-weight: bold; text-decoration: underline;">v-for</span>&lt;/<span style="color: #721045;">title</span>&gt;
+    &lt;<span style="color: #721045;">script</span> <span style="color: #005e8b;">src</span>=<span style="color: #3548cf;">"https://unpkg.com/vue@3/dist/vue.global.js"</span>&gt;&lt;/<span style="color: #721045;">script</span>&gt;
+  &lt;/<span style="color: #721045;">head</span>&gt;
+  &lt;<span style="color: #721045;">body</span>&gt;
+    &lt;<span style="color: #721045;">div</span> <span style="color: #005e8b;">id</span>=<span style="color: #3548cf;">"app"</span>&gt;
+      &lt;<span style="color: #721045;">h2</span>&gt;<span style="font-weight: bold; font-style: italic; text-decoration: underline;">v-for array</span>&lt;/<span style="color: #721045;">h2</span>&gt;
+      &lt;<span style="color: #721045;">ul</span>&gt;
+        &lt;<span style="color: #721045;">li</span> <span style="color: #005e8b;">v-for</span>=<span style="color: #3548cf;">"(p,index) in persons"</span>&gt;{{index}}-{{p.name}}-{{p.age}}&lt;/<span style="color: #721045;">li</span>&gt;
+      &lt;/<span style="color: #721045;">ul</span>&gt;
+      &lt;<span style="color: #721045;">h2</span>&gt;<span style="font-weight: bold; font-style: italic; text-decoration: underline;">v-for object</span>&lt;/<span style="color: #721045;">h2</span>&gt;
+      &lt;<span style="color: #721045;">ul</span>&gt;
+        &lt;<span style="color: #721045;">li</span> <span style="color: #005e8b;">v-for</span>=<span style="color: #3548cf;">"(value,name) in car"</span>&gt;{{name}}-{{value}}&lt;/<span style="color: #721045;">li</span>&gt;
+      &lt;/<span style="color: #721045;">ul</span>&gt;
+      &lt;<span style="color: #721045;">h2</span>&gt;<span style="font-weight: bold; font-style: italic; text-decoration: underline;">v-for integer</span>&lt;/<span style="color: #721045;">h2</span>&gt;
+      &lt;<span style="color: #721045;">ul</span>&gt;
+        &lt;<span style="color: #721045;">li</span> <span style="color: #005e8b;">v-for</span>=<span style="color: #3548cf;">"value in num"</span>&gt;{{value}}&lt;/<span style="color: #721045;">li</span>&gt;
+      &lt;/<span style="color: #721045;">ul</span>&gt;
+    &lt;/<span style="color: #721045;">div</span>&gt;
+    &lt;<span style="color: #721045;">script</span>&gt;
+      const { createApp } = Vue; // &#20174; Vue &#20013;&#35299;&#26500;&#20986;&#38656;&#35201;&#30340;API
+
+      // &#21019;&#24314; Vue &#24212;&#29992;
+      const app = createApp({
+        data() {
+          return {
+            persons: [
+              { id: "001", name: "zhang-san", age: 21 },
+              { id: "002", name: "li-si", age: 22 },
+              { id: "003", name: "wang-wu", age: 23 },
+            ],
+            car: {
+              name: "audi",
+              price: "70k",
+              color: "black",
+            },
+            num: 5,
+          };
+        },
+      });
+      // &#25346;&#36733;&#21040; #app
+      app.mount("#app");
+    &lt;/<span style="color: #721045;">script</span>&gt;
+  &lt;/<span style="color: #721045;">body</span>&gt;
+&lt;/<span style="color: #721045;">html</span>&gt;
+</pre>
+</div></li>
+<li><p>
+Vue官方文档建议我们,在使用v-for指令进行列表渲染的时候,最好同时指定唯一的key属性,这个key属性可以
+提高列表更新渲染的性能.同时我们不能使用数组元素的下标来作为这个key,因为这个下标是不稳定的,可能会
+产生错误.之前的例子需要如下更改
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #721045;">ul</span>&gt;
+  &lt;<span style="color: #721045;">li</span> <span style="color: #005e8b;">v-for</span>=<span style="color: #3548cf;">"(p,index) in persons"</span> :key=<span style="color: #3548cf;">"p.id"</span>&gt;{{index}}-{{p.name}}-{{p.age}}&lt;/<span style="color: #721045;">li</span>&gt;
+&lt;/<span style="color: #721045;">ul</span>&gt;
+</pre>
+</div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org2e02a27" class="outline-4">
+<h4 id="org2e02a27"><span class="section-number-4">2.6.2.</span> 列表的增,删,改</h4>
+<div class="outline-text-4" id="text-2-6-2">
+<ul class="org-ul">
+<li>实际项目中,列表初始状态显示后,往往会进行增,删,改等操作.
+<ul class="org-ul">
+<li><p>
+示例如下
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #531ab6;">!doctype</span> html&gt;
+
+&lt;<span style="color: #721045;">html</span> <span style="color: #005e8b;">lang</span>=<span style="color: #3548cf;">"en"</span>&gt;
+  &lt;<span style="color: #721045;">head</span>&gt;
+    &lt;<span style="color: #721045;">meta</span> <span style="color: #005e8b;">charset</span>=<span style="color: #3548cf;">"UTF-8"</span> /&gt;
+    &lt;<span style="color: #721045;">meta</span> <span style="color: #005e8b;">name</span>=<span style="color: #3548cf;">"viewport"</span> <span style="color: #005e8b;">content</span>=<span style="color: #3548cf;">"width=device-width, initial-scale=1.0"</span> /&gt;
+    &lt;<span style="color: #721045;">title</span>&gt;<span style="font-weight: bold; text-decoration: underline;">v-for</span>&lt;/<span style="color: #721045;">title</span>&gt;
+    &lt;<span style="color: #721045;">script</span> <span style="color: #005e8b;">src</span>=<span style="color: #3548cf;">"https://unpkg.com/vue@3/dist/vue.global.js"</span>&gt;&lt;/<span style="color: #721045;">script</span>&gt;
+  &lt;/<span style="color: #721045;">head</span>&gt;
+  &lt;<span style="color: #721045;">body</span>&gt;
+    &lt;<span style="color: #721045;">div</span> <span style="color: #005e8b;">id</span>=<span style="color: #3548cf;">"app"</span>&gt;
+      &lt;<span style="color: #721045;">h2</span>&gt;<span style="font-weight: bold; font-style: italic; text-decoration: underline;">v-for update</span>&lt;/<span style="color: #721045;">h2</span>&gt;
+      &lt;<span style="color: #721045;">ul</span>&gt;
+        &lt;<span style="color: #721045;">li</span> <span style="color: #005e8b;">v-for</span>=<span style="color: #3548cf;">"(p,index) in persons"</span> :key=<span style="color: #3548cf;">"p.id"</span>&gt;
+          {{index}}-{{p.name}}-{{p.age}} --
+          &lt;<span style="color: #721045;">button</span> @click=<span style="color: #3548cf;">"deleteItem(index)"</span>&gt;Delete&lt;/<span style="color: #721045;">button</span>&gt; --
+          &lt;<span style="color: #721045;">button</span>
+            @click=<span style="color: #3548cf;">"updateItem(index, {id: Date.now(), name: 'xiao-lan', age: 12})"</span>
+          &gt;
+            Update
+          &lt;/<span style="color: #721045;">button</span>&gt;
+        &lt;/<span style="color: #721045;">li</span>&gt;
+      &lt;/<span style="color: #721045;">ul</span>&gt;
+      &lt;<span style="color: #721045;">button</span> @click=<span style="color: #3548cf;">"addFirst({id:Date.now(), name: 'xiao-ming', age: 10})"</span>&gt;
+        Add First
+      &lt;/<span style="color: #721045;">button</span>&gt;
+      &lt;<span style="color: #721045;">button</span> @click=<span style="color: #3548cf;">"addLast({id:Date.now(), name: 'xiao-hong', age: 11})"</span>&gt;
+        Add Last
+      &lt;/<span style="color: #721045;">button</span>&gt;
+    &lt;/<span style="color: #721045;">div</span>&gt;
+    &lt;<span style="color: #721045;">script</span>&gt;
+      const { createApp } = Vue; // &#20174; Vue &#20013;&#35299;&#26500;&#20986;&#38656;&#35201;&#30340;API
+
+      // &#21019;&#24314; Vue &#24212;&#29992;
+      const app = createApp({
+        data() {
+          return {
+            persons: [
+              { id: "001", name: "zhang-san", age: 21 },
+              { id: "002", name: "li-si", age: 22 },
+              { id: "003", name: "wang-wu", age: 23 },
+            ],
+            car: {
+              name: "audi",
+              price: "70k",
+              color: "black",
+            },
+            num: 5,
+          };
+        },
+        methods: {
+          addFirst(newP) {
+            this.persons.unshift(newP);
+          },
+          addLast(newP) {
+            this.persons.push(newP);
+          },
+          deleteItem(index) {
+            this.persons.splice(index, 1);
+          },
+          updateItem(index, newP) {
+            this.persons.splice(index, 1, newP);
+          },
+        },
+      });
+      // &#25346;&#36733;&#21040; #app
+      app.mount("#app");
+    &lt;/<span style="color: #721045;">script</span>&gt;
+  &lt;/<span style="color: #721045;">body</span>&gt;
+&lt;/<span style="color: #721045;">html</span>&gt;
+</pre>
+</div></li>
+<li><p>
+注意我们上面的写法是vue2和vue3都能接受的更改方法,也就是使用splice.但是在vue3里面,其实是可以直接更改数组元素的,比如
+</p>
+<div class="org-src-container">
+<pre class="src src-js"><span style="color: #0000b0;">this</span>.persons<span style="color: #000000;">[</span>index<span style="color: #000000;">]</span> = newP
+</pre>
+</div></li>
+<li>之所以Vue3能够直接修改了,底层原因是因为Vue2只能监控splice这种函数,而无法监控arr[index]这种赋值,但是Vue3做到了.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orge32409f" class="outline-4">
+<h4 id="orge32409f"><span class="section-number-4">2.6.3.</span> 列表的过滤</h4>
+<div class="outline-text-4" id="text-2-6-3">
+<ul class="org-ul">
+<li>过滤是前端常见需求,一般来说,就是输入一个关键字,能匹配这个关键字的结果展示出来,否则则不展示
+<ul class="org-ul">
+<li><p>
+示例如下,当没有任何输入的时候,所有结果展示,如果有任何输入,那么命中输入的结果展示.
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #531ab6;">!doctype</span> html&gt;
+
+&lt;<span style="color: #721045;">html</span> <span style="color: #005e8b;">lang</span>=<span style="color: #3548cf;">"en"</span>&gt;
+  &lt;<span style="color: #721045;">head</span>&gt;
+    &lt;<span style="color: #721045;">meta</span> <span style="color: #005e8b;">charset</span>=<span style="color: #3548cf;">"UTF-8"</span> /&gt;
+    &lt;<span style="color: #721045;">meta</span> <span style="color: #005e8b;">name</span>=<span style="color: #3548cf;">"viewport"</span> <span style="color: #005e8b;">content</span>=<span style="color: #3548cf;">"width=device-width, initial-scale=1.0"</span> /&gt;
+    &lt;<span style="color: #721045;">title</span>&gt;<span style="font-weight: bold; text-decoration: underline;">v-for</span>&lt;/<span style="color: #721045;">title</span>&gt;
+    &lt;<span style="color: #721045;">script</span> <span style="color: #005e8b;">src</span>=<span style="color: #3548cf;">"https://unpkg.com/vue@3/dist/vue.global.js"</span>&gt;&lt;/<span style="color: #721045;">script</span>&gt;
+  &lt;/<span style="color: #721045;">head</span>&gt;
+  &lt;<span style="color: #721045;">body</span>&gt;
+    &lt;<span style="color: #721045;">div</span> <span style="color: #005e8b;">id</span>=<span style="color: #3548cf;">"app"</span>&gt;
+      &lt;<span style="color: #721045;">h2</span>&gt;<span style="font-weight: bold; font-style: italic; text-decoration: underline;">v-for filter</span>&lt;/<span style="color: #721045;">h2</span>&gt;
+      &lt;<span style="color: #721045;">input</span>
+        <span style="color: #005e8b;">type</span>=<span style="color: #3548cf;">"text"</span>
+        <span style="color: #005e8b;">placeholder</span>=<span style="color: #3548cf;">"Please input username"</span>
+        <span style="color: #005e8b;">v-model</span>=<span style="color: #3548cf;">"keyword"</span>
+      /&gt;
+      &lt;<span style="color: #721045;">ul</span>&gt;
+        &lt;<span style="color: #721045;">li</span> <span style="color: #005e8b;">v-for</span>=<span style="color: #3548cf;">"(p,index) in filterPersons"</span> :key=<span style="color: #3548cf;">"index"</span>&gt;
+          {{p.name}}-{{p.age}}-{{p.sex}}
+        &lt;/<span style="color: #721045;">li</span>&gt;
+      &lt;/<span style="color: #721045;">ul</span>&gt;
+    &lt;/<span style="color: #721045;">div</span>&gt;
+    &lt;<span style="color: #721045;">script</span>&gt;
+      const { createApp } = Vue; // &#20174; Vue &#20013;&#35299;&#26500;&#20986;&#38656;&#35201;&#30340;API
+
+      // &#21019;&#24314; Vue &#24212;&#29992;
+      const app = createApp({
+        data() {
+          return {
+            persons: [
+              { id: "001", name: "zhang-san", age: 21, sex: "Male" },
+              { id: "002", name: "li-si", age: 22, sex: "Female" },
+              { id: "003", name: "wang-wu", age: 23, sex: "Male" },
+            ],
+            keyword: "",
+          };
+        },
+        computed: {
+          filterPersons() {
+            return this.persons.filter((p) =&gt; {
+              return p.name.indexOf(this.keyword) !== -1;
+            });
+          },
+        },
+      });
+      // &#25346;&#36733;&#21040; #app
+      app.mount("#app");
+    &lt;/<span style="color: #721045;">script</span>&gt;
+  &lt;/<span style="color: #721045;">body</span>&gt;
+&lt;/<span style="color: #721045;">html</span>&gt;
+</pre>
+</div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgec42e18" class="outline-4">
+<h4 id="orgec42e18"><span class="section-number-4">2.6.4.</span> 列表的排序</h4>
+<div class="outline-text-4" id="text-2-6-4">
+<ul class="org-ul">
+<li>对于结果的排序也是前端常见需求
+<ul class="org-ul">
+<li><p>
+示例代码如下
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #531ab6;">!doctype</span> html&gt;
+
+&lt;<span style="color: #721045;">html</span> <span style="color: #005e8b;">lang</span>=<span style="color: #3548cf;">"en"</span>&gt;
+  &lt;<span style="color: #721045;">head</span>&gt;
+    &lt;<span style="color: #721045;">meta</span> <span style="color: #005e8b;">charset</span>=<span style="color: #3548cf;">"UTF-8"</span> /&gt;
+    &lt;<span style="color: #721045;">meta</span> <span style="color: #005e8b;">name</span>=<span style="color: #3548cf;">"viewport"</span> <span style="color: #005e8b;">content</span>=<span style="color: #3548cf;">"width=device-width, initial-scale=1.0"</span> /&gt;
+    &lt;<span style="color: #721045;">title</span>&gt;<span style="font-weight: bold; text-decoration: underline;">v-for</span>&lt;/<span style="color: #721045;">title</span>&gt;
+    &lt;<span style="color: #721045;">script</span> <span style="color: #005e8b;">src</span>=<span style="color: #3548cf;">"https://unpkg.com/vue@3/dist/vue.global.js"</span>&gt;&lt;/<span style="color: #721045;">script</span>&gt;
+  &lt;/<span style="color: #721045;">head</span>&gt;
+  &lt;<span style="color: #721045;">body</span>&gt;
+    &lt;<span style="color: #721045;">div</span> <span style="color: #005e8b;">id</span>=<span style="color: #3548cf;">"app"</span>&gt;
+      &lt;<span style="color: #721045;">h2</span>&gt;<span style="font-weight: bold; font-style: italic; text-decoration: underline;">v-for filter</span>&lt;/<span style="color: #721045;">h2</span>&gt;
+      &lt;<span style="color: #721045;">input</span>
+        <span style="color: #005e8b;">type</span>=<span style="color: #3548cf;">"text"</span>
+        <span style="color: #005e8b;">placeholder</span>=<span style="color: #3548cf;">"Please input username"</span>
+        <span style="color: #005e8b;">v-model</span>=<span style="color: #3548cf;">"keyword"</span>
+      /&gt;
+      &lt;<span style="color: #721045;">ul</span>&gt;
+        &lt;<span style="color: #721045;">li</span> <span style="color: #005e8b;">v-for</span>=<span style="color: #3548cf;">"(p,index) in filterPersons"</span> :key=<span style="color: #3548cf;">"index"</span>&gt;
+          {{p.name}}-{{p.age}}-{{p.sex}}
+        &lt;/<span style="color: #721045;">li</span>&gt;
+      &lt;/<span style="color: #721045;">ul</span>&gt;
+      &lt;<span style="color: #721045;">button</span> @click=<span style="color: #3548cf;">"sortType = 2"</span>&gt;Order Asc&lt;/<span style="color: #721045;">button</span>&gt;
+      &lt;<span style="color: #721045;">button</span> @click=<span style="color: #3548cf;">"sortType = 1"</span>&gt;Order Desc&lt;/<span style="color: #721045;">button</span>&gt;
+      &lt;<span style="color: #721045;">button</span> @click=<span style="color: #3548cf;">"sortType = 0"</span>&gt;Original Order&lt;/<span style="color: #721045;">button</span>&gt;
+    &lt;/<span style="color: #721045;">div</span>&gt;
+    &lt;<span style="color: #721045;">script</span>&gt;
+      const { createApp } = Vue; // &#20174; Vue &#20013;&#35299;&#26500;&#20986;&#38656;&#35201;&#30340;API
+
+      // &#21019;&#24314; Vue &#24212;&#29992;
+      const app = createApp({
+        data() {
+          return {
+            persons: [
+              { id: "001", name: "zhang-san", age: 21, sex: "Male" },
+              { id: "002", name: "li-si", age: 22, sex: "Female" },
+              { id: "003", name: "wang-wu", age: 19, sex: "Male" },
+            ],
+            keyword: "",
+            sortType: 0,
+          };
+        },
+        computed: {
+          filterPersons() {
+            const { persons, keyword, sortType } = this;
+
+            const arr = persons.filter((p) =&gt; {
+              return p.name.indexOf(keyword) !== -1;
+            });
+
+            if (sortType !== 0) {
+              arr.sort((p1, p2) =&gt; {
+                if (sortType === 1) {
+                  return p2.age - p1.age;
+                } else {
+                  return p1.age - p2.age;
+                }
+              });
+            }
+            return arr;
+          },
+        },
+      });
+      // &#25346;&#36733;&#21040; #app
+      app.mount("#app");
+    &lt;/<span style="color: #721045;">script</span>&gt;
+  &lt;/<span style="color: #721045;">body</span>&gt;
+&lt;/<span style="color: #721045;">html</span>&gt;
+</pre>
+</div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org680e4d4" class="outline-3">
+<h3 id="org680e4d4"><span class="section-number-3">2.7.</span> 事件处理</h3>
+<div class="outline-text-3" id="text-2-7">
+</div>
+<div id="outline-container-org4192255" class="outline-4">
+<h4 id="org4192255"><span class="section-number-4">2.7.1.</span> 绑定事件监听</h4>
+<div class="outline-text-4" id="text-2-7-1">
+<ul class="org-ul">
+<li>我们可以在HTML标签上面使用v-on指令来绑定原生DOM事件监听
+<ul class="org-ul">
+<li><p>
+基本语法格式如下
+</p>
+<div class="org-src-container">
+<pre class="src src-html">v-on:&lt;<span style="color: #721045;">&#20107;&#20214;&#21517;</span>&gt;="handler"
+</pre>
+</div></li>
+<li><p>
+当然通常情况下,都会把v-on简化成@,如下
+</p>
+<div class="org-src-container">
+<pre class="src src-html">@&lt;<span style="color: #721045;">&#20107;&#20214;&#21517;</span>&gt;="handler"
+</pre>
+</div></li>
+</ul></li>
+<li>上面的"handler"在Vue中,有多种写法:
+<ul class="org-ul">
+<li><p>
+"handler"可以是一个函数名,对应methods中的同名方法,注意这里的handleClick1被触发时,浏览器会自动将事
+件对象 event 作为参数传递给这个方法,event 包含了与事件相关的各种信息，比如点击的位置、触发事件的
+元素、键盘按键（如果是键盘事件）等
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #531ab6;">!doctype</span> html&gt;
+
+&lt;<span style="color: #721045;">html</span> <span style="color: #005e8b;">lang</span>=<span style="color: #3548cf;">"en"</span>&gt;
+  &lt;<span style="color: #721045;">head</span>&gt;
+    &lt;<span style="color: #721045;">meta</span> <span style="color: #005e8b;">charset</span>=<span style="color: #3548cf;">"UTF-8"</span> /&gt;
+    &lt;<span style="color: #721045;">meta</span> <span style="color: #005e8b;">name</span>=<span style="color: #3548cf;">"viewport"</span> <span style="color: #005e8b;">content</span>=<span style="color: #3548cf;">"width=device-width, initial-scale=1.0"</span> /&gt;
+    &lt;<span style="color: #721045;">title</span>&gt;<span style="font-weight: bold; text-decoration: underline;">v-for</span>&lt;/<span style="color: #721045;">title</span>&gt;
+    &lt;<span style="color: #721045;">script</span> <span style="color: #005e8b;">src</span>=<span style="color: #3548cf;">"https://unpkg.com/vue@3/dist/vue.global.js"</span>&gt;&lt;/<span style="color: #721045;">script</span>&gt;
+  &lt;/<span style="color: #721045;">head</span>&gt;
+  &lt;<span style="color: #721045;">body</span>&gt;
+    &lt;<span style="color: #721045;">div</span> <span style="color: #005e8b;">id</span>=<span style="color: #3548cf;">"app"</span>&gt;
+      &lt;<span style="color: #721045;">h2</span>&gt;<span style="font-weight: bold; font-style: italic; text-decoration: underline;">event</span>&lt;/<span style="color: #721045;">h2</span>&gt;
+      &lt;<span style="color: #721045;">button</span> @click=<span style="color: #3548cf;">"handleClick1"</span>&gt;HandleClick1&lt;/<span style="color: #721045;">button</span>&gt;
+    &lt;/<span style="color: #721045;">div</span>&gt;
+    &lt;<span style="color: #721045;">script</span>&gt;
+      const { createApp } = Vue; // &#20174; Vue &#20013;&#35299;&#26500;&#20986;&#38656;&#35201;&#30340;API
+
+      // &#21019;&#24314; Vue &#24212;&#29992;
+      const app = createApp({
+        methods: {
+          handleClick1(event) {
+            alert(event.target.innerHTML);
+          },
+        },
+      });
+      // &#25346;&#36733;&#21040; #app
+      app.mount("#app");
+    &lt;/<span style="color: #721045;">script</span>&gt;
+  &lt;/<span style="color: #721045;">body</span>&gt;
+&lt;/<span style="color: #721045;">html</span>&gt;
+</pre>
+</div></li>
+<li><p>
+"handler"可以是一个语句
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #531ab6;">!doctype</span> html&gt;
+
+&lt;<span style="color: #721045;">html</span> <span style="color: #005e8b;">lang</span>=<span style="color: #3548cf;">"en"</span>&gt;
+  &lt;<span style="color: #721045;">head</span>&gt;
+    &lt;<span style="color: #721045;">meta</span> <span style="color: #005e8b;">charset</span>=<span style="color: #3548cf;">"UTF-8"</span> /&gt;
+    &lt;<span style="color: #721045;">meta</span> <span style="color: #005e8b;">name</span>=<span style="color: #3548cf;">"viewport"</span> <span style="color: #005e8b;">content</span>=<span style="color: #3548cf;">"width=device-width, initial-scale=1.0"</span> /&gt;
+    &lt;<span style="color: #721045;">title</span>&gt;<span style="font-weight: bold; text-decoration: underline;">v-for</span>&lt;/<span style="color: #721045;">title</span>&gt;
+    &lt;<span style="color: #721045;">script</span> <span style="color: #005e8b;">src</span>=<span style="color: #3548cf;">"https://unpkg.com/vue@3/dist/vue.global.js"</span>&gt;&lt;/<span style="color: #721045;">script</span>&gt;
+  &lt;/<span style="color: #721045;">head</span>&gt;
+  &lt;<span style="color: #721045;">body</span>&gt;
+    &lt;<span style="color: #721045;">div</span> <span style="color: #005e8b;">id</span>=<span style="color: #3548cf;">"app"</span>&gt;
+      &lt;<span style="color: #721045;">h2</span>&gt;<span style="font-weight: bold; font-style: italic; text-decoration: underline;">event</span>&lt;/<span style="color: #721045;">h2</span>&gt;
+      &lt;<span style="color: #721045;">h3</span>&gt;<span style="font-style: italic; text-decoration: underline;">{{ num }}</span>&lt;/<span style="color: #721045;">h3</span>&gt;
+      &lt;<span style="color: #721045;">button</span> @click=<span style="color: #3548cf;">"num += 3"</span>&gt;Click to add 3 on num&lt;/<span style="color: #721045;">button</span>&gt;
+    &lt;/<span style="color: #721045;">div</span>&gt;
+    &lt;<span style="color: #721045;">script</span>&gt;
+      const { createApp } = Vue; // &#20174; Vue &#20013;&#35299;&#26500;&#20986;&#38656;&#35201;&#30340;API
+
+      // &#21019;&#24314; Vue &#24212;&#29992;
+      const app = createApp({
+        data() {
+          return {
+            num: 0,
+          };
+        },
+        methods: {
+          handleClick1(event) {
+            alert(event.target.innerHTML);
+          },
+        },
+      });
+      // &#25346;&#36733;&#21040; #app
+      app.mount("#app");
+    &lt;/<span style="color: #721045;">script</span>&gt;
+  &lt;/<span style="color: #721045;">body</span>&gt;
+&lt;/<span style="color: #721045;">html</span>&gt;
+</pre>
+</div></li>
+<li><p>
+"handler"还可以是一个箭头函数,也就是事件监听回调函数,可以接收一个event对象. 这里的handleClick2比
+上面的handleClick1可以多接收一个参数
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #531ab6;">!doctype</span> html&gt;
+
+&lt;<span style="color: #721045;">html</span> <span style="color: #005e8b;">lang</span>=<span style="color: #3548cf;">"en"</span>&gt;
+  &lt;<span style="color: #721045;">head</span>&gt;
+    &lt;<span style="color: #721045;">meta</span> <span style="color: #005e8b;">charset</span>=<span style="color: #3548cf;">"UTF-8"</span> /&gt;
+    &lt;<span style="color: #721045;">meta</span> <span style="color: #005e8b;">name</span>=<span style="color: #3548cf;">"viewport"</span> <span style="color: #005e8b;">content</span>=<span style="color: #3548cf;">"width=device-width, initial-scale=1.0"</span> /&gt;
+    &lt;<span style="color: #721045;">title</span>&gt;<span style="font-weight: bold; text-decoration: underline;">v-for</span>&lt;/<span style="color: #721045;">title</span>&gt;
+    &lt;<span style="color: #721045;">script</span> <span style="color: #005e8b;">src</span>=<span style="color: #3548cf;">"https://unpkg.com/vue@3/dist/vue.global.js"</span>&gt;&lt;/<span style="color: #721045;">script</span>&gt;
+  &lt;/<span style="color: #721045;">head</span>&gt;
+  &lt;<span style="color: #721045;">body</span>&gt;
+    &lt;<span style="color: #721045;">div</span> <span style="color: #005e8b;">id</span>=<span style="color: #3548cf;">"app"</span>&gt;
+      &lt;<span style="color: #721045;">h2</span>&gt;<span style="font-weight: bold; font-style: italic; text-decoration: underline;">event</span>&lt;/<span style="color: #721045;">h2</span>&gt;
+      &lt;<span style="color: #721045;">button</span> @click=<span style="color: #3548cf;">"event =&gt; handleClick2('data msg', event)"</span>&gt;
+        Click to pass str and event
+      &lt;/<span style="color: #721045;">button</span>&gt;
+    &lt;/<span style="color: #721045;">div</span>&gt;
+    &lt;<span style="color: #721045;">script</span>&gt;
+      const { createApp } = Vue;
+
+      // &#21019;&#24314; Vue &#24212;&#29992;
+      const app = createApp({
+        methods: {
+          handleClick2(data, event) {
+            alert(`Data: ${data}`);
+            alert(`Event: ${event.target.innerHTML}`);
+          },
+        },
+      });
+      // &#25346;&#36733;&#21040; #app
+      app.mount("#app");
+    &lt;/<span style="color: #721045;">script</span>&gt;
+  &lt;/<span style="color: #721045;">body</span>&gt;
+&lt;/<span style="color: #721045;">html</span>&gt;
+</pre>
+</div></li>
+<li><p>
+上面回调函数还有Vue优化版(使用 $event)
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #531ab6;">!doctype</span> html&gt;
+
+&lt;<span style="color: #721045;">html</span> <span style="color: #005e8b;">lang</span>=<span style="color: #3548cf;">"en"</span>&gt;
+  &lt;<span style="color: #721045;">head</span>&gt;
+    &lt;<span style="color: #721045;">meta</span> <span style="color: #005e8b;">charset</span>=<span style="color: #3548cf;">"UTF-8"</span> /&gt;
+    &lt;<span style="color: #721045;">meta</span> <span style="color: #005e8b;">name</span>=<span style="color: #3548cf;">"viewport"</span> <span style="color: #005e8b;">content</span>=<span style="color: #3548cf;">"width=device-width, initial-scale=1.0"</span> /&gt;
+    &lt;<span style="color: #721045;">title</span>&gt;<span style="font-weight: bold; text-decoration: underline;">v-for</span>&lt;/<span style="color: #721045;">title</span>&gt;
+    &lt;<span style="color: #721045;">script</span> <span style="color: #005e8b;">src</span>=<span style="color: #3548cf;">"https://unpkg.com/vue@3/dist/vue.global.js"</span>&gt;&lt;/<span style="color: #721045;">script</span>&gt;
+  &lt;/<span style="color: #721045;">head</span>&gt;
+  &lt;<span style="color: #721045;">body</span>&gt;
+    &lt;<span style="color: #721045;">div</span> <span style="color: #005e8b;">id</span>=<span style="color: #3548cf;">"app"</span>&gt;
+      &lt;<span style="color: #721045;">h2</span>&gt;<span style="font-weight: bold; font-style: italic; text-decoration: underline;">event use $event in function</span>&lt;/<span style="color: #721045;">h2</span>&gt;
+      &lt;<span style="color: #721045;">button</span> @click=<span style="color: #3548cf;">"handleClick2('data msg', $event)"</span>&gt;
+        Click to pass str and $event
+      &lt;/<span style="color: #721045;">button</span>&gt;
+    &lt;/<span style="color: #721045;">div</span>&gt;
+    &lt;<span style="color: #721045;">script</span>&gt;
+      const { createApp } = Vue;
+
+      // &#21019;&#24314; Vue &#24212;&#29992;
+      const app = createApp({
+        methods: {
+          handleClick2(data, event) {
+            alert(`Data: ${data}`);
+            alert(`Event: ${event.target.innerHTML}`);
+          },
+        },
+      });
+      // &#25346;&#36733;&#21040; #app
+      app.mount("#app");
+    &lt;/<span style="color: #721045;">script</span>&gt;
+  &lt;/<span style="color: #721045;">body</span>&gt;
+&lt;/<span style="color: #721045;">html</span>&gt;
+</pre>
+</div></li>
+<li><p>
+其实实践当中,传入一个event,或者一个data一个event的情况都不多,反而是传入一个data的情况多.这种情况下,
+event不需要被传入,我们只传入data
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #531ab6;">!doctype</span> html&gt;
+
+&lt;<span style="color: #721045;">html</span> <span style="color: #005e8b;">lang</span>=<span style="color: #3548cf;">"en"</span>&gt;
+  &lt;<span style="color: #721045;">head</span>&gt;
+    &lt;<span style="color: #721045;">meta</span> <span style="color: #005e8b;">charset</span>=<span style="color: #3548cf;">"UTF-8"</span> /&gt;
+    &lt;<span style="color: #721045;">meta</span> <span style="color: #005e8b;">name</span>=<span style="color: #3548cf;">"viewport"</span> <span style="color: #005e8b;">content</span>=<span style="color: #3548cf;">"width=device-width, initial-scale=1.0"</span> /&gt;
+    &lt;<span style="color: #721045;">title</span>&gt;<span style="font-weight: bold; text-decoration: underline;">v-for</span>&lt;/<span style="color: #721045;">title</span>&gt;
+    &lt;<span style="color: #721045;">script</span> <span style="color: #005e8b;">src</span>=<span style="color: #3548cf;">"https://unpkg.com/vue@3/dist/vue.global.js"</span>&gt;&lt;/<span style="color: #721045;">script</span>&gt;
+  &lt;/<span style="color: #721045;">head</span>&gt;
+  &lt;<span style="color: #721045;">body</span>&gt;
+    &lt;<span style="color: #721045;">div</span> <span style="color: #005e8b;">id</span>=<span style="color: #3548cf;">"app"</span>&gt;
+      &lt;<span style="color: #721045;">h2</span>&gt;<span style="font-weight: bold; font-style: italic; text-decoration: underline;">event use only data in function</span>&lt;/<span style="color: #721045;">h2</span>&gt;
+      &lt;<span style="color: #721045;">button</span> @click=<span style="color: #3548cf;">"handleClick3('data pass to function')"</span>&gt;
+        Click to pass str only
+      &lt;/<span style="color: #721045;">button</span>&gt;
+    &lt;/<span style="color: #721045;">div</span>&gt;
+    &lt;<span style="color: #721045;">script</span>&gt;
+      const { createApp } = Vue;
+
+      // &#21019;&#24314; Vue &#24212;&#29992;
+      const app = createApp({
+        methods: {
+          handleClick3(data) {
+            alert(`Data: ${data}`);
+          },
+        },
+      });
+      // &#25346;&#36733;&#21040; #app
+      app.mount("#app");
+    &lt;/<span style="color: #721045;">script</span>&gt;
+  &lt;/<span style="color: #721045;">body</span>&gt;
+&lt;/<span style="color: #721045;">html</span>&gt;
+</pre>
+</div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org458ba34" class="outline-4">
+<h4 id="org458ba34"><span class="section-number-4">2.7.2.</span> 事件修饰符</h4>
+<div class="outline-text-4" id="text-2-7-2">
+<ul class="org-ul">
+<li>原生DOM事件中,我们可以在实践监听回调函数中通过event.preventDefault来组织默认行为,还可以通过event.stopPropagation
+来停止事件冒泡.</li>
+<li>Vue设计了更加简洁的时间修饰符来实现对事件的类似操作.常用的事件修饰符有下面几个:
+<ul class="org-ul">
+<li>.stop: 停止事件冒泡</li>
+<li>.prevent: 阻止默认行为</li>
+<li>.once: 事件只处理一次</li>
+</ul></li>
+</ul>
+</div>
+<ol class="org-ol">
+<li><a id="orgf3973d0"></a>stop阻止事件冒泡<br />
+<div class="outline-text-5" id="text-2-7-2-1">
+<ul class="org-ul">
+<li>事件冒泡是指事件从最深的目标元素开始，逐级向上传播到父节点的过程。
+<ul class="org-ul">
+<li><p>
+示例如下
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #531ab6;">!doctype</span> html&gt;
+
+&lt;<span style="color: #721045;">html</span> <span style="color: #005e8b;">lang</span>=<span style="color: #3548cf;">"en"</span>&gt;
+  &lt;<span style="color: #721045;">head</span>&gt;
+    &lt;<span style="color: #721045;">meta</span> <span style="color: #005e8b;">charset</span>=<span style="color: #3548cf;">"UTF-8"</span> /&gt;
+    &lt;<span style="color: #721045;">meta</span> <span style="color: #005e8b;">name</span>=<span style="color: #3548cf;">"viewport"</span> <span style="color: #005e8b;">content</span>=<span style="color: #3548cf;">"width=device-width, initial-scale=1.0"</span> /&gt;
+    &lt;<span style="color: #721045;">title</span>&gt;<span style="font-weight: bold; text-decoration: underline;">v-for</span>&lt;/<span style="color: #721045;">title</span>&gt;
+    &lt;<span style="color: #721045;">script</span> <span style="color: #005e8b;">src</span>=<span style="color: #3548cf;">"https://unpkg.com/vue@3/dist/vue.global.js"</span>&gt;&lt;/<span style="color: #721045;">script</span>&gt;
+  &lt;/<span style="color: #721045;">head</span>&gt;
+  &lt;<span style="color: #721045;">body</span>&gt;
+    &lt;<span style="color: #721045;">div</span> <span style="color: #005e8b;">id</span>=<span style="color: #3548cf;">"app"</span>&gt;
+      &lt;<span style="color: #721045;">h2</span>&gt;<span style="font-weight: bold; font-style: italic; text-decoration: underline;">event stop</span>&lt;/<span style="color: #721045;">h2</span>&gt;
+
+      &lt;<span style="color: #721045;">div</span>
+        <span style="color: #005e8b;">style</span>=<span style="color: #3548cf;">"width: 200px; height: 200px; background: yellow"</span>
+        @click=<span style="color: #3548cf;">"handleDivClick"</span>
+      &gt;
+        &lt;<span style="color: #721045;">button</span> @click=<span style="color: #3548cf;">"handleButtonClick"</span>&gt;Click Me&lt;/<span style="color: #721045;">button</span>&gt;
+      &lt;/<span style="color: #721045;">div</span>&gt;
+      &lt;<span style="color: #721045;">br</span> /&gt;
+    &lt;/<span style="color: #721045;">div</span>&gt;
+    &lt;<span style="color: #721045;">script</span>&gt;
+      const { createApp } = Vue;
+
+      // &#21019;&#24314; Vue &#24212;&#29992;
+      const app = createApp({
+        methods: {
+          handleDivClick() {
+            alert("Div clicked!");
+          },
+          handleButtonClick() {
+            alert("Button clicked!");
+          },
+        },
+      });
+      // &#25346;&#36733;&#21040; #app
+      app.mount("#app");
+    &lt;/<span style="color: #721045;">script</span>&gt;
+  &lt;/<span style="color: #721045;">body</span>&gt;
+&lt;/<span style="color: #721045;">html</span>&gt;
+</pre>
+</div></li>
+<li>如果点击 &lt;button&gt;，浏览器会先触发 button 的点击事件，再触发其父元素 div 的点击事件（向上传播）</li>
+<li><p>
+如果我们希望阻止事件冒泡（即点击按钮时，不触发父级 div 的点击事件），就可以使用 .stop 修饰符。
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #531ab6;">!doctype</span> html&gt;
+
+&lt;<span style="color: #721045;">html</span> <span style="color: #005e8b;">lang</span>=<span style="color: #3548cf;">"en"</span>&gt;
+  &lt;<span style="color: #721045;">head</span>&gt;
+    &lt;<span style="color: #721045;">meta</span> <span style="color: #005e8b;">charset</span>=<span style="color: #3548cf;">"UTF-8"</span> /&gt;
+    &lt;<span style="color: #721045;">meta</span> <span style="color: #005e8b;">name</span>=<span style="color: #3548cf;">"viewport"</span> <span style="color: #005e8b;">content</span>=<span style="color: #3548cf;">"width=device-width, initial-scale=1.0"</span> /&gt;
+    &lt;<span style="color: #721045;">title</span>&gt;<span style="font-weight: bold; text-decoration: underline;">v-for</span>&lt;/<span style="color: #721045;">title</span>&gt;
+    &lt;<span style="color: #721045;">script</span> <span style="color: #005e8b;">src</span>=<span style="color: #3548cf;">"https://unpkg.com/vue@3/dist/vue.global.js"</span>&gt;&lt;/<span style="color: #721045;">script</span>&gt;
+  &lt;/<span style="color: #721045;">head</span>&gt;
+  &lt;<span style="color: #721045;">body</span>&gt;
+    &lt;<span style="color: #721045;">div</span> <span style="color: #005e8b;">id</span>=<span style="color: #3548cf;">"app"</span>&gt;
+      &lt;<span style="color: #721045;">h2</span>&gt;<span style="font-weight: bold; font-style: italic; text-decoration: underline;">event stop</span>&lt;/<span style="color: #721045;">h2</span>&gt;
+
+      &lt;<span style="color: #721045;">div</span>
+        <span style="color: #005e8b;">style</span>=<span style="color: #3548cf;">"width: 200px; height: 200px; background: yellow"</span>
+        @click=<span style="color: #3548cf;">"handleDivClick"</span>
+      &gt;
+        &lt;<span style="color: #721045;">button</span> @click.stop=<span style="color: #3548cf;">"handleButtonClick"</span>&gt;Click Me&lt;/<span style="color: #721045;">button</span>&gt;
+      &lt;/<span style="color: #721045;">div</span>&gt;
+      &lt;<span style="color: #721045;">br</span> /&gt;
+    &lt;/<span style="color: #721045;">div</span>&gt;
+    &lt;<span style="color: #721045;">script</span>&gt;
+      const { createApp } = Vue;
+
+      // &#21019;&#24314; Vue &#24212;&#29992;
+      const app = createApp({
+        methods: {
+          handleDivClick() {
+            alert("Div clicked!");
+          },
+          handleButtonClick() {
+            alert("Button clicked!");
+          },
+        },
+      });
+      // &#25346;&#36733;&#21040; #app
+      app.mount("#app");
+    &lt;/<span style="color: #721045;">script</span>&gt;
+  &lt;/<span style="color: #721045;">body</span>&gt;
+&lt;/<span style="color: #721045;">html</span>&gt;
+</pre>
+</div></li>
+</ul></li>
+</ul>
+</div>
+</li>
+<li><a id="org5483a47"></a>prevent阻止事件默认行为<br />
+<div class="outline-text-5" id="text-2-7-2-2">
+<ul class="org-ul">
+<li>这个就很容易理解了,我们可以阻止浏览器默认的行为(改成自己的行为)
+<ul class="org-ul">
+<li><p>
+比如href是超链接到新的网址,但是我们可以改成alert
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #531ab6;">!doctype</span> html&gt;
+
+&lt;<span style="color: #721045;">html</span> <span style="color: #005e8b;">lang</span>=<span style="color: #3548cf;">"en"</span>&gt;
+  &lt;<span style="color: #721045;">head</span>&gt;
+    &lt;<span style="color: #721045;">meta</span> <span style="color: #005e8b;">charset</span>=<span style="color: #3548cf;">"UTF-8"</span> /&gt;
+    &lt;<span style="color: #721045;">meta</span> <span style="color: #005e8b;">name</span>=<span style="color: #3548cf;">"viewport"</span> <span style="color: #005e8b;">content</span>=<span style="color: #3548cf;">"width=device-width, initial-scale=1.0"</span> /&gt;
+    &lt;<span style="color: #721045;">title</span>&gt;<span style="font-weight: bold; text-decoration: underline;">v-for</span>&lt;/<span style="color: #721045;">title</span>&gt;
+    &lt;<span style="color: #721045;">script</span> <span style="color: #005e8b;">src</span>=<span style="color: #3548cf;">"https://unpkg.com/vue@3/dist/vue.global.js"</span>&gt;&lt;/<span style="color: #721045;">script</span>&gt;
+  &lt;/<span style="color: #721045;">head</span>&gt;
+  &lt;<span style="color: #721045;">body</span>&gt;
+    &lt;<span style="color: #721045;">div</span> <span style="color: #005e8b;">id</span>=<span style="color: #3548cf;">"app"</span>&gt;
+      &lt;<span style="color: #721045;">h2</span>&gt;<span style="font-weight: bold; font-style: italic; text-decoration: underline;">event prevent</span>&lt;/<span style="color: #721045;">h2</span>&gt;
+      &lt;<span style="color: #721045;">a</span> <span style="color: #005e8b;">href</span>=<span style="color: #3548cf;">"https://bing.com"</span> @click.prevent=<span style="color: #3548cf;">"handleClick"</span>&gt;Bing.com Link&lt;/<span style="color: #721045;">a</span>&gt;
+
+      &lt;<span style="color: #721045;">br</span> /&gt;
+    &lt;/<span style="color: #721045;">div</span>&gt;
+    &lt;<span style="color: #721045;">script</span>&gt;
+      const { createApp } = Vue;
+
+      // &#21019;&#24314; Vue &#24212;&#29992;
+      const app = createApp({
+        methods: {
+          handleClick() {
+            alert("handle click!");
+          },
+        },
+      });
+      // &#25346;&#36733;&#21040; #app
+      app.mount("#app");
+    &lt;/<span style="color: #721045;">script</span>&gt;
+  &lt;/<span style="color: #721045;">body</span>&gt;
+&lt;/<span style="color: #721045;">html</span>&gt;
+</pre>
+</div></li>
+</ul></li>
+</ul>
+</div>
+</li>
+<li><a id="org9f49788"></a>once事件只处理一次<br />
+<div class="outline-text-5" id="text-2-7-2-3">
+<ul class="org-ul">
+<li>这个也很容易理解,就是所有的事件只有第一次发生的时候处理
+<ul class="org-ul">
+<li><p>
+示例如下,我们的button只有第一次点击的时候会alert
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #531ab6;">!doctype</span> html&gt;
+
+&lt;<span style="color: #721045;">html</span> <span style="color: #005e8b;">lang</span>=<span style="color: #3548cf;">"en"</span>&gt;
+  &lt;<span style="color: #721045;">head</span>&gt;
+    &lt;<span style="color: #721045;">meta</span> <span style="color: #005e8b;">charset</span>=<span style="color: #3548cf;">"UTF-8"</span> /&gt;
+    &lt;<span style="color: #721045;">meta</span> <span style="color: #005e8b;">name</span>=<span style="color: #3548cf;">"viewport"</span> <span style="color: #005e8b;">content</span>=<span style="color: #3548cf;">"width=device-width, initial-scale=1.0"</span> /&gt;
+    &lt;<span style="color: #721045;">title</span>&gt;<span style="font-weight: bold; text-decoration: underline;">v-for</span>&lt;/<span style="color: #721045;">title</span>&gt;
+    &lt;<span style="color: #721045;">script</span> <span style="color: #005e8b;">src</span>=<span style="color: #3548cf;">"https://unpkg.com/vue@3/dist/vue.global.js"</span>&gt;&lt;/<span style="color: #721045;">script</span>&gt;
+  &lt;/<span style="color: #721045;">head</span>&gt;
+  &lt;<span style="color: #721045;">body</span>&gt;
+    &lt;<span style="color: #721045;">div</span> <span style="color: #005e8b;">id</span>=<span style="color: #3548cf;">"app"</span>&gt;
+      &lt;<span style="color: #721045;">h2</span>&gt;<span style="font-weight: bold; font-style: italic; text-decoration: underline;">event prevent</span>&lt;/<span style="color: #721045;">h2</span>&gt;
+      &lt;<span style="color: #721045;">button</span> @click.once=<span style="color: #3548cf;">"handleClick"</span>&gt;Handle Once&lt;/<span style="color: #721045;">button</span>&gt;
+      &lt;<span style="color: #721045;">br</span> /&gt;
+    &lt;/<span style="color: #721045;">div</span>&gt;
+    &lt;<span style="color: #721045;">script</span>&gt;
+      const { createApp } = Vue;
+
+      // &#21019;&#24314; Vue &#24212;&#29992;
+      const app = createApp({
+        methods: {
+          handleClick() {
+            alert("handle click!");
+          },
+        },
+      });
+      // &#25346;&#36733;&#21040; #app
+      app.mount("#app");
+    &lt;/<span style="color: #721045;">script</span>&gt;
+  &lt;/<span style="color: #721045;">body</span>&gt;
+&lt;/<span style="color: #721045;">html</span>&gt;
+</pre>
+</div></li>
+</ul></li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div id="outline-container-org8db7ebb" class="outline-4">
+<h4 id="org8db7ebb"><span class="section-number-4">2.7.3.</span> 按键修饰符</h4>
+<div class="outline-text-4" id="text-2-7-3">
+<ul class="org-ul">
+<li>按键修饰符是Vue用来处理键盘事件的
+<ul class="org-ul">
+<li><p>
+示例如下,我们可以使用enter来确认提交
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #531ab6;">!doctype</span> html&gt;
+
+&lt;<span style="color: #721045;">html</span> <span style="color: #005e8b;">lang</span>=<span style="color: #3548cf;">"en"</span>&gt;
+  &lt;<span style="color: #721045;">head</span>&gt;
+    &lt;<span style="color: #721045;">meta</span> <span style="color: #005e8b;">charset</span>=<span style="color: #3548cf;">"UTF-8"</span> /&gt;
+    &lt;<span style="color: #721045;">meta</span> <span style="color: #005e8b;">name</span>=<span style="color: #3548cf;">"viewport"</span> <span style="color: #005e8b;">content</span>=<span style="color: #3548cf;">"width=device-width, initial-scale=1.0"</span> /&gt;
+    &lt;<span style="color: #721045;">title</span>&gt;<span style="font-weight: bold; text-decoration: underline;">v-for</span>&lt;/<span style="color: #721045;">title</span>&gt;
+    &lt;<span style="color: #721045;">script</span> <span style="color: #005e8b;">src</span>=<span style="color: #3548cf;">"https://unpkg.com/vue@3/dist/vue.global.js"</span>&gt;&lt;/<span style="color: #721045;">script</span>&gt;
+  &lt;/<span style="color: #721045;">head</span>&gt;
+  &lt;<span style="color: #721045;">body</span>&gt;
+    &lt;<span style="color: #721045;">div</span> <span style="color: #005e8b;">id</span>=<span style="color: #3548cf;">"app"</span>&gt;
+      &lt;<span style="color: #721045;">h2</span>&gt;<span style="font-weight: bold; font-style: italic; text-decoration: underline;">event keyup</span>&lt;/<span style="color: #721045;">h2</span>&gt;
+      &lt;<span style="color: #721045;">input</span>
+        <span style="color: #005e8b;">type</span>=<span style="color: #3548cf;">"text"</span>
+        <span style="color: #005e8b;">v-model</span>=<span style="color: #3548cf;">"inputValue"</span>
+        @keyup.enter=<span style="color: #3548cf;">"submitForm"</span>
+        <span style="color: #005e8b;">placeholder</span>=<span style="color: #3548cf;">"Type something and press Enter"</span>
+      /&gt;
+      &lt;<span style="color: #721045;">p</span>&gt;Submitted Value: {{ submittedValue }}&lt;/<span style="color: #721045;">p</span>&gt;
+    &lt;/<span style="color: #721045;">div</span>&gt;
+    &lt;<span style="color: #721045;">script</span>&gt;
+      const { createApp } = Vue;
+
+      // &#21019;&#24314; Vue &#24212;&#29992;
+      const app = createApp({
+        data() {
+          return {
+            inputValue: "", // &#29992;&#25143;&#36755;&#20837;&#30340;&#20540;
+            submittedValue: "", // &#25552;&#20132;&#21518;&#30340;&#20540;
+          };
+        },
+        methods: {
+          submitForm() {
+            // &#23558;&#36755;&#20837;&#30340;&#20540;&#35774;&#32622;&#20026;&#24050;&#25552;&#20132;&#30340;&#20540;
+            this.submittedValue = this.inputValue;
+            alert(`You submitted: ${this.inputValue}`);
+            // &#28165;&#31354;&#36755;&#20837;&#26694;
+            this.inputValue = "";
+          },
+        },
+      });
+      // &#25346;&#36733;&#21040; #app
+      app.mount("#app");
+    &lt;/<span style="color: #721045;">script</span>&gt;
+  &lt;/<span style="color: #721045;">body</span>&gt;
+&lt;/<span style="color: #721045;">html</span>&gt;
+</pre>
+</div></li>
+<li><p>
+我们甚至可以使用组合键进行触发,比如常见的shift+enter触发
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #531ab6;">!doctype</span> html&gt;
+
+&lt;<span style="color: #721045;">html</span> <span style="color: #005e8b;">lang</span>=<span style="color: #3548cf;">"en"</span>&gt;
+  &lt;<span style="color: #721045;">head</span>&gt;
+    &lt;<span style="color: #721045;">meta</span> <span style="color: #005e8b;">charset</span>=<span style="color: #3548cf;">"UTF-8"</span> /&gt;
+    &lt;<span style="color: #721045;">meta</span> <span style="color: #005e8b;">name</span>=<span style="color: #3548cf;">"viewport"</span> <span style="color: #005e8b;">content</span>=<span style="color: #3548cf;">"width=device-width, initial-scale=1.0"</span> /&gt;
+    &lt;<span style="color: #721045;">title</span>&gt;<span style="font-weight: bold; text-decoration: underline;">v-for</span>&lt;/<span style="color: #721045;">title</span>&gt;
+    &lt;<span style="color: #721045;">script</span> <span style="color: #005e8b;">src</span>=<span style="color: #3548cf;">"https://unpkg.com/vue@3/dist/vue.global.js"</span>&gt;&lt;/<span style="color: #721045;">script</span>&gt;
+  &lt;/<span style="color: #721045;">head</span>&gt;
+  &lt;<span style="color: #721045;">body</span>&gt;
+    &lt;<span style="color: #721045;">div</span> <span style="color: #005e8b;">id</span>=<span style="color: #3548cf;">"app"</span>&gt;
+      &lt;<span style="color: #721045;">h2</span>&gt;<span style="font-weight: bold; font-style: italic; text-decoration: underline;">event keyup</span>&lt;/<span style="color: #721045;">h2</span>&gt;
+      &lt;<span style="color: #721045;">input</span>
+        <span style="color: #005e8b;">type</span>=<span style="color: #3548cf;">"text"</span>
+        <span style="color: #005e8b;">v-model</span>=<span style="color: #3548cf;">"inputValue"</span>
+        @keyup.shift.enter=<span style="color: #3548cf;">"submitForm"</span>
+        <span style="color: #005e8b;">placeholder</span>=<span style="color: #3548cf;">"Type something and press Enter"</span>
+      /&gt;
+      &lt;<span style="color: #721045;">p</span>&gt;Submitted Value: {{ submittedValue }}&lt;/<span style="color: #721045;">p</span>&gt;
+    &lt;/<span style="color: #721045;">div</span>&gt;
+    &lt;<span style="color: #721045;">script</span>&gt;
+      const { createApp } = Vue;
+
+      // &#21019;&#24314; Vue &#24212;&#29992;
+      const app = createApp({
+        data() {
+          return {
+            inputValue: "", // &#29992;&#25143;&#36755;&#20837;&#30340;&#20540;
+            submittedValue: "", // &#25552;&#20132;&#21518;&#30340;&#20540;
+          };
+        },
+        methods: {
+          submitForm() {
+            // &#23558;&#36755;&#20837;&#30340;&#20540;&#35774;&#32622;&#20026;&#24050;&#25552;&#20132;&#30340;&#20540;
+            this.submittedValue = this.inputValue;
+            alert(`You submitted: ${this.inputValue}`);
+            // &#28165;&#31354;&#36755;&#20837;&#26694;
+            this.inputValue = "";
+          },
+        },
+      });
+      // &#25346;&#36733;&#21040; #app
+      app.mount("#app");
+    &lt;/<span style="color: #721045;">script</span>&gt;
+  &lt;/<span style="color: #721045;">body</span>&gt;
+&lt;/<span style="color: #721045;">html</span>&gt;
+</pre>
+</div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgf58f458" class="outline-3">
+<h3 id="orgf58f458"><span class="section-number-3">2.8.</span> 收集表单数据</h3>
+<div class="outline-text-3" id="text-2-8">
+<ul class="org-ul">
+<li>前端开发中,表单是常见的页面效果.我们通常需要根据用户的输入,将数据实时同步给Javascript变量
+<ul class="org-ul">
+<li><p>
+比较原始的做法是一来绑定动态value属性,二来监听input,示例如下
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #531ab6;">!doctype</span> html&gt;
+
+&lt;<span style="color: #721045;">html</span> <span style="color: #005e8b;">lang</span>=<span style="color: #3548cf;">"en"</span>&gt;
+  &lt;<span style="color: #721045;">head</span>&gt;
+    &lt;<span style="color: #721045;">meta</span> <span style="color: #005e8b;">charset</span>=<span style="color: #3548cf;">"UTF-8"</span> /&gt;
+    &lt;<span style="color: #721045;">meta</span> <span style="color: #005e8b;">name</span>=<span style="color: #3548cf;">"viewport"</span> <span style="color: #005e8b;">content</span>=<span style="color: #3548cf;">"width=device-width, initial-scale=1.0"</span> /&gt;
+    &lt;<span style="color: #721045;">title</span>&gt;<span style="font-weight: bold; text-decoration: underline;">v-for</span>&lt;/<span style="color: #721045;">title</span>&gt;
+    &lt;<span style="color: #721045;">script</span> <span style="color: #005e8b;">src</span>=<span style="color: #3548cf;">"https://unpkg.com/vue@3/dist/vue.global.js"</span>&gt;&lt;/<span style="color: #721045;">script</span>&gt;
+  &lt;/<span style="color: #721045;">head</span>&gt;
+  &lt;<span style="color: #721045;">body</span>&gt;
+    &lt;<span style="color: #721045;">div</span> <span style="color: #005e8b;">id</span>=<span style="color: #3548cf;">"app"</span>&gt;
+      &lt;<span style="color: #721045;">input</span>
+        :value=<span style="color: #3548cf;">"inputValue"</span>
+        @input=<span style="color: #3548cf;">"updateValue($event)"</span>
+        <span style="color: #005e8b;">placeholder</span>=<span style="color: #3548cf;">"Type something here"</span>
+      /&gt;
+      &lt;<span style="color: #721045;">p</span>&gt;You typed: {{ inputValue }}&lt;/<span style="color: #721045;">p</span>&gt;
+    &lt;/<span style="color: #721045;">div</span>&gt;
+    &lt;<span style="color: #721045;">script</span>&gt;
+      const { createApp } = Vue;
+
+      // &#21019;&#24314; Vue &#24212;&#29992;
+      const app = createApp({
+        data() {
+          return {
+            inputValue: "",
+          };
+        },
+        methods: {
+          updateValue(event) {
+            this.inputValue = event.target.value;
+          },
+        },
+      });
+      // &#25346;&#36733;&#21040; #app
+      app.mount("#app");
+    &lt;/<span style="color: #721045;">script</span>&gt;
+  &lt;/<span style="color: #721045;">body</span>&gt;
+&lt;/<span style="color: #721045;">html</span>&gt;
+</pre>
+</div></li>
+<li><p>
+但是Vue发明了v-model,可以同时做上面的两件事:也就是所谓的双向数据绑定,示例如下
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #531ab6;">!doctype</span> html&gt;
+
+&lt;<span style="color: #721045;">html</span> <span style="color: #005e8b;">lang</span>=<span style="color: #3548cf;">"en"</span>&gt;
+  &lt;<span style="color: #721045;">head</span>&gt;
+    &lt;<span style="color: #721045;">meta</span> <span style="color: #005e8b;">charset</span>=<span style="color: #3548cf;">"UTF-8"</span> /&gt;
+    &lt;<span style="color: #721045;">meta</span> <span style="color: #005e8b;">name</span>=<span style="color: #3548cf;">"viewport"</span> <span style="color: #005e8b;">content</span>=<span style="color: #3548cf;">"width=device-width, initial-scale=1.0"</span> /&gt;
+    &lt;<span style="color: #721045;">title</span>&gt;<span style="font-weight: bold; text-decoration: underline;">v-for</span>&lt;/<span style="color: #721045;">title</span>&gt;
+    &lt;<span style="color: #721045;">script</span> <span style="color: #005e8b;">src</span>=<span style="color: #3548cf;">"https://unpkg.com/vue@3/dist/vue.global.js"</span>&gt;&lt;/<span style="color: #721045;">script</span>&gt;
+  &lt;/<span style="color: #721045;">head</span>&gt;
+  &lt;<span style="color: #721045;">body</span>&gt;
+    &lt;<span style="color: #721045;">div</span> <span style="color: #005e8b;">id</span>=<span style="color: #3548cf;">"app"</span>&gt;
+      &lt;<span style="color: #721045;">h2</span>&gt;<span style="font-weight: bold; font-style: italic; text-decoration: underline;">v-model</span>&lt;/<span style="color: #721045;">h2</span>&gt;
+      &lt;<span style="color: #721045;">input</span> <span style="color: #005e8b;">v-model</span>=<span style="color: #3548cf;">"inputValue"</span> <span style="color: #005e8b;">placeholder</span>=<span style="color: #3548cf;">"Type something here"</span> /&gt;
+      &lt;<span style="color: #721045;">p</span>&gt;You typed: {{ inputValue }}&lt;/<span style="color: #721045;">p</span>&gt;
+    &lt;/<span style="color: #721045;">div</span>&gt;
+    &lt;<span style="color: #721045;">script</span>&gt;
+      const { createApp } = Vue;
+
+      // &#21019;&#24314; Vue &#24212;&#29992;
+      const app = createApp({
+        data() {
+          return {
+            inputValue: "",
+          };
+        },
+        methods: {
+          updateValue(event) {
+            this.inputValue = event.target.value;
+          },
+        },
+      });
+      // &#25346;&#36733;&#21040; #app
+      app.mount("#app");
+    &lt;/<span style="color: #721045;">script</span>&gt;
+  &lt;/<span style="color: #721045;">body</span>&gt;
+&lt;/<span style="color: #721045;">html</span>&gt;
+</pre>
+</div></li>
+</ul></li>
+</ul>
+</div>
+<div id="outline-container-org439676a" class="outline-4">
+<h4 id="org439676a"><span class="section-number-4">2.8.1.</span> 使用v-model指令</h4>
+<div class="outline-text-4" id="text-2-8-1">
+<ul class="org-ul">
+<li>v-model指令可以应用在各种不同类型的表单元素上,它会根据所应用的元素不同,自动扩展到不同的DOM属性和事件监听上
+<ul class="org-ul">
+<li><p>
+输入框绑定,示例如下
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #531ab6;">!doctype</span> html&gt;
+
+&lt;<span style="color: #721045;">html</span> <span style="color: #005e8b;">lang</span>=<span style="color: #3548cf;">"en"</span>&gt;
+  &lt;<span style="color: #721045;">head</span>&gt;
+    &lt;<span style="color: #721045;">meta</span> <span style="color: #005e8b;">charset</span>=<span style="color: #3548cf;">"UTF-8"</span> /&gt;
+    &lt;<span style="color: #721045;">meta</span> <span style="color: #005e8b;">name</span>=<span style="color: #3548cf;">"viewport"</span> <span style="color: #005e8b;">content</span>=<span style="color: #3548cf;">"width=device-width, initial-scale=1.0"</span> /&gt;
+    &lt;<span style="color: #721045;">title</span>&gt;<span style="font-weight: bold; text-decoration: underline;">v-for</span>&lt;/<span style="color: #721045;">title</span>&gt;
+    &lt;<span style="color: #721045;">script</span> <span style="color: #005e8b;">src</span>=<span style="color: #3548cf;">"https://unpkg.com/vue@3/dist/vue.global.js"</span>&gt;&lt;/<span style="color: #721045;">script</span>&gt;
+  &lt;/<span style="color: #721045;">head</span>&gt;
+  &lt;<span style="color: #721045;">body</span>&gt;
+    &lt;<span style="color: #721045;">div</span> <span style="color: #005e8b;">id</span>=<span style="color: #3548cf;">"app"</span>&gt;
+      &lt;<span style="color: #721045;">input</span> <span style="color: #005e8b;">v-model</span>=<span style="color: #3548cf;">"username"</span> <span style="color: #005e8b;">placeholder</span>=<span style="color: #3548cf;">"Enter your username"</span> /&gt;
+      &lt;<span style="color: #721045;">p</span>&gt;Your username: {{ username }}&lt;/<span style="color: #721045;">p</span>&gt;
+    &lt;/<span style="color: #721045;">div</span>&gt;
+    &lt;<span style="color: #721045;">script</span>&gt;
+      const { createApp } = Vue;
+
+      // &#21019;&#24314; Vue &#24212;&#29992;
+      const app = createApp({
+        data() {
+          return {
+            username: "", // &#29992;&#25143;&#21517;
+          };
+        },
+      });
+      // &#25346;&#36733;&#21040; #app
+      app.mount("#app");
+    &lt;/<span style="color: #721045;">script</span>&gt;
+  &lt;/<span style="color: #721045;">body</span>&gt;
+&lt;/<span style="color: #721045;">html</span>&gt;
+</pre>
+</div></li>
+<li><p>
+单选框绑定,示例如下
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #531ab6;">!doctype</span> html&gt;
+
+&lt;<span style="color: #721045;">html</span> <span style="color: #005e8b;">lang</span>=<span style="color: #3548cf;">"en"</span>&gt;
+  &lt;<span style="color: #721045;">head</span>&gt;
+    &lt;<span style="color: #721045;">meta</span> <span style="color: #005e8b;">charset</span>=<span style="color: #3548cf;">"UTF-8"</span> /&gt;
+    &lt;<span style="color: #721045;">meta</span> <span style="color: #005e8b;">name</span>=<span style="color: #3548cf;">"viewport"</span> <span style="color: #005e8b;">content</span>=<span style="color: #3548cf;">"width=device-width, initial-scale=1.0"</span> /&gt;
+    &lt;<span style="color: #721045;">title</span>&gt;<span style="font-weight: bold; text-decoration: underline;">v-for</span>&lt;/<span style="color: #721045;">title</span>&gt;
+    &lt;<span style="color: #721045;">script</span> <span style="color: #005e8b;">src</span>=<span style="color: #3548cf;">"https://unpkg.com/vue@3/dist/vue.global.js"</span>&gt;&lt;/<span style="color: #721045;">script</span>&gt;
+  &lt;/<span style="color: #721045;">head</span>&gt;
+  &lt;<span style="color: #721045;">body</span>&gt;
+    &lt;<span style="color: #721045;">div</span> <span style="color: #005e8b;">id</span>=<span style="color: #3548cf;">"app"</span>&gt;
+      &lt;<span style="color: #721045;">label</span>&gt;
+        &lt;<span style="color: #721045;">input</span> <span style="color: #005e8b;">type</span>=<span style="color: #3548cf;">"radio"</span> <span style="color: #005e8b;">v-model</span>=<span style="color: #3548cf;">"gender"</span> <span style="color: #005e8b;">value</span>=<span style="color: #3548cf;">"Male"</span> /&gt;
+        Male
+      &lt;/<span style="color: #721045;">label</span>&gt;
+      &lt;<span style="color: #721045;">label</span>&gt;
+        &lt;<span style="color: #721045;">input</span> <span style="color: #005e8b;">type</span>=<span style="color: #3548cf;">"radio"</span> <span style="color: #005e8b;">v-model</span>=<span style="color: #3548cf;">"gender"</span> <span style="color: #005e8b;">value</span>=<span style="color: #3548cf;">"Female"</span> /&gt;
+        Female
+      &lt;/<span style="color: #721045;">label</span>&gt;
+      &lt;<span style="color: #721045;">p</span>&gt;Your gender: {{ gender }}&lt;/<span style="color: #721045;">p</span>&gt;
+    &lt;/<span style="color: #721045;">div</span>&gt;
+    &lt;<span style="color: #721045;">script</span>&gt;
+      const { createApp } = Vue;
+
+      // &#21019;&#24314; Vue &#24212;&#29992;
+      const app = createApp({
+        data() {
+          return {
+            gender: "", // &#29992;&#25143;&#21517;
+          };
+        },
+      });
+      // &#25346;&#36733;&#21040; #app
+      app.mount("#app");
+    &lt;/<span style="color: #721045;">script</span>&gt;
+  &lt;/<span style="color: #721045;">body</span>&gt;
+&lt;/<span style="color: #721045;">html</span>&gt;
+</pre>
+</div></li>
+<li><p>
+复选框绑定
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #531ab6;">!doctype</span> html&gt;
+
+&lt;<span style="color: #721045;">html</span> <span style="color: #005e8b;">lang</span>=<span style="color: #3548cf;">"en"</span>&gt;
+  &lt;<span style="color: #721045;">head</span>&gt;
+    &lt;<span style="color: #721045;">meta</span> <span style="color: #005e8b;">charset</span>=<span style="color: #3548cf;">"UTF-8"</span> /&gt;
+    &lt;<span style="color: #721045;">meta</span> <span style="color: #005e8b;">name</span>=<span style="color: #3548cf;">"viewport"</span> <span style="color: #005e8b;">content</span>=<span style="color: #3548cf;">"width=device-width, initial-scale=1.0"</span> /&gt;
+    &lt;<span style="color: #721045;">title</span>&gt;<span style="font-weight: bold; text-decoration: underline;">v-for</span>&lt;/<span style="color: #721045;">title</span>&gt;
+    &lt;<span style="color: #721045;">script</span> <span style="color: #005e8b;">src</span>=<span style="color: #3548cf;">"https://unpkg.com/vue@3/dist/vue.global.js"</span>&gt;&lt;/<span style="color: #721045;">script</span>&gt;
+  &lt;/<span style="color: #721045;">head</span>&gt;
+  &lt;<span style="color: #721045;">body</span>&gt;
+    &lt;<span style="color: #721045;">div</span> <span style="color: #005e8b;">id</span>=<span style="color: #3548cf;">"app"</span>&gt;
+      &lt;<span style="color: #721045;">h3</span>&gt;<span style="font-style: italic; text-decoration: underline;">Select your hobbies:</span>&lt;/<span style="color: #721045;">h3</span>&gt;
+      &lt;<span style="color: #721045;">label</span>&gt;
+        &lt;<span style="color: #721045;">input</span> <span style="color: #005e8b;">type</span>=<span style="color: #3548cf;">"checkbox"</span> <span style="color: #005e8b;">v-model</span>=<span style="color: #3548cf;">"hobbies"</span> <span style="color: #005e8b;">value</span>=<span style="color: #3548cf;">"Reading"</span> /&gt;
+        Reading
+      &lt;/<span style="color: #721045;">label</span>&gt;
+      &lt;<span style="color: #721045;">label</span>&gt;
+        &lt;<span style="color: #721045;">input</span> <span style="color: #005e8b;">type</span>=<span style="color: #3548cf;">"checkbox"</span> <span style="color: #005e8b;">v-model</span>=<span style="color: #3548cf;">"hobbies"</span> <span style="color: #005e8b;">value</span>=<span style="color: #3548cf;">"Traveling"</span> /&gt;
+        Traveling
+      &lt;/<span style="color: #721045;">label</span>&gt;
+      &lt;<span style="color: #721045;">label</span>&gt;
+        &lt;<span style="color: #721045;">input</span> <span style="color: #005e8b;">type</span>=<span style="color: #3548cf;">"checkbox"</span> <span style="color: #005e8b;">v-model</span>=<span style="color: #3548cf;">"hobbies"</span> <span style="color: #005e8b;">value</span>=<span style="color: #3548cf;">"Gaming"</span> /&gt;
+        Gaming
+      &lt;/<span style="color: #721045;">label</span>&gt;
+      &lt;<span style="color: #721045;">p</span>&gt;Your hobbies: {{ hobbies }}&lt;/<span style="color: #721045;">p</span>&gt;
+    &lt;/<span style="color: #721045;">div</span>&gt;
+    &lt;<span style="color: #721045;">script</span>&gt;
+      const { createApp } = Vue;
+
+      // &#21019;&#24314; Vue &#24212;&#29992;
+      const app = createApp({
+        data() {
+          return {
+            hobbies: [],
+          };
+        },
+      });
+      // &#25346;&#36733;&#21040; #app
+      app.mount("#app");
+    &lt;/<span style="color: #721045;">script</span>&gt;
+  &lt;/<span style="color: #721045;">body</span>&gt;
+&lt;/<span style="color: #721045;">html</span>&gt;
+</pre>
+</div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgcedae49" class="outline-4">
+<h4 id="orgcedae49"><span class="section-number-4">2.8.2.</span> 相关指令修饰符</h4>
+<div class="outline-text-4" id="text-2-8-2">
+<ul class="org-ul">
+<li>.lazy的修饰符更改同步数据的方法:
+<ul class="org-ul">
+<li>默认情况下,v-model会在input事件触发的时候同步数据,具体效果就是每写一个字母,就会触发Javascript变量的改变.</li>
+<li>加了.lazy之后,v-model会在change时间的时候同步数据,具体效果就是会在输入框失去焦点的时候,数据才会同步</li>
+</ul></li>
+<li>.trim的修饰符决定文本数据是否trim
+<ul class="org-ul">
+<li>默认情况下, v-model会把文本两端的空格同步到data对应属性上</li>
+<li>加了.trim之后,v-model会把文本两端的空格去除之后,再同步到data对应属性上</li>
+</ul></li>
+<li>.number修饰符决定文本类型是否转换为number
+<ul class="org-ul">
+<li>默认情况下, v-model会把输入框的所有内容理解为文本类型,并且同步</li>
+<li>加了.number之后,v-model会把文本转换为number类型,再同步给data对应属性</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org630f4df" class="outline-3">
+<h3 id="org630f4df"><span class="section-number-3">2.9.</span> Vue实例的生命周期</h3>
+<div class="outline-text-3" id="text-2-9">
+<ul class="org-ul">
+<li>Vue的实例有不同的生命周期,具体可以分为如下几个部分:
+<ul class="org-ul">
+<li>创建阶段:先后有beforeCreate, created</li>
+<li>挂载阶段:先后有beforeMount, mountd</li>
+<li>更新阶段:先后有beforeUpdate, updated</li>
+<li>销毁阶段:先后有beforeUnmount, unmountd</li>
+</ul></li>
+<li>我们可以通过一个例子来展示这些生命周期
+<ul class="org-ul">
+<li><p>
+示例如下
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #531ab6;">!doctype</span> html&gt;
+
+&lt;<span style="color: #721045;">html</span> <span style="color: #005e8b;">lang</span>=<span style="color: #3548cf;">"en"</span>&gt;
+  &lt;<span style="color: #721045;">head</span>&gt;
+    &lt;<span style="color: #721045;">meta</span> <span style="color: #005e8b;">charset</span>=<span style="color: #3548cf;">"UTF-8"</span> /&gt;
+    &lt;<span style="color: #721045;">meta</span> <span style="color: #005e8b;">name</span>=<span style="color: #3548cf;">"viewport"</span> <span style="color: #005e8b;">content</span>=<span style="color: #3548cf;">"width=device-width, initial-scale=1.0"</span> /&gt;
+    &lt;<span style="color: #721045;">title</span>&gt;<span style="font-weight: bold; text-decoration: underline;">v-for</span>&lt;/<span style="color: #721045;">title</span>&gt;
+    &lt;<span style="color: #721045;">script</span> <span style="color: #005e8b;">src</span>=<span style="color: #3548cf;">"https://unpkg.com/vue@3/dist/vue.global.js"</span>&gt;&lt;/<span style="color: #721045;">script</span>&gt;
+  &lt;/<span style="color: #721045;">head</span>&gt;
+  &lt;<span style="color: #721045;">body</span>&gt;
+    &lt;<span style="color: #721045;">div</span> <span style="color: #005e8b;">id</span>=<span style="color: #3548cf;">"app"</span>&gt;
+      &lt;<span style="color: #721045;">h3</span>&gt;<span style="font-style: italic; text-decoration: underline;">{{ title }}</span>&lt;/<span style="color: #721045;">h3</span>&gt;
+      &lt;<span style="color: #721045;">button</span> @click=<span style="color: #3548cf;">"updateTitle"</span>&gt;Update Title&lt;/<span style="color: #721045;">button</span>&gt;
+    &lt;/<span style="color: #721045;">div</span>&gt;
+    &lt;<span style="color: #721045;">script</span>&gt;
+      const { createApp } = Vue;
+
+      // &#21019;&#24314; Vue &#24212;&#29992;
+      const app = createApp({
+        data() {
+          return {
+            title: "Hello World!",
+          };
+        },
+        methods: {
+          updateTitle() {
+            this.title = "Title Updated!";
+          },
+        },
+        beforeCreate() {
+          console.log("beforeCreate: &#23454;&#20363;&#21021;&#22987;&#21270;&#21069;");
+        },
+        created() {
+          console.log("created: &#23454;&#20363;&#24050;&#21019;&#24314;");
+        },
+        beforeMount() {
+          console.log("beforeMount: &#25346;&#36733;&#21069;");
+        },
+        mounted() {
+          console.log("mounted: &#25346;&#36733;&#23436;&#25104;");
+        },
+        beforeUpdate() {
+          console.log("beforeUpdate: &#25968;&#25454;&#26356;&#26032;&#21069;");
+        },
+        updated() {
+          console.log("updated: &#25968;&#25454;&#26356;&#26032;&#21518;");
+        },
+        beforeUnmount() {
+          console.log("beforeUnmount: &#38144;&#27585;&#21069;");
+        },
+        unmounted() {
+          console.log("unmounted: &#23454;&#20363;&#24050;&#38144;&#27585;");
+        },
+      });
+      // &#25346;&#36733;&#21040; #app
+      app.mount("#app");
+    &lt;/<span style="color: #721045;">script</span>&gt;
+  &lt;/<span style="color: #721045;">body</span>&gt;
+&lt;/<span style="color: #721045;">html</span>&gt;
+</pre>
+</div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org936374b" class="outline-3">
+<h3 id="org936374b"><span class="section-number-3">2.10.</span> 过渡与动画</h3>
+<div class="outline-text-3" id="text-2-10">
+<ul class="org-ul">
+<li>Vue 提供了一种简洁优雅的方式来处理 过渡与动画，用于在元素的插入、更新和移除时应用过渡效果。通过 Vue
+的内置指令和工具，你可以轻松地实现动态效果，如淡入淡出、滑动、缩放等。</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org3c4cae9" class="outline-3">
+<h3 id="org3c4cae9"><span class="section-number-3">2.11.</span> 内置指令</h3>
+<div class="outline-text-3" id="text-2-11">
+</div>
+<div id="outline-container-org47e9180" class="outline-4">
+<h4 id="org47e9180"><span class="section-number-4">2.11.1.</span> v-text和v-html指令</h4>
+<div class="outline-text-4" id="text-2-11-1">
+<ul class="org-ul">
+<li>v-text和v-html是两个非常相近的指令,区别在于v-text会自动转移HTML标签,所以它是安全的,而v-html不会转义
+HTML标签是,所以其不安全可能会导致XSS(当然其存在的意义是为了插入动态生成的HTML内容:
+<ul class="org-ul">
+<li><p>
+我们先来看一个v-text的例子,它会显示&lt;strong&gt;Hello,Vue!&lt;/strong&gt;纯文本
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #531ab6;">!doctype</span> html&gt;
+
+&lt;<span style="color: #721045;">html</span> <span style="color: #005e8b;">lang</span>=<span style="color: #3548cf;">"en"</span>&gt;
+  &lt;<span style="color: #721045;">head</span>&gt;
+    &lt;<span style="color: #721045;">meta</span> <span style="color: #005e8b;">charset</span>=<span style="color: #3548cf;">"UTF-8"</span> /&gt;
+    &lt;<span style="color: #721045;">meta</span> <span style="color: #005e8b;">name</span>=<span style="color: #3548cf;">"viewport"</span> <span style="color: #005e8b;">content</span>=<span style="color: #3548cf;">"width=device-width, initial-scale=1.0"</span> /&gt;
+    &lt;<span style="color: #721045;">title</span>&gt;<span style="font-weight: bold; text-decoration: underline;">v-for</span>&lt;/<span style="color: #721045;">title</span>&gt;
+    &lt;<span style="color: #721045;">script</span> <span style="color: #005e8b;">src</span>=<span style="color: #3548cf;">"https://unpkg.com/vue@3/dist/vue.global.js"</span>&gt;&lt;/<span style="color: #721045;">script</span>&gt;
+  &lt;/<span style="color: #721045;">head</span>&gt;
+  &lt;<span style="color: #721045;">body</span>&gt;
+    &lt;<span style="color: #721045;">div</span> <span style="color: #005e8b;">id</span>=<span style="color: #3548cf;">"app"</span>&gt;
+      &lt;<span style="color: #721045;">p</span> <span style="color: #005e8b;">v-text</span>=<span style="color: #3548cf;">"message"</span>&gt;&lt;/<span style="color: #721045;">p</span>&gt;
+    &lt;/<span style="color: #721045;">div</span>&gt;
+    &lt;<span style="color: #721045;">script</span>&gt;
+      const { createApp } = Vue;
+
+      // &#21019;&#24314; Vue &#24212;&#29992;
+      const app = createApp({
+        data() {
+          return {
+            message: "&lt;<span style="color: #721045;">strong</span>&gt;<span style="font-weight: bold;">Hello, Vue!</span>&lt;/<span style="color: #721045;">strong</span>&gt;",
+          };
+        },
+      });
+      // &#25346;&#36733;&#21040; #app
+      app.mount("#app");
+    &lt;/<span style="color: #721045;">script</span>&gt;
+  &lt;/<span style="color: #721045;">body</span>&gt;
+&lt;/<span style="color: #721045;">html</span>&gt;
+</pre>
+</div></li>
+<li><p>
+我们再来看一个v-html的例子,它会显示Hello,Vue!加粗文本
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #531ab6;">!doctype</span> html&gt;
+
+&lt;<span style="color: #721045;">html</span> <span style="color: #005e8b;">lang</span>=<span style="color: #3548cf;">"en"</span>&gt;
+  &lt;<span style="color: #721045;">head</span>&gt;
+    &lt;<span style="color: #721045;">meta</span> <span style="color: #005e8b;">charset</span>=<span style="color: #3548cf;">"UTF-8"</span> /&gt;
+    &lt;<span style="color: #721045;">meta</span> <span style="color: #005e8b;">name</span>=<span style="color: #3548cf;">"viewport"</span> <span style="color: #005e8b;">content</span>=<span style="color: #3548cf;">"width=device-width, initial-scale=1.0"</span> /&gt;
+    &lt;<span style="color: #721045;">title</span>&gt;<span style="font-weight: bold; text-decoration: underline;">v-for</span>&lt;/<span style="color: #721045;">title</span>&gt;
+    &lt;<span style="color: #721045;">script</span> <span style="color: #005e8b;">src</span>=<span style="color: #3548cf;">"https://unpkg.com/vue@3/dist/vue.global.js"</span>&gt;&lt;/<span style="color: #721045;">script</span>&gt;
+  &lt;/<span style="color: #721045;">head</span>&gt;
+  &lt;<span style="color: #721045;">body</span>&gt;
+    &lt;<span style="color: #721045;">div</span> <span style="color: #005e8b;">id</span>=<span style="color: #3548cf;">"app"</span>&gt;
+      &lt;<span style="color: #721045;">p</span> <span style="color: #005e8b;">v-html</span>=<span style="color: #3548cf;">"message"</span>&gt;&lt;/<span style="color: #721045;">p</span>&gt;
+    &lt;/<span style="color: #721045;">div</span>&gt;
+    &lt;<span style="color: #721045;">script</span>&gt;
+      const { createApp } = Vue;
+
+      // &#21019;&#24314; Vue &#24212;&#29992;
+      const app = createApp({
+        data() {
+          return {
+            message: "&lt;<span style="color: #721045;">strong</span>&gt;<span style="font-weight: bold;">Hello, Vue!</span>&lt;/<span style="color: #721045;">strong</span>&gt;",
+          };
+        },
+      });
+      // &#25346;&#36733;&#21040; #app
+      app.mount("#app");
+    &lt;/<span style="color: #721045;">script</span>&gt;
+  &lt;/<span style="color: #721045;">body</span>&gt;
+&lt;/<span style="color: #721045;">html</span>&gt;
+</pre>
+</div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org2c9f786" class="outline-4">
+<h4 id="org2c9f786"><span class="section-number-4">2.11.2.</span> v-pre指令</h4>
+<div class="outline-text-4" id="text-2-11-2">
+<ul class="org-ul">
+<li>v-pre指令会跳过当前所在元素(及其所有子元素)的编译
+<ul class="org-ul">
+<li><p>
+比如我们有一个{{ message }}, 如果使用了v-pre,那么不会打印message变量的内容,而是直接打印"{{ message }}"
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #531ab6;">!doctype</span> html&gt;
+
+&lt;<span style="color: #721045;">html</span> <span style="color: #005e8b;">lang</span>=<span style="color: #3548cf;">"en"</span>&gt;
+  &lt;<span style="color: #721045;">head</span>&gt;
+    &lt;<span style="color: #721045;">meta</span> <span style="color: #005e8b;">charset</span>=<span style="color: #3548cf;">"UTF-8"</span> /&gt;
+    &lt;<span style="color: #721045;">meta</span> <span style="color: #005e8b;">name</span>=<span style="color: #3548cf;">"viewport"</span> <span style="color: #005e8b;">content</span>=<span style="color: #3548cf;">"width=device-width, initial-scale=1.0"</span> /&gt;
+    &lt;<span style="color: #721045;">title</span>&gt;<span style="font-weight: bold; text-decoration: underline;">v-for</span>&lt;/<span style="color: #721045;">title</span>&gt;
+    &lt;<span style="color: #721045;">script</span> <span style="color: #005e8b;">src</span>=<span style="color: #3548cf;">"https://unpkg.com/vue@3/dist/vue.global.js"</span>&gt;&lt;/<span style="color: #721045;">script</span>&gt;
+  &lt;/<span style="color: #721045;">head</span>&gt;
+  &lt;<span style="color: #721045;">body</span>&gt;
+    &lt;<span style="color: #721045;">div</span> <span style="color: #005e8b;">id</span>=<span style="color: #3548cf;">"app"</span>&gt;
+      &lt;<span style="color: #721045;">p</span> v-pre&gt;{{ message }}&lt;/<span style="color: #721045;">p</span>&gt;
+    &lt;/<span style="color: #721045;">div</span>&gt;
+    &lt;<span style="color: #721045;">script</span>&gt;
+      const { createApp } = Vue;
+
+      // &#21019;&#24314; Vue &#24212;&#29992;
+      const app = createApp({
+        data() {
+          return {
+            message: "&lt;<span style="color: #721045;">strong</span>&gt;<span style="font-weight: bold;">Hello, Vue!</span>&lt;/<span style="color: #721045;">strong</span>&gt;",
+          };
+        },
+      });
+      // &#25346;&#36733;&#21040; #app
+      app.mount("#app");
+    &lt;/<span style="color: #721045;">script</span>&gt;
+  &lt;/<span style="color: #721045;">body</span>&gt;
+&lt;/<span style="color: #721045;">html</span>&gt;
+</pre>
+</div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org084983a" class="outline-4">
+<h4 id="org084983a"><span class="section-number-4">2.11.3.</span> v-once指令</h4>
+<div class="outline-text-4" id="text-2-11-3">
+<ul class="org-ul">
+<li>v-once顾名思义就是只渲染一次.简单的说就是在动态显示时,使用该指令后不会再更新对应的data数据
+<ul class="org-ul">
+<li><p>
+示例如下,第二个message由于被配置了v-once所以后面不会再改动.第一个message会进行相应改动
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #531ab6;">!doctype</span> html&gt;
+
+&lt;<span style="color: #721045;">html</span> <span style="color: #005e8b;">lang</span>=<span style="color: #3548cf;">"en"</span>&gt;
+  &lt;<span style="color: #721045;">head</span>&gt;
+    &lt;<span style="color: #721045;">meta</span> <span style="color: #005e8b;">charset</span>=<span style="color: #3548cf;">"UTF-8"</span> /&gt;
+    &lt;<span style="color: #721045;">meta</span> <span style="color: #005e8b;">name</span>=<span style="color: #3548cf;">"viewport"</span> <span style="color: #005e8b;">content</span>=<span style="color: #3548cf;">"width=device-width, initial-scale=1.0"</span> /&gt;
+    &lt;<span style="color: #721045;">title</span>&gt;<span style="font-weight: bold; text-decoration: underline;">v-for</span>&lt;/<span style="color: #721045;">title</span>&gt;
+    &lt;<span style="color: #721045;">script</span> <span style="color: #005e8b;">src</span>=<span style="color: #3548cf;">"https://unpkg.com/vue@3/dist/vue.global.js"</span>&gt;&lt;/<span style="color: #721045;">script</span>&gt;
+  &lt;/<span style="color: #721045;">head</span>&gt;
+  &lt;<span style="color: #721045;">body</span>&gt;
+    &lt;<span style="color: #721045;">div</span> <span style="color: #005e8b;">id</span>=<span style="color: #3548cf;">"app"</span>&gt;
+      &lt;<span style="color: #721045;">p</span>&gt;{{ message }}&lt;/<span style="color: #721045;">p</span>&gt;
+      &lt;<span style="color: #721045;">p</span> v-once&gt;{{ message }}&lt;/<span style="color: #721045;">p</span>&gt;
+      &lt;<span style="color: #721045;">button</span> @click=<span style="color: #3548cf;">"message += '~'"</span>&gt;Change Message&lt;/<span style="color: #721045;">button</span>&gt;
+    &lt;/<span style="color: #721045;">div</span>&gt;
+    &lt;<span style="color: #721045;">script</span>&gt;
+      const { createApp } = Vue;
+
+      // &#21019;&#24314; Vue &#24212;&#29992;
+      const app = createApp({
+        data() {
+          return {
+            message: "Hello, Vue!",
+          };
+        },
+      });
+      // &#25346;&#36733;&#21040; #app
+      app.mount("#app");
+    &lt;/<span style="color: #721045;">script</span>&gt;
+  &lt;/<span style="color: #721045;">body</span>&gt;
+&lt;/<span style="color: #721045;">html</span>&gt;
+</pre>
+</div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org82c691f" class="outline-4">
+<h4 id="org82c691f"><span class="section-number-4">2.11.4.</span> v-memo指令</h4>
+<div class="outline-text-4" id="text-2-11-4">
+<ul class="org-ul">
+<li>v-memo 是 Vue 3.2 引入的一个新指令，用于优化性能。它通过缓存和跳过更新，避免不必要的渲染，以提高应用的性能。</li>
+<li>v-memo 指令适合以下场景：
+<ul class="org-ul">
+<li>性能优化：当某些部分的模板不需要频繁更新时，可以使用 v-memo 来减少渲染开销。</li>
+<li>避免不必要的渲染：如果模板依赖的状态或属性长期不变，可以通过 v-memo 跳过渲染。</li>
+<li>复杂计算或渲染：对于计算和渲染代价较高的部分，缓存可以提高性能。</li>
+</ul></li>
+<li>我们来看一个v-memo的例子:
+<ul class="org-ul">
+<li>示例如下:当message改变的时候v-memo缓存的模版会重新渲染,否则Vue会跳过该部分的更新</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org890c3ee" class="outline-4">
+<h4 id="org890c3ee"><span class="section-number-4">2.11.5.</span> v-cloak指令</h4>
+<div class="outline-text-4" id="text-2-11-5">
+<ul class="org-ul">
+<li>v-cloak 是 Vue 提供的一个非常简单但却非常实用的指令，用于在 Vue 应用初始化完成之前隐藏未渲染的模板内容
+<ul class="org-ul">
+<li><p>
+示例如下,如果数据需要异步加载(比如API获取数据),可以使用v-cloak避免为渲染的模版内容被用户看到
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #531ab6;">!doctype</span> html&gt;
+
+&lt;<span style="color: #721045;">html</span> <span style="color: #005e8b;">lang</span>=<span style="color: #3548cf;">"en"</span>&gt;
+  &lt;<span style="color: #721045;">head</span>&gt;
+    &lt;<span style="color: #721045;">meta</span> <span style="color: #005e8b;">charset</span>=<span style="color: #3548cf;">"UTF-8"</span> /&gt;
+    &lt;<span style="color: #721045;">meta</span> <span style="color: #005e8b;">name</span>=<span style="color: #3548cf;">"viewport"</span> <span style="color: #005e8b;">content</span>=<span style="color: #3548cf;">"width=device-width, initial-scale=1.0"</span> /&gt;
+    &lt;<span style="color: #721045;">title</span>&gt;<span style="font-weight: bold; text-decoration: underline;">v-for</span>&lt;/<span style="color: #721045;">title</span>&gt;
+    &lt;<span style="color: #721045;">script</span> <span style="color: #005e8b;">src</span>=<span style="color: #3548cf;">"https://unpkg.com/vue@3/dist/vue.global.js"</span>&gt;&lt;/<span style="color: #721045;">script</span>&gt;
+  &lt;/<span style="color: #721045;">head</span>&gt;
+  &lt;<span style="color: #721045;">body</span>&gt;
+    &lt;<span style="color: #721045;">div</span> <span style="color: #005e8b;">id</span>=<span style="color: #3548cf;">"app"</span>&gt;
+      &lt;<span style="color: #721045;">p</span> v-cloak&gt;{{ loadingMessage }}&lt;/<span style="color: #721045;">p</span>&gt;
+    &lt;/<span style="color: #721045;">div</span>&gt;
+    &lt;<span style="color: #721045;">script</span>&gt;
+      const { createApp } = Vue;
+
+      // &#21019;&#24314; Vue &#24212;&#29992;
+      const app = createApp({
+        data() {
+          return {
+            loadingMessage: "Loading data...",
+          };
+        },
+        mounted() {
+          setTimeout(() =&gt; {
+            this.loadingMessage = "Data loaded successfully!";
+          }, 2000); // &#27169;&#25311;&#25968;&#25454;&#21152;&#36733;
+        },
+      });
+      // &#25346;&#36733;&#21040; #app
+      app.mount("#app");
+    &lt;/<span style="color: #721045;">script</span>&gt;
+  &lt;/<span style="color: #721045;">body</span>&gt;
+&lt;/<span style="color: #721045;">html</span>&gt;
+</pre>
+</div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org54ec0b5" class="outline-2">
+<h2 id="org54ec0b5"><span class="section-number-2">3.</span> Chapter 03: Vue3新语法</h2>
+<div class="outline-text-2" id="text-3">
+<ul class="org-ul">
+<li>第二章的例子全部是选项式API,Vue3新开发了组合式API,组合式API才是官方推荐的做法.我们可以认为选项式API
+只是为了向前兼容而保留,新的代码一定要使用组合式API</li>
+</ul>
+</div>
+<div id="outline-container-orga248e4c" class="outline-3">
+<h3 id="orga248e4c"><span class="section-number-3">3.1.</span> 组合式API的了解</h3>
+<div class="outline-text-3" id="text-3-1">
+<ul class="org-ul">
+<li>回顾第二章的选项式API的例子,其暴露的一个主要问题是: 操作同一内容目标的代码会被分散在不同的选项中,
+比如data, methods, computed, watch以及声明周期钩子函数等</li>
+<li>组合式API则不同,所有的逻辑全部在setup()函数里面书写,从而让逻辑更加清晰,便于代码的编写,查看和维护</li>
+<li>setup()函数有两个参数:
+<ul class="org-ul">
+<li>props对象,包含传入的组件的属性</li>
+<li>context,可以理解为除了props属性以外的其他的meta信息</li>
+</ul></li>
+<li>setup()返回一个对象,对象中包含数据和函数,都可以在模板中直接使用.</li>
+<li>setup()在严格模式下,this是undefined,这样能让大家安心的写箭头函数,不用担心this被乱绑定</li>
+<li>我们来用一个例子来展示下setup的基本使用
+<ul class="org-ul">
+<li><p>
+示例如下
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #531ab6;">!doctype</span> html&gt;
+&lt;<span style="color: #721045;">html</span> <span style="color: #005e8b;">lang</span>=<span style="color: #3548cf;">"en"</span>&gt;
+  &lt;<span style="color: #721045;">head</span>&gt;
+    &lt;<span style="color: #721045;">meta</span> <span style="color: #005e8b;">charset</span>=<span style="color: #3548cf;">"UTF-8"</span> /&gt;
+    &lt;<span style="color: #721045;">meta</span> <span style="color: #005e8b;">name</span>=<span style="color: #3548cf;">"viewport"</span> <span style="color: #005e8b;">content</span>=<span style="color: #3548cf;">"width=device-width, initial-scale=1.0"</span> /&gt;
+    &lt;<span style="color: #721045;">script</span> <span style="color: #005e8b;">src</span>=<span style="color: #3548cf;">"https://unpkg.com/vue@3/dist/vue.global.js"</span>&gt;&lt;/<span style="color: #721045;">script</span>&gt;
+  &lt;/<span style="color: #721045;">head</span>&gt;
+  &lt;<span style="color: #721045;">body</span>&gt;
+    &lt;<span style="color: #721045;">div</span> <span style="color: #005e8b;">id</span>=<span style="color: #3548cf;">"app"</span>&gt;
+      <span style="color: #7f0000;">&lt;!-- </span><span style="color: #7f0000;">Vue &#27169;&#26495;</span><span style="color: #7f0000;"> --&gt;</span>
+      &lt;<span style="color: #721045;">h1</span>&gt;<span style="font-weight: bold; text-decoration: underline;">{{ message }}</span>&lt;/<span style="color: #721045;">h1</span>&gt;
+      &lt;<span style="color: #721045;">button</span> @click=<span style="color: #3548cf;">"handleClick"</span>&gt;Handle Click&lt;/<span style="color: #721045;">button</span>&gt;
+    &lt;/<span style="color: #721045;">div</span>&gt;
+
+    &lt;<span style="color: #721045;">script</span>&gt;
+      "use strict";
+      const { createApp } = Vue; // &#20174; Vue &#20013;&#35299;&#26500;&#20986;&#38656;&#35201;&#30340;API
+
+      // &#21019;&#24314; Vue &#24212;&#29992;
+      const app = createApp({
+        setup() {
+          console.log("this =&gt;", this);
+          let message = "Hello World";
+          function handleClick() {
+            alert("handleClick");
+            message += "~";
+            console.log(message);
+          }
+
+          // &#36820;&#22238;&#27169;&#26495;&#20013;&#38656;&#35201;&#20351;&#29992;&#30340;&#25968;&#25454;
+          return {
+            message,
+            handleClick,
+          };
+        },
+      });
+
+      // &#25346;&#36733;&#21040; #app
+      app.mount("#app");
+    &lt;/<span style="color: #721045;">script</span>&gt;
+  &lt;/<span style="color: #721045;">body</span>&gt;
+&lt;/<span style="color: #721045;">html</span>&gt;
+</pre>
+</div></li>
+<li>上面的例子中,由于使用了严格模式,所以this的值总数undefined</li>
+<li>我们的handleClick成功的触发了alert(),并且message的值也改变了,但是页面显示的message还是不变,因为
+在Vue3里面,变量不再自动是响应式的了.需要ref或者reactive</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org1bd39f8" class="outline-3">
+<h3 id="org1bd39f8"><span class="section-number-3">3.2.</span> 利用ref函数定义响应式数据</h3>
+<div class="outline-text-3" id="text-3-2">
+<ul class="org-ul">
+<li>在Vue3中,数据需要被修饰后才能成为响应式数据,修饰的方法有两个:
+<ul class="org-ul">
+<li>ref: 能修饰任意类型,除了模版以外的地方需要".value"才能访问数据</li>
+<li>reactive:只能修饰对象类型.任何时候不需要".value"</li>
+</ul></li>
+<li>ref相比之下,比reactive的使用范围更大(可以修饰基本类型),区别是在代码中需要".value"(在模版中不需要)
+<ul class="org-ul">
+<li><p>
+示例如下
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #531ab6;">!doctype</span> html&gt;
+&lt;<span style="color: #721045;">html</span> <span style="color: #005e8b;">lang</span>=<span style="color: #3548cf;">"en"</span>&gt;
+  &lt;<span style="color: #721045;">head</span>&gt;
+    &lt;<span style="color: #721045;">meta</span> <span style="color: #005e8b;">charset</span>=<span style="color: #3548cf;">"UTF-8"</span> /&gt;
+    &lt;<span style="color: #721045;">meta</span> <span style="color: #005e8b;">name</span>=<span style="color: #3548cf;">"viewport"</span> <span style="color: #005e8b;">content</span>=<span style="color: #3548cf;">"width=device-width, initial-scale=1.0"</span> /&gt;
+    &lt;<span style="color: #721045;">script</span> <span style="color: #005e8b;">src</span>=<span style="color: #3548cf;">"https://unpkg.com/vue@3/dist/vue.global.js"</span>&gt;&lt;/<span style="color: #721045;">script</span>&gt;
+  &lt;/<span style="color: #721045;">head</span>&gt;
+  &lt;<span style="color: #721045;">body</span>&gt;
+    &lt;<span style="color: #721045;">div</span> <span style="color: #005e8b;">id</span>=<span style="color: #3548cf;">"app"</span>&gt;
+      <span style="color: #7f0000;">&lt;!-- </span><span style="color: #7f0000;">Vue &#27169;&#26495;</span><span style="color: #7f0000;"> --&gt;</span>
+      &lt;<span style="color: #721045;">h1</span>&gt;<span style="font-weight: bold; text-decoration: underline;">{{ count }}</span>&lt;/<span style="color: #721045;">h1</span>&gt;
+      &lt;<span style="color: #721045;">button</span> @click=<span style="color: #3548cf;">"handleClick"</span>&gt;Handle Click&lt;/<span style="color: #721045;">button</span>&gt;
+    &lt;/<span style="color: #721045;">div</span>&gt;
+
+    &lt;<span style="color: #721045;">script</span>&gt;
+      "use strict";
+      const { createApp, ref } = Vue; // &#20174; Vue &#20013;&#35299;&#26500;&#20986;&#38656;&#35201;&#30340;API
+
+      // &#21019;&#24314; Vue &#24212;&#29992;
+      const app = createApp({
+        setup() {
+          const count = ref(0);
+          function handleClick() {
+            count.value += 1;
+          }
+
+          // &#36820;&#22238;&#27169;&#26495;&#20013;&#38656;&#35201;&#20351;&#29992;&#30340;&#25968;&#25454;
+          return {
+            count,
+            handleClick,
+          };
+        },
+      });
+
+      // &#25346;&#36733;&#21040; #app
+      app.mount("#app");
+    &lt;/<span style="color: #721045;">script</span>&gt;
+  &lt;/<span style="color: #721045;">body</span>&gt;
+&lt;/<span style="color: #721045;">html</span>&gt;
+</pre>
+</div></li>
+<li>上例就是一个ref修饰基本类型(number)的例子,注意只有script中需要".value",在模板中,不需要".value"</li>
+<li><p>
+ref还可以修饰对象类型使其变为响应式,新的响应式对象的部分和整体都可以修改,如下
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #531ab6;">!doctype</span> html&gt;
+&lt;<span style="color: #721045;">html</span> <span style="color: #005e8b;">lang</span>=<span style="color: #3548cf;">"en"</span>&gt;
+  &lt;<span style="color: #721045;">head</span>&gt;
+    &lt;<span style="color: #721045;">meta</span> <span style="color: #005e8b;">charset</span>=<span style="color: #3548cf;">"UTF-8"</span> /&gt;
+    &lt;<span style="color: #721045;">meta</span> <span style="color: #005e8b;">name</span>=<span style="color: #3548cf;">"viewport"</span> <span style="color: #005e8b;">content</span>=<span style="color: #3548cf;">"width=device-width, initial-scale=1.0"</span> /&gt;
+    &lt;<span style="color: #721045;">script</span> <span style="color: #005e8b;">src</span>=<span style="color: #3548cf;">"https://unpkg.com/vue@3/dist/vue.global.js"</span>&gt;&lt;/<span style="color: #721045;">script</span>&gt;
+  &lt;/<span style="color: #721045;">head</span>&gt;
+  &lt;<span style="color: #721045;">body</span>&gt;
+    &lt;<span style="color: #721045;">div</span> <span style="color: #005e8b;">id</span>=<span style="color: #3548cf;">"app"</span>&gt;
+      <span style="color: #7f0000;">&lt;!-- </span><span style="color: #7f0000;">Vue &#27169;&#26495;</span><span style="color: #7f0000;"> --&gt;</span>
+      &lt;<span style="color: #721045;">h1</span>&gt;<span style="font-weight: bold; text-decoration: underline;">{{ person }}</span>&lt;/<span style="color: #721045;">h1</span>&gt;
+      &lt;<span style="color: #721045;">button</span> @click=<span style="color: #3548cf;">"changePersonAge"</span>&gt;Change Person Age&lt;/<span style="color: #721045;">button</span>&gt;
+      &lt;<span style="color: #721045;">button</span> @click=<span style="color: #3548cf;">"changeWholePerson"</span>&gt;Change Whole Person&lt;/<span style="color: #721045;">button</span>&gt;
+    &lt;/<span style="color: #721045;">div</span>&gt;
+
+    &lt;<span style="color: #721045;">script</span>&gt;
+      "use strict";
+      const { createApp, ref } = Vue; // &#20174; Vue &#20013;&#35299;&#26500;&#20986;&#38656;&#35201;&#30340;API
+
+      // &#21019;&#24314; Vue &#24212;&#29992;
+      const app = createApp({
+        setup() {
+          const person = ref({ name: "Tom", age: 18 });
+          function changeWholePerson() {
+            person.value = { name: "Jack", age: 20 };
+          }
+
+          function changePersonAge() {
+            person.value.age += 1;
+          }
+
+          // &#36820;&#22238;&#27169;&#26495;&#20013;&#38656;&#35201;&#20351;&#29992;&#30340;&#25968;&#25454;
+          return {
+            person,
+            changeWholePerson,
+            changePersonAge,
+          };
+        },
+      });
+
+      // &#25346;&#36733;&#21040; #app
+      app.mount("#app");
+    &lt;/<span style="color: #721045;">script</span>&gt;
+  &lt;/<span style="color: #721045;">body</span>&gt;
+&lt;/<span style="color: #721045;">html</span>&gt;
+</pre>
+</div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org0a1e40c" class="outline-3">
+<h3 id="org0a1e40c"><span class="section-number-3">3.3.</span> 利用reactive函数定义响应式数据</h3>
+<div class="outline-text-3" id="text-3-3">
+<ul class="org-ul">
+<li>reactive可以让对象类型变成响应式,对象类型内部的任意数据都可以"响应式更改"(Javascript中更改,能直接反应到模板上)
+<ul class="org-ul">
+<li><p>
+示例如下
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #531ab6;">!doctype</span> html&gt;
+&lt;<span style="color: #721045;">html</span> <span style="color: #005e8b;">lang</span>=<span style="color: #3548cf;">"en"</span>&gt;
+  &lt;<span style="color: #721045;">head</span>&gt;
+    &lt;<span style="color: #721045;">meta</span> <span style="color: #005e8b;">charset</span>=<span style="color: #3548cf;">"UTF-8"</span> /&gt;
+    &lt;<span style="color: #721045;">meta</span> <span style="color: #005e8b;">name</span>=<span style="color: #3548cf;">"viewport"</span> <span style="color: #005e8b;">content</span>=<span style="color: #3548cf;">"width=device-width, initial-scale=1.0"</span> /&gt;
+    &lt;<span style="color: #721045;">script</span> <span style="color: #005e8b;">src</span>=<span style="color: #3548cf;">"https://unpkg.com/vue@3/dist/vue.global.js"</span>&gt;&lt;/<span style="color: #721045;">script</span>&gt;
+  &lt;/<span style="color: #721045;">head</span>&gt;
+  &lt;<span style="color: #721045;">body</span>&gt;
+    &lt;<span style="color: #721045;">div</span> <span style="color: #005e8b;">id</span>=<span style="color: #3548cf;">"app"</span>&gt;
+      <span style="color: #7f0000;">&lt;!-- </span><span style="color: #7f0000;">Vue &#27169;&#26495;</span><span style="color: #7f0000;"> --&gt;</span>
+      &lt;<span style="color: #721045;">h1</span>&gt;<span style="font-weight: bold; text-decoration: underline;">{{ person }}</span>&lt;/<span style="color: #721045;">h1</span>&gt;
+      &lt;<span style="color: #721045;">button</span> @click=<span style="color: #3548cf;">"changePersonAge"</span>&gt;Change Person Age&lt;/<span style="color: #721045;">button</span>&gt;
+      &lt;<span style="color: #721045;">button</span> @click=<span style="color: #3548cf;">"changeWholePerson"</span>&gt;Change Whole Person&lt;/<span style="color: #721045;">button</span>&gt;
+    &lt;/<span style="color: #721045;">div</span>&gt;
+
+    &lt;<span style="color: #721045;">script</span>&gt;
+      "use strict";
+      const { createApp, reactive } = Vue; // &#20174; Vue &#20013;&#35299;&#26500;&#20986;&#38656;&#35201;&#30340;API
+
+      // &#21019;&#24314; Vue &#24212;&#29992;
+      const app = createApp({
+        setup() {
+          const person = reactive({ name: "Tom", age: 18 });
+          function changeWholePerson() {
+            Object.assign(person, { name: "Jack", age: 20 });
+          }
+
+          function changePersonAge() {
+            person.age += 1;
+          }
+
+          // &#36820;&#22238;&#27169;&#26495;&#20013;&#38656;&#35201;&#20351;&#29992;&#30340;&#25968;&#25454;
+          return {
+            person,
+            changeWholePerson,
+            changePersonAge,
+          };
+        },
+      });
+
+      // &#25346;&#36733;&#21040; #app
+      app.mount("#app");
+    &lt;/<span style="color: #721045;">script</span>&gt;
+  &lt;/<span style="color: #721045;">body</span>&gt;
+&lt;/<span style="color: #721045;">html</span>&gt;
+</pre>
+</div></li>
+<li>我们注意到,使用reactive的情况下,哪里都不需要".value"</li>
+<li>我们这个例子中的changeWholePerson就必须使用Object.assign函数来给具体某个属性赋值了.因为reactive
+本来就是一个对象,如果直接赋值(假设这里是let不是const),那么对象会变成另外一个对象.相比之下因为ref
+有".value",反而可以直接赋新值</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org1042ddd" class="outline-3">
+<h3 id="org1042ddd"><span class="section-number-3">3.4.</span> toRefs与toRef函数</h3>
+<div class="outline-text-3" id="text-3-4">
+<ul class="org-ul">
+<li>toRefs和toRef,顾名思义,就是把一个对象转换为ref对象,但是这个对象其实是有要求的,因为这个对象必须是reactive对象</li>
+<li>为什么会有这种需求呢?
+<ul class="org-ul">
+<li>这是因为reactive是一个复杂的object,但是这个object中的某些成员希望:
+<ol class="org-ol">
+<li>解构赋值</li>
+<li>依然保持之前的响应式绑定</li>
+</ol></li>
+</ul></li>
+<li>toRef是提取单个属性,通过参数决定提取哪个属性
+<ul class="org-ul">
+<li><p>
+示例如下
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #531ab6;">!doctype</span> html&gt;
+&lt;<span style="color: #721045;">html</span> <span style="color: #005e8b;">lang</span>=<span style="color: #3548cf;">"en"</span>&gt;
+  &lt;<span style="color: #721045;">head</span>&gt;
+    &lt;<span style="color: #721045;">meta</span> <span style="color: #005e8b;">charset</span>=<span style="color: #3548cf;">"UTF-8"</span> /&gt;
+    &lt;<span style="color: #721045;">meta</span> <span style="color: #005e8b;">name</span>=<span style="color: #3548cf;">"viewport"</span> <span style="color: #005e8b;">content</span>=<span style="color: #3548cf;">"width=device-width, initial-scale=1.0"</span> /&gt;
+    &lt;<span style="color: #721045;">script</span> <span style="color: #005e8b;">src</span>=<span style="color: #3548cf;">"https://unpkg.com/vue@3/dist/vue.global.js"</span>&gt;&lt;/<span style="color: #721045;">script</span>&gt;
+  &lt;/<span style="color: #721045;">head</span>&gt;
+  &lt;<span style="color: #721045;">body</span>&gt;
+    &lt;<span style="color: #721045;">div</span> <span style="color: #005e8b;">id</span>=<span style="color: #3548cf;">"app"</span>&gt;
+      <span style="color: #7f0000;">&lt;!-- </span><span style="color: #7f0000;">Vue &#27169;&#26495;</span><span style="color: #7f0000;"> --&gt;</span>
+      &lt;<span style="color: #721045;">h1</span>&gt;<span style="font-weight: bold; text-decoration: underline;">{{ person }}</span>&lt;/<span style="color: #721045;">h1</span>&gt;
+      &lt;<span style="color: #721045;">button</span> @click=<span style="color: #3548cf;">"changePersonAge"</span>&gt;Change Person Age&lt;/<span style="color: #721045;">button</span>&gt;
+      &lt;<span style="color: #721045;">button</span> @click=<span style="color: #3548cf;">"changeWholePerson"</span>&gt;Change Whole Person&lt;/<span style="color: #721045;">button</span>&gt;
+    &lt;/<span style="color: #721045;">div</span>&gt;
+
+    &lt;<span style="color: #721045;">script</span>&gt;
+      "use strict";
+      const { createApp, reactive, toRef } = Vue; // &#20174; Vue &#20013;&#35299;&#26500;&#20986;&#38656;&#35201;&#30340;API
+
+      // &#21019;&#24314; Vue &#24212;&#29992;
+      const app = createApp({
+        setup() {
+          const person = reactive({ name: "Tom", age: 18 });
+          function changeWholePerson() {
+            Object.assign(person, { name: "Jack", age: 20 });
+          }
+
+          function changePersonAge() {
+            const age = toRef(person, "age");
+            age.value += 2;
+          }
+
+          // &#36820;&#22238;&#27169;&#26495;&#20013;&#38656;&#35201;&#20351;&#29992;&#30340;&#25968;&#25454;
+          return {
+            person,
+            changeWholePerson,
+            changePersonAge,
+          };
+        },
+      });
+
+      // &#25346;&#36733;&#21040; #app
+      app.mount("#app");
+    &lt;/<span style="color: #721045;">script</span>&gt;
+  &lt;/<span style="color: #721045;">body</span>&gt;
+&lt;/<span style="color: #721045;">html</span>&gt;
+</pre>
+</div></li>
+</ul></li>
+<li>toRefs是提取所有属性,可以通过解构赋值来完成
+<ul class="org-ul">
+<li><p>
+示例如下
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #531ab6;">!doctype</span> html&gt;
+&lt;<span style="color: #721045;">html</span> <span style="color: #005e8b;">lang</span>=<span style="color: #3548cf;">"en"</span>&gt;
+  &lt;<span style="color: #721045;">head</span>&gt;
+    &lt;<span style="color: #721045;">meta</span> <span style="color: #005e8b;">charset</span>=<span style="color: #3548cf;">"UTF-8"</span> /&gt;
+    &lt;<span style="color: #721045;">meta</span> <span style="color: #005e8b;">name</span>=<span style="color: #3548cf;">"viewport"</span> <span style="color: #005e8b;">content</span>=<span style="color: #3548cf;">"width=device-width, initial-scale=1.0"</span> /&gt;
+    &lt;<span style="color: #721045;">script</span> <span style="color: #005e8b;">src</span>=<span style="color: #3548cf;">"https://unpkg.com/vue@3/dist/vue.global.js"</span>&gt;&lt;/<span style="color: #721045;">script</span>&gt;
+  &lt;/<span style="color: #721045;">head</span>&gt;
+  &lt;<span style="color: #721045;">body</span>&gt;
+    &lt;<span style="color: #721045;">div</span> <span style="color: #005e8b;">id</span>=<span style="color: #3548cf;">"app"</span>&gt;
+      <span style="color: #7f0000;">&lt;!-- </span><span style="color: #7f0000;">Vue &#27169;&#26495;</span><span style="color: #7f0000;"> --&gt;</span>
+      &lt;<span style="color: #721045;">h1</span>&gt;<span style="font-weight: bold; text-decoration: underline;">{{ person }}</span>&lt;/<span style="color: #721045;">h1</span>&gt;
+      &lt;<span style="color: #721045;">button</span> @click=<span style="color: #3548cf;">"changePersonAge"</span>&gt;Change Person Age&lt;/<span style="color: #721045;">button</span>&gt;
+      &lt;<span style="color: #721045;">button</span> @click=<span style="color: #3548cf;">"changeWholePerson"</span>&gt;Change Whole Person&lt;/<span style="color: #721045;">button</span>&gt;
+    &lt;/<span style="color: #721045;">div</span>&gt;
+
+    &lt;<span style="color: #721045;">script</span>&gt;
+      "use strict";
+      const { createApp, reactive, toRefs } = Vue; // &#20174; Vue &#20013;&#35299;&#26500;&#20986;&#38656;&#35201;&#30340;API
+
+      // &#21019;&#24314; Vue &#24212;&#29992;
+      const app = createApp({
+        setup() {
+          const person = reactive({ name: "Tom", age: 18 });
+          function changeWholePerson() {
+            const { name, age } = toRefs(person);
+            name.value += "~";
+            age.value += 2;
+          }
+
+          function changePersonAge() {
+            person.age += 1;
+          }
+
+          // &#36820;&#22238;&#27169;&#26495;&#20013;&#38656;&#35201;&#20351;&#29992;&#30340;&#25968;&#25454;
+          return {
+            person,
+            changeWholePerson,
+            changePersonAge,
+          };
+        },
+      });
+
+      // &#25346;&#36733;&#21040; #app
+      app.mount("#app");
+    &lt;/<span style="color: #721045;">script</span>&gt;
+  &lt;/<span style="color: #721045;">body</span>&gt;
+&lt;/<span style="color: #721045;">html</span>&gt;
+</pre>
+</div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org5ec7750" class="outline-3">
+<h3 id="org5ec7750"><span class="section-number-3">3.5.</span> readonly与shallowReadonly函数</h3>
+<div class="outline-text-3" id="text-3-5">
+<ul class="org-ul">
+<li>在 Vue 3 中，readonly 和 shallowReadonly 是用于创建不可修改的响应式数据的工具。它们主要用于防止意
+外修改数据，同时保持数据的响应式特性，使得视图仍然可以追踪数据的变化</li>
+</ul>
+</div>
+<div id="outline-container-org9e8af1c" class="outline-4">
+<h4 id="org9e8af1c"><span class="section-number-4">3.5.1.</span> readonly</h4>
+<div class="outline-text-4" id="text-3-5-1">
+<ul class="org-ul">
+<li>readonly可以将一个响应式对象或普通对象转化为一个完全不可修改的响应式对象:
+<ul class="org-ul">
+<li>转化后的对象的所有属性都是只读的，无法被修改</li>
+<li>对象中的嵌套属性也会变成只读（深层只读)</li>
+<li>如果尝试修改这些属性，Vue 会在开发环境下发出警告</li>
+</ul></li>
+<li>readonly对象是深度只读的,任意部分修改都会报错
+<ul class="org-ul">
+<li><p>
+示例如下
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #531ab6;">!doctype</span> html&gt;
+&lt;<span style="color: #721045;">html</span> <span style="color: #005e8b;">lang</span>=<span style="color: #3548cf;">"en"</span>&gt;
+  &lt;<span style="color: #721045;">head</span>&gt;
+    &lt;<span style="color: #721045;">meta</span> <span style="color: #005e8b;">charset</span>=<span style="color: #3548cf;">"UTF-8"</span> /&gt;
+    &lt;<span style="color: #721045;">meta</span> <span style="color: #005e8b;">name</span>=<span style="color: #3548cf;">"viewport"</span> <span style="color: #005e8b;">content</span>=<span style="color: #3548cf;">"width=device-width, initial-scale=1.0"</span> /&gt;
+    &lt;<span style="color: #721045;">script</span> <span style="color: #005e8b;">src</span>=<span style="color: #3548cf;">"https://unpkg.com/vue@3/dist/vue.global.js"</span>&gt;&lt;/<span style="color: #721045;">script</span>&gt;
+  &lt;/<span style="color: #721045;">head</span>&gt;
+  &lt;<span style="color: #721045;">body</span>&gt;
+    &lt;<span style="color: #721045;">div</span> <span style="color: #005e8b;">id</span>=<span style="color: #3548cf;">"app"</span>&gt;
+      <span style="color: #7f0000;">&lt;!-- </span><span style="color: #7f0000;">Vue &#27169;&#26495;</span><span style="color: #7f0000;"> --&gt;</span>
+      &lt;<span style="color: #721045;">h1</span>&gt;<span style="font-weight: bold; text-decoration: underline;">{{ state.count }}</span>&lt;/<span style="color: #721045;">h1</span>&gt;
+      &lt;<span style="color: #721045;">h1</span>&gt;<span style="font-weight: bold; text-decoration: underline;">{{ state.nested.value }}</span>&lt;/<span style="color: #721045;">h1</span>&gt;
+    &lt;/<span style="color: #721045;">div</span>&gt;
+
+    &lt;<span style="color: #721045;">script</span>&gt;
+      "use strict";
+      const { createApp, reactive, readonly } = Vue; // &#20174; Vue &#20013;&#35299;&#26500;&#20986;&#38656;&#35201;&#30340;API
+
+      // &#21019;&#24314; Vue &#24212;&#29992;
+      const app = createApp({
+        setup() {
+          const state = reactive({
+            count: 0,
+            nested: {
+              value: 32,
+            },
+          });
+
+          const readonlyState = readonly(state);
+          console.log(readonlyState);
+          /* Set operation on key "count" failed: target is readonly. */
+          /* readonlyState.count++; */
+
+          /* Set operation on key "value" failed: target is readonly. */
+          /* readonlyState.nested.value = 100; */
+
+          // &#36820;&#22238;&#27169;&#26495;&#20013;&#38656;&#35201;&#20351;&#29992;&#30340;&#25968;&#25454;
+          return {
+            state,
+          };
+        },
+      });
+
+      // &#25346;&#36733;&#21040; #app
+      app.mount("#app");
+    &lt;/<span style="color: #721045;">script</span>&gt;
+  &lt;/<span style="color: #721045;">body</span>&gt;
+&lt;/<span style="color: #721045;">html</span>&gt;
+</pre>
+</div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org4009804" class="outline-4">
+<h4 id="org4009804"><span class="section-number-4">3.5.2.</span> shallowReadonly</h4>
+<div class="outline-text-4" id="text-3-5-2">
+<ul class="org-ul">
+<li>shallowReadonly 可以将一个对象转化为浅层只读的对象。只有对象的根属性是只读的，而嵌套属性仍然可以被修改:
+<ul class="org-ul">
+<li>转化后的对象的根属性是只读的，无法被修改。</li>
+<li>对象中的嵌套属性仍然是可修改的（浅层只读）。</li>
+<li>如果尝试修改根属性，Vue 会在开发环境下发出警告</li>
+</ul></li>
+<li>shallowReadonly适用于防止修改对象的顶层属性，同时允许嵌套属性可被修改
+<ul class="org-ul">
+<li><p>
+示例如下,shallowRadonly中的nested.value可以被更改
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #531ab6;">!doctype</span> html&gt;
+&lt;<span style="color: #721045;">html</span> <span style="color: #005e8b;">lang</span>=<span style="color: #3548cf;">"en"</span>&gt;
+  &lt;<span style="color: #721045;">head</span>&gt;
+    &lt;<span style="color: #721045;">meta</span> <span style="color: #005e8b;">charset</span>=<span style="color: #3548cf;">"UTF-8"</span> /&gt;
+    &lt;<span style="color: #721045;">meta</span> <span style="color: #005e8b;">name</span>=<span style="color: #3548cf;">"viewport"</span> <span style="color: #005e8b;">content</span>=<span style="color: #3548cf;">"width=device-width, initial-scale=1.0"</span> /&gt;
+    &lt;<span style="color: #721045;">script</span> <span style="color: #005e8b;">src</span>=<span style="color: #3548cf;">"https://unpkg.com/vue@3/dist/vue.global.js"</span>&gt;&lt;/<span style="color: #721045;">script</span>&gt;
+  &lt;/<span style="color: #721045;">head</span>&gt;
+  &lt;<span style="color: #721045;">body</span>&gt;
+    &lt;<span style="color: #721045;">div</span> <span style="color: #005e8b;">id</span>=<span style="color: #3548cf;">"app"</span>&gt;
+      <span style="color: #7f0000;">&lt;!-- </span><span style="color: #7f0000;">Vue &#27169;&#26495;</span><span style="color: #7f0000;"> --&gt;</span>
+      &lt;<span style="color: #721045;">h1</span>&gt;<span style="font-weight: bold; text-decoration: underline;">{{ state.count }}</span>&lt;/<span style="color: #721045;">h1</span>&gt;
+      &lt;<span style="color: #721045;">h1</span>&gt;<span style="font-weight: bold; text-decoration: underline;">{{ state.nested.value }}</span>&lt;/<span style="color: #721045;">h1</span>&gt;
+      &lt;<span style="color: #721045;">button</span> @click=<span style="color: #3548cf;">"changeNestedValue"</span>&gt;Change Nested Value&lt;/<span style="color: #721045;">button</span>&gt;
+    &lt;/<span style="color: #721045;">div</span>&gt;
+
+    &lt;<span style="color: #721045;">script</span>&gt;
+      "use strict";
+      const { createApp, reactive, shallowReadonly } = Vue; // &#20174; Vue &#20013;&#35299;&#26500;&#20986;&#38656;&#35201;&#30340;API
+
+      // &#21019;&#24314; Vue &#24212;&#29992;
+      const app = createApp({
+        setup() {
+          const state = reactive({
+            count: 0,
+            nested: {
+              value: 32,
+            },
+          });
+
+          const shallowReadonlyState = shallowReadonly(state);
+          console.log(shallowReadonlyState);
+
+          function changeNestedValue() {
+            shallowReadonlyState.nested.value += 1;
+          }
+
+          // &#36820;&#22238;&#27169;&#26495;&#20013;&#38656;&#35201;&#20351;&#29992;&#30340;&#25968;&#25454;
+          return {
+            state,
+            changeNestedValue,
+          };
+        },
+      });
+
+      // &#25346;&#36733;&#21040; #app
+      app.mount("#app");
+    &lt;/<span style="color: #721045;">script</span>&gt;
+  &lt;/<span style="color: #721045;">body</span>&gt;
+&lt;/<span style="color: #721045;">html</span>&gt;
+</pre>
+</div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgc360c54" class="outline-3">
+<h3 id="orgc360c54"><span class="section-number-3">3.6.</span> shallowRef与shallowReactive函数</h3>
+<div class="outline-text-3" id="text-3-6">
+<ul class="org-ul">
+<li>通常情况下，Vue 的响应式系统会递归地追踪对象或数组的所有嵌套属性，确保深层次的响应式。然而，在某些
+场景中(必须按需更新的场景)，我们可能只需要对对象的顶层属性进行响应式处理，而不追踪嵌套的属性。这种
+情况下，就可以使用 shallowRef 和 shallowReactive。</li>
+</ul>
+</div>
+<div id="outline-container-org8c1540a" class="outline-4">
+<h4 id="org8c1540a"><span class="section-number-4">3.6.1.</span> shallowRef</h4>
+<div class="outline-text-4" id="text-3-6-1">
+<ul class="org-ul">
+<li>shallowRef创建一个只追踪ref的顶层值的响应对象.如果这个值是一个对象或者数组,Vue不会地递归的将嵌套属性转换为响应式
+<ul class="org-ul">
+<li><p>
+示例如下,只有把整个对象都改动的情况下,才能触发响应.
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #531ab6;">!doctype</span> html&gt;
+&lt;<span style="color: #721045;">html</span> <span style="color: #005e8b;">lang</span>=<span style="color: #3548cf;">"en"</span>&gt;
+  &lt;<span style="color: #721045;">head</span>&gt;
+    &lt;<span style="color: #721045;">meta</span> <span style="color: #005e8b;">charset</span>=<span style="color: #3548cf;">"UTF-8"</span> /&gt;
+    &lt;<span style="color: #721045;">meta</span> <span style="color: #005e8b;">name</span>=<span style="color: #3548cf;">"viewport"</span> <span style="color: #005e8b;">content</span>=<span style="color: #3548cf;">"width=device-width, initial-scale=1.0"</span> /&gt;
+    &lt;<span style="color: #721045;">script</span> <span style="color: #005e8b;">src</span>=<span style="color: #3548cf;">"https://unpkg.com/vue@3/dist/vue.global.js"</span>&gt;&lt;/<span style="color: #721045;">script</span>&gt;
+  &lt;/<span style="color: #721045;">head</span>&gt;
+  &lt;<span style="color: #721045;">body</span>&gt;
+    &lt;<span style="color: #721045;">div</span> <span style="color: #005e8b;">id</span>=<span style="color: #3548cf;">"app"</span>&gt;
+      <span style="color: #7f0000;">&lt;!-- </span><span style="color: #7f0000;">Vue &#27169;&#26495;</span><span style="color: #7f0000;"> --&gt;</span>
+      &lt;<span style="color: #721045;">h1</span>&gt;<span style="font-weight: bold; text-decoration: underline;">{{ charData }}</span>&lt;/<span style="color: #721045;">h1</span>&gt;
+      &lt;<span style="color: #721045;">button</span> @click=<span style="color: #3548cf;">"changeWholeChartData"</span>&gt;Change Whole Chart Data&lt;/<span style="color: #721045;">button</span>&gt;
+      &lt;<span style="color: #721045;">button</span> @click=<span style="color: #3548cf;">"changeChartData"</span>&gt;Change Chart Data&lt;/<span style="color: #721045;">button</span>&gt;
+      &lt;<span style="color: #721045;">button</span> @click=<span style="color: #3548cf;">"changeChartDataElement"</span>&gt;Change Chart Data Element&lt;/<span style="color: #721045;">button</span>&gt;
+    &lt;/<span style="color: #721045;">div</span>&gt;
+
+    &lt;<span style="color: #721045;">script</span>&gt;
+      "use strict";
+      const { createApp, shallowRef } = Vue;
+
+      // &#21019;&#24314; Vue &#24212;&#29992;
+      const app = createApp({
+        setup() {
+          const charData = shallowRef({
+            labels: ["A", "B", "C"],
+            datasets: [10, 20, 30],
+          });
+
+          function changeWholeChartData() {
+            charData.value = {
+              labels: ["X", "Y", "Z"],
+              datasets: [15, 25, 35],
+            };
+          }
+
+          function changeChartData() {
+            charData.value.datasets = [50, 60, 70];
+            console.log(charData.value);
+          }
+
+          function changeChartDataElement() {
+            charData.value.datasets[0] += 10;
+            console.log(charData.value);
+          }
+
+          // &#36820;&#22238;&#27169;&#26495;&#20013;&#38656;&#35201;&#20351;&#29992;&#30340;&#25968;&#25454;
+          return {
+            charData,
+            changeWholeChartData,
+            changeChartData,
+            changeChartDataElement,
+          };
+        },
+      });
+
+      // &#25346;&#36733;&#21040; #app
+      app.mount("#app");
+    &lt;/<span style="color: #721045;">script</span>&gt;
+  &lt;/<span style="color: #721045;">body</span>&gt;
+&lt;/<span style="color: #721045;">html</span>&gt;
+</pre>
+</div></li>
+<li>我们的changeChartData和changeChartDataElement分别只改动了一部分成员,是不会触发响应的</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org74e4ed9" class="outline-4">
+<h4 id="org74e4ed9"><span class="section-number-4">3.6.2.</span> shallowReactive</h4>
+<div class="outline-text-4" id="text-3-6-2">
+<ul class="org-ul">
+<li>shallowReactive当然就是shallowRef的reactive版本啦,和shallowRef稍微不同的是,更改shallowReactive的第
+一层会触发视图更新,注意shallowRef是更改第零层触发更新!</li>
+<li>那么shallowReactive能不能更改第零层呢?
+<ul class="org-ul">
+<li>答案是不可以,因为shallowReactive没有".value",更改第零层就把整个对象给换了.</li>
+</ul></li>
+<li>总结起来就是shallowReactive响应式范围是"对象的顶层属性",而不是shallowRef里面的"顶层值"
+<ul class="org-ul">
+<li><p>
+示例如下
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #531ab6;">!doctype</span> html&gt;
+&lt;<span style="color: #721045;">html</span> <span style="color: #005e8b;">lang</span>=<span style="color: #3548cf;">"en"</span>&gt;
+  &lt;<span style="color: #721045;">head</span>&gt;
+    &lt;<span style="color: #721045;">meta</span> <span style="color: #005e8b;">charset</span>=<span style="color: #3548cf;">"UTF-8"</span> /&gt;
+    &lt;<span style="color: #721045;">meta</span> <span style="color: #005e8b;">name</span>=<span style="color: #3548cf;">"viewport"</span> <span style="color: #005e8b;">content</span>=<span style="color: #3548cf;">"width=device-width, initial-scale=1.0"</span> /&gt;
+    &lt;<span style="color: #721045;">script</span> <span style="color: #005e8b;">src</span>=<span style="color: #3548cf;">"https://unpkg.com/vue@3/dist/vue.global.js"</span>&gt;&lt;/<span style="color: #721045;">script</span>&gt;
+  &lt;/<span style="color: #721045;">head</span>&gt;
+  &lt;<span style="color: #721045;">body</span>&gt;
+    &lt;<span style="color: #721045;">div</span> <span style="color: #005e8b;">id</span>=<span style="color: #3548cf;">"app"</span>&gt;
+      <span style="color: #7f0000;">&lt;!-- </span><span style="color: #7f0000;">Vue &#27169;&#26495;</span><span style="color: #7f0000;"> --&gt;</span>
+      &lt;<span style="color: #721045;">h1</span>&gt;<span style="font-weight: bold; text-decoration: underline;">{{ charData }}</span>&lt;/<span style="color: #721045;">h1</span>&gt;
+      &lt;<span style="color: #721045;">button</span> @click=<span style="color: #3548cf;">"changeWholeChartData"</span>&gt;Change Whole Chart Data&lt;/<span style="color: #721045;">button</span>&gt;
+      &lt;<span style="color: #721045;">button</span> @click=<span style="color: #3548cf;">"changeChartData"</span>&gt;Change Chart Data&lt;/<span style="color: #721045;">button</span>&gt;
+      &lt;<span style="color: #721045;">button</span> @click=<span style="color: #3548cf;">"changeChartDataElement"</span>&gt;Change Chart Data Element&lt;/<span style="color: #721045;">button</span>&gt;
+    &lt;/<span style="color: #721045;">div</span>&gt;
+
+    &lt;<span style="color: #721045;">script</span>&gt;
+      "use strict";
+      const { createApp, shallowReactive } = Vue;
+
+      // &#21019;&#24314; Vue &#24212;&#29992;
+      const app = createApp({
+        setup() {
+          const charData = shallowReactive({
+            labels: ["A", "B", "C"],
+            datasets: [10, 20, 30],
+          });
+
+          function changeWholeChartData() {
+            /* charData = {
+             *   labels: ["X", "Y", "Z"],
+             *   datasets: [15, 25, 35],
+             * }; */
+
+            Object.assign(charData, {
+              labels: ["X", "Y", "Z"],
+              datasets: [15, 25, 35],
+            });
+          }
+
+          function changeChartData() {
+            charData.datasets = [50, 60, 70];
+          }
+
+          function changeChartDataElement() {
+            charData.datasets[0] += 10;
+            console.log(charData);
+          }
+
+          // &#36820;&#22238;&#27169;&#26495;&#20013;&#38656;&#35201;&#20351;&#29992;&#30340;&#25968;&#25454;
+          return {
+            charData,
+            changeWholeChartData,
+            changeChartData,
+            changeChartDataElement,
+          };
+        },
+      });
+
+      // &#25346;&#36733;&#21040; #app
+      app.mount("#app");
+    &lt;/<span style="color: #721045;">script</span>&gt;
+  &lt;/<span style="color: #721045;">body</span>&gt;
+&lt;/<span style="color: #721045;">html</span>&gt;
+</pre>
+</div></li>
+<li>changeChartData能引起触发响应,这是预想到的</li>
+<li>changeWholeChartData能触发响应是因为它用了Object.assign,本质上是多次changeChartData</li>
+<li>changeCharDataElement不能触发响应,这是因为它已经是第二层了.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org0738a21" class="outline-3">
+<h3 id="org0738a21"><span class="section-number-3">3.7.</span> toRaw与markRaw函数</h3>
+<div class="outline-text-3" id="text-3-7">
+</div>
+<div id="outline-container-orgaf7663c" class="outline-4">
+<h4 id="orgaf7663c"><span class="section-number-4">3.7.1.</span> toRaw</h4>
+<div class="outline-text-4" id="text-3-7-1">
+<ul class="org-ul">
+<li>Vue通过reactive创建响应式对象的时候(ref内部.value其实也是reactive),会通过Proxy对原始对象进行代理,
+toRaw函数会跳过Vue的响应式代理机制.直接返回原始对象
+<ul class="org-ul">
+<li><p>
+toRaw通常会使用需要底层非响应式数据的情况下.比如下面的例子toRaw可以获取底层数据,而不是响应式后的数据
+</p>
+<div class="org-src-container">
+<pre class="src src-typescript"><span style="color: #531ab6;">import</span> <span style="color: #000000;">{</span> reactive, toRaw <span style="color: #000000;">}</span> <span style="color: #531ab6;">from</span> <span style="color: #3548cf;">"vue"</span>;
+
+<span style="color: #531ab6;">const</span> <span style="color: #005e8b;">originalData</span> = <span style="color: #000000;">{</span>
+  count: 1,
+  message: <span style="color: #3548cf;">"Hello World"</span>,
+  car: <span style="color: #dd22dd;">{</span> name: <span style="color: #3548cf;">"bmw"</span>, price: 100 <span style="color: #dd22dd;">}</span>,
+<span style="color: #000000;">}</span>;
+
+<span style="color: #531ab6;">const</span> <span style="color: #005e8b;">reactiveData</span> = <span style="color: #721045;">reactive</span><span style="color: #000000;">(</span>originalData<span style="color: #000000;">)</span>;
+
+<span style="color: #005f5f;">console</span>.<span style="color: #721045;">log</span><span style="color: #000000;">(</span>
+  <span style="color: #3548cf;">`|originalData === reactiveData| =&gt; </span><span style="color: #531ab6;">${</span><span style="color: #000000; background-color: #fbf7f0;">originalData === reactiveData</span><span style="color: #531ab6;">}</span><span style="color: #3548cf;">`</span>,
+<span style="color: #000000;">)</span>;
+<span style="color: #005f5f;">console</span>.<span style="color: #721045;">log</span><span style="color: #000000;">(</span>
+  <span style="color: #3548cf;">`|originalData === toRaw(reactiveData)| =&gt; ${</span>
+<span style="color: #3548cf;">    originalData === toRaw(reactiveData)</span>
+<span style="color: #3548cf;">  }`</span>,
+<span style="color: #000000;">)</span>;
+
+<span style="color: #7f0000;">// </span><span style="color: #7f0000;">&lt;====================OUTPUT====================&gt;</span>
+<span style="color: #7f0000;">// </span><span style="color: #7f0000;">|originalData === reactiveData| =&gt; false</span>
+<span style="color: #7f0000;">// </span><span style="color: #7f0000;">|originalData === toRaw(reactiveData)| =&gt; </span><span style="color: #005e8b;">true</span>
+</pre>
+</div></li>
+<li>获取真正底层数据(而不是响应式数据)有很多用处,比如一个可以序列化(JSON.stringify)的复杂对象,一旦变
+成响应式后,可能就无法成功序列化,还是要获取底层的对象后再进行序列化比较好.</li>
+</ul></li>
+<li>使用toRaw获取原始对象不会破坏响应机制,响应式对象依然有效.
+<ul class="org-ul">
+<li><p>
+示例如下
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #531ab6;">!doctype</span> html&gt;
+&lt;<span style="color: #721045;">html</span> <span style="color: #005e8b;">lang</span>=<span style="color: #3548cf;">"en"</span>&gt;
+  &lt;<span style="color: #721045;">head</span>&gt;
+    &lt;<span style="color: #721045;">meta</span> <span style="color: #005e8b;">charset</span>=<span style="color: #3548cf;">"UTF-8"</span> /&gt;
+    &lt;<span style="color: #721045;">meta</span> <span style="color: #005e8b;">name</span>=<span style="color: #3548cf;">"viewport"</span> <span style="color: #005e8b;">content</span>=<span style="color: #3548cf;">"width=device-width, initial-scale=1.0"</span> /&gt;
+    &lt;<span style="color: #721045;">script</span> <span style="color: #005e8b;">src</span>=<span style="color: #3548cf;">"https://unpkg.com/vue@3/dist/vue.global.js"</span>&gt;&lt;/<span style="color: #721045;">script</span>&gt;
+  &lt;/<span style="color: #721045;">head</span>&gt;
+  &lt;<span style="color: #721045;">body</span>&gt;
+    &lt;<span style="color: #721045;">div</span> <span style="color: #005e8b;">id</span>=<span style="color: #3548cf;">"app"</span>&gt;
+      <span style="color: #7f0000;">&lt;!-- </span><span style="color: #7f0000;">Vue &#27169;&#26495;</span><span style="color: #7f0000;"> --&gt;</span>
+      &lt;<span style="color: #721045;">h1</span>&gt;<span style="font-weight: bold; text-decoration: underline;">{{ state }}</span>&lt;/<span style="color: #721045;">h1</span>&gt;
+      &lt;<span style="color: #721045;">button</span> @click=<span style="color: #3548cf;">"handleClick"</span>&gt;Handle Click&lt;/<span style="color: #721045;">button</span>&gt;
+    &lt;/<span style="color: #721045;">div</span>&gt;
+
+    &lt;<span style="color: #721045;">script</span>&gt;
+      "use strict";
+      const { createApp, reactive, toRaw } = Vue; // &#20174; Vue &#20013;&#35299;&#26500;&#20986;&#38656;&#35201;&#30340;API
+
+      // &#21019;&#24314; Vue &#24212;&#29992;
+      const app = createApp({
+        setup() {
+          const state = reactive({ count: 1 });
+          const raw = toRaw(state);
+          function handleClick() {
+            state.count += 1;
+            console.log(`|state.count| =&gt; ${state.count}`);
+            console.log(`|raw.count| =&gt; ${raw.count}`);
+          }
+
+          // &#36820;&#22238;&#27169;&#26495;&#20013;&#38656;&#35201;&#20351;&#29992;&#30340;&#25968;&#25454;
+          return {
+            state,
+            handleClick,
+          };
+        },
+      });
+
+      // &#25346;&#36733;&#21040; #app
+      app.mount("#app");
+    &lt;/<span style="color: #721045;">script</span>&gt;
+  &lt;/<span style="color: #721045;">body</span>&gt;
+&lt;/<span style="color: #721045;">html</span>&gt;
+</pre>
+</div></li>
+<li>我们可以看到toRaw获取的原始对象和响应式对象一起改变了.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orge03f093" class="outline-4">
+<h4 id="orge03f093"><span class="section-number-4">3.7.2.</span> markRaw</h4>
+<div class="outline-text-4" id="text-3-7-2">
+<ul class="org-ul">
+<li>当Vue创建响应式对象时,它会递归地将对象的每个属性转换为响应式,使用markRaw标记了某个对象后,Vue会跳过该
+对象的响应式转换,并直接将其作为普通对象处理
+<ul class="org-ul">
+<li><p>
+被标记为非响应式的对象不会被代理,但它可以嵌套在响应式对象中,示例如下
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #531ab6;">!doctype</span> html&gt;
+&lt;<span style="color: #721045;">html</span> <span style="color: #005e8b;">lang</span>=<span style="color: #3548cf;">"en"</span>&gt;
+  &lt;<span style="color: #721045;">head</span>&gt;
+    &lt;<span style="color: #721045;">meta</span> <span style="color: #005e8b;">charset</span>=<span style="color: #3548cf;">"UTF-8"</span> /&gt;
+    &lt;<span style="color: #721045;">meta</span> <span style="color: #005e8b;">name</span>=<span style="color: #3548cf;">"viewport"</span> <span style="color: #005e8b;">content</span>=<span style="color: #3548cf;">"width=device-width, initial-scale=1.0"</span> /&gt;
+    &lt;<span style="color: #721045;">script</span> <span style="color: #005e8b;">src</span>=<span style="color: #3548cf;">"https://unpkg.com/vue@3/dist/vue.global.js"</span>&gt;&lt;/<span style="color: #721045;">script</span>&gt;
+  &lt;/<span style="color: #721045;">head</span>&gt;
+  &lt;<span style="color: #721045;">body</span>&gt;
+    &lt;<span style="color: #721045;">div</span> <span style="color: #005e8b;">id</span>=<span style="color: #3548cf;">"app"</span>&gt;
+      <span style="color: #7f0000;">&lt;!-- </span><span style="color: #7f0000;">Vue &#27169;&#26495;</span><span style="color: #7f0000;"> --&gt;</span>
+      &lt;<span style="color: #721045;">h1</span>&gt;<span style="font-weight: bold; text-decoration: underline;">{{ state }}</span>&lt;/<span style="color: #721045;">h1</span>&gt;
+      &lt;<span style="color: #721045;">button</span> @click=<span style="color: #3548cf;">"increaseCount"</span>&gt;Increase Count&lt;/<span style="color: #721045;">button</span>&gt;
+      &lt;<span style="color: #721045;">button</span> @click=<span style="color: #3548cf;">"changeName"</span>&gt;Change Name&lt;/<span style="color: #721045;">button</span>&gt;
+    &lt;/<span style="color: #721045;">div</span>&gt;
+
+    &lt;<span style="color: #721045;">script</span>&gt;
+      "use strict";
+      const { createApp, reactive, markRaw } = Vue; // &#20174; Vue &#20013;&#35299;&#26500;&#20986;&#38656;&#35201;&#30340;API
+
+      // &#21019;&#24314; Vue &#24212;&#29992;
+      const app = createApp({
+        setup() {
+          const original = { count: 1 };
+          const raw = markRaw(original);
+          const state = reactive({
+            name: "Hello, World",
+            sum: raw,
+          });
+          function increaseCount() {
+            state.sum.count += 1;
+            console.log(`|state| =&gt; ${state.sum.count}`);
+          }
+          function changeName() {
+            state.name += "~";
+          }
+
+          // &#36820;&#22238;&#27169;&#26495;&#20013;&#38656;&#35201;&#20351;&#29992;&#30340;&#25968;&#25454;
+          return {
+            state,
+            increaseCount,
+            changeName,
+          };
+        },
+      });
+
+      // &#25346;&#36733;&#21040; #app
+      app.mount("#app");
+    &lt;/<span style="color: #721045;">script</span>&gt;
+  &lt;/<span style="color: #721045;">body</span>&gt;
+&lt;/<span style="color: #721045;">html</span>&gt;
+</pre>
+</div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgcf7f200" class="outline-3">
+<h3 id="orgcf7f200"><span class="section-number-3">3.8.</span> computed函数</h3>
+<div class="outline-text-3" id="text-3-8">
+<ul class="org-ul">
+<li>我们这里讲解的是"Vue3的组合式API中的computed函数",其和第二章将的"选项式API中的computed属性"在功能上
+是一样的,但是在语法的使用上是不一样的.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org7c04241" class="outline-3">
+<h3 id="org7c04241"><span class="section-number-3">3.9.</span> watch函数</h3>
+</div>
+<div id="outline-container-org8464346" class="outline-3">
+<h3 id="org8464346"><span class="section-number-3">3.10.</span> 生命周期钩子函数</h3>
+</div>
+</div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: harrifeng@outlook.com</p>
-<p class="date">Created: 2025-04-30 Wed 17:38</p>
+<p class="date">Created: 2025-05-15 Thu 15:14</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
