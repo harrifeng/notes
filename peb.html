@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-05-13 Tue 16:40 -->
+<!-- 2025-05-16 Fri 17:29 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>peb</title>
@@ -55,26 +55,36 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgb6d557c">1. Chapter 1: Combinatorics</a>
+<li><a href="#orgd504c72">1. Chapter 1: Combinatorics</a>
 <ul>
-<li><a href="#org28f694d">1.1. Factorials</a></li>
-<li><a href="#orge479dfd">1.2. Permutations</a>
+<li><a href="#orga77478d">1.1. Factorials</a></li>
+<li><a href="#org5f2d6cb">1.2. Permutations</a>
 <ul>
-<li><a href="#org2ce501c">1.2.1. One object</a></li>
-<li><a href="#orgb4f8aa2">1.2.2. Two objects</a></li>
-<li><a href="#orgf53990c">1.2.3. Three objects</a></li>
+<li><a href="#org07af1cd">1.2.1. One object</a></li>
+<li><a href="#org1317c42">1.2.2. Two objects</a></li>
+<li><a href="#orgba8119e">1.2.3. Three objects</a></li>
 </ul>
 </li>
-<li><a href="#org1aa471c">1.3. Ordered sets, repetitions allowed</a></li>
-<li><a href="#org0f3259d">1.4. Ordered sets, repetitions not allowed</a></li>
-<li><a href="#org860e30e">1.5. Unordered sets, repetitions not allowed</a></li>
-<li><a href="#org5090d7e">1.6. What we know so far</a></li>
-<li><a href="#org27f68be">1.7. Unordered sets, repetitions allowed</a></li>
-<li><a href="#orgff3d5af">1.8. Binomial coefficients</a>
+<li><a href="#orgfc6870c">1.3. Ordered sets, repetitions allowed</a></li>
+<li><a href="#orga6f05cd">1.4. Ordered sets, repetitions not allowed</a></li>
+<li><a href="#org6f67dad">1.5. Unordered sets, repetitions not allowed</a>
 <ul>
-<li><a href="#org56b4811">1.8.1. Cons and Pascal's trianglep</a></li>
-<li><a href="#org0f16dfb">1.8.2. (a+b)^n and Pascal's triangle</a></li>
-<li><a href="#org3cd9294">1.8.3. Properties of Pascal's triangle</a></li>
+<li><a href="#org745d3de">1.5.1. Example(Two chosen from five)</a></li>
+<li><a href="#org8a753ca">1.5.2. First solution</a></li>
+<li><a href="#orgf23146f">1.5.3. Second solution:</a></li>
+<li><a href="#org08212f5">1.5.4. Examle(Three different titles)</a></li>
+<li><a href="#orgacee3e5">1.5.5. First solution</a></li>
+<li><a href="#org5b13801">1.5.6. Second solution</a></li>
+<li><a href="#orgbdf4f97">1.5.7. Third solution</a></li>
+</ul>
+</li>
+<li><a href="#org39f7492">1.6. What we know so far</a></li>
+<li><a href="#orgd590a17">1.7. Unordered sets, repetitions allowed</a></li>
+<li><a href="#orgff451dc">1.8. Binomial coefficients</a>
+<ul>
+<li><a href="#org18e16e7">1.8.1. Cons and Pascal's trianglep</a></li>
+<li><a href="#org9277cae">1.8.2. (a+b)^n and Pascal's triangle</a></li>
+<li><a href="#org2159f22">1.8.3. Properties of Pascal's triangle</a></li>
 </ul>
 </li>
 </ul>
@@ -82,12 +92,12 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-orgb6d557c" class="outline-2">
-<h2 id="orgb6d557c"><span class="section-number-2">1.</span> Chapter 1: Combinatorics</h2>
+<div id="outline-container-orgd504c72" class="outline-2">
+<h2 id="orgd504c72"><span class="section-number-2">1.</span> Chapter 1: Combinatorics</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-org28f694d" class="outline-3">
-<h3 id="org28f694d"><span class="section-number-3">1.1.</span> Factorials</h3>
+<div id="outline-container-orga77478d" class="outline-3">
+<h3 id="orga77478d"><span class="section-number-3">1.1.</span> Factorials</h3>
 <div class="outline-text-3" id="text-1-1">
 <ul class="org-ul">
 <li>每当我们遇到一个正整数N,那么我们通常会考虑1到N的乘积,这个乘积就是"N factorial", 用数学表示就是"N!"</li>
@@ -130,8 +140,8 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-orge479dfd" class="outline-3">
-<h3 id="orge479dfd"><span class="section-number-3">1.2.</span> Permutations</h3>
+<div id="outline-container-org5f2d6cb" class="outline-3">
+<h3 id="org5f2d6cb"><span class="section-number-3">1.2.</span> Permutations</h3>
 <div class="outline-text-3" id="text-1-2">
 <ul class="org-ul">
 <li>permutaion是用来order一系列object的方法.比如我们有三个人Alice,Bob,Carol,那么下面每一列都是一种permutation(一共六种):
@@ -146,8 +156,8 @@
 <li>我们下面会详细介绍如何count permutation</li>
 </ul>
 </div>
-<div id="outline-container-org2ce501c" class="outline-4">
-<h4 id="org2ce501c"><span class="section-number-4">1.2.1.</span> One object</h4>
+<div id="outline-container-org07af1cd" class="outline-4">
+<h4 id="org07af1cd"><span class="section-number-4">1.2.1.</span> One object</h4>
 <div class="outline-text-4" id="text-1-2-1">
 <ul class="org-ul">
 <li>如果我们只有一个object,那么显然只有一种方式来order它.</li>
@@ -155,8 +165,8 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-orgb4f8aa2" class="outline-4">
-<h4 id="orgb4f8aa2"><span class="section-number-4">1.2.2.</span> Two objects</h4>
+<div id="outline-container-org1317c42" class="outline-4">
+<h4 id="org1317c42"><span class="section-number-4">1.2.2.</span> Two objects</h4>
 <div class="outline-text-4" id="text-1-2-2">
 <ul class="org-ul">
 <li>两个对象后,稍微复杂了一点,但是也只是一点,比如如果我们使用1,2来代表两个object,那么我们可以把这两个object order如下:
@@ -168,8 +178,8 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-orgf53990c" class="outline-4">
-<h4 id="orgf53990c"><span class="section-number-4">1.2.3.</span> Three objects</h4>
+<div id="outline-container-orgba8119e" class="outline-4">
+<h4 id="orgba8119e"><span class="section-number-4">1.2.3.</span> Three objects</h4>
 <div class="outline-text-4" id="text-1-2-3">
 <ul class="org-ul">
 <li>三个对象之后,情形就复杂了,我们使用1,2,3来代表三个object,那么order的方式有六种,换句话说就是 \(P_3=6\) :
@@ -182,7 +192,7 @@
 </ul>
 </div>
 <ol class="org-ol">
-<li><a id="org8e91bcb"></a>Four objects<br />
+<li><a id="orga200456"></a>Four objects<br />
 <div class="outline-text-5" id="text-1-2-3-1">
 <ul class="org-ul">
 <li>一旦有四个对象,那么列举起来就费事了很多,但是我们借鉴三个对象时候的方法,把列举分成四组(每组的开头字
@@ -198,7 +208,7 @@ permutation的全部数据.其他三行去掉最开始一个数字也是相同�
 </ul>
 </div>
 </li>
-<li><a id="org636325b"></a>Five objects<br />
+<li><a id="org0cae2d4"></a>Five objects<br />
 <div class="outline-text-5" id="text-1-2-3-2">
 <ul class="org-ul">
 <li>我们一旦理解了上面的做法,那么显然我们只需要在1,2,3,4,5后面每个都添加上上诉24个permutation,那么最终
@@ -212,7 +222,7 @@ permutation的全部数据.其他三行去掉最开始一个数字也是相同�
 </ul>
 </div>
 </li>
-<li><a id="orge6b7658"></a>Question<br />
+<li><a id="orga04272d"></a>Question<br />
 <div class="outline-text-5" id="text-1-2-3-3">
 <ul class="org-ul">
 <li>一共有九个客人,同时有九个位置.这九个位置分为两组,A组5个座位,B组4个座位,请问一共有多少种方法来把座
@@ -220,7 +230,7 @@ permutation的全部数据.其他三行去掉最开始一个数字也是相同�
 </ul>
 </div>
 </li>
-<li><a id="orgce17043"></a>Solution<br />
+<li><a id="orga338918"></a>Solution<br />
 <div class="outline-text-5" id="text-1-2-3-4">
 <ul class="org-ul">
 <li>有五种方式把一个人放到A组的位置,所以有5!种方式把五个人放到A组的位置</li>
@@ -237,8 +247,8 @@ permutation的全部数据.其他三行去掉最开始一个数字也是相同�
 </ol>
 </div>
 </div>
-<div id="outline-container-org1aa471c" class="outline-3">
-<h3 id="org1aa471c"><span class="section-number-3">1.3.</span> Ordered sets, repetitions allowed</h3>
+<div id="outline-container-orgfc6870c" class="outline-3">
+<h3 id="orgfc6870c"><span class="section-number-3">1.3.</span> Ordered sets, repetitions allowed</h3>
 <div class="outline-text-3" id="text-1-3">
 <ul class="org-ul">
 <li>所谓ordered set,repetitions allowed是指这么一类实验
@@ -272,7 +282,7 @@ permutation的全部数据.其他三行去掉最开始一个数字也是相同�
 <li><p>
 各种可能性如下
 </p>
-<pre class="example" id="orgfadf995">
+<pre class="example" id="org4b71a30">
 AA AB AC AD AE
 BA BB BC BD BE
 CA CB CC CD CE
@@ -290,14 +300,14 @@ EA EB EC ED EE
 </ul>
 </div>
 <ol class="org-ol">
-<li><a id="org37b682b"></a>Question<br />
+<li><a id="org87d3277"></a>Question<br />
 <div class="outline-text-5" id="text-1-3-0-1">
 <ul class="org-ul">
 <li>有一个标准的六面骰子,我们投掷两次,能够得到多少种不同的结果(不同order视为不同结果)</li>
 </ul>
 </div>
 </li>
-<li><a id="orga9ac120"></a>Solution<br />
+<li><a id="org7d8b051"></a>Solution<br />
 <div class="outline-text-5" id="text-1-3-0-2">
 <ul class="org-ul">
 <li>由于order是有关系的,所以2,5和5,2不是一种结果,又由于每次都有6种结果(且不存在放回问题,骰子永远放回),
@@ -305,14 +315,14 @@ EA EB EC ED EE
 </ul>
 </div>
 </li>
-<li><a id="org2207a47"></a>Question<br />
+<li><a id="orga98bb36"></a>Question<br />
 <div class="outline-text-5" id="text-1-3-0-3">
 <ul class="org-ul">
 <li>如果投掷一个标准的硬币四次,那么讷讷够得到多少种不同的结果(不同order视为不同结果)</li>
 </ul>
 </div>
 </li>
-<li><a id="org0996aef"></a>Solution<br />
+<li><a id="org924f1b4"></a>Solution<br />
 <div class="outline-text-5" id="text-1-3-0-4">
 <ul class="org-ul">
 <li>思路和上面的题目类似,答案为 \(2^4=16\)</li>
@@ -321,8 +331,8 @@ EA EB EC ED EE
 </li>
 </ol>
 </div>
-<div id="outline-container-org0f3259d" class="outline-3">
-<h3 id="org0f3259d"><span class="section-number-3">1.4.</span> Ordered sets, repetitions not allowed</h3>
+<div id="outline-container-orga6f05cd" class="outline-3">
+<h3 id="orga6f05cd"><span class="section-number-3">1.4.</span> Ordered sets, repetitions not allowed</h3>
 <div class="outline-text-3" id="text-1-4">
 <ul class="org-ul">
 <li>所谓ordered set,repetitions allowed是指这么一类实验
@@ -347,21 +357,21 @@ EA EB EC ED EE
 </ul>
 </div>
 <ol class="org-ol">
-<li><a id="org337ffe4"></a>Example(Two chosen from five)<br />
+<li><a id="orgf655aff"></a>Example(Two chosen from five)<br />
 <div class="outline-text-5" id="text-1-4-0-1">
 <ul class="org-ul">
 <li>从5个人里面,选择两个人进入委员会,且顺序重要(第一个人会作为主席,第二个作为副主席)</li>
 </ul>
 </div>
 </li>
-<li><a id="orgcf3a2e5"></a>First Soluton<br />
+<li><a id="org64b7a2d"></a>First Soluton<br />
 <div class="outline-text-5" id="text-1-4-0-2">
 <ul class="org-ul">
 <li><p>
 我们把五个人都分别标记为A,B,C,D,E,我们把所有可能的"有顺序的pair"列举出来,先包含重复(虽然一个人被选
 做主席,外加副主席是不可能的).那么所有的列表如下
 </p>
-<pre class="example" id="orgacf104e">
+<pre class="example" id="org014aee2">
 AA AB AC AD AE
 BA BB BC BD BE
 CA CB CC CD CE
@@ -378,7 +388,7 @@ EA EB EC ED EE
 </ul>
 </div>
 </li>
-<li><a id="org6997cec"></a>Second solution<br />
+<li><a id="orgb1b9364"></a>Second solution<br />
 <div class="outline-text-5" id="text-1-4-0-3">
 <ul class="org-ul">
 <li>First solution很有说服力,但是其只能把5给泛化成N,无法泛化2成n</li>
@@ -414,40 +424,216 @@ EA EB EC ED EE
 </li>
 </ol>
 </div>
-<div id="outline-container-org860e30e" class="outline-3">
-<h3 id="org860e30e"><span class="section-number-3">1.5.</span> Unordered sets, repetitions not allowed</h3>
+<div id="outline-container-org6f67dad" class="outline-3">
+<h3 id="org6f67dad"><span class="section-number-3">1.5.</span> Unordered sets, repetitions not allowed</h3>
 <div class="outline-text-3" id="text-1-5">
 <ul class="org-ul">
 <li>本节和上一节的区别很明显,就是我们从N个里面选取n个,但是这n个的顺序不再重要了.以委员会的选举为例,我们
-从13个人力选取2个人进入委员会,但是这两个人只是委员而已,不会有主席副主席的区别.那么顺序就不再重要了.</li>
+从5个人里选取2个人进入委员会,但是这两个人只是委员而已,不会有主席副主席的区别.那么顺序就不再重要了.</li>
+</ul>
+</div>
+<div id="outline-container-org745d3de" class="outline-4">
+<h4 id="org745d3de"><span class="section-number-4">1.5.1.</span> Example(Two chosen from five)</h4>
+<div class="outline-text-4" id="text-1-5-1">
+<ul class="org-ul">
+<li>从五个人里面选取两个人,且这两个人的顺序不重要,有多少种选取方式</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org5090d7e" class="outline-3">
-<h3 id="org5090d7e"><span class="section-number-3">1.6.</span> What we know so far</h3>
+<div id="outline-container-org8a753ca" class="outline-4">
+<h4 id="org8a753ca"><span class="section-number-4">1.5.2.</span> First solution</h4>
+<div class="outline-text-4" id="text-1-5-2">
+<ul class="org-ul">
+<li><p>
+我们把这个五个人标记为A,B,C,D,E,我们首先把所有的pair都写出来,包括重复的(虽然人不能重复),包括不同的
+order(虽然order不重要),那么我们可以得到下面的列表(列完之后,我们再去除"重复"和"顺序"):
+</p>
+<pre class="example" id="orgeef76d5">
+AA AB AC AD AE
+BA BB BC BD BE
+CA CB CC CD CE
+DA DB DC DD DE
+EA EB EC ED EE
+</pre></li>
+<li>首先去除"重复",对角线这个明显是重复的,不需要,那么我们就剩下 \(5^2-5\) 个了</li>
+<li><p>
+再去除"顺序",我们可以看到,对角线去掉后,所有剩余的pair刚好分成了两份,这两份是内容相同,顺序相反的
+</p>
+<pre class="example" id="org705e41d">
+                 AB AC AD AE
+BA                  BC BD BE
+CA CB                  CD CE
+DA DB DC                  DE
+EA EB EC ED
+</pre></li>
+<li>所以我们再除以2,就得到真正的"不重复,没有顺序"的pair了,所以最终的结果是 \((5^2-5)/2=10\)</li>
+<li>这里的2不能泛化,但是5可以泛化成N,我们就得到:从N个对象里面找"不重复,顺序不重要的2个对象",有 \((N^2-N)/2\) 中取法</li>
+</ul>
 </div>
-<div id="outline-container-org27f68be" class="outline-3">
-<h3 id="org27f68be"><span class="section-number-3">1.7.</span> Unordered sets, repetitions allowed</h3>
 </div>
-<div id="outline-container-orgff3d5af" class="outline-3">
-<h3 id="orgff3d5af"><span class="section-number-3">1.8.</span> Binomial coefficients</h3>
+<div id="outline-container-orgf23146f" class="outline-4">
+<h4 id="orgf23146f"><span class="section-number-4">1.5.3.</span> Second solution:</h4>
+<div class="outline-text-4" id="text-1-5-3">
+<ul class="org-ul">
+<li>我们可以把选择委员会问题看成每次选择一个,那么我们第一次就有5种选法,第二次有4种选法,那么我们总共就有
+\(5 \times 4 = 20\) 种选法</li>
+<li>但是在这个过程中,我们把XY和YX当做了不同的结果,其实这个两个结果由于顺序不重要,其实是同一个结果.所以,
+我们最终的结果要除以2,也就是 \((5 \times 4) / 2 = 10\)</li>
+<li>这里只泛化5的话,我们可以得到 \(N(N-1)/2\) 其实和solution1的结果一致</li>
+<li>这里其实还可以泛化n,假设我们从N个人里面选n个委员,我们考虑顺序的情况下,我们可以从公式1-6得到我们有
+\(N!/(N-n)!\) 种选法</li>
+<li>同时,我们还通过公式1-3知道,n个object组成的group,有n!种排列方式,我们上面的选法需要去除这n!种排列的影响.</li>
+<li>怎么去重这n!种影响呢?很简单,我们的 \(N!/(N-n)!\) 种选法中,把选择了固定某些人的情况编辑为一团,那么这一
+团每个的数量都是n!,而这一团其实只能算一个选法,但是它算了n!种选法.那么显然,我们要把刚才的结果除以n!
+也就是 \(\frac{N!}{n!(N-n)!}\)</li>
+<li>我们之前使用 \({}_{N}P_{n}\) 来代表"从N个里面选择n个,且顺序重要"的选法,这里我们用新的标识 \({}_{N}C_{n}\)
+来代表"从N个里面选择n个,且不考虑顺序"</li>
+<li>而这个结果 \(\frac{N!}{n!(N-n)!}\) 也有一个写法,叫做二项式系数(binomial coefficient):
+<ul class="org-ul">
+<li>读作"n取K(N chosse n)"</li>
+<li>写作 \(\binom{N}{n}\)</li>
+</ul></li>
+<li><p>
+那么,整个公式就可以整理为公式1-8
+</p>
+\begin{equation}
+{}_{N}C_n \equiv \binom{N}{n} = \frac{N!}{n! (N-n)!} \tag{1.8}
+\end{equation}</li>
+<li><p>
+举个例子,从6个人里面选择四个委员的选法有
+</p>
+\begin{equation}
+\binom{6}{4} = \frac{6!}{4!2!}=15
+\end{equation}</li>
+<li>由于我们有0!=1的定义,所以:
+<ul class="org-ul">
+<li>当n=N的时候,公式1-8也是成立的,这个时候结果为 \(\binom{N}{N}=N!/N!0!=1\) ,意味着,我们从N个人里面挑出
+来N个人的方法就只有1种</li>
+<li>当n=0的时候,公式1-8也是成立的,这个时候结果为 \(\binom{N}{0}=N!/0!N!=1\) ,意味着,我们从N个人里面挑出
+来0个人的方法就只有1种,就是一个都不挑</li>
+</ul></li>
+<li><p>
+总结起来就是,不能重放的情况下,我们本节讲的"顺序不重要的从N选取n( \(_{N}C_n\) )"其实就是:
+</p>
+<pre class="example" id="org06591ba">
+"顺序不重要的从N选取n( $_{N}P_n$ )"额外再除以n!,用来去除overcounting
+</pre></li>
+<li>我们注意到一个有趣的现象就是 \(\binom{11}{8}\) 和 \(\binom{11}{3}\) 的结果是一样的,我们可以这么理解:
+<ul class="org-ul">
+<li>从11个人里面选取8个人有N种方法</li>
+<li>从11个人里面"剩下"3个人,也肯定能有N种方法</li>
+<li>其实"剩下"3个人,就是选取8个人</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org08212f5" class="outline-4">
+<h4 id="org08212f5"><span class="section-number-4">1.5.4.</span> Examle(Three different titles)</h4>
+<div class="outline-text-4" id="text-1-5-4">
+<ul class="org-ul">
+<li>有多少种方法从十个人里面选取一个委员会,并且这个委员会里面有如下要求:
+<ul class="org-ul">
+<li>一个主席</li>
+<li>两个副主席(顺序不重要)</li>
+<li>四个委员(顺序不重要)</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgacee3e5" class="outline-4">
+<h4 id="orgacee3e5"><span class="section-number-4">1.5.5.</span> First solution</h4>
+<div class="outline-text-4" id="text-1-5-5">
+<ul class="org-ul">
+<li>我们首先来从10个人中选取7个人,并且这个7个人是 <b>有顺序的</b>, 那么就有 \(_{10}P_{7} = 10\cdot9\cdot8\cdot7\cdot6\cdot5\cdot4\)
+种方式</li>
+<li>那么 \(_{10}P_{7}\) 这种方式overcount了哪些呢?
+<ul class="org-ul">
+<li>overcount两个副主席的顺序,多数了2!倍</li>
+<li>overcount四个委员的顺序,多数了4!倍</li>
+</ul></li>
+<li><p>
+所以最终的答案是 \(_{10}P_{7}\) 除以2!,再除以4!,公式如下
+</p>
+\begin{equation}
+\frac{_{10}P_7}{4!2!} = \frac{10\cdot9\cdot8\cdot7\cdot6\cdot5\cdot4}{4!\cdot2!} = 12,600 \tag{1.11}
+\end{equation}</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org5b13801" class="outline-4">
+<h4 id="org5b13801"><span class="section-number-4">1.5.6.</span> Second solution</h4>
+<div class="outline-text-4" id="text-1-5-6">
+<ul class="org-ul">
+<li>从一堆对象N中,不考虑顺序的获取小部分对象n的方法是 \(\binom{N}{n}\),所以我没有:
+<ul class="org-ul">
+<li>从10个人中选1个主席的方法总共有 \(\binom{10}{1}\)</li>
+<li>从9个人中选个2个副主席的方法总共有 \(\binom{9}{2}\)</li>
+<li>从7个人中选个4个委员的方法总共有 \(\binom{7}{4}\)</li>
+<li><p>
+那么三者相乘,就是最终的结果(我们未把4!展开,为的是能够让我们看到我们这个公式其实和1-11一样)
+</p>
+\begin{equation}
+\binom{10}{1} \binom{9}{2} \binom{7}{4} = \frac{10}{1!} \cdot \frac{9\cdot8}{2!} \cdot\frac{7\cdot6\cdot5\cdot4}{4!} = 12,600 \tag{1.12}
+\end{equation}</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgbdf4f97" class="outline-4">
+<h4 id="orgbdf4f97"><span class="section-number-4">1.5.7.</span> Third solution</h4>
+<div class="outline-text-4" id="text-1-5-7">
+<ul class="org-ul">
+<li>我们上面是按官职从大到小进行的选取(先选主席,再选副主席,再选委员),那么我们如果按照官职从小到大选取,结果如何的,
+<ul class="org-ul">
+<li><p>
+公式如下
+</p>
+\begin{equation}
+\binom{10}{4} \binom{6}{2} \binom{4}{1} = \frac{10\cdot9\cdot8\cdot7}{4!} \cdot \frac{6\cdot5}{2!} \cdot\frac{4}{1!} = 12,600 \tag{1.13}
+\end{equation}</li>
+</ul></li>
+<li>我们可以看到,我们按照官职从小到大选取(1-13)和前面的官职从大到小选取(1-12),得到的结果是一样的!</li>
+<li>这也就是说,我们以什么顺序选取subpart不重要,如果愿意,我们甚至可以
+<ul class="org-ul">
+<li>先选取7个主席,副主席,委员.</li>
+<li>然后从这7个里面选择1个主席</li>
+<li>再从6个里面选择两个副主席</li>
+<li><p>
+然后不用选了!因为就剩下四个了.总体选的方法还是12600种,公式如下
+</p>
+\begin{equation}
+\binom{10}{7} \binom{7}{1} \binom{6}{2} = \frac{10\cdot9\cdot8}{3!} \cdot \frac{7}{1!} \cdot\frac{6\cdot5}{2!} = 12,600 \tag{1.14}
+\end{equation}</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org39f7492" class="outline-3">
+<h3 id="org39f7492"><span class="section-number-3">1.6.</span> What we know so far</h3>
+</div>
+<div id="outline-container-orgd590a17" class="outline-3">
+<h3 id="orgd590a17"><span class="section-number-3">1.7.</span> Unordered sets, repetitions allowed</h3>
+</div>
+<div id="outline-container-orgff451dc" class="outline-3">
+<h3 id="orgff451dc"><span class="section-number-3">1.8.</span> Binomial coefficients</h3>
 <div class="outline-text-3" id="text-1-8">
 </div>
-<div id="outline-container-org56b4811" class="outline-4">
-<h4 id="org56b4811"><span class="section-number-4">1.8.1.</span> Cons and Pascal's trianglep</h4>
+<div id="outline-container-org18e16e7" class="outline-4">
+<h4 id="org18e16e7"><span class="section-number-4">1.8.1.</span> Cons and Pascal's trianglep</h4>
 </div>
-<div id="outline-container-org0f16dfb" class="outline-4">
-<h4 id="org0f16dfb"><span class="section-number-4">1.8.2.</span> (a+b)^n and Pascal's triangle</h4>
+<div id="outline-container-org9277cae" class="outline-4">
+<h4 id="org9277cae"><span class="section-number-4">1.8.2.</span> (a+b)^n and Pascal's triangle</h4>
 </div>
-<div id="outline-container-org3cd9294" class="outline-4">
-<h4 id="org3cd9294"><span class="section-number-4">1.8.3.</span> Properties of Pascal's triangle</h4>
+<div id="outline-container-org2159f22" class="outline-4">
+<h4 id="org2159f22"><span class="section-number-4">1.8.3.</span> Properties of Pascal's triangle</h4>
 </div>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: harrifeng@outlook.com</p>
-<p class="date">Created: 2025-05-13 Tue 16:40</p>
+<p class="date">Created: 2025-05-16 Fri 17:29</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
