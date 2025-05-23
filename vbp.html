@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-05-21 Wed 17:21 -->
+<!-- 2025-05-23 Fri 17:48 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>vbp</title>
@@ -23,208 +23,213 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgfacd952">1. Chapter 01: Vue.js概述</a>
+<li><a href="#org57147f7">1. Chapter 01: Vue.js概述</a>
 <ul>
-<li><a href="#orgc0e5617">1.1. 六何分析Vue</a>
+<li><a href="#org3b81827">1.1. 六何分析Vue</a>
 <ul>
-<li><a href="#orgae4fe18">1.1.1. Vue是什么</a></li>
-<li><a href="#org6d2c16a">1.1.2. Vue是由谁开发的</a></li>
-<li><a href="#orgb9c108a">1.1.3. Vue的发展历程</a></li>
-<li><a href="#org36904d3">1.1.4. Vue用在哪些项目的开发中</a></li>
-<li><a href="#orgcced6c7">1.1.5. 为什么要选择Vue</a></li>
+<li><a href="#org5c27514">1.1.1. Vue是什么</a></li>
+<li><a href="#org48ec357">1.1.2. Vue是由谁开发的</a></li>
+<li><a href="#org133beb7">1.1.3. Vue的发展历程</a></li>
+<li><a href="#orgdd897d2">1.1.4. Vue用在哪些项目的开发中</a></li>
+<li><a href="#org0f5b67e">1.1.5. 为什么要选择Vue</a></li>
 </ul>
 </li>
-<li><a href="#orgf106087">1.2. Vue3的新特性</a>
+<li><a href="#orgc01f7ae">1.2. Vue3的新特性</a>
 <ul>
-<li><a href="#org4212562">1.2.1. 内在核心的变化</a></li>
-<li><a href="#orge7732ef">1.2.2. 渲染引擎的改进</a></li>
-<li><a href="#org261e9ff">1.2.3. 新的内置组件</a></li>
-<li><a href="#org68f1967">1.2.4. API的修改</a></li>
+<li><a href="#org29b572f">1.2.1. 内在核心的变化</a></li>
+<li><a href="#org11a7407">1.2.2. 渲染引擎的改进</a></li>
+<li><a href="#org1859cd0">1.2.3. 新的内置组件</a></li>
+<li><a href="#orgaef62bc">1.2.4. API的修改</a></li>
 </ul>
 </li>
-<li><a href="#org529ba84">1.3. Vue3的运行环境</a>
+<li><a href="#org949acd5">1.3. Vue3的运行环境</a>
 <ul>
-<li><a href="#orga8c0f2f">1.3.1. 运行环境搭建</a></li>
-<li><a href="#orgfe67432">1.3.2. Vue开发者调试工具</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#orga24b22a">2. Chapter 02: 核心语法</a>
-<ul>
-<li><a href="#org66052f3">2.1. 模板语法</a>
-<ul>
-<li><a href="#org69fd4a9">2.1.1. 插值语法</a></li>
-<li><a href="#orgc0f5e74">2.1.2. 指令语法</a></li>
-<li><a href="#orgab47009">2.1.3. data和methods配置项</a></li>
-</ul>
-</li>
-<li><a href="#org3715350">2.2. 计算属性</a>
-<ul>
-<li><a href="#org188c21e">2.2.1. 计算属性的基本使用</a></li>
-<li><a href="#org1f53512">2.2.2. 计算属性和method方法</a></li>
-<li><a href="#org0ce807b">2.2.3. 计算属性的setter</a></li>
-</ul>
-</li>
-<li><a href="#org396f8eb">2.3. 监听</a>
-<ul>
-<li><a href="#org9c62468">2.3.1. 监听的基本使用</a></li>
-</ul>
-</li>
-<li><a href="#org4422766">2.4. 绑定动态样式</a>
-<ul>
-<li><a href="#org887347d">2.4.1. 字符串绑定</a></li>
-<li><a href="#org7fcccf2">2.4.2. 对象绑定</a></li>
-<li><a href="#org0b510f8">2.4.3. 绑定数组</a></li>
-</ul>
-</li>
-<li><a href="#org94737b5">2.5. 条件渲染指令</a>
-<ul>
-<li><a href="#org210f6fa">2.5.1. v-if相关指令</a></li>
-<li><a href="#org617007b">2.5.2. v-show指令</a></li>
-<li><a href="#orgb311e4a">2.5.3. 比较v-if和v-show指令</a></li>
-</ul>
-</li>
-<li><a href="#orgef6f194">2.6. 列表渲染指令</a>
-<ul>
-<li><a href="#org1f51d43">2.6.1. 列表的动态渲染</a></li>
-<li><a href="#org8e336a9">2.6.2. 列表的增,删,改</a></li>
-<li><a href="#orgbff4496">2.6.3. 列表的过滤</a></li>
-<li><a href="#org1904a10">2.6.4. 列表的排序</a></li>
-</ul>
-</li>
-<li><a href="#orgaa71ea5">2.7. 事件处理</a>
-<ul>
-<li><a href="#orgad214ff">2.7.1. 绑定事件监听</a></li>
-<li><a href="#org0b95c3c">2.7.2. 事件修饰符</a></li>
-<li><a href="#orgc7a1601">2.7.3. 按键修饰符</a></li>
-</ul>
-</li>
-<li><a href="#orga390b8f">2.8. 收集表单数据</a>
-<ul>
-<li><a href="#org2de255d">2.8.1. 使用v-model指令</a></li>
-<li><a href="#orgc91b38a">2.8.2. 相关指令修饰符</a></li>
-</ul>
-</li>
-<li><a href="#org7a57ede">2.9. Vue实例的生命周期</a></li>
-<li><a href="#org45f97ca">2.10. 过渡与动画</a></li>
-<li><a href="#org8aa6594">2.11. 内置指令</a>
-<ul>
-<li><a href="#orgb05002b">2.11.1. v-text和v-html指令</a></li>
-<li><a href="#org0bc2eed">2.11.2. v-pre指令</a></li>
-<li><a href="#orgbd6eb96">2.11.3. v-once指令</a></li>
-<li><a href="#org34c65aa">2.11.4. v-memo指令</a></li>
-<li><a href="#org695f365">2.11.5. v-cloak指令</a></li>
+<li><a href="#org3c28983">1.3.1. 运行环境搭建</a></li>
+<li><a href="#org2ff7354">1.3.2. Vue开发者调试工具</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orgeb99668">3. Chapter 03: Vue3新语法</a>
+<li><a href="#orgf71cbdd">2. Chapter 02: 核心语法</a>
 <ul>
-<li><a href="#org9c0594c">3.1. 组合式API的了解</a></li>
-<li><a href="#org8548345">3.2. 利用ref函数定义响应式数据</a></li>
-<li><a href="#orgf94ad00">3.3. 利用reactive函数定义响应式数据</a></li>
-<li><a href="#org6bfab1b">3.4. toRefs与toRef函数</a></li>
-<li><a href="#orgff6ddef">3.5. readonly与shallowReadonly函数</a>
+<li><a href="#org740f338">2.1. 模板语法</a>
 <ul>
-<li><a href="#orgd2c82a4">3.5.1. readonly</a></li>
-<li><a href="#org78f31f2">3.5.2. shallowReadonly</a></li>
+<li><a href="#orgd32ea45">2.1.1. 插值语法</a></li>
+<li><a href="#org0cdbf3e">2.1.2. 指令语法</a></li>
+<li><a href="#orga02e475">2.1.3. data和methods配置项</a></li>
 </ul>
 </li>
-<li><a href="#orgfc3c4cb">3.6. shallowRef与shallowReactive函数</a>
+<li><a href="#org73b3340">2.2. 计算属性</a>
 <ul>
-<li><a href="#org5dadcfc">3.6.1. shallowRef</a></li>
-<li><a href="#orgebf3d65">3.6.2. shallowReactive</a></li>
+<li><a href="#orgad755af">2.2.1. 计算属性的基本使用</a></li>
+<li><a href="#org9ca0cf8">2.2.2. 计算属性和method方法</a></li>
+<li><a href="#orged0b930">2.2.3. 计算属性的setter</a></li>
 </ul>
 </li>
-<li><a href="#org4bb7fc1">3.7. toRaw与markRaw函数</a>
+<li><a href="#orge26e628">2.3. 监听</a>
 <ul>
-<li><a href="#org7f04dc8">3.7.1. toRaw</a></li>
-<li><a href="#org0738744">3.7.2. markRaw</a></li>
+<li><a href="#orga81c80d">2.3.1. 监听的基本使用</a></li>
 </ul>
 </li>
-<li><a href="#org97a7de0">3.8. computed函数</a>
+<li><a href="#org764c291">2.4. 绑定动态样式</a>
 <ul>
-<li><a href="#orgc2c49e3">3.8.1. 只读计算属性</a></li>
-<li><a href="#org5854e0c">3.8.2. 可读写属性</a></li>
-<li><a href="#org3f001ef">3.8.3. 返回值</a></li>
+<li><a href="#org661ce72">2.4.1. 字符串绑定</a></li>
+<li><a href="#org455520a">2.4.2. 对象绑定</a></li>
+<li><a href="#org88d637a">2.4.3. 绑定数组</a></li>
 </ul>
 </li>
-<li><a href="#org58b7485">3.9. watch函数</a>
+<li><a href="#org18bebb7">2.5. 条件渲染指令</a>
 <ul>
-<li><a href="#org2911771">3.9.1. watch语法</a></li>
-<li><a href="#orgf75641e">3.9.2. watch使用举例</a></li>
+<li><a href="#orgd364599">2.5.1. v-if相关指令</a></li>
+<li><a href="#org6dff481">2.5.2. v-show指令</a></li>
+<li><a href="#org9ea9b27">2.5.3. 比较v-if和v-show指令</a></li>
 </ul>
 </li>
-<li><a href="#orga367633">3.10. 生命周期钩子函数</a></li>
+<li><a href="#orgb5a1b7f">2.6. 列表渲染指令</a>
+<ul>
+<li><a href="#org29a49cb">2.6.1. 列表的动态渲染</a></li>
+<li><a href="#org4d5b127">2.6.2. 列表的增,删,改</a></li>
+<li><a href="#org3a4069b">2.6.3. 列表的过滤</a></li>
+<li><a href="#org6231081">2.6.4. 列表的排序</a></li>
 </ul>
 </li>
-<li><a href="#org7ad008d">4. Chapter 04: 组件详情</a>
+<li><a href="#org371a2ec">2.7. 事件处理</a>
 <ul>
-<li><a href="#orge6b6ee1">4.1. 脚手架项目的分析</a></li>
-<li><a href="#org2e5d765">4.2. ESLint与Prettier</a></li>
-<li><a href="#org1c5b9f3">4.3. 组件样式控制</a>
-<ul>
-<li><a href="#org78665ab">4.3.1. 组件的定义与使用</a></li>
-<li><a href="#org06b1e65">4.3.2. 全局样式控制</a></li>
-<li><a href="#org3122445">4.3.3. 局部作用域样式控制</a></li>
-<li><a href="#orgd69eff4">4.3.4. 深度样式控制</a></li>
+<li><a href="#org46ad7dd">2.7.1. 绑定事件监听</a></li>
+<li><a href="#org72f49e1">2.7.2. 事件修饰符</a></li>
+<li><a href="#org7ce63b5">2.7.3. 按键修饰符</a></li>
 </ul>
 </li>
-<li><a href="#orgfa0099b">4.4. 组件通信之props</a>
+<li><a href="#org78a0c24">2.8. 收集表单数据</a>
 <ul>
-<li><a href="#org024d1cb">4.4.1. 组件关系</a></li>
-<li><a href="#org80c853a">4.4.2. 父与子通信之props</a></li>
+<li><a href="#orge8b8fba">2.8.1. 使用v-model指令</a></li>
+<li><a href="#orgb1449ff">2.8.2. 相关指令修饰符</a></li>
 </ul>
 </li>
-<li><a href="#org0d7019f">4.5. 组件通信之ref与defineExpose</a></li>
-<li><a href="#org5969485">4.6. 组件通信之emits与defineEmits</a></li>
-<li><a href="#org9a3e2b7">4.7. 组件通信之attrs</a></li>
-<li><a href="#org4e280ef">4.8. 组件通信之provide与inject</a></li>
-<li><a href="#orgaa6c765">4.9. 组件通信之slot</a>
+<li><a href="#org2117765">2.9. Vue实例的生命周期</a></li>
+<li><a href="#orgf0e60ce">2.10. 过渡与动画</a></li>
+<li><a href="#orga8907bd">2.11. 内置指令</a>
 <ul>
-<li><a href="#org5624ce8">4.9.1. 默认插槽</a></li>
-<li><a href="#orgf0f6f52">4.9.2. 具名插槽</a></li>
-<li><a href="#org0da2b06">4.9.3. 作用域插槽</a></li>
+<li><a href="#org0a9d62f">2.11.1. v-text和v-html指令</a></li>
+<li><a href="#org1bbb87f">2.11.2. v-pre指令</a></li>
+<li><a href="#org3cd84cd">2.11.3. v-once指令</a></li>
+<li><a href="#org20a3c55">2.11.4. v-memo指令</a></li>
+<li><a href="#org1b1775e">2.11.5. v-cloak指令</a></li>
 </ul>
 </li>
-<li><a href="#orged6c0d4">4.10. 内置组件之Component</a></li>
-<li><a href="#org43e9e1f">4.11. 内置组件之KeepAlive</a></li>
-<li><a href="#orged58460">4.12. 内置组件之Teleport</a></li>
-<li><a href="#orgdc1d082">4.13. 代码封装之自定义directive(指令)</a></li>
-<li><a href="#org6e0c9ed">4.14. 代码封装之自定义hook (钩子)</a></li>
-<li><a href="#org2637f70">4.15. 代码封装之plugin (插件)</a></li>
 </ul>
 </li>
-<li><a href="#org7c1ef4b">5. Chapter 05: Vue路由</a>
+<li><a href="#org8e6a0d6">3. Chapter 03: Vue3新语法</a>
 <ul>
-<li><a href="#orgf9c2d87">5.1. 路由的概念与核心功能</a></li>
-<li><a href="#org69e6c68">5.2. 动态组件加载</a></li>
-<li><a href="#org3a88e39">5.3. 配置简单路由</a></li>
-<li><a href="#orgba4058f">5.4. 路由连接高亮显示</a></li>
-<li><a href="#orgfae7ba5">5.5. 嵌套路由</a></li>
-<li><a href="#org581857a">5.6. 动态路由传参</a></li>
-<li><a href="#org784ee9e">5.7. 路由参数映射</a></li>
-<li><a href="#org95a596a">5.8. 命名路由切换</a></li>
-<li><a href="#org29c5a11">5.9. 命名视图渲染</a></li>
-<li><a href="#orgde53609">5.10. 编程式路由导航</a></li>
-<li><a href="#org8ce098b">5.11. 路由过渡动画效果</a></li>
-<li><a href="#org6a4a08d">5.12. 路由滚动行为</a></li>
-<li><a href="#orga9a8d84">5.13. 路由的异步懒加载</a></li>
-<li><a href="#org0bfa141">5.14. 缓存路由组件</a></li>
-<li><a href="#org516499a">5.15. 路由守卫</a></li>
-<li><a href="#org1ee66ef">5.16. 动态添加与删除路由</a></li>
+<li><a href="#orgaaa4890">3.1. 组合式API的了解</a></li>
+<li><a href="#orgb368386">3.2. 利用ref函数定义响应式数据</a></li>
+<li><a href="#orga77c015">3.3. 利用reactive函数定义响应式数据</a></li>
+<li><a href="#orgba8211b">3.4. toRefs与toRef函数</a></li>
+<li><a href="#org1f01288">3.5. readonly与shallowReadonly函数</a>
+<ul>
+<li><a href="#org9aeb5f7">3.5.1. readonly</a></li>
+<li><a href="#orgbd56a86">3.5.2. shallowReadonly</a></li>
+</ul>
+</li>
+<li><a href="#org680883a">3.6. shallowRef与shallowReactive函数</a>
+<ul>
+<li><a href="#org8402800">3.6.1. shallowRef</a></li>
+<li><a href="#orgbc420d6">3.6.2. shallowReactive</a></li>
+</ul>
+</li>
+<li><a href="#org32f3a09">3.7. toRaw与markRaw函数</a>
+<ul>
+<li><a href="#org6d32029">3.7.1. toRaw</a></li>
+<li><a href="#org3500c72">3.7.2. markRaw</a></li>
+</ul>
+</li>
+<li><a href="#org5171e8f">3.8. computed函数</a>
+<ul>
+<li><a href="#org24cad09">3.8.1. 只读计算属性</a></li>
+<li><a href="#org56d544f">3.8.2. 可读写属性</a></li>
+<li><a href="#orgc248487">3.8.3. 返回值</a></li>
+</ul>
+</li>
+<li><a href="#org5601753">3.9. watch函数</a>
+<ul>
+<li><a href="#org548c8e1">3.9.1. watch语法</a></li>
+<li><a href="#orgccc061d">3.9.2. watch使用举例</a></li>
+</ul>
+</li>
+<li><a href="#orgb0c9690">3.10. 生命周期钩子函数</a></li>
+</ul>
+</li>
+<li><a href="#org2599afa">4. Chapter 04: 组件详情</a>
+<ul>
+<li><a href="#org7448da9">4.1. 脚手架项目的分析</a></li>
+<li><a href="#orga0c7fb2">4.2. ESLint与Prettier</a></li>
+<li><a href="#org2bab94d">4.3. 组件样式控制</a>
+<ul>
+<li><a href="#orgd6e878d">4.3.1. 组件的定义与使用</a></li>
+<li><a href="#orgb085d82">4.3.2. 全局样式控制</a></li>
+<li><a href="#org2a9163d">4.3.3. 局部作用域样式控制</a></li>
+<li><a href="#orgd0ee5ae">4.3.4. 深度样式控制</a></li>
+</ul>
+</li>
+<li><a href="#org6360a44">4.4. 组件通信之props</a>
+<ul>
+<li><a href="#orgfd34b1a">4.4.1. 组件关系</a></li>
+<li><a href="#org23a40ba">4.4.2. 父与子通信之props</a></li>
+</ul>
+</li>
+<li><a href="#org81b251f">4.5. 组件通信之ref与defineExpose</a></li>
+<li><a href="#org453ee6c">4.6. 组件通信之emits与defineEmits</a></li>
+<li><a href="#org116e487">4.7. 组件通信之attrs</a></li>
+<li><a href="#org8a0a701">4.8. 组件通信之provide与inject</a></li>
+<li><a href="#orgce92eaa">4.9. 组件通信之slot</a>
+<ul>
+<li><a href="#org8b9b81f">4.9.1. 默认插槽</a></li>
+<li><a href="#orga5ef14c">4.9.2. 具名插槽</a></li>
+<li><a href="#org3eba70b">4.9.3. 作用域插槽</a></li>
+</ul>
+</li>
+<li><a href="#org6c60535">4.10. 内置组件之Component</a></li>
+<li><a href="#org54d68d9">4.11. 内置组件之KeepAlive</a></li>
+<li><a href="#org98e451c">4.12. 内置组件之Teleport</a></li>
+<li><a href="#org0ed2cb1">4.13. 代码封装之自定义directive(指令)</a></li>
+<li><a href="#org68b97b9">4.14. 代码封装之自定义hook (钩子)</a></li>
+<li><a href="#orgba03305">4.15. 代码封装之plugin (插件)</a></li>
+</ul>
+</li>
+<li><a href="#org3602985">5. Chapter 05: Vue路由</a>
+<ul>
+<li><a href="#orgbd64e20">5.1. 路由的概念与核心功能</a></li>
+<li><a href="#org98364cd">5.2. 动态组件加载</a></li>
+<li><a href="#orgd08f24d">5.3. 配置简单路由</a></li>
+<li><a href="#org67b1f72">5.4. 路由连接高亮显示</a>
+<ul>
+<li><a href="#org4caa072">5.4.1. 利用vue-router模块的内置样式实现路由链接高亮显示</a></li>
+<li><a href="#org60f838b">5.4.2. 利用active-class属性实现路由链接高亮显示</a></li>
+</ul>
+</li>
+<li><a href="#org8015416">5.5. 嵌套路由</a></li>
+<li><a href="#orgbf1f3ee">5.6. 动态路由传参</a></li>
+<li><a href="#org6ffd8aa">5.7. 路由参数映射</a></li>
+<li><a href="#org801c60b">5.8. 命名路由切换</a></li>
+<li><a href="#orgc78b20d">5.9. 命名视图渲染</a></li>
+<li><a href="#org1f2bb2d">5.10. 编程式路由导航</a></li>
+<li><a href="#orgba639c5">5.11. 路由过渡动画效果</a></li>
+<li><a href="#orgac95ce7">5.12. 路由滚动行为</a></li>
+<li><a href="#orgc818e70">5.13. 路由的异步懒加载</a></li>
+<li><a href="#orgb097378">5.14. 缓存路由组件</a></li>
+<li><a href="#org38c70dd">5.15. 路由守卫</a></li>
+<li><a href="#org99b1b4e">5.16. 动态添加与删除路由</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgfacd952" class="outline-2">
-<h2 id="orgfacd952"><span class="section-number-2">1.</span> Chapter 01: Vue.js概述</h2>
+<div id="outline-container-org57147f7" class="outline-2">
+<h2 id="org57147f7"><span class="section-number-2">1.</span> Chapter 01: Vue.js概述</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-orgc0e5617" class="outline-3">
-<h3 id="orgc0e5617"><span class="section-number-3">1.1.</span> 六何分析Vue</h3>
+<div id="outline-container-org3b81827" class="outline-3">
+<h3 id="org3b81827"><span class="section-number-3">1.1.</span> 六何分析Vue</h3>
 <div class="outline-text-3" id="text-1-1">
 <ul class="org-ul">
 <li>所谓六何分析就是了解如下六个方面:
@@ -238,8 +243,8 @@
 </ul></li>
 </ul>
 </div>
-<div id="outline-container-orgae4fe18" class="outline-4">
-<h4 id="orgae4fe18"><span class="section-number-4">1.1.1.</span> Vue是什么</h4>
+<div id="outline-container-org5c27514" class="outline-4">
+<h4 id="org5c27514"><span class="section-number-4">1.1.1.</span> Vue是什么</h4>
 <div class="outline-text-4" id="text-1-1-1">
 <ul class="org-ul">
 <li>Vue是一款渐进式JavaScript框架</li>
@@ -252,16 +257,16 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-org6d2c16a" class="outline-4">
-<h4 id="org6d2c16a"><span class="section-number-4">1.1.2.</span> Vue是由谁开发的</h4>
+<div id="outline-container-org48ec357" class="outline-4">
+<h4 id="org48ec357"><span class="section-number-4">1.1.2.</span> Vue是由谁开发的</h4>
 <div class="outline-text-4" id="text-1-1-2">
 <ul class="org-ul">
 <li>Vue的主要作者是尤雨溪领导的开发团队</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgb9c108a" class="outline-4">
-<h4 id="orgb9c108a"><span class="section-number-4">1.1.3.</span> Vue的发展历程</h4>
+<div id="outline-container-org133beb7" class="outline-4">
+<h4 id="org133beb7"><span class="section-number-4">1.1.3.</span> Vue的发展历程</h4>
 <div class="outline-text-4" id="text-1-1-3">
 <ul class="org-ul">
 <li>Vue的发展历程如下
@@ -273,16 +278,16 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-org36904d3" class="outline-4">
-<h4 id="org36904d3"><span class="section-number-4">1.1.4.</span> Vue用在哪些项目的开发中</h4>
+<div id="outline-container-orgdd897d2" class="outline-4">
+<h4 id="orgdd897d2"><span class="section-number-4">1.1.4.</span> Vue用在哪些项目的开发中</h4>
 <div class="outline-text-4" id="text-1-1-4">
 <ul class="org-ul">
 <li>中国国内的互联网公司使用Vue较多</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgcced6c7" class="outline-4">
-<h4 id="orgcced6c7"><span class="section-number-4">1.1.5.</span> 为什么要选择Vue</h4>
+<div id="outline-container-org0f5b67e" class="outline-4">
+<h4 id="org0f5b67e"><span class="section-number-4">1.1.5.</span> 为什么要选择Vue</h4>
 <div class="outline-text-4" id="text-1-1-5">
 <ul class="org-ul">
 <li>Vue的优势有如下:
@@ -295,16 +300,16 @@
 </div>
 </div>
 </div>
-<div id="outline-container-orgf106087" class="outline-3">
-<h3 id="orgf106087"><span class="section-number-3">1.2.</span> Vue3的新特性</h3>
+<div id="outline-container-orgc01f7ae" class="outline-3">
+<h3 id="orgc01f7ae"><span class="section-number-3">1.2.</span> Vue3的新特性</h3>
 <div class="outline-text-3" id="text-1-2">
 <ul class="org-ul">
 <li>Vue2是以JavaScript为开发基础的.而Vue3是以TypeScript为基础开发的</li>
 <li>Vue3借鉴了其他框架和库的功能与优势,成功实现了API的高度抽象</li>
 </ul>
 </div>
-<div id="outline-container-org4212562" class="outline-4">
-<h4 id="org4212562"><span class="section-number-4">1.2.1.</span> 内在核心的变化</h4>
+<div id="outline-container-org29b572f" class="outline-4">
+<h4 id="org29b572f"><span class="section-number-4">1.2.1.</span> 内在核心的变化</h4>
 <div class="outline-text-4" id="text-1-2-1">
 <ul class="org-ul">
 <li>Vue3采用了浏览器中的一些新特性,比如Proxy,Reflect</li>
@@ -313,23 +318,23 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-orge7732ef" class="outline-4">
-<h4 id="orge7732ef"><span class="section-number-4">1.2.2.</span> 渲染引擎的改进</h4>
+<div id="outline-container-org11a7407" class="outline-4">
+<h4 id="org11a7407"><span class="section-number-4">1.2.2.</span> 渲染引擎的改进</h4>
 <div class="outline-text-4" id="text-1-2-2">
 <ul class="org-ul">
 <li>Vue3对底层渲染引擎进行了改进,采用了新的虚拟DOM算法</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org261e9ff" class="outline-4">
-<h4 id="org261e9ff"><span class="section-number-4">1.2.3.</span> 新的内置组件</h4>
+<div id="outline-container-org1859cd0" class="outline-4">
+<h4 id="org1859cd0"><span class="section-number-4">1.2.3.</span> 新的内置组件</h4>
 <div class="outline-text-4" id="text-1-2-3">
 <ul class="org-ul">
 <li>Vue3新增了一些内置组件,开发人员可以利用它们来解决一些常见的问题,我们下面分别来介绍</li>
 </ul>
 </div>
 <ol class="org-ol">
-<li><a id="org770ce96"></a>Fragment<br />
+<li><a id="orgb420d77"></a>Fragment<br />
 <div class="outline-text-5" id="text-1-2-3-1">
 <ul class="org-ul">
 <li><p>
@@ -385,7 +390,7 @@ Fragment的最终效果是这样的,注意和上面报错的代码一致,只是v
 </ul>
 </div>
 </li>
-<li><a id="org43dfe97"></a>Teleport<br />
+<li><a id="orgba41f16"></a>Teleport<br />
 <div class="outline-text-5" id="text-1-2-3-2">
 <ul class="org-ul">
 <li>Teleport 是 Vue 3 提供的一个内置组件，它允许你将某些 DOM 节点从当前组件的渲染位置“传送”（或者说移动）
@@ -418,7 +423,7 @@ Fragment的最终效果是这样的,注意和上面报错的代码一致,只是v
 </ul>
 </div>
 </li>
-<li><a id="orge7e516c"></a>Suspense<br />
+<li><a id="org0dbcfd1"></a>Suspense<br />
 <div class="outline-text-5" id="text-1-2-3-3">
 <ul class="org-ul">
 <li>Suspense 是 Vue 3 提供的一个异步组件加载工具，它允许你在等待异步内容加载时显示备用内容（也叫“占位内容”）。
@@ -463,8 +468,8 @@ Fragment的最终效果是这样的,注意和上面报错的代码一致,只是v
 </li>
 </ol>
 </div>
-<div id="outline-container-org68f1967" class="outline-4">
-<h4 id="org68f1967"><span class="section-number-4">1.2.4.</span> API的修改</h4>
+<div id="outline-container-orgaef62bc" class="outline-4">
+<h4 id="orgaef62bc"><span class="section-number-4">1.2.4.</span> API的修改</h4>
 <div class="outline-text-4" id="text-1-2-4">
 <ul class="org-ul">
 <li>Vue3中的变化主要体现在三个方面:
@@ -477,7 +482,7 @@ Fragment的最终效果是这样的,注意和上面报错的代码一致,只是v
 </ul>
 </div>
 <ol class="org-ol">
-<li><a id="org41b90a9"></a>组合式API<br />
+<li><a id="org99a2ebf"></a>组合式API<br />
 <div class="outline-text-5" id="text-1-2-4-1">
 <ul class="org-ul">
 <li>组合式API是Vue3中最为重大的一个升级内容.也即是把代码的数据和函数"组合到一个地方"进行开发</li>
@@ -486,35 +491,35 @@ Fragment的最终效果是这样的,注意和上面报错的代码一致,只是v
 </ul>
 </div>
 </li>
-<li><a id="orga5f059b"></a>filter过滤器的摒弃<br />
+<li><a id="orga81af0b"></a>filter过滤器的摒弃<br />
 <div class="outline-text-5" id="text-1-2-4-2">
 <ul class="org-ul">
 <li>Vue2中经常使用过滤器功能,Vue3已经不再提供</li>
 </ul>
 </div>
 </li>
-<li><a id="org3eebdb7"></a>bus总线移除<br />
+<li><a id="org01a6b48"></a>bus总线移除<br />
 <div class="outline-text-5" id="text-1-2-4-3">
 <ul class="org-ul">
 <li>Vue3中已经移除了bus总线</li>
 </ul>
 </div>
 </li>
-<li><a id="org66e64b3"></a>不再有全局Vue实例的$mount方法<br />
+<li><a id="org2742c37"></a>不再有全局Vue实例的$mount方法<br />
 <div class="outline-text-5" id="text-1-2-4-4">
 <ul class="org-ul">
 <li>不再使用$mount方法,改为使用createApp命令</li>
 </ul>
 </div>
 </li>
-<li><a id="orge27f451"></a>v-model<br />
+<li><a id="org89d8ec9"></a>v-model<br />
 <div class="outline-text-5" id="text-1-2-4-5">
 <ul class="org-ul">
 <li>Vue3的组件可以进行多次v-model的双向数据绑定处理</li>
 </ul>
 </div>
 </li>
-<li><a id="org06a3de5"></a>样式的强化<br />
+<li><a id="org83d1724"></a>样式的强化<br />
 <div class="outline-text-5" id="text-1-2-4-6">
 <ul class="org-ul">
 <li>Vue3中增加了新的操作样式的方法</li>
@@ -524,19 +529,19 @@ Fragment的最终效果是这样的,注意和上面报错的代码一致,只是v
 </ol>
 </div>
 </div>
-<div id="outline-container-org529ba84" class="outline-3">
-<h3 id="org529ba84"><span class="section-number-3">1.3.</span> Vue3的运行环境</h3>
+<div id="outline-container-org949acd5" class="outline-3">
+<h3 id="org949acd5"><span class="section-number-3">1.3.</span> Vue3的运行环境</h3>
 <div class="outline-text-3" id="text-1-3">
 </div>
-<div id="outline-container-orga8c0f2f" class="outline-4">
-<h4 id="orga8c0f2f"><span class="section-number-4">1.3.1.</span> 运行环境搭建</h4>
+<div id="outline-container-org3c28983" class="outline-4">
+<h4 id="org3c28983"><span class="section-number-4">1.3.1.</span> 运行环境搭建</h4>
 <div class="outline-text-4" id="text-1-3-1">
 <ul class="org-ul">
 <li>Vue3有两种方式搭建运行环境,分别是页面直接引用和通过脚手架创建Vue项目</li>
 </ul>
 </div>
 <ol class="org-ol">
-<li><a id="org8e6084f"></a>页面直接引入Vue库<br />
+<li><a id="org3eca4a4"></a>页面直接引入Vue库<br />
 <div class="outline-text-5" id="text-1-3-1-1">
 <ul class="org-ul">
 <li>我们通过cdn直接引入Vue到script标签内.这种方法对于快速实验很有帮助
@@ -594,7 +599,7 @@ Fragment的最终效果是这样的,注意和上面报错的代码一致,只是v
 </ul>
 </div>
 </li>
-<li><a id="org8d058d3"></a>通过脚手架创建Vue项目<br />
+<li><a id="org96dd08d"></a>通过脚手架创建Vue项目<br />
 <div class="outline-text-5" id="text-1-3-1-2">
 <ul class="org-ul">
 <li>SPA项目显然要有自己的npm项目,这种情况下如果要创建Vue项目可以:
@@ -613,8 +618,8 @@ Fragment的最终效果是这样的,注意和上面报错的代码一致,只是v
 </li>
 </ol>
 </div>
-<div id="outline-container-orgfe67432" class="outline-4">
-<h4 id="orgfe67432"><span class="section-number-4">1.3.2.</span> Vue开发者调试工具</h4>
+<div id="outline-container-org2ff7354" class="outline-4">
+<h4 id="org2ff7354"><span class="section-number-4">1.3.2.</span> Vue开发者调试工具</h4>
 <div class="outline-text-4" id="text-1-3-2">
 <ul class="org-ul">
 <li>可以在各大浏览器市场搜索并下载vue-devtools使用.</li>
@@ -623,12 +628,12 @@ Fragment的最终效果是这样的,注意和上面报错的代码一致,只是v
 </div>
 </div>
 </div>
-<div id="outline-container-orga24b22a" class="outline-2">
-<h2 id="orga24b22a"><span class="section-number-2">2.</span> Chapter 02: 核心语法</h2>
+<div id="outline-container-orgf71cbdd" class="outline-2">
+<h2 id="orgf71cbdd"><span class="section-number-2">2.</span> Chapter 02: 核心语法</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-org66052f3" class="outline-3">
-<h3 id="org66052f3"><span class="section-number-3">2.1.</span> 模板语法</h3>
+<div id="outline-container-org740f338" class="outline-3">
+<h3 id="org740f338"><span class="section-number-3">2.1.</span> 模板语法</h3>
 <div class="outline-text-3" id="text-2-1">
 <ul class="org-ul">
 <li>Vue使用了一种基于HTML的模版语法,使用户能够生命式地将组件实例的数据绑定到呈现的DOM上</li>
@@ -641,8 +646,8 @@ Fragment的最终效果是这样的,注意和上面报错的代码一致,只是v
 动更新需要变化的DOM节点,并且做到最小化更新</li>
 </ul>
 </div>
-<div id="outline-container-org69fd4a9" class="outline-4">
-<h4 id="org69fd4a9"><span class="section-number-4">2.1.1.</span> 插值语法</h4>
+<div id="outline-container-orgd32ea45" class="outline-4">
+<h4 id="orgd32ea45"><span class="section-number-4">2.1.1.</span> 插值语法</h4>
 <div class="outline-text-4" id="text-2-1-1">
 <ul class="org-ul">
 <li>插值语法用来向标签中插入一个动态的值.格式很固定,就是一个双大括号包含一个JavaScript值
@@ -700,8 +705,8 @@ Fragment的最终效果是这样的,注意和上面报错的代码一致,只是v
 </ul>
 </div>
 </div>
-<div id="outline-container-orgc0f5e74" class="outline-4">
-<h4 id="orgc0f5e74"><span class="section-number-4">2.1.2.</span> 指令语法</h4>
+<div id="outline-container-org0cdbf3e" class="outline-4">
+<h4 id="org0cdbf3e"><span class="section-number-4">2.1.2.</span> 指令语法</h4>
 <div class="outline-text-4" id="text-2-1-2">
 <ul class="org-ul">
 <li>指令(Directive)是带有"v-"前缀的Vue自定义标签属性,其属性值一般是一个JavaScript表达式</li>
@@ -822,8 +827,8 @@ Fragment的最终效果是这样的,注意和上面报错的代码一致,只是v
 </ul>
 </div>
 </div>
-<div id="outline-container-orgab47009" class="outline-4">
-<h4 id="orgab47009"><span class="section-number-4">2.1.3.</span> data和methods配置项</h4>
+<div id="outline-container-orga02e475" class="outline-4">
+<h4 id="orga02e475"><span class="section-number-4">2.1.3.</span> data和methods配置项</h4>
 <div class="outline-text-4" id="text-2-1-3">
 <ul class="org-ul">
 <li>我们前面的例子,在createAp里面都是使用setup()来创建对象和函数,这是Vue3的推荐做法(也就是所谓的组合式API),
@@ -951,12 +956,12 @@ Fragment的最终效果是这样的,注意和上面报错的代码一致,只是v
 </div>
 </div>
 </div>
-<div id="outline-container-org3715350" class="outline-3">
-<h3 id="org3715350"><span class="section-number-3">2.2.</span> 计算属性</h3>
+<div id="outline-container-org73b3340" class="outline-3">
+<h3 id="org73b3340"><span class="section-number-3">2.2.</span> 计算属性</h3>
 <div class="outline-text-3" id="text-2-2">
 </div>
-<div id="outline-container-org188c21e" class="outline-4">
-<h4 id="org188c21e"><span class="section-number-4">2.2.1.</span> 计算属性的基本使用</h4>
+<div id="outline-container-orgad755af" class="outline-4">
+<h4 id="orgad755af"><span class="section-number-4">2.2.1.</span> 计算属性的基本使用</h4>
 <div class="outline-text-4" id="text-2-2-1">
 <ul class="org-ul">
 <li><p>
@@ -1022,8 +1027,8 @@ computed的函数在插值语法中使用的时候,是不加括号的.尽管有�
 </ul>
 </div>
 </div>
-<div id="outline-container-org1f53512" class="outline-4">
-<h4 id="org1f53512"><span class="section-number-4">2.2.2.</span> 计算属性和method方法</h4>
+<div id="outline-container-org9ca0cf8" class="outline-4">
+<h4 id="org9ca0cf8"><span class="section-number-4">2.2.2.</span> 计算属性和method方法</h4>
 <div class="outline-text-4" id="text-2-2-2">
 <ul class="org-ul">
 <li>其实methods能实现和computed完全相同的功能
@@ -1090,7 +1095,7 @@ computed的函数在插值语法中使用的时候,是不加括号的.尽管有�
 <li><p>
 methods和computed区别在于computed会有缓存,多次展示的情况下,计算属性只计算了一次,而method执行了三次,如下
 </p>
-<pre class="example" id="org95411c3">
+<pre class="example" id="org91d8c54">
 computed
 methods
 methods
@@ -1101,8 +1106,8 @@ methods
 </ul>
 </div>
 </div>
-<div id="outline-container-org0ce807b" class="outline-4">
-<h4 id="org0ce807b"><span class="section-number-4">2.2.3.</span> 计算属性的setter</h4>
+<div id="outline-container-orged0b930" class="outline-4">
+<h4 id="orged0b930"><span class="section-number-4">2.2.3.</span> 计算属性的setter</h4>
 <div class="outline-text-4" id="text-2-2-3">
 <ul class="org-ul">
 <li>默认情况下,computed属性是只读的,如果希望修改computed属性,我们需要把写入和读取在computd里面分开属性
@@ -1129,15 +1134,15 @@ methods
 </div>
 </div>
 </div>
-<div id="outline-container-org396f8eb" class="outline-3">
-<h3 id="org396f8eb"><span class="section-number-3">2.3.</span> 监听</h3>
+<div id="outline-container-orge26e628" class="outline-3">
+<h3 id="orge26e628"><span class="section-number-3">2.3.</span> 监听</h3>
 <div class="outline-text-3" id="text-2-3">
 <ul class="org-ul">
 <li>有些时候,在依赖数据发生变化时,我们需要让其产生一些"副作用",比如更新其他数据,此时,我们可以使用Vue的监听语法</li>
 </ul>
 </div>
-<div id="outline-container-org9c62468" class="outline-4">
-<h4 id="org9c62468"><span class="section-number-4">2.3.1.</span> 监听的基本使用</h4>
+<div id="outline-container-orga81c80d" class="outline-4">
+<h4 id="orga81c80d"><span class="section-number-4">2.3.1.</span> 监听的基本使用</h4>
 <div class="outline-text-4" id="text-2-3-1">
 <ul class="org-ul">
 <li>其实和computed的类似,需要一个watch的property
@@ -1197,8 +1202,8 @@ methods
 </div>
 </div>
 </div>
-<div id="outline-container-org4422766" class="outline-3">
-<h3 id="org4422766"><span class="section-number-3">2.4.</span> 绑定动态样式</h3>
+<div id="outline-container-org764c291" class="outline-3">
+<h3 id="org764c291"><span class="section-number-3">2.4.</span> 绑定动态样式</h3>
 <div class="outline-text-3" id="text-2-4">
 <ul class="org-ul">
 <li>项目开发中,动态页面除了数据需要动态,其样式也要动态.</li>
@@ -1211,8 +1216,8 @@ methods
 类型值</li>
 </ul>
 </div>
-<div id="outline-container-org887347d" class="outline-4">
-<h4 id="org887347d"><span class="section-number-4">2.4.1.</span> 字符串绑定</h4>
+<div id="outline-container-org661ce72" class="outline-4">
+<h4 id="org661ce72"><span class="section-number-4">2.4.1.</span> 字符串绑定</h4>
 <div class="outline-text-4" id="text-2-4-1">
 <ul class="org-ul">
 <li>这是最传统的方式，也就是直接在模板中绑定动态字符串值
@@ -1243,8 +1248,8 @@ export default {
 </ul>
 </div>
 </div>
-<div id="outline-container-org7fcccf2" class="outline-4">
-<h4 id="org7fcccf2"><span class="section-number-4">2.4.2.</span> 对象绑定</h4>
+<div id="outline-container-org455520a" class="outline-4">
+<h4 id="org455520a"><span class="section-number-4">2.4.2.</span> 对象绑定</h4>
 <div class="outline-text-4" id="text-2-4-2">
 <ul class="org-ul">
 <li>Vue 支持使用对象的形式来绑定 class 和 style，从而更灵活地控制条件样式。
@@ -1281,8 +1286,8 @@ export default {
 </ul>
 </div>
 </div>
-<div id="outline-container-org0b510f8" class="outline-4">
-<h4 id="org0b510f8"><span class="section-number-4">2.4.3.</span> 绑定数组</h4>
+<div id="outline-container-org88d637a" class="outline-4">
+<h4 id="org88d637a"><span class="section-number-4">2.4.3.</span> 绑定数组</h4>
 <div class="outline-text-4" id="text-2-4-3">
 <ul class="org-ul">
 <li>Vue 还支持使用数组的方式来绑定 class 和 style，适用于多个 class 或 style 的动态组合。
@@ -1324,8 +1329,8 @@ export default {
 </div>
 </div>
 </div>
-<div id="outline-container-org94737b5" class="outline-3">
-<h3 id="org94737b5"><span class="section-number-3">2.5.</span> 条件渲染指令</h3>
+<div id="outline-container-org18bebb7" class="outline-3">
+<h3 id="org18bebb7"><span class="section-number-3">2.5.</span> 条件渲染指令</h3>
 <div class="outline-text-3" id="text-2-5">
 <ul class="org-ul">
 <li>实际项目中时候有两种场景很常见:
@@ -1336,8 +1341,8 @@ export default {
 <li>上面两种场景都可以通过v-if和v-show指令实现</li>
 </ul>
 </div>
-<div id="outline-container-org210f6fa" class="outline-4">
-<h4 id="org210f6fa"><span class="section-number-4">2.5.1.</span> v-if相关指令</h4>
+<div id="outline-container-orgd364599" class="outline-4">
+<h4 id="orgd364599"><span class="section-number-4">2.5.1.</span> v-if相关指令</h4>
 <div class="outline-text-4" id="text-2-5-1">
 <ul class="org-ul">
 <li>v-if相关指令其实是如下三个:
@@ -1406,8 +1411,8 @@ export default {
 </ul>
 </div>
 </div>
-<div id="outline-container-org617007b" class="outline-4">
-<h4 id="org617007b"><span class="section-number-4">2.5.2.</span> v-show指令</h4>
+<div id="outline-container-org6dff481" class="outline-4">
+<h4 id="org6dff481"><span class="section-number-4">2.5.2.</span> v-show指令</h4>
 <div class="outline-text-4" id="text-2-5-2">
 <ul class="org-ul">
 <li>v-show也可以做到"隐藏-显示"内容
@@ -1462,8 +1467,8 @@ export default {
 </ul>
 </div>
 </div>
-<div id="outline-container-orgb311e4a" class="outline-4">
-<h4 id="orgb311e4a"><span class="section-number-4">2.5.3.</span> 比较v-if和v-show指令</h4>
+<div id="outline-container-org9ea9b27" class="outline-4">
+<h4 id="org9ea9b27"><span class="section-number-4">2.5.3.</span> 比较v-if和v-show指令</h4>
 <div class="outline-text-4" id="text-2-5-3">
 <ul class="org-ul">
 <li>v-if和v-show的效果是非常相似的,但是实现机制完全不同:
@@ -1475,8 +1480,8 @@ export default {
 </div>
 </div>
 </div>
-<div id="outline-container-orgef6f194" class="outline-3">
-<h3 id="orgef6f194"><span class="section-number-3">2.6.</span> 列表渲染指令</h3>
+<div id="outline-container-orgb5a1b7f" class="outline-3">
+<h3 id="orgb5a1b7f"><span class="section-number-3">2.6.</span> 列表渲染指令</h3>
 <div class="outline-text-3" id="text-2-6">
 <ul class="org-ul">
 <li>在项目开发的页面中,有很多列表效果需要动态显示,在Vue中被称之为列表渲染,可以通过v-for指令来实现</li>
@@ -1488,8 +1493,8 @@ export default {
 </ul></li>
 </ul>
 </div>
-<div id="outline-container-org1f51d43" class="outline-4">
-<h4 id="org1f51d43"><span class="section-number-4">2.6.1.</span> 列表的动态渲染</h4>
+<div id="outline-container-org29a49cb" class="outline-4">
+<h4 id="org29a49cb"><span class="section-number-4">2.6.1.</span> 列表的动态渲染</h4>
 <div class="outline-text-4" id="text-2-6-1">
 <ul class="org-ul">
 <li>v-for指令在数组中有两种形式:
@@ -1609,8 +1614,8 @@ Vue官方文档建议我们,在使用v-for指令进行列表渲染的时候,最�
 </ul>
 </div>
 </div>
-<div id="outline-container-org8e336a9" class="outline-4">
-<h4 id="org8e336a9"><span class="section-number-4">2.6.2.</span> 列表的增,删,改</h4>
+<div id="outline-container-org4d5b127" class="outline-4">
+<h4 id="org4d5b127"><span class="section-number-4">2.6.2.</span> 列表的增,删,改</h4>
 <div class="outline-text-4" id="text-2-6-2">
 <ul class="org-ul">
 <li>实际项目中,列表初始状态显示后,往往会进行增,删,改等操作.
@@ -1703,8 +1708,8 @@ Vue官方文档建议我们,在使用v-for指令进行列表渲染的时候,最�
 </ul>
 </div>
 </div>
-<div id="outline-container-orgbff4496" class="outline-4">
-<h4 id="orgbff4496"><span class="section-number-4">2.6.3.</span> 列表的过滤</h4>
+<div id="outline-container-org3a4069b" class="outline-4">
+<h4 id="org3a4069b"><span class="section-number-4">2.6.3.</span> 列表的过滤</h4>
 <div class="outline-text-4" id="text-2-6-3">
 <ul class="org-ul">
 <li>过滤是前端常见需求,一般来说,就是输入一个关键字,能匹配这个关键字的结果展示出来,否则则不展示
@@ -1770,8 +1775,8 @@ Vue官方文档建议我们,在使用v-for指令进行列表渲染的时候,最�
 </ul>
 </div>
 </div>
-<div id="outline-container-org1904a10" class="outline-4">
-<h4 id="org1904a10"><span class="section-number-4">2.6.4.</span> 列表的排序</h4>
+<div id="outline-container-org6231081" class="outline-4">
+<h4 id="org6231081"><span class="section-number-4">2.6.4.</span> 列表的排序</h4>
 <div class="outline-text-4" id="text-2-6-4">
 <ul class="org-ul">
 <li>对于结果的排序也是前端常见需求
@@ -1855,12 +1860,12 @@ Vue官方文档建议我们,在使用v-for指令进行列表渲染的时候,最�
 </div>
 </div>
 </div>
-<div id="outline-container-orgaa71ea5" class="outline-3">
-<h3 id="orgaa71ea5"><span class="section-number-3">2.7.</span> 事件处理</h3>
+<div id="outline-container-org371a2ec" class="outline-3">
+<h3 id="org371a2ec"><span class="section-number-3">2.7.</span> 事件处理</h3>
 <div class="outline-text-3" id="text-2-7">
 </div>
-<div id="outline-container-orgad214ff" class="outline-4">
-<h4 id="orgad214ff"><span class="section-number-4">2.7.1.</span> 绑定事件监听</h4>
+<div id="outline-container-org46ad7dd" class="outline-4">
+<h4 id="org46ad7dd"><span class="section-number-4">2.7.1.</span> 绑定事件监听</h4>
 <div class="outline-text-4" id="text-2-7-1">
 <ul class="org-ul">
 <li>我们可以在HTML标签上面使用v-on指令来绑定原生DOM事件监听
@@ -2084,8 +2089,8 @@ event不需要被传入,我们只传入data
 </ul>
 </div>
 </div>
-<div id="outline-container-org0b95c3c" class="outline-4">
-<h4 id="org0b95c3c"><span class="section-number-4">2.7.2.</span> 事件修饰符</h4>
+<div id="outline-container-org72f49e1" class="outline-4">
+<h4 id="org72f49e1"><span class="section-number-4">2.7.2.</span> 事件修饰符</h4>
 <div class="outline-text-4" id="text-2-7-2">
 <ul class="org-ul">
 <li>原生DOM事件中,我们可以在实践监听回调函数中通过event.preventDefault来组织默认行为,还可以通过event.stopPropagation
@@ -2099,7 +2104,7 @@ event不需要被传入,我们只传入data
 </ul>
 </div>
 <ol class="org-ol">
-<li><a id="orgd59ee10"></a>stop阻止事件冒泡<br />
+<li><a id="org89e66b7"></a>stop阻止事件冒泡<br />
 <div class="outline-text-5" id="text-2-7-2-1">
 <ul class="org-ul">
 <li>事件冒泡是指事件从最深的目标元素开始，逐级向上传播到父节点的过程。
@@ -2201,7 +2206,7 @@ event不需要被传入,我们只传入data
 </ul>
 </div>
 </li>
-<li><a id="org772579e"></a>prevent阻止事件默认行为<br />
+<li><a id="org1a33e4e"></a>prevent阻止事件默认行为<br />
 <div class="outline-text-5" id="text-2-7-2-2">
 <ul class="org-ul">
 <li>这个就很容易理解了,我们可以阻止浏览器默认的行为(改成自己的行为)
@@ -2248,7 +2253,7 @@ event不需要被传入,我们只传入data
 </ul>
 </div>
 </li>
-<li><a id="orgca50b0a"></a>once事件只处理一次<br />
+<li><a id="org36f9891"></a>once事件只处理一次<br />
 <div class="outline-text-5" id="text-2-7-2-3">
 <ul class="org-ul">
 <li>这个也很容易理解,就是所有的事件只有第一次发生的时候处理
@@ -2296,8 +2301,8 @@ event不需要被传入,我们只传入data
 </li>
 </ol>
 </div>
-<div id="outline-container-orgc7a1601" class="outline-4">
-<h4 id="orgc7a1601"><span class="section-number-4">2.7.3.</span> 按键修饰符</h4>
+<div id="outline-container-org7ce63b5" class="outline-4">
+<h4 id="org7ce63b5"><span class="section-number-4">2.7.3.</span> 按键修饰符</h4>
 <div class="outline-text-4" id="text-2-7-3">
 <ul class="org-ul">
 <li>按键修饰符是Vue用来处理键盘事件的
@@ -2411,8 +2416,8 @@ event不需要被传入,我们只传入data
 </div>
 </div>
 </div>
-<div id="outline-container-orga390b8f" class="outline-3">
-<h3 id="orga390b8f"><span class="section-number-3">2.8.</span> 收集表单数据</h3>
+<div id="outline-container-org78a0c24" class="outline-3">
+<h3 id="org78a0c24"><span class="section-number-3">2.8.</span> 收集表单数据</h3>
 <div class="outline-text-3" id="text-2-8">
 <ul class="org-ul">
 <li>前端开发中,表单是常见的页面效果.我们通常需要根据用户的输入,将数据实时同步给Javascript变量
@@ -2507,8 +2512,8 @@ event不需要被传入,我们只传入data
 </ul></li>
 </ul>
 </div>
-<div id="outline-container-org2de255d" class="outline-4">
-<h4 id="org2de255d"><span class="section-number-4">2.8.1.</span> 使用v-model指令</h4>
+<div id="outline-container-orge8b8fba" class="outline-4">
+<h4 id="orge8b8fba"><span class="section-number-4">2.8.1.</span> 使用v-model指令</h4>
 <div class="outline-text-4" id="text-2-8-1">
 <ul class="org-ul">
 <li>v-model指令可以应用在各种不同类型的表单元素上,它会根据所应用的元素不同,自动扩展到不同的DOM属性和事件监听上
@@ -2644,8 +2649,8 @@ event不需要被传入,我们只传入data
 </ul>
 </div>
 </div>
-<div id="outline-container-orgc91b38a" class="outline-4">
-<h4 id="orgc91b38a"><span class="section-number-4">2.8.2.</span> 相关指令修饰符</h4>
+<div id="outline-container-orgb1449ff" class="outline-4">
+<h4 id="orgb1449ff"><span class="section-number-4">2.8.2.</span> 相关指令修饰符</h4>
 <div class="outline-text-4" id="text-2-8-2">
 <ul class="org-ul">
 <li>.lazy的修饰符更改同步数据的方法:
@@ -2667,8 +2672,8 @@ event不需要被传入,我们只传入data
 </div>
 </div>
 </div>
-<div id="outline-container-org7a57ede" class="outline-3">
-<h3 id="org7a57ede"><span class="section-number-3">2.9.</span> Vue实例的生命周期</h3>
+<div id="outline-container-org2117765" class="outline-3">
+<h3 id="org2117765"><span class="section-number-3">2.9.</span> Vue实例的生命周期</h3>
 <div class="outline-text-3" id="text-2-9">
 <ul class="org-ul">
 <li>Vue的实例有不同的生命周期,具体可以分为如下几个部分:
@@ -2749,8 +2754,8 @@ event不需要被传入,我们只传入data
 </ul>
 </div>
 </div>
-<div id="outline-container-org45f97ca" class="outline-3">
-<h3 id="org45f97ca"><span class="section-number-3">2.10.</span> 过渡与动画</h3>
+<div id="outline-container-orgf0e60ce" class="outline-3">
+<h3 id="orgf0e60ce"><span class="section-number-3">2.10.</span> 过渡与动画</h3>
 <div class="outline-text-3" id="text-2-10">
 <ul class="org-ul">
 <li>Vue 提供了一种简洁优雅的方式来处理 过渡与动画，用于在元素的插入、更新和移除时应用过渡效果。通过 Vue
@@ -2758,12 +2763,12 @@ event不需要被传入,我们只传入data
 </ul>
 </div>
 </div>
-<div id="outline-container-org8aa6594" class="outline-3">
-<h3 id="org8aa6594"><span class="section-number-3">2.11.</span> 内置指令</h3>
+<div id="outline-container-orga8907bd" class="outline-3">
+<h3 id="orga8907bd"><span class="section-number-3">2.11.</span> 内置指令</h3>
 <div class="outline-text-3" id="text-2-11">
 </div>
-<div id="outline-container-orgb05002b" class="outline-4">
-<h4 id="orgb05002b"><span class="section-number-4">2.11.1.</span> v-text和v-html指令</h4>
+<div id="outline-container-org0a9d62f" class="outline-4">
+<h4 id="org0a9d62f"><span class="section-number-4">2.11.1.</span> v-text和v-html指令</h4>
 <div class="outline-text-4" id="text-2-11-1">
 <ul class="org-ul">
 <li>v-text和v-html是两个非常相近的指令,区别在于v-text会自动转移HTML标签,所以它是安全的,而v-html不会转义
@@ -2843,8 +2848,8 @@ HTML标签是,所以其不安全可能会导致XSS(当然其存在的意义是�
 </ul>
 </div>
 </div>
-<div id="outline-container-org0bc2eed" class="outline-4">
-<h4 id="org0bc2eed"><span class="section-number-4">2.11.2.</span> v-pre指令</h4>
+<div id="outline-container-org1bbb87f" class="outline-4">
+<h4 id="org1bbb87f"><span class="section-number-4">2.11.2.</span> v-pre指令</h4>
 <div class="outline-text-4" id="text-2-11-2">
 <ul class="org-ul">
 <li>v-pre指令会跳过当前所在元素(及其所有子元素)的编译
@@ -2888,8 +2893,8 @@ HTML标签是,所以其不安全可能会导致XSS(当然其存在的意义是�
 </ul>
 </div>
 </div>
-<div id="outline-container-orgbd6eb96" class="outline-4">
-<h4 id="orgbd6eb96"><span class="section-number-4">2.11.3.</span> v-once指令</h4>
+<div id="outline-container-org3cd84cd" class="outline-4">
+<h4 id="org3cd84cd"><span class="section-number-4">2.11.3.</span> v-once指令</h4>
 <div class="outline-text-4" id="text-2-11-3">
 <ul class="org-ul">
 <li>v-once顾名思义就是只渲染一次.简单的说就是在动态显示时,使用该指令后不会再更新对应的data数据
@@ -2935,8 +2940,8 @@ HTML标签是,所以其不安全可能会导致XSS(当然其存在的意义是�
 </ul>
 </div>
 </div>
-<div id="outline-container-org34c65aa" class="outline-4">
-<h4 id="org34c65aa"><span class="section-number-4">2.11.4.</span> v-memo指令</h4>
+<div id="outline-container-org20a3c55" class="outline-4">
+<h4 id="org20a3c55"><span class="section-number-4">2.11.4.</span> v-memo指令</h4>
 <div class="outline-text-4" id="text-2-11-4">
 <ul class="org-ul">
 <li>v-memo 是 Vue 3.2 引入的一个新指令，用于优化性能。它通过缓存和跳过更新，避免不必要的渲染，以提高应用的性能。</li>
@@ -2953,8 +2958,8 @@ HTML标签是,所以其不安全可能会导致XSS(当然其存在的意义是�
 </ul>
 </div>
 </div>
-<div id="outline-container-org695f365" class="outline-4">
-<h4 id="org695f365"><span class="section-number-4">2.11.5.</span> v-cloak指令</h4>
+<div id="outline-container-org1b1775e" class="outline-4">
+<h4 id="org1b1775e"><span class="section-number-4">2.11.5.</span> v-cloak指令</h4>
 <div class="outline-text-4" id="text-2-11-5">
 <ul class="org-ul">
 <li>v-cloak 是 Vue 提供的一个非常简单但却非常实用的指令，用于在 Vue 应用初始化完成之前隐藏未渲染的模板内容
@@ -3005,16 +3010,16 @@ HTML标签是,所以其不安全可能会导致XSS(当然其存在的意义是�
 </div>
 </div>
 </div>
-<div id="outline-container-orgeb99668" class="outline-2">
-<h2 id="orgeb99668"><span class="section-number-2">3.</span> Chapter 03: Vue3新语法</h2>
+<div id="outline-container-org8e6a0d6" class="outline-2">
+<h2 id="org8e6a0d6"><span class="section-number-2">3.</span> Chapter 03: Vue3新语法</h2>
 <div class="outline-text-2" id="text-3">
 <ul class="org-ul">
 <li>第二章的例子全部是选项式API,Vue3新开发了组合式API,组合式API才是官方推荐的做法.我们可以认为选项式API
 只是为了向前兼容而保留,新的代码一定要使用组合式API</li>
 </ul>
 </div>
-<div id="outline-container-org9c0594c" class="outline-3">
-<h3 id="org9c0594c"><span class="section-number-3">3.1.</span> 组合式API的了解</h3>
+<div id="outline-container-orgaaa4890" class="outline-3">
+<h3 id="orgaaa4890"><span class="section-number-3">3.1.</span> 组合式API的了解</h3>
 <div class="outline-text-3" id="text-3-1">
 <ul class="org-ul">
 <li>回顾第二章的选项式API的例子,其暴露的一个主要问题是: 操作同一内容目标的代码会被分散在不同的选项中,
@@ -3084,8 +3089,8 @@ HTML标签是,所以其不安全可能会导致XSS(当然其存在的意义是�
 </ul>
 </div>
 </div>
-<div id="outline-container-org8548345" class="outline-3">
-<h3 id="org8548345"><span class="section-number-3">3.2.</span> 利用ref函数定义响应式数据</h3>
+<div id="outline-container-orgb368386" class="outline-3">
+<h3 id="orgb368386"><span class="section-number-3">3.2.</span> 利用ref函数定义响应式数据</h3>
 <div class="outline-text-3" id="text-3-2">
 <ul class="org-ul">
 <li>在Vue3中,数据需要被修饰后才能成为响应式数据,修饰的方法有两个:
@@ -3196,8 +3201,8 @@ ref还可以修饰对象类型使其变为响应式,新的响应式对象的部�
 </ul>
 </div>
 </div>
-<div id="outline-container-orgf94ad00" class="outline-3">
-<h3 id="orgf94ad00"><span class="section-number-3">3.3.</span> 利用reactive函数定义响应式数据</h3>
+<div id="outline-container-orga77c015" class="outline-3">
+<h3 id="orga77c015"><span class="section-number-3">3.3.</span> 利用reactive函数定义响应式数据</h3>
 <div class="outline-text-3" id="text-3-3">
 <ul class="org-ul">
 <li>reactive可以让对象类型变成响应式,对象类型内部的任意数据都可以"响应式更改"(Javascript中更改,能直接反应到模板上)
@@ -3261,8 +3266,8 @@ ref还可以修饰对象类型使其变为响应式,新的响应式对象的部�
 </ul>
 </div>
 </div>
-<div id="outline-container-org6bfab1b" class="outline-3">
-<h3 id="org6bfab1b"><span class="section-number-3">3.4.</span> toRefs与toRef函数</h3>
+<div id="outline-container-orgba8211b" class="outline-3">
+<h3 id="orgba8211b"><span class="section-number-3">3.4.</span> toRefs与toRef函数</h3>
 <div class="outline-text-3" id="text-3-4">
 <ul class="org-ul">
 <li>toRefs和toRef,顾名思义,就是把一个对象转换为ref对象,但是这个对象其实是有要求的,因为这个对象必须是reactive对象</li>
@@ -3388,16 +3393,16 @@ ref还可以修饰对象类型使其变为响应式,新的响应式对象的部�
 </ul>
 </div>
 </div>
-<div id="outline-container-orgff6ddef" class="outline-3">
-<h3 id="orgff6ddef"><span class="section-number-3">3.5.</span> readonly与shallowReadonly函数</h3>
+<div id="outline-container-org1f01288" class="outline-3">
+<h3 id="org1f01288"><span class="section-number-3">3.5.</span> readonly与shallowReadonly函数</h3>
 <div class="outline-text-3" id="text-3-5">
 <ul class="org-ul">
 <li>在 Vue 3 中，readonly 和 shallowReadonly 是用于创建不可修改的响应式数据的工具。它们主要用于防止意
 外修改数据，同时保持数据的响应式特性，使得视图仍然可以追踪数据的变化</li>
 </ul>
 </div>
-<div id="outline-container-orgd2c82a4" class="outline-4">
-<h4 id="orgd2c82a4"><span class="section-number-4">3.5.1.</span> readonly</h4>
+<div id="outline-container-org9aeb5f7" class="outline-4">
+<h4 id="org9aeb5f7"><span class="section-number-4">3.5.1.</span> readonly</h4>
 <div class="outline-text-4" id="text-3-5-1">
 <ul class="org-ul">
 <li>readonly可以将一个响应式对象或普通对象转化为一个完全不可修改的响应式对象:
@@ -3466,8 +3471,8 @@ ref还可以修饰对象类型使其变为响应式,新的响应式对象的部�
 </ul>
 </div>
 </div>
-<div id="outline-container-org78f31f2" class="outline-4">
-<h4 id="org78f31f2"><span class="section-number-4">3.5.2.</span> shallowReadonly</h4>
+<div id="outline-container-orgbd56a86" class="outline-4">
+<h4 id="orgbd56a86"><span class="section-number-4">3.5.2.</span> shallowReadonly</h4>
 <div class="outline-text-4" id="text-3-5-2">
 <ul class="org-ul">
 <li>shallowReadonly 可以将一个对象转化为浅层只读的对象。只有对象的根属性是只读的，而嵌套属性仍然可以被修改:
@@ -3538,8 +3543,8 @@ ref还可以修饰对象类型使其变为响应式,新的响应式对象的部�
 </div>
 </div>
 </div>
-<div id="outline-container-orgfc3c4cb" class="outline-3">
-<h3 id="orgfc3c4cb"><span class="section-number-3">3.6.</span> shallowRef与shallowReactive函数</h3>
+<div id="outline-container-org680883a" class="outline-3">
+<h3 id="org680883a"><span class="section-number-3">3.6.</span> shallowRef与shallowReactive函数</h3>
 <div class="outline-text-3" id="text-3-6">
 <ul class="org-ul">
 <li>通常情况下，Vue 的响应式系统会递归地追踪对象或数组的所有嵌套属性，确保深层次的响应式。然而，在某些
@@ -3547,8 +3552,8 @@ ref还可以修饰对象类型使其变为响应式,新的响应式对象的部�
 情况下，就可以使用 shallowRef 和 shallowReactive。</li>
 </ul>
 </div>
-<div id="outline-container-org5dadcfc" class="outline-4">
-<h4 id="org5dadcfc"><span class="section-number-4">3.6.1.</span> shallowRef</h4>
+<div id="outline-container-org8402800" class="outline-4">
+<h4 id="org8402800"><span class="section-number-4">3.6.1.</span> shallowRef</h4>
 <div class="outline-text-4" id="text-3-6-1">
 <ul class="org-ul">
 <li>shallowRef创建一个只追踪ref的顶层值的响应对象.如果这个值是一个对象或者数组,Vue不会地递归的将嵌套属性转换为响应式
@@ -3624,8 +3629,8 @@ ref还可以修饰对象类型使其变为响应式,新的响应式对象的部�
 </ul>
 </div>
 </div>
-<div id="outline-container-orgebf3d65" class="outline-4">
-<h4 id="orgebf3d65"><span class="section-number-4">3.6.2.</span> shallowReactive</h4>
+<div id="outline-container-orgbc420d6" class="outline-4">
+<h4 id="orgbc420d6"><span class="section-number-4">3.6.2.</span> shallowReactive</h4>
 <div class="outline-text-4" id="text-3-6-2">
 <ul class="org-ul">
 <li>shallowReactive当然就是shallowRef的reactive版本啦,和shallowRef稍微不同的是,更改shallowReactive的第
@@ -3714,12 +3719,12 @@ ref还可以修饰对象类型使其变为响应式,新的响应式对象的部�
 </div>
 </div>
 </div>
-<div id="outline-container-org4bb7fc1" class="outline-3">
-<h3 id="org4bb7fc1"><span class="section-number-3">3.7.</span> toRaw与markRaw函数</h3>
+<div id="outline-container-org32f3a09" class="outline-3">
+<h3 id="org32f3a09"><span class="section-number-3">3.7.</span> toRaw与markRaw函数</h3>
 <div class="outline-text-3" id="text-3-7">
 </div>
-<div id="outline-container-org7f04dc8" class="outline-4">
-<h4 id="org7f04dc8"><span class="section-number-4">3.7.1.</span> toRaw</h4>
+<div id="outline-container-org6d32029" class="outline-4">
+<h4 id="org6d32029"><span class="section-number-4">3.7.1.</span> toRaw</h4>
 <div class="outline-text-4" id="text-3-7-1">
 <ul class="org-ul">
 <li>Vue通过reactive创建响应式对象的时候(ref内部.value其实也是reactive),会通过Proxy对原始对象进行代理,
@@ -3811,8 +3816,8 @@ toRaw通常会使用需要底层非响应式数据的情况下.比如下面的�
 </ul>
 </div>
 </div>
-<div id="outline-container-org0738744" class="outline-4">
-<h4 id="org0738744"><span class="section-number-4">3.7.2.</span> markRaw</h4>
+<div id="outline-container-org3500c72" class="outline-4">
+<h4 id="org3500c72"><span class="section-number-4">3.7.2.</span> markRaw</h4>
 <div class="outline-text-4" id="text-3-7-2">
 <ul class="org-ul">
 <li>当Vue创建响应式对象时,它会递归地将对象的每个属性转换为响应式,使用markRaw标记了某个对象后,Vue会跳过该
@@ -3879,8 +3884,8 @@ toRaw通常会使用需要底层非响应式数据的情况下.比如下面的�
 </div>
 </div>
 </div>
-<div id="outline-container-org97a7de0" class="outline-3">
-<h3 id="org97a7de0"><span class="section-number-3">3.8.</span> computed函数</h3>
+<div id="outline-container-org5171e8f" class="outline-3">
+<h3 id="org5171e8f"><span class="section-number-3">3.8.</span> computed函数</h3>
 <div class="outline-text-3" id="text-3-8">
 <ul class="org-ul">
 <li>我们这里讲解的是"Vue3的组合式API中的computed函数",其和第二章将的"选项式API中的computed属性"在功能上
@@ -3888,8 +3893,8 @@ toRaw通常会使用需要底层非响应式数据的情况下.比如下面的�
 <li>computed()的参数比较复杂分成了你的computed是只读的,还是可写的.返回值也和之前不一样,是一个ref</li>
 </ul>
 </div>
-<div id="outline-container-orgc2c49e3" class="outline-4">
-<h4 id="orgc2c49e3"><span class="section-number-4">3.8.1.</span> 只读计算属性</h4>
+<div id="outline-container-org24cad09" class="outline-4">
+<h4 id="org24cad09"><span class="section-number-4">3.8.1.</span> 只读计算属性</h4>
 <div class="outline-text-4" id="text-3-8-1">
 <ul class="org-ul">
 <li>只读计算属性的输入是一个函数,这个函数的返回值就是计算属性的结果
@@ -3956,8 +3961,8 @@ toRaw通常会使用需要底层非响应式数据的情况下.比如下面的�
 </ul>
 </div>
 </div>
-<div id="outline-container-org5854e0c" class="outline-4">
-<h4 id="org5854e0c"><span class="section-number-4">3.8.2.</span> 可读写属性</h4>
+<div id="outline-container-org56d544f" class="outline-4">
+<h4 id="org56d544f"><span class="section-number-4">3.8.2.</span> 可读写属性</h4>
 <div class="outline-text-4" id="text-3-8-2">
 <ul class="org-ul">
 <li>可读写计算属性的输入是一个对象,包含get和set两个函数
@@ -4043,8 +4048,8 @@ toRaw通常会使用需要底层非响应式数据的情况下.比如下面的�
 </ul>
 </div>
 </div>
-<div id="outline-container-org3f001ef" class="outline-4">
-<h4 id="org3f001ef"><span class="section-number-4">3.8.3.</span> 返回值</h4>
+<div id="outline-container-orgc248487" class="outline-4">
+<h4 id="orgc248487"><span class="section-number-4">3.8.3.</span> 返回值</h4>
 <div class="outline-text-4" id="text-3-8-3">
 <ul class="org-ul">
 <li>computed()函数的返回值是一个Vue的ref对象,它有如下特点:
@@ -4057,16 +4062,16 @@ toRaw通常会使用需要底层非响应式数据的情况下.比如下面的�
 </div>
 </div>
 </div>
-<div id="outline-container-org58b7485" class="outline-3">
-<h3 id="org58b7485"><span class="section-number-3">3.9.</span> watch函数</h3>
+<div id="outline-container-org5601753" class="outline-3">
+<h3 id="org5601753"><span class="section-number-3">3.9.</span> watch函数</h3>
 <div class="outline-text-3" id="text-3-9">
 <ul class="org-ul">
 <li>我们这里讲解的是"Vue3的组合式API中的watch函数",其和第二章将的"选项式API中的watch"在功能上
 是一样的,但是在语法的使用上是不一样的.</li>
 </ul>
 </div>
-<div id="outline-container-org2911771" class="outline-4">
-<h4 id="org2911771"><span class="section-number-4">3.9.1.</span> watch语法</h4>
+<div id="outline-container-org548c8e1" class="outline-4">
+<h4 id="org548c8e1"><span class="section-number-4">3.9.1.</span> watch语法</h4>
 <div class="outline-text-4" id="text-3-9-1">
 <ul class="org-ul">
 <li>watch的语法非常复杂,无法用一句话说清楚
@@ -4098,8 +4103,8 @@ watch语法原型如下
 </ul>
 </div>
 </div>
-<div id="outline-container-orgf75641e" class="outline-4">
-<h4 id="orgf75641e"><span class="section-number-4">3.9.2.</span> watch使用举例</h4>
+<div id="outline-container-orgccc061d" class="outline-4">
+<h4 id="orgccc061d"><span class="section-number-4">3.9.2.</span> watch使用举例</h4>
 <div class="outline-text-4" id="text-3-9-2">
 <ul class="org-ul">
 <li>最常见的就是监听单个响应式数据
@@ -4426,8 +4431,8 @@ reactive对象就是默认就是deep: true的,示例如下
 </div>
 </div>
 </div>
-<div id="outline-container-orga367633" class="outline-3">
-<h3 id="orga367633"><span class="section-number-3">3.10.</span> 生命周期钩子函数</h3>
+<div id="outline-container-orgb0c9690" class="outline-3">
+<h3 id="orgb0c9690"><span class="section-number-3">3.10.</span> 生命周期钩子函数</h3>
 <div class="outline-text-3" id="text-3-10">
 <ul class="org-ul">
 <li>组合式API的声明周期和选项式API的生命周期不太一样,主要区别在于:
@@ -4581,12 +4586,12 @@ reactive对象就是默认就是deep: true的,示例如下
 </div>
 </div>
 </div>
-<div id="outline-container-org7ad008d" class="outline-2">
-<h2 id="org7ad008d"><span class="section-number-2">4.</span> Chapter 04: 组件详情</h2>
+<div id="outline-container-org2599afa" class="outline-2">
+<h2 id="org2599afa"><span class="section-number-2">4.</span> Chapter 04: 组件详情</h2>
 <div class="outline-text-2" id="text-4">
 </div>
-<div id="outline-container-orge6b6ee1" class="outline-3">
-<h3 id="orge6b6ee1"><span class="section-number-3">4.1.</span> 脚手架项目的分析</h3>
+<div id="outline-container-org7448da9" class="outline-3">
+<h3 id="org7448da9"><span class="section-number-3">4.1.</span> 脚手架项目的分析</h3>
 <div class="outline-text-3" id="text-4-1">
 <ul class="org-ul">
 <li>早期Vue的创建方法是使用@vue/cli命令行创建,当前这种方法已经被放弃了.</li>
@@ -4664,8 +4669,8 @@ vue3-demo/
 </ul>
 </div>
 </div>
-<div id="outline-container-org2e5d765" class="outline-3">
-<h3 id="org2e5d765"><span class="section-number-3">4.2.</span> ESLint与Prettier</h3>
+<div id="outline-container-orga0c7fb2" class="outline-3">
+<h3 id="orga0c7fb2"><span class="section-number-3">4.2.</span> ESLint与Prettier</h3>
 <div class="outline-text-3" id="text-4-2">
 <ul class="org-ul">
 <li>ESLint和Prettier是经常容易混淆的两个工具,两者虽然有一些功能重合(格式化代码的功能),但是通常情况下是互补的:
@@ -4725,12 +4730,12 @@ vue3-demo/
 </ul>
 </div>
 </div>
-<div id="outline-container-org1c5b9f3" class="outline-3">
-<h3 id="org1c5b9f3"><span class="section-number-3">4.3.</span> 组件样式控制</h3>
+<div id="outline-container-org2bab94d" class="outline-3">
+<h3 id="org2bab94d"><span class="section-number-3">4.3.</span> 组件样式控制</h3>
 <div class="outline-text-3" id="text-4-3">
 </div>
-<div id="outline-container-org78665ab" class="outline-4">
-<h4 id="org78665ab"><span class="section-number-4">4.3.1.</span> 组件的定义与使用</h4>
+<div id="outline-container-orgd6e878d" class="outline-4">
+<h4 id="orgd6e878d"><span class="section-number-4">4.3.1.</span> 组件的定义与使用</h4>
 <div class="outline-text-4" id="text-4-3-1">
 <ul class="org-ul">
 <li>当前脚手架中有太多预定义的样式和组件,我们将下列数据进行删除:
@@ -4869,8 +4874,8 @@ index d05208d..8659e0e 100644
 </ul>
 </div>
 </div>
-<div id="outline-container-org06b1e65" class="outline-4">
-<h4 id="org06b1e65"><span class="section-number-4">4.3.2.</span> 全局样式控制</h4>
+<div id="outline-container-orgb085d82" class="outline-4">
+<h4 id="orgb085d82"><span class="section-number-4">4.3.2.</span> 全局样式控制</h4>
 <div class="outline-text-4" id="text-4-3-2">
 <ul class="org-ul">
 <li>我们的代码中在style里面加上历史 scoped,所以 = background: #ccc = 只会对App组件起作用,HelloWorld背景并没有改变;</li>
@@ -4896,8 +4901,8 @@ index 8659e0e..255e4fb 100644
 </ul>
 </div>
 </div>
-<div id="outline-container-org3122445" class="outline-4">
-<h4 id="org3122445"><span class="section-number-4">4.3.3.</span> 局部作用域样式控制</h4>
+<div id="outline-container-org2a9163d" class="outline-4">
+<h4 id="org2a9163d"><span class="section-number-4">4.3.3.</span> 局部作用域样式控制</h4>
 <div class="outline-text-4" id="text-4-3-3">
 <ul class="org-ul">
 <li>从上面的例子我们也可以看到,在Vue里面,只要在 <code>&lt;style&gt;</code> 里面加了 scoped,那么这个style只能作用于当前
@@ -4909,8 +4914,8 @@ index 8659e0e..255e4fb 100644
 </ul>
 </div>
 </div>
-<div id="outline-container-orgd69eff4" class="outline-4">
-<h4 id="orgd69eff4"><span class="section-number-4">4.3.4.</span> 深度样式控制</h4>
+<div id="outline-container-orgd0ee5ae" class="outline-4">
+<h4 id="orgd0ee5ae"><span class="section-number-4">4.3.4.</span> 深度样式控制</h4>
 <div class="outline-text-4" id="text-4-3-4">
 <ul class="org-ul">
 <li>我们前面介绍了:
@@ -4943,12 +4948,12 @@ index 8659e0e..c846836 100644
 </div>
 </div>
 </div>
-<div id="outline-container-orgfa0099b" class="outline-3">
-<h3 id="orgfa0099b"><span class="section-number-3">4.4.</span> 组件通信之props</h3>
+<div id="outline-container-org6360a44" class="outline-3">
+<h3 id="org6360a44"><span class="section-number-3">4.4.</span> 组件通信之props</h3>
 <div class="outline-text-3" id="text-4-4">
 </div>
-<div id="outline-container-org024d1cb" class="outline-4">
-<h4 id="org024d1cb"><span class="section-number-4">4.4.1.</span> 组件关系</h4>
+<div id="outline-container-orgfd34b1a" class="outline-4">
+<h4 id="orgfd34b1a"><span class="section-number-4">4.4.1.</span> 组件关系</h4>
 <div class="outline-text-4" id="text-4-4-1">
 <ul class="org-ul">
 <li>前面讲了组件的嵌套情况: 在App父组件中嵌套了HelloWorld子组件</li>
@@ -4957,7 +4962,7 @@ index 8659e0e..c846836 100644
 <li><p>
 父与子关系模式
 </p>
-<pre class="example" id="org0ba04c9">
+<pre class="example" id="org7c5093c">
 +-------------------+
 |       App         |
 |        |          |
@@ -4973,7 +4978,7 @@ index 8659e0e..c846836 100644
 <li><p>
 子与父关系模式
 </p>
-<pre class="example" id="org9ae8fef">
+<pre class="example" id="org4caf68e">
 +-------------------+
 |       App         |
 |        ^          |
@@ -4991,8 +4996,8 @@ index 8659e0e..c846836 100644
 </ul>
 </div>
 </div>
-<div id="outline-container-org80c853a" class="outline-4">
-<h4 id="org80c853a"><span class="section-number-4">4.4.2.</span> 父与子通信之props</h4>
+<div id="outline-container-org23a40ba" class="outline-4">
+<h4 id="org23a40ba"><span class="section-number-4">4.4.2.</span> 父与子通信之props</h4>
 <div class="outline-text-4" id="text-4-4-2">
 <ul class="org-ul">
 <li>从父向子传递,主要使用props,在vue3的组合式API里面,就是defineProps.
@@ -5074,8 +5079,8 @@ div :deep(h3) {
 </div>
 </div>
 </div>
-<div id="outline-container-org0d7019f" class="outline-3">
-<h3 id="org0d7019f"><span class="section-number-3">4.5.</span> 组件通信之ref与defineExpose</h3>
+<div id="outline-container-org81b251f" class="outline-3">
+<h3 id="org81b251f"><span class="section-number-3">4.5.</span> 组件通信之ref与defineExpose</h3>
 <div class="outline-text-3" id="text-4-5">
 <ul class="org-ul">
 <li><p>
@@ -5146,7 +5151,7 @@ div :deep(h3) {
 <li><p>
 上面例子中,父组件还成功调用了子组件的函数,向子组件传递了信息,这说明:
 </p>
-<pre class="example" id="org46037b9">
+<pre class="example" id="org5f9fdf0">
 ref和defineExpose的交互方式是双向完全打通的
 </pre></li>
 </ul>
@@ -5156,8 +5161,8 @@ ref和defineExpose的交互方式是双向完全打通的
 </ul>
 </div>
 </div>
-<div id="outline-container-org5969485" class="outline-3">
-<h3 id="org5969485"><span class="section-number-3">4.6.</span> 组件通信之emits与defineEmits</h3>
+<div id="outline-container-org453ee6c" class="outline-3">
+<h3 id="org453ee6c"><span class="section-number-3">4.6.</span> 组件通信之emits与defineEmits</h3>
 <div class="outline-text-3" id="text-4-6">
 <ul class="org-ul">
 <li>ref和defineExpose双向完全打通的通信方式会引入更加紧密的耦合,不是特别推荐.</li>
@@ -5242,8 +5247,8 @@ div :deep(h3) {
 </ul>
 </div>
 </div>
-<div id="outline-container-org9a3e2b7" class="outline-3">
-<h3 id="org9a3e2b7"><span class="section-number-3">4.7.</span> 组件通信之attrs</h3>
+<div id="outline-container-org116e487" class="outline-3">
+<h3 id="org116e487"><span class="section-number-3">4.7.</span> 组件通信之attrs</h3>
 <div class="outline-text-3" id="text-4-7">
 <ul class="org-ul">
 <li>前面讲了通过props可以从父向子传递信息,但是有些信息不是一个props,比如input的占位符,这种属于属性,在
@@ -5299,8 +5304,8 @@ div :deep(h3) {
 </ul>
 </div>
 </div>
-<div id="outline-container-org4e280ef" class="outline-3">
-<h3 id="org4e280ef"><span class="section-number-3">4.8.</span> 组件通信之provide与inject</h3>
+<div id="outline-container-org8a0a701" class="outline-3">
+<h3 id="org8a0a701"><span class="section-number-3">4.8.</span> 组件通信之provide与inject</h3>
 <div class="outline-text-3" id="text-4-8">
 <ul class="org-ul">
 <li>在 Vue 3 中，provide 和 inject 是一组用于跨层级组件通信的 API。它们允许祖先组件将数据提供给后代组件，
@@ -5385,16 +5390,16 @@ const increment = () =&gt; {
 </ul>
 </div>
 </div>
-<div id="outline-container-orgaa6c765" class="outline-3">
-<h3 id="orgaa6c765"><span class="section-number-3">4.9.</span> 组件通信之slot</h3>
+<div id="outline-container-orgce92eaa" class="outline-3">
+<h3 id="orgce92eaa"><span class="section-number-3">4.9.</span> 组件通信之slot</h3>
 <div class="outline-text-3" id="text-4-9">
 <ul class="org-ul">
 <li>在 Vue 3 中，slot 是一种用于在组件内部插入动态内容的机制。通过 slot，父组件可以将内容传递到子组件的
 特定位置，同时还能支持内容传递和数据通信.</li>
 </ul>
 </div>
-<div id="outline-container-org5624ce8" class="outline-4">
-<h4 id="org5624ce8"><span class="section-number-4">4.9.1.</span> 默认插槽</h4>
+<div id="outline-container-org8b9b81f" class="outline-4">
+<h4 id="org8b9b81f"><span class="section-number-4">4.9.1.</span> 默认插槽</h4>
 <div class="outline-text-4" id="text-4-9-1">
 <ul class="org-ul">
 <li>有时候,父组件想传递一些HTML标签和属性,比如title,content等.如果用props传递,那么会非常的麻烦.这时候,
@@ -5443,8 +5448,8 @@ div :deep(h3) {
 </ul>
 </div>
 </div>
-<div id="outline-container-orgf0f6f52" class="outline-4">
-<h4 id="orgf0f6f52"><span class="section-number-4">4.9.2.</span> 具名插槽</h4>
+<div id="outline-container-orga5ef14c" class="outline-4">
+<h4 id="orga5ef14c"><span class="section-number-4">4.9.2.</span> 具名插槽</h4>
 <div class="outline-text-4" id="text-4-9-2">
 <ul class="org-ul">
 <li>默认插槽只能有一个,但是具名插槽因为名字不同,所以可以有多个
@@ -5497,8 +5502,8 @@ div :deep(h3) {
 </ul>
 </div>
 </div>
-<div id="outline-container-org0da2b06" class="outline-4">
-<h4 id="org0da2b06"><span class="section-number-4">4.9.3.</span> 作用域插槽</h4>
+<div id="outline-container-org3eba70b" class="outline-4">
+<h4 id="org3eba70b"><span class="section-number-4">4.9.3.</span> 作用域插槽</h4>
 <div class="outline-text-4" id="text-4-9-3">
 <ul class="org-ul">
 <li>当父组件中写的插槽数据需要使用子组件中的数据时,就会应用到作用域插槽.子组件通过作用域插槽传递了数据给父组件.</li>
@@ -5554,8 +5559,8 @@ div :deep(h3) {
 </div>
 </div>
 </div>
-<div id="outline-container-orged6c0d4" class="outline-3">
-<h3 id="orged6c0d4"><span class="section-number-3">4.10.</span> 内置组件之Component</h3>
+<div id="outline-container-org6c60535" class="outline-3">
+<h3 id="org6c60535"><span class="section-number-3">4.10.</span> 内置组件之Component</h3>
 <div class="outline-text-3" id="text-4-10">
 <ul class="org-ul">
 <li>&lt;Component&gt; 是 Vue 提供的内置组件，通过其 is 属性，可以动态加载和渲染不同的组件。它的作用是根据需
@@ -5631,8 +5636,8 @@ div :deep(h3) {
 </ul>
 </div>
 </div>
-<div id="outline-container-org43e9e1f" class="outline-3">
-<h3 id="org43e9e1f"><span class="section-number-3">4.11.</span> 内置组件之KeepAlive</h3>
+<div id="outline-container-org54d68d9" class="outline-3">
+<h3 id="org54d68d9"><span class="section-number-3">4.11.</span> 内置组件之KeepAlive</h3>
 <div class="outline-text-3" id="text-4-11">
 <ul class="org-ul">
 <li>&lt;keep-alive&gt; 是 Vue 3 提供的一个内置组件，用于缓存动态组件的状态。它可以在组件切换时保持已被缓存的组件的状态，避免重新渲染组件，从而提升性能</li>
@@ -5719,8 +5724,8 @@ div :deep(h3) {
 </ul>
 </div>
 </div>
-<div id="outline-container-orged58460" class="outline-3">
-<h3 id="orged58460"><span class="section-number-3">4.12.</span> 内置组件之Teleport</h3>
+<div id="outline-container-org98e451c" class="outline-3">
+<h3 id="org98e451c"><span class="section-number-3">4.12.</span> 内置组件之Teleport</h3>
 <div class="outline-text-3" id="text-4-12">
 <ul class="org-ul">
 <li>在 Vue 3 中，&lt;teleport&gt; 是一个内置组件，用于将子组件或元素渲染到 DOM 的指定位置，而不是嵌套在父组件
@@ -5780,8 +5785,8 @@ div :deep(h3) {
 </ul>
 </div>
 </div>
-<div id="outline-container-orgdc1d082" class="outline-3">
-<h3 id="orgdc1d082"><span class="section-number-3">4.13.</span> 代码封装之自定义directive(指令)</h3>
+<div id="outline-container-org0ed2cb1" class="outline-3">
+<h3 id="org0ed2cb1"><span class="section-number-3">4.13.</span> 代码封装之自定义directive(指令)</h3>
 <div class="outline-text-3" id="text-4-13">
 <ul class="org-ul">
 <li>Vue代码的封装方式有很多种,主要有:
@@ -5853,8 +5858,8 @@ div :deep(h3) {
 </ul>
 </div>
 </div>
-<div id="outline-container-org6e0c9ed" class="outline-3">
-<h3 id="org6e0c9ed"><span class="section-number-3">4.14.</span> 代码封装之自定义hook (钩子)</h3>
+<div id="outline-container-org68b97b9" class="outline-3">
+<h3 id="org68b97b9"><span class="section-number-3">4.14.</span> 代码封装之自定义hook (钩子)</h3>
 <div class="outline-text-3" id="text-4-14">
 <ul class="org-ul">
 <li>Hook 是以 use 为前缀命名的函数（如 useFetch、useCounter），用于封装响应式状态、副作用或业务逻辑。
@@ -5913,8 +5918,8 @@ div :deep(h3) {
 </ul>
 </div>
 </div>
-<div id="outline-container-org2637f70" class="outline-3">
-<h3 id="org2637f70"><span class="section-number-3">4.15.</span> 代码封装之plugin (插件)</h3>
+<div id="outline-container-orgba03305" class="outline-3">
+<h3 id="orgba03305"><span class="section-number-3">4.15.</span> 代码封装之plugin (插件)</h3>
 <div class="outline-text-3" id="text-4-15">
 <ul class="org-ul">
 <li>Vue 插件是一种可以增强 Vue 应用功能的机制。它通常用于向应用中注册全局的功能，比如：
@@ -5928,8 +5933,8 @@ div :deep(h3) {
 </div>
 </div>
 </div>
-<div id="outline-container-org7c1ef4b" class="outline-2">
-<h2 id="org7c1ef4b"><span class="section-number-2">5.</span> Chapter 05: Vue路由</h2>
+<div id="outline-container-org3602985" class="outline-2">
+<h2 id="org3602985"><span class="section-number-2">5.</span> Chapter 05: Vue路由</h2>
 <div class="outline-text-2" id="text-5">
 <ul class="org-ul">
 <li>程序开发分为后端路由和前端路由
@@ -5941,8 +5946,8 @@ URL在前台切换页面显示不同的内容</li>
 </ul></li>
 </ul>
 </div>
-<div id="outline-container-orgf9c2d87" class="outline-3">
-<h3 id="orgf9c2d87"><span class="section-number-3">5.1.</span> 路由的概念与核心功能</h3>
+<div id="outline-container-orgbd64e20" class="outline-3">
+<h3 id="orgbd64e20"><span class="section-number-3">5.1.</span> 路由的概念与核心功能</h3>
 <div class="outline-text-3" id="text-5-1">
 <ul class="org-ul">
 <li>路由是前端应用中的核心内容,随着页面增多功能不断增强,单纯的利用组件切换页面已经无法满足应用程序的开
@@ -5970,8 +5975,8 @@ URL在前台切换页面显示不同的内容</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org69e6c68" class="outline-3">
-<h3 id="org69e6c68"><span class="section-number-3">5.2.</span> 动态组件加载</h3>
+<div id="outline-container-org98364cd" class="outline-3">
+<h3 id="org98364cd"><span class="section-number-3">5.2.</span> 动态组件加载</h3>
 <div class="outline-text-3" id="text-5-2">
 <ul class="org-ul">
 <li>为了学习新内容,我们使用 <code>npm init vue@latest vbp-ch5</code> 创建一个新的项目,并且:
@@ -6100,8 +6105,8 @@ index 771c30b..9f08de4 100644
 </ul>
 </div>
 </div>
-<div id="outline-container-org3a88e39" class="outline-3">
-<h3 id="org3a88e39"><span class="section-number-3">5.3.</span> 配置简单路由</h3>
+<div id="outline-container-orgd08f24d" class="outline-3">
+<h3 id="orgd08f24d"><span class="section-number-3">5.3.</span> 配置简单路由</h3>
 <div class="outline-text-3" id="text-5-3">
 <ul class="org-ul">
 <li>路由的主要配置需要的函数,需要从'vue-router'引入,需要在两处进行配置方能起作用:
@@ -6166,50 +6171,488 @@ index 9f08de4..63c5f88 100644
 </ul>
 </div>
 </div>
-<div id="outline-container-orgba4058f" class="outline-3">
-<h3 id="orgba4058f"><span class="section-number-3">5.4.</span> 路由连接高亮显示</h3>
+<div id="outline-container-org67b1f72" class="outline-3">
+<h3 id="org67b1f72"><span class="section-number-3">5.4.</span> 路由连接高亮显示</h3>
+<div class="outline-text-3" id="text-5-4">
+<ul class="org-ul">
+<li>当前两个路由button(其实是a link),样式是一样的,无论当前页面选中的是谁,都无法区分是哪个按钮按下的效果</li>
+<li>我们想通过各种方式能够体现区别,提高用户体验</li>
+</ul>
 </div>
-<div id="outline-container-orgfae7ba5" class="outline-3">
-<h3 id="orgfae7ba5"><span class="section-number-3">5.5.</span> 嵌套路由</h3>
+<div id="outline-container-org4caa072" class="outline-4">
+<h4 id="org4caa072"><span class="section-number-4">5.4.1.</span> 利用vue-router模块的内置样式实现路由链接高亮显示</h4>
+<div class="outline-text-4" id="text-5-4-1">
+<ul class="org-ul">
+<li>使用vue-router的时候,被选中的a标签会有router-link-active这个类,我们可以把这个类改成特殊的样式,这样
+被选中的a标签就会"与众不同"了
+<ul class="org-ul">
+<li><p>
+我们只需要更改App.vue即可
+</p>
+<div class="org-src-container">
+<pre class="src src-diff">diff --git a/code/ch05/01/src/App.vue b/code/ch05/01/src/App.vue
+index 63c5f88..1326dce 100644
+--- <span style="font-weight: bold;">a/code/ch05/01/src/App.vue</span>
++++ <span style="font-weight: bold;">b/code/ch05/01/src/App.vue</span>
+<span style="background-color: #dfd5cf; font-weight: bold;">@@ -18,4 +18,9 @@</span><span style="background-color: #dfd5cf;"> function changePage(page) {</span>
+   &lt;/div&gt;
+ &lt;/template&gt;
+
+<span style="color: #aa2222; background-color: #f4d0cf;">-</span><span style="color: #8f1313; background-color: #f4d0cf;">&lt;style scoped&gt;&lt;/style&gt;</span>
+<span style="color: #006700; background-color: #c3ebc1;">+</span><span style="color: #005000; background-color: #c3ebc1;">&lt;style scoped&gt;</span>
+<span style="color: #005000; background-color: #acd6a5;">+</span><span style="color: #005000; background-color: #acd6a5;">.router-link-active {</span><span style="color: #005000; background-color: #acd6a5;">
+</span><span style="color: #005000; background-color: #acd6a5;">+</span><span style="color: #005000; background-color: #acd6a5;">  background-color: #923156;</span><span style="color: #005000; background-color: #acd6a5;">
+</span><span style="color: #005000; background-color: #acd6a5;">+</span><span style="color: #005000; background-color: #acd6a5;">  font-weight: bolder;</span><span style="color: #005000; background-color: #acd6a5;">
+</span><span style="color: #005000; background-color: #acd6a5;">+</span><span style="color: #005000; background-color: #acd6a5;">}</span><span style="color: #005000; background-color: #acd6a5;">
++</span>&lt;/style&gt;
+</pre>
+</div></li>
+</ul></li>
+</ul>
 </div>
-<div id="outline-container-org581857a" class="outline-3">
-<h3 id="org581857a"><span class="section-number-3">5.6.</span> 动态路由传参</h3>
 </div>
-<div id="outline-container-org784ee9e" class="outline-3">
-<h3 id="org784ee9e"><span class="section-number-3">5.7.</span> 路由参数映射</h3>
+<div id="outline-container-org60f838b" class="outline-4">
+<h4 id="org60f838b"><span class="section-number-4">5.4.2.</span> 利用active-class属性实现路由链接高亮显示</h4>
+<div class="outline-text-4" id="text-5-4-2">
+<ul class="org-ul">
+<li><p>
+有时候我们的项目有总体的高亮样式,如下
+</p>
+<div class="org-src-container">
+<pre class="src src-css"><span style="color: #721045;">.active</span> <span style="color: #000000;">{</span>
+  <span style="color: #531ab6;">background-color</span>: <span style="color: #ffffff; background-color: #626126;">#626126</span>;
+  <span style="color: #531ab6;">font-weight</span>: bolder;
+<span style="color: #000000;">}</span>
+</pre>
+</div></li>
+
+<li>那么这种情况下,我们只需要给所有的router-link加上active-class="active"就可以了
+<ul class="org-ul">
+<li><p>
+这里我们为了显示对比,只给第一个router-link加上active-class="active",我们会发现最终的效果是只有第一个button在页面被选中的时候,实现了上一节css的高亮样式
+</p>
+<div class="org-src-container">
+<pre class="src src-diff">diff --git a/code/ch05/03/src/App.vue b/code/ch05/03/src/App.vue
+index 63c5f88..c704193 100644
+--- <span style="font-weight: bold;">a/code/ch05/03/src/App.vue</span>
++++ <span style="font-weight: bold;">b/code/ch05/03/src/App.vue</span>
+<span style="background-color: #dfd5cf; font-weight: bold;">@@ -11,10 +11,12 @@</span><span style="background-color: #dfd5cf;"> function changePage(page) {</span>
+
+ &lt;template&gt;
+   &lt;div class="container"&gt;
+<span style="color: #aa2222; background-color: #f4d0cf;">-</span><span style="color: #8f1313; background-color: #f4d0cf;">    &lt;router-link to="/" class="btn btn-secondary"&gt;Router Change to Home&lt;/router-link&gt;</span>
+<span style="color: #006700; background-color: #c3ebc1;">+</span><span style="color: #005000; background-color: #c3ebc1;">    &lt;router-link active-class="active" to="/" class="btn btn-secondary"</span>
+<span style="color: #006700; background-color: #c3ebc1;">+</span><span style="color: #005000; background-color: #c3ebc1;">      &gt;Router Change to Home&lt;/router-link</span>
+<span style="color: #006700; background-color: #c3ebc1;">+</span><span style="color: #005000; background-color: #c3ebc1;">    &gt;</span>
+     &lt;router-link to="/users" class="btn btn-secondary"&gt;Router Change to Users&lt;/router-link&gt;
+
+     &lt;router-view&gt;&lt;/router-view&gt;
+   &lt;/div&gt;
+ &lt;/template&gt;
+</pre>
+</div></li>
+<li><p>
+我们当然也可以把所有的router-link都加上active-class="active",但是我们有更加方便的办法,就是更改main.ts
+里面createRouter的参数,就可以自动在所有router-link里面添加active-class="active",所以之前添加的就
+可以删掉了
+</p>
+<div class="org-src-container">
+<pre class="src src-diff">diff --git a/code/ch05/04/src/App.vue b/code/ch05/04/src/App.vue
+index c704193..d45e3b9 100644
+--- <span style="font-weight: bold;">a/code/ch05/04/src/App.vue</span>
++++ <span style="font-weight: bold;">b/code/ch05/04/src/App.vue</span>
+<span style="background-color: #dfd5cf; font-weight: bold;">@@ -11,7 +11,7 @@</span><span style="background-color: #dfd5cf;"> function changePage(page) {</span>
+
+ &lt;template&gt;
+   &lt;div class="container"&gt;
+<span style="color: #aa2222; background-color: #f4d0cf;">-</span><span style="color: #8f1313; background-color: #f4d0cf;">    &lt;router-link </span><span style="color: #8f1313; background-color: #f3b5a7;">active-class="active"</span><span style="color: #8f1313; background-color: #f4d0cf;"> to="/" class="btn btn-secondary"</span>
+<span style="color: #006700; background-color: #c3ebc1;">+</span><span style="color: #005000; background-color: #c3ebc1;">    &lt;router-link to="/" class="btn btn-secondary"</span>
+       &gt;Router Change to Home&lt;/router-link
+     &gt;
+     &lt;router-link to="/users" class="btn btn-secondary"&gt;Router Change to Users&lt;/router-link&gt;
+diff --git a/code/ch05/04/src/main.ts b/code/ch05/04/src/main.ts
+index 14f6507..1af7961 100644
+--- <span style="font-weight: bold;">a/code/ch05/04/src/main.ts</span>
++++ <span style="font-weight: bold;">b/code/ch05/04/src/main.ts</span>
+<span style="background-color: #dfd5cf; font-weight: bold;">@@ -14,6 +14,7 @@</span><span style="background-color: #dfd5cf;"> const routes = [</span>
+ const router = createRouter({
+   history: createWebHashHistory(),
+   routes,
+<span style="color: #006700; background-color: #c3ebc1;">+</span><span style="color: #005000; background-color: #c3ebc1;">  linkActiveClass: 'active',</span>
+ })
+</pre>
+</div></li>
+</ul></li>
+</ul>
 </div>
-<div id="outline-container-org95a596a" class="outline-3">
-<h3 id="org95a596a"><span class="section-number-3">5.8.</span> 命名路由切换</h3>
 </div>
-<div id="outline-container-org29c5a11" class="outline-3">
-<h3 id="org29c5a11"><span class="section-number-3">5.9.</span> 命名视图渲染</h3>
 </div>
-<div id="outline-container-orgde53609" class="outline-3">
-<h3 id="orgde53609"><span class="section-number-3">5.10.</span> 编程式路由导航</h3>
+<div id="outline-container-org8015416" class="outline-3">
+<h3 id="org8015416"><span class="section-number-3">5.5.</span> 嵌套路由</h3>
+<div class="outline-text-3" id="text-5-5">
+<ul class="org-ul">
+<li>实际业务当中,不可能只有一层路由,而是可能进行路由嵌套.</li>
+<li><p>
+所谓路由嵌套,是指第一层路由的结果页面里面还是有路由.我们用下面的图来进行讲解
+</p>
+<pre class="example" id="org9d6ee42">
++--------------------------------------------+
+|  First Route Link Area                     |
+|                                            |
+|  +--------------------------------------+  |
+|  |  First router-view Area              |  |
+|  |               +--------------------+ |  |
+|  |  Second Route |  Second router-view| |  |
+|  |  Link Area    |  Area              | |  |
+|  |               |                    | |  |
+|  |               +--------------------+ |  |
+|  +--------------------------------------+  |
++--------------------------------------------+
+</pre></li>
+<li>为了达到上述效果,我们要做如下的改动:
+<ul class="org-ul">
+<li>首先把创建文件夹src/views/user,并且把用户相关的代码都放到这个文件夹里面</li>
+<li><p>
+第一个放到src/views/user的文件是Users.vue,而且进行重大修改,修改后如下.
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #721045;">template</span>&gt;
+  &lt;<span style="color: #721045;">div</span>&gt;
+    &lt;<span style="color: #721045;">nav</span> <span style="color: #005e8b;">aria-label</span>=<span style="color: #3548cf;">"breadcrumb"</span>&gt;
+      &lt;<span style="color: #721045;">ol</span> <span style="color: #005e8b;">class</span>=<span style="color: #3548cf;">"breadcrumb"</span>&gt;
+        &lt;<span style="color: #721045;">li</span> <span style="color: #005e8b;">class</span>=<span style="color: #3548cf;">"breadcrum-item"</span>&gt;
+          &lt;<span style="color: #721045;">router-link</span> <span style="color: #005e8b;">to</span>=<span style="color: #3548cf;">"/"</span> <span style="color: #005e8b;">class</span>=<span style="color: #3548cf;">"text-decoration-none"</span>&gt;Home&lt;/<span style="color: #721045;">router-link</span>&gt;
+        &lt;/<span style="color: #721045;">li</span>&gt;
+        &lt;<span style="color: #721045;">li</span> <span style="color: #005e8b;">class</span>=<span style="color: #3548cf;">"breadcrum-item active"</span>&gt;
+          &lt;<span style="color: #721045;">router-link</span> <span style="color: #005e8b;">to</span>=<span style="color: #3548cf;">"/users"</span> <span style="color: #005e8b;">class</span>=<span style="color: #3548cf;">"text-decoration-none"</span>&gt;User&lt;/<span style="color: #721045;">router-link</span>&gt;
+        &lt;/<span style="color: #721045;">li</span>&gt;
+      &lt;/<span style="color: #721045;">ol</span>&gt;
+    &lt;/<span style="color: #721045;">nav</span>&gt;
+  &lt;/<span style="color: #721045;">div</span>&gt;
+  &lt;<span style="color: #721045;">div</span> <span style="color: #005e8b;">class</span>=<span style="color: #3548cf;">"row"</span>&gt;
+    &lt;<span style="color: #721045;">div</span> <span style="color: #005e8b;">class</span>=<span style="color: #3548cf;">"col-3"</span>&gt;
+      &lt;<span style="color: #721045;">h1</span>&gt;<span style="font-weight: bold; text-decoration: underline;">User List</span>&lt;/<span style="color: #721045;">h1</span>&gt;
+      &lt;<span style="color: #721045;">div</span> <span style="color: #005e8b;">class</span>=<span style="color: #3548cf;">"list-group"</span>&gt;
+        &lt;<span style="color: #721045;">router-link</span> <span style="color: #005e8b;">to</span>=<span style="color: #3548cf;">"/users/detail"</span> <span style="color: #005e8b;">class</span>=<span style="color: #3548cf;">"list-group-item list-group-item-action"</span>
+          &gt;User 1&lt;/<span style="color: #721045;">router-link</span>
+        &gt;
+        &lt;<span style="color: #721045;">router-link</span> <span style="color: #005e8b;">to</span>=<span style="color: #3548cf;">"/users/detail"</span> <span style="color: #005e8b;">class</span>=<span style="color: #3548cf;">"list-group-item list-group-item-action"</span>
+          &gt;User 2&lt;/<span style="color: #721045;">router-link</span>
+        &gt;
+      &lt;/<span style="color: #721045;">div</span>&gt;
+    &lt;/<span style="color: #721045;">div</span>&gt;
+    &lt;<span style="color: #721045;">div</span> <span style="color: #005e8b;">class</span>=<span style="color: #3548cf;">"col-9"</span>&gt;
+      &lt;<span style="color: #721045;">router-view</span>&gt;&lt;/<span style="color: #721045;">router-view</span>&gt;
+    &lt;/<span style="color: #721045;">div</span>&gt;
+  &lt;/<span style="color: #721045;">div</span>&gt;
+&lt;/<span style="color: #721045;">template</span>&gt;
+</pre>
+</div></li>
+<li>注意,本来Users.vue就是App.vue中的router-view,但是当前Users.vue里面也有router-view了,这就是所谓的
+嵌套</li>
+<li><p>
+在views/users里面创建第一个文件UserStart.vue,这个是嵌套的router-view默认的显示
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #721045;">template</span>&gt;
+  &lt;<span style="color: #721045;">div</span>&gt;
+    &lt;<span style="color: #721045;">h1</span>&gt;<span style="font-weight: bold; text-decoration: underline;">UserStart</span>&lt;/<span style="color: #721045;">h1</span>&gt;
+  &lt;/<span style="color: #721045;">div</span>&gt;
+&lt;/<span style="color: #721045;">template</span>&gt;
+</pre>
+</div></li>
+<li><p>
+在views/users里面创建第二个文件UserDetail.vue,这个是嵌套的router-view点击具体信息后的显示,在UserDetail
+里面,进行了第三次嵌套
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #721045;">template</span>&gt;
+  &lt;<span style="color: #721045;">div</span>&gt;
+    &lt;<span style="color: #721045;">h1</span>&gt;<span style="font-weight: bold; text-decoration: underline;">UserDetail</span>&lt;/<span style="color: #721045;">h1</span>&gt;
+    &lt;<span style="color: #721045;">router-link</span> <span style="color: #005e8b;">to</span>=<span style="color: #3548cf;">"/users/edit"</span> <span style="color: #005e8b;">class</span>=<span style="color: #3548cf;">"btn btn-primary"</span>&gt;Edit User&lt;/<span style="color: #721045;">router-link</span>&gt;
+  &lt;/<span style="color: #721045;">div</span>&gt;
+&lt;/<span style="color: #721045;">template</span>&gt;
+</pre>
+</div></li>
+<li><p>
+在views/users里面创建第二个文件UserEdit.vue,这个是嵌套的router-view点击修改信息后的显示.
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #721045;">template</span>&gt;
+  &lt;<span style="color: #721045;">div</span>&gt;
+    &lt;<span style="color: #721045;">h1</span>&gt;<span style="font-weight: bold; text-decoration: underline;">UserEdit</span>&lt;/<span style="color: #721045;">h1</span>&gt;
+  &lt;/<span style="color: #721045;">div</span>&gt;
+&lt;/<span style="color: #721045;">template</span>&gt;
+</pre>
+</div></li>
+<li><p>
+同时我们要把新加的文件都给与path,新的path设置成老的/users的子path,用children来指代
+</p>
+<div class="org-src-container">
+<pre class="src src-diff">diff --git a/code/ch05/05/src/main.ts b/code/ch05/05/src/main.ts
+index 1af7961..6234bdc 100644
+--- <span style="font-weight: bold;">a/code/ch05/05/src/main.ts</span>
++++ <span style="font-weight: bold;">b/code/ch05/05/src/main.ts</span>
+<span style="background-color: #dfd5cf; font-weight: bold;">@@ -4,11 +4,22 @@</span><span style="background-color: #dfd5cf;"> import { createApp } from 'vue'</span>
+ import App from './App.vue'
+ import { createRouter, createWebHashHistory } from 'vue-router'
+ import Home from '@/views/Home'
+<span style="color: #aa2222; background-color: #f4d0cf;">-</span><span style="color: #8f1313; background-color: #f4d0cf;">import Users from '@/views/Users'</span>
+<span style="color: #006700; background-color: #c3ebc1;">+</span><span style="color: #005000; background-color: #c3ebc1;">import Users from '@/views/user/Users'</span>
+<span style="color: #006700; background-color: #c3ebc1;">+</span><span style="color: #005000; background-color: #c3ebc1;">import UserStart from '@/views/user/UserStart'</span>
+<span style="color: #006700; background-color: #c3ebc1;">+</span><span style="color: #005000; background-color: #c3ebc1;">import UserDetail from '@/views/user/UserDetail'</span>
+<span style="color: #006700; background-color: #c3ebc1;">+</span><span style="color: #005000; background-color: #c3ebc1;">import UserEdit from '@/views/user/UserEdit'</span>
+
+ const routes = [
+   { path: '/', component: Home },
+<span style="color: #aa2222; background-color: #f4d0cf;">-</span><span style="color: #8f1313; background-color: #f4d0cf;">  { path: '/users', component: Users },</span>
+<span style="color: #006700; background-color: #c3ebc1;">+</span><span style="color: #005000; background-color: #c3ebc1;">  {</span>
+<span style="color: #006700; background-color: #c3ebc1;">+</span><span style="color: #005000; background-color: #c3ebc1;">    path: '/users',</span>
+<span style="color: #006700; background-color: #c3ebc1;">+</span><span style="color: #005000; background-color: #c3ebc1;">    component: Users,</span>
+<span style="color: #006700; background-color: #c3ebc1;">+</span><span style="color: #005000; background-color: #c3ebc1;">    children: [</span>
+<span style="color: #006700; background-color: #c3ebc1;">+</span><span style="color: #005000; background-color: #c3ebc1;">      { path: '', component: UserStart },</span>
+<span style="color: #006700; background-color: #c3ebc1;">+</span><span style="color: #005000; background-color: #c3ebc1;">      { path: 'detail', component: UserDetail },</span>
+<span style="color: #006700; background-color: #c3ebc1;">+</span><span style="color: #005000; background-color: #c3ebc1;">      { path: 'edit', component: UserEdit },</span>
+<span style="color: #006700; background-color: #c3ebc1;">+</span><span style="color: #005000; background-color: #c3ebc1;">    ],</span>
+<span style="color: #006700; background-color: #c3ebc1;">+</span><span style="color: #005000; background-color: #c3ebc1;">  },</span>
+ ]
+</pre>
+</div></li>
+</ul></li>
+</ul>
 </div>
-<div id="outline-container-org8ce098b" class="outline-3">
-<h3 id="org8ce098b"><span class="section-number-3">5.11.</span> 路由过渡动画效果</h3>
 </div>
-<div id="outline-container-org6a4a08d" class="outline-3">
-<h3 id="org6a4a08d"><span class="section-number-3">5.12.</span> 路由滚动行为</h3>
+<div id="outline-container-orgbf1f3ee" class="outline-3">
+<h3 id="orgbf1f3ee"><span class="section-number-3">5.6.</span> 动态路由传参</h3>
+<div class="outline-text-3" id="text-5-6">
+<ul class="org-ul">
+<li>上一节我们已经做到能够跳转到不同的页面,但是没有区分不同用户,因为不同用户的url是动态的,和用户id相关的</li>
+<li>为了能够做到不同用户调转不同的页面,我们需要做如下的更改
+<ul class="org-ul">
+<li><p>
+首先我们的Users.vue先自己创造三个用户id,然后需要使用v-for来遍历,而不是挨个列出用户.注意这里的":to"
+是"v-bind:to"的缩写
+</p>
+<div class="org-src-container">
+<pre class="src src-diff">diff --git a/code/ch05/07/src/views/user/Users.vue b/code/ch05/07/src/views/user/Users.vue
+index 65f11d9..a0a1eeb 100644
+--- <span style="font-weight: bold;">a/code/ch05/07/src/views/user/Users.vue</span>
++++ <span style="font-weight: bold;">b/code/ch05/07/src/views/user/Users.vue</span>
+<span style="background-color: #dfd5cf; font-weight: bold;">@@ -1,3 +1,8 @@</span>
+<span style="color: #006700; background-color: #c3ebc1;">+</span><span style="color: #005000; background-color: #c3ebc1;">&lt;script setup lang="ts"&gt;</span>
+<span style="color: #006700; background-color: #c3ebc1;">+</span><span style="color: #005000; background-color: #c3ebc1;">import { ref } from 'vue'</span>
+<span style="color: #006700; background-color: #c3ebc1;">+</span><span style="color: #005000; background-color: #c3ebc1;">const ids = ref([1, 2, 3])</span>
+<span style="color: #006700; background-color: #c3ebc1;">+</span><span style="color: #005000; background-color: #c3ebc1;">&lt;/script&gt;</span>
+<span style="color: #006700; background-color: #c3ebc1;">+</span>
+ &lt;template&gt;
+   &lt;div&gt;
+     &lt;nav aria-label="breadcrumb"&gt;
+<span style="background-color: #dfd5cf; font-weight: bold;">@@ -15,12 +20,14 @@</span>
+     &lt;div class="col-3"&gt;
+       &lt;h1&gt;User List&lt;/h1&gt;
+       &lt;div class="list-group"&gt;
+<span style="color: #aa2222; background-color: #f4d0cf;">-</span><span style="color: #8f1313; background-color: #f4d0cf;">        &lt;router-link </span><span style="color: #8f1313; background-color: #f3b5a7;">to="/users/detail" class="list</span><span style="color: #8f1313; background-color: #f4d0cf;">-</span><span style="color: #8f1313; background-color: #f3b5a7;">group-item</span><span style="color: #8f1313; background-color: #f4d0cf;"> </span><span style="color: #8f1313; background-color: #f3b5a7;">list-group-item-action"</span>
+<span style="color: #8f1313; background-color: #f3b5a7;">-</span><span style="color: #8f1313; background-color: #f4d0cf;">          </span><span style="color: #8f1313; background-color: #f3b5a7;">&gt;User</span><span style="color: #8f1313; background-color: #f4d0cf;"> </span><span style="color: #8f1313; background-color: #f3b5a7;">1&lt;/router</span><span style="color: #8f1313; background-color: #f4d0cf;">-</span><span style="color: #8f1313; background-color: #f3b5a7;">link</span>
+<span style="color: #8f1313; background-color: #f3b5a7;">-</span><span style="color: #8f1313; background-color: #f4d0cf;">        </span><span style="color: #8f1313; background-color: #f3b5a7;">&gt;</span>
+<span style="color: #aa2222; background-color: #f4d0cf;">-</span><span style="color: #8f1313; background-color: #f4d0cf;">        </span><span style="color: #8f1313; background-color: #f3b5a7;">&lt;router-link</span><span style="color: #8f1313; background-color: #f4d0cf;"> to="/users/</span><span style="color: #8f1313; background-color: #f3b5a7;">detail</span><span style="color: #8f1313; background-color: #f4d0cf;">" class="list-group-item list-group-item-action"</span>
+<span style="color: #8f1313; background-color: #f3b5a7;">-</span><span style="color: #8f1313; background-color: #f3b5a7;">          &gt;User 2&lt;/router-link</span>
+<span style="color: #006700; background-color: #c3ebc1;">+</span><span style="color: #005000; background-color: #c3ebc1;">        &lt;router-link</span>
+<span style="color: #006700; background-color: #c3ebc1;">+</span><span style="color: #005000; background-color: #c3ebc1;">          </span><span style="color: #005000; background-color: #acd6a5;">v-for="id</span><span style="color: #005000; background-color: #c3ebc1;"> </span><span style="color: #005000; background-color: #acd6a5;">in</span><span style="color: #005000; background-color: #c3ebc1;"> </span><span style="color: #005000; background-color: #acd6a5;">ids"</span>
+<span style="color: #006700; background-color: #c3ebc1;">+</span><span style="color: #005000; background-color: #c3ebc1;">          </span><span style="color: #005000; background-color: #acd6a5;">:key="id"</span>
+<span style="color: #006700; background-color: #c3ebc1;">+</span><span style="color: #005000; background-color: #c3ebc1;">          </span><span style="color: #005000; background-color: #acd6a5;">:</span><span style="color: #005000; background-color: #c3ebc1;">to="</span><span style="color: #005000; background-color: #acd6a5;">`</span><span style="color: #005000; background-color: #c3ebc1;">/users/</span><span style="color: #005000; background-color: #acd6a5;">${id}`</span><span style="color: #005000; background-color: #c3ebc1;">"</span>
+<span style="color: #005000; background-color: #acd6a5;">+</span><span style="color: #005000; background-color: #c3ebc1;">          class="list-group-item list-group-item-action"</span>
+         &gt;
+<span style="color: #006700; background-color: #c3ebc1;">+</span><span style="color: #005000; background-color: #c3ebc1;">          User {{ id }}</span>
+<span style="color: #006700; background-color: #c3ebc1;">+</span><span style="color: #005000; background-color: #c3ebc1;">        &lt;/router-link&gt;</span>
+       &lt;/div&gt;
+     &lt;/div&gt;
+     &lt;div class="col-9"&gt;
+</pre>
+</div></li>
+<li><p>
+UserDetail页面由于有跳转,也需要更新,注意更新的时候我们能从 $route.param 里面获取传递的id
+</p>
+<div class="org-src-container">
+<pre class="src src-diff">diff --git a/code/ch05/07/src/views/user/UserDetail.vue b/code/ch05/07/src/views/user/UserDetail.vue
+index 4355984..300a7e7 100644
+--- <span style="font-weight: bold;">a/code/ch05/07/src/views/user/UserDetail.vue</span>
++++ <span style="font-weight: bold;">b/code/ch05/07/src/views/user/UserDetail.vue</span>
+<span style="background-color: #dfd5cf; font-weight: bold;">@@ -1,6 +1,9 @@</span>
+ &lt;template&gt;
+   &lt;div&gt;
+     &lt;h1&gt;UserDetail&lt;/h1&gt;
+<span style="color: #aa2222; background-color: #f4d0cf;">-</span><span style="color: #8f1313; background-color: #f4d0cf;">    &lt;router-link to="/users/edit" class="btn btn-primary"&gt;Edit User&lt;/router-link&gt;</span>
+<span style="color: #006700; background-color: #c3ebc1;">+</span><span style="color: #005000; background-color: #c3ebc1;">    &lt;</span><span style="color: #005000; background-color: #acd6a5;">p&gt;User ID: {{ $route.params.id }}&lt;/p&gt;</span><span style="color: #005000; background-color: #acd6a5;">
+</span><span style="color: #005000; background-color: #acd6a5;">+</span><span style="color: #005000; background-color: #acd6a5;">    &lt;</span><span style="color: #005000; background-color: #c3ebc1;">router-link </span><span style="color: #005000; background-color: #acd6a5;">:</span><span style="color: #005000; background-color: #c3ebc1;">to="</span><span style="color: #005000; background-color: #acd6a5;">`</span><span style="color: #005000; background-color: #c3ebc1;">/users/</span><span style="color: #005000; background-color: #acd6a5;">${$route.params.id}/</span><span style="color: #005000; background-color: #c3ebc1;">edit</span><span style="color: #005000; background-color: #acd6a5;">`</span><span style="color: #005000; background-color: #c3ebc1;">" class="btn btn-primary"</span>
+<span style="color: #005000; background-color: #acd6a5;">+</span><span style="color: #005000; background-color: #c3ebc1;">      &gt;Edit User</span>
+<span style="color: #005000; background-color: #acd6a5;">+</span><span style="color: #005000; background-color: #c3ebc1;">    &lt;/router-link&gt;</span>
+   &lt;/div&gt;
+ &lt;/template&gt;
+</pre>
+</div></li>
+<li><p>
+UserEdit页面当前没有其他逻辑,就展示下id表示我们在编辑某个用户就可以了
+</p>
+<div class="org-src-container">
+<pre class="src src-diff">diff --git a/code/ch05/07/src/views/user/UserEdit.vue b/code/ch05/07/src/views/user/UserEdit.vue
+index a6d28dc..3271099 100644
+--- <span style="font-weight: bold;">a/code/ch05/07/src/views/user/UserEdit.vue</span>
++++ <span style="font-weight: bold;">b/code/ch05/07/src/views/user/UserEdit.vue</span>
+<span style="background-color: #dfd5cf; font-weight: bold;">@@ -1,5 +1,6 @@</span>
+ &lt;template&gt;
+   &lt;div&gt;
+     &lt;h1&gt;UserEdit&lt;/h1&gt;
+<span style="color: #006700; background-color: #c3ebc1;">+</span><span style="color: #005000; background-color: #c3ebc1;">    &lt;p&gt; User ID : {{ $route.params.id }} &lt;/p&gt;</span>
+   &lt;/div&gt;
+ &lt;/template&gt;
+</pre>
+</div></li>
+<li><p>
+最后,我们需要把访问具体页面的path改动一下,毕竟我们现在是动态的url了
+</p>
+<div class="org-src-container">
+<pre class="src src-diff">diff --git a/code/ch05/07/src/main.ts b/code/ch05/07/src/main.ts
+index 6234bdc..d806556 100644
+--- <span style="font-weight: bold;">a/code/ch05/07/src/main.ts</span>
++++ <span style="font-weight: bold;">b/code/ch05/07/src/main.ts</span>
+<span style="background-color: #dfd5cf; font-weight: bold;">@@ -16,8 +16,8 @@</span><span style="background-color: #dfd5cf;"> const routes = [</span>
+     component: Users,
+     children: [
+       { path: '', component: UserStart },
+<span style="color: #aa2222; background-color: #f4d0cf;">-</span><span style="color: #8f1313; background-color: #f4d0cf;">      { path: '</span><span style="color: #8f1313; background-color: #f3b5a7;">detail</span><span style="color: #8f1313; background-color: #f4d0cf;">', component: UserDetail },</span>
+<span style="color: #aa2222; background-color: #f4d0cf;">-</span><span style="color: #8f1313; background-color: #f4d0cf;">      { path: 'edit', component: UserEdit },</span>
+<span style="color: #006700; background-color: #c3ebc1;">+</span><span style="color: #005000; background-color: #c3ebc1;">      { path: '</span><span style="color: #005000; background-color: #acd6a5;">:id</span><span style="color: #005000; background-color: #c3ebc1;">', component: UserDetail },</span>
+<span style="color: #006700; background-color: #c3ebc1;">+</span><span style="color: #005000; background-color: #c3ebc1;">      { path: '</span><span style="color: #005000; background-color: #acd6a5;">:id/</span><span style="color: #005000; background-color: #c3ebc1;">edit', component: UserEdit },</span>
+     ],
+   },
+ ]
+</pre>
+</div></li>
+</ul></li>
+<li>这样更改以后,就能轻松的到达指定页面了,url里面的id也是动态的了.</li>
+<li>但是,美中不足的是,还是我们编辑到user id为2 的时候,左侧导航栏的高亮丢失了为了能够记住当前编辑的id,
+我们还需要做如下的更改:
+<ul class="org-ul">
+<li>引入useRoute()这个hook来获取route.params.id</li>
+<li>使用watch来监控route.params.id的更改,并且赋值给currentId,通过currentId来判断当前编辑的用户是哪个,并且高亮该用户</li>
+<li><p>
+具体改动如下
+</p>
+<div class="org-src-container">
+<pre class="src src-diff">diff --git a/code/ch05/07/src/views/user/Users.vue b/code/ch05/07/src/views/user/Users.vue
+index a0a1eeb..af3710e 100644
+--- <span style="font-weight: bold;">a/code/ch05/07/src/views/user/Users.vue</span>
++++ <span style="font-weight: bold;">b/code/ch05/07/src/views/user/Users.vue</span>
+<span style="background-color: #dfd5cf; font-weight: bold;">@@ -1,6 +1,18 @@</span>
+ &lt;script setup lang="ts"&gt;
+<span style="color: #aa2222; background-color: #f4d0cf;">-</span><span style="color: #8f1313; background-color: #f4d0cf;">import { ref } from 'vue'</span>
+<span style="color: #006700; background-color: #c3ebc1;">+</span><span style="color: #005000; background-color: #c3ebc1;">import { ref</span><span style="color: #005000; background-color: #acd6a5;">,</span><span style="color: #005000; background-color: #c3ebc1;"> </span><span style="color: #005000; background-color: #acd6a5;">watch</span><span style="color: #005000; background-color: #c3ebc1;"> } from 'vue</span><span style="color: #005000; background-color: #acd6a5;">'</span><span style="color: #005000; background-color: #acd6a5;">
+</span><span style="color: #005000; background-color: #acd6a5;">+</span><span style="color: #005000; background-color: #acd6a5;">import { useRoute } from 'vue-router</span><span style="color: #005000; background-color: #c3ebc1;">'</span>
+ const ids = ref([1, 2, 3])
+<span style="color: #006700; background-color: #c3ebc1;">+</span>
+<span style="color: #006700; background-color: #c3ebc1;">+</span><span style="color: #005000; background-color: #c3ebc1;">const route = useRoute()</span>
+<span style="color: #006700; background-color: #c3ebc1;">+</span><span style="color: #005000; background-color: #c3ebc1;">const currentId = ref(null)</span>
+<span style="color: #006700; background-color: #c3ebc1;">+</span>
+<span style="color: #006700; background-color: #c3ebc1;">+</span><span style="color: #005000; background-color: #c3ebc1;">watch(</span>
+<span style="color: #006700; background-color: #c3ebc1;">+</span><span style="color: #005000; background-color: #c3ebc1;">  () =&gt; route.params.id,</span>
+<span style="color: #006700; background-color: #c3ebc1;">+</span><span style="color: #005000; background-color: #c3ebc1;">  (val) =&gt; {</span>
+<span style="color: #006700; background-color: #c3ebc1;">+</span><span style="color: #005000; background-color: #c3ebc1;">    currentId.value = +val</span>
+<span style="color: #006700; background-color: #c3ebc1;">+</span><span style="color: #005000; background-color: #c3ebc1;">  },</span>
+<span style="color: #006700; background-color: #c3ebc1;">+</span><span style="color: #005000; background-color: #c3ebc1;">  { immediate: true },</span>
+<span style="color: #006700; background-color: #c3ebc1;">+</span><span style="color: #005000; background-color: #c3ebc1;">)</span>
+ &lt;/script&gt;
+
+ &lt;template&gt;
+<span style="background-color: #dfd5cf; font-weight: bold;">@@ -25,6 +37,7 @@</span><span style="background-color: #dfd5cf;"> const ids = ref([1, 2, 3])</span>
+           :key="id"
+           :to="`/users/${id}`"
+           class="list-group-item list-group-item-action"
+<span style="color: #006700; background-color: #c3ebc1;">+</span><span style="color: #005000; background-color: #c3ebc1;">          :class="{ active: id === currentId }"</span>
+         &gt;
+           User {{ id }}
+         &lt;/router-link&gt;
+</pre>
+</div></li>
+</ul></li>
+<li>route除了params参数,还有query参数.query参数就是url在`?`之后通过多个`&amp;`传递的key-value字符串组合,我
+们改写下当前的例子,从query传递name和age,需要做如下修改:
+<ul class="org-ul">
+<li><p>
+首先在UserDetail里面的url里面加上传递的query(这里只是举例子,所以不同User传递的是同样的query)
+</p>
+<div class="org-src-container">
+<pre class="src src-diff">diff --git a/code/ch05/07/src/views/user/UserDetail.vue b/code/ch05/07/src/views/user/UserDetail.vue
+index 300a7e7..27c3f87 100644
+--- <span style="font-weight: bold;">a/code/ch05/07/src/views/user/UserDetail.vue</span>
++++ <span style="font-weight: bold;">b/code/ch05/07/src/views/user/UserDetail.vue</span>
+<span style="background-color: #dfd5cf; font-weight: bold;">@@ -2,7 +2,7 @@</span>
+   &lt;div&gt;
+     &lt;h1&gt;UserDetail&lt;/h1&gt;
+     &lt;p&gt;User ID: {{ $route.params.id }}&lt;/p&gt;
+<span style="color: #aa2222; background-color: #f4d0cf;">-</span><span style="color: #8f1313; background-color: #f4d0cf;">    &lt;router-link :to="`/users/${$route.params.id}/edit`" class="btn btn-primary"</span>
+<span style="color: #006700; background-color: #c3ebc1;">+</span><span style="color: #005000; background-color: #c3ebc1;">    &lt;router-link :to="`/users/${$route.params.id}/edit</span><span style="color: #005000; background-color: #acd6a5;">?name=zhangsan&amp;age=18</span><span style="color: #005000; background-color: #c3ebc1;">`" class="btn btn-primary"</span>
+       &gt;Edit User
+     &lt;/router-link&gt;
+   &lt;/div&gt;
+</pre>
+</div></li>
+<li><p>
+然后在UserEdit页面就能显示这些query
+</p>
+<div class="org-src-container">
+<pre class="src src-diff">diff --git a/code/ch05/07/src/views/user/UserEdit.vue b/code/ch05/07/src/views/user/UserEdit.vue
+index 6b69be7..b4c90c3 100644
+--- <span style="font-weight: bold;">a/code/ch05/07/src/views/user/UserEdit.vue</span>
++++ <span style="font-weight: bold;">b/code/ch05/07/src/views/user/UserEdit.vue</span>
+<span style="background-color: #dfd5cf; font-weight: bold;">@@ -2,5 +2,7 @@</span>
+   &lt;div&gt;
+     &lt;h1&gt;UserEdit&lt;/h1&gt;
+     &lt;p&gt;User ID : {{ $route.params.id }}&lt;/p&gt;
+<span style="color: #006700; background-color: #c3ebc1;">+</span><span style="color: #005000; background-color: #c3ebc1;">    &lt;p&gt;User Name : {{ $route.query.name }}&lt;/p&gt;</span>
+<span style="color: #006700; background-color: #c3ebc1;">+</span><span style="color: #005000; background-color: #c3ebc1;">    &lt;p&gt;User Age : {{ $route.query.age }}&lt;/p&gt;</span>
+   &lt;/div&gt;
+ &lt;/template&gt;
+</pre>
+</div></li>
+</ul></li>
+</ul>
 </div>
-<div id="outline-container-orga9a8d84" class="outline-3">
-<h3 id="orga9a8d84"><span class="section-number-3">5.13.</span> 路由的异步懒加载</h3>
 </div>
-<div id="outline-container-org0bfa141" class="outline-3">
-<h3 id="org0bfa141"><span class="section-number-3">5.14.</span> 缓存路由组件</h3>
+<div id="outline-container-org6ffd8aa" class="outline-3">
+<h3 id="org6ffd8aa"><span class="section-number-3">5.7.</span> 路由参数映射</h3>
 </div>
-<div id="outline-container-org516499a" class="outline-3">
-<h3 id="org516499a"><span class="section-number-3">5.15.</span> 路由守卫</h3>
+<div id="outline-container-org801c60b" class="outline-3">
+<h3 id="org801c60b"><span class="section-number-3">5.8.</span> 命名路由切换</h3>
 </div>
-<div id="outline-container-org1ee66ef" class="outline-3">
-<h3 id="org1ee66ef"><span class="section-number-3">5.16.</span> 动态添加与删除路由</h3>
+<div id="outline-container-orgc78b20d" class="outline-3">
+<h3 id="orgc78b20d"><span class="section-number-3">5.9.</span> 命名视图渲染</h3>
+</div>
+<div id="outline-container-org1f2bb2d" class="outline-3">
+<h3 id="org1f2bb2d"><span class="section-number-3">5.10.</span> 编程式路由导航</h3>
+</div>
+<div id="outline-container-orgba639c5" class="outline-3">
+<h3 id="orgba639c5"><span class="section-number-3">5.11.</span> 路由过渡动画效果</h3>
+</div>
+<div id="outline-container-orgac95ce7" class="outline-3">
+<h3 id="orgac95ce7"><span class="section-number-3">5.12.</span> 路由滚动行为</h3>
+</div>
+<div id="outline-container-orgc818e70" class="outline-3">
+<h3 id="orgc818e70"><span class="section-number-3">5.13.</span> 路由的异步懒加载</h3>
+</div>
+<div id="outline-container-orgb097378" class="outline-3">
+<h3 id="orgb097378"><span class="section-number-3">5.14.</span> 缓存路由组件</h3>
+</div>
+<div id="outline-container-org38c70dd" class="outline-3">
+<h3 id="org38c70dd"><span class="section-number-3">5.15.</span> 路由守卫</h3>
+</div>
+<div id="outline-container-org99b1b4e" class="outline-3">
+<h3 id="org99b1b4e"><span class="section-number-3">5.16.</span> 动态添加与删除路由</h3>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: harrifeng@outlook.com</p>
-<p class="date">Created: 2025-05-21 Wed 17:21</p>
+<p class="date">Created: 2025-05-23 Fri 17:48</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
