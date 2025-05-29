@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-05-16 Fri 17:29 -->
+<!-- 2025-05-29 Thu 23:01 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>peb</title>
@@ -55,49 +55,53 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgd504c72">1. Chapter 1: Combinatorics</a>
+<li><a href="#org7bc5fd1">1. Chapter 1: Combinatorics</a>
 <ul>
-<li><a href="#orga77478d">1.1. Factorials</a></li>
-<li><a href="#org5f2d6cb">1.2. Permutations</a>
+<li><a href="#org786f8b3">1.1. Factorials</a></li>
+<li><a href="#org9557258">1.2. Permutations</a>
 <ul>
-<li><a href="#org07af1cd">1.2.1. One object</a></li>
-<li><a href="#org1317c42">1.2.2. Two objects</a></li>
-<li><a href="#orgba8119e">1.2.3. Three objects</a></li>
+<li><a href="#org6f84d5e">1.2.1. One object</a></li>
+<li><a href="#orge876411">1.2.2. Two objects</a></li>
+<li><a href="#orgce5fa26">1.2.3. Three objects</a></li>
 </ul>
 </li>
-<li><a href="#orgfc6870c">1.3. Ordered sets, repetitions allowed</a></li>
-<li><a href="#orga6f05cd">1.4. Ordered sets, repetitions not allowed</a></li>
-<li><a href="#org6f67dad">1.5. Unordered sets, repetitions not allowed</a>
+<li><a href="#org38534c1">1.3. Ordered sets, repetitions allowed</a></li>
+<li><a href="#org1857064">1.4. Ordered sets, repetitions not allowed</a></li>
+<li><a href="#org756b9c8">1.5. Unordered sets, repetitions not allowed</a>
 <ul>
-<li><a href="#org745d3de">1.5.1. Example(Two chosen from five)</a></li>
-<li><a href="#org8a753ca">1.5.2. First solution</a></li>
-<li><a href="#orgf23146f">1.5.3. Second solution:</a></li>
-<li><a href="#org08212f5">1.5.4. Examle(Three different titles)</a></li>
-<li><a href="#orgacee3e5">1.5.5. First solution</a></li>
-<li><a href="#org5b13801">1.5.6. Second solution</a></li>
-<li><a href="#orgbdf4f97">1.5.7. Third solution</a></li>
+<li><a href="#org8bf3b0b">1.5.1. Example(Two chosen from five)</a></li>
+<li><a href="#org9378e07">1.5.2. First solution</a></li>
+<li><a href="#org8c94266">1.5.3. Second solution:</a></li>
+<li><a href="#orgcffa0e8">1.5.4. Examle(Three different titles)</a></li>
+<li><a href="#org1da00d6">1.5.5. First solution</a></li>
+<li><a href="#org850a87d">1.5.6. Second solution</a></li>
+<li><a href="#org44b9bb0">1.5.7. Third solution</a></li>
 </ul>
 </li>
-<li><a href="#org39f7492">1.6. What we know so far</a></li>
-<li><a href="#orgd590a17">1.7. Unordered sets, repetitions allowed</a></li>
-<li><a href="#orgff451dc">1.8. Binomial coefficients</a>
+<li><a href="#orgca5ed7d">1.6. What we know so far</a></li>
+<li><a href="#org75e52e6">1.7. Unordered sets, repetitions allowed</a>
 <ul>
-<li><a href="#org18e16e7">1.8.1. Cons and Pascal's trianglep</a></li>
-<li><a href="#org9277cae">1.8.2. (a+b)^n and Pascal's triangle</a></li>
-<li><a href="#org2159f22">1.8.3. Properties of Pascal's triangle</a></li>
+<li><a href="#orgdbbf3cb">1.7.1. Example 1(n=4 chosen from N = 3)</a></li>
+<li><a href="#org1689d00">1.7.2. Example 2(n=3 chosen fron N = 4)</a></li>
+<li><a href="#org2380079">1.7.3. Example 3(n=5 chosen fron N = 3)</a></li>
+<li><a href="#org7108001">1.7.4. Example(Dividing the monery)</a></li>
+<li><a href="#org6bf0f68">1.7.5. Solution</a></li>
+<li><a href="#orgf11519e">1.7.6. Example(Reproducing \(N^n\) )</a></li>
+<li><a href="#org051d2f8">1.7.7. Solution</a></li>
 </ul>
 </li>
+<li><a href="#org06e78bf">1.8. Binomial coefficients</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgd504c72" class="outline-2">
-<h2 id="orgd504c72"><span class="section-number-2">1.</span> Chapter 1: Combinatorics</h2>
+<div id="outline-container-org7bc5fd1" class="outline-2">
+<h2 id="org7bc5fd1"><span class="section-number-2">1.</span> Chapter 1: Combinatorics</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-orga77478d" class="outline-3">
-<h3 id="orga77478d"><span class="section-number-3">1.1.</span> Factorials</h3>
+<div id="outline-container-org786f8b3" class="outline-3">
+<h3 id="org786f8b3"><span class="section-number-3">1.1.</span> Factorials</h3>
 <div class="outline-text-3" id="text-1-1">
 <ul class="org-ul">
 <li>每当我们遇到一个正整数N,那么我们通常会考虑1到N的乘积,这个乘积就是"N factorial", 用数学表示就是"N!"</li>
@@ -140,8 +144,8 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-org5f2d6cb" class="outline-3">
-<h3 id="org5f2d6cb"><span class="section-number-3">1.2.</span> Permutations</h3>
+<div id="outline-container-org9557258" class="outline-3">
+<h3 id="org9557258"><span class="section-number-3">1.2.</span> Permutations</h3>
 <div class="outline-text-3" id="text-1-2">
 <ul class="org-ul">
 <li>permutaion是用来order一系列object的方法.比如我们有三个人Alice,Bob,Carol,那么下面每一列都是一种permutation(一共六种):
@@ -156,8 +160,8 @@
 <li>我们下面会详细介绍如何count permutation</li>
 </ul>
 </div>
-<div id="outline-container-org07af1cd" class="outline-4">
-<h4 id="org07af1cd"><span class="section-number-4">1.2.1.</span> One object</h4>
+<div id="outline-container-org6f84d5e" class="outline-4">
+<h4 id="org6f84d5e"><span class="section-number-4">1.2.1.</span> One object</h4>
 <div class="outline-text-4" id="text-1-2-1">
 <ul class="org-ul">
 <li>如果我们只有一个object,那么显然只有一种方式来order它.</li>
@@ -165,8 +169,8 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-org1317c42" class="outline-4">
-<h4 id="org1317c42"><span class="section-number-4">1.2.2.</span> Two objects</h4>
+<div id="outline-container-orge876411" class="outline-4">
+<h4 id="orge876411"><span class="section-number-4">1.2.2.</span> Two objects</h4>
 <div class="outline-text-4" id="text-1-2-2">
 <ul class="org-ul">
 <li>两个对象后,稍微复杂了一点,但是也只是一点,比如如果我们使用1,2来代表两个object,那么我们可以把这两个object order如下:
@@ -178,8 +182,8 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-orgba8119e" class="outline-4">
-<h4 id="orgba8119e"><span class="section-number-4">1.2.3.</span> Three objects</h4>
+<div id="outline-container-orgce5fa26" class="outline-4">
+<h4 id="orgce5fa26"><span class="section-number-4">1.2.3.</span> Three objects</h4>
 <div class="outline-text-4" id="text-1-2-3">
 <ul class="org-ul">
 <li>三个对象之后,情形就复杂了,我们使用1,2,3来代表三个object,那么order的方式有六种,换句话说就是 \(P_3=6\) :
@@ -192,7 +196,7 @@
 </ul>
 </div>
 <ol class="org-ol">
-<li><a id="orga200456"></a>Four objects<br />
+<li><a id="org058afc8"></a>Four objects<br />
 <div class="outline-text-5" id="text-1-2-3-1">
 <ul class="org-ul">
 <li>一旦有四个对象,那么列举起来就费事了很多,但是我们借鉴三个对象时候的方法,把列举分成四组(每组的开头字
@@ -208,7 +212,7 @@ permutation的全部数据.其他三行去掉最开始一个数字也是相同�
 </ul>
 </div>
 </li>
-<li><a id="org0cae2d4"></a>Five objects<br />
+<li><a id="orgc19c7aa"></a>Five objects<br />
 <div class="outline-text-5" id="text-1-2-3-2">
 <ul class="org-ul">
 <li>我们一旦理解了上面的做法,那么显然我们只需要在1,2,3,4,5后面每个都添加上上诉24个permutation,那么最终
@@ -222,7 +226,7 @@ permutation的全部数据.其他三行去掉最开始一个数字也是相同�
 </ul>
 </div>
 </li>
-<li><a id="orga04272d"></a>Question<br />
+<li><a id="org3351527"></a>Question<br />
 <div class="outline-text-5" id="text-1-2-3-3">
 <ul class="org-ul">
 <li>一共有九个客人,同时有九个位置.这九个位置分为两组,A组5个座位,B组4个座位,请问一共有多少种方法来把座
@@ -230,7 +234,7 @@ permutation的全部数据.其他三行去掉最开始一个数字也是相同�
 </ul>
 </div>
 </li>
-<li><a id="orga338918"></a>Solution<br />
+<li><a id="orge8e1dab"></a>Solution<br />
 <div class="outline-text-5" id="text-1-2-3-4">
 <ul class="org-ul">
 <li>有五种方式把一个人放到A组的位置,所以有5!种方式把五个人放到A组的位置</li>
@@ -247,8 +251,8 @@ permutation的全部数据.其他三行去掉最开始一个数字也是相同�
 </ol>
 </div>
 </div>
-<div id="outline-container-orgfc6870c" class="outline-3">
-<h3 id="orgfc6870c"><span class="section-number-3">1.3.</span> Ordered sets, repetitions allowed</h3>
+<div id="outline-container-org38534c1" class="outline-3">
+<h3 id="org38534c1"><span class="section-number-3">1.3.</span> Ordered sets, repetitions allowed</h3>
 <div class="outline-text-3" id="text-1-3">
 <ul class="org-ul">
 <li>所谓ordered set,repetitions allowed是指这么一类实验
@@ -282,7 +286,7 @@ permutation的全部数据.其他三行去掉最开始一个数字也是相同�
 <li><p>
 各种可能性如下
 </p>
-<pre class="example" id="org4b71a30">
+<pre class="example" id="org0231ed9">
 AA AB AC AD AE
 BA BB BC BD BE
 CA CB CC CD CE
@@ -300,14 +304,14 @@ EA EB EC ED EE
 </ul>
 </div>
 <ol class="org-ol">
-<li><a id="org87d3277"></a>Question<br />
+<li><a id="org2114809"></a>Question<br />
 <div class="outline-text-5" id="text-1-3-0-1">
 <ul class="org-ul">
 <li>有一个标准的六面骰子,我们投掷两次,能够得到多少种不同的结果(不同order视为不同结果)</li>
 </ul>
 </div>
 </li>
-<li><a id="org7d8b051"></a>Solution<br />
+<li><a id="org0dcc7dd"></a>Solution<br />
 <div class="outline-text-5" id="text-1-3-0-2">
 <ul class="org-ul">
 <li>由于order是有关系的,所以2,5和5,2不是一种结果,又由于每次都有6种结果(且不存在放回问题,骰子永远放回),
@@ -315,14 +319,14 @@ EA EB EC ED EE
 </ul>
 </div>
 </li>
-<li><a id="orga98bb36"></a>Question<br />
+<li><a id="org57c550b"></a>Question<br />
 <div class="outline-text-5" id="text-1-3-0-3">
 <ul class="org-ul">
 <li>如果投掷一个标准的硬币四次,那么讷讷够得到多少种不同的结果(不同order视为不同结果)</li>
 </ul>
 </div>
 </li>
-<li><a id="org924f1b4"></a>Solution<br />
+<li><a id="org45d6688"></a>Solution<br />
 <div class="outline-text-5" id="text-1-3-0-4">
 <ul class="org-ul">
 <li>思路和上面的题目类似,答案为 \(2^4=16\)</li>
@@ -331,8 +335,8 @@ EA EB EC ED EE
 </li>
 </ol>
 </div>
-<div id="outline-container-orga6f05cd" class="outline-3">
-<h3 id="orga6f05cd"><span class="section-number-3">1.4.</span> Ordered sets, repetitions not allowed</h3>
+<div id="outline-container-org1857064" class="outline-3">
+<h3 id="org1857064"><span class="section-number-3">1.4.</span> Ordered sets, repetitions not allowed</h3>
 <div class="outline-text-3" id="text-1-4">
 <ul class="org-ul">
 <li>所谓ordered set,repetitions allowed是指这么一类实验
@@ -357,21 +361,21 @@ EA EB EC ED EE
 </ul>
 </div>
 <ol class="org-ol">
-<li><a id="orgf655aff"></a>Example(Two chosen from five)<br />
+<li><a id="orgfae1db0"></a>Example(Two chosen from five)<br />
 <div class="outline-text-5" id="text-1-4-0-1">
 <ul class="org-ul">
 <li>从5个人里面,选择两个人进入委员会,且顺序重要(第一个人会作为主席,第二个作为副主席)</li>
 </ul>
 </div>
 </li>
-<li><a id="org64b7a2d"></a>First Soluton<br />
+<li><a id="org6f7b52a"></a>First Soluton<br />
 <div class="outline-text-5" id="text-1-4-0-2">
 <ul class="org-ul">
 <li><p>
 我们把五个人都分别标记为A,B,C,D,E,我们把所有可能的"有顺序的pair"列举出来,先包含重复(虽然一个人被选
 做主席,外加副主席是不可能的).那么所有的列表如下
 </p>
-<pre class="example" id="org014aee2">
+<pre class="example" id="org70c86ab">
 AA AB AC AD AE
 BA BB BC BD BE
 CA CB CC CD CE
@@ -388,7 +392,7 @@ EA EB EC ED EE
 </ul>
 </div>
 </li>
-<li><a id="orgb1b9364"></a>Second solution<br />
+<li><a id="org42fabe8"></a>Second solution<br />
 <div class="outline-text-5" id="text-1-4-0-3">
 <ul class="org-ul">
 <li>First solution很有说服力,但是其只能把5给泛化成N,无法泛化2成n</li>
@@ -424,31 +428,31 @@ EA EB EC ED EE
 </li>
 </ol>
 </div>
-<div id="outline-container-org6f67dad" class="outline-3">
-<h3 id="org6f67dad"><span class="section-number-3">1.5.</span> Unordered sets, repetitions not allowed</h3>
+<div id="outline-container-org756b9c8" class="outline-3">
+<h3 id="org756b9c8"><span class="section-number-3">1.5.</span> Unordered sets, repetitions not allowed</h3>
 <div class="outline-text-3" id="text-1-5">
 <ul class="org-ul">
 <li>本节和上一节的区别很明显,就是我们从N个里面选取n个,但是这n个的顺序不再重要了.以委员会的选举为例,我们
 从5个人里选取2个人进入委员会,但是这两个人只是委员而已,不会有主席副主席的区别.那么顺序就不再重要了.</li>
 </ul>
 </div>
-<div id="outline-container-org745d3de" class="outline-4">
-<h4 id="org745d3de"><span class="section-number-4">1.5.1.</span> Example(Two chosen from five)</h4>
+<div id="outline-container-org8bf3b0b" class="outline-4">
+<h4 id="org8bf3b0b"><span class="section-number-4">1.5.1.</span> Example(Two chosen from five)</h4>
 <div class="outline-text-4" id="text-1-5-1">
 <ul class="org-ul">
 <li>从五个人里面选取两个人,且这两个人的顺序不重要,有多少种选取方式</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org8a753ca" class="outline-4">
-<h4 id="org8a753ca"><span class="section-number-4">1.5.2.</span> First solution</h4>
+<div id="outline-container-org9378e07" class="outline-4">
+<h4 id="org9378e07"><span class="section-number-4">1.5.2.</span> First solution</h4>
 <div class="outline-text-4" id="text-1-5-2">
 <ul class="org-ul">
 <li><p>
 我们把这个五个人标记为A,B,C,D,E,我们首先把所有的pair都写出来,包括重复的(虽然人不能重复),包括不同的
 order(虽然order不重要),那么我们可以得到下面的列表(列完之后,我们再去除"重复"和"顺序"):
 </p>
-<pre class="example" id="orgeef76d5">
+<pre class="example" id="org3b6388a">
 AA AB AC AD AE
 BA BB BC BD BE
 CA CB CC CD CE
@@ -459,7 +463,7 @@ EA EB EC ED EE
 <li><p>
 再去除"顺序",我们可以看到,对角线去掉后,所有剩余的pair刚好分成了两份,这两份是内容相同,顺序相反的
 </p>
-<pre class="example" id="org705e41d">
+<pre class="example" id="org46c4952">
                  AB AC AD AE
 BA                  BC BD BE
 CA CB                  CD CE
@@ -471,8 +475,8 @@ EA EB EC ED
 </ul>
 </div>
 </div>
-<div id="outline-container-orgf23146f" class="outline-4">
-<h4 id="orgf23146f"><span class="section-number-4">1.5.3.</span> Second solution:</h4>
+<div id="outline-container-org8c94266" class="outline-4">
+<h4 id="org8c94266"><span class="section-number-4">1.5.3.</span> Second solution:</h4>
 <div class="outline-text-4" id="text-1-5-3">
 <ul class="org-ul">
 <li>我们可以把选择委员会问题看成每次选择一个,那么我们第一次就有5种选法,第二次有4种选法,那么我们总共就有
@@ -515,7 +519,7 @@ EA EB EC ED
 <li><p>
 总结起来就是,不能重放的情况下,我们本节讲的"顺序不重要的从N选取n( \(_{N}C_n\) )"其实就是:
 </p>
-<pre class="example" id="org06591ba">
+<pre class="example" id="org8c1897c">
 "顺序不重要的从N选取n( $_{N}P_n$ )"额外再除以n!,用来去除overcounting
 </pre></li>
 <li>我们注意到一个有趣的现象就是 \(\binom{11}{8}\) 和 \(\binom{11}{3}\) 的结果是一样的,我们可以这么理解:
@@ -527,8 +531,8 @@ EA EB EC ED
 </ul>
 </div>
 </div>
-<div id="outline-container-org08212f5" class="outline-4">
-<h4 id="org08212f5"><span class="section-number-4">1.5.4.</span> Examle(Three different titles)</h4>
+<div id="outline-container-orgcffa0e8" class="outline-4">
+<h4 id="orgcffa0e8"><span class="section-number-4">1.5.4.</span> Examle(Three different titles)</h4>
 <div class="outline-text-4" id="text-1-5-4">
 <ul class="org-ul">
 <li>有多少种方法从十个人里面选取一个委员会,并且这个委员会里面有如下要求:
@@ -540,8 +544,8 @@ EA EB EC ED
 </ul>
 </div>
 </div>
-<div id="outline-container-orgacee3e5" class="outline-4">
-<h4 id="orgacee3e5"><span class="section-number-4">1.5.5.</span> First solution</h4>
+<div id="outline-container-org1da00d6" class="outline-4">
+<h4 id="org1da00d6"><span class="section-number-4">1.5.5.</span> First solution</h4>
 <div class="outline-text-4" id="text-1-5-5">
 <ul class="org-ul">
 <li>我们首先来从10个人中选取7个人,并且这个7个人是 <b>有顺序的</b>, 那么就有 \(_{10}P_{7} = 10\cdot9\cdot8\cdot7\cdot6\cdot5\cdot4\)
@@ -560,8 +564,8 @@ EA EB EC ED
 </ul>
 </div>
 </div>
-<div id="outline-container-org5b13801" class="outline-4">
-<h4 id="org5b13801"><span class="section-number-4">1.5.6.</span> Second solution</h4>
+<div id="outline-container-org850a87d" class="outline-4">
+<h4 id="org850a87d"><span class="section-number-4">1.5.6.</span> Second solution</h4>
 <div class="outline-text-4" id="text-1-5-6">
 <ul class="org-ul">
 <li>从一堆对象N中,不考虑顺序的获取小部分对象n的方法是 \(\binom{N}{n}\),所以我没有:
@@ -579,8 +583,8 @@ EA EB EC ED
 </ul>
 </div>
 </div>
-<div id="outline-container-orgbdf4f97" class="outline-4">
-<h4 id="orgbdf4f97"><span class="section-number-4">1.5.7.</span> Third solution</h4>
+<div id="outline-container-org44b9bb0" class="outline-4">
+<h4 id="org44b9bb0"><span class="section-number-4">1.5.7.</span> Third solution</h4>
 <div class="outline-text-4" id="text-1-5-7">
 <ul class="org-ul">
 <li>我们上面是按官职从大到小进行的选取(先选主席,再选副主席,再选委员),那么我们如果按照官职从小到大选取,结果如何的,
@@ -609,31 +613,506 @@ EA EB EC ED
 </div>
 </div>
 </div>
-<div id="outline-container-org39f7492" class="outline-3">
-<h3 id="org39f7492"><span class="section-number-3">1.6.</span> What we know so far</h3>
+<div id="outline-container-orgca5ed7d" class="outline-3">
+<h3 id="orgca5ed7d"><span class="section-number-3">1.6.</span> What we know so far</h3>
+<div class="outline-text-3" id="text-1-6">
+<ul class="org-ul">
+<li>我们先后讲了如下几个部分:
+<ul class="org-ul">
+<li><p>
+N个对象的permutation
+</p>
+\begin{equation}
+N!
+\end{equation}</li>
+<li><p>
+Ordered sets(n objects chosen from N), with repetions allowed
+</p>
+\begin{equation}
+N^n
+\end{equation}</li>
+<li><p>
+Ordered sets(n objects chosen from N), with repetions NOT allowed (当n等于N的时候,就是permutation)
+</p>
+\begin{equation}
+_{N}P_{n} = \frac{N!}{(N-n)!}
+\end{equation}</li>
+<li><p>
+Unordered sets(n objects chosen from N), with repetitoins not allowed
+</p>
+\begin{equation}
+_{N}C_{n}= \binom{N}{n} = \frac{N!}{n!(N-n)!}
+\end{equation}</li>
+</ul></li>
+<li>我们先用一种方法来联系下上面的几个结果:
+<ul class="org-ul">
+<li>首先我们使用N!来获得一个permutation</li>
+<li>然后如果我们想获得 \(_{N}P_{n}\) 的话,我们直接把截取N!的前半部分就可以了(n算中间的话)</li>
+<li>如果我们想获取 \(\binom{N}{n}\) 那么我们就用 \(_{N}P_{n}\) 再除以 n!就可以了.</li>
+</ul></li>
+<li>我们再用另外一种方法来联系下上面的结果:
+<ul class="org-ul">
+<li>首先我们使用 \(N^n\) 来从N个object里面获取n个对象(允许重放),也就是 \(N \cdot N \cdot N \cdots\)</li>
+<li>我们要想得到 \(_{N}P_{n}\) 我们完全可以把上面的结果,从第二次开始,每一步都减少一个(因为不允许重放,每
+次的可选择数目就减少了1),那也就得到了 \(N(N-1)(N-2)\cdots\)</li>
+</ul></li>
+<li><p>
+我们还可以用图1-3来表示上面几个结果的联系
+</p>
+
+<div id="orgb48396b" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/peb/1-3.png" alt="1-3.png" />
+</p>
+<p><span class="figure-number">Figure 1: </span>peb/1-3.png</p>
+</div></li>
+</ul>
 </div>
-<div id="outline-container-orgd590a17" class="outline-3">
-<h3 id="orgd590a17"><span class="section-number-3">1.7.</span> Unordered sets, repetitions allowed</h3>
 </div>
-<div id="outline-container-orgff451dc" class="outline-3">
-<h3 id="orgff451dc"><span class="section-number-3">1.8.</span> Binomial coefficients</h3>
-<div class="outline-text-3" id="text-1-8">
+<div id="outline-container-org75e52e6" class="outline-3">
+<h3 id="org75e52e6"><span class="section-number-3">1.7.</span> Unordered sets, repetitions allowed</h3>
+<div class="outline-text-3" id="text-1-7">
+<ul class="org-ul">
+<li>在图1-3中,N!是一个有些特殊的结果:
+<ul class="org-ul">
+<li>因为这个N!公式里面只有N,没有n.</li>
+<li>其他的三个公式都是从N个对象里面取n个对象,所以涉及到两个n,一个大N,一个小n</li>
+</ul></li>
+<li>之所以出现这个N!是因为N!(也就是permutation)是 \(_{N}P_{n}\) 公式中N=n的特殊形式,所以我们可以把N!当做
+\(_{N}P_{n}\) 来看待.</li>
+<li><p>
+于是我们就剩下三种情况,根据order是否重要和replacement是否允许,我们得到了下图
+</p>
+
+<div id="org6b03e2f" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/peb/1-10-1.png" alt="1-10-1.png" />
+</p>
+<p><span class="figure-number">Figure 2: </span>peb/1-10-1.png</p>
+</div></li>
+<li>上图中唯一缺少的,就是从N个对象里面取n个对象,order不重要,但是允许重放.这种情况相比于其他三种情况来说,
+在概率中遇到的时候不如其他三种多,但是为了完整,我们还是要介绍一下</li>
+<li>在介绍之前,我们还是做几个例子来找找感觉</li>
+</ul>
 </div>
-<div id="outline-container-org18e16e7" class="outline-4">
-<h4 id="org18e16e7"><span class="section-number-4">1.8.1.</span> Cons and Pascal's trianglep</h4>
+<div id="outline-container-orgdbbf3cb" class="outline-4">
+<h4 id="orgdbbf3cb"><span class="section-number-4">1.7.1.</span> Example 1(n=4 chosen from N = 3)</h4>
+<div class="outline-text-4" id="text-1-7-1">
+<ul class="org-ul">
+<li>问题:从3个字母(ABC)中获取4个letter,允许重放(所以n可以大于N),order不重要有几种方法</li>
+<li>问题看起来棘手,但是我们通过思考,发现如果不关注order,还允许重放,那么其实只有四种基本类型的set(注意是set,因为没有order):
+<ul class="org-ul">
+<li>四个字母相同的情况,比如AAAA.由于只有三个字母,所以这种情况的排列只有3个(也就是AAAA,BBBB,CCCC)</li>
+<li>三个字母相同的情况,比如AAAB(因为顺序不重要,所以AAAB等同于AABA,ABAA,BAAA),由于只有三个字母,其实是从三个字母里面选择两个,所以这种情况的排列有2*3=6个</li>
+<li>两个两个字母相同的情况,比如AABB.由于只有三个字母,其实是从三个字母里面选择两个(同时顺序不重要,因为AABB和BBAA是一回事,这个和AAAB不一样),所以这种情况排列有 \(\binom{3}{2}=3\) 个</li>
+<li>两个字母相同,另外两个字母不同的情况,比如AABC.由于只有三个字母,其实是从三个字母里面挑一个能重复一次的,所以这种情况排列有3个</li>
+<li><p>
+那么我们总结起来就是15个,详细列表如下
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">pattern</th>
+<th scope="col" class="org-right">AAAA</th>
+<th scope="col" class="org-right">AAAB</th>
+<th scope="col" class="org-right">AABB</th>
+<th scope="col" class="org-right">AABC</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">number</td>
+<td class="org-right">3</td>
+<td class="org-right">6</td>
+<td class="org-right">3</td>
+<td class="org-right">3</td>
+</tr>
+</tbody>
+</table></li>
+</ul></li>
+<li>注意15可以写成 \(\binom{6}{2}\)</li>
+</ul>
 </div>
-<div id="outline-container-org9277cae" class="outline-4">
-<h4 id="org9277cae"><span class="section-number-4">1.8.2.</span> (a+b)^n and Pascal's triangle</h4>
 </div>
-<div id="outline-container-org2159f22" class="outline-4">
-<h4 id="org2159f22"><span class="section-number-4">1.8.3.</span> Properties of Pascal's triangle</h4>
+<div id="outline-container-org1689d00" class="outline-4">
+<h4 id="org1689d00"><span class="section-number-4">1.7.2.</span> Example 2(n=3 chosen fron N = 4)</h4>
+<div class="outline-text-4" id="text-1-7-2">
+<ul class="org-ul">
+<li>问题:从4个字母(ABCD)中获取3个letter,允许重放(所以n可以大于N),order不重要有几种方法</li>
+<li>思路和上面的问题一样:
+<ul class="org-ul">
+<li>三个字母相同的情况,比如AAA,由于只有四个字母,所以这种情况排列就是4个</li>
+<li>两个字母相同的情况,比如AAB,由于只有四个字母,所以是从四个字母里面选择两个有顺序的组合,那么就是 \(_{4}P_{2} = \frac{4!}{(4-2)!} = 12\)</li>
+<li>三个字母完全不同的情况,比如ABC,由于只有四个字母,所以是从四个字母里面选择三个没有顺序的组合,那么就是 \(\binom{4}{3} = \frac{4!}{3!\cdot 1!} = 4\)</li>
+<li><p>
+那么我们总结起来就是20个,详细列表如下
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">pattern</th>
+<th scope="col" class="org-right">AAA</th>
+<th scope="col" class="org-right">AAB</th>
+<th scope="col" class="org-right">ABC</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">number</td>
+<td class="org-right">4</td>
+<td class="org-right">12</td>
+<td class="org-right">4</td>
+</tr>
+</tbody>
+</table></li>
+</ul></li>
+<li>注意20可以写成 \(\binom{6}{3}\)</li>
+</ul>
 </div>
+</div>
+<div id="outline-container-org2380079" class="outline-4">
+<h4 id="org2380079"><span class="section-number-4">1.7.3.</span> Example 3(n=5 chosen fron N = 3)</h4>
+<div class="outline-text-4" id="text-1-7-3">
+<ul class="org-ul">
+<li>问题:从3个字母(ABC)中获取5个letter,允许重放(所以n可以大于N),order不重要有几种方法</li>
+<li>思路和上面的问题一样:
+<ul class="org-ul">
+<li>五个字母相同,只有两种字母的情况,比如AAAAA,由于只有三个字母,所以这种情况排列就是3个</li>
+<li>四个字母相同,只有两种字母的情况,比如AAAAB,由于只有三个字母,所以是从三个字母里面选择两个有顺序的组合,那么就是 \(_{3}P_{2} = \frac{3!}{(3-2)!} = 6\)</li>
+<li>三个字母相同,只有两种字母的情况,比如AAACC,由于只有三个字母,所以是从三个字母里面选择两个有顺序的组合,那么就是 \(_{3}P_{2} = \frac{3!}{(3-2)!} = 6\)</li>
+<li>三个字母相同,有三种字母的情况,比如AAABC,由于只有三个字母,所以是从三个字母里面选择两个没有顺序的组合,那么就是 \(_{3}C_{2} = \frac{3!}{(3-2)! \cdot 2!} = 3\)</li>
+<li>两个字母相同,有三种字母的情况,比如AABBC,由于只有三个字母,所以是从三个字母里面选择两个没有顺序的组合,那么就是 \(_{3}C_{2} = \frac{3!}{(3-2)! \cdot 2!} = 3\)</li>
+<li><p>
+那么我们总结起来就是21个,详细列表如下
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">pattern</th>
+<th scope="col" class="org-right">AAAAA</th>
+<th scope="col" class="org-right">AAAAB</th>
+<th scope="col" class="org-right">AAABB</th>
+<th scope="col" class="org-right">AAABC</th>
+<th scope="col" class="org-right">AABBC</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">number</td>
+<td class="org-right">3</td>
+<td class="org-right">6</td>
+<td class="org-right">6</td>
+<td class="org-right">3</td>
+<td class="org-right">3</td>
+</tr>
+</tbody>
+</table></li>
+</ul></li>
+<li>注意21可以写成 \(\binom{7}{2}\)</li>
+<li>我们前面不厌其烦的写了三个例子,其实就是为了寻找规律,我们也最终找到了规律:
+<ul class="org-ul">
+<li>对于从N个对象里面选择n个对象,顺序不重要,且能放回的情况下,其最终的方法有 \(\binom{n+(N-1)}{N-1}\) 种</li>
+</ul></li>
+<li>前面三个例子虽然分析的很详细,但是其并不能泛化成n和N,换句话,如果n和N很大的情况下,我们无法使用上面的方法进行分析</li>
+<li>下面我们可以来介绍我们可以泛化的方法了,我们首先假设N是3,n是6
+<ul class="org-ul">
+<li>首先,我们使用星星来代替字母,那么其实就是有6个星星</li>
+<li><p>
+这6个星星可以是任意的A或者B或者C,*但是* 必须是A和A挨着,B和B挨着,C和C挨着,顺序必须是先A后B,最后C,
+不能有相同的字母,但是不挨着,比如下面两个AAABCC和BBBBBBC都是合理的
+</p>
+
+<div id="org6a53630" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/peb/1-4.png" alt="1-4.png" />
+</p>
+<p><span class="figure-number">Figure 3: </span>peb/1-4.png</p>
+</div></li>
+<li><p>
+一旦使用星星来替代字母,那么到底选哪些字母到最终的六个成员里面,就变成了这么一个选择题:如何把两个板
+子插入到六个星星的七个位置,如下图
+</p>
+
+<div id="orgcc167d0" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/peb/1-5.png" alt="1-5.png" />
+</p>
+<p><span class="figure-number">Figure 4: </span>peb/1-5.png</p>
+</div></li>
+<li><p>
+板子插入后,第一个板子前面的都是A,第一个板子和第二个板子之间的都是B,剩下的都是C. 这个分发很类似
+leetcode75(给定一个包含红色、白色和蓝色、共 n 个元素的数组 nums ，原地 对它们进行排序，使得相同颜
+色的元素相邻，并按照红色、白色、蓝色顺序排列。我们使用整数 0、 1 和 2 分别表示红色、白色和蓝色)我
+们这里把leetcode75的代码贴一下
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #531ab6;">class</span> <span style="color: #005f5f;">Solution</span>:
+    <span style="color: #531ab6;">def</span> <span style="color: #721045;">sortColors</span><span style="color: #000000;">(</span><span style="color: #531ab6;">self</span>, nums: List<span style="color: #dd22dd;">[</span><span style="color: #8f0075;">int</span><span style="color: #dd22dd;">]</span><span style="color: #000000;">)</span> -&gt; <span style="color: #0000b0;">None</span>:
+        <span style="color: #2a5045;">"""</span>
+<span style="color: #2a5045;">        Do not return anything, modify nums in-place instead.</span>
+<span style="color: #2a5045;">        """</span>
+        <span style="color: #005e8b;">left</span> = -1
+        <span style="color: #005e8b;">right</span> = <span style="color: #8f0075;">len</span><span style="color: #000000;">(</span>nums<span style="color: #000000;">)</span>
+
+        <span style="color: #005e8b;">i</span> = 0
+        <span style="color: #531ab6;">while</span> i &lt; right:
+            <span style="color: #531ab6;">if</span> nums<span style="color: #000000;">[</span>i<span style="color: #000000;">]</span> == 0:
+                <span style="color: #005e8b;">left</span> += 1
+                <span style="color: #005e8b;">nums</span><span style="color: #000000;">[</span><span style="color: #005e8b;">left</span><span style="color: #000000;">]</span>, <span style="color: #005e8b;">nums</span><span style="color: #000000;">[</span>i<span style="color: #000000;">]</span> = nums<span style="color: #000000;">[</span>i<span style="color: #000000;">]</span>, nums<span style="color: #000000;">[</span>left<span style="color: #000000;">]</span>
+                <span style="color: #7f0000;">#   </span><span style="color: #7f0000;">l     i   r</span>
+                <span style="color: #7f0000;"># </span><span style="color: #7f0000;">000|111|xxx|222</span>
+                <span style="color: #7f0000;"># </span><span style="color: #7f0000;">&#19978;&#22270;&#26159;&#24403;&#21069;&#30340;&#24773;&#24418;l&#26159;left&#30340;&#20301;&#32622;,i&#26159;index&#30340;&#20301;&#32622;,r&#26159;right&#30340;&#20301;&#32622;</span>
+                <span style="color: #7f0000;"># </span><span style="color: #7f0000;">&#25105;&#20204;&#21487;&#20197;&#30475;&#21040;,i&#21644;l&#20132;&#25442;&#30340;&#26102;&#20505;,&#35201;&#20040;&#20132;&#25442;&#36807;&#26469;1(1&#22823;&#20110;1&#20010;&#30340;&#24773;&#20917;).&#35201;&#20040;&#23601;&#26159;</span>
+                <span style="color: #7f0000;"># </span><span style="color: #7f0000;">&#33258;&#24049;&#21644;&#33258;&#24049;&#20132;&#25442;(1&#31561;&#20110;0&#20010;)</span>
+                <span style="color: #005e8b;">i</span> += 1
+            <span style="color: #531ab6;">elif</span> nums<span style="color: #000000;">[</span>i<span style="color: #000000;">]</span> == 2:
+                <span style="color: #005e8b;">right</span> -= 1
+                <span style="color: #7f0000;">#   </span><span style="color: #7f0000;">l     i   r</span>
+                <span style="color: #7f0000;"># </span><span style="color: #7f0000;">000|111|xxx|222</span>
+                <span style="color: #7f0000;"># </span><span style="color: #7f0000;">&#32780;i&#21644;r&#20132;&#25442;&#30340;&#24773;&#20917;&#19979;&#30001;&#20110;i&#23567;&#20110;r,&#37027;&#20040;&#24517;&#28982;&#26159;i&#21644;&#33258;&#24049;&#20132;&#25442;(x&#31561;&#20110;1&#30340;&#24773;&#20917;)</span>
+                <span style="color: #7f0000;"># </span><span style="color: #7f0000;">&#35201;&#20040;&#26159;i&#21644;x&#20132;&#25442;(x&#22823;&#20110;1&#30340;&#24773;&#20917;), &#32531;&#36807;&#26469;x&#30340;&#35805;,&#25105;&#20204;&#24517;&#39035;&#35201;&#35201;&#20877;&#26816;&#26597;x</span>
+                <span style="color: #005e8b;">nums</span><span style="color: #000000;">[</span><span style="color: #005e8b;">i</span><span style="color: #000000;">]</span>, <span style="color: #005e8b;">nums</span><span style="color: #000000;">[</span>right<span style="color: #000000;">]</span> = nums<span style="color: #000000;">[</span>right<span style="color: #000000;">]</span>, nums<span style="color: #000000;">[</span>i<span style="color: #000000;">]</span>
+            <span style="color: #531ab6;">else</span>:
+                <span style="color: #005e8b;">i</span> += 1
+        <span style="color: #531ab6;">return</span>
+</pre>
+</div></li>
+<li><p>
+那么我们的问题就转换为如何把六个星星和两个隔板进行摆放
+</p>
+
+<div id="org7ca9206" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/peb/1-6.png" alt="1-6.png" />
+</p>
+<p><span class="figure-number">Figure 5: </span>peb/1-6.png</p>
+</div></li>
+<li>上图就是两个合理的摆放,我们可以看到隔板可以选择的位置有6+3-1个,从6+3-1个位置选择两个位置,那么就得
+到了有 \(\binom{8}{2}=28\) 种选择结果</li>
+<li>如果我们从另外一个角度考虑,那就是从6+3-1个位置选六个位置放星星,那么我们就有\(\binom{8}{8}=28\) 种
+选择结果</li>
+<li><p>
+上面这种方法是非常容易泛化的,比如我们有N个letter,那么我们就有N-1个bar要放到n+(N-1)个位置.或者我们
+也可以说我们有n个星星要放到n+(N-1)个位置,于是就有
+</p>
+\begin{equation}
+\binom{n+(N-1)}{N-1} = \binom{n+(N-1)}{n} \notag
+\end{equation}</li>
+<li><p>
+泛化之后,我们再具化,看一个n=6, N=4的例子,如下
+</p>
+
+<div id="orgb68e4e5" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/peb/1-7.png" alt="1-7.png" />
+</p>
+<p><span class="figure-number">Figure 6: </span>peb/1-7.png</p>
+</div></li>
+</ul></li>
+<li><p>
+如果我们使用 \(_{N}U_{n}\) 来表达从N个对象里面选择n个对象,顺序不重要,可以重放,那么我们就有如下公式
+</p>
+\begin{equation}
+_{N}U_{n} = \binom{n+(N-1)}{N-1} \tag{1.16}
+\end{equation}</li>
+<li><p>
+我们也终于可以把1-10-1的图补齐成1-11-1,如下
+</p>
+
+<div id="org18f750f" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/peb/1-11-1.png" alt="1-11-1.png" />
+</p>
+<p><span class="figure-number">Figure 7: </span>peb/1-11-1.png</p>
+</div></li>
+<li>我们下面再来看一类"money partitions"问题,这种问题看起来和我们本章讨论的"with replacement, order
+does not matter"的问题没关系,但是其实是一回事</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org7108001" class="outline-4">
+<h4 id="org7108001"><span class="section-number-4">1.7.4.</span> Example(Dividing the monery)</h4>
+<div class="outline-text-4" id="text-1-7-4">
+<ul class="org-ul">
+<li>你有10张一美元的钞票，想要分给4个人。有多少种不同的分配方式？</li>
+<li>例如，如果这4个人排成一排，他们可能分别得到4、0、3、3美元，或者1、6、2、1美元，又或者0、10、0、0美元等。</li>
+<li>钞票是相同的，但人是不同的。因此，4、0、3、3和3、4、0、3被视为不同的分配方式。</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org6bf0f68" class="outline-4">
+<h4 id="org6bf0f68"><span class="section-number-4">1.7.5.</span> Solution</h4>
+<div class="outline-text-4" id="text-1-7-5">
+<ul class="org-ul">
+<li>这个问题其实可以转换为如下问题:
+<ul class="org-ul">
+<li>有十张一元钱</li>
+<li>由四个人,标记为A,B,C,D, 每个人一旦分配到一个美元,就给美元上面写上自己的字母</li>
+<li>十个美元分配后,会产生字母排列,比如CBBDCBDBAD,由于你什么时候给美元给ABCD不重要,所以CBBDCBDBAD也就
+等同于ABBBBCCDDD(alphabetical排列)</li>
+<li>一旦有了ABBBBCCDDD排列,我们就可以发现了,其实这就是:从N(4)个对象里面找出n(10)个对象,顺序不重要,可以重放</li>
+<li><p>
+那么我们也就知道了,问题的解如下
+</p>
+\begin{equation}
+\binom{10+(4-1)}{4-1}=\binom{13}{3}=286 \tag{1.17}
+\end{equation}</li>
+</ul></li>
+<li>除了monery partition以外,还有几种和本节介绍的"从N(4)个对象里面找出n(10)个对象,顺序不重要,可以重放"
+本质是一回事,它们就是:
+<ul class="org-ul">
+<li>有多少种方式吧n个球扔到N个盒子里</li>
+<li>有多少种方式找出N个大于等于0的整数,其和为n.换句话说就是求方程 \(x_1 + x_2 + x_3 + x_4=10\) 的非负整数解的个数</li>
+</ul></li>
+<li>我们再来集中考虑下1-11-1里面的两个相关的结论:
+<ul class="org-ul">
+<li>在允许重放的情况下,顺序有意义的结果 \(N^n\)</li>
+<li>在允许重放的情况下,顺序无意义的结果 \(\binom{n+(N-1)}{N-1}\)</li>
+</ul></li>
+<li>我们必须从 \(\binom{n+(N-1)}{N-1}\) 里面经过分析,得出 \(N^n\) 的结果,我们使用n=4和N=3来进行解释</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgf11519e" class="outline-4">
+<h4 id="orgf11519e"><span class="section-number-4">1.7.6.</span> Example(Reproducing \(N^n\) )</h4>
+<div class="outline-text-4" id="text-1-7-6">
+<ul class="org-ul">
+<li>\(N^n\) 的结果告诉我们，当从装有N=3个物体中​​有放回地抽取​​n=4个物体时，可能的​​有序排列​​共有3⁴=81种。现在
+让我们通过分析本节开头​​例1​​中四种基本​​无序组合​类型​（AAAA、AAAB、AABB、AABC）各自对应的有序排列数量，
+来验证这一结果。虽然这种方法比直接计算3⁴=81更繁琐，但通过实际验证确认其正确性并无坏处</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org051d2f8" class="outline-4">
+<h4 id="org051d2f8"><span class="section-number-4">1.7.7.</span> Solution</h4>
+<div class="outline-text-4" id="text-1-7-7">
+<ul class="org-ul">
+<li><p>
+首先列一下每种组合类型中,"无顺序组合(unordered set)"的个数
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">pattern</th>
+<th scope="col" class="org-right">AAAA</th>
+<th scope="col" class="org-right">AAAB</th>
+<th scope="col" class="org-right">AABB</th>
+<th scope="col" class="org-right">AABC</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">number</td>
+<td class="org-right">3</td>
+<td class="org-right">6</td>
+<td class="org-right">3</td>
+<td class="org-right">3</td>
+</tr>
+</tbody>
+</table></li>
+<li>我们再计算每种"无顺序组合(unordered set)"可能产生的"有顺序组合"的数值,和"无顺序组合(unordered set)"
+相乘就是这种"组合类型"得到的"有顺序组合"的总值</li>
+<li>足厚我们把所有"组合类型"得到的"有顺序组合"的总值相加,就得到了"可重放,有顺序"的组合结果</li>
+<li>先看AAAA,这种组合类型每次只能选一个字母,所以"有顺序组合"也就是1,合计 3*1=3</li>
+<li>再看AAAB,这种组合类型每次可以把B放到4个位置,所以合计是6*4=24</li>
+<li>再看AABB,这种组合类型每次可以有六种排列方式(AABB,ABAB,ABBA,BAAB,BABA,BBAA),所以合计是3*6=18</li>
+<li>最后看AABC,这种组合类型每次可以有12种排列方式,所以合计是3*12=36</li>
+<li>总共就是3+24+18+36=81</li>
+<li>正如本节开头所说,在标准概率问题中,"允许重放的无序组合"的出现频率低于1-11-1中其他三种情况.原因之一在于:
+<ul class="org-ul">
+<li>其他三种情况所有的组合,都是等可能出现的.</li>
+<li>而"允许重复的无序组合",其每一个结果的权重是一样的(比如BBBB和ACCC权重一样),但是概率却不一样(BBBB
+每出现一次,ACCC却能以'ACCC,CACC,CCAC,CCCA'的形式出现四次).</li>
+</ul></li>
+
+<li>"有放回"（或"可重复"）等同于"独立试验"，例如:
+<ul class="org-ul">
+<li>掷骰子</li>
+<li>抛硬币</li>
+<li>从有放回的盒子中抽取小球等情形。</li>
+</ul></li>
+<li>而"无放回"则等同于"消耗性试验"，即每次试验后可能结果的总数会减1,例如:
+<ul class="org-ul">
+<li>人员委员会的挑选（因为同一个人显然不能被重复选择）</li>
+<li>座位分配</li>
+<li>从无放回的盒子中抽取小球等案例</li>
+</ul></li>
+<li>"顺序重要"与"顺序无关"的区分标准，可以形象地理解为：有序对象如同排列成线，而无序对象则似聚作一团。</li>
+<li><p>
+根据"顺序重要与否"以及"可放回与否",我们整理了如下的图来抽象说明每种情况,请和1-11-1.png一同对比
+</p>
+
+<div id="orgfd9153f" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/peb/1-12-1.png" alt="1-12-1.png" />
+</p>
+<p><span class="figure-number">Figure 8: </span>peb/1-12-1.png</p>
+</div></li>
+<li><p>
+根据"顺序重要与否"以及"可放回与否",我们整理了如下的图来举例说明每种情况,请和1-12-1.png一同对比
+</p>
+
+<div id="org357b7e4" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/peb/1-13-1.png" alt="1-13-1.png" />
+</p>
+<p><span class="figure-number">Figure 9: </span>peb/1-13-1.png</p>
+</div></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org06e78bf" class="outline-3">
+<h3 id="org06e78bf"><span class="section-number-3">1.8.</span> Binomial coefficients</h3>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: harrifeng@outlook.com</p>
-<p class="date">Created: 2025-05-16 Fri 17:29</p>
+<p class="date">Created: 2025-05-29 Thu 23:01</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
