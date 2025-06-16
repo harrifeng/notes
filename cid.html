@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-06-11 Wed 14:36 -->
+<!-- 2025-06-16 Mon 11:23 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>cid</title>
@@ -23,36 +23,36 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org76fc7ef">1. Chapter 01: Cascade, specificity, and inheritance</a>
+<li><a href="#org4963a7f">1. Chapter 01: Cascade, specificity, and inheritance</a>
 <ul>
-<li><a href="#orgfb10720">1.1. The cascade</a>
+<li><a href="#orgf3b6868">1.1. The cascade</a>
 <ul>
-<li><a href="#org918924d">1.1.1. Stylesheet origin</a></li>
-<li><a href="#org2a4fcfc">1.1.2. Inline styles</a></li>
-<li><a href="#org4b6f874">1.1.3. Selector specificity</a></li>
-<li><a href="#org0e0997a">1.1.4. Source order</a></li>
+<li><a href="#org4b746da">1.1.1. Stylesheet origin</a></li>
+<li><a href="#org3b19f28">1.1.2. Inline styles</a></li>
+<li><a href="#org241c08c">1.1.3. Selector specificity</a></li>
+<li><a href="#org6d616c6">1.1.4. Source order</a></li>
 </ul>
 </li>
-<li><a href="#orgdb0917e">1.2. Inheritance</a></li>
-<li><a href="#org4a4abc9">1.3. Special values</a>
+<li><a href="#orgdfbdc4d">1.2. Inheritance</a></li>
+<li><a href="#org22751c2">1.3. Special values</a>
 <ul>
-<li><a href="#org686c51f">1.3.1. The inherit keyword</a></li>
-<li><a href="#org6ae8725">1.3.2. The initial keyword</a></li>
-<li><a href="#org641e79a">1.3.3. The unset keyword</a></li>
-<li><a href="#org78c1fef">1.3.4. The revert keyword</a></li>
+<li><a href="#orgd29c4e0">1.3.1. The inherit keyword</a></li>
+<li><a href="#org1dc85a3">1.3.2. The initial keyword</a></li>
+<li><a href="#org457478c">1.3.3. The unset keyword</a></li>
+<li><a href="#orgb6c85c5">1.3.4. The revert keyword</a></li>
 </ul>
 </li>
-<li><a href="#org450ba56">1.4. Shorthand properties</a>
+<li><a href="#orgfec9cd7">1.4. Shorthand properties</a>
 <ul>
-<li><a href="#org8835fb1">1.4.1. Beware shorthands silently overriding other styles</a></li>
-<li><a href="#org0b68295">1.4.2. Remember the order of shorthand values</a></li>
+<li><a href="#org6004463">1.4.1. Beware shorthands silently overriding other styles</a></li>
+<li><a href="#org20f8c2d">1.4.2. Remember the order of shorthand values</a></li>
 </ul>
 </li>
-<li><a href="#orgc104b37">1.5. Progressive enhancement</a>
+<li><a href="#org79c51b9">1.5. Progressive enhancement</a>
 <ul>
-<li><a href="#orgbd759c6">1.5.1. Using the cascade for progressive enhancement</a></li>
-<li><a href="#org9a288ae">1.5.2. Progressively enhancing selectors</a></li>
-<li><a href="#org8eaf001">1.5.3. Feature queries using @supports()</a></li>
+<li><a href="#org67f2772">1.5.1. Using the cascade for progressive enhancement</a></li>
+<li><a href="#orgdfbebcd">1.5.2. Progressively enhancing selectors</a></li>
+<li><a href="#orgfa77a92">1.5.3. Feature queries using @supports()</a></li>
 </ul>
 </li>
 </ul>
@@ -60,19 +60,19 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-org76fc7ef" class="outline-2">
-<h2 id="org76fc7ef"><span class="section-number-2">1.</span> Chapter 01: Cascade, specificity, and inheritance</h2>
+<div id="outline-container-org4963a7f" class="outline-2">
+<h2 id="org4963a7f"><span class="section-number-2">1.</span> Chapter 01: Cascade, specificity, and inheritance</h2>
 <div class="outline-text-2" id="text-1">
 <ul class="org-ul">
 <li>CSS不同于软件开发世界中的诸多事物:
 <ul class="org-ul">
-<li>它并非传统意义上的编程语言，却需要抽象思维</li>
+<li>它并非传统意义上的编程语言,却需要抽象思维</li>
 <li>它不完全是设计工具却需要创造力</li>
-<li>它提供看似简单的声明式语法，但如果你参与过大型项目，就会明白它能演变成难以控制的复杂体系</li>
+<li>它提供看似简单的声明式语法,但如果你参与过大型项目,就会明白它能演变成难以控制的复杂体系</li>
 </ul></li>
-<li>当你需要学习传统编程中的某项操作时,通常能明确该搜索什么（例如"如何在数组中查找x类型的元素?"）</li>
-<li>但使用CSS时，问题往往难以提炼成单一提问。即便能够提炼，答案也常是"视情况而定",实现目标的最佳方式往
-往取决于你的特定约束条件，以及你希望如何精确处理各种边界情况</li>
+<li>当你需要学习传统编程中的某项操作时,通常能明确该搜索什么(例如"如何在数组中查找x类型的元素?")</li>
+<li>但使用CSS时,问题往往难以提炼成单一提问.即便能够提炼,答案也常是"视情况而定",实现目标的最佳方式往
+往取决于你的特定约束条件,以及你希望如何精确处理各种边界情况</li>
 <li>为了能够更好的学习,我们首先来总结一下常见的术语:
 <ul class="org-ul">
 <li><p>
@@ -100,18 +100,18 @@
 </ul></li>
 <li>第一部分从CSS最根本的原理讲起:
 <ul class="org-ul">
-<li>层叠（cascade）</li>
-<li>盒模型（box model）</li>
+<li>层叠(cascade)</li>
+<li>盒模型(box model)</li>
 <li>多样的单位体系</li>
 </ul></li>
-<li>多数开发者都听说过层叠和盒模型的概念，他们了解像素单位，或许也听过“应该用em单位替代像素”的建议。但事
-实是，这些主题蕴含的知识远不止于此——对它们的浅显理解只能让你走这么远。</li>
-<li>若想真正精通CSS，你必须首先深入掌握这些基础原理，并且是透彻地掌握</li>
+<li>多数开发者都听说过层叠和盒模型的概念,他们了解像素单位,或许也听过"应该用em单位替代像素"的建议.但事
+实是,这些主题蕴含的知识远不止于此&#x2013;对它们的浅显理解只能让你走这么远.</li>
+<li>若想真正精通CSS,你必须首先深入掌握这些基础原理,并且是透彻地掌握</li>
 <li>本书的目标是巩固读者的css知识体系和根基,所以我们会从基础原理讲起,回顾核心概念后,我们会对每个核心概念进行深入讨论</li>
 </ul>
 </div>
-<div id="outline-container-orgfb10720" class="outline-3">
-<h3 id="orgfb10720"><span class="section-number-3">1.1.</span> The cascade</h3>
+<div id="outline-container-orgf3b6868" class="outline-3">
+<h3 id="orgf3b6868"><span class="section-number-3">1.1.</span> The cascade</h3>
 <div class="outline-text-3" id="text-1-1">
 <ul class="org-ul">
 <li>本质上来说,css的核心就是用来声明rules(前面讲过,rules是泛指不同样式): 也就是,在不同条件下触发特定的样式效果:
@@ -120,14 +120,14 @@
 <li>当elementX是elementY的child的时候,应用那个style</li>
 <li>浏览器会解析这些规则,并且确定各个规则的适用位置,最终通过渲染引擎将样式呈现到页面上</li>
 </ul></li>
-<li>​虽然在小规模示例中,CSS规则的解析过程通常清晰明了,但随着样式表规模扩大或应用页面增多，代码复杂度可能迅速攀升.</li>
-<li>CSS往往提供多种途径实现相同效果——而根据所选方案的不同,当HTML结构变更或样式应用于不同页面时,结果可能截然不同</li>
-<li>CSS开发的核心挑战，在于编写具备可预测性的规则.</li>
-<li>实现(编写具备可预测性的规则)这一目标的首要步骤，是确切理解浏览器如何解析CSS规则:
+<li>虽然在小规模示例中,CSS规则的解析过程通常清晰明了,但随着样式表规模扩大或应用页面增多,代码复杂度可能迅速攀升.</li>
+<li>CSS往往提供多种途径实现相同效果&#x2013;而根据所选方案的不同,当HTML结构变更或样式应用于不同页面时,结果可能截然不同</li>
+<li>CSS开发的核心挑战,在于编写具备可预测性的规则.</li>
+<li>实现(编写具备可预测性的规则)这一目标的首要步骤,是确切理解浏览器如何解析CSS规则:
 <ul class="org-ul">
-<li>每个规则本身可能简单明了，但当两条规则对同一元素的样式提供冲突信息时会发生什么?</li>
-<li>你可能会发现某条规则未按预期生效——因为另一条规则与其产生了冲突.</li>
-<li>要准确预测规则行为，必须深入理解层叠机制（cascade）</li>
+<li>每个规则本身可能简单明了,但当两条规则对同一元素的样式提供冲突信息时会发生什么?</li>
+<li>你可能会发现某条规则未按预期生效&#x2013;因为另一条规则与其产生了冲突.</li>
+<li>要准确预测规则行为,必须深入理解层叠机制(cascade)</li>
 </ul></li>
 <li>我们通过例子来展示下CSS ruleset的冲突如何解决
 <ul class="org-ul">
@@ -184,15 +184,15 @@
 sans serif字体</li>
 <li>这就是所谓的cascade的例子:在多个ruleset相互冲突的时候,决定哪个ruleset起作用.</li>
 </ul></li>
-<li>下面我们解析层叠规则。当声明冲突时，层叠会按 <b>以下顺序</b> 通过六个标准来判断多个冲突ruleset的优先级。
+<li>下面我们解析层叠规则.当声明冲突时,层叠会按 <b>以下顺序</b> 通过六个标准来判断多个冲突ruleset的优先级.
 一旦某种标准解决了优先级问题,就退出,否则就继续使用下一个标准进行解决. 我们将逐一深入探讨这六个标准:
 <ol class="org-ol">
-<li>样式表来源(Stylesheet origin)——样式来自何处。你的样式会与浏览器的默认样式共同应用</li>
-<li>内联样式(Inline style)——声明是通过HTML的style属性还是CSS选择器应用到元素上</li>
-<li>层（Layer）​——样式可以定义在不同的层中，每层有不同的优先级</li>
-<li>选择器特异性(Selector specificity)2——哪些选择器会优先于其他选择器</li>
-<li>作用域邻近性(Scope proximity)——样式是否限定在DOM的某一部分</li>
-<li>​源码顺序(Source order)——样式在样式表中声明的顺序</li>
+<li>样式表来源(Stylesheet origin)&#x2013;样式来自何处.你的样式会与浏览器的默认样式共同应用</li>
+<li>内联样式(Inline style)&#x2013;声明是通过HTML的style属性还是CSS选择器应用到元素上</li>
+<li>层(Layer)&#x2013;样式可以定义在不同的层中,每层有不同的优先级</li>
+<li>选择器特异性(Selector specificity)2&#x2013;哪些选择器会优先于其他选择器</li>
+<li>作用域邻近性(Scope proximity)&#x2013;样式是否限定在DOM的某一部分</li>
+<li>源码顺序(Source order)&#x2013;样式在样式表中声明的顺序</li>
 </ol></li>
 <li>注意,上面的六个标准可能会被!important所影响,我们后面会详细介绍</li>
 <li>上面的例子技术使用了Selector specificty来进行解决的: ID selector的优先级更高</li>
@@ -200,8 +200,8 @@ sans serif字体</li>
 <li>接下来我们来介绍剩下的四个</li>
 </ul>
 </div>
-<div id="outline-container-org918924d" class="outline-4">
-<h4 id="org918924d"><span class="section-number-4">1.1.1.</span> Stylesheet origin</h4>
+<div id="outline-container-org4b746da" class="outline-4">
+<h4 id="org4b746da"><span class="section-number-4">1.1.1.</span> Stylesheet origin</h4>
 <div class="outline-text-4" id="text-1-1-1">
 <ul class="org-ul">
 <li>实时上,有三种stylesheet的来源,分别是:
@@ -210,21 +210,21 @@ sans serif字体</li>
 <li>user-style,是在特定的浏览器插件或个别几种浏览器里面才能定义的style,很少被使用,优先级中等</li>
 <li>user-agent style,是浏览器默认的style,优先级最低</li>
 </ul></li>
-<li>用户代理样式（user-agent styles）在不同浏览器中略有差异，但通常实现的功能相同:
+<li>用户代理样式(user-agent styles)在不同浏览器中略有差异,但通常实现的功能相同:
 <ul class="org-ul">
-<li>标题（&lt;h1&gt; 到 &lt;h6&gt;）和段落（&lt;p&gt;）会被赋予上下外边距(margin)</li>
-<li>列表（&lt;ol&gt; 和 &lt;ul&gt;）会被赋予左内边距(padding)</li>
+<li>标题(&lt;h1&gt; 到 &lt;h6&gt;)和段落(&lt;p&gt;)会被赋予上下外边距(margin)</li>
+<li>列表(&lt;ol&gt; 和 &lt;ul&gt;)会被赋予左内边距(padding)</li>
 <li>链接颜色和默认字体大小也会被设置</li>
 </ul></li>
 <li>用户代理样式(user-agent styles)设置的通常是您期望的默认效果,因此不会产生完全出乎意料的行为.不同现代
-浏览器的最新版本中，这些样式往往保持高度一致.</li>
-<li>若对某些属性的默认效果不满意，只需在自定义样式表中覆盖这些值即可
+浏览器的最新版本中,这些样式往往保持高度一致.</li>
+<li>若对某些属性的默认效果不满意,只需在自定义样式表中覆盖这些值即可
 <ul class="org-ul">
 <li><p>
 图1-4就是user-agent style的设置
 </p>
 
-<div id="orge06828a" class="figure">
+<div id="org6a20072" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/cid/1-4.png" alt="1-4.png" />
 </p>
 <p><span class="figure-number">Figure 1: </span>cid/1-4.png</p>
@@ -233,7 +233,7 @@ sans serif字体</li>
 我们想对1-4进行一些改动,具体的改动后,效果
 </p>
 
-<div id="orge88f168" class="figure">
+<div id="org1f0b4bc" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/cid/1-5.png" alt="1-5.png" />
 </p>
 <p><span class="figure-number">Figure 2: </span>cid/1-5.png</p>
@@ -273,7 +273,7 @@ sans serif字体</li>
 </ul>
 </div>
 <ol class="org-ol">
-<li><a id="org3ebc319"></a>Important Declarations<br />
+<li><a id="orgbf234bd"></a>Important Declarations<br />
 <div class="outline-text-5" id="text-1-1-1-1">
 <ul class="org-ul">
 <li>style origin rules有一个例外,那就是一旦一个declaration被标记为imporatnt(使用!important),那么这个declaration
@@ -292,14 +292,14 @@ important考虑进来之后,所有的优先级从高到低如下:
 </li>
 </ol>
 </div>
-<div id="outline-container-org2a4fcfc" class="outline-4">
-<h4 id="org2a4fcfc"><span class="section-number-4">1.1.2.</span> Inline styles</h4>
+<div id="outline-container-org3b19f28" class="outline-4">
+<h4 id="org3b19f28"><span class="section-number-4">1.1.2.</span> Inline styles</h4>
 <div class="outline-text-4" id="text-1-1-2">
 <ul class="org-ul">
-<li>当冲突声明无法通过来源（origin）解决时,浏览器会检查它们是否通过内联样式（inline styles）添加到元素:
+<li>当冲突声明无法通过来源(origin)解决时,浏览器会检查它们是否通过内联样式(inline styles)添加到元素:
 <ul class="org-ul">
 <li><p>
-通过HTML的style属性应用的样式声明仅作用于当前元素，且会覆盖外部样式表或&lt;style&gt;标签中的声明,比如我
+通过HTML的style属性应用的样式声明仅作用于当前元素,且会覆盖外部样式表或&lt;style&gt;标签中的声明,比如我
 们想把最后一个Specials给给成桔色背景,那么我们可以直接在目标元素内更改
 </p>
 <div class="org-src-container">
@@ -318,21 +318,21 @@ index e0f6bd3..078f82b 100644
    &lt;/header&gt;
 </pre>
 </div></li>
-<li>内联样式无需选择器，因其直接绑定目标元素。</li>
+<li>内联样式无需选择器,因其直接绑定目标元素.</li>
 </ul></li>
 <li>inline style的特点如下:
 <ul class="org-ul">
-<li>优先级排序​：内联样式 &gt; 作者样式（外部/内部） &gt; 用户代理样式（浏览器默认）</li>
-<li>特殊性计算​：内联样式的特殊性权重为1,0,0,0，高于ID选择器的0,1,0,0</li>
-<li>应用场景​：适合局部覆盖，但滥用会降低可维护性</li>
+<li>优先级排序:内联样式 &gt; 作者样式(外部/内部) &gt; 用户代理样式(浏览器默认)</li>
+<li>特殊性计算:内联样式的特殊性权重为1,0,0,0,高于ID选择器的0,1,0,0</li>
+<li>应用场景:适合局部覆盖,但滥用会降低可维护性</li>
 </ul></li>
 <li>若需在stylesheet中覆盖内联声明,必须为声明添加!important以提升其优先级来源.若内联样式本身已被标记为
 !important,则无法被任何规则覆盖.建议优先通过stylesheet(而非inline style)实现此类覆盖</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org4b6f874" class="outline-4">
-<h4 id="org4b6f874"><span class="section-number-4">1.1.3.</span> Selector specificity</h4>
+<div id="outline-container-org241c08c" class="outline-4">
+<h4 id="org241c08c"><span class="section-number-4">1.1.3.</span> Selector specificity</h4>
 <div class="outline-text-4" id="text-1-1-3">
 <ul class="org-ul">
 <li>selector specificity是一个不易察觉但是却是非常重要的CSS特性,因为:
@@ -580,8 +580,8 @@ index 7344b9d..12c92d8 100644
 </ul>
 </div>
 </div>
-<div id="outline-container-org0e0997a" class="outline-4">
-<h4 id="org0e0997a"><span class="section-number-4">1.1.4.</span> Source order</h4>
+<div id="outline-container-org6d616c6" class="outline-4">
+<h4 id="org6d616c6"><span class="section-number-4">1.1.4.</span> Source order</h4>
 <div class="outline-text-4" id="text-1-1-4">
 <ul class="org-ul">
 <li>最后一步解决冲突的办法就是source order了,简单点说,所有的标准都相同的情况下,在代码中的位置越往后,优
@@ -636,6 +636,15 @@ index 7344b9d..12c92d8 100644
 </pre>
 </div></li>
 </ul></li>
+<li>浏览器会遵循以下步骤来解析页面上每个元素的每个属性.在层叠过程中"胜出"的声明称为层叠值 (cascaded
+value)每个元素的每个属性最多只有一个层叠值.</li>
+<li><p>
+页面上的一个特定段落 (&lt;p&gt;) 可以有一个上边距和一个下边距,但它不能有两个不同的上边距或两个不同的下边
+距.如果 CSS 为同一个属性指定了不同的值,在渲染该元素时,层叠规则将只选择其中一个值.这就是层叠值.
+</p>
+<pre class="example" id="orgce37280">
+层叠值 (cascaded value) 是指通过层叠过程应用到一个元素上的特定属性的值
+</pre></li>
 <li>总体上来说层叠(cascade)是比较容易处理的,我们只需要记住两个最佳实践即可:
 <ul class="org-ul">
 <li>不要使用ID selector</li>
@@ -645,56 +654,804 @@ index 7344b9d..12c92d8 100644
 </div>
 </div>
 </div>
-<div id="outline-container-orgdb0917e" class="outline-3">
-<h3 id="orgdb0917e"><span class="section-number-3">1.2.</span> Inheritance</h3>
+<div id="outline-container-orgdfbdc4d" class="outline-3">
+<h3 id="orgdfbdc4d"><span class="section-number-3">1.2.</span> Inheritance</h3>
+<div class="outline-text-3" id="text-1-2">
+<ul class="org-ul">
+<li>如果一个元素没有某个属性的层叠值,它可能会从祖先元素那里继承该属性值.通常的做法是为 &lt;body&gt; 元素设
+置 font-family(字体).所有后代元素将自动继承该字体,无需显式地为页面上的每个元素单独设置
+<ul class="org-ul">
+<li><p>
+图1-8展示了DOM树里面的继承关系
+</p>
+
+<div id="orgd63d533" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/cid/1-8.png" alt="1-8.png" />
+</p>
+<p><span class="figure-number">Figure 3: </span>cid/1-8.png</p>
+</div></li>
+</ul></li>
+<li>并非所有属性都具有继承性.默认情况下,只有特定属性会被继承.通常,这些正是您希望被继承的属性,主要
+包括与文本相关的属性:
+<ul class="org-ul">
+<li>color(颜色)</li>
+<li>font(字体)</li>
+<li>font-family(字体系列)</li>
+<li>font-size(字体大小)</li>
+<li>font-weight(字体粗细)</li>
+<li>font-variant(字体变体)</li>
+<li>font-style(字体样式)</li>
+<li>line-height(行高)</li>
+<li>letter-spacing(字符间距)</li>
+<li>text-align(文本对齐)</li>
+<li>text-indent(文本缩进)</li>
+<li>text-transform(文本大小写转换)</li>
+<li>white-space(空白处理)</li>
+<li>word-spacing(单词间距).</li>
+</ul></li>
+<li>其他可继承属性还包括列表属性:
+<ul class="org-ul">
+<li>list-style(列表样式)</li>
+<li>list-style-type(列表标记类型)</li>
+<li>list-style-position(列表标记位置)</li>
+<li>list-style-image(列表标记图像)</li>
+</ul></li>
+<li>表格边框属性也可以继承但是:这些属性控制表格的边框行为,而非常用于非表格元素的边框属性.例如,我们不
+会希望 &lt;div&gt; 将其边框传递给每个后代元素:
+<ul class="org-ul">
+<li>border-collapse(边框合并)</li>
+<li>border-spacing(边框间距)</li>
+</ul></li>
+<li><p>
+下面这个例子就可以把font-family给body,从而让body所有的后代都可以继承
+</p>
+<div class="org-src-container">
+<pre class="src src-css"><span style="color: #721045;">body</span> <span style="color: #000000;">{</span>
+  <span style="color: #531ab6;">font-family</span>: sans-serif;
+<span style="color: #000000;">}</span>
+</pre>
+</div></li>
+<li>inheritance会在后代和后代之间不断的传递,知道它被cascaded value所覆盖</li>
+<li>目前为止,我们学了如下几种设置样式的方法:
+<ul class="org-ul">
+<li>inline style: 直接在element上面设置(优先级最高)</li>
+<li>cascaded value: 基本就是用户代码,也就是user-agent(也有个别浏览器author-agent样式),用来替换inherited value</li>
+<li>inherited value: 后代element继承自己的祖先的(优先级最低)</li>
+</ul></li>
+<li><p>
+上面三种方法都可以在浏览器的开发者工具中找到,而且优先级顺序也是最高的在最上面
+</p>
+
+<div id="org98d878e" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/cid/dev_tool.png" alt="dev_tool.png" />
+</p>
+<p><span class="figure-number">Figure 4: </span>cid/dev_tool.png</p>
+</div></li>
+</ul>
 </div>
-<div id="outline-container-org4a4abc9" class="outline-3">
-<h3 id="org4a4abc9"><span class="section-number-3">1.3.</span> Special values</h3>
+</div>
+<div id="outline-container-org22751c2" class="outline-3">
+<h3 id="org22751c2"><span class="section-number-3">1.3.</span> Special values</h3>
 <div class="outline-text-3" id="text-1-3">
+<ul class="org-ul">
+<li><p>
+本节介绍的关键字,其不会改变层叠规则:CSS 的核心机制是层叠规则(Cascading Rules),优先级是其关键部分.
+下面介绍的关键字都是一个属性值,在declaration层面起作用!
+</p>
+<pre class="example" id="org381a153">
+Warning: These keywords are normal cascaded values. That means it is still
+possible to override them with other values when another selector with higher
+specificity targets the same element.
+</pre></li>
+</ul>
 </div>
-<div id="outline-container-org686c51f" class="outline-4">
-<h4 id="org686c51f"><span class="section-number-4">1.3.1.</span> The inherit keyword</h4>
+<div id="outline-container-orgd29c4e0" class="outline-4">
+<h4 id="orgd29c4e0"><span class="section-number-4">1.3.1.</span> The inherit keyword</h4>
+<div class="outline-text-4" id="text-1-3-1">
+<ul class="org-ul">
+<li>由于cascade优先级高,其会替代继承给element以style,这也是绝大多数情况下,我们希望发生的情形</li>
+<li>但是有些情况下,我们其实是希望继承发生:
+<ul class="org-ul">
+<li><p>
+比如下面这个例子中,我们的Term of use是在footer里面的.所以其 cascade value是代码中各种selector决定
+的,而不是继承的
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #531ab6;">!doctype</span> html&gt;
+&lt;<span style="color: #721045;">head</span>&gt;
+  &lt;<span style="color: #721045;">meta</span> <span style="color: #005e8b;">charset</span>=<span style="color: #3548cf;">"utf-8"</span> /&gt;
+  &lt;<span style="color: #721045;">style</span>&gt;
+    body {
+      font-family: sans-serif;
+    }
+
+    a:link {
+      background-color: blue;
+      color: white;
+      text-decoration: none;
+      padding: 2px;
+    }
+
+    a:visited {
+      background-color: purple;
+    }
+
+    a:hover {
+      background-color: transparent;
+      color: blue;
+      text-decoration: underline;
+    }
+
+    a:active {
+      color: red;
+    }
+
+    h1 {
+      color: #2f4f4f;
+      margin-bottom: 10px;
+    }
+
+    .nav {
+      margin-top: 10px;
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .nav li {
+      display: inline-block;
+    }
+
+    .nav a {
+      color: white;
+      background-color: #13a4a4;
+      padding: 5px;
+      border-radius: 2px;
+      text-decoration: none;
+    }
+
+    .nav .featured {
+      background-color: orange;
+    }
+
+    /* footer styled will be added in the next listing */
+  &lt;/<span style="color: #721045;">style</span>&gt;
+&lt;/<span style="color: #721045;">head</span>&gt;
+&lt;<span style="color: #721045;">body</span>&gt;
+  &lt;<span style="color: #721045;">header</span> <span style="color: #005e8b;">class</span>=<span style="color: #3548cf;">"page-header"</span>&gt;
+    &lt;<span style="color: #721045;">h1</span> <span style="color: #005e8b;">id</span>=<span style="color: #3548cf;">"page-title"</span> <span style="color: #005e8b;">class</span>=<span style="color: #3548cf;">"title"</span>&gt;<span style="font-weight: bold; text-decoration: underline;">Wombat Coffee Roasters</span>&lt;/<span style="color: #721045;">h1</span>&gt;
+    &lt;<span style="color: #721045;">nav</span>&gt;
+      &lt;<span style="color: #721045;">ul</span> <span style="color: #005e8b;">id</span>=<span style="color: #3548cf;">"main-nav"</span> <span style="color: #005e8b;">class</span>=<span style="color: #3548cf;">"nav"</span>&gt;
+        &lt;<span style="color: #721045;">li</span>&gt;&lt;<span style="color: #721045;">a</span> <span style="color: #005e8b;">href</span>=<span style="color: #3548cf;">"/"</span>&gt;Home&lt;/<span style="color: #721045;">a</span>&gt;&lt;/<span style="color: #721045;">li</span>&gt;
+        &lt;<span style="color: #721045;">li</span>&gt;&lt;<span style="color: #721045;">a</span> <span style="color: #005e8b;">href</span>=<span style="color: #3548cf;">"/coffees"</span>&gt;Coffees&lt;/<span style="color: #721045;">a</span>&gt;&lt;/<span style="color: #721045;">li</span>&gt;
+        &lt;<span style="color: #721045;">li</span>&gt;&lt;<span style="color: #721045;">a</span> <span style="color: #005e8b;">href</span>=<span style="color: #3548cf;">"/brewers"</span>&gt;Brewers&lt;/<span style="color: #721045;">a</span>&gt;&lt;/<span style="color: #721045;">li</span>&gt;
+        &lt;<span style="color: #721045;">li</span>&gt;&lt;<span style="color: #721045;">a</span> <span style="color: #005e8b;">href</span>=<span style="color: #3548cf;">"/specials"</span> <span style="color: #005e8b;">class</span>=<span style="color: #3548cf;">"featured"</span>&gt;Specials&lt;/<span style="color: #721045;">a</span>&gt;&lt;/<span style="color: #721045;">li</span>&gt;
+      &lt;/<span style="color: #721045;">ul</span>&gt;
+    &lt;/<span style="color: #721045;">nav</span>&gt;
+  &lt;/<span style="color: #721045;">header</span>&gt;
+  &lt;<span style="color: #721045;">main</span>&gt;
+    &lt;<span style="color: #721045;">p</span>&gt;
+      Be sure to check out
+      &lt;<span style="color: #721045;">a</span> <span style="color: #005e8b;">href</span>=<span style="color: #3548cf;">"/specials"</span> <span style="color: #005e8b;">class</span>=<span style="color: #3548cf;">"featured"</span>&gt;our specials&lt;/<span style="color: #721045;">a</span>&gt;.
+    &lt;/<span style="color: #721045;">p</span>&gt;
+  &lt;/<span style="color: #721045;">main</span>&gt;
+  &lt;<span style="color: #721045;">footer</span> <span style="color: #005e8b;">class</span>=<span style="color: #3548cf;">"footer"</span>&gt;
+    <span style="color: #005e8b;">&amp;copy;</span> 2023 Wombat Coffee Roasters <span style="color: #005e8b;">&amp;mdash;</span>
+    &lt;<span style="color: #721045;">a</span> <span style="color: #005e8b;">href</span>=<span style="color: #3548cf;">"/terms-of-use"</span>&gt;Terms of use&lt;/<span style="color: #721045;">a</span>&gt;
+  &lt;/<span style="color: #721045;">footer</span>&gt;
+&lt;/<span style="color: #721045;">body</span>&gt;
+</pre>
+</div></li>
+<li><p>
+我们其实不希望footer里面的link像我们cascade里面设置的那样,使用非常夸张的颜色.我们希望使用一个全站
+其他页面都使用的低调颜色,那么我们就会用到inherit,注意inherit不会改变优先级,只不过是我们可以从继承
+树上获取一个配置,从而和"父级"保持一致,在"父级"有更改的时候,也能自动获得更改
+</p>
+<div class="org-src-container">
+<pre class="src src-diff"><span style="background-color: #dfd5cf; font-weight: bold;">@@ -54,7 +54,19 @@</span>
+       background-color: orange;
+     }
+
+<span style="color: #aa2222; background-color: #f4d0cf;">-</span><span style="color: #8f1313; background-color: #f4d0cf;">    </span><span style="color: #8f1313; background-color: #f3b5a7;">/*</span><span style="color: #8f1313; background-color: #f4d0cf;"> footer </span><span style="color: #8f1313; background-color: #f3b5a7;">styled</span><span style="color: #8f1313; background-color: #f4d0cf;"> </span><span style="color: #8f1313; background-color: #f3b5a7;">will</span><span style="color: #8f1313; background-color: #f4d0cf;"> </span><span style="color: #8f1313; background-color: #f3b5a7;">be</span><span style="color: #8f1313; background-color: #f4d0cf;"> </span><span style="color: #8f1313; background-color: #f3b5a7;">added</span><span style="color: #8f1313; background-color: #f4d0cf;"> </span><span style="color: #8f1313; background-color: #f3b5a7;">in</span><span style="color: #8f1313; background-color: #f4d0cf;"> </span><span style="color: #8f1313; background-color: #f3b5a7;">the</span><span style="color: #8f1313; background-color: #f4d0cf;"> </span><span style="color: #8f1313; background-color: #f3b5a7;">next</span><span style="color: #8f1313; background-color: #f4d0cf;"> </span><span style="color: #8f1313; background-color: #f3b5a7;">listing</span><span style="color: #8f1313; background-color: #f4d0cf;"> </span><span style="color: #8f1313; background-color: #f3b5a7;">*/</span>
+<span style="color: #006700; background-color: #c3ebc1;">+</span><span style="color: #005000; background-color: #c3ebc1;">    </span><span style="color: #005000; background-color: #acd6a5;">.footer</span><span style="color: #005000; background-color: #c3ebc1;"> </span><span style="color: #005000; background-color: #acd6a5;">{</span><span style="color: #005000; background-color: #acd6a5;">
+</span><span style="color: #005000; background-color: #acd6a5;">+</span><span style="color: #005000; background-color: #acd6a5;">      color: #666;</span><span style="color: #005000; background-color: #acd6a5;">
+</span><span style="color: #005000; background-color: #acd6a5;">+</span><span style="color: #005000; background-color: #acd6a5;">      background-color: #ccc;</span><span style="color: #005000; background-color: #acd6a5;">
+</span><span style="color: #005000; background-color: #acd6a5;">+</span><span style="color: #005000; background-color: #acd6a5;">      padding: 15px 0;</span><span style="color: #005000; background-color: #acd6a5;">
+</span><span style="color: #005000; background-color: #acd6a5;">+</span><span style="color: #005000; background-color: #acd6a5;">      text-align: center;</span><span style="color: #005000; background-color: #acd6a5;">
+</span><span style="color: #005000; background-color: #acd6a5;">+</span><span style="color: #005000; background-color: #acd6a5;">      font-size: 14px;</span><span style="color: #005000; background-color: #acd6a5;">
+</span><span style="color: #005000; background-color: #acd6a5;">+</span><span style="color: #005000; background-color: #acd6a5;">    }</span><span style="color: #005000; background-color: #acd6a5;">
+</span><span style="color: #005000; background-color: #acd6a5;">+</span><span style="color: #005000; background-color: #acd6a5;">
+</span><span style="color: #005000; background-color: #acd6a5;">+</span><span style="color: #005000; background-color: #acd6a5;">    .</span><span style="color: #005000; background-color: #c3ebc1;">footer </span><span style="color: #005000; background-color: #acd6a5;">a</span><span style="color: #005000; background-color: #c3ebc1;"> </span><span style="color: #005000; background-color: #acd6a5;">{</span>
+<span style="color: #005000; background-color: #acd6a5;">+</span><span style="color: #005000; background-color: #c3ebc1;">      </span><span style="color: #005000; background-color: #acd6a5;">color: inherit;</span><span style="color: #005000; background-color: #acd6a5;">
+</span><span style="color: #005000; background-color: #acd6a5;">+</span><span style="color: #005000; background-color: #acd6a5;">      background-color: transparent;</span><span style="color: #005000; background-color: #acd6a5;">
+</span><span style="color: #005000; background-color: #acd6a5;">+</span><span style="color: #005000; background-color: #acd6a5;">      text-decoration: underline;</span><span style="color: #005000; background-color: #acd6a5;">
+</span><span style="color: #005000; background-color: #acd6a5;">+</span><span style="color: #005000; background-color: #acd6a5;">    }</span>
+   &lt;/style&gt;
+ &lt;/head&gt;
+ &lt;body&gt;
+</pre>
+</div></li>
+</ul></li>
+</ul>
 </div>
-<div id="outline-container-org6ae8725" class="outline-4">
-<h4 id="org6ae8725"><span class="section-number-4">1.3.2.</span> The initial keyword</h4>
 </div>
-<div id="outline-container-org641e79a" class="outline-4">
-<h4 id="org641e79a"><span class="section-number-4">1.3.3.</span> The unset keyword</h4>
+<div id="outline-container-org1dc85a3" class="outline-4">
+<h4 id="org1dc85a3"><span class="section-number-4">1.3.2.</span> The initial keyword</h4>
+<div class="outline-text-4" id="text-1-3-2">
+<ul class="org-ul">
+<li>有时候你想把某个element的style设置为初始值,就需要用到initial.这种设置会:
+<ul class="org-ul">
+<li><p>
+强制覆盖层叠样式(连!important都能覆盖)
+</p>
+<div class="org-src-container">
+<pre class="src src-css"><span style="color: #721045;">footer</span> <span style="color: #000000;">{</span> <span style="color: #531ab6;">color</span>: <span style="color: #ffffff; background-color: #0000ff;">blue</span> <span style="color: #8f0075;">!important</span>; <span style="color: #000000;">}</span>
+<span style="color: #721045;">footer a</span> <span style="color: #000000;">{</span> <span style="color: #531ab6;">color</span>: initial; <span style="color: #000000;">}</span> <span style="color: #7f0000;">/* </span><span style="color: #7f0000;">&#38142;&#25509;&#21464;&#20026;&#40657;&#33394;,&#35206;&#30422;&#34013;&#33394;</span><span style="color: #7f0000;"> */</span>
+</pre>
+</div></li>
+<li><p>
+忽略继承
+</p>
+<div class="org-src-container">
+<pre class="src src-css"><span style="color: #721045;">body</span> <span style="color: #000000;">{</span> <span style="color: #531ab6;">font-family</span>: Arial; <span style="color: #000000;">}</span>
+<span style="color: #721045;">.reset-text</span> <span style="color: #000000;">{</span> <span style="color: #531ab6;">font-family</span>: initial; <span style="color: #000000;">}</span> <span style="color: #7f0000;">/* </span><span style="color: #7f0000;">&#24674;&#22797;&#20026;&#27983;&#35272;&#22120;&#40664;&#35748;&#23383;&#20307;(&#22914; Times New Roman)</span><span style="color: #7f0000;"> */</span>
+</pre>
+</div></li>
+</ul></li>
+<li>注意这个初始值是CSS规范定义的初始值,而非浏览器默认样式.比如:
+<ul class="org-ul">
+<li>button的background-color的规范初始值是transparent,按说浏览器默认值是灰色</li>
+</ul></li>
+<li>更需要注意的是:initial 本身并不会改变语句的优先级.它的作用仅仅是将属性值重置为 CSS 规范定义的初始
+值(就像我们之前说的那样:initial仅仅在declaration层面起作用),而是否生效,取决于该规则的优先级是否比
+其他规则高,或者优先级相等但位于后面:
+<ul class="org-ul">
+<li><p>
+优先级相等时生效: 如果 initial 所在的规则优先级与其他规则相等,它会根据层叠规则(后写覆盖前写)
+起作用.例如:
+</p>
+<div class="org-src-container">
+<pre class="src src-css"><span style="color: #721045;">div</span> <span style="color: #000000;">{</span>
+  <span style="color: #531ab6;">color</span>: <span style="color: #ffffff; background-color: #ff0000;">red</span>; <span style="color: #7f0000;">/* </span><span style="color: #7f0000;">&#20808;&#23450;&#20041;&#20026;&#32418;&#33394;</span><span style="color: #7f0000;"> */</span>
+<span style="color: #000000;">}</span>
+
+<span style="color: #721045;">div</span> <span style="color: #000000;">{</span>
+  <span style="color: #531ab6;">color</span>: initial; <span style="color: #7f0000;">/* </span><span style="color: #7f0000;">&#21518;&#23450;&#20041;&#20026;&#21021;&#22987;&#20540;,&#35206;&#30422;&#21069;&#38754;&#30340; red</span><span style="color: #7f0000;"> */</span>
+<span style="color: #000000;">}</span>
+</pre>
+</div></li>
+<li><p>
+优先级低时不生效
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #721045;">div</span> <span style="color: #005e8b;">id</span>=<span style="color: #3548cf;">"example"</span> <span style="color: #005e8b;">class</span>=<span style="color: #3548cf;">"example-class"</span>&gt;Hello&lt;/<span style="color: #721045;">div</span>&gt;
+</pre>
 </div>
-<div id="outline-container-org78c1fef" class="outline-4">
-<h4 id="org78c1fef"><span class="section-number-4">1.3.4.</span> The revert keyword</h4>
+<div class="org-src-container">
+<pre class="src src-css"><span style="color: #721045;">#example</span> <span style="color: #000000;">{</span>
+  <span style="color: #531ab6;">color</span>: <span style="color: #ffffff; background-color: #ff0000;">red</span>; <span style="color: #7f0000;">/* </span><span style="color: #7f0000;">ID &#36873;&#25321;&#22120;&#20248;&#20808;&#32423;&#39640;</span><span style="color: #7f0000;"> */</span>
+<span style="color: #000000;">}</span>
+
+<span style="color: #721045;">.example-class</span> <span style="color: #000000;">{</span>
+  <span style="color: #531ab6;">color</span>: initial; <span style="color: #7f0000;">/* </span><span style="color: #7f0000;">&#31867;&#36873;&#25321;&#22120;&#20248;&#20808;&#32423;&#20302;,&#19981;&#29983;&#25928;</span><span style="color: #7f0000;"> */</span>
+<span style="color: #000000;">}</span>
+
+</pre>
+</div></li>
+<li><p>
+使用 !important 提升优先级: 如果希望强制应用 initial,可以通过 !important 提升优先级
+</p>
+<div class="org-src-container">
+<pre class="src src-css"><span style="color: #721045;">div</span> <span style="color: #000000;">{</span>
+  <span style="color: #531ab6;">color</span>: initial <span style="color: #8f0075;">!important</span>; <span style="color: #7f0000;">/* </span><span style="color: #7f0000;">&#24378;&#21046;&#37325;&#32622;&#20026;&#21021;&#22987;&#20540;</span><span style="color: #7f0000;"> */</span>
+<span style="color: #000000;">}</span>
+</pre>
+</div></li>
+</ul></li>
+</ul>
 </div>
 </div>
-<div id="outline-container-org450ba56" class="outline-3">
-<h3 id="org450ba56"><span class="section-number-3">1.4.</span> Shorthand properties</h3>
+<div id="outline-container-org457478c" class="outline-4">
+<h4 id="org457478c"><span class="section-number-4">1.3.3.</span> The unset keyword</h4>
+<div class="outline-text-4" id="text-1-3-3">
+<ul class="org-ul">
+<li>unset 是一个 CSS 的特殊值,用来根据属性是否继承来决定行为:
+<ul class="org-ul">
+<li><p>
+如果属性是可继承的,将其值设置为 inherit(继承父元素的值). 对于那些默认会继承的属性(如 color,
+font-family),unset 的效果相当于 inherit
+</p>
+<div class="org-src-container">
+<pre class="src src-css"><span style="color: #721045;">div</span> <span style="color: #000000;">{</span>
+  <span style="color: #531ab6;">color</span>: <span style="color: #ffffff; background-color: #ff0000;">red</span>;
+<span style="color: #000000;">}</span>
+<span style="color: #721045;">p</span> <span style="color: #000000;">{</span>
+  <span style="color: #531ab6;">color</span>: unset; <span style="color: #7f0000;">/* </span><span style="color: #7f0000;">&#31561;&#21516;&#20110; inherit,&#32487;&#25215; div &#30340; red</span><span style="color: #7f0000;"> */</span>
+<span style="color: #000000;">}</span>
+</pre>
+</div></li>
+<li><p>
+如果属性是不可继承的,将其值设置为 initial(属性的初始值),对于那些默认不会继承的属性(如 margin,
+border),unset 的效果相当于 initial
+</p>
+<div class="org-src-container">
+<pre class="src src-css"><span style="color: #721045;">div</span> <span style="color: #000000;">{</span>
+  <span style="color: #531ab6;">margin</span>: 20px;
+<span style="color: #000000;">}</span>
+<span style="color: #721045;">p</span> <span style="color: #000000;">{</span>
+  <span style="color: #531ab6;">margin</span>: unset; <span style="color: #7f0000;">/* </span><span style="color: #7f0000;">&#31561;&#21516;&#20110; initial,&#37325;&#32622;&#20026; 0</span><span style="color: #7f0000;"> */</span>
+<span style="color: #000000;">}</span>
+</pre>
+</div></li>
+</ul></li>
+
+<li>因此,unset 可以理解为同时具备 inherit 和 initial 的双重功能.</li>
+<li>unset 的使用场景:
+<ul class="org-ul">
+<li>当你不确定某个属性是否继承时,可以使用 unset,它会自动选择合适的行为.</li>
+<li>在清除样式或重置属性时特别有用.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgb6c85c5" class="outline-4">
+<h4 id="orgb6c85c5"><span class="section-number-4">1.3.4.</span> The revert keyword</h4>
+<div class="outline-text-4" id="text-1-3-4">
+<ul class="org-ul">
+<li>initial和unset关键字(在起作用的情况下)会把如下两种style都revert掉:
+<ul class="org-ul">
+<li>优先级较低的user-agent stylesheet</li>
+<li>优先级较高的author stylesheet</li>
+</ul></li>
+<li>但是有些时候,你只想revertauthor stylesheet,换句话说就是:
+<ul class="org-ul">
+<li>不要revert到css规范的默认值</li>
+<li>而是要revert到浏览器的默认值</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgfec9cd7" class="outline-3">
+<h3 id="orgfec9cd7"><span class="section-number-3">1.4.</span> Shorthand properties</h3>
 <div class="outline-text-3" id="text-1-4">
+<ul class="org-ul">
+<li>简写属性(shorthand properties)允许开发者通过单行声明同时设置多个相关CSS属性的值,例如:
+<ul class="org-ul">
+<li><p>
+font 是一个简写属性,可通过一行声明设置多种字体属性
+</p>
+<div class="org-src-container">
+<pre class="src src-css"><span style="color: #531ab6;">font</span>: italic bold 18px/1.2 <span style="color: #3548cf;">"Helvetica"</span>, <span style="color: #3548cf;">"Arial"</span>, sans-serif;
+<span style="color: #7f0000;">/* </span><span style="color: #7f0000;">&#31561;&#25928;&#20110;:</span>
+<span style="color: #7f0000;">   font-style: italic;</span>
+<span style="color: #7f0000;">   font-weight: bold;</span>
+<span style="color: #7f0000;">   font-size: 18px;</span>
+<span style="color: #7f0000;">   line-height: 1.2;</span>
+<span style="color: #7f0000;">   font-family: "Helvetica", "Arial", sans-serif;</span><span style="color: #7f0000;"> */</span>
+</pre>
+</div></li>
+<li>background 整合8种背景属性:
+<ol class="org-ol">
+<li>background-color</li>
+<li>background-image</li>
+<li>background-size</li>
+<li>background-repeat</li>
+<li>background-position</li>
+<li>background-origin</li>
+<li>background-clip</li>
+<li>background-attachment</li>
+</ol></li>
+<li>border 复合三层简写属性:
+<ol class="org-ol">
+<li>border-width(边框宽度)</li>
+<li>border-style(边框样式)</li>
+<li>border-color(边框颜色)</li>
+</ol></li>
+<li>border-width直接定义四个方向的边框宽度</li>
+</ul></li>
+<li>shorthand properties可以减少代码量,提升代码整洁度,但是带来的问题也不少,我们下面详细说一下</li>
+</ul>
 </div>
-<div id="outline-container-org8835fb1" class="outline-4">
-<h4 id="org8835fb1"><span class="section-number-4">1.4.1.</span> Beware shorthands silently overriding other styles</h4>
+<div id="outline-container-org6004463" class="outline-4">
+<h4 id="org6004463"><span class="section-number-4">1.4.1.</span> Beware shorthands silently overriding other styles</h4>
+<div class="outline-text-4" id="text-1-4-1">
+<ul class="org-ul">
+<li>在最佳实践中,我们不建议使用shorthand properties,下面就是short properties引入unexpected结果的例子:
+<ul class="org-ul">
+<li><p>
+我们本意是想只设置font的个别属性,保留font的bold,代码如下
+</p>
+<div class="org-src-container">
+<pre class="src src-css"><span style="color: #721045;">h1</span> <span style="color: #000000;">{</span>
+  <span style="color: #531ab6;">font-weight</span>: bold;
+<span style="color: #000000;">}</span>
+
+<span style="color: #721045;">.title</span> <span style="color: #000000;">{</span>
+  <span style="color: #531ab6;">font</span>:
+    32px Helvetica,
+    Arial,
+    sans-serif;
+<span style="color: #000000;">}</span>
+</pre>
+</div></li>
+<li><p>
+但是结果却打大跌眼镜,因为上述代码最终的结果是font的bold消失了,这就是shorthand properties惹的祸,其
+会为你没写的部分自动设置值,在这个例子里面,上面的代码其实等同于如下代码
+</p>
+<div class="org-src-container">
+<pre class="src src-css"><span style="color: #721045;">h1</span> <span style="color: #000000;">{</span>
+  <span style="color: #531ab6;">font-weight</span>: bold;
+<span style="color: #000000;">}</span>
+
+<span style="color: #721045;">.title</span> <span style="color: #000000;">{</span>
+  <span style="color: #531ab6;">font-style</span>: normal;
+  <span style="color: #531ab6;">font-variant</span>: normal;
+  <span style="color: #531ab6;">font-weight</span>: normal;
+  <span style="color: #531ab6;">font-stretch</span>: normal;
+  <span style="color: #531ab6;">line-height</span>: normal;
+  <span style="color: #531ab6;">font-size</span>: 32px;
+  <span style="color: #531ab6;">font-family</span>: Helvetica, Arial, sans-serif;
+<span style="color: #000000;">}</span>
+</pre>
+</div></li>
+</ul></li>
+</ul>
 </div>
-<div id="outline-container-org0b68295" class="outline-4">
-<h4 id="org0b68295"><span class="section-number-4">1.4.2.</span> Remember the order of shorthand values</h4>
+</div>
+<div id="outline-container-org20f8c2d" class="outline-4">
+<h4 id="org20f8c2d"><span class="section-number-4">1.4.2.</span> Remember the order of shorthand values</h4>
+<div class="outline-text-4" id="text-1-4-2">
+<ul class="org-ul">
+<li>简写属性在值的指定顺序方面通常比较宽松.你可以设置 border: 1px solid black 或者 border: black 1px
+solid,两者都能生效.这是因为浏览器能清楚地分辨哪个值指定了宽度,哪个值指定了颜色以及哪个值指定了边
+框样式.</li>
+<li>但是,对于许多属性,其值的含义可能更加模糊.在这些情况下,值的顺序就变得很重要.理解你所使用的简写
+属性中值的顺序至关重要</li>
+<li>对于像 margin,padding 或者一些为元素的四个边指定值的边框属性(如 border-width)来说,其值的顺序特
+别容易让开发者感到困惑.对于这些属性,值的顺序是顺时针的,从顶部开始.</li>
+<li>记住这个顺序可以让你避免麻烦(trouble).事实上,单词 TRouBLe 就是一个你可以用来记住这个顺序的助记
+词:Top (上),Right (右),Bottom (下),Left (左).
+<ul class="org-ul">
+<li><p>
+下面的例子就可以看到我们设置了"上右左下"四个方向的padding
+</p>
+<div class="org-src-container">
+<pre class="src src-css"><span style="color: #721045;">.nav a</span> <span style="color: #000000;">{</span>
+  <span style="color: #531ab6;">color</span>: <span style="color: #000000; background-color: #ffffff;">white</span>;
+  <span style="color: #531ab6;">background-color</span>: <span style="color: #ffffff; background-color: #13a4a4;">#13a4a4</span>;
+  <span style="color: #531ab6;">padding</span>: 10px 15px 0 5px;
+  <span style="color: #531ab6;">border-radius</span>: 2px;
+  <span style="color: #531ab6;">text-decoration</span>: none;
+<span style="color: #000000;">}</span>
+</pre>
+</div></li>
+</ul></li>
+<li>遵循此模式的属性(如 margin 和 padding)也支持省略写法.当声明结束但某一边未明确赋值时,该边的值将
+取自其对边:
+<ul class="org-ul">
+<li>若指定 三个值,则左,右两边均使用第二个值;</li>
+<li>若指定 两个值,则上,下使用第一个值,左,右使用第二个值;</li>
+<li>若仅指定 一个值,该值将应用于所有四边.</li>
+</ul></li>
+<li>所以,下面四种声明是 <b>完全相等</b> 的:
+<ul class="org-ul">
+<li><p>
+只有两个值,上下都使用第一个,左右都使用第二个
+</p>
+<div class="org-src-container">
+<pre class="src src-css"><span style="color: #531ab6;">padding</span>: 1em 2em;       <span style="color: #7f0000;">/* </span><span style="color: #7f0000;">&#19978;=1em, &#21491;=2em, &#19979;=1em(&#21462;&#33258;&#23545;&#36793;"&#19978;"), &#24038;=2em(&#21462;&#33258;&#23545;&#36793;"&#21491;")</span><span style="color: #7f0000;"> */</span>
+</pre>
+</div></li>
+<li><p>
+有三个值,上下使用1,3个,左右都使用2,4个. 这种是最容易让人困惑的,上右下都有值,只有左边没有值,这个值
+是要和右边用一样的值,也就是第二个值
+</p>
+<div class="org-src-container">
+<pre class="src src-css"><span style="color: #531ab6;">padding</span>: 1em 2em 1em;   <span style="color: #7f0000;">/* </span><span style="color: #7f0000;">&#19978;=1em, &#21491;=2em, &#19979;=1em, &#24038;=2em(&#21462;&#33258;&#23545;&#36793;"&#21491;")</span><span style="color: #7f0000;"> */</span>
+</pre>
+</div></li>
+<li><p>
+有全部四个值,那么就按照"上右下左"的顺序使用
+</p>
+<div class="org-src-container">
+<pre class="src src-css"><span style="color: #531ab6;">padding</span>: 1em 2em 1em 2em;
+</pre>
+</div></li>
+</ul></li>
+<li><b>最佳实践是是你需要设置两个值</b>. 特别是在较小的元素上,左右内边距大于上下内边距通常效果更好.这种方
+法在按钮上,或者在我们页面的导航链接上,看起来都很不错.</li>
+<li>TRouBLe助记词仅适用于作用于盒子四边的简写属性.其他属性最多只支持两个值,包括background-position,
+box-shadow和text-shadow等(严格来说这些并非传统简写属性).</li>
+<li>与padding这类四值属性相比,这些属性的值声明顺序是相反的:
+<ul class="org-ul">
+<li>padding: 1em 2em 先声明垂直方向(上/下)值,后声明水平方向(右/左)值</li>
+<li>background-position: 25% 75% 则先声明水平方向值,后声明垂直方向值</li>
+</ul></li>
+<li>这种看似矛盾的顺序差异其实有着合理的解释:这两个值代表笛卡尔坐标系.笛卡尔坐标系的测量值通常按x
+(水平)y(垂直)的顺序给出.
+<ul class="org-ul">
+<li><p>
+下面就是一个先设置水平再设置垂直的例子
+</p>
+<div class="org-src-container">
+<pre class="src src-css"><span style="color: #721045;">.nav .featured</span> <span style="color: #000000;">{</span>
+  <span style="color: #531ab6;">background-color</span>: <span style="color: #000000; background-color: #ffa500;">orange</span>;
+  <span style="color: #531ab6;">box-shadow</span>: 10px 2px <span style="color: #ffffff; background-color: #6f9090;">#6f9090</span>;
+<span style="color: #000000;">}</span>
+</pre>
+</div></li>
+</ul></li>
+</ul>
 </div>
 </div>
-<div id="outline-container-orgc104b37" class="outline-3">
-<h3 id="orgc104b37"><span class="section-number-3">1.5.</span> Progressive enhancement</h3>
+</div>
+<div id="outline-container-org79c51b9" class="outline-3">
+<h3 id="org79c51b9"><span class="section-number-3">1.5.</span> Progressive enhancement</h3>
 <div class="outline-text-3" id="text-1-5">
+<ul class="org-ul">
+<li>CSS 语言在不断发展演进.在这一持续演进的语言中工作,一个重要环节是跟踪哪些功能对该语言来说仍然相对
+较新.特别需要了解的是,某项功能可能仅被一部分主流浏览器所支持.</li>
+<li>该语言被刻意设计成同时具有向前兼容性和向后兼容性,并为你提供了必要的工具,使你的代码能够在旧版和新
+版浏览器中同时工作.通过一些预先考量,即便你明知某些前沿功能无法对所有用户生效,也仍可以在 CSS 中使
+用它们.</li>
+<li>为此,你可以先添加提供可接受的(但功能可能不够完善的)基础体验所需的 CSS,以确保旧版浏览器的兼容.
+然后,在此基础之上,再叠加使用更新功能(如新特性)的 CSS.你深知这些特定的功能仅能在最新版本的浏览
+器中生效.这样做的好处在于,你的代码具有面向未来的兼容性.随着更多用户的浏览器升级,这些新功能将开
+始自动对他们生效.这种方法就被称为渐进增强方案</li>
+<li>一些开发者曾有这样的预期:​全新的CSS功能在几年内都无法投入使用,因为在Web的早期阶段,浏览器更新非常
+缓慢.然而,现在所有主流浏览器都已是“常青浏览器”(evergreen),这意味着更新变得频繁且大多是自动进行
+的.</li>
+<li>某些新功能的支持率能在短短几个月内从0%跃升至80%.此后的进展通常会放缓,因为部分用户会推迟点击那个更
+新按钮​(或者受限于企业政策而无法更新).</li>
+<li>不过,除非您有特别的需求需要支持某个旧版浏览器,否则通常可以预期,在所有主流浏览器都添加支持后的一
+两年内,您就能放心使用这个新功能了.</li>
+<li>借助恰当的渐进增强方案​(progressive enhancement),您通常甚至无需等到那么久就可以开始使用它——不过,
+这取决于所讨论功能本身的特性以及它对于您想要实现的效果有多关键.</li>
+</ul>
 </div>
-<div id="outline-container-orgbd759c6" class="outline-4">
-<h4 id="orgbd759c6"><span class="section-number-4">1.5.1.</span> Using the cascade for progressive enhancement</h4>
+<div id="outline-container-org67f2772" class="outline-4">
+<h4 id="org67f2772"><span class="section-number-4">1.5.1.</span> Using the cascade for progressive enhancement</h4>
+<div class="outline-text-4" id="text-1-5-1">
+<ul class="org-ul">
+<li>利用渐进增强最简洁的方式,其实就内建在CSS的层叠机制本身之中.当浏览器遇到一条它无法解析的声明时,它
+会直接忽略该声明.
+<ul class="org-ul">
+<li><p>
+请看以下代码示例:
+</p>
+<div class="org-src-container">
+<pre class="src src-css"><span style="color: #721045;">aside</span> <span style="color: #000000;">{</span>
+  <span style="color: #531ab6;">background-color</span>: <span style="color: #ffffff; background-color: #333333;">#333333</span>;    <span style="color: #7f0000;">/* </span><span style="color: #7f0000;">&#22522;&#30784;&#39068;&#33394;&#20540;</span><span style="color: #7f0000;"> */</span>
+  <span style="color: #531ab6;">background-color</span>: <span style="color: #ffffff; background-color: #333333;">#333333aa</span>;  <span style="color: #7f0000;">/* </span><span style="color: #7f0000;">&#24102;&#36879;&#26126;&#36890;&#36947;&#30340;8&#20301;HEX&#26032;&#26684;&#24335;</span><span style="color: #7f0000;"> */</span>
+<span style="color: #000000;">}</span>
+</pre>
+</div></li>
+<li>由于第二条声明出现在第一条之后,层叠规则会使用它作为background-color属性的最终值.第二条声明采用
+了相对较新的8位十六进制颜色代码格式​(第七、八位表示透明度alpha值).虽然该语法已被大多数现代浏览
+器支持,但某些旧版浏览器(如Internet Explorer)并不支持.</li>
+<li>因此,当用户使用IE浏览器时,其浏览器会忽略第二条声明,而第一条声明仍会生效.尽管用户无法体验到带
+透明度的完整效果,但他们看到的仍然是一个完全可用的结果.页面既不会“崩溃”,也不会抛出错误——浏览器
+只是继续解析后续CSS,并自动舍弃无法识别的声明.</li>
+</ul></li>
+<li><p>
+从调试角度看,这种“静默失败”或许有些奇怪(因为CSS语言从不抛出错误).但这是CSS语言运作机制的核心组
+成部分,且正是为渐进增强而刻意设计的特性
+</p>
+<pre class="example" id="orgb1ae240">
+This may seem odd from a debugging perspective because the language never
+throws errors. But it’s an essential part of how the language works, and this is intentional for
+this very purpose: progressive enhancement.
+</pre></li>
+</ul>
 </div>
-<div id="outline-container-org9a288ae" class="outline-4">
-<h4 id="org9a288ae"><span class="section-number-4">1.5.2.</span> Progressively enhancing selectors</h4>
 </div>
-<div id="outline-container-org8eaf001" class="outline-4">
-<h4 id="org8eaf001"><span class="section-number-4">1.5.3.</span> Feature queries using @supports()</h4>
+<div id="outline-container-orgdfbebcd" class="outline-4">
+<h4 id="orgdfbebcd"><span class="section-number-4">1.5.2.</span> Progressively enhancing selectors</h4>
+<div class="outline-text-4" id="text-1-5-2">
+<ul class="org-ul">
+<li>progressive enhancement不仅仅可以适用于新属性,还可以适用于新的选择器语法:
+<ul class="org-ul">
+<li>能够识别新选择器的浏览器会应用样式,无法识别的则会忽略整个规则集</li>
+</ul></li>
+<li>使用例子如下:
+<ul class="org-ul">
+<li><p>
+一个错误的使用方法,是把新selector和老的selector都写在一起,这样做的危害是如果新的selector不被理解
+的话,老的selector就算理解,也没用.整个规则集都被抛弃了,样式无法被使用
+</p>
+<div class="org-src-container">
+<pre class="src src-css">input.invalid,
+<span style="color: #531ab6;">input</span>:user-invalid <span style="color: #000000;">{</span>
+  <span style="color: #531ab6;">border</span>: 1px solid <span style="color: #ffffff; background-color: #ff0000;">red</span>;
+<span style="color: #000000;">}</span>
+</pre>
+</div></li>
+<li><p>
+正确的做法是要重复一部分代码,把一个规则集拆成两个.这种做法虽然导致代码重复,但是却是最可靠的方案
+</p>
+<div class="org-src-container">
+<pre class="src src-css"><span style="color: #721045;">input.invalid</span> <span style="color: #000000;">{</span>
+  <span style="color: #531ab6;">border</span>: 1px solid <span style="color: #ffffff; background-color: #ff0000;">red</span>;
+<span style="color: #000000;">}</span>
+<span style="color: #531ab6;">input</span>:user-invalid <span style="color: #000000;">{</span>
+  <span style="color: #531ab6;">border</span>: 1px solid <span style="color: #ffffff; background-color: #ff0000;">red</span>;
+<span style="color: #000000;">}</span>
+</pre>
+</div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgfa77a92" class="outline-4">
+<h4 id="orgfa77a92"><span class="section-number-4">1.5.3.</span> Feature queries using @supports()</h4>
+<div class="outline-text-4" id="text-1-5-3">
+<ul class="org-ul">
+<li>上面的两种做法(progressively enhancement for cascase 以及 progressively enhancement for selector)在
+仅仅涉及一两条css规则的时候比较有用,但是如果需要为新老浏览器准备多组不同的声明,则需要使用特征查询(feature query)
+<ul class="org-ul">
+<li><p>
+特性查询的例子如下
+</p>
+<div class="org-src-container">
+<pre class="src src-css"><span style="color: #8f0075;">@supports</span> <span style="color: #000000;">(</span>display: grid<span style="color: #000000;">)</span> <span style="color: #000000;">{</span>
+  <span style="color: #7f0000;">/* </span><span style="color: #7f0000;">&#26679;&#24335;&#35268;&#21017;</span><span style="color: #7f0000;"> */</span>
+<span style="color: #000000;">}</span>
+</pre>
+</div></li>
+<li>@supports规则后紧跟括号内的声明.如果当前浏览器理解该声明​(例如本例中支持grid布局),则会应用大括
+号{}内的所有规则集；若无法理解,则忽略这些规则</li>
+<li><p>
+这意味着您可以先通过传统布局技术(如浮动布局)提供基础样式.这些样式虽非理想方案(需做出一定妥协),
+但能实现基本功能.随后,通过特性查询为支持网格布局的浏览器应用更完整的网格布局方案​.下面就是这样一
+个例子的全貌
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #531ab6;">!doctype</span> html&gt;
+&lt;<span style="color: #721045;">head</span>&gt;
+  &lt;<span style="color: #721045;">meta</span> <span style="color: #005e8b;">charset</span>=<span style="color: #3548cf;">"utf-8"</span> /&gt;
+  &lt;<span style="color: #721045;">style</span>&gt;
+    body {
+      font-family: sans-serif;
+    }
+
+    a:link {
+      background-color: blue;
+      color: white;
+      text-decoration: none;
+      padding: 2px;
+    }
+
+    a:visited {
+      background-color: purple;
+    }
+
+    a:hover {
+      background-color: transparent;
+      color: blue;
+      text-decoration: underline;
+    }
+
+    a:active {
+      color: red;
+    }
+
+    h1 {
+      color: #2f4f4f;
+      margin-bottom: 10px;
+    }
+
+    .nav {
+      margin-top: 10px;
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .nav li {
+      display: inline-block;
+    }
+
+    .nav a {
+      color: white;
+      background-color: #13a4a4;
+      padding: 5px 15px;
+      border-radius: 2px;
+      text-decoration: none;
+    }
+
+    .nav .featured {
+      background-color: orange;
+    }
+
+    .coffees {
+      margin: 20px 0;
+    }
+
+    .coffees a {
+      display: inline-block;
+      min-width: 300px;
+      padding: 10px 15px;
+      margin-right: 10px;
+      margin-bottom: 10px;
+      color: black;
+      background-color: transparent;
+      border: 1px solid gray;
+      border-radius: 5px;
+    }
+
+    @supports (display: grid) {
+      .coffees {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 10px;
+      }
+
+      .coffees a {
+        margin: 0;
+        min-width: unset;
+      }
+    }
+
+    .footer {
+      color: #666;
+      background-color: #ccc;
+      padding: 15px 0;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    .footer a {
+      color: unset;
+      background-color: unset;
+      text-decoration: revert;
+    }
+  &lt;/<span style="color: #721045;">style</span>&gt;
+&lt;/<span style="color: #721045;">head</span>&gt;
+&lt;<span style="color: #721045;">body</span>&gt;
+  &lt;<span style="color: #721045;">header</span> <span style="color: #005e8b;">class</span>=<span style="color: #3548cf;">"page-header"</span>&gt;
+    &lt;<span style="color: #721045;">h1</span> <span style="color: #005e8b;">id</span>=<span style="color: #3548cf;">"page-title"</span> <span style="color: #005e8b;">class</span>=<span style="color: #3548cf;">"title"</span>&gt;<span style="font-weight: bold; text-decoration: underline;">Wombat Coffee Roasters</span>&lt;/<span style="color: #721045;">h1</span>&gt;
+    &lt;<span style="color: #721045;">nav</span>&gt;
+      &lt;<span style="color: #721045;">ul</span> <span style="color: #005e8b;">id</span>=<span style="color: #3548cf;">"main-nav"</span> <span style="color: #005e8b;">class</span>=<span style="color: #3548cf;">"nav"</span>&gt;
+        &lt;<span style="color: #721045;">li</span>&gt;&lt;<span style="color: #721045;">a</span> <span style="color: #005e8b;">href</span>=<span style="color: #3548cf;">"/"</span>&gt;Home&lt;/<span style="color: #721045;">a</span>&gt;&lt;/<span style="color: #721045;">li</span>&gt;
+        &lt;<span style="color: #721045;">li</span>&gt;&lt;<span style="color: #721045;">a</span> <span style="color: #005e8b;">href</span>=<span style="color: #3548cf;">"/coffees"</span>&gt;Coffees&lt;/<span style="color: #721045;">a</span>&gt;&lt;/<span style="color: #721045;">li</span>&gt;
+        &lt;<span style="color: #721045;">li</span>&gt;&lt;<span style="color: #721045;">a</span> <span style="color: #005e8b;">href</span>=<span style="color: #3548cf;">"/brewers"</span>&gt;Brewers&lt;/<span style="color: #721045;">a</span>&gt;&lt;/<span style="color: #721045;">li</span>&gt;
+        &lt;<span style="color: #721045;">li</span>&gt;&lt;<span style="color: #721045;">a</span> <span style="color: #005e8b;">href</span>=<span style="color: #3548cf;">"/specials"</span> <span style="color: #005e8b;">class</span>=<span style="color: #3548cf;">"featured"</span>&gt;Specials&lt;/<span style="color: #721045;">a</span>&gt;&lt;/<span style="color: #721045;">li</span>&gt;
+      &lt;/<span style="color: #721045;">ul</span>&gt;
+    &lt;/<span style="color: #721045;">nav</span>&gt;
+  &lt;/<span style="color: #721045;">header</span>&gt;
+  &lt;<span style="color: #721045;">main</span>&gt;
+    &lt;<span style="color: #721045;">p</span>&gt;Try some of our newest coffees:&lt;/<span style="color: #721045;">p</span>&gt;
+    &lt;<span style="color: #721045;">div</span> <span style="color: #005e8b;">class</span>=<span style="color: #3548cf;">"coffees"</span>&gt;
+      &lt;<span style="color: #721045;">a</span> <span style="color: #005e8b;">href</span>=<span style="color: #3548cf;">"/coffees/costa-rica"</span>&gt;Costa Rica&lt;/<span style="color: #721045;">a</span>&gt;
+      &lt;<span style="color: #721045;">a</span> <span style="color: #005e8b;">href</span>=<span style="color: #3548cf;">"/coffees/ethiopia"</span>&gt;Ethiopia&lt;/<span style="color: #721045;">a</span>&gt;
+      &lt;<span style="color: #721045;">a</span> <span style="color: #005e8b;">href</span>=<span style="color: #3548cf;">"/coffees/guatamala"</span>&gt;Guatemala&lt;/<span style="color: #721045;">a</span>&gt;
+      &lt;<span style="color: #721045;">a</span> <span style="color: #005e8b;">href</span>=<span style="color: #3548cf;">"/coffees/kenya"</span>&gt;Kenya&lt;/<span style="color: #721045;">a</span>&gt;
+      &lt;<span style="color: #721045;">a</span> <span style="color: #005e8b;">href</span>=<span style="color: #3548cf;">"/coffees/mexico"</span>&gt;Mexico&lt;/<span style="color: #721045;">a</span>&gt;
+    &lt;/<span style="color: #721045;">div</span>&gt;
+  &lt;/<span style="color: #721045;">main</span>&gt;
+  &lt;<span style="color: #721045;">footer</span> <span style="color: #005e8b;">class</span>=<span style="color: #3548cf;">"footer"</span>&gt;
+    <span style="color: #005e8b;">&amp;copy;</span> 2023 Wombat Coffee Roasters <span style="color: #005e8b;">&amp;mdash;</span>
+    &lt;<span style="color: #721045;">a</span> <span style="color: #005e8b;">href</span>=<span style="color: #3548cf;">"/terms-of-use"</span>&gt;Terms of use&lt;/<span style="color: #721045;">a</span>&gt;
+  &lt;/<span style="color: #721045;">footer</span>&gt;
+&lt;/<span style="color: #721045;">body</span>&gt;
+</pre>
+</div></li>
+</ul></li>
+<li>特性查询还支持以下扩展语法:
+<ul class="org-ul">
+<li>反向检测​: @supports not(&lt;declaration&gt;) 仅当浏览器不支持声明时应用样式</li>
+<li>​或逻辑检测​: @supports (&lt;declaration&gt;) or (&lt;declaration&gt;) 任意一个声明被支持即应用样式</li>
+<li>​与逻辑检测​: @supports (&lt;declaration&gt;) and (&lt;declaration&gt;) 仅当所有声明均被支持时应用样式</li>
+<li>​选择器检测​: @supports selector(&lt;selector&gt;) 检测浏览器是否理解特定选择器(例如@supports selector(:user-invalid))</li>
+</ul></li>
+</ul>
+</div>
 </div>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: harrifeng@outlook.com</p>
-<p class="date">Created: 2025-06-11 Wed 14:36</p>
+<p class="date">Created: 2025-06-16 Mon 11:23</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
