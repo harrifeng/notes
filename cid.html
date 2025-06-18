@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-06-16 Mon 11:23 -->
+<!-- 2025-06-18 Wed 16:41 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>cid</title>
@@ -23,45 +23,61 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org4963a7f">1. Chapter 01: Cascade, specificity, and inheritance</a>
+<li><a href="#org372bfe6">1. Chapter 01: Cascade, specificity, and inheritance</a>
 <ul>
-<li><a href="#orgf3b6868">1.1. The cascade</a>
+<li><a href="#org3589d18">1.1. The cascade</a>
 <ul>
-<li><a href="#org4b746da">1.1.1. Stylesheet origin</a></li>
-<li><a href="#org3b19f28">1.1.2. Inline styles</a></li>
-<li><a href="#org241c08c">1.1.3. Selector specificity</a></li>
-<li><a href="#org6d616c6">1.1.4. Source order</a></li>
+<li><a href="#orga299c46">1.1.1. Stylesheet origin</a></li>
+<li><a href="#org6444655">1.1.2. Inline styles</a></li>
+<li><a href="#org3036691">1.1.3. Selector specificity</a></li>
+<li><a href="#org687efde">1.1.4. Source order</a></li>
 </ul>
 </li>
-<li><a href="#orgdfbdc4d">1.2. Inheritance</a></li>
-<li><a href="#org22751c2">1.3. Special values</a>
+<li><a href="#org3250b65">1.2. Inheritance</a></li>
+<li><a href="#org7e7eee9">1.3. Special values</a>
 <ul>
-<li><a href="#orgd29c4e0">1.3.1. The inherit keyword</a></li>
-<li><a href="#org1dc85a3">1.3.2. The initial keyword</a></li>
-<li><a href="#org457478c">1.3.3. The unset keyword</a></li>
-<li><a href="#orgb6c85c5">1.3.4. The revert keyword</a></li>
+<li><a href="#orgdc3c0f9">1.3.1. The inherit keyword</a></li>
+<li><a href="#org4ba2cde">1.3.2. The initial keyword</a></li>
+<li><a href="#orgd95aa43">1.3.3. The unset keyword</a></li>
+<li><a href="#org6fc7611">1.3.4. The revert keyword</a></li>
 </ul>
 </li>
-<li><a href="#orgfec9cd7">1.4. Shorthand properties</a>
+<li><a href="#orgd942458">1.4. Shorthand properties</a>
 <ul>
-<li><a href="#org6004463">1.4.1. Beware shorthands silently overriding other styles</a></li>
-<li><a href="#org20f8c2d">1.4.2. Remember the order of shorthand values</a></li>
+<li><a href="#org409b9ff">1.4.1. Beware shorthands silently overriding other styles</a></li>
+<li><a href="#org23bd278">1.4.2. Remember the order of shorthand values</a></li>
 </ul>
 </li>
-<li><a href="#org79c51b9">1.5. Progressive enhancement</a>
+<li><a href="#org0e2ae7d">1.5. Progressive enhancement</a>
 <ul>
-<li><a href="#org67f2772">1.5.1. Using the cascade for progressive enhancement</a></li>
-<li><a href="#orgdfbebcd">1.5.2. Progressively enhancing selectors</a></li>
-<li><a href="#orgfa77a92">1.5.3. Feature queries using @supports()</a></li>
+<li><a href="#org0ee2ea4">1.5.1. Using the cascade for progressive enhancement</a></li>
+<li><a href="#org493a444">1.5.2. Progressively enhancing selectors</a></li>
+<li><a href="#orgc3c533a">1.5.3. Feature queries using @supports()</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li><a href="#orgf7e3987">2. Chapter 02: Working with relative units</a>
+<ul>
+<li><a href="#org6fa15b1">2.1. The power of relative units</a>
+<ul>
+<li><a href="#orgbc2507e">2.1.1. The rise of responsive design</a></li>
+</ul>
+</li>
+<li><a href="#orgffc3fe1">2.2. Ems and rems</a>
+<ul>
+<li><a href="#orge74a265">2.2.1. Using ems to define font-size</a></li>
+<li><a href="#org875fb30">2.2.2. Using rems for font-size</a></li>
+</ul>
+</li>
+<li><a href="#orge5876d4">2.3. Stop thinking in pixels</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org4963a7f" class="outline-2">
-<h2 id="org4963a7f"><span class="section-number-2">1.</span> Chapter 01: Cascade, specificity, and inheritance</h2>
+<div id="outline-container-org372bfe6" class="outline-2">
+<h2 id="org372bfe6"><span class="section-number-2">1.</span> Chapter 01: Cascade, specificity, and inheritance</h2>
 <div class="outline-text-2" id="text-1">
 <ul class="org-ul">
 <li>CSS不同于软件开发世界中的诸多事物:
@@ -110,8 +126,8 @@
 <li>本书的目标是巩固读者的css知识体系和根基,所以我们会从基础原理讲起,回顾核心概念后,我们会对每个核心概念进行深入讨论</li>
 </ul>
 </div>
-<div id="outline-container-orgf3b6868" class="outline-3">
-<h3 id="orgf3b6868"><span class="section-number-3">1.1.</span> The cascade</h3>
+<div id="outline-container-org3589d18" class="outline-3">
+<h3 id="org3589d18"><span class="section-number-3">1.1.</span> The cascade</h3>
 <div class="outline-text-3" id="text-1-1">
 <ul class="org-ul">
 <li>本质上来说,css的核心就是用来声明rules(前面讲过,rules是泛指不同样式): 也就是,在不同条件下触发特定的样式效果:
@@ -200,8 +216,8 @@ sans serif字体</li>
 <li>接下来我们来介绍剩下的四个</li>
 </ul>
 </div>
-<div id="outline-container-org4b746da" class="outline-4">
-<h4 id="org4b746da"><span class="section-number-4">1.1.1.</span> Stylesheet origin</h4>
+<div id="outline-container-orga299c46" class="outline-4">
+<h4 id="orga299c46"><span class="section-number-4">1.1.1.</span> Stylesheet origin</h4>
 <div class="outline-text-4" id="text-1-1-1">
 <ul class="org-ul">
 <li>实时上,有三种stylesheet的来源,分别是:
@@ -224,7 +240,7 @@ sans serif字体</li>
 图1-4就是user-agent style的设置
 </p>
 
-<div id="org6a20072" class="figure">
+<div id="orgb67a03d" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/cid/1-4.png" alt="1-4.png" />
 </p>
 <p><span class="figure-number">Figure 1: </span>cid/1-4.png</p>
@@ -233,7 +249,7 @@ sans serif字体</li>
 我们想对1-4进行一些改动,具体的改动后,效果
 </p>
 
-<div id="org1f0b4bc" class="figure">
+<div id="org2af7ec7" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/cid/1-5.png" alt="1-5.png" />
 </p>
 <p><span class="figure-number">Figure 2: </span>cid/1-5.png</p>
@@ -273,7 +289,7 @@ sans serif字体</li>
 </ul>
 </div>
 <ol class="org-ol">
-<li><a id="orgbf234bd"></a>Important Declarations<br />
+<li><a id="orgbc44ab9"></a>Important Declarations<br />
 <div class="outline-text-5" id="text-1-1-1-1">
 <ul class="org-ul">
 <li>style origin rules有一个例外,那就是一旦一个declaration被标记为imporatnt(使用!important),那么这个declaration
@@ -292,8 +308,8 @@ important考虑进来之后,所有的优先级从高到低如下:
 </li>
 </ol>
 </div>
-<div id="outline-container-org3b19f28" class="outline-4">
-<h4 id="org3b19f28"><span class="section-number-4">1.1.2.</span> Inline styles</h4>
+<div id="outline-container-org6444655" class="outline-4">
+<h4 id="org6444655"><span class="section-number-4">1.1.2.</span> Inline styles</h4>
 <div class="outline-text-4" id="text-1-1-2">
 <ul class="org-ul">
 <li>当冲突声明无法通过来源(origin)解决时,浏览器会检查它们是否通过内联样式(inline styles)添加到元素:
@@ -331,8 +347,8 @@ index e0f6bd3..078f82b 100644
 </ul>
 </div>
 </div>
-<div id="outline-container-org241c08c" class="outline-4">
-<h4 id="org241c08c"><span class="section-number-4">1.1.3.</span> Selector specificity</h4>
+<div id="outline-container-org3036691" class="outline-4">
+<h4 id="org3036691"><span class="section-number-4">1.1.3.</span> Selector specificity</h4>
 <div class="outline-text-4" id="text-1-1-3">
 <ul class="org-ul">
 <li>selector specificity是一个不易察觉但是却是非常重要的CSS特性,因为:
@@ -580,8 +596,8 @@ index 7344b9d..12c92d8 100644
 </ul>
 </div>
 </div>
-<div id="outline-container-org6d616c6" class="outline-4">
-<h4 id="org6d616c6"><span class="section-number-4">1.1.4.</span> Source order</h4>
+<div id="outline-container-org687efde" class="outline-4">
+<h4 id="org687efde"><span class="section-number-4">1.1.4.</span> Source order</h4>
 <div class="outline-text-4" id="text-1-1-4">
 <ul class="org-ul">
 <li>最后一步解决冲突的办法就是source order了,简单点说,所有的标准都相同的情况下,在代码中的位置越往后,优
@@ -642,7 +658,7 @@ value)每个元素的每个属性最多只有一个层叠值.</li>
 页面上的一个特定段落 (&lt;p&gt;) 可以有一个上边距和一个下边距,但它不能有两个不同的上边距或两个不同的下边
 距.如果 CSS 为同一个属性指定了不同的值,在渲染该元素时,层叠规则将只选择其中一个值.这就是层叠值.
 </p>
-<pre class="example" id="orgce37280">
+<pre class="example" id="orgb7df3fb">
 层叠值 (cascaded value) 是指通过层叠过程应用到一个元素上的特定属性的值
 </pre></li>
 <li>总体上来说层叠(cascade)是比较容易处理的,我们只需要记住两个最佳实践即可:
@@ -654,8 +670,8 @@ value)每个元素的每个属性最多只有一个层叠值.</li>
 </div>
 </div>
 </div>
-<div id="outline-container-orgdfbdc4d" class="outline-3">
-<h3 id="orgdfbdc4d"><span class="section-number-3">1.2.</span> Inheritance</h3>
+<div id="outline-container-org3250b65" class="outline-3">
+<h3 id="org3250b65"><span class="section-number-3">1.2.</span> Inheritance</h3>
 <div class="outline-text-3" id="text-1-2">
 <ul class="org-ul">
 <li>如果一个元素没有某个属性的层叠值,它可能会从祖先元素那里继承该属性值.通常的做法是为 &lt;body&gt; 元素设
@@ -665,7 +681,7 @@ value)每个元素的每个属性最多只有一个层叠值.</li>
 图1-8展示了DOM树里面的继承关系
 </p>
 
-<div id="orgd63d533" class="figure">
+<div id="org8d75e08" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/cid/1-8.png" alt="1-8.png" />
 </p>
 <p><span class="figure-number">Figure 3: </span>cid/1-8.png</p>
@@ -722,7 +738,7 @@ value)每个元素的每个属性最多只有一个层叠值.</li>
 上面三种方法都可以在浏览器的开发者工具中找到,而且优先级顺序也是最高的在最上面
 </p>
 
-<div id="org98d878e" class="figure">
+<div id="org6e742e8" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/cid/dev_tool.png" alt="dev_tool.png" />
 </p>
 <p><span class="figure-number">Figure 4: </span>cid/dev_tool.png</p>
@@ -730,23 +746,23 @@ value)每个元素的每个属性最多只有一个层叠值.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org22751c2" class="outline-3">
-<h3 id="org22751c2"><span class="section-number-3">1.3.</span> Special values</h3>
+<div id="outline-container-org7e7eee9" class="outline-3">
+<h3 id="org7e7eee9"><span class="section-number-3">1.3.</span> Special values</h3>
 <div class="outline-text-3" id="text-1-3">
 <ul class="org-ul">
 <li><p>
 本节介绍的关键字,其不会改变层叠规则:CSS 的核心机制是层叠规则(Cascading Rules),优先级是其关键部分.
 下面介绍的关键字都是一个属性值,在declaration层面起作用!
 </p>
-<pre class="example" id="org381a153">
+<pre class="example" id="orge14b5b7">
 Warning: These keywords are normal cascaded values. That means it is still
 possible to override them with other values when another selector with higher
 specificity targets the same element.
 </pre></li>
 </ul>
 </div>
-<div id="outline-container-orgd29c4e0" class="outline-4">
-<h4 id="orgd29c4e0"><span class="section-number-4">1.3.1.</span> The inherit keyword</h4>
+<div id="outline-container-orgdc3c0f9" class="outline-4">
+<h4 id="orgdc3c0f9"><span class="section-number-4">1.3.1.</span> The inherit keyword</h4>
 <div class="outline-text-4" id="text-1-3-1">
 <ul class="org-ul">
 <li>由于cascade优先级高,其会替代继承给element以style,这也是绝大多数情况下,我们希望发生的情形</li>
@@ -874,8 +890,8 @@ specificity targets the same element.
 </ul>
 </div>
 </div>
-<div id="outline-container-org1dc85a3" class="outline-4">
-<h4 id="org1dc85a3"><span class="section-number-4">1.3.2.</span> The initial keyword</h4>
+<div id="outline-container-org4ba2cde" class="outline-4">
+<h4 id="org4ba2cde"><span class="section-number-4">1.3.2.</span> The initial keyword</h4>
 <div class="outline-text-4" id="text-1-3-2">
 <ul class="org-ul">
 <li>有时候你想把某个element的style设置为初始值,就需要用到initial.这种设置会:
@@ -950,8 +966,8 @@ specificity targets the same element.
 </ul>
 </div>
 </div>
-<div id="outline-container-org457478c" class="outline-4">
-<h4 id="org457478c"><span class="section-number-4">1.3.3.</span> The unset keyword</h4>
+<div id="outline-container-orgd95aa43" class="outline-4">
+<h4 id="orgd95aa43"><span class="section-number-4">1.3.3.</span> The unset keyword</h4>
 <div class="outline-text-4" id="text-1-3-3">
 <ul class="org-ul">
 <li>unset 是一个 CSS 的特殊值,用来根据属性是否继承来决定行为:
@@ -993,8 +1009,8 @@ border),unset 的效果相当于 initial
 </ul>
 </div>
 </div>
-<div id="outline-container-orgb6c85c5" class="outline-4">
-<h4 id="orgb6c85c5"><span class="section-number-4">1.3.4.</span> The revert keyword</h4>
+<div id="outline-container-org6fc7611" class="outline-4">
+<h4 id="org6fc7611"><span class="section-number-4">1.3.4.</span> The revert keyword</h4>
 <div class="outline-text-4" id="text-1-3-4">
 <ul class="org-ul">
 <li>initial和unset关键字(在起作用的情况下)会把如下两种style都revert掉:
@@ -1011,8 +1027,8 @@ border),unset 的效果相当于 initial
 </div>
 </div>
 </div>
-<div id="outline-container-orgfec9cd7" class="outline-3">
-<h3 id="orgfec9cd7"><span class="section-number-3">1.4.</span> Shorthand properties</h3>
+<div id="outline-container-orgd942458" class="outline-3">
+<h3 id="orgd942458"><span class="section-number-3">1.4.</span> Shorthand properties</h3>
 <div class="outline-text-3" id="text-1-4">
 <ul class="org-ul">
 <li>简写属性(shorthand properties)允许开发者通过单行声明同时设置多个相关CSS属性的值,例如:
@@ -1052,8 +1068,8 @@ font 是一个简写属性,可通过一行声明设置多种字体属性
 <li>shorthand properties可以减少代码量,提升代码整洁度,但是带来的问题也不少,我们下面详细说一下</li>
 </ul>
 </div>
-<div id="outline-container-org6004463" class="outline-4">
-<h4 id="org6004463"><span class="section-number-4">1.4.1.</span> Beware shorthands silently overriding other styles</h4>
+<div id="outline-container-org409b9ff" class="outline-4">
+<h4 id="org409b9ff"><span class="section-number-4">1.4.1.</span> Beware shorthands silently overriding other styles</h4>
 <div class="outline-text-4" id="text-1-4-1">
 <ul class="org-ul">
 <li>在最佳实践中,我们不建议使用shorthand properties,下面就是short properties引入unexpected结果的例子:
@@ -1098,8 +1114,8 @@ font 是一个简写属性,可通过一行声明设置多种字体属性
 </ul>
 </div>
 </div>
-<div id="outline-container-org20f8c2d" class="outline-4">
-<h4 id="org20f8c2d"><span class="section-number-4">1.4.2.</span> Remember the order of shorthand values</h4>
+<div id="outline-container-org23bd278" class="outline-4">
+<h4 id="org23bd278"><span class="section-number-4">1.4.2.</span> Remember the order of shorthand values</h4>
 <div class="outline-text-4" id="text-1-4-2">
 <ul class="org-ul">
 <li>简写属性在值的指定顺序方面通常比较宽松.你可以设置 border: 1px solid black 或者 border: black 1px
@@ -1185,8 +1201,8 @@ box-shadow和text-shadow等(严格来说这些并非传统简写属性).</li>
 </div>
 </div>
 </div>
-<div id="outline-container-org79c51b9" class="outline-3">
-<h3 id="org79c51b9"><span class="section-number-3">1.5.</span> Progressive enhancement</h3>
+<div id="outline-container-org0e2ae7d" class="outline-3">
+<h3 id="org0e2ae7d"><span class="section-number-3">1.5.</span> Progressive enhancement</h3>
 <div class="outline-text-3" id="text-1-5">
 <ul class="org-ul">
 <li>CSS 语言在不断发展演进.在这一持续演进的语言中工作,一个重要环节是跟踪哪些功能对该语言来说仍然相对
@@ -1198,19 +1214,19 @@ box-shadow和text-shadow等(严格来说这些并非传统简写属性).</li>
 然后,在此基础之上,再叠加使用更新功能(如新特性)的 CSS.你深知这些特定的功能仅能在最新版本的浏览
 器中生效.这样做的好处在于,你的代码具有面向未来的兼容性.随着更多用户的浏览器升级,这些新功能将开
 始自动对他们生效.这种方法就被称为渐进增强方案</li>
-<li>一些开发者曾有这样的预期:​全新的CSS功能在几年内都无法投入使用,因为在Web的早期阶段,浏览器更新非常
-缓慢.然而,现在所有主流浏览器都已是“常青浏览器”(evergreen),这意味着更新变得频繁且大多是自动进行
+<li>一些开发者曾有这样的预期:全新的CSS功能在几年内都无法投入使用,因为在Web的早期阶段,浏览器更新非常
+缓慢.然而,现在所有主流浏览器都已是"常青浏览器"(evergreen),这意味着更新变得频繁且大多是自动进行
 的.</li>
 <li>某些新功能的支持率能在短短几个月内从0%跃升至80%.此后的进展通常会放缓,因为部分用户会推迟点击那个更
-新按钮​(或者受限于企业政策而无法更新).</li>
+新按钮(或者受限于企业政策而无法更新).</li>
 <li>不过,除非您有特别的需求需要支持某个旧版浏览器,否则通常可以预期,在所有主流浏览器都添加支持后的一
 两年内,您就能放心使用这个新功能了.</li>
-<li>借助恰当的渐进增强方案​(progressive enhancement),您通常甚至无需等到那么久就可以开始使用它——不过,
+<li>借助恰当的渐进增强方案(progressive enhancement),您通常甚至无需等到那么久就可以开始使用它&#x2013;不过,
 这取决于所讨论功能本身的特性以及它对于您想要实现的效果有多关键.</li>
 </ul>
 </div>
-<div id="outline-container-org67f2772" class="outline-4">
-<h4 id="org67f2772"><span class="section-number-4">1.5.1.</span> Using the cascade for progressive enhancement</h4>
+<div id="outline-container-org0ee2ea4" class="outline-4">
+<h4 id="org0ee2ea4"><span class="section-number-4">1.5.1.</span> Using the cascade for progressive enhancement</h4>
 <div class="outline-text-4" id="text-1-5-1">
 <ul class="org-ul">
 <li>利用渐进增强最简洁的方式,其实就内建在CSS的层叠机制本身之中.当浏览器遇到一条它无法解析的声明时,它
@@ -1227,26 +1243,26 @@ box-shadow和text-shadow等(严格来说这些并非传统简写属性).</li>
 </pre>
 </div></li>
 <li>由于第二条声明出现在第一条之后,层叠规则会使用它作为background-color属性的最终值.第二条声明采用
-了相对较新的8位十六进制颜色代码格式​(第七、八位表示透明度alpha值).虽然该语法已被大多数现代浏览
+了相对较新的8位十六进制颜色代码格式(第七,八位表示透明度alpha值).虽然该语法已被大多数现代浏览
 器支持,但某些旧版浏览器(如Internet Explorer)并不支持.</li>
 <li>因此,当用户使用IE浏览器时,其浏览器会忽略第二条声明,而第一条声明仍会生效.尽管用户无法体验到带
-透明度的完整效果,但他们看到的仍然是一个完全可用的结果.页面既不会“崩溃”,也不会抛出错误——浏览器
+透明度的完整效果,但他们看到的仍然是一个完全可用的结果.页面既不会"崩溃",也不会抛出错误&#x2013;浏览器
 只是继续解析后续CSS,并自动舍弃无法识别的声明.</li>
 </ul></li>
 <li><p>
-从调试角度看,这种“静默失败”或许有些奇怪(因为CSS语言从不抛出错误).但这是CSS语言运作机制的核心组
+从调试角度看,这种"静默失败"或许有些奇怪(因为CSS语言从不抛出错误).但这是CSS语言运作机制的核心组
 成部分,且正是为渐进增强而刻意设计的特性
 </p>
-<pre class="example" id="orgb1ae240">
+<pre class="example" id="org0537468">
 This may seem odd from a debugging perspective because the language never
-throws errors. But it’s an essential part of how the language works, and this is intentional for
+throws errors. But it's an essential part of how the language works, and this is intentional for
 this very purpose: progressive enhancement.
 </pre></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgdfbebcd" class="outline-4">
-<h4 id="orgdfbebcd"><span class="section-number-4">1.5.2.</span> Progressively enhancing selectors</h4>
+<div id="outline-container-org493a444" class="outline-4">
+<h4 id="org493a444"><span class="section-number-4">1.5.2.</span> Progressively enhancing selectors</h4>
 <div class="outline-text-4" id="text-1-5-2">
 <ul class="org-ul">
 <li>progressive enhancement不仅仅可以适用于新属性,还可以适用于新的选择器语法:
@@ -1282,8 +1298,8 @@ this very purpose: progressive enhancement.
 </ul>
 </div>
 </div>
-<div id="outline-container-orgfa77a92" class="outline-4">
-<h4 id="orgfa77a92"><span class="section-number-4">1.5.3.</span> Feature queries using @supports()</h4>
+<div id="outline-container-orgc3c533a" class="outline-4">
+<h4 id="orgc3c533a"><span class="section-number-4">1.5.3.</span> Feature queries using @supports()</h4>
 <div class="outline-text-4" id="text-1-5-3">
 <ul class="org-ul">
 <li>上面的两种做法(progressively enhancement for cascase 以及 progressively enhancement for selector)在
@@ -1298,11 +1314,11 @@ this very purpose: progressive enhancement.
 <span style="color: #000000;">}</span>
 </pre>
 </div></li>
-<li>@supports规则后紧跟括号内的声明.如果当前浏览器理解该声明​(例如本例中支持grid布局),则会应用大括
-号{}内的所有规则集；若无法理解,则忽略这些规则</li>
+<li>@supports规则后紧跟括号内的声明.如果当前浏览器理解该声明(例如本例中支持grid布局),则会应用大括
+号{}内的所有规则集;若无法理解,则忽略这些规则</li>
 <li><p>
 这意味着您可以先通过传统布局技术(如浮动布局)提供基础样式.这些样式虽非理想方案(需做出一定妥协),
-但能实现基本功能.随后,通过特性查询为支持网格布局的浏览器应用更完整的网格布局方案​.下面就是这样一
+但能实现基本功能.随后,通过特性查询为支持网格布局的浏览器应用更完整的网格布局方案.下面就是这样一
 个例子的全貌
 </p>
 <div class="org-src-container">
@@ -1438,20 +1454,359 @@ this very purpose: progressive enhancement.
 </ul></li>
 <li>特性查询还支持以下扩展语法:
 <ul class="org-ul">
-<li>反向检测​: @supports not(&lt;declaration&gt;) 仅当浏览器不支持声明时应用样式</li>
-<li>​或逻辑检测​: @supports (&lt;declaration&gt;) or (&lt;declaration&gt;) 任意一个声明被支持即应用样式</li>
-<li>​与逻辑检测​: @supports (&lt;declaration&gt;) and (&lt;declaration&gt;) 仅当所有声明均被支持时应用样式</li>
-<li>​选择器检测​: @supports selector(&lt;selector&gt;) 检测浏览器是否理解特定选择器(例如@supports selector(:user-invalid))</li>
+<li>反向检测: @supports not(&lt;declaration&gt;) 仅当浏览器不支持声明时应用样式</li>
+<li>或逻辑检测: @supports (&lt;declaration&gt;) or (&lt;declaration&gt;) 任意一个声明被支持即应用样式</li>
+<li>与逻辑检测: @supports (&lt;declaration&gt;) and (&lt;declaration&gt;) 仅当所有声明均被支持时应用样式</li>
+<li>选择器检测: @supports selector(&lt;selector&gt;) 检测浏览器是否理解特定选择器(例如@supports selector(:user-invalid))</li>
 </ul></li>
 </ul>
 </div>
 </div>
 </div>
 </div>
+<div id="outline-container-orgf7e3987" class="outline-2">
+<h2 id="orgf7e3987"><span class="section-number-2">2.</span> Chapter 02: Working with relative units</h2>
+<div class="outline-text-2" id="text-2">
+<ul class="org-ul">
+<li>在CSS中指定长度值时,开发者拥有丰富多样的选择.其中最常用且可能最易用的单位是像素(px).这类单位属
+于绝对单位,即5px始终代表相同的物理尺寸.</li>
+<li>介绍下像素 (px),点 (pt) 与派卡 (pc).CSS 支持多种绝对长度单位,其中最常见,最基础的是像素 (px).</li>
+<li>其他不太常见的绝对单位包括:
+<ul class="org-ul">
+<li>毫米 (mm)</li>
+<li>厘米 (cm)</li>
+<li>四分之一毫米 (Q)</li>
+<li>英寸 (in.)</li>
+<li>点 (pt — 印刷术语,表示 1/72 英寸)</li>
+<li>派卡 (pc — 印刷术语,表示 12 点)</li>
+</ul></li>
+<li>如果您愿意进行数学计算,这些单位中的任何一个都可以直接转换为另一个:
+<ul class="org-ul">
+<li>1 in. = 25.4 mm = 101.6 Q = 2.54 cm = 6 pc = 72 pt = 96 px.</li>
+<li>因此,16 px 等同于 12 pt(计算方式:16 / 96 × 72).</li>
+</ul></li>
+<li>印刷设计师通常更熟悉点的使用,而开发者则更习惯像素,因此在与设计师沟通时,您可能需要在两者之间进行一些
+换算.</li>
+<li>像素 (px) 这个名称稍具误导性:一个 CSS 像素并不严格等同于显示器的一个物理像素点.在高分辨率("视网膜")
+显示屏的情况下尤其明显.尽管 CSS 测量值可能会根据浏览器操作系统和硬件进行一定程度的缩放,但通常情况下,
+<b><b>96 px 大致接近屏幕上的 1 物理英寸</b></b>. 然而,在某些特定设备上,或受用户分辨率设置的影响,这个对应关系
+可能会有所不同</li>
+<li>而另一些单位如em和rem则属于相对单位,其具体值会随外部因素变化&#x2013;例如2em的实际尺寸取决于所应用的元素
+(有时甚至取决于应用的CSS属性).这种特性自然使得相对单位的使用更具挑战性.</li>
+<li>注意:长度(length)是CSS中表示距离测量的正式名称,由数字和单位组成(如5px).百分比(percentage)
+虽然与长度类似,但严格来说不属于长度单位.</li>
+<li>即使是经验丰富的CSS开发者,也常因相对单位值的不可预测性而倾向于使用像素这类绝对单位.本章将揭开相对
+单位的神秘面纱:首先阐释其独特的应用价值,进而解析其运作机制.我将揭示其看似不稳定的本质规律,并演
+示如何驾驭这种特性.熟练运用相对单位能让你的代码更简洁更灵活,更易维护&#x2013;让相对单位真正为你所用.</li>
+</ul>
+</div>
+<div id="outline-container-org6fa15b1" class="outline-3">
+<h3 id="org6fa15b1"><span class="section-number-3">2.1.</span> The power of relative units</h3>
+<div class="outline-text-3" id="text-2-1">
+<ul class="org-ul">
+<li>CSS 将样式延迟绑定到网页: 网页内容和其样式需要两者都编写完成后才会合并应用.这为设计流程增加了一层
+复杂性,这是在平面设计等其他类型场景中不存在的.</li>
+<li>但与此同时,它也带来了更强大的功能:一个样式表可以应用于成百上千甚至上万个页面.此外,页面的最终渲
+染效果可以直接由用户更改,例如,用户可以更改默认字体大小或调整浏览器窗口大小.</li>
+<li>在早期的计算机应用程序开发(以及传统出版)中,开发者(或出版商)确切了解其媒介的固定约束条件.一个
+特定的程序窗口可能是 800 像素宽 × 500 像素高,或者一页纸可能是 4 英寸宽 × 6.5 英寸高.因此,当开发
+者开始布局应用程序的按钮和文本时,他们确切知道可以将这些元素制作多大,也确切知道屏幕上留给其他元素
+的空间有多少.但在网页环境中,情况截然不同</li>
+</ul>
+</div>
+<div id="outline-container-orgbc2507e" class="outline-4">
+<h4 id="orgbc2507e"><span class="section-number-4">2.1.1.</span> The rise of responsive design</h4>
+<div class="outline-text-4" id="text-2-1-1">
+<ul class="org-ul">
+<li>在网页环境中,用户可以将浏览器窗口设置为任意尺寸,而CSS样式必须适应这些尺寸. 此外,用户还可能在页
+面打开后调整窗口大小,CSS也需要随之适应新的约束条件.这意味着样式不能在创建页面时就固定应用;浏览器
+必须在页面渲染到屏幕上时进行实时计算.</li>
+<li>这给CSS增加了一层抽象性. 开发者无法在理想化上下文中设计元素样式,而必须制定能在该元素可能出现的任
+何上下文中都适用的规则.在当今的网页环境下,您的页面:
+<ul class="org-ul">
+<li>不仅需要在4英寸的手机屏幕上正确渲染,</li>
+<li>同样也需要在30英寸的显示器上完美呈现.</li>
+</ul></li>
+<li>面对用户设备类型和屏幕尺寸的千差万别,我们必须时刻关注响应式设计.如果你给一个元素设置了 800px 的宽
+度,它在较小的窗口中将如何显示?如果横向菜单的内容无法完全放在一行上,又会呈现什么样子?</li>
+<li>在编写 CSS 时,你需要同时具备具体与全局的思维.当遇到一个特定问题有多种解决方案时,应该优先选择在多
+种不同情况下更具普遍适用性的方案.</li>
+<li>定义:响应式设计(Responsive Design)这个术语由伊桑·马科特(Ethan Marcotte)首创,指的是能够根据浏
+览器窗口尺寸大小"响应式"地呈现不同样式的设计方法.这就要求有意识地考虑移动设备,平板电脑或任何尺寸
+的桌面屏幕.我们将在第 7 章深入探讨响应式设计,但在本章中,我会在进入该主题前先奠定一些重要基础.</li>
+<li>相对单位(Relative units)是 CSS 提供的实现这种抽象化思维的工具之一:
+<ul class="org-ul">
+<li>字体大小不必固定为 14px,你可以设置为相对于窗口尺寸成比例缩放.</li>
+<li>或者,将页面上所有内容的大小设置为相对于基本字体大多少,小多少(relative to the base font size),然后
+只需一行代码就能调整整个页面的尺寸.</li>
+</ul></li>
+<li>下面让我们具体看看 CSS 提供了哪些功能来实现这种设计方式.</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgffc3fe1" class="outline-3">
+<h3 id="orgffc3fe1"><span class="section-number-3">2.2.</span> Ems and rems</h3>
+<div class="outline-text-3" id="text-2-2">
+<ul class="org-ul">
+<li><b><b>em 是最常见的相对长度单位</b></b>,源于印刷排版领域,指代特定字体尺寸的计量单位.</li>
+<li>在 CSS 中,1em 表示当前元素的字体尺寸;其实际值会随着"被应用element的改变而改变"
+<ul class="org-ul">
+<li><p>
+比如图2-1 展示了一个带有 1em 内边距的 div 元素.
+</p>
+
+<div id="org7cbf098" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/cid/2-1.png" alt="2-1.png" />
+</p>
+<p><span class="figure-number">Figure 5: </span>cid/2-1.png</p>
+</div></li>
+<li><p>
+上面的例子是使用如下代码产生的.既然字体是16px,那么padding 也就会是"16px乘以1"的宽度
+</p>
+<div class="org-src-container">
+<pre class="src src-css"><span style="color: #721045;">.padded</span> <span style="color: #000000;">{</span>
+  <span style="color: #531ab6;">font-size</span>: 16px;
+  <span style="color: #531ab6;">padding</span>: 1em;
+<span style="color: #000000;">}</span>
+</pre>
+</div></li>
+<li><p>
+如果字体变大,那么padding也变大,字体变小,padding也变小,图2-2的对比更容易让人理解
+</p>
+
+<div id="orgd62b8e1" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/cid/2-2.png" alt="2-2.png" />
+</p>
+<p><span class="figure-number">Figure 6: </span>cid/2-2.png</p>
+</div></li>
+<li><p>
+上图的html代码如下
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #531ab6;">!doctype</span> html&gt;
+&lt;<span style="color: #721045;">head</span>&gt;
+  &lt;<span style="color: #721045;">style</span>&gt;
+    /* keep the spans from bleeding off the top of the page */
+    body {
+      margin: 1.5em;
+    }
+
+    .box {
+      padding: 1em;
+      border-radius: 1em;
+      background-color: lightgray;
+    }
+
+    .box-small {
+      font-size: 12px;
+    }
+
+    .box-large {
+      font-size: 18px;
+    }
+  &lt;/<span style="color: #721045;">style</span>&gt;
+&lt;/<span style="color: #721045;">head</span>&gt;
+
+&lt;<span style="color: #721045;">body</span>&gt;
+  &lt;<span style="color: #721045;">span</span> <span style="color: #005e8b;">class</span>=<span style="color: #3548cf;">"box box-small"</span>&gt;Small&lt;/<span style="color: #721045;">span</span>&gt;
+  &lt;<span style="color: #721045;">span</span> <span style="color: #005e8b;">class</span>=<span style="color: #3548cf;">"box box-large"</span>&gt;Large&lt;/<span style="color: #721045;">span</span>&gt;
+&lt;/<span style="color: #721045;">body</span>&gt;
+</pre>
+</div></li>
+<li>使用 em 单位设置 内边距(padding),高度(height),宽度(width) 或 圆角(border-radius) 等属性
+非常便捷,因为当元素继承不同的字体大小或用户更改字体设置时,这些属性会随之均匀缩放</li>
+</ul></li>
+</ul>
+</div>
+<div id="outline-container-orge74a265" class="outline-4">
+<h4 id="orge74a265"><span class="section-number-4">2.2.1.</span> Using ems to define font-size</h4>
+<div class="outline-text-4" id="text-2-2-1">
+<ul class="org-ul">
+<li>我们前面说过,如果你在非font-size的地方设置了ems,那么ems其实就是font-size的倍数,比如0.8ems,其实就是
+当前font-size乘以0.8</li>
+<li>那如果我们的font-size也是以ems为单位设置的呢?
+<ul class="org-ul">
+<li>检查当前元素的直接父元素的font-size值(单位可以是px,em,%等), 1em = 父级元素的字体大小</li>
+<li>若父级未设置,则继续向上查找,直至根元素(&lt;html&gt;)</li>
+<li>未手动设置时,根元素(&lt;html&gt;)的默认字体大小为 **16px**(多数浏览器的标准), 这个16px由于非常常用,
+甚至可以使用关键字medium代替</li>
+</ul></li>
+<li>ems还存在一个隐藏的累计缩放问题,原因如下几点:
+<ul class="org-ul">
+<li>ems既能在font-size使用,所以会从父元素获得基准font-size,计算出实际font-size等于 <b>父元素基准font-size乘以font ems</b></li>
+<li>ems如果同时在padding使用,这个时候的基准来源 <b>不是父元素基准font-size</b> ,而是刚才获得的新的font-size</li>
+<li>所以ems同时在padding使用,那么其font-size等于 <b>父元素基准font-size乘以font ems再乘以padding ems</b></li>
+</ul></li>
+<li>下面这个例子中就是使用ems同时设置了font-size和padding
+<ul class="org-ul">
+<li><p>
+示例如下
+</p>
+<div class="org-src-container">
+<pre class="src src-css"><span style="color: #721045;">body</span> <span style="color: #000000;">{</span>
+  <span style="color: #531ab6;">font-size</span>: 16px;
+<span style="color: #000000;">}</span>
+
+<span style="color: #721045;">.slogan</span> <span style="color: #000000;">{</span>
+  <span style="color: #531ab6;">font-size</span>: 1.2em;
+  <span style="color: #531ab6;">padding</span>: 1.2.em;
+  <span style="color: #531ab6;">background-color</span>: <span style="color: #000000; background-color: #ccc;">#ccc</span>;
+<span style="color: #000000;">}</span>
+</pre>
+</div></li>
+<li>font-size使用1.2em会得到16 * 1.2 = 19.2px</li>
+<li>padding在使用1.2em会得到19.2 * 1.2 = 23.04px</li>
+</ul></li>
+<li>当你使用 em 单位来指定多个嵌套元素的字体大小时,可能会产生意想不到的结果.为了知道每个元素的确切值,
+你需要知道它继承的字体大小.而如果这个继承大小是在父元素上用 em 定义的,那么你又需要知道父元素继承
+的尺寸,如此层层向上追溯,直到根元素.</li>
+<li>当你为列表的字体大小使用 em 单位,然后将列表嵌套好几层时,这个问题会迅速显现.
+<ul class="org-ul">
+<li><p>
+几乎每位 Web 开发者在职业生涯的某个阶段,都曾加载页面后看到类似图 2-5 的情形:文字正在缩小! 这
+恰恰  是令开发者对使用 em 单位感到畏惧的那类问题.
+</p>
+
+<div id="org6385f83" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/cid/2-5.png" alt="2-5.png" />
+</p>
+<p><span class="figure-number">Figure 7: </span>cid/2-5.png</p>
+</div></li>
+<li><p>
+上图的代码如下
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #531ab6;">!doctype</span> html&gt;
+&lt;<span style="color: #721045;">head</span>&gt;
+  &lt;<span style="color: #721045;">style</span>&gt;
+    body {
+      font-size: 16px;
+    }
+
+    ul {
+      font-size: 0.8em;
+    }
+  &lt;/<span style="color: #721045;">style</span>&gt;
+&lt;/<span style="color: #721045;">head</span>&gt;
+
+&lt;<span style="color: #721045;">body</span>&gt;
+  &lt;<span style="color: #721045;">ul</span>&gt;
+    &lt;<span style="color: #721045;">li</span>&gt;
+      Top level
+      &lt;<span style="color: #721045;">ul</span>&gt;
+        &lt;<span style="color: #721045;">li</span>&gt;
+          Second level
+          &lt;<span style="color: #721045;">ul</span>&gt;
+            &lt;<span style="color: #721045;">li</span>&gt;
+              Third level
+              &lt;<span style="color: #721045;">ul</span>&gt;
+                &lt;<span style="color: #721045;">li</span>&gt;
+                  Fourth level
+                  &lt;<span style="color: #721045;">ul</span>&gt;
+                    &lt;<span style="color: #721045;">li</span>&gt;Fifth level&lt;/<span style="color: #721045;">li</span>&gt;
+                  &lt;/<span style="color: #721045;">ul</span>&gt;
+                &lt;/<span style="color: #721045;">li</span>&gt;
+              &lt;/<span style="color: #721045;">ul</span>&gt;
+            &lt;/<span style="color: #721045;">li</span>&gt;
+          &lt;/<span style="color: #721045;">ul</span>&gt;
+        &lt;/<span style="color: #721045;">li</span>&gt;
+      &lt;/<span style="color: #721045;">ul</span>&gt;
+    &lt;/<span style="color: #721045;">li</span>&gt;
+  &lt;/<span style="color: #721045;">ul</span>&gt;
+&lt;/<span style="color: #721045;">body</span>&gt;
+</pre>
+</div></li>
+<li>文字缩小问题发生在你将列表嵌套多层,并对每一层应用基于 em 的字体大小时.上例将无序列表 (&lt;ul&gt;) 的
+字体大小设置为 0.8em.该选择器会作用于页面上的每一个 &lt;ul&gt;;因此,当这些列表从其他父级列表继承其字
+体大小时,em 值就会进行复合计算</li>
+<li>每个列表的字体大小都是其父级字体大小的 0.8 倍.这意味着第一级列表的字体大小为 12.8px,但下一级列
+表是 10.24px(12.8px × 0.8),第三级是 8.192px,依此类推.同样地,如果你指定的 em 值大于 1,文字
+则会不断变大</li>
+</ul></li>
+<li>一个可行的解决方案是首先像之前一样(清单 2.5)将第一级列表的字体大小设置为 0.8em.然后,清单中的第
+二个选择器专门针对位于无序列表内部的无序列表&#x2013;即除了顶层列表之外的所有嵌套列表
+<ul class="org-ul">
+<li><p>
+代码如下
+</p>
+<div class="org-src-container">
+<pre class="src src-css"><span style="color: #721045;">ul</span> <span style="color: #000000;">{</span>
+  <span style="color: #531ab6;">font-size</span>: 0.8em;
+<span style="color: #000000;">}</span>
+<span style="color: #721045;">ul ul</span> <span style="color: #000000;">{</span>
+  <span style="color: #531ab6;">font-size</span>: 1em;
+<span style="color: #000000;">}</span>
+</pre>
+</div></li>
+<li>上述做法解决了问题,但它并非理想方案;因为你设置了一个值,然后立即用另一条规则覆盖了它.如果能通过
+提升选择器优先级来避免覆盖规则,那会更好</li>
+</ul></li>
+<li>至此,应该很清楚,如果不小心使用,em 单位很容易失控.它们用于设置内边距 (padding),外边距 (margin)
+和元素尺寸 (element sizing) 时很好,但用于设置字体大小时,它们可能会变得很复杂.值得庆幸的是,有一
+个更好的选择&#x2013;rem.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org875fb30" class="outline-4">
+<h4 id="org875fb30"><span class="section-number-4">2.2.2.</span> Using rems for font-size</h4>
+<div class="outline-text-4" id="text-2-2-2">
+<ul class="org-ul">
+<li>是一种树形结构,其中每个元素由一个节点表示.
+<ul class="org-ul">
+<li>&lt;html&gt; 元素是顶级(或根)节点.</li>
+<li>在它之下是其子节点 &lt;head&gt; 和 &lt;body&gt;.</li>
+<li>在这些节点之下是它们的子节点,然后是它们的子节点,依此类推</li>
+</ul></li>
+<li>根节点是文档中所有其他元素的祖先.它有一个特殊的伪类选择器 (:root, 注意伪类用`:`, 类用`.`),您可以
+使用它来定位根节点.这等效于使用类型选择器 html,但其特异性相当于一个类选择器,而不是标签选择器.</li>
+<li>Rem 是 "root em" 的缩写.与相对于当前元素不同,rems 是相对于根元素 (&lt;html&gt;) 的.无论您在文档中的哪
+个位置应用它,1.2rem 都具有相同的计算值:根元素字体大小的 1.2 倍.
+<ul class="org-ul">
+<li><p>
+下面的代码清单设置了根字体大小,然后使用 rems 来定义相对于该根字体大小的无序列表的字体大小:
+</p>
+<div class="org-src-container">
+<pre class="src src-css"><span style="color: #721045;">:root</span> <span style="color: #000000;">{</span>
+  <span style="color: #7f0000;">/* </span><span style="color: #7f0000;">:root &#20266;&#31867;&#36873;&#25321;&#22120;</span><span style="color: #7f0000;"> */</span>
+  <span style="color: #531ab6;">font-size</span>: 1em; <span style="color: #7f0000;">/* </span><span style="color: #7f0000;">&#20351;&#29992;&#27983;&#35272;&#22120;&#30340;&#40664;&#35748;&#22823;&#23567;(16px)</span><span style="color: #7f0000;"> */</span>
+<span style="color: #000000;">}</span> <span style="color: #7f0000;">/* </span><span style="color: #7f0000;">&#31561;&#25928;&#20110; HTML &#31867;&#22411;&#36873;&#25321;&#22120;</span><span style="color: #7f0000;"> */</span>
+
+<span style="color: #721045;">ul</span> <span style="color: #000000;">{</span>
+  <span style="color: #531ab6;">font-size</span>: 0.8rem; <span style="color: #7f0000;">/* </span><span style="color: #7f0000;">&#30456;&#23545;&#20110;&#26681;&#20803;&#32032;&#30340;&#23383;&#20307;&#22823;&#23567;&#35745;&#31639;</span><span style="color: #7f0000;"> */</span>
+<span style="color: #000000;">}</span>
+</pre>
+</div></li>
+<li>上例中,根字体大小是浏览器的默认值 16px(根元素上的 1em 是相对于浏览器的默认值).</li>
+<li>无序列表 (ul) 的指定字体大小为 0.8rem,计算结果为 16px * 0.8 = 12.8px.</li>
+<li>因为这是相对于根元素的,即使您嵌套列表,字体大小也保持不变</li>
+</ul></li>
+<li>Rems 简化了与 ems 相关的许多复杂性.事实上,它们在像素 (px) 和 ems 之间提供了一个很好的中间地带,既
+提供了相对单位的优点,又更容易使用.这是否意味着您应该在任何地方都使用 rems 而放弃其他选项呢?
+<ul class="org-ul">
+<li>答案是否定的,在 CSS 中,答案往往是:"视情况而定." Rems 只是您工具箱中的一个工具.掌握 CSS 的一个
+重要部分就是学习在何时使用哪种工具</li>
+</ul></li>
+<li>实际上单位的选择,的最佳实践是如下三条:
+<ul class="org-ul">
+<li><b><b>rems 用于字体大小 (font-size)</b></b>: 以获得可预测性.</li>
+<li><b><b>像素 (px) 用于边框 (border)</b></b>: 特别是当您想要一条漂亮的细线时.</li>
+<li><b><b>ems 或 rems 用于大多数其他度量</b></b>: 尤其是内边距 (padding),外边距 (margin) 和圆角
+(border-radius).这样,字体大小是可预测的,但如果其他因素改变了元素的字体大小,您仍然可以利用
+ems 缩放其内边距和外边距带来的优势</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orge5876d4" class="outline-3">
+<h3 id="orge5876d4"><span class="section-number-3">2.3.</span> Stop thinking in pixels</h3>
+</div>
+</div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: harrifeng@outlook.com</p>
-<p class="date">Created: 2025-06-16 Mon 11:23</p>
+<p class="date">Created: 2025-06-18 Wed 16:41</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
