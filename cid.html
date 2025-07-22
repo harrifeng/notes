@@ -3,196 +3,18 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-07-22 �ܶ� 20:41 -->
+<!-- 2025-07-22 Tue 20:51 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>cid</title>
 <meta name="author" content="harrifeng@outlook.com" />
 <meta name="generator" content="Org Mode" />
-<style type="text/css">
-  #content { max-width: 60em; margin: auto; }
-  .title  { text-align: center;
-             margin-bottom: .2em; }
-  .subtitle { text-align: center;
-              font-size: medium;
-              font-weight: bold;
-              margin-top:0; }
-  .todo   { font-family: monospace; color: red; }
-  .done   { font-family: monospace; color: green; }
-  .priority { font-family: monospace; color: orange; }
-  .tag    { background-color: #eee; font-family: monospace;
-            padding: 2px; font-size: 80%; font-weight: normal; }
-  .timestamp { color: #bebebe; }
-  .timestamp-kwd { color: #5f9ea0; }
-  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
-  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
-  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
-  .underline { text-decoration: underline; }
-  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
-  p.verse { margin-left: 3%; }
-  pre {
-    border: 1px solid #e6e6e6;
-    border-radius: 3px;
-    background-color: #f2f2f2;
-    padding: 8pt;
-    font-family: monospace;
-    overflow: auto;
-    margin: 1.2em;
-  }
-  pre.src {
-    position: relative;
-    overflow: auto;
-  }
-  pre.src:before {
-    display: none;
-    position: absolute;
-    top: -8px;
-    right: 12px;
-    padding: 3px;
-    color: #555;
-    background-color: #f2f2f299;
-  }
-  pre.src:hover:before { display: inline; margin-top: 14px;}
-  /* Languages per Org manual */
-  pre.src-asymptote:before { content: 'Asymptote'; }
-  pre.src-awk:before { content: 'Awk'; }
-  pre.src-authinfo::before { content: 'Authinfo'; }
-  pre.src-C:before { content: 'C'; }
-  /* pre.src-C++ doesn't work in CSS */
-  pre.src-clojure:before { content: 'Clojure'; }
-  pre.src-css:before { content: 'CSS'; }
-  pre.src-D:before { content: 'D'; }
-  pre.src-ditaa:before { content: 'ditaa'; }
-  pre.src-dot:before { content: 'Graphviz'; }
-  pre.src-calc:before { content: 'Emacs Calc'; }
-  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
-  pre.src-fortran:before { content: 'Fortran'; }
-  pre.src-gnuplot:before { content: 'gnuplot'; }
-  pre.src-haskell:before { content: 'Haskell'; }
-  pre.src-hledger:before { content: 'hledger'; }
-  pre.src-java:before { content: 'Java'; }
-  pre.src-js:before { content: 'Javascript'; }
-  pre.src-latex:before { content: 'LaTeX'; }
-  pre.src-ledger:before { content: 'Ledger'; }
-  pre.src-lisp:before { content: 'Lisp'; }
-  pre.src-lilypond:before { content: 'Lilypond'; }
-  pre.src-lua:before { content: 'Lua'; }
-  pre.src-matlab:before { content: 'MATLAB'; }
-  pre.src-mscgen:before { content: 'Mscgen'; }
-  pre.src-ocaml:before { content: 'Objective Caml'; }
-  pre.src-octave:before { content: 'Octave'; }
-  pre.src-org:before { content: 'Org mode'; }
-  pre.src-oz:before { content: 'OZ'; }
-  pre.src-plantuml:before { content: 'Plantuml'; }
-  pre.src-processing:before { content: 'Processing.js'; }
-  pre.src-python:before { content: 'Python'; }
-  pre.src-R:before { content: 'R'; }
-  pre.src-ruby:before { content: 'Ruby'; }
-  pre.src-sass:before { content: 'Sass'; }
-  pre.src-scheme:before { content: 'Scheme'; }
-  pre.src-screen:before { content: 'Gnu Screen'; }
-  pre.src-sed:before { content: 'Sed'; }
-  pre.src-sh:before { content: 'shell'; }
-  pre.src-sql:before { content: 'SQL'; }
-  pre.src-sqlite:before { content: 'SQLite'; }
-  /* additional languages in org.el's org-babel-load-languages alist */
-  pre.src-forth:before { content: 'Forth'; }
-  pre.src-io:before { content: 'IO'; }
-  pre.src-J:before { content: 'J'; }
-  pre.src-makefile:before { content: 'Makefile'; }
-  pre.src-maxima:before { content: 'Maxima'; }
-  pre.src-perl:before { content: 'Perl'; }
-  pre.src-picolisp:before { content: 'Pico Lisp'; }
-  pre.src-scala:before { content: 'Scala'; }
-  pre.src-shell:before { content: 'Shell Script'; }
-  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
-  /* additional language identifiers per "defun org-babel-execute"
-       in ob-*.el */
-  pre.src-cpp:before  { content: 'C++'; }
-  pre.src-abc:before  { content: 'ABC'; }
-  pre.src-coq:before  { content: 'Coq'; }
-  pre.src-groovy:before  { content: 'Groovy'; }
-  /* additional language identifiers from org-babel-shell-names in
-     ob-shell.el: ob-shell is the only babel language using a lambda to put
-     the execution function name together. */
-  pre.src-bash:before  { content: 'bash'; }
-  pre.src-csh:before  { content: 'csh'; }
-  pre.src-ash:before  { content: 'ash'; }
-  pre.src-dash:before  { content: 'dash'; }
-  pre.src-ksh:before  { content: 'ksh'; }
-  pre.src-mksh:before  { content: 'mksh'; }
-  pre.src-posh:before  { content: 'posh'; }
-  /* Additional Emacs modes also supported by the LaTeX listings package */
-  pre.src-ada:before { content: 'Ada'; }
-  pre.src-asm:before { content: 'Assembler'; }
-  pre.src-caml:before { content: 'Caml'; }
-  pre.src-delphi:before { content: 'Delphi'; }
-  pre.src-html:before { content: 'HTML'; }
-  pre.src-idl:before { content: 'IDL'; }
-  pre.src-mercury:before { content: 'Mercury'; }
-  pre.src-metapost:before { content: 'MetaPost'; }
-  pre.src-modula-2:before { content: 'Modula-2'; }
-  pre.src-pascal:before { content: 'Pascal'; }
-  pre.src-ps:before { content: 'PostScript'; }
-  pre.src-prolog:before { content: 'Prolog'; }
-  pre.src-simula:before { content: 'Simula'; }
-  pre.src-tcl:before { content: 'tcl'; }
-  pre.src-tex:before { content: 'TeX'; }
-  pre.src-plain-tex:before { content: 'Plain TeX'; }
-  pre.src-verilog:before { content: 'Verilog'; }
-  pre.src-vhdl:before { content: 'VHDL'; }
-  pre.src-xml:before { content: 'XML'; }
-  pre.src-nxml:before { content: 'XML'; }
-  /* add a generic configuration mode; LaTeX export needs an additional
-     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
-  pre.src-conf:before { content: 'Configuration File'; }
-
-  table { border-collapse:collapse; }
-  caption.t-above { caption-side: top; }
-  caption.t-bottom { caption-side: bottom; }
-  td, th { vertical-align:top;  }
-  th.org-right  { text-align: center;  }
-  th.org-left   { text-align: center;   }
-  th.org-center { text-align: center; }
-  td.org-right  { text-align: right;  }
-  td.org-left   { text-align: left;   }
-  td.org-center { text-align: center; }
-  dt { font-weight: bold; }
-  .footpara { display: inline; }
-  .footdef  { margin-bottom: 1em; }
-  .figure { padding: 1em; }
-  .figure p { text-align: center; }
-  .equation-container {
-    display: table;
-    text-align: center;
-    width: 100%;
-  }
-  .equation {
-    vertical-align: middle;
-  }
-  .equation-label {
-    display: table-cell;
-    text-align: right;
-    vertical-align: middle;
-  }
-  .inlinetask {
-    padding: 10px;
-    border: 2px solid gray;
-    margin: 10px;
-    background: #ffffcc;
-  }
-  #org-div-home-and-up
-   { text-align: right; font-size: 70%; white-space: nowrap; }
-  textarea { overflow-x: auto; }
-  .linenr { font-size: smaller }
-  .code-highlighted { background-color: #ffff00; }
-  .org-info-js_info-navigation { border-style: none; }
-  #org-info-js_console-label
-    { font-size: 10px; font-weight: bold; white-space: nowrap; }
-  .org-info-js_search-highlight
-    { background-color: #ffff00; color: #000000; font-weight: bold; }
-  .org-svg { }
-</style>
+<link rel="stylesheet" type="text/css" href="src/readtheorg_theme/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="src/readtheorg_theme/css/readtheorg.css"/>
+<script type="text/javascript" src="src/lib/js/jquery.min.js"></script>
+<script type="text/javascript" src="src/lib/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="src/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="src/readtheorg_theme/js/readtheorg.js"></script>
 <script>
   window.MathJax = {
     tex: {
@@ -233,148 +55,148 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org396f529">1. Chapter 01: Cascade, specificity, and inheritance</a>
+<li><a href="#org55dece7">1. Chapter 01: Cascade, specificity, and inheritance</a>
 <ul>
-<li><a href="#orgb44339f">1.1. The cascade</a>
+<li><a href="#orgebdec96">1.1. The cascade</a>
 <ul>
-<li><a href="#orge64b60b">1.1.1. Stylesheet origin</a></li>
-<li><a href="#orgd65774b">1.1.2. Inline styles</a></li>
-<li><a href="#orge326648">1.1.3. Selector specificity</a></li>
-<li><a href="#orgd7ba826">1.1.4. Source order</a></li>
+<li><a href="#orgfdd6936">1.1.1. Stylesheet origin</a></li>
+<li><a href="#org310f5bd">1.1.2. Inline styles</a></li>
+<li><a href="#org9b58840">1.1.3. Selector specificity</a></li>
+<li><a href="#org073478b">1.1.4. Source order</a></li>
 </ul>
 </li>
-<li><a href="#org870c816">1.2. Inheritance</a></li>
-<li><a href="#org51ba7c0">1.3. Special values</a>
+<li><a href="#orgf1fb217">1.2. Inheritance</a></li>
+<li><a href="#org490dc10">1.3. Special values</a>
 <ul>
-<li><a href="#orgf07f3b0">1.3.1. The inherit keyword</a></li>
-<li><a href="#orgfc5a165">1.3.2. The initial keyword</a></li>
-<li><a href="#orgf947e4d">1.3.3. The unset keyword</a></li>
-<li><a href="#orgda25641">1.3.4. The revert keyword</a></li>
+<li><a href="#org4122011">1.3.1. The inherit keyword</a></li>
+<li><a href="#org5ac0b7e">1.3.2. The initial keyword</a></li>
+<li><a href="#orgbafbc1e">1.3.3. The unset keyword</a></li>
+<li><a href="#orgb56b06c">1.3.4. The revert keyword</a></li>
 </ul>
 </li>
-<li><a href="#org04e1306">1.4. Shorthand properties</a>
+<li><a href="#org99c71c7">1.4. Shorthand properties</a>
 <ul>
-<li><a href="#org6130b9a">1.4.1. Beware shorthands silently overriding other styles</a></li>
-<li><a href="#org95a9402">1.4.2. Remember the order of shorthand values</a></li>
+<li><a href="#orgdb373df">1.4.1. Beware shorthands silently overriding other styles</a></li>
+<li><a href="#org325b429">1.4.2. Remember the order of shorthand values</a></li>
 </ul>
 </li>
-<li><a href="#orgb17f4b5">1.5. Progressive enhancement</a>
+<li><a href="#orgf751fdc">1.5. Progressive enhancement</a>
 <ul>
-<li><a href="#orgde0dd8a">1.5.1. Using the cascade for progressive enhancement</a></li>
-<li><a href="#org608f5e6">1.5.2. Progressively enhancing selectors</a></li>
-<li><a href="#org1d58e43">1.5.3. Feature queries using @supports()</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#orgee2d0ae">2. Chapter 02: Working with relative units</a>
-<ul>
-<li><a href="#org118b989">2.1. The power of relative units</a>
-<ul>
-<li><a href="#org0897956">2.1.1. The rise of responsive design</a></li>
-</ul>
-</li>
-<li><a href="#org05486e3">2.2. Ems and rems</a>
-<ul>
-<li><a href="#org2ccec0b">2.2.1. Using ems to define font-size</a></li>
-<li><a href="#org8dd178f">2.2.2. Using rems for font-size</a></li>
-</ul>
-</li>
-<li><a href="#orgb1fd0a4">2.3. Stop thinking in pixels</a>
-<ul>
-<li><a href="#org8257c0f">2.3.1. Setting a sane default font size</a></li>
-<li><a href="#orgbee1c17">2.3.2. Making the panel responsive</a></li>
-<li><a href="#org70ef9c1">2.3.3. Resizing a single component</a></li>
-</ul>
-</li>
-<li><a href="#org0c64b15">2.4. Vieport-relative units</a>
-<ul>
-<li><a href="#orga9af25c">2.4.1. Selecting from the newer viewpoint units</a></li>
-</ul>
-</li>
-<li><a href="#org5353e16">2.5. Unitless numbers and line-height</a></li>
-<li><a href="#org1723835">2.6. Custom properties (aka CSS variables)</a>
-<ul>
-<li><a href="#orgd4b9bee">2.6.1. Changing custom properties dynamically</a></li>
+<li><a href="#org2076323">1.5.1. Using the cascade for progressive enhancement</a></li>
+<li><a href="#orgc299046">1.5.2. Progressively enhancing selectors</a></li>
+<li><a href="#orgfbf69d6">1.5.3. Feature queries using @supports()</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org98e4db1">3. Chapter 03: Document flow and the box model</a>
+<li><a href="#org47c2e47">2. Chapter 02: Working with relative units</a>
 <ul>
-<li><a href="#org9b8ba63">3.1. Normal document flow</a>
+<li><a href="#org5128be1">2.1. The power of relative units</a>
 <ul>
-<li><a href="#org6a925ae">3.1.1. Centering content horizontally</a></li>
-<li><a href="#org70565b5">3.1.2. Using logical proprties</a></li>
-<li><a href="#orgf8984f0">3.1.3. Adopting useful shorthand logical properties</a></li>
+<li><a href="#orgbc5e189">2.1.1. The rise of responsive design</a></li>
 </ul>
 </li>
-<li><a href="#org68dccfd">3.2. The box model</a>
+<li><a href="#org38af573">2.2. Ems and rems</a>
 <ul>
-<li><a href="#org8c74436">3.2.1. Avoiding magic numbers</a></li>
-<li><a href="#org6f61c21">3.2.2. Adjusting the box model</a></li>
-<li><a href="#orga06bc96">3.2.3. Using universal border box sizing</a></li>
+<li><a href="#org6557c58">2.2.1. Using ems to define font-size</a></li>
+<li><a href="#orgdfe56a7">2.2.2. Using rems for font-size</a></li>
 </ul>
 </li>
-<li><a href="#org6743507">3.3. Element height</a>
+<li><a href="#org23cfe3f">2.3. Stop thinking in pixels</a>
 <ul>
-<li><a href="#orgd3a4bb2">3.3.1. Using alternatives to percentage-based heights</a></li>
-<li><a href="#org7c62a83">3.3.2. Using min-height and max-height</a></li>
+<li><a href="#orgc7b3f0d">2.3.1. Setting a sane default font size</a></li>
+<li><a href="#org6700108">2.3.2. Making the panel responsive</a></li>
+<li><a href="#org3f00bdd">2.3.3. Resizing a single component</a></li>
 </ul>
 </li>
-<li><a href="#org135ae96">3.4. Negative margins</a></li>
-<li><a href="#org7a84f2f">3.5. Collapsed margins</a>
+<li><a href="#org45f1bb5">2.4. Vieport-relative units</a>
 <ul>
-<li><a href="#org35fb6f3">3.5.1. Collapsing between text</a></li>
-<li><a href="#orgd62c82e">3.5.2. Collapsing multiple margins</a></li>
-<li><a href="#org4ca2043">3.5.3. Collapsing outside a container</a></li>
+<li><a href="#org563af2a">2.4.1. Selecting from the newer viewpoint units</a></li>
 </ul>
 </li>
-<li><a href="#orgb729997">3.6. Spacig elements within a container</a>
+<li><a href="#org1bf77f3">2.5. Unitless numbers and line-height</a></li>
+<li><a href="#org6547389">2.6. Custom properties (aka CSS variables)</a>
 <ul>
-<li><a href="#org2ed93fe">3.6.1. Considering changing content</a></li>
-<li><a href="#org4a92a51">3.6.2. Creating a more general solution</a></li>
+<li><a href="#orga31a8ae">2.6.1. Changing custom properties dynamically</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orgc548b3a">4. Chapter 4: Flexbox</a>
+<li><a href="#org889583c">3. Chapter 03: Document flow and the box model</a>
 <ul>
-<li><a href="#org6559714">4.1. Flexbox principles</a>
+<li><a href="#org53a10eb">3.1. Normal document flow</a>
 <ul>
-<li><a href="#orga54e7b8">4.1.1. Building a bsic flex menu</a></li>
-<li><a href="#org60ec2fb">4.1.2. Adding padding and spacing</a></li>
+<li><a href="#org54e1318">3.1.1. Centering content horizontally</a></li>
+<li><a href="#org891a3d3">3.1.2. Using logical proprties</a></li>
+<li><a href="#orgd104eea">3.1.3. Adopting useful shorthand logical properties</a></li>
 </ul>
 </li>
-<li><a href="#org9a11214">4.2. Flex item sizes</a>
+<li><a href="#org997ad87">3.2. The box model</a>
 <ul>
-<li><a href="#orgb13de9c">4.2.1. Flex basis</a></li>
-<li><a href="#org932a9f2">4.2.2. Flex grow</a></li>
-<li><a href="#orgf80ca7a">4.2.3. Flex shrink</a></li>
-<li><a href="#orgccdd0aa">4.2.4. Some practical examples</a></li>
+<li><a href="#orgaad3e61">3.2.1. Avoiding magic numbers</a></li>
+<li><a href="#org17fad19">3.2.2. Adjusting the box model</a></li>
+<li><a href="#orgea940d0">3.2.3. Using universal border box sizing</a></li>
 </ul>
 </li>
-<li><a href="#org3008f10">4.3. Flex direction</a>
+<li><a href="#org0a42dd1">3.3. Element height</a>
 <ul>
-<li><a href="#org44228d6">4.3.1. Changing the flex direction</a></li>
-<li><a href="#orga107654">4.3.2. Styling the login form</a></li>
+<li><a href="#orgf9d0075">3.3.1. Using alternatives to percentage-based heights</a></li>
+<li><a href="#org9472a6a">3.3.2. Using min-height and max-height</a></li>
 </ul>
 </li>
-<li><a href="#org329b2b3">4.4. Alignment, spacing, and other details</a>
+<li><a href="#orge012128">3.4. Negative margins</a></li>
+<li><a href="#orgfd92b96">3.5. Collapsed margins</a>
 <ul>
-<li><a href="#org00ef14a">4.4.1. Understanding flex container properties</a></li>
-<li><a href="#orga0fa954">4.4.2. Understanding flex item properties</a></li>
-<li><a href="#orgfb7cbb8">4.4.3. Using alignment properties</a></li>
+<li><a href="#orga10cb8d">3.5.1. Collapsing between text</a></li>
+<li><a href="#org90112d7">3.5.2. Collapsing multiple margins</a></li>
+<li><a href="#orgab2ce6a">3.5.3. Collapsing outside a container</a></li>
+</ul>
+</li>
+<li><a href="#orgb45ac98">3.6. Spacig elements within a container</a>
+<ul>
+<li><a href="#org68abc3e">3.6.1. Considering changing content</a></li>
+<li><a href="#org2d12cac">3.6.2. Creating a more general solution</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org1646fc1">5. Chapter 5: Grid layout</a>
+<li><a href="#orgb244a75">4. Chapter 4: Flexbox</a>
 <ul>
-<li><a href="#org6b1dfaa">5.1. Building a basic grid</a></li>
-<li><a href="#org643ef55">5.2. Anatomy of a grid</a>
+<li><a href="#org421a16f">4.1. Flexbox principles</a>
 <ul>
-<li><a href="#org1730ff7">5.2.1. Numbering grid lines</a></li>
+<li><a href="#org60e5cff">4.1.1. Building a bsic flex menu</a></li>
+<li><a href="#org1da3f52">4.1.2. Adding padding and spacing</a></li>
+</ul>
+</li>
+<li><a href="#org782aeef">4.2. Flex item sizes</a>
+<ul>
+<li><a href="#org6537f15">4.2.1. Flex basis</a></li>
+<li><a href="#org3582a7d">4.2.2. Flex grow</a></li>
+<li><a href="#org0b1d3aa">4.2.3. Flex shrink</a></li>
+<li><a href="#orgcad9890">4.2.4. Some practical examples</a></li>
+</ul>
+</li>
+<li><a href="#orga9c7ad2">4.3. Flex direction</a>
+<ul>
+<li><a href="#orgfaf7de5">4.3.1. Changing the flex direction</a></li>
+<li><a href="#org36c9128">4.3.2. Styling the login form</a></li>
+</ul>
+</li>
+<li><a href="#org449bc5f">4.4. Alignment, spacing, and other details</a>
+<ul>
+<li><a href="#org117f192">4.4.1. Understanding flex container properties</a></li>
+<li><a href="#org5d530b9">4.4.2. Understanding flex item properties</a></li>
+<li><a href="#org04b48b2">4.4.3. Using alignment properties</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org05fc285">5. Chapter 5: Grid layout</a>
+<ul>
+<li><a href="#org91b1626">5.1. Building a basic grid</a></li>
+<li><a href="#org6fd8672">5.2. Anatomy of a grid</a>
+<ul>
+<li><a href="#org7daead1">5.2.1. Numbering grid lines</a></li>
 </ul>
 </li>
 </ul>
@@ -382,8 +204,8 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-org396f529" class="outline-2">
-<h2 id="org396f529"><span class="section-number-2">1.</span> Chapter 01: Cascade, specificity, and inheritance</h2>
+<div id="outline-container-org55dece7" class="outline-2">
+<h2 id="org55dece7"><span class="section-number-2">1.</span> Chapter 01: Cascade, specificity, and inheritance</h2>
 <div class="outline-text-2" id="text-1">
 <ul class="org-ul">
 <li>CSS不同于软件开发世界中的诸多事物:
@@ -432,8 +254,8 @@
 <li>本书的目标是巩固读者的css知识体系和根基,所以我们会从基础原理讲起,回顾核心概念后,我们会对每个核心概念进行深入讨论</li>
 </ul>
 </div>
-<div id="outline-container-orgb44339f" class="outline-3">
-<h3 id="orgb44339f"><span class="section-number-3">1.1.</span> The cascade</h3>
+<div id="outline-container-orgebdec96" class="outline-3">
+<h3 id="orgebdec96"><span class="section-number-3">1.1.</span> The cascade</h3>
 <div class="outline-text-3" id="text-1-1">
 <ul class="org-ul">
 <li>本质上来说,css的核心就是用来声明rules(前面讲过,rules是泛指不同样式): 也就是,在不同条件下触发特定的样式效果:
@@ -522,8 +344,8 @@ sans serif字体</li>
 <li>接下来我们来介绍剩下的四个</li>
 </ul>
 </div>
-<div id="outline-container-orge64b60b" class="outline-4">
-<h4 id="orge64b60b"><span class="section-number-4">1.1.1.</span> Stylesheet origin</h4>
+<div id="outline-container-orgfdd6936" class="outline-4">
+<h4 id="orgfdd6936"><span class="section-number-4">1.1.1.</span> Stylesheet origin</h4>
 <div class="outline-text-4" id="text-1-1-1">
 <ul class="org-ul">
 <li>实时上,有三种stylesheet的来源,分别是:
@@ -546,7 +368,7 @@ sans serif字体</li>
 图1-4就是user-agent style的设置
 </p>
 
-<div id="org1362ad8" class="figure">
+<div id="org4f5b546" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/cid/1-4.png" alt="1-4.png" />
 </p>
 <p><span class="figure-number">Figure 1: </span>cid/1-4.png</p>
@@ -555,7 +377,7 @@ sans serif字体</li>
 我们想对1-4进行一些改动,具体的改动后,效果
 </p>
 
-<div id="org99826f6" class="figure">
+<div id="org76274ab" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/cid/1-5.png" alt="1-5.png" />
 </p>
 <p><span class="figure-number">Figure 2: </span>cid/1-5.png</p>
@@ -595,7 +417,7 @@ sans serif字体</li>
 </ul>
 </div>
 <ol class="org-ol">
-<li><a id="org8b180a3"></a>Important Declarations<br />
+<li><a id="orgef35f8c"></a>Important Declarations<br />
 <div class="outline-text-5" id="text-1-1-1-1">
 <ul class="org-ul">
 <li>style origin rules有一个例外,那就是一旦一个declaration被标记为imporatnt(使用!important),那么这个declaration
@@ -614,8 +436,8 @@ important考虑进来之后,所有的优先级从高到低如下:
 </li>
 </ol>
 </div>
-<div id="outline-container-orgd65774b" class="outline-4">
-<h4 id="orgd65774b"><span class="section-number-4">1.1.2.</span> Inline styles</h4>
+<div id="outline-container-org310f5bd" class="outline-4">
+<h4 id="org310f5bd"><span class="section-number-4">1.1.2.</span> Inline styles</h4>
 <div class="outline-text-4" id="text-1-1-2">
 <ul class="org-ul">
 <li>当冲突声明无法通过来源(origin)解决时,浏览器会检查它们是否通过内联样式(inline styles)添加到元素:
@@ -634,7 +456,7 @@ index e0f6bd3..078f82b 100644
          &lt;li&gt;&lt;a href="/coffees"&gt;Coffees&lt;/a&gt;&lt;/li&gt;
          &lt;li&gt;&lt;a href="/brewers"&gt;Brewers&lt;/a&gt;&lt;/li&gt;
 <span style="color: #aa2222; background-color: #f4d0cf;">-</span><span style="color: #8f1313; background-color: #f4d0cf;">        &lt;li&gt;&lt;a href="/specials" class="featured"&gt;Specials&lt;/a&gt;&lt;/li&gt;</span>
-<span style="color: #006700; background-color: #c3ebc1;">+</span><span style="color: #005000; background-color: #c3ebc1;">        &lt;li&gt;&lt;a href="/specials" class="featured" style="background-color: orange;"&gt;Specials&lt;/a&gt;&lt;/li&gt;</span>
+<span style="color: #006700; background-color: #c3ebc1;">+</span><span style="color: #005000; background-color: #c3ebc1;">        &lt;li&gt;&lt;a href="/specials" class="featured" </span><span style="color: #005000; background-color: #acd6a5;">style="background-color: orange;"</span><span style="color: #005000; background-color: #c3ebc1;">&gt;Specials&lt;/a&gt;&lt;/li&gt;</span>
        &lt;/ul&gt;
      &lt;/nav&gt;
    &lt;/header&gt;
@@ -653,8 +475,8 @@ index e0f6bd3..078f82b 100644
 </ul>
 </div>
 </div>
-<div id="outline-container-orge326648" class="outline-4">
-<h4 id="orge326648"><span class="section-number-4">1.1.3.</span> Selector specificity</h4>
+<div id="outline-container-org9b58840" class="outline-4">
+<h4 id="org9b58840"><span class="section-number-4">1.1.3.</span> Selector specificity</h4>
 <div class="outline-text-4" id="text-1-1-3">
 <ul class="org-ul">
 <li>selector specificity是一个不易察觉但是却是非常重要的CSS特性,因为:
@@ -823,7 +645,7 @@ index a4e88fe..7344b9d 100644
 
      .featured {
 <span style="color: #aa2222; background-color: #f4d0cf;">-</span><span style="color: #8f1313; background-color: #f4d0cf;">      background-color: orange;</span>
-<span style="color: #006700; background-color: #c3ebc1;">+</span><span style="color: #005000; background-color: #c3ebc1;">      background-color: orange !important;</span>
+<span style="color: #006700; background-color: #c3ebc1;">+</span><span style="color: #005000; background-color: #c3ebc1;">      background-color: orange </span><span style="color: #005000; background-color: #acd6a5;">!important</span><span style="color: #005000; background-color: #c3ebc1;">;</span>
      }
    &lt;/style&gt;
  &lt;/head&gt;
@@ -845,8 +667,8 @@ index 7344b9d..38aa9ae 100644
      }
 
 <span style="color: #aa2222; background-color: #f4d0cf;">-</span><span style="color: #8f1313; background-color: #f4d0cf;">    .featured {</span>
-<span style="color: #aa2222; background-color: #f4d0cf;">-</span><span style="color: #8f1313; background-color: #f4d0cf;">      background-color: orange !important;</span>
-<span style="color: #006700; background-color: #c3ebc1;">+</span><span style="color: #005000; background-color: #c3ebc1;">    #main-nav .featured {</span>
+<span style="color: #aa2222; background-color: #f4d0cf;">-</span><span style="color: #8f1313; background-color: #f4d0cf;">      background-color: orange </span><span style="color: #8f1313; background-color: #f3b5a7;">!important</span><span style="color: #8f1313; background-color: #f4d0cf;">;</span>
+<span style="color: #006700; background-color: #c3ebc1;">+</span><span style="color: #005000; background-color: #c3ebc1;">    </span><span style="color: #005000; background-color: #acd6a5;">#main-nav</span><span style="color: #005000; background-color: #c3ebc1;"> .featured {</span>
 <span style="color: #006700; background-color: #c3ebc1;">+</span><span style="color: #005000; background-color: #c3ebc1;">      background-color: orange;</span>
      }
    &lt;/style&gt;
@@ -866,20 +688,20 @@ index 7344b9d..12c92d8 100644
        margin-bottom: 10px;
      }
 
-<span style="color: #aa2222; background-color: #f4d0cf;">-</span><span style="color: #8f1313; background-color: #f4d0cf;">    #main-nav {</span>
-<span style="color: #006700; background-color: #c3ebc1;">+</span><span style="color: #005000; background-color: #c3ebc1;">    .nav {</span>
+<span style="color: #aa2222; background-color: #f4d0cf;">-</span><span style="color: #8f1313; background-color: #f4d0cf;">    </span><span style="color: #8f1313; background-color: #f3b5a7;">#main-</span><span style="color: #8f1313; background-color: #f4d0cf;">nav {</span>
+<span style="color: #006700; background-color: #c3ebc1;">+</span><span style="color: #005000; background-color: #c3ebc1;">    </span><span style="color: #005000; background-color: #acd6a5;">.</span><span style="color: #005000; background-color: #c3ebc1;">nav {</span>
        margin-top: 10px;
        list-style: none;
        padding-left: 0;
      }
 
-<span style="color: #aa2222; background-color: #f4d0cf;">-</span><span style="color: #8f1313; background-color: #f4d0cf;">    #main-nav li {</span>
-<span style="color: #006700; background-color: #c3ebc1;">+</span><span style="color: #005000; background-color: #c3ebc1;">    .nav li {</span>
+<span style="color: #aa2222; background-color: #f4d0cf;">-</span><span style="color: #8f1313; background-color: #f4d0cf;">    </span><span style="color: #8f1313; background-color: #f3b5a7;">#main-</span><span style="color: #8f1313; background-color: #f4d0cf;">nav li {</span>
+<span style="color: #006700; background-color: #c3ebc1;">+</span><span style="color: #005000; background-color: #c3ebc1;">    </span><span style="color: #005000; background-color: #acd6a5;">.</span><span style="color: #005000; background-color: #c3ebc1;">nav li {</span>
        display: inline-block;
      }
 
-<span style="color: #aa2222; background-color: #f4d0cf;">-</span><span style="color: #8f1313; background-color: #f4d0cf;">    #main-nav a {</span>
-<span style="color: #006700; background-color: #c3ebc1;">+</span><span style="color: #005000; background-color: #c3ebc1;">    .nav a {</span>
+<span style="color: #aa2222; background-color: #f4d0cf;">-</span><span style="color: #8f1313; background-color: #f4d0cf;">    </span><span style="color: #8f1313; background-color: #f3b5a7;">#main-</span><span style="color: #8f1313; background-color: #f4d0cf;">nav a {</span>
+<span style="color: #006700; background-color: #c3ebc1;">+</span><span style="color: #005000; background-color: #c3ebc1;">    </span><span style="color: #005000; background-color: #acd6a5;">.</span><span style="color: #005000; background-color: #c3ebc1;">nav a {</span>
        color: white;
        background-color: #13a4a4;
        padding: 5px;
@@ -888,8 +710,8 @@ index 7344b9d..12c92d8 100644
      }
 
 <span style="color: #aa2222; background-color: #f4d0cf;">-</span><span style="color: #8f1313; background-color: #f4d0cf;">    .featured {</span>
-<span style="color: #aa2222; background-color: #f4d0cf;">-</span><span style="color: #8f1313; background-color: #f4d0cf;">      background-color: orange !important;</span>
-<span style="color: #006700; background-color: #c3ebc1;">+</span><span style="color: #005000; background-color: #c3ebc1;">    .nav .featured {</span>
+<span style="color: #aa2222; background-color: #f4d0cf;">-</span><span style="color: #8f1313; background-color: #f4d0cf;">      background-color: orange </span><span style="color: #8f1313; background-color: #f3b5a7;">!important</span><span style="color: #8f1313; background-color: #f4d0cf;">;</span>
+<span style="color: #006700; background-color: #c3ebc1;">+</span><span style="color: #005000; background-color: #c3ebc1;">    .</span><span style="color: #005000; background-color: #acd6a5;">nav .</span><span style="color: #005000; background-color: #c3ebc1;">featured {</span>
 <span style="color: #006700; background-color: #c3ebc1;">+</span><span style="color: #005000; background-color: #c3ebc1;">      background-color: orange;</span>
      }
    &lt;/style&gt;
@@ -902,8 +724,8 @@ index 7344b9d..12c92d8 100644
 </ul>
 </div>
 </div>
-<div id="outline-container-orgd7ba826" class="outline-4">
-<h4 id="orgd7ba826"><span class="section-number-4">1.1.4.</span> Source order</h4>
+<div id="outline-container-org073478b" class="outline-4">
+<h4 id="org073478b"><span class="section-number-4">1.1.4.</span> Source order</h4>
 <div class="outline-text-4" id="text-1-1-4">
 <ul class="org-ul">
 <li>最后一步解决冲突的办法就是source order了,简单点说,所有的标准都相同的情况下,在代码中的位置越往后,优
@@ -964,7 +786,7 @@ value)每个元素的每个属性最多只有一个层叠值.</li>
 页面上的一个特定段落 (&lt;p&gt;) 可以有一个上边距和一个下边距,但它不能有两个不同的上边距或两个不同的下边
 距.如果 CSS 为同一个属性指定了不同的值,在渲染该元素时,层叠规则将只选择其中一个值.这就是层叠值.
 </p>
-<pre class="example" id="org1985e9b">
+<pre class="example" id="org9a697d5">
 层叠值 (cascaded value) 是指通过层叠过程应用到一个元素上的特定属性的值
 </pre></li>
 <li>总体上来说层叠(cascade)是比较容易处理的,我们只需要记住两个最佳实践即可:
@@ -976,8 +798,8 @@ value)每个元素的每个属性最多只有一个层叠值.</li>
 </div>
 </div>
 </div>
-<div id="outline-container-org870c816" class="outline-3">
-<h3 id="org870c816"><span class="section-number-3">1.2.</span> Inheritance</h3>
+<div id="outline-container-orgf1fb217" class="outline-3">
+<h3 id="orgf1fb217"><span class="section-number-3">1.2.</span> Inheritance</h3>
 <div class="outline-text-3" id="text-1-2">
 <ul class="org-ul">
 <li>如果一个元素没有某个属性的层叠值,它可能会从祖先元素那里继承该属性值.通常的做法是为 &lt;body&gt; 元素设
@@ -987,7 +809,7 @@ value)每个元素的每个属性最多只有一个层叠值.</li>
 图1-8展示了DOM树里面的继承关系
 </p>
 
-<div id="orgc019ff1" class="figure">
+<div id="org224373c" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/cid/1-8.png" alt="1-8.png" />
 </p>
 <p><span class="figure-number">Figure 3: </span>cid/1-8.png</p>
@@ -1044,7 +866,7 @@ value)每个元素的每个属性最多只有一个层叠值.</li>
 上面三种方法都可以在浏览器的开发者工具中找到,而且优先级顺序也是最高的在最上面
 </p>
 
-<div id="org100df37" class="figure">
+<div id="org9218a31" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/cid/1-a-1.png" alt="1-a-1.png" />
 </p>
 <p><span class="figure-number">Figure 4: </span>cid/1-a-1.png</p>
@@ -1052,23 +874,23 @@ value)每个元素的每个属性最多只有一个层叠值.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org51ba7c0" class="outline-3">
-<h3 id="org51ba7c0"><span class="section-number-3">1.3.</span> Special values</h3>
+<div id="outline-container-org490dc10" class="outline-3">
+<h3 id="org490dc10"><span class="section-number-3">1.3.</span> Special values</h3>
 <div class="outline-text-3" id="text-1-3">
 <ul class="org-ul">
 <li><p>
 本节介绍的关键字,其不会改变层叠规则:CSS 的核心机制是层叠规则(Cascading Rules),优先级是其关键部分.
 下面介绍的关键字都是一个属性值,在declaration层面起作用!
 </p>
-<pre class="example" id="org3fbced5">
+<pre class="example" id="org7226fa9">
 Warning: These keywords are normal cascaded values. That means it is still
 possible to override them with other values when another selector with higher
 specificity targets the same element.
 </pre></li>
 </ul>
 </div>
-<div id="outline-container-orgf07f3b0" class="outline-4">
-<h4 id="orgf07f3b0"><span class="section-number-4">1.3.1.</span> The inherit keyword</h4>
+<div id="outline-container-org4122011" class="outline-4">
+<h4 id="org4122011"><span class="section-number-4">1.3.1.</span> The inherit keyword</h4>
 <div class="outline-text-4" id="text-1-3-1">
 <ul class="org-ul">
 <li>由于cascade优先级高,其会替代继承给element以style,这也是绝大多数情况下,我们希望发生的情形</li>
@@ -1173,20 +995,20 @@ specificity targets the same element.
        background-color: orange;
      }
 
-<span style="color: #aa2222; background-color: #f4d0cf;">-</span><span style="color: #8f1313; background-color: #f4d0cf;">    /* footer styled will be added in the next listing */</span>
-<span style="color: #006700; background-color: #c3ebc1;">+</span><span style="color: #005000; background-color: #c3ebc1;">    .footer {</span>
-<span style="color: #006700; background-color: #c3ebc1;">+</span><span style="color: #005000; background-color: #c3ebc1;">      color: #666;</span>
-<span style="color: #006700; background-color: #c3ebc1;">+</span><span style="color: #005000; background-color: #c3ebc1;">      background-color: #ccc;</span>
-<span style="color: #006700; background-color: #c3ebc1;">+</span><span style="color: #005000; background-color: #c3ebc1;">      padding: 15px 0;</span>
-<span style="color: #006700; background-color: #c3ebc1;">+</span><span style="color: #005000; background-color: #c3ebc1;">      text-align: center;</span>
-<span style="color: #006700; background-color: #c3ebc1;">+</span><span style="color: #005000; background-color: #c3ebc1;">      font-size: 14px;</span>
-<span style="color: #006700; background-color: #c3ebc1;">+</span><span style="color: #005000; background-color: #c3ebc1;">    }</span>
-<span style="color: #006700; background-color: #c3ebc1;">+</span>
-<span style="color: #006700; background-color: #c3ebc1;">+</span><span style="color: #005000; background-color: #c3ebc1;">    .footer a {</span>
-<span style="color: #006700; background-color: #c3ebc1;">+</span><span style="color: #005000; background-color: #c3ebc1;">      color: inherit;</span>
-<span style="color: #006700; background-color: #c3ebc1;">+</span><span style="color: #005000; background-color: #c3ebc1;">      background-color: transparent;</span>
-<span style="color: #006700; background-color: #c3ebc1;">+</span><span style="color: #005000; background-color: #c3ebc1;">      text-decoration: underline;</span>
-<span style="color: #006700; background-color: #c3ebc1;">+</span><span style="color: #005000; background-color: #c3ebc1;">    }</span>
+<span style="color: #aa2222; background-color: #f4d0cf;">-</span><span style="color: #8f1313; background-color: #f4d0cf;">    </span><span style="color: #8f1313; background-color: #f3b5a7;">/*</span><span style="color: #8f1313; background-color: #f4d0cf;"> footer </span><span style="color: #8f1313; background-color: #f3b5a7;">styled</span><span style="color: #8f1313; background-color: #f4d0cf;"> </span><span style="color: #8f1313; background-color: #f3b5a7;">will</span><span style="color: #8f1313; background-color: #f4d0cf;"> </span><span style="color: #8f1313; background-color: #f3b5a7;">be</span><span style="color: #8f1313; background-color: #f4d0cf;"> </span><span style="color: #8f1313; background-color: #f3b5a7;">added</span><span style="color: #8f1313; background-color: #f4d0cf;"> </span><span style="color: #8f1313; background-color: #f3b5a7;">in</span><span style="color: #8f1313; background-color: #f4d0cf;"> </span><span style="color: #8f1313; background-color: #f3b5a7;">the</span><span style="color: #8f1313; background-color: #f4d0cf;"> </span><span style="color: #8f1313; background-color: #f3b5a7;">next</span><span style="color: #8f1313; background-color: #f4d0cf;"> </span><span style="color: #8f1313; background-color: #f3b5a7;">listing</span><span style="color: #8f1313; background-color: #f4d0cf;"> </span><span style="color: #8f1313; background-color: #f3b5a7;">*/</span>
+<span style="color: #006700; background-color: #c3ebc1;">+</span><span style="color: #005000; background-color: #c3ebc1;">    </span><span style="color: #005000; background-color: #acd6a5;">.footer</span><span style="color: #005000; background-color: #c3ebc1;"> </span><span style="color: #005000; background-color: #acd6a5;">{</span><span style="color: #005000; background-color: #acd6a5;">
+</span><span style="color: #005000; background-color: #acd6a5;">+</span><span style="color: #005000; background-color: #acd6a5;">      color: #666;</span><span style="color: #005000; background-color: #acd6a5;">
+</span><span style="color: #005000; background-color: #acd6a5;">+</span><span style="color: #005000; background-color: #acd6a5;">      background-color: #ccc;</span><span style="color: #005000; background-color: #acd6a5;">
+</span><span style="color: #005000; background-color: #acd6a5;">+</span><span style="color: #005000; background-color: #acd6a5;">      padding: 15px 0;</span><span style="color: #005000; background-color: #acd6a5;">
+</span><span style="color: #005000; background-color: #acd6a5;">+</span><span style="color: #005000; background-color: #acd6a5;">      text-align: center;</span><span style="color: #005000; background-color: #acd6a5;">
+</span><span style="color: #005000; background-color: #acd6a5;">+</span><span style="color: #005000; background-color: #acd6a5;">      font-size: 14px;</span><span style="color: #005000; background-color: #acd6a5;">
+</span><span style="color: #005000; background-color: #acd6a5;">+</span><span style="color: #005000; background-color: #acd6a5;">    }</span><span style="color: #005000; background-color: #acd6a5;">
+</span><span style="color: #005000; background-color: #acd6a5;">+</span><span style="color: #005000; background-color: #acd6a5;">
+</span><span style="color: #005000; background-color: #acd6a5;">+</span><span style="color: #005000; background-color: #acd6a5;">    .</span><span style="color: #005000; background-color: #c3ebc1;">footer </span><span style="color: #005000; background-color: #acd6a5;">a</span><span style="color: #005000; background-color: #c3ebc1;"> </span><span style="color: #005000; background-color: #acd6a5;">{</span>
+<span style="color: #005000; background-color: #acd6a5;">+</span><span style="color: #005000; background-color: #c3ebc1;">      </span><span style="color: #005000; background-color: #acd6a5;">color: inherit;</span><span style="color: #005000; background-color: #acd6a5;">
+</span><span style="color: #005000; background-color: #acd6a5;">+</span><span style="color: #005000; background-color: #acd6a5;">      background-color: transparent;</span><span style="color: #005000; background-color: #acd6a5;">
+</span><span style="color: #005000; background-color: #acd6a5;">+</span><span style="color: #005000; background-color: #acd6a5;">      text-decoration: underline;</span><span style="color: #005000; background-color: #acd6a5;">
+</span><span style="color: #005000; background-color: #acd6a5;">+</span><span style="color: #005000; background-color: #acd6a5;">    }</span>
    &lt;/style&gt;
  &lt;/head&gt;
  &lt;body&gt;
@@ -1196,8 +1018,8 @@ specificity targets the same element.
 </ul>
 </div>
 </div>
-<div id="outline-container-orgfc5a165" class="outline-4">
-<h4 id="orgfc5a165"><span class="section-number-4">1.3.2.</span> The initial keyword</h4>
+<div id="outline-container-org5ac0b7e" class="outline-4">
+<h4 id="org5ac0b7e"><span class="section-number-4">1.3.2.</span> The initial keyword</h4>
 <div class="outline-text-4" id="text-1-3-2">
 <ul class="org-ul">
 <li>有时候你想把某个element的style设置为初始值,就需要用到initial.这种设置会:
@@ -1272,8 +1094,8 @@ specificity targets the same element.
 </ul>
 </div>
 </div>
-<div id="outline-container-orgf947e4d" class="outline-4">
-<h4 id="orgf947e4d"><span class="section-number-4">1.3.3.</span> The unset keyword</h4>
+<div id="outline-container-orgbafbc1e" class="outline-4">
+<h4 id="orgbafbc1e"><span class="section-number-4">1.3.3.</span> The unset keyword</h4>
 <div class="outline-text-4" id="text-1-3-3">
 <ul class="org-ul">
 <li>unset 是一个 CSS 的特殊值,用来根据属性是否继承来决定行为:
@@ -1315,8 +1137,8 @@ border),unset 的效果相当于 initial
 </ul>
 </div>
 </div>
-<div id="outline-container-orgda25641" class="outline-4">
-<h4 id="orgda25641"><span class="section-number-4">1.3.4.</span> The revert keyword</h4>
+<div id="outline-container-orgb56b06c" class="outline-4">
+<h4 id="orgb56b06c"><span class="section-number-4">1.3.4.</span> The revert keyword</h4>
 <div class="outline-text-4" id="text-1-3-4">
 <ul class="org-ul">
 <li>initial和unset关键字(在起作用的情况下)会把如下两种style都revert掉:
@@ -1333,8 +1155,8 @@ border),unset 的效果相当于 initial
 </div>
 </div>
 </div>
-<div id="outline-container-org04e1306" class="outline-3">
-<h3 id="org04e1306"><span class="section-number-3">1.4.</span> Shorthand properties</h3>
+<div id="outline-container-org99c71c7" class="outline-3">
+<h3 id="org99c71c7"><span class="section-number-3">1.4.</span> Shorthand properties</h3>
 <div class="outline-text-3" id="text-1-4">
 <ul class="org-ul">
 <li>简写属性(shorthand properties)允许开发者通过单行声明同时设置多个相关CSS属性的值,例如:
@@ -1374,8 +1196,8 @@ font 是一个简写属性,可通过一行声明设置多种字体属性
 <li>shorthand properties可以减少代码量,提升代码整洁度,但是带来的问题也不少,我们下面详细说一下</li>
 </ul>
 </div>
-<div id="outline-container-org6130b9a" class="outline-4">
-<h4 id="org6130b9a"><span class="section-number-4">1.4.1.</span> Beware shorthands silently overriding other styles</h4>
+<div id="outline-container-orgdb373df" class="outline-4">
+<h4 id="orgdb373df"><span class="section-number-4">1.4.1.</span> Beware shorthands silently overriding other styles</h4>
 <div class="outline-text-4" id="text-1-4-1">
 <ul class="org-ul">
 <li>在最佳实践中,我们不建议使用shorthand properties,下面就是short properties引入unexpected结果的例子:
@@ -1420,8 +1242,8 @@ font 是一个简写属性,可通过一行声明设置多种字体属性
 </ul>
 </div>
 </div>
-<div id="outline-container-org95a9402" class="outline-4">
-<h4 id="org95a9402"><span class="section-number-4">1.4.2.</span> Remember the order of shorthand values</h4>
+<div id="outline-container-org325b429" class="outline-4">
+<h4 id="org325b429"><span class="section-number-4">1.4.2.</span> Remember the order of shorthand values</h4>
 <div class="outline-text-4" id="text-1-4-2">
 <ul class="org-ul">
 <li>简写属性在值的指定顺序方面通常比较宽松.你可以设置 border: 1px solid black 或者 border: black 1px
@@ -1507,8 +1329,8 @@ box-shadow和text-shadow等(严格来说这些并非传统简写属性).</li>
 </div>
 </div>
 </div>
-<div id="outline-container-orgb17f4b5" class="outline-3">
-<h3 id="orgb17f4b5"><span class="section-number-3">1.5.</span> Progressive enhancement</h3>
+<div id="outline-container-orgf751fdc" class="outline-3">
+<h3 id="orgf751fdc"><span class="section-number-3">1.5.</span> Progressive enhancement</h3>
 <div class="outline-text-3" id="text-1-5">
 <ul class="org-ul">
 <li>CSS 语言在不断发展演进.在这一持续演进的语言中工作,一个重要环节是跟踪哪些功能对该语言来说仍然相对
@@ -1531,8 +1353,8 @@ box-shadow和text-shadow等(严格来说这些并非传统简写属性).</li>
 这取决于所讨论功能本身的特性以及它对于您想要实现的效果有多关键.</li>
 </ul>
 </div>
-<div id="outline-container-orgde0dd8a" class="outline-4">
-<h4 id="orgde0dd8a"><span class="section-number-4">1.5.1.</span> Using the cascade for progressive enhancement</h4>
+<div id="outline-container-org2076323" class="outline-4">
+<h4 id="org2076323"><span class="section-number-4">1.5.1.</span> Using the cascade for progressive enhancement</h4>
 <div class="outline-text-4" id="text-1-5-1">
 <ul class="org-ul">
 <li>利用渐进增强最简洁的方式,其实就内建在CSS的层叠机制本身之中.当浏览器遇到一条它无法解析的声明时,它
@@ -1559,7 +1381,7 @@ box-shadow和text-shadow等(严格来说这些并非传统简写属性).</li>
 从调试角度看,这种"静默失败"或许有些奇怪(因为CSS语言从不抛出错误).但这是CSS语言运作机制的核心组
 成部分,且正是为渐进增强而刻意设计的特性
 </p>
-<pre class="example" id="orgf2876c2">
+<pre class="example" id="org1605ebb">
 This may seem odd from a debugging perspective because the language never
 throws errors. But it's an essential part of how the language works, and this is intentional for
 this very purpose: progressive enhancement.
@@ -1567,8 +1389,8 @@ this very purpose: progressive enhancement.
 </ul>
 </div>
 </div>
-<div id="outline-container-org608f5e6" class="outline-4">
-<h4 id="org608f5e6"><span class="section-number-4">1.5.2.</span> Progressively enhancing selectors</h4>
+<div id="outline-container-orgc299046" class="outline-4">
+<h4 id="orgc299046"><span class="section-number-4">1.5.2.</span> Progressively enhancing selectors</h4>
 <div class="outline-text-4" id="text-1-5-2">
 <ul class="org-ul">
 <li>progressive enhancement不仅仅可以适用于新属性,还可以适用于新的选择器语法:
@@ -1604,8 +1426,8 @@ this very purpose: progressive enhancement.
 </ul>
 </div>
 </div>
-<div id="outline-container-org1d58e43" class="outline-4">
-<h4 id="org1d58e43"><span class="section-number-4">1.5.3.</span> Feature queries using @supports()</h4>
+<div id="outline-container-orgfbf69d6" class="outline-4">
+<h4 id="orgfbf69d6"><span class="section-number-4">1.5.3.</span> Feature queries using @supports()</h4>
 <div class="outline-text-4" id="text-1-5-3">
 <ul class="org-ul">
 <li>上面的两种做法(progressively enhancement for cascase 以及 progressively enhancement for selector)在
@@ -1770,8 +1592,8 @@ this very purpose: progressive enhancement.
 </div>
 </div>
 </div>
-<div id="outline-container-orgee2d0ae" class="outline-2">
-<h2 id="orgee2d0ae"><span class="section-number-2">2.</span> Chapter 02: Working with relative units</h2>
+<div id="outline-container-org47c2e47" class="outline-2">
+<h2 id="org47c2e47"><span class="section-number-2">2.</span> Chapter 02: Working with relative units</h2>
 <div class="outline-text-2" id="text-2">
 <ul class="org-ul">
 <li>在CSS中指定长度值时,开发者拥有丰富多样的选择.其中最常用且可能最易用的单位是像素(px).这类单位属
@@ -1806,8 +1628,8 @@ this very purpose: progressive enhancement.
 示如何驾驭这种特性.熟练运用相对单位能让你的代码更简洁更灵活,更易维护&#x2013;让相对单位真正为你所用.</li>
 </ul>
 </div>
-<div id="outline-container-org118b989" class="outline-3">
-<h3 id="org118b989"><span class="section-number-3">2.1.</span> The power of relative units</h3>
+<div id="outline-container-org5128be1" class="outline-3">
+<h3 id="org5128be1"><span class="section-number-3">2.1.</span> The power of relative units</h3>
 <div class="outline-text-3" id="text-2-1">
 <ul class="org-ul">
 <li>CSS 将样式延迟绑定到网页: 网页内容和其样式需要两者都编写完成后才会合并应用.这为设计流程增加了一层
@@ -1820,8 +1642,8 @@ this very purpose: progressive enhancement.
 的空间有多少.但在网页环境中,情况截然不同</li>
 </ul>
 </div>
-<div id="outline-container-org0897956" class="outline-4">
-<h4 id="org0897956"><span class="section-number-4">2.1.1.</span> The rise of responsive design</h4>
+<div id="outline-container-orgbc5e189" class="outline-4">
+<h4 id="orgbc5e189"><span class="section-number-4">2.1.1.</span> The rise of responsive design</h4>
 <div class="outline-text-4" id="text-2-1-1">
 <ul class="org-ul">
 <li>在网页环境中,用户可以将浏览器窗口设置为任意尺寸,而CSS样式必须适应这些尺寸. 此外,用户还可能在页
@@ -1851,8 +1673,8 @@ this very purpose: progressive enhancement.
 </div>
 </div>
 </div>
-<div id="outline-container-org05486e3" class="outline-3">
-<h3 id="org05486e3"><span class="section-number-3">2.2.</span> Ems and rems</h3>
+<div id="outline-container-org38af573" class="outline-3">
+<h3 id="org38af573"><span class="section-number-3">2.2.</span> Ems and rems</h3>
 <div class="outline-text-3" id="text-2-2">
 <ul class="org-ul">
 <li><b>em 是最常见的相对长度单位</b>,源于印刷排版领域,指代特定字体尺寸的计量单位.</li>
@@ -1862,7 +1684,7 @@ this very purpose: progressive enhancement.
 比如图2-1 展示了一个带有 1em 内边距的 div 元素.
 </p>
 
-<div id="orge573e3c" class="figure">
+<div id="orgfdf5eb0" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/cid/2-1.png" alt="2-1.png" />
 </p>
 <p><span class="figure-number">Figure 5: </span>cid/2-1.png</p>
@@ -1881,7 +1703,7 @@ this very purpose: progressive enhancement.
 如果字体变大,那么padding也变大,字体变小,padding也变小,图2-2的对比更容易让人理解
 </p>
 
-<div id="orgf4c7797" class="figure">
+<div id="org202c53b" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/cid/2-2.png" alt="2-2.png" />
 </p>
 <p><span class="figure-number">Figure 6: </span>cid/2-2.png</p>
@@ -1925,8 +1747,8 @@ this very purpose: progressive enhancement.
 </ul></li>
 </ul>
 </div>
-<div id="outline-container-org2ccec0b" class="outline-4">
-<h4 id="org2ccec0b"><span class="section-number-4">2.2.1.</span> Using ems to define font-size</h4>
+<div id="outline-container-org6557c58" class="outline-4">
+<h4 id="org6557c58"><span class="section-number-4">2.2.1.</span> Using ems to define font-size</h4>
 <div class="outline-text-4" id="text-2-2-1">
 <ul class="org-ul">
 <li>我们前面说过,如果你在非font-size的地方设置了ems,那么ems其实就是font-size的倍数,比如0.8ems,其实就是
@@ -1974,7 +1796,7 @@ this very purpose: progressive enhancement.
 恰恰  是令开发者对使用 em 单位感到畏惧的那类问题.
 </p>
 
-<div id="org2b0a788" class="figure">
+<div id="orgbbc322a" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/cid/2-5.png" alt="2-5.png" />
 </p>
 <p><span class="figure-number">Figure 7: </span>cid/2-5.png</p>
@@ -2054,8 +1876,8 @@ this very purpose: progressive enhancement.
 </ul>
 </div>
 </div>
-<div id="outline-container-org8dd178f" class="outline-4">
-<h4 id="org8dd178f"><span class="section-number-4">2.2.2.</span> Using rems for font-size</h4>
+<div id="outline-container-orgdfe56a7" class="outline-4">
+<h4 id="orgdfe56a7"><span class="section-number-4">2.2.2.</span> Using rems for font-size</h4>
 <div class="outline-text-4" id="text-2-2-2">
 <ul class="org-ul">
 <li>是一种树形结构,其中每个元素由一个节点表示.
@@ -2105,8 +1927,8 @@ ems 缩放其内边距和外边距带来的优势</li>
 </div>
 </div>
 </div>
-<div id="outline-container-orgb1fd0a4" class="outline-3">
-<h3 id="orgb1fd0a4"><span class="section-number-3">2.3.</span> Stop thinking in pixels</h3>
+<div id="outline-container-org23cfe3f" class="outline-3">
+<h3 id="org23cfe3f"><span class="section-number-3">2.3.</span> Stop thinking in pixels</h3>
 <div class="outline-text-3" id="text-2-3">
 <ul class="org-ul">
 <li>过去有一个常见但实为反模式的做法:将页面根元素(html)的字体大小重置为 0.625em 或 62.5%.这种做法将
@@ -2145,8 +1967,8 @@ ems 缩放其内边距和外边距带来的优势</li>
 在本章之后,我将主要使用相对单位来讨论字体大小.</li>
 </ul>
 </div>
-<div id="outline-container-org8257c0f" class="outline-4">
-<h4 id="org8257c0f"><span class="section-number-4">2.3.1.</span> Setting a sane default font size</h4>
+<div id="outline-container-orgc7b3f0d" class="outline-4">
+<h4 id="orgc7b3f0d"><span class="section-number-4">2.3.1.</span> Setting a sane default font size</h4>
 <div class="outline-text-4" id="text-2-3-1">
 <ul class="org-ul">
 <li>假设您希望默认字体大小为 14 像素 (px).
@@ -2209,8 +2031,8 @@ ems 缩放其内边距和外边距带来的优势</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgbee1c17" class="outline-4">
-<h4 id="orgbee1c17"><span class="section-number-4">2.3.2.</span> Making the panel responsive</h4>
+<div id="outline-container-org6700108" class="outline-4">
+<h4 id="org6700108"><span class="section-number-4">2.3.2.</span> Making the panel responsive</h4>
 <div class="outline-text-4" id="text-2-3-2">
 <ul class="org-ul">
 <li>我们可以根据屏幕的尺寸来更改基准字体大小
@@ -2264,8 +2086,8 @@ ems 缩放其内边距和外边距带来的优势</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org70ef9c1" class="outline-4">
-<h4 id="org70ef9c1"><span class="section-number-4">2.3.3.</span> Resizing a single component</h4>
+<div id="outline-container-org3f00bdd" class="outline-4">
+<h4 id="org3f00bdd"><span class="section-number-4">2.3.3.</span> Resizing a single component</h4>
 <div class="outline-text-4" id="text-2-3-3">
 <ul class="org-ul">
 <li>你也可以使用 em 单位来缩放页面上的单个组件.有时,你可能需要在页面的某些区域使用同一界面元素的放大
@@ -2276,7 +2098,7 @@ ems 缩放其内边距和外边距带来的优势</li>
 图2-9
 </p>
 
-<div id="org0dc11e6" class="figure">
+<div id="org30ac3e8" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/cid/2-9.png" alt="2-9.png" />
 </p>
 <p><span class="figure-number">Figure 8: </span>cid/2-9.png</p>
@@ -2391,15 +2213,15 @@ em 单位使其他字体大小相对于已建立的父元素字体大小计算.�
 </div>
 </div>
 </div>
-<div id="outline-container-org0c64b15" class="outline-3">
-<h3 id="org0c64b15"><span class="section-number-3">2.4.</span> Vieport-relative units</h3>
+<div id="outline-container-org45f1bb5" class="outline-3">
+<h3 id="org45f1bb5"><span class="section-number-3">2.4.</span> Vieport-relative units</h3>
 <div class="outline-text-3" id="text-2-4">
 <ul class="org-ul">
 <li><p>
 您已经了解到 em 和 rem 是相对于字体大小 (font-size) 定义的,但这些并非唯一的相对单位类型.还有视口
 相对单位 (viewport-relative units),用于定义相对于浏览器视口长度的单位.
 </p>
-<pre class="example" id="org1eb351b">
+<pre class="example" id="org5fde07f">
 定义:视口 (viewport) 是浏览器窗口中网页可见的框架区域.它不包括浏览器的地址栏,工具栏和状态栏(如果存在).
 </pre></li>
 <li>随着语言的最新扩展,CSS 中总共有 24 种视口相对单位.这听起来可能有些令人不知所措,但这些单位其实只
@@ -2419,7 +2241,7 @@ em 单位使其他字体大小相对于已建立的父元素字体大小计算.�
 图2-10
 </p>
 
-<div id="orge5ac5ac" class="figure">
+<div id="orge68f64a" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/cid/2-10.png" alt="2-10.png" />
 </p>
 <p><span class="figure-number">Figure 9: </span>cid/2-10.png</p>
@@ -2454,8 +2276,8 @@ em 单位使其他字体大小相对于已建立的父元素字体大小计算.�
 如此,CSS 规范后续引入了更多视口相关单位来提供更精细的控制.</li>
 </ul>
 </div>
-<div id="outline-container-orga9af25c" class="outline-4">
-<h4 id="orga9af25c"><span class="section-number-4">2.4.1.</span> Selecting from the newer viewpoint units</h4>
+<div id="outline-container-org563af2a" class="outline-4">
+<h4 id="org563af2a"><span class="section-number-4">2.4.1.</span> Selecting from the newer viewpoint units</h4>
 <div class="outline-text-4" id="text-2-4-1">
 <ul class="org-ul">
 <li>为了解决布局抖动(layout thrashing)问题,CSS 引入了大视口(large viewport) 和小视口(small viewport)
@@ -2466,7 +2288,7 @@ em 单位使其他字体大小相对于已建立的父元素字体大小计算.�
 (见图 2.11)
 </p>
 
-<div id="org34bd8f9" class="figure">
+<div id="orgb16b354" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/cid/2-11.png" alt="2-11.png" />
 </p>
 <p><span class="figure-number">Figure 10: </span>cid/2-11.png</p>
@@ -2581,8 +2403,8 @@ lvw,但未来的行为可能会发生变化.</li>
 </div>
 </div>
 </div>
-<div id="outline-container-org5353e16" class="outline-3">
-<h3 id="org5353e16"><span class="section-number-3">2.5.</span> Unitless numbers and line-height</h3>
+<div id="outline-container-org1bf77f3" class="outline-3">
+<h3 id="org1bf77f3"><span class="section-number-3">2.5.</span> Unitless numbers and line-height</h3>
 <div class="outline-text-3" id="text-2-5">
 <ul class="org-ul">
 <li>某些 CSS 属性支持使用无单位值(即纯数字).包含该特性的属性有
@@ -2611,15 +2433,15 @@ line-height会自动根据字体大小调整,适用于响应式设计和动态�
 </ul>
 </div>
 </div>
-<div id="outline-container-org1723835" class="outline-3">
-<h3 id="org1723835"><span class="section-number-3">2.6.</span> Custom properties (aka CSS variables)</h3>
+<div id="outline-container-org6547389" class="outline-3">
+<h3 id="org6547389"><span class="section-number-3">2.6.</span> Custom properties (aka CSS variables)</h3>
 <div class="outline-text-3" id="text-2-6">
 <ul class="org-ul">
 <li><p>
 自定义属性(Custom Properties)实现了更高层级的动态化,基于上下文的样式控制.其运作机制类似于变量:
 声明变量→赋值→在样式表中复用该值.此技术能显著减少样式代码重复,并支持多种高级应用场景.
 </p>
-<pre class="example" id="org210d765">
+<pre class="example" id="org9d0060a">
 关键区别注解:若您使用Sass/Less等预处理器,切莫轻视原生CSS变量.CSS自定义属性在本质上截然不同,其
 能力远超预处理器变量(我倾向称其为"自定义属性"以强调此差异)
 </pre></li>
@@ -2658,8 +2480,8 @@ line-height会自动根据字体大小调整,适用于响应式设计和动态�
 <li>custom property让我们能够在一个地方定义变量,起到了single source of truth的功能.</li>
 </ul>
 </div>
-<div id="outline-container-orgd4b9bee" class="outline-4">
-<h4 id="orgd4b9bee"><span class="section-number-4">2.6.1.</span> Changing custom properties dynamically</h4>
+<div id="outline-container-orga31a8ae" class="outline-4">
+<h4 id="orga31a8ae"><span class="section-number-4">2.6.1.</span> Changing custom properties dynamically</h4>
 <div class="outline-text-4" id="text-2-6-1">
 <ul class="org-ul">
 <li>在目前为止,custom property只不过是比较便捷的工具:它能够减少代码中的大量财富</li>
@@ -2673,7 +2495,7 @@ line-height会自动根据字体大小调整,适用于响应式设计和动态�
 图2-15
 </p>
 
-<div id="orgb2f128d" class="figure">
+<div id="org15407b7" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/cid/2-15.png" alt="2-15.png" />
 </p>
 <p><span class="figure-number">Figure 11: </span>cid/2-15.png</p>
@@ -2764,12 +2586,12 @@ line-height会自动根据字体大小调整,适用于响应式设计和动态�
 </div>
 </div>
 </div>
-<div id="outline-container-org98e4db1" class="outline-2">
-<h2 id="org98e4db1"><span class="section-number-2">3.</span> Chapter 03: Document flow and the box model</h2>
+<div id="outline-container-org889583c" class="outline-2">
+<h2 id="org889583c"><span class="section-number-2">3.</span> Chapter 03: Document flow and the box model</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-org9b8ba63" class="outline-3">
-<h3 id="org9b8ba63"><span class="section-number-3">3.1.</span> Normal document flow</h3>
+<div id="outline-container-org53a10eb" class="outline-3">
+<h3 id="org53a10eb"><span class="section-number-3">3.1.</span> Normal document flow</h3>
 <div class="outline-text-3" id="text-3-1">
 <ul class="org-ul">
 <li>在本章中,你将创建一个包含顶部页眉和主体内容的简易页面.页面内容的宽度将被限制,以避免文本行过长.
@@ -2780,7 +2602,7 @@ line-height会自动根据字体大小调整,适用于响应式设计和动态�
 图3-1
 </p>
 
-<div id="org7e8a6f7" class="figure">
+<div id="orgc82a305" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/cid/3-1.png" alt="3-1.png" />
 </p>
 <p><span class="figure-number">Figure 12: </span>cid/3-1.png</p>
@@ -2830,7 +2652,7 @@ line-height会自动根据字体大小调整,适用于响应式设计和动态�
 效果如3-2
 </p>
 
-<div id="org472c70d" class="figure">
+<div id="orgd2e5d3f" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/cid/3-2.png" alt="3-2.png" />
 </p>
 <p><span class="figure-number">Figure 13: </span>cid/3-2.png</p>
@@ -2872,7 +2694,7 @@ line-height会自动根据字体大小调整,适用于响应式设计和动态�
 增加如上代码后的效果如图3-3
 </p>
 
-<div id="org29e81b5" class="figure">
+<div id="org92bf122" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/cid/3-3.png" alt="3-3.png" />
 </p>
 <p><span class="figure-number">Figure 14: </span>cid/3-3.png</p>
@@ -2889,7 +2711,7 @@ line-height会自动根据字体大小调整,适用于响应式设计和动态�
 <li><p>
 如何做到块级元素是非常特殊的,css的做法是
 </p>
-<pre class="example" id="org456705c">
+<pre class="example" id="org6c27c61">
 是给特定元素以 display: block
 </pre></li>
 <li>比如as &lt;p&gt;, &lt;div&gt;, and &lt;header&gt; 都是在user-agent里面设置了display: block,从而获得了block element的
@@ -2897,7 +2719,7 @@ line-height会自动根据字体大小调整,适用于响应式设计和动态�
 <li><p>
 我们上面讲述的inline element和block element就是所谓的Normal document flow,定义如下
 </p>
-<pre class="example" id="org8ef919b">
+<pre class="example" id="orga90fe2a">
 Normal document flow refers to the default layout behavior of elements on the page. Inline
 elements flow along with the text of the page, from left to right, line wrapping when they reach
 the edge of their container. Blocklevel elements fall on individual lines, with a line break
@@ -2909,20 +2731,20 @@ document flow)的设计基于"宽度受限"与"高度无限"的原则:
 <li><p>
 父元素的宽度决定了子元素的宽度:
 </p>
-<pre class="example" id="org4f9546e">
+<pre class="example" id="org830dc5c">
 块级元素默认横向填满父容器(宽度受父容器限制),文本或行内元素在容器内按从左至右流动,抵达边界时折行
 </pre></li>
 <li><p>
 而对于高度,情况则相反&#x2013;子元素的高度决定了父元素的高度
 </p>
-<pre class="example" id="org478a233">
+<pre class="example" id="org96c5387">
 高度由内容动态撑开,可无限延伸
 </pre></li>
 </ul></li>
 </ul>
 </div>
-<div id="outline-container-org6a925ae" class="outline-4">
-<h4 id="org6a925ae"><span class="section-number-4">3.1.1.</span> Centering content horizontally</h4>
+<div id="outline-container-org54e1318" class="outline-4">
+<h4 id="org54e1318"><span class="section-number-4">3.1.1.</span> Centering content horizontally</h4>
 <div class="outline-text-4" id="text-3-1-1">
 <ul class="org-ul">
 <li>在构建页面布局时,通常应该先从高层级的 DOM 元素开始.先确定它们的大小并相互之间的位置关系,再专注于
@@ -2940,7 +2762,7 @@ document flow)的设计基于"宽度受限"与"高度无限"的原则:
 图3-3
 </p>
 
-<div id="org4efa307" class="figure">
+<div id="org559c71e" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/cid/3-3.png" alt="3-3.png" />
 </p>
 <p><span class="figure-number">Figure 15: </span>cid/3-3.png</p>
@@ -2951,7 +2773,7 @@ document flow)的设计基于"宽度受限"与"高度无限"的原则:
 "双容器模式"(double-container pattern)
 </p>
 
-<div id="org7ee6085" class="figure">
+<div id="org5e2690f" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/cid/3-4.png" alt="3-4.png" />
 </p>
 <p><span class="figure-number">Figure 16: </span>cid/3-4.png</p>
@@ -3024,8 +2846,8 @@ document flow)的设计基于"宽度受限"与"高度无限"的原则:
 </ul>
 </div>
 </div>
-<div id="outline-container-org70565b5" class="outline-4">
-<h4 id="org70565b5"><span class="section-number-4">3.1.2.</span> Using logical proprties</h4>
+<div id="outline-container-org891a3d3" class="outline-4">
+<h4 id="org891a3d3"><span class="section-number-4">3.1.2.</span> Using logical proprties</h4>
 <div class="outline-text-4" id="text-3-1-2">
 <ul class="org-ul">
 <li>在过去,文档流(document flow)的默认行为常常给需要翻译成某些语言的网站带来困难.正常的文档流是从左到
@@ -3079,8 +2901,8 @@ margin-top.因此,您可以在样式表中交替使用这两种方法,同时仍�
 </ul>
 </div>
 </div>
-<div id="outline-container-orgf8984f0" class="outline-4">
-<h4 id="orgf8984f0"><span class="section-number-4">3.1.3.</span> Adopting useful shorthand logical properties</h4>
+<div id="outline-container-orgd104eea" class="outline-4">
+<h4 id="orgd104eea"><span class="section-number-4">3.1.3.</span> Adopting useful shorthand logical properties</h4>
 <div class="outline-text-4" id="text-3-1-3">
 <ul class="org-ul">
 <li>一些逻辑属性恰好提供了一种简化常见模式的方法.例如,margin-inline 允许您同时设置起始(左)和结束
@@ -3108,17 +2930,17 @@ margin-top.因此,您可以在样式表中交替使用这两种方法,同时仍�
      }
 
      .page-header h1 {
-<span style="color: #aa2222; background-color: #f4d0cf;">-</span><span style="color: #8f1313; background-color: #f4d0cf;">      max-width: var(--column-width);</span>
-<span style="color: #aa2222; background-color: #f4d0cf;">-</span><span style="color: #8f1313; background-color: #f4d0cf;">      margin: 0 auto;</span>
-<span style="color: #006700; background-color: #c3ebc1;">+</span><span style="color: #005000; background-color: #c3ebc1;">      max-inline-size: var(--column-width);</span>
-<span style="color: #006700; background-color: #c3ebc1;">+</span><span style="color: #005000; background-color: #c3ebc1;">      margin-inline: auto;</span>
+<span style="color: #aa2222; background-color: #f4d0cf;">-</span><span style="color: #8f1313; background-color: #f4d0cf;">      max-</span><span style="color: #8f1313; background-color: #f3b5a7;">width</span><span style="color: #8f1313; background-color: #f4d0cf;">: var(--column-width);</span>
+<span style="color: #aa2222; background-color: #f4d0cf;">-</span><span style="color: #8f1313; background-color: #f4d0cf;">      margin: </span><span style="color: #8f1313; background-color: #f3b5a7;">0</span><span style="color: #8f1313; background-color: #f4d0cf;"> auto;</span>
+<span style="color: #006700; background-color: #c3ebc1;">+</span><span style="color: #005000; background-color: #c3ebc1;">      max-</span><span style="color: #005000; background-color: #acd6a5;">inline-size</span><span style="color: #005000; background-color: #c3ebc1;">: var(--column-width);</span>
+<span style="color: #006700; background-color: #c3ebc1;">+</span><span style="color: #005000; background-color: #c3ebc1;">      margin</span><span style="color: #005000; background-color: #acd6a5;">-inline</span><span style="color: #005000; background-color: #c3ebc1;">: auto;</span>
      }
 
      .container {
-<span style="color: #aa2222; background-color: #f4d0cf;">-</span><span style="color: #8f1313; background-color: #f4d0cf;">      max-width: var(--column-width);</span>
-<span style="color: #aa2222; background-color: #f4d0cf;">-</span><span style="color: #8f1313; background-color: #f4d0cf;">      margin: 0 auto;</span>
-<span style="color: #006700; background-color: #c3ebc1;">+</span><span style="color: #005000; background-color: #c3ebc1;">      max-inline-size: var(--column-width);</span>
-<span style="color: #006700; background-color: #c3ebc1;">+</span><span style="color: #005000; background-color: #c3ebc1;">      margin-inline: auto;</span>
+<span style="color: #aa2222; background-color: #f4d0cf;">-</span><span style="color: #8f1313; background-color: #f4d0cf;">      max-</span><span style="color: #8f1313; background-color: #f3b5a7;">width</span><span style="color: #8f1313; background-color: #f4d0cf;">: var(--column-width);</span>
+<span style="color: #aa2222; background-color: #f4d0cf;">-</span><span style="color: #8f1313; background-color: #f4d0cf;">      margin: </span><span style="color: #8f1313; background-color: #f3b5a7;">0</span><span style="color: #8f1313; background-color: #f4d0cf;"> auto;</span>
+<span style="color: #006700; background-color: #c3ebc1;">+</span><span style="color: #005000; background-color: #c3ebc1;">      max-</span><span style="color: #005000; background-color: #acd6a5;">inline-size</span><span style="color: #005000; background-color: #c3ebc1;">: var(--column-width);</span>
+<span style="color: #006700; background-color: #c3ebc1;">+</span><span style="color: #005000; background-color: #c3ebc1;">      margin</span><span style="color: #005000; background-color: #acd6a5;">-inline</span><span style="color: #005000; background-color: #c3ebc1;">: auto;</span>
      }
 
      .main {
@@ -3130,8 +2952,8 @@ margin-top.因此,您可以在样式表中交替使用这两种方法,同时仍�
 </div>
 </div>
 </div>
-<div id="outline-container-org68dccfd" class="outline-3">
-<h3 id="org68dccfd"><span class="section-number-3">3.2.</span> The box model</h3>
+<div id="outline-container-org997ad87" class="outline-3">
+<h3 id="org997ad87"><span class="section-number-3">3.2.</span> The box model</h3>
 <div class="outline-text-3" id="text-3-2">
 <ul class="org-ul">
 <li>我们下面要处理的,是在main container(以及 social-links这个类)里面为加一些padding: 当前这两个区域是
@@ -3164,7 +2986,7 @@ margin-top.因此,您可以在样式表中交替使用这两种方法,同时仍�
 但是这导致这两个文本的最左边和标题(Franklin)不再对齐
 </p>
 
-<div id="org79b82c5" class="figure">
+<div id="org16d6096" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/cid/3-6.png" alt="3-6.png" />
 </p>
 <p><span class="figure-number">Figure 17: </span>cid/3-6.png</p>
@@ -3201,7 +3023,7 @@ margin-top.因此,您可以在样式表中交替使用这两种方法,同时仍�
 如下图所示
 </p>
 
-<div id="orge5a8b39" class="figure">
+<div id="org15838b6" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/cid/3-7.png" alt="3-7.png" />
 </p>
 <p><span class="figure-number">Figure 18: </span>cid/3-7.png</p>
@@ -3209,7 +3031,7 @@ margin-top.因此,您可以在样式表中交替使用这两种方法,同时仍�
 <li><p>
 如果上图中我们设置了300px的width, 10px的padding,1px的border,那么最终render的宽度是322px
 </p>
-<pre class="example" id="org55c159c">
+<pre class="example" id="orgdd6176f">
 300 + 10 + 10 + 1 + 1 = 322
 </pre></li>
 </ul></li>
@@ -3218,8 +3040,8 @@ area不受影响,我们的padding只是增加了最终render的宽度</li>
 <li>理解box modle对于我们和CSS一起工作非常重要,特别是需要理解padding和border会增加element的size.</li>
 </ul>
 </div>
-<div id="outline-container-org8c74436" class="outline-4">
-<h4 id="org8c74436"><span class="section-number-4">3.2.1.</span> Avoiding magic numbers</h4>
+<div id="outline-container-orgaad3e61" class="outline-4">
+<h4 id="orgaad3e61"><span class="section-number-4">3.2.1.</span> Avoiding magic numbers</h4>
 <div class="outline-text-4" id="text-3-2-1">
 <ul class="org-ul">
 <li>有时候,当你遇到类似的问题时,可能会忍不住通过调整数值来让它正常工作.尤其是在使用百分比定义尺寸时
@@ -3246,8 +3068,8 @@ area不受影响,我们的padding只是增加了最终render的宽度</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org6f61c21" class="outline-4">
-<h4 id="org6f61c21"><span class="section-number-4">3.2.2.</span> Adjusting the box model</h4>
+<div id="outline-container-org17fad19" class="outline-4">
+<h4 id="org17fad19"><span class="section-number-4">3.2.2.</span> Adjusting the box model</h4>
 <div class="outline-text-4" id="text-3-2-2">
 <ul class="org-ul">
 <li>默认的盒模型行为往往会导致页面上元素的尺寸和对齐问题.相反,你可能希望指定的宽度包括内边距和边框.
@@ -3262,7 +3084,7 @@ ox-sizing设置为border-box.这样,宽度,高度,inline-size和block-size属性
 比使用content-box的元素更小.
 </p>
 
-<div id="orgd339c76" class="figure">
+<div id="org408f7ab" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/cid/3-8.png" alt="3-8.png" />
 </p>
 <p><span class="figure-number">Figure 19: </span>cid/3-8.png</p>
@@ -3287,7 +3109,7 @@ ox-sizing设置为border-box.这样,宽度,高度,inline-size和block-size属性
 更改过后,&lt;h1&gt;的内容就会与主容器中的内容对齐,如图3-9所示.
 </p>
 
-<div id="orgc21ecb5" class="figure">
+<div id="org08c29bd" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/cid/3-9.png" alt="3-9.png" />
 </p>
 <p><span class="figure-number">Figure 20: </span>cid/3-9.png</p>
@@ -3296,8 +3118,8 @@ ox-sizing设置为border-box.这样,宽度,高度,inline-size和block-size属性
 </ul>
 </div>
 </div>
-<div id="outline-container-orga06bc96" class="outline-4">
-<h4 id="orga06bc96"><span class="section-number-4">3.2.3.</span> Using universal border box sizing</h4>
+<div id="outline-container-orgea940d0" class="outline-4">
+<h4 id="orgea940d0"><span class="section-number-4">3.2.3.</span> Using universal border box sizing</h4>
 <div class="outline-text-4" id="text-3-2-3">
 <ul class="org-ul">
 <li>你已经为这个元素使盒模型变得更加直观,但你肯定会遇到其他有相同问题的元素.如果能一次性解决这个问题,
@@ -3323,7 +3145,7 @@ ox-sizing设置为border-box.这样,宽度,高度,inline-size和block-size属性
 如果你已经基于默认的内容盒模型编写了大量样式.在将这段代码添加到现有项目时,请务必彻底检查是否会引
 发任何问题.
 </p>
-<pre class="example" id="org2c8b3a0">
+<pre class="example" id="org1899151">
 注意: 将这段代码放在样式表的开头已经成为一种常见的做法.从本书这一点开始,所有的示例都将假定这个
 border-box的修复代码已经位于样式表的开头.
 </pre></li>
@@ -3331,8 +3153,8 @@ border-box的修复代码已经位于样式表的开头.
 </div>
 </div>
 </div>
-<div id="outline-container-org6743507" class="outline-3">
-<h3 id="org6743507"><span class="section-number-3">3.3.</span> Element height</h3>
+<div id="outline-container-org0a42dd1" class="outline-3">
+<h3 id="org0a42dd1"><span class="section-number-3">3.3.</span> Element height</h3>
 <div class="outline-text-3" id="text-3-3">
 <ul class="org-ul">
 <li>处理元素的高度(块级尺寸)可能会比较棘手.正常的文档流设计是为了在宽度受限,高度不受限制的情况下工
@@ -3355,7 +3177,7 @@ JavaScript以编程方式滚动到这些内容.</li>
 图3-11展示了四个设置了不同overflow值的容器.
 </p>
 
-<div id="orgc15a13c" class="figure">
+<div id="org5a99bd4" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/cid/3-11.png" alt="3-11.png" />
 </p>
 <p><span class="figure-number">Figure 21: </span>cid/3-11.png</p>
@@ -3373,8 +3195,8 @@ JavaScript以编程方式滚动到这些内容.</li>
 结果.在这种情况下,建议使用clip代替.</li>
 </ul>
 </div>
-<div id="outline-container-orgd3a4bb2" class="outline-4">
-<h4 id="orgd3a4bb2"><span class="section-number-4">3.3.1.</span> Using alternatives to percentage-based heights</h4>
+<div id="outline-container-orgf9d0075" class="outline-4">
+<h4 id="orgf9d0075"><span class="section-number-4">3.3.1.</span> Using alternatives to percentage-based heights</h4>
 <div class="outline-text-4" id="text-3-3-1">
 <ul class="org-ul">
 <li>使用百分比来指定高度可能会带来问题.百分比的高度是相对于元素的包含块(containing block)尺寸而言的
@@ -3395,8 +3217,8 @@ JavaScript以编程方式滚动到这些内容.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org7c62a83" class="outline-4">
-<h4 id="org7c62a83"><span class="section-number-4">3.3.2.</span> Using min-height and max-height</h4>
+<div id="outline-container-org9472a6a" class="outline-4">
+<h4 id="org9472a6a"><span class="section-number-4">3.3.2.</span> Using min-height and max-height</h4>
 <div class="outline-text-4" id="text-3-3-2">
 <ul class="org-ul">
 <li>有两个非常有用的属性是min-height和max-height(以及它们的逻辑对应属性min-block-size和max-block-size).
@@ -3413,7 +3235,7 @@ JavaScript以编程方式滚动到这些内容.</li>
 图3-12展示了三个元素.
 </p>
 
-<div id="org454915c" class="figure">
+<div id="org331c9bc" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/cid/3-12.png" alt="3-12.png" />
 </p>
 <p><span class="figure-number">Figure 22: </span>cid/3-12.png</p>
@@ -3431,8 +3253,8 @@ JavaScript以编程方式滚动到这些内容.</li>
 </div>
 </div>
 </div>
-<div id="outline-container-org135ae96" class="outline-3">
-<h3 id="org135ae96"><span class="section-number-3">3.4.</span> Negative margins</h3>
+<div id="outline-container-orge012128" class="outline-3">
+<h3 id="orge012128"><span class="section-number-3">3.4.</span> Negative margins</h3>
 <div class="outline-text-3" id="text-3-4">
 <ul class="org-ul">
 <li>与内边距(padding)和边框宽度(border width)不同,你可以为外边距(margin)指定负值.这种特性有一些
@@ -3443,7 +3265,7 @@ JavaScript以编程方式滚动到这些内容.</li>
 如图3-13所示.
 </p>
 
-<div id="org66c05ab" class="figure">
+<div id="org5ed88d7" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/cid/3-13.png" alt="3-13.png" />
 </p>
 <p><span class="figure-number">Figure 23: </span>cid/3-13.png</p>
@@ -3467,7 +3289,7 @@ JavaScript以编程方式滚动到这些内容.</li>
 上边为0值,说明上边的"缓存区放弃了"和上边的空间挨在一起
 </p>
 
-<div id="org219fce3" class="figure">
+<div id="org8822eb3" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/cid/3-a-1.png" alt="3-a-1.png" />
 </p>
 <p><span class="figure-number">Figure 24: </span>cid/3-a-1.png</p>
@@ -3476,7 +3298,7 @@ JavaScript以编程方式滚动到这些内容.</li>
 上边为正值,我们会主动让出"缓冲区"以免和其他element接触.
 </p>
 
-<div id="org582d04b" class="figure">
+<div id="org56e8028" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/cid/3-a-2.png" alt="3-a-2.png" />
 </p>
 <p><span class="figure-number">Figure 25: </span>cid/3-a-2.png</p>
@@ -3485,7 +3307,7 @@ JavaScript以编程方式滚动到这些内容.</li>
 上边的值为负值,就会"侵略"更上的element(或者边界):
 </p>
 
-<div id="org416d4df" class="figure">
+<div id="org9b7ef6a" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/cid/3-a-3.png" alt="3-a-3.png" />
 </p>
 <p><span class="figure-number">Figure 26: </span>cid/3-a-3.png</p>
@@ -3498,7 +3320,7 @@ JavaScript以编程方式滚动到这些内容.</li>
 右边为正值,我们会主动让出"缓冲区"以免和其他element接触.
 </p>
 
-<div id="orgd99c8b7" class="figure">
+<div id="org738ad1d" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/cid/3-a-4.png" alt="3-a-4.png" />
 </p>
 <p><span class="figure-number">Figure 27: </span>cid/3-a-4.png</p>
@@ -3507,7 +3329,7 @@ JavaScript以编程方式滚动到这些内容.</li>
 右边的值为负值,就会"侵略"右边的element(或者边界):
 </p>
 
-<div id="org2a640ce" class="figure">
+<div id="org7311c46" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/cid/3-a-5.png" alt="3-a-5.png" />
 </p>
 <p><span class="figure-number">Figure 28: </span>cid/3-a-5.png</p>
@@ -3521,7 +3343,7 @@ JavaScript以编程方式滚动到这些内容.</li>
 沉的是其他element,而不是我们
 </p>
 
-<div id="org2c9ebd7" class="figure">
+<div id="orgb4b6a40" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/cid/3-a-6.png" alt="3-a-6.png" />
 </p>
 <p><span class="figure-number">Figure 29: </span>cid/3-a-6.png</p>
@@ -3531,7 +3353,7 @@ JavaScript以编程方式滚动到这些内容.</li>
 略其他element
 </p>
 
-<div id="orge044fdd" class="figure">
+<div id="org0fb345a" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/cid/3-a-7.png" alt="3-a-7.png" />
 </p>
 <p><span class="figure-number">Figure 30: </span>cid/3-a-7.png</p>
@@ -3544,7 +3366,7 @@ JavaScript以编程方式滚动到这些内容.</li>
 左边为正值,我们会主动让出"缓冲区"以免和其他element接触.
 </p>
 
-<div id="org45ead6d" class="figure">
+<div id="org9bb26e8" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/cid/3-a-8.png" alt="3-a-8.png" />
 </p>
 <p><span class="figure-number">Figure 31: </span>cid/3-a-8.png</p>
@@ -3553,7 +3375,7 @@ JavaScript以编程方式滚动到这些内容.</li>
 左边的值为负值,就会"侵略"左边的element(或者边界)
 </p>
 
-<div id="org3725099" class="figure">
+<div id="orgd8928de" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/cid/3-a-9.png" alt="3-a-9.png" />
 </p>
 <p><span class="figure-number">Figure 32: </span>cid/3-a-9.png</p>
@@ -3574,7 +3396,7 @@ JavaScript以编程方式滚动到这些内容.</li>
 的另类应用,如图3-14所示.
 </p>
 
-<div id="orgfa8c2be" class="figure">
+<div id="org673aa08" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/cid/3-14.png" alt="3-14.png" />
 </p>
 <p><span class="figure-number">Figure 33: </span>cid/3-14.png</p>
@@ -3602,8 +3424,8 @@ JavaScript以编程方式滚动到这些内容.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org7a84f2f" class="outline-3">
-<h3 id="org7a84f2f"><span class="section-number-3">3.5.</span> Collapsed margins</h3>
+<div id="outline-container-orgfd92b96" class="outline-3">
+<h3 id="orgfd92b96"><span class="section-number-3">3.5.</span> Collapsed margins</h3>
 <div class="outline-text-3" id="text-3-5">
 <ul class="org-ul">
 <li>我们继续我们页面的修改的时候,会发现我们的header和container之间会有一些gap,这个是非常奇怪的,因为
@@ -3616,14 +3438,14 @@ JavaScript以编程方式滚动到这些内容.</li>
 我们再来看下collapsing的定义:当上方和/或下方的外边距相邻时,它们会重叠合并形成单一的外边距,这种现
 象被称为外边距塌陷 ( <b>注意</b> 只有上下相邻的情况会collapsing,左右相邻的时候不会)
 </p>
-<pre class="example" id="org147f24e">
+<pre class="example" id="org420b25b">
 When top and/or bottom margins are adjoining, they overlap, combining to from a single margin.
 This is referred to as collapsing
 </pre></li>
 </ul>
 </div>
-<div id="outline-container-org35fb6f3" class="outline-4">
-<h4 id="org35fb6f3"><span class="section-number-4">3.5.1.</span> Collapsing between text</h4>
+<div id="outline-container-orga10cb8d" class="outline-4">
+<h4 id="orga10cb8d"><span class="section-number-4">3.5.1.</span> Collapsing between text</h4>
 <div class="outline-text-4" id="text-3-5-1">
 <ul class="org-ul">
 <li>折叠外边距的主要原因与文本块之间的间距有关.准确的说,跟"节省空间有关":
@@ -3654,7 +3476,7 @@ double了,本来"缓冲区"一个就够,如果 <b>不加以限制</b> 那么就�
 如图3-16
 </p>
 
-<div id="org0315ac2" class="figure">
+<div id="org5b1b5d1" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/cid/3-16.png" alt="3-16.png" />
 </p>
 <p><span class="figure-number">Figure 34: </span>cid/3-16.png</p>
@@ -3665,8 +3487,8 @@ double了,本来"缓冲区"一个就够,如果 <b>不加以限制</b> 那么就�
 </ul>
 </div>
 </div>
-<div id="outline-container-orgd62c82e" class="outline-4">
-<h4 id="orgd62c82e"><span class="section-number-4">3.5.2.</span> Collapsing multiple margins</h4>
+<div id="outline-container-org90112d7" class="outline-4">
+<h4 id="org90112d7"><span class="section-number-4">3.5.2.</span> Collapsing multiple margins</h4>
 <div class="outline-text-4" id="text-3-5-2">
 <ul class="org-ul">
 <li>元素之间的外边距(margin)并不一定需要是相邻的兄弟元素才能发生折叠.即使你将段落包裹在一个额外的
@@ -3705,8 +3527,8 @@ double了,本来"缓冲区"一个就够,如果 <b>不加以限制</b> 那么就�
 </ul>
 </div>
 </div>
-<div id="outline-container-org4ca2043" class="outline-4">
-<h4 id="org4ca2043"><span class="section-number-4">3.5.3.</span> Collapsing outside a container</h4>
+<div id="outline-container-orgab2ce6a" class="outline-4">
+<h4 id="orgab2ce6a"><span class="section-number-4">3.5.3.</span> Collapsing outside a container</h4>
 <div class="outline-text-4" id="text-3-5-3">
 <ul class="org-ul">
 <li>三个连续的外边距发生折叠的方式可能会让你感到意外.如果一个元素的外边距折叠到了其容器之外,而该容器
@@ -3746,7 +3568,7 @@ double了,本来"缓冲区"一个就够,如果 <b>不加以限制</b> 那么就�
 你会注意到,现在 &lt;header&gt; 和主内容之间没有任何空间了.(见图 3-17)
 </p>
 
-<div id="org4902a94" class="figure">
+<div id="org6c589df" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/cid/3-17.png" alt="3-17.png" />
 </p>
 <p><span class="figure-number">Figure 35: </span>cid/3-17.png</p>
@@ -3771,8 +3593,8 @@ double了,本来"缓冲区"一个就够,如果 <b>不加以限制</b> 那么就�
 </div>
 </div>
 </div>
-<div id="outline-container-orgb729997" class="outline-3">
-<h3 id="orgb729997"><span class="section-number-3">3.6.</span> Spacig elements within a container</h3>
+<div id="outline-container-orgb45ac98" class="outline-3">
+<h3 id="orgb45ac98"><span class="section-number-3">3.6.</span> Spacig elements within a container</h3>
 <div class="outline-text-3" id="text-3-6">
 <ul class="org-ul">
 <li>容器的内边距(padding)与其内容的外边距(margin)之间的交互可能会比较棘手.接下来我们为页面底部的社
@@ -3782,7 +3604,7 @@ double了,本来"缓冲区"一个就够,如果 <b>不加以限制</b> 那么就�
 你将为两个社交媒体链接和另一个不太重要的链接设置样式.你的目标是让这一部分看起来像图 3-18 所示.
 </p>
 
-<div id="org432392a" class="figure">
+<div id="org01e8aa0" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/cid/3-18.png" alt="3-18.png" />
 </p>
 <p><span class="figure-number">Figure 36: </span>cid/3-18.png</p>
@@ -3833,7 +3655,7 @@ double了,本来"缓冲区"一个就够,如果 <b>不加以限制</b> 那么就�
 如果你为两个链接都添加 margin-top: 1.5em,你会得到图 3-19 所示的效果.
 </p>
 
-<div id="org8e09de8" class="figure">
+<div id="org0dfde7e" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/cid/3-19.png" alt="3-19.png" />
 </p>
 <p><span class="figure-number">Figure 37: </span>cid/3-19.png</p>
@@ -3871,8 +3693,8 @@ double了,本来"缓冲区"一个就够,如果 <b>不加以限制</b> 那么就�
 </ul></li>
 </ul>
 </div>
-<div id="outline-container-org2ed93fe" class="outline-4">
-<h4 id="org2ed93fe"><span class="section-number-4">3.6.1.</span> Considering changing content</h4>
+<div id="outline-container-org68abc3e" class="outline-4">
+<h4 id="org68abc3e"><span class="section-number-4">3.6.1.</span> Considering changing content</h4>
 <div class="outline-text-4" id="text-3-6-1">
 <ul class="org-ul">
 <li>上面的问题暂时解决了,但是随着我们需求的增加,我们还会面临新的问题,比如我们增加了新的link,但是class不
@@ -3912,7 +3734,7 @@ double了,本来"缓冲区"一个就够,如果 <b>不加以限制</b> 那么就�
 新增上述代码后的样子如下
 </p>
 
-<div id="org043a25a" class="figure">
+<div id="org057b626" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/cid/3-21.png" alt="3-21.png" />
 </p>
 <p><span class="figure-number">Figure 38: </span>cid/3-21.png</p>
@@ -3922,8 +3744,8 @@ double了,本来"缓冲区"一个就够,如果 <b>不加以限制</b> 那么就�
 </ul>
 </div>
 </div>
-<div id="outline-container-org4a92a51" class="outline-4">
-<h4 id="org4a92a51"><span class="section-number-4">3.6.2.</span> Creating a more general solution</h4>
+<div id="outline-container-org2d12cac" class="outline-4">
+<h4 id="org2d12cac"><span class="section-number-4">3.6.2.</span> Creating a more general solution</h4>
 <div class="outline-text-4" id="text-3-6-2">
 <ul class="org-ul">
 <li>Web设计师Heydon Pickering曾经说过,边距就像是:"在你确定是否真的要把某个物体粘到另一个物体上以及那个
@@ -3943,7 +3765,7 @@ Pickering称为"被截短的猫头鹰选择器"(lobotomized owl selector)来实�
 最终效果如图3-22所示.
 </p>
 
-<div id="org95721ff" class="figure">
+<div id="org7ace66d" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/cid/3-22.png" alt="3-22.png" />
 </p>
 <p><span class="figure-number">Figure 39: </span>cid/3-22.png</p>
@@ -3991,12 +3813,12 @@ Pickering称为"被截短的猫头鹰选择器"(lobotomized owl selector)来实�
    &lt;/style&gt;
  &lt;/head&gt;
 <span style="color: #aa2222; background-color: #f4d0cf;">-</span><span style="color: #8f1313; background-color: #f4d0cf;">&lt;body lang="en-US"&gt;</span>
-<span style="color: #006700; background-color: #c3ebc1;">+</span><span style="color: #005000; background-color: #c3ebc1;">&lt;body lang="en-US" class="stack"&gt;</span>
+<span style="color: #006700; background-color: #c3ebc1;">+</span><span style="color: #005000; background-color: #c3ebc1;">&lt;body lang="en-US" </span><span style="color: #005000; background-color: #acd6a5;">class="stack"</span><span style="color: #005000; background-color: #c3ebc1;">&gt;</span>
    &lt;header class="page-header"&gt;
      &lt;h1&gt;Franklin Running Club&lt;/h1&gt;
    &lt;/header&gt;
 <span style="color: #aa2222; background-color: #f4d0cf;">-</span><span style="color: #8f1313; background-color: #f4d0cf;">  &lt;div class="container"&gt;</span>
-<span style="color: #006700; background-color: #c3ebc1;">+</span><span style="color: #005000; background-color: #c3ebc1;">  &lt;div class="container stack"&gt;</span>
+<span style="color: #006700; background-color: #c3ebc1;">+</span><span style="color: #005000; background-color: #c3ebc1;">  &lt;div class="container </span><span style="color: #005000; background-color: #acd6a5;">stack</span><span style="color: #005000; background-color: #c3ebc1;">"&gt;</span>
      &lt;main class="main"&gt;
        &lt;h2&gt;Come join us!&lt;/h2&gt;
        &lt;p&gt;
@@ -4005,7 +3827,7 @@ Pickering称为"被截短的猫头鹰选择器"(lobotomized owl selector)来实�
        &lt;/p&gt;
      &lt;/main&gt;
 <span style="color: #aa2222; background-color: #f4d0cf;">-</span><span style="color: #8f1313; background-color: #f4d0cf;">    &lt;aside class="social-links"&gt;</span>
-<span style="color: #006700; background-color: #c3ebc1;">+</span><span style="color: #005000; background-color: #c3ebc1;">    &lt;aside class="social-links stack"&gt;</span>
+<span style="color: #006700; background-color: #c3ebc1;">+</span><span style="color: #005000; background-color: #c3ebc1;">    &lt;aside class="social-links </span><span style="color: #005000; background-color: #acd6a5;">stack</span><span style="color: #005000; background-color: #c3ebc1;">"&gt;</span>
        &lt;a href="/mastodon" class="button-link"&gt;follow us on Mastodon&lt;/a&gt;
        &lt;a href="/facebook" class="button-link"&gt;like us on Facebook&lt;/a&gt;
        &lt;a href="/sponsors" class="sponsor-link"&gt;Become a sponsor&lt;/a&gt;
@@ -4016,8 +3838,8 @@ Pickering称为"被截短的猫头鹰选择器"(lobotomized owl selector)来实�
 </div>
 </div>
 </div>
-<div id="outline-container-orgc548b3a" class="outline-2">
-<h2 id="orgc548b3a"><span class="section-number-2">4.</span> Chapter 4: Flexbox</h2>
+<div id="outline-container-orgb244a75" class="outline-2">
+<h2 id="orgb244a75"><span class="section-number-2">4.</span> Chapter 4: Flexbox</h2>
 <div class="outline-text-2" id="text-4">
 <ul class="org-ul">
 <li>在第3章中,我们探讨了文档的正常流&#x2013;浏览器默认情况下如何在页面上布局元素.在接下来的几章中,我们将深
@@ -4033,8 +3855,8 @@ Pickering称为"被截短的猫头鹰选择器"(lobotomized owl selector)来实�
 释这些属性,并提供一个参考指南,方便您在需要时查阅.</li>
 </ul>
 </div>
-<div id="outline-container-org6559714" class="outline-3">
-<h3 id="org6559714"><span class="section-number-3">4.1.</span> Flexbox principles</h3>
+<div id="outline-container-org421a16f" class="outline-3">
+<h3 id="org421a16f"><span class="section-number-3">4.1.</span> Flexbox principles</h3>
 <div class="outline-text-3" id="text-4-1">
 <ul class="org-ul">
 <li>Flexbox 从熟悉的 display 属性开始.将 display: flex 应用于一个元素会将其变为一个 flex 容器,而它的
@@ -4051,7 +3873,7 @@ Flexbox 则是一个 flex 容器,它对内部元素的布局方式施加了控�
 一个 flex 容器及其项目的关系可以通过图 4.1 来说明.
 </p>
 
-<div id="org7919f2b" class="figure">
+<div id="org06e60d1" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/cid/4-1.png" alt="4-1.png" />
 </p>
 <p><span class="figure-number">Figure 40: </span>cid/4-1.png</p>
@@ -4071,7 +3893,7 @@ display: flex 属性,就足以让你在不需要学习那些新属性的情况�
 为了尝试这些概念,你将构建图 4.2 所示的页面.
 </p>
 
-<div id="orgd27a293" class="figure">
+<div id="orgefd9f24" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/cid/4-2.png" alt="4-2.png" />
 </p>
 <p><span class="figure-number">Figure 41: </span>cid/4-2.png</p>
@@ -4178,8 +4000,8 @@ display: flex 属性,就足以让你在不需要学习那些新属性的情况�
 <li>下面就是使用flexbox来创建layout的过程了,我们从navigation menu开始</li>
 </ul>
 </div>
-<div id="outline-container-orga54e7b8" class="outline-4">
-<h4 id="orga54e7b8"><span class="section-number-4">4.1.1.</span> Building a bsic flex menu</h4>
+<div id="outline-container-org60e5cff" class="outline-4">
+<h4 id="org60e5cff"><span class="section-number-4">4.1.1.</span> Building a bsic flex menu</h4>
 <div class="outline-text-4" id="text-4-1-1">
 <ul class="org-ul">
 <li>我们本节的最终效果如下图
@@ -4188,7 +4010,7 @@ display: flex 属性,就足以让你在不需要学习那些新属性的情况�
 图4-3
 </p>
 
-<div id="org65a209f" class="figure">
+<div id="org22d29b0" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/cid/4-3.png" alt="4-3.png" />
 </p>
 <p><span class="figure-number">Figure 42: </span>cid/4-3.png</p>
@@ -4244,7 +4066,7 @@ display: flex 属性,就足以让你在不需要学习那些新属性的情况�
 更改之后的效果如下
 </p>
 
-<div id="orgab49812" class="figure">
+<div id="orgeaff398" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/cid/4-4.png" alt="4-4.png" />
 </p>
 <p><span class="figure-number">Figure 43: </span>cid/4-4.png</p>
@@ -4261,8 +4083,8 @@ display: flex 属性,就足以让你在不需要学习那些新属性的情况�
 </ul>
 </div>
 </div>
-<div id="outline-container-org60ec2fb" class="outline-4">
-<h4 id="org60ec2fb"><span class="section-number-4">4.1.2.</span> Adding padding and spacing</h4>
+<div id="outline-container-org1da3f52" class="outline-4">
+<h4 id="org1da3f52"><span class="section-number-4">4.1.2.</span> Adding padding and spacing</h4>
 <div class="outline-text-4" id="text-4-1-2">
 <ul class="org-ul">
 <li>此时,我们的菜单看起来有些单薄.让我们通过添加一些内边距(padding)来让它更充实一些.你需要同时为容
@@ -4272,7 +4094,7 @@ display: flex 属性,就足以让你在不需要学习那些新属性的情况�
 你的菜单将看起来像图 4.5 所示
 </p>
 
-<div id="org6678d4f" class="figure">
+<div id="orga3604d7" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/cid/4-5.png" alt="4-5.png" />
 </p>
 <p><span class="figure-number">Figure 44: </span>cid/4-5.png</p>
@@ -4296,8 +4118,8 @@ display: flex 属性,就足以让你在不需要学习那些新属性的情况�
 
        .site-nav {
          display: flex;
-<span style="color: #aa2222; background-color: #f4d0cf;">-</span><span style="color: #8f1313; background-color: #f4d0cf;">        padding: unset;</span>
-<span style="color: #006700; background-color: #c3ebc1;">+</span><span style="color: #005000; background-color: #c3ebc1;">        padding: 0.5rem;</span>
+<span style="color: #aa2222; background-color: #f4d0cf;">-</span><span style="color: #8f1313; background-color: #f4d0cf;">        padding: </span><span style="color: #8f1313; background-color: #f3b5a7;">unset</span><span style="color: #8f1313; background-color: #f4d0cf;">;</span>
+<span style="color: #006700; background-color: #c3ebc1;">+</span><span style="color: #005000; background-color: #c3ebc1;">        padding: </span><span style="color: #005000; background-color: #acd6a5;">0.5rem</span><span style="color: #005000; background-color: #c3ebc1;">;</span>
          list-style-type: none;
          background-color: #5f4b44;
        }
@@ -4326,7 +4148,7 @@ display: flex 属性,就足以让你在不需要学习那些新属性的情况�
 在应用这些更改后,菜单就完成了(如图 4-6 所示).
 </p>
 
-<div id="orge21a2e5" class="figure">
+<div id="orgcbf624e" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/cid/4-6.png" alt="4-6.png" />
 </p>
 <p><span class="figure-number">Figure 45: </span>cid/4-6.png</p>
@@ -4380,8 +4202,8 @@ display: flex 属性,就足以让你在不需要学习那些新属性的情况�
 </div>
 </div>
 </div>
-<div id="outline-container-org9a11214" class="outline-3">
-<h3 id="org9a11214"><span class="section-number-3">4.2.</span> Flex item sizes</h3>
+<div id="outline-container-org782aeef" class="outline-3">
+<h3 id="org782aeef"><span class="section-number-3">4.2.</span> Flex item sizes</h3>
 <div class="outline-text-3" id="text-4-2">
 <ul class="org-ul">
 <li>在调整 Flexbox 元素的大小时,你可以使用熟悉的 width 和 height 属性,但 Flexbox 提供了比这些属性单独
@@ -4392,7 +4214,7 @@ display: flex 属性,就足以让你在不需要学习那些新属性的情况�
 完成这些更改后,你的主区域将看起来如图 4-7 所示.
 </p>
 
-<div id="orga0cd235" class="figure">
+<div id="org7140af8" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/cid/4-7.png" alt="4-7.png" />
 </p>
 <p><span class="figure-number">Figure 46: </span>cid/4-7.png</p>
@@ -4488,8 +4310,8 @@ display: flex 属性,就足以让你在不需要学习那些新属性的情况�
 <li>接下来,我们逐一了解这三个属性的含义.我们将从 flex-basis 开始,因为另外两个属性是基于它的.</li>
 </ul>
 </div>
-<div id="outline-container-orgb13de9c" class="outline-4">
-<h4 id="orgb13de9c"><span class="section-number-4">4.2.1.</span> Flex basis</h4>
+<div id="outline-container-org6537f15" class="outline-4">
+<h4 id="org6537f15"><span class="section-number-4">4.2.1.</span> Flex basis</h4>
 <div class="outline-text-4" id="text-4-2-1">
 <ul class="org-ul">
 <li>flex-basis 定义了元素尺寸的一个起始点&#x2013;即"初始主轴尺寸"(指沿主轴的尺寸).flex-basis 属性可以设置
@@ -4503,7 +4325,7 @@ display: flex 属性,就足以让你在不需要学习那些新属性的情况�
 这也意味着,对于那些 flex-basis 不为 auto 的元素,width 属性将会被忽略.图 4-8 展示了这一点.
 </p>
 
-<div id="orgff4aecc" class="figure">
+<div id="orgc066d57" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/cid/4-8.png" alt="4-8.png" />
 </p>
 <p><span class="figure-number">Figure 47: </span>cid/4-8.png</p>
@@ -4513,8 +4335,8 @@ display: flex 属性,就足以让你在不需要学习那些新属性的情况�
 </ul>
 </div>
 </div>
-<div id="outline-container-org932a9f2" class="outline-4">
-<h4 id="org932a9f2"><span class="section-number-4">4.2.2.</span> Flex grow</h4>
+<div id="outline-container-org3582a7d" class="outline-4">
+<h4 id="org3582a7d"><span class="section-number-4">4.2.2.</span> Flex grow</h4>
 <div class="outline-text-4" id="text-4-2-2">
 <ul class="org-ul">
 <li>一旦 <b>每个 Flex 项目的</b> flex-basis 计算完成,它们(加上它们之间的间隙或边距)将会累加成一个总宽度.
@@ -4524,7 +4346,7 @@ display: flex 属性,就足以让你在不需要学习那些新属性的情况�
 如图 4-8 所示
 </p>
 
-<div id="orgc2485ee" class="figure">
+<div id="org0a414d7" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/cid/4-8.png" alt="4-8.png" />
 </p>
 <p><span class="figure-number">Figure 48: </span>cid/4-8.png</p>
@@ -4540,7 +4362,7 @@ display: flex 属性,就足以让你在不需要学习那些新属性的情况�
 填满整个容器的宽度(如图 4-9 所示).也就是每个element1,2,3基础"底薪20%",element2和3把剩下的40%平分了
 </p>
 
-<div id="orgcf35f6b" class="figure">
+<div id="org5a07556" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/cid/4-9.png" alt="4-9.png" />
 </p>
 <p><span class="figure-number">Figure 49: </span>cid/4-9.png</p>
@@ -4553,7 +4375,7 @@ display: flex 属性,就足以让你在不需要学习那些新属性的情况�
 也就是每个element1,2,3基础"底薪20%",element2和3把剩下的40%按2:1分了
 </p>
 
-<div id="org03a28c3" class="figure">
+<div id="orge9a299a" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/cid/4-10.png" alt="4-10.png" />
 </p>
 <p><span class="figure-number">Figure 50: </span>cid/4-10.png</p>
@@ -4564,7 +4386,7 @@ display: flex 属性,就足以让你在不需要学习那些新属性的情况�
 分之二分配给第一列,剩下的三分之一分配给第二列(如图 4.11 所示).
 </p>
 
-<div id="org7c32281" class="figure">
+<div id="org068fcab" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/cid/4-11.png" alt="4-11.png" />
 </p>
 <p><span class="figure-number">Figure 51: </span>cid/4-11.png</p>
@@ -4580,8 +4402,8 @@ flex-basis 为 0%.这些通常是你最常需要的设置.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgf80ca7a" class="outline-4">
-<h4 id="orgf80ca7a"><span class="section-number-4">4.2.3.</span> Flex shrink</h4>
+<div id="outline-container-org0b1d3aa" class="outline-4">
+<h4 id="org0b1d3aa"><span class="section-number-4">4.2.3.</span> Flex shrink</h4>
 <div class="outline-text-4" id="text-4-2-3">
 <ul class="org-ul">
 <li>flex-shrink 属性的原理与 flex-grow 类似.在确定 Flex 项目的初始主轴尺寸后,它们可能会超出 Flex 容器
@@ -4591,7 +4413,7 @@ flex-basis 为 0%.这些通常是你最常需要的设置.</li>
 如果没有 flex-shrink,这会导致内容溢出(如图 4-12 所示).
 </p>
 
-<div id="orgaff85e0" class="figure">
+<div id="orgad77d16" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/cid/4-12.png" alt="4-12.png" />
 </p>
 <p><span class="figure-number">Figure 52: </span>cid/4-12.png</p>
@@ -4619,13 +4441,13 @@ flex-basis 为 0%.这些通常是你最常需要的设置.</li>
        }
 
        .column-main {
-<span style="color: #aa2222; background-color: #f4d0cf;">-</span><span style="color: #8f1313; background-color: #f4d0cf;">        flex: 2;</span>
-<span style="color: #006700; background-color: #c3ebc1;">+</span><span style="color: #005000; background-color: #c3ebc1;">        flex: 66.67%;</span>
+<span style="color: #aa2222; background-color: #f4d0cf;">-</span><span style="color: #8f1313; background-color: #f4d0cf;">        flex: </span><span style="color: #8f1313; background-color: #f3b5a7;">2</span><span style="color: #8f1313; background-color: #f4d0cf;">;</span>
+<span style="color: #006700; background-color: #c3ebc1;">+</span><span style="color: #005000; background-color: #c3ebc1;">        flex: </span><span style="color: #005000; background-color: #acd6a5;">66.67%</span><span style="color: #005000; background-color: #c3ebc1;">;</span>
        }
 
        .column-sidebar {
-<span style="color: #aa2222; background-color: #f4d0cf;">-</span><span style="color: #8f1313; background-color: #f4d0cf;">        flex: 1;</span>
-<span style="color: #006700; background-color: #c3ebc1;">+</span><span style="color: #005000; background-color: #c3ebc1;">        flex: 33.3%;</span>
+<span style="color: #aa2222; background-color: #f4d0cf;">-</span><span style="color: #8f1313; background-color: #f4d0cf;">        flex: </span><span style="color: #8f1313; background-color: #f3b5a7;">1</span><span style="color: #8f1313; background-color: #f4d0cf;">;</span>
+<span style="color: #006700; background-color: #c3ebc1;">+</span><span style="color: #005000; background-color: #c3ebc1;">        flex: </span><span style="color: #005000; background-color: #acd6a5;">33.3%</span><span style="color: #005000; background-color: #c3ebc1;">;</span>
        }
      &lt;/style&gt;
    &lt;/head&gt;
@@ -4645,8 +4467,8 @@ flex-basis 为 0%.这些通常是你最常需要的设置.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgccdd0aa" class="outline-4">
-<h4 id="orgccdd0aa"><span class="section-number-4">4.2.4.</span> Some practical examples</h4>
+<div id="outline-container-orgcad9890" class="outline-4">
+<h4 id="orgcad9890"><span class="section-number-4">4.2.4.</span> Some practical examples</h4>
 <div class="outline-text-4" id="text-4-2-4">
 <ul class="org-ul">
 <li>你可以通过无数种方式使用 flex 属性.
@@ -4668,8 +4490,8 @@ flex-basis 为 0%.这些通常是你最常需要的设置.</li>
 </div>
 </div>
 </div>
-<div id="outline-container-org3008f10" class="outline-3">
-<h3 id="org3008f10"><span class="section-number-3">4.3.</span> Flex direction</h3>
+<div id="outline-container-orga9c7ad2" class="outline-3">
+<h3 id="orga9c7ad2"><span class="section-number-3">4.3.</span> Flex direction</h3>
 <div class="outline-text-3" id="text-4-3">
 <ul class="org-ul">
 <li>另一个在 Flexbox 中很重要的选项是改变轴方向的能力.
@@ -4683,7 +4505,7 @@ flex-basis 为 0%.这些通常是你最常需要的设置.</li>
 图 4-14 展示了上面的情况
 </p>
 
-<div id="org28f7acf" class="figure">
+<div id="org0da24f9" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/cid/4-14.png" alt="4-14.png" />
 </p>
 <p><span class="figure-number">Figure 53: </span>cid/4-14.png</p>
@@ -4697,7 +4519,7 @@ flex-basis 为 0%.这些通常是你最常需要的设置.</li>
 如图 4.15 所示.
 </p>
 
-<div id="orga9f980e" class="figure">
+<div id="orgb58ce50" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/cid/4-15.png" alt="4-15.png" />
 </p>
 <p><span class="figure-number">Figure 54: </span>cid/4-15.png</p>
@@ -4713,7 +4535,7 @@ flex-basis 为 0%.这些通常是你最常需要的设置.</li>
 图4-16
 </p>
 
-<div id="org79c4b46" class="figure">
+<div id="org210f3d6" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/cid/4-16.png" alt="4-16.png" />
 </p>
 <p><span class="figure-number">Figure 55: </span>cid/4-16.png</p>
@@ -4724,8 +4546,8 @@ CSS 实现的(尽管借助 JavaScript 是可以做到的).</li>
 </ul></li>
 </ul>
 </div>
-<div id="outline-container-org44228d6" class="outline-4">
-<h4 id="org44228d6"><span class="section-number-4">4.3.1.</span> Changing the flex direction</h4>
+<div id="outline-container-orgfaf7de5" class="outline-4">
+<h4 id="orgfaf7de5"><span class="section-number-4">4.3.1.</span> Changing the flex direction</h4>
 <div class="outline-text-4" id="text-4-3-1">
 <ul class="org-ul">
 <li>你需要的是让这两列在必要时能够增长以填满容器的高度.为此,
@@ -4795,7 +4617,7 @@ CSS 实现的(尽管借助 JavaScript 是可以做到的).</li>
 在垂直 Flexbox 中,flex-grow 和 flex-shrink 属性起作用是有前提的,那就是:有其他因素强制 Flex 容器的
 高度为特定大小在你的页面中,这个"其他因素"就是从外部 Flexbox 派生的高度(比如我们上面的例子)
 </p>
-<pre class="example" id="org0dffeb6">
+<pre class="example" id="orge416c8e">
 In a vertical flexbox, flx-grow and flex-shrink applied to the items will have no effect unless
 something else forces the height fo the flex container to a specific size. On your page, that
 "something" is the height derived from the outer flexbox
@@ -4803,8 +4625,8 @@ something else forces the height fo the flex container to a specific size. On yo
 </ul>
 </div>
 </div>
-<div id="outline-container-orga107654" class="outline-4">
-<h4 id="orga107654"><span class="section-number-4">4.3.2.</span> Styling the login form</h4>
+<div id="outline-container-org36c9128" class="outline-4">
+<h4 id="org36c9128"><span class="section-number-4">4.3.2.</span> Styling the login form</h4>
 <div class="outline-text-4" id="text-4-3-2">
 <ul class="org-ul">
 <li>您现在已经将整体布局应用到了整个页面.接下来只需要为右侧的两个小区域(登录表单和注册链接)进行样式
@@ -4815,7 +4637,7 @@ something else forces the height fo the flex container to a specific size. On yo
 图 4.17 所示.
 </p>
 
-<div id="org765432c" class="figure">
+<div id="orge079835" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/cid/4-17.png" alt="4-17.png" />
 </p>
 <p><span class="figure-number">Figure 56: </span>cid/4-17.png</p>
@@ -4885,8 +4707,8 @@ ext-transform 将文本全部转换为大写.注意,在 HTML 中标题文本并�
 </div>
 </div>
 </div>
-<div id="outline-container-org329b2b3" class="outline-3">
-<h3 id="org329b2b3"><span class="section-number-3">4.4.</span> Alignment, spacing, and other details</h3>
+<div id="outline-container-org449bc5f" class="outline-3">
+<h3 id="org449bc5f"><span class="section-number-3">4.4.</span> Alignment, spacing, and other details</h3>
 <div class="outline-text-3" id="text-4-4">
 <ul class="org-ul">
 <li>现在你应该已经掌握了 Flexbox 的核心部分.不过,正如我之前提到的,还有许多选项你可能偶尔会需要使用.
@@ -4898,7 +4720,7 @@ ext-transform 将文本全部转换为大写.注意,在 HTML 中标题文本并�
 图 4-18 列出了所有可以应用于 Flex 容器的属性,
 </p>
 
-<div id="org49f962f" class="figure">
+<div id="orgb27c892" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/cid/4-18.png" alt="4-18.png" />
 </p>
 <p><span class="figure-number">Figure 57: </span>cid/4-18.png</p>
@@ -4907,7 +4729,7 @@ ext-transform 将文本全部转换为大写.注意,在 HTML 中标题文本并�
 图 4-19 和图4-18一样,继续列出了所有可以应用于 Flex 容器的属性,
 </p>
 
-<div id="org56db5bc" class="figure">
+<div id="orgc88fb0a" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/cid/4-19.png" alt="4-19.png" />
 </p>
 <p><span class="figure-number">Figure 58: </span>cid/4-19.png</p>
@@ -4916,7 +4738,7 @@ ext-transform 将文本全部转换为大写.注意,在 HTML 中标题文本并�
 图 4-20 列出了所有适用于 Flex 项目的属性.
 </p>
 
-<div id="org7d91e69" class="figure">
+<div id="org7f8baad" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/cid/4-20.png" alt="4-20.png" />
 </p>
 <p><span class="figure-number">Figure 59: </span>cid/4-20.png</p>
@@ -4935,8 +4757,8 @@ ext-transform 将文本全部转换为大写.注意,在 HTML 中标题文本并�
 </ul></li>
 </ul>
 </div>
-<div id="outline-container-org00ef14a" class="outline-4">
-<h4 id="org00ef14a"><span class="section-number-4">4.4.1.</span> Understanding flex container properties</h4>
+<div id="outline-container-org117f192" class="outline-4">
+<h4 id="org117f192"><span class="section-number-4">4.4.1.</span> Understanding flex container properties</h4>
 <div class="outline-text-4" id="text-4-4-1">
 <ul class="org-ul">
 <li>有多种属性可以应用于 Flex 容器,以控制其 Flex 项目的布局.第一个是 flex-direction,我已经在第 4.3
@@ -4944,7 +4766,7 @@ ext-transform 将文本全部转换为大写.注意,在 HTML 中标题文本并�
 </ul>
 </div>
 <ol class="org-ol">
-<li><a id="orgecaae76"></a>FLEX-WRAP 属性<br />
+<li><a id="org7699661"></a>FLEX-WRAP 属性<br />
 <div class="outline-text-5" id="text-4-4-1-1">
 <ul class="org-ul">
 <li>flex-wrap 属性可用于允许 Flex 项目换行到新行(或多行).它可以设置为
@@ -4960,7 +4782,7 @@ ext-transform 将文本全部转换为大写.注意,在 HTML 中标题文本并�
 </ul>
 </div>
 </li>
-<li><a id="orgb5b6430"></a>FLEX-FLOW 属性<br />
+<li><a id="orgb6d408d"></a>FLEX-FLOW 属性<br />
 <div class="outline-text-5" id="text-4-4-1-2">
 <ul class="org-ul">
 <li>flex-flow 是 flex-direction 和 flex-wrap 的简写属性.
@@ -4970,7 +4792,7 @@ ext-transform 将文本全部转换为大写.注意,在 HTML 中标题文本并�
 </ul>
 </div>
 </li>
-<li><a id="org2b0a250"></a>JUSTIFY-CONTENT 属性<br />
+<li><a id="org531b7d5"></a>JUSTIFY-CONTENT 属性<br />
 <div class="outline-text-5" id="text-4-4-1-3">
 <ul class="org-ul">
 <li>justify-content 属性控制当项目未填满容器时,它们在主轴上的间距.支持的值包括几个新关键词:
@@ -4998,7 +4820,7 @@ ext-transform 将文本全部转换为大写.注意,在 HTML 中标题文本并�
 </ul>
 </div>
 </li>
-<li><a id="org0273778"></a>ALIGN-CONTENT 属性<br />
+<li><a id="org658c31e"></a>ALIGN-CONTENT 属性<br />
 <div class="outline-text-5" id="text-4-4-1-4">
 <ul class="org-ul">
 <li>如果启用了换行(使用 flex-wrap),align-content 属性控制 Flex 容器内每一行沿交叉轴的间距.支持的值
@@ -5019,7 +4841,7 @@ ext-transform 将文本全部转换为大写.注意,在 HTML 中标题文本并�
 </ul>
 </div>
 </li>
-<li><a id="orgcdae100"></a>ALIGN-ITEMS 属性<br />
+<li><a id="orgc16b833"></a>ALIGN-ITEMS 属性<br />
 <div class="outline-text-5" id="text-4-4-1-5">
 <ul class="org-ul">
 <li>justify-content 控制主轴上的项目对齐,而 align-items 则调整项目在交叉轴上的对齐方式.它的默认值是
@@ -5046,8 +4868,8 @@ justify-items 仅在网格布局(第 5 章)中使用,在 Flex 容器上会被忽
 </li>
 </ol>
 </div>
-<div id="outline-container-orga0fa954" class="outline-4">
-<h4 id="orga0fa954"><span class="section-number-4">4.4.2.</span> Understanding flex item properties</h4>
+<div id="outline-container-org5d530b9" class="outline-4">
+<h4 id="org5d530b9"><span class="section-number-4">4.4.2.</span> Understanding flex item properties</h4>
 <div class="outline-text-4" id="text-4-4-2">
 <ul class="org-ul">
 <li>前面已经描述了 flex-grow,flex-shrink,flex-basis 以及它们的简写属性 flex(参见第 4.2 节).接下来
@@ -5055,7 +4877,7 @@ justify-items 仅在网格布局(第 5 章)中使用,在 Flex 容器上会被忽
 </ul>
 </div>
 <ol class="org-ol">
-<li><a id="org7106295"></a>ALIGN-SELF 属性<br />
+<li><a id="org1bd3dc9"></a>ALIGN-SELF 属性<br />
 <div class="outline-text-5" id="text-4-4-2-1">
 <ul class="org-ul">
 <li>此属性控制某个 Flex 项目在其容器的交叉轴上的对齐方式.它的功能与 Flex 容器的 align-items 属性相同,
@@ -5080,7 +4902,7 @@ justify-self 仅在网格布局(第 5 章)中使用,在 Flex 容器中会被忽�
 </ul>
 </div>
 </li>
-<li><a id="orgddc192e"></a>ORDER 属性<br />
+<li><a id="orgca18309"></a>ORDER 属性<br />
 <div class="outline-text-5" id="text-4-4-2-2">
 <ul class="org-ul">
 <li>通常情况下,Flex 项目会按照它们在 HTML 源代码中的顺序进行布局.它们沿主轴从起点开始依次排列.通过使
@@ -5096,8 +4918,8 @@ justify-self 仅在网格布局(第 5 章)中使用,在 Flex 容器中会被忽�
 </li>
 </ol>
 </div>
-<div id="outline-container-orgfb7cbb8" class="outline-4">
-<h4 id="orgfb7cbb8"><span class="section-number-4">4.4.3.</span> Using alignment properties</h4>
+<div id="outline-container-org04b48b2" class="outline-4">
+<h4 id="org04b48b2"><span class="section-number-4">4.4.3.</span> Using alignment properties</h4>
 <div class="outline-text-4" id="text-4-4-3">
 <ul class="org-ul">
 <li>现在展示如何使用这些属性完成页面的最后部分.最终的部分是一个样式化的价格和一个行动号召 (CTA) 按钮.
@@ -5107,7 +4929,7 @@ justify-self 仅在网格布局(第 5 章)中使用,在 Flex 容器中会被忽�
 页面的最后一步应该呈现为图 4-21 所示.
 </p>
 
-<div id="org7674b4c" class="figure">
+<div id="org9168cda" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/cid/4-21.png" alt="4-21.png" />
 </p>
 <p><span class="figure-number">Figure 60: </span>cid/4-21.png</p>
@@ -5194,8 +5016,8 @@ CTA 按钮的 cta-button 类.</li>
 </div>
 </div>
 </div>
-<div id="outline-container-org1646fc1" class="outline-2">
-<h2 id="org1646fc1"><span class="section-number-2">5.</span> Chapter 5: Grid layout</h2>
+<div id="outline-container-org05fc285" class="outline-2">
+<h2 id="org05fc285"><span class="section-number-2">5.</span> Chapter 5: Grid layout</h2>
 <div class="outline-text-2" id="text-5">
 <ul class="org-ul">
 <li>Flexbox 革新了我们在网页上进行布局的方式,但它只是整个布局工具的一部分.它还有一个"更强大的兄弟":
@@ -5212,7 +5034,7 @@ CTA 按钮的 cta-button 类.</li>
 通过网格,你可以构建复杂的布局,比如图 5.1 所示的那种
 </p>
 
-<div id="orgd2edbb8" class="figure">
+<div id="org421dab3" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/cid/5-1.png" alt="5-1.png" />
 </p>
 <p><span class="figure-number">Figure 61: </span>cid/5-1.png</p>
@@ -5220,8 +5042,8 @@ CTA 按钮的 cta-button 类.</li>
 </ul></li>
 </ul>
 </div>
-<div id="outline-container-org6b1dfaa" class="outline-3">
-<h3 id="org6b1dfaa"><span class="section-number-3">5.1.</span> Building a basic grid</h3>
+<div id="outline-container-org91b1626" class="outline-3">
+<h3 id="org91b1626"><span class="section-number-3">5.1.</span> Building a basic grid</h3>
 <div class="outline-text-3" id="text-5-1">
 <ul class="org-ul">
 <li>网格(Grid)非常灵活,所以我将在本章通过几个示例来说明它的强大功能.
@@ -5231,7 +5053,7 @@ CTA 按钮的 cta-button 类.</li>
 如图5-2所示.
 </p>
 
-<div id="orgbc9d0e7" class="figure">
+<div id="orgc9586bc" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/cid/5-2.png" alt="5-2.png" />
 </p>
 <p><span class="figure-number">Figure 62: </span>cid/5-2.png</p>
@@ -5298,7 +5120,7 @@ CTA 按钮的 cta-button 类.</li>
 这段代码会将六个大小相等的盒子渲染成三列(如图5-2所示).
 </p>
 
-<div id="orgc9be1ae" class="figure">
+<div id="org876666c" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/cid/5-2.png" alt="5-2.png" />
 </p>
 <p><span class="figure-number">Figure 63: </span>cid/5-2.png</p>
@@ -5321,8 +5143,8 @@ Flexbox 中的 flex-grow 因子类似.声明 grid-template-columns: 1fr 1fr 1fr 
 </ul>
 </div>
 </div>
-<div id="outline-container-org643ef55" class="outline-3">
-<h3 id="org643ef55"><span class="section-number-3">5.2.</span> Anatomy of a grid</h3>
+<div id="outline-container-org6fd8672" class="outline-3">
+<h3 id="org6fd8672"><span class="section-number-3">5.2.</span> Anatomy of a grid</h3>
 <div class="outline-text-3" id="text-5-2">
 <ul class="org-ul">
 <li>理解网格的各个部分非常重要.我们已经提到"网格容器"和"网格项目",它们是构成网格的基本元素.除此之外
@@ -5340,7 +5162,7 @@ Flexbox 中的 flex-grow 因子类似.声明 grid-template-columns: 1fr 1fr 1fr 
 上述术语在图5-3中有所说明:
 </p>
 
-<div id="orgc42eeb9" class="figure">
+<div id="orgccbe55f" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/cid/5-3.png" alt="5-3.png" />
 </p>
 <p><span class="figure-number">Figure 64: </span>cid/5-3.png</p>
@@ -5354,7 +5176,7 @@ Flexbox 中的 flex-grow 因子类似.声明 grid-template-columns: 1fr 1fr 1fr 
 图5.4展示了这个设计,
 </p>
 
-<div id="org6fb1239" class="figure">
+<div id="org8f3abe0" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/cid/5-4.png" alt="5-4.png" />
 </p>
 <p><span class="figure-number">Figure 65: </span>cid/5-4.png</p>
@@ -5442,7 +5264,7 @@ Flexbox 中的 flex-grow 因子类似.声明 grid-template-columns: 1fr 1fr 1fr 
 页面将如图 5.5 所示.
 </p>
 
-<div id="org5493d77" class="figure">
+<div id="orgb5676c0" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/cid/5-5.png" alt="5-5.png" />
 </p>
 <p><span class="figure-number">Figure 66: </span>cid/5-5.png</p>
@@ -5597,7 +5419,7 @@ grid-template-rows: auto auto auto auto.</li>
 三次,结果为 2fr 1fr 2fr 1fr 2fr 1fr.图 5.6 展示了由此产生的列布局.
 </p>
 
-<div id="org84924ad" class="figure">
+<div id="orgd494183" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/cid/5-6.png" alt="5-6.png" />
 </p>
 <p><span class="figure-number">Figure 67: </span>cid/5-6.png</p>
@@ -5608,15 +5430,15 @@ grid-template-rows: auto auto auto auto.</li>
 </ul></li>
 </ul>
 </div>
-<div id="outline-container-org1730ff7" class="outline-4">
-<h4 id="org1730ff7"><span class="section-number-4">5.2.1.</span> Numbering grid lines</h4>
+<div id="outline-container-org7daead1" class="outline-4">
+<h4 id="org7daead1"><span class="section-number-4">5.2.1.</span> Numbering grid lines</h4>
 </div>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: harrifeng@outlook.com</p>
-<p class="date">Created: 2025-07-22 �ܶ� 20:41</p>
+<p class="date">Created: 2025-07-22 Tue 20:51</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
