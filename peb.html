@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-07-16 Wed 14:05 -->
+<!-- 2025-08-22 Fri 17:48 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>peb 独立随机变量和的方差定理及证明</title>
@@ -55,166 +55,196 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgcfd058a">1. Chapter 1: Combinatorics</a>
+<li><a href="#orga29de54">1. Chapter 1: Combinatorics</a>
 <ul>
-<li><a href="#orgfaf0deb">1.1. Factorials</a></li>
-<li><a href="#org57e36e2">1.2. Permutations</a>
+<li><a href="#org2c4be0c">1.1. Factorials</a></li>
+<li><a href="#orgea61a9c">1.2. Permutations</a>
 <ul>
-<li><a href="#org1a72d4e">1.2.1. One object</a></li>
-<li><a href="#org2410807">1.2.2. Two objects</a></li>
-<li><a href="#org755f1f5">1.2.3. Three objects</a></li>
+<li><a href="#orgae7b6df">1.2.1. One object</a></li>
+<li><a href="#orgda61182">1.2.2. Two objects</a></li>
+<li><a href="#org8b4d293">1.2.3. Three objects</a></li>
 </ul>
 </li>
-<li><a href="#org2d576fd">1.3. Ordered sets, repetitions allowed</a></li>
-<li><a href="#orgc4d59ac">1.4. Ordered sets, repetitions not allowed</a></li>
-<li><a href="#org4d79314">1.5. Unordered sets, repetitions not allowed</a>
+<li><a href="#org9a6c998">1.3. Ordered sets, repetitions allowed</a></li>
+<li><a href="#org55d7a10">1.4. Ordered sets, repetitions not allowed</a></li>
+<li><a href="#org3913641">1.5. Unordered sets, repetitions not allowed</a>
 <ul>
-<li><a href="#org480c8fb">1.5.1. Example(Two chosen from five)</a></li>
-<li><a href="#org1e428e6">1.5.2. First solution</a></li>
-<li><a href="#org1a7ec62">1.5.3. Second solution:</a></li>
-<li><a href="#org631ca28">1.5.4. Examle(Three different titles)</a></li>
-<li><a href="#org0c5c299">1.5.5. First solution</a></li>
-<li><a href="#org3de9845">1.5.6. Second solution</a></li>
-<li><a href="#orgabbf25b">1.5.7. Third solution</a></li>
+<li><a href="#orgee2cc81">1.5.1. Example(Two chosen from five)</a></li>
+<li><a href="#org53f254e">1.5.2. First solution</a></li>
+<li><a href="#org23bb628">1.5.3. Second solution:</a></li>
+<li><a href="#orge7c1790">1.5.4. Examle(Three different titles)</a></li>
+<li><a href="#org7a0c2ee">1.5.5. First solution</a></li>
+<li><a href="#org152f64d">1.5.6. Second solution</a></li>
+<li><a href="#org6328e2b">1.5.7. Third solution</a></li>
 </ul>
 </li>
-<li><a href="#orgc7e744b">1.6. What we know so far</a></li>
-<li><a href="#orgc54e8eb">1.7. Unordered sets, repetitions allowed</a>
+<li><a href="#org7dee917">1.6. What we know so far</a></li>
+<li><a href="#orgb2f20bd">1.7. Unordered sets, repetitions allowed</a>
 <ul>
-<li><a href="#orga4098a9">1.7.1. Example 1(n=4 chosen from N = 3)</a></li>
-<li><a href="#orgd37ee42">1.7.2. Example 2(n=3 chosen fron N = 4)</a></li>
-<li><a href="#orgac27b75">1.7.3. Example 3(n=5 chosen fron N = 3)</a></li>
-<li><a href="#orge981a1c">1.7.4. Example(Dividing the monery)</a></li>
-<li><a href="#orgf5979f2">1.7.5. Solution</a></li>
-<li><a href="#orge86db4f">1.7.6. Example(Reproducing \(N^n\) )</a></li>
-<li><a href="#org22b1d1a">1.7.7. Solution</a></li>
+<li><a href="#org260a93c">1.7.1. Example 1(n=4 chosen from N = 3)</a></li>
+<li><a href="#orgeeef328">1.7.2. Example 2(n=3 chosen fron N = 4)</a></li>
+<li><a href="#org6696c82">1.7.3. Example 3(n=5 chosen fron N = 3)</a></li>
+<li><a href="#orgebc4fd5">1.7.4. Example(Dividing the monery)</a></li>
+<li><a href="#org0031bc6">1.7.5. Solution</a></li>
+<li><a href="#orgeeda176">1.7.6. Example(Reproducing \(N^n\) )</a></li>
+<li><a href="#org6061a59">1.7.7. Solution</a></li>
 </ul>
 </li>
-<li><a href="#org69f8fd6">1.8. Binomial coefficients</a></li>
+<li><a href="#orgb059513">1.8. Binomial coefficients</a></li>
 </ul>
 </li>
-<li><a href="#org8dc487e">2. Chapter 2: Probability</a>
+<li><a href="#org37d880d">2. Chapter 2: Probability</a>
 <ul>
-<li><a href="#org07d2fcf">2.1. Definition of probability</a>
+<li><a href="#org1ac6abc">2.1. Definition of probability</a>
 <ul>
-<li><a href="#org91f3f4b">2.1.1. The importance of the words "on average"</a></li>
+<li><a href="#org3a511fc">2.1.1. The importance of the words "on average"</a></li>
 </ul>
 </li>
-<li><a href="#orgb61aa74">2.2. The rules of probability</a>
+<li><a href="#org4769f6a">2.2. The rules of probability</a>
 <ul>
-<li><a href="#org0ad3d1a">2.2.1. AND: The "intersection" probability, P(A and B)</a></li>
-<li><a href="#org1d43df7">2.2.2. Example(Balls in a box)</a></li>
-<li><a href="#org8567f56">2.2.3. OR: The "union" probability, P(A or B)</a></li>
-<li><a href="#org0884489">2.2.4. (In)dependence and (non)exclusiveness</a></li>
-<li><a href="#org7273776">2.2.5. Conditional probability</a></li>
+<li><a href="#orge001e15">2.2.1. AND: The "intersection" probability, P(A and B)</a></li>
+<li><a href="#orgbaf039f">2.2.2. Example(Balls in a box)</a></li>
+<li><a href="#orgfa475ad">2.2.3. OR: The "union" probability, P(A or B)</a></li>
+<li><a href="#orgd77c0af">2.2.4. (In)dependence and (non)exclusiveness</a></li>
+<li><a href="#orge446f63">2.2.5. Conditional probability</a></li>
 </ul>
 </li>
-<li><a href="#org8a943ad">2.3. Examples</a>
+<li><a href="#org51adcea">2.3. Examples</a>
 <ul>
-<li><a href="#org76cb37e">2.3.1. The art of "not"</a></li>
-<li><a href="#org398c77a">2.3.2. Example(At least one 6)</a></li>
-<li><a href="#org9d73d02">2.3.3. Solution</a></li>
-<li><a href="#org729437c">2.3.4. Picking seats</a></li>
-<li><a href="#org1f4ffbb">2.3.5. Example 1(Middle in the middle)</a></li>
-<li><a href="#org8eb64c8">2.3.6. 解法一:所有 \(3! = 6\) 种可能的排列顺序如下:</a></li>
-<li><a href="#org400dc6f">2.3.7. 解法二:随机分配人员到座位时,可先安排中等身高者.</a></li>
-<li><a href="#orgb075944">2.3.8. 解法三:若先安排最高者(标记为 1):</a></li>
-<li><a href="#orga5f8963">2.3.9. 数学表述</a></li>
-<li><a href="#org58b4066">2.3.10. 直观方法(推荐):</a></li>
-<li><a href="#org0049650">2.3.11. Example 2(Order of height in a line)</a></li>
-<li><a href="#org8858258">2.3.12. 解法一:排列计数法</a></li>
-<li><a href="#orga212b22">2.3.13. 解法二:条件概率法</a></li>
-<li><a href="#org43a4719">2.3.14. 公式推导:条件概率的扩展形式</a></li>
-<li><a href="#orgd1f4af9">2.3.15. Example 3 (Order of height in a circle)</a></li>
-<li><a href="#org39ba79f">2.3.16. 解法一:排列计数法</a></li>
-<li><a href="#org0d6ba90">2.3.17. 解法二:条件概率分解法</a></li>
-<li><a href="#orga627743">2.3.18. Example 4(Three girls and three boys)</a></li>
-<li><a href="#org5ae0acd">2.3.19. 解法一:排列计数法</a></li>
-<li><a href="#orgc8ea5d6">2.3.20. 解法二:顺序概率法(女生优先入座)</a></li>
-<li><a href="#org12dc33f">2.3.21. 解法三:组合选择法</a></li>
-<li><a href="#org04d57e6">2.3.22. Socks in a drawer</a></li>
-<li><a href="#orgcb16b0a">2.3.23. Example 1 (Two blue and two red)</a></li>
-<li><a href="#orgd1452a2">2.3.24. 解法一</a></li>
-<li><a href="#org13437a7">2.3.25. 解法二</a></li>
-<li><a href="#orga9217cc">2.3.26. Example 2(Four blue and two red)</a></li>
-<li><a href="#orgda0a5d5">2.3.27. 解法一:组合计数法</a></li>
-<li><a href="#org71a23eb">2.3.28. 解法二:条件概率法</a></li>
-<li><a href="#orgc514724">2.3.29. Coins and dice</a></li>
-<li><a href="#org8b0fa10">2.3.30. Example 1(One of each number)</a></li>
-<li><a href="#orga452577">2.3.31. 解法一:排列计数法</a></li>
-<li><a href="#org1b25f4a">2.3.32. 解法二:序贯概率乘法原理**</a></li>
-<li><a href="#org6e5c23e">2.3.33. Example 2(Three pairs)</a></li>
-<li><a href="#org1af5f12">2.3.34. 解法:有序样本空间计数法</a></li>
-<li><a href="#org893f56b">2.3.35. Example 3(Five coin flips)</a></li>
-<li><a href="#org2e25dfb">2.3.36. 解法:有序样本空间计数法**</a></li>
-<li><a href="#orgeaca509">2.3.37. Cards</a></li>
-<li><a href="#org30f44d6">2.3.38. Example 1(Royal flush from seven cards)</a></li>
-<li><a href="#orgcdc350e">2.3.39. 解法:组合计数法**</a></li>
-<li><a href="#org5fabfa8">2.3.40. Example 2 (Suit full hourse)</a></li>
-<li><a href="#org761f326">2.3.41. Solution</a></li>
-<li><a href="#orgc809604">2.3.42. 真正的满堂红</a></li>
-<li><a href="#org0ffbd67">2.3.43. Example 3 (Only two suits)</a></li>
-<li><a href="#orgfb8ff66">2.3.44. 解法一:</a></li>
-<li><a href="#org1a773b9">2.3.45. 解法二</a></li>
+<li><a href="#org6fcd54b">2.3.1. The art of "not"</a></li>
+<li><a href="#orga117706">2.3.2. Example(At least one 6)</a></li>
+<li><a href="#org757fd05">2.3.3. Solution</a></li>
+<li><a href="#orgf004aa9">2.3.4. Picking seats</a></li>
+<li><a href="#org1799d17">2.3.5. Example 1(Middle in the middle)</a></li>
+<li><a href="#org46e47e7">2.3.6. 解法一:所有 \(3! = 6\) 种可能的排列顺序如下:</a></li>
+<li><a href="#org5bd2ff4">2.3.7. 解法二:随机分配人员到座位时,可先安排中等身高者.</a></li>
+<li><a href="#org6b71f24">2.3.8. 解法三:若先安排最高者(标记为 1):</a></li>
+<li><a href="#orge59c32f">2.3.9. 数学表述</a></li>
+<li><a href="#org028a9ff">2.3.10. 直观方法(推荐):</a></li>
+<li><a href="#orga9a16d0">2.3.11. Example 2(Order of height in a line)</a></li>
+<li><a href="#orgc39bad9">2.3.12. 解法一:排列计数法</a></li>
+<li><a href="#orgcde5e37">2.3.13. 解法二:条件概率法</a></li>
+<li><a href="#org6db87a3">2.3.14. 公式推导:条件概率的扩展形式</a></li>
+<li><a href="#orgfa9d7b1">2.3.15. Example 3 (Order of height in a circle)</a></li>
+<li><a href="#org629c052">2.3.16. 解法一:排列计数法</a></li>
+<li><a href="#org7739b0f">2.3.17. 解法二:条件概率分解法</a></li>
+<li><a href="#org96d7513">2.3.18. Example 4(Three girls and three boys)</a></li>
+<li><a href="#orgd26affb">2.3.19. 解法一:排列计数法</a></li>
+<li><a href="#org39edcc0">2.3.20. 解法二:顺序概率法(女生优先入座)</a></li>
+<li><a href="#org0bb2864">2.3.21. 解法三:组合选择法</a></li>
+<li><a href="#org3ac2ae2">2.3.22. Socks in a drawer</a></li>
+<li><a href="#orgc4406fb">2.3.23. Example 1 (Two blue and two red)</a></li>
+<li><a href="#orgb6a9262">2.3.24. 解法一</a></li>
+<li><a href="#orgf4807e9">2.3.25. 解法二</a></li>
+<li><a href="#org1862d2a">2.3.26. Example 2(Four blue and two red)</a></li>
+<li><a href="#org0fd88d8">2.3.27. 解法一:组合计数法</a></li>
+<li><a href="#org9b290cf">2.3.28. 解法二:条件概率法</a></li>
+<li><a href="#org6cc0ef7">2.3.29. Coins and dice</a></li>
+<li><a href="#orgbb20876">2.3.30. Example 1(One of each number)</a></li>
+<li><a href="#org09595bd">2.3.31. 解法一:排列计数法</a></li>
+<li><a href="#org0a1522d">2.3.32. 解法二:序贯概率乘法原理**</a></li>
+<li><a href="#orgbc4055c">2.3.33. Example 2(Three pairs)</a></li>
+<li><a href="#org1599f13">2.3.34. 解法:有序样本空间计数法</a></li>
+<li><a href="#org6944e4c">2.3.35. Example 3(Five coin flips)</a></li>
+<li><a href="#orgc357e21">2.3.36. 解法:有序样本空间计数法**</a></li>
+<li><a href="#org2106094">2.3.37. Cards</a></li>
+<li><a href="#org624d9ee">2.3.38. Example 1(Royal flush from seven cards)</a></li>
+<li><a href="#org7e67ee6">2.3.39. 解法:组合计数法**</a></li>
+<li><a href="#org631ad0c">2.3.40. Example 2 (Suit full hourse)</a></li>
+<li><a href="#org1d58857">2.3.41. Solution</a></li>
+<li><a href="#org7298b84">2.3.42. 真正的满堂红</a></li>
+<li><a href="#orgc9d0173">2.3.43. Example 3 (Only two suits)</a></li>
+<li><a href="#org334763f">2.3.44. 解法一:</a></li>
+<li><a href="#orgbfe2de3">2.3.45. 解法二</a></li>
 </ul>
 </li>
-<li><a href="#orgc9b9ea3">2.4. Four classic problems</a>
+<li><a href="#org00ce5cd">2.4. Four classic problems</a>
 <ul>
-<li><a href="#org827bc57">2.4.1. The Birthday Problem</a></li>
-<li><a href="#orga011dbe">2.4.2. The Game-Show Problem</a></li>
-<li><a href="#orgae28e96">2.4.3. The Prosecutor's Fallacy</a></li>
-<li><a href="#orgc721a3a">2.4.4. The Boy/Girl Problem</a></li>
+<li><a href="#org3594a41">2.4.1. The Birthday Problem</a></li>
+<li><a href="#org33e9afc">2.4.2. The Game-Show Problem</a></li>
+<li><a href="#orgb3e48e4">2.4.3. The Prosecutor's Fallacy</a></li>
+<li><a href="#org94a2200">2.4.4. The Boy/Girl Problem</a></li>
 </ul>
 </li>
-<li><a href="#org846bceb">2.5. Bayes' theorem</a>
+<li><a href="#org71f5586">2.5. Bayes' theorem</a>
 <ul>
-<li><a href="#org8d084ec">2.5.1. Example(False positive)</a></li>
-<li><a href="#org082d3a7">2.5.2. First Solution</a></li>
-<li><a href="#org6deb4e7">2.5.3. Second Solution</a></li>
+<li><a href="#orge96b2f0">2.5.1. Example(False positive)</a></li>
+<li><a href="#org1e6e328">2.5.2. First Solution</a></li>
+<li><a href="#org1b8ce14">2.5.3. Second Solution</a></li>
 </ul>
 </li>
-<li><a href="#org1360454">2.6. Stirling's formula</a>
+<li><a href="#orgc309207">2.6. Stirling's formula</a>
 <ul>
-<li><a href="#org747cb0a">2.6.1. Exampe(50 out of 100)</a></li>
+<li><a href="#orgf1404d9">2.6.1. Exampe(50 out of 100)</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orgb1534d2">3. Chapter 3: Expectation values</a>
+<li><a href="#org5d1887f">3. Chapter 3: Expectation values</a>
 <ul>
-<li><a href="#org28c14bb">3.1. Expectation value</a>
+<li><a href="#org4d7ece7">3.1. Expectation value</a>
 <ul>
-<li><a href="#org8b6fd56">3.1.1. Example 1( Expected number of Heads)</a></li>
-<li><a href="#orgc361be4">3.1.2. Solution</a></li>
-<li><a href="#org2f092f7">3.1.3. Example 2 (Flip until Heads)</a></li>
-<li><a href="#org1d5632e">3.1.4. Solution</a></li>
-<li><a href="#org4db3279">3.1.5. Example</a></li>
-<li><a href="#orgcd50d80">3.1.6. Solution</a></li>
-<li><a href="#org7cd4001">3.1.7. 注解</a></li>
-<li><a href="#orgf031b1f">3.1.8. Example</a></li>
+<li><a href="#orgef6f123">3.1.1. Example 1( Expected number of Heads)</a></li>
+<li><a href="#org1655b14">3.1.2. Solution</a></li>
+<li><a href="#org95be41a">3.1.3. Example 2 (Flip until Heads)</a></li>
+<li><a href="#org4e2715d">3.1.4. Solution</a></li>
+<li><a href="#org495c664">3.1.5. Example</a></li>
+<li><a href="#org9fa3b56">3.1.6. Solution</a></li>
+<li><a href="#org784713c">3.1.7. 注解</a></li>
+<li><a href="#org3e396d1">3.1.8. Example</a></li>
 </ul>
 </li>
-<li><a href="#org55e3cec">3.2. Variance</a>
+<li><a href="#org608c253">3.2. Variance</a>
 <ul>
-<li><a href="#org8e1bcfe">3.2.1. Example 1 (Die roll)</a></li>
-<li><a href="#orgc1e4666">3.2.2. Example 2 (Coin fip)</a></li>
-<li><a href="#orge7241d0">3.2.3. Example(Biased coin)</a></li>
-<li><a href="#org1229f99">3.2.4. Example(Two conis)</a></li>
+<li><a href="#org96a986c">3.2.1. Example 1 (Die roll)</a></li>
+<li><a href="#orge95666e">3.2.2. Example 2 (Coin fip)</a></li>
+<li><a href="#org4e3f014">3.2.3. Example(Biased coin)</a></li>
+<li><a href="#org637729a">3.2.4. Example(Two conis)</a></li>
 </ul>
 </li>
-<li><a href="#org5bc0574">3.3. Standard deviation</a></li>
-<li><a href="#org5970a92">3.4. Standard deviation of the mean</a></li>
+<li><a href="#org648fafb">3.3. Standard deviation</a></li>
+<li><a href="#org47b18f8">3.4. Standard deviation of the mean</a></li>
 </ul>
 </li>
+<li><a href="#org51915cd">4. Chapter 4: Distributions</a>
+<ul>
+<li><a href="#org5879116">4.1. Discrete distributions</a></li>
+<li><a href="#orgda281a1">4.2. Continuous distributions</a>
+<ul>
+<li><a href="#org8857770">4.2.1. Motivation</a></li>
+<li><a href="#orgae95f46">4.2.2. Probability density</a></li>
+<li><a href="#orgceba891">4.2.3. Probability equals area</a></li>
+</ul>
+</li>
+<li><a href="#org3db4c3b">4.3. Uniform distribution</a></li>
+<li><a href="#orgdab1a93">4.4. Bernoulli distribution</a></li>
+<li><a href="#org783b994">4.5. Binomial distribution</a>
+<ul>
+<li><a href="#org8626193">4.5.1. Example(Equal probabilites)</a></li>
+<li><a href="#org41b42d8">4.5.2. Solution:</a></li>
+</ul>
+</li>
+<li><a href="#org389b707">4.6. Exponential distribution</a>
+<ul>
+<li><a href="#org1fc7390">4.6.1. Discrete case</a></li>
+<li><a href="#org7ba569b">4.6.2. Rates, expectation values, and probabilities</a></li>
+<li><a href="#org7de2ea0">4.6.3. Continuous case</a></li>
+</ul>
+</li>
+<li><a href="#org64ca0f9">4.7. Poisson distribution</a></li>
+<li><a href="#orgf58d385">4.8. Gaussian distribution</a></li>
+</ul>
+</li>
+<li><a href="#orgf039c9d">5. Chapter 5: Gaussian approximations</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgcfd058a" class="outline-2">
-<h2 id="orgcfd058a"><span class="section-number-2">1.</span> Chapter 1: Combinatorics</h2>
+<div id="outline-container-orga29de54" class="outline-2">
+<h2 id="orga29de54"><span class="section-number-2">1.</span> Chapter 1: Combinatorics</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-orgfaf0deb" class="outline-3">
-<h3 id="orgfaf0deb"><span class="section-number-3">1.1.</span> Factorials</h3>
+<div id="outline-container-org2c4be0c" class="outline-3">
+<h3 id="org2c4be0c"><span class="section-number-3">1.1.</span> Factorials</h3>
 <div class="outline-text-3" id="text-1-1">
 <ul class="org-ul">
 <li>每当我们遇到一个正整数N,那么我们通常会考虑1到N的乘积,这个乘积就是"N factorial", 用数学表示就是"N!"</li>
@@ -257,8 +287,8 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-org57e36e2" class="outline-3">
-<h3 id="org57e36e2"><span class="section-number-3">1.2.</span> Permutations</h3>
+<div id="outline-container-orgea61a9c" class="outline-3">
+<h3 id="orgea61a9c"><span class="section-number-3">1.2.</span> Permutations</h3>
 <div class="outline-text-3" id="text-1-2">
 <ul class="org-ul">
 <li>permutaion是用来order一系列object的方法.比如我们有三个人Alice,Bob,Carol,那么下面每一列都是一种permutation(一共六种):
@@ -273,8 +303,8 @@
 <li>我们下面会详细介绍如何count permutation</li>
 </ul>
 </div>
-<div id="outline-container-org1a72d4e" class="outline-4">
-<h4 id="org1a72d4e"><span class="section-number-4">1.2.1.</span> One object</h4>
+<div id="outline-container-orgae7b6df" class="outline-4">
+<h4 id="orgae7b6df"><span class="section-number-4">1.2.1.</span> One object</h4>
 <div class="outline-text-4" id="text-1-2-1">
 <ul class="org-ul">
 <li>如果我们只有一个object,那么显然只有一种方式来order它.</li>
@@ -282,8 +312,8 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-org2410807" class="outline-4">
-<h4 id="org2410807"><span class="section-number-4">1.2.2.</span> Two objects</h4>
+<div id="outline-container-orgda61182" class="outline-4">
+<h4 id="orgda61182"><span class="section-number-4">1.2.2.</span> Two objects</h4>
 <div class="outline-text-4" id="text-1-2-2">
 <ul class="org-ul">
 <li>两个对象后,稍微复杂了一点,但是也只是一点,比如如果我们使用1,2来代表两个object,那么我们可以把这两个object order如下:
@@ -295,8 +325,8 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-org755f1f5" class="outline-4">
-<h4 id="org755f1f5"><span class="section-number-4">1.2.3.</span> Three objects</h4>
+<div id="outline-container-org8b4d293" class="outline-4">
+<h4 id="org8b4d293"><span class="section-number-4">1.2.3.</span> Three objects</h4>
 <div class="outline-text-4" id="text-1-2-3">
 <ul class="org-ul">
 <li>三个对象之后,情形就复杂了,我们使用1,2,3来代表三个object,那么order的方式有六种,换句话说就是 \(P_3=6\) :
@@ -309,7 +339,7 @@
 </ul>
 </div>
 <ol class="org-ol">
-<li><a id="org4f5957a"></a>Four objects<br />
+<li><a id="org3d2bf60"></a>Four objects<br />
 <div class="outline-text-5" id="text-1-2-3-1">
 <ul class="org-ul">
 <li>一旦有四个对象,那么列举起来就费事了很多,但是我们借鉴三个对象时候的方法,把列举分成四组(每组的开头字
@@ -325,7 +355,7 @@ permutation的全部数据.其他三行去掉最开始一个数字也是相同�
 </ul>
 </div>
 </li>
-<li><a id="org0fb82eb"></a>Five objects<br />
+<li><a id="org1f756d7"></a>Five objects<br />
 <div class="outline-text-5" id="text-1-2-3-2">
 <ul class="org-ul">
 <li>我们一旦理解了上面的做法,那么显然我们只需要在1,2,3,4,5后面每个都添加上上诉24个permutation,那么最终
@@ -339,7 +369,7 @@ permutation的全部数据.其他三行去掉最开始一个数字也是相同�
 </ul>
 </div>
 </li>
-<li><a id="org324e889"></a>Question<br />
+<li><a id="orgb30b373"></a>Question<br />
 <div class="outline-text-5" id="text-1-2-3-3">
 <ul class="org-ul">
 <li>一共有九个客人,同时有九个位置.这九个位置分为两组,A组5个座位,B组4个座位,请问一共有多少种方法来把座
@@ -347,7 +377,7 @@ permutation的全部数据.其他三行去掉最开始一个数字也是相同�
 </ul>
 </div>
 </li>
-<li><a id="org9d91b78"></a>Solution<br />
+<li><a id="org6ab82ca"></a>Solution<br />
 <div class="outline-text-5" id="text-1-2-3-4">
 <ul class="org-ul">
 <li>有五种方式把一个人放到A组的位置,所以有5!种方式把五个人放到A组的位置</li>
@@ -364,8 +394,8 @@ permutation的全部数据.其他三行去掉最开始一个数字也是相同�
 </ol>
 </div>
 </div>
-<div id="outline-container-org2d576fd" class="outline-3">
-<h3 id="org2d576fd"><span class="section-number-3">1.3.</span> Ordered sets, repetitions allowed</h3>
+<div id="outline-container-org9a6c998" class="outline-3">
+<h3 id="org9a6c998"><span class="section-number-3">1.3.</span> Ordered sets, repetitions allowed</h3>
 <div class="outline-text-3" id="text-1-3">
 <ul class="org-ul">
 <li>所谓ordered set,repetitions allowed是指这么一类实验
@@ -399,7 +429,7 @@ permutation的全部数据.其他三行去掉最开始一个数字也是相同�
 <li><p>
 各种可能性如下
 </p>
-<pre class="example" id="orga8f8bf3">
+<pre class="example" id="org37d33f4">
 AA AB AC AD AE
 BA BB BC BD BE
 CA CB CC CD CE
@@ -417,14 +447,14 @@ EA EB EC ED EE
 </ul>
 </div>
 <ol class="org-ol">
-<li><a id="org567a8a6"></a>Question<br />
+<li><a id="org9457391"></a>Question<br />
 <div class="outline-text-5" id="text-1-3-0-1">
 <ul class="org-ul">
 <li>有一个标准的六面骰子,我们投掷两次,能够得到多少种不同的结果(不同order视为不同结果)</li>
 </ul>
 </div>
 </li>
-<li><a id="org9355bb2"></a>Solution<br />
+<li><a id="org5bb6d08"></a>Solution<br />
 <div class="outline-text-5" id="text-1-3-0-2">
 <ul class="org-ul">
 <li>由于order是有关系的,所以2,5和5,2不是一种结果,又由于每次都有6种结果(且不存在放回问题,骰子永远放回),
@@ -432,20 +462,20 @@ EA EB EC ED EE
 </ul>
 </div>
 </li>
-<li><a id="orgfacff91"></a>Question<br />
+<li><a id="orgbd1cf72"></a>Question<br />
 <div class="outline-text-5" id="text-1-3-0-3">
 <ul class="org-ul">
 <li>如果投掷一个标准的硬币四次,那么讷讷够得到多少种不同的结果(不同order视为不同结果)</li>
 </ul>
 </div>
 </li>
-<li><a id="orgfe7efcb"></a>Solution<br />
+<li><a id="orgd1831fa"></a>Solution<br />
 <div class="outline-text-5" id="text-1-3-0-4">
 <ul class="org-ul">
 <li><p>
 总体的16种可能如下
 </p>
-<pre class="example" id="org76aa82e">
+<pre class="example" id="org1dd0dd6">
 'HHHH', 'HHHT', 'HHTH', 'HHTT',
 'HTHH', 'HTHT', 'HTTH', 'HTTT',
 'THHH', 'THHT', 'THTH', 'THTT',
@@ -475,8 +505,8 @@ EA EB EC ED EE
 </li>
 </ol>
 </div>
-<div id="outline-container-orgc4d59ac" class="outline-3">
-<h3 id="orgc4d59ac"><span class="section-number-3">1.4.</span> Ordered sets, repetitions not allowed</h3>
+<div id="outline-container-org55d7a10" class="outline-3">
+<h3 id="org55d7a10"><span class="section-number-3">1.4.</span> Ordered sets, repetitions not allowed</h3>
 <div class="outline-text-3" id="text-1-4">
 <ul class="org-ul">
 <li>所谓ordered set,repetitions allowed是指这么一类实验
@@ -501,21 +531,21 @@ EA EB EC ED EE
 </ul>
 </div>
 <ol class="org-ol">
-<li><a id="org11a04f1"></a>Example(Two chosen from five)<br />
+<li><a id="org40d68a1"></a>Example(Two chosen from five)<br />
 <div class="outline-text-5" id="text-1-4-0-1">
 <ul class="org-ul">
 <li>从5个人里面,选择两个人进入委员会,且顺序重要(第一个人会作为主席,第二个作为副主席)</li>
 </ul>
 </div>
 </li>
-<li><a id="org9102eec"></a>First Soluton<br />
+<li><a id="orga51f771"></a>First Soluton<br />
 <div class="outline-text-5" id="text-1-4-0-2">
 <ul class="org-ul">
 <li><p>
 我们把五个人都分别标记为A,B,C,D,E,我们把所有可能的"有顺序的pair"列举出来,先包含重复(虽然一个人被选
 做主席,外加副主席是不可能的).那么所有的列表如下
 </p>
-<pre class="example" id="orgea9fe43">
+<pre class="example" id="org49eae5a">
 AA AB AC AD AE
 BA BB BC BD BE
 CA CB CC CD CE
@@ -532,7 +562,7 @@ EA EB EC ED EE
 </ul>
 </div>
 </li>
-<li><a id="org307affc"></a>Second solution<br />
+<li><a id="org8bd44c0"></a>Second solution<br />
 <div class="outline-text-5" id="text-1-4-0-3">
 <ul class="org-ul">
 <li>First solution很有说服力,但是其只能把5给泛化成N,无法泛化2成n</li>
@@ -568,31 +598,31 @@ EA EB EC ED EE
 </li>
 </ol>
 </div>
-<div id="outline-container-org4d79314" class="outline-3">
-<h3 id="org4d79314"><span class="section-number-3">1.5.</span> Unordered sets, repetitions not allowed</h3>
+<div id="outline-container-org3913641" class="outline-3">
+<h3 id="org3913641"><span class="section-number-3">1.5.</span> Unordered sets, repetitions not allowed</h3>
 <div class="outline-text-3" id="text-1-5">
 <ul class="org-ul">
 <li>本节和上一节的区别很明显,就是我们从N个里面选取n个,但是这n个的顺序不再重要了.以委员会的选举为例,我们
 从5个人里选取2个人进入委员会,但是这两个人只是委员而已,不会有主席副主席的区别.那么顺序就不再重要了.</li>
 </ul>
 </div>
-<div id="outline-container-org480c8fb" class="outline-4">
-<h4 id="org480c8fb"><span class="section-number-4">1.5.1.</span> Example(Two chosen from five)</h4>
+<div id="outline-container-orgee2cc81" class="outline-4">
+<h4 id="orgee2cc81"><span class="section-number-4">1.5.1.</span> Example(Two chosen from five)</h4>
 <div class="outline-text-4" id="text-1-5-1">
 <ul class="org-ul">
 <li>从五个人里面选取两个人,且这两个人的顺序不重要,有多少种选取方式</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org1e428e6" class="outline-4">
-<h4 id="org1e428e6"><span class="section-number-4">1.5.2.</span> First solution</h4>
+<div id="outline-container-org53f254e" class="outline-4">
+<h4 id="org53f254e"><span class="section-number-4">1.5.2.</span> First solution</h4>
 <div class="outline-text-4" id="text-1-5-2">
 <ul class="org-ul">
 <li><p>
 我们把这个五个人标记为A,B,C,D,E,我们首先把所有的pair都写出来,包括重复的(虽然人不能重复),包括不同的
 order(虽然order不重要),那么我们可以得到下面的列表(列完之后,我们再去除"重复"和"顺序"):
 </p>
-<pre class="example" id="org4197f3c">
+<pre class="example" id="org0aa3d96">
 AA AB AC AD AE
 BA BB BC BD BE
 CA CB CC CD CE
@@ -603,7 +633,7 @@ EA EB EC ED EE
 <li><p>
 再去除"顺序",我们可以看到,对角线去掉后,所有剩余的pair刚好分成了两份,这两份是内容相同,顺序相反的
 </p>
-<pre class="example" id="org9dae88e">
+<pre class="example" id="org8dabe06">
                  AB AC AD AE
 BA                  BC BD BE
 CA CB                  CD CE
@@ -615,8 +645,8 @@ EA EB EC ED
 </ul>
 </div>
 </div>
-<div id="outline-container-org1a7ec62" class="outline-4">
-<h4 id="org1a7ec62"><span class="section-number-4">1.5.3.</span> Second solution:</h4>
+<div id="outline-container-org23bb628" class="outline-4">
+<h4 id="org23bb628"><span class="section-number-4">1.5.3.</span> Second solution:</h4>
 <div class="outline-text-4" id="text-1-5-3">
 <ul class="org-ul">
 <li>我们可以把选择委员会问题看成每次选择一个,那么我们第一次就有5种选法,第二次有4种选法,那么我们总共就有
@@ -659,7 +689,7 @@ EA EB EC ED
 <li><p>
 总结起来就是,不能重放的情况下,我们本节讲的"顺序不重要的从N选取n( \(_{N}C_n\) )"其实就是:
 </p>
-<pre class="example" id="orgcc2e92d">
+<pre class="example" id="org1e68dbc">
 "顺序不重要的从N选取n( $_{N}P_n$ )"额外再除以n!,用来去除overcounting
 </pre></li>
 <li>我们注意到一个有趣的现象就是 \(\binom{11}{8}\) 和 \(\binom{11}{3}\) 的结果是一样的,我们可以这么理解:
@@ -671,8 +701,8 @@ EA EB EC ED
 </ul>
 </div>
 </div>
-<div id="outline-container-org631ca28" class="outline-4">
-<h4 id="org631ca28"><span class="section-number-4">1.5.4.</span> Examle(Three different titles)</h4>
+<div id="outline-container-orge7c1790" class="outline-4">
+<h4 id="orge7c1790"><span class="section-number-4">1.5.4.</span> Examle(Three different titles)</h4>
 <div class="outline-text-4" id="text-1-5-4">
 <ul class="org-ul">
 <li>有多少种方法从十个人里面选取一个委员会,并且这个委员会里面有如下要求:
@@ -684,8 +714,8 @@ EA EB EC ED
 </ul>
 </div>
 </div>
-<div id="outline-container-org0c5c299" class="outline-4">
-<h4 id="org0c5c299"><span class="section-number-4">1.5.5.</span> First solution</h4>
+<div id="outline-container-org7a0c2ee" class="outline-4">
+<h4 id="org7a0c2ee"><span class="section-number-4">1.5.5.</span> First solution</h4>
 <div class="outline-text-4" id="text-1-5-5">
 <ul class="org-ul">
 <li>我们首先来从10个人中选取7个人,并且这个7个人是 <b>有顺序的</b>, 那么就有 \(_{10}P_{7} = 10\cdot9\cdot8\cdot7\cdot6\cdot5\cdot4\)
@@ -704,8 +734,8 @@ EA EB EC ED
 </ul>
 </div>
 </div>
-<div id="outline-container-org3de9845" class="outline-4">
-<h4 id="org3de9845"><span class="section-number-4">1.5.6.</span> Second solution</h4>
+<div id="outline-container-org152f64d" class="outline-4">
+<h4 id="org152f64d"><span class="section-number-4">1.5.6.</span> Second solution</h4>
 <div class="outline-text-4" id="text-1-5-6">
 <ul class="org-ul">
 <li>从一堆对象N中,不考虑顺序的获取小部分对象n的方法是 \(\binom{N}{n}\),所以我没有:
@@ -723,8 +753,8 @@ EA EB EC ED
 </ul>
 </div>
 </div>
-<div id="outline-container-orgabbf25b" class="outline-4">
-<h4 id="orgabbf25b"><span class="section-number-4">1.5.7.</span> Third solution</h4>
+<div id="outline-container-org6328e2b" class="outline-4">
+<h4 id="org6328e2b"><span class="section-number-4">1.5.7.</span> Third solution</h4>
 <div class="outline-text-4" id="text-1-5-7">
 <ul class="org-ul">
 <li>我们上面是按官职从大到小进行的选取(先选主席,再选副主席,再选委员),那么我们如果按照官职从小到大选取,结果如何的,
@@ -753,8 +783,8 @@ EA EB EC ED
 </div>
 </div>
 </div>
-<div id="outline-container-orgc7e744b" class="outline-3">
-<h3 id="orgc7e744b"><span class="section-number-3">1.6.</span> What we know so far</h3>
+<div id="outline-container-org7dee917" class="outline-3">
+<h3 id="org7dee917"><span class="section-number-3">1.6.</span> What we know so far</h3>
 <div class="outline-text-3" id="text-1-6">
 <ul class="org-ul">
 <li>我们先后讲了如下几个部分:
@@ -800,7 +830,7 @@ _{N}C_{n}= \binom{N}{n} = \frac{N!}{n!(N-n)!}
 我们还可以用图1-3来表示上面几个结果的联系
 </p>
 
-<div id="org6b9d9bd" class="figure">
+<div id="orgf681d5c" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/peb/1-3.png" alt="1-3.png" />
 </p>
 <p><span class="figure-number">Figure 1: </span>peb/1-3.png</p>
@@ -808,8 +838,8 @@ _{N}C_{n}= \binom{N}{n} = \frac{N!}{n!(N-n)!}
 </ul>
 </div>
 </div>
-<div id="outline-container-orgc54e8eb" class="outline-3">
-<h3 id="orgc54e8eb"><span class="section-number-3">1.7.</span> Unordered sets, repetitions allowed</h3>
+<div id="outline-container-orgb2f20bd" class="outline-3">
+<h3 id="orgb2f20bd"><span class="section-number-3">1.7.</span> Unordered sets, repetitions allowed</h3>
 <div class="outline-text-3" id="text-1-7">
 <ul class="org-ul">
 <li>在图1-3中,N!是一个有些特殊的结果:
@@ -823,7 +853,7 @@ _{N}C_{n}= \binom{N}{n} = \frac{N!}{n!(N-n)!}
 于是我们就剩下三种情况,根据order是否重要和replacement是否允许,我们得到了下图
 </p>
 
-<div id="org3ad010e" class="figure">
+<div id="org19e0c21" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/peb/1-10-1.png" alt="1-10-1.png" />
 </p>
 <p><span class="figure-number">Figure 2: </span>peb/1-10-1.png</p>
@@ -833,8 +863,8 @@ _{N}C_{n}= \binom{N}{n} = \frac{N!}{n!(N-n)!}
 <li>在介绍之前,我们还是做几个例子来找找感觉</li>
 </ul>
 </div>
-<div id="outline-container-orga4098a9" class="outline-4">
-<h4 id="orga4098a9"><span class="section-number-4">1.7.1.</span> Example 1(n=4 chosen from N = 3)</h4>
+<div id="outline-container-org260a93c" class="outline-4">
+<h4 id="org260a93c"><span class="section-number-4">1.7.1.</span> Example 1(n=4 chosen from N = 3)</h4>
 <div class="outline-text-4" id="text-1-7-1">
 <ul class="org-ul">
 <li>问题:从3个字母(ABC)中获取4个letter,允许重放(所以n可以大于N),order不重要有几种方法</li>
@@ -885,8 +915,8 @@ _{N}C_{n}= \binom{N}{n} = \frac{N!}{n!(N-n)!}
 </ul>
 </div>
 </div>
-<div id="outline-container-orgd37ee42" class="outline-4">
-<h4 id="orgd37ee42"><span class="section-number-4">1.7.2.</span> Example 2(n=3 chosen fron N = 4)</h4>
+<div id="outline-container-orgeeef328" class="outline-4">
+<h4 id="orgeeef328"><span class="section-number-4">1.7.2.</span> Example 2(n=3 chosen fron N = 4)</h4>
 <div class="outline-text-4" id="text-1-7-2">
 <ul class="org-ul">
 <li>问题:从4个字母(ABCD)中获取3个letter,允许重放(所以n可以大于N),order不重要有几种方法</li>
@@ -932,8 +962,8 @@ _{N}C_{n}= \binom{N}{n} = \frac{N!}{n!(N-n)!}
 </ul>
 </div>
 </div>
-<div id="outline-container-orgac27b75" class="outline-4">
-<h4 id="orgac27b75"><span class="section-number-4">1.7.3.</span> Example 3(n=5 chosen fron N = 3)</h4>
+<div id="outline-container-org6696c82" class="outline-4">
+<h4 id="org6696c82"><span class="section-number-4">1.7.3.</span> Example 3(n=5 chosen fron N = 3)</h4>
 <div class="outline-text-4" id="text-1-7-3">
 <ul class="org-ul">
 <li>问题:从3个字母(ABC)中获取5个letter,允许重放(所以n可以大于N),order不重要有几种方法</li>
@@ -999,7 +1029,7 @@ _{N}C_{n}= \binom{N}{n} = \frac{N!}{n!(N-n)!}
 不能有相同的字母,但是不挨着,比如下面两个AAABCC和BBBBBBC都是合理的
 </p>
 
-<div id="orga0e83cf" class="figure">
+<div id="org5fa4774" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/peb/1-4.png" alt="1-4.png" />
 </p>
 <p><span class="figure-number">Figure 3: </span>peb/1-4.png</p>
@@ -1009,7 +1039,7 @@ _{N}C_{n}= \binom{N}{n} = \frac{N!}{n!(N-n)!}
 子插入到六个星星的七个位置,如下图
 </p>
 
-<div id="org5c2a00f" class="figure">
+<div id="org6d811b5" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/peb/1-5.png" alt="1-5.png" />
 </p>
 <p><span class="figure-number">Figure 4: </span>peb/1-5.png</p>
@@ -1056,7 +1086,7 @@ leetcode75(给定一个包含红色,白色和蓝色,共 n 个元素的数组 num
 那么我们的问题就转换为如何把六个星星和两个隔板进行摆放
 </p>
 
-<div id="orgd3e0448" class="figure">
+<div id="org76e3f8f" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/peb/1-6.png" alt="1-6.png" />
 </p>
 <p><span class="figure-number">Figure 5: </span>peb/1-6.png</p>
@@ -1076,7 +1106,7 @@ leetcode75(给定一个包含红色,白色和蓝色,共 n 个元素的数组 num
 泛化之后,我们再具化,看一个n=6, N=4的例子,如下
 </p>
 
-<div id="orgc54db5e" class="figure">
+<div id="org21da831" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/peb/1-7.png" alt="1-7.png" />
 </p>
 <p><span class="figure-number">Figure 6: </span>peb/1-7.png</p>
@@ -1092,7 +1122,7 @@ _{N}U_{n} = \binom{n+(N-1)}{N-1} \tag{1.16}
 我们也终于可以把1-10-1的图补齐成1-11-1,如下
 </p>
 
-<div id="org436bc63" class="figure">
+<div id="org71bc8c5" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/peb/1-11-1.png" alt="1-11-1.png" />
 </p>
 <p><span class="figure-number">Figure 7: </span>peb/1-11-1.png</p>
@@ -1102,8 +1132,8 @@ does not matter"的问题没关系,但是其实是一回事</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orge981a1c" class="outline-4">
-<h4 id="orge981a1c"><span class="section-number-4">1.7.4.</span> Example(Dividing the monery)</h4>
+<div id="outline-container-orgebc4fd5" class="outline-4">
+<h4 id="orgebc4fd5"><span class="section-number-4">1.7.4.</span> Example(Dividing the monery)</h4>
 <div class="outline-text-4" id="text-1-7-4">
 <ul class="org-ul">
 <li>你有10张一美元的钞票,想要分给4个人.有多少种不同的分配方式?</li>
@@ -1112,8 +1142,8 @@ does not matter"的问题没关系,但是其实是一回事</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgf5979f2" class="outline-4">
-<h4 id="orgf5979f2"><span class="section-number-4">1.7.5.</span> Solution</h4>
+<div id="outline-container-org0031bc6" class="outline-4">
+<h4 id="org0031bc6"><span class="section-number-4">1.7.5.</span> Solution</h4>
 <div class="outline-text-4" id="text-1-7-5">
 <ul class="org-ul">
 <li>这个问题其实可以转换为如下问题:
@@ -1145,8 +1175,8 @@ does not matter"的问题没关系,但是其实是一回事</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orge86db4f" class="outline-4">
-<h4 id="orge86db4f"><span class="section-number-4">1.7.6.</span> Example(Reproducing \(N^n\) )</h4>
+<div id="outline-container-orgeeda176" class="outline-4">
+<h4 id="orgeeda176"><span class="section-number-4">1.7.6.</span> Example(Reproducing \(N^n\) )</h4>
 <div class="outline-text-4" id="text-1-7-6">
 <ul class="org-ul">
 <li>\(N^n\) 的结果告诉我们,当从装有N=3个物体中有放回地抽取n=4个物体时,可能的有序排列共有3⁴=81种.现在
@@ -1155,8 +1185,8 @@ does not matter"的问题没关系,但是其实是一回事</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org22b1d1a" class="outline-4">
-<h4 id="org22b1d1a"><span class="section-number-4">1.7.7.</span> Solution</h4>
+<div id="outline-container-org6061a59" class="outline-4">
+<h4 id="org6061a59"><span class="section-number-4">1.7.7.</span> Solution</h4>
 <div class="outline-text-4" id="text-1-7-7">
 <ul class="org-ul">
 <li><p>
@@ -1227,7 +1257,7 @@ does not matter"的问题没关系,但是其实是一回事</li>
 根据"顺序重要与否"以及"可放回与否",我们整理了如下的图来抽象说明每种情况,请和1-11-1.png一同对比
 </p>
 
-<div id="orga766e1d" class="figure">
+<div id="orgd503214" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/peb/1-12-1.png" alt="1-12-1.png" />
 </p>
 <p><span class="figure-number">Figure 8: </span>peb/1-12-1.png</p>
@@ -1236,7 +1266,7 @@ does not matter"的问题没关系,但是其实是一回事</li>
 根据"顺序重要与否"以及"可放回与否",我们整理了如下的图来举例说明每种情况,请和1-12-1.png一同对比
 </p>
 
-<div id="org3b81471" class="figure">
+<div id="org064874c" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/peb/1-13-1.png" alt="1-13-1.png" />
 </p>
 <p><span class="figure-number">Figure 9: </span>peb/1-13-1.png</p>
@@ -1245,16 +1275,16 @@ does not matter"的问题没关系,但是其实是一回事</li>
 </div>
 </div>
 </div>
-<div id="outline-container-org69f8fd6" class="outline-3">
-<h3 id="org69f8fd6"><span class="section-number-3">1.8.</span> Binomial coefficients</h3>
+<div id="outline-container-orgb059513" class="outline-3">
+<h3 id="orgb059513"><span class="section-number-3">1.8.</span> Binomial coefficients</h3>
 </div>
 </div>
-<div id="outline-container-org8dc487e" class="outline-2">
-<h2 id="org8dc487e"><span class="section-number-2">2.</span> Chapter 2: Probability</h2>
+<div id="outline-container-org37d880d" class="outline-2">
+<h2 id="org37d880d"><span class="section-number-2">2.</span> Chapter 2: Probability</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-org07d2fcf" class="outline-3">
-<h3 id="org07d2fcf"><span class="section-number-3">2.1.</span> Definition of probability</h3>
+<div id="outline-container-org1ac6abc" class="outline-3">
+<h3 id="org1ac6abc"><span class="section-number-3">2.1.</span> Definition of probability</h3>
 <div class="outline-text-3" id="text-2-1">
 <ul class="org-ul">
 <li>概率给了"某种事情多大概率发生"的一种度量
@@ -1262,7 +1292,7 @@ does not matter"的问题没关系,但是其实是一回事</li>
 <li><p>
 概率可以有如下的定义:
 </p>
-<pre class="example" id="org7a8d67a">
+<pre class="example" id="orga1e51c6">
 概率定义:
 考虑对某种可重复的过程进行大量的实验:比如抛硬币,掷筛子,从盒子中取球(可放回).
 如果特定事件(如出现正面,抛出5点,取出的球为蓝色)发生的概率为p,那么,这个事件在平均情况下,
@@ -1271,7 +1301,7 @@ does not matter"的问题没关系,但是其实是一回事</li>
 <li><p>
 其英文定义如下:
 </p>
-<pre class="example" id="orgc326daf">
+<pre class="example" id="orgd34f30e">
 DEFINITION OFPROBABILITY:
 Consider a very large number of identical trials of a certain process;
 for example, flipping a coin, rolling a die, picking a ball from a box
@@ -1295,7 +1325,7 @@ ball)is p, then the event will occur in a fraction p of the trails, on average
 涉及到概率问题的时候,有这么一个特性,那就是:若存在多种不同的可能结果(outcome),那么这些可能结果(outcome)
 的概率相同.
 </p>
-<pre class="example" id="org8de2d34">
+<pre class="example" id="orga081dfc">
 Many probabilistic situations have the property that they involve a number
 of different possible outcomes, all of which are qually likely
 </pre></li>
@@ -1347,8 +1377,8 @@ p = \frac{number of desired outcomes}{total number of possible outcomes} \tag{2.
 </ul></li>
 </ul>
 </div>
-<div id="outline-container-org91f3f4b" class="outline-4">
-<h4 id="org91f3f4b"><span class="section-number-4">2.1.1.</span> The importance of the words "on average"</h4>
+<div id="outline-container-org3a511fc" class="outline-4">
+<h4 id="org3a511fc"><span class="section-number-4">2.1.1.</span> The importance of the words "on average"</h4>
 <div class="outline-text-4" id="text-2-1-1">
 <ul class="org-ul">
 <li>上面的定义中包含了"平均而言(on average)"这一表述,这个词语非常重要,如果省略他们,转而采用类似如下的定
@@ -1375,8 +1405,8 @@ p = \frac{number of desired outcomes}{total number of possible outcomes} \tag{2.
 </div>
 </div>
 </div>
-<div id="outline-container-orgb61aa74" class="outline-3">
-<h3 id="orgb61aa74"><span class="section-number-3">2.2.</span> The rules of probability</h3>
+<div id="outline-container-org4769f6a" class="outline-3">
+<h3 id="org4769f6a"><span class="section-number-3">2.2.</span> The rules of probability</h3>
 <div class="outline-text-3" id="text-2-2">
 <ul class="org-ul">
 <li>到目前为止,我们讨论的都只是单一事件的概率,例如:掷骰子得到一个偶数,抛硬币得到一次正面(Heads),</li>
@@ -1388,8 +1418,8 @@ p = \frac{number of desired outcomes}{total number of possible outcomes} \tag{2.
 </ul></li>
 </ul>
 </div>
-<div id="outline-container-org0ad3d1a" class="outline-4">
-<h4 id="org0ad3d1a"><span class="section-number-4">2.2.1.</span> AND: The "intersection" probability, P(A and B)</h4>
+<div id="outline-container-orge001e15" class="outline-4">
+<h4 id="orge001e15"><span class="section-number-4">2.2.1.</span> AND: The "intersection" probability, P(A and B)</h4>
 <div class="outline-text-4" id="text-2-2-1">
 <ul class="org-ul">
 <li>我们假设A和B是两个Event</li>
@@ -1417,7 +1447,7 @@ p = \frac{number of desired outcomes}{total number of possible outcomes} \tag{2.
 </ul>
 </div>
 <ol class="org-ol">
-<li><a id="org2f6c1e2"></a>Independent events<br />
+<li><a id="org8d62f74"></a>Independent events<br />
 <div class="outline-text-5" id="text-2-2-1-1">
 <ul class="org-ul">
 <li>如果两个事件互不影响,或者更准确地说,如果一个事件的发生不会影响另一个事件发生的概率,那么这两个事
@@ -1439,7 +1469,7 @@ p = \frac{number of desired outcomes}{total number of possible outcomes} \tag{2.
 </ul>
 </div>
 </li>
-<li><a id="orgff45871"></a>REMARK<br />
+<li><a id="orgfe6a637"></a>REMARK<br />
 <div class="outline-text-5" id="text-2-2-1-2">
 <ul class="org-ul">
 <li>我们在概率论里面要区分如下两个概念:
@@ -1477,7 +1507,7 @@ P(\text{2 and 5}) = P(2) \cdot P(5) = \frac{1}{6} \cdot \frac{1}{6} = \frac{1}{3
 现在,我们只关注这批"第一个数字为2"的结果组,忽略其他结果,在这些结果中,平均有 \(\frac{1}{6}\) 的比例
 其第二个数字为5. 这个结论是从事件的独立性定理获得的:
 </p>
-<pre class="example" id="org52d9e78">
+<pre class="example" id="orgc8f4cb8">
 对于第二次投递骰子而言,这组第一个数字为2的1/6*N次实验,和其他第一个
 为1,3,4,5,6的1/6*N次实验并无区别,因此第二次投出5的概率依然是1/6
 </pre></li>
@@ -1489,7 +1519,7 @@ P(\text{2 and 5}) = P(2) \cdot P(5) = \frac{1}{6} \cdot \frac{1}{6} = \frac{1}{3
 图2-1
 </p>
 
-<div id="orgc22217f" class="figure">
+<div id="org48c3898" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/peb/2-1.png" alt="2-1.png" />
 </p>
 <p><span class="figure-number">Figure 10: </span>peb/2-1.png</p>
@@ -1503,7 +1533,7 @@ of a region gives the probabilit that an outcome located in that region occurs)<
 </ul>
 </div>
 </li>
-<li><a id="org591e3aa"></a>Dependent events<br />
+<li><a id="orge82ef58"></a>Dependent events<br />
 <div class="outline-text-5" id="text-2-2-1-3">
 <ul class="org-ul">
 <li>若两个事件相互影响,或更精确地说,若一个事件的发生会影响另一个事件发生的概率,则称这两个事件为依赖事件</li>
@@ -1549,7 +1579,7 @@ P(A \text{ and } B)=P(A) \cdot P(B|A) \tag{2.5}
 和图2-1相同功能的图2-3就是一个韦恩图
 </p>
 
-<div id="org33187b1" class="figure">
+<div id="org2a0cd59" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/peb/2-3.png" alt="2-3.png" />
 </p>
 <p><span class="figure-number">Figure 11: </span>peb/2-3.png</p>
@@ -1574,8 +1604,8 @@ P(A \mathrm{~and~} B) &= P(A) \cdot P(B|A) \nonumber \\
 </li>
 </ol>
 </div>
-<div id="outline-container-org1d43df7" class="outline-4">
-<h4 id="org1d43df7"><span class="section-number-4">2.2.2.</span> Example(Balls in a box)</h4>
+<div id="outline-container-orgbaf039f" class="outline-4">
+<h4 id="orgbaf039f"><span class="section-number-4">2.2.2.</span> Example(Balls in a box)</h4>
 <div class="outline-text-4" id="text-2-2-2">
 <ul class="org-ul">
 <li>我们来使用实际例子来展示下公式2-5,假设有两个event:
@@ -1603,7 +1633,7 @@ P(Red_1 \text{ and } Blue_2) = P(Red_1) \cdot P(Blue_2|Red_1) = \frac{2}{5} \cdo
 然后就有如下列表,有四个象限代表红色第一,红色第二,蓝色第一,蓝色第二
 </p>
 
-<div id="org2a7348f" class="figure">
+<div id="org0f82d36" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/peb/2-1-1.png" alt="2-1-1.png" />
 </p>
 <p><span class="figure-number">Figure 12: </span>peb/2-1-1.png</p>
@@ -1668,8 +1698,8 @@ P(A \text{ and }B) = P(A) \cdot P(B)   \text{ (independence)}  \tag{2.13}
 </ul>
 </div>
 </div>
-<div id="outline-container-org8567f56" class="outline-4">
-<h4 id="org8567f56"><span class="section-number-4">2.2.3.</span> OR: The "union" probability, P(A or B)</h4>
+<div id="outline-container-orgfa475ad" class="outline-4">
+<h4 id="orgfa475ad"><span class="section-number-4">2.2.3.</span> OR: The "union" probability, P(A or B)</h4>
 <div class="outline-text-4" id="text-2-2-3">
 <ul class="org-ul">
 <li>假设A和B是两个event,我们想知道两者之一发生的概率,也就是P(A or B),那我们我们需要根据下面情况的不同
@@ -1681,7 +1711,7 @@ P(A \text{ and }B) = P(A) \cdot P(B)   \text{ (independence)}  \tag{2.13}
 </ul>
 </div>
 <ol class="org-ol">
-<li><a id="org611c2da"></a>Exclusive events<br />
+<li><a id="org8cc1d90"></a>Exclusive events<br />
 <div class="outline-text-5" id="text-2-2-3-1">
 <ul class="org-ul">
 <li>两个事件若互斥,是指其中一个事件的发生会排除另一个事件的发生.即它们不可能同时发生.例如:
@@ -1711,7 +1741,7 @@ P(A \text{ or (not } A \text{)}) &= P(A) + P(\text{ not } A) \\
 </ul>
 </div>
 </li>
-<li><a id="org941eb6a"></a>Nonexclusive events<br />
+<li><a id="orgf18cbf9"></a>Nonexclusive events<br />
 <div class="outline-text-5" id="text-2-2-3-2">
 <ul class="org-ul">
 <li>如果这两个event,有可能同时发生,那么我们就说这两个event是nonexclusive的(互不排斥事件),例子如下:
@@ -1731,7 +1761,7 @@ P(A \text{ or } B) = P(A) + P(B) - P(A \text{ and } B) \tag{2.18}
 公司2-18的韦恩图如下
 </p>
 
-<div id="org5305e2d" class="figure">
+<div id="org4bb4d84" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/peb/2-6.png" alt="2-6.png" />
 </p>
 <p><span class="figure-number">Figure 13: </span>peb/2-6.png</p>
@@ -1753,8 +1783,8 @@ P(A \cup B) \equiv P(A \text{ or } B) \tag{2.19}
 </li>
 </ol>
 </div>
-<div id="outline-container-org0884489" class="outline-4">
-<h4 id="org0884489"><span class="section-number-4">2.2.4.</span> (In)dependence and (non)exclusiveness</h4>
+<div id="outline-container-orgd77c0af" class="outline-4">
+<h4 id="orgd77c0af"><span class="section-number-4">2.2.4.</span> (In)dependence and (non)exclusiveness</h4>
 <div class="outline-text-4" id="text-2-2-4">
 <ul class="org-ul">
 <li>两个event是要么independent的,要么dependent的, 同时,两个event要么是exclusive,要么是nonexclusive的,
@@ -1762,7 +1792,7 @@ P(A \cup B) \equiv P(A \text{ or } B) \tag{2.19}
 </ul>
 </div>
 <ol class="org-ol">
-<li><a id="orge808a74"></a>Exclusive and Independent<br />
+<li><a id="org715f833"></a>Exclusive and Independent<br />
 <div class="outline-text-5" id="text-2-2-4-1">
 <ul class="org-ul">
 <li>这种组合是不存在的,可以从两个方面进行论证:</li>
@@ -1781,13 +1811,13 @@ P(A \cup B) \equiv P(A \text{ or } B) \tag{2.19}
 <li><p>
 除了这些严谨的论证,我们还可以用自己的语言理解一下这组合不存在的原因
 </p>
-<pre class="example" id="orgf9294e8">
+<pre class="example" id="org7b9310f">
 一旦两个事件是互斥的,那么一个发生,就意味着另外一个"一定不发生","一定不发生"就是一种非常强的"依赖(depend)"关系
 </pre></li>
 </ul>
 </div>
 </li>
-<li><a id="org2467142"></a>Exclusive and Dependent<br />
+<li><a id="org38b81f1"></a>Exclusive and Dependent<br />
 <div class="outline-text-5" id="text-2-2-4-2">
 <ul class="org-ul">
 <li>这种组合是存在的</li>
@@ -1802,13 +1832,13 @@ probability of the other occurring,所以是dependent的</li>
 <li><p>
 总结起来就是,一旦两个event是互斥的,那么他们一定是互相依赖的
 </p>
-<pre class="example" id="orge2b3c5d">
+<pre class="example" id="orgf2d084a">
 If two events are exclusive, then they are necessarily also dependent
 </pre></li>
 </ul>
 </div>
 </li>
-<li><a id="org687f202"></a>Nonexclusive and Independent<br />
+<li><a id="org4158aad"></a>Nonexclusive and Independent<br />
 <div class="outline-text-5" id="text-2-2-4-3">
 <ul class="org-ul">
 <li>这种组合是存在的</li>
@@ -1824,13 +1854,13 @@ If two events are exclusive, then they are necessarily also dependent
 <li><p>
 总结起来就是,一旦两个event是独立的,那么他们一定不是互斥的!
 </p>
-<pre class="example" id="org5e2738d">
+<pre class="example" id="org5532660">
 If two events are independent, then they are necessarily also nonexclusive
 </pre></li>
 </ul>
 </div>
 </li>
-<li><a id="orgb84cae1"></a>Nonexclusive and dependent<br />
+<li><a id="org5da51be"></a>Nonexclusive and dependent<br />
 <div class="outline-text-5" id="text-2-2-4-4">
 <ul class="org-ul">
 <li>这种组合是存在的</li>
@@ -1854,8 +1884,8 @@ If two events are independent, then they are necessarily also nonexclusive
 </li>
 </ol>
 </div>
-<div id="outline-container-org7273776" class="outline-4">
-<h4 id="org7273776"><span class="section-number-4">2.2.5.</span> Conditional probability</h4>
+<div id="outline-container-orge446f63" class="outline-4">
+<h4 id="orge446f63"><span class="section-number-4">2.2.5.</span> Conditional probability</h4>
 <div class="outline-text-4" id="text-2-2-5">
 <ul class="org-ul">
 <li>我们前面已经引入过条件概率了,P(B|A)就是表示A已经发生的情况下,B发生的概率.</li>
@@ -1866,7 +1896,7 @@ If two events are independent, then they are necessarily also nonexclusive
 图2-8
 </p>
 
-<div id="org374f733" class="figure">
+<div id="org1a8ae07" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/peb/2-8.png" alt="2-8.png" />
 </p>
 <p><span class="figure-number">Figure 14: </span>peb/2-8.png</p>
@@ -1918,13 +1948,13 @@ If two events are independent, then they are necessarily also nonexclusive
 <li><p>
 我们之前之所以总是感觉P(Z|U) 和P(U|Z)相等,是基于如下 <b>错误</b> 的理解
 </p>
-<pre class="example" id="org2860e63">
+<pre class="example" id="org1a79473">
 既然U和Z是独立的,那么他们不会互相干扰,所以两者的条件概率无论谁先后,结果都相等
 </pre></li>
 <li><p>
 而 <b>正确</b> 的理解应该是如下
 </p>
-<pre class="example" id="org43754c9">
+<pre class="example" id="org7fbb414">
 既然U和Z是独立的,那么一个event不会影响另外一个event,所以"条件概率"应该更加接近其"非条件概率",
 也就是说P(Z|U)=P(Z), P(U|Z)=P(U). P(Z)是一个接近0的值,而P(U)是一个接近1的值,所以两者肯定不同
 </pre></li>
@@ -1933,23 +1963,23 @@ If two events are independent, then they are necessarily also nonexclusive
 上面的例子比较繁琐,但是完全理解之后对条件概率也会理解的更透彻.其实我们还可以用更加简洁的语言来举例
 一个类似的,但更加通俗的例子:
 </p>
-<pre class="example" id="org0bbb173">
+<pre class="example" id="orgb5d3dd4">
 当已知某生物拥有大脑时,它属于人类的概率微乎其微;但当一致某生物是人类时,它拥有大脑的概率必然是1.
 </pre></li>
 </ul>
 </div>
 </div>
 </div>
-<div id="outline-container-org8a943ad" class="outline-3">
-<h3 id="org8a943ad"><span class="section-number-3">2.3.</span> Examples</h3>
+<div id="outline-container-org51adcea" class="outline-3">
+<h3 id="org51adcea"><span class="section-number-3">2.3.</span> Examples</h3>
 <div class="outline-text-3" id="text-2-3">
 <ul class="org-ul">
 <li>我们本节来介绍一些例子,了解概率问题最好的方式就是学习这些例子</li>
 <li>在讲解这些例子之前,我们首先先了解一下解决问题的策略,这些策略很多情况下很有用</li>
 </ul>
 </div>
-<div id="outline-container-org76cb37e" class="outline-4">
-<h4 id="org76cb37e"><span class="section-number-4">2.3.1.</span> The art of "not"</h4>
+<div id="outline-container-org6fcd54b" class="outline-4">
+<h4 id="org6fcd54b"><span class="section-number-4">2.3.1.</span> The art of "not"</h4>
 <div class="outline-text-4" id="text-2-3-1">
 <ul class="org-ul">
 <li>在很多情况下,计算一个event(A)最好的方法不是直接计算event(A)的概率,而是:
@@ -1962,7 +1992,7 @@ If two events are independent, then they are necessarily also nonexclusive
 <li><p>
 "最多有"的情况,用英文描述如下
 </p>
-<pre class="example" id="orgd831370">
+<pre class="example" id="org34285de">
 What is the probability of obtaining at least one of such-and-such
 </pre></li>
 <li>上面表述中的at least很显然听起来让我们的概率求解变的复杂,因为at least one意味着可能是:
@@ -1978,16 +2008,16 @@ What is the probability of obtaining at least one of such-and-such
 </ul>
 </div>
 </div>
-<div id="outline-container-org398c77a" class="outline-4">
-<h4 id="org398c77a"><span class="section-number-4">2.3.2.</span> Example(At least one 6)</h4>
+<div id="outline-container-orga117706" class="outline-4">
+<h4 id="orga117706"><span class="section-number-4">2.3.2.</span> Example(At least one 6)</h4>
 <div class="outline-text-4" id="text-2-3-2">
 <ul class="org-ul">
 <li>有三个骰子,请问至少其中有一个为6的概率是多少</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org9d73d02" class="outline-4">
-<h4 id="org9d73d02"><span class="section-number-4">2.3.3.</span> Solution</h4>
+<div id="outline-container-org757fd05" class="outline-4">
+<h4 id="org757fd05"><span class="section-number-4">2.3.3.</span> Solution</h4>
 <div class="outline-text-4" id="text-2-3-3">
 <ul class="org-ul">
 <li>很显然,可以先求event(有三个骰子,请问至少其中有一个为6)的概率是多少的补集,那就是:event(刚好有0个骰子为6)的概率</li>
@@ -2001,8 +2031,8 @@ event(刚好有0个骰子为6)的概率是每个骰子都是非6,那么就是:
 </ul>
 </div>
 </div>
-<div id="outline-container-org729437c" class="outline-4">
-<h4 id="org729437c"><span class="section-number-4">2.3.4.</span> Picking seats</h4>
+<div id="outline-container-orgf004aa9" class="outline-4">
+<h4 id="orgf004aa9"><span class="section-number-4">2.3.4.</span> Picking seats</h4>
 <div class="outline-text-4" id="text-2-3-4">
 <ul class="org-ul">
 <li>情境: 我们常常会遇到需要将不同事物分配到不同位置的情况.</li>
@@ -2018,16 +2048,16 @@ event(刚好有0个骰子为6)的概率是每个骰子都是非6,那么就是:
 </ul>
 </div>
 </div>
-<div id="outline-container-org1f4ffbb" class="outline-4">
-<h4 id="org1f4ffbb"><span class="section-number-4">2.3.5.</span> Example 1(Middle in the middle)</h4>
+<div id="outline-container-org1799d17" class="outline-4">
+<h4 id="org1799d17"><span class="section-number-4">2.3.5.</span> Example 1(Middle in the middle)</h4>
 <div class="outline-text-4" id="text-2-3-5">
 <ul class="org-ul">
 <li>三把椅子排成一行,三人随机入座.中等身高者最终坐在中间座位的概率是多少?</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org8eb64c8" class="outline-4">
-<h4 id="org8eb64c8"><span class="section-number-4">2.3.6.</span> 解法一:所有 \(3! = 6\) 种可能的排列顺序如下:</h4>
+<div id="outline-container-org46e47e7" class="outline-4">
+<h4 id="org46e47e7"><span class="section-number-4">2.3.6.</span> 解法一:所有 \(3! = 6\) 种可能的排列顺序如下:</h4>
 <div class="outline-text-4" id="text-2-3-6">
 <ul class="org-ul">
 <li><p>
@@ -2040,8 +2070,8 @@ event(刚好有0个骰子为6)的概率是每个骰子都是非6,那么就是:
 </ul>
 </div>
 </div>
-<div id="outline-container-org400dc6f" class="outline-4">
-<h4 id="org400dc6f"><span class="section-number-4">2.3.7.</span> 解法二:随机分配人员到座位时,可先安排中等身高者.</h4>
+<div id="outline-container-org5bd2ff4" class="outline-4">
+<h4 id="org5bd2ff4"><span class="section-number-4">2.3.7.</span> 解法二:随机分配人员到座位时,可先安排中等身高者.</h4>
 <div class="outline-text-4" id="text-2-3-7">
 <ul class="org-ul">
 <li>该人员坐在任意座位的概率均等,故坐在中间座位的概率为 \(\frac{1}{3}\).</li>
@@ -2049,8 +2079,8 @@ event(刚好有0个骰子为6)的概率是每个骰子都是非6,那么就是:
 </ul>
 </div>
 </div>
-<div id="outline-container-orgb075944" class="outline-4">
-<h4 id="orgb075944"><span class="section-number-4">2.3.8.</span> 解法三:若先安排最高者(标记为 1):</h4>
+<div id="outline-container-org6b71f24" class="outline-4">
+<h4 id="org6b71f24"><span class="section-number-4">2.3.8.</span> 解法三:若先安排最高者(标记为 1):</h4>
 <div class="outline-text-4" id="text-2-3-8">
 <ul class="org-ul">
 <li>有 \(\frac{1}{3}\) 的概率其坐在中间座位 → 此时中等身高者坐中间的概率为 \(0\).</li>
@@ -2064,8 +2094,8 @@ P = \frac{1}{3} \cdot 0 + \frac{2}{3} \cdot \frac{1}{2} = \frac{1}{3}
 </ul>
 </div>
 </div>
-<div id="outline-container-orga5f8963" class="outline-4">
-<h4 id="orga5f8963"><span class="section-number-4">2.3.9.</span> 数学表述</h4>
+<div id="outline-container-orge59c32f" class="outline-4">
+<h4 id="orge59c32f"><span class="section-number-4">2.3.9.</span> 数学表述</h4>
 <div class="outline-text-4" id="text-2-3-9">
 <ul class="org-ul">
 <li>定义事件:
@@ -2085,8 +2115,8 @@ P(M_{\text{mid}}) &= P(T_{\text{mid}} \text{ and } M_{\text{mid}}) + P(T_{\text{
 </ul>
 </div>
 </div>
-<div id="outline-container-org58b4066" class="outline-4">
-<h4 id="org58b4066"><span class="section-number-4">2.3.10.</span> 直观方法(推荐):</h4>
+<div id="outline-container-org028a9ff" class="outline-4">
+<h4 id="org028a9ff"><span class="section-number-4">2.3.10.</span> 直观方法(推荐):</h4>
 <div class="outline-text-4" id="text-2-3-10">
 <ul class="org-ul">
 <li>通过大样本试验模拟更直观安全.进行 600 次试验:
@@ -2099,16 +2129,16 @@ P(M_{\text{mid}}) &= P(T_{\text{mid}} \text{ and } M_{\text{mid}}) + P(T_{\text{
 </ul>
 </div>
 </div>
-<div id="outline-container-org0049650" class="outline-4">
-<h4 id="org0049650"><span class="section-number-4">2.3.11.</span> Example 2(Order of height in a line)</h4>
+<div id="outline-container-orga9a16d0" class="outline-4">
+<h4 id="orga9a16d0"><span class="section-number-4">2.3.11.</span> Example 2(Order of height in a line)</h4>
 <div class="outline-text-4" id="text-2-3-11">
 <ul class="org-ul">
 <li>五把椅子排成一行,五人随机入座.求他们最终按身高 **从高到低递减**(从左至右)排列的概率?</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org8858258" class="outline-4">
-<h4 id="org8858258"><span class="section-number-4">2.3.12.</span> 解法一:排列计数法</h4>
+<div id="outline-container-orgc39bad9" class="outline-4">
+<h4 id="orgc39bad9"><span class="section-number-4">2.3.12.</span> 解法一:排列计数法</h4>
 <div class="outline-text-4" id="text-2-3-12">
 <ul class="org-ul">
 <li>核心逻辑**:总排列数为 \(5!\),满足条件的排列只有 1 种.
@@ -2125,8 +2155,8 @@ P = \frac{1}{5!} = \frac{1}{120}
 </ul>
 </div>
 </div>
-<div id="outline-container-orga212b22" class="outline-4">
-<h4 id="orga212b22"><span class="section-number-4">2.3.13.</span> 解法二:条件概率法</h4>
+<div id="outline-container-orgcde5e37" class="outline-4">
+<h4 id="orgcde5e37"><span class="section-number-4">2.3.13.</span> 解法二:条件概率法</h4>
 <div class="outline-text-4" id="text-2-3-13">
 <ul class="org-ul">
 <li>核心逻辑:按身高顺序依次安排座位,计算每步正确入座的条件概率.</li>
@@ -2147,8 +2177,8 @@ P = \frac{1}{5} \times \frac{1}{4} \times \frac{1}{3} \times \frac{1}{2} \times 
 </ul>
 </div>
 </div>
-<div id="outline-container-org43a4719" class="outline-4">
-<h4 id="org43a4719"><span class="section-number-4">2.3.14.</span> 公式推导:条件概率的扩展形式</h4>
+<div id="outline-container-org6db87a3" class="outline-4">
+<h4 id="org6db87a3"><span class="section-number-4">2.3.14.</span> 公式推导:条件概率的扩展形式</h4>
 <div class="outline-text-4" id="text-2-3-14">
 <ul class="org-ul">
 <li>设事件:
@@ -2188,8 +2218,8 @@ P = \frac{1}{120}
 </ul>
 </div>
 </div>
-<div id="outline-container-orgd1f4af9" class="outline-4">
-<h4 id="orgd1f4af9"><span class="section-number-4">2.3.15.</span> Example 3 (Order of height in a circle)</h4>
+<div id="outline-container-orgfa9d7b1" class="outline-4">
+<h4 id="orgfa9d7b1"><span class="section-number-4">2.3.15.</span> Example 3 (Order of height in a circle)</h4>
 <div class="outline-text-4" id="text-2-3-15">
 <ul class="org-ul">
 <li>五把椅子**排成一个圆圈**,五人随机入座.求最终形成身高 <b><b>从高到低顺时针递减</b></b> 排列的概率?</li>
@@ -2202,8 +2232,8 @@ P = \frac{1}{120}
 </ul>
 </div>
 </div>
-<div id="outline-container-org39ba79f" class="outline-4">
-<h4 id="org39ba79f"><span class="section-number-4">2.3.16.</span> 解法一:排列计数法</h4>
+<div id="outline-container-org629c052" class="outline-4">
+<h4 id="org629c052"><span class="section-number-4">2.3.16.</span> 解法一:排列计数法</h4>
 <div class="outline-text-4" id="text-2-3-16">
 <ul class="org-ul">
 <li>核心逻辑
@@ -2226,8 +2256,8 @@ P = \frac{\text{有效排列数}}{\text{总排列数}} = \frac{5}{120} = \frac{1
 </ul>
 </div>
 </div>
-<div id="outline-container-org0d6ba90" class="outline-4">
-<h4 id="org0d6ba90"><span class="section-number-4">2.3.17.</span> 解法二:条件概率分解法</h4>
+<div id="outline-container-org7739b0f" class="outline-4">
+<h4 id="org7739b0f"><span class="section-number-4">2.3.17.</span> 解法二:条件概率分解法</h4>
 <div class="outline-text-4" id="text-2-3-17">
 <ul class="org-ul">
 <li>分步推理
@@ -2262,16 +2292,16 @@ P = 1 \times \frac{1}{4} \times \frac{1}{3} \times \frac{1}{2} \times 1 = \frac{
 </ul>
 </div>
 </div>
-<div id="outline-container-orga627743" class="outline-4">
-<h4 id="orga627743"><span class="section-number-4">2.3.18.</span> Example 4(Three girls and three boys)</h4>
+<div id="outline-container-org96d7513" class="outline-4">
+<h4 id="org96d7513"><span class="section-number-4">2.3.18.</span> Example 4(Three girls and three boys)</h4>
 <div class="outline-text-4" id="text-2-3-18">
 <ul class="org-ul">
 <li>问题描述:六把椅子排成一行,三名女生和三名男生随机入座.求**三名女生最终全部坐在最左侧三个座位**的概率?</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org5ae0acd" class="outline-4">
-<h4 id="org5ae0acd"><span class="section-number-4">2.3.19.</span> 解法一:排列计数法</h4>
+<div id="outline-container-orgd26affb" class="outline-4">
+<h4 id="orgd26affb"><span class="section-number-4">2.3.19.</span> 解法一:排列计数法</h4>
 <div class="outline-text-4" id="text-2-3-19">
 <ul class="org-ul">
 <li>核心逻辑
@@ -2293,8 +2323,8 @@ P = \frac{3! \times 3!}{6!} = \frac{6 \times 6}{720} = \frac{36}{720} = \frac{1}
 </ul>
 </div>
 </div>
-<div id="outline-container-orgc8ea5d6" class="outline-4">
-<h4 id="orgc8ea5d6"><span class="section-number-4">2.3.20.</span> 解法二:顺序概率法(女生优先入座)</h4>
+<div id="outline-container-org39edcc0" class="outline-4">
+<h4 id="org39edcc0"><span class="section-number-4">2.3.20.</span> 解法二:顺序概率法(女生优先入座)</h4>
 <div class="outline-text-4" id="text-2-3-20">
 <ul class="org-ul">
 <li>分步计算
@@ -2328,8 +2358,8 @@ P = \frac{3}{6} \times \frac{2}{5} \times \frac{1}{4} = \frac{1}{20}
 </ul>
 </div>
 </div>
-<div id="outline-container-org12dc33f" class="outline-4">
-<h4 id="org12dc33f"><span class="section-number-4">2.3.21.</span> 解法三:组合选择法</h4>
+<div id="outline-container-org0bb2864" class="outline-4">
+<h4 id="org0bb2864"><span class="section-number-4">2.3.21.</span> 解法三:组合选择法</h4>
 <div class="outline-text-4" id="text-2-3-21">
 <ul class="org-ul">
 <li>核心洞察
@@ -2347,8 +2377,8 @@ P = \frac{1}{\binom{6}{3}} = \frac{1}{\frac{6!}{3!3!}} = \frac{3!3!}{6!} = \frac
 </ul>
 </div>
 </div>
-<div id="outline-container-org04d57e6" class="outline-4">
-<h4 id="org04d57e6"><span class="section-number-4">2.3.22.</span> Socks in a drawer</h4>
+<div id="outline-container-org3ac2ae2" class="outline-4">
+<h4 id="org3ac2ae2"><span class="section-number-4">2.3.22.</span> Socks in a drawer</h4>
 <div class="outline-text-4" id="text-2-3-22">
 <ul class="org-ul">
 <li>从抽屉中抽取彩色袜子的概率问题这是一种经典的概率模型.若通过计数法处理此类问题,则会涉及子群划分与
@@ -2356,30 +2386,30 @@ P = \frac{1}{\binom{6}{3}} = \frac{1}{\frac{6!}{3!3!}} = \frac{3!3!}{6!} = \frac
 </ul>
 </div>
 </div>
-<div id="outline-container-orgcb16b0a" class="outline-4">
-<h4 id="orgcb16b0a"><span class="section-number-4">2.3.23.</span> Example 1 (Two blue and two red)</h4>
+<div id="outline-container-orgc4406fb" class="outline-4">
+<h4 id="orgc4406fb"><span class="section-number-4">2.3.23.</span> Example 1 (Two blue and two red)</h4>
 <div class="outline-text-4" id="text-2-3-23">
 <ul class="org-ul">
 <li>抽屉中有两只蓝袜和两只红袜.若随机抽取两只袜子,获得同色配对的概率是多少?</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgd1452a2" class="outline-4">
-<h4 id="orgd1452a2"><span class="section-number-4">2.3.24.</span> 解法一</h4>
+<div id="outline-container-orgb6a9262" class="outline-4">
+<h4 id="orgb6a9262"><span class="section-number-4">2.3.24.</span> 解法一</h4>
 <div class="outline-text-4" id="text-2-3-24">
 <ul class="org-ul">
 <li><p>
 所有可能组合数为二项式系数 \(\binom{4}{2}=6\) .其中存在两组成对情况(一蓝对,一红对),故概率为 2/6 = 1/3.
 若枚举所有组合(设蓝袜编号1,2,红袜编号3,4):
 </p>
-<pre class="example" id="orgab267c2">
+<pre class="example" id="org22df23f">
 1,2｜1,3｜1,4｜2,3｜2,4｜3,4
 </pre></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org13437a7" class="outline-4">
-<h4 id="org13437a7"><span class="section-number-4">2.3.25.</span> 解法二</h4>
+<div id="outline-container-orgf4807e9" class="outline-4">
+<h4 id="orgf4807e9"><span class="section-number-4">2.3.25.</span> 解法二</h4>
 <div class="outline-text-4" id="text-2-3-25">
 <ul class="org-ul">
 <li>抽取首只袜子后,抽屉中剩余:同色袜1只,异色袜2只.剩余三只袜子中,仅有一只可形成配对,其余两只不可,
@@ -2387,16 +2417,16 @@ P = \frac{1}{\binom{6}{3}} = \frac{1}{\frac{6!}{3!3!}} = \frac{3!3!}{6!} = \frac
 </ul>
 </div>
 </div>
-<div id="outline-container-orga9217cc" class="outline-4">
-<h4 id="orga9217cc"><span class="section-number-4">2.3.26.</span> Example 2(Four blue and two red)</h4>
+<div id="outline-container-org1862d2a" class="outline-4">
+<h4 id="org1862d2a"><span class="section-number-4">2.3.26.</span> Example 2(Four blue and two red)</h4>
 <div class="outline-text-4" id="text-2-3-26">
 <ul class="org-ul">
 <li>抽屉中有四只蓝袜与两只红袜(如图2.9所示).若随机抽取两只袜子,获得同色配对的概率是多少?</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgda0a5d5" class="outline-4">
-<h4 id="orgda0a5d5"><span class="section-number-4">2.3.27.</span> 解法一:组合计数法</h4>
+<div id="outline-container-org0fd88d8" class="outline-4">
+<h4 id="org0fd88d8"><span class="section-number-4">2.3.27.</span> 解法一:组合计数法</h4>
 <div class="outline-text-4" id="text-2-3-27">
 <ul class="org-ul">
 <li>总可能配对数为二项式系数 \( \binom{6}{2} = 15 \) 种组合.</li>
@@ -2414,8 +2444,8 @@ P = \frac{1}{\binom{6}{3}} = \frac{1}{\frac{6!}{3!3!}} = \frac{3!3!}{6!} = \frac
 </ul>
 </div>
 </div>
-<div id="outline-container-org71a23eb" class="outline-4">
-<h4 id="org71a23eb"><span class="section-number-4">2.3.28.</span> 解法二:条件概率法</h4>
+<div id="outline-container-org9b290cf" class="outline-4">
+<h4 id="org9b290cf"><span class="section-number-4">2.3.28.</span> 解法二:条件概率法</h4>
 <div class="outline-text-4" id="text-2-3-28">
 <ul class="org-ul">
 <li>分步计算匹配概率:
@@ -2434,24 +2464,24 @@ P = \frac{1}{\binom{6}{3}} = \frac{1}{\frac{6!}{3!3!}} = \frac{3!3!}{6!} = \frac
 </ul>
 </div>
 </div>
-<div id="outline-container-orgc514724" class="outline-4">
-<h4 id="orgc514724"><span class="section-number-4">2.3.29.</span> Coins and dice</h4>
+<div id="outline-container-org6cc0ef7" class="outline-4">
+<h4 id="org6cc0ef7"><span class="section-number-4">2.3.29.</span> Coins and dice</h4>
 <div class="outline-text-4" id="text-2-3-29">
 <ul class="org-ul">
 <li>概率问题中总数存在投掷硬币和骰子的问题,这里我们列举几个</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org8b0fa10" class="outline-4">
-<h4 id="org8b0fa10"><span class="section-number-4">2.3.30.</span> Example 1(One of each number)</h4>
+<div id="outline-container-orgbb20876" class="outline-4">
+<h4 id="orgbb20876"><span class="section-number-4">2.3.30.</span> Example 1(One of each number)</h4>
 <div class="outline-text-4" id="text-2-3-30">
 <ul class="org-ul">
 <li>投掷六枚骰子,求恰好出现数字1至6各一次的概率?</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orga452577" class="outline-4">
-<h4 id="orga452577"><span class="section-number-4">2.3.31.</span> 解法一:排列计数法</h4>
+<div id="outline-container-org09595bd" class="outline-4">
+<h4 id="org09595bd"><span class="section-number-4">2.3.31.</span> 解法一:排列计数法</h4>
 <div class="outline-text-4" id="text-2-3-31">
 <ul class="org-ul">
 <li><b><b>总样本空间</b></b>:骰子有序投掷时,每个骰子有6种可能结果,总样本数为 \(6^6\).</li>
@@ -2466,8 +2496,8 @@ P = \frac{6!}{6^6} = \frac{720}{46656} \approx 0.015 \tag{2.35}
 </ul>
 </div>
 </div>
-<div id="outline-container-org1b25f4a" class="outline-4">
-<h4 id="org1b25f4a"><span class="section-number-4">2.3.32.</span> 解法二:序贯概率乘法原理**</h4>
+<div id="outline-container-org0a1522d" class="outline-4">
+<h4 id="org0a1522d"><span class="section-number-4">2.3.32.</span> 解法二:序贯概率乘法原理**</h4>
 <div class="outline-text-4" id="text-2-3-32">
 <ul class="org-ul">
 <li>假设依次投掷六枚骰子,要求每次新增不重复数字:
@@ -2488,16 +2518,16 @@ P = 1 \times \frac{5}{6} \times \frac{4}{6} \times \frac{3}{6} \times \frac{2}{6
 </ul>
 </div>
 </div>
-<div id="outline-container-org6e5c23e" class="outline-4">
-<h4 id="org6e5c23e"><span class="section-number-4">2.3.33.</span> Example 2(Three pairs)</h4>
+<div id="outline-container-orgbc4055c" class="outline-4">
+<h4 id="orgbc4055c"><span class="section-number-4">2.3.33.</span> Example 2(Three pairs)</h4>
 <div class="outline-text-4" id="text-2-3-33">
 <ul class="org-ul">
 <li>投掷六枚骰子,求恰好出现**三组相同点数对**(即三个不同数字各出现两次)的概率?</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org1af5f12" class="outline-4">
-<h4 id="org1af5f12"><span class="section-number-4">2.3.34.</span> 解法:有序样本空间计数法</h4>
+<div id="outline-container-org1599f13" class="outline-4">
+<h4 id="org1599f13"><span class="section-number-4">2.3.34.</span> 解法:有序样本空间计数法</h4>
 <div class="outline-text-4" id="text-2-3-34">
 <ul class="org-ul">
 <li><b><b>总样本空间</b></b></li>
@@ -2547,16 +2577,16 @@ p = \frac{\binom{6}{3} \cdot \binom{6}{2} \cdot \binom{4}{2} \cdot \binom{2}{2}}
 </ul>
 </div>
 </div>
-<div id="outline-container-org893f56b" class="outline-4">
-<h4 id="org893f56b"><span class="section-number-4">2.3.35.</span> Example 3(Five coin flips)</h4>
+<div id="outline-container-org6944e4c" class="outline-4">
+<h4 id="org6944e4c"><span class="section-number-4">2.3.35.</span> Example 3(Five coin flips)</h4>
 <div class="outline-text-4" id="text-2-3-35">
 <ul class="org-ul">
 <li>一枚硬币连续抛掷五次.求出现不同正面数(0至5次)的概率分布.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org2e25dfb" class="outline-4">
-<h4 id="org2e25dfb"><span class="section-number-4">2.3.36.</span> 解法:有序样本空间计数法**</h4>
+<div id="outline-container-orgc357e21" class="outline-4">
+<h4 id="orgc357e21"><span class="section-number-4">2.3.36.</span> 解法:有序样本空间计数法**</h4>
 <div class="outline-text-4" id="text-2-3-36">
 <ul class="org-ul">
 <li><b><b>总样本空间</b></b>  每次抛掷有2种可能结果(正面H或反面T),五次抛掷的总可能结果数为:  2^5 = 32</li>
@@ -2593,8 +2623,8 @@ P(3) &= \frac{10}{32}, \quad &P(4) &= \frac{5}{32}, \quad &P(5) &= \frac{1}{32} 
 </ul>
 </div>
 </div>
-<div id="outline-container-orgeaca509" class="outline-4">
-<h4 id="orgeaca509"><span class="section-number-4">2.3.37.</span> Cards</h4>
+<div id="outline-container-org2106094" class="outline-4">
+<h4 id="org2106094"><span class="section-number-4">2.3.37.</span> Cards</h4>
 <div class="outline-text-4" id="text-2-3-37">
 <ul class="org-ul">
 <li>在第一章中(尤其是习题1.10),我们已对纸牌组合计数进行了大量讨论,部分结论将延续至本节应用.如多次
@@ -2603,8 +2633,8 @@ P(3) &= \frac{10}{32}, \quad &P(4) &= \frac{5}{32}, \quad &P(5) &= \frac{1}{32} 
 </ul>
 </div>
 </div>
-<div id="outline-container-org30f44d6" class="outline-4">
-<h4 id="org30f44d6"><span class="section-number-4">2.3.38.</span> Example 1(Royal flush from seven cards)</h4>
+<div id="outline-container-org624d9ee" class="outline-4">
+<h4 id="org624d9ee"><span class="section-number-4">2.3.38.</span> Example 1(Royal flush from seven cards)</h4>
 <div class="outline-text-4" id="text-2-3-38">
 <ul class="org-ul">
 <li>在扑克的某些变体中,玩家会获得七张牌(通过不同方式),并需从中组成最佳的五张牌手牌.求能组成皇家同
@@ -2612,8 +2642,8 @@ P(3) &= \frac{10}{32}, \quad &P(4) &= \frac{5}{32}, \quad &P(5) &= \frac{1}{32} 
 </ul>
 </div>
 </div>
-<div id="outline-container-orgcdc350e" class="outline-4">
-<h4 id="orgcdc350e"><span class="section-number-4">2.3.39.</span> 解法:组合计数法**</h4>
+<div id="outline-container-org7e67ee6" class="outline-4">
+<h4 id="org7e67ee6"><span class="section-number-4">2.3.39.</span> 解法:组合计数法**</h4>
 <div class="outline-text-4" id="text-2-3-39">
 <ul class="org-ul">
 <li><b><b>总样本空间</b></b>  从52张牌中随机抽取7张的组合数为:   \(\binom{52}{7} = 133,784,560\)</li>
@@ -2655,8 +2685,8 @@ p_5 = \frac{4}{\binom{52}{5}} = \frac{4}{2,598,960} \approx 0.00015\%
 </ul>
 </div>
 </div>
-<div id="outline-container-org5fabfa8" class="outline-4">
-<h4 id="org5fabfa8"><span class="section-number-4">2.3.40.</span> Example 2 (Suit full hourse)</h4>
+<div id="outline-container-org631ad0c" class="outline-4">
+<h4 id="org631ad0c"><span class="section-number-4">2.3.40.</span> Example 2 (Suit full hourse)</h4>
 <div class="outline-text-4" id="text-2-3-40">
 <ul class="org-ul">
 <li>在五张牌的扑克手牌中,求出现花色满堂红(即三张同花色牌与两张另一花色牌组合)的概率?需注意:此牌型
@@ -2665,8 +2695,8 @@ p_5 = \frac{4}{\binom{52}{5}} = \frac{4}{2,598,960} \approx 0.00015\%
 </ul>
 </div>
 </div>
-<div id="outline-container-org761f326" class="outline-4">
-<h4 id="org761f326"><span class="section-number-4">2.3.41.</span> Solution</h4>
+<div id="outline-container-org1d58857" class="outline-4">
+<h4 id="org1d58857"><span class="section-number-4">2.3.41.</span> Solution</h4>
 <div class="outline-text-4" id="text-2-3-41">
 <ul class="org-ul">
 <li>花色满堂红是要求花色一样,数组无所谓,所以获取方式如下:
@@ -2684,8 +2714,8 @@ p_5 = \frac{4}{\binom{52}{5}} = \frac{4}{2,598,960} \approx 0.00015\%
 </ul>
 </div>
 </div>
-<div id="outline-container-orgc809604" class="outline-4">
-<h4 id="orgc809604"><span class="section-number-4">2.3.42.</span> 真正的满堂红</h4>
+<div id="outline-container-org7298b84" class="outline-4">
+<h4 id="org7298b84"><span class="section-number-4">2.3.42.</span> 真正的满堂红</h4>
 <div class="outline-text-4" id="text-2-3-42">
 <ul class="org-ul">
 <li><p>
@@ -2704,8 +2734,8 @@ p_5 = \frac{4}{\binom{52}{5}} = \frac{4}{2,598,960} \approx 0.00015\%
 </ul>
 </div>
 </div>
-<div id="outline-container-org0ffbd67" class="outline-4">
-<h4 id="org0ffbd67"><span class="section-number-4">2.3.43.</span> Example 3 (Only two suits)</h4>
+<div id="outline-container-orgc9d0173" class="outline-4">
+<h4 id="orgc9d0173"><span class="section-number-4">2.3.43.</span> Example 3 (Only two suits)</h4>
 <div class="outline-text-4" id="text-2-3-43">
 <ul class="org-ul">
 <li>求五张扑克手牌中所有牌**至多属于两种花色**的概率(单一花色也符合此条件).需注意:
@@ -2716,8 +2746,8 @@ p_5 = \frac{4}{\binom{52}{5}} = \frac{4}{2,598,960} \approx 0.00015\%
 </ul>
 </div>
 </div>
-<div id="outline-container-orgfb8ff66" class="outline-4">
-<h4 id="orgfb8ff66"><span class="section-number-4">2.3.44.</span> 解法一:</h4>
+<div id="outline-container-org334763f" class="outline-4">
+<h4 id="org334763f"><span class="section-number-4">2.3.44.</span> 解法一:</h4>
 <div class="outline-text-4" id="text-2-3-44">
 <ul class="org-ul">
 <li>如果出现两种花色,有 \(\binom{4}{2} = 6\) 种选择方式</li>
@@ -2752,8 +2782,8 @@ p = \frac{384,384}{2,598,960} \approx 14.8\% \tag{2.43}
 </ul>
 </div>
 </div>
-<div id="outline-container-org1a773b9" class="outline-4">
-<h4 id="org1a773b9"><span class="section-number-4">2.3.45.</span> 解法二</h4>
+<div id="outline-container-orgbfe2de3" class="outline-4">
+<h4 id="orgbfe2de3"><span class="section-number-4">2.3.45.</span> 解法二</h4>
 <div class="outline-text-4" id="text-2-3-45">
 <ul class="org-ul">
 <li>我们可以通过三种情况来分析"至多两种花色"的牌型:
@@ -2779,8 +2809,8 @@ p = \frac{384,384}{2,598,960} \approx 14.8\% \tag{2.43}
 </div>
 </div>
 </div>
-<div id="outline-container-orgc9b9ea3" class="outline-3">
-<h3 id="orgc9b9ea3"><span class="section-number-3">2.4.</span> Four classic problems</h3>
+<div id="outline-container-org00ce5cd" class="outline-3">
+<h3 id="org00ce5cd"><span class="section-number-3">2.4.</span> Four classic problems</h3>
 <div class="outline-text-3" id="text-2-4">
 <ul class="org-ul">
 <li>现在我们来看看四个经典的概率问题.如果没有讨论"生日问题"和"游戏节目问题",任何一本关于概率的书都算
@@ -2788,8 +2818,8 @@ p = \frac{384,384}{2,598,960} \approx 14.8\% \tag{2.43}
 题的答案可能一开始看起来有些违反直觉,但如果你花足够的时间思考,它们最终是合乎逻辑的.</li>
 </ul>
 </div>
-<div id="outline-container-org827bc57" class="outline-4">
-<h4 id="org827bc57"><span class="section-number-4">2.4.1.</span> The Birthday Problem</h4>
+<div id="outline-container-org3594a41" class="outline-4">
+<h4 id="org3594a41"><span class="section-number-4">2.4.1.</span> The Birthday Problem</h4>
 <div class="outline-text-4" id="text-2-4-1">
 <ul class="org-ul">
 <li>我们首先介绍"生日问题".除了这个问题本身非常有趣之外,它的结果出乎意料,甚至可以让你在派对上利用对
@@ -2843,8 +2873,8 @@ P_{\text{no}}^{(22)} \approx 0.524, \quad P_{\text{yes}}^{(22)} = 1 - 0.524 = 0.
 </ul>
 </div>
 </div>
-<div id="outline-container-orga011dbe" class="outline-4">
-<h4 id="orga011dbe"><span class="section-number-4">2.4.2.</span> The Game-Show Problem</h4>
+<div id="outline-container-org33e9afc" class="outline-4">
+<h4 id="org33e9afc"><span class="section-number-4">2.4.2.</span> The Game-Show Problem</h4>
 <div class="outline-text-4" id="text-2-4-2">
 <ul class="org-ul">
 <li>我们现在来讨论游戏节目问题.除了这个问题有多种常见的错误解法外,这个问题还有着人们热烈争论这些错误
@@ -2917,8 +2947,8 @@ P_{\text{no}}^{(22)} \approx 0.524, \quad P_{\text{yes}}^{(22)} = 1 - 0.524 = 0.
 </ul>
 </div>
 </div>
-<div id="outline-container-orgae28e96" class="outline-4">
-<h4 id="orgae28e96"><span class="section-number-4">2.4.3.</span> The Prosecutor's Fallacy</h4>
+<div id="outline-container-orgb3e48e4" class="outline-4">
+<h4 id="orgb3e48e4"><span class="section-number-4">2.4.3.</span> The Prosecutor's Fallacy</h4>
 <div class="outline-text-4" id="text-2-4-3">
 <ul class="org-ul">
 <li>我们现在呈现概率学中一个最经典的问题/悖论之一.这一问题之所以经典,很大程度上是因为它与现实世界的紧
@@ -2930,7 +2960,7 @@ P_{\text{no}}^{(22)} \approx 0.524, \quad P_{\text{yes}}^{(22)} = 1 - 0.524 = 0.
 <li><p>
 在庭审过程中,检察官告诉陪审团,
 </p>
-<pre class="example" id="orgb7d3126">
+<pre class="example" id="org1dec37c">
 由于每1万人中只有1人符合描述(这是一个真实的陈述),一个无辜的人符合描述的概率极低(这一点也是真
 实的);因此,被告是无辜的可能性极低.
 </pre></li>
@@ -2973,7 +3003,7 @@ P_{\text{no}}^{(22)} \approx 0.524, \quad P_{\text{yes}}^{(22)} = 1 - 0.524 = 0.
 粗略的图示;面积的比例并不完全准确.)大椭圆代表999,999个无辜的人,而小椭圆代表符合描述的100人.
 </p>
 
-<div id="org035fb50" class="figure">
+<div id="orgcb5a008" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/peb/2-10.png" alt="2-10.png" />
 </p>
 <p><span class="figure-number">Figure 15: </span>peb/2-10.png</p>
@@ -2982,7 +3012,7 @@ P_{\text{no}}^{(22)} \approx 0.524, \quad P_{\text{yes}}^{(22)} = 1 - 0.524 = 0.
 图中有三种基本类型的人:A = 999,900个无辜但不符合描述的人,B = 99个无辜且符合描述的人,以及C = 1个
 符合描述的有罪者.(第四种可能性&#x2013;有罪但不符合描述的人&#x2013;不存在.)与上述讨论相关的两个条件概率如下:
 </p>
-<pre class="example" id="orge296c3a">
+<pre class="example" id="org137cca5">
 P(D|I) = B / (B + A) = 99 / 999,999,
 P(I|D) = B / (B + C) = 99 / 100.
 </pre></li>
@@ -2997,8 +3027,8 @@ P(I|D) = B / (B + C) = 99 / 100.
 </ul>
 </div>
 </div>
-<div id="outline-container-orgc721a3a" class="outline-4">
-<h4 id="orgc721a3a"><span class="section-number-4">2.4.4.</span> The Boy/Girl Problem</h4>
+<div id="outline-container-org94a2200" class="outline-4">
+<h4 id="org94a2200"><span class="section-number-4">2.4.4.</span> The Boy/Girl Problem</h4>
 <div class="outline-text-4" id="text-2-4-4">
 <ul class="org-ul">
 <li>众所周知的"男孩/女孩问题"可以用许多不同的方式表述,并且不同的表述可能会产生相同或不同的答案.以下列
@@ -3017,7 +3047,7 @@ P(I|D) = B / (B + C) = 99 / 100.
 </ul>
 </div>
 <ol class="org-ol">
-<li><a id="org6e055ea"></a>问题1<br />
+<li><a id="org7d306f2"></a>问题1<br />
 <div class="outline-text-5" id="text-2-4-4-1">
 <ul class="org-ul">
 <li><p>
@@ -3025,7 +3055,7 @@ P(I|D) = B / (B + C) = 99 / 100.
 关于男孩的信息.用B表示男孩,G表示女孩,在本问题(a)的场景中,家庭的可能类型(在父母给出关于男孩的信
 息之前)如下,且每种类型的概率为1/4:
 </p>
-<pre class="example" id="org01fcb0d">
+<pre class="example" id="org8ceaab1">
 BB BG GB GG
 </pre></li>
 <li>在每对字母中,第一个字母表示大的孩子,第二个字母表示小的孩子.</li>
@@ -3041,13 +3071,13 @@ BB BG GB GG
 </ul>
 </div>
 </li>
-<li><a id="org986feb7"></a>问题2<br />
+<li><a id="org747a095"></a>问题2<br />
 <div class="outline-text-5" id="text-2-4-4-2">
 <ul class="org-ul">
 <li><p>
 (2) 与(1)部分类似,在考虑有关男孩的信息之前,孩子有四种等可能的组合
 </p>
-<pre class="example" id="org154c1a8">
+<pre class="example" id="orgc1e9f72">
 BB BG GB GG
 </pre></li>
 <li>但一旦父母告诉你大的孩子是男孩,那么GB和GG情况被排除;记住,每对字母中的第一个字母对应大的孩子.所
@@ -3056,7 +3086,7 @@ BB BG GB GG
 </ul>
 </div>
 </li>
-<li><a id="org78692c5"></a>问题3<br />
+<li><a id="org15cb0e6"></a>问题3<br />
 <div class="outline-text-5" id="text-2-4-4-3">
 <ul class="org-ul">
 <li>这一版本的问题稍微复杂一些,因为在考虑有关男孩的信息之前,现在有八种等可能的情况,而不是只有四种.
@@ -3074,8 +3104,8 @@ bB bG gB gG</li>
 </ol>
 </div>
 </div>
-<div id="outline-container-org846bceb" class="outline-3">
-<h3 id="org846bceb"><span class="section-number-3">2.5.</span> Bayes' theorem</h3>
+<div id="outline-container-org71f5586" class="outline-3">
+<h3 id="org71f5586"><span class="section-number-3">2.5.</span> Bayes' theorem</h3>
 <div class="outline-text-3" id="text-2-5">
 <ul class="org-ul">
 <li>我们现在介绍贝叶斯定理(Bayes' theorem),它给出了某些条件概率之间的关系.这个定理与我们本章讨论的
@@ -3147,8 +3177,8 @@ P(Z) &= \sum_{i} P(Z \text{ and } A_i) \notag \\
 <li>还要注意,定理三种形式(2.51,2.52,2.53)右侧的分子都等于由方程 (2.54) 得出的 P(A and Z) 或 P(A_k and Z).</li>
 </ul>
 </div>
-<div id="outline-container-org8d084ec" class="outline-4">
-<h4 id="org8d084ec"><span class="section-number-4">2.5.1.</span> Example(False positive)</h4>
+<div id="outline-container-orge96b2f0" class="outline-4">
+<h4 id="orge96b2f0"><span class="section-number-4">2.5.1.</span> Example(False positive)</h4>
 <div class="outline-text-4" id="text-2-5-1">
 <ul class="org-ul">
 <li>一家医院对患者进行测试,以判断其是否患有某种疾病.假设我们知道以下三件事情:
@@ -3169,8 +3199,8 @@ P(Z) &= \sum_{i} P(Z \text{ and } A_i) \notag \\
 </ul>
 </div>
 </div>
-<div id="outline-container-org082d3a7" class="outline-4">
-<h4 id="org082d3a7"><span class="section-number-4">2.5.2.</span> First Solution</h4>
+<div id="outline-container-org1e6e328" class="outline-4">
+<h4 id="org1e6e328"><span class="section-number-4">2.5.2.</span> First Solution</h4>
 <div class="outline-text-4" id="text-2-5-2">
 <ul class="org-ul">
 <li>分析一个大样本的人群测试结果
@@ -3185,7 +3215,7 @@ P(Z) &= \sum_{i} P(Z \text{ and } A_i) \notag \\
 图(图 2-11).已知的三个条件分别对应概率树中的三次分支:
 </p>
 
-<div id="orga9f9684" class="figure">
+<div id="orgbd477a1" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/peb/2-11.png" alt="2-11.png" />
 </p>
 <p><span class="figure-number">Figure 16: </span>peb/2-11.png</p>
@@ -3215,8 +3245,8 @@ p = \frac{(0.95)(0.02)}{(0.95)(0.02) + (0.10)(0.98)} = 0.16
 </ul>
 </div>
 </div>
-<div id="outline-container-org6deb4e7" class="outline-4">
-<h4 id="org6deb4e7"><span class="section-number-4">2.5.3.</span> Second Solution</h4>
+<div id="outline-container-org1b8ce14" class="outline-4">
+<h4 id="org1b8ce14"><span class="section-number-4">2.5.3.</span> Second Solution</h4>
 <div class="outline-text-4" id="text-2-5-3">
 <ul class="org-ul">
 <li>我们将使用方程 (2.52) 中的贝叶斯定理"显式形式",它是方程 (2.53) 中"一般形式"的一个特例.使用方程 (2.52) 的符号,
@@ -3224,7 +3254,7 @@ p = \frac{(0.95)(0.02)}{(0.95)(0.02) + (0.10)(0.98)} = 0.16
 <li><p>
 我们有:
 </p>
-<pre class="example" id="org833cd1c">
+<pre class="example" id="org1023f1f">
 A = 患病
 ′A = 未患病
 Z = 检测阳性 (2.59)
@@ -3232,7 +3262,7 @@ Z = 检测阳性 (2.59)
 <li><p>
 我们的目标是计算 P(A|Z),即给定检测呈阳性的条件下,患病的概率.根据给出的三点事实,我们知道:
 </p>
-<pre class="example" id="org4362867">
+<pre class="example" id="orgc0245a4">
 P(A) = 0.02
 P(Z|A) = 0.95
 P(Z|′A) = 0.10 (2.60)
@@ -3244,7 +3274,7 @@ P(Z|′A) = 0.10 (2.60)
 同组成部分如何对应图中不同区域.
 </p>
 
-<div id="orgc7a26c5" class="figure">
+<div id="org02f2143" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/peb/2-14.png" alt="2-14.png" />
 </p>
 <p><span class="figure-number">Figure 17: </span>peb/2-14.png</p>
@@ -3253,7 +3283,7 @@ P(Z|′A) = 0.10 (2.60)
 图2-12 以图示方式展示了图 2-11 中的概率树
 </p>
 
-<div id="orgd555cc8" class="figure">
+<div id="org42ab7ab" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/peb/2-12.png" alt="2-12.png" />
 </p>
 <p><span class="figure-number">Figure 18: </span>peb/2-12.png</p>
@@ -3286,7 +3316,7 @@ P(Z|′A) = 0.10 (2.60)
 与图 2-12 类似;参见图 2-13,
 </p>
 
-<div id="org6be6928" class="figure">
+<div id="org3dca533" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/peb/2-13.png" alt="2-13.png" />
 </p>
 <p><span class="figure-number">Figure 19: </span>peb/2-13.png</p>
@@ -3309,7 +3339,7 @@ P(\text{walk|guitar}) &= \frac{P(\text{walk and guitar})}{P(\text{guitar})} \not
 我们需要给出步行,骑自行车,开车或坐公交的百分比.(实际上,由于这些百分比必须加起来为 100%,这里只有三个独立的信息.)
 </p>
 
-<div id="orgdd0a896" class="figure">
+<div id="org07a68b5" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/peb/2-13.png" alt="2-13.png" />
 </p>
 <p><span class="figure-number">Figure 20: </span>peb/2-13.png</p>
@@ -3331,7 +3361,7 @@ P(\text{walk|guitar}) &= \frac{P(\text{walk and guitar})}{P(\text{guitar})} \not
 解贝叶斯定理总是更直观,因此当您思考贝叶斯定理时,您可能会想到图 2-14.
 </p>
 
-<div id="orgf9f06fe" class="figure">
+<div id="org8e29305" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/peb/2-14.png" alt="2-14.png" />
 </p>
 <p><span class="figure-number">Figure 21: </span>peb/2-14.png</p>
@@ -3341,8 +3371,8 @@ P(\text{walk|guitar}) &= \frac{P(\text{walk and guitar})}{P(\text{guitar})} \not
 </div>
 </div>
 </div>
-<div id="outline-container-org1360454" class="outline-3">
-<h3 id="org1360454"><span class="section-number-3">2.6.</span> Stirling's formula</h3>
+<div id="outline-container-orgc309207" class="outline-3">
+<h3 id="orgc309207"><span class="section-number-3">2.6.</span> Stirling's formula</h3>
 <div class="outline-text-3" id="text-2-6">
 <ul class="org-ul">
 <li>斯特林公式为 n! 提供了一个有效的近似,适用于较大的n.其核心意义在于:
@@ -3364,7 +3394,7 @@ n! \approx n^n e^{-n} \sqrt{2\pi n} \quad \text{(Stirling's formula)} \tag{2.64}
 表2-6
 </p>
 
-<div id="orga017d73" class="figure">
+<div id="org2b56af3" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/peb/t2-6.png" alt="t2-6.png" />
 </p>
 <p><span class="figure-number">Figure 22: </span>peb/t2-6.png</p>
@@ -3389,8 +3419,8 @@ n! \approx n^n e^{-n} \sqrt{2\pi n} \quad \text{(Stirling's formula)} \tag{2.64}
 </ul></li>
 </ul>
 </div>
-<div id="outline-container-org747cb0a" class="outline-4">
-<h4 id="org747cb0a"><span class="section-number-4">2.6.1.</span> Exampe(50 out of 100)</h4>
+<div id="outline-container-orgf1404d9" class="outline-4">
+<h4 id="orgf1404d9"><span class="section-number-4">2.6.1.</span> Exampe(50 out of 100)</h4>
 <div class="outline-text-4" id="text-2-6-1">
 <ul class="org-ul">
 <li>问题:一枚硬币抛掷 100 次,求 <b>恰好出现 50 次正面</b> 的概率.</li>
@@ -3463,8 +3493,8 @@ P(50) ≈ 8% 的结果推断出 P(5000) ≈ 0.8%.</li>
 </div>
 </div>
 </div>
-<div id="outline-container-orgb1534d2" class="outline-2">
-<h2 id="orgb1534d2"><span class="section-number-2">3.</span> Chapter 3: Expectation values</h2>
+<div id="outline-container-org5d1887f" class="outline-2">
+<h2 id="org5d1887f"><span class="section-number-2">3.</span> Chapter 3: Expectation values</h2>
 <div class="outline-text-2" id="text-3">
 <ul class="org-ul">
 <li>我们将在本章开篇于第3.1节引入一个重要的概念&#x2013;期望值.粗略地说,期望值就是一个花哨的(用来描述)"平
@@ -3478,8 +3508,8 @@ P(50) ≈ 8% 的结果推断出 P(5000) ≈ 0.8%.</li>
 较强,在初次阅读时可以略过</li>
 </ul>
 </div>
-<div id="outline-container-org28c14bb" class="outline-3">
-<h3 id="org28c14bb"><span class="section-number-3">3.1.</span> Expectation value</h3>
+<div id="outline-container-org4d7ece7" class="outline-3">
+<h3 id="org4d7ece7"><span class="section-number-3">3.1.</span> Expectation value</h3>
 <div class="outline-text-3" id="text-3-1">
 <ul class="org-ul">
 <li>考虑一个可以以特定概率取特定数值的变量.这样的变量恰当地被称为随机变量 (Random Variable).例如,
@@ -3591,23 +3621,23 @@ E(X) = p_1 x_1 + p_x + x_2 + \cdot\cdot\cdot + p_m x_m \tag{3.4}
 章讨论这些情况),那么公式(3.4)中的求和将被积分取代.</li>
 </ul>
 </div>
-<div id="outline-container-org8b6fd56" class="outline-4">
-<h4 id="org8b6fd56"><span class="section-number-4">3.1.1.</span> Example 1( Expected number of Heads)</h4>
+<div id="outline-container-orgef6f123" class="outline-4">
+<h4 id="orgef6f123"><span class="section-number-4">3.1.1.</span> Example 1( Expected number of Heads)</h4>
 <div class="outline-text-4" id="text-3-1-1">
 <ul class="org-ul">
 <li>如果你掷硬币四次,获得正面的期望值是多少?</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgc361be4" class="outline-4">
-<h4 id="orgc361be4"><span class="section-number-4">3.1.2.</span> Solution</h4>
+<div id="outline-container-org1655b14" class="outline-4">
+<h4 id="org1655b14"><span class="section-number-4">3.1.2.</span> Solution</h4>
 <div class="outline-text-4" id="text-3-1-2">
 <ul class="org-ul">
 <li>不用计算,我们就知道获得正面的期望值是2,因为平均来说,一半的硬币是正面,另一半是反面.</li>
 <li><p>
 我们也可以使用公式(3.4)来解决这个问题.一共有16种可能
 </p>
-<pre class="example" id="orgacfc831">
+<pre class="example" id="org42cdad6">
 'HHHH', 'HHHT', 'HHTH', 'HHTT',
 'HTHH', 'HTHT', 'HTTH', 'HTTT',
 'THHH', 'THHT', 'THTH', 'THTT',
@@ -3630,16 +3660,16 @@ E(X) = p_1 x_1 + p_x + x_2 + \cdot\cdot\cdot + p_m x_m \tag{3.4}
 </ul>
 </div>
 </div>
-<div id="outline-container-org2f092f7" class="outline-4">
-<h4 id="org2f092f7"><span class="section-number-4">3.1.3.</span> Example 2 (Flip until Heads)</h4>
+<div id="outline-container-org95be41a" class="outline-4">
+<h4 id="org95be41a"><span class="section-number-4">3.1.3.</span> Example 2 (Flip until Heads)</h4>
 <div class="outline-text-4" id="text-3-1-3">
 <ul class="org-ul">
 <li>如果你扔硬币,直到你得到head,那么扔硬币的期望次数是多少次</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org1d5632e" class="outline-4">
-<h4 id="org1d5632e"><span class="section-number-4">3.1.4.</span> Solution</h4>
+<div id="outline-container-org4e2715d" class="outline-4">
+<h4 id="org4e2715d"><span class="section-number-4">3.1.4.</span> Solution</h4>
 <div class="outline-text-4" id="text-3-1-4">
 <ul class="org-ul">
 <li>你有二分之一的概率第一次就掷出正面,此时你仅掷了一次硬币.</li>
@@ -3729,8 +3759,8 @@ P(X=x \text{ and } Y=y) = P(X=x) \cdot P(Y=y)   \notag
 <hr />
 </div>
 </div>
-<div id="outline-container-org4db3279" class="outline-4">
-<h4 id="org4db3279"><span class="section-number-4">3.1.5.</span> Example</h4>
+<div id="outline-container-org495c664" class="outline-4">
+<h4 id="org495c664"><span class="section-number-4">3.1.5.</span> Example</h4>
 <div class="outline-text-4" id="text-3-1-5">
 <ul class="org-ul">
 <li>让随机变量(X) 取值 1 和 2,且具有相等的概率 (1/2);让随机变量 (Y) 取值 1,2 和 3,且具有相等的概率
@@ -3738,8 +3768,8 @@ P(X=x \text{ and } Y=y) = P(X=x) \cdot P(Y=y)   \notag
 </ul>
 </div>
 </div>
-<div id="outline-container-orgcd50d80" class="outline-4">
-<h4 id="orgcd50d80"><span class="section-number-4">3.1.6.</span> Solution</h4>
+<div id="outline-container-org9fa3b56" class="outline-4">
+<h4 id="org9fa3b56"><span class="section-number-4">3.1.6.</span> Solution</h4>
 <div class="outline-text-4" id="text-3-1-6">
 <ul class="org-ul">
 <li>首先,我们快速得出 (E(X)=1.5) 和 (E(Y)=2).</li>
@@ -3804,8 +3834,8 @@ E(X_1 + X_2 + \cdots + X_n) = nE(X). \tag{3.15}
 <hr />
 </div>
 </div>
-<div id="outline-container-org7cd4001" class="outline-4">
-<h4 id="org7cd4001"><span class="section-number-4">3.1.7.</span> 注解</h4>
+<div id="outline-container-org784713c" class="outline-4">
+<h4 id="org784713c"><span class="section-number-4">3.1.7.</span> 注解</h4>
 <div class="outline-text-4" id="text-3-1-7">
 <ul class="org-ul">
 <li>关于记法:由于所有的 \(X_i\) 都来自同一个分布(即它们同分布),很容易想到用同一个字母(比如 \(X\))替换
@@ -3881,8 +3911,8 @@ E(XY) &= \sum_{i=1}^{n_X} \sum_{j=1}^{n_Y} P(x_i, y_j) \cdot x_i y_j \notag \\
 <hr />
 </div>
 </div>
-<div id="outline-container-orgf031b1f" class="outline-4">
-<h4 id="orgf031b1f"><span class="section-number-4">3.1.8.</span> Example</h4>
+<div id="outline-container-org3e396d1" class="outline-4">
+<h4 id="org3e396d1"><span class="section-number-4">3.1.8.</span> Example</h4>
 <div class="outline-text-4" id="text-3-1-8">
 <ul class="org-ul">
 <li>令 \(X\) 表示一枚硬币抛掷的结果,我们规定:
@@ -3941,8 +3971,8 @@ E(XY) &= \sum_{i=1}^{n_X} \sum_{j=1}^{n_Y} P(x_i, y_j) \cdot x_i y_j \notag \\
 </div>
 </div>
 </div>
-<div id="outline-container-org55e3cec" class="outline-3">
-<h3 id="org55e3cec"><span class="section-number-3">3.2.</span> Variance</h3>
+<div id="outline-container-org608c253" class="outline-3">
+<h3 id="org608c253"><span class="section-number-3">3.2.</span> Variance</h3>
 <div class="outline-text-3" id="text-3-2">
 <ul class="org-ul">
 <li>在上一节中,我们将期望值 \(E(X)\) 定义为随机变量 \(X\) 经过多次试验所获得的预期平均值.</li>
@@ -3974,8 +4004,8 @@ E(XY) &= \sum_{i=1}^{n_X} \sum_{j=1}^{n_Y} P(x_i, y_j) \cdot x_i y_j \notag \\
 </ul>
 <hr />
 </div>
-<div id="outline-container-org8e1bcfe" class="outline-4">
-<h4 id="org8e1bcfe"><span class="section-number-4">3.2.1.</span> Example 1 (Die roll)</h4>
+<div id="outline-container-org96a986c" class="outline-4">
+<h4 id="org96a986c"><span class="section-number-4">3.2.1.</span> Example 1 (Die roll)</h4>
 <div class="outline-text-4" id="text-3-2-1">
 <ul class="org-ul">
 <li><p>
@@ -3992,8 +4022,8 @@ E(XY) &= \sum_{i=1}^{n_X} \sum_{j=1}^{n_Y} P(x_i, y_j) \cdot x_i y_j \notag \\
 <hr />
 </div>
 </div>
-<div id="outline-container-orgc1e4666" class="outline-4">
-<h4 id="orgc1e4666"><span class="section-number-4">3.2.2.</span> Example 2 (Coin fip)</h4>
+<div id="outline-container-orge95666e" class="outline-4">
+<h4 id="orge95666e"><span class="section-number-4">3.2.2.</span> Example 2 (Coin fip)</h4>
 <div class="outline-text-4" id="text-3-2-2">
 <ul class="org-ul">
 <li><p>
@@ -4009,8 +4039,8 @@ E(XY) &= \sum_{i=1}^{n_X} \sum_{j=1}^{n_Y} P(x_i, y_j) \cdot x_i y_j \notag \\
 <hr />
 </div>
 </div>
-<div id="outline-container-orge7241d0" class="outline-4">
-<h4 id="orge7241d0"><span class="section-number-4">3.2.3.</span> Example(Biased coin)</h4>
+<div id="outline-container-org4e3f014" class="outline-4">
+<h4 id="org4e3f014"><span class="section-number-4">3.2.3.</span> Example(Biased coin)</h4>
 <div class="outline-text-4" id="text-3-2-3">
 <ul class="org-ul">
 <li>考虑一枚偏置硬币,出现正面的概率为 \(p\),出现反面的概率为 \(1 - p \equiv q\).如果我们再次将正面赋值为
@@ -4073,7 +4103,7 @@ E(X - \mu) = E(X) - E(\mu) = \mu - \mu = 0
 </ul>
 </div>
 <ol class="org-ol">
-<li><a id="orgf92a62f"></a>定理 3.3:两个独立随机变量和的方差<br />
+<li><a id="orgbe52f15"></a>定理 3.3:两个独立随机变量和的方差<br />
 <div class="outline-text-5" id="text-3-2-3-1">
 <ul class="org-ul">
 <li><p>
@@ -4085,7 +4115,7 @@ E(X - \mu) = E(X) - E(\mu) = \mu - \mu = 0
 </ul>
 </div>
 </li>
-<li><a id="org391545e"></a>定理证明<br />
+<li><a id="org54a0e16"></a>定理证明<br />
 <div class="outline-text-5" id="text-3-2-3-2">
 <ul class="org-ul">
 <li><p>
@@ -4113,8 +4143,8 @@ E\left[(X-\mu_X)(Y-\mu_Y)\right] &= E(X-\mu_X) \cdot E(Y-\mu_Y) \tag{3.27} \\
 </li>
 </ol>
 </div>
-<div id="outline-container-org1229f99" class="outline-4">
-<h4 id="org1229f99"><span class="section-number-4">3.2.4.</span> Example(Two conis)</h4>
+<div id="outline-container-org637729a" class="outline-4">
+<h4 id="org637729a"><span class="section-number-4">3.2.4.</span> Example(Two conis)</h4>
 <div class="outline-text-4" id="text-3-2-4">
 <ul class="org-ul">
 <li><b>独立硬币场景(正面例子):</b>:设随机变量 \(X\) 和 \(Y\) 分别表示两枚独立硬币的抛掷结果(正面赋值为 1,反面为 0).</li>
@@ -4241,7 +4271,7 @@ E(X+Y) = 0 \cdot \frac{1}{2} + 2 \cdot \frac{1}{2} = 1
 </ul>
 </div>
 <ol class="org-ol">
-<li><a id="org622e771"></a>独立同分布(i.i.d.)变量的特例<br />
+<li><a id="org811c7fc"></a>独立同分布(i.i.d.)变量的特例<br />
 <div class="outline-text-5" id="text-3-2-4-1">
 <ul class="org-ul">
 <li><p>
@@ -4255,7 +4285,7 @@ random variable的英文缩写),则公式(3.30)可简化为:
 </ul>
 </div>
 </li>
-<li><a id="orgebc51e5"></a>实际应用:抛硬币实验<br />
+<li><a id="org83ac59d"></a>实际应用:抛硬币实验<br />
 <div class="outline-text-5" id="text-3-2-4-2">
 <ul class="org-ul">
 <li>1. 标准硬币(p=0.5)当抛掷$n$次标准硬币时:
@@ -4277,7 +4307,7 @@ random variable的英文缩写),则公式(3.30)可简化为:
 </ul>
 </div>
 </li>
-<li><a id="orgff16bc4"></a>Remark: 随机变量求和与标量乘法的本质区别<br />
+<li><a id="orgaf693a2"></a>Remark: 随机变量求和与标量乘法的本质区别<br />
 <div class="outline-text-5" id="text-3-2-4-3">
 <ul class="org-ul">
 <li>如公式(3.15)后的注解所述,公式(3.32)中的随机变量之和 \(X_{1}+X_{2}+\cdots +X_{n}\) 与 \(nX\)(即单个随机变量乘以 \(n\))*具有本质区别*.
@@ -4330,7 +4360,7 @@ random variable的英文缩写),则公式(3.30)可简化为:
 </ul>
 </div>
 </li>
-<li><a id="org2e65bd3"></a>关于随机变量乘积的方差性质<br />
+<li><a id="org3fcd1c2"></a>关于随机变量乘积的方差性质<br />
 <div class="outline-text-5" id="text-3-2-4-4">
 <ul class="org-ul">
 <li>在讨论两个随机变量 \(X\) 与 \(Y\) 的乘积时,**即便二者相互独立**,方差运算也**不具备**与期望值公式(3.16)
@@ -4349,7 +4379,7 @@ random variable的英文缩写),则公式(3.30)可简化为:
 <li><p>
 换句话说就是:方差等于平方的期望值减去期望值的平方.
 </p>
-<pre class="example" id="orgb878a24">
+<pre class="example" id="org14702aa">
 The variance equals the expectation value of the square, minus the square of the
 expectation value
 </pre></li>
@@ -4372,7 +4402,7 @@ expectation value
 </ul>
 </div>
 </li>
-<li><a id="org3a4ec61"></a>Variance of a set of numbers<br />
+<li><a id="org8ee4cba"></a>Variance of a set of numbers<br />
 <div class="outline-text-5" id="text-3-2-4-5">
 <ul class="org-ul">
 <li>在上述关于方差的讨论中,式(3.19)的定义是基于一个具有给定概率分布的随机变量X.</li>
@@ -4424,8 +4454,8 @@ The variance of the set S is the average value of the square of the difference f
 </ol>
 </div>
 </div>
-<div id="outline-container-org5bc0574" class="outline-3">
-<h3 id="org5bc0574"><span class="section-number-3">3.3.</span> Standard deviation</h3>
+<div id="outline-container-org648fafb" class="outline-3">
+<h3 id="org648fafb"><span class="section-number-3">3.3.</span> Standard deviation</h3>
 <div class="outline-text-3" id="text-3-3">
 <ul class="org-ul">
 <li>随机变量(或等价地说,概率分布)的标准差(standard deviation)定义为方差的平方根:
@@ -4549,14 +4579,14 @@ n 次有偏硬币抛掷的标准差:正面值为 1(概率为p),反面值为0(概
 <hr />
 </div>
 <ol class="org-ol">
-<li><a id="org2163207"></a>Example<br />
+<li><a id="org546c3bb"></a>Example<br />
 <div class="outline-text-5" id="text-3-3-0-1">
 <ul class="org-ul">
 <li><p>
 图3.1 展示了标准差在概率分布图上叠加显示的四个示例.
 </p>
 
-<div id="org09db8f1" class="figure">
+<div id="org9143abc" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/peb/3-1.png" alt="3-1.png" />
 </p>
 <p><span class="figure-number">Figure 23: </span>peb/3-1.png</p>
@@ -4564,7 +4594,7 @@ n 次有偏硬币抛掷的标准差:正面值为 1(概率为p),反面值为0(概
 </ul>
 </div>
 </li>
-<li><a id="orgf8a2e34"></a>第一幅图(骰子投掷)<br />
+<li><a id="orga52b544"></a>第一幅图(骰子投掷)<br />
 <div class="outline-text-5" id="text-3-3-0-2">
 <ul class="org-ul">
 <li>骰子六个面的概率均为 1/6.</li>
@@ -4574,7 +4604,7 @@ n 次有偏硬币抛掷的标准差:正面值为 1(概率为p),反面值为0(概
 </ul>
 </div>
 </li>
-<li><a id="org7af4d12"></a>第二幅图(公平硬币抛掷)<br />
+<li><a id="orgee5f620"></a>第二幅图(公平硬币抛掷)<br />
 <div class="outline-text-5" id="text-3-3-0-3">
 <ul class="org-ul">
 <li>设正面=1,反面=0.公式 (3.48) 给出标准差 &sigma; = 1/2.</li>
@@ -4585,7 +4615,7 @@ n 次有偏硬币抛掷的标准差:正面值为 1(概率为p),反面值为0(概
 </ul>
 </div>
 </li>
-<li><a id="org9f23d97"></a>第三幅图(有偏硬币抛掷)<br />
+<li><a id="orga871f06"></a>第三幅图(有偏硬币抛掷)<br />
 <div class="outline-text-5" id="text-3-3-0-4">
 <ul class="org-ul">
 <li>设正面概率 p = 1/10,反面概率 q = 9/10.公式 (3.46)</li>
@@ -4595,7 +4625,7 @@ n 次有偏硬币抛掷的标准差:正面值为 1(概率为p),反面值为0(概
 </ul>
 </div>
 </li>
-<li><a id="orgbc8103d"></a>第四幅图(公平硬币多次抛掷)<br />
+<li><a id="org5dcdcf2"></a>第四幅图(公平硬币多次抛掷)<br />
 <div class="outline-text-5" id="text-3-3-0-5">
 <ul class="org-ul">
 <li><p>
@@ -4666,48 +4696,48 @@ n 次有偏硬币抛掷的标准差:正面值为 1(概率为p),反面值为0(概
 </li>
 </ol>
 </div>
-<div id="outline-container-org5970a92" class="outline-3">
-<h3 id="org5970a92"><span class="section-number-3">3.4.</span> Standard deviation of the mean</h3>
+<div id="outline-container-org47b18f8" class="outline-3">
+<h3 id="org47b18f8"><span class="section-number-3">3.4.</span> Standard deviation of the mean</h3>
 <div class="outline-text-3" id="text-3-4">
 <ul class="org-ul">
-<li>考虑图 3-1 中的第四个图，它展示了在 20 次公平掷硬币中出现正面的次数的概率分布以及标准差。
+<li>考虑图 3-1 中的第四个图,它展示了在 20 次公平掷硬币中出现正面的次数的概率分布以及标准差.
 <ul class="org-ul">
-<li>如果我们关心的不是 20 次掷硬币中正面的总次数，</li>
-<li>而是每次掷硬币中正面的平均次数（即在 20 次掷硬币中取平均值），情况会如何呢？例如，如果我们碰巧在
-20 次掷硬币中得到 12 次正面（从图中可以看出概率约为 12%），那么每次掷硬币中正面的平均次数可以通
-过将 12 除以 20 得到，计算结果为 12/20 = 0.6。</li>
+<li>如果我们关心的不是 20 次掷硬币中正面的总次数,</li>
+<li>而是每次掷硬币中正面的平均次数(即在 20 次掷硬币中取平均值),情况会如何呢?例如,如果我们碰巧在
+20 次掷硬币中得到 12 次正面(从图中可以看出概率约为 12%),那么每次掷硬币中正面的平均次数可以通
+过将 12 除以 20 得到,计算结果为 12/20 = 0.6.</li>
 </ul></li>
-<li>以同样的方式，为了获得每次掷硬币中正面的平均次数的完整概率分布，我们只需将图 3.1 中的点保持不变，但
-将 x 轴上的数值除以 20。
+<li>以同样的方式,为了获得每次掷硬币中正面的平均次数的完整概率分布,我们只需将图 3.1 中的点保持不变,但
+将 x 轴上的数值除以 20.
 <ul class="org-ul">
 <li><p>
-这就得到了图 3.2(a) 中展示的概率分布。
+这就得到了图 3.2(a) 中展示的概率分布.
 </p>
 
-<div id="org7ed9e2a" class="figure">
+<div id="orgeb9b3e7" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/peb/3-2.png" alt="3-2.png" />
 </p>
 <p><span class="figure-number">Figure 24: </span>peb/3-2.png</p>
 </div></li>
-<li>显然，每次掷硬币中正面平均为 0.5 是最有可能的平均值，其发生的概率约为 18%（与在 20 次掷硬币中出现
-10 次正面的概率相同）。</li>
+<li>显然,每次掷硬币中正面平均为 0.5 是最有可能的平均值,其发生的概率约为 18%(与在 20 次掷硬币中出现
+10 次正面的概率相同).</li>
 </ul></li>
 <li><p>
-在 n 次掷硬币中出现正面总次数的标准差为公式 (3.51) 中的结果 \(\sigma_{tot} = \sqrt{n}/2\) 因此，每次
+在 n 次掷硬币中出现正面总次数的标准差为公式 (3.51) 中的结果 \(\sigma_{tot} = \sqrt{n}/2\) 因此,每次
 掷硬币中正面平均次数的标准差为
 </p>
 \begin{equation}
 \sigma_{avg} = \frac{\sigma_{tot}}{n} = \frac{\sqrt{n}/2}{n} = \frac{1}{2\sqrt{n}}  \tag{3.52}
 \end{equation}</li>
-<li>如果 \(X_{tot}\) 表示 n 次投掷中正面的总次数，而 \(X_{avg}\) 表示每次投掷中正面的平均次数，那么有
-\(X_{avg} = \frac{X_tot}{n}\) 。由公式 (3.41) 可得 \(\sigma_{avg} = \frac{\sigma_{tot}}{n}\)</li>
-<li>同样地，在图 3.2(a) 中，x 轴上的某个跨度仅为图 3.1 中对应跨度的 1/n（其中 n = 20）。
+<li>如果 \(X_{tot}\) 表示 n 次投掷中正面的总次数,而 \(X_{avg}\) 表示每次投掷中正面的平均次数,那么有
+\(X_{avg} = \frac{X_tot}{n}\) .由公式 (3.41) 可得 \(\sigma_{avg} = \frac{\sigma_{tot}}{n}\)</li>
+<li>同样地,在图 3.2(a) 中,x 轴上的某个跨度仅为图 3.1 中对应跨度的 1/n(其中 n = 20).
 <ul class="org-ul">
 <li><p>
 图3-1
 </p>
 
-<div id="org36be8b3" class="figure">
+<div id="orgcf996ec" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/peb/3-1.png" alt="3-1.png" />
 </p>
 <p><span class="figure-number">Figure 25: </span>peb/3-1.png</p>
@@ -4716,167 +4746,167 @@ n 次有偏硬币抛掷的标准差:正面值为 1(概率为p),反面值为0(概
 图3-2
 </p>
 
-<div id="org2aaf76a" class="figure">
+<div id="orgeb46fdc" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/peb/3-2.png" alt="3-2.png" />
 </p>
 <p><span class="figure-number">Figure 26: </span>peb/3-2.png</p>
 </div></li>
 <li><p>
-因此，图 3.2(a) 的分布范围是图 3.1 分布范围的 1/n 倍。当 n = 20 时，公式 (3.52) 给出了平均值的标
-准差（通常称为均值的标准差也就是standard deviation of the mean）:
+因此,图 3.2(a) 的分布范围是图 3.1 分布范围的 1/n 倍.当 n = 20 时,公式 (3.52) 给出了平均值的标
+准差(通常称为均值的标准差也就是standard deviation of the mean):
 </p>
 \begin{equation}
 \sigma_{avg} = \frac{1}{2\sqrt{20}} = 0.11 \notag
 \end{equation}</li>
-<li>这一点在图 3.2(a) 中有所表示；图中标注的条形总长度为 \(2\sigma_{avg}\)。</li>
+<li>这一点在图 3.2(a) 中有所表示;图中标注的条形总长度为 \(2\sigma_{avg}\).</li>
 </ul></li>
-<li>让我们重复上述分析，但这次考虑 2000 次投掷。正面总次数的概率分布显然在 1000 附近达到峰值。
+<li>让我们重复上述分析,但这次考虑 2000 次投掷.正面总次数的概率分布显然在 1000 附近达到峰值.
 <ul class="org-ul">
 <li><p>
-根据公式 (3.51)，2000 次投掷中正面总次数的标准差为：
+根据公式 (3.51),2000 次投掷中正面总次数的标准差为:
 </p>
 \begin{equation}
 \sigma_{tot} = \sqrt{(2000/2)} = 22.4 \notag
 \end{equation}</li>
 </ul></li>
-<li>为了得到每次投掷中正面平均次数的概率分布（其峰值在 0.5 附近），我们只需将 x 轴上的所有数值（与正面
-总次数相关的数值）除以 2000，这与从图 3.1 的第四幅图到图 3.2(a) 的处理类似。
+<li>为了得到每次投掷中正面平均次数的概率分布(其峰值在 0.5 附近),我们只需将 x 轴上的所有数值(与正面
+总次数相关的数值)除以 2000,这与从图 3.1 的第四幅图到图 3.2(a) 的处理类似.
 <ul class="org-ul">
 <li><p>
-由此得到的每次投掷中正面平均次数的概率分布如图 3.2(b) 所示。
+由此得到的每次投掷中正面平均次数的概率分布如图 3.2(b) 所示.
 </p>
 
-<div id="orgb035c87" class="figure">
+<div id="orge482d44" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/peb/3-2.png" alt="3-2.png" />
 </p>
 <p><span class="figure-number">Figure 27: </span>peb/3-2.png</p>
 </div></li>
 <li><p>
-根据公式 (3.52)，每次投掷中正面平均次数的标准差为：
+根据公式 (3.52),每次投掷中正面平均次数的标准差为:
 </p>
 \begin{equation}
 \sigma_{avg} = \frac{1}{2\sqrt{2000}} = 0.011 \notag
 \end{equation}</li>
-<li>这一点在图中有所表示；标注的条形（非常短）总长度为 \(2\sigma_{avg}\)。</li>
+<li>这一点在图中有所表示;标注的条形(非常短)总长度为 \(2\sigma_{avg}\).</li>
 </ul></li>
 
-<li>由于 2000 和 20 相差 100 倍，2000 次投掷中的 \(\sigma_{tot}\) 是 20 次投掷中 σtot 的 10 倍，因为公
-式 (3.51) 的结果与 \(\sqrt{n}\) 成正比。</li>
-<li>但 \(\sigma_{avg}\) 却小了 10 倍，因为公式 (3.52) 中的 \(\sigma_{avg}\) 与 \(\frac{1}{\sqrt{n}}\) 成正比
+<li>由于 2000 和 20 相差 100 倍,2000 次投掷中的 \(\sigma_{tot}\) 是 20 次投掷中 σtot 的 10 倍,因为公
+式 (3.51) 的结果与 \(\sqrt{n}\) 成正比.</li>
+<li>但 \(\sigma_{avg}\) 却小了 10 倍,因为公式 (3.52) 中的 \(\sigma_{avg}\) 与 \(\frac{1}{\sqrt{n}}\) 成正比
 这一事实解释了为什么图 3.2(b) 中的点分布比图 3.2(a) 中的点分布要窄得多:
 <ul class="org-ul">
-<li>图 3.2(b) 中绘制的 \(\sigma_{avg}\) 短到几乎不易察觉。</li>
-<li>但即使不计算和比较图 3.2 中两幅图的标准差，也很明显图 3.2(b) 中的分布要比图 3.2(a) 中的分布窄得多。</li>
+<li>图 3.2(b) 中绘制的 \(\sigma_{avg}\) 短到几乎不易察觉.</li>
+<li>但即使不计算和比较图 3.2 中两幅图的标准差,也很明显图 3.2(b) 中的分布要比图 3.2(a) 中的分布窄得多.</li>
 </ul></li>
-<li>让我们总结一下学到的内容。尽管在 n = 2000 的情况下，\(\sigma_{tot}\) 更大（是 n = 20 情况下的 10 倍）,
+<li>让我们总结一下学到的内容.尽管在 n = 2000 的情况下,\(\sigma_{tot}\) 更大(是 n = 20 情况下的 10 倍),
 这个结论涉及到: absolute deviation \(\sigma_{tot}\) from the expected value of n /2</li>
-<li>在 n = 2000 的情况下，\(\sigma_{avg}\) 更小（是 n = 20 情况下的 1/10）。这个结论涉及到：fractional
+<li>在 n = 2000 的情况下,\(\sigma_{avg}\) 更小(是 n = 20 情况下的 1/10).这个结论涉及到:fractional
 deviation \(\sigma_avg}\) from the expected value of 1/2</li>
-<li>这里的关键是，尽管绝对偏差 \(\sigma_{tot}\) 随 n 增长（这是直观的），但增长速度仅与 \(\sqrt{n}\) 成正比。
-所以，
+<li>这里的关键是,尽管绝对偏差 \(\sigma_{tot}\) 随 n 增长(这是直观的),但增长速度仅与 \(\sqrt{n}\) 成正比.
+所以,
 <ul class="org-ul">
-<li>当在计算正面平均次数时将此偏差除以 n，得到的相对偏差 \(\sigma_{avg}\) 最终与 \(\frac{1}{\sqrt{n}}\)
-成正比，</li>
-<li>并随 n 的增长而减小（这可能不太直观）。</li>
+<li>当在计算正面平均次数时将此偏差除以 n,得到的相对偏差 \(\sigma_{avg}\) 最终与 \(\frac{1}{\sqrt{n}}\)
+成正比,</li>
+<li>并随 n 的增长而减小(这可能不太直观).</li>
 </ul></li>
-<li>请注意，尽管每次投掷中正面平均次数的 <b>期望值</b> 与投掷次数无关（对于一枚公平硬币，它始终是 0.5，如图
-3.2(b) 中的两幅图所示），但正面平均次数的分布却依赖于投掷次数。</li>
-<li>也就是说，图 3.2 中两条曲线的形状是不同的（在 x 轴从 0 到 1 的相同尺度上）。例如，
+<li>请注意,尽管每次投掷中正面平均次数的 <b>期望值</b> 与投掷次数无关(对于一枚公平硬币,它始终是 0.5,如图
+3.2(b) 中的两幅图所示),但正面平均次数的分布却依赖于投掷次数.</li>
+<li>也就是说,图 3.2 中两条曲线的形状是不同的(在 x 轴从 0 到 1 的相同尺度上).例如,
 <ul class="org-ul">
-<li>在 20 次投掷的情况下，获得 0.6 或更高的平均值是有一定可能的。</li>
-<li>但在 2000 次投掷的情况下，几乎不可能获得这样的平均值。</li>
+<li>在 20 次投掷的情况下,获得 0.6 或更高的平均值是有一定可能的.</li>
+<li>但在 2000 次投掷的情况下,几乎不可能获得这样的平均值.</li>
 </ul></li>
-<li>让我们用以下定理来正式化上述结果。</li>
+<li>让我们用以下定理来正式化上述结果.</li>
 <li><b>定理 3.4</b>
 <ul class="org-ul">
-<li>设随机变量 X 的标准差为 \(\sigma\) 。我们对概率分布的形状不做任何假设。</li>
-<li>设 \(\overline{X}\) 为通过对随机变量 X 的 n 次独立试验取平均得到的随机变量。</li>
+<li>设随机变量 X 的标准差为 \(\sigma\) .我们对概率分布的形状不做任何假设.</li>
+<li>设 \(\overline{X}\) 为通过对随机变量 X 的 n 次独立试验取平均得到的随机变量.</li>
 <li><p>
-则 X 的标准差由下式给出：
+则 X 的标准差由下式给出:
 </p>
 \begin{equation}
 \sigma_{\overline{X}} = \frac{\sigma}{\sqrt{n}} \tag{3.53}
 \end{equation}</li>
-<li>这是标准的表示方式，尽管从技术上讲，字母 n 应该在公式左侧的某处作为标签，因为 \(\overline{X}\) 的标
-准差依赖于您所平均的试验次数 n。</li>
+<li>这是标准的表示方式,尽管从技术上讲,字母 n 应该在公式左侧的某处作为标签,因为 \(\overline{X}\) 的标
+准差依赖于您所平均的试验次数 n.</li>
 </ul></li>
-<li><b>证明</b> ：
+<li><b>证明</b> :
 <ul class="org-ul">
-<li>设随机变量 X 的 n 次独立试验分别标记为 X1, X2, &#x2026;, Xn（因此 Xi 是相互独立并且具有相同分布的随机变量）。</li>
+<li>设随机变量 X 的 n 次独立试验分别标记为 X1, X2, &#x2026;, Xn(因此 Xi 是相互独立并且具有相同分布的随机变量).</li>
 <li><p>
-则 \(\overline{X}\) 表示为：
+则 \(\overline{X}\) 表示为:
 </p>
 \begin{equation}
 \overline{X} = \frac{X_1 + X_2 + \cdots + X_n}{n} \tag{3.54}
 \end{equation}</li>
-<li>根据公式 (3.41)，\(\overline{X}\) 的标准差等于 (1/n) 乘以 X1 + X2 + &#x2026; + Xn 的标准差。</li>
-<li>而根据公式 (3.45)，后者(X1 + X2 + &#x2026; + Xn 的标准差)为 \(\sqrt{n} \sigma\)。因此，\(\overline{X}\) 的
-标准差为： \(\frac{\sqrt{n} \sigma}{n} = \frac{\sigma}{\sqrt{n}}\) 证明完成</li>
+<li>根据公式 (3.41),\(\overline{X}\) 的标准差等于 (1/n) 乘以 X1 + X2 + &#x2026; + Xn 的标准差.</li>
+<li>而根据公式 (3.45),后者(X1 + X2 + &#x2026; + Xn 的标准差)为 \(\sqrt{n} \sigma\).因此,\(\overline{X}\) 的
+标准差为: \(\frac{\sqrt{n} \sigma}{n} = \frac{\sigma}{\sqrt{n}}\) 证明完成</li>
 </ul></li>
-<li>简而言之（如我们多次提到的），上述证明归结为公式 (3.45)，即
+<li>简而言之(如我们多次提到的),上述证明归结为公式 (3.45),即
 <ul class="org-ul">
-<li>n 次独立且相同试验的和的标准差随 n 增长，但仅以 √n 的方式增长。</li>
-<li>当我们取平均并除以 n 时，得到的均值的标准差比原始标准差 \(\sigma\) 小了一个 \(\sqrt{n}\) 的因子。</li>
+<li>n 次独立且相同试验的和的标准差随 n 增长,但仅以 √n 的方式增长.</li>
+<li>当我们取平均并除以 n 时,得到的均值的标准差比原始标准差 \(\sigma\) 小了一个 \(\sqrt{n}\) 的因子.</li>
 </ul></li>
-<li>更一般地，如果我们关心 n 个不同随机变量的平均值，并且这些随机变量具有不同的标准差，
+<li>更一般地,如果我们关心 n 个不同随机变量的平均值,并且这些随机变量具有不同的标准差,
 <ul class="org-ul">
 <li><p>
-我们可以利用公式 (3.41) 和 (3.44) 得到：
+我们可以利用公式 (3.41) 和 (3.44) 得到:
 </p>
 \begin{equation}
 \sigma_{\overline{X}} \equiv \sigma_{\frac{X_1 + X_2 + \cdots + X_n}{n}}
 = \frac{1}{n} \sigma_{X_1 + X_2 + \cdots + X_n}
 = \frac{\sqrt{\sigma^2_{X_1} + \sigma^2_{X_2} + \cdots + \sigma^2_{X_n}}}{n}. \tag{3.55}
 \end{equation}</li>
-<li>当所有 \(\sigma_{X_i}\) 都相等时（即使分布不相同），此公式化简为公式 (3.53)。</li>
+<li>当所有 \(\sigma_{X_i}\) 都相等时(即使分布不相同),此公式化简为公式 (3.53).</li>
 </ul></li>
-<li>图 3.2(b) 中曲线的纤细程度（这是公式 (3.53) 中分母 √n 的结果）与“大数定律”是一致的。该定律表明:
+<li>图 3.2(b) 中曲线的纤细程度(这是公式 (3.53) 中分母 √n 的结果)与"大数定律"是一致的.该定律表明:
 <ul class="org-ul">
-<li>如果您进行非常多的试验，观察到的平均值很可能非常接近理论预测的平均值。</li>
-<li>更详细地说：许多概率分布（例如图 3.2 中的分布）本质上呈高斯形状（即“正态分布”或“钟形曲线”）。</li>
+<li>如果您进行非常多的试验,观察到的平均值很可能非常接近理论预测的平均值.</li>
+<li>更详细地说:许多概率分布(例如图 3.2 中的分布)本质上呈高斯形状(即"正态分布"或"钟形曲线").</li>
 </ul></li>
-<li>可以通过数值方法证明，对于高斯分布，
+<li>可以通过数值方法证明,对于高斯分布,
 <ul class="org-ul">
-<li>位于均值一个标准差范围内（即 \(\mu \pm \sigma\) ）的概率为 68%，</li>
-<li>位于均值两个标准差范围内的概率为 95%，</li>
-<li>位于均值三个标准差范围内的概率为 99.7%。</li>
-<li>对于更宽的范围，在大多数实际情况下，概率可以有效视为 1。</li>
+<li>位于均值一个标准差范围内(即 \(\mu \pm \sigma\) )的概率为 68%,</li>
+<li>位于均值两个标准差范围内的概率为 95%,</li>
+<li>位于均值三个标准差范围内的概率为 99.7%.</li>
+<li>对于更宽的范围,在大多数实际情况下,概率可以有效视为 1.</li>
 </ul></li>
-<li>这就是为什么我们之前提到，对于 2000 次掷硬币，每次掷硬币中正面平均次数 <b>极不可能达到 0.6 或更高</b> 。
-由于 0.6 比均值 0.5 高出 0.1，而在这种情况下 σavg = 0.011，我们可以看到 0.6 超出了均值约九个标准差
-高于均值九个标准差的概率微乎其微（大约是 10⁻¹⁹）。</li>
-<li>在前一段中，我们提到了许多术语和结果。我们将在后续部分中详细讨论这些内容。第 4.8 节将介绍高斯分布，
-第 5 章将讨论大数定律和中心极限定理。中心极限定理解释了为什么许多概率分布近似于高斯分布。</li>
+<li>这就是为什么我们之前提到,对于 2000 次掷硬币,每次掷硬币中正面平均次数 <b>极不可能达到 0.6 或更高</b> .
+由于 0.6 比均值 0.5 高出 0.1,而在这种情况下 σavg = 0.011,我们可以看到 0.6 超出了均值约九个标准差
+高于均值九个标准差的概率微乎其微(大约是 10⁻¹⁹).</li>
+<li>在前一段中,我们提到了许多术语和结果.我们将在后续部分中详细讨论这些内容.第 4.8 节将介绍高斯分布,
+第 5 章将讨论大数定律和中心极限定理.中心极限定理解释了为什么许多概率分布近似于高斯分布.</li>
 </ul>
 <hr />
 </div>
 <ol class="org-ol">
-<li><a id="orgf581bca"></a>Example(Rolling 10000 dice)<br />
+<li><a id="orgbab39b1"></a>Example(Rolling 10000 dice)<br />
 <div class="outline-text-5" id="text-3-4-0-1">
 <ul class="org-ul">
 <li>掷 10,000 枚骰子:
-a) 出现“6”的总次数的期望值是多少？出现“6”的总次数的标准差是多少？
-b) 每次掷骰子出现“6”的平均次数的期望值是多少？该平均值的标准差是多少？
-c) 您认为至少在 20% 的掷骰子中出现“6”的可能性大吗？</li>
+a) 出现"6"的总次数的期望值是多少?出现"6"的总次数的标准差是多少?
+b) 每次掷骰子出现"6"的平均次数的期望值是多少?该平均值的标准差是多少?
+c) 您认为至少在 20% 的掷骰子中出现"6"的可能性大吗?</li>
 </ul>
 </div>
 </li>
-<li><a id="org1b634c2"></a>Solution a<br />
+<li><a id="org4c16ed3"></a>Solution a<br />
 <div class="outline-text-5" id="text-3-4-0-2">
 <ul class="org-ul">
 <li><p>
-在单次掷骰子中出现“6”的概率为 p = 1/6，因此在 10,000 次掷骰子中出现“6”的总次数的期望值为：
+在单次掷骰子中出现"6"的概率为 p = 1/6,因此在 10,000 次掷骰子中出现"6"的总次数的期望值为:
 </p>
 \begin{equation}
 1/6 \times 10000 = 1667 \notag
 \end{equation}</li>
-<li>为了找到出现“6”的总次数的标准差，我们可以
+<li>为了找到出现"6"的总次数的标准差,我们可以
 <ul class="org-ul">
-<li>将掷出“6”的值设为 1，</li>
-<li>而将其他五种结果的值设为 0。</li>
+<li>将掷出"6"的值设为 1,</li>
+<li>而将其他五种结果的值设为 0.</li>
 <li><p>
-由于 p = 1/6，这等效于抛掷一个偏向的硬币，其成功的概率为 p = 1/6。根据公式 (3.47)，在 10,000 次掷
-骰子中出现“6”的总次数的标准差为：
+由于 p = 1/6,这等效于抛掷一个偏向的硬币,其成功的概率为 p = 1/6.根据公式 (3.47),在 10,000 次掷
+骰子中出现"6"的总次数的标准差为:
 </p>
 \begin{equation}
 \sigma_{tot} = \sqrt{npq} = \sqrt{(10,000)(1/6)(5/6)} = 37 \tag{3.56}
@@ -4885,60 +4915,60 @@ c) 您认为至少在 20% 的掷骰子中出现“6”的可能性大吗？</li>
 </ul>
 </div>
 </li>
-<li><a id="org1045458"></a>Soluton b<br />
+<li><a id="org21d0a24"></a>Soluton b<br />
 <div class="outline-text-5" id="text-3-4-0-3">
 <ul class="org-ul">
-<li>每次掷骰子出现“6”的平均次数的期望值显然为：1667 / 10,000 = 1/6。</li>
+<li>每次掷骰子出现"6"的平均次数的期望值显然为:1667 / 10,000 = 1/6.</li>
 <li><p>
-平均值的标准差可以通过将总次数的标准差（公式 (3.56) 中给出）除以 10,000 得到（就像我们在讨论图 3.2
-时除以 n 一样）。因此我们得到：
+平均值的标准差可以通过将总次数的标准差(公式 (3.56) 中给出)除以 10,000 得到(就像我们在讨论图 3.2
+时除以 n 一样).因此我们得到:
 </p>
 \begin{equation}
 \sigma_{avg} = 37 / 10,000 = 0.0037    \notag
 \end{equation}</li>
 <li><p>
-或者，均值的标准差也可以通过使用公式 (3.53) 从单次掷骰子的标准差计算得到。公式 (3.46) 给出了单次掷骰子的标准差：
+或者,均值的标准差也可以通过使用公式 (3.53) 从单次掷骰子的标准差计算得到.公式 (3.46) 给出了单次掷骰子的标准差:
 </p>
 \begin{equation}
 \sigma_{single} = \sqrt{pq} = \sqrt{(1/6)(5/6)} = 0.37 \notag
 \end{equation}</li>
 <li><p>
-因此，公式 (3.53) 得到：
+因此,公式 (3.53) 得到:
 </p>
 \begin{equation}
 \sigma_{avg} = \frac{\sigma_{single}}{\sqrt{n}} = \frac{0.37}{\sqrt{10,000}} = 0.0037 \tag{3.57}
 \end{equation}</li>
 <li><p>
-请注意，此问题中出现了三个不同的 \(\sigma\) ：
+请注意,此问题中出现了三个不同的 \(\sigma\) :
 </p>
 \begin{equation}
 \sigma_{single} = 0.37 \quad \sigma_{tot} = 37 \quad \sigma_{avg} = 0.0037 \tag{3.58}
 \end{equation}</li>
-<li>\(\sigma_{tot}\) 是通过将 \(\sigma_{single}\) 乘以 \(\sqrt{n}\) 得到的（见公式 (3.45) 或公式 (3.47)），</li>
-<li>而 \(\sigma_{avg}\) 是通过将 \(\sigma_{single}\) 除以 \(\sqrt{n}\) 得到的（见公式 (3.53)）。</li>
-<li>与这些关系一致，\(\sigma_{avg}\) 是通过将 \(\sigma_{tot}\) 除以 n 得到的（见公式 (3.52)），因为求平均值涉及除以 n。</li>
+<li>\(\sigma_{tot}\) 是通过将 \(\sigma_{single}\) 乘以 \(\sqrt{n}\) 得到的(见公式 (3.45) 或公式 (3.47)),</li>
+<li>而 \(\sigma_{avg}\) 是通过将 \(\sigma_{single}\) 除以 \(\sqrt{n}\) 得到的(见公式 (3.53)).</li>
+<li>与这些关系一致,\(\sigma_{avg}\) 是通过将 \(\sigma_{tot}\) 除以 n 得到的(见公式 (3.52)),因为求平均值涉及除以 n.</li>
 </ul>
 </div>
 </li>
-<li><a id="org1fe1ef6"></a>Solution c<br />
+<li><a id="orgf2bfab6"></a>Solution c<br />
 <div class="outline-text-5" id="text-3-4-0-4">
 <ul class="org-ul">
-<li>您没有合理的机会在至少 20% 的掷骰子中出现“6”。这是因为:
+<li>您没有合理的机会在至少 20% 的掷骰子中出现"6".这是因为:
 <ul class="org-ul">
-<li>20% 的掷骰子对应于 2000 次出现“6”，这比期望值 1667 高出 333</li>
-<li>而 333 是标准差 σtot = 37 的 9 倍。</li>
-<li>随机过程的结果达到比均值高出至少 9 个标准差的概率微乎其微，正如我们在本例之前的讨论中提到的。</li>
+<li>20% 的掷骰子对应于 2000 次出现"6",这比期望值 1667 高出 333</li>
+<li>而 333 是标准差 σtot = 37 的 9 倍.</li>
+<li>随机过程的结果达到比均值高出至少 9 个标准差的概率微乎其微,正如我们在本例之前的讨论中提到的.</li>
 <li><p>
-图 3-3 展示了围绕均值的 ±4σtot 范围内的概率分布。
+图 3-3 展示了围绕均值的 ±4σtot 范围内的概率分布.
 </p>
 
-<div id="org4a49b87" class="figure">
+<div id="org38ecf0e" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/peb/3-3.png" alt="3-3.png" />
 </p>
 <p><span class="figure-number">Figure 28: </span>peb/3-3.png</p>
 </div></li>
-<li>从图中可以清楚地看出，即使我们将问题改为 18%（对应于 1800 次出现“6”，比均值高出约 \(3.6 \sigma_{tot}\) ，
-答案仍然是您没有合理的机会在至少 18% 的掷骰子中出现“6”。此时的概率约为 0.016%。</li>
+<li>从图中可以清楚地看出,即使我们将问题改为 18%(对应于 1800 次出现"6",比均值高出约 \(3.6 \sigma_{tot}\) ,
+答案仍然是您没有合理的机会在至少 18% 的掷骰子中出现"6".此时的概率约为 0.016%.</li>
 </ul></li>
 </ul>
 <hr />
@@ -4947,11 +4977,1169 @@ c) 您认为至少在 20% 的掷骰子中出现“6”的可能性大吗？</li>
 </ol>
 </div>
 </div>
+<div id="outline-container-org51915cd" class="outline-2">
+<h2 id="org51915cd"><span class="section-number-2">4.</span> Chapter 4: Distributions</h2>
+<div class="outline-text-2" id="text-4">
+<ul class="org-ul">
+<li>在3.1节的开头,我们介绍了随机变量和概率分布的概念.随机变量是一种可以以特定概率取特定数值的变量.这
+些概率的集合称为该随机变量的概率分布.概率分布规定了总概率(总是等于1)如何在各种可能结果之间分配.</li>
+<li>随机变量(random variable)是表示随机试验各种结果的实值单值函数.它本质上是一个函数,将随机试验的结果
+映射为数值,使我们能够用数学方法研究随机现象.例如:
+<ul class="org-ul">
+<li>掷骰子的点数(1-6)</li>
+<li>某电话交换台在一定时间内收到的呼叫次数</li>
+<li>灯泡的寿命</li>
+</ul></li>
+<li>随机变量的关键特点是:在进行试验或测量之前,我们无法确定它将取得哪个具体数值,但这些取值遵循一定的
+概率规律.</li>
+<li>概率分布(probability distribution)是用于描述随机变量取值概率规律的数学表达.它完整地规定了随机变量
+所有可能取值及对应概率的分配方式.</li>
+<li>概率分布的核心特征是:
+<ul class="org-ul">
+<li>每个可能结果的概率介于0和1之间</li>
+<li>所有可能结果的概率总和等于1</li>
+</ul></li>
+</ul>
+</div>
+<div id="outline-container-org5879116" class="outline-3">
+<h3 id="org5879116"><span class="section-number-3">4.1.</span> Discrete distributions</h3>
+<div class="outline-text-3" id="text-4-1">
+<ul class="org-ul">
+<li>本节我们会介绍一些离散随机变量的例子,首先看看上一章讲到的五次抛硬币得到不同HEAD数目的概率:
+<ul class="org-ul">
+<li>P(0)=1/32</li>
+<li>P(1)=5/32</li>
+<li>P(2)=10/32</li>
+<li>P(3)=10/32</li>
+<li>P(4)=5/32</li>
+<li>P(5)=1/32</li>
+</ul></li>
+<li>这些概率值的和是1(当然这也是必须的).我们把P(n)和n的关系做了个图.
+<ul class="org-ul">
+<li><p>
+如图4-1, 横轴是Head的数目,纵轴是概率值
+</p>
+
+<div id="orgcfadb2c" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/peb/4-1.png" alt="4-1.png" />
+</p>
+<p><span class="figure-number">Figure 29: </span>peb/4-1.png</p>
+</div></li>
+<li>论是以图4-1的视觉形式还是以数据形式的明确形式给出的综合信息,都称为概率分布.</li>
+<li>概率分布简单来说,就是告诉你随机变量可以取的所有值的概率是多少.</li>
+<li>请注意,在当前的例子中,P(n)只有在n取离散值0,1,2,3,4或5时才是非零的.</li>
+<li>询问获得4.27个正面的概率是一个荒谬的问题,因为n当然必须是一个整数.获得4.27个正面的概率显然为零.
+因此,本节标题中出现了"离散"这个词.</li>
+</ul></li>
+
+<li>另一个简单的离散概率分布例子是掷一个骰子时六种可能结果的分布.在这个情境中,随机变量是骰子顶部显示
+的数字.如果骰子是公平的,那么所有六个数字的概率都是相等的,因此每个数字的概率为1/6
+<ul class="org-ul">
+<li><p>
+如图4-2所示
+</p>
+
+<div id="org54ca8f9" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/peb/4-2.png" alt="4-2.png" />
+</p>
+<p><span class="figure-number">Figure 30: </span>peb/4-2.png</p>
+</div></li>
+</ul></li>
+<li>如果骰子不是公平的怎么办?例如:
+<ul class="org-ul">
+<li>如果我们通过在"1"面中央的表面下嵌入一小块铅,使"1"面变得更重,那么骰子更有可能以"1"面朝下的方式落
+地.</li>
+<li>"6"面与"1"面相对,因此骰子更有可能以"6"面朝上的方式落地.因此,图4.2会被修改,"6"点会被抬高,而另
+外五个点会降低;</li>
+<li>当然,概率的总和仍然必须是1.</li>
+<li>由于对称性,P2到P5的值都是相等的.所有概率的具体值复杂地取决于铅块的质量与骰子质量的对比关系,还
+与骰子和骰子滚动的桌面的特性(比如摩擦力,弹性等)有关.</li>
+</ul></li>
+<li><p>
+正如第3.1节开头提到的,随机变量的定义是假定它取数值.因此,对于单次硬币投掷来说,正面和反面的结果严
+格来说并不是随机变量.(也就是图4-3中的Heads和Tails)
+</p>
+
+<div id="org78806aa" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/peb/4-3.png" alt="4-3.png" />
+</p>
+<p><span class="figure-number">Figure 31: </span>peb/4-3.png</p>
+</div></li>
+<li>但以图4.3所示的方式绘制概率仍然是有意义的,尽管横轴上的结果并未与随机变量相关联.</li>
+<li>当然,如果我们定义一个随机变量为正面的数量,那么图中的"正面"就变成了1,"反面"就变成了0.</li>
+<li>然而,在大多数情况下,结果从一开始就会取数值,因此我们可以正式将它们标记为随机变量.</li>
+<li>但即使不是如此,我们通常也会直接将概率分布图的横轴上所绘制的内容称为随机变量</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgda281a1" class="outline-3">
+<h3 id="orgda281a1"><span class="section-number-3">4.2.</span> Continuous distributions</h3>
+<div class="outline-text-3" id="text-4-2">
+</div>
+<div id="outline-container-org8857770" class="outline-4">
+<h4 id="org8857770"><span class="section-number-4">4.2.1.</span> Motivation</h4>
+<div class="outline-text-4" id="text-4-2-1">
+<ul class="org-ul">
+<li>当随机变量是离散的时,概率分布相对来说是相当简单的.你只需要列出(或绘制)随机变量每个可能取值的概
+率.这些概率总是会相加等于1.</li>
+<li>然而,并不是所有事物都以离散的形式存在.例如:
+<ul class="org-ul">
+<li>你家外面的气温是一个连续的取值集合,杯子中的水量也是如此.(我们这里忽略物质的原子性质!)</li>
+</ul></li>
+<li>在为连续随机变量寻找概率分布时,你可能会认为这个过程应该与离散情况下完全相同.也就是说,</li>
+<li>如果我们的随机变量是明天中午某处的气温,那么你可能会认为你只需要回答类似以下的问题:
+<ul class="org-ul">
+<li>"明天中午气温正好是70°F的概率是多少?"</li>
+<li>然而,这个问题有点问题,因为它太容易回答了.答案是这个概率为零,</li>
+<li>因为在特定时间(和特定地点)气温正好是70°F的可能性为零.如果气温是70.1°F,那就不算了;70.01°F也不
+行,甚至70.00000001°F也不行.基本上,由于气温是一个连续的取值集合(因此有无限可能的取值),某个特
+定值出现的概率是1/∞,也就是零.</li>
+</ul></li>
+<li>然而,尽管上述问题("明天中午气温正好是70°F的概率是多少?")是一个不好的问题,这并不意味着我们应该
+放弃并得出结论:连续随机变量没有概率分布.</li>
+<li>实际上,它们确实存在,因为有一些有意义的问题我们可以提出.这些有意义的问题一般可以表述为:
+<ul class="org-ul">
+<li>"明天中午某处气温在69°F到71°F之间的概率是多少?"</li>
+<li>这个问题有一个非零的答案,也就是说,它并不是自动为零的.根据明天的天气预报,答案可能是20%左右.</li>
+</ul></li>
+<li>我们还可以问:
+<ul class="org-ul">
+<li>"明天中午气温在69.5°F到70.5°F之间的概率是多少?"</li>
+<li>这个问题的答案会比前一个问题的答案小,因为它涉及的范围只有1°F,而不是2°F.如果我们假设在69°F到
+71°F范围内,气温在任何地方都是等可能的(这是一个合理的近似,尽管不完全正确),并且前一个问题的答
+案是20%,那么现在这个问题的答案大约是10%,因为范围只有前一个的一半.</li>
+</ul></li>
+<li>这里的关键是:
+<ul class="org-ul">
+<li>范围越小,气温落在该范围内的概率就越小.</li>
+<li>反之,范围越大,气温落在该范围内的概率就越大.极端情况下,如果我们问"明天中午气温在-100°F到200°F
+之间的概率是多少?"那么答案就是1(忽略液氮泄漏,森林火灾等特殊情况!)</li>
+</ul></li>
+<li>除了依赖于范围的大小外,概率当然还取决于该范围在温度刻度上的位置.例如,
+<ul class="org-ul">
+<li>中午气温在69°F到71°F之间的概率无疑不同于气温在11°F到13°F之间的概率.这两个范围的跨度都是2°F,</li>
+<li>但如果当天正值夏末,气温更有可能在70°F左右,而不是接近冰点(假设我们在波士顿).要真正计算出这些
+概率,需要考虑许多不同的数据.</li>
+</ul></li>
+<li>在当前的气温例子中,这些数据将是气象类型的数据.但如果我们感兴趣的是一个随机人的身高在69到71英寸之
+间的概率,那么我们需要考虑一套完全不同的数据.</li>
+
+<li>从这些讨论中得出的结论是:如果我们研究的随机变量可以取连续的值,那么这个随机变量落在某个给定范围内的概率取决于以下三个因素:
+<ul class="org-ul">
+<li>范围的位置(location of the range)</li>
+<li>范围的大小(the size of the range)</li>
+<li>我们所研究的具体情境(the specifics of the situation we're dealing with)</li>
+</ul></li>
+<li>上述第三点决定了概率密度,它是一个函数,参数是范围的位置.接下来我们将讨论概率密度.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgae95f46" class="outline-4">
+<h4 id="orgae95f46"><span class="section-number-4">4.2.2.</span> Probability density</h4>
+<div class="outline-text-4" id="text-4-2-2">
+<ul class="org-ul">
+<li>考虑图4.4中的图,它展示了一个关于我们一直讨论的温度示例的假设概率分布.
+<ul class="org-ul">
+<li><p>
+如图
+</p>
+
+<div id="orge08335f" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/peb/4-4.png" alt="4-4.png" />
+</p>
+<p><span class="figure-number">Figure 32: </span>peb/4-4.png</p>
+</div></li>
+<li>该图将概率分布绘制在纵轴上,而温度 (T)(随机变量)绘制在横轴上.我们选择以华氏度为单位测量温度.</li>
+<li>我们使用 \(\rho(T)\) 而不是 P(T) 来表示该概率分布,以便将其与离散变量概率分布的表示方法区分开来.使
+用这种新符号表示的原因是 \(\rho(T)\) 是概率密度(probability density),而不是实际的概率(actual
+probability).我们将在下面对此进行讨论.</li>
+<li>当写概率分布的函数形式时,我们将用小写字母表示概率密度,如 \(\rho(T)\) 中的 \(\rho\) 或 f(x) 中的 f.
+而实际的概率则用大写字母表示,如 P(n) 中的 P.</li>
+</ul></li>
+<li>我们下面来精确的定义下上面图中的 \(\rho(T)\) 也就是概率密度函数:
+<ul class="org-ul">
+<li><p>
+\(\rho(T)\) 是关于温度T的函数,当其乘以一个微小的间隔 \(\Delta T\) 时,表示温度落在 \(T\) 和 \(T + \Delta T\)
+之间的概率,也就是
+</p>
+\begin{equation}
+P(\text{temp lies between } T \text{ and } T + \Delta T) = \rho(T) \cdot \Delta T \tag{4.2}
+\end{equation}</li>
+<li>需要注意的是,等式的左边是实际概率P,而右边是概率密度函数 \(\rho(T)\), 后者必须乘以T的取值范围,才能得
+到实际概率.当然上述定义不仅适用于温度,也适用于任何连续型随机变量</li>
+<li><p>
+我们可以通过几个例子来简化对公式4-2的理解,比如我们从4-4中可以看到 \(\rho(70^{\circ})\) 大约为0.07,
+因此如果我们取 \(\Delta T = 1^{\circ}\) 就可以通过如下公式计算出温度介于70度和71度之间的概率为
+</p>
+\begin{equation}
+\rho(T) \cdot \Delta T = (0.07)(1) = 0.07 = 7\% \tag{4.3}
+\end{equation}</li>
+<li>同理,起始温度不变.我们可以选择更小的 \(\Delta T\) 比如0.5,得到3.5%</li>
+<li>如果我们起始温度也变了,比如 \(\rho(60^{\circ})\) 为0.02, 我们 \(\Delta T\) 也选择1,那么我们得到的概率
+是2%</li>
+</ul></li>
+<li>需要注意的是,根据式(4.2)的定义,我们一直使用给定温度区间下限的ρ值进行计算.例如,
+<ul class="org-ul">
+<li>当区间为70°至71°时,我们使用ρ(70°)乘以∆T.</li>
+</ul></li>
+<li>但 <b>是否同样可以使用区间上限的ρ值</b> ?即式(4.2)的右侧是否也能写成ρ(T + ∆T)·∆T?
+<ul class="org-ul">
+<li><b>答案是可以的</b>.</li>
+<li>但只要∆T足够小,使用ρ(T)或ρ(T + ∆T)对结果的影响微乎其微,两者计算结果本质上相同</li>
+</ul></li>
+<li>在计算温度落在某一范围内的概率时,必须包含以下三个输入参数:
+<ol class="org-ol">
+<li>目标温度值T(如70°);</li>
+<li>区间范围∆T**(如1°)</li>
+<li>概率密度函数ρ(T)在T处的取值**(如ρ(70°)≈0.07)</li>
+</ol></li>
+<li>后两者(∆T与ρ(T))正是式(4.2)右侧相乘的两个量.*仅知道其中之一无法确定概率*,因为连续型概率的本质
+要求密度与区间范围的乘积.</li>
+<li>总结来说,连续型与离散型随机变量的概率分布存在根本差异:
+<ul class="org-ul">
+<li><b>连续型分布</b>:由概率密度描述,其图像只能绘制密度曲线而非实际概率值,因为单点概率恒为零(可能取值无限多);</li>
+<li><b>离散型分布*</b>:由具体概率值(概率质量)构成,可直接绘制概率值.</li>
+</ul></li>
+<li>相反,对于离散型分布,我们绘制的是实际概率值而非密度曲线,因为离散变量的概率密度会呈现为无限多个尖
+锐的峰值(spikes),这在图形上毫无意义.例如:
+<ul class="org-ul">
+<li>在掷骰子实验中,点数为5的概率为1/6,即落在区间[4.9999999, 5.0000001]内的概率为1/6.</li>
+<li>根据式(4.2),概率密度等于概率除以区间长度,因此在5处的概率密度值为(1/6)/0.0000002&#x2013;这一数值极大.</li>
+<li>若进一步缩小区间长度,密度值将无限增大. 所以 <b>离散型分布</b> 的概率密度是没有意义的.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgceba891" class="outline-4">
+<h4 id="orgceba891"><span class="section-number-4">4.2.3.</span> Probability equals area</h4>
+<div class="outline-text-4" id="text-4-2-3">
+<ul class="org-ul">
+<li>图形化的解释公式4-2里面的乘积 \(\rho(T) \cdot \Delta T\) ,就是下图(4-5)中灰色长方形的面积
+<ul class="org-ul">
+<li>如图4-5</li>
+<li>图中长方形的"底"是 \(\Delta T\) , "高" 是 \(\rho(T)\) , 乘起来刚好是长方形面积</li>
+</ul></li>
+<li>我们在图中选择了∆T为2度.在这个选择下,矩形的面积(等于ρ(70度)·(2度))可以很好地近似温度在70度到72
+度之间的概率.</li>
+<li>但是,这并不完全准确,因为在2度的区间内,ρ(T)并不是一个恒定值.</li>
+<li><p>
+为了更好地近似温度在70度到72度之间的概率,我们可以将2度的区间分成两个1度的区间,然后将每个区间的概
+率加起来.这两个概率分别近似为ρ(70度)·(1度)和ρ(71度)·(1度),图4.6中显示了对应的两个矩形.
+</p>
+
+<div id="org97ab1bf" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/peb/4-6.png" alt="4-6.png" />
+</p>
+<p><span class="figure-number">Figure 33: </span>peb/4-6.png</p>
+</div></li>
+<li>然而,这两个矩形面积的总和仍然只是温度在70度到72度之间的真实概率的一个近似值,因为在1度的区间内,
+ρ(T)也不是一个恒定值.更好的近似方法是:
+<ul class="org-ul">
+<li>将1度的区间分成更小的区间,</li>
+<li>然后再进一步分成更小的区间,</li>
+<li><p>
+如此不断细分.当我们最终得到100或1000个极薄的矩形时,这些矩形面积的总和基本上就等于图4.7中显示的
+面积.这一面积就是温度在70度到72度之间的真实概率.
+</p>
+
+<div id="orga14e784" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/peb/4-7.png" alt="4-7.png" />
+</p>
+<p><span class="figure-number">Figure 34: </span>peb/4-7.png</p>
+</div></li>
+</ul></li>
+<li>回顾一下,我们可以看到图4.5中的矩形面积超出了真实概率,其超出的部分是矩形右上角的小三角形区域的面积
+因此,我们得出了概率密度ρ(T)的一个更精确定义(相比于公式(4.2)):
+<ul class="org-ul">
+<li><p>
+概率密度函数ρ(T)的改进定义: ρ(T)是关于T的函数,其中ρ(T)曲线在T到T+∆T之间的面积表示温度在T到T+∆T之间的概率.
+</p>
+<pre class="example" id="org17ee981">
+ρ(T) is the function of T for which the area under the ρ(T) curve between T and T+∆T gives the
+probability that the temperature lies between T and T+∆T
+</pre></li>
+</ul></li>
+<li>这是一个精确的定义,不需要像公式(4.2)那样要求∆T很小.两者的区别在于:
+<ul class="org-ul">
+<li>这里的定义涉及精确的面积,</li>
+<li>而公式(4.2)则通过简单地乘以∆T得到矩形的面积,这只是一种近似值.</li>
+</ul></li>
+<li>但从技术上讲,我们只需要在公式(4.2)的基础上增加∆T → 0的限制条件,就能使定义变得严格.</li>
+<li>任何概率密度曲线下的总面积必须是1,因为:
+<ul class="org-ul">
+<li>这一面积等于温度(或其他研究量)在区间−∞到+∞之间取某个值的概率,</li>
+<li>而在−∞到+∞的范围内包含了所有可能的结果.</li>
+</ul></li>
+<li>然而,在任何实际情况下,概率密度在某个特定有限区域之外基本上是零.因此,从图中该区域之外的部分对总
+面积的贡献几乎可以忽略.因此,没有必要真的延伸到±∞.</li>
+<li>在上面图示中的每条曲线下的总面积,包括两侧未绘制的尾部区域,确实等于1(至少大致如此;这些曲线是手绘的).</li>
+<li>给定一个概率密度函数f(x),累积分布函数F(x)定义为:
+<ul class="org-ul">
+<li>随机变量X取值小于或等于x的概率.</li>
+<li>也就是说,F(x) = P(X ≤ x).</li>
+<li>对于连续分布,这一定义意味着F(x)等于从−∞到给定x值的f(x)曲线下的面积.</li>
+</ul></li>
+<li>一个快速推论是:
+<ul class="org-ul">
+<li>随机变量x在两个给定值a和b之间的概率P(a &lt; x ≤ b)等于F(b) − F(a).</li>
+</ul></li>
+<li>对于离散分布,这一定义F(x) = P(X ≤ x)仍然适用,但我们现在通过形成离散和(而不是求面积)来计算P(X ≤ x).
+虽然累积分布函数在概率论和统计学中非常有用,但我们在本书中不会经常使用它.</li>
+<li>接下来,我们将在第4.3节到第4.8节花费相当多的时间讨论一些常见的概率分布.
+<ul class="org-ul">
+<li>技术上讲,可能的分布有无穷多种,</li>
+<li>但只有大约一百种分布出现的频率足够高以至于有了名字.</li>
+<li>而即使在这当中,许多分布也相对冷门.然而,有少数几种分布在各种场景中反复出现,因此我们将重点讨论
+这些分布.它们是:
+<ol class="org-ol">
+<li>均匀分布</li>
+<li>伯努利分布</li>
+<li>二项分布</li>
+<li>指数分布</li>
+<li>泊松分布</li>
+<li>高斯(或正态)分布.</li>
+</ol></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org3db4c3b" class="outline-3">
+<h3 id="org3db4c3b"><span class="section-number-3">4.3.</span> Uniform distribution</h3>
+<div class="outline-text-3" id="text-4-3">
+<ul class="org-ul">
+<li>我们将从一种非常简单的连续概率分布开始,这种分布在给定区间内呈均匀分布,区间外则为零.
+<ul class="org-ul">
+<li><p>
+如图4.8所示
+</p>
+
+<div id="org5a1399c" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/peb/4-8.png" alt="4-8.png" />
+</p>
+<p><span class="figure-number">Figure 35: </span>peb/4-8.png</p>
+</div></li>
+<li>若分布范围从x₁延伸至x₂,则该区域内ρ(x)的值必须为1/(x₂-x₁),以确保总面积为1.</li>
+</ul></li>
+<li>这种分布可能出现在以下场景中:
+<ul class="org-ul">
+<li>假设一个橡胶球在一个空矩形房间内随机弹跳,最终静止时测量其与某一特定墙壁的距离x.</li>
+<li>若初始投掷力度足够大,则可以近似认为x在0到L(房间在该方向的长度)之间取任意值的概率均等.</li>
+<li>此时,图4-8中的x₁对应0(需将矩形左移对齐),x₂对应L.</li>
+</ul></li>
+<li>这里的随机变量记为 X ,其取值用 x 表示,因此横轴表示 x 的数值.</li>
+<li>由于讨论的是连续分布,纵轴表示的是概率密度(而非概率本身).
+<ul class="org-ul">
+<li>若区域长度  L = 10  英尺,则在  0 &lt; x &lt; 10  区间外,概率密度 \( \rho(x) = 0 \);</li>
+<li>在此区间内,密度等于总概率(1)除以总长度(10 英尺),即每英尺 1/10 的概率密度.例如,若计算球最
+终落在  x = 6  至  x = 8  之间的概率,只需用密度 \( \rho(x) \) 乘以区间长度(2 英尺),
+结果为 \( (1/10) \times 2 = 1/5 \).这符合直观&#x2013;2 英尺的区间恰好占总长度的 1/5.</li>
+</ul></li>
+<li>均匀密度分布的处理十分简便,因为曲线下面积(即概率)就是矩形面积:底(区间长度)乘以高(密度值),
+如上例所示.若密度非均匀,则计算曲线下面积可能非常困难.</li>
+<li>需注意,在均匀分布中,\( \rho(x) \) 非零的区间越大,密度值越小.这是因为密度曲线下总面积必须等于
+1(本例中曲线为直线段),底边延长时高度必然降低.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgdab1a93" class="outline-3">
+<h3 id="orgdab1a93"><span class="section-number-3">4.4.</span> Bernoulli distribution</h3>
+<div class="outline-text-3" id="text-4-4">
+<ul class="org-ul">
+<li>现在讨论一种简单的离散分布&#x2013;伯努利分布.该分布描述只有两种可能结果的过程:
+<ul class="org-ul">
+<li>结果 1(概率  p )</li>
+<li>结果 0(概率  1-p )</li>
+</ul></li>
+<li>两者概率之和为 1.通常称 1 为"成功",0 为"失败".
+<ul class="org-ul">
+<li><p>
+图 4.9 展示了其概率分布.
+</p>
+
+<div id="org268bbc2" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/peb/4-9.png" alt="4-9.png" />
+</p>
+<p><span class="figure-number">Figure 36: </span>peb/4-9.png</p>
+</div></li>
+</ul></li>
+<li>抛硬币是伯努利分布的特例:若规定正面(Heads)为 1,反面(Tails)为 0,且正反面概率均为 1/2.</li>
+<li>伯努利分布是所有概率分布中最简单的一种&#x2013;除了仅存在单一可能结果(因而其发生概率恒为1)的极端情形.</li>
+<li>均匀分布与伯努利分布都过于基础,其理论深度相对有限.相较而言,接下来四个章节将要探讨的分布(二项分
+布,指数分布,泊松分布及高斯分布)则更具研究价值,我们将就此展开深入讨论.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org783b994" class="outline-3">
+<h3 id="org783b994"><span class="section-number-3">4.5.</span> Binomial distribution</h3>
+<div class="outline-text-3" id="text-4-5">
+<ul class="org-ul">
+<li>二项分布是一种离散型分布,是伯努利分布的推广.</li>
+<li>它描述的是在任意多次独立同分布的伯努利试验中,总成功次数的概率分布.例如,
+<ul class="org-ul">
+<li>在5次抛硬币试验中,正面(Head)出现次数的概率分布就是一个二项分布(我们在4.1节讨论过).</li>
+<li>当然,试验次数也可以是任意其他数值.</li>
+</ul></li>
+<li>在5次抛硬币的例子中,每次抛掷都是一个伯努利试验.当我们汇总5次试验并统计总成功次数(即正面朝上的次
+数,记为k)时,就得到了一个二项分布.
+<ul class="org-ul">
+<li>在这个具体例子中,试验次数n=5,每次试验的成功概率p=1/2.</li>
+<li><p>
+其概率分布P(k)正是图4.1中绘制的"正面出现次数"的概率分布.
+</p>
+
+<div id="orgf489193" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/peb/4-1.png" alt="4-1.png" />
+</p>
+<p><span class="figure-number">Figure 37: </span>peb/4-1.png</p>
+</div></li>
+</ul></li>
+<li>现在,我们推广到一般情况:
+<ul class="org-ul">
+<li>设有n次独立伯努利试验,</li>
+<li>每次试验的成功概率均为p.</li>
+<li>我们的目标是求出总成功次数k(取值范围为0到n)对应的概率P(k).</li>
+</ul></li>
+<li>对于给定的n和p,计算二项分布的方法如下:
+<ul class="org-ul">
+<li>特定k次成功的概率:\(p^k\) 表示某特定的k次试验全部成功的概率(因为每次成功的概率是p).</li>
+<li>其余n-k次失败的概率:由于我们要求恰好k次成功,因此剩下的n-k次必须失败,其概率为 \((1-p)^{n-k}\)(因
+为每次失败的概率是1-p).</li>
+<li><p>
+特定k次成功(且其余失败)的联合概率:因此,某个特定k次试验成功(其余失败)的概率为
+</p>
+\begin{equation}
+p^k \cdot (1-p)^{n-k}
+\end{equation}</li>
+<li><p>
+所有可能的k次组合:由于从n次试验中选取k次成功的方式共有 \(\binom{n}{k}\) 种,因此恰好k次成功的总概
+率为:
+</p>
+\begin{equation}
+P(k) = \binom{n}{k} p^k (1-p)^{n-k} \qquad \text{ (binomial distribution) } \qquad \tag{4.6}
+\end{equation}</li>
+</ul></li>
+<li>这就是我们要求的二项分布.需要注意的是,该分布依赖于两个参数:
+<ul class="org-ul">
+<li>试验次数n</li>
+<li>每次试验的成功概率p</li>
+</ul></li>
+<li><p>
+如果需要明确参数,可以记作B<sub>n,p</sub>(k),即:
+</p>
+\begin{equation}
+B_{n,p}(k) = \binom{n}{k} p^k (1-p)^{n-k}. \qquad \tag{4.7}
+\end{equation}</li>
+<li>不过,我们通常仍会使用简化的P(k)表示法.</li>
+<li><p>
+在由n次抛硬币生成的二项分布这一特殊情形下,每次试验的成功概率为p=1/2.因此,式(4.6)可简化为计算恰
+好出现k次正面(Heads)的概率:
+</p>
+\begin{equation}
+P(k)=\frac{1}{2^{n}}{ n\choose k}.\tag{4.8}
+\end{equation}</li>
+<li>参数回顾:在式(4.6)中:
+<ul class="org-ul">
+<li>n:伯努利试验的总次数(如抛硬币次数).</li>
+<li>p:每次试验的成功概率(如硬币正面朝上的概率).</li>
+<li>k:n次试验中的总成功次数(k的取值范围为0至n).</li>
+</ul></li>
+<li><p>
+图4.10展示了两种参数组合的二项分布:
+</p>
+
+<div id="org1add3fb" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/peb/4-10.png" alt="4-10.png" />
+</p>
+<p><span class="figure-number">Figure 38: </span>peb/4-10.png</p>
+</div></li>
+<li>示例对比:
+<ul class="org-ul">
+<li>n=30,p=1/2:对应30次抛硬币试验,成功为"正面朝上".</li>
+<li>n=30,p=1/6:对应30次掷骰子试验,成功为"骰子显示某一特定数字"(如数字1).</li>
+</ul></li>
+</ul>
+<hr />
+</div>
+<div id="outline-container-org8626193" class="outline-4">
+<h4 id="org8626193"><span class="section-number-4">4.5.1.</span> Example(Equal probabilites)</h4>
+<div class="outline-text-4" id="text-4-5-1">
+<ul class="org-ul">
+<li>给定试验次数n,求使"零次成功"概率等于"一次成功"概率的p值.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org41b42d8" class="outline-4">
+<h4 id="org41b42d8"><span class="section-number-4">4.5.2.</span> Solution:</h4>
+<div class="outline-text-4" id="text-4-5-2">
+<ul class="org-ul">
+<li>根据式(4.6),我们需要使P(0)等于P(1).由此可得:</li>
+</ul>
+<p>
+\begin{align}
+</p>
+<ul class="org-ul">
+<li>这个p=1/(n+1)是一个特殊值,在此处各种竞争效应相互抵消.
+<ul class="org-ul">
+<li>一方面,P(1)包含一个额外的系数n,这是从 \(\binom{n}{1}\) 获得的</li>
+<li>另一方面,P(1)还包含一个因子p,这反映了一次成功确实发生的事实.</li>
+</ul></li>
+<li>第一个效应使P(1)大于P(0), <b>因为多了一个比1大的n</b>, 而第二个效应使其更小, <b>因为多了一个比1小的p</b> .当
+p=1/(n+1)时,这两个效应恰好抵消.</li>
+<li>当参数取p=1/(n+1)时(如图4.11所示案例n=10,p=1/11),
+<ul class="org-ul">
+<li><p>
+如图
+</p>
+
+<div id="org823f00b" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/peb/4-11.png" alt="4-11.png" />
+</p>
+<p><span class="figure-number">Figure 39: </span>peb/4-11.png</p>
+</div></li>
+<li>二项分布呈现特殊性质:概率相等:零成功概率P(0)与一次成功概率P(1)精确相等</li>
+</ul></li>
+<li>分布形态分界:此概率值为分布极值点位置的分水岭
+<ul class="org-ul">
+<li>p&gt;1/(n+1):概率最大值出现在k&ne;0处,分布呈现隆起形态(如图4.10两例所示)</li>
+<li>p&lt;1/(n+1):概率峰值位于k=0处,此后单调递减</li>
+</ul></li>
+<li>在推导出二项分布公式(4.6)后,我们可通过以下方式验证其正确性:
+<ul class="org-ul">
+<li><p>
+由于成功次数k的取值范围为0至n,所有P(k)的概率总和应满足:
+</p>
+\begin{equation}
+\sum_{k=0}^{n}P(k)=1
+\end{equation}</li>
+</ul></li>
+<li><p>
+式(4.6)的概率表达式通过二项式定理完美满足该要求.根据式(1.21)的推广(令a=p,b=1-p),可得:
+</p>
+\begin{equation}
+\left(p+(1-p)\right)^{n}=\sum_{k=0}^{n}\binom{n}{k}p^{k}(1-p)^{n-k} \quad \text{(4.10)}
+\end{equation}</li>
+<li><p>
+由于等式左边简化为 \(1^n=1\) ,右边求和项恰为式(4.6)的P(k)项,因此直接导出:
+</p>
+\begin{equation}
+1=\sum_{k=0}^{n}P(k) \quad \text{(4.11)}
+\end{equation}</li>
+<li>正如我们所证明的结论,读者可通过图4.10左图所示概率分布进行验证.在估算过程中,允许采用近似读数方法
+&#x2013;您将发现各概率值的总和确实趋近于1(在估算误差允许范围内).</li>
+<li>习题4.4任务说明 该题目要求运用式(3.4)严格证明:二项分布期望值:E = pn</li>
+<li>其概率意义:在n次伯努利试验中,若每次试验成功概率为p,则长期观测下的平均成功次数应为pn</li>
+<li>该结论具有必然性:根据伯努利过程的定义,n次试验中平均会有占比p的试验取得成功.</li>
+<li>若要通过实验验证图4.10左图所示的30次抛硬币正面朝上次数分布:
+<ul class="org-ul">
+<li>单次实验的局限性:单组30次抛掷仅能获得一个数据点(如17次正面)无法反映整体概率分布特征</li>
+<li>正确验证步骤:需进行大量"30次抛掷"的独立实验组.记录每组实验的正面出现次数(生成数列如13,16,15,16,
+18,&#x2026;)统计各次数出现的相对频率</li>
+</ul></li>
+<li>收敛性原则:实验组数越多,统计频率与理论概率的吻合度越高.分布规律描述的是大量实验组的宏观统计特征,而非单次实验的具体结果</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org389b707" class="outline-3">
+<h3 id="org389b707"><span class="section-number-3">4.6.</span> Exponential distribution</h3>
+<div class="outline-text-3" id="text-4-6">
+<ul class="org-ul">
+<li><p>
+我们将从指数分布的公式开始,其一般形式为:
+</p>
+\begin{equation}
+\rho(t) = A e^{-bt}, \tag{4.12}
+\end{equation}</li>
+<li>其中,A 和 b 是依赖于具体情况的量.我们将在下面的公式 (4.26) 中发现,这些量必须满足某种特定的关系,
+以确保总概率为 1.</li>
+<li>参数 t 对应于随机变量.指数分布是一个连续分布,因此 ρ(t) 是一个概率密度函数.该分布最常见的应用场景是以下情况:
+<ul class="org-ul">
+<li>考虑一个完全随机发生的重复事件.所谓"完全随机"是指该事件在任意给定时刻(或者更准确地说,在任何长
+度相同的小时间间隔内)发生的概率是均匀的,且与之前发生的情况无关.也就是说,这个过程没有"记忆".</li>
+<li>最终我们将在公式 (4.26) 中推导出这种指数分布,它给出了直到下一个事件发生的等待时间的概率分布.由
+于时间 t 是一个连续变量,我们需要发展一些形式化的方法来分析该分布.</li>
+</ul></li>
+<li>为了逐步展开分析,我们先从一个稍微简单一些的情况开始:假设时间是离散的(实际上时间是连续的)</li>
+</ul>
+</div>
+<div id="outline-container-org1fc7390" class="outline-4">
+<h4 id="org1fc7390"><span class="section-number-4">4.6.1.</span> Discrete case</h4>
+<div class="outline-text-4" id="text-4-6-1">
+<ul class="org-ul">
+<li>考虑一个过程:
+<ul class="org-ul">
+<li>我们每秒掷一次一个假想的10面骰子.</li>
+<li>因此,时间被离散化为1秒的间隔.</li>
+<li>其实,在这里引入时间并不是必须的.我们完全可以只讨论这个过程的迭代次数.但相比于讨论"需要等待的迭
+代次数",讨论"等待时间"会更容易理解.因此,为了方便,我们将在时间的背景下讨论这些问题.</li>
+</ul></li>
+<li>如果骰子掷出了"1",我们将其视为一次成功.而其他九个数字则表示失败.有两个合理的问题可以提出:
+<ul class="org-ul">
+<li>成功之间的平均等待时间(也就是等待时间的期望值)是多少?</li>
+<li>成功之间的等待时间的概率分布是什么?</li>
+</ul></li>
+<li>确定平均等待时间相对比较简单.骰子有10个可能的数字,因此平均来说,我们可以预期其中有1/10是"1".</li>
+<li>如果我们运行这个过程很长时间,比如1小时(即3600秒),那么:
+<ul class="org-ul">
+<li>我们可以预期大约会有360次掷出"1".</li>
+<li>因此,成功之间的平均等待时间为 (3600秒)/360 = 10秒.</li>
+</ul></li>
+<li>更一般地说,
+<ul class="org-ul">
+<li>如果每次试验中成功的概率是 p,</li>
+<li>那么平均等待时间就是 1/p(假设试验以1秒的间隔进行).</li>
+</ul></li>
+<li>这一点可以通过与上述相同的推理得出.如果我们进行 n 次试验,那么平均来说,其中会有 pn 次成功.
+<ul class="org-ul">
+<li><p>
+成功之间的平均等待时间是总时间(n)除以成功的次数(pn):
+</p>
+\begin{equation}
+\text{Average waiting time} = \frac{n}{pn} = \frac{1}{p} \tag{4.13}
+\end{equation}</li>
+<li>需要注意的是,上述推理给出了平均等待时间,而无需知道等待时间的实际概率分布(我们将在下面计算).
+当然,一旦我们知道了概率分布,我们就应该能够计算出等待时间的平均值(期望值).</li>
+</ul></li>
+<li>找到等待时间的概率分布比找到平均等待时间需要更多一些工作.</li>
+<li>以10面骰子的例子为例,我们试图回答的问题是:
+<ul class="org-ul">
+<li>如果我们考虑两个连续出现的"1",</li>
+<li>它们之间的时间间隔是6秒的概率是多少?</li>
+<li>30秒的概率是多少?</li>
+<li>1秒的概率又是多少?</li>
+</ul></li>
+<li>尽管平均等待时间是10秒,但这当然并不意味着等待时间总是10秒.实际上,我们会发现,等待时间恰好是10秒
+的概率非常小.</li>
+<li>让我们更一般化地考虑,假设每次试验中成功的概率是p(在我们当前的情况中p=1/10),那么问题就是:
+<ul class="org-ul">
+<li>在获得下一次成功之前,我们恰好需要等待k次实验(也就是k秒,每次实验1秒)的概率P(k)是多少?</li>
+</ul></li>
+<li>要回答这个问题,注意到为了让下一次成功发生在第k次试验,那么:
+<ul class="org-ul">
+<li>前k−1次试验必须失败</li>
+</ul></li>
+<li>每次失败的概率是1-p,并且第k次实验成功,
+<ul class="org-ul">
+<li><p>
+发生这种情况的概率是
+</p>
+\begin{equation}
+P(k) = (1-p)^{k-1}p  \text{  (geometric distribution)}
+\end{equation}</li>
+<li>这就是我们想要的等待时间的(离散)概率分布.这个分布被称为几何分布(geometric distribution),因为
+这些概率形成了一个几何级数,这是由于(1−p)因子的幂次递增所致.</li>
+<li>几何分布是我们将在下面的公式 (4.26) 中推导出的指数分布的离散版本.</li>
+<li>这个公式告诉我们,下一个成功在下一次试验中发生的概率是 (p);在第二次试验中发生的概率是 ((1−p)p);在第三次试验中发生的概率是 ((1−p)(1-p)p)</li>
+<li>依此类推,每个概率都比前一个小一个因子(1−p)</li>
+<li><p>
+对于 (p=1/10) 的情况,其分布的图像如图 4.12 所示.
+</p>
+
+<div id="orgace83ce" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/peb/4-12.png" alt="4-12.png" />
+</p>
+<p><span class="figure-number">Figure 40: </span>peb/4-12.png</p>
+</div></li>
+<li>分布在 (k=1) 时达到最大值,然后从该值开始下降.即使 (k=10) 是平均等待时间,等待时间恰好为10的概率只有0.04</li>
+</ul></li>
+<li>如果p很大(接近于1),P(k) 的图像在 (p) 处开始很高(接近1),然后迅速下降,因为 (1−p) 因子接近0.</li>
+<li>另一方面,如果 (p) 很小(接近于0),(P(k)) 的图像在 (p) 处开始很低(接近0),然后缓慢下降,因为(1−p) 因子接近1.</li>
+<li>因此所有 (P(k)) 概率的总和必须为1.这些 (P(k)) 概率形成了一个几何级数,
+<ul class="org-ul">
+<li>其首项为 (p),</li>
+<li>公比为 ((1−p)).</li>
+<li><p>
+因此我们有
+</p>
+\begin{equation}
+P(1) + P(2) + P(3) + \cdots  = p + p(1-p) + p(1-p)^2 + \cdots = \frac{p}{1-(1-p)} = 1 \tag{4.15}
+\end{equation}</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org7ba569b" class="outline-4">
+<h4 id="org7ba569b"><span class="section-number-4">4.6.2.</span> Rates, expectation values, and probabilities</h4>
+<div class="outline-text-4" id="text-4-6-2">
+<ul class="org-ul">
+<li>现在让我们考虑时间是一个连续变量的情况.也就是说,
+<ul class="org-ul">
+<li>假设我们可以在任意时刻发生"成功"事件,</li>
+<li>而不仅仅是在如上所述的等间隔的1秒时刻.</li>
+</ul></li>
+<li>一个时间上概率均匀分布的连续过程可以用一个数字完全描述&#x2013;即成功的平均速率,我们称之为 \(\lambda\)(读作"lambda").
+我们通常不会特别强调"平均"这个词,因此直接称 λ 为"速率".</li>
+<li>速率 λ 可以通过在一个较长的时间间隔内统计成功事件的数量,然后除以这个时间间隔来确定.例如,
+<ul class="org-ul">
+<li>如果在100分钟内发生了300次(成功)事件,那么速率 λ 就是每分钟3次.</li>
+<li>当然,如果你在另一个100分钟的时间段内统计事件数量,可能会得到一个略微不同的数字,比如313次或281次.</li>
+<li>但在时间间隔非常长的极限情况下,无论选择哪个具体的长时间间隔,你都会发现速率基本相同.</li>
+</ul></li>
+<li>如果速率 λ 是每分钟3次事件,
+<ul class="org-ul">
+<li>你也可以将其写成每20秒1次事件,</li>
+<li>或者每秒1/20次事件.</li>
+<li>实际上,有无数种方法来表达 λ,选择哪一种完全是个人偏好.只需记住,你必须说明所使用的"每单位时间"
+间隔.如果你只是说速率是3,那就没有任何意义.</li>
+</ul></li>
+<li>在时间 (t) 内发生事件的期望值是多少?根据 (λ) 的定义,这个期望值简单地等于 (λt) 的乘积.</li>
+<li>如果期望值不是 (λt),那么如果我们用它除以 (t) 来计算速率,就不会得到 (λ).</li>
+<li>如果你想更严格一些,可以考虑一个包含 (n) 个长度为 (t) 的时间间隔的情况.这些时间间隔的总时长是 (nt).
+这个总时长非常长,因此根据 (λ) 的定义,在这段时间内发生的事件数量(近似)等于 (nt)λ 因此,每个长度
+为 (t) 的 (n) 个间隔中的期望事件数量为 ntλ/n=λt,与上述结果一致.</li>
+<li><p>
+因此,我们可以写为:
+</p>
+\begin{equation}
+\text{(Expected number of events in time t) } = \lambda t \tag{4.16}
+\end{equation}</li>
+<li>上面公式中当 \(\lambda\) 等于每分钟三次event的情况下,在5分钟内期望发生的数目是15</li>
+<li>这是否意味着在某个特定的5分钟时间段内,我们保证会有恰好15次事件发生?
+<ul class="org-ul">
+<li>当然不是.</li>
+<li>理论上,事件数量可以是任何值,尽管事件数量显著偏离15的概率几乎为零.(发生不同事件数量的概率由泊
+松分布(Poisson distribution)决定,我们将在4.7节中讨论.)</li>
+<li>但期望值确实是15.也就是说,如果我们进行大量的5分钟试验,然后计算每次试验中发生的事件数量的平均值,
+结果将接近15.</li>
+</ul></li>
+<li>一个更微妙的问题是:在时间 t 内恰好发生一个事件的概率是多少?
+<ul class="org-ul">
+<li>由于 λ 是事件发生的速率(单位时间发生次数的期望值),你可能会想,我们可以像上面计算期望次数那样,
+直接把 λ 乘以 t,认为这个概率就是 λt.</li>
+<li>但这显然是不正确的,因为在上面的设定中(λ = 3 次/分钟),对于一个 5 分钟的时间间隔,这会得出一个
+概率值 15.这很荒谬,因为概率不可能大于 1.</li>
+<li>如果我们改为选择一个 20 秒(1/3 分钟)的时间间隔,会得到一个 λt 值等于 1((3 次/分钟) * (1/3 分钟) = 1).
+这个值没有大于 1 的致命缺陷,但它有另一个问题:它意味着在一个 20 秒的时间间隔内,恰好发生一个事件
+是必然的(概率为 1).这也不可能是正确的,因为显然有可能发生零个(或两个,三个等等)事件.</li>
+</ul></li>
+<li>将 λ 乘以 t 来得到一个概率的策略似乎行不通.</li>
+<li>然而,有一种特殊情况是成立的.
+<ul class="org-ul">
+<li>如果时间间隔非常小(我们称之为 ϵ,这是一个用来表示非常小的事物的标准字母),那么在 ϵ 时间间隔内恰
+好发生一个事件的概率基本上等于 λϵ.</li>
+<li>我们使用"基本上"这个词是因为,虽然这个说法在技术上并不精确,但在 ϵ 趋近于零的极限情况下,它会无限
+接近正确.在上面的例子中(λ = 1/20 次/秒),"λt 是在时间 t 内恰好发生一个事件的概率"这个说法:
+<ol class="org-ol">
+<li>当 t = 20 秒时,是一个糟糕的近似(λt = 1),</li>
+<li>当 t = 2 秒时,是一个尚可的近似(λt = 0.1),</li>
+<li>当 t = 0.2 秒时,是一个非常好的近似(λt = 0.01).而且,随着时间间隔越来越小,这个近似效果只会
+越来越好.我们将在下面的第一个备注中解释原因.</li>
+</ol></li>
+</ul></li>
+<li><p>
+因此,我们可以说:如果 \(P_{\epsilon}(1)\) 表示在极短时间间隔 ϵ 内恰好发生一个事件的概率,那么:
+</p>
+\begin{equation}
+P_{\epsilon}(1) \approx \lambda \epsilon \quad \text{ (if } \epsilon \text{ is very small) } \tag{4.18}
+\end{equation}</li>
+<li>ϵ 越小,该近似越精确.</li>
+<li>严格来说,式(4.18)成立的条件是 "λϵ 非常小".但由于我们通常处理"常规"量级的 λ(即 λ 不极大),因此
+λϵ 小等价于 ϵ 小.</li>
+<li>后续讨论连续时间时,我们实际将取极限 ϵ→0.在此数学极限下,式(4.18)中的 "≈" 将变为严格的 "=" .</li>
+<li>总结如下:
+<ul class="org-ul">
+<li>若时间 t 极短,则 λt 同时表示:
+<ol class="org-ol">
+<li>在时间 t 内发生事件的期望数量;</li>
+<li>在时间 t 内恰好发生一个事件的概率(本质成立).</li>
+</ol></li>
+<li>若时间 t 不极短,则 λt 仅表示事件的期望数量(无法直接作为单事件概率)</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org7de2ea0" class="outline-4">
+<h4 id="org7de2ea0"><span class="section-number-4">4.6.3.</span> Continuous case</h4>
+<div class="outline-text-4" id="text-4-6-3">
+<ul class="org-ul">
+<li>在4.6.1节的离散时间情形中,我们提出了两个问题:
+<ul class="org-ul">
+<li>成功事件之间的平均等待时间是多少?</li>
+<li>成功事件之间等待时间的概率分布是什么?</li>
+</ul></li>
+<li>本节将针对时间作为连续量的情形回答这两个问题.</li>
+<li>与离散情形类似,第一个问题相对容易回答.
+<ul class="org-ul">
+<li><p>
+设成功事件的平均发生率为 λ,并考虑一段较长时间 t.根据式(4.16),在时间 t 内发生的事件总数量期望
+值为 λt.若定义平均等待时间为 τ,则其等于总时间除以事件总数:
+</p>
+\begin{equation}
+\tau = \frac{t}{\lambda t} = \frac{1}{\lambda} \tag{4.22}
+\end{equation}</li>
+</ul></li>
+<li>我们可知,平均等待时间 τ 就是事件发生速率 λ 的倒数.例如,若事件发生速率为每秒 5 次,则平均等待时间
+为 1/5 秒(τ=0.2 s).</li>
+<li>这一结论是直观的:在确定性过程中,若事件严格以 1/5 秒的等间隔发生,平均等待时间同样为 0.2 秒.</li>
+<li>但妙就妙在,即使对于随机过程&#x2013;尽管事件间隔并不均等&#x2013;式(4.22)依然成立.</li>
+<li>式(4.22)中 λ 位于分母是合理的:
+<ul class="org-ul">
+<li>若 λ 较小(事件发生缓慢),平均等待时间 τ 较长;</li>
+<li>若 λ 较大(事件发生频繁),平均等待时间 τ 较短;</li>
+</ul></li>
+<li>如前所述(第三节备注),τ 的值完全由 λ 决定.</li>
+<li>现在我们来回答第二个(更困难的)问题:
+<ul class="org-ul">
+<li>等待时间在两次成功之间的概率分布是什么?</li>
+<li>换句话说,从某个事件发生到下一个事件的等待时间在 `t` 和 `t + ∆t` 之间的概率是多少?  其中 `∆t` 很小.</li>
+</ul></li>
+<li>为了解答这个问题,
+<ul class="org-ul">
+<li>我们将使用与第 4.6.1 节离散情形中相同的总体策略,</li>
+<li>只不过这次迭代间的时间间隔不是 1 秒,而是非常小的时间 `ϵ`.</li>
+<li>然后我们取极限 `ϵ → 0`,使得时间变为连续的.</li>
+</ul></li>
+<li>时间划分方法
+<ul class="org-ul">
+<li><p>
+如图 4.13 所示
+</p>
+
+<div id="org2f62e08" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/peb/4-13.png" alt="4-13.png" />
+</p>
+<p><span class="figure-number">Figure 41: </span>peb/4-13.png</p>
+</div></li>
+<li>从时间零(即假设初始事件发生的时刻)到时间 `t`,</li>
+<li>我们将时间分成大量极小的间隔,每段长度为 `ϵ`(这意味着这里共有 `t/ϵ` 个这样的时间间隔).</li>
+<li>然后,在末尾放置一个长度为 `∆t` 的区间.</li>
+<li>这里 `ϵ` 和 `∆t` 都假设非常小, 但它们彼此之间不必有任何关系.</li>
+<li>`ϵ` 只是计算上的工具,而 `∆t` 是出现在公式 (4.2) 中任意选择的小时间间隔.</li>
+</ul></li>
+<li>下一次成功发生在 (t, t + ∆t] 区间的概率:为了让下一次成功(事件)发生在 `t` 和 `t + ∆t` 之间,必须满足以下条件:
+<ul class="org-ul">
+<li>在图 4.13 中的 `t/ϵ` 个长度为 `ϵ` 的时间间隔内,每个间隔都发生失败;</li>
+<li>然后在 `(t, t + ∆t]` 区间中发生一次成功.</li>
+</ul></li>
+<li>根据公式 (4.18),由于 `∆t` 被假设得非常小,  在 `∆t` 内发生成功的概率为:λ∆t</li>
+<li>同样根据 (4.18),在任意一个长度为 `ϵ` 的小区间内发生成功的概率为:λ ϵ</li>
+<li>因此,失败的概率为:1 - λϵ</li>
+<li>由于有 `t/ϵ` 个这样的间隔,全部失败的概率为:\((1 - \lambda \epsilon)^{t/\epsilon}\)</li>
+<li>又由于下一次成功发生在 `(t, t + ∆t]` 区间的概率为 `P(t, ∆t)`</li>
+<li><p>
+那么总体概率(前N次失败最后一次成功)
+</p>
+\begin{equation}
+P(t, \Delta t) = \left( 1 - \lambda \epsilon \right)^{t / \epsilon} \left( \lambda \, \Delta t \right).
+\tag{4.23}
+\end{equation}</li>
+<li>这一推导方法与公式 (4.14) 的推理方式类似(见注释 1).</li>
+<li><p>
+接下来,我们使用附录 C 中的结果,即近似公式 (7.14):
+</p>
+\begin{equation}
+(1 + a)^n \approx e^{n a}
+\end{equation}</li>
+<li>该近似对正数 `a` 和负数 `a` 都成立,其中 `e` 是欧拉数 `e ≈ 2.71828`.</li>
+<li>在当前问题中:
+<ul class="org-ul">
+<li>令 `a = -λϵ`</li>
+<li>令 `n = t/ϵ`</li>
+</ul></li>
+<li>得到: \(na = (t/\epsilon)(-\lambda \epsilon) = -\lambda t\)</li>
+<li>上面这个公式再由 \((1 + a)^n \approx e^{n a}\) 推导得到 \((1 + (-\lambda\epsilon))^{t/\epsilon} \approx e^{t (-\lambda)}\)</li>
+<li><p>
+所以总体来说就得到如下公式4-25
+</p>
+\begin{equation}
+P(t, \Delta t) = e^{-\lambda t} \, \lambda \, \Delta t.\tag{4.25}
+\end{equation}</li>
+</ul>
+</div>
+<ol class="org-ol">
+<li><a id="org31c09ba"></a>求概率分布(概率密度)<br />
+<div class="outline-text-5" id="text-4-6-3-1">
+<ul class="org-ul">
+<li><p>
+根据公式 (4.2),概率密度 ρ(t) 可以通过将概率除以区间长度 `∆t` 得到,
+</p>
+\begin{equation}
+\boxed{\rho(t) = \lambda e^{-\lambda t}} \quad \text{(exponential distribution)} \tag{4.26}
+\end{equation}</li>
+<li>这称为 <b><b>指数分布</b></b>,因为它随 `t` 以指数形式递减.该分布依赖于速率参数 `λ`(当然也依赖于 `t`).</li>
+</ul>
+</div>
+</li>
+<li><a id="org19bb0e6"></a>用平均等待时间 τ 表示<br />
+<div class="outline-text-5" id="text-4-6-3-2">
+<ul class="org-ul">
+<li>在等待时间的情境下,常用 <b><b>平均等待时间</b></b> `τ` 而不是速率 `λ` 来描述.
+<ul class="org-ul">
+<li>根据 (4.22) 有:\([\lambda = \frac{1}{\tau}]\)</li>
+<li><p>
+将其代入 (4.26) 得:
+</p>
+\begin{equation}
+\boxed{\rho(t) = \frac{e^{-t / \tau}}{\tau}} \quad \text{(exponential distribution)}\tag{4.27}
+\end{equation}</li>
+</ul></li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org64ca0f9" class="outline-3">
+<h3 id="org64ca0f9"><span class="section-number-3">4.7.</span> Poisson distribution</h3>
+<div class="outline-text-3" id="text-4-7">
+<ul class="org-ul">
+<li>本节我们要介绍的是泊松分布,
+<ul class="org-ul">
+<li><p>
+其公式如下
+</p>
+\begin{equation}
+\boxed{
+P(k) = \frac{a^k e^{-a}}{k!}
+}
+\quad \text{(Poisson distribution)}
+\tag{4.31}
+\end{equation}</li>
+<li>参数 a 取决于具体的情境,</li>
+<li>k 是随机变量的取值,表示在某个时间区间(或空间,或其他场合)内发生的事件数(我们会在下文讨论).</li>
+<li>因为 k 是整数(表示事件发生的次数),所以泊松分布是一个离散分布.</li>
+</ul></li>
+<li>与前一节讨论的指数分布类似,考虑一个在时间上完全随机地发生的重复事件.我们将证明:
+<ul class="org-ul">
+<li>在给定时间间隔内发生的事件数量所服从的概率分布,正是上述泊松分布的形式.</li>
+</ul></li>
+<li>指数分布和泊松分布区别如下:
+<ul class="org-ul">
+<li>指数分布:描述直到下一个事件发生的等待时间.</li>
+<li>泊松分布:描述给定时间间隔内事件发生的次数.</li>
+</ul></li>
+<li>与指数分布的推导类似,我们在推导泊松分布时的策略是:
+<ul class="org-ul">
+<li>先考虑 <b>离散时间</b> 的情形,</li>
+<li>再过渡到 <b>连续时间</b> 的情形.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgf58d385" class="outline-3">
+<h3 id="orgf58d385"><span class="section-number-3">4.8.</span> Gaussian distribution</h3>
+<div class="outline-text-3" id="text-4-8">
+<ul class="org-ul">
+<li>高斯概率分布(也称为"正态分布"或"钟形曲线")是所有概率分布中最重要的一种.</li>
+<li>原因是(正如我们将在第 5 章看到的那样),:
+<ul class="org-ul">
+<li>在大数极限下,许多其他分布都会趋近于高斯分布.</li>
+</ul></li>
+<li><p>
+现在,我们先只研究高斯分布的数学性质.这种分布通常用以下任意一种形式来表示:
+</p>
+\begin{equation}
+\boxed{
+f(x) = \sqrt{\frac{b}{\pi}} \, e^{-b(x-\mu)^2}
+\quad \text{or} \quad
+\sqrt{\frac{1}{2\pi\sigma^2}} \, e^{-\frac{(x-\mu)^2}{2\sigma^2}}
+}
+\tag{4.42}
+\end{equation}</li>
+<li>如果你想明确表示公式中出现的参数,可以写成 \(f_{\mu,b}(x)\), 或者 \(f_{\mu,\sigma}(x)\)</li>
+<li>高斯分布是一个连续分布:
+<ul class="org-ul">
+<li>x 可以取连续的数值(类似于指数分布中的 t)</li>
+<li>不同于二项分布和泊松分布中的 k(离散取值)</li>
+</ul></li>
+<li>因此,高斯概率分布实际上是一个**概率密度**.  正如在 4.2.2 节开头提到的:
+<ul class="org-ul">
+<li>概率密度通常用小写字母表示(如 f(x) 中的 f)</li>
+<li>实际概率通常用大写字母表示(如 P(k) 中的 P)</li>
+</ul></li>
+<li>两种常见形式(公式 4.42 的关系)
+<ul class="org-ul">
+<li>第二种表达式可由第一种通过令 b = 1 / (2σ²) 得到</li>
+<li>第一种形式更简单</li>
+<li>第二种形式更常见,因为在 3.3 节中引入的 <b>标准差</b> 正好就是 σ  因此,这里用字母 σ 表示参数</li>
+</ul></li>
+
+<li>归一化性质:注意 b(或 σ)在分布中出现两次:
+<ul class="org-ul">
+<li>出现在指数因子中</li>
+<li>出现在前置系数(prefactor)中</li>
+</ul></li>
+<li>这两个位置的配合确保了分布曲线下的总面积等于 1</li>
+<li>参数对曲线形状的影响
+<ul class="org-ul">
+<li>µ 和 b(或 µ 和 σ)取决于具体情境</li>
+<li>本节我们主要使用公式 (4.42) 的第一种形式进行讨论</li>
+<li>关于 b 的结论,可通过替换 b = 1 / (2σ²) 转化为关于 σ 的结论</li>
+</ul></li>
+<li>我们先来考虑平均值 \(\mu\)
+<ul class="org-ul">
+<li><p>
+如图4-23首先展示了两个高斯分布
+</p>
+
+<div id="orgc407033" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/peb/4-23.png" alt="4-23.png" />
+</p>
+<p><span class="figure-number">Figure 42: </span>peb/4-23.png</p>
+</div></li>
+<li>第一个 \(b=2,\mu=6\)</li>
+<li>第二个 \(b=2,\mu=10\)</li>
+<li>从图中可以明显看出,µ 是曲线的最大值位置.</li>
+<li>从数学上来说,这是因为 e<sup>-b(x-µ)^2</sup> 中的指数部分要么为 0,要么为负数.因为平方项 (x-µ)² 总是大于
+等于 0).因此,这个指数因子总是小于或等于 1,当指数为 0(即 x = µ)时,该因子的取值达到最大值 1.
+所以曲线的峰值出现在 x = µ.</li>
+</ul></li>
+<li>µ 对曲线位置的影响
+如果在 b 不变的情况下增大 µ,整条曲线会向右平移,但形状保持不变.
+这一点从图中可以直接看出来.</li>
+<li>µ 与均值的关系:由于曲线在最大值位置左,右对称,µ 同时也是该分布的均值(或期望值):</li>
+<li>记号选择原因
+<ul class="org-ul">
+<li>在第 3 章中我们一直用 µ 表示均值,因此在公式中用 µ 是自然而然的选择</li>
+<li>理论上,也可以在指数分布和泊松分布中用 µ 表示均值但为了避免本章中出现太多 µ,我们将它们的均值分别
+记作 τ 和 a</li>
+</ul></li>
+<li>之前是b固定, \(\mu\) 不同,我们这里改成 \(\mu\) 固定, b改变,那么我们可以最终发现,改变的是height
+<ul class="org-ul">
+<li><p>
+两个分布如图
+</p>
+
+<div id="org2993eb5" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/peb/4-24.png" alt="4-24.png" />
+</p>
+<p><span class="figure-number">Figure 43: </span>peb/4-24.png</p>
+</div></li>
+</ul></li>
+<li>参数 b 对高斯分布高度和宽度的影响
+<ul class="org-ul">
+<li>从图中可以明显看出,b 同时影响曲线的高度和宽度.</li>
+</ul></li>
+<li>下面我们来看这两种影响是如何产生的.</li>
+<li>对高度的影响:
+<ul class="org-ul">
+<li>高度的影响比较容易理解,因为曲线的高度(函数的最大值)就是: \(\sqrt{b/\pi}\)</li>
+<li>当 x = µ(即峰值位置)时, \(e^{-b(x - \mu)^2} = 1\)</li>
+<li>因此在这个位置,\(f(x0 = \sqrt{b/\pi} \cdot 1 = \sqrt{b/\pi}\)</li>
+<li>类似地,也可以用 σ 表示高度: \(\text{Height} = \frac{1}{\sqrt{2\pi\sigma^2}}\)</li>
+</ul></li>
+<li>高度变化比率:
+<ul class="org-ul">
+<li>比较公式 (4.45) 中的两个函数,可以看出:高度比率 \(\sqrt{8/2} = 2\)  这个比率与图 4.24 中观察到的结果一致.</li>
+</ul></li>
+<li><p>
+高度公式总结(公式 4.46)
+</p>
+\begin{equation}
+\text{Height} = \sqrt{\frac{b}{\pi}} = \sqrt{\frac{1}{2\pi\sigma^2}}
+\tag{4.46}
+\end{equation}</li>
+</ul>
+</div>
+<ol class="org-ol">
+<li><a id="orgf66856c"></a>Width in terms of b(以 b 表示的宽度)<br />
+<div class="outline-text-5" id="text-4-8-0-1">
+<ul class="org-ul">
+<li>现在来看宽度.我们注意到图 4.24 中的第二条函数曲线比第一条曲线更高且更窄(但具有相同的中点,因为我
+们没有改变 \(( \mu )\)).它在水平方向收缩的比例大约是 \(( 1/2 )\).</li>
+<li>事实上,这个比例正好是 \(( 1/2 )\).事实证明,高斯曲线的宽度与 \(( 1/\sqrt{b} )\) 成正比.</li>
+<li>这意味着,当我们在构造第二个函数时,将 \(( b )\) 增加了 4 倍,就使得宽度减少了\(( 1/\sqrt{4} = 1/2 )\) 倍.</li>
+<li>接下来我们来证明,宽度实际上确实与 \(( 1/\sqrt{b} )\) 成正比.
+<ul class="org-ul">
+<li>但首先,我们必须明确"宽度"的含义.</li>
+<li>一个竖直矩形拥有明确定义的宽度,但高斯曲线没有,因为它的"两边"是倾斜的.我们可以 <b>任意</b> 地将宽度定义
+为曲线在最大高度的一半处的水平宽度;或者不是一半,而是三分之一,甚至十分之一.</li>
+<li>我们可以随便定义,但好处是,只要我们在比较的所有曲线中使用同一个定义,上面的「与 \(( 1/\sqrt{b} )\) 成正比」的结果始终成立.</li>
+</ul></li>
+<li>类似地,如果我们考虑方程 (4.42) 的第二个表达式,
+<ul class="org-ul">
+<li>由于 \(( 1/\sqrt{b} \propto \sigma )\),</li>
+<li>那么宽度就会与 \((\sigma)\) 成正比&#x2013;而且这和我们"任意"选择的具体宽度定义无关.</li>
+</ul></li>
+<li>这里我们选择的定义是:
+<ul class="org-ul">
+<li><b>曲线的宽度是其高度等于最大高度的 \(( 1/e )\)(约等于 0.37)时的水平宽度</b>.</li>
+<li>最大高度为 \(( \frac{\sqrt{b}}{\pi} )\).选择 \(( 1/e )\) 这个高度是自然的,</li>
+</ul></li>
+<li><p>
+因为对应的 \(( x )\) 值很容易找到,它们就是\(( \mu \pm 1/\sqrt{b} )\),因为方程 (4.42) 的第一个表达式给出:
+</p>
+\begin{align}
+f(\mu \pm 1/\sqrt{b})  \notag
+&= \sqrt{\frac{b}{\pi}} \, e^{-b \left[ (\mu \pm \frac{1}{\sqrt{b}}) - \mu \right]^2} \\ \notag
+&= \sqrt{\frac{b}{\pi}} \, e^{-b \left( \pm \frac{1}{\sqrt{b}} \right)^2} \\ \notag
+&= \sqrt{\frac{b}{\pi}} \, e^{-b/b} \\ \notag
+&= \sqrt{\frac{b}{\pi}} \cdot \frac{1}{e},
+\end{align}</li>
+<li>正如所需.由于 \(((\mu + 1/\sqrt{b}) - (\mu - 1/\sqrt{b}) = \frac{2}{\sqrt{b}})\),所以按照我们的定义
+高斯曲线的宽度为:\([\text{width} = \frac{2}{\sqrt{b}}.]\)</li>
+<li>因此,\(( 1/\sqrt{b} )\) 是宽度的一半,我们称之为 <b>半宽度</b>.  (需要注意,"半宽度"一词在有些场合也用
+来表示 <b>在最大高度的一半处曲线的全宽</b>,但这里我们不采用那个意义.)</li>
+<li>半宽度在图 4.25 中有示意,它出现在按照 \((\sigma )\) 讨论宽度的部分之后.</li>
+<li>关键点是:
+<ul class="org-ul">
+<li>不论我们如何定义宽度,公式中的分母都会有 \((\sqrt{b})\),</li>
+<li>而分子中的常数 2 并不重要.</li>
+</ul></li>
+</ul>
+</div>
+</li>
+<li><a id="org9497bcb"></a>Width in terms of σ<br />
+<div class="outline-text-5" id="text-4-8-0-2">
+<ul class="org-ul">
+<li>当我们使用方程 (4.42) 的第二种形式(这两种形式中更为常用的一种)时,
+<ul class="org-ul">
+<li>宽度的默认定义是:*在曲线最大高度的 \((1/\sqrt{e})\) 处的水平宽度*.</li>
+<li>这个定义(与之前的 \((1/e)\) 定义不同)之所以被使用,是因为对应这个高度的 \((x)\) 值  恰好是 \((x = \mu \pm \sigma)\).</li>
+<li>这是因为,如果将 \((x = \mu \pm \sigma)\) 代入方程 (4.42) 的第二个表达式,我们可以得到:</li>
+</ul></li>
+<li>这里的 \((1/\sqrt{e})\) 约等于 \((1/\sqrt{2.718} \approx 0.61)\), 大于之前定义中 \((1/e \approx 0.37)\) 的值.</li>
+<li>这是符合直觉的&#x2013;因为当 \((x = \mu \pm \sigma)\) 时,函数值是最大高度的 \((1/\sqrt{e} \approx 0.61)\),</li>
+<li>而这些点比 \((x = \mu \pm 1/\sqrt{b} = \mu \pm \sqrt{2}\,\sigma)\) (此时高度为 \((1/e \approx 0.37)\))更靠近中心.</li>
+
+<li><p>
+图 4.25 总结了这个情况,并且为了方便,我们选取了 \((\mu = 0)\).
+</p>
+
+<div id="org67bc454" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/peb/4-25.png" alt="4-25.png" />
+</p>
+<p><span class="figure-number">Figure 44: </span>peb/4-25.png</p>
+</div></li>
+<li>虽然 \((x = \mu \pm \sigma)\) 处的函数值是最大高度的 \((1/\sqrt{e})\),数值上比较"整洁",</li>
+<li>但它的真正优势在于,这些点恰好离均值 \((\mu)\) 一个标准差(standard deviation)的距离.</li>
+<li>可以用微积分(参见题 4.23)证明,方程 (4.42) 第二种形式给出的高斯分布的标准差**正好是** \((\sigma)\).
+<b>这也是该形式比第一种形式更常用的原因</b></li>
+<li>出于同样原因,人们通常(任意地)选择把高斯曲线的**半宽度**定义为 \((\sigma)\),而不是我们之前得到的
+\((1/\sqrt{b} = \sqrt{2}\,\sigma)\) 半宽度.</li>
+<li>换句话说,他们是通过函数值为最大值的 \((1/\sqrt{e})\) 处来定义宽度,而不是 \((1/e)\) 处.</li>
+<li>正如我们之前提到的,任何定义都是可以的,这只是个人偏好问题.</li>
+<li>关键在于:*宽度与 \((\sigma)\)(或 \((1/\sqrt{b})\))成正比*,精确的数值因子只是定义方式不同导致的.</li>
+<li>正如第 153 页所述,通过数值计算可以得出:
+<ul class="org-ul">
+<li>大约 <b><b>68%</b></b> 的高斯曲线下的总面积(即概率)位于区间 \((\mu \pm \sigma)\) 内.</li>
+<li>换句话说,你获得一个 \((x)\) 值位于 \((\mu)\) 一个标准差范围内的概率是 68%.</li>
+<li>这里说"数值计算",是因为虽然我们在本章涉及的其他分布中,曲线下的面积(或离散和)</li>
+<li>都可以解析计算(closed form),但高斯分布并不是这样.因此在计算高斯曲线下面积时,必须给定区间端点
+然后用计算机进行数值积分 (精确到任意精度都可以).</li>
+</ul></li>
+<li>类似地,可以计算出:
+<ul class="org-ul">
+<li>落在 \((\mu \pm 2\sigma)\) 内的面积比例大约是 <b><b>95%</b></b>;</li>
+<li>落在 \((\mu \pm 3\sigma)\) 内的面积比例大约是 <b><b>99.7%</b></b>.</li>
+</ul></li>
+<li>这些百分比与图 4.26 中的阴影区域相符.随着范围扩大,百分比迅速接近 100%,例如落在 \((\mu \pm 5\sigma)\)
+内的比例约为 <b><b>99.99994%</b></b>.</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orgf039c9d" class="outline-2">
+<h2 id="orgf039c9d"><span class="section-number-2">5.</span> Chapter 5: Gaussian approximations</h2>
+</div>
 </div>
 <div id="postamble" class="status">
 <p class="date">Date: 2025-07-12</p>
 <p class="author">Author: 图片内容翻译</p>
-<p class="date">Created: 2025-07-16 Wed 14:05</p>
+<p class="date">Created: 2025-08-22 Fri 17:48</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
