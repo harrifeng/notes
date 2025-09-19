@@ -1,0 +1,2250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-09-19 Fri 16:04 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ms</title>
+<meta name="author" content="harrifeng@outlook.com" />
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="src/readtheorg_theme/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="src/readtheorg_theme/css/readtheorg.css"/>
+<script type="text/javascript" src="src/lib/js/jquery.min.js"></script>
+<script type="text/javascript" src="src/lib/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="src/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="src/readtheorg_theme/js/readtheorg.js"></script>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">ms</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orgf3da6c4">1. Chapter 01: Introduction to this book</a>
+<ul>
+<li><a href="#orgb396451">1.1. What is statistics and why learn it?</a></li>
+<li><a href="#org4acc1bf">1.2. Statistics, data science, machine learning, etc.</a>
+<ul>
+<li><a href="#orge88a913">1.2.1. Data science</a></li>
+<li><a href="#org33f36c8">1.2.2. Data mining, analytics, informatics, etc.</a></li>
+</ul>
+</li>
+<li><a href="#org37a0c7b">1.3. Target audience</a></li>
+<li><a href="#org103492e">1.4. Prerequisites</a>
+<ul>
+<li><a href="#org93f5e15">1.4.1. The obvious</a></li>
+<li><a href="#org8eb0315">1.4.2. High-school math</a></li>
+<li><a href="#org9543f62">1.4.3. Calculus and linear algebra</a></li>
+<li><a href="#orge6205a5">1.4.4. Programming</a></li>
+</ul>
+</li>
+<li><a href="#orgb55e14a">1.5. Exercises</a></li>
+<li><a href="#orge4f5dba">1.6. Learning from simulated data</a>
+<ul>
+<li><a href="#orgd669dfc">1.6.1. 现代计算方法：模拟数据学习</a></li>
+</ul>
+</li>
+<li><a href="#orga939b86">1.7. Using the code with this book</a>
+<ul>
+<li><a href="#org79b634f">1.7.1. Which language to use?</a></li>
+<li><a href="#orgfe1eef4">1.7.2. Following along with Python</a></li>
+<li><a href="#org6cdc647">1.7.3. Following along with R</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org8d09539">2. Chapter 02: What Are (Is?) Data?</a>
+<ul>
+<li><a href="#orge837646">2.1. Is "data" singular or plural?</a></li>
+<li><a href="#org3c0f68d">2.2. Where do data come from, what do they mean?</a></li>
+<li><a href="#org96172f2">2.3. What do data look like?</a></li>
+<li><a href="#orgf553547">2.4. Limitations of data</a>
+<ul>
+<li><a href="#org1147b8a">2.4.1. Data come from imperfect measurements</a></li>
+<li><a href="#org14e701c">2.4.2. Data my contains noise</a></li>
+<li><a href="#orgdff8fa2">2.4.3. Outliers may skew statistics</a></li>
+<li><a href="#orgdfcb343">2.4.4. What is a measurement unit?</a></li>
+<li><a href="#orged09fb0">2.4.5. Conclusion</a></li>
+</ul>
+</li>
+<li><a href="#org3506fc1">2.5. Accuracy, precision, resolution, range</a>
+<ul>
+<li><a href="#org095c6db">2.5.1. Accuracy ​准确度</a></li>
+<li><a href="#org5191eb2">2.5.2. Precision 精密度</a></li>
+<li><a href="#org8d7589f">2.5.3. Resolution 分辨率</a></li>
+<li><a href="#orgefab5f5">2.5.4. Range 量程</a></li>
+</ul>
+</li>
+<li><a href="#org427cbce">2.6. Data types</a>
+<ul>
+<li><a href="#orgc429a8d">2.6.1. 数值型数据（Numerical data）</a></li>
+<li><a href="#org78efb3b">2.6.2. 离散数据（Discrete data）</a></li>
+<li><a href="#org4e8b71d">2.6.3. 区间数据（Interval data）</a></li>
+<li><a href="#orgee5e899">2.6.4. 比率数据（Ratio data）</a></li>
+<li><a href="#orgb84d8b7">2.6.5. 分类数据（Categorical data）</a></li>
+<li><a href="#org450dc05">2.6.6. 名义数据（Nominal data）</a></li>
+<li><a href="#org2347802">2.6.7. 有序数据（Ordinal data）</a></li>
+<li><a href="#orgbec519e">2.6.8. 数据类型的变化</a></li>
+<li><a href="#org1ddf5e4">2.6.9. 有序数据的数学运算</a></li>
+</ul>
+</li>
+<li><a href="#org097d491">2.7. From anecdotes to populations</a>
+<ul>
+<li><a href="#org5c38812">2.7.1. Sample vs. population</a></li>
+<li><a href="#orgda171fc">2.7.2. "Big enough" samples</a></li>
+<li><a href="#orgf724d7f">2.7.3. Problems with N=1 studies</a></li>
+</ul>
+</li>
+<li><a href="#orga89e7e8">2.8. Data management</a></li>
+<li><a href="#org2d9a486">2.9. The ethics of making up data</a></li>
+</ul>
+</li>
+<li><a href="#org5c012ee">3. Chapter 03: Visualizing Data</a>
+<ul>
+<li><a href="#org3535b67">3.1. Why visualize data?</a></li>
+<li><a href="#org618bc31">3.2. How to visualize data</a></li>
+<li><a href="#orgf21c7be">3.3. Bar plots</a>
+<ul>
+<li><a href="#org93a0d91">3.3.1. Bar plots for grouped data</a></li>
+<li><a href="#org0d545b2">3.3.2. Error bars</a></li>
+</ul>
+</li>
+<li><a href="#org3d2ffa5">3.4. Pie charts</a></li>
+<li><a href="#orge3a32d2">3.5. Box plots</a></li>
+<li><a href="#org7a42414">3.6. Histograms</a>
+<ul>
+<li><a href="#org795d711">3.6.1. Histogram vs. bar plot</a></li>
+<li><a href="#orgd817d9a">3.6.2. Counts vs. proprotions</a></li>
+</ul>
+</li>
+<li><a href="#org4d04f5b">3.7. Lines vs. bars in a histogram</a></li>
+<li><a href="#org2b859cd">3.8. Violin plots</a></li>
+<li><a href="#org29da6de">3.9. Linear vs. logarithmic axis scaling</a></li>
+<li><a href="#orgd09a93a">3.10. Discretizing continuous data</a></li>
+<li><a href="#org7d0f3c9">3.11. Radial plots</a></li>
+<li><a href="#org3fe7c7c">3.12. Color</a>
+<ul>
+<li><a href="#orgec5bb54">3.12.1. 选择哪些颜色？</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgf3da6c4" class="outline-2">
+<h2 id="orgf3da6c4"><span class="section-number-2">1.</span> Chapter 01: Introduction to this book</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-orgb396451" class="outline-3">
+<h3 id="orgb396451"><span class="section-number-3">1.1.</span> What is statistics and why learn it?</h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li>统计学是关于在不确定性面前利用数据帮助决策的学科.有时候不确定性很小,你根本不需要统计学.例如:
+<ul class="org-ul">
+<li>地球和月球哪个更大?回答这个问题绝对不需要统计学.</li>
+<li>另一个问题:女性比男性更爱说闲话吗?虽然文化刻板印象提供了答案,但您肯定认识爱闲聊的男性和守口如
+瓶的女性.因此,要普遍回答这个问题,我们需要收集数据,并需要对这些数据进行统计分析.</li>
+</ul></li>
+<li>但"对数据进行统计分析"意味着什么?
+<ul class="org-ul">
+<li>统计学是一套广泛的算法体系,用于将数值数据转化为少量可解释的数值</li>
+<li><p>
+这些数值既能描述世界,也能体现我们对解读世界的确信程度(图1.1).
+</p>
+
+<div id="org1372883" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/1-1.png" alt="1-1.png" />
+</p>
+<p><span class="figure-number">Figure 1: </span>ms/1-1.png</p>
+</div></li>
+</ul></li>
+<li>许多统计程序最终都会产生一个"p值",其中p代表概率.p值的精妙解释将在本书后续章节说明,但基本上它表示
+你在数据中观察到的效应实际上是 <b>由偶然因素而非真实效应导致的概率</b> :
+<ul class="org-ul">
+<li>接近零的p值意味着数据中的模式不太可能是偶然现象。因此，p值越小，我们越相信该效应的真实性；</li>
+<li>若p值越接近1，我们则判定任何表面效应都只是偶然现象，不太可能被重复观测到。</li>
+</ul></li>
+<li>统计学在现代人类生活的众多领域都发挥着关键作用:
+<ul class="org-ul">
+<li>从量子力学到医学再到金融退休规划无不如此。</li>
+<li>从亚马逊这样的大型企业到一人规模的小型初创公司，越来越多的企业正在运用数据指导决策和商业策略。</li>
+</ul></li>
+<li>因此，掌握数据处理、分析、可视化及解读的能力，正对越来越多的职业变得日益重要。</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org4acc1bf" class="outline-3">
+<h3 id="org4acc1bf"><span class="section-number-3">1.2.</span> Statistics, data science, machine learning, etc.</h3>
+<div class="outline-text-3" id="text-1-2">
+<ul class="org-ul">
+<li>统计学、数据科学、机器学习等. 这些术语之间有何区别？它们真的彼此不同吗？</li>
+<li>广义而言：并无不同，这些不同术语只是相同流程的重新包装。我们可以达成共识：
+<ul class="org-ul">
+<li>"数据科学"听起来新奇有趣；</li>
+<li>"机器学习"充满未来感和科幻感；</li>
+<li>"商业分析"则显得严肃且具有竞争力。</li>
+<li>相比之下，"统计学"听起来陈旧、枯燥、数学化且乏味。</li>
+</ul></li>
+<li>从广义上讲，所有上述术语都共享一个共同目标：
+<ul class="org-ul">
+<li>以数据为输入，应用某种算法或算法集，</li>
+<li>最终提供可解释的数值输出，进而帮助我们做出决策并理解世界。</li>
+</ul></li>
+<li>但仍存在一些微妙而重要的区别值得关注：
+<ul class="org-ul">
+<li>统计学​:维基百科给出了一个严谨的定义："一门专注于数据收集、整理、分析、阐释与呈现的学科"。本书大
+部分内容都符合这一定义。</li>
+<li>​机器学习​:尽管常被互换使用——且采用相同的分析方法——机器学习与统计学的目标存在细微差异。
+<ol class="org-ol">
+<li>推论统计学的目标是基于样本数据(sample data)推断总体特征(population inferernce)，</li>
+<li>而机器学习的目标则是利用数据中的模式来预测结果或进行分类。</li>
+</ol></li>
+</ul></li>
+<li>在许多场景中，统计学与机器学习会使用相同的分析方法和算法，但研究者的关注点有所不同。例如:双方都使用
+称为"回归分析"的技术，
+<ul class="org-ul">
+<li>但统计学家会重点关注各个回归变量的统计显著性及其阐释，</li>
+<li>而机器学习专家则会聚焦于模型对数据样本进行分类的准确度。</li>
+</ul></li>
+<li>若您难以理解这种区别，请不必担心:
+<ul class="org-ul">
+<li>需要掌握更多统计学与机器学习知识才能透彻理解。我们将在本书后续章节重新讨论这一话题。</li>
+<li>关键在于：统计学与机器学习的相似之处远超过它们的差异，且多数分歧仅涉及对最终结果的解读方式，而非
+数学原理或代码实现层面的根本分歧。</li>
+</ul></li>
+</ul>
+</div>
+<div id="outline-container-orge88a913" class="outline-4">
+<h4 id="orge88a913"><span class="section-number-4">1.2.1.</span> Data science</h4>
+<div class="outline-text-4" id="text-1-2-1">
+<ul class="org-ul">
+<li>关于数据科学是否以及如何区别于统计学，不同学者持有不同观点。</li>
+<li>我个人对此没有强烈立场，但数据科学确实更侧重于现代应用领域，并包含传统统计学长期忽略的数据类型,如:
+<ul class="org-ul">
+<li>图像</li>
+<li>时间序列</li>
+<li>文本等。</li>
+</ul></li>
+<li>必须承认，"科学"一词的附加让我有些不适：
+<ul class="org-ul">
+<li>科学本意为追求认知而探索事物本质，</li>
+<li>但数据科学实质上并非研究数据本身的科学，而是关于运用数据辅助决策的学科。即使不理解数据本质，您仍
+可利用数据做出更优决策——这或许正是"数据工程"术语逐渐流行的原因。</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org33f36c8" class="outline-4">
+<h4 id="org33f36c8"><span class="section-number-4">1.2.2.</span> Data mining, analytics, informatics, etc.</h4>
+<div class="outline-text-4" id="text-1-2-2">
+<ul class="org-ul">
+<li>恕我直言，尽管这些术语体系的创立必然存在合理缘由，且特定领域确实需要比"统计学"更精细的术语来体现细
+微差别，但此种程度的术语辨析并非我愿意投入时间深究的范畴。</li>
+</ul>
+<hr />
+<ul class="org-ul">
+<li>本文讨论的核心在于：纵然统计学与机器学习并非完全相同的学科，但它们存在足够的重叠领域。</li>
+<li>本书所奠定的坚实基础，将足以应对您未来雇主在职位描述中可能使用的任何特定术语。</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org37a0c7b" class="outline-3">
+<h3 id="org37a0c7b"><span class="section-number-3">1.3.</span> Target audience</h3>
+<div class="outline-text-3" id="text-1-3">
+<ul class="org-ul">
+<li>我撰写本书时，始终将自学读者放在心上。
+<ul class="org-ul">
+<li>也许您在校期间并未意识到自己需要掌握统计学知识，</li>
+<li>抑或您虽正在修读大学课程，却对推荐的教材不甚满意。</li>
+</ul></li>
+<li>的确，许多统计学教科书数学密度过高，令非数学专业的学生望而生畏</li>
+<li>或者成书于个人计算机尚未普及和强大的时代，曾为经典却已不合时宜。</li>
+<li>我期望本书能成为课堂内外皆有益的学习资源。</li>
+<li>现今众多的统计学教材过度侧重数学推演，强烈聚焦于抽象概念而非实际应用。我此言并非批评：
+<ul class="org-ul">
+<li>数理统计学本身是一个丰富且极具智力挑战的领域，为应用统计学奠定了基石。</li>
+<li>然而，对于那些希望将统计学作为理解数据的工具，并依据数据做出决策的学习者而言，纯数学化的统计学论
+述往往艰深难懂甚至难以入门。</li>
+</ul></li>
+<li>本书的目标，是以一种易于理解和掌握的方式呈现应用统计学，着重强调那些与实际操作、具体应用和结果解读
+紧密关联的概念</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org103492e" class="outline-3">
+<h3 id="org103492e"><span class="section-number-3">1.4.</span> Prerequisites</h3>
+<div class="outline-text-3" id="text-1-4">
+</div>
+<div id="outline-container-org93f5e15" class="outline-4">
+<h4 id="org93f5e15"><span class="section-number-4">1.4.1.</span> The obvious</h4>
+<div class="outline-text-4" id="text-1-4-1">
+<ul class="org-ul">
+<li>虽不言自明但仍需强调：
+<ul class="org-ul">
+<li>学习统计学首先需要强烈的动机。</li>
+<li>统计学既非艰深莫测，也非轻而易举。最重要的是保持学习意愿，并愿意为此投入时间与精力。相较之下，以
+下各点都属次要。</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org8eb0315" class="outline-4">
+<h4 id="org8eb0315"><span class="section-number-4">1.4.2.</span> High-school math</h4>
+<div class="outline-text-4" id="text-1-4-2">
+<ul class="org-ul">
+<li>需熟练掌握算术与基础代数知识。若能解答4x²=9这类方程，即具备继续学习所需的代数基础。其他数学概念将在
+需要时引入讲解。</li>
+<li>本书虽包含公式、方程和算法，但力求以通俗易懂的语言阐释，配以图表说明，并提供Python与R代码示例，方便
+您通过模拟和可视化方式理解数学原理。</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org9543f62" class="outline-4">
+<h4 id="org9543f62"><span class="section-number-4">1.4.3.</span> Calculus and linear algebra</h4>
+<div class="outline-text-4" id="text-1-4-3">
+<ul class="org-ul">
+<li>无需基础。需说明的是：
+<ul class="org-ul">
+<li>统计学作为数学分支，掌握其他数学领域知识固然有助于学习，但本书专注应用统计学而非数理统计学，因此
+省略了依赖微积分的证明，侧重直观理解。</li>
+<li>书中虽涉及少量微积分与线性代数内容，但已确保即使不理解全部数学符号，也能通过直观方式理解算法与证
+明过程。</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orge6205a5" class="outline-4">
+<h4 id="orge6205a5"><span class="section-number-4">1.4.4.</span> Programming</h4>
+<div class="outline-text-4" id="text-1-4-4">
+<ul class="org-ul">
+<li>现代应用统计学完全依赖编程——此言绝非夸张。若不具备至少基础编码能力，根本无法实施统计操作。</li>
+<li>所幸现有成熟稳定的代码库能实现底层技术细节。这意味着您无需成为专业程序员即可轻松应用统计学，但确实
+需要具备代码编写能力。</li>
+<li>本书采用Python与R语言——这两者堪称现代统计学领域最流行的编程语言。我确信它们不会永远占据主导地位；未
+来必将出现更高效、更易用、更快速的新语言。</li>
+<li>但好消息是：所有编程语言都存在共通性，因此通过Python或R学习统计学将助您在任意其他语言中应用统计知识</li>
+<li>换言之，编程学习是值得投入的时间投资而非浪费——即使您实践中使用不同语言。况且ChatGPT（或其他先进语言AI）
+已能相当准确地将代码转换为SAS、MATLAB、Julia等其他语言。</li>
+<li>需要明确：阅读本书无需编程基础。您可跳过所有代码与练习，专注概念与解读部分。但本书的设计理念在于：
+<ul class="org-ul">
+<li>唯有通过代码实践与练习，方能获得对知识的深层理解。</li>
+</ul></li>
+<li>亲身体验胜过纸上谈兵——这正是我写作与教学的核心哲学。
+<ul class="org-ul">
+<li>人们通过亲眼观察与亲手实践才能达到最佳学习效果，而非仅让目光掠过文字与公式。</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgb55e14a" class="outline-3">
+<h3 id="orgb55e14a"><span class="section-number-3">1.5.</span> Exercises</h3>
+<div class="outline-text-3" id="text-1-5">
+<ul class="org-ul">
+<li>我确信您曾听过这个说法：数学绝非观赏性运动​。</li>
+<li>若您仅阅读本书而不尝试任何练习，固然能有所收获，我也希望您觉得本书有用。</li>
+<li>但若要真正理解统计学，您必须亲手解决统计学问题​。</li>
+<li>本人设计的练习需投入一定精力与创造力，且必须通过编码完成。</li>
+<li>这些练习将为您提供独特机会，通过编程方式探索概念、可视化效果与参数调整:这些体验仅靠阅读难以实现。</li>
+<li>本人强烈建议您认真完成这些练习。
+<ul class="org-ul">
+<li>它们并非填充时间的无效劳作，而是通过实践来巩固、探索和扩展统计学认知的重要途径，其效果是单纯阅读
+章节无法企及的。</li>
+<li>这些练习同时提供了丰富的代码资源，可供您持续学习并将统计学应用于自身研究数据。</li>
+</ul></li>
+<li>虽然我会提供全部练习的代码参考答案，但请注意：
+<ul class="org-ul">
+<li>编程解决方案本无定法。重点在于通过编码探索和理解统计学，而非精确复现我的代码。</li>
+</ul></li>
+<li>请随时随意查阅参考答案，
+<ul class="org-ul">
+<li>这绝非作弊行为——尤其当您是Python或R语言新手时：若已理解统计学概念但暂受编码语法困扰，参考答案正是
+为您铺设的学习阶梯。</li>
+<li>这些练习的根本目的是提供学习探索与知识拓展的契机，而非进行量化考核。</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orge4f5dba" class="outline-3">
+<h3 id="orge4f5dba"><span class="section-number-3">1.6.</span> Learning from simulated data</h3>
+<div class="outline-text-3" id="text-1-6">
+<ul class="org-ul">
+<li>统计学作为一门方法论科学，传统上主要通过三种方式学习. 每种方式各有特点，但也存在明显局限性。而现代
+计算方法特别是模拟数据技术，为统计学教育提供了新的可能。</li>
+<li>三种传统学习方式
+<ol class="org-ol">
+<li>教科书公式导向法: 这种方法侧重于钻研统计学教科书中的方程式，这些教材通常由荣誉退休的统计学教授编
+写。部分教授编写教材的目的是向同行展示而非教育学习者。如果您对纯数理统计学感兴趣，这种方法很棒；
+但如果您关注现实世界的应用统计学，则可能令人望而生畏</li>
+<li>案例脱离实际法: 这种方法通过阅读充满案例的统计学书籍来学习，但这些书籍使用的数据很少向读者公开，
+且这些数据的特征或主题与学习者实际可能接触到的任何数据集或应用场景毫无关联</li>
+<li>软件菜单操作法: 这种方法通过阅读软件教程书籍来学习哪些菜单选项可以执行哪些分析。如果您已经了解统
+计学并且需要学习特定软件的实施细节，这种方法很棒；但如果您还不理解统计学原理，则可能造成困惑和误导</li>
+</ol></li>
+</ul>
+</div>
+<div id="outline-container-orgd669dfc" class="outline-4">
+<h4 id="orgd669dfc"><span class="section-number-4">1.6.1.</span> 现代计算方法：模拟数据学习</h4>
+<div class="outline-text-4" id="text-1-6-1">
+<ul class="org-ul">
+<li>本书旨在通过模拟具有特定特征的数据集然后对这些数据进行统计分析，提供一种现代的、计算驱动的统计学学习方式</li>
+<li>模拟数据的本质与价值:
+<ul class="org-ul">
+<li>本质上，模拟提供了一种在虚拟环境中试验定制数据集的方法。通过多次迭代运行、操纵数据特征并观察结果,
+您可以了解统计分析的行为方式以及对现实场景的预期.第五章开头提供了使用模拟数据的详细动机和优势。</li>
+<li>与健身房的类比:这就像在健身房锻炼：器械和自由重量器械奇怪且不自然，但它们能增强力量和耐力，从而帮
+助你在现实世界中的行为。同样，您可能认为模拟数据奇怪且不自然，但我相信（希望）模拟让您获得的数学、
+概念和实施技能将有助于您在现实世界中的数据分析</li>
+</ul></li>
+<li>方法论的多样性与包容性:
+<ul class="org-ul">
+<li>并非每个人都喜欢这种方法，我尊重意见和偏好学习风格的差异。但据我所知，有无数统计学书籍不依赖模拟
+数据作为深入探究统计学数学、算法和解释的机制；而至少有一本书严重依赖模拟数据（就是您正在阅读的这本！）。</li>
+<li>我理解并尊重不同的人有不同的意见和偏好，并且我保证，如果您不喜欢这种教育方法，我不会个人感到被冒犯</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orga939b86" class="outline-3">
+<h3 id="orga939b86"><span class="section-number-3">1.7.</span> Using the code with this book</h3>
+<div class="outline-text-3" id="text-1-7">
+<ul class="org-ul">
+<li>这本书不包含 Python 或 R 语言的教程.我已尽力确保代码中的注释足够详细,以便初学者能够理解并将代码改
+编用于自己的应用.但我确实假设读者具备一些基础的编程知识.如果你理解变量,for循环,函数,导入库以及
+基础绘图,那么你就具备了学习本书代码所需的基础.</li>
+<li>如果你是完全不熟悉 Python 或 R 的新手,那么我建议你先学习一些编程基础再继续.</li>
+</ul>
+</div>
+<div id="outline-container-org79b634f" class="outline-4">
+<h4 id="org79b634f"><span class="section-number-4">1.7.1.</span> Which language to use?</h4>
+<div class="outline-text-4" id="text-1-7-1">
+<ul class="org-ul">
+<li>我不确定是否值得同时深入钻研 Python 和 R 的代码.最好的做法可能是选择一门语言,然后将你的时间最大限
+度地投入那门语言.</li>
+<li>你该选择哪门语言?我无法下定论.我的建议是,专注于你所在部门,公司,大学或任何环境中大多数人使用的
+那门语言.如果你不知道应该使用哪门语言,那么选择 Python 可能更好,因为它是一门通用编程语言,而 R 的
+应用范围更专注于统计学.</li>
+<li>请记住,R 和 Python 是使用不同库的不同语言.基于相同数据的统计分析结果在两种语言中应该趋于一致,但
+并不保证完全 identical(完全相同),尤其是对于那些依赖复杂数学的高级分析.在一个给定的项目中,最好
+坚持使用一种语言</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgfe1eef4" class="outline-4">
+<h4 id="orgfe1eef4"><span class="section-number-4">1.7.2.</span> Following along with Python</h4>
+<div class="outline-text-4" id="text-1-7-2">
+<ul class="org-ul">
+<li>其实就是jupyter notebook, 我们的笔记也会主要以jupyter notebook为主</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org6cdc647" class="outline-4">
+<h4 id="org6cdc647"><span class="section-number-4">1.7.3.</span> Following along with R</h4>
+<div class="outline-text-4" id="text-1-7-3">
+<ul class="org-ul">
+<li>本笔记不涉及R语言</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org8d09539" class="outline-2">
+<h2 id="org8d09539"><span class="section-number-2">2.</span> Chapter 02: What Are (Is?) Data?</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-orge837646" class="outline-3">
+<h3 id="orge837646"><span class="section-number-3">2.1.</span> Is "data" singular or plural?</h3>
+<div class="outline-text-3" id="text-2-1">
+<ul class="org-ul">
+<li>请原谅我对语法用法的小小抱怨；我会尽量简短。</li>
+<li>从语法角度看，data 是一个复数名词。Data 表示多个数据点，即多于一条的数据——一个可数的数据值集合。</li>
+<li>一条数据——也就是一个数据点——用 datum 表示。
+<ul class="org-ul">
+<li>Datum 是 data 的单数形式。一个数字是一个 datum；</li>
+<li>两个数字是 data。</li>
+</ul></li>
+<li>因此，像 “this data shows” 或 “the data was uploaded” 这样的表达，其实算是非英语母语者可以被原谅的
+语法错误。</li>
+<li>正确的语法应该是 “these data show” 和 “the data were uploaded”（或者 “this datum shows” 和
+“the datum was uploaded”）。</li>
+<li>但实际上，不知为何——令语法较真的统计学家们十分懊恼的是——data 成了“既是单数又是复数”的词。</li>
+<li>“This data shows” 这种用法在媒体和传播领域被视为可接受的表达。甚至 Reddit 上还有一个子版块叫
+“Data is beautiful”。</li>
+<li>这种用法让我听起来很刺耳，简直像一位百岁女巫用她过长的指甲刮黑板，同时唱着阿金托（Argento）电影
+《阴风阵阵》（Suspiria）里那首令人毛骨悚然的小调。</li>
+<li>当然，我的语法并不完美，我确信如果用语言学的精密梳子来细查，这本书里一定也会发现一些语法上的小瑕疵。</li>
+<li>但我会始终坚持将 data 视作复数名词，将 datum 视作单数名词。</li>
+<li>感谢你，亲爱的读者，包容我这一番抱怨。现在，让我们进入一个关于数据更有意义的讨论吧。</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org3c0f68d" class="outline-3">
+<h3 id="org3c0f68d"><span class="section-number-3">2.2.</span> Where do data come from, what do they mean?</h3>
+<div class="outline-text-3" id="text-2-2">
+<ul class="org-ul">
+<li>宇宙是一个极其、极其、极其无法想象的复杂之地。</li>
+<li>我们甚至并不了解它到底有多复杂——事实上，宇宙中大约 95% 是神秘的暗物质和暗能量。</li>
+<li>然而，我们是充满好奇的生物。人类长期以来一直试图通过故事、寓言、宗教、哲学、观察和科学来理解并掌控
+自己的环境。</li>
+<li>科学的方法是：构建测量装置，将某些可观测的物理量转化为一个或一组数字。这些数字就叫作数据。</li>
+<li>举个例子：想象你在一家想更好了解顾客的公司工作。</li>
+<li>当然，人是极其复杂且多样的。为了帮助你理解顾客，你设计了一种测量装置——问卷调查——让顾客用数字来回答
+关于他们对各种产品或设计的偏好，或者他们愿意为某些产品或服务支付多少钱。这些数字，就是数据。</li>
+<li>重要的是要明白:这些数字并不等同于现实;现实要复杂且微妙得多.
+<ul class="org-ul">
+<li>比如,顾客对某个产品的满意度并不是真的"9分(满分10分)";那是一种主观体验,涉及情感,记忆,期望,
+基因等多种因素的交织,还可能受到早餐吃了什么,配偶的压力水平等各种细微因素的影响.</li>
+</ul></li>
+<li>而这种由生物—心理—社会—情感动态共同作用所产生的满意度,是极其复杂的,要想开始理解它,甚至准确测量它
+都可能需要一生的科学研究.</li>
+<li>所以,我们会去用某种方式捕捉这种现实的某一部分特征,把它用一个可以存入电子表格的数字表示出来.</li>
+<li>这些数字&#x2013;也就是数据&#x2013;并不是真实本身,但它们反映了对现实的测量结果.</li>
+<li>数据的来源就在于此:我们开发测量技术,将物理和生物现象转化为可以储存在计算机中的数字.
+<ul class="org-ul">
+<li>这些测量技术可能非常先进,比如大型强子对撞机,核磁共振成像(MRI)机器,扫描电子显微镜;</li>
+<li>也可能很简单,比如问卷调查,体重秤,或者医生对患者疾病严重程度的评分.</li>
+</ul></li>
+<li>测量设备的质量很重要,因为它直接关系到数据的准确性和精确性(本书 2.5 节会详细讨论这些概念).</li>
+<li>但从概念上来看,所有数据的本质是相同的:
+<ul class="org-ul">
+<li>你在宇宙中测量某个事物</li>
+<li>测量产生一个或一串数字(或文字,再转换成数字)</li>
+<li>我们称这些数字为数据。</li>
+<li>然后，你对这些数据进行统计分析，希望能够更好地理解你正在研究的系统。</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org96172f2" class="outline-3">
+<h3 id="org96172f2"><span class="section-number-3">2.3.</span> What do data look like?</h3>
+<div class="outline-text-3" id="text-2-3">
+<ul class="org-ul">
+<li>为了进行处理和分析，数据会被数字化并存储在计算机中。因此，从根本上说，数据是以一系列存储单元的二进
+制状态进行编码的，但我们会用更熟悉的数字和字母来表示和可视化它们。</li>
+<li>大多数数据集以表格形式表示，其中行对应数据样本，列对应所测量的特征。换句话说，
+<ul class="org-ul">
+<li>行代表观测值（observations）</li>
+<li>列代表特征（features）。</li>
+</ul></li>
+<li>图 2.2 给出了一个示例数据集：我在写这一章时，记录了我在联合办公空间里下午早些时候喝的咖啡评分。
+<ul class="org-ul">
+<li><p>
+图2-2
+</p>
+
+<div id="orgeb95cb8" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/2-2.png" alt="2-2.png" />
+</p>
+<p><span class="figure-number">Figure 2: </span>ms/2-2.png</p>
+</div></li>
+<li>在表格中，每一行是一条观测记录，每一列是一个特征。这个例子说明，数据特征可以是类别型（用文本编码
+表示），也可以是数值型。</li>
+<li>表格中还有一个缺失值（那天是周六，我有点宿醉，所以没去联合办公空间）。</li>
+</ul></li>
+<li>数据也可以是图像的形式（见图 2.3），它们的本质是数字，这些数字会映射为像素的颜色强度。
+<ul class="org-ul">
+<li><p>
+图2-3
+</p>
+
+<div id="org7b91628" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/2-3.png" alt="2-3.png" />
+</p>
+<p><span class="figure-number">Figure 3: </span>ms/2-3.png</p>
+</div></li>
+</ul></li>
+<li>有些数据集可能会存储为多维数组，比如三维立方体，而不是二维表格——例如彩色图像通常会存储成一个立方体，
+其三个维度分别表示宽度、高度和 RGB 颜色通道。</li>
+<li>不过，在本书所讨论的统计分析中，我们关心的数据集通常是电子表格的形式：
+<ul class="org-ul">
+<li>行表示观测值（样本）</li>
+<li>列表示特征（测量变量）</li>
+</ul></li>
+<li><p>
+就像图 2.4 那样的结构。
+</p>
+
+<div id="org1658b47" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/2-4.png" alt="2-4.png" />
+</p>
+<p><span class="figure-number">Figure 4: </span>ms/2-4.png</p>
+</div></li>
+<li>数据可以是数值型的，也可以是文本型的，你在图 2.2 中已经看到过这两种形式。</li>
+<li>然而，非数值型数据通常会在分析之前被转换成数字。
+<ul class="org-ul">
+<li>例如，“Coffee”（咖啡）这一列的数据，可以用 0 表示卡布奇诺，用 1 表示浓缩咖啡，等等。</li>
+</ul></li>
+<li>需要注意的是，这种把数据类别映射成数字的方法是任意的：为什么不能用 1 表示卡布奇诺，用 2.3 表示浓缩
+咖啡呢？</li>
+<li>在某些情况下，这种数字映射会影响结果的解释，例如在回归分析中。你将在本书后面学到原因。</li>
+<li>目前你只需要知道，文本数据在分析时通常会被转换成数字。</li>
+<li>对整个数据集有一个鸟瞰式的整体视图很好，但对于庞大或多维度的数据集来说，这种方法并不适用。</li>
+<li>此外，仅仅看着一堆电子表格中的数字并不会自动带来洞察，也不太可能单凭肉眼就从原始数据中看出有意义的
+模式。因此，数据可视化是很有必要的，你将在下一章学习到许多数据可视化的方法。</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgf553547" class="outline-3">
+<h3 id="orgf553547"><span class="section-number-3">2.4.</span> Limitations of data</h3>
+<div class="outline-text-3" id="text-2-4">
+<ul class="org-ul">
+<li>如果数据来自对宇宙的测量，那我们为什么还需要数据处理和统计分析呢？</li>
+<li>难道我们不能直接相信原始数据吗？</li>
+<li>很遗憾，并不是所有数据都能立即被信任，因此我们需要对数据进行清洗、准备、归一化或转换，并结合统计分析。</li>
+<li>下面列出了一些困扰“原始”（未处理）数据的问题，这些问题促使我们在解释数据之前，先对其应用算法和分析方法。</li>
+</ul>
+</div>
+<div id="outline-container-org1147b8a" class="outline-4">
+<h4 id="org1147b8a"><span class="section-number-4">2.4.1.</span> Data come from imperfect measurements</h4>
+<div class="outline-text-4" id="text-2-4-1">
+<ul class="org-ul">
+<li>数据的质量受限于测量的质量。以下是几个说明这种限制的例子：</li>
+</ul>
+</div>
+<ol class="org-ol">
+<li><a id="org08e8314"></a>记忆偏差<br />
+<div class="outline-text-5" id="text-2-4-1-1">
+<ul class="org-ul">
+<li>你让人们回忆 10 年前的购买偏好，并将调查放到网上，收集到数以万计的回答。</li>
+<li>但这些数据究竟意味着什么？它们真的反映了人们当时的经济决策吗？</li>
+<li>还是其实在测量他们的记忆，或者是他们对过去自我的理想化印象？</li>
+</ul>
+</div>
+</li>
+<li><a id="orgaabd443"></a>测量环境限制<br />
+<div class="outline-text-5" id="text-2-4-1-2">
+<ul class="org-ul">
+<li>你需要测量发动机内部的温度，但把温度计放进发动机会被融化。</li>
+<li>于是你可能会把温度计放在发动机外面，但那样测到的温度其实是发动机温度 + 外界温度 + 热量经过发动机外
+壳传递的影响的综合结果。</li>
+</ul>
+</div>
+</li>
+<li><a id="org67e8743"></a>数据与现实不完全吻合<br />
+<div class="outline-text-5" id="text-2-4-1-3">
+<ul class="org-ul">
+<li>2020 年初，新冠病毒在全球传播。当时各国都尝试统计感染人数。</li>
+<li>但虽然病毒会让部分人死亡或出现严重健康问题，很多人无症状或症状轻微。</li>
+<li>因此，数据呈现的是“报告的确诊病例数”，而不是真正的“感染人数”。</li>
+<li>实际的感染人数比报告病例更重要，但在自测工具普及之前、并且只检测出现症状的人时，这个数字几乎无法准
+确测量。</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div id="outline-container-org14e701c" class="outline-4">
+<h4 id="org14e701c"><span class="section-number-4">2.4.2.</span> Data my contains noise</h4>
+<div class="outline-text-4" id="text-2-4-2">
+<ul class="org-ul">
+<li>另一个限制是，数据中往往会包含噪声。</li>
+<li>“噪声”是一个出乎意料难以精确定义的概念，但一般可以理解为数据中不需要的变化。</li>
+<li>有些噪声来源已知，例如：在没有做好屏蔽的电路中，会出现 50/60 Hz 的市电干扰噪声；</li>
+<li>有些噪声来自测量设备的故障，例如手机摄像头镜头上有一块油渍，就会降低拍摄图像的质量；</li>
+<li>还有一些噪声来自未知或无法量化的因素，例如人的体重取决于基因、年龄、生活方式及其他多种复杂因素的组合。</li>
+<li>噪声可以是非系统性的（对所有测量产生大致相同的影响），也可以是系统性的（以某种方式影响测量，从而可能引入偏差）。</li>
+<li>有些类型的噪声在统计分析中容易被最小化或忽略，而另一些噪声则更具破坏性。</li>
+<li>在第 7 章（以及本书的许多其他章节）中，你会学到更多关于识别与处理噪声的方法。</li>
+<li>现在，你只需要理解：噪声会给数据引入不需要的变动，从而使数据更难解释
+<ul class="org-ul">
+<li><p>
+参见图 2-5
+</p>
+
+<div id="orgad1abfb" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/2-5.png" alt="2-5.png" />
+</p>
+<p><span class="figure-number">Figure 5: </span>ms/2-5.png</p>
+</div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgdff8fa2" class="outline-4">
+<h4 id="orgdff8fa2"><span class="section-number-4">2.4.3.</span> Outliers may skew statistics</h4>
+<div class="outline-text-4" id="text-2-4-3">
+<ul class="org-ul">
+<li>数据集中有时会包含相对于其他数据来说异常的少量数据点。</li>
+<li><p>
+这些数据点被称为离群值（outliers）或非代表性样本（non-representative samples）（见图 2.6）。
+</p>
+
+<div id="orgf481b86" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/2-6.png" alt="2-6.png" />
+</p>
+<p><span class="figure-number">Figure 6: </span>ms/2-6.png</p>
+</div></li>
+<li>离群值可能由多种原因造成，例如测量误差或特殊样本。</li>
+<li>离群值对分析结果的影响可能非常大，也可能几乎没有影响——这取决于离群值的性质、大小，以及所进行的统计分析类型。</li>
+<li>因此，在进行分析之前，通常有必要检查数据中是否存在离群值，并在必要时将其移除。</li>
+<li>更多相关内容会在第 7 章中详细讨论。</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgdfcb343" class="outline-4">
+<h4 id="orgdfcb343"><span class="section-number-4">2.4.4.</span> What is a measurement unit?</h4>
+<div class="outline-text-4" id="text-2-4-4">
+<ul class="org-ul">
+<li>我们使用的大多数计量单位——秒、千克、英里、主观评分等等——其实都是人为设定、任意创造的。例如：
+<ul class="org-ul">
+<li>一秒 的定义基于铯-133 原子的能态跃迁频率（但为什么是这个同位素，而不是别的呢？）</li>
+<li>一千克 等于一千克（1000 克），而 1 克最初被定义为一立方厘米水的重量（但为什么用立方厘米？为什么选
+特定温度下的水？又为什么用十进制？）</li>
+<li>一英里 等于 5280 英尺，至于为什么… 嗯，你懂我的意思了。</li>
+</ul></li>
+<li>当然，也有一些计量单位似乎是宇宙通用的，也就是说，无论在宇宙何处，它们都是相同的。</li>
+<li>一个例子是光速，物理学家相信光速在宇宙各处都是恒定的。</li>
+<li>所以，如果你必须向一个外星人解释地球上的交通情况，说我们开车的速度是 8.946989587×10⁻⁸ c（c 代表光速）
+会比说60 英里/小时更好——毕竟“英里”和“小时”都是不具普适性的任意单位。</li>
+<li>当然，这些人类自创的单位本身没有错，它们方便、易用，并能让我们有效沟通。</li>
+<li><p>
+我想表达的只是：这些不具有普遍意义、带有文化色彩的测量单位，只是把真实的宇宙与数据集中的数值隔开了
+又一层。
+</p>
+<pre class="example" id="org17906dd">
+Non-universal, cultural measurement units are just one more step in between the actual universe
+and the numerical values in our datasets.
+</pre></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orged09fb0" class="outline-4">
+<h4 id="orged09fb0"><span class="section-number-4">2.4.5.</span> Conclusion</h4>
+<div class="outline-text-4" id="text-2-4-5">
+<ul class="org-ul">
+<li>虽然我们喜欢认为数据直接来自那些我们想要理解的宇宙中的事物，但事实并非如此。</li>
+<li>实际上，数据来自测量设备。
+<ul class="org-ul">
+<li>如果测量设备不精确、存在噪声或有缺陷，那么数据将会很难甚至无法正确解读。</li>
+<li>如果我们没能理解宇宙与数据之间的区别，就可能得出具有误导性甚至完全错误的结论。</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org3506fc1" class="outline-3">
+<h3 id="org3506fc1"><span class="section-number-3">2.5.</span> Accuracy, precision, resolution, range</h3>
+<div class="outline-text-3" id="text-2-5">
+<ul class="org-ul">
+<li>测量设备的质量可以通过多种方式进行量化。在本节中，你将学习到本节标题所列四个术语的定义及其区别。</li>
+</ul>
+</div>
+<div id="outline-container-org095c6db" class="outline-4">
+<h4 id="org095c6db"><span class="section-number-4">2.5.1.</span> Accuracy ​准确度</h4>
+<div class="outline-text-4" id="text-2-5-1">
+<ul class="org-ul">
+<li>指的是测量数据相对于其所测量特征的正确程度</li>
+<li>例如,一个廉价制造的心率监测仪报告你的心跳是每分钟80次,而你的实际心率是50 bpm(准确度低).相比之下,
+更高质量的心率监测仪报告你的心率为52 bpm(准确度更高,尽管仍不完美).</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org5191eb2" class="outline-4">
+<h4 id="org5191eb2"><span class="section-number-4">2.5.2.</span> Precision 精密度</h4>
+<div class="outline-text-4" id="text-2-5-2">
+<ul class="org-ul">
+<li>是设备在重复测量中提供相同数据值的能力</li>
+<li>例如,想象一下你在一个数字体重秤上上下下称了五次.你的体重在如此短的时间内不会波动,但测量值却是
+72.4,73.1,70.4,73.2和72.1公斤.这个秤的精密度低.</li>
+<li>相反,一个精密度更高的秤可能会显示72.4,72.5,72.4,72.2和72.3公斤(轻微的波动可能来自秤上姿势和体
+重分布的变化).</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org8d7589f" class="outline-4">
+<h4 id="org8d7589f"><span class="section-number-4">2.5.3.</span> Resolution 分辨率</h4>
+<div class="outline-text-4" id="text-2-5-3">
+<ul class="org-ul">
+<li>指的是连续两次测量之间的数值差距</li>
+<li>例如,厨房烤箱中一个低分辨率的温度传感器报告的温度精确到25°C(例如,200°,225°,250°),而分辨率更
+高的烤箱则报告精确到1°C的温度.在信号处理和时间序列分析中,分辨率被称为采样率或离散化率;在数字图像
+处理中,分辨率由像素数量决定.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgefab5f5" class="outline-4">
+<h4 id="orgefab5f5"><span class="section-number-4">2.5.4.</span> Range 量程</h4>
+<div class="outline-text-4" id="text-2-5-4">
+<ul class="org-ul">
+<li>是传感器能够测量的最小值和最大值</li>
+<li>例如,你放在嘴里,用来判断能否说服父母让你请假在家打游戏或躺一整天的体温计,其量程可能是35°C至42°C.
+让这种测量设备报告低至-100°C或高达300°C的温度是没有意义的。</li>
+</ul>
+<hr />
+<ul class="org-ul">
+<li>准确度和量程很少被混淆，因为这些都是日常生活中使用的概念。</li>
+<li>然而，精密度和分辨率则更常被混淆,请务必理解它们之间的区别，因为你肯定想成为那个纠正别人错误的“讨厌
+鬼”，而不是那个被纠正的尴尬者。</li>
+<li>图2.7展示了一系列常用于说明这些概念的靶心图。
+<ul class="org-ul">
+<li><p>
+如图
+</p>
+
+<div id="org164d625" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/2-7.png" alt="2-7.png" />
+</p>
+<p><span class="figure-number">Figure 7: </span>ms/2-7.png</p>
+</div></li>
+<li>一个理想的测量设备只会将点打在靶心中心。</li>
+<li>最下面一排的靶心图缺少的描述文字为:
+<ol class="org-ol">
+<li>A⬇️R⬆️P⬆️</li>
+<li>A⬇️R⬆️P⬇️</li>
+<li>A⬆️R⬇️P⬇️</li>
+</ol></li>
+</ul></li>
+<li>毋庸置疑，准确度、分辨率和精密度都应该被最大化。但这并不总是可能:
+<ul class="org-ul">
+<li>部分是由于技术限制</li>
+<li>部分是由于你试图测量的数据特性。例如，心理学家使用自我报告问卷来评估人格风格，但人们可能无法非常
+准确地洞察自身能力（例如，65%的美国人认为自己比50%的人口更聪明）。</li>
+</ul></li>
+<li>低精密度和低分辨率可以通过重复测量和取平均值来克服，例如称重五次然后取平均值作为你的“真实”体重。</li>
+<li>低准确度则很成问题，因为它可能引入系统性偏差，从而导致误解。</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org427cbce" class="outline-3">
+<h3 id="org427cbce"><span class="section-number-3">2.6.</span> Data types</h3>
+<div class="outline-text-3" id="text-2-6">
+<ul class="org-ul">
+<li>因为本书涉猎了coding部分,所以我们需要区别如下两个概念:
+<ul class="org-ul">
+<li>data type in computer science</li>
+<li>data type in statistics</li>
+</ul></li>
+<li>在计算机科学中，数据类型指的是数据存储的格式（例如：int、string、float、bool）。数据类型会影响变量
+可以进行的操作种类，以及这些变量在计算机内存中所占用的存储空间大小。</li>
+<li>在统计学中，数据类型是指根据数据的性质，将数据归纳到的某个类别。数据类型的类别会影响可以对数据应用
+的可视化方式以及统计分析方法。</li>
+<li>人们已经区分出了许多不同的数据类型。总体上，数据可以分为数值型或分类型（有时也称为标签型）。在这两
+个大类中，还可以进一步细分。
+<ul class="org-ul">
+<li><p>
+图 2.8 提供了一个概览。
+</p>
+
+<div id="org2775c9c" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/2-8.png" alt="2-8.png" />
+</p>
+<p><span class="figure-number">Figure 8: </span>ms/2-8.png</p>
+</div></li>
+</ul></li>
+<li>我们下面挨个来介绍下图2-8中的各种数据类型</li>
+</ul>
+</div>
+<div id="outline-container-orgc429a8d" class="outline-4">
+<h4 id="orgc429a8d"><span class="section-number-4">2.6.1.</span> 数值型数据（Numerical data）</h4>
+<div class="outline-text-4" id="text-2-6-1">
+<ul class="org-ul">
+<li>由数字组成。但并不仅仅是“看起来是数字”就能算数值型，因为分类数据（categorical data）有时也会用数字
+表示。</li>
+<li>数值型数据的定义特征在于：数据值与它所反映的现实世界数量之间有有意义的联系。
+<ul class="org-ul">
+<li>例如，如果你有 47 个苹果，那么“47”与一个实际存在的物理数量密切相关。</li>
+<li>反之，如果我们规定 BMW=1、Mercedes=2、Honda=3，那么“1”和 BMW 之间并没有内在意义上的映射关系；我本
+可以给 BMW 指定成任何一个数字（或者根本不用数字）。</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org78efb3b" class="outline-4">
+<h4 id="org78efb3b"><span class="section-number-4">2.6.2.</span> 离散数据（Discrete data）</h4>
+<div class="outline-text-4" id="text-2-6-2">
+<ul class="org-ul">
+<li>离散数据反映的是可数的事物，通常用整数来表示。</li>
+<li>例如，一个城市的人口就是可数的，并且一定是整数
+<ul class="org-ul">
+<li>新西兰惠灵顿市的人口可能是 422,000 人，</li>
+<li>但不会是 422,000.2 人。</li>
+</ul></li>
+<li>这意味着数据的精度限制在整数范围内，而这个限制来自数据本身，而不是来自测量工具。</li>
+<li>这就引出了**区间数据（Interval data）**的概念(因为Interval data的精度由工具决定)。</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org4e8b71d" class="outline-4">
+<h4 id="org4e8b71d"><span class="section-number-4">2.6.3.</span> 区间数据（Interval data）</h4>
+<div class="outline-text-4" id="text-2-6-3">
+<ul class="org-ul">
+<li>区间数据是具有有意义的间隔（interval）且精度由测量工具决定的数值数据。</li>
+<li>所谓“测量精度由工具限制”，是指数据本身没有精度限制，而是测量设备决定了我们能测得多精确。</li>
+<li>举例来说，如果室外温度是 24 °C，一个更精确的温度计可能读出 24.43 °C，更精确的甚至可能读到
+24.4323492184 °C，依此类推。</li>
+<li>测量精度取决于仪器和应用场景（比如在实验室监控化学反应需要远高于测量一个城市的平均室温的精度）。</li>
+<li>需要注意的是，0 °C 并不表示“没有温度”；它依然是一个具体的温度值，–24 °C 也是如此。</li>
+<li>“零点”的意义在统计数据类型中非常重要，它直接决定了区间数据与比率数据（Ratio data）的区别。</li>
+<li>为什么“0”的含义很重要？:
+<ul class="org-ul">
+<li>这是因为“0”的含义决定了我们能对数据做什么数学运算。</li>
+</ul></li>
+<li>我们可以对区间数据做加法和减法，但不能做乘法或除法。
+<ul class="org-ul">
+<li>例如：20 °C 比 10 °C 高 10 °C，但不能说它是“两倍热”。这是因为 0 °C 的物理意义是：在标准大气压下，
+纯水冻结时原子所具有的某个动能水平。</li>
+<li>原子完全可以有两倍的动能，但 2×0 °C 依然是 0 °C，这个运算在物理意义上不成立。</li>
+<li>另一个例子：–10 °C 的动能翻倍显然不会得到 –20 °C。</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgee5e899" class="outline-4">
+<h4 id="orgee5e899"><span class="section-number-4">2.6.4.</span> 比率数据（Ratio data）</h4>
+<div class="outline-text-4" id="text-2-6-4">
+<ul class="org-ul">
+<li>比率数据是具有有意义零点的区间数据，因此我们可以对它进行乘法和除法。
+<ul class="org-ul">
+<li>例如身高：一个 10 米高的建筑确实是一个 5 米高建筑的两倍高，而 0 米 代表完全没有高度。</li>
+</ul></li>
+<li>比率数据既可以相加，也可以相乘。</li>
+<li>比率数据通常不能取负值——没有“负高度”，就像一条线不能有“负长度”，气球也不能有“负体积”。</li>
+<li>不过在一些情境中，为了方便，我们会用负数表示相反方向的概念，例如：“负高度”可能用来表示地下建筑；“负货币”表示负债。</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgb84d8b7" class="outline-4">
+<h4 id="orgb84d8b7"><span class="section-number-4">2.6.5.</span> 分类数据（Categorical data）</h4>
+<div class="outline-text-4" id="text-2-6-5">
+<ul class="org-ul">
+<li>也叫 标记数据（labeled data）。</li>
+<li>这类数据由不同的类别构成，而这些类别之间可能在许多方面存在差异。
+<ul class="org-ul">
+<li>例如，“高中”与“大学”是变量“教育水平”的两个类别，但它们之间的差异不仅仅是一个学位名称的不同，还可
+能涉及教育、学术、社会、文化、经济等多方面的差别。</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org450dc05" class="outline-4">
+<h4 id="org450dc05"><span class="section-number-4">2.6.6.</span> 名义数据（Nominal data）</h4>
+<div class="outline-text-4" id="text-2-6-6">
+<ul class="org-ul">
+<li>名义数据是离散的、不可排序的类别。</li>
+<li>这意味着我们可以给不同的类别分配数字，但这种映射是任意的，数字与类别之间没有内在联系，数字彼此之间
+也没有关系。
+<ul class="org-ul">
+<li>比如，我们做一个问卷调查，让人们填写他们最近看过的电影类型。类型可能包括：科幻片（sci-fi）、浪漫
+喜剧（romcom）、纪录片（documentary）、动作片（action）、剧情片（drama）等。</li>
+<li>我们可以设置映射：科幻片 = 1，浪漫喜剧 = 2。但这种数字分配与电影类型本身没有任何关系，我完全可以
+把浪漫喜剧设为 1，把科幻片设为 2。</li>
+</ul></li>
+<li>这种编号不能拿来做数学运算：两个“科幻片”并不等于一个“浪漫喜剧”，浪漫喜剧也不是科幻片的“两倍类型”。</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org2347802" class="outline-4">
+<h4 id="org2347802"><span class="section-number-4">2.6.7.</span> 有序数据（Ordinal data）</h4>
+<div class="outline-text-4" id="text-2-6-7">
+<ul class="org-ul">
+<li>有序数据是可以按某种指标排序的离散数据。以“教育水平”为例：
+<ul class="org-ul">
+<li>可能的取值包括初中、高中、本科、硕士、博士。</li>
+<li>这些类别是离散的、并且可以排序：本科高于高中，硕士高于本科。</li>
+<li>我们也可以给它们分配数字：初中 = 1，高中 = 2，本科 = 3，硕士 = 4，博士 = 5。</li>
+</ul></li>
+<li>但是，类别间的差距以及分配的数字并不是等距的：高中和本科的差别并不像本科和硕士的差别那样在数量上相
+等。两个高中学历的人也不会“等于”一个硕士学位。</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgbec519e" class="outline-4">
+<h4 id="orgbec519e"><span class="section-number-4">2.6.8.</span> 数据类型的变化</h4>
+<div class="outline-text-4" id="text-2-6-8">
+<ul class="org-ul">
+<li>通过改变收集数据的方式，我们有时可以将数据类型从名义数据变为有序数据。
+<ul class="org-ul">
+<li>比如刚才的电影类型例子，如果我们让受访者按喜好顺序排列电影类型（比如某人最喜欢科幻片，其次动作片
+其次纪录片），那么这些数据就可以排序，也能分配有意义的数字，就成了有序数据，而不是名义数据。</li>
+</ul></li>
+<li>在下一章你会看到，区间数据和比率数据通常会被转化成离散数据用来绘制直方图。</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org1ddf5e4" class="outline-4">
+<h4 id="org1ddf5e4"><span class="section-number-4">2.6.9.</span> 有序数据的数学运算</h4>
+<div class="outline-text-4" id="text-2-6-9">
+<ul class="org-ul">
+<li>理论上，我们不能对有序数据进行算术运算（原因同上），不过在实践中，很多地方都会这么做。</li>
+<li>虽然解释上会有问题，但这种方法足够常见，以至于我们习惯接受它。举个例子：
+<ul class="org-ul">
+<li>我希望你喜欢读这本书，如果你喜欢，也希望你在购买网站给它评分。评分可能是 1、2、3、4 或 5 星。</li>
+</ul></li>
+<li>但问题是：
+<ul class="org-ul">
+<li>1 星和 2 星的差异，和 4 星与 5 星的差异是一样的吗？</li>
+<li>4 星是否正好是 2 星的两倍好？</li>
+<li>两个低分能不能相加变成一个高分？</li>
+</ul></li>
+<li>答案都是 不成立。评分是有序数据，而不是数值数据。因此，它不应该被加总或平均。</li>
+<li>然而，现实中每个有评分的网站都会显示平均分，消费者也会用这些平均分来做购买决策。</li>
+<li>这是严重的统计学违规行为并会造成严重后果吗？不是。</li>
+<li>平均分确实有参考价值，我们也没必要在每一种数据类型都严格套用规则。</li>
+</ul>
+</div>
+<ol class="org-ol">
+<li><a id="orga8f3eaa"></a>从纯统计到应用统计<br />
+<div class="outline-text-5" id="text-2-6-9-1">
+<ul class="org-ul">
+<li>这个例子虽小，却深刻反映出统计的现实：
+<ul class="org-ul">
+<li>统计学中充满了假设、要求和规则，有些必须遵守，有些则可以在一定条件下弯曲、甚至打破。</li>
+<li>纯统计（pure statistics） 是算法开发和严格数学证明所必需的；</li>
+<li>应用统计（applied statistics） 则允许我们在复杂、混乱的现实世界中运用统计方法。</li>
+</ul></li>
+<li>现实世界很混乱，如果一味死守规则，我们可能寸步难行。</li>
+<li>我希望在读完本书后，你能理解 什么时候、为什么可以稍微弯曲规则，甚至在某些假设不成立的情况下继续分析</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org097d491" class="outline-3">
+<h3 id="org097d491"><span class="section-number-3">2.7.</span> From anecdotes to populations</h3>
+<div class="outline-text-3" id="text-2-7">
+<ul class="org-ul">
+<li>你可能知道，datum 指的是一个单独的数据点，而 data 指的是多个数据点。</li>
+<li>但是，数据还有更细致的层次划分，这些划分会影响你能对数据进行的统计分析类型——以及你能得出的结论类型
+我会先列出并简要定义这些层次，然后再进行更深入的讨论。</li>
+<li>在此之前，先让我来定义一下样本量（sample size）：它指的是一个数据集中观测值的数量。
+<ul class="org-ul">
+<li>例如，如果你调查了 1000 个人，询问他们的生活幸福感和咖啡消费情况，那么你的样本量就是 1000。</li>
+</ul></li>
+<li>不要把样本量(sample size)和数据点总数(total number of data points)混淆：在这个例子中，总数据点数是
+2000（1000 个人分别给出关于幸福感和咖啡的回答），由 1000 个样本和两个特征组成。</li>
+<li>样本量通常用大写字母 N（有时用小写 n）表示，所以在这个例子中，N = 1000。</li>
+</ul>
+</div>
+<ol class="org-ol">
+<li><a id="org8b80434"></a>推测或理论(Speculation or theory, N = 0)<br />
+<div class="outline-text-5" id="text-2-7-0-1">
+<ul class="org-ul">
+<li>开发新的想法,假设和理论,即使一个数据点都没有,也是可以完成的.虽然这对科学发展至关重要,但这种非
+实证研究与统计学教材并不直接相关.</li>
+</ul>
+</div>
+</li>
+<li><a id="org7848bcd"></a>轶事(Anecdote, N = 1)<br />
+<div class="outline-text-5" id="text-2-7-0-2">
+<ul class="org-ul">
+<li>轶事是关于一个人所发生事情的故事.</li>
+</ul>
+</div>
+</li>
+<li><a id="org4fa83d6"></a>病例报告(Case report, N = 1)<br />
+<div class="outline-text-5" id="text-2-7-0-3">
+<ul class="org-ul">
+<li>病例报告本质上是一种在医学背景下的轶事,通常是对某位患有罕见病症患者的诊断或治疗的描述.病例报告有
+时可能包含多个患者(即 N &gt; 1),但样本量仍然很小.</li>
+</ul>
+</div>
+</li>
+<li><a id="orge3ef089"></a>样本(Sample)<br />
+<div class="outline-text-5" id="text-2-7-0-4">
+<ul class="org-ul">
+<li>在前文中我定义了样本量(sample size).样本指的是你进行测量并收集数据的个体集合.例如,如果你想知道
+狐獴的体重,不可能测量所有曾经存在过的狐獴;相反,你会测量其中的一部分&#x2013;这部分就是样本.</li>
+</ul>
+</div>
+</li>
+<li><a id="org2f16f75"></a>预研 / 试点研究(Pilot study,小样本 N)<br />
+<div class="outline-text-5" id="text-2-7-0-5">
+<ul class="org-ul">
+<li>"试点研究"并不是关于驾驶飞机的飞行员的研究项目.它的真正含义是:
+<ul class="org-ul">
+<li>使用太小而不足以进行严格统计分析的样本量进行的研究,</li>
+<li>但样本量又大到足以判断设备和实验过程 <b>是否可行</b></li>
+</ul></li>
+<li>试点研究(也叫"探索性研究"或"概念验证研究")的作用包括:
+<ul class="org-ul">
+<li>在正式收集全量数据前,有机会调整实验方案;</li>
+<li>向资助机构证明研究团队有能力完成更大型的研究计划.</li>
+</ul></li>
+</ul>
+</div>
+</li>
+<li><a id="orgabdc14c"></a>小规模 vs. 大规模研究(Small-scale vs. large-scale studies)<br />
+<div class="outline-text-5" id="text-2-7-0-6">
+<ul class="org-ul">
+<li>这两个术语有一定模糊性,因为并没有一个明确的样本量界定何为"小"或"大";它取决于多个因素,例如效:
+<ul class="org-ul">
+<li>应量大小</li>
+<li>数据获取难度</li>
+<li>以及该研究领域的常见样本量.</li>
+</ul></li>
+
+<li>大规模研究的主要优势是:
+<ul class="org-ul">
+<li>具有更高的统计效力以控制混杂因素;</li>
+<li>能够识别更小的效应量;</li>
+<li>结果更容易推广到更广泛的人群.</li>
+</ul></li>
+</ul>
+</div>
+</li>
+<li><a id="orga2755ac"></a>观察性研究(Observational study)<br />
+<div class="outline-text-5" id="text-2-7-0-7">
+<ul class="org-ul">
+<li>这个术语有点容易误导&#x2013;数据都是"观察"得到的,那么是不是所有有数据的研究都是观察性研究?
+<ul class="org-ul">
+<li>其实不然.观察性研究是指在没有任何实验性操控的情况下收集数据,即没有引入干预或控制.</li>
+<li>例如:研究男性或女性在 1 月 vs. 6 月加入健身房的倾向.</li>
+</ul></li>
+<li>与之相对的,是实验性研究(experimental study),即研究人员会操控变量进行干预.</li>
+</ul>
+</div>
+</li>
+<li><a id="orgb92751a"></a>便利样本(Convenience sample)<br />
+<div class="outline-text-5" id="text-2-7-0-8">
+<ul class="org-ul">
+<li>便利样本是指研究人员几乎不费力气就获取到的样本.比如只调查你的朋友和家人,就是一种便利样本.</li>
+<li>便利抽样的结果往往缺乏普遍性,因为这个易获取的群体可能与更广泛的人群存在差异.尽量避免这种采样方式,
+除非是在试点研究阶段,它才是可接受的.</li>
+</ul>
+</div>
+</li>
+<li><a id="org513a8e4"></a>总体(Population)<br />
+<div class="outline-text-5" id="text-2-7-0-9">
+<ul class="org-ul">
+<li>总体是指你想要了解的所有对象的集合.在很多情况下,总体是不可能被完全测量的,例如宇宙中所有的恒星.
+这也是为何我们用样本来进行分析的原因.</li>
+</ul>
+</div>
+</li>
+</ol>
+<div id="outline-container-org5c38812" class="outline-4">
+<h4 id="org5c38812"><span class="section-number-4">2.7.1.</span> Sample vs. population</h4>
+<div class="outline-text-4" id="text-2-7-1">
+<ul class="org-ul">
+<li>虽然个体的情况可能很有趣，但大多数研究的目标是理解总体。
+<ul class="org-ul">
+<li>举例来说，一个生产小工具的公司，并不想只把小工具卖给一个人，而是希望卖给很多人；</li>
+<li>心理学家想要理解人们的思维、情感和行为，而不仅仅是理解某一个人；</li>
+<li>肿瘤科医生的目标是治愈所有人的所有癌症，而不是只为某一个人治好某一种癌症。</li>
+</ul></li>
+<li>有些总体很小，可以全部测量。例如：
+<ul class="org-ul">
+<li>如果我们对某家公司某个部门里所有员工的薪资感兴趣；</li>
+<li>或者我们想知道一个动物园里所有狮子的年龄——这些都是总体，而且我们可以测量总体中每一个成员。</li>
+</ul></li>
+<li>但是，很多总体是无法被完整测量的。比如，
+<ul class="org-ul">
+<li>如果我们想知道全体意大利人的平均身高，维基百科上有人声称，意大利人大约有 1.4 亿人。要找到每一个意
+大利人并测量他们的身高，显然不可行。</li>
+<li>因此，我们会选择一个较小数量的意大利人——比如几百人——来测量他们的身高，这就是样本。</li>
+</ul></li>
+<li>抽样的核心目的是：我们希望把结论推广到整个总体。
+<ul class="org-ul">
+<li>仔细想想这里的逻辑：我们想知道所有意大利人的身高，</li>
+<li>但我们只测量了 100 个意大利人，</li>
+<li>我们并不是真的只关心这 100 个具体的人，而是想根据样本，对整个意大利人群做出科学的结论。</li>
+<li>换句话说，我们希望能从样本推广到总体。</li>
+</ul></li>
+<li>但是，这个逻辑站得住吗？
+<ul class="org-ul">
+<li>我们真的能根据样本对总体做出结论吗？</li>
+<li>答案是有条件的“可以”。</li>
+</ul></li>
+<li>是的，我们可以推广，但前提是满足特定条件，即样本必须是
+<ul class="org-ul">
+<li>随机的(random)</li>
+<li>具有代表性(representative)</li>
+<li>且样本量足够大(sufficiently large)</li>
+</ul></li>
+<li>我将在第 9 章详细讨论这个问题，但因为从样本推广到总体极其重要，所以我希望现在就把这个概念种在你的脑
+海里——它正是统计学的核心所在。</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgda171fc" class="outline-4">
+<h4 id="orgda171fc"><span class="section-number-4">2.7.2.</span> "Big enough" samples</h4>
+<div class="outline-text-4" id="text-2-7-2">
+<ul class="org-ul">
+<li>多大的样本量才足够让我们将样本推论至总体呢？</li>
+<li>这是一个非常重要的问题，但遗憾的是，无法给出一个通用的答案。</li>
+<li>我真希望能像这样轻松下结论：“N = 30 就是一个足够大的样本量”。</li>
+<li>但现实是，合适的样本量取决于多个因素，包括：
+<ul class="org-ul">
+<li>效应量（effect size）；</li>
+<li>样本与总体的变异程度（variability）；</li>
+<li>样本特征与总体特征的匹配程度；</li>
+<li>样本是如何收集的。</li>
+</ul></li>
+<li>除此之外，还有一些实际因素会影响样本量：
+<ul class="org-ul">
+<li>某些类型的病人群体十分稀少或难以接触；</li>
+<li>有些研究成本高且受预算限制；</li>
+<li>有些研究耗时长，而研究人员可能是迫于论文答辩压力的博士生，需要尽快完成工作。</li>
+</ul></li>
+<li>你将在第 17 章学到更多有关估算合理样本量的知识；目前你只需记住这样一个关键点：
+<ul class="org-ul">
+<li>样本量越大，通常越好（“更好”意味着统计结果中出现偶然偏差的风险更小，结论更容易推广到抽样来源的总
+体）；</li>
+<li>但现实中，非常大的样本量并不总是可行的。</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgf724d7f" class="outline-4">
+<h4 id="orgf724d7f"><span class="section-number-4">2.7.3.</span> Problems with N=1 studies</h4>
+<div class="outline-text-4" id="text-2-7-3">
+<ul class="org-ul">
+<li>案例研究和轶事（anecdote）可以成为很精彩的故事，但在解读时必须格外谨慎，尤其当研究目标是为了理解总
+体时。</li>
+<li>我并不是说 N = 1 的报告不应该存在——它们可能很有趣，也能激发灵感。</li>
+<li>有些人甚至可能仅仅基于一个轶事或一个临床病例报告，就发展出完整的研究方向。但是，真正带有严格统计分
+析并且具有可推广性的研究，往往发生在大规模研究中。</li>
+<li>为什么 N = 1 的研究难以解读呢？
+<ul class="org-ul">
+<li>主要限制在于，这种观察结果很可能缺乏代表性。</li>
+</ul></li>
+<li>事实上，这类案例之所以被报道，是因为它不寻常，否则就不会引起关注。</li>
+<li>这就像新闻总是报道那些重大、罕见的事件，而不会去报道某个普通人度过了和几百万人一模一样的平凡一天。</li>
+<li>这意味着，在 N = 1 的研究中，几乎不可能进行统计推断，也很难将结论推广到总体。</li>
+<li>另一方面，拥有大样本量也并不能保证就能获得完美的统计推断和可推广性。依然可能出现的问题包括：
+<ul class="org-ul">
+<li>抽样变异（sampling variability）</li>
+<li>噪声或离群值（noise / outliers）</li>
+<li>实验设计缺陷</li>
+<li>统计方法使用错误等等。</li>
+</ul></li>
+<li>关键结论是：
+<ul class="org-ul">
+<li><p>
+案例报告和轶事无法推广到总体；而大规模研究才有可能具备推广性。
+</p>
+<pre class="example" id="org0a04bf2">
+Case reports and anecdotes cannot be generalized, whereas larger-scale studies proffer the
+possibility of generalizability.
+</pre></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orga89e7e8" class="outline-3">
+<h3 id="orga89e7e8"><span class="section-number-3">2.8.</span> Data management</h3>
+<div class="outline-text-3" id="text-2-8">
+<ul class="org-ul">
+<li>数据管理（Data management） 指的是一种用于记录、存储、和归档数据的系统。</li>
+<li>根据数据的性质，合理的数据管理可能包括安全限制或匿名化处理。</li>
+<li>数据管理的范围还包括你用来处理、可视化、和分析数据的代码。</li>
+<li>数据管理的重要性在于，格式整齐、结构清晰的数据更容易使用和共享。</li>
+<li>良好的数据管理还能帮助你预防问题，并方便在需要时共享数据。</li>
+<li>我们在这个美丽的地球上时间有限，而恰当的数据管理能让我们把更多时间花在有趣且有洞察力的分析上，而不
+是被缺乏文档、格式混乱的数据搞得焦头烂额。</li>
+<li>好消息是，数据管理并不复杂，只要提前投入一些精力，就能确保高质量的数据。
+<ul class="org-ul">
+<li>要管理好数据，你需要一个计划。</li>
+</ul></li>
+<li>数据管理计划（Data Management Plan，DMP）需要针对每个数据集和实验方案进行定制化设计，因此我无法提供
+一个通用的“一招通”的方案。</li>
+<li>所以，在正式收集数据集之前，请先设计或调整一份数据管理计划，
+<ul class="org-ul">
+<li>记录你的命名规则、组织方式、数据与代码文件的存储方法，</li>
+<li>并考虑你将在代码中如何识别和导入数据文件。</li>
+</ul></li>
+<li>最后，一个良好的数据管理计划必须包含数据备份。备份的方法取决于数据的性质和大小，但最重要的规则是：
+<ul class="org-ul">
+<li>务必保留多份数据副本。</li>
+</ul></li>
+<li>一个可靠的备份方案可能包括：
+<ul class="org-ul">
+<li>一份数据存在办公室里的外接硬盘上；</li>
+<li>一份数据存在笔记本电脑里；</li>
+<li>另一份数据放在云存储中。</li>
+</ul></li>
+<li>许多研究机构和大型公司都有内部的数据归档系统。</li>
+<li>但需要注意，某些敏感数据（如医疗或财务信息）可能被禁止存储在非安全地点，因此在备份时一定要遵守相应
+法律与政策要求。</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org2d9a486" class="outline-3">
+<h3 id="org2d9a486"><span class="section-number-3">2.9.</span> The ethics of making up data</h3>
+<div class="outline-text-3" id="text-2-9">
+<ul class="org-ul">
+<li>听起来很简单,对吧?"不要捏造数据."&#x2013;好像一句话就能结束讨论.</li>
+<li>但这里需要一些细微区分.捏造数据本身并不是有问题的.
+<ul class="org-ul">
+<li>事实上,我为这本书创造了大量的虚拟数据,</li>
+<li>在你用这本书学习时,我也会鼓励你创造大量的虚拟数据.</li>
+<li>我在其他书籍,在线课程以及线下教学中,同样经常使用虚拟数据.</li>
+</ul></li>
+<li>有些人会用"生成数据(generating data)"或"模拟数据(simulating data)"这样的说法,但归根到底,这和
+"捏造假数据"是同一回事.</li>
+<li>生成虚拟数据是有价值的
+<ul class="org-ul">
+<li>模拟数据是学习统计的无价方法.</li>
+<li>通过创造并使用虚拟数据,你可以在统计分析方面建立信心和直觉,这些是仅使用真实数据往往难以获得的.</li>
+</ul></li>
+<li>我会在第 5 章详细解释和论证这一点,但提前说结论:
+<ul class="org-ul">
+<li>数据创造过程使你能够控制效应量,噪声特征,数据分布形状,样本量等关键因素;</li>
+<li>而这些因素在真实数据中往往无法人为操控,却对理解统计原理至关重要.</li>
+</ul></li>
+<li>将虚拟数据冒充真实数据是极其有害的
+<ul class="org-ul">
+<li>当人们讨论"捏造数据的伦理"时,一般指的是这一种情况.</li>
+<li>问题不在于"假数据"本身,而在于把假数据当成真数据来表现和使用.</li>
+</ul></li>
+<li>我们可以区分两种不诚信行为:
+<ul class="org-ul">
+<li>捏造数据(faking data):凭空编造整组数据集;</li>
+<li>篡改数据(manipulating data):为了得到特定结果,故意修改真实数据集.</li>
+</ul></li>
+<li>这两种行为在伦理上没有区别:都不要做.</li>
+<li>如果你被发现将假数据冒充为真数据,可能会失去工作,失去声誉;</li>
+<li>如果你与他人合作,他们也可能受到牵连.</li>
+<li>如果数据在现实世界中有直接影响(例如制造工厂的安全数据),</li>
+<li>那么捏造或篡改这些数据可能会直接危及他人的生命安全.</li>
+<li>即使你没有被发现,你也不想背负那种长期撒谎带来的压力,焦虑与恐惧.我们生活在这个复杂多变的世界中,
+已经有足够多的社会,经济,健康和气候压力,不要再给自己加上"假数据"这个烦恼来源.</li>
+<li>犯错与造假是两回事
+<ul class="org-ul">
+<li>每个人都会犯错&#x2013;这是人之常情.</li>
+<li>错误(mistake)与操纵(manipulation)的区别是:诚实的错误是无意的,而捏造或篡改数据是有意的.</li>
+<li>如果你意识到自己犯了错,那就承认,诚恳道歉,改正它,从中学习,然后继续前进.</li>
+</ul></li>
+
+<li>总结起来:
+<ul class="org-ul">
+<li>捏造数据(虚拟数据)是极佳的方式,可以帮助你深入理解数据可视化,描述统计与推断统计,分析局限性,
+以及数据特征(如样本量,方差,离群值,分布)对结果的影响.</li>
+<li>虚拟数据同样非常适合用来向学生,同事和客户展示假设性的数据模式.</li>
+</ul></li>
+<li>问题在于:当假数据或被篡改的数据被当作真实数据呈现时,就会引发严重的伦理问题.</li>
+<li>所以,必须明确说明数据是假的(可以用更温和的术语,如"模拟的(simulated)""生成的(generated)""假设
+的(hypothetical)"或"理论的(theorized)").不要留下任何可能让人误解数据真实性的空间.</li>
+<li>更成熟,诚实的讨论
+<ul class="org-ul">
+<li>在教材里写一句"不要做有伦理争议的事"很容易,但现实世界从来不是黑白分明的.</li>
+<li>在数据采集,筛选,清洗,以及选择分析方法和参数的过程中,我们会做出无数决策;</li>
+<li>你可能会在无意识状态下,为了得到某个更可能"理想"的结果,而在分析流程中引入微妙的偏差.</li>
+</ul></li>
+<li>一些严苛的统计学"纯粹派"可能会反对这种说法,
+<ul class="org-ul">
+<li>他们会建议整个数据处理与分析流程在数据收集前就全部固定,</li>
+<li>并且只有在收集到全新数据集的情况下才能做任何调整.</li>
+</ul></li>
+<li>我对这种理想化想法并不反感&#x2013;预先设定的分析流程确实是每位数据科学家值得追求的目标.</li>
+<li>但是我更愿意面对现实:
+<ul class="org-ul">
+<li>人类在不断开发更先进的方法来测量生物与物理世界;</li>
+<li>数据集越来越庞大且更复杂;</li>
+<li>在拿到数据之前,最佳的分析方式可能根本无法完全预知;</li>
+<li>科学需要不断改进与保持灵活性.</li>
+</ul></li>
+<li>现实是：
+<ul class="org-ul">
+<li>统计分析往往是迭代进行的，每一次迭代都会改进和优化分析流程。</li>
+<li>这种迭代可能让我们发现一些细微而有价值的数据模式，但也会带来引入偏差、影响结果的风险。</li>
+</ul></li>
+<li>在保持分析灵活性的同时减少偏差，是有原则可循的——你会在第 18 章学到更多。</li>
+<li>我想表达的是：尽管“绝对化”的数据伦理立场听起来权威且容易写下，但面对现代数据分析的现实，成熟而细腻
+的讨论才更有意义。</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org5c012ee" class="outline-2">
+<h2 id="org5c012ee"><span class="section-number-2">3.</span> Chapter 03: Visualizing Data</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-org3535b67" class="outline-3">
+<h3 id="org3535b67"><span class="section-number-3">3.1.</span> Why visualize data?</h3>
+<div class="outline-text-3" id="text-3-1">
+<ul class="org-ul">
+<li>我非常热爱数据的可视化。
+<ul class="org-ul">
+<li>不仅仅是我——任何处理数据的人都会同意，数据可视化是理解和传达数据最重要的方式之一。</li>
+</ul></li>
+<li>你应该进行数据可视化，有几个重要原因：
+<ul class="org-ul">
+<li>可视化能够帮助你发现单看数字或标签可能很难甚至不可能察觉的模式。</li>
+<li>大脑是一个惊人的模式识别机器，而我们人类本质上是视觉型的生物。事实上，我们大脑大约三分之一的区域
+专注于视觉处理，并且还有更多的大脑区域与视觉密切相关，例如由视觉引导的运动。因此，把数据呈现成一
+种大自然塑造我们大脑去处理的形式，符合我们的天性。</li>
+<li>查看可视化数据可以发现离群值、错误，或其他可能引入伪影（artifacts）或对分析造成负面影响的问题。</li>
+<li>使用图表展示数据，可以帮助非专业人士理解分析中的重要结论。换句话说，良好的数据可视化能帮助你塑造
+数据故事（data narrative），并将这个故事传递给别人。</li>
+<li>数据是美的，而美的事物值得我们细细品味。</li>
+</ul></li>
+<li><p>
+为了说明可视化在理解数据（以及更广泛地说，理解数学）方面的重要性，请看看以下这个方程：
+</p>
+\begin{equation}
+\left(x^{2} + y^{2} - 1\right)^{3} - x^{2} y^{3}  = 0 \tag{3.1}
+\end{equation}</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org618bc31" class="outline-3">
+<h3 id="org618bc31"><span class="section-number-3">3.2.</span> How to visualize data</h3>
+<div class="outline-text-3" id="text-3-2">
+<ul class="org-ul">
+<li>数据可视化之所以是一项技能&#x2013;甚至说是一门艺术&#x2013;是因为有些数据具有内在特性,可以直接决定它们该如何被
+可视化.
+<ul class="org-ul">
+<li>例如,不同邮政编码区域的人口数可以在地图上用颜色来表示;</li>
+<li>而另外一些数据,并不天然地对应某种特定的可视化类型.</li>
+</ul></li>
+<li>所以,我们必须决定,对于不同的数据集,该使用哪些可视化方式,以及是否应该使用特定的方式.这并不是一
+个简单的任务,尤其是在处理大型多变量数据集时会更具挑战性.</li>
+<li>对于小数据集,你可以直接查看全部数据.
+<ul class="org-ul">
+<li>举个例子,我曾记录了一周内每天晚上开始吃晚餐的时间.</li>
+<li><p>
+图 3.1 在电子表格中展示了这些数据.
+</p>
+
+<div id="orgff68c6a" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/3-1.png" alt="3-1.png" />
+</p>
+<p><span class="figure-number">Figure 9: </span>ms/3-1.png</p>
+</div></li>
+<li>这实际上就是整个数据集,所以数据的可视化,就只是看一眼这些数字那么简单.</li>
+</ul></li>
+<li>然而,大多数数据集(我甚至敢说&#x2013;所有你在本书,其他书/课程以及现实世界中遇到的数据集)都比这个例子庞
+大得多:可能包含几百,几千,甚至几百万行数据,以及几十到上百个数据列.</li>
+<li>在这种情况下,重要的模式仅靠肉眼浏览原始数字是很难,甚至根本不可能看出来的.</li>
+<li>关键在于:查看原始数据虽然有用,也能提供一些信息,但是,图形化的数据表达往往更有洞察力,更美观,也
+更容易解释.</li>
+<li>在本章的接下来的部分,你将学习最常见的数据可视化方式&#x2013;它们长什么样,怎么解读,以及可以用于哪种类型的数据.</li>
+<li>在整本书中,你也会看到大量数据可视化的实例.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgf21c7be" class="outline-3">
+<h3 id="orgf21c7be"><span class="section-number-3">3.3.</span> Bar plots</h3>
+<div class="outline-text-3" id="text-3-3">
+<ul class="org-ul">
+<li>让我们先看一个例子.假设我们进行了一项调查,向人们询问他们从哪里获取新闻¹.他们可以选择的答案是:
+<ul class="org-ul">
+<li>电视(TV)</li>
+<li>报纸(newspaper)</li>
+<li>互联网(Internet)</li>
+<li>或口口相传(word of mouth).</li>
+</ul></li>
+<li>我们计算选择每一种新闻来源的参与者所占的百分比.
+<ul class="org-ul">
+<li><p>
+图 3.3 展示了这一调查结果,并用**条形图(bar plot)**进行可视化.
+</p>
+
+<div id="orgbc0276c" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/3-3.png" alt="3-3.png" />
+</p>
+<p><span class="figure-number">Figure 10: </span>ms/3-3.png</p>
+</div></li>
+<li>横轴(x 轴)上的刻度对应于各类新闻来源,</li>
+<li>纵轴(y 轴)&#x2013;也就是每个柱子的高度&#x2013;对应选择这一新闻来源的人的百分比.</li>
+</ul></li>
+<li>请注意:
+<ul class="org-ul">
+<li>x 轴表示的是分类变量(categorical variable);</li>
+<li>y 轴表示的是连续的数值型变量(continuous numerical variable).</li>
+</ul></li>
+<li>条形图适用于名义数据(nominal data).</li>
+<li>学习直方图(histogram)时一定要记住这一点,因为条形图(bar plot)和直方图(histogram)一开始看上去可能
+很相似,但使用场景不同.</li>
+<li>另外要注意,这些柱子的百分比相加并不等于 100%,因为参与者可能会从多个来源获取新闻.这点会在后面学习
+饼图(pie chart)以及直方图百分比归一化时做对比.</li>
+<li>一些关于用条形图可视化数据的补充(更通用的)说明:
+<ul class="org-ul">
+<li>坐标轴必须有标签,明确告诉读者所展示的内容;</li>
+<li>每个刻度(坐标轴上的小刻线)都有对应的标签,尤其是 x 轴;</li>
+<li>标签可以旋转以适应较长的文字,或出于美观的考虑;</li>
+<li>x 轴上的刻度距离相等,让图形看起来整齐美观;</li>
+<li>x 轴上类别的顺序是任意的.例如,"报纸" 并不一定非要排在"互联网"左边;类别可以按多种方式排序,如按
+新闻来源发展历史的先后,或按其受欢迎程度(即按 y 轴数值排序).这都是我们人为的选择,而不是数据本
+身固有的属性;</li>
+<li>y 轴的范围应当与数据范围匹配(想象一下,如果 y 轴画成 -500% 到 +6000%的区间会多荒谬).</li>
+<li>有些数据是天然有界的(如身高不可能为负),有些则没有固定边界.</li>
+<li>坐标轴范围一般略微超过数据范围,即在最小值的下方和最大值的上方略微延伸;</li>
+<li>标题要简短且信息充足;</li>
+</ul></li>
+<li>图中没有颜色.本书的实体版采用灰度印刷以降低印刷成本.如果你绘制的图表会有人打印成纸质版,尽量避免
+使用颜色;</li>
+<li>但如果你的图表只会在电子设备上查看,或确定会彩色打印,那么颜色可以使图表更美观,也更易于区分图形元
+素(参见 3.12 节).</li>
+<li>使用python创建一个条形图(Bar Plot)非常简单
+<ul class="org-ul">
+<li><p>
+下面的代码就能创建图3-4的例子
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #531ab6;">import</span> matplotlib.pyplot <span style="color: #531ab6;">as</span> plt
+
+<span style="color: #005e8b;">Y</span> = <span style="color: #000000;">[</span>1, 4, 3, 9<span style="color: #000000;">]</span>  <span style="color: #7f0000;"># </span><span style="color: #7f0000;">bar heights</span>
+<span style="color: #005e8b;">X</span> = <span style="color: #000000;">[</span>0, 1, 3, 4<span style="color: #000000;">]</span>  <span style="color: #7f0000;"># </span><span style="color: #7f0000;">bar locations</span>
+
+plt.figure<span style="color: #000000;">(</span>figsize=<span style="color: #dd22dd;">(</span>5, 2.5<span style="color: #dd22dd;">)</span><span style="color: #000000;">)</span>
+plt.bar<span style="color: #000000;">(</span>X, Y, color=<span style="color: #3548cf;">"k"</span><span style="color: #000000;">)</span>
+plt.xlabel<span style="color: #000000;">(</span><span style="color: #3548cf;">"X"</span><span style="color: #000000;">)</span>
+plt.ylabel<span style="color: #000000;">(</span><span style="color: #3548cf;">"Y"</span><span style="color: #000000;">)</span>
+plt.savefig<span style="color: #000000;">(</span><span style="color: #3548cf;">"vis_barplot_basic.png"</span><span style="color: #000000;">)</span>
+plt.show<span style="color: #000000;">()</span>
+</pre>
+</div></li>
+
+<li><p>
+图3-4
+</p>
+
+<div id="orgf20b045" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/3-4.png" alt="3-4.png" />
+</p>
+<p><span class="figure-number">Figure 11: </span>ms/3-4.png</p>
+</div></li>
+</ul></li>
+</ul>
+</div>
+<div id="outline-container-org93a0d91" class="outline-4">
+<h4 id="org93a0d91"><span class="section-number-4">3.3.1.</span> Bar plots for grouped data</h4>
+<div class="outline-text-4" id="text-3-3-1">
+<ul class="org-ul">
+<li>我们继续使用之前的"新闻来源调查"例子.现在假设我们调查了两组人:
+<ul class="org-ul">
+<li>千禧一代(millennials)</li>
+<li>婴儿潮一代(boomers).</li>
+</ul></li>
+<li>于是,我们就可以根据年轻人和年长者来对回答结果进行区分.</li>
+<li>那么,应该如何可视化这些数据呢?其实有两种方式来对条形图进行分组:
+<ul class="org-ul">
+<li>按年龄组分组</li>
+<li>按新闻来源分组</li>
+</ul></li>
+<li>图 3.5 展示了这两种方式.
+<ul class="org-ul">
+<li>如图</li>
+<li>重要的是:两幅图的数据完全相同,但结果的解读是不同的.</li>
+<li>我将在下一段讨论这两幅图的不同之处;</li>
+</ul></li>
+<li>在阅读之前,请先仔细观察这张图,思考一下每种分组方式在讲述怎样的故事(narrative).</li>
+<li>在图 3.5 的 A 面板(panel A)中,叙事的重点是年龄组之间的差异.例如,你可以清楚地看到:
+<ul class="org-ul">
+<li>千禧一代相比婴儿潮一代,从互联网获取新闻的比例更高;</li>
+<li>而婴儿潮一代从电视获取新闻的比例更高³.</li>
+</ul></li>
+<li>在 B 面板(panel B)中,叙事的重点则是每个年龄组内部的新闻获取方式.例如,你可以看到:
+<ul class="org-ul">
+<li>千禧一代从口口相传获取新闻的比例高于从报纸获取新闻的比例.</li>
+<li>这一信息在 A 面板中同样存在,但不太显眼.</li>
+</ul></li>
+<li>关键是:两种可视化方式都不是"对"或"错".你需要根据研究问题,研究目的,以及你想传达给受众的发现,来
+选择数据分组的方式.</li>
+<li>我在这里不会给出绘制分组条形图(grouped bar plot)的代码,因为这是本章末尾的一个练习.</li>
+<li>不过我会从概念上解释一下分组条形图是如何从一个数字矩阵创建出来的.
+<ul class="org-ul">
+<li>在 Python 中,plt.bar() 会按照行(row)进行分组,</li>
+<li>同一行(row)中的列(column)会显示为相邻的柱形,</li>
+<li>不同行(row)之间会在 x 轴上用空白分隔.</li>
+<li>因此,如果想用另一种方式分组,就需要转置(transpose)这个数据矩阵,以交换行和列</li>
+<li><p>
+如图3-6
+</p>
+
+<div id="org1f6b390" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/3-6.png" alt="3-6.png" />
+</p>
+<p><span class="figure-number">Figure 12: </span>ms/3-6.png</p>
+</div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org0d545b2" class="outline-4">
+<h4 id="org0d545b2"><span class="section-number-4">3.3.2.</span> Error bars</h4>
+<div class="outline-text-4" id="text-3-3-2">
+<ul class="org-ul">
+<li>误差线（Error bars） 是条形图的一种自然扩展。</li>
+<li>误差线图（error bar plot）看起来像普通的条形图，只不过——它带有误差线。</li>
+<li>误差线是在每个柱子的中心位置画出的竖直线，它的顶部和底部通常会有水平的小刻度线（hash marks），以便你看清误差线的两端位置。
+<ul class="org-ul">
+<li><p>
+参见图 3.7 示例。
+</p>
+
+<div id="org5f10860" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/3-7.png" alt="3-7.png" />
+</p>
+<p><span class="figure-number">Figure 13: </span>ms/3-7.png</p>
+</div></li>
+</ul></li>
+<li>误差线可以表示多种不同的统计量，例如：
+<ul class="org-ul">
+<li>标准差（standard deviation）</li>
+<li>标准误（standard error）</li>
+<li>置信区间（confidence interval）</li>
+</ul></li>
+<li>从一个角度来看，任何由误差线表示的统计量都会与数据的变异性有关；</li>
+<li>但从另一个角度来看，不同的统计量会导致不同的解读——这意味着误差线图可能会让人感到困惑或被误解。</li>
+<li>解决办法很简单：务必明确说明误差线代表的数据特性。</li>
+<li>误差线是通过数学公式计算得出的，而数学公式并不总是受到现实的约束。举个例子：
+<ul class="org-ul">
+<li>假设图 3.7 中的柱子代表不同地理区域内建筑物的高度。如果 “类别 0” 和 “类别 1” 的误差线向下延伸到负
+数，这在物理上毫无意义（建筑物高度不可能为负），但却可能是公式计算的结果。</li>
+</ul></li>
+<li>关键结论：
+<ul class="org-ul">
+<li>误差线确实有用，可以提供信息，</li>
+<li>但如果没有明确解释，它们同样会引起困惑。</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org3d2ffa5" class="outline-3">
+<h3 id="org3d2ffa5"><span class="section-number-3">3.4.</span> Pie charts</h3>
+<div class="outline-text-3" id="text-3-4">
+<ul class="org-ul">
+<li>饼图（Pie chart） 看起来像一个被切成楔形块的圆——换句话说，就像一个派（pie）。</li>
+<li>饼图中的每一块对应数据中的一个类别，它所占的面积与该类别占整体的百分比成比例。</li>
+<li>“占整体的百分比” 是判断什么时候该使用饼图的关键。只有当数据可以转换成总和为 100% 的百分比时，饼图才
+是可解释的。
+<ul class="org-ul">
+<li>例如，上一节中展示新闻来源类别的条形图，不能用饼图表示，因为这些类别的百分比相加超过了 100%。</li>
+<li>但是，如果修改调查问卷，数据就可能适合用饼图：假设调查中有一个单一问题，问人们大部分新闻是从哪里
+获得的。这时，每位受访者只能选择一个答案，那么，各类新闻来源的百分比加起来就会正好等于 100%。</li>
+</ul></li>
+<li><p>
+图 3.8 展示了一个饼图的示例。
+</p>
+
+<div id="orgeeb6d62" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/3-8.png" alt="3-8.png" />
+</p>
+<p><span class="figure-number">Figure 14: </span>ms/3-8.png</p>
+</div></li>
+<li>饼图适用于分类数据（categorical data），这些数据可以是有序的（ordinal）或无序的（nominal）。</li>
+<li>使用饼图的主要限制是：数据必须可以转换为占整体百分比。</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orge3a32d2" class="outline-3">
+<h3 id="orge3a32d2"><span class="section-number-3">3.5.</span> Box plots</h3>
+<div class="outline-text-3" id="text-3-5">
+<ul class="org-ul">
+<li>箱线图（Box plots），传统上也叫箱形-须状图（box-and-whiskers plots），和条形图有些相似：
+<ul class="org-ul">
+<li>它们的 x 轴 也是用于显示分类数据，</li>
+<li>而 y 轴 用于显示连续数据。</li>
+</ul></li>
+<li>不过，与条形图只展示数据的一个特征（平均值）不同，箱线图能够展示更多与数据分布相关的特征，从而帮助
+更好地解释数据。</li>
+<li>图 3.9 展示了我模拟的随机数据所绘制的一个箱线图。图中的字母对应了下面要介绍的重要组成部分（其中一些
+术语你可能是第一次看到，我会在下一章更详细解释）：
+<ul class="org-ul">
+<li><p>
+如图
+</p>
+
+<div id="org9b90c5d" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/3-9.png" alt="3-9.png" />
+</p>
+<p><span class="figure-number">Figure 15: </span>ms/3-9.png</p>
+</div></li>
+<li>a) 中间的横线表示数据的中位数（median）。中位数将数据一分为二：50% 的数据值小于中位数，50% 的数据
+值大于中位数。</li>
+<li>b) 箱体的下边界表示数据的第 25 百分位（下四分位数）。换句话说，25% 的数据值小于箱体的下边缘。</li>
+<li>c) 同 b，但对应第 75 百分位（上四分位数）。换句话说，25% 的数据值大于箱体的上边缘。</li>
+<li>综合来看：箱体包围了数据集中间的 50% 数值，25% 的数据在箱体下方，25% 的数据在箱体上方。箱体所代表
+的中间 50% 数据范围叫做 四分位距（IQR: interquartile range）。</li>
+<li>d) "非极端最小值"：下方的水平短线是最小的数据值，但它不算离群点或异常极值。</li>
+<li>e) 同 d，但对应非极端最大值。</li>
+<li>f) 离群值（outliers）：非常大、非常小或不具代表性的数据值。离群值的精确定义和合理处理方式并不总是
+简单的，你将在 第 4 章 和 第 7 章 学到更多。</li>
+</ul></li>
+<li>箱线图的用途:
+<ul class="org-ul">
+<li>箱线图非常有用，因为它能反映数据的分布形态，并帮助识别离群值或潜在问题数据。</li>
+<li>它还可以帮助比较分类变量之间的差异模式。</li>
+</ul></li>
+<li>例如，图 3.10 展示了两个类别的箱线图。假设这些数据表示同一职业在不同国家的月薪：
+<ul class="org-ul">
+<li>虽然两个国家的薪资中位数相同，但国家 A 的薪资分布更宽，</li>
+<li>这可能意味着薪资增长的潜力更大。</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org7a42414" class="outline-3">
+<h3 id="org7a42414"><span class="section-number-3">3.6.</span> Histograms</h3>
+<div class="outline-text-3" id="text-3-6">
+<ul class="org-ul">
+<li>直方图（Histogram） 乍一看和 条形图（Bar plot） 很像，但它们在几个重要方面有明显区别。最重要的区别是：
+<ul class="org-ul">
+<li>条形图 用于分类数据（categorical data）；</li>
+<li>直方图 用于数值型数据（numerical data）。</li>
+</ul></li>
+<li><p>
+让我们先从一个小整数数据集的简单例子开始：
+</p>
+<pre class="example" id="org2ca514a">
+X = [1, 2, 2, 3, 3, 4, 5, 5, 5, 5, 6, 7, 7, 7, 8, 8, 9]
+</pre></li>
+<li>在这个数据集中：
+<ul class="org-ul">
+<li>有一个 “1”</li>
+<li>有两个 “2”</li>
+<li>有两个 “3”</li>
+<li>以此类推。</li>
+</ul></li>
+<li>直方图就是将 x 轴表示的数值元素 与 y 轴表示的出现次数进行可视化。
+<ul class="org-ul">
+<li><p>
+见图 3.11
+</p>
+
+<div id="orgb1dfe32" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/3-11.png" alt="3-11.png" />
+</p>
+<p><span class="figure-number">Figure 16: </span>ms/3-11.png</p>
+</div></li>
+<li>请花点时间观察一下x 轴的刻度位置和标签。它们出现的位置是不是和你预期的不一样？</li>
+<li>我猜你的答案是 “是的，不一样” —— 你可能希望刻度正好位于柱子的中间（参考图 3.7 或 3.3）。其实，这
+种刻度位置的呈现方式对应的是条形图，而不是直方图。</li>
+</ul></li>
+<li>这是一个细微但非常重要的区别，理解并区分它对于正确解读和绘制直方图至关重要。
+<ul class="org-ul">
+<li><p>
+现在，请看图 3.12。
+</p>
+
+<div id="org19de3d4" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/3-12.png" alt="3-12.png" />
+</p>
+<p><span class="figure-number">Figure 17: </span>ms/3-12.png</p>
+</div></li>
+<li>你会注意到：柱子的高度与图 3.11 完全相同；但刻度线却位于每个柱子的中心位置，也就是你原本可能会预
+期的位置。</li>
+</ul></li>
+<li>在解释这两幅图的区别之前，我们先来看看混淆从哪里产生的：
+<ul class="org-ul">
+<li>你看到数据后，自然而然会想到去数一数每个数值（1、2、3……）各出现了多少次，</li>
+<li>然后预期直方图会直接显示这些计数值。</li>
+<li>实际上，你这是在期待直方图变成条形图的呈现方式。但是，直方图并不是这样工作的。</li>
+</ul></li>
+<li>直方图通过定义数值边界，然后计算落在这些边界之间的数据值数量来工作。
+<ul class="org-ul">
+<li>图 3.11 和图 3.12 看起来不同，是因为我使用了不同的分箱（binning）边界。</li>
+<li><p>
+图 3.13 展示了这两组边界。(图3.11的间距是0.9,所以导致中心一直在变. 但是图3.12的间距是1.0,所以中心
+一直不变)
+</p>
+
+<div id="orgcd2b9df" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/3-13.png" alt="3-13.png" />
+</p>
+<p><span class="figure-number">Figure 18: </span>ms/3-13.png</p>
+</div></li>
+<li>因此，当你查看数据集 X 时，你是数了有多少个 1；</li>
+<li>但图 3.11 中的直方图是通过计算 1 到 1.9 之间的数值个数、1.9 到 2.8 之间的数值个数，依此类推绘制出来的。</li>
+</ul></li>
+<li>图 3.11 和图 3.12 的另一个不同点是：
+<ul class="org-ul">
+<li>前者的 x 轴刻度 位于 边界 上，</li>
+<li>而后者的 x 轴刻度 位于 区间中点 上。</li>
+</ul></li>
+<li>这种差异在可视化多个直方图时非常重要，你很快就会学到原因。</li>
+<li>我知道这个讨论可能有点让人困惑，但如果你花时间理解它，那么关于直方图的其他内容都会变得清晰易懂。这
+是非常值得的，因为许多数据分析、假设和解释都是建立在直方图形状的基础上的。</li>
+<li>并不是所有数据集都只包含少量整数(所以不适用于条形图)。假设我们有更多的数据，而且精度更高呢？例如，
+<ul class="org-ul">
+<li>想象一个包含 500 只巴比伦獴 长度的数据集。</li>
+<li>如果我们以 毫米 为精度来测量，那么数据集中很可能 没有任何两个完全相同的数值。因此，我们不能像处理
+整数数据集那样，直接用条形图来绘制。</li>
+<li><p>
+我们唯一的办法，就是定义边界，然后统计数据点落在每个边界之间的数量，也就是直方图的做法。你可以在
+图 3.14 中看到这种情况。
+</p>
+
+<div id="orge95306f" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/3-14.png" alt="3-14.png" />
+</p>
+<p><span class="figure-number">Figure 19: </span>ms/3-14.png</p>
+</div></li>
+</ul></li>
+<li>仅仅通过观察直方图，我们是无法知道这些獴的精确长度的，只能知道在每个柱状条对应的边界区间内，有多少个数据点。
+<ul class="org-ul">
+<li>这意味着我们在可视化过程中丢失了部分信息，不过这种信息损失被可解释性的提升所平衡。</li>
+<li>事实上，数据可视化往往会涉及一定的信息损失，而数据可视化的艺术就在于知道应该牺牲哪些信息、以及牺
+牲多少信息，才能换取更强的可解释性和模式发现能力。</li>
+</ul></li>
+<li>那么，为什么我选择了这些边界，而不是其他的边界呢？
+<ul class="org-ul">
+<li>我本可以添加更多的分箱（也就是增加更多的柱形条），这样可以减少信息损失。</li>
+<li>确实，直方图使用的分箱数越多，保留的信息就越多。</li>
+<li>当然，分箱数量的选择带有一定的任意性，这一点我稍后还会讨论。</li>
+</ul></li>
+
+<li>不过，咱们先达成一个共识：
+<ul class="org-ul">
+<li>分箱太少 → 信息损失太大</li>
+<li>分箱太多 → 可能过于复杂，也不易解读</li>
+</ul></li>
+<li><p>
+看看图 3.15，你会发现它展示了同一组数据，在分箱数量少与分箱数量多的情况下，直方图的不同表现。
+</p>
+
+<div id="orgd2ada7e" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/3-15.png" alt="3-15.png" />
+</p>
+<p><span class="figure-number">Figure 20: </span>ms/3-15.png</p>
+</div></li>
+<li>显然，有一些极端的分箱数量选项并不太有用，但这仍然留下了一个很宽的可接受分箱范围。那么，该如何选择合适的分箱数量呢？
+<ul class="org-ul">
+<li>有几种指南可以用于计算分箱数量，这些指南是基于数据集的某些特征来确定的，你会在下一章中学习到，因
+此我们会在后面回到这个话题。</li>
+</ul></li>
+<li>目前而言，根据视觉检查随意选择一个分箱数量是可以的。在很多数据集中，30–40 个分箱效果往往不错（在图
+3.14 中，我使用了 30 个分箱）。</li>
+<li>Distribution tails: 你必须掌握的一个术语是：在用直方图表示分布时，分布的两端被称为 “尾部（tails）”:
+<ul class="org-ul">
+<li>左边的尾部称为 “左尾（left tail）”</li>
+<li>右边的尾部称为 “右尾（right tail）”</li>
+<li>见图 3.16</li>
+</ul></li>
+<li>如果数据包含负值和正值，那么它们也可能分别被称为：
+<ul class="org-ul">
+<li>负尾（negative tail）- 负值</li>
+<li>正尾（positive tail）- 正值</li>
+</ul></li>
+<li>这些术语（指“尾部”）其实是比较宽泛的，因为对于所有分布类型和所有分析方法来说，并不存在一个精确统一
+的边界来严格区分分布的尾部（tail）与分布主体（body）。
+<ul class="org-ul">
+<li>有时，尾部是通过定性描述来界定的；</li>
+<li>而在另一些情况下，尾部会被精确地定义，</li>
+</ul></li>
+<li>比如使用：
+<ul class="org-ul">
+<li>占整个分布面积一定百分比的区域</li>
+<li>或者一个特定的数值边界</li>
+</ul></li>
+</ul>
+</div>
+<div id="outline-container-org795d711" class="outline-4">
+<h4 id="org795d711"><span class="section-number-4">3.6.1.</span> Histogram vs. bar plot</h4>
+<div class="outline-text-4" id="text-3-6-1">
+<ul class="org-ul">
+<li>条形图（bar plot）和直方图（histogram）的关键区别在于：
+<ul class="org-ul">
+<li>条形图 的 x 轴 上是类别（categories）</li>
+<li>直方图 的 x 轴 上是数值区间（numerical ranges）</li>
+</ul></li>
+<li>要判断你看到的是条形图还是直方图，可以问自己这样一个问题：x 轴上的柱子能否互换位置？</li>
+<li>回想一下我们在“新闻来源研究”（news sources study）和“獴（mongoose）研究”中的例子：
+<ul class="org-ul">
+<li>在条形图中，比如 Internet（互联网） 这一栏并不一定要放在 Newspaper（报纸） 这一栏的右边，如果把它
+们互换位置，图表的意义依然不变。</li>
+<li>但在直方图中，柱子的位置是不能乱换的，比如 40–41 cm 这一组（bin）必须在 41–42 cm 这一组的左边，互
+换顺序会让图失去原本意义。</li>
+</ul></li>
+<li>在直方图中，你不能随意改变分组（bin）的顺序，否则会破坏图表的可解释性。</li>
+<li>这种区别并不 trivial（不是无关紧要的）：
+<ul class="org-ul">
+<li>直方图的形状可以用来判断数据是否来自某种特定分布，以及某些统计方法是否可以应用于该数据。</li>
+<li>分布都是是具有某种图形的(比如正太分布像一个钟,钟的最高点在平均值那里),所以只有直方图能表示正态分
+布,而能把中间最高值随意调换的条形图显然不行</li>
+</ul></li>
+<li>为了避免遗漏，我再强调一次这个重要的观点：
+<ul class="org-ul">
+<li>直方图：x 轴的顺序有意义，因为它反映了数据内在的性质，这些数据被“分组”（bin）时是根据连续的数值边
+界划分的。</li>
+<li>条形图：x 轴的顺序可以改变，虽然某些排序可能会让解释更方便，但排序本身是由数据分析者决定的，而不
+是由数据的内在性质来决定的。</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgd817d9a" class="outline-4">
+<h4 id="orgd817d9a"><span class="section-number-4">3.6.2.</span> Counts vs. proprotions</h4>
+<div class="outline-text-4" id="text-3-6-2">
+<ul class="org-ul">
+<li>到目前为止，我展示的直方图（histogram）和条形图（bar plot）的 y 轴 都表示原始计数（raw counts）。</li>
+<li>原始计数的优点是：
+<ul class="org-ul">
+<li>你可以清楚地看到每个分组（bin）中确切的样本数量。</li>
+</ul></li>
+<li>但原始计数也有缺点，特别是在比较 <b>样本量不同</b> 的数据集时。
+<ul class="org-ul">
+<li>一种替代方法是将计数转换为比例（proportion）或百分比（percentage）。</li>
+<li><p>
+比如 图 3.17 显示了同一份数据：
+</p>
+
+<div id="org433189a" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/3-17.png" alt="3-17.png" />
+</p>
+<p><span class="figure-number">Figure 21: </span>ms/3-17.png</p>
+</div></li>
+<li>左侧是原始计数形式</li>
+<li>右侧是转换为比例后的形式</li>
+</ul></li>
+<li>需要注意的是：
+<ul class="org-ul">
+<li>在转换为比例后，分布的形状以及柱子的相对高度并没有变化</li>
+<li>唯一不同的是 y 轴上的数值</li>
+</ul></li>
+<li>这两种方式没有哪一种绝对更好，只是提供了不同的信息表达方式. <b>但是,如果不同样本数比较的话,就必须得用比例显示的形式</b></li>
+<li><p>
+图 3.18 对比了计数和比例的优缺点，以及何时更适合使用哪种方式。
+</p>
+
+<div id="org396bba7" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/3-18.png" alt="3-18.png" />
+</p>
+<p><span class="figure-number">Figure 22: </span>ms/3-18.png</p>
+</div></li>
+<li>如何将计数转换为比例？
+<ul class="org-ul">
+<li>公式很简单：将每个分箱（bin）的值除以所有分箱值的总和，即：</li>
+<li>如果要将比例转换为百分比:只要将比例乘以 100,然后在数字后加上 % 符号即可</li>
+</ul></li>
+<li>比例化(Normalization) 在直方图中的优势示例:以獴(mongoose)的体长为例,假设我们要比较非洲獴与亚
+洲獴:
+<ul class="org-ul">
+<li>我去毛里求斯(Mauritius)测量了 100 只獴的体长</li>
+<li>你去了爪哇(Java)并测量了 500 只獴的体长(好吧,我承认我在旅途中没有你努力 😅)</li>
+<li><p>
+图 3.19 显示了来自这两个岛屿的体长直方图:
+</p>
+
+<div id="orgfab68c3" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/3-19.png" alt="3-19.png" />
+</p>
+<p><span class="figure-number">Figure 23: </span>ms/3-19.png</p>
+</div></li>
+</ul></li>
+<li>在原始计数直方图中,由于样本量差别很大,柱子的高度也必然不同,因此不能直接比较两张图的高度</li>
+<li>但如果我们的研究问题是"非洲獴和亚洲獴,谁更长",那么我们并不关心 y 轴的绝对数值,通过将两张直方图归
+一化为百分比,我们就可以定量地比较它们的分布形状与柱子高度.</li>
+<li>如果要统计比较这两个分布,可以使用 t 检验(t-test) 或 KL 检验(Kullback–Leibler test),但这超出当前讨论范围.</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org4d04f5b" class="outline-3">
+<h3 id="org4d04f5b"><span class="section-number-3">3.7.</span> Lines vs. bars in a histogram</h3>
+<div class="outline-text-3" id="text-3-7">
+<ul class="org-ul">
+<li>直方图使用的是条形而不是线条，因为所有落在某一范围（区间）内的数据点都归入同一个“箱子”（bin）中；</li>
+<li>对数据进行离散化处理时会导致一定的信息损失，我们将无法知道如果改变分界点数据会呈现什么样的形态。这
+意味着你应该使用条形（或者点，或者其他任何离散的标记），并在相邻条形之间使用竖直的间隔。</li>
+<li>为什么不适合用线连接各个“箱子”呢？
+<ul class="org-ul">
+<li>问题在于，线条暗示了各点之间的平滑过渡，就好像你知道在改变分界点后数据会呈现的形状（见图 3.20）。</li>
+<li>一方面，如果样本量很大、分布又比较平滑，那么这种隐含的平滑过渡假设通常是合理的。</li>
+<li>但另一方面，我们应尽量保持准确性，只有在收益超过代价时才允许牺牲准确性。</li>
+</ul></li>
+<li>话虽如此，也确实存在一些情况，使用线条能够实现柱形图无法达到的解释效果和视觉美感。你将在练习 5 中对
+此进行探索。</li>
+<li>结论是：
+<ul class="org-ul">
+<li>直方图用柱形展示最为准确，</li>
+<li>但在解释性上的收益大于可能造成的“离散化之间平滑连续”这种错误印象的风险时，也可以使用线条。值得庆
+幸的是，直方图中的柱形（bin）越多，线条就越能准确地反映直方图的形状</li>
+</ul></li>
+<li><b>Lines in bar plots</b> 很显然，在条形图(bar plot, 不是histogram)中使用线条是完全不合适的。
+<ul class="org-ul">
+<li>回到“新闻来源”的例子：在“互联网”和“口耳相传”之间画一条线，这意味着什么呢？</li>
+<li>在这些类别之间想象一个插值数据点是没有意义的，尤其是考虑到这些类别的排序本身是任意的。</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org2b859cd" class="outline-3">
+<h3 id="org2b859cd"><span class="section-number-3">3.8.</span> Violin plots</h3>
+<div class="outline-text-3" id="text-3-8">
+<ul class="org-ul">
+<li>使用线条而不是柱形的一个优势是,它让你能够将数据以"小提琴图"的形式可视化,而小提琴图既优秀又美观.</li>
+<li>小提琴图的制作方法是:用线条绘制直方图,并交换 x 轴与 y 轴的位置(见图 3.21).</li>
+<li>你经常会看到直方图沿垂直方向镜像,从而形成小提琴图的对称外观.如果你有两个数据集,你可以创建一个非
+对称的小提琴图,让每个数据集占据图形的一侧(图 3.21D).在第 7 个练习中你将学习如何绘制这种图.</li>
+<li>另一种小提琴图:
+<ul class="org-ul">
+<li>当两个数据集包含相关且取值范围相当的数据时,非对称小提琴图是合适的.
+<ul class="org-ul">
+<li>例如,可以想象一个非对称小提琴图,用于展示成年男性和女性的身高.在这种情况下,数据特征是相同的
+(身高),并且两个群体(男性和女性)的数据范围相当.</li>
+<li>反例则是将"年薪(单位:美元/年)"和"身高(单位:英尺)"放在同一个非对称小提琴图中.这两个特征完
+全不同,且数值范围差别巨大,这么做只会造成混乱.</li>
+</ul></li>
+</ul></li>
+<li>最后补充一点：在图 3.21 中对应于每个单独数据值的点，沿 x 轴增加一些微小的随机偏移有助于可视化；否则
+这些点会彼此重叠。
+<ul class="org-ul">
+<li>这里要解释一下,在上图C中, 如果不进行"x轴微小的随机偏移",那么这些点就会全部在x轴位0,的这条垂直竖线
+上面紧密的排列,并且很大概率会重叠.</li>
+<li>换个句话说,如果我们以一个矩形来从上到下的框起来这些点,就能得到直方图里面的数量(这也是为什么中间的
+点密集,而边缘的点稀少的原因)</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org29da6de" class="outline-3">
+<h3 id="org29da6de"><span class="section-number-3">3.9.</span> Linear vs. logarithmic axis scaling</h3>
+<div class="outline-text-3" id="text-3-9">
+<ul class="org-ul">
+<li>许多图表的 y 轴可以采用线性刻度（linear scaling）或对数刻度（logarithmic scaling）显示。
+<ul class="org-ul">
+<li><p>
+图 3.22 展示了相同的数据在线性刻度（A 面板）与对数刻度（B、C 面板）下的效果。
+</p>
+
+<div id="orgcb23c6d" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/3-22.png" alt="3-22.png" />
+</p>
+<p><span class="figure-number">Figure 24: </span>ms/3-22.png</p>
+</div></li>
+<li>B 和 C 面板的曲线和刻度缩放完全相同，但 y 轴的刻度标签格式不同。</li>
+</ul></li>
+<li>线性刻度与对数刻度的区别,本质区别在于 y 轴刻度之间的间距：
+<ul class="org-ul">
+<li>在线性刻度中，刻度的间距是按照加法来的；例如，在图 3.22A 中，每个 y 轴刻度是在前一个刻度的基础上
+加 2000；</li>
+<li>在对数刻度中，刻度的间距是按照乘法来的。而在图 3.22B-C 中，每个刻度是在前一个刻度的基础上 乘以10。</li>
+</ul></li>
+<li>这种差异的结果是：较大的数据值会在图中显得被压缩。</li>
+<li>当然，数据的数值本身没变，只是可视化方式不同。</li>
+<li>什么时候应该使用对数刻度而不是线性刻度？
+<ul class="org-ul">
+<li>当数据表现出指数增长或衰减时（如人口动态、细菌生长、股票增长、辐射衰减等），采用对数刻度可以让数
+据特征更清晰。</li>
+<li>在生物学和物理学中，对数刻度的应用尤其广泛。</li>
+</ul></li>
+<li>但需要注意的是：
+<ul class="org-ul">
+<li>大多数没有科学背景的人更容易理解线性刻度的图表。因此，如果希望图表对更多人来说易于理解，除非有充
+分理由，否则最好使用线性刻度。</li>
+</ul></li>
+<li>关于对数刻度的几点补充说明
+<ul class="org-ul">
+<li>图 3.22 中 y 轴刻度是 10 的倍数，但在某些场景下其他倍数可能更适用，例如倍增（刻度为 2、4、8、16、
+32……）。</li>
+<li>对数刻度通常只能用于正值数据，因为乘以零以及某些数据变换下的负数会导致数学上的问题。</li>
+<li>对数刻度也可以用在 x 轴；如果 x、y 两个轴都是对数刻度，这种图称为 “双对数图（log-log plot）”。</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgd09a93a" class="outline-3">
+<h3 id="orgd09a93a"><span class="section-number-3">3.10.</span> Discretizing continuous data</h3>
+<div class="outline-text-3" id="text-3-10">
+<ul class="org-ul">
+<li>将连续数据离散化有它的“阴暗面”。我会在这里简单介绍这个问题，因为它与直方图相关。稍后在本书中我还会
+继续讨论这个话题，
+<ul class="org-ul">
+<li>因为离散化在决定是否使用方差分析（ANOVA）或回归分析、以及在回归分析中进行数据可视化时，都是一个需
+要考虑的因素。</li>
+</ul></li>
+<li>开头先看图 3.23A，它形象地展示了直方图是如何生成的：
+<ul class="org-ul">
+<li><p>
+如图
+</p>
+
+<div id="org95a6af4" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/3-23.png" alt="3-23.png" />
+</p>
+<p><span class="figure-number">Figure 25: </span>ms/3-23.png</p>
+</div></li>
+<li>左图：数据值的范围被分成等大小的区间（bin）；</li>
+<li>右图：统计落在每个区间内的数据点数量，由此画出直方图。</li>
+<li>现在想象一下，只用两个区间来画直方图。这称为 <b>二值化（binarizing</b> 数据，因为数据从连续型被转换成
+了两类（见 图 3.23B）。</li>
+</ul></li>
+<li>虽然在每个区间内，许多数据值确实比较接近，但也会出现另一些情况：跨区间的两个数据点可能比区间内的某
+些点更接近。
+<ul class="org-ul">
+<li>例如：方块（square）和上三角形（up-facing triangle）的数值很接近，但因为刚好落在不同的区间，它们
+被分到不同的直方图柱里；</li>
+<li>而方块和菱形（diamond）之间数值差距更大，却因为落在同一区间而出现在同一个柱子里（上、下三角形的情
+况也是一样）。</li>
+</ul></li>
+<li>因此，二值化数据的风险在于：
+<ul class="org-ul">
+<li>有些属于不同类别（bin）的数据点，实际上比同一类别中的数据更接近。</li>
+<li>这违反了在解读直方图时的一个不成文假设——即假设同一区间内的数据是足够同质化的，从而可以用一根柱子
+去表示它们。</li>
+</ul></li>
+<li>你可能会觉得这种情况有点极端，甚至不现实——毕竟，谁会用只有两个区间的直方图呢？
+<ul class="org-ul">
+<li>但这并非只是理论探讨；在实际中对连续数据进行二值化是很常见的，比如通过 <b>中位数拆分（median split</b>
+来将数据分成两类。</li>
+</ul></li>
+<li>结论：
+<ul class="org-ul">
+<li>离散化连续数据有时是合理的，也能简化数据分析，</li>
+<li>但必须谨慎执行，并充分考虑这种离散化对分析结果可能造成的影响。</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org7d0f3c9" class="outline-3">
+<h3 id="org7d0f3c9"><span class="section-number-3">3.11.</span> Radial plots</h3>
+<div class="outline-text-3" id="text-3-11">
+<ul class="org-ul">
+<li>雷达图——也称为极坐标图（polar plots）或蜘蛛图（spider plots）——是一种用来可视化循环性或周期性数据的
+方法。</li>
+<li>“循环性”意味着这些数据会不断地首尾相接，比如一天的 24 小时、一周的 7 天。</li>
+<li>要创建一个雷达图，首先将数据类别等距地分布在一个圆周上，然后径向轴（从圆心出发的距离）表示数据的大
+小，相当于柱状图中的 y 轴高度。</li>
+<li>图 3.24 显示了一个极坐标图的例子，
+<ul class="org-ul">
+<li><p>
+如图
+</p>
+
+<div id="org285ddcc" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/3-24.png" alt="3-24.png" />
+</p>
+<p><span class="figure-number">Figure 26: </span>ms/3-24.png</p>
+</div></li>
+<li>内容是某一年各月的平均温度。这显然是一个合理使用雷达图的例子，因为数据序列的末尾（12 月）自然衔接
+到数据序列的开头（1 月）。</li>
+</ul></li>
+<li>雷达图不应用于非循环数据。</li>
+<li>此外，雷达图不能用于包含负值的数据，因为从原点的距离是非负数。</li>
+<li>图 3.25 展示了一个不恰当使用雷达图的例子：
+<ul class="org-ul">
+<li><p>
+如图
+</p>
+
+<div id="orgb040be1" class="figure">
+<p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/3-25.png" alt="3-25.png" />
+</p>
+<p><span class="figure-number">Figure 27: </span>ms/3-25.png</p>
+</div></li>
+<li>圆周轴上是电影类型（类别），径向轴显示我对这些类型的喜好程度（1 到 10 分）。</li>
+</ul></li>
+<li>雷达图不应用于非循环数据的原因有几个：
+<ul class="org-ul">
+<li>第一个原因,和为什么在柱状图的类别型 x 轴上使用折线图是不合适的一样：
+<ol class="org-ol">
+<li>折线会给人一种印象——在“浪漫喜剧（Romcom）”和“恐怖片（Horror）”之间存在某个插值数据点，而这其实是
+没有意义的。（当然，一部电影可能同时包含浪漫喜剧和恐怖元素，但类别数据并不能像数值数据那样进行数学计算和插值。）</li>
+<li>这可以和图 3.24 进行对比：在 9 月和 10 月之间的插值是有意义的，比如9 月第三周的预计最高温度可能是 18°C。</li>
+</ol></li>
+<li>第二个原因,这些类别本身并不是循环的，就如同柱状图中类别的排序是任意的
+<ol class="org-ol">
+<li>在数据中没有任何内在逻辑要求我们必须“循环”地从“浪漫喜剧”到“动漫”，再回到“浪漫喜剧”。类别间并不
+存在这样的必然衔接性或周期性。</li>
+<li>相比之下，图 3.24 中月份的顺序是自然且周期性的，这是数据的内在属性。</li>
+</ol></li>
+</ul></li>
+<li>尽管有上述理由，在你数据科学的旅途中，仍会遇到很多不恰当的雷达图。</li>
+<li>正如我之前所写的，人类文明要担心的事情已经够多了，所以我们可以原谅这种统计礼仪上的“小违例”。</li>
+<li>但是，请不要自己继续这种不当使用雷达图的坏习惯。</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org3fe7c7c" class="outline-3">
+<h3 id="org3fe7c7c"><span class="section-number-3">3.12.</span> Color</h3>
+<div class="outline-text-3" id="text-3-12">
+<ul class="org-ul">
+<li>颜色在图形可视化中是一种简单而强大——但也具有潜在风险——的方式，可以让你的可视化更有吸引力、更具信息性。</li>
+<li><b>Adding color is simple</b> 在 Python 或 R 中添加颜色非常简单，比如：
+<ul class="org-ul">
+<li>指定调色板（palette）直接指定绘图对象的颜色（你可以通过快速的网页搜索找到各种调色板的可视化列表）</li>
+<li>在大多数 matplotlib 函数中，颜色通过三位参数指定：color=(R,G,B)，其中 R、G、B 是 0~1 之间的浮点数。
+在本书的代码中，你会看到我几乎总是让这三个值相等，从而生成灰度线条。</li>
+</ul></li>
+
+<li><b>Color is powerful</b> 在大脑中，有几个机制在意识之前就会对颜色产生反应：
+<ul class="org-ul">
+<li><b>上丘（superior colliculus）</b> 是视网膜信号到达的第一批神经目标之一，它会对颜色变化作出反应，并能
+直接控制眼睛转向某个颜色的区域。</li>
+<li>大脑中还有专门区域负责处理颜色。</li>
+<li>换句话说，我们的大脑就是天生会关注意力到颜色，所以给图表加颜色能自动触发注意力机制。</li>
+</ul></li>
+<li>另外，颜色还可以为图表增加一维信息。例如：
+<ul class="org-ul">
+<li>热力图（heat maps）：用于展示多维数据（如相关性矩阵）</li>
+<li>区分同一坐标轴上的多条线</li>
+</ul></li>
+<li><b>Color is risky</b> 添加颜色的两个风险：
+<ul class="org-ul">
+<li>你无法控制观众看到的实际颜色质量</li>
+<li>如果在现场演示中投屏，色彩可能会被投影仪或屏幕失真,如果放到网上，观众可能在小手机屏幕或强光环境中
+观看，颜色效果会打折,即便在同一屏幕，也不能保证每个人看到的颜色相同</li>
+</ul></li>
+<li>色盲约占男性的 8%，女性的 0.5%（据 Google 搜索）很多人难以区分红色或绿色的细微色差</li>
+<li><b>注意</b> 我并不是要劝你不要用颜色，颜色是很棒的可视化增强手段，应该在可能的情况下多用。但建议——颜色最
+好是一个辅助特征，而不是唯一依赖的信息。
+<ul class="org-ul">
+<li>例如，可以让颜色在亮度或线型上有冗余：浅绿色实线 vs 深红色虚线，即便在灰度条件下也能区分，因为亮
+度和线型不同。</li>
+</ul></li>
+</ul>
+</div>
+<div id="outline-container-orgec5bb54" class="outline-4">
+<h4 id="orgec5bb54"><span class="section-number-4">3.12.1.</span> 选择哪些颜色？</h4>
+<div class="outline-text-4" id="text-3-12-1">
+<ul class="org-ul">
+<li>颜色理论和数据可视化中的配色选择是一个有争议的话题——一些“数据可视化纯粹主义者”会对哪些颜色或调色板
+能用/不能用发表强烈意见。</li>
+<li>“Jet colormap”就是一个经典争议例子（网上搜索 Should I use the jet colormap? 就能看到很多讨论）。</li>
+<li>我对此没有强烈观点，也不打算卷入长期的争论。颜色与人类视觉感知相关的理论和实验非常多，如果这个话题
+你感兴趣，非常支持你去深入研究；否则，你可以直接用 Python 或 R 自带的调色板，也可以去一些调色网站找
+颜色。</li>
+<li>我自己常用的两个网站是：
+<ul class="org-ul">
+<li>colorhunt.co</li>
+<li>color.adobe.com</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: harrifeng@outlook.com</p>
+<p class="date">Created: 2025-09-19 Fri 16:04</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
