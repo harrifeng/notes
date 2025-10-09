@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-10-09 Thu 14:07 -->
+<!-- 2025-10-09 Thu 14:10 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>ms</title>
@@ -55,303 +55,307 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orga4cbf97">1. Chapter 01: Introduction to this book</a>
+<li><a href="#org2b768eb">1. Chapter 01: Introduction to this book</a>
 <ul>
-<li><a href="#org63fb3bb">1.1. What is statistics and why learn it?</a></li>
-<li><a href="#org08c121d">1.2. Statistics, data science, machine learning, etc.</a>
+<li><a href="#org7f9a778">1.1. What is statistics and why learn it?</a></li>
+<li><a href="#orgca61f1b">1.2. Statistics, data science, machine learning, etc.</a>
 <ul>
-<li><a href="#org1e0c896">1.2.1. Data science</a></li>
-<li><a href="#org1d32ce0">1.2.2. Data mining, analytics, informatics, etc.</a></li>
+<li><a href="#org5595fa5">1.2.1. Data science</a></li>
+<li><a href="#orgeff1aab">1.2.2. Data mining, analytics, informatics, etc.</a></li>
 </ul>
 </li>
-<li><a href="#orge3ecbf2">1.3. Target audience</a></li>
-<li><a href="#org40b1e52">1.4. Prerequisites</a>
+<li><a href="#org7e2ee17">1.3. Target audience</a></li>
+<li><a href="#org77d8a81">1.4. Prerequisites</a>
 <ul>
-<li><a href="#orgfc831d2">1.4.1. The obvious</a></li>
-<li><a href="#orga5818f2">1.4.2. High-school math</a></li>
-<li><a href="#orgd8965cf">1.4.3. Calculus and linear algebra</a></li>
-<li><a href="#org5edee99">1.4.4. Programming</a></li>
+<li><a href="#orge7da1dc">1.4.1. The obvious</a></li>
+<li><a href="#orgdd1f525">1.4.2. High-school math</a></li>
+<li><a href="#orgd27f346">1.4.3. Calculus and linear algebra</a></li>
+<li><a href="#orgf750a8a">1.4.4. Programming</a></li>
 </ul>
 </li>
-<li><a href="#org8c75333">1.5. Exercises</a></li>
-<li><a href="#org113fba4">1.6. Learning from simulated data</a>
+<li><a href="#orgc33e7ad">1.5. Exercises</a></li>
+<li><a href="#org462553f">1.6. Learning from simulated data</a>
 <ul>
-<li><a href="#orgb517dcc">1.6.1. 现代计算方法:模拟数据学习</a></li>
+<li><a href="#org415ccde">1.6.1. 现代计算方法:模拟数据学习</a></li>
 </ul>
 </li>
-<li><a href="#org9e0949e">1.7. Using the code with this book</a>
+<li><a href="#orgfa87c9f">1.7. Using the code with this book</a>
 <ul>
-<li><a href="#org870a097">1.7.1. Which language to use?</a></li>
-<li><a href="#org9bbe41c">1.7.2. Following along with Python</a></li>
-<li><a href="#org5e91a01">1.7.3. Following along with R</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#orge916ed4">2. Chapter 02: What Are (Is?) Data?</a>
-<ul>
-<li><a href="#orgb8ea45c">2.1. Is "data" singular or plural?</a></li>
-<li><a href="#orgbb1caca">2.2. Where do data come from, what do they mean?</a></li>
-<li><a href="#org7a7809e">2.3. What do data look like?</a></li>
-<li><a href="#org7d518c3">2.4. Limitations of data</a>
-<ul>
-<li><a href="#org15dd249">2.4.1. Data come from imperfect measurements</a></li>
-<li><a href="#org482cdb4">2.4.2. Data my contains noise</a></li>
-<li><a href="#orgf809d98">2.4.3. Outliers may skew statistics</a></li>
-<li><a href="#orgd959e6a">2.4.4. What is a measurement unit?</a></li>
-<li><a href="#orgceefc69">2.4.5. Conclusion</a></li>
-</ul>
-</li>
-<li><a href="#orgdbdada5">2.5. Accuracy, precision, resolution, range</a>
-<ul>
-<li><a href="#orga642729">2.5.1. Accuracy 准确度</a></li>
-<li><a href="#org1db07ee">2.5.2. Precision 精密度</a></li>
-<li><a href="#orgea18a8b">2.5.3. Resolution 分辨率</a></li>
-<li><a href="#org817396c">2.5.4. Range 量程</a></li>
-</ul>
-</li>
-<li><a href="#orgd1b3354">2.6. Data types</a>
-<ul>
-<li><a href="#org846b2a5">2.6.1. 数值型数据(Numerical data)</a></li>
-<li><a href="#org7feaac1">2.6.2. 离散数据(Discrete data)</a></li>
-<li><a href="#orged8a634">2.6.3. 区间数据(Interval data)</a></li>
-<li><a href="#orgd263ebd">2.6.4. 比率数据(Ratio data)</a></li>
-<li><a href="#org53d3ff6">2.6.5. 分类数据(Categorical data)</a></li>
-<li><a href="#orgae3d1d9">2.6.6. 名义数据(Nominal data)</a></li>
-<li><a href="#org5c18fa6">2.6.7. 有序数据(Ordinal data)</a></li>
-<li><a href="#orgab435a5">2.6.8. 数据类型的变化</a></li>
-<li><a href="#org9ef06a3">2.6.9. 有序数据的数学运算</a></li>
-</ul>
-</li>
-<li><a href="#org34e1813">2.7. From anecdotes to populations</a>
-<ul>
-<li><a href="#orgebe97d6">2.7.1. Sample vs. population</a></li>
-<li><a href="#orgcaede77">2.7.2. "Big enough" samples</a></li>
-<li><a href="#org2bc954f">2.7.3. Problems with N=1 studies</a></li>
-</ul>
-</li>
-<li><a href="#org660bd30">2.8. Data management</a></li>
-<li><a href="#org53912b9">2.9. The ethics of making up data</a></li>
-</ul>
-</li>
-<li><a href="#org1d1a8c4">3. Chapter 03: Visualizing Data</a>
-<ul>
-<li><a href="#org56ee92b">3.1. Why visualize data?</a></li>
-<li><a href="#orga263039">3.2. How to visualize data</a></li>
-<li><a href="#org63c44ad">3.3. Bar plots</a>
-<ul>
-<li><a href="#org40f53b6">3.3.1. Bar plots for grouped data</a></li>
-<li><a href="#orgd0bb643">3.3.2. Error bars</a></li>
-</ul>
-</li>
-<li><a href="#org9f0b5e6">3.4. Pie charts</a></li>
-<li><a href="#org026c43c">3.5. Box plots</a></li>
-<li><a href="#org4303d03">3.6. Histograms</a>
-<ul>
-<li><a href="#orgc765c79">3.6.1. Histogram vs. bar plot</a></li>
-<li><a href="#orgb564207">3.6.2. Counts vs. proprotions</a></li>
-</ul>
-</li>
-<li><a href="#org25a397a">3.7. Lines vs. bars in a histogram</a></li>
-<li><a href="#org6400c05">3.8. Violin plots</a></li>
-<li><a href="#org3b3de45">3.9. Linear vs. logarithmic axis scaling</a></li>
-<li><a href="#org9da146b">3.10. Discretizing continuous data</a></li>
-<li><a href="#orgd05c381">3.11. Radial plots</a></li>
-<li><a href="#orga1bcbdc">3.12. Color</a>
-<ul>
-<li><a href="#orga023028">3.12.1. 选择哪些颜色?</a></li>
+<li><a href="#org9904b54">1.7.1. Which language to use?</a></li>
+<li><a href="#org0158bd5">1.7.2. Following along with Python</a></li>
+<li><a href="#org57550e3">1.7.3. Following along with R</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orgb3636e9">4. Chapter 04: Descriptive Statistics</a>
+<li><a href="#org70b092d">2. Chapter 02: What Are (Is?) Data?</a>
 <ul>
-<li><a href="#org95c31a2">4.1. Descriptive vs. inferential statistics</a></li>
-<li><a href="#org6ebc5ff">4.2. Data distributons</a>
+<li><a href="#org57352ab">2.1. Is "data" singular or plural?</a></li>
+<li><a href="#org91a4007">2.2. Where do data come from, what do they mean?</a></li>
+<li><a href="#org7375e4e">2.3. What do data look like?</a></li>
+<li><a href="#org96acd89">2.4. Limitations of data</a>
 <ul>
-<li><a href="#orgaf069d7">4.2.1. Empirical vs. analytical distributions</a></li>
-<li><a href="#org9a27fdd">4.2.2. The usese of data distributions</a></li>
-<li><a href="#org8563cd4">4.2.3. Examples of distributions</a></li>
-<li><a href="#orgec7080e">4.2.4. Quantifying qualitative characteristics</a></li>
+<li><a href="#orgfcf8ce9">2.4.1. Data come from imperfect measurements</a></li>
+<li><a href="#orgc975c78">2.4.2. Data my contains noise</a></li>
+<li><a href="#org404f862">2.4.3. Outliers may skew statistics</a></li>
+<li><a href="#org72ef86f">2.4.4. What is a measurement unit?</a></li>
+<li><a href="#orgcb0839c">2.4.5. Conclusion</a></li>
 </ul>
 </li>
-<li><a href="#org8174d48">4.3. Central tendency</a>
+<li><a href="#org70ad25b">2.5. Accuracy, precision, resolution, range</a>
 <ul>
-<li><a href="#orge8afee4">4.3.1. Mean</a></li>
-<li><a href="#orgd4e2b18">4.3.2. Median</a></li>
-<li><a href="#org695a15b">4.3.3. Mode</a></li>
+<li><a href="#org9f0b81e">2.5.1. Accuracy 准确度</a></li>
+<li><a href="#org9584d40">2.5.2. Precision 精密度</a></li>
+<li><a href="#org34d152b">2.5.3. Resolution 分辨率</a></li>
+<li><a href="#orge60b8b3">2.5.4. Range 量程</a></li>
 </ul>
 </li>
-<li><a href="#orgcef2454">4.4. Measures of dispersion</a>
+<li><a href="#org23aabe1">2.6. Data types</a>
 <ul>
-<li><a href="#org1f99d1a">4.4.1. Variance</a></li>
-<li><a href="#org60c9ad1">4.4.2. Standard deviation</a></li>
-<li><a href="#orgc1c0bf2">4.4.3. Heteroscedasticity and Homoscedasticity</a></li>
-<li><a href="#orgab942d5">4.4.4. Full width at half maximum (FWHM)</a></li>
-<li><a href="#org89e1120">4.4.5. Fano factor and CV</a></li>
+<li><a href="#orgd309641">2.6.1. 数值型数据(Numerical data)</a></li>
+<li><a href="#org62376b0">2.6.2. 离散数据(Discrete data)</a></li>
+<li><a href="#org89082cf">2.6.3. 区间数据(Interval data)</a></li>
+<li><a href="#orgbe0f65e">2.6.4. 比率数据(Ratio data)</a></li>
+<li><a href="#org67e3118">2.6.5. 分类数据(Categorical data)</a></li>
+<li><a href="#org135287f">2.6.6. 名义数据(Nominal data)</a></li>
+<li><a href="#org5db129f">2.6.7. 有序数据(Ordinal data)</a></li>
+<li><a href="#org5f067f2">2.6.8. 数据类型的变化</a></li>
+<li><a href="#org32d7de0">2.6.9. 有序数据的数学运算</a></li>
 </ul>
 </li>
-<li><a href="#org4728499">4.5. Interquartile range(IQR)</a></li>
-<li><a href="#org4f904a2">4.6. QQ plots</a></li>
-<li><a href="#org43b1a35">4.7. Statistical "moments"</a>
+<li><a href="#orgb97c4f5">2.7. From anecdotes to populations</a>
 <ul>
-<li><a href="#org82dab9b">4.7.1. Unstandardized and standardized moments</a></li>
-<li><a href="#orgdaabe76">4.7.2. First moment: mean</a></li>
-<li><a href="#org6d68b77">4.7.3. Second moment: variance</a></li>
-<li><a href="#org671a22a">4.7.4. Third moment: skew</a></li>
-<li><a href="#orga466fae">4.7.5. Fourth moment: kurtosis</a></li>
-<li><a href="#org2d4e147">4.7.6. What to memorize</a></li>
+<li><a href="#orgac7d051">2.7.1. Sample vs. population</a></li>
+<li><a href="#org961eb12">2.7.2. "Big enough" samples</a></li>
+<li><a href="#orge7211ae">2.7.3. Problems with N=1 studies</a></li>
 </ul>
 </li>
-<li><a href="#org3a1c7e7">4.8. Histograms part 2: Number of bins</a>
-<ul>
-<li><a href="#orga376783">4.8.1. Other descriptive stats</a></li>
+<li><a href="#org37d284c">2.8. Data management</a></li>
+<li><a href="#org183f90b">2.9. The ethics of making up data</a></li>
 </ul>
 </li>
+<li><a href="#org0288018">3. Chapter 03: Visualizing Data</a>
+<ul>
+<li><a href="#org1a166ac">3.1. Why visualize data?</a></li>
+<li><a href="#org2a69f83">3.2. How to visualize data</a></li>
+<li><a href="#orge34ef01">3.3. Bar plots</a>
+<ul>
+<li><a href="#orgd16acbd">3.3.1. Bar plots for grouped data</a></li>
+<li><a href="#org2f7c294">3.3.2. Error bars</a></li>
 </ul>
 </li>
-<li><a href="#org5538532">5. Chapter 05: Simulating Data</a>
+<li><a href="#org1086731">3.4. Pie charts</a></li>
+<li><a href="#org8bb1e89">3.5. Box plots</a></li>
+<li><a href="#org6b5336c">3.6. Histograms</a>
 <ul>
-<li><a href="#org76b6e5e">5.1. Why simulate data?</a></li>
-<li><a href="#orgb74ea7d">5.2. Random data from distributions</a>
-<ul>
-<li><a href="#orgee9cb3e">5.2.1. Normally distributed random data</a></li>
-<li><a href="#org9936dce">5.2.2. Uniformly distributed data</a></li>
-<li><a href="#org7c915d2">5.2.3. Random data from other distributions</a></li>
-<li><a href="#org7a35c6f">5.2.4. Random integers</a></li>
+<li><a href="#orgab7f9c2">3.6.1. Histogram vs. bar plot</a></li>
+<li><a href="#org38f84f5">3.6.2. Counts vs. proprotions</a></li>
 </ul>
 </li>
-<li><a href="#org0499079">5.3. Random elements of a set</a></li>
-<li><a href="#org0756579">5.4. Random permutations</a></li>
-<li><a href="#org1b957cc">5.5. Reproducing randomness</a></li>
-<li><a href="#org94c313e">5.6. Runningexperiments with random numbers</a>
+<li><a href="#org757c56f">3.7. Lines vs. bars in a histogram</a></li>
+<li><a href="#orgc0ee667">3.8. Violin plots</a></li>
+<li><a href="#org47e27bd">3.9. Linear vs. logarithmic axis scaling</a></li>
+<li><a href="#org353e3cb">3.10. Discretizing continuous data</a></li>
+<li><a href="#org8507720">3.11. Radial plots</a></li>
+<li><a href="#orgab5839c">3.12. Color</a>
 <ul>
-<li><a href="#org193c494">5.6.1. Experiment: Impact of standard deviation on mean</a></li>
-</ul>
-</li>
-<li><a href="#orgbd79931">5.7. The amazing world of data-simulations</a></li>
-<li><a href="#org69062c7">5.8. Finding publicly available real datasets</a></li>
-<li><a href="#org04a2c82">5.9. Wht, why, and how of data transformations</a>
-<ul>
-<li><a href="#org8894034">5.9.1. What are data transformations?</a></li>
-<li><a href="#orgbd4030d">5.9.2. Why transform data?</a></li>
-<li><a href="#orgff5a651">5.9.3. How to transform data?</a></li>
-<li><a href="#org66250f8">5.9.4. What kinds of transformations are there?</a></li>
-</ul>
-</li>
-<li><a href="#org5599045">5.10. Z-score standardization</a>
-<ul>
-<li><a href="#orgf0574aa">5.10.1. Z-score math</a></li>
-<li><a href="#orge1a8a82">5.10.2. Interpretation</a></li>
-<li><a href="#org944191b">5.10.3. Hard and soft assumptions</a></li>
-<li><a href="#org5b55cc5">5.10.4. The modified z-score method</a></li>
-</ul>
-</li>
-<li><a href="#orga5a72c4">5.11. Min-max normalization</a>
-<ul>
-<li><a href="#org09fea03">5.11.1. Interpretation</a></li>
-</ul>
-</li>
-<li><a href="#org9867310">5.12. Z-scoring vs. min-max scaling</a></li>
-<li><a href="#org3ae2890">5.13. Percent change</a></li>
-<li><a href="#orgbcb71c1">5.14. Nonlinear data transformations</a>
-<ul>
-<li><a href="#org0c01483">5.14.1. Rank-transform</a></li>
-<li><a href="#org2cd7251">5.14.2. Logarithm and square root transformation</a></li>
-<li><a href="#orgccdfbba">5.14.3. Fisher-Z</a></li>
-<li><a href="#orgb230554">5.14.4. Transform any distribution to Gaussian</a></li>
-</ul>
-</li>
-<li><a href="#org8315b73">5.15. Interpreting transformed data</a>
-<ul>
-<li><a href="#org94f4f35">5.15.1. When to transform your  data</a></li>
+<li><a href="#org6693717">3.12.1. 选择哪些颜色?</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org37cdd5e">6. Chapter 07: Assess And Improve Data Quality</a>
+<li><a href="#orgec8e98f">4. Chapter 04: Descriptive Statistics</a>
 <ul>
-<li><a href="#orgf2cd4a6">6.1. Data quality matters</a>
+<li><a href="#orgeccb145">4.1. Descriptive vs. inferential statistics</a></li>
+<li><a href="#orgca0b460">4.2. Data distributons</a>
 <ul>
-<li><a href="#orgbacd357">6.1.1. Data quality influences data-driven decisions</a></li>
+<li><a href="#org07f2fa9">4.2.1. Empirical vs. analytical distributions</a></li>
+<li><a href="#orgd729361">4.2.2. The usese of data distributions</a></li>
+<li><a href="#org6b70321">4.2.3. Examples of distributions</a></li>
+<li><a href="#org0d02450">4.2.4. Quantifying qualitative characteristics</a></li>
 </ul>
 </li>
-<li><a href="#org2d50f6d">6.2. Data cleaning phases</a>
+<li><a href="#org5739937">4.3. Central tendency</a>
 <ul>
-<li><a href="#org094b687">6.2.1. 获取数据之前</a></li>
-<li><a href="#org823fe1c">6.2.2. 数据收集期间</a></li>
-<li><a href="#org0eec1ec">6.2.3. 数据收集之后</a></li>
-<li><a href="#orgba0fcc4">6.2.4. 数据分析期间</a></li>
+<li><a href="#orgc2113d4">4.3.1. Mean</a></li>
+<li><a href="#org9d80af3">4.3.2. Median</a></li>
+<li><a href="#orge8b8cdc">4.3.3. Mode</a></li>
 </ul>
 </li>
-<li><a href="#org1e221b0">6.3. Assessing data quality</a>
+<li><a href="#orgd96e4f7">4.4. Measures of dispersion</a>
 <ul>
-<li><a href="#orgd2f888d">6.3.1. 定性质量评估(Qualitative quality assessments)</a></li>
-<li><a href="#org2d9d6a7">6.3.2. 定量质量评估(Quantitative quality assessments)</a></li>
+<li><a href="#org5da1743">4.4.1. Variance</a></li>
+<li><a href="#org2fe0aa4">4.4.2. Standard deviation</a></li>
+<li><a href="#orgd0080a9">4.4.3. Heteroscedasticity and Homoscedasticity</a></li>
+<li><a href="#orgcf26790">4.4.4. Full width at half maximum (FWHM)</a></li>
+<li><a href="#org0d347d9">4.4.5. Fano factor and CV</a></li>
 </ul>
 </li>
-<li><a href="#org5da481a">6.4. Improving data quality through  transformations</a></li>
-<li><a href="#orgc6df46a">6.5. What are outliers?</a>
+<li><a href="#org52e7586">4.5. Interquartile range(IQR)</a></li>
+<li><a href="#org0ebbdf2">4.6. QQ plots</a></li>
+<li><a href="#org5cb713c">4.7. Statistical "moments"</a>
 <ul>
-<li><a href="#org5331fd3">6.5.1. How to think about outliers</a></li>
+<li><a href="#org7192ca1">4.7.1. Unstandardized and standardized moments</a></li>
+<li><a href="#org4f03791">4.7.2. First moment: mean</a></li>
+<li><a href="#org2605e56">4.7.3. Second moment: variance</a></li>
+<li><a href="#orgef29e90">4.7.4. Third moment: skew</a></li>
+<li><a href="#orgf306c44">4.7.5. Fourth moment: kurtosis</a></li>
+<li><a href="#org87ff9d7">4.7.6. What to memorize</a></li>
 </ul>
 </li>
-<li><a href="#orgbe54a6a">6.6. Identifying outliers</a>
+<li><a href="#orga29f388">4.8. Histograms part 2: Number of bins</a>
 <ul>
-<li><a href="#orgfb3696f">6.6.1. Absolute threshold detection</a></li>
-<li><a href="#org9f02799">6.6.2. The z-score method</a></li>
-<li><a href="#org68bbb3f">6.6.3. Iterative z-score method</a></li>
-<li><a href="#orga87de6e">6.6.4. Removing data by trimming</a></li>
-<li><a href="#orgef3e39b">6.6.5. Manual, automatic, and semi-automatic cleaning</a></li>
-<li><a href="#org104d6fd">6.6.6. What happends to rejected outliers?</a></li>
-</ul>
-</li>
-<li><a href="#org78aad2c">6.7. Analysis-based solutions to outliers</a>
-<ul>
-<li><a href="#orgf33d09c">6.7.1. 非参数分析(Nonparametric analyses)</a></li>
-<li><a href="#org27184f1">6.7.2. 基于置换的检验(Permutation-based tests)</a></li>
-<li><a href="#org2df2f39">6.7.3. 加权分析(Weighted analyses)</a></li>
-<li><a href="#orge401835">6.7.4. 子群分析(Subgroups analysis)</a></li>
-</ul>
-</li>
-<li><a href="#orga12bd67">6.8. Missing data</a>
-<ul>
-<li><a href="#orgea90a0a">6.8.1. 按行删除(Row-wise removal)</a></li>
-<li><a href="#org424db58">6.8.2. 针对特定分析的行删除(Analysis-specific row removal)</a></li>
-<li><a href="#org5a3b49d">6.8.3. 插补(Imputation)</a></li>
-<li><a href="#orgd40752a">6.8.4. 预测建模(Predictive modeling)</a></li>
+<li><a href="#org5297e9e">4.8.1. Other descriptive stats</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orgaba0702">7. Chapter 08: Probability Theory</a>
+<li><a href="#orgf3e372a">5. Chapter 05: Simulating Data</a>
 <ul>
-<li><a href="#orgca31d2e">7.1. From descriptive to inferential statistics</a></li>
-<li><a href="#org9c7b3f4">7.2. What is probability?</a>
+<li><a href="#org6ef30cc">5.1. Why simulate data?</a></li>
+<li><a href="#org0032922">5.2. Random data from distributions</a>
 <ul>
-<li><a href="#orgcc63463">7.2.1. The problem with  probability</a></li>
-<li><a href="#orgcbe4617">7.2.2. When do we need probabilities?</a></li>
+<li><a href="#orgd30ed55">5.2.1. Normally distributed random data</a></li>
+<li><a href="#org6b106f3">5.2.2. Uniformly distributed data</a></li>
+<li><a href="#org2b64070">5.2.3. Random data from other distributions</a></li>
+<li><a href="#org3de6ad7">5.2.4. Random integers</a></li>
 </ul>
 </li>
-<li><a href="#org3b88535">7.3. Probability vs. proportion</a></li>
-<li><a href="#orgd9494bb">7.4. Computing probabilities</a>
+<li><a href="#org418b2d3">5.3. Random elements of a set</a></li>
+<li><a href="#orgdac6398">5.4. Random permutations</a></li>
+<li><a href="#org1dccf48">5.5. Reproducing randomness</a></li>
+<li><a href="#org16707bb">5.6. Runningexperiments with random numbers</a>
 <ul>
-<li><a href="#org1569e1d">7.4.1. Computing analytical probabilities</a></li>
-<li><a href="#orgf1bf103">7.4.2. Computing expirical probabilities</a></li>
+<li><a href="#orgded732c">5.6.1. Experiment: Impact of standard deviation on mean</a></li>
 </ul>
 </li>
-<li><a href="#org7e7a0f6">7.5. Probability functions, mass, and density</a></li>
-<li><a href="#orgd319a44">7.6. Cumulative distribution function (cdf)</a></li>
-<li><a href="#orgef10856">7.7. Expected value</a>
-<ul>
-<li><a href="#org96d7c9f">7.7.1. Computing expected value</a></li>
-<li><a href="#orgff2e43d">7.7.2. Expected value and statistical moments</a></li>
+<li><a href="#orgfc1f352">5.7. The amazing world of data-simulations</a></li>
+<li><a href="#orgd2dacc5">5.8. Finding publicly available real datasets</a></li>
 </ul>
 </li>
-<li><a href="#orgccd11c9">7.8. Softmax</a>
+<li><a href="#org2947e4a">6. Chapter 06: Transformations</a>
 <ul>
-<li><a href="#org7801e0a">7.8.1. Does \(\sigma(x)\) really produce a probability mass function</a></li>
-<li><a href="#org59a3c3c">7.8.2. What is softmax used for?</a></li>
+<li><a href="#org48e54f5">6.1. Wht, why, and how of data transformations</a>
+<ul>
+<li><a href="#org84ca673">6.1.1. What are data transformations?</a></li>
+<li><a href="#org50480bb">6.1.2. Why transform data?</a></li>
+<li><a href="#org85758cc">6.1.3. How to transform data?</a></li>
+<li><a href="#org2f0c463">6.1.4. What kinds of transformations are there?</a></li>
+</ul>
+</li>
+<li><a href="#orgb2b1c77">6.2. Z-score standardization</a>
+<ul>
+<li><a href="#orgc6c44f3">6.2.1. Z-score math</a></li>
+<li><a href="#orgfe21aae">6.2.2. Interpretation</a></li>
+<li><a href="#org31888be">6.2.3. Hard and soft assumptions</a></li>
+<li><a href="#org00cb5bf">6.2.4. The modified z-score method</a></li>
+</ul>
+</li>
+<li><a href="#orgec0f392">6.3. Min-max normalization</a>
+<ul>
+<li><a href="#org34a46bc">6.3.1. Interpretation</a></li>
+</ul>
+</li>
+<li><a href="#org2ab432f">6.4. Z-scoring vs. min-max scaling</a></li>
+<li><a href="#org480ba4a">6.5. Percent change</a></li>
+<li><a href="#org77c1226">6.6. Nonlinear data transformations</a>
+<ul>
+<li><a href="#org449237a">6.6.1. Rank-transform</a></li>
+<li><a href="#org94c5c0a">6.6.2. Logarithm and square root transformation</a></li>
+<li><a href="#orgb272acf">6.6.3. Fisher-Z</a></li>
+<li><a href="#orgf35ef2a">6.6.4. Transform any distribution to Gaussian</a></li>
+</ul>
+</li>
+<li><a href="#org88ab95b">6.7. Interpreting transformed data</a>
+<ul>
+<li><a href="#orga9a18d6">6.7.1. When to transform your  data</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org79bb52c">7. Chapter 07: Assess And Improve Data Quality</a>
+<ul>
+<li><a href="#orgf28a6a1">7.1. Data quality matters</a>
+<ul>
+<li><a href="#org0700d87">7.1.1. Data quality influences data-driven decisions</a></li>
+</ul>
+</li>
+<li><a href="#orgd0b7ab1">7.2. Data cleaning phases</a>
+<ul>
+<li><a href="#org3a5fd8d">7.2.1. 获取数据之前</a></li>
+<li><a href="#org3e92e1b">7.2.2. 数据收集期间</a></li>
+<li><a href="#org14369d9">7.2.3. 数据收集之后</a></li>
+<li><a href="#org4aab09e">7.2.4. 数据分析期间</a></li>
+</ul>
+</li>
+<li><a href="#orgf0263bd">7.3. Assessing data quality</a>
+<ul>
+<li><a href="#org3f26b05">7.3.1. 定性质量评估(Qualitative quality assessments)</a></li>
+<li><a href="#orgc0b0a85">7.3.2. 定量质量评估(Quantitative quality assessments)</a></li>
+</ul>
+</li>
+<li><a href="#org730060a">7.4. Improving data quality through  transformations</a></li>
+<li><a href="#org5000464">7.5. What are outliers?</a>
+<ul>
+<li><a href="#orgf4917d8">7.5.1. How to think about outliers</a></li>
+</ul>
+</li>
+<li><a href="#org8286176">7.6. Identifying outliers</a>
+<ul>
+<li><a href="#org5d151c1">7.6.1. Absolute threshold detection</a></li>
+<li><a href="#org1387aae">7.6.2. The z-score method</a></li>
+<li><a href="#org80d505b">7.6.3. Iterative z-score method</a></li>
+<li><a href="#org80e239a">7.6.4. Removing data by trimming</a></li>
+<li><a href="#org63c7941">7.6.5. Manual, automatic, and semi-automatic cleaning</a></li>
+<li><a href="#orgde5919d">7.6.6. What happends to rejected outliers?</a></li>
+</ul>
+</li>
+<li><a href="#org8895135">7.7. Analysis-based solutions to outliers</a>
+<ul>
+<li><a href="#org58d5db7">7.7.1. 非参数分析(Nonparametric analyses)</a></li>
+<li><a href="#orgf146eb8">7.7.2. 基于置换的检验(Permutation-based tests)</a></li>
+<li><a href="#org522fe9f">7.7.3. 加权分析(Weighted analyses)</a></li>
+<li><a href="#org15a0008">7.7.4. 子群分析(Subgroups analysis)</a></li>
+</ul>
+</li>
+<li><a href="#org67604b0">7.8. Missing data</a>
+<ul>
+<li><a href="#org08231df">7.8.1. 按行删除(Row-wise removal)</a></li>
+<li><a href="#org168a55a">7.8.2. 针对特定分析的行删除(Analysis-specific row removal)</a></li>
+<li><a href="#orgf5b09e1">7.8.3. 插补(Imputation)</a></li>
+<li><a href="#org1abe481">7.8.4. 预测建模(Predictive modeling)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgb9787f1">8. Chapter 08: Probability Theory</a>
+<ul>
+<li><a href="#org41fc619">8.1. From descriptive to inferential statistics</a></li>
+<li><a href="#org6f56501">8.2. What is probability?</a>
+<ul>
+<li><a href="#org54b599f">8.2.1. The problem with  probability</a></li>
+<li><a href="#orgeadcf5b">8.2.2. When do we need probabilities?</a></li>
+</ul>
+</li>
+<li><a href="#orge585b3a">8.3. Probability vs. proportion</a></li>
+<li><a href="#org3f82dca">8.4. Computing probabilities</a>
+<ul>
+<li><a href="#org927797d">8.4.1. Computing analytical probabilities</a></li>
+<li><a href="#org25c075a">8.4.2. Computing expirical probabilities</a></li>
+</ul>
+</li>
+<li><a href="#org8348e93">8.5. Probability functions, mass, and density</a></li>
+<li><a href="#org215beb4">8.6. Cumulative distribution function (cdf)</a></li>
+<li><a href="#org70c1663">8.7. Expected value</a>
+<ul>
+<li><a href="#orgdc7ac44">8.7.1. Computing expected value</a></li>
+<li><a href="#org0d363fd">8.7.2. Expected value and statistical moments</a></li>
+</ul>
+</li>
+<li><a href="#orgf32168e">8.8. Softmax</a>
+<ul>
+<li><a href="#org64e7d69">8.8.1. Does \(\sigma(x)\) really produce a probability mass function</a></li>
+<li><a href="#org57c85b6">8.8.2. What is softmax used for?</a></li>
 </ul>
 </li>
 </ul>
@@ -359,12 +363,12 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-orga4cbf97" class="outline-2">
-<h2 id="orga4cbf97"><span class="section-number-2">1.</span> Chapter 01: Introduction to this book</h2>
+<div id="outline-container-org2b768eb" class="outline-2">
+<h2 id="org2b768eb"><span class="section-number-2">1.</span> Chapter 01: Introduction to this book</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-org63fb3bb" class="outline-3">
-<h3 id="org63fb3bb"><span class="section-number-3">1.1.</span> What is statistics and why learn it?</h3>
+<div id="outline-container-org7f9a778" class="outline-3">
+<h3 id="org7f9a778"><span class="section-number-3">1.1.</span> What is statistics and why learn it?</h3>
 <div class="outline-text-3" id="text-1-1">
 <ul class="org-ul">
 <li>统计学是关于在不确定性面前利用数据帮助决策的学科.有时候不确定性很小,你根本不需要统计学.例如:
@@ -380,7 +384,7 @@
 这些数值既能描述世界,也能体现我们对解读世界的确信程度(图1.1).
 </p>
 
-<div id="org3d7c8cd" class="figure">
+<div id="orgc50d73a" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/1-1.png" alt="1-1.png" />
 </p>
 <p><span class="figure-number">Figure 1: </span>ms/1-1.png</p>
@@ -401,8 +405,8 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-org08c121d" class="outline-3">
-<h3 id="org08c121d"><span class="section-number-3">1.2.</span> Statistics, data science, machine learning, etc.</h3>
+<div id="outline-container-orgca61f1b" class="outline-3">
+<h3 id="orgca61f1b"><span class="section-number-3">1.2.</span> Statistics, data science, machine learning, etc.</h3>
 <div class="outline-text-3" id="text-1-2">
 <ul class="org-ul">
 <li>统计学,数据科学,机器学习等. 这些术语之间有何区别?它们真的彼此不同吗?</li>
@@ -442,8 +446,8 @@
 </ul></li>
 </ul>
 </div>
-<div id="outline-container-org1e0c896" class="outline-4">
-<h4 id="org1e0c896"><span class="section-number-4">1.2.1.</span> Data science</h4>
+<div id="outline-container-org5595fa5" class="outline-4">
+<h4 id="org5595fa5"><span class="section-number-4">1.2.1.</span> Data science</h4>
 <div class="outline-text-4" id="text-1-2-1">
 <ul class="org-ul">
 <li>关于数据科学是否以及如何区别于统计学,不同学者持有不同观点.</li>
@@ -462,8 +466,8 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-org1d32ce0" class="outline-4">
-<h4 id="org1d32ce0"><span class="section-number-4">1.2.2.</span> Data mining, analytics, informatics, etc.</h4>
+<div id="outline-container-orgeff1aab" class="outline-4">
+<h4 id="orgeff1aab"><span class="section-number-4">1.2.2.</span> Data mining, analytics, informatics, etc.</h4>
 <div class="outline-text-4" id="text-1-2-2">
 <ul class="org-ul">
 <li>恕我直言,尽管这些术语体系的创立必然存在合理缘由,且特定领域确实需要比"统计学"更精细的术语来体现细
@@ -477,8 +481,8 @@
 </div>
 </div>
 </div>
-<div id="outline-container-orge3ecbf2" class="outline-3">
-<h3 id="orge3ecbf2"><span class="section-number-3">1.3.</span> Target audience</h3>
+<div id="outline-container-org7e2ee17" class="outline-3">
+<h3 id="org7e2ee17"><span class="section-number-3">1.3.</span> Target audience</h3>
 <div class="outline-text-3" id="text-1-3">
 <ul class="org-ul">
 <li>我撰写本书时,始终将自学读者放在心上.
@@ -500,12 +504,12 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-org40b1e52" class="outline-3">
-<h3 id="org40b1e52"><span class="section-number-3">1.4.</span> Prerequisites</h3>
+<div id="outline-container-org77d8a81" class="outline-3">
+<h3 id="org77d8a81"><span class="section-number-3">1.4.</span> Prerequisites</h3>
 <div class="outline-text-3" id="text-1-4">
 </div>
-<div id="outline-container-orgfc831d2" class="outline-4">
-<h4 id="orgfc831d2"><span class="section-number-4">1.4.1.</span> The obvious</h4>
+<div id="outline-container-orge7da1dc" class="outline-4">
+<h4 id="orge7da1dc"><span class="section-number-4">1.4.1.</span> The obvious</h4>
 <div class="outline-text-4" id="text-1-4-1">
 <ul class="org-ul">
 <li>虽不言自明但仍需强调:
@@ -517,8 +521,8 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-orga5818f2" class="outline-4">
-<h4 id="orga5818f2"><span class="section-number-4">1.4.2.</span> High-school math</h4>
+<div id="outline-container-orgdd1f525" class="outline-4">
+<h4 id="orgdd1f525"><span class="section-number-4">1.4.2.</span> High-school math</h4>
 <div class="outline-text-4" id="text-1-4-2">
 <ul class="org-ul">
 <li>需熟练掌握算术与基础代数知识.若能解答4x²=9这类方程,即具备继续学习所需的代数基础.其他数学概念将在
@@ -528,8 +532,8 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-orgd8965cf" class="outline-4">
-<h4 id="orgd8965cf"><span class="section-number-4">1.4.3.</span> Calculus and linear algebra</h4>
+<div id="outline-container-orgd27f346" class="outline-4">
+<h4 id="orgd27f346"><span class="section-number-4">1.4.3.</span> Calculus and linear algebra</h4>
 <div class="outline-text-4" id="text-1-4-3">
 <ul class="org-ul">
 <li>无需基础.需说明的是:
@@ -542,8 +546,8 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-org5edee99" class="outline-4">
-<h4 id="org5edee99"><span class="section-number-4">1.4.4.</span> Programming</h4>
+<div id="outline-container-orgf750a8a" class="outline-4">
+<h4 id="orgf750a8a"><span class="section-number-4">1.4.4.</span> Programming</h4>
 <div class="outline-text-4" id="text-1-4-4">
 <ul class="org-ul">
 <li>现代应用统计学完全依赖编程&#x2013;此言绝非夸张.若不具备至少基础编码能力,根本无法实施统计操作.</li>
@@ -566,8 +570,8 @@
 </div>
 </div>
 </div>
-<div id="outline-container-org8c75333" class="outline-3">
-<h3 id="org8c75333"><span class="section-number-3">1.5.</span> Exercises</h3>
+<div id="outline-container-orgc33e7ad" class="outline-3">
+<h3 id="orgc33e7ad"><span class="section-number-3">1.5.</span> Exercises</h3>
 <div class="outline-text-3" id="text-1-5">
 <ul class="org-ul">
 <li>我确信您曾听过这个说法:数学绝非观赏性运动.</li>
@@ -594,8 +598,8 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-org113fba4" class="outline-3">
-<h3 id="org113fba4"><span class="section-number-3">1.6.</span> Learning from simulated data</h3>
+<div id="outline-container-org462553f" class="outline-3">
+<h3 id="org462553f"><span class="section-number-3">1.6.</span> Learning from simulated data</h3>
 <div class="outline-text-3" id="text-1-6">
 <ul class="org-ul">
 <li>统计学作为一门方法论科学,传统上主要通过三种方式学习. 每种方式各有特点,但也存在明显局限性.而现代
@@ -612,8 +616,8 @@
 </ol></li>
 </ul>
 </div>
-<div id="outline-container-orgb517dcc" class="outline-4">
-<h4 id="orgb517dcc"><span class="section-number-4">1.6.1.</span> 现代计算方法:模拟数据学习</h4>
+<div id="outline-container-org415ccde" class="outline-4">
+<h4 id="org415ccde"><span class="section-number-4">1.6.1.</span> 现代计算方法:模拟数据学习</h4>
 <div class="outline-text-4" id="text-1-6-1">
 <ul class="org-ul">
 <li>本书旨在通过模拟具有特定特征的数据集然后对这些数据进行统计分析,提供一种现代的,计算驱动的统计学学习方式</li>
@@ -635,8 +639,8 @@
 </div>
 </div>
 </div>
-<div id="outline-container-org9e0949e" class="outline-3">
-<h3 id="org9e0949e"><span class="section-number-3">1.7.</span> Using the code with this book</h3>
+<div id="outline-container-orgfa87c9f" class="outline-3">
+<h3 id="orgfa87c9f"><span class="section-number-3">1.7.</span> Using the code with this book</h3>
 <div class="outline-text-3" id="text-1-7">
 <ul class="org-ul">
 <li>这本书不包含 Python 或 R 语言的教程.我已尽力确保代码中的注释足够详细,以便初学者能够理解并将代码改
@@ -645,8 +649,8 @@
 <li>如果你是完全不熟悉 Python 或 R 的新手,那么我建议你先学习一些编程基础再继续.</li>
 </ul>
 </div>
-<div id="outline-container-org870a097" class="outline-4">
-<h4 id="org870a097"><span class="section-number-4">1.7.1.</span> Which language to use?</h4>
+<div id="outline-container-org9904b54" class="outline-4">
+<h4 id="org9904b54"><span class="section-number-4">1.7.1.</span> Which language to use?</h4>
 <div class="outline-text-4" id="text-1-7-1">
 <ul class="org-ul">
 <li>我不确定是否值得同时深入钻研 Python 和 R 的代码.最好的做法可能是选择一门语言,然后将你的时间最大限
@@ -660,16 +664,16 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-org9bbe41c" class="outline-4">
-<h4 id="org9bbe41c"><span class="section-number-4">1.7.2.</span> Following along with Python</h4>
+<div id="outline-container-org0158bd5" class="outline-4">
+<h4 id="org0158bd5"><span class="section-number-4">1.7.2.</span> Following along with Python</h4>
 <div class="outline-text-4" id="text-1-7-2">
 <ul class="org-ul">
 <li>其实就是jupyter notebook, 我们的笔记也会主要以jupyter notebook为主</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org5e91a01" class="outline-4">
-<h4 id="org5e91a01"><span class="section-number-4">1.7.3.</span> Following along with R</h4>
+<div id="outline-container-org57550e3" class="outline-4">
+<h4 id="org57550e3"><span class="section-number-4">1.7.3.</span> Following along with R</h4>
 <div class="outline-text-4" id="text-1-7-3">
 <ul class="org-ul">
 <li>本笔记不涉及R语言</li>
@@ -678,12 +682,12 @@
 </div>
 </div>
 </div>
-<div id="outline-container-orge916ed4" class="outline-2">
-<h2 id="orge916ed4"><span class="section-number-2">2.</span> Chapter 02: What Are (Is?) Data?</h2>
+<div id="outline-container-org70b092d" class="outline-2">
+<h2 id="org70b092d"><span class="section-number-2">2.</span> Chapter 02: What Are (Is?) Data?</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-orgb8ea45c" class="outline-3">
-<h3 id="orgb8ea45c"><span class="section-number-3">2.1.</span> Is "data" singular or plural?</h3>
+<div id="outline-container-org57352ab" class="outline-3">
+<h3 id="org57352ab"><span class="section-number-3">2.1.</span> Is "data" singular or plural?</h3>
 <div class="outline-text-3" id="text-2-1">
 <ul class="org-ul">
 <li>请原谅我对语法用法的小小抱怨;我会尽量简短.</li>
@@ -708,8 +712,8 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-orgbb1caca" class="outline-3">
-<h3 id="orgbb1caca"><span class="section-number-3">2.2.</span> Where do data come from, what do they mean?</h3>
+<div id="outline-container-org91a4007" class="outline-3">
+<h3 id="org91a4007"><span class="section-number-3">2.2.</span> Where do data come from, what do they mean?</h3>
 <div class="outline-text-3" id="text-2-2">
 <ul class="org-ul">
 <li>宇宙是一个极其,极其,极其无法想象的复杂之地.</li>
@@ -745,8 +749,8 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-org7a7809e" class="outline-3">
-<h3 id="org7a7809e"><span class="section-number-3">2.3.</span> What do data look like?</h3>
+<div id="outline-container-org7375e4e" class="outline-3">
+<h3 id="org7375e4e"><span class="section-number-3">2.3.</span> What do data look like?</h3>
 <div class="outline-text-3" id="text-2-3">
 <ul class="org-ul">
 <li>为了进行处理和分析,数据会被数字化并存储在计算机中.因此,从根本上说,数据是以一系列存储单元的二进
@@ -762,7 +766,7 @@
 图2-2
 </p>
 
-<div id="orgd5bf72d" class="figure">
+<div id="org1f7a89c" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/2-2.png" alt="2-2.png" />
 </p>
 <p><span class="figure-number">Figure 2: </span>ms/2-2.png</p>
@@ -777,7 +781,7 @@
 图2-3
 </p>
 
-<div id="org3d19ec2" class="figure">
+<div id="org39e4555" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/2-3.png" alt="2-3.png" />
 </p>
 <p><span class="figure-number">Figure 3: </span>ms/2-3.png</p>
@@ -794,7 +798,7 @@
 就像图 2.4 那样的结构.
 </p>
 
-<div id="org2352862" class="figure">
+<div id="org546a93f" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/2-4.png" alt="2-4.png" />
 </p>
 <p><span class="figure-number">Figure 4: </span>ms/2-4.png</p>
@@ -814,8 +818,8 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-org7d518c3" class="outline-3">
-<h3 id="org7d518c3"><span class="section-number-3">2.4.</span> Limitations of data</h3>
+<div id="outline-container-org96acd89" class="outline-3">
+<h3 id="org96acd89"><span class="section-number-3">2.4.</span> Limitations of data</h3>
 <div class="outline-text-3" id="text-2-4">
 <ul class="org-ul">
 <li>如果数据来自对宇宙的测量,那我们为什么还需要数据处理和统计分析呢?</li>
@@ -824,15 +828,15 @@
 <li>下面列出了一些困扰"原始"(未处理)数据的问题,这些问题促使我们在解释数据之前,先对其应用算法和分析方法.</li>
 </ul>
 </div>
-<div id="outline-container-org15dd249" class="outline-4">
-<h4 id="org15dd249"><span class="section-number-4">2.4.1.</span> Data come from imperfect measurements</h4>
+<div id="outline-container-orgfcf8ce9" class="outline-4">
+<h4 id="orgfcf8ce9"><span class="section-number-4">2.4.1.</span> Data come from imperfect measurements</h4>
 <div class="outline-text-4" id="text-2-4-1">
 <ul class="org-ul">
 <li>数据的质量受限于测量的质量.以下是几个说明这种限制的例子:</li>
 </ul>
 </div>
 <ol class="org-ol">
-<li><a id="orgcc9f019"></a>记忆偏差<br />
+<li><a id="orgef6324f"></a>记忆偏差<br />
 <div class="outline-text-5" id="text-2-4-1-1">
 <ul class="org-ul">
 <li>你让人们回忆 10 年前的购买偏好,并将调查放到网上,收集到数以万计的回答.</li>
@@ -841,7 +845,7 @@
 </ul>
 </div>
 </li>
-<li><a id="org3e94450"></a>测量环境限制<br />
+<li><a id="orgdcac952"></a>测量环境限制<br />
 <div class="outline-text-5" id="text-2-4-1-2">
 <ul class="org-ul">
 <li>你需要测量发动机内部的温度,但把温度计放进发动机会被融化.</li>
@@ -850,7 +854,7 @@
 </ul>
 </div>
 </li>
-<li><a id="org1dd258e"></a>数据与现实不完全吻合<br />
+<li><a id="org2cbff6c"></a>数据与现实不完全吻合<br />
 <div class="outline-text-5" id="text-2-4-1-3">
 <ul class="org-ul">
 <li>2020 年初,新冠病毒在全球传播.当时各国都尝试统计感染人数.</li>
@@ -863,8 +867,8 @@
 </li>
 </ol>
 </div>
-<div id="outline-container-org482cdb4" class="outline-4">
-<h4 id="org482cdb4"><span class="section-number-4">2.4.2.</span> Data my contains noise</h4>
+<div id="outline-container-orgc975c78" class="outline-4">
+<h4 id="orgc975c78"><span class="section-number-4">2.4.2.</span> Data my contains noise</h4>
 <div class="outline-text-4" id="text-2-4-2">
 <ul class="org-ul">
 <li>另一个限制是,数据中往往会包含噪声.</li>
@@ -881,7 +885,7 @@
 参见图 2-5
 </p>
 
-<div id="org4db4f5a" class="figure">
+<div id="orgb20288c" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/2-5.png" alt="2-5.png" />
 </p>
 <p><span class="figure-number">Figure 5: </span>ms/2-5.png</p>
@@ -890,8 +894,8 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-orgf809d98" class="outline-4">
-<h4 id="orgf809d98"><span class="section-number-4">2.4.3.</span> Outliers may skew statistics</h4>
+<div id="outline-container-org404f862" class="outline-4">
+<h4 id="org404f862"><span class="section-number-4">2.4.3.</span> Outliers may skew statistics</h4>
 <div class="outline-text-4" id="text-2-4-3">
 <ul class="org-ul">
 <li>数据集中有时会包含相对于其他数据来说异常的少量数据点.</li>
@@ -899,7 +903,7 @@
 这些数据点被称为离群值(outliers)或非代表性样本(non-representative samples)(见图 2.6).
 </p>
 
-<div id="org38fbea3" class="figure">
+<div id="org87e5f1b" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/2-6.png" alt="2-6.png" />
 </p>
 <p><span class="figure-number">Figure 6: </span>ms/2-6.png</p>
@@ -911,8 +915,8 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-orgd959e6a" class="outline-4">
-<h4 id="orgd959e6a"><span class="section-number-4">2.4.4.</span> What is a measurement unit?</h4>
+<div id="outline-container-org72ef86f" class="outline-4">
+<h4 id="org72ef86f"><span class="section-number-4">2.4.4.</span> What is a measurement unit?</h4>
 <div class="outline-text-4" id="text-2-4-4">
 <ul class="org-ul">
 <li>我们使用的大多数计量单位&#x2013;秒,千克,英里,主观评分等等&#x2013;其实都是人为设定,任意创造的.例如:
@@ -931,15 +935,15 @@
 我想表达的只是:这些不具有普遍意义,带有文化色彩的测量单位,只是把真实的宇宙与数据集中的数值隔开了
 又一层.
 </p>
-<pre class="example" id="orgdb49909">
+<pre class="example" id="org5a638e0">
 Non-universal, cultural measurement units are just one more step in between the actual universe
 and the numerical values in our datasets.
 </pre></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgceefc69" class="outline-4">
-<h4 id="orgceefc69"><span class="section-number-4">2.4.5.</span> Conclusion</h4>
+<div id="outline-container-orgcb0839c" class="outline-4">
+<h4 id="orgcb0839c"><span class="section-number-4">2.4.5.</span> Conclusion</h4>
 <div class="outline-text-4" id="text-2-4-5">
 <ul class="org-ul">
 <li>虽然我们喜欢认为数据直接来自那些我们想要理解的宇宙中的事物,但事实并非如此.</li>
@@ -952,15 +956,15 @@ and the numerical values in our datasets.
 </div>
 </div>
 </div>
-<div id="outline-container-orgdbdada5" class="outline-3">
-<h3 id="orgdbdada5"><span class="section-number-3">2.5.</span> Accuracy, precision, resolution, range</h3>
+<div id="outline-container-org70ad25b" class="outline-3">
+<h3 id="org70ad25b"><span class="section-number-3">2.5.</span> Accuracy, precision, resolution, range</h3>
 <div class="outline-text-3" id="text-2-5">
 <ul class="org-ul">
 <li>测量设备的质量可以通过多种方式进行量化.在本节中,你将学习到本节标题所列四个术语的定义及其区别.</li>
 </ul>
 </div>
-<div id="outline-container-orga642729" class="outline-4">
-<h4 id="orga642729"><span class="section-number-4">2.5.1.</span> Accuracy 准确度</h4>
+<div id="outline-container-org9f0b81e" class="outline-4">
+<h4 id="org9f0b81e"><span class="section-number-4">2.5.1.</span> Accuracy 准确度</h4>
 <div class="outline-text-4" id="text-2-5-1">
 <ul class="org-ul">
 <li>指的是测量数据相对于其所测量特征的正确程度</li>
@@ -969,8 +973,8 @@ and the numerical values in our datasets.
 </ul>
 </div>
 </div>
-<div id="outline-container-org1db07ee" class="outline-4">
-<h4 id="org1db07ee"><span class="section-number-4">2.5.2.</span> Precision 精密度</h4>
+<div id="outline-container-org9584d40" class="outline-4">
+<h4 id="org9584d40"><span class="section-number-4">2.5.2.</span> Precision 精密度</h4>
 <div class="outline-text-4" id="text-2-5-2">
 <ul class="org-ul">
 <li>是设备在重复测量中提供相同数据值的能力</li>
@@ -981,8 +985,8 @@ and the numerical values in our datasets.
 </ul>
 </div>
 </div>
-<div id="outline-container-orgea18a8b" class="outline-4">
-<h4 id="orgea18a8b"><span class="section-number-4">2.5.3.</span> Resolution 分辨率</h4>
+<div id="outline-container-org34d152b" class="outline-4">
+<h4 id="org34d152b"><span class="section-number-4">2.5.3.</span> Resolution 分辨率</h4>
 <div class="outline-text-4" id="text-2-5-3">
 <ul class="org-ul">
 <li>指的是连续两次测量之间的数值差距</li>
@@ -992,8 +996,8 @@ and the numerical values in our datasets.
 </ul>
 </div>
 </div>
-<div id="outline-container-org817396c" class="outline-4">
-<h4 id="org817396c"><span class="section-number-4">2.5.4.</span> Range 量程</h4>
+<div id="outline-container-orge60b8b3" class="outline-4">
+<h4 id="orge60b8b3"><span class="section-number-4">2.5.4.</span> Range 量程</h4>
 <div class="outline-text-4" id="text-2-5-4">
 <ul class="org-ul">
 <li>是传感器能够测量的最小值和最大值</li>
@@ -1011,7 +1015,7 @@ and the numerical values in our datasets.
 如图
 </p>
 
-<div id="orgfe9403e" class="figure">
+<div id="orgbd880eb" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/2-7.png" alt="2-7.png" />
 </p>
 <p><span class="figure-number">Figure 7: </span>ms/2-7.png</p>
@@ -1036,8 +1040,8 @@ and the numerical values in our datasets.
 </div>
 </div>
 </div>
-<div id="outline-container-orgd1b3354" class="outline-3">
-<h3 id="orgd1b3354"><span class="section-number-3">2.6.</span> Data types</h3>
+<div id="outline-container-org23aabe1" class="outline-3">
+<h3 id="org23aabe1"><span class="section-number-3">2.6.</span> Data types</h3>
 <div class="outline-text-3" id="text-2-6">
 <ul class="org-ul">
 <li>因为本书涉猎了coding部分,所以我们需要区别如下两个概念:
@@ -1056,7 +1060,7 @@ and the numerical values in our datasets.
 图 2.8 提供了一个概览.
 </p>
 
-<div id="orgb6d0c6f" class="figure">
+<div id="orgec6ca97" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/2-8.png" alt="2-8.png" />
 </p>
 <p><span class="figure-number">Figure 8: </span>ms/2-8.png</p>
@@ -1065,8 +1069,8 @@ and the numerical values in our datasets.
 <li>我们下面挨个来介绍下图2-8中的各种数据类型</li>
 </ul>
 </div>
-<div id="outline-container-org846b2a5" class="outline-4">
-<h4 id="org846b2a5"><span class="section-number-4">2.6.1.</span> 数值型数据(Numerical data)</h4>
+<div id="outline-container-orgd309641" class="outline-4">
+<h4 id="orgd309641"><span class="section-number-4">2.6.1.</span> 数值型数据(Numerical data)</h4>
 <div class="outline-text-4" id="text-2-6-1">
 <ul class="org-ul">
 <li>由数字组成.但并不仅仅是"看起来是数字"就能算数值型,因为分类数据(categorical data)有时也会用数字
@@ -1080,8 +1084,8 @@ and the numerical values in our datasets.
 </ul>
 </div>
 </div>
-<div id="outline-container-org7feaac1" class="outline-4">
-<h4 id="org7feaac1"><span class="section-number-4">2.6.2.</span> 离散数据(Discrete data)</h4>
+<div id="outline-container-org62376b0" class="outline-4">
+<h4 id="org62376b0"><span class="section-number-4">2.6.2.</span> 离散数据(Discrete data)</h4>
 <div class="outline-text-4" id="text-2-6-2">
 <ul class="org-ul">
 <li>离散数据反映的是可数的事物,通常用整数来表示.</li>
@@ -1095,8 +1099,8 @@ and the numerical values in our datasets.
 </ul>
 </div>
 </div>
-<div id="outline-container-orged8a634" class="outline-4">
-<h4 id="orged8a634"><span class="section-number-4">2.6.3.</span> 区间数据(Interval data)</h4>
+<div id="outline-container-org89082cf" class="outline-4">
+<h4 id="org89082cf"><span class="section-number-4">2.6.3.</span> 区间数据(Interval data)</h4>
 <div class="outline-text-4" id="text-2-6-3">
 <ul class="org-ul">
 <li>区间数据是具有有意义的间隔(interval)且精度由测量工具决定的数值数据.</li>
@@ -1120,8 +1124,8 @@ and the numerical values in our datasets.
 </ul>
 </div>
 </div>
-<div id="outline-container-orgd263ebd" class="outline-4">
-<h4 id="orgd263ebd"><span class="section-number-4">2.6.4.</span> 比率数据(Ratio data)</h4>
+<div id="outline-container-orgbe0f65e" class="outline-4">
+<h4 id="orgbe0f65e"><span class="section-number-4">2.6.4.</span> 比率数据(Ratio data)</h4>
 <div class="outline-text-4" id="text-2-6-4">
 <ul class="org-ul">
 <li>比率数据是具有有意义零点的区间数据,因此我们可以对它进行乘法和除法.
@@ -1134,8 +1138,8 @@ and the numerical values in our datasets.
 </ul>
 </div>
 </div>
-<div id="outline-container-org53d3ff6" class="outline-4">
-<h4 id="org53d3ff6"><span class="section-number-4">2.6.5.</span> 分类数据(Categorical data)</h4>
+<div id="outline-container-org67e3118" class="outline-4">
+<h4 id="org67e3118"><span class="section-number-4">2.6.5.</span> 分类数据(Categorical data)</h4>
 <div class="outline-text-4" id="text-2-6-5">
 <ul class="org-ul">
 <li>也叫 标记数据(labeled data).</li>
@@ -1147,8 +1151,8 @@ and the numerical values in our datasets.
 </ul>
 </div>
 </div>
-<div id="outline-container-orgae3d1d9" class="outline-4">
-<h4 id="orgae3d1d9"><span class="section-number-4">2.6.6.</span> 名义数据(Nominal data)</h4>
+<div id="outline-container-org135287f" class="outline-4">
+<h4 id="org135287f"><span class="section-number-4">2.6.6.</span> 名义数据(Nominal data)</h4>
 <div class="outline-text-4" id="text-2-6-6">
 <ul class="org-ul">
 <li>名义数据是离散的,不可排序的类别.</li>
@@ -1164,8 +1168,8 @@ and the numerical values in our datasets.
 </ul>
 </div>
 </div>
-<div id="outline-container-org5c18fa6" class="outline-4">
-<h4 id="org5c18fa6"><span class="section-number-4">2.6.7.</span> 有序数据(Ordinal data)</h4>
+<div id="outline-container-org5db129f" class="outline-4">
+<h4 id="org5db129f"><span class="section-number-4">2.6.7.</span> 有序数据(Ordinal data)</h4>
 <div class="outline-text-4" id="text-2-6-7">
 <ul class="org-ul">
 <li>有序数据是可以按某种指标排序的离散数据.以"教育水平"为例:
@@ -1179,8 +1183,8 @@ and the numerical values in our datasets.
 </ul>
 </div>
 </div>
-<div id="outline-container-orgab435a5" class="outline-4">
-<h4 id="orgab435a5"><span class="section-number-4">2.6.8.</span> 数据类型的变化</h4>
+<div id="outline-container-org5f067f2" class="outline-4">
+<h4 id="org5f067f2"><span class="section-number-4">2.6.8.</span> 数据类型的变化</h4>
 <div class="outline-text-4" id="text-2-6-8">
 <ul class="org-ul">
 <li>通过改变收集数据的方式,我们有时可以将数据类型从名义数据变为有序数据.
@@ -1192,8 +1196,8 @@ and the numerical values in our datasets.
 </ul>
 </div>
 </div>
-<div id="outline-container-org9ef06a3" class="outline-4">
-<h4 id="org9ef06a3"><span class="section-number-4">2.6.9.</span> 有序数据的数学运算</h4>
+<div id="outline-container-org32d7de0" class="outline-4">
+<h4 id="org32d7de0"><span class="section-number-4">2.6.9.</span> 有序数据的数学运算</h4>
 <div class="outline-text-4" id="text-2-6-9">
 <ul class="org-ul">
 <li>理论上,我们不能对有序数据进行算术运算(原因同上),不过在实践中,很多地方都会这么做.</li>
@@ -1214,7 +1218,7 @@ and the numerical values in our datasets.
 </ul>
 </div>
 <ol class="org-ol">
-<li><a id="orgba1d626"></a>从纯统计到应用统计<br />
+<li><a id="org81f825e"></a>从纯统计到应用统计<br />
 <div class="outline-text-5" id="text-2-6-9-1">
 <ul class="org-ul">
 <li>这个例子虽小,却深刻反映出统计的现实:
@@ -1231,8 +1235,8 @@ and the numerical values in our datasets.
 </ol>
 </div>
 </div>
-<div id="outline-container-org34e1813" class="outline-3">
-<h3 id="org34e1813"><span class="section-number-3">2.7.</span> From anecdotes to populations</h3>
+<div id="outline-container-orgb97c4f5" class="outline-3">
+<h3 id="orgb97c4f5"><span class="section-number-3">2.7.</span> From anecdotes to populations</h3>
 <div class="outline-text-3" id="text-2-7">
 <ul class="org-ul">
 <li>你可能知道,datum 指的是一个单独的数据点,而 data 指的是多个数据点.</li>
@@ -1248,7 +1252,7 @@ and the numerical values in our datasets.
 </ul>
 </div>
 <ol class="org-ol">
-<li><a id="org7adcab9"></a>推测或理论(Speculation or theory, N = 0)<br />
+<li><a id="orgcc63185"></a>推测或理论(Speculation or theory, N = 0)<br />
 <div class="outline-text-5" id="text-2-7-0-1">
 <ul class="org-ul">
 <li>开发新的想法,假设和理论,即使一个数据点都没有,也是可以完成的.虽然这对科学发展至关重要,但这种非
@@ -1256,14 +1260,14 @@ and the numerical values in our datasets.
 </ul>
 </div>
 </li>
-<li><a id="org3659bc7"></a>轶事(Anecdote, N = 1)<br />
+<li><a id="orgb69402a"></a>轶事(Anecdote, N = 1)<br />
 <div class="outline-text-5" id="text-2-7-0-2">
 <ul class="org-ul">
 <li>轶事是关于一个人所发生事情的故事.</li>
 </ul>
 </div>
 </li>
-<li><a id="org18ffd28"></a>病例报告(Case report, N = 1)<br />
+<li><a id="org2b22f85"></a>病例报告(Case report, N = 1)<br />
 <div class="outline-text-5" id="text-2-7-0-3">
 <ul class="org-ul">
 <li>病例报告本质上是一种在医学背景下的轶事,通常是对某位患有罕见病症患者的诊断或治疗的描述.病例报告有
@@ -1271,7 +1275,7 @@ and the numerical values in our datasets.
 </ul>
 </div>
 </li>
-<li><a id="org1003bee"></a>样本(Sample)<br />
+<li><a id="org953d47c"></a>样本(Sample)<br />
 <div class="outline-text-5" id="text-2-7-0-4">
 <ul class="org-ul">
 <li>在前文中我定义了样本量(sample size).样本指的是你进行测量并收集数据的个体集合.例如,如果你想知道
@@ -1279,7 +1283,7 @@ and the numerical values in our datasets.
 </ul>
 </div>
 </li>
-<li><a id="org77e15cd"></a>预研 / 试点研究(Pilot study,小样本 N)<br />
+<li><a id="orgc581352"></a>预研 / 试点研究(Pilot study,小样本 N)<br />
 <div class="outline-text-5" id="text-2-7-0-5">
 <ul class="org-ul">
 <li>"试点研究"并不是关于驾驶飞机的飞行员的研究项目.它的真正含义是:
@@ -1295,7 +1299,7 @@ and the numerical values in our datasets.
 </ul>
 </div>
 </li>
-<li><a id="org38c2e4d"></a>小规模 vs. 大规模研究(Small-scale vs. large-scale studies)<br />
+<li><a id="org3539be4"></a>小规模 vs. 大规模研究(Small-scale vs. large-scale studies)<br />
 <div class="outline-text-5" id="text-2-7-0-6">
 <ul class="org-ul">
 <li>这两个术语有一定模糊性,因为并没有一个明确的样本量界定何为"小"或"大";它取决于多个因素,例如效:
@@ -1314,7 +1318,7 @@ and the numerical values in our datasets.
 </ul>
 </div>
 </li>
-<li><a id="org6153a50"></a>观察性研究(Observational study)<br />
+<li><a id="org360041d"></a>观察性研究(Observational study)<br />
 <div class="outline-text-5" id="text-2-7-0-7">
 <ul class="org-ul">
 <li>这个术语有点容易误导&#x2013;数据都是"观察"得到的,那么是不是所有有数据的研究都是观察性研究?
@@ -1326,7 +1330,7 @@ and the numerical values in our datasets.
 </ul>
 </div>
 </li>
-<li><a id="org34b80f9"></a>便利样本(Convenience sample)<br />
+<li><a id="org02d7126"></a>便利样本(Convenience sample)<br />
 <div class="outline-text-5" id="text-2-7-0-8">
 <ul class="org-ul">
 <li>便利样本是指研究人员几乎不费力气就获取到的样本.比如只调查你的朋友和家人,就是一种便利样本.</li>
@@ -1335,7 +1339,7 @@ and the numerical values in our datasets.
 </ul>
 </div>
 </li>
-<li><a id="org9d37eff"></a>总体(Population)<br />
+<li><a id="orgeb672d8"></a>总体(Population)<br />
 <div class="outline-text-5" id="text-2-7-0-9">
 <ul class="org-ul">
 <li>总体是指你想要了解的所有对象的集合.在很多情况下,总体是不可能被完全测量的,例如宇宙中所有的恒星.
@@ -1344,8 +1348,8 @@ and the numerical values in our datasets.
 </div>
 </li>
 </ol>
-<div id="outline-container-orgebe97d6" class="outline-4">
-<h4 id="orgebe97d6"><span class="section-number-4">2.7.1.</span> Sample vs. population</h4>
+<div id="outline-container-orgac7d051" class="outline-4">
+<h4 id="orgac7d051"><span class="section-number-4">2.7.1.</span> Sample vs. population</h4>
 <div class="outline-text-4" id="text-2-7-1">
 <ul class="org-ul">
 <li>虽然个体的情况可能很有趣,但大多数研究的目标是理解总体.
@@ -1388,8 +1392,8 @@ and the numerical values in our datasets.
 </ul>
 </div>
 </div>
-<div id="outline-container-orgcaede77" class="outline-4">
-<h4 id="orgcaede77"><span class="section-number-4">2.7.2.</span> "Big enough" samples</h4>
+<div id="outline-container-org961eb12" class="outline-4">
+<h4 id="org961eb12"><span class="section-number-4">2.7.2.</span> "Big enough" samples</h4>
 <div class="outline-text-4" id="text-2-7-2">
 <ul class="org-ul">
 <li>多大的样本量才足够让我们将样本推论至总体呢?</li>
@@ -1417,8 +1421,8 @@ and the numerical values in our datasets.
 </ul>
 </div>
 </div>
-<div id="outline-container-org2bc954f" class="outline-4">
-<h4 id="org2bc954f"><span class="section-number-4">2.7.3.</span> Problems with N=1 studies</h4>
+<div id="outline-container-orge7211ae" class="outline-4">
+<h4 id="orge7211ae"><span class="section-number-4">2.7.3.</span> Problems with N=1 studies</h4>
 <div class="outline-text-4" id="text-2-7-3">
 <ul class="org-ul">
 <li>案例研究和轶事(anecdote)可以成为很精彩的故事,但在解读时必须格外谨慎,尤其当研究目标是为了理解总
@@ -1445,7 +1449,7 @@ and the numerical values in our datasets.
 <li><p>
 案例报告和轶事无法推广到总体;而大规模研究才有可能具备推广性.
 </p>
-<pre class="example" id="org8aa369f">
+<pre class="example" id="orgc81e1b1">
 Case reports and anecdotes cannot be generalized, whereas larger-scale studies proffer the
 possibility of generalizability.
 </pre></li>
@@ -1454,8 +1458,8 @@ possibility of generalizability.
 </div>
 </div>
 </div>
-<div id="outline-container-org660bd30" class="outline-3">
-<h3 id="org660bd30"><span class="section-number-3">2.8.</span> Data management</h3>
+<div id="outline-container-org37d284c" class="outline-3">
+<h3 id="org37d284c"><span class="section-number-3">2.8.</span> Data management</h3>
 <div class="outline-text-3" id="text-2-8">
 <ul class="org-ul">
 <li>数据管理(Data management) 指的是一种用于记录,存储,和归档数据的系统.</li>
@@ -1492,8 +1496,8 @@ possibility of generalizability.
 </ul>
 </div>
 </div>
-<div id="outline-container-org53912b9" class="outline-3">
-<h3 id="org53912b9"><span class="section-number-3">2.9.</span> The ethics of making up data</h3>
+<div id="outline-container-org183f90b" class="outline-3">
+<h3 id="org183f90b"><span class="section-number-3">2.9.</span> The ethics of making up data</h3>
 <div class="outline-text-3" id="text-2-9">
 <ul class="org-ul">
 <li>听起来很简单,对吧?"不要捏造数据."&#x2013;好像一句话就能结束讨论.</li>
@@ -1579,12 +1583,12 @@ possibility of generalizability.
 </div>
 </div>
 </div>
-<div id="outline-container-org1d1a8c4" class="outline-2">
-<h2 id="org1d1a8c4"><span class="section-number-2">3.</span> Chapter 03: Visualizing Data</h2>
+<div id="outline-container-org0288018" class="outline-2">
+<h2 id="org0288018"><span class="section-number-2">3.</span> Chapter 03: Visualizing Data</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-org56ee92b" class="outline-3">
-<h3 id="org56ee92b"><span class="section-number-3">3.1.</span> Why visualize data?</h3>
+<div id="outline-container-org1a166ac" class="outline-3">
+<h3 id="org1a166ac"><span class="section-number-3">3.1.</span> Why visualize data?</h3>
 <div class="outline-text-3" id="text-3-1">
 <ul class="org-ul">
 <li>我非常热爱数据的可视化.
@@ -1611,8 +1615,8 @@ possibility of generalizability.
 </ul>
 </div>
 </div>
-<div id="outline-container-orga263039" class="outline-3">
-<h3 id="orga263039"><span class="section-number-3">3.2.</span> How to visualize data</h3>
+<div id="outline-container-org2a69f83" class="outline-3">
+<h3 id="org2a69f83"><span class="section-number-3">3.2.</span> How to visualize data</h3>
 <div class="outline-text-3" id="text-3-2">
 <ul class="org-ul">
 <li>数据可视化之所以是一项技能&#x2013;甚至说是一门艺术&#x2013;是因为有些数据具有内在特性,可以直接决定它们该如何被
@@ -1630,7 +1634,7 @@ possibility of generalizability.
 图 3.1 在电子表格中展示了这些数据.
 </p>
 
-<div id="orgf0a96b8" class="figure">
+<div id="orgf55c8e5" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/3-1.png" alt="3-1.png" />
 </p>
 <p><span class="figure-number">Figure 9: </span>ms/3-1.png</p>
@@ -1647,8 +1651,8 @@ possibility of generalizability.
 </ul>
 </div>
 </div>
-<div id="outline-container-org63c44ad" class="outline-3">
-<h3 id="org63c44ad"><span class="section-number-3">3.3.</span> Bar plots</h3>
+<div id="outline-container-orge34ef01" class="outline-3">
+<h3 id="orge34ef01"><span class="section-number-3">3.3.</span> Bar plots</h3>
 <div class="outline-text-3" id="text-3-3">
 <ul class="org-ul">
 <li>让我们先看一个例子.假设我们进行了一项调查,向人们询问他们从哪里获取新闻¹.他们可以选择的答案是:
@@ -1664,7 +1668,7 @@ possibility of generalizability.
 图 3.3 展示了这一调查结果,并用**条形图(bar plot)**进行可视化.
 </p>
 
-<div id="org924dbef" class="figure">
+<div id="org655343c" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/3-3.png" alt="3-3.png" />
 </p>
 <p><span class="figure-number">Figure 10: </span>ms/3-3.png</p>
@@ -1724,7 +1728,7 @@ plt.show<span style="color: #000000;">()</span>
 图3-4
 </p>
 
-<div id="org8b8eb74" class="figure">
+<div id="org27576d6" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/3-4.png" alt="3-4.png" />
 </p>
 <p><span class="figure-number">Figure 11: </span>ms/3-4.png</p>
@@ -1732,8 +1736,8 @@ plt.show<span style="color: #000000;">()</span>
 </ul></li>
 </ul>
 </div>
-<div id="outline-container-org40f53b6" class="outline-4">
-<h4 id="org40f53b6"><span class="section-number-4">3.3.1.</span> Bar plots for grouped data</h4>
+<div id="outline-container-orgd16acbd" class="outline-4">
+<h4 id="orgd16acbd"><span class="section-number-4">3.3.1.</span> Bar plots for grouped data</h4>
 <div class="outline-text-4" id="text-3-3-1">
 <ul class="org-ul">
 <li>我们继续使用之前的"新闻来源调查"例子.现在假设我们调查了两组人:
@@ -1777,7 +1781,7 @@ plt.show<span style="color: #000000;">()</span>
 如图3-6
 </p>
 
-<div id="orgb9e524e" class="figure">
+<div id="org62c5b5d" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/3-6.png" alt="3-6.png" />
 </p>
 <p><span class="figure-number">Figure 12: </span>ms/3-6.png</p>
@@ -1786,8 +1790,8 @@ plt.show<span style="color: #000000;">()</span>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgd0bb643" class="outline-4">
-<h4 id="orgd0bb643"><span class="section-number-4">3.3.2.</span> Error bars</h4>
+<div id="outline-container-org2f7c294" class="outline-4">
+<h4 id="org2f7c294"><span class="section-number-4">3.3.2.</span> Error bars</h4>
 <div class="outline-text-4" id="text-3-3-2">
 <ul class="org-ul">
 <li>误差线(Error bars) 是条形图的一种自然扩展.</li>
@@ -1798,7 +1802,7 @@ plt.show<span style="color: #000000;">()</span>
 参见图 3.7 示例.
 </p>
 
-<div id="org12f8b15" class="figure">
+<div id="orgf5d20b1" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/3-7.png" alt="3-7.png" />
 </p>
 <p><span class="figure-number">Figure 13: </span>ms/3-7.png</p>
@@ -1827,8 +1831,8 @@ plt.show<span style="color: #000000;">()</span>
 </div>
 </div>
 </div>
-<div id="outline-container-org9f0b5e6" class="outline-3">
-<h3 id="org9f0b5e6"><span class="section-number-3">3.4.</span> Pie charts</h3>
+<div id="outline-container-org1086731" class="outline-3">
+<h3 id="org1086731"><span class="section-number-3">3.4.</span> Pie charts</h3>
 <div class="outline-text-3" id="text-3-4">
 <ul class="org-ul">
 <li>饼图(Pie chart) 看起来像一个被切成楔形块的圆&#x2013;换句话说,就像一个派(pie).</li>
@@ -1844,7 +1848,7 @@ plt.show<span style="color: #000000;">()</span>
 图 3.8 展示了一个饼图的示例.
 </p>
 
-<div id="org93ca844" class="figure">
+<div id="org00db8b4" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/3-8.png" alt="3-8.png" />
 </p>
 <p><span class="figure-number">Figure 14: </span>ms/3-8.png</p>
@@ -1854,8 +1858,8 @@ plt.show<span style="color: #000000;">()</span>
 </ul>
 </div>
 </div>
-<div id="outline-container-org026c43c" class="outline-3">
-<h3 id="org026c43c"><span class="section-number-3">3.5.</span> Box plots</h3>
+<div id="outline-container-org8bb1e89" class="outline-3">
+<h3 id="org8bb1e89"><span class="section-number-3">3.5.</span> Box plots</h3>
 <div class="outline-text-3" id="text-3-5">
 <ul class="org-ul">
 <li>箱线图(Box plots),传统上也叫箱形-须状图(box-and-whiskers plots),和条形图有些相似:
@@ -1872,7 +1876,7 @@ plt.show<span style="color: #000000;">()</span>
 如图
 </p>
 
-<div id="org0d7d564" class="figure">
+<div id="orgb450e0f" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/3-9.png" alt="3-9.png" />
 </p>
 <p><span class="figure-number">Figure 15: </span>ms/3-9.png</p>
@@ -1901,8 +1905,8 @@ plt.show<span style="color: #000000;">()</span>
 </ul>
 </div>
 </div>
-<div id="outline-container-org4303d03" class="outline-3">
-<h3 id="org4303d03"><span class="section-number-3">3.6.</span> Histograms</h3>
+<div id="outline-container-org6b5336c" class="outline-3">
+<h3 id="org6b5336c"><span class="section-number-3">3.6.</span> Histograms</h3>
 <div class="outline-text-3" id="text-3-6">
 <ul class="org-ul">
 <li>直方图(Histogram) 乍一看和 条形图(Bar plot) 很像,但它们在几个重要方面有明显区别.最重要的区别是:
@@ -1913,7 +1917,7 @@ plt.show<span style="color: #000000;">()</span>
 <li><p>
 让我们先从一个小整数数据集的简单例子开始:
 </p>
-<pre class="example" id="org6ec2cb9">
+<pre class="example" id="org364db59">
 X = [1, 2, 2, 3, 3, 4, 5, 5, 5, 5, 6, 7, 7, 7, 8, 8, 9]
 </pre></li>
 <li>在这个数据集中:
@@ -1929,7 +1933,7 @@ X = [1, 2, 2, 3, 3, 4, 5, 5, 5, 5, 6, 7, 7, 7, 8, 8, 9]
 见图 3.11
 </p>
 
-<div id="orgaa68eeb" class="figure">
+<div id="orge768f93" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/3-11.png" alt="3-11.png" />
 </p>
 <p><span class="figure-number">Figure 16: </span>ms/3-11.png</p>
@@ -1944,7 +1948,7 @@ X = [1, 2, 2, 3, 3, 4, 5, 5, 5, 5, 6, 7, 7, 7, 8, 8, 9]
 现在,请看图 3.12.
 </p>
 
-<div id="orgcc29de8" class="figure">
+<div id="org927abf5" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/3-12.png" alt="3-12.png" />
 </p>
 <p><span class="figure-number">Figure 17: </span>ms/3-12.png</p>
@@ -1966,7 +1970,7 @@ X = [1, 2, 2, 3, 3, 4, 5, 5, 5, 5, 6, 7, 7, 7, 8, 8, 9]
 一直不变)
 </p>
 
-<div id="orgfacea13" class="figure">
+<div id="org4e27fd7" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/3-13.png" alt="3-13.png" />
 </p>
 <p><span class="figure-number">Figure 18: </span>ms/3-13.png</p>
@@ -1992,7 +1996,7 @@ X = [1, 2, 2, 3, 3, 4, 5, 5, 5, 5, 6, 7, 7, 7, 8, 8, 9]
 图 3.14 中看到这种情况.
 </p>
 
-<div id="orgeee0369" class="figure">
+<div id="org554268f" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/3-14.png" alt="3-14.png" />
 </p>
 <p><span class="figure-number">Figure 19: </span>ms/3-14.png</p>
@@ -2020,7 +2024,7 @@ X = [1, 2, 2, 3, 3, 4, 5, 5, 5, 5, 6, 7, 7, 7, 8, 8, 9]
 看看图 3.15,你会发现它展示了同一组数据,在分箱数量少与分箱数量多的情况下,直方图的不同表现.
 </p>
 
-<div id="org09a0718" class="figure">
+<div id="orga5e0296" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/3-15.png" alt="3-15.png" />
 </p>
 <p><span class="figure-number">Figure 20: </span>ms/3-15.png</p>
@@ -2056,8 +2060,8 @@ X = [1, 2, 2, 3, 3, 4, 5, 5, 5, 5, 6, 7, 7, 7, 8, 8, 9]
 </ul></li>
 </ul>
 </div>
-<div id="outline-container-orgc765c79" class="outline-4">
-<h4 id="orgc765c79"><span class="section-number-4">3.6.1.</span> Histogram vs. bar plot</h4>
+<div id="outline-container-orgab7f9c2" class="outline-4">
+<h4 id="orgab7f9c2"><span class="section-number-4">3.6.1.</span> Histogram vs. bar plot</h4>
 <div class="outline-text-4" id="text-3-6-1">
 <ul class="org-ul">
 <li>条形图(bar plot)和直方图(histogram)的关键区别在于:
@@ -2090,8 +2094,8 @@ X = [1, 2, 2, 3, 3, 4, 5, 5, 5, 5, 6, 7, 7, 7, 8, 8, 9]
 </ul>
 </div>
 </div>
-<div id="outline-container-orgb564207" class="outline-4">
-<h4 id="orgb564207"><span class="section-number-4">3.6.2.</span> Counts vs. proprotions</h4>
+<div id="outline-container-org38f84f5" class="outline-4">
+<h4 id="org38f84f5"><span class="section-number-4">3.6.2.</span> Counts vs. proprotions</h4>
 <div class="outline-text-4" id="text-3-6-2">
 <ul class="org-ul">
 <li>到目前为止,我展示的直方图(histogram)和条形图(bar plot)的 y 轴 都表示原始计数(raw counts).</li>
@@ -2106,7 +2110,7 @@ X = [1, 2, 2, 3, 3, 4, 5, 5, 5, 5, 6, 7, 7, 7, 8, 8, 9]
 比如 图 3.17 显示了同一份数据:
 </p>
 
-<div id="orgb38c522" class="figure">
+<div id="org3793234" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/3-17.png" alt="3-17.png" />
 </p>
 <p><span class="figure-number">Figure 21: </span>ms/3-17.png</p>
@@ -2124,7 +2128,7 @@ X = [1, 2, 2, 3, 3, 4, 5, 5, 5, 5, 6, 7, 7, 7, 8, 8, 9]
 图 3.18 对比了计数和比例的优缺点,以及何时更适合使用哪种方式.
 </p>
 
-<div id="orgb07b0b8" class="figure">
+<div id="orgfa1f032" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/3-18.png" alt="3-18.png" />
 </p>
 <p><span class="figure-number">Figure 22: </span>ms/3-18.png</p>
@@ -2143,7 +2147,7 @@ X = [1, 2, 2, 3, 3, 4, 5, 5, 5, 5, 6, 7, 7, 7, 8, 8, 9]
 图 3.19 显示了来自这两个岛屿的体长直方图:
 </p>
 
-<div id="orgc023f50" class="figure">
+<div id="org87061ad" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/3-19.png" alt="3-19.png" />
 </p>
 <p><span class="figure-number">Figure 23: </span>ms/3-19.png</p>
@@ -2157,8 +2161,8 @@ X = [1, 2, 2, 3, 3, 4, 5, 5, 5, 5, 6, 7, 7, 7, 8, 8, 9]
 </div>
 </div>
 </div>
-<div id="outline-container-org25a397a" class="outline-3">
-<h3 id="org25a397a"><span class="section-number-3">3.7.</span> Lines vs. bars in a histogram</h3>
+<div id="outline-container-org757c56f" class="outline-3">
+<h3 id="org757c56f"><span class="section-number-3">3.7.</span> Lines vs. bars in a histogram</h3>
 <div class="outline-text-3" id="text-3-7">
 <ul class="org-ul">
 <li>直方图使用的是条形而不是线条,因为所有落在某一范围(区间)内的数据点都归入同一个"箱子"(bin)中;</li>
@@ -2186,8 +2190,8 @@ X = [1, 2, 2, 3, 3, 4, 5, 5, 5, 5, 6, 7, 7, 7, 8, 8, 9]
 </ul>
 </div>
 </div>
-<div id="outline-container-org6400c05" class="outline-3">
-<h3 id="org6400c05"><span class="section-number-3">3.8.</span> Violin plots</h3>
+<div id="outline-container-orgc0ee667" class="outline-3">
+<h3 id="orgc0ee667"><span class="section-number-3">3.8.</span> Violin plots</h3>
 <div class="outline-text-3" id="text-3-8">
 <ul class="org-ul">
 <li>使用线条而不是柱形的一个优势是,它让你能够将数据以"小提琴图"的形式可视化,而小提琴图既优秀又美观.</li>
@@ -2215,8 +2219,8 @@ X = [1, 2, 2, 3, 3, 4, 5, 5, 5, 5, 6, 7, 7, 7, 8, 8, 9]
 </ul>
 </div>
 </div>
-<div id="outline-container-org3b3de45" class="outline-3">
-<h3 id="org3b3de45"><span class="section-number-3">3.9.</span> Linear vs. logarithmic axis scaling</h3>
+<div id="outline-container-org47e27bd" class="outline-3">
+<h3 id="org47e27bd"><span class="section-number-3">3.9.</span> Linear vs. logarithmic axis scaling</h3>
 <div class="outline-text-3" id="text-3-9">
 <ul class="org-ul">
 <li>许多图表的 y 轴可以采用线性刻度(linear scaling)或对数刻度(logarithmic scaling)显示.
@@ -2225,7 +2229,7 @@ X = [1, 2, 2, 3, 3, 4, 5, 5, 5, 5, 6, 7, 7, 7, 8, 8, 9]
 图 3.22 展示了相同的数据在线性刻度(A 面板)与对数刻度(B,C 面板)下的效果.
 </p>
 
-<div id="org980b701" class="figure">
+<div id="orgf9c74fb" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/3-22.png" alt="3-22.png" />
 </p>
 <p><span class="figure-number">Figure 24: </span>ms/3-22.png</p>
@@ -2261,8 +2265,8 @@ X = [1, 2, 2, 3, 3, 4, 5, 5, 5, 5, 6, 7, 7, 7, 8, 8, 9]
 </ul>
 </div>
 </div>
-<div id="outline-container-org9da146b" class="outline-3">
-<h3 id="org9da146b"><span class="section-number-3">3.10.</span> Discretizing continuous data</h3>
+<div id="outline-container-org353e3cb" class="outline-3">
+<h3 id="org353e3cb"><span class="section-number-3">3.10.</span> Discretizing continuous data</h3>
 <div class="outline-text-3" id="text-3-10">
 <ul class="org-ul">
 <li>将连续数据离散化有它的"阴暗面".我会在这里简单介绍这个问题,因为它与直方图相关.稍后在本书中我还会
@@ -2277,7 +2281,7 @@ X = [1, 2, 2, 3, 3, 4, 5, 5, 5, 5, 6, 7, 7, 7, 8, 8, 9]
 如图
 </p>
 
-<div id="org9042a45" class="figure">
+<div id="org22d2238" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/3-23.png" alt="3-23.png" />
 </p>
 <p><span class="figure-number">Figure 25: </span>ms/3-23.png</p>
@@ -2314,8 +2318,8 @@ X = [1, 2, 2, 3, 3, 4, 5, 5, 5, 5, 6, 7, 7, 7, 8, 8, 9]
 </ul>
 </div>
 </div>
-<div id="outline-container-orgd05c381" class="outline-3">
-<h3 id="orgd05c381"><span class="section-number-3">3.11.</span> Radial plots</h3>
+<div id="outline-container-org8507720" class="outline-3">
+<h3 id="org8507720"><span class="section-number-3">3.11.</span> Radial plots</h3>
 <div class="outline-text-3" id="text-3-11">
 <ul class="org-ul">
 <li>雷达图&#x2013;也称为极坐标图(polar plots)或蜘蛛图(spider plots)&#x2013;是一种用来可视化循环性或周期性数据的
@@ -2329,7 +2333,7 @@ X = [1, 2, 2, 3, 3, 4, 5, 5, 5, 5, 6, 7, 7, 7, 8, 8, 9]
 如图
 </p>
 
-<div id="org8aa127f" class="figure">
+<div id="org2242eab" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/3-24.png" alt="3-24.png" />
 </p>
 <p><span class="figure-number">Figure 26: </span>ms/3-24.png</p>
@@ -2345,7 +2349,7 @@ X = [1, 2, 2, 3, 3, 4, 5, 5, 5, 5, 6, 7, 7, 7, 8, 8, 9]
 如图
 </p>
 
-<div id="org2890612" class="figure">
+<div id="orgbb4b32f" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/3-25.png" alt="3-25.png" />
 </p>
 <p><span class="figure-number">Figure 27: </span>ms/3-25.png</p>
@@ -2373,8 +2377,8 @@ X = [1, 2, 2, 3, 3, 4, 5, 5, 5, 5, 6, 7, 7, 7, 8, 8, 9]
 </ul>
 </div>
 </div>
-<div id="outline-container-orga1bcbdc" class="outline-3">
-<h3 id="orga1bcbdc"><span class="section-number-3">3.12.</span> Color</h3>
+<div id="outline-container-orgab5839c" class="outline-3">
+<h3 id="orgab5839c"><span class="section-number-3">3.12.</span> Color</h3>
 <div class="outline-text-3" id="text-3-12">
 <ul class="org-ul">
 <li>颜色在图形可视化中是一种简单而强大&#x2013;但也具有潜在风险&#x2013;的方式,可以让你的可视化更有吸引力,更具信息性.</li>
@@ -2412,8 +2416,8 @@ X = [1, 2, 2, 3, 3, 4, 5, 5, 5, 5, 6, 7, 7, 7, 8, 8, 9]
 </ul></li>
 </ul>
 </div>
-<div id="outline-container-orga023028" class="outline-4">
-<h4 id="orga023028"><span class="section-number-4">3.12.1.</span> 选择哪些颜色?</h4>
+<div id="outline-container-org6693717" class="outline-4">
+<h4 id="org6693717"><span class="section-number-4">3.12.1.</span> 选择哪些颜色?</h4>
 <div class="outline-text-4" id="text-3-12-1">
 <ul class="org-ul">
 <li>颜色理论和数据可视化中的配色选择是一个有争议的话题&#x2013;一些"数据可视化纯粹主义者"会对哪些颜色或调色板
@@ -2432,12 +2436,12 @@ X = [1, 2, 2, 3, 3, 4, 5, 5, 5, 5, 6, 7, 7, 7, 8, 8, 9]
 </div>
 </div>
 </div>
-<div id="outline-container-orgb3636e9" class="outline-2">
-<h2 id="orgb3636e9"><span class="section-number-2">4.</span> Chapter 04: Descriptive Statistics</h2>
+<div id="outline-container-orgec8e98f" class="outline-2">
+<h2 id="orgec8e98f"><span class="section-number-2">4.</span> Chapter 04: Descriptive Statistics</h2>
 <div class="outline-text-2" id="text-4">
 </div>
-<div id="outline-container-org95c31a2" class="outline-3">
-<h3 id="org95c31a2"><span class="section-number-3">4.1.</span> Descriptive vs. inferential statistics</h3>
+<div id="outline-container-orgeccb145" class="outline-3">
+<h3 id="orgeccb145"><span class="section-number-3">4.1.</span> Descriptive vs. inferential statistics</h3>
 <div class="outline-text-3" id="text-4-1">
 <ul class="org-ul">
 <li>让人略感无奈的是,"statistics"(统计)这个词是个多义词 &#x2013; 在不同的语境下,它的含义并不完全相同.这
@@ -2477,8 +2481,8 @@ X = [1, 2, 2, 3, 3, 4, 5, 5, 5, 5, 6, 7, 7, 7, 8, 8, 9]
 </ul>
 </div>
 </div>
-<div id="outline-container-org6ebc5ff" class="outline-3">
-<h3 id="org6ebc5ff"><span class="section-number-3">4.2.</span> Data distributons</h3>
+<div id="outline-container-orgca0b460" class="outline-3">
+<h3 id="orgca0b460"><span class="section-number-3">4.2.</span> Data distributons</h3>
 <div class="outline-text-3" id="text-4-2">
 <ul class="org-ul">
 <li>让我们先来想一想一个实验.假设我找到 300 个人,并且向每个人提出同样的问题:
@@ -2500,7 +2504,7 @@ Style 视频.</li>
 图 4.1).但是,这并不是一种好的可视化方法,而且对于大型数据集来说也不适用.
 </p>
 
-<div id="orgb07ed6a" class="figure">
+<div id="org2c1a16b" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/4-1.png" alt="4-1.png" />
 </p>
 <p><span class="figure-number">Figure 28: </span>ms/4-1.png</p>
@@ -2510,7 +2514,7 @@ Style 视频.</li>
 法比单纯的数字表格好一些,但它是可视化这些数据的最佳方式吗?
 </p>
 
-<div id="org6896f88" class="figure">
+<div id="orga3e2046" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/4-2.png" alt="4-2.png" />
 </p>
 <p><span class="figure-number">Figure 29: </span>ms/4-2.png</p>
@@ -2548,8 +2552,8 @@ Style 视频.</li>
 转换不会改变分布的形状,也不会影响你将在本章学习的描述性统计特征.</li>
 </ul>
 </div>
-<div id="outline-container-orgaf069d7" class="outline-4">
-<h4 id="orgaf069d7"><span class="section-number-4">4.2.1.</span> Empirical vs. analytical distributions</h4>
+<div id="outline-container-org07f2fa9" class="outline-4">
+<h4 id="org07f2fa9"><span class="section-number-4">4.2.1.</span> Empirical vs. analytical distributions</h4>
 <div class="outline-text-4" id="text-4-2-1">
 <ul class="org-ul">
 <li>数据分布来自两种来源之一:测量得到的数据,或数学公式.它们也分别被称为
@@ -2563,7 +2567,7 @@ Style 视频.</li>
 图4-2
 </p>
 
-<div id="org6ed14a0" class="figure">
+<div id="org3d853ee" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/4-2.png" alt="4-2.png" />
 </p>
 <p><span class="figure-number">Figure 30: </span>ms/4-2.png</p>
@@ -2582,7 +2586,7 @@ Style 视频.</li>
 图4-3
 </p>
 
-<div id="orgc56bc02" class="figure">
+<div id="org662aefc" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/4-3.png" alt="4-3.png" />
 </p>
 <p><span class="figure-number">Figure 31: </span>ms/4-3.png</p>
@@ -2611,7 +2615,7 @@ f(x) = \frac{1}{\sigma \sqrt{2\pi}} e^{-\frac{x^2}{2\sigma^2}} \tag{4.1}
 并画出类似图 4.4 的曲线.
 </p>
 
-<div id="orge7ff2a8" class="figure">
+<div id="org2546401" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/4-4.png" alt="4-4.png" />
 </p>
 <p><span class="figure-number">Figure 32: </span>ms/4-4.png</p>
@@ -2631,8 +2635,8 @@ f(x) = \frac{1}{\sigma \sqrt{2\pi}} e^{-\frac{x^2}{2\sigma^2}} \tag{4.1}
 </ul>
 </div>
 </div>
-<div id="outline-container-org9a27fdd" class="outline-4">
-<h4 id="org9a27fdd"><span class="section-number-4">4.2.2.</span> The usese of data distributions</h4>
+<div id="outline-container-orgd729361" class="outline-4">
+<h4 id="orgd729361"><span class="section-number-4">4.2.2.</span> The usese of data distributions</h4>
 <div class="outline-text-4" id="text-4-2-2">
 <ul class="org-ul">
 <li>数据分布(data distribution)有多种应用,包括:
@@ -2652,8 +2656,8 @@ f(x) = \frac{1}{\sigma \sqrt{2\pi}} e^{-\frac{x^2}{2\sigma^2}} \tag{4.1}
 </ul>
 </div>
 </div>
-<div id="outline-container-org8563cd4" class="outline-4">
-<h4 id="org8563cd4"><span class="section-number-4">4.2.3.</span> Examples of distributions</h4>
+<div id="outline-container-org6b70321" class="outline-4">
+<h4 id="org6b70321"><span class="section-number-4">4.2.3.</span> Examples of distributions</h4>
 <div class="outline-text-4" id="text-4-2-3">
 <ul class="org-ul">
 <li>你将在本书后面学习各种不同的分布,但我希望现在先让你感受一下几种解析分布(analytical distributions)
@@ -2664,7 +2668,7 @@ f(x) = \frac{1}{\sigma \sqrt{2\pi}} e^{-\frac{x^2}{2\sigma^2}} \tag{4.1}
 图4-5
 </p>
 
-<div id="orgdae9d09" class="figure">
+<div id="org42ea5a4" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/4-5.png" alt="4-5.png" />
 </p>
 <p><span class="figure-number">Figure 33: </span>ms/4-5.png</p>
@@ -2689,7 +2693,7 @@ f(x) = \frac{1}{\sigma \sqrt{2\pi}} e^{-\frac{x^2}{2\sigma^2}} \tag{4.1}
 图 4.6 中的数据是通过随机数生成的,但它们包含了真实数据中可能出现的特征.
 </p>
 
-<div id="org9bb1b62" class="figure">
+<div id="orgbf3bd14" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/4-6.png" alt="4-6.png" />
 </p>
 <p><span class="figure-number">Figure 34: </span>ms/4-6.png</p>
@@ -2715,8 +2719,8 @@ f(x) = \frac{1}{\sigma \sqrt{2\pi}} e^{-\frac{x^2}{2\sigma^2}} \tag{4.1}
 </ul>
 </div>
 </div>
-<div id="outline-container-orgec7080e" class="outline-4">
-<h4 id="orgec7080e"><span class="section-number-4">4.2.4.</span> Quantifying qualitative characteristics</h4>
+<div id="outline-container-org0d02450" class="outline-4">
+<h4 id="org0d02450"><span class="section-number-4">4.2.4.</span> Quantifying qualitative characteristics</h4>
 <div class="outline-text-4" id="text-4-2-4">
 <ul class="org-ul">
 <li>在进入本章其他内容之前,再看一个分布的例子:
@@ -2725,7 +2729,7 @@ f(x) = \frac{1}{\sigma \sqrt{2\pi}} e^{-\frac{x^2}{2\sigma^2}} \tag{4.1}
 请观察图 4.7 中的三个解析分布(analytical distributions),试着比较它们的不同之处和相同之处.
 </p>
 
-<div id="org930dd1d" class="figure">
+<div id="orgd02dce2" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/4-7.png" alt="4-7.png" />
 </p>
 <p><span class="figure-number">Figure 35: </span>ms/4-7.png</p>
@@ -2741,8 +2745,8 @@ f(x) = \frac{1}{\sigma \sqrt{2\pi}} e^{-\frac{x^2}{2\sigma^2}} \tag{4.1}
 </div>
 </div>
 </div>
-<div id="outline-container-org8174d48" class="outline-3">
-<h3 id="org8174d48"><span class="section-number-3">4.3.</span> Central tendency</h3>
+<div id="outline-container-org5739937" class="outline-3">
+<h3 id="org5739937"><span class="section-number-3">4.3.</span> Central tendency</h3>
 <div class="outline-text-3" id="text-4-3">
 <ul class="org-ul">
 <li>集中趋势(Central tendency)是一个统称,一般指数据集中"典型的"或最有可能出现的值(见图 4.8).</li>
@@ -2759,8 +2763,8 @@ f(x) = \frac{1}{\sigma \sqrt{2\pi}} e^{-\frac{x^2}{2\sigma^2}} \tag{4.1}
 度量方法.</li>
 </ul>
 </div>
-<div id="outline-container-orge8afee4" class="outline-4">
-<h4 id="orge8afee4"><span class="section-number-4">4.3.1.</span> Mean</h4>
+<div id="outline-container-orgc2113d4" class="outline-4">
+<h4 id="orgc2113d4"><span class="section-number-4">4.3.1.</span> Mean</h4>
 <div class="outline-text-4" id="text-4-3-1">
 <ul class="org-ul">
 <li>要计算均值(mean),只需将所有数据值相加,然后除以数据值的数量.
@@ -2791,7 +2795,7 @@ f(x) = \frac{1}{\sigma \sqrt{2\pi}} e^{-\frac{x^2}{2\sigma^2}} \tag{4.1}
 均值可以在直方图中用一条竖线表示(见图 4.9).
 </p>
 
-<div id="org6fc57e4" class="figure">
+<div id="org15b2557" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/4-9.png" alt="4-9.png" />
 </p>
 <p><span class="figure-number">Figure 36: </span>ms/4-9.png</p>
@@ -2807,7 +2811,7 @@ f(x) = \frac{1}{\sigma \sqrt{2\pi}} e^{-\frac{x^2}{2\sigma^2}} \tag{4.1}
 例 1(图 4.10 左):
 </p>
 
-<div id="orgad62456" class="figure">
+<div id="org40ed3aa" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/4-10.png" alt="4-10.png" />
 </p>
 <p><span class="figure-number">Figure 37: </span>ms/4-10.png</p>
@@ -2844,8 +2848,8 @@ f(x) = \frac{1}{\sigma \sqrt{2\pi}} e^{-\frac{x^2}{2\sigma^2}} \tag{4.1}
 </ul>
 </div>
 </div>
-<div id="outline-container-orgd4e2b18" class="outline-4">
-<h4 id="orgd4e2b18"><span class="section-number-4">4.3.2.</span> Median</h4>
+<div id="outline-container-org9d80af3" class="outline-4">
+<h4 id="org9d80af3"><span class="section-number-4">4.3.2.</span> Median</h4>
 <div class="outline-text-4" id="text-4-3-2">
 <ul class="org-ul">
 <li>中位数(median)是能够把数据集分成两等份的数据值.</li>
@@ -2870,7 +2874,7 @@ med(x) = \tilde{x}_i, \quad i = \frac{n+1}{2} \tag{4.4}
 <li><p>
 比如下面的数据集
 </p>
-<pre class="example" id="org966f168">
+<pre class="example" id="orge55463d">
 x=[0,1,1,2,2]
 </pre></li>
 <li>计算步骤:
@@ -2890,13 +2894,13 @@ x=[0,1,1,2,2]
 <li><p>
 数据集:
 </p>
-<pre class="example" id="org9687e85">
+<pre class="example" id="org667855d">
 y=[10,0,4,1,−2,7]
 </pre></li>
 <li><p>
 排序后:
 </p>
-<pre class="example" id="org7f21603">
+<pre class="example" id="org2e7b1ed">
 y=[−2,0,1,4,7,10]
 </pre></li>
 <li>这里数据个数是偶数,因此没有单个值能完美分割数据集.那怎么办呢?会有两个中位数吗?还是根本就没有
@@ -2916,7 +2920,7 @@ y=[−2,0,1,4,7,10]
 非常接近的.
 </p>
 
-<div id="org9448e9a" class="figure">
+<div id="orgbff07b9" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/4-11.png" alt="4-11.png" />
 </p>
 <p><span class="figure-number">Figure 38: </span>ms/4-11.png</p>
@@ -2927,7 +2931,7 @@ y=[−2,0,1,4,7,10]
 让我们回到图 4.10,不过这次不仅标出均值,也标出中位数(见图 4.12).
 </p>
 
-<div id="org8752088" class="figure">
+<div id="orgad93764" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/4-12.png" alt="4-12.png" />
 </p>
 <p><span class="figure-number">Figure 39: </span>ms/4-12.png</p>
@@ -2948,8 +2952,8 @@ y=[−2,0,1,4,7,10]
 </ul>
 </div>
 </div>
-<div id="outline-container-org695a15b" class="outline-4">
-<h4 id="org695a15b"><span class="section-number-4">4.3.3.</span> Mode</h4>
+<div id="outline-container-orge8b8cdc" class="outline-4">
+<h4 id="orge8b8cdc"><span class="section-number-4">4.3.3.</span> Mode</h4>
 <div class="outline-text-4" id="text-4-3-3">
 <ul class="org-ul">
 <li>先补充一点关于术语的说明:
@@ -2990,7 +2994,7 @@ y=[−2,0,1,4,7,10]
 图 4.13(示意图)展示了某个虚拟数据集的洗衣日(laundry day)分布:周三 和 周日 出现频率最高.
 </p>
 
-<div id="orgda074b2" class="figure">
+<div id="org62213ae" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/4-13.png" alt="4-13.png" />
 </p>
 <p><span class="figure-number">Figure 40: </span>ms/4-13.png</p>
@@ -3003,8 +3007,8 @@ y=[−2,0,1,4,7,10]
 </div>
 </div>
 </div>
-<div id="outline-container-orgcef2454" class="outline-3">
-<h3 id="orgcef2454"><span class="section-number-3">4.4.</span> Measures of dispersion</h3>
+<div id="outline-container-orgd96e4f7" class="outline-3">
+<h3 id="orgd96e4f7"><span class="section-number-3">4.4.</span> Measures of dispersion</h3>
 <div class="outline-text-3" id="text-4-4">
 <ul class="org-ul">
 <li>离散程度(dispersion)指的是一个分布的宽度.
@@ -3013,7 +3017,7 @@ y=[−2,0,1,4,7,10]
 举个例子:想象两种收入分布情况&#x2013;(见图 4.14).
 </p>
 
-<div id="org499416b" class="figure">
+<div id="orga7ed599" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/4-14.png" alt="4-14.png" />
 </p>
 <p><span class="figure-number">Figure 41: </span>ms/4-14.png</p>
@@ -3027,8 +3031,8 @@ y=[−2,0,1,4,7,10]
 </ul></li>
 </ul>
 </div>
-<div id="outline-container-org1f99d1a" class="outline-4">
-<h4 id="org1f99d1a"><span class="section-number-4">4.4.1.</span> Variance</h4>
+<div id="outline-container-org5da1743" class="outline-4">
+<h4 id="org5da1743"><span class="section-number-4">4.4.1.</span> Variance</h4>
 <div class="outline-text-4" id="text-4-4-1">
 <ul class="org-ul">
 <li>总体方差的符号是 σ²,样本方差的符号是 s².</li>
@@ -3068,7 +3072,7 @@ s^2 = \frac{1}{n-1} \sum_{i=1}^{n} (x_i - \overline{x})^2 \tag{4.5}
 从图 4.15 的可视化中,你能直观看到 P 的数据比 Q 更分布分散.
 </p>
 
-<div id="org31e4bd1" class="figure">
+<div id="orgb124897" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/4-15.png" alt="4-15.png" />
 </p>
 <p><span class="figure-number">Figure 42: </span>ms/4-15.png</p>
@@ -3146,8 +3150,8 @@ MAD = \frac{1}{n-1} \sum_{i=1}^{n} \left| x_i - \overline{x} \right| \tag{4.8}
 </ul>
 </div>
 </div>
-<div id="outline-container-org60c9ad1" class="outline-4">
-<h4 id="org60c9ad1"><span class="section-number-4">4.4.2.</span> Standard deviation</h4>
+<div id="outline-container-org2fe0aa4" class="outline-4">
+<h4 id="org2fe0aa4"><span class="section-number-4">4.4.2.</span> Standard deviation</h4>
 <div class="outline-text-4" id="text-4-4-2">
 <ul class="org-ul">
 <li>从数学上说,本节的核心内容很简单:标准差就是方差的平方根.</li>
@@ -3185,8 +3189,8 @@ s = \sqrt{\frac{1}{n-1} \sum_{i=1}^{n} (x_i - \overline{x})^2} \tag{4.9}
 </ul>
 </div>
 </div>
-<div id="outline-container-orgc1c0bf2" class="outline-4">
-<h4 id="orgc1c0bf2"><span class="section-number-4">4.4.3.</span> Heteroscedasticity and Homoscedasticity</h4>
+<div id="outline-container-orgd0080a9" class="outline-4">
+<h4 id="orgd0080a9"><span class="section-number-4">4.4.3.</span> Heteroscedasticity and Homoscedasticity</h4>
 <div class="outline-text-4" id="text-4-4-3">
 <ul class="org-ul">
 <li>同方差性(homoscedasticity) 指的是一个变量在所有取值上都具有相同的方差
@@ -3195,7 +3199,7 @@ s = \sqrt{\frac{1}{n-1} \sum_{i=1}^{n} (x_i - \overline{x})^2} \tag{4.9}
 (见图 4.16A).
 </p>
 
-<div id="org712e4be" class="figure">
+<div id="org27ae04a" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/4-16.png" alt="4-16.png" />
 </p>
 <p><span class="figure-number">Figure 43: </span>ms/4-16.png</p>
@@ -3227,8 +3231,8 @@ s = \sqrt{\frac{1}{n-1} \sum_{i=1}^{n} (x_i - \overline{x})^2} \tag{4.9}
 </ul>
 </div>
 </div>
-<div id="outline-container-orgab942d5" class="outline-4">
-<h4 id="orgab942d5"><span class="section-number-4">4.4.4.</span> Full width at half maximum (FWHM)</h4>
+<div id="outline-container-orgcf26790" class="outline-4">
+<h4 id="orgcf26790"><span class="section-number-4">4.4.4.</span> Full width at half maximum (FWHM)</h4>
 <div class="outline-text-4" id="text-4-4-4">
 <ul class="org-ul">
 <li>FWHM 是衡量高斯函数(Gaussian function)宽度的一种方法.</li>
@@ -3243,7 +3247,7 @@ s = \sqrt{\frac{1}{n-1} \sum_{i=1}^{n} (x_i - \overline{x})^2} \tag{4.9}
 图 4.17 给出了这个概念的示意图.
 </p>
 
-<div id="orga64ff44" class="figure">
+<div id="org73140d1" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/4-17.png" alt="4-17.png" />
 </p>
 <p><span class="figure-number">Figure 44: </span>ms/4-17.png</p>
@@ -3269,8 +3273,8 @@ FWHM\left( g(x) \right) = 2\sigma \sqrt{2 \ln 2} \tag{4.11}
 </ul>
 </div>
 </div>
-<div id="outline-container-org89e1120" class="outline-4">
-<h4 id="org89e1120"><span class="section-number-4">4.4.5.</span> Fano factor and CV</h4>
+<div id="outline-container-org0d347d9" class="outline-4">
+<h4 id="org0d347d9"><span class="section-number-4">4.4.5.</span> Fano factor and CV</h4>
 <div class="outline-text-4" id="text-4-4-5">
 <ul class="org-ul">
 <li>我在本章前面提到过,即使是对称的单峰分布,均值的可解释性也在一定程度上取决于方差:
@@ -3320,8 +3324,8 @@ CV = \frac{s}{\overline{x}} \tag{4.13}
 </div>
 </div>
 </div>
-<div id="outline-container-org4728499" class="outline-3">
-<h3 id="org4728499"><span class="section-number-3">4.5.</span> Interquartile range(IQR)</h3>
+<div id="outline-container-org52e7586" class="outline-3">
+<h3 id="org52e7586"><span class="section-number-3">4.5.</span> Interquartile range(IQR)</h3>
 <div class="outline-text-3" id="text-4-5">
 <ul class="org-ul">
 <li>IQR 是另一种衡量数据集 离散程度 的方法,我在 第 3.5 节(箱线图部分)中曾简要介绍过它.</li>
@@ -3331,7 +3335,7 @@ CV = \frac{s}{\overline{x}} \tag{4.13}
 (见图 4.19,该图来自前一章).
 </p>
 
-<div id="org09aadd3" class="figure">
+<div id="org54160ea" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/4-19.png" alt="4-19.png" />
 </p>
 <p><span class="figure-number">Figure 45: </span>ms/4-19.png</p>
@@ -3349,7 +3353,7 @@ CV = \frac{s}{\overline{x}} \tag{4.13}
 具体步骤如(见图 4.20):
 </p>
 
-<div id="orgf81a6a4" class="figure">
+<div id="org61c2642" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/4-20.png" alt="4-20.png" />
 </p>
 <p><span class="figure-number">Figure 46: </span>ms/4-20.png</p>
@@ -3370,8 +3374,8 @@ CV = \frac{s}{\overline{x}} \tag{4.13}
 </ul>
 </div>
 </div>
-<div id="outline-container-org4f904a2" class="outline-3">
-<h3 id="org4f904a2"><span class="section-number-3">4.6.</span> QQ plots</h3>
+<div id="outline-container-org0ebbdf2" class="outline-3">
+<h3 id="org0ebbdf2"><span class="section-number-3">4.6.</span> QQ plots</h3>
 <div class="outline-text-3" id="text-4-6">
 <ul class="org-ul">
 <li>QQ 图最棒的地方就是它的名字&#x2013;把它说出口的感觉就很好玩.除此之外嘛&#x2026;&#x2026;嗯,我们只能说,QQ 图需要有一定
@@ -3395,7 +3399,7 @@ CV = \frac{s}{\overline{x}} \tag{4.13}
 在 图 4.21 中,
 </p>
 
-<div id="org3a0b35e" class="figure">
+<div id="orgfa99721" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/4-21.png" alt="4-21.png" />
 </p>
 <p><span class="figure-number">Figure 47: </span>ms/4-21.png</p>
@@ -3459,8 +3463,8 @@ D)中,我们看到数据点明显没有落在对角线上,而且这些偏离不�
 </ul>
 </div>
 </div>
-<div id="outline-container-org43b1a35" class="outline-3">
-<h3 id="org43b1a35"><span class="section-number-3">4.7.</span> Statistical "moments"</h3>
+<div id="outline-container-org5cb713c" class="outline-3">
+<h3 id="org5cb713c"><span class="section-number-3">4.7.</span> Statistical "moments"</h3>
 <div class="outline-text-3" id="text-4-7">
 <ul class="org-ul">
 <li>统计学中的 "矩(moments)" 是用来描述分布形状的一组数值.</li>
@@ -3470,8 +3474,8 @@ D)中,我们看到数据点明显没有落在对角线上,而且这些偏离不�
 <li>因此,我想你会觉得,把这些特征推广到"矩"的概念既直观,又能带来一些新的认知.</li>
 </ul>
 </div>
-<div id="outline-container-org82dab9b" class="outline-4">
-<h4 id="org82dab9b"><span class="section-number-4">4.7.1.</span> Unstandardized and standardized moments</h4>
+<div id="outline-container-org7192ca1" class="outline-4">
+<h4 id="org7192ca1"><span class="section-number-4">4.7.1.</span> Unstandardized and standardized moments</h4>
 <div class="outline-text-4" id="text-4-7-1">
 <ul class="org-ul">
 <li>我把这一部分内容按前四阶矩的顺序分成了几个小节,不过在讨论每个矩的具体细节和解释之前,我想先给你展
@@ -3511,7 +3515,7 @@ m_k = \frac{1}{N\sigma^k} \sum_{i=1}^{N} (X_i - \overline{X})^{k}
 表来理解
 </p>
 
-<div id="org90248c3" class="figure">
+<div id="orgdecef78" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/4-22.png" alt="4-22.png" />
 </p>
 <p><span class="figure-number">Figure 48: </span>ms/4-22.png</p>
@@ -3520,8 +3524,8 @@ m_k = \frac{1}{N\sigma^k} \sum_{i=1}^{N} (X_i - \overline{X})^{k}
 </ul>
 </div>
 </div>
-<div id="outline-container-orgdaabe76" class="outline-4">
-<h4 id="orgdaabe76"><span class="section-number-4">4.7.2.</span> First moment: mean</h4>
+<div id="outline-container-org4f03791" class="outline-4">
+<h4 id="org4f03791"><span class="section-number-4">4.7.2.</span> First moment: mean</h4>
 <div class="outline-text-4" id="text-4-7-2">
 <ul class="org-ul">
 <li>一个分布的第一阶矩就是均值(mean)&#x2013;也就是平均值.</li>
@@ -3540,8 +3544,8 @@ m_1 =\frac{1}{N} \sum_{i=1}^{N} X_i \tag{4.16}
 </ul>
 </div>
 </div>
-<div id="outline-container-org6d68b77" class="outline-4">
-<h4 id="org6d68b77"><span class="section-number-4">4.7.3.</span> Second moment: variance</h4>
+<div id="outline-container-org2605e56" class="outline-4">
+<h4 id="org2605e56"><span class="section-number-4">4.7.3.</span> Second moment: variance</h4>
 <div class="outline-text-4" id="text-4-7-3">
 <ul class="org-ul">
 <li>你其实也已经知道了分布的第二阶矩:那就是方差(variance),它表示数据围绕均值的离散程度.</li>
@@ -3553,8 +3557,8 @@ m_1 =\frac{1}{N} \sum_{i=1}^{N} X_i \tag{4.16}
 </ul>
 </div>
 </div>
-<div id="outline-container-org671a22a" class="outline-4">
-<h4 id="org671a22a"><span class="section-number-4">4.7.4.</span> Third moment: skew</h4>
+<div id="outline-container-orgef29e90" class="outline-4">
+<h4 id="orgef29e90"><span class="section-number-4">4.7.4.</span> Third moment: skew</h4>
 <div class="outline-text-4" id="text-4-7-4">
 <ul class="org-ul">
 <li>分布的第三阶统计矩叫做 "偏"(skew),而分布中偏的程度称为 "偏度"(skewness).</li>
@@ -3566,7 +3570,7 @@ m_1 =\frac{1}{N} \sum_{i=1}^{N} X_i \tag{4.16}
 图4-23
 </p>
 
-<div id="orgb283420" class="figure">
+<div id="org33c1b29" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/4-23.png" alt="4-23.png" />
 </p>
 <p><span class="figure-number">Figure 49: </span>ms/4-23.png</p>
@@ -3586,8 +3590,8 @@ m_1 =\frac{1}{N} \sum_{i=1}^{N} X_i \tag{4.16}
 </ul>
 </div>
 </div>
-<div id="outline-container-orga466fae" class="outline-4">
-<h4 id="orga466fae"><span class="section-number-4">4.7.5.</span> Fourth moment: kurtosis</h4>
+<div id="outline-container-orgf306c44" class="outline-4">
+<h4 id="orgf306c44"><span class="section-number-4">4.7.5.</span> Fourth moment: kurtosis</h4>
 <div class="outline-text-4" id="text-4-7-5">
 <ul class="org-ul">
 <li>第四阶矩称为 峰度(kurtosis),通常计算并报告的是它的标准化版本.
@@ -3596,7 +3600,7 @@ m_1 =\frac{1}{N} \sum_{i=1}^{N} X_i \tag{4.16}
 在继续阅读下文之前,不妨先试着通过 图 4.24 中的分布推测一下峰度的含义.
 </p>
 
-<div id="org51b78ee" class="figure">
+<div id="org26d608e" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/4-24.png" alt="4-24.png" />
 </p>
 <p><span class="figure-number">Figure 50: </span>ms/4-24.png</p>
@@ -3636,8 +3640,8 @@ kurtosis).具体来说:
 </ul>
 </div>
 </div>
-<div id="outline-container-org2d4e147" class="outline-4">
-<h4 id="org2d4e147"><span class="section-number-4">4.7.6.</span> What to memorize</h4>
+<div id="outline-container-org87ff9d7" class="outline-4">
+<h4 id="org87ff9d7"><span class="section-number-4">4.7.6.</span> What to memorize</h4>
 <div class="outline-text-4" id="text-4-7-6">
 <ul class="org-ul">
 <li>关于统计矩,其实还有很多有趣的细节可以深入探讨.</li>
@@ -3647,7 +3651,7 @@ kurtosis).具体来说:
 图 4.26 展示了我关于"统计矩"应该记住哪些重点内容的建议
 </p>
 
-<div id="org5e2ce6b" class="figure">
+<div id="org6fd8505" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/4-26.png" alt="4-26.png" />
 </p>
 <p><span class="figure-number">Figure 51: </span>ms/4-26.png</p>
@@ -3657,8 +3661,8 @@ kurtosis).具体来说:
 </div>
 </div>
 </div>
-<div id="outline-container-org3a1c7e7" class="outline-3">
-<h3 id="org3a1c7e7"><span class="section-number-3">4.8.</span> Histograms part 2: Number of bins</h3>
+<div id="outline-container-orga29f388" class="outline-3">
+<h3 id="orga29f388"><span class="section-number-3">4.8.</span> Histograms part 2: Number of bins</h3>
 <div class="outline-text-3" id="text-4-8">
 <ul class="org-ul">
 <li>现在,你已经积累了一些绘制和使用直方图的经验,我们可以回到之前提到过的一个问题:绘制直方图时应该使
@@ -3683,7 +3687,7 @@ k = \left\lceil \frac{\max(x) - \min(x)}{w} \right\rceil \tag{4.17}
 确定分箱数量的方法有很多,这里我会重点介绍三种常见方法(见图 4.27,稍后会详细说明):
 </p>
 
-<div id="org544234a" class="figure">
+<div id="org649db31" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/4-27.png" alt="4-27.png" />
 </p>
 <p><span class="figure-number">Figure 52: </span>ms/4-27.png</p>
@@ -3723,7 +3727,7 @@ Python自动帮你计算,比如:
 <li><p>
 R也能自动帮你计算,比如
 </p>
-<pre class="example" id="org2d48e94">
+<pre class="example" id="orga9f199f">
 hist(data, breaks='FD')
 </pre></li>
 </ul></li>
@@ -3734,7 +3738,7 @@ hist(data, breaks='FD')
 理论上,可以让箱宽随数据分布情况变化(可变箱宽),这样看起来很漂亮(见图 4.28),但实际上并不好:
 </p>
 
-<div id="orgd1fbd8d" class="figure">
+<div id="org7002707" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/4-28.png" alt="4-28.png" />
 </p>
 <p><span class="figure-number">Figure 53: </span>ms/4-28.png</p>
@@ -3744,8 +3748,8 @@ hist(data, breaks='FD')
 </ul></li>
 </ul>
 </div>
-<div id="outline-container-orga376783" class="outline-4">
-<h4 id="orga376783"><span class="section-number-4">4.8.1.</span> Other descriptive stats</h4>
+<div id="outline-container-org5297e9e" class="outline-4">
+<h4 id="org5297e9e"><span class="section-number-4">4.8.1.</span> Other descriptive stats</h4>
 <div class="outline-text-4" id="text-4-8-1">
 <ul class="org-ul">
 <li>本章绝不是对所有描述性统计量的穷尽列举.
@@ -3762,12 +3766,12 @@ hist(data, breaks='FD')
 </div>
 </div>
 </div>
-<div id="outline-container-org5538532" class="outline-2">
-<h2 id="org5538532"><span class="section-number-2">5.</span> Chapter 05: Simulating Data</h2>
+<div id="outline-container-orgf3e372a" class="outline-2">
+<h2 id="orgf3e372a"><span class="section-number-2">5.</span> Chapter 05: Simulating Data</h2>
 <div class="outline-text-2" id="text-5">
 </div>
-<div id="outline-container-org76b6e5e" class="outline-3">
-<h3 id="org76b6e5e"><span class="section-number-3">5.1.</span> Why simulate data?</h3>
+<div id="outline-container-org6ef30cc" class="outline-3">
+<h3 id="org6ef30cc"><span class="section-number-3">5.1.</span> Why simulate data?</h3>
 <div class="outline-text-3" id="text-5-1">
 <ul class="org-ul">
 <li>为什么在学习统计学时要使用模拟数据(simulated data)?</li>
@@ -3843,8 +3847,8 @@ hist(data, breaks='FD')
 </ul>
 </div>
 </div>
-<div id="outline-container-orgb74ea7d" class="outline-3">
-<h3 id="orgb74ea7d"><span class="section-number-3">5.2.</span> Random data from distributions</h3>
+<div id="outline-container-org0032922" class="outline-3">
+<h3 id="org0032922"><span class="section-number-3">5.2.</span> Random data from distributions</h3>
 <div class="outline-text-3" id="text-5-2">
 <ul class="org-ul">
 <li>在上一章中,我介绍了分布,并用根据数据绘制的直方图来说明.核心思想是:
@@ -3857,7 +3861,7 @@ hist(data, breaks='FD')
 你不是从数据开始,而是从分布开始(见图 5.1).
 </p>
 
-<div id="orgb13d506" class="figure">
+<div id="org02656ee" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/5-1.png" alt="5-1.png" />
 </p>
 <p><span class="figure-number">Figure 54: </span>ms/5-1.png</p>
@@ -3868,8 +3872,8 @@ hist(data, breaks='FD')
 <li>本节的目的就是向你展示如何从多种分布中生成随机数据.这里介绍的所有概念和公式都会在本章末的练习中实现.</li>
 </ul>
 </div>
-<div id="outline-container-orgee9cb3e" class="outline-4">
-<h4 id="orgee9cb3e"><span class="section-number-4">5.2.1.</span> Normally distributed random data</h4>
+<div id="outline-container-orgd30ed55" class="outline-4">
+<h4 id="orgd30ed55"><span class="section-number-4">5.2.1.</span> Normally distributed random data</h4>
 <div class="outline-text-4" id="text-5-2-1">
 <ul class="org-ul">
 <li>你已经很熟悉正态分布(Normal 或 Gaussian 分布)数据了.
@@ -3901,7 +3905,7 @@ X \sim \mathcal{N}(\mu, \sigma) \notag
 图 5.2 展示了四个不同参数的正态分布数据集示例.
 </p>
 
-<div id="orgb1654d6" class="figure">
+<div id="org800352e" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/5-2.png" alt="5-2.png" />
 </p>
 <p><span class="figure-number">Figure 55: </span>ms/5-2.png</p>
@@ -3937,8 +3941,8 @@ X \sim \mathcal{N}(\mu, \sigma) \notag
 </ul>
 </div>
 </div>
-<div id="outline-container-org9936dce" class="outline-4">
-<h4 id="org9936dce"><span class="section-number-4">5.2.2.</span> Uniformly distributed data</h4>
+<div id="outline-container-org6b106f3" class="outline-4">
+<h4 id="org6b106f3"><span class="section-number-4">5.2.2.</span> Uniformly distributed data</h4>
 <div class="outline-text-4" id="text-5-2-2">
 <ul class="org-ul">
 <li><p>
@@ -3954,7 +3958,7 @@ X \sim \mathcal{N}(a, b) \tag{5.2}
 也就是说,生成在 0 到 1 之间均匀分布的随机数(见图 5.3).
 </p>
 
-<div id="org5635cee" class="figure">
+<div id="orgb0f578a" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/5-3.png" alt="5-3.png" />
 </p>
 <p><span class="figure-number">Figure 56: </span>ms/5-3.png</p>
@@ -4006,7 +4010,7 @@ U \sim \mathcal{U}(0,1) \tag{5.6}
 图 5.4 给出了一些示例.
 </p>
 
-<div id="org4118846" class="figure">
+<div id="org751461f" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/5-4.png" alt="5-4.png" />
 </p>
 <p><span class="figure-number">Figure 57: </span>ms/5-4.png</p>
@@ -4056,8 +4060,8 @@ U \sim \mathcal{U}(0, 1) \tag{5.10}
 </ul>
 </div>
 </div>
-<div id="outline-container-org7c915d2" class="outline-4">
-<h4 id="org7c915d2"><span class="section-number-4">5.2.3.</span> Random data from other distributions</h4>
+<div id="outline-container-org2b64070" class="outline-4">
+<h4 id="org2b64070"><span class="section-number-4">5.2.3.</span> Random data from other distributions</h4>
 <div class="outline-text-4" id="text-5-2-3">
 <ul class="org-ul">
 <li>有无数种分布可以用来生成随机数据.</li>
@@ -4073,7 +4077,7 @@ U \sim \mathcal{U}(0, 1) \tag{5.10}
 使用 Python 函数 `np.random.weibull` 可以从威布尔分布生成随机数据(见图 5.5).
 </p>
 
-<div id="orgb95265d" class="figure">
+<div id="orga11c610" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/5-5.png" alt="5-5.png" />
 </p>
 <p><span class="figure-number">Figure 58: </span>ms/5-5.png</p>
@@ -4103,7 +4107,7 @@ Y = \exp(X\sigma + \mu) \tag{5.11}
 图 5.6 展示了一个对数正态分布的例子
 </p>
 
-<div id="org19d060a" class="figure">
+<div id="orgd408fa7" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/5-6.png" alt="5-6.png" />
 </p>
 <p><span class="figure-number">Figure 59: </span>ms/5-6.png</p>
@@ -4112,8 +4116,8 @@ Y = \exp(X\sigma + \mu) \tag{5.11}
 </ul>
 </div>
 </div>
-<div id="outline-container-org7a35c6f" class="outline-4">
-<h4 id="org7a35c6f"><span class="section-number-4">5.2.4.</span> Random integers</h4>
+<div id="outline-container-org3de6ad7" class="outline-4">
+<h4 id="org3de6ad7"><span class="section-number-4">5.2.4.</span> Random integers</h4>
 <div class="outline-text-4" id="text-5-2-4">
 <ul class="org-ul">
 <li>随机整数有着无数的应用场景,从算法,到电子游戏中的随机事件,再到密码学.</li>
@@ -4188,8 +4192,8 @@ plt.show<span style="color: #000000;">()</span>
 </div>
 </div>
 </div>
-<div id="outline-container-org0499079" class="outline-3">
-<h3 id="org0499079"><span class="section-number-3">5.3.</span> Random elements of a set</h3>
+<div id="outline-container-org418b2d3" class="outline-3">
+<h3 id="org418b2d3"><span class="section-number-3">5.3.</span> Random elements of a set</h3>
 <div class="outline-text-3" id="text-5-3">
 <ul class="org-ul">
 <li>在本节中,我将向你展示如何从一个已有的数据集中随机选择数据.
@@ -4246,7 +4250,7 @@ np.random.choice<span style="color: #000000;">(</span>t, 1<span style="color: #0
 这个区别在图 5.7 中进行了说明.
 </p>
 
-<div id="org1e41987" class="figure">
+<div id="orgb13ecf8" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/5-7.png" alt="5-7.png" />
 </p>
 <p><span class="figure-number">Figure 60: </span>ms/5-7.png</p>
@@ -4261,15 +4265,15 @@ np.random.choice<span style="color: #000000;">(</span>t, 1<span style="color: #0
 如果是无放回采样,那么新数据集会与原数据集的元素完全相同,不同的地方只是元素的排列顺序可能会改变.
 事实上,无放回的随机采样就是 <b>随机排列(permutation)</b> 的一种机制,这也是你将在下一节学习的内容.
 </p>
-<pre class="example" id="org8e59eee">
+<pre class="example" id="org3035711">
 Random sampling without replacement is a mechanism of random permutations
 </pre></li>
 </ul></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org0756579" class="outline-3">
-<h3 id="org0756579"><span class="section-number-3">5.4.</span> Random permutations</h3>
+<div id="outline-container-orgdac6398" class="outline-3">
+<h3 id="orgdac6398"><span class="section-number-3">5.4.</span> Random permutations</h3>
 <div class="outline-text-3" id="text-5-4">
 <ul class="org-ul">
 <li><b>置换(Permuting)或洗牌(shuffling)</b> 是一种随机化列表或数组中元素顺序的方法,
@@ -4327,8 +4331,8 @@ Random sampling without replacement is a mechanism of random permutations
 </ul>
 </div>
 </div>
-<div id="outline-container-org1b957cc" class="outline-3">
-<h3 id="org1b957cc"><span class="section-number-3">5.5.</span> Reproducing randomness</h3>
+<div id="outline-container-org1dccf48" class="outline-3">
+<h3 id="org1dccf48"><span class="section-number-3">5.5.</span> Reproducing randomness</h3>
 <div class="outline-text-3" id="text-5-5">
 <ul class="org-ul">
 <li>每次调用一个随机化函数时,你都会得到一组不同的数字.
@@ -4420,8 +4424,8 @@ Random sampling without replacement is a mechanism of random permutations
 </ul>
 </div>
 </div>
-<div id="outline-container-org94c313e" class="outline-3">
-<h3 id="org94c313e"><span class="section-number-3">5.6.</span> Runningexperiments with random numbers</h3>
+<div id="outline-container-org16707bb" class="outline-3">
+<h3 id="org16707bb"><span class="section-number-3">5.6.</span> Runningexperiments with random numbers</h3>
 <div class="outline-text-3" id="text-5-6">
 <ul class="org-ul">
 <li>使用模拟数据来理解统计方法的主要途径之一,就是进行实验.在本节中,我会先说明这个观点的理由,然后解
@@ -4464,8 +4468,8 @@ Random sampling without replacement is a mechanism of random permutations
 <li>另一方面,用模拟数据进行实验的目的&#x2013;至少在本书中&#x2013;是帮助你理解统计方法,而不是取代真实的经验实验.</li>
 </ul>
 </div>
-<div id="outline-container-org193c494" class="outline-4">
-<h4 id="org193c494"><span class="section-number-4">5.6.1.</span> Experiment: Impact of standard deviation on mean</h4>
+<div id="outline-container-orgded732c" class="outline-4">
+<h4 id="orgded732c"><span class="section-number-4">5.6.1.</span> Experiment: Impact of standard deviation on mean</h4>
 <div class="outline-text-4" id="text-5-6-1">
 <ul class="org-ul">
 <li>为了让这个概念更具体,我们来运行一个实验.本实验的目标是:
@@ -4497,7 +4501,7 @@ Random sampling without replacement is a mechanism of random permutations
 在阅读下面的文字之前,请先花几分钟看看 图 5.8,并试着去观察,总结标准差与均值估计之间的关系.
 </p>
 
-<div id="orgf916103" class="figure">
+<div id="org757f5f8" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/5-8.png" alt="5-8.png" />
 </p>
 <p><span class="figure-number">Figure 61: </span>ms/5-8.png</p>
@@ -4532,7 +4536,7 @@ Random sampling without replacement is a mechanism of random permutations
 实验结果见图 5.9.
 </p>
 
-<div id="org117c148" class="figure">
+<div id="org98d0616" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/5-9.png" alt="5-9.png" />
 </p>
 <p><span class="figure-number">Figure 62: </span>ms/5-9.png</p>
@@ -4568,8 +4572,8 @@ Random sampling without replacement is a mechanism of random permutations
 </div>
 </div>
 </div>
-<div id="outline-container-orgbd79931" class="outline-3">
-<h3 id="orgbd79931"><span class="section-number-3">5.7.</span> The amazing world of data-simulations</h3>
+<div id="outline-container-orgfc1f352" class="outline-3">
+<h3 id="orgfc1f352"><span class="section-number-3">5.7.</span> The amazing world of data-simulations</h3>
 <div class="outline-text-3" id="text-5-7">
 <ul class="org-ul">
 <li>在本章中,我介绍的只是模拟数据方法的一小部分,实际上还有更多方式可以进行数据模拟.
@@ -4597,8 +4601,8 @@ Random sampling without replacement is a mechanism of random permutations
 </ul>
 </div>
 </div>
-<div id="outline-container-org69062c7" class="outline-3">
-<h3 id="org69062c7"><span class="section-number-3">5.8.</span> Finding publicly available real datasets</h3>
+<div id="outline-container-orgd2dacc5" class="outline-3">
+<h3 id="orgd2dacc5"><span class="section-number-3">5.8.</span> Finding publicly available real datasets</h3>
 <div class="outline-text-3" id="text-5-8">
 <ul class="org-ul">
 <li>现在,公开可获取的数据量正在不断增加,你可以将这些数据用于教育,科研以及商业目的.</li>
@@ -4629,25 +4633,27 @@ Random sampling without replacement is a mechanism of random permutations
 <li>好消息是,较受欢迎的数据仓库中的数据通常更有可能是高质量,可用的.</li>
 <li>虽然本书主要关注的是模拟数据,但我也有不少练习和示例使用真实数据&#x2013;这些通常作为每一章最后的练习出现.</li>
 </ul>
-<p>
-s* Chapter 06: Transformations
-</p>
 </div>
 </div>
-<div id="outline-container-org04a2c82" class="outline-3">
-<h3 id="org04a2c82"><span class="section-number-3">5.9.</span> Wht, why, and how of data transformations</h3>
-<div class="outline-text-3" id="text-5-9">
 </div>
-<div id="outline-container-org8894034" class="outline-4">
-<h4 id="org8894034"><span class="section-number-4">5.9.1.</span> What are data transformations?</h4>
-<div class="outline-text-4" id="text-5-9-1">
+<div id="outline-container-org2947e4a" class="outline-2">
+<h2 id="org2947e4a"><span class="section-number-2">6.</span> Chapter 06: Transformations</h2>
+<div class="outline-text-2" id="text-6">
+</div>
+<div id="outline-container-org48e54f5" class="outline-3">
+<h3 id="org48e54f5"><span class="section-number-3">6.1.</span> Wht, why, and how of data transformations</h3>
+<div class="outline-text-3" id="text-6-1">
+</div>
+<div id="outline-container-org84ca673" class="outline-4">
+<h4 id="org84ca673"><span class="section-number-4">6.1.1.</span> What are data transformations?</h4>
+<div class="outline-text-4" id="text-6-1-1">
 <ul class="org-ul">
 <li>数据变换(Data transformation)指的是对数据应用某种数学运算,或者一系列运算.
 <ul class="org-ul">
 <li><p>
 举一个简单的例子,下面这个数据集及其变换版本:
 </p>
-<pre class="example" id="orga7d3204">
+<pre class="example" id="org08a895b">
 X = [1, 3, 4, 6, 7]
 X* = [0, 2, 3, 5, 6]
 </pre></li>
@@ -4661,9 +4667,9 @@ X* = [0, 2, 3, 5, 6]
 </ul>
 </div>
 </div>
-<div id="outline-container-orgbd4030d" class="outline-4">
-<h4 id="orgbd4030d"><span class="section-number-4">5.9.2.</span> Why transform data?</h4>
-<div class="outline-text-4" id="text-5-9-2">
+<div id="outline-container-org50480bb" class="outline-4">
+<h4 id="org50480bb"><span class="section-number-4">6.1.2.</span> Why transform data?</h4>
+<div class="outline-text-4" id="text-6-1-2">
 <ul class="org-ul">
 <li>数据转换的原因有很多,但它们都源于同一个核心动机:
 <ul class="org-ul">
@@ -4687,9 +4693,9 @@ X* = [0, 2, 3, 5, 6]
 </ul>
 </div>
 </div>
-<div id="outline-container-orgff5a651" class="outline-4">
-<h4 id="orgff5a651"><span class="section-number-4">5.9.3.</span> How to transform data?</h4>
-<div class="outline-text-4" id="text-5-9-3">
+<div id="outline-container-org85758cc" class="outline-4">
+<h4 id="org85758cc"><span class="section-number-4">6.1.3.</span> How to transform data?</h4>
+<div class="outline-text-4" id="text-6-1-3">
 <ul class="org-ul">
 <li>正如我之前所写,数据转换就是对数据应用某种数学运算或算法.不过这只是一个抽象的说法,下面我会把它具
 体化.</li>
@@ -4713,9 +4719,9 @@ X* = [0, 2, 3, 5, 6]
 </ul>
 </div>
 </div>
-<div id="outline-container-org66250f8" class="outline-4">
-<h4 id="org66250f8"><span class="section-number-4">5.9.4.</span> What kinds of transformations are there?</h4>
-<div class="outline-text-4" id="text-5-9-4">
+<div id="outline-container-org2f0c463" class="outline-4">
+<h4 id="org2f0c463"><span class="section-number-4">6.1.4.</span> What kinds of transformations are there?</h4>
+<div class="outline-text-4" id="text-6-1-4">
 <ul class="org-ul">
 <li>目前并没有一个被广泛认可的数据转换分类体系,而我也不喜欢人为强加的分类体系,因为它们往往会错误地表
 现分类之间的区别和联系.</li>
@@ -4733,9 +4739,9 @@ X* = [0, 2, 3, 5, 6]
 </div>
 </div>
 </div>
-<div id="outline-container-org5599045" class="outline-3">
-<h3 id="org5599045"><span class="section-number-3">5.10.</span> Z-score standardization</h3>
-<div class="outline-text-3" id="text-5-10">
+<div id="outline-container-orgb2b1c77" class="outline-3">
+<h3 id="orgb2b1c77"><span class="section-number-3">6.2.</span> Z-score standardization</h3>
+<div class="outline-text-3" id="text-6-2">
 <ul class="org-ul">
 <li>Z-标准化(Z-scoring) 可能是整个统计学中最常见,也最重要的转换方法之一.</li>
 <li>我们先从一个 Z-scoring 能解决的问题开始.
@@ -4754,7 +4760,7 @@ X* = [0, 2, 3, 5, 6]
 图 6.1 说明了这一概念:
 </p>
 
-<div id="org240c4c7" class="figure">
+<div id="org31d99dd" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/6-1.png" alt="6-1.png" />
 </p>
 <p><span class="figure-number">Figure 63: </span>ms/6-1.png</p>
@@ -4769,9 +4775,9 @@ X* = [0, 2, 3, 5, 6]
 这个人既高又轻.</li>
 </ul>
 </div>
-<div id="outline-container-orgf0574aa" class="outline-4">
-<h4 id="orgf0574aa"><span class="section-number-4">5.10.1.</span> Z-score math</h4>
-<div class="outline-text-4" id="text-5-10-1">
+<div id="outline-container-orgc6c44f3" class="outline-4">
+<h4 id="orgc6c44f3"><span class="section-number-4">6.2.1.</span> Z-score math</h4>
+<div class="outline-text-4" id="text-6-2-1">
 <ul class="org-ul">
 <li>Z评分的数学很简单,但它背后隐藏的假设可能在数据违反这些假设时导致解释上的困难</li>
 <li>在标题为"Hard and soft assumptions"的小节中,我将描述一些 Z 评分的局限性和潜在尴尬特征;在此之前,
@@ -4907,9 +4913,9 @@ plt.show<span style="color: #000000;">()</span>
 </ul>
 </div>
 </div>
-<div id="outline-container-orge1a8a82" class="outline-4">
-<h4 id="orge1a8a82"><span class="section-number-4">5.10.2.</span> Interpretation</h4>
-<div class="outline-text-4" id="text-5-10-2">
+<div id="outline-container-orgfe21aae" class="outline-4">
+<h4 id="orgfe21aae"><span class="section-number-4">6.2.2.</span> Interpretation</h4>
+<div class="outline-text-4" id="text-6-2-2">
 <ul class="org-ul">
 <li>Z 分数(Z-score)的解释是:
 <ul class="org-ul">
@@ -4934,7 +4940,7 @@ plt.show<span style="color: #000000;">()</span>
 difference in how the transformation impacts some data values compared to others),如图6-2
 </p>
 
-<div id="org285f39c" class="figure">
+<div id="orgad53f05" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/6-2.png" alt="6-2.png" />
 </p>
 <p><span class="figure-number">Figure 64: </span>ms/6-2.png</p>
@@ -4944,9 +4950,9 @@ difference in how the transformation impacts some data values compared to others
 </ul>
 </div>
 </div>
-<div id="outline-container-org944191b" class="outline-4">
-<h4 id="org944191b"><span class="section-number-4">5.10.3.</span> Hard and soft assumptions</h4>
-<div class="outline-text-4" id="text-5-10-3">
+<div id="outline-container-org31888be" class="outline-4">
+<h4 id="org31888be"><span class="section-number-4">6.2.3.</span> Hard and soft assumptions</h4>
+<div class="outline-text-4" id="text-6-2-3">
 <ul class="org-ul">
 <li>所谓"硬性假设"(hard assumptions)与"软性假设"(soft assumptions),分别指的是 数学层面的问题 和
 解释层面的问题.</li>
@@ -4974,7 +4980,7 @@ difference in how the transformation impacts some data values compared to others
 图 6.3 展示了一组服从指数分布的正值数据.
 </p>
 
-<div id="orga3be5b8" class="figure">
+<div id="org4e4b5bd" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/6-3.png" alt="6-3.png" />
 </p>
 <p><span class="figure-number">Figure 65: </span>ms/6-3.png</p>
@@ -5007,9 +5013,9 @@ difference in how the transformation impacts some data values compared to others
 </ul>
 </div>
 </div>
-<div id="outline-container-org5b55cc5" class="outline-4">
-<h4 id="org5b55cc5"><span class="section-number-4">5.10.4.</span> The modified z-score method</h4>
-<div class="outline-text-4" id="text-5-10-4">
+<div id="outline-container-org00cb5bf" class="outline-4">
+<h4 id="org00cb5bf"><span class="section-number-4">6.2.4.</span> The modified z-score method</h4>
+<div class="outline-text-4" id="text-6-2-4">
 <ul class="org-ul">
 <li>如果你的数据分布与高斯分布(Gaussian)差别很大,你可以考虑使用改进的 z-score 方法.
 <ul class="org-ul">
@@ -5061,7 +5067,7 @@ MAD = median(|x_i - \tilde{x}|) \tag{6.8}
 平方根函数 <b>先平方再开根号,虽然有根号运算,但是在平反步骤放大了偏差权重</b>,看下例, 结果是标准差通常
 比 MAD 大.
 </p>
-<pre class="example" id="org068482a">
+<pre class="example" id="orgfbe4945">
 例如,对于数据集{1, 3, 5, 7, 9}:
 均值是5,偏差分别为-4,-2,0,2,4
 标准差 = √[(16+4+0+4+16)/5] = √8 ≈ 2.83
@@ -5082,7 +5088,7 @@ MAD = 中位数{|1-5|,|3-5|,|5-5|,|7-5|,|9-5|} = 中位数{4,2,0,2,4} = 2
 图6-4
 </p>
 
-<div id="orge87ef5e" class="figure">
+<div id="orgc6dff5f" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/6-4.png" alt="6-4.png" />
 </p>
 <p><span class="figure-number">Figure 66: </span>ms/6-4.png</p>
@@ -5121,9 +5127,9 @@ MAD = 中位数{|1-5|,|3-5|,|5-5|,|7-5|,|9-5|} = 中位数{4,2,0,2,4} = 2
 </div>
 </div>
 </div>
-<div id="outline-container-orga5a72c4" class="outline-3">
-<h3 id="orga5a72c4"><span class="section-number-3">5.11.</span> Min-max normalization</h3>
-<div class="outline-text-3" id="text-5-11">
+<div id="outline-container-orgec0f392" class="outline-3">
+<h3 id="orgec0f392"><span class="section-number-3">6.3.</span> Min-max normalization</h3>
+<div class="outline-text-3" id="text-6-3">
 <ul class="org-ul">
 <li>Min-max 归一化的目的,是将数据重新缩放到你指定的最小值和最大值范围内.
 <ul class="org-ul">
@@ -5154,7 +5160,7 @@ MAD = 中位数{|1-5|,|3-5|,|5-5|,|7-5|,|9-5|} = 中位数{4,2,0,2,4} = 2
 如图
 </p>
 
-<div id="org39d37d7" class="figure">
+<div id="org11bcba7" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/6-5.png" alt="6-5.png" />
 </p>
 <p><span class="figure-number">Figure 67: </span>ms/6-5.png</p>
@@ -5178,9 +5184,9 @@ x^{*} = a + (b-a)\tilde{x_i} \tag{6.10}
 min-max 缩放都有一个共同的关键描述特征:都有明确的下限和上限.</li>
 </ul>
 </div>
-<div id="outline-container-org09fea03" class="outline-4">
-<h4 id="org09fea03"><span class="section-number-4">5.11.1.</span> Interpretation</h4>
-<div class="outline-text-4" id="text-5-11-1">
+<div id="outline-container-org34a46bc" class="outline-4">
+<h4 id="org34a46bc"><span class="section-number-4">6.3.1.</span> Interpretation</h4>
+<div class="outline-text-4" id="text-6-3-1">
 <ul class="org-ul">
 <li>就像 z-score 标准化一样,min-max 缩放不会改变数据分布的形状,也不会影响数据集中各数值之间的相对距离;
 <ul class="org-ul">
@@ -5194,7 +5200,7 @@ min-max 缩放都有一个共同的关键描述特征:都有明确的下限和�
 如图
 </p>
 
-<div id="orgde83efd" class="figure">
+<div id="orgb6ee597" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/6-6.png" alt="6-6.png" />
 </p>
 <p><span class="figure-number">Figure 68: </span>ms/6-6.png</p>
@@ -5206,9 +5212,9 @@ min-max 缩放都有一个共同的关键描述特征:都有明确的下限和�
 </div>
 </div>
 </div>
-<div id="outline-container-org9867310" class="outline-3">
-<h3 id="org9867310"><span class="section-number-3">5.12.</span> Z-scoring vs. min-max scaling</h3>
-<div class="outline-text-3" id="text-5-12">
+<div id="outline-container-org2ab432f" class="outline-3">
+<h3 id="org2ab432f"><span class="section-number-3">6.4.</span> Z-scoring vs. min-max scaling</h3>
+<div class="outline-text-3" id="text-6-4">
 <ul class="org-ul">
 <li>什么时候应该使用 z-score 标准化,什么时候应该使用 min-max 缩放?</li>
 <li>有些情况下,这两种方法都可以:如果目标只是限制数据的数值范围,例如:
@@ -5245,9 +5251,9 @@ min-max 缩放都有一个共同的关键描述特征:都有明确的下限和�
 </ul>
 </div>
 </div>
-<div id="outline-container-org3ae2890" class="outline-3">
-<h3 id="org3ae2890"><span class="section-number-3">5.13.</span> Percent change</h3>
-<div class="outline-text-3" id="text-5-13">
+<div id="outline-container-org480ba4a" class="outline-3">
+<h3 id="org480ba4a"><span class="section-number-3">6.5.</span> Percent change</h3>
+<div class="outline-text-3" id="text-6-5">
 <ul class="org-ul">
 <li>百分比变化是你一定听说过的概念;它广泛用于购物促销和民意调查&#x2013;这些都是现代社会的标志.</li>
 <li>百分比变化用于量化一个变量的变化.这种变化需要两个测量值:从某个数值变化到另一个数值.这个"某个数值"
@@ -5293,9 +5299,9 @@ min-max 缩放都有一个共同的关键描述特征:都有明确的下限和�
 </ul>
 </div>
 </div>
-<div id="outline-container-orgbcb71c1" class="outline-3">
-<h3 id="orgbcb71c1"><span class="section-number-3">5.14.</span> Nonlinear data transformations</h3>
-<div class="outline-text-3" id="text-5-14">
+<div id="outline-container-org77c1226" class="outline-3">
+<h3 id="org77c1226"><span class="section-number-3">6.6.</span> Nonlinear data transformations</h3>
+<div class="outline-text-3" id="text-6-6">
 <ul class="org-ul">
 <li>所有非线性变换都源自同一个核心动机:*改变分布的形状*.</li>
 <li>这是与线性变换的一个关键区别&#x2013;线性变换不会改变分布的形状.这意味着,
@@ -5328,9 +5334,9 @@ min-max 缩放都有一个共同的关键描述特征:都有明确的下限和�
 </ul></li>
 </ul>
 </div>
-<div id="outline-container-org0c01483" class="outline-4">
-<h4 id="org0c01483"><span class="section-number-4">5.14.1.</span> Rank-transform</h4>
-<div class="outline-text-4" id="text-5-14-1">
+<div id="outline-container-org449237a" class="outline-4">
+<h4 id="org449237a"><span class="section-number-4">6.6.1.</span> Rank-transform</h4>
+<div class="outline-text-4" id="text-6-6-1">
 <ul class="org-ul">
 <li>排序变换会将带有某种有意义量纲的数值数据(例如:英寸,欧元,幸福感评分等)转换为 <b>序数位置</b>
 <ul class="org-ul">
@@ -5436,9 +5442,9 @@ rank transform"或"tied-rank transform"</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org2cd7251" class="outline-4">
-<h4 id="org2cd7251"><span class="section-number-4">5.14.2.</span> Logarithm and square root transformation</h4>
-<div class="outline-text-4" id="text-5-14-2">
+<div id="outline-container-org94c5c0a" class="outline-4">
+<h4 id="org94c5c0a"><span class="section-number-4">6.6.2.</span> Logarithm and square root transformation</h4>
+<div class="outline-text-4" id="text-6-6-2">
 <ul class="org-ul">
 <li>Logarithm transformation 和 square root transformation 是两种不同的变换,但它们足够相似,因此我将它
 们归为同一部分.</li>
@@ -5459,7 +5465,7 @@ rank transform"或"tied-rank transform"</li>
 见图 6.7
 </p>
 
-<div id="org7788559" class="figure">
+<div id="org074baf2" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/6-7.png" alt="6-7.png" />
 </p>
 <p><span class="figure-number">Figure 69: </span>ms/6-7.png</p>
@@ -5493,7 +5499,7 @@ y = \sqrt{x}
 你可以在图 6.8 中看到平方根变换的例子,以及它与 log 变换的对比;这部分你还会在练习 2 中进一步探索.
 </p>
 
-<div id="orga8d8614" class="figure">
+<div id="org3fff456" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/6-8.png" alt="6-8.png" />
 </p>
 <p><span class="figure-number">Figure 70: </span>ms/6-8.png</p>
@@ -5503,9 +5509,9 @@ y = \sqrt{x}
 </ul>
 </div>
 </div>
-<div id="outline-container-orgccdfbba" class="outline-4">
-<h4 id="orgccdfbba"><span class="section-number-4">5.14.3.</span> Fisher-Z</h4>
-<div class="outline-text-4" id="text-5-14-3">
+<div id="outline-container-orgb272acf" class="outline-4">
+<h4 id="orgb272acf"><span class="section-number-4">6.6.3.</span> Fisher-Z</h4>
+<div class="outline-text-4" id="text-6-6-3">
 <ul class="org-ul">
 <li>Fisher-z 变换用于将一个范围在 (-1, +1) 的均匀分布扭曲成一个近似正态分布
 <ul class="org-ul">
@@ -5513,7 +5519,7 @@ y = \sqrt{x}
 见图 6.9A-B
 </p>
 
-<div id="org1b8a6e6" class="figure">
+<div id="orgfebf23a" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/6-9.png" alt="6-9.png" />
 </p>
 <p><span class="figure-number">Figure 71: </span>ms/6-9.png</p>
@@ -5552,9 +5558,9 @@ x_z = \frac{1}{2} \ln\left( \frac{1 + x}{1 - x} \right) \tag{6.17}
 </ul>
 </div>
 </div>
-<div id="outline-container-orgb230554" class="outline-4">
-<h4 id="orgb230554"><span class="section-number-4">5.14.4.</span> Transform any distribution to Gaussian</h4>
-<div class="outline-text-4" id="text-5-14-4">
+<div id="outline-container-orgf35ef2a" class="outline-4">
+<h4 id="orgf35ef2a"><span class="section-number-4">6.6.4.</span> Transform any distribution to Gaussian</h4>
+<div class="outline-text-4" id="text-6-6-4">
 <ul class="org-ul">
 <li>事实证明,任何形状的分布都可以通过非线性变换转换为高斯分布.这个算法分为三个步骤:
 <ol class="org-ol">
@@ -5568,7 +5574,7 @@ x_z = \frac{1}{2} \ln\left( \frac{1 + x}{1 - x} \right) \tag{6.17}
 如图
 </p>
 
-<div id="org5b52304" class="figure">
+<div id="org2db4635" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/6-10.png" alt="6-10.png" />
 </p>
 <p><span class="figure-number">Figure 72: </span>ms/6-10.png</p>
@@ -5580,9 +5586,9 @@ x_z = \frac{1}{2} \ln\left( \frac{1 + x}{1 - x} \right) \tag{6.17}
 </div>
 </div>
 </div>
-<div id="outline-container-org8315b73" class="outline-3">
-<h3 id="org8315b73"><span class="section-number-3">5.15.</span> Interpreting transformed data</h3>
-<div class="outline-text-3" id="text-5-15">
+<div id="outline-container-org88ab95b" class="outline-3">
+<h3 id="org88ab95b"><span class="section-number-3">6.7.</span> Interpreting transformed data</h3>
+<div class="outline-text-3" id="text-6-7">
 <ul class="org-ul">
 <li>许多数据变换会改变数据的单位.这本身并无"好坏"之分,但可能需要我们调整对结果的解释方式.</li>
 <li>Z 变换(Z-transformation) 可能是最容易理解的一种,同时也有助于解释像回归分析这样的统计模型.
@@ -5604,7 +5610,7 @@ x_z = \frac{1}{2} \ln\left( \frac{1 + x}{1 - x} \right) \tag{6.17}
 性的.
 </p>
 
-<div id="org6cbb98b" class="figure">
+<div id="orgd47e14f" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/6-11.png" alt="6-11.png" />
 </p>
 <p><span class="figure-number">Figure 73: </span>ms/6-11.png</p>
@@ -5618,9 +5624,9 @@ x_z = \frac{1}{2} \ln\left( \frac{1 + x}{1 - x} \right) \tag{6.17}
 </ul></li>
 </ul>
 </div>
-<div id="outline-container-org94f4f35" class="outline-4">
-<h4 id="org94f4f35"><span class="section-number-4">5.15.1.</span> When to transform your  data</h4>
-<div class="outline-text-4" id="text-5-15-1">
+<div id="outline-container-orga9a18d6" class="outline-4">
+<h4 id="orga9a18d6"><span class="section-number-4">6.7.1.</span> When to transform your  data</h4>
+<div class="outline-text-4" id="text-6-7-1">
 <ul class="org-ul">
 <li>总体来说,除非必要,尽量避免对数据进行变换.
 <ul class="org-ul">
@@ -5643,13 +5649,13 @@ x_z = \frac{1}{2} \ln\left( \frac{1 + x}{1 - x} \right) \tag{6.17}
 </div>
 </div>
 </div>
-<div id="outline-container-org37cdd5e" class="outline-2">
-<h2 id="org37cdd5e"><span class="section-number-2">6.</span> Chapter 07: Assess And Improve Data Quality</h2>
-<div class="outline-text-2" id="text-6">
+<div id="outline-container-org79bb52c" class="outline-2">
+<h2 id="org79bb52c"><span class="section-number-2">7.</span> Chapter 07: Assess And Improve Data Quality</h2>
+<div class="outline-text-2" id="text-7">
 </div>
-<div id="outline-container-orgf2cd4a6" class="outline-3">
-<h3 id="orgf2cd4a6"><span class="section-number-3">6.1.</span> Data quality matters</h3>
-<div class="outline-text-3" id="text-6-1">
+<div id="outline-container-orgf28a6a1" class="outline-3">
+<h3 id="orgf28a6a1"><span class="section-number-3">7.1.</span> Data quality matters</h3>
+<div class="outline-text-3" id="text-7-1">
 <ul class="org-ul">
 <li>数据质量指的就是数据的质量.</li>
 <li>高质量的数据结构合理,几乎没有噪声,伪影或缺失值.低质量的数据可能会导致管理不善,混乱,错误以及错误的解释.</li>
@@ -5667,9 +5673,9 @@ x_z = \frac{1}{2} \ln\left( \frac{1 + x}{1 - x} \right) \tag{6.17}
 <li>有效进行数据清洗需要统计学知识,实践经验,对研究主题的深入理解,以及对数据特殊特性的熟悉.</li>
 </ul>
 </div>
-<div id="outline-container-orgbacd357" class="outline-4">
-<h4 id="orgbacd357"><span class="section-number-4">6.1.1.</span> Data quality influences data-driven decisions</h4>
-<div class="outline-text-4" id="text-6-1-1">
+<div id="outline-container-org0700d87" class="outline-4">
+<h4 id="org0700d87"><span class="section-number-4">7.1.1.</span> Data quality influences data-driven decisions</h4>
+<div class="outline-text-4" id="text-7-1-1">
 <ul class="org-ul">
 <li>为什么拥有高质量的数据很重要?
 <ul class="org-ul">
@@ -5719,9 +5725,9 @@ x_z = \frac{1}{2} \ln\left( \frac{1 + x}{1 - x} \right) \tag{6.17}
 </div>
 </div>
 </div>
-<div id="outline-container-org2d50f6d" class="outline-3">
-<h3 id="org2d50f6d"><span class="section-number-3">6.2.</span> Data cleaning phases</h3>
-<div class="outline-text-3" id="text-6-2">
+<div id="outline-container-orgd0b7ab1" class="outline-3">
+<h3 id="orgd0b7ab1"><span class="section-number-3">7.2.</span> Data cleaning phases</h3>
+<div class="outline-text-3" id="text-7-2">
 <ul class="org-ul">
 <li>你有四个不同的时间窗口可以用来控制和提高数据质量.
 <ul class="org-ul">
@@ -5729,7 +5735,7 @@ x_z = \frac{1}{2} \ln\left( \frac{1 + x}{1 - x} \right) \tag{6.17}
 图 7.1 给出了这些时间窗口的概念性概览,下面的文字将提供更多解释.
 </p>
 
-<div id="orgdef4121" class="figure">
+<div id="org7883a86" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/7-1.png" alt="7-1.png" />
 </p>
 <p><span class="figure-number">Figure 74: </span>ms/7-1.png</p>
@@ -5738,9 +5744,9 @@ x_z = \frac{1}{2} \ln\left( \frac{1 + x}{1 - x} \right) \tag{6.17}
 </ul></li>
 </ul>
 </div>
-<div id="outline-container-org094b687" class="outline-4">
-<h4 id="org094b687"><span class="section-number-4">6.2.1.</span> 获取数据之前</h4>
-<div class="outline-text-4" id="text-6-2-1">
+<div id="outline-container-org3a5fd8d" class="outline-4">
+<h4 id="org3a5fd8d"><span class="section-number-4">7.2.1.</span> 获取数据之前</h4>
+<div class="outline-text-4" id="text-7-2-1">
 <ul class="org-ul">
 <li>获得高质量数据的最佳方式就是收集高质量数据,这意味着在数据获取开始之前就要采取预防性策略.</li>
 <li>这只有在你参与数据获取或数据生成过程时才可能做到.基本目标是:
@@ -5759,9 +5765,9 @@ x_z = \frac{1}{2} \ln\left( \frac{1 + x}{1 - x} \right) \tag{6.17}
 </ul>
 </div>
 </div>
-<div id="outline-container-org823fe1c" class="outline-4">
-<h4 id="org823fe1c"><span class="section-number-4">6.2.2.</span> 数据收集期间</h4>
-<div class="outline-text-4" id="text-6-2-2">
+<div id="outline-container-org3e92e1b" class="outline-4">
+<h4 id="org3e92e1b"><span class="section-number-4">7.2.2.</span> 数据收集期间</h4>
+<div class="outline-text-4" id="text-7-2-2">
 <ul class="org-ul">
 <li>数据获取的方式千差万别,但某些实验允许研究者在数据收集的过程中实时监控数据.</li>
 <li>如果你有这个条件,应当实时检查数据是否存在伪影(artifacts),传感器校准错误或其他可能降低数据质量的问题.</li>
@@ -5770,9 +5776,9 @@ x_z = \frac{1}{2} \ln\left( \frac{1 + x}{1 - x} \right) \tag{6.17}
 </ul>
 </div>
 </div>
-<div id="outline-container-org0eec1ec" class="outline-4">
-<h4 id="org0eec1ec"><span class="section-number-4">6.2.3.</span> 数据收集之后</h4>
-<div class="outline-text-4" id="text-6-2-3">
+<div id="outline-container-org14369d9" class="outline-4">
+<h4 id="org14369d9"><span class="section-number-4">7.2.3.</span> 数据收集之后</h4>
+<div class="outline-text-4" id="text-7-2-3">
 <ul class="org-ul">
 <li>数据收集完成后的清理主要有两种策略:
 <ul class="org-ul">
@@ -5788,9 +5794,9 @@ x_z = \frac{1}{2} \ln\left( \frac{1 + x}{1 - x} \right) \tag{6.17}
 </ul>
 </div>
 </div>
-<div id="outline-container-orgba0fcc4" class="outline-4">
-<h4 id="orgba0fcc4"><span class="section-number-4">6.2.4.</span> 数据分析期间</h4>
-<div class="outline-text-4" id="text-6-2-4">
+<div id="outline-container-org4aab09e" class="outline-4">
+<h4 id="org4aab09e"><span class="section-number-4">7.2.4.</span> 数据分析期间</h4>
+<div class="outline-text-4" id="text-7-2-4">
 <ul class="org-ul">
 <li>在数据分析阶段进行数据质量控制是最糟糕的时机,因为这会带来最大的结果偏倚风险.</li>
 <li>这种偏倚可能是有意或无意引入的,例如以某种方式选择或修改数据,从而增加获得某个统计结果的机会&#x2013;即使
@@ -5801,24 +5807,24 @@ x_z = \frac{1}{2} \ln\left( \frac{1 + x}{1 - x} \right) \tag{6.17}
 </div>
 </div>
 </div>
-<div id="outline-container-org1e221b0" class="outline-3">
-<h3 id="org1e221b0"><span class="section-number-3">6.3.</span> Assessing data quality</h3>
-<div class="outline-text-3" id="text-6-3">
+<div id="outline-container-orgf0263bd" class="outline-3">
+<h3 id="orgf0263bd"><span class="section-number-3">7.3.</span> Assessing data quality</h3>
+<div class="outline-text-3" id="text-7-3">
 <ul class="org-ul">
 <li>有两大类方法可以用来评估数据质量.在这里我将它们分开讨论是为了说明方便,但实际上,你并不是只能选择
 其中一种方法&#x2013;它们是互补的,最好在可能的情况下都使用.</li>
 </ul>
 </div>
-<div id="outline-container-orgd2f888d" class="outline-4">
-<h4 id="orgd2f888d"><span class="section-number-4">6.3.1.</span> 定性质量评估(Qualitative quality assessments)</h4>
-<div class="outline-text-4" id="text-6-3-1">
+<div id="outline-container-org3f26b05" class="outline-4">
+<h4 id="org3f26b05"><span class="section-number-4">7.3.1.</span> 定性质量评估(Qualitative quality assessments)</h4>
+<div class="outline-text-4" id="text-7-3-1">
 <ul class="org-ul">
 <li>定性检查数据,就是视觉检查,也就是说你要用一种或多种方式将数据可视化,然后花点时间盯着屏幕仔细观察.</li>
 <li><p>
 在可视化数据进行质量评估时,你需要关注什么呢?这里有一些建议:
 </p>
 
-<div id="orge0cd280" class="figure">
+<div id="org5d494f3" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/7-2.png" alt="7-2.png" />
 </p>
 <p><span class="figure-number">Figure 75: </span>ms/7-2.png</p>
@@ -5826,14 +5832,14 @@ x_z = \frac{1}{2} \ln\left( \frac{1 + x}{1 - x} \right) \tag{6.17}
 </ul>
 </div>
 <ol class="org-ol">
-<li><a id="org97595f0"></a>数据范围(图 7.2A)<br />
-<div class="outline-text-5" id="text-6-3-1-1">
+<li><a id="org89bd763"></a>数据范围(图 7.2A)<br />
+<div class="outline-text-5" id="text-7-3-1-1">
 <ul class="org-ul">
 <li><p>
 检查数值是否符合预期.图 7.2A 中的前 20 个数据点数值可疑地过于相似,这可能是设备问题导致的.
 </p>
 
-<div id="org7c904e9" class="figure">
+<div id="org2788459" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/7-2.png" alt="7-2.png" />
 </p>
 <p><span class="figure-number">Figure 76: </span>ms/7-2.png</p>
@@ -5843,16 +5849,16 @@ x_z = \frac{1}{2} \ln\left( \frac{1 + x}{1 - x} \right) \tag{6.17}
 </ul>
 </div>
 </li>
-<li><a id="org32c79df"></a>分布形状(图 7.2B)<br />
-<div class="outline-text-5" id="text-6-3-1-2">
+<li><a id="orgabd4636"></a>分布形状(图 7.2B)<br />
+<div class="outline-text-5" id="text-7-3-1-2">
 <ul class="org-ul">
 <li>分布的形状影响可适用的统计分析类型,以及你可能需要进行的变换.</li>
 <li>如果分布看起来不像任何典型的分析分布,可能存在数据截断(clipping)或噪声问题.</li>
 </ul>
 </div>
 </li>
-<li><a id="org43a89a0"></a>单组或多组数据(图 7.2C)<br />
-<div class="outline-text-5" id="text-6-3-1-3">
+<li><a id="orgf2af519"></a>单组或多组数据(图 7.2C)<br />
+<div class="outline-text-5" id="text-7-3-1-3">
 <ul class="org-ul">
 <li>如果数据来自同质系统,数据应该呈现出单一组形态.</li>
 <li>如果存在多个分组或簇(cluster),可能说明数据实际上包含了几个不同的群组.</li>
@@ -5860,8 +5866,8 @@ x_z = \frac{1}{2} \ln\left( \frac{1 + x}{1 - x} \right) \tag{6.17}
 </ul>
 </div>
 </li>
-<li><a id="org1739203"></a>离群值(图 7.2D)<br />
-<div class="outline-text-5" id="text-6-3-1-4">
+<li><a id="org4f8d0cc"></a>离群值(图 7.2D)<br />
+<div class="outline-text-5" id="text-7-3-1-4">
 <ul class="org-ul">
 <li>关于离群值本章稍后会详细讨论,但相对于整体分布值显得异常的数据,通常在可视化中很容易识别出来.</li>
 </ul>
@@ -5869,17 +5875,17 @@ x_z = \frac{1}{2} \ln\left( \frac{1 + x}{1 - x} \right) \tag{6.17}
 </li>
 </ol>
 </div>
-<div id="outline-container-org2d9d6a7" class="outline-4">
-<h4 id="org2d9d6a7"><span class="section-number-4">6.3.2.</span> 定量质量评估(Quantitative quality assessments)</h4>
-<div class="outline-text-4" id="text-6-3-2">
+<div id="outline-container-orgc0b0a85" class="outline-4">
+<h4 id="orgc0b0a85"><span class="section-number-4">7.3.2.</span> 定量质量评估(Quantitative quality assessments)</h4>
+<div class="outline-text-4" id="text-7-3-2">
 <ul class="org-ul">
 <li>有一些定量的衡量方法可以评估数据质量,其中最有用的指标往往是针对具体应用甚至具体数据集定制的.</li>
 <li>下面的不完全列表,可以让你了解可能的质量评估类型.</li>
 </ul>
 </div>
 <ol class="org-ol">
-<li><a id="org6c24ff9"></a>样本量(Sample sizes)<br />
-<div class="outline-text-5" id="text-6-3-2-1">
+<li><a id="orgd7e940f"></a>样本量(Sample sizes)<br />
+<div class="outline-text-5" id="text-7-3-2-1">
 <ul class="org-ul">
 <li>较大的样本量通常能提供更可信的统计结果,原因包括:
 <ul class="org-ul">
@@ -5895,16 +5901,16 @@ x_z = \frac{1}{2} \ln\left( \frac{1 + x}{1 - x} \right) \tag{6.17}
 </ul>
 </div>
 </li>
-<li><a id="org13bdafa"></a>错误率(Error rates)<br />
-<div class="outline-text-5" id="text-6-3-2-2">
+<li><a id="orgd7b656f"></a>错误率(Error rates)<br />
+<div class="outline-text-5" id="text-7-3-2-2">
 <ul class="org-ul">
 <li>指缺失或被剔除的数据比例.剔除的数据越多,预清理阶段的数据质量就越低.</li>
 <li>高错误率也可能引发人们对实验设计,设备,以及清理后的数据质量的质疑.</li>
 </ul>
 </div>
 </li>
-<li><a id="orgfc146a6"></a>数据范围(Data range)<br />
-<div class="outline-text-5" id="text-6-3-2-3">
+<li><a id="org3b678ca"></a>数据范围(Data range)<br />
+<div class="outline-text-5" id="text-7-3-2-3">
 <ul class="org-ul">
 <li>指数据值的最小值与最大值,这个特征可能揭示数据中存在的问题.
 <ul class="org-ul">
@@ -5914,8 +5920,8 @@ x_z = \frac{1}{2} \ln\left( \frac{1 + x}{1 - x} \right) \tag{6.17}
 </ul>
 </div>
 </li>
-<li><a id="orgd792602"></a>方差(Variance)<br />
-<div class="outline-text-5" id="text-6-3-2-4">
+<li><a id="org69e121e"></a>方差(Variance)<br />
+<div class="outline-text-5" id="text-7-3-2-4">
 <ul class="org-ul">
 <li>方差就像"金发姑娘"法则(Goldilocks principle)&#x2013;太小或太大都不好,刚刚好才最佳.</li>
 <li>统计分析需要一定的方差,否则就没有可解释的内容;但过大的方差会降低参数估计的精度,并可能掩盖真实效应.</li>
@@ -5928,9 +5934,9 @@ x_z = \frac{1}{2} \ln\left( \frac{1 + x}{1 - x} \right) \tag{6.17}
 </ol>
 </div>
 </div>
-<div id="outline-container-org5da481a" class="outline-3">
-<h3 id="org5da481a"><span class="section-number-3">6.4.</span> Improving data quality through  transformations</h3>
-<div class="outline-text-3" id="text-6-4">
+<div id="outline-container-org730060a" class="outline-3">
+<h3 id="org730060a"><span class="section-number-3">7.4.</span> Improving data quality through  transformations</h3>
+<div class="outline-text-3" id="text-7-4">
 <ul class="org-ul">
 <li>在某些情况下,数据转换可以用来将数据转化为更适合分析的格式.
 <ul class="org-ul">
@@ -5945,9 +5951,9 @@ x_z = \frac{1}{2} \ln\left( \frac{1 + x}{1 - x} \right) \tag{6.17}
 </ul>
 </div>
 </div>
-<div id="outline-container-orgc6df46a" class="outline-3">
-<h3 id="orgc6df46a"><span class="section-number-3">6.5.</span> What are outliers?</h3>
-<div class="outline-text-3" id="text-6-5">
+<div id="outline-container-org5000464" class="outline-3">
+<h3 id="org5000464"><span class="section-number-3">7.5.</span> What are outliers?</h3>
+<div class="outline-text-3" id="text-7-5">
 <ul class="org-ul">
 <li>离群值(outlier) 是指具有"相对异常值"的数据点.</li>
 <li>那么,数据点具有相对异常值是什么意思呢?
@@ -5962,9 +5968,9 @@ x_z = \frac{1}{2} \ln\left( \frac{1 + x}{1 - x} \right) \tag{6.17}
 <li>这些"讨厌的小家伙"既可能是统计学家梦魇的来源,也可能成为一条新的科学探索之路的灵感.</li>
 </ul>
 </div>
-<div id="outline-container-org5331fd3" class="outline-4">
-<h4 id="org5331fd3"><span class="section-number-4">6.5.1.</span> How to think about outliers</h4>
-<div class="outline-text-4" id="text-6-5-1">
+<div id="outline-container-orgf4917d8" class="outline-4">
+<h4 id="orgf4917d8"><span class="section-number-4">7.5.1.</span> How to think about outliers</h4>
+<div class="outline-text-4" id="text-7-5-1">
 <ul class="org-ul">
 <li>我们不要懒惰地陷入一个陷阱:
 <ul class="org-ul">
@@ -5976,8 +5982,8 @@ x_z = \frac{1}{2} \ln\left( \frac{1 + x}{1 - x} \right) \tag{6.17}
 </ul>
 </div>
 <ol class="org-ol">
-<li><a id="org08933b3"></a>The outlier is an invalid data point<br />
-<div class="outline-text-5" id="text-6-5-1-1">
+<li><a id="org8dc7761"></a>The outlier is an invalid data point<br />
+<div class="outline-text-5" id="text-7-5-1-1">
 <ul class="org-ul">
 <li>无效数据可能来自于噪声,错误,传感器故障或其他失误.
 <ul class="org-ul">
@@ -5993,8 +5999,8 @@ x_z = \frac{1}{2} \ln\left( \frac{1 + x}{1 - x} \right) \tag{6.17}
 </ul>
 </div>
 </li>
-<li><a id="org7988640"></a>The outlier is valid but unusual<br />
-<div class="outline-text-5" id="text-6-5-1-2">
+<li><a id="orgb6faaed"></a>The outlier is valid but unusual<br />
+<div class="outline-text-5" id="text-7-5-1-2">
 <ul class="org-ul">
 <li>这是完全不同的情形:离群值不是由噪声或错误造成的,而是它的数值与其他数据点差别非常明显.
 <ul class="org-ul">
@@ -6048,9 +6054,9 @@ Jeff 都富得多).</li>
 </ol>
 </div>
 </div>
-<div id="outline-container-orgbe54a6a" class="outline-3">
-<h3 id="orgbe54a6a"><span class="section-number-3">6.6.</span> Identifying outliers</h3>
-<div class="outline-text-3" id="text-6-6">
+<div id="outline-container-org8286176" class="outline-3">
+<h3 id="org8286176"><span class="section-number-3">7.6.</span> Identifying outliers</h3>
+<div class="outline-text-3" id="text-7-6">
 <ul class="org-ul">
 <li>就像我在 第 7.3 节 中写到的,你可以通过可视化数据来进行定性数据检视,并观察其中是否存在异常的模式或
 数据点.</li>
@@ -6060,7 +6066,7 @@ Jeff 都富得多).</li>
 图 7.3 给出了一个示例.
 </p>
 
-<div id="org8ac6bdf" class="figure">
+<div id="org621801e" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/7-3.png" alt="7-3.png" />
 </p>
 <p><span class="figure-number">Figure 77: </span>ms/7-3.png</p>
@@ -6086,9 +6092,9 @@ Jeff 都富得多).</li>
 化或半算法化的离群值识别策略来代替纯粹的定性方法.</li>
 </ul>
 </div>
-<div id="outline-container-orgfb3696f" class="outline-4">
-<h4 id="orgfb3696f"><span class="section-number-4">6.6.1.</span> Absolute threshold detection</h4>
-<div class="outline-text-4" id="text-6-6-1">
+<div id="outline-container-org5d151c1" class="outline-4">
+<h4 id="org5d151c1"><span class="section-number-4">7.6.1.</span> Absolute threshold detection</h4>
+<div class="outline-text-4" id="text-7-6-1">
 <ul class="org-ul">
 <li>这个方法的思路很简单:
 <ul class="org-ul">
@@ -6104,17 +6110,17 @@ Jeff 都富得多).</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org9f02799" class="outline-4">
-<h4 id="org9f02799"><span class="section-number-4">6.6.2.</span> The z-score method</h4>
-<div class="outline-text-4" id="text-6-6-2">
+<div id="outline-container-org1387aae" class="outline-4">
+<h4 id="org1387aae"><span class="section-number-4">7.6.2.</span> The z-score method</h4>
+<div class="outline-text-4" id="text-7-6-2">
 <ul class="org-ul">
 <li>绝对阈值检测方法的主要缺点,可以通过使用相对阈值来克服.</li>
 <li>这也是z 分数(z-score)离群值检测方法的动机所在.</li>
 </ul>
 </div>
 <ol class="org-ol">
-<li><a id="org8ea9ae7"></a>Z-scores and data proportions<br />
-<div class="outline-text-5" id="text-6-6-2-1">
+<li><a id="org038d375"></a>Z-scores and data proportions<br />
+<div class="outline-text-5" id="text-7-6-2-1">
 <ul class="org-ul">
 <li>在介绍 z 分数法 来识别离群值之前,我先说明一下 z 分数在不同范围内所包含的数据比例.
 <ul class="org-ul">
@@ -6122,7 +6128,7 @@ Jeff 都富得多).</li>
 图 7.4 展示了标准正态分布,其中坐标单位为标准差(即 z 分数).
 </p>
 
-<div id="orgf7f6012" class="figure">
+<div id="org195af53" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/7-4.png" alt="7-4.png" />
 </p>
 <p><span class="figure-number">Figure 78: </span>ms/7-4.png</p>
@@ -6140,8 +6146,8 @@ Jeff 都富得多).</li>
 </ul>
 </div>
 </li>
-<li><a id="orgc71c45e"></a>The z-score method<br />
-<div class="outline-text-5" id="text-6-6-2-2">
+<li><a id="org260e64c"></a>The z-score method<br />
+<div class="outline-text-5" id="text-7-6-2-2">
 <ul class="org-ul">
 <li>z 分数法非常常见&#x2013;甚至可能是最常用的离群值识别方法,而且它非常简单:
 <ul class="org-ul">
@@ -6155,7 +6161,7 @@ Jeff 都富得多).</li>
 例如,在图 7.5 中,数据已被转换为 z 分数,任何 z &gt; 3.29 的数据点都被视为离群值.
 </p>
 
-<div id="org284d033" class="figure">
+<div id="org43b74b7" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/7-5.png" alt="7-5.png" />
 </p>
 <p><span class="figure-number">Figure 79: </span>ms/7-5.png</p>
@@ -6179,8 +6185,8 @@ Jeff 都富得多).</li>
 </ul>
 </div>
 </li>
-<li><a id="orga415c1d"></a>Modified-z<br />
-<div class="outline-text-5" id="text-6-6-2-3">
+<li><a id="orga96b520"></a>Modified-z<br />
+<div class="outline-text-5" id="text-7-6-2-3">
 <ul class="org-ul">
 <li>在上一章中你已经学过,如果数据的**中位数(median)和中位数绝对离差(MAD)**比均值和标准差更合适来衡
 量数据的中心位置和分散程度时,就可以用改进版的 z 分数来替代普通 z 分数.</li>
@@ -6190,9 +6196,9 @@ Jeff 都富得多).</li>
 </li>
 </ol>
 </div>
-<div id="outline-container-org68bbb3f" class="outline-4">
-<h4 id="org68bbb3f"><span class="section-number-4">6.6.3.</span> Iterative z-score method</h4>
-<div class="outline-text-4" id="text-6-6-3">
+<div id="outline-container-org80d505b" class="outline-4">
+<h4 id="org80d505b"><span class="section-number-4">7.6.3.</span> Iterative z-score method</h4>
+<div class="outline-text-4" id="text-7-6-3">
 <ul class="org-ul">
 <li>在使用相对转换(relative transformation)时,一个问题是:
 <ul class="org-ul">
@@ -6204,7 +6210,7 @@ Jeff 都富得多).</li>
 如图
 </p>
 
-<div id="org0614483" class="figure">
+<div id="org66010f6" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/7-6.png" alt="7-6.png" />
 </p>
 <p><span class="figure-number">Figure 80: </span>ms/7-6.png</p>
@@ -6221,7 +6227,7 @@ Jeff 都富得多).</li>
 图 7.7 展示了该过程的一个示例,实现这一方法并生成该图的代码在练习 1中.
 </p>
 
-<div id="org8544a05" class="figure">
+<div id="org93f5547" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/7-7.png" alt="7-7.png" />
 </p>
 <p><span class="figure-number">Figure 81: </span>ms/7-7.png</p>
@@ -6242,9 +6248,9 @@ Jeff 都富得多).</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orga87de6e" class="outline-4">
-<h4 id="orga87de6e"><span class="section-number-4">6.6.4.</span> Removing data by trimming</h4>
-<div class="outline-text-4" id="text-6-6-4">
+<div id="outline-container-org80e239a" class="outline-4">
+<h4 id="org80e239a"><span class="section-number-4">7.6.4.</span> Removing data by trimming</h4>
+<div class="outline-text-4" id="text-7-6-4">
 <ul class="org-ul">
 <li>另一种清理数据并移除离群值的方法叫做 "截尾法"(trimming).</li>
 <li>它的动机与阈值法相同&#x2013;移除数值过大的数据&#x2013;但在实现方式上有一个重要区别:
@@ -6269,9 +6275,9 @@ Jeff 都富得多).</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgef3e39b" class="outline-4">
-<h4 id="orgef3e39b"><span class="section-number-4">6.6.5.</span> Manual, automatic, and semi-automatic cleaning</h4>
-<div class="outline-text-4" id="text-6-6-5">
+<div id="outline-container-org63c7941" class="outline-4">
+<h4 id="org63c7941"><span class="section-number-4">7.6.5.</span> Manual, automatic, and semi-automatic cleaning</h4>
+<div class="outline-text-4" id="text-7-6-5">
 <ul class="org-ul">
 <li>自动化离群值移除方法是指依赖算法自动替你删除离群值;而人工方法则是基于可视化检视,由研究人员手动识
 别离群值.
@@ -6296,9 +6302,9 @@ Jeff 都富得多).</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org104d6fd" class="outline-4">
-<h4 id="org104d6fd"><span class="section-number-4">6.6.6.</span> What happends to rejected outliers?</h4>
-<div class="outline-text-4" id="text-6-6-6">
+<div id="outline-container-orgde5919d" class="outline-4">
+<h4 id="orgde5919d"><span class="section-number-4">7.6.6.</span> What happends to rejected outliers?</h4>
+<div class="outline-text-4" id="text-7-6-6">
 <ul class="org-ul">
 <li>在某些情况下,直接移除离群值是可行的,就好像它从未存在过一样.
 <ul class="org-ul">
@@ -6318,8 +6324,8 @@ Jeff 都富得多).</li>
 </ul>
 </div>
 <ol class="org-ol">
-<li><a id="org981279a"></a>Hybrid methods<br />
-<div class="outline-text-5" id="text-6-6-6-1">
+<li><a id="orgf007e4b"></a>Hybrid methods<br />
+<div class="outline-text-5" id="text-7-6-6-1">
 <ul class="org-ul">
 <li>多种离群值检测策略是可以组合使用的.
 <ul class="org-ul">
@@ -6338,9 +6344,9 @@ Jeff 都富得多).</li>
 </ol>
 </div>
 </div>
-<div id="outline-container-org78aad2c" class="outline-3">
-<h3 id="org78aad2c"><span class="section-number-3">6.7.</span> Analysis-based solutions to outliers</h3>
-<div class="outline-text-3" id="text-6-7">
+<div id="outline-container-org8895135" class="outline-3">
+<h3 id="org8895135"><span class="section-number-3">7.7.</span> Analysis-based solutions to outliers</h3>
+<div class="outline-text-3" id="text-7-7">
 <ul class="org-ul">
 <li>把离群值当作你神奇数据汤里的有毒成分并一刀切地剔除,有时可能会消灭其中有意义的细微差异.</li>
 <li>有时候,非代表性的数据值其实是有效的数据点;
@@ -6350,9 +6356,9 @@ Jeff 都富得多).</li>
 <li>在这种情况下,你可以采用一些既能包含极端数据值,又能最大限度减少它们影响的分析方法.</li>
 </ul>
 </div>
-<div id="outline-container-orgf33d09c" class="outline-4">
-<h4 id="orgf33d09c"><span class="section-number-4">6.7.1.</span> 非参数分析(Nonparametric analyses)</h4>
-<div class="outline-text-4" id="text-6-7-1">
+<div id="outline-container-org58d5db7" class="outline-4">
+<h4 id="org58d5db7"><span class="section-number-4">7.7.1.</span> 非参数分析(Nonparametric analyses)</h4>
+<div class="outline-text-4" id="text-7-7-1">
 <ul class="org-ul">
 <li>许多统计方法(如 t 检验,相关分析,方差分析 ANOVA)都有非参数替代方法,
 <ul class="org-ul">
@@ -6369,9 +6375,9 @@ Jeff 都富得多).</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org27184f1" class="outline-4">
-<h4 id="org27184f1"><span class="section-number-4">6.7.2.</span> 基于置换的检验(Permutation-based tests)</h4>
-<div class="outline-text-4" id="text-6-7-2">
+<div id="outline-container-orgf146eb8" class="outline-4">
+<h4 id="orgf146eb8"><span class="section-number-4">7.7.2.</span> 基于置换的检验(Permutation-based tests)</h4>
+<div class="outline-text-4" id="text-7-7-2">
 <ul class="org-ul">
 <li>基于置换的统计方法,是通过随机重新分配数据点到其他组或实验条件,构造经验的零假设分布(empirical
 null-hypothesis distribution).</li>
@@ -6380,9 +6386,9 @@ null-hypothesis distribution).</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org2df2f39" class="outline-4">
-<h4 id="org2df2f39"><span class="section-number-4">6.7.3.</span> 加权分析(Weighted analyses)</h4>
-<div class="outline-text-4" id="text-6-7-3">
+<div id="outline-container-org522fe9f" class="outline-4">
+<h4 id="org522fe9f"><span class="section-number-4">7.7.3.</span> 加权分析(Weighted analyses)</h4>
+<div class="outline-text-4" id="text-7-7-3">
 <ul class="org-ul">
 <li>如果离群值的问题在于它们对结果的影响过大,那么&#x2013;为什么不 <b>降低它们的权重(de-weight)</b> 呢?</li>
 <li>"降权"离群值意味着根据它的离群程度(outlier badness),将它乘以一个介于 0 到 1 之间的数值.
@@ -6395,9 +6401,9 @@ null-hypothesis distribution).</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orge401835" class="outline-4">
-<h4 id="orge401835"><span class="section-number-4">6.7.4.</span> 子群分析(Subgroups analysis)</h4>
-<div class="outline-text-4" id="text-6-7-4">
+<div id="outline-container-org15a0008" class="outline-4">
+<h4 id="org15a0008"><span class="section-number-4">7.7.4.</span> 子群分析(Subgroups analysis)</h4>
+<div class="outline-text-4" id="text-7-7-4">
 <ul class="org-ul">
 <li>如果数据集中有很多值都可能被标记为离群值,</li>
 <li>那么这些值有可能其实代表了一个与大部分数据质上不同的独立群体.例如,假设有一个包含 100 辆汽车油耗
@@ -6412,9 +6418,9 @@ null-hypothesis distribution).</li>
 </div>
 </div>
 </div>
-<div id="outline-container-orga12bd67" class="outline-3">
-<h3 id="orga12bd67"><span class="section-number-3">6.8.</span> Missing data</h3>
-<div class="outline-text-3" id="text-6-8">
+<div id="outline-container-org67604b0" class="outline-3">
+<h3 id="org67604b0"><span class="section-number-3">7.8.</span> Missing data</h3>
+<div class="outline-text-3" id="text-7-8">
 <ul class="org-ul">
 <li>缺失数据在统计学中可能带来很大的挑战,并可能对研究结果产生显著影响.图 7.9 展示了一个带有缺失数据的数据集示例.</li>
 <li>数据缺失可能由多种原因造成:
@@ -6427,9 +6433,9 @@ null-hypothesis distribution).</li>
 <li>那么,面对缺失数据该怎么办呢?让我们逐一来看(在下面的讨论中,记住数据表是列代表特征,行代表观测值):</li>
 </ul>
 </div>
-<div id="outline-container-orgea90a0a" class="outline-4">
-<h4 id="orgea90a0a"><span class="section-number-4">6.8.1.</span> 按行删除(Row-wise removal)</h4>
-<div class="outline-text-4" id="text-6-8-1">
+<div id="outline-container-org08231df" class="outline-4">
+<h4 id="org08231df"><span class="section-number-4">7.8.1.</span> 按行删除(Row-wise removal)</h4>
+<div class="outline-text-4" id="text-7-8-1">
 <ul class="org-ul">
 <li>如果某一行中包含至少一个缺失值,就将整行删除.</li>
 <li>这种策略适用于配对数据(例如,测量运动员在一周训练课程前后的表现).假设是:一旦有数据缺失,那么该
@@ -6437,9 +6443,9 @@ null-hypothesis distribution).</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org424db58" class="outline-4">
-<h4 id="org424db58"><span class="section-number-4">6.8.2.</span> 针对特定分析的行删除(Analysis-specific row removal)</h4>
-<div class="outline-text-4" id="text-6-8-2">
+<div id="outline-container-org168a55a" class="outline-4">
+<h4 id="org168a55a"><span class="section-number-4">7.8.2.</span> 针对特定分析的行删除(Analysis-specific row removal)</h4>
+<div class="outline-text-4" id="text-7-8-2">
 <ul class="org-ul">
 <li>按行删除的缺点是:行中有些非缺失数据可能是有效且可用的.</li>
 <li>因此另一种方法是保留这行数据,但在某些需要该数据点的统计分析中,将其排除.</li>
@@ -6448,9 +6454,9 @@ null-hypothesis distribution).</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org5a3b49d" class="outline-4">
-<h4 id="org5a3b49d"><span class="section-number-4">6.8.3.</span> 插补(Imputation)</h4>
-<div class="outline-text-4" id="text-6-8-3">
+<div id="outline-container-orgf5b09e1" class="outline-4">
+<h4 id="orgf5b09e1"><span class="section-number-4">7.8.3.</span> 插补(Imputation)</h4>
+<div class="outline-text-4" id="text-7-8-3">
 <ul class="org-ul">
 <li>这种方法是用估计值替换缺失数据,估计值基于已有数据计算.例如,常用该特征的现有数据值的平均值来替换缺失值.
 <ul class="org-ul">
@@ -6458,7 +6464,7 @@ null-hypothesis distribution).</li>
 例如,在图 7.9 中,缺失的数值会被 6.67 代替(这是该特征在时间点 2 的平均值).
 </p>
 
-<div id="orged31917" class="figure">
+<div id="orgb3dfbc2" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/7-9.png" alt="7-9.png" />
 </p>
 <p><span class="figure-number">Figure 82: </span>ms/7-9.png</p>
@@ -6467,9 +6473,9 @@ null-hypothesis distribution).</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgd40752a" class="outline-4">
-<h4 id="orgd40752a"><span class="section-number-4">6.8.4.</span> 预测建模(Predictive modeling)</h4>
-<div class="outline-text-4" id="text-6-8-4">
+<div id="outline-container-org1abe481" class="outline-4">
+<h4 id="org1abe481"><span class="section-number-4">7.8.4.</span> 预测建模(Predictive modeling)</h4>
+<div class="outline-text-4" id="text-7-8-4">
 <ul class="org-ul">
 <li>这种方法在概念上与插补相似,不过使用更详细的统计模型来预测缺失值,而不是简单地用平均值替换.</li>
 <li>预测模型的复杂度可以从简单的回归到深度学习神经网络不等.</li>
@@ -6480,13 +6486,13 @@ null-hypothesis distribution).</li>
 </div>
 </div>
 </div>
-<div id="outline-container-orgaba0702" class="outline-2">
-<h2 id="orgaba0702"><span class="section-number-2">7.</span> Chapter 08: Probability Theory</h2>
-<div class="outline-text-2" id="text-7">
+<div id="outline-container-orgb9787f1" class="outline-2">
+<h2 id="orgb9787f1"><span class="section-number-2">8.</span> Chapter 08: Probability Theory</h2>
+<div class="outline-text-2" id="text-8">
 </div>
-<div id="outline-container-orgca31d2e" class="outline-3">
-<h3 id="orgca31d2e"><span class="section-number-3">7.1.</span> From descriptive to inferential statistics</h3>
-<div class="outline-text-3" id="text-7-1">
+<div id="outline-container-org41fc619" class="outline-3">
+<h3 id="org41fc619"><span class="section-number-3">8.1.</span> From descriptive to inferential statistics</h3>
+<div class="outline-text-3" id="text-8-1">
 <ul class="org-ul">
 <li>本章是本书的一个转折点.到目前为止,本书一直专注于描述性统计&#x2013;即用数值特征来帮助你理解你的数据.
 <ul class="org-ul">
@@ -6531,9 +6537,9 @@ null-hypothesis distribution).</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org9c7b3f4" class="outline-3">
-<h3 id="org9c7b3f4"><span class="section-number-3">7.2.</span> What is probability?</h3>
-<div class="outline-text-3" id="text-7-2">
+<div id="outline-container-org6f56501" class="outline-3">
+<h3 id="org6f56501"><span class="section-number-3">8.2.</span> What is probability?</h3>
+<div class="outline-text-3" id="text-8-2">
 <ul class="org-ul">
 <li>从自然界的最微观尺度,到人类生活中的死亡和税收,再到银河尺度上黑洞的寿命&#x2013;没有什么是绝对确定的.我
 们无法确切知道未来会发生什么;我们只能为各种事件发生的可能性赋予一个概率.</li>
@@ -6550,9 +6556,9 @@ null-hypothesis distribution).</li>
 坚实的基础.</li>
 </ul>
 </div>
-<div id="outline-container-orgcc63463" class="outline-4">
-<h4 id="orgcc63463"><span class="section-number-4">7.2.1.</span> The problem with  probability</h4>
-<div class="outline-text-4" id="text-7-2-1">
+<div id="outline-container-org54b599f" class="outline-4">
+<h4 id="org54b599f"><span class="section-number-4">8.2.1.</span> The problem with  probability</h4>
+<div class="outline-text-4" id="text-8-2-1">
 <ul class="org-ul">
 <li>概率的问题在于,它并不是很直观,尤其是当你第一次接触它的时候,有时甚至会让人觉得违背直觉.
 <ul class="org-ul">
@@ -6624,9 +6630,9 @@ null-hypothesis distribution).</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgcbe4617" class="outline-4">
-<h4 id="orgcbe4617"><span class="section-number-4">7.2.2.</span> When do we need probabilities?</h4>
-<div class="outline-text-4" id="text-7-2-2">
+<div id="outline-container-orgeadcf5b" class="outline-4">
+<h4 id="orgeadcf5b"><span class="section-number-4">8.2.2.</span> When do we need probabilities?</h4>
+<div class="outline-text-4" id="text-8-2-2">
 <ul class="org-ul">
 <li>我在本书前面提到过,你并不总是需要统计学.同样,你也并不总是需要概率.</li>
 <li>在实践中,只有当一个事件的结果存在较大的不确定性时,我们才需要考虑概率.比如:
@@ -6649,9 +6655,9 @@ null-hypothesis distribution).</li>
 </div>
 </div>
 </div>
-<div id="outline-container-org3b88535" class="outline-3">
-<h3 id="org3b88535"><span class="section-number-3">7.3.</span> Probability vs. proportion</h3>
-<div class="outline-text-3" id="text-7-3">
+<div id="outline-container-orge585b3a" class="outline-3">
+<h3 id="orge585b3a"><span class="section-number-3">8.3.</span> Probability vs. proportion</h3>
+<div class="outline-text-3" id="text-8-3">
 <ul class="org-ul">
 <li>概率(Probability)和比例(Proportion)是相关但不同的概念.它们容易被混淆,因为有时它们的数值是相同的.</li>
 <li>我先用一个例子说明,然后给出定义.
@@ -6662,7 +6668,7 @@ null-hypothesis distribution).</li>
 但实验结果却是 10 枚硬币里有 6 枚是正面(见图 8.2).
 </p>
 
-<div id="org4e909dc" class="figure">
+<div id="org93ef8f6" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/8-2.png" alt="8-2.png" />
 </p>
 <p><span class="figure-number">Figure 83: </span>ms/8-2.png</p>
@@ -6701,9 +6707,9 @@ null-hypothesis distribution).</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgd9494bb" class="outline-3">
-<h3 id="orgd9494bb"><span class="section-number-3">7.4.</span> Computing probabilities</h3>
-<div class="outline-text-3" id="text-7-4">
+<div id="outline-container-org3f82dca" class="outline-3">
+<h3 id="org3f82dca"><span class="section-number-3">8.4.</span> Computing probabilities</h3>
+<div class="outline-text-3" id="text-8-4">
 <ul class="org-ul">
 <li>让我们稍微退一步,先问一个简单的问题:我们怎么才能知道一个事件的概率呢?换句话说,概率是从哪里来的?</li>
 <li>概率的来源主要有三个:</li>
@@ -6751,9 +6757,9 @@ null-hypothesis distribution).</li>
 </ul></li>
 </ul>
 </div>
-<div id="outline-container-org1569e1d" class="outline-4">
-<h4 id="org1569e1d"><span class="section-number-4">7.4.1.</span> Computing analytical probabilities</h4>
-<div class="outline-text-4" id="text-7-4-1">
+<div id="outline-container-org927797d" class="outline-4">
+<h4 id="org927797d"><span class="section-number-4">8.4.1.</span> Computing analytical probabilities</h4>
+<div class="outline-text-4" id="text-8-4-1">
 <ul class="org-ul">
 <li>分析型概率(Analytical probabilities)是通过数学公式推导出来的.</li>
 <li>我在本章前面已经给过一些简单的例子:
@@ -6836,7 +6842,7 @@ probabilities)有多接近.</li>
 <li><p>
 在这里,我们可以做的一个合理性检查就是:把所有颜色的概率加起来,看看是否等于 100%.
 </p>
-<pre class="example" id="org7c602fe">
+<pre class="example" id="org7f413c0">
 44.4 + 33.3 + 22.2 = 99.9
 </pre></li>
 <li>啊哦!这些概率的总和没有等于 100%.</li>
@@ -6868,9 +6874,9 @@ probabilities)有多接近.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgf1bf103" class="outline-4">
-<h4 id="orgf1bf103"><span class="section-number-4">7.4.2.</span> Computing expirical probabilities</h4>
-<div class="outline-text-4" id="text-7-4-2">
+<div id="outline-container-org25c075a" class="outline-4">
+<h4 id="org25c075a"><span class="section-number-4">8.4.2.</span> Computing expirical probabilities</h4>
+<div class="outline-text-4" id="text-8-4-2">
 <ul class="org-ul">
 <li>实际上,计算经验型概率(computing empirical probabilities) 用的公式与 分析型概率(analytical
 probabilities) 相同(见公式 8.1).</li>
@@ -6971,9 +6977,9 @@ probabilities)**是一样的:</li>
 </div>
 </div>
 </div>
-<div id="outline-container-org7e7a0f6" class="outline-3">
-<h3 id="org7e7a0f6"><span class="section-number-3">7.5.</span> Probability functions, mass, and density</h3>
-<div class="outline-text-3" id="text-7-5">
+<div id="outline-container-org8348e93" class="outline-3">
+<h3 id="org8348e93"><span class="section-number-3">8.5.</span> Probability functions, mass, and density</h3>
+<div class="outline-text-3" id="text-8-5">
 <ul class="org-ul">
 <li><p>
 我们要先区分一下如下的几个概念:
@@ -7087,7 +7093,7 @@ s.t.\,\sum_{i=1}^{n}p(X=x_{i})=1 \tag{8.9}
 如图
 </p>
 
-<div id="orgc91c069" class="figure">
+<div id="orgbde9073" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/8-4.png" alt="8-4.png" />
 </p>
 <p><span class="figure-number">Figure 84: </span>ms/8-4.png</p>
@@ -7126,7 +7132,7 @@ s.t.\,\sum_{i=1}^{n}p(X=x_{i})=1 \tag{8.9}
 这显然不太有用.因此,我转而将数据离散化为宽度为 0.25 千克的分箱(图 8.5).
 </p>
 
-<div id="orgd92c875" class="figure">
+<div id="orgbd4d71c" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/8-5.png" alt="8-5.png" />
 </p>
 <p><span class="figure-number">Figure 85: </span>ms/8-5.png</p>
@@ -7154,9 +7160,9 @@ s.t.\,\sum_{i=1}^{n}p(X=x_{i})=1 \tag{8.9}
 </ul>
 </div>
 </div>
-<div id="outline-container-orgd319a44" class="outline-3">
-<h3 id="orgd319a44"><span class="section-number-3">7.6.</span> Cumulative distribution function (cdf)</h3>
-<div class="outline-text-3" id="text-7-6">
+<div id="outline-container-org215beb4" class="outline-3">
+<h3 id="org215beb4"><span class="section-number-3">8.6.</span> Cumulative distribution function (cdf)</h3>
+<div class="outline-text-3" id="text-8-6">
 <ul class="org-ul">
 <li>累积分布函数是概率质量函数或概率密度函数的累积和(对于密度函数,求和替换为积分).</li>
 <li>这意味着 cdf 中的每个点表示获取小于或等于该值的概率.
@@ -7177,7 +7183,7 @@ F(x)=p(X\leq x) \tag{8.10}
 图 8.6 展示了正态分布的 pdf 与 cdf 之间的区别与联系.
 </p>
 
-<div id="org0e664cb" class="figure">
+<div id="orgd2d9084" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/8-6.png" alt="8-6.png" />
 </p>
 <p><span class="figure-number">Figure 86: </span>ms/8-6.png</p>
@@ -7191,7 +7197,7 @@ F(x)=p(X\leq x) \tag{8.10}
 图8.7展示了一些概率密度函数及其对应累积分布函数的示例.
 </p>
 
-<div id="orgeae583e" class="figure">
+<div id="org380e8d9" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/8-7.png" alt="8-7.png" />
 </p>
 <p><span class="figure-number">Figure 87: </span>ms/8-7.png</p>
@@ -7216,9 +7222,9 @@ F(x)=p(X\leq x) \tag{8.10}
 </ul>
 </div>
 </div>
-<div id="outline-container-orgef10856" class="outline-3">
-<h3 id="orgef10856"><span class="section-number-3">7.7.</span> Expected value</h3>
-<div class="outline-text-3" id="text-7-7">
+<div id="outline-container-org70c1663" class="outline-3">
+<h3 id="org70c1663"><span class="section-number-3">8.7.</span> Expected value</h3>
+<div class="outline-text-3" id="text-8-7">
 <ul class="org-ul">
 <li>在本节中,我将定义*期望值*,解释如何推导和理解它,以及它与平均值和方差等量之间的关系.</li>
 <li>请看看下面的平均值和期望值公式(在公式中,E[X] 表示变量 X 的期望值,p_i 表示取到数据点 x_i 的概率).
@@ -7260,7 +7266,7 @@ E[X] = \sum_{i=1}^n x_i p_i \quad (8.12)
 假设我们有一个加权骰子,不同的面出现的概率如图 8.8 所示.
 </p>
 
-<div id="orga25f444" class="figure">
+<div id="orgbdfd062" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/8-8.png" alt="8-8.png" />
 </p>
 <p><span class="figure-number">Figure 88: </span>ms/8-8.png</p>
@@ -7289,9 +7295,9 @@ x = [1, 3, 4, 4, 4, 3, 2, 5]
 </ul></li>
 </ul>
 </div>
-<div id="outline-container-org96d7c9f" class="outline-4">
-<h4 id="org96d7c9f"><span class="section-number-4">7.7.1.</span> Computing expected value</h4>
-<div class="outline-text-4" id="text-7-7-1">
+<div id="outline-container-orgdc7ac44" class="outline-4">
+<h4 id="orgdc7ac44"><span class="section-number-4">8.7.1.</span> Computing expected value</h4>
+<div class="outline-text-4" id="text-8-7-1">
 <ul class="org-ul">
 <li>计算一个分布的期望值最精确的方法是进行**解析计算**.
 <ul class="org-ul">
@@ -7326,9 +7332,9 @@ E[X] &= \int_a^b \frac{x}{b-a} \, dx \tag{8.13}\\
 </ul>
 </div>
 </div>
-<div id="outline-container-orgff2e43d" class="outline-4">
-<h4 id="orgff2e43d"><span class="section-number-4">7.7.2.</span> Expected value and statistical moments</h4>
-<div class="outline-text-4" id="text-7-7-2">
+<div id="outline-container-org0d363fd" class="outline-4">
+<h4 id="org0d363fd"><span class="section-number-4">8.7.2.</span> Expected value and statistical moments</h4>
+<div class="outline-text-4" id="text-8-7-2">
 <ul class="org-ul">
 <li>分布的统计矩可以表示为数据的期望值,其幂次为矩的阶数. 例如:
 <ul class="org-ul">
@@ -7378,9 +7384,9 @@ E[X^2] &= \int_a^b \frac{x^2}{b-a} \, dx \tag{8.21} \\
 </div>
 </div>
 </div>
-<div id="outline-container-orgccd11c9" class="outline-3">
-<h3 id="orgccd11c9"><span class="section-number-3">7.8.</span> Softmax</h3>
-<div class="outline-text-3" id="text-7-8">
+<div id="outline-container-orgf32168e" class="outline-3">
+<h3 id="orgf32168e"><span class="section-number-3">8.8.</span> Softmax</h3>
+<div class="outline-text-3" id="text-8-8">
 <ul class="org-ul">
 <li>Softmax 是一种将一组数值转换为概率质量(probability mass)的**数学变换**.</li>
 <li>它在机器学习中被广泛使用,而在统计学中使用较少. 但是 Softmax 运算非常重要,值得花时间去理解.
@@ -7409,7 +7415,7 @@ Softmax 方程如下:
 图 8.9 展示了一个数值示例,验证了以上性质.
 </p>
 
-<div id="org5c38b32" class="figure">
+<div id="org272c173" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/8-9.png" alt="8-9.png" />
 </p>
 <p><span class="figure-number">Figure 89: </span>ms/8-9.png</p>
@@ -7418,7 +7424,7 @@ Softmax 方程如下:
 图 8.10 展示了在更大范围数值上的 Softmax 变换.
 </p>
 
-<div id="orgafa4e44" class="figure">
+<div id="org22446ea" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/8-10.png" alt="8-10.png" />
 </p>
 <p><span class="figure-number">Figure 90: </span>ms/8-10.png</p>
@@ -7428,9 +7434,9 @@ Softmax 方程如下:
 <li>现在我已经展示了 Softmax 的公式和一些示例,接下来让我回答你可能会对 Softmax 函数产生的两个问题.</li>
 </ul>
 </div>
-<div id="outline-container-org7801e0a" class="outline-4">
-<h4 id="org7801e0a"><span class="section-number-4">7.8.1.</span> Does \(\sigma(x)\) really produce a probability mass function</h4>
-<div class="outline-text-4" id="text-7-8-1">
+<div id="outline-container-org64e7d69" class="outline-4">
+<h4 id="org64e7d69"><span class="section-number-4">8.8.1.</span> Does \(\sigma(x)\) really produce a probability mass function</h4>
+<div class="outline-text-4" id="text-8-8-1">
 <ul class="org-ul">
 <li>是的,因为它满足概率分布的要求:
 <ul class="org-ul">
@@ -7449,9 +7455,9 @@ Softmax 方程如下:
 </ul>
 </div>
 </div>
-<div id="outline-container-org59a3c3c" class="outline-4">
-<h4 id="org59a3c3c"><span class="section-number-4">7.8.2.</span> What is softmax used for?</h4>
-<div class="outline-text-4" id="text-7-8-2">
+<div id="outline-container-org57c85b6" class="outline-4">
+<h4 id="org57c85b6"><span class="section-number-4">8.8.2.</span> What is softmax used for?</h4>
+<div class="outline-text-4" id="text-8-8-2">
 <ul class="org-ul">
 <li>Softmax 常用于机器学习中的分类任务(classification tasks).
 <ul class="org-ul">
@@ -7471,7 +7477,7 @@ Softmax 方程如下:
 分类器产生了图 8.9 所示的数值输出
 </p>
 
-<div id="orgdc66d09" class="figure">
+<div id="org015b04c" class="figure">
 <p><img src="https://raw.githubusercontent.com/harrifeng/image/master/ms/8-9.png" alt="8-9.png" />
 </p>
 <p><span class="figure-number">Figure 91: </span>ms/8-9.png</p>
@@ -7491,7 +7497,7 @@ Softmax 方程如下:
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: harrifeng@outlook.com</p>
-<p class="date">Created: 2025-10-09 Thu 14:07</p>
+<p class="date">Created: 2025-10-09 Thu 14:10</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
