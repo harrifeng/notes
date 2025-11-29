@@ -1,0 +1,2233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-11-29 Sat 20:27 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>d2l</title>
+<meta name="author" content="harrifeng@outlook.com" />
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="src/readtheorg_theme/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="src/readtheorg_theme/css/readtheorg.css"/>
+<script type="text/javascript" src="src/lib/js/jquery.min.js"></script>
+<script type="text/javascript" src="src/lib/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="src/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="src/readtheorg_theme/js/readtheorg.js"></script>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">d2l</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orgd86ee28">1. Chapter1: 引言</a>
+<ul>
+<li><a href="#org25dd02d">1.1. 日常生活中的机器学习</a></li>
+<li><a href="#org29059a6">1.2. 机器学习中的关键组件</a>
+<ul>
+<li><a href="#org3129440">1.2.1. 数据</a></li>
+<li><a href="#org983d41a">1.2.2. 模型</a></li>
+<li><a href="#orgc3d46ea">1.2.3. 目标函数</a></li>
+<li><a href="#org74dc6cf">1.2.4. 优化算法</a></li>
+</ul>
+</li>
+<li><a href="#org40ee05f">1.3. 各种机器学习问题</a>
+<ul>
+<li><a href="#orga22a5d7">1.3.1. 监督学习</a></li>
+<li><a href="#orgd7f59d3">1.3.2. 无监督学习</a></li>
+<li><a href="#org728e8ac">1.3.3. 与环境互动</a></li>
+<li><a href="#org7923faf">1.3.4. 强化学习</a></li>
+</ul>
+</li>
+<li><a href="#org838a488">1.4. 起源</a></li>
+<li><a href="#org73f82e2">1.5. 深度学习的发展</a></li>
+<li><a href="#org6a845b9">1.6. 深度学习的成功案例</a></li>
+<li><a href="#orgaf4df2e">1.7. 特点</a></li>
+</ul>
+</li>
+<li><a href="#orgf932ae2">2. Chapter 2: 预备知识</a>
+<ul>
+<li><a href="#org78206e9">2.1. 数据操作</a>
+<ul>
+<li><a href="#org8fd7179">2.1.1. 入门</a></li>
+<li><a href="#org557b2f9">2.1.2. 运算符</a></li>
+<li><a href="#orge3d40c9">2.1.3. 广播机制</a></li>
+<li><a href="#orgb4518a5">2.1.4. 索引和切片</a></li>
+<li><a href="#orgd13dad2">2.1.5. 节省内存</a></li>
+<li><a href="#orgd8e65c8">2.1.6. 转换为其他Python对象</a></li>
+</ul>
+</li>
+<li><a href="#orgc6e8157">2.2. 数据预处理</a>
+<ul>
+<li><a href="#org364145c">2.2.1. 读取数据集</a></li>
+<li><a href="#org6f68925">2.2.2. 处理缺失值</a></li>
+<li><a href="#org1a1a354">2.2.3. 转换为张量格式</a></li>
+</ul>
+</li>
+<li><a href="#org45df5ab">2.3. 线性代数</a>
+<ul>
+<li><a href="#orgb351b94">2.3.1. 标量</a></li>
+<li><a href="#org4616185">2.3.2. 向量</a></li>
+<li><a href="#orgddbc9d6">2.3.3. 矩阵</a></li>
+<li><a href="#org85d36f1">2.3.4. 张量</a></li>
+<li><a href="#orgdf89748">2.3.5. 张量算法的基本性质</a></li>
+<li><a href="#org8006f21">2.3.6. 降维</a></li>
+<li><a href="#org73e78fe">2.3.7. 点积(Dot Product)</a></li>
+<li><a href="#org997353e">2.3.8. 矩阵-向量积</a></li>
+<li><a href="#orgb4cc617">2.3.9. 矩阵-矩阵乘法</a></li>
+<li><a href="#org2a856f6">2.3.10. 范数</a></li>
+</ul>
+</li>
+<li><a href="#org3a00490">2.4. 微积分</a>
+<ul>
+<li><a href="#org9f7c94b">2.4.1. 导数和微分</a></li>
+<li><a href="#orgb5aaf1e">2.4.2. 偏导数</a></li>
+<li><a href="#org54a01ca">2.4.3. 梯度</a></li>
+<li><a href="#org84c35bc">2.4.4. 链式法则</a></li>
+</ul>
+</li>
+<li><a href="#orgc4b24db">2.5. 自动微分</a>
+<ul>
+<li><a href="#org4c4e82d">2.5.1. 一个简单的例子</a></li>
+<li><a href="#orgd7b120a">2.5.2. 非标量变量的反向传播</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgd86ee28" class="outline-2">
+<h2 id="orgd86ee28"><span class="section-number-2">1.</span> Chapter1: 引言</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-org25dd02d" class="outline-3">
+<h3 id="org25dd02d"><span class="section-number-3">1.1.</span> 日常生活中的机器学习</h3>
+</div>
+<div id="outline-container-org29059a6" class="outline-3">
+<h3 id="org29059a6"><span class="section-number-3">1.2.</span> 机器学习中的关键组件</h3>
+<div class="outline-text-3" id="text-1-2">
+</div>
+<div id="outline-container-org3129440" class="outline-4">
+<h4 id="org3129440"><span class="section-number-4">1.2.1.</span> 数据</h4>
+</div>
+<div id="outline-container-org983d41a" class="outline-4">
+<h4 id="org983d41a"><span class="section-number-4">1.2.2.</span> 模型</h4>
+</div>
+<div id="outline-container-orgc3d46ea" class="outline-4">
+<h4 id="orgc3d46ea"><span class="section-number-4">1.2.3.</span> 目标函数</h4>
+</div>
+<div id="outline-container-org74dc6cf" class="outline-4">
+<h4 id="org74dc6cf"><span class="section-number-4">1.2.4.</span> 优化算法</h4>
+</div>
+</div>
+<div id="outline-container-org40ee05f" class="outline-3">
+<h3 id="org40ee05f"><span class="section-number-3">1.3.</span> 各种机器学习问题</h3>
+<div class="outline-text-3" id="text-1-3">
+</div>
+<div id="outline-container-orga22a5d7" class="outline-4">
+<h4 id="orga22a5d7"><span class="section-number-4">1.3.1.</span> 监督学习</h4>
+<div class="outline-text-4" id="text-1-3-1">
+</div>
+<ol class="org-ol">
+<li><a id="orgc0e31f2"></a>回归<br /></li>
+<li><a id="org448a224"></a>分类<br /></li>
+<li><a id="org666bf5e"></a>标记问题<br /></li>
+<li><a id="orgac555b6"></a>搜索<br /></li>
+<li><a id="orgce22c66"></a>推荐系统<br /></li>
+<li><a id="orge9668dc"></a>序列学习<br /></li>
+</ol>
+</div>
+<div id="outline-container-orgd7f59d3" class="outline-4">
+<h4 id="orgd7f59d3"><span class="section-number-4">1.3.2.</span> 无监督学习</h4>
+</div>
+<div id="outline-container-org728e8ac" class="outline-4">
+<h4 id="org728e8ac"><span class="section-number-4">1.3.3.</span> 与环境互动</h4>
+</div>
+<div id="outline-container-org7923faf" class="outline-4">
+<h4 id="org7923faf"><span class="section-number-4">1.3.4.</span> 强化学习</h4>
+</div>
+</div>
+<div id="outline-container-org838a488" class="outline-3">
+<h3 id="org838a488"><span class="section-number-3">1.4.</span> 起源</h3>
+</div>
+<div id="outline-container-org73f82e2" class="outline-3">
+<h3 id="org73f82e2"><span class="section-number-3">1.5.</span> 深度学习的发展</h3>
+</div>
+<div id="outline-container-org6a845b9" class="outline-3">
+<h3 id="org6a845b9"><span class="section-number-3">1.6.</span> 深度学习的成功案例</h3>
+</div>
+<div id="outline-container-orgaf4df2e" class="outline-3">
+<h3 id="orgaf4df2e"><span class="section-number-3">1.7.</span> 特点</h3>
+</div>
+</div>
+<div id="outline-container-orgf932ae2" class="outline-2">
+<h2 id="orgf932ae2"><span class="section-number-2">2.</span> Chapter 2: 预备知识</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-org78206e9" class="outline-3">
+<h3 id="org78206e9"><span class="section-number-3">2.1.</span> 数据操作</h3>
+<div class="outline-text-3" id="text-2-1">
+<ul class="org-ul">
+<li>为了完成各种数据操作,我们需要某种方法存储和操作数据,这里有两件重要的事:
+<ul class="org-ul">
+<li>获取数据</li>
+<li>将数据读入计算机后进行处理</li>
+</ul></li>
+<li>我们下面会介绍n维数组,也称之为张量.</li>
+<li>张量在pytorch里面是Tensor,它和numpy中ndarray类似,但是pytorch的Tensor比ndarray多了一些功能:
+<ul class="org-ul">
+<li>首先,numpy仅支持cpu计算,但是pytorch支持GPU计算</li>
+<li>其次,pytorch张量支持自动微分</li>
+</ul></li>
+</ul>
+</div>
+<div id="outline-container-org8fd7179" class="outline-4">
+<h4 id="org8fd7179"><span class="section-number-4">2.1.1.</span> 入门</h4>
+<div class="outline-text-4" id="text-2-1-1">
+<ul class="org-ul">
+<li><p>
+首先,我们要导入pytorch,如下
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #531ab6;">import</span> torch
+</pre>
+</div></li>
+<li>下面来介绍张量tersor.张量表示一个由数值构成的数组, 这个数组可能有多个维度:
+<ul class="org-ul">
+<li>一个轴的张量叫向量(vector)</li>
+<li>两个轴的张量叫矩阵(matrix)</li>
+<li>三个轴及以上就没有特定名字了</li>
+</ul></li>
+<li>具有一个轴的张量,对应数学上的向量(vector)
+<ul class="org-ul">
+<li><p>
+向量创建示例如下
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #531ab6;">import</span> torch
+
+<span style="color: #005e8b;">x</span> = torch.arange<span style="color: #000000;">(</span>12<span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|x|=&gt;"""</span>, x<span style="color: #000000;">)</span>
+
+<span style="color: #7f0000;"># </span><span style="color: #7f0000;">&lt;====================OUTPUT====================&gt;
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|x|=&gt; tensor([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11])</span>
+</pre>
+</div></li>
+<li><p>
+我们可以使用shape属性来访问张量的"形状",也就是沿每个轴的长度. 这个向量的shape不太直观一会我们看到矩阵的shape就非常直观
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #531ab6;">import</span> torch
+
+<span style="color: #005e8b;">x</span> = torch.arange<span style="color: #000000;">(</span>12<span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|x.shape|=&gt;"""</span>, x.shape<span style="color: #000000;">)</span>
+
+<span style="color: #7f0000;"># </span><span style="color: #7f0000;">&lt;====================OUTPUT====================&gt;
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|x.shape|=&gt; torch.Size([12])</span>
+</pre>
+</div></li>
+<li><p>
+还可以使用numel来查看张量中元素的总数
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #531ab6;">import</span> torch
+
+<span style="color: #005e8b;">x</span> = torch.arange<span style="color: #000000;">(</span>12<span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|x.numel()|=&gt;"""</span>, x.numel<span style="color: #dd22dd;">()</span><span style="color: #000000;">)</span>
+
+
+<span style="color: #7f0000;"># </span><span style="color: #7f0000;">&lt;====================OUTPUT====================&gt;
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|x.numel()|=&gt; 12</span>
+</pre>
+</div></li>
+</ul></li>
+<li>具有两个轴的张量对应数学上的矩阵.
+<ul class="org-ul">
+<li><p>
+我们可以通过把上面的向量reshape后得到矩阵,也就是把shape从(12,)变成(3, 4)
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #531ab6;">import</span> torch
+
+<span style="color: #005e8b;">x</span> = torch.arange<span style="color: #000000;">(</span>12<span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|x.shape|=&gt;"""</span>, x.shape<span style="color: #000000;">)</span>
+
+<span style="color: #005e8b;">x2</span> = x.reshape<span style="color: #000000;">(</span>3, 4<span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|x2.shape|=&gt;"""</span>, x2.shape<span style="color: #000000;">)</span>
+
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|x2|=&gt;"""</span>, x2<span style="color: #000000;">)</span>
+<span style="color: #7f0000;"># </span><span style="color: #7f0000;">&lt;====================OUTPUT====================&gt;
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|x.shape|=&gt; torch.Size([12])
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|x2.shape|=&gt; torch.Size([3, 4])
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|x2|=&gt; tensor([[ 0,  1,  2,  3],
+</span><span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[ 4,  5,  6,  7],
+</span><span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[ 8,  9, 10, 11]])</span>
+</pre>
+</div></li>
+</ul></li>
+<li>具有两个轴以上的张量就没有特殊的数学名称了.但是我们可以创建
+<ul class="org-ul">
+<li><p>
+比如有三个轴的张量
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #531ab6;">import</span> torch
+
+<span style="color: #005e8b;">x</span> = torch.arange<span style="color: #000000;">(</span>12<span style="color: #000000;">)</span>
+<span style="color: #005e8b;">x2</span> = x.reshape<span style="color: #000000;">(</span>2, 2, 3<span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|x2|=&gt;"""</span>, x2<span style="color: #000000;">)</span>
+
+
+<span style="color: #7f0000;"># </span><span style="color: #7f0000;">&lt;====================OUTPUT====================&gt;
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|x2|=&gt; tensor([[[ 0,  1,  2],
+</span><span style="color: #7f0000;">#          </span><span style="color: #7f0000;">[ 3,  4,  5]],
+</span>
+<span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[[ 6,  7,  8],
+</span><span style="color: #7f0000;">#          </span><span style="color: #7f0000;">[ 9, 10, 11]]])</span>
+</pre>
+</div></li>
+</ul></li>
+<li>我们还可以创建一个成员全部是0或者1的张量
+<ul class="org-ul">
+<li><p>
+全部是0的张量
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #531ab6;">import</span> torch
+
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|torch.zeros(2,3)|=&gt;"""</span>, torch.zeros<span style="color: #dd22dd;">(</span>2, 3<span style="color: #dd22dd;">)</span><span style="color: #000000;">)</span>
+
+<span style="color: #7f0000;"># </span><span style="color: #7f0000;">&lt;====================OUTPUT====================&gt;
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|torch.zeros(2,3)|=&gt; tensor([[0., 0., 0.],
+</span><span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[0., 0., 0.]])</span>
+</pre>
+</div></li>
+<li><p>
+全部是1的张量
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #531ab6;">import</span> torch
+
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|torch.zeros(2,3)|=&gt;"""</span>, torch.ones<span style="color: #dd22dd;">(</span>2, 3<span style="color: #dd22dd;">)</span><span style="color: #000000;">)</span>
+
+<span style="color: #7f0000;"># </span><span style="color: #7f0000;">&lt;====================OUTPUT====================&gt;
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|torch.zeros(2,3)|=&gt; tensor([[1., 1., 1.],
+</span><span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[1., 1., 1.]])</span>
+</pre>
+</div></li>
+</ul></li>
+<li>有时候我们想创建一个张量,但是张量中的每个值都是随机的(但是符合某个特定的概率分布),那么我们就要使用randn来创建
+<ul class="org-ul">
+<li><p>
+比如我们要创建一个形状为(2,3)的张量,其中元素从 <b>均值为0,标准差为1的标准高斯分布(正态分布)</b> 中随机采样
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #531ab6;">import</span> torch
+
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|torch.zeros(2,3)|=&gt;"""</span>, torch.randn<span style="color: #dd22dd;">(</span>2, 3<span style="color: #dd22dd;">)</span><span style="color: #000000;">)</span>
+
+<span style="color: #7f0000;"># </span><span style="color: #7f0000;">&lt;====================OUTPUT====================&gt;
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|torch.zeros(2,3)|=&gt; tensor([[-1.9929,  0.7894, -0.3389],
+</span><span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[-0.3312,  1.5500,  0.9451]])</span>
+</pre>
+</div></li>
+</ul></li>
+<li>我们还可以使用python列表(或者嵌套列表)来初始化张量,其中python列表里面详细列举每个位置的数值
+<ul class="org-ul">
+<li><p>
+比如我们使用一个二维数组来初始化一个张量
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #531ab6;">import</span> torch
+
+
+<span style="color: #005e8b;">x</span> = torch.tensor<span style="color: #000000;">(</span><span style="color: #dd22dd;">[</span><span style="color: #008899;">[</span>2, 1, 5, 3<span style="color: #008899;">]</span>, <span style="color: #008899;">[</span>1, 2, 3, 5<span style="color: #008899;">]</span>, <span style="color: #008899;">[</span>5, 3, 2, 1<span style="color: #008899;">]</span><span style="color: #dd22dd;">]</span><span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|x|=&gt;"""</span>, x<span style="color: #000000;">)</span>
+
+<span style="color: #7f0000;"># </span><span style="color: #7f0000;">&lt;====================OUTPUT====================&gt;
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|x|=&gt; tensor([[2, 1, 5, 3],
+</span><span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[1, 2, 3, 5],
+</span><span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[5, 3, 2, 1]])</span>
+</pre>
+</div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org557b2f9" class="outline-4">
+<h4 id="org557b2f9"><span class="section-number-4">2.1.2.</span> 运算符</h4>
+<div class="outline-text-4" id="text-2-1-2">
+<ul class="org-ul">
+<li>在数据上面执行数学运算,最简单且最有用的操作叫做elementwise(按元素运算)
+<ul class="org-ul">
+<li><p>
+下面就是按元素运算最简单的例子: 两个shape完全一样的张量在进行加,减,乘,除,求幂运算的时候,都是elementwise的
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #531ab6;">import</span> torch
+
+<span style="color: #005e8b;">x</span> = torch.tensor<span style="color: #000000;">(</span><span style="color: #dd22dd;">[</span>1, 2, 4, 8<span style="color: #dd22dd;">]</span><span style="color: #000000;">)</span>
+<span style="color: #005e8b;">y</span> = torch.tensor<span style="color: #000000;">(</span><span style="color: #dd22dd;">[</span>2, 2, 2, 2<span style="color: #dd22dd;">]</span><span style="color: #000000;">)</span>
+
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|x+y|=&gt;"""</span>, x + y<span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|x-y|=&gt;"""</span>, x - y<span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|x*y|=&gt;"""</span>, x * y<span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|x/y|=&gt;"""</span>, x / y<span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|x**y|=&gt;"""</span>, x**y<span style="color: #000000;">)</span>
+
+<span style="color: #7f0000;"># </span><span style="color: #7f0000;">&lt;====================OUTPUT====================&gt;
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|x+y|=&gt; tensor([ 3,  4,  6, 10])
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|x-y|=&gt; tensor([-1,  0,  2,  6])
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|x*y|=&gt; tensor([ 2,  4,  8, 16])
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|x/y|=&gt; tensor([0.5000, 1.0000, 2.0000, 4.0000])
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|x**y|=&gt; tensor([ 1,  4, 16, 64])</span>
+</pre>
+</div></li>
+<li><p>
+再比如我们要求 \(e^x\) (自然常数e 为底的幂运算),也是elementwise的
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #531ab6;">import</span> torch
+
+<span style="color: #005e8b;">x</span> = torch.tensor<span style="color: #000000;">(</span><span style="color: #dd22dd;">[</span>1, 2, 4, 8<span style="color: #dd22dd;">]</span><span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|torch.exp(x)|=&gt;"""</span>, torch.exp<span style="color: #dd22dd;">(</span>x<span style="color: #dd22dd;">)</span><span style="color: #000000;">)</span>
+
+<span style="color: #7f0000;"># </span><span style="color: #7f0000;">&lt;====================OUTPUT====================&gt;
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|torch.exp(x)|=&gt; tensor([2.7183e+00, 7.3891e+00, 5.4598e+01, 2.9810e+03])</span>
+</pre>
+</div></li>
+</ul></li>
+<li>我们可以把多个张量cat(连接)起来,连接的时候要指定dim,指定哪个dim.哪个dim的长度不变
+<ul class="org-ul">
+<li><p>
+例子如下
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #531ab6;">import</span> torch
+
+<span style="color: #005e8b;">x</span> = torch.arange<span style="color: #000000;">(</span>6, dtype=torch.float32<span style="color: #000000;">)</span>.reshape<span style="color: #000000;">(</span><span style="color: #dd22dd;">(</span>2, 3<span style="color: #dd22dd;">)</span><span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|x|=&gt;"""</span>, x<span style="color: #000000;">)</span>
+<span style="color: #005e8b;">xx0</span> = torch.cat<span style="color: #000000;">(</span><span style="color: #dd22dd;">(</span>x, x<span style="color: #dd22dd;">)</span>, dim=0<span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|xx0|=&gt;"""</span>, xx0<span style="color: #000000;">)</span>
+<span style="color: #005e8b;">xx1</span> = torch.cat<span style="color: #000000;">(</span><span style="color: #dd22dd;">(</span>x, x<span style="color: #dd22dd;">)</span>, dim=1<span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|xx1|=&gt;"""</span>, xx1<span style="color: #000000;">)</span>
+
+<span style="color: #7f0000;"># </span><span style="color: #7f0000;">&lt;====================OUTPUT====================&gt;
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|x|=&gt; tensor([[0., 1., 2.],
+</span><span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[3., 4., 5.]])
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|xx0|=&gt; tensor([[0., 1., 2.],
+</span><span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[3., 4., 5.],
+</span><span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[0., 1., 2.],
+</span><span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[3., 4., 5.]])
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|xx1|=&gt; tensor([[0., 1., 2., 0., 1., 2.],
+</span><span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[3., 4., 5., 3., 4., 5.]])</span>
+</pre>
+</div></li>
+</ul></li>
+<li>我们当然可以在x和y的shape相同的情况下,进行比较
+<ul class="org-ul">
+<li><p>
+比如x==y的操作,就是比较每一个位置,相同返回True,否则返回False
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #531ab6;">import</span> torch
+
+<span style="color: #005e8b;">x</span> = torch.arange<span style="color: #000000;">(</span>6, dtype=torch.float32<span style="color: #000000;">)</span>.reshape<span style="color: #000000;">(</span><span style="color: #dd22dd;">(</span>2, 3<span style="color: #dd22dd;">)</span><span style="color: #000000;">)</span>
+<span style="color: #005e8b;">y</span> = torch.tensor<span style="color: #000000;">(</span><span style="color: #dd22dd;">[</span><span style="color: #008899;">[</span>1, 2, 3<span style="color: #008899;">]</span>, <span style="color: #008899;">[</span>3, 4, 5<span style="color: #008899;">]</span><span style="color: #dd22dd;">]</span><span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|x|=&gt;"""</span>, x<span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|y|=&gt;"""</span>, y<span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|x == y|=&gt;"""</span>, x == y<span style="color: #000000;">)</span>
+
+<span style="color: #7f0000;"># </span><span style="color: #7f0000;">&lt;====================OUTPUT====================&gt;
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|x|=&gt; tensor([[0., 1., 2.],
+</span><span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[3., 4., 5.]])
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|y|=&gt; tensor([[1, 2, 3],
+</span><span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[3, 4, 5]])
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|x == y|=&gt; tensor([[False, False, False],
+</span><span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[ True,  True,  True]])</span>
+</pre>
+</div></li>
+</ul></li>
+<li><p>
+对张量中所有元素求和会得到一个单元素张量
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #531ab6;">import</span> torch
+
+<span style="color: #005e8b;">x</span> = torch.tensor<span style="color: #000000;">(</span><span style="color: #dd22dd;">[</span><span style="color: #008899;">[</span>1, 2, 3<span style="color: #008899;">]</span>, <span style="color: #008899;">[</span>5, 6, 7<span style="color: #008899;">]</span><span style="color: #dd22dd;">]</span><span style="color: #000000;">)</span>
+<span style="color: #005e8b;">y</span> = x.<span style="color: #8f0075;">sum</span><span style="color: #000000;">()</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|y|=&gt;"""</span>, y<span style="color: #000000;">)</span>
+
+<span style="color: #7f0000;"># </span><span style="color: #7f0000;">&lt;====================OUTPUT====================&gt;
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|y|=&gt; tensor(24)</span>
+</pre>
+</div></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orge3d40c9" class="outline-4">
+<h4 id="orge3d40c9"><span class="section-number-4">2.1.3.</span> 广播机制</h4>
+<div class="outline-text-4" id="text-2-1-3">
+<ul class="org-ul">
+<li>在上面的部分中,我们看到了如何在相同形状的两个张量上执行按元素操作.</li>
+<li>在某些情况下,即使形状不同,我们仍然可以通过调用 广播机制(broadcasting mechanism)来执行按元素操作
+这种机制的工作方式简单来说就是如下两个步骤:
+<ol class="org-ol">
+<li>通过适当复制元素来扩展一个或两个数组,以便在转换之后,两个张量具有相同的形状;</li>
+<li>对生成的数组执行按元素操作.</li>
+</ol></li>
+<li>广播机制来源于numpy,是非常复杂的机制,我们尽可能通过一些例子来了解.完全理解机制确实有些困难
+<ul class="org-ul">
+<li>大多数情况下,张量是沿着长度为1的轴进行"扩张",以便能和其他的张量shape对齐,从而进行操作</li>
+<li><p>
+比如下面的例子,一个shape是(3,1), 一个shape是(1,2), 那么就会都扩展成(3,2)然后运算
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #531ab6;">import</span> torch
+
+<span style="color: #005e8b;">a</span> = torch.arange<span style="color: #000000;">(</span>3<span style="color: #000000;">)</span>.reshape<span style="color: #000000;">(</span><span style="color: #dd22dd;">(</span>3, 1<span style="color: #dd22dd;">)</span><span style="color: #000000;">)</span>
+<span style="color: #005e8b;">b</span> = torch.arange<span style="color: #000000;">(</span>2<span style="color: #000000;">)</span>.reshape<span style="color: #000000;">(</span><span style="color: #dd22dd;">(</span>1, 2<span style="color: #dd22dd;">)</span><span style="color: #000000;">)</span>
+
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|a|=&gt;"""</span>, a<span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|b|=&gt;"""</span>, b<span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|a+b|=&gt;"""</span>, a + b<span style="color: #000000;">)</span>
+
+<span style="color: #7f0000;"># </span><span style="color: #7f0000;">&lt;====================OUTPUT====================&gt;
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|a|=&gt; tensor([[0],
+</span><span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[1],
+</span><span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[2]])
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|b|=&gt; tensor([[0, 1]])
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|a+b|=&gt; tensor([[0, 1],
+</span><span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[1, 2],
+</span><span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[2, 3]])</span>
+</pre>
+</div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgb4518a5" class="outline-4">
+<h4 id="orgb4518a5"><span class="section-number-4">2.1.4.</span> 索引和切片</h4>
+<div class="outline-text-4" id="text-2-1-4">
+<ul class="org-ul">
+<li>张量中的元素也可以通过索引访问,和python数组一样:
+<ul class="org-ul">
+<li>第一个元素的索引是0</li>
+<li>最后一个元素的索引是-1</li>
+<li>可以指定范围用来包含第一个元素和最后一个元素之前的元素</li>
+</ul></li>
+<li><p>
+例子如下
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #531ab6;">import</span> torch
+
+
+<span style="color: #005e8b;">x</span> = torch.arange<span style="color: #000000;">(</span>12<span style="color: #000000;">)</span>.reshape<span style="color: #000000;">(</span>3, 4<span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|x|=&gt;"""</span>, x<span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|x[-1]|=&gt;"""</span>, x<span style="color: #dd22dd;">[</span>-1<span style="color: #dd22dd;">]</span><span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|x[1:3]|=&gt;"""</span>, x<span style="color: #dd22dd;">[</span>1:3<span style="color: #dd22dd;">]</span><span style="color: #000000;">)</span>
+
+<span style="color: #7f0000;"># </span><span style="color: #7f0000;">&lt;====================OUTPUT====================&gt;
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|x|=&gt; tensor([[ 0,  1,  2,  3],
+</span><span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[ 4,  5,  6,  7],
+</span><span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[ 8,  9, 10, 11]])
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|x[-1]|=&gt; tensor([ 8,  9, 10, 11])
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|x[1:3]|=&gt; tensor([[ 4,  5,  6,  7],
+</span><span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[ 8,  9, 10, 11]])</span>
+</pre>
+</div></li>
+<li>我们当然也可以通过制定的位置来更改对应位置的值:
+<ul class="org-ul">
+<li><p>
+更改一个位置的值是很容易理解的:注意用逗号来确认所有的索引位置是numpy特有的
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #531ab6;">import</span> torch
+
+<span style="color: #005e8b;">x</span> = torch.arange<span style="color: #000000;">(</span>12<span style="color: #000000;">)</span>.reshape<span style="color: #000000;">(</span>3, 4<span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|x|=&gt;"""</span>, x<span style="color: #000000;">)</span>
+x<span style="color: #000000;">[</span>0<span style="color: #000000;">][</span>0<span style="color: #000000;">]</span> = 3
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|x|=&gt;"""</span>, x<span style="color: #000000;">)</span>
+<span style="color: #005e8b;">x</span><span style="color: #000000;">[</span>0, 0<span style="color: #000000;">]</span> = 12
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|x|=&gt;"""</span>, x<span style="color: #000000;">)</span>
+
+<span style="color: #7f0000;"># </span><span style="color: #7f0000;">&lt;====================OUTPUT====================&gt;
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|x|=&gt; tensor([[ 0,  1,  2,  3],
+</span><span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[ 4,  5,  6,  7],
+</span><span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[ 8,  9, 10, 11]])
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|x|=&gt; tensor([[ 3,  1,  2,  3],
+</span><span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[ 4,  5,  6,  7],
+</span><span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[ 8,  9, 10, 11]])
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|x|=&gt; tensor([[12,  1,  2,  3],
+</span><span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[ 4,  5,  6,  7],
+</span><span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[ 8,  9, 10, 11]])</span>
+</pre>
+</div></li>
+<li><p>
+如果想一次更改很多位置的值,那么就要更复杂的索引方法,如下
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #531ab6;">import</span> numpy <span style="color: #531ab6;">as</span> np
+
+<span style="color: #005e8b;">x</span> = np.array<span style="color: #000000;">(</span><span style="color: #dd22dd;">[</span><span style="color: #008899;">[</span>1, 2, 3<span style="color: #008899;">]</span>, <span style="color: #008899;">[</span>4, 5, 6<span style="color: #008899;">]</span>, <span style="color: #008899;">[</span>7, 8, 9<span style="color: #008899;">]</span><span style="color: #dd22dd;">]</span><span style="color: #000000;">)</span>
+
+<span style="color: #005e8b;">x</span><span style="color: #000000;">[</span>0:2, :<span style="color: #000000;">]</span> = 12
+
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|x|=&gt;"""</span>, x<span style="color: #000000;">)</span>
+
+<span style="color: #7f0000;"># </span><span style="color: #7f0000;">&lt;====================OUTPUT====================&gt;
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|x|=&gt; [[12 12 12]
+</span><span style="color: #7f0000;">#  </span><span style="color: #7f0000;">[12 12 12]
+</span><span style="color: #7f0000;">#  </span><span style="color: #7f0000;">[ 7  8  9]]</span>
+</pre>
+</div></li>
+<li>上例中的[0:2,:]是用","分割的两个部分:
+<ol class="org-ol">
+<li>","前面表示第0行和第1行,</li>
+<li>","后面表示圈定行的所有列</li>
+</ol></li>
+<li>综合起来就是前两行所有成员都赋值为12</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgd13dad2" class="outline-4">
+<h4 id="orgd13dad2"><span class="section-number-4">2.1.5.</span> 节省内存</h4>
+<div class="outline-text-4" id="text-2-1-5">
+<ul class="org-ul">
+<li>Python中有些操作会重新分配内存,在机器学习中是不可取的(浪费内存)
+<ul class="org-ul">
+<li><p>
+例子如下
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #531ab6;">import</span> torch
+
+<span style="color: #005e8b;">x</span> = torch.arange<span style="color: #000000;">(</span>5<span style="color: #000000;">)</span>
+<span style="color: #005e8b;">y</span> = torch.arange<span style="color: #000000;">(</span>5<span style="color: #000000;">)</span>
+
+<span style="color: #005e8b;">before</span> = <span style="color: #8f0075;">id</span><span style="color: #000000;">(</span>y<span style="color: #000000;">)</span>
+<span style="color: #005e8b;">y</span> = y + x
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|before|=&gt;"""</span>, before<span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|id(y)|=&gt;"""</span>, <span style="color: #8f0075;">id</span><span style="color: #dd22dd;">(</span>y<span style="color: #dd22dd;">)</span><span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|id(y) == before|=&gt;"""</span>, <span style="color: #8f0075;">id</span><span style="color: #dd22dd;">(</span>y<span style="color: #dd22dd;">)</span> == before<span style="color: #000000;">)</span>
+
+<span style="color: #7f0000;"># </span><span style="color: #7f0000;">&lt;====================OUTPUT====================&gt;
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|before|=&gt; 4312662256
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|id(y)|=&gt; 4312748096
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|id(y) == before|=&gt; False</span>
+</pre>
+</div></li>
+<li>上例中由于python先计算y+x,然后为这个结果分配一片新内存.然后把这个内存又让y变量给tag上.</li>
+<li>老的内存块如果仍然有其他对象引用着,那么也不会释放,这样一来就有额外多申请了一片内存</li>
+</ul></li>
+<li>应对的方法是使用label[:]=&lt;expression&gt;来强制分配给label之前的内存
+<ul class="org-ul">
+<li><p>
+上面的例子就可以转换为如下
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #531ab6;">import</span> torch
+
+<span style="color: #005e8b;">x</span> = torch.arange<span style="color: #000000;">(</span>5<span style="color: #000000;">)</span>
+<span style="color: #005e8b;">y</span> = torch.arange<span style="color: #000000;">(</span>5<span style="color: #000000;">)</span>
+
+<span style="color: #005e8b;">before</span> = <span style="color: #8f0075;">id</span><span style="color: #000000;">(</span>y<span style="color: #000000;">)</span>
+<span style="color: #005e8b;">y</span><span style="color: #000000;">[</span>:<span style="color: #000000;">]</span> = y + x
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|before|=&gt;"""</span>, before<span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|id(y)|=&gt;"""</span>, <span style="color: #8f0075;">id</span><span style="color: #dd22dd;">(</span>y<span style="color: #dd22dd;">)</span><span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|id(y) == before|=&gt;"""</span>, <span style="color: #8f0075;">id</span><span style="color: #dd22dd;">(</span>y<span style="color: #dd22dd;">)</span> == before<span style="color: #000000;">)</span>
+
+<span style="color: #7f0000;"># </span><span style="color: #7f0000;">&lt;====================OUTPUT====================&gt;
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|before|=&gt; 4386603248
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|id(y)|=&gt; 4386603248
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|id(y) == before|=&gt; True</span>
+</pre>
+</div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgd8e65c8" class="outline-4">
+<h4 id="orgd8e65c8"><span class="section-number-4">2.1.6.</span> 转换为其他Python对象</h4>
+<div class="outline-text-4" id="text-2-1-6">
+<ul class="org-ul">
+<li><p>
+由于张量本来就是由numpy数组实现的,所以张量和numpy数组直接在转换非常容易
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #531ab6;">import</span> torch
+
+<span style="color: #005e8b;">X</span> = torch.arange<span style="color: #000000;">(</span>5<span style="color: #000000;">)</span>
+<span style="color: #005e8b;">A</span> = X.numpy<span style="color: #000000;">()</span>
+<span style="color: #005e8b;">B</span> = torch.tensor<span style="color: #000000;">(</span>A<span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|type(A)|=&gt;"""</span>, <span style="color: #8f0075;">type</span><span style="color: #dd22dd;">(</span>A<span style="color: #dd22dd;">)</span><span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|type(B)|=&gt;"""</span>, <span style="color: #8f0075;">type</span><span style="color: #dd22dd;">(</span>B<span style="color: #dd22dd;">)</span><span style="color: #000000;">)</span>
+
+<span style="color: #7f0000;"># </span><span style="color: #7f0000;">&lt;====================OUTPUT====================&gt;
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|type(A)|=&gt; &lt;class 'numpy.ndarray'&gt;
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|type(B)|=&gt; &lt;class 'torch.Tensor'&gt;</span>
+</pre>
+</div></li>
+<li><p>
+如果要将大小为1的张量转换为python标量,我们可以调用item函数或者python内置函数
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #531ab6;">import</span> torch
+
+<span style="color: #005e8b;">a</span> = torch.tensor<span style="color: #000000;">(</span><span style="color: #dd22dd;">[</span>3.5<span style="color: #dd22dd;">]</span><span style="color: #000000;">)</span>
+
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|a|=&gt;"""</span>, a<span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|a.item()|=&gt;"""</span>, a.item<span style="color: #dd22dd;">()</span><span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|float(a)|=&gt;"""</span>, <span style="color: #8f0075;">float</span><span style="color: #dd22dd;">(</span>a<span style="color: #dd22dd;">)</span><span style="color: #000000;">)</span>
+
+<span style="color: #7f0000;"># </span><span style="color: #7f0000;">&lt;====================OUTPUT====================&gt;
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|a|=&gt; tensor([3.5000])
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|a.item()|=&gt; 3.5
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|float(a)|=&gt; 3.5</span>
+</pre>
+</div></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgc6e8157" class="outline-3">
+<h3 id="orgc6e8157"><span class="section-number-3">2.2.</span> 数据预处理</h3>
+<div class="outline-text-3" id="text-2-2">
+</div>
+<div id="outline-container-org364145c" class="outline-4">
+<h4 id="org364145c"><span class="section-number-4">2.2.1.</span> 读取数据集</h4>
+<div class="outline-text-4" id="text-2-2-1">
+<ul class="org-ul">
+<li><p>
+在机器学习领域,所谓的读取数据,其实都是使用pandas进行读和写,下面这个例子就是我们首先创建一个文件写入
+一些数据,然后再读出来.整个过程使用pandas来处理csv格式文件
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #531ab6;">import</span> os
+<span style="color: #531ab6;">import</span> pandas <span style="color: #531ab6;">as</span> pd
+
+os.makedirs<span style="color: #000000;">(</span>os.path.join<span style="color: #dd22dd;">(</span><span style="color: #3548cf;">".."</span>, <span style="color: #3548cf;">"data"</span><span style="color: #dd22dd;">)</span>, exist_ok=<span style="color: #0000b0;">True</span><span style="color: #000000;">)</span>
+<span style="color: #005e8b;">data_file</span> = os.path.join<span style="color: #000000;">(</span><span style="color: #3548cf;">".."</span>, <span style="color: #3548cf;">"data"</span>, <span style="color: #3548cf;">"house_tiny.csv"</span><span style="color: #000000;">)</span>
+
+<span style="color: #531ab6;">with</span> <span style="color: #8f0075;">open</span><span style="color: #000000;">(</span>data_file, <span style="color: #3548cf;">"w"</span><span style="color: #000000;">)</span> <span style="color: #531ab6;">as</span> f:
+    f.write<span style="color: #000000;">(</span><span style="color: #3548cf;">"NumRooms,Alley,Price</span><span style="color: #0000b0;">\n</span><span style="color: #3548cf;">"</span><span style="color: #000000;">)</span>  <span style="color: #7f0000;"># </span><span style="color: #7f0000;">&#21015;&#21517;
+</span>    f.write<span style="color: #000000;">(</span><span style="color: #3548cf;">"NA,Pave,127500</span><span style="color: #0000b0;">\n</span><span style="color: #3548cf;">"</span><span style="color: #000000;">)</span>  <span style="color: #7f0000;"># </span><span style="color: #7f0000;">&#27599;&#34892;&#34920;&#31034;&#19968;&#20010;&#25968;&#25454;&#26679;&#26412;
+</span>    f.write<span style="color: #000000;">(</span><span style="color: #3548cf;">"2,NA,106000</span><span style="color: #0000b0;">\n</span><span style="color: #3548cf;">"</span><span style="color: #000000;">)</span>
+    f.write<span style="color: #000000;">(</span><span style="color: #3548cf;">"4,NA,178100</span><span style="color: #0000b0;">\n</span><span style="color: #3548cf;">"</span><span style="color: #000000;">)</span>
+    f.write<span style="color: #000000;">(</span><span style="color: #3548cf;">"NA,NA,140000</span><span style="color: #0000b0;">\n</span><span style="color: #3548cf;">"</span><span style="color: #000000;">)</span>
+
+<span style="color: #005e8b;">data</span> = pd.read_csv<span style="color: #000000;">(</span>data_file<span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span>data<span style="color: #000000;">)</span>
+
+<span style="color: #7f0000;"># </span><span style="color: #7f0000;">&lt;====================OUTPUT====================&gt;
+</span><span style="color: #7f0000;">#    </span><span style="color: #7f0000;">NumRooms Alley   Price
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">0       NaN  Pave  127500
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">1       2.0   NaN  106000
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">2       4.0   NaN  178100
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">3       NaN   NaN  140000</span>
+</pre>
+</div></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org6f68925" class="outline-4">
+<h4 id="org6f68925"><span class="section-number-4">2.2.2.</span> 处理缺失值</h4>
+<div class="outline-text-4" id="text-2-2-2">
+<ul class="org-ul">
+<li>上面例子中的NaN代表缺失值,为了处理缺失数据,典型的方法包括插值法和删除法.</li>
+<li><p>
+插值法就是用一个默认值代替,我们很容易想到使用0来代替默认值
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #531ab6;">import</span> tempfile
+<span style="color: #531ab6;">import</span> os
+<span style="color: #531ab6;">import</span> pandas <span style="color: #531ab6;">as</span> pd
+
+<span style="color: #7f0000;"># </span><span style="color: #7f0000;">&#22312;&#31995;&#32479;&#20020;&#26102;&#30446;&#24405;&#21019;&#24314;&#19968;&#20010;&#24102;&#21517;&#23383;&#30340;&#20020;&#26102;&#25991;&#20214;
+</span><span style="color: #005e8b;">tmp_file</span> = tempfile.NamedTemporaryFile<span style="color: #000000;">(</span>delete=<span style="color: #0000b0;">False</span>, suffix=<span style="color: #3548cf;">".csv"</span><span style="color: #000000;">)</span>
+<span style="color: #005e8b;">data_file</span> = tmp_file.name  <span style="color: #7f0000;"># </span><span style="color: #7f0000;">&#20020;&#26102;&#25991;&#20214;&#36335;&#24452;
+</span>tmp_file.close<span style="color: #000000;">()</span>  <span style="color: #7f0000;"># </span><span style="color: #7f0000;">&#20808;&#20851;&#38381;,&#35753;&#21518;&#38754;&#21487;&#20197;&#27491;&#24120;&#20889;&#20837;
+</span>
+<span style="color: #7f0000;"># </span><span style="color: #7f0000;">&#20889;&#20837;&#25968;&#25454;
+</span><span style="color: #531ab6;">with</span> <span style="color: #8f0075;">open</span><span style="color: #000000;">(</span>data_file, <span style="color: #3548cf;">"w"</span><span style="color: #000000;">)</span> <span style="color: #531ab6;">as</span> f:
+    f.write<span style="color: #000000;">(</span><span style="color: #3548cf;">"NumRooms,Alley,Price</span><span style="color: #0000b0;">\n</span><span style="color: #3548cf;">"</span><span style="color: #000000;">)</span>
+    f.write<span style="color: #000000;">(</span><span style="color: #3548cf;">"NA,Pave,127500</span><span style="color: #0000b0;">\n</span><span style="color: #3548cf;">"</span><span style="color: #000000;">)</span>
+    f.write<span style="color: #000000;">(</span><span style="color: #3548cf;">"2,NA,106000</span><span style="color: #0000b0;">\n</span><span style="color: #3548cf;">"</span><span style="color: #000000;">)</span>
+    f.write<span style="color: #000000;">(</span><span style="color: #3548cf;">"4,NA,178100</span><span style="color: #0000b0;">\n</span><span style="color: #3548cf;">"</span><span style="color: #000000;">)</span>
+    f.write<span style="color: #000000;">(</span><span style="color: #3548cf;">"NA,NA,140000</span><span style="color: #0000b0;">\n</span><span style="color: #3548cf;">"</span><span style="color: #000000;">)</span>
+
+<span style="color: #7f0000;"># </span><span style="color: #7f0000;">&#35835;&#21462;&#25968;&#25454;
+</span><span style="color: #005e8b;">data</span> = pd.read_csv<span style="color: #000000;">(</span>data_file<span style="color: #000000;">)</span>
+<span style="color: #005e8b;">inputs</span>, <span style="color: #005e8b;">outputs</span> = data.iloc<span style="color: #000000;">[</span>:, 0:2<span style="color: #000000;">]</span>, data.iloc<span style="color: #000000;">[</span>:, 2<span style="color: #000000;">]</span>
+<span style="color: #005e8b;">inputs</span> = inputs.fillna<span style="color: #000000;">(</span>0<span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span>inputs<span style="color: #000000;">)</span>
+
+<span style="color: #7f0000;"># </span><span style="color: #7f0000;">&lt;====================OUTPUT====================&gt;
+</span><span style="color: #7f0000;">#    </span><span style="color: #7f0000;">NumRooms Alley
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">0       0.0  Pave
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">1       2.0     0
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">2       4.0     0
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">3       0.0     0</span>
+</pre>
+</div></li>
+<li><p>
+上面的例子使用了0以后,Alley这个本来不是数值型的列也被设置成了0,这个是不合适的.我们可以使用"平均值"
+来设置列的值,同时把非数值型的给排除(非数值型也没法算平均值)
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #531ab6;">import</span> tempfile
+<span style="color: #531ab6;">import</span> os
+<span style="color: #531ab6;">import</span> pandas <span style="color: #531ab6;">as</span> pd
+
+<span style="color: #7f0000;"># </span><span style="color: #7f0000;">&#22312;&#31995;&#32479;&#20020;&#26102;&#30446;&#24405;&#21019;&#24314;&#19968;&#20010;&#24102;&#21517;&#23383;&#30340;&#20020;&#26102;&#25991;&#20214;
+</span><span style="color: #005e8b;">tmp_file</span> = tempfile.NamedTemporaryFile<span style="color: #000000;">(</span>delete=<span style="color: #0000b0;">False</span>, suffix=<span style="color: #3548cf;">".csv"</span><span style="color: #000000;">)</span>
+<span style="color: #005e8b;">data_file</span> = tmp_file.name  <span style="color: #7f0000;"># </span><span style="color: #7f0000;">&#20020;&#26102;&#25991;&#20214;&#36335;&#24452;
+</span>tmp_file.close<span style="color: #000000;">()</span>  <span style="color: #7f0000;"># </span><span style="color: #7f0000;">&#20808;&#20851;&#38381;,&#35753;&#21518;&#38754;&#21487;&#20197;&#27491;&#24120;&#20889;&#20837;
+</span>
+<span style="color: #7f0000;"># </span><span style="color: #7f0000;">&#20889;&#20837;&#25968;&#25454;
+</span><span style="color: #531ab6;">with</span> <span style="color: #8f0075;">open</span><span style="color: #000000;">(</span>data_file, <span style="color: #3548cf;">"w"</span><span style="color: #000000;">)</span> <span style="color: #531ab6;">as</span> f:
+    f.write<span style="color: #000000;">(</span><span style="color: #3548cf;">"NumRooms,Alley,Price</span><span style="color: #0000b0;">\n</span><span style="color: #3548cf;">"</span><span style="color: #000000;">)</span>
+    f.write<span style="color: #000000;">(</span><span style="color: #3548cf;">"NA,Pave,127500</span><span style="color: #0000b0;">\n</span><span style="color: #3548cf;">"</span><span style="color: #000000;">)</span>
+    f.write<span style="color: #000000;">(</span><span style="color: #3548cf;">"2,NA,106000</span><span style="color: #0000b0;">\n</span><span style="color: #3548cf;">"</span><span style="color: #000000;">)</span>
+    f.write<span style="color: #000000;">(</span><span style="color: #3548cf;">"4,NA,178100</span><span style="color: #0000b0;">\n</span><span style="color: #3548cf;">"</span><span style="color: #000000;">)</span>
+    f.write<span style="color: #000000;">(</span><span style="color: #3548cf;">"NA,NA,140000</span><span style="color: #0000b0;">\n</span><span style="color: #3548cf;">"</span><span style="color: #000000;">)</span>
+
+<span style="color: #7f0000;"># </span><span style="color: #7f0000;">&#35835;&#21462;&#25968;&#25454;
+</span><span style="color: #005e8b;">data</span> = pd.read_csv<span style="color: #000000;">(</span>data_file<span style="color: #000000;">)</span>
+<span style="color: #005e8b;">inputs</span>, <span style="color: #005e8b;">outputs</span> = data.iloc<span style="color: #000000;">[</span>:, 0:2<span style="color: #000000;">]</span>, data.iloc<span style="color: #000000;">[</span>:, 2<span style="color: #000000;">]</span>
+<span style="color: #005e8b;">inputs</span> = inputs.fillna<span style="color: #000000;">(</span>inputs.mean<span style="color: #dd22dd;">(</span>numeric_only=<span style="color: #0000b0;">True</span><span style="color: #dd22dd;">)</span><span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span>inputs<span style="color: #000000;">)</span>
+
+
+<span style="color: #7f0000;"># </span><span style="color: #7f0000;">&lt;====================OUTPUT====================&gt;
+</span><span style="color: #7f0000;">#    </span><span style="color: #7f0000;">NumRooms Alley
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">0       3.0  Pave
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">1       2.0   NaN
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">2       4.0   NaN
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">3       3.0   NaN</span>
+</pre>
+</div></li>
+<li>好了,问题又来了:
+<ul class="org-ul">
+<li>第一个例子中Alley被分成了两种类型:Pave和0, 字符串和数字</li>
+<li>第二个例子中Alley被分成了两种类型:Pave和NaN, 字符串和NaN</li>
+</ul></li>
+<li>能不能让Alley被分成两种相同的类型,比如都是布尔: True和False(用来表示是否是Pave,或者是否是NaN)
+<ul class="org-ul">
+<li><p>
+答案肯定是可以的,这就是函数get_dummies的作用
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #531ab6;">import</span> tempfile
+<span style="color: #531ab6;">import</span> os
+<span style="color: #531ab6;">import</span> pandas <span style="color: #531ab6;">as</span> pd
+
+<span style="color: #7f0000;"># </span><span style="color: #7f0000;">&#22312;&#31995;&#32479;&#20020;&#26102;&#30446;&#24405;&#21019;&#24314;&#19968;&#20010;&#24102;&#21517;&#23383;&#30340;&#20020;&#26102;&#25991;&#20214;
+</span><span style="color: #005e8b;">tmp_file</span> = tempfile.NamedTemporaryFile<span style="color: #000000;">(</span>delete=<span style="color: #0000b0;">False</span>, suffix=<span style="color: #3548cf;">".csv"</span><span style="color: #000000;">)</span>
+<span style="color: #005e8b;">data_file</span> = tmp_file.name  <span style="color: #7f0000;"># </span><span style="color: #7f0000;">&#20020;&#26102;&#25991;&#20214;&#36335;&#24452;
+</span>tmp_file.close<span style="color: #000000;">()</span>  <span style="color: #7f0000;"># </span><span style="color: #7f0000;">&#20808;&#20851;&#38381;,&#35753;&#21518;&#38754;&#21487;&#20197;&#27491;&#24120;&#20889;&#20837;
+</span>
+<span style="color: #7f0000;"># </span><span style="color: #7f0000;">&#20889;&#20837;&#25968;&#25454;
+</span><span style="color: #531ab6;">with</span> <span style="color: #8f0075;">open</span><span style="color: #000000;">(</span>data_file, <span style="color: #3548cf;">"w"</span><span style="color: #000000;">)</span> <span style="color: #531ab6;">as</span> f:
+    f.write<span style="color: #000000;">(</span><span style="color: #3548cf;">"NumRooms,Alley,Price</span><span style="color: #0000b0;">\n</span><span style="color: #3548cf;">"</span><span style="color: #000000;">)</span>
+    f.write<span style="color: #000000;">(</span><span style="color: #3548cf;">"NA,Pave,127500</span><span style="color: #0000b0;">\n</span><span style="color: #3548cf;">"</span><span style="color: #000000;">)</span>
+    f.write<span style="color: #000000;">(</span><span style="color: #3548cf;">"2,NA,106000</span><span style="color: #0000b0;">\n</span><span style="color: #3548cf;">"</span><span style="color: #000000;">)</span>
+    f.write<span style="color: #000000;">(</span><span style="color: #3548cf;">"4,NA,178100</span><span style="color: #0000b0;">\n</span><span style="color: #3548cf;">"</span><span style="color: #000000;">)</span>
+    f.write<span style="color: #000000;">(</span><span style="color: #3548cf;">"NA,NA,140000</span><span style="color: #0000b0;">\n</span><span style="color: #3548cf;">"</span><span style="color: #000000;">)</span>
+
+<span style="color: #7f0000;"># </span><span style="color: #7f0000;">&#35835;&#21462;&#25968;&#25454;
+</span><span style="color: #005e8b;">data</span> = pd.read_csv<span style="color: #000000;">(</span>data_file<span style="color: #000000;">)</span>
+<span style="color: #005e8b;">inputs</span>, <span style="color: #005e8b;">outputs</span> = data.iloc<span style="color: #000000;">[</span>:, 0:2<span style="color: #000000;">]</span>, data.iloc<span style="color: #000000;">[</span>:, 2<span style="color: #000000;">]</span>
+<span style="color: #005e8b;">inputs</span> = inputs.fillna<span style="color: #000000;">(</span>inputs.mean<span style="color: #dd22dd;">(</span>numeric_only=<span style="color: #0000b0;">True</span><span style="color: #dd22dd;">)</span><span style="color: #000000;">)</span>
+<span style="color: #005e8b;">inputs</span> = pd.get_dummies<span style="color: #000000;">(</span>inputs, dummy_na=<span style="color: #0000b0;">True</span><span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span>inputs<span style="color: #000000;">)</span>
+
+<span style="color: #7f0000;"># </span><span style="color: #7f0000;">&lt;====================OUTPUT====================&gt;
+</span><span style="color: #7f0000;">#    </span><span style="color: #7f0000;">NumRooms  Alley_Pave  Alley_nan
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">0       3.0        True      False
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">1       2.0       False       True
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">2       4.0       False       True
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">3       3.0       False       True</span>
+</pre>
+</div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org1a1a354" class="outline-4">
+<h4 id="org1a1a354"><span class="section-number-4">2.2.3.</span> 转换为张量格式</h4>
+<div class="outline-text-4" id="text-2-2-3">
+<ul class="org-ul">
+<li><p>
+当前outputs都是数值格式了,inputs的最后两列是布尔格式,但是可以转换为数值格式,那么这种情况下就可以把
+pandas的DataFrame和张量进行转换了,示例如下
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #531ab6;">import</span> tempfile
+<span style="color: #531ab6;">import</span> os
+<span style="color: #531ab6;">import</span> pandas <span style="color: #531ab6;">as</span> pd
+<span style="color: #531ab6;">import</span> torch
+
+<span style="color: #7f0000;"># </span><span style="color: #7f0000;">&#22312;&#31995;&#32479;&#20020;&#26102;&#30446;&#24405;&#21019;&#24314;&#19968;&#20010;&#24102;&#21517;&#23383;&#30340;&#20020;&#26102;&#25991;&#20214;
+</span><span style="color: #005e8b;">tmp_file</span> = tempfile.NamedTemporaryFile<span style="color: #000000;">(</span>delete=<span style="color: #0000b0;">False</span>, suffix=<span style="color: #3548cf;">".csv"</span><span style="color: #000000;">)</span>
+<span style="color: #005e8b;">data_file</span> = tmp_file.name  <span style="color: #7f0000;"># </span><span style="color: #7f0000;">&#20020;&#26102;&#25991;&#20214;&#36335;&#24452;
+</span>tmp_file.close<span style="color: #000000;">()</span>  <span style="color: #7f0000;"># </span><span style="color: #7f0000;">&#20808;&#20851;&#38381;,&#35753;&#21518;&#38754;&#21487;&#20197;&#27491;&#24120;&#20889;&#20837;
+</span>
+<span style="color: #7f0000;"># </span><span style="color: #7f0000;">&#20889;&#20837;&#25968;&#25454;
+</span><span style="color: #531ab6;">with</span> <span style="color: #8f0075;">open</span><span style="color: #000000;">(</span>data_file, <span style="color: #3548cf;">"w"</span><span style="color: #000000;">)</span> <span style="color: #531ab6;">as</span> f:
+    f.write<span style="color: #000000;">(</span><span style="color: #3548cf;">"NumRooms,Alley,Price</span><span style="color: #0000b0;">\n</span><span style="color: #3548cf;">"</span><span style="color: #000000;">)</span>
+    f.write<span style="color: #000000;">(</span><span style="color: #3548cf;">"NA,Pave,127500</span><span style="color: #0000b0;">\n</span><span style="color: #3548cf;">"</span><span style="color: #000000;">)</span>
+    f.write<span style="color: #000000;">(</span><span style="color: #3548cf;">"2,NA,106000</span><span style="color: #0000b0;">\n</span><span style="color: #3548cf;">"</span><span style="color: #000000;">)</span>
+    f.write<span style="color: #000000;">(</span><span style="color: #3548cf;">"4,NA,178100</span><span style="color: #0000b0;">\n</span><span style="color: #3548cf;">"</span><span style="color: #000000;">)</span>
+    f.write<span style="color: #000000;">(</span><span style="color: #3548cf;">"NA,NA,140000</span><span style="color: #0000b0;">\n</span><span style="color: #3548cf;">"</span><span style="color: #000000;">)</span>
+
+<span style="color: #7f0000;"># </span><span style="color: #7f0000;">&#35835;&#21462;&#25968;&#25454;
+</span><span style="color: #005e8b;">data</span> = pd.read_csv<span style="color: #000000;">(</span>data_file<span style="color: #000000;">)</span>
+<span style="color: #005e8b;">inputs</span>, <span style="color: #005e8b;">outputs</span> = data.iloc<span style="color: #000000;">[</span>:, 0:2<span style="color: #000000;">]</span>, data.iloc<span style="color: #000000;">[</span>:, 2<span style="color: #000000;">]</span>
+<span style="color: #005e8b;">inputs</span> = inputs.fillna<span style="color: #000000;">(</span>inputs.mean<span style="color: #dd22dd;">(</span>numeric_only=<span style="color: #0000b0;">True</span><span style="color: #dd22dd;">)</span><span style="color: #000000;">)</span>
+<span style="color: #005e8b;">inputs</span> = pd.get_dummies<span style="color: #000000;">(</span>inputs, dummy_na=<span style="color: #0000b0;">True</span><span style="color: #000000;">)</span>
+<span style="color: #005e8b;">X</span> = torch.tensor<span style="color: #000000;">(</span>inputs.to_numpy<span style="color: #dd22dd;">(</span>dtype=<span style="color: #8f0075;">float</span><span style="color: #dd22dd;">)</span><span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|X|=&gt;"""</span>, X<span style="color: #000000;">)</span>
+<span style="color: #005e8b;">Y</span> = torch.tensor<span style="color: #000000;">(</span>outputs.to_numpy<span style="color: #dd22dd;">(</span>dtype=<span style="color: #8f0075;">float</span><span style="color: #dd22dd;">)</span><span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|Y|=&gt;"""</span>, Y<span style="color: #000000;">)</span>
+
+<span style="color: #7f0000;"># </span><span style="color: #7f0000;">&lt;====================OUTPUT====================&gt;
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|X|=&gt; tensor([[3., 1., 0.],
+</span><span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[2., 0., 1.],
+</span><span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[4., 0., 1.],
+</span><span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[3., 0., 1.]], dtype=torch.float64)
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|Y|=&gt; tensor([127500., 106000., 178100., 140000.], dtype=torch.float64)</span>
+</pre>
+</div></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org45df5ab" class="outline-3">
+<h3 id="org45df5ab"><span class="section-number-3">2.3.</span> 线性代数</h3>
+<div class="outline-text-3" id="text-2-3">
+<ul class="org-ul">
+<li>本节简单回顾下线性代数</li>
+</ul>
+</div>
+<div id="outline-container-orgb351b94" class="outline-4">
+<h4 id="orgb351b94"><span class="section-number-4">2.3.1.</span> 标量</h4>
+<div class="outline-text-4" id="text-2-3-1">
+<ul class="org-ul">
+<li>我们可以用一个公式来转换华氏温度(f表示)和摄氏温度 (c表示)
+<ul class="org-ul">
+<li><p>
+公式如下
+</p>
+\begin{equation}
+c = \frac{5}{9}(f-32) \notag
+\end{equation}</li>
+<li>其中5, 9, 32 都是标量(scalar)</li>
+<li>符号c和f被称之为变量(variable),可以理解为未知的标量</li>
+</ul></li>
+<li>本书有如下规定:
+<ul class="org-ul">
+<li>标量和变量由小写字母表示(比如x,y,z)</li>
+<li>本书使用 \(\mathbb{R}\) 表示所有(连续)实数标量的空间</li>
+</ul></li>
+<li><p>
+在pytorch里面,标量是只有一个成员的张量,例子如下
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #531ab6;">import</span> torch
+
+<span style="color: #005e8b;">x</span> = torch.tensor<span style="color: #000000;">(</span>3.0<span style="color: #000000;">)</span>
+<span style="color: #005e8b;">y</span> = torch.tensor<span style="color: #000000;">(</span>2.0<span style="color: #000000;">)</span>
+
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|x+y|=&gt;"""</span>, x + y<span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|x*y|=&gt;"""</span>, x * y<span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|x/y|=&gt;"""</span>, x / y<span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|x**y|=&gt;"""</span>, x**y<span style="color: #000000;">)</span>
+
+<span style="color: #7f0000;"># </span><span style="color: #7f0000;">&lt;====================OUTPUT====================&gt;
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|x+y|=&gt; tensor(5.)
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|x*y|=&gt; tensor(6.)
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|x/y|=&gt; tensor(1.5000)
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|x**y|=&gt; tensor(9.)</span>
+</pre>
+</div></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org4616185" class="outline-4">
+<h4 id="org4616185"><span class="section-number-4">2.3.2.</span> 向量</h4>
+<div class="outline-text-4" id="text-2-3-2">
+<ul class="org-ul">
+<li>向量可以被视为标量值组成的列表.这些标量值被称为向量的元素(element)或分量(component).</li>
+<li>当向量表示数据集中的样本时,它们的值具有一定的现实意义.
+<ul class="org-ul">
+<li>例如,如果我们正在训练一个模型来预测贷款违约风险,可能会将每个申请人与一个向量相关联,其分量与其
+收入,工作年限,过往违约次数和其他因素相对应.</li>
+<li>如果我们正在研究医院患者可能面临的心脏病发作风险,可能会用一个向量来表示每个患者,其分量为最近的
+生命体征,胆固醇水平,每天运动时间等.</li>
+</ul></li>
+<li>在数学表示法中,向量通常记为粗体,小写的符号(例如,x,y和z)
+<ul class="org-ul">
+<li><p>
+人们通过一维张量表示向量.一般来说,张量可以具有任意长度,取决于机器的内存限制
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #531ab6;">import</span> torch
+
+<span style="color: #005e8b;">x</span> = torch.arange<span style="color: #000000;">(</span>4<span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|x|=&gt;"""</span>, x<span style="color: #000000;">)</span>
+
+<span style="color: #7f0000;"># </span><span style="color: #7f0000;">&lt;====================OUTPUT====================&gt;
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|x|=&gt; tensor([0, 1, 2, 3])</span>
+</pre>
+</div></li>
+</ul></li>
+<li>我们可以使用下标来引用向量的任一元素,例如可以通过 \(x_i\) 来引用第i个元素.注意,元素xi是一个标量,
+所以我们在引用它时不会加粗.大量文献认为列向量是向量的默认方向,在本书中也是如此.
+<ul class="org-ul">
+<li><p>
+在数学中,向量x可以如下书写
+</p>
+\begin{equation}
+\mathbf{x} =
+\begin{bmatrix}
+x_{1} \\
+x_{2} \\
+\vdots \\
+x_{n}
+\end{bmatrix},
+\tag{2.3.1}
+\end{equation}</li>
+<li><p>
+其中 \(x_1, \cdots, x_n\) 是向量的元素,在代码中,我们通过张量的索引来达到访问任意元素的目的
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #531ab6;">import</span> torch
+
+<span style="color: #005e8b;">x</span> = torch.arange<span style="color: #000000;">(</span>4<span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|x[3]|=&gt;"""</span>, x<span style="color: #dd22dd;">[</span>3<span style="color: #dd22dd;">]</span><span style="color: #000000;">)</span>
+
+<span style="color: #7f0000;"># </span><span style="color: #7f0000;">&lt;====================OUTPUT====================&gt;
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|x[3]|=&gt; tensor(3)</span>
+</pre>
+</div></li>
+</ul></li>
+</ul>
+</div>
+<ol class="org-ol">
+<li><a id="orgd60cdb7"></a>长度,维度和形状<br />
+<div class="outline-text-5" id="text-2-3-2-1">
+<ul class="org-ul">
+<li>向量只是一个数字数组,就像每个数组都有一个长度一样,每个向量也是如此.</li>
+<li>在数学表示法中,如果我们想说一个向量x由n个实值标量组成,可以将其表示为\(x \in \mathbb{R}^n\)</li>
+<li>向量的长度通常称为向量的维度(dimension).
+<ul class="org-ul">
+<li><p>
+与普通的Python数组一样,我们可以通过调用Python的内置len()函数来访问张量的长度.
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #531ab6;">import</span> torch
+
+<span style="color: #005e8b;">x</span> = torch.arange<span style="color: #000000;">(</span>5<span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|len(x)|=&gt;"""</span>, <span style="color: #8f0075;">len</span><span style="color: #dd22dd;">(</span>x<span style="color: #dd22dd;">)</span><span style="color: #000000;">)</span>
+
+<span style="color: #7f0000;"># </span><span style="color: #7f0000;">&lt;====================OUTPUT====================&gt;
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|len(x)|=&gt; 5</span>
+</pre>
+</div></li>
+<li><p>
+当用张量表示一个向量(只有一个轴)时,我们也可以通过.shape属性访问向量的长度.形状(shape)是一个
+元素组,列出了张量沿每个轴的长度(维数).对于只有一个轴的张量,形状只有一个元素.
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #531ab6;">import</span> torch
+
+<span style="color: #005e8b;">x</span> = torch.arange<span style="color: #000000;">(</span>5<span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|x.shape|=&gt;"""</span>, x.shape<span style="color: #000000;">)</span>
+
+<span style="color: #7f0000;"># </span><span style="color: #7f0000;">&lt;====================OUTPUT====================&gt;
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|x.shape|=&gt; torch.Size([5])</span>
+</pre>
+</div></li>
+</ul></li>
+<li>请注意,维度(dimension)这个词在不同上下文时往往会有不同的含义,这经常会使人感到困惑.</li>
+<li>为了清楚起见,我们在此明确一下:
+<ul class="org-ul">
+<li>向量或轴的维度被用来表示向量或轴的长度,即向量或轴的元素数量.</li>
+<li>然而,*张量的维度* 用来表示张量具有的轴数.在这个意义上,*张量的某个轴的维数* 就是这个轴的长度.</li>
+</ul></li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div id="outline-container-orgddbc9d6" class="outline-4">
+<h4 id="orgddbc9d6"><span class="section-number-4">2.3.3.</span> 矩阵</h4>
+<div class="outline-text-4" id="text-2-3-3">
+<ul class="org-ul">
+<li>正如向量将标量从零阶推广到一阶,矩阵将向量从一阶推广到二阶.</li>
+<li>矩阵,我们通常用粗体,大写字母来表示(例如,\(\mathbf{X,Y,Z}\) ),在代码中表示为具有两个轴的张量.</li>
+<li>数学表示法使用 \(\mathbf{A} \in \mathbb{R}^{m \times n}\) 来表示矩阵A,其由m行和n列的实值标量组成.</li>
+<li><p>
+我们可以将任意矩阵 \(\mathbf{A} \in \mathbb{R}^{m \times n}\) 视为一个表格,其中每个元素 \(a_{ij}\) 属
+于第i行第j列:
+</p>
+\begin{equation}
+\mathbf{A} =
+\begin{bmatrix}
+a_{11} & a_{12} & \cdots & a_{1n} \\
+a_{21} & a_{22} & \cdots & a_{2n} \\
+\vdots & \vdots & \ddots & \vdots \\
+a_{m1} & a_{m2} & \cdots & a_{mn}
+\end{bmatrix}.
+\tag{2.3.2}
+\end{equation}</li>
+<li>对于任意 \(\mathbf{A} \in \mathbb{R}^{m \times n}\), \(\mathbf{A}\) 的形状是(m,n)或者 \(m \times n\),当m=n
+的时候,其形状变为正方形,因此它被称之为方阵(square matrix)</li>
+<li><p>
+在torch里面,我们可以通过制定两个分量m,n来创建一个形状为m*n的矩阵
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #531ab6;">import</span> torch
+
+<span style="color: #005e8b;">A</span> = torch.arange<span style="color: #000000;">(</span>30<span style="color: #000000;">)</span>.reshape<span style="color: #000000;">(</span>5, 6<span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|A|=&gt;"""</span>, A<span style="color: #000000;">)</span>
+
+<span style="color: #7f0000;"># </span><span style="color: #7f0000;">&lt;====================OUTPUT====================&gt;
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|A|=&gt; tensor([[ 0,  1,  2,  3,  4,  5],
+</span><span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[ 6,  7,  8,  9, 10, 11],
+</span><span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[12, 13, 14, 15, 16, 17],
+</span><span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[18, 19, 20, 21, 22, 23],
+</span><span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[24, 25, 26, 27, 28, 29]])</span>
+</pre>
+</div></li>
+<li><p>
+交换一个矩阵的行和列,叫做转置(transpose), 通常使用 \(\mathbf{A}^{\mathrm{T}}\) 在torch里面转置的代码如下
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #531ab6;">import</span> torch
+
+<span style="color: #005e8b;">A</span> = torch.arange<span style="color: #000000;">(</span>30<span style="color: #000000;">)</span>.reshape<span style="color: #000000;">(</span>5, 6<span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|A.T|=&gt;"""</span>, A.T<span style="color: #000000;">)</span>
+
+<span style="color: #7f0000;"># </span><span style="color: #7f0000;">&lt;====================OUTPUT====================&gt;
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|A.T|=&gt; tensor([[ 0,  6, 12, 18, 24],
+</span><span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[ 1,  7, 13, 19, 25],
+</span><span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[ 2,  8, 14, 20, 26],
+</span><span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[ 3,  9, 15, 21, 27],
+</span><span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[ 4, 10, 16, 22, 28],
+</span><span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[ 5, 11, 17, 23, 29]])</span>
+</pre>
+</div></li>
+<li><p>
+如果一个矩阵的"转置"和自己相等,也就 \(\mathbf{A} = \mathbf{A}^{\mathrm{T}}\), 那么这个矩阵叫做对称矩
+阵,下面就是一个对阵矩阵的例子. 相信聪明的你也想到了,对阵矩阵必定是方针
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #531ab6;">import</span> torch
+
+<span style="color: #005e8b;">B</span> = torch.tensor<span style="color: #000000;">(</span><span style="color: #dd22dd;">[</span><span style="color: #008899;">[</span>1, 2, 3<span style="color: #008899;">]</span>, <span style="color: #008899;">[</span>2, 0, 4<span style="color: #008899;">]</span>, <span style="color: #008899;">[</span>3, 4, 5<span style="color: #008899;">]</span><span style="color: #dd22dd;">]</span><span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|B|=&gt;"""</span>, B<span style="color: #000000;">)</span>
+
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|B.T|=&gt;"""</span>, B.T<span style="color: #000000;">)</span>
+
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|B == B.T|=&gt;"""</span>, B == B.T<span style="color: #000000;">)</span>
+
+<span style="color: #7f0000;"># </span><span style="color: #7f0000;">&lt;====================OUTPUT====================&gt;
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|B|=&gt; tensor([[1, 2, 3],
+</span><span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[2, 0, 4],
+</span><span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[3, 4, 5]])
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|B.T|=&gt; tensor([[1, 2, 3],
+</span><span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[2, 0, 4],
+</span><span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[3, 4, 5]])
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|B == B.T|=&gt; tensor([[True, True, True],
+</span><span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[True, True, True],
+</span><span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[True, True, True]])</span>
+</pre>
+</div></li>
+<li>矩阵是有用的数据结构:它们允许我们组织具有不同模式的数据.
+<ul class="org-ul">
+<li>例如,我们矩阵中的行可能对应于不同的房屋(数据样本),而列可能对应于不同的属性.曾经使用过电子表
+格软件或已阅读过 2.2节的人,应该对此很熟悉.</li>
+</ul></li>
+<li>因此,尽管单个向量的默认方向是 <b>列向量</b>,但在表示表格数据集的矩阵中,将每个数据样本作为矩阵中的 <b>行向量</b>
+更为常见.后面的章节将讲到这点,这种约定将支持常见的深度学习实践.
+<ul class="org-ul">
+<li>例如,沿着张量的最外轴,我们可以访问或遍历小批量的数据样本.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org85d36f1" class="outline-4">
+<h4 id="org85d36f1"><span class="section-number-4">2.3.4.</span> 张量</h4>
+<div class="outline-text-4" id="text-2-3-4">
+<ul class="org-ul">
+<li>就像 <b>向量是标量的推广,矩阵是向量的推广</b> 一样,我们可以构建具有更多轴的数据结构.</li>
+<li>张量(本小节中的"张量"指代数对象)是描述具有任意数量轴的n维数组的通用方法.例如,
+<ul class="org-ul">
+<li>向量是一阶张量</li>
+<li>矩阵是二阶张量.</li>
+</ul></li>
+<li>张量用特殊字体的大写字母表示(例如, X, Y和Z),它们的索引机制(例如 \(x_{ijk}\) )与矩阵类似.</li>
+<li>当我们开始处理图像时,张量将变得更加重要,图像以n维数组形式出现,其中3个轴对应于
+<ul class="org-ul">
+<li>高度</li>
+<li>宽度,</li>
+<li>以及一个通道(channel)轴,用于表示颜色通道(红色,绿色和蓝色).</li>
+</ul></li>
+<li><p>
+下面就是一个张量的例子
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #531ab6;">import</span> torch
+
+<span style="color: #005e8b;">X</span> = torch.arange<span style="color: #000000;">(</span>30<span style="color: #000000;">)</span>.reshape<span style="color: #000000;">(</span>2, 3, 5<span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|X|=&gt;"""</span>, X<span style="color: #000000;">)</span>
+
+<span style="color: #7f0000;"># </span><span style="color: #7f0000;">&lt;====================OUTPUT====================&gt;
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|X|=&gt; tensor([[[ 0,  1,  2,  3,  4],
+</span><span style="color: #7f0000;">#          </span><span style="color: #7f0000;">[ 5,  6,  7,  8,  9],
+</span><span style="color: #7f0000;">#          </span><span style="color: #7f0000;">[10, 11, 12, 13, 14]],
+</span>
+<span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[[15, 16, 17, 18, 19],
+</span><span style="color: #7f0000;">#          </span><span style="color: #7f0000;">[20, 21, 22, 23, 24],
+</span><span style="color: #7f0000;">#          </span><span style="color: #7f0000;">[25, 26, 27, 28, 29]]])</span>
+</pre>
+</div></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgdf89748" class="outline-4">
+<h4 id="orgdf89748"><span class="section-number-4">2.3.5.</span> 张量算法的基本性质</h4>
+<div class="outline-text-4" id="text-2-3-5">
+<ul class="org-ul">
+<li>标量,向量,矩阵和任意数量轴的张量(本小节中的"张量"指代数对象)有一些实用的属性.
+<ul class="org-ul">
+<li>例如,从按元素操作的定义中可以注意到,任何按元素的一元运算都不会改变其操作数的形状.</li>
+<li><p>
+同样,给定具有相同形状的任意两个张量,任何按元素二元运算的结果都将是相同形状的张量.例如,将两个
+相同形状的矩阵相加,会在这两个矩阵上执行元素加法.
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #531ab6;">import</span> torch
+
+<span style="color: #005e8b;">A</span> = torch.arange<span style="color: #000000;">(</span>20, dtype=torch.float32<span style="color: #000000;">)</span>.reshape<span style="color: #000000;">(</span>5, 4<span style="color: #000000;">)</span>
+<span style="color: #005e8b;">B</span> = A.clone<span style="color: #000000;">()</span>
+
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|A|=&gt;"""</span>, A<span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|A+B|=&gt;"""</span>, A + B<span style="color: #000000;">)</span>
+
+<span style="color: #7f0000;"># </span><span style="color: #7f0000;">&lt;====================OUTPUT====================&gt;
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|A|=&gt; tensor([[ 0.,  1.,  2.,  3.],
+</span><span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[ 4.,  5.,  6.,  7.],
+</span><span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[ 8.,  9., 10., 11.],
+</span><span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[12., 13., 14., 15.],
+</span><span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[16., 17., 18., 19.]])
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|A+B|=&gt; tensor([[ 0.,  2.,  4.,  6.],
+</span><span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[ 8., 10., 12., 14.],
+</span><span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[16., 18., 20., 22.],
+</span><span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[24., 26., 28., 30.],
+</span><span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[32., 34., 36., 38.]])</span>
+</pre>
+</div></li>
+<li><p>
+两个矩阵元素,按元素 <b>位置对位置</b> 的乘法(其实不太常用),叫做Hadamard积,用数学符号 \(\odot\) 表示,一个
+Hadamard积的公式如下:
+</p>
+\begin{equation}
+\mathbf{A} \odot \mathbf{B} =
+\begin{bmatrix}
+a_{11} b_{11} & a_{12} b_{12} & \cdots & a_{1n} b_{1n} \\
+a_{21} b_{21} & a_{22} b_{22} & \cdots & a_{2n} b_{2n} \\
+\vdots & \vdots & \ddots & \vdots \\
+a_{m1} b_{m1} & a_{m2} b_{m2} & \cdots & a_{mn} b_{mn}
+\end{bmatrix}.
+\end{equation}</li>
+<li><p>
+我们使用torch来写一个hadamard积的例子
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #531ab6;">import</span> torch
+
+<span style="color: #005e8b;">A</span> = torch.arange<span style="color: #000000;">(</span>20, dtype=torch.float32<span style="color: #000000;">)</span>.reshape<span style="color: #000000;">(</span>5, 4<span style="color: #000000;">)</span>
+<span style="color: #005e8b;">B</span> = A.clone<span style="color: #000000;">()</span>
+
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|A|=&gt;"""</span>, A<span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|A*B|=&gt;"""</span>, A * B<span style="color: #000000;">)</span>
+
+<span style="color: #7f0000;"># </span><span style="color: #7f0000;">&lt;====================OUTPUT====================&gt;
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|A|=&gt; tensor([[ 0.,  1.,  2.,  3.],
+</span><span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[ 4.,  5.,  6.,  7.],
+</span><span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[ 8.,  9., 10., 11.],
+</span><span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[12., 13., 14., 15.],
+</span><span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[16., 17., 18., 19.]])
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|A*B|=&gt; tensor([[  0.,   1.,   4.,   9.],
+</span><span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[ 16.,  25.,  36.,  49.],
+</span><span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[ 64.,  81., 100., 121.],
+</span><span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[144., 169., 196., 225.],
+</span><span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[256., 289., 324., 361.]])</span>
+</pre>
+</div></li>
+<li><p>
+张量还有一种情况不会改变自己的形状,那就是和一个标量相加或者相乘
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #531ab6;">import</span> torch
+
+<span style="color: #005e8b;">a</span> = 2
+<span style="color: #005e8b;">X</span> = torch.arange<span style="color: #000000;">(</span>30<span style="color: #000000;">)</span>.reshape<span style="color: #000000;">(</span>2, 3, 5<span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|a + X|=&gt;"""</span>, a + X<span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|(a*X).shape|=&gt;"""</span>, <span style="color: #dd22dd;">(</span>a * X<span style="color: #dd22dd;">)</span>.shape<span style="color: #000000;">)</span>
+
+<span style="color: #7f0000;"># </span><span style="color: #7f0000;">&lt;====================OUTPUT====================&gt;
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|a + X|=&gt; tensor([[[ 2,  3,  4,  5,  6],
+</span><span style="color: #7f0000;">#          </span><span style="color: #7f0000;">[ 7,  8,  9, 10, 11],
+</span><span style="color: #7f0000;">#          </span><span style="color: #7f0000;">[12, 13, 14, 15, 16]],
+</span>
+<span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[[17, 18, 19, 20, 21],
+</span><span style="color: #7f0000;">#          </span><span style="color: #7f0000;">[22, 23, 24, 25, 26],
+</span><span style="color: #7f0000;">#          </span><span style="color: #7f0000;">[27, 28, 29, 30, 31]]])
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|(a*X).shape|=&gt; torch.Size([2, 3, 5])</span>
+</pre>
+</div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org8006f21" class="outline-4">
+<h4 id="org8006f21"><span class="section-number-4">2.3.6.</span> 降维</h4>
+<div class="outline-text-4" id="text-2-3-6">
+<ul class="org-ul">
+<li>对张量一个有用的操作是计算其元素的和:
+<ul class="org-ul">
+<li><p>
+向量求和的例子
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #531ab6;">import</span> torch
+
+<span style="color: #005e8b;">x</span> = torch.arange<span style="color: #000000;">(</span>5, dtype=torch.float32<span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|x|=&gt;"""</span>, x<span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|x.sum()|=&gt;"""</span>, x.<span style="color: #8f0075;">sum</span><span style="color: #dd22dd;">()</span><span style="color: #000000;">)</span>
+
+<span style="color: #7f0000;"># </span><span style="color: #7f0000;">&lt;====================OUTPUT====================&gt;
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|x|=&gt; tensor([0., 1., 2., 3., 4.])
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|x.sum()|=&gt; tensor(10.)</span>
+</pre>
+</div></li>
+<li><p>
+矩阵求和的例子
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #531ab6;">import</span> torch
+
+<span style="color: #005e8b;">x</span> = torch.arange<span style="color: #000000;">(</span>15, dtype=torch.float32<span style="color: #000000;">)</span>.reshape<span style="color: #000000;">(</span>3, 5<span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|x|=&gt;"""</span>, x<span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|x.sum()|=&gt;"""</span>, x.<span style="color: #8f0075;">sum</span><span style="color: #dd22dd;">()</span><span style="color: #000000;">)</span>
+
+<span style="color: #7f0000;"># </span><span style="color: #7f0000;">&lt;====================OUTPUT====================&gt;
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|x|=&gt; tensor([[ 0.,  1.,  2.,  3.,  4.],
+</span><span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[ 5.,  6.,  7.,  8.,  9.],
+</span><span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[10., 11., 12., 13., 14.]])
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|x.sum()|=&gt; tensor(105.)</span>
+</pre>
+</div></li>
+</ul></li>
+<li>默认情况下(比如上面两个求和的例子),调用求和函数会沿所有的轴降低张量的维度,使它变为一个标量.</li>
+<li>我们还可以指定张量沿哪一个轴来通过求和降低维度.以矩阵为例,
+<ul class="org-ul">
+<li><p>
+为了通过求和所有行的元素来降维(轴0),可以在调用函数时指定axis=0.由于输入矩阵沿0轴降维以生成输
+出向量,因此输入轴0的维数在输出形状中消失
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #531ab6;">import</span> torch
+
+<span style="color: #005e8b;">x</span> = torch.arange<span style="color: #000000;">(</span>15, dtype=torch.float32<span style="color: #000000;">)</span>.reshape<span style="color: #000000;">(</span>3, 5<span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|x|=&gt;"""</span>, x<span style="color: #000000;">)</span>
+<span style="color: #005e8b;">x_sum_axis0</span> = x.<span style="color: #8f0075;">sum</span><span style="color: #000000;">(</span>axis=0<span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|x_sum_axis0|=&gt;"""</span>, x_sum_axis0<span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|x_sum_axis0.shape|=&gt;"""</span>, x_sum_axis0.shape<span style="color: #000000;">)</span>
+
+<span style="color: #7f0000;"># </span><span style="color: #7f0000;">&lt;====================OUTPUT====================&gt;
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|x|=&gt; tensor([[ 0.,  1.,  2.,  3.,  4.],
+</span><span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[ 5.,  6.,  7.,  8.,  9.],
+</span><span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[10., 11., 12., 13., 14.]])
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|x_sum_axis0|=&gt; tensor([15., 18., 21., 24., 27.])
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|x_sum_axis0.shape|=&gt; torch.Size([5])</span>
+</pre>
+</div></li>
+<li><p>
+我们如果设置axis=1,那么就是输入轴1的维数在输出形状中消失
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #531ab6;">import</span> torch
+
+<span style="color: #005e8b;">x</span> = torch.arange<span style="color: #000000;">(</span>15, dtype=torch.float32<span style="color: #000000;">)</span>.reshape<span style="color: #000000;">(</span>3, 5<span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|x|=&gt;"""</span>, x<span style="color: #000000;">)</span>
+<span style="color: #005e8b;">x_sum_axis1</span> = x.<span style="color: #8f0075;">sum</span><span style="color: #000000;">(</span>axis=1<span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|x_sum_axis1|=&gt;"""</span>, x_sum_axis1<span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|x_sum_axis1.shape|=&gt;"""</span>, x_sum_axis1.shape<span style="color: #000000;">)</span>
+
+<span style="color: #7f0000;"># </span><span style="color: #7f0000;">&lt;====================OUTPUT====================&gt;
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|x|=&gt; tensor([[ 0.,  1.,  2.,  3.,  4.],
+</span><span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[ 5.,  6.,  7.,  8.,  9.],
+</span><span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[10., 11., 12., 13., 14.]])
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|x_sum_axis1|=&gt; tensor([10., 35., 60.])
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|x_sum_axis1.shape|=&gt; torch.Size([3])</span>
+</pre>
+</div></li>
+<li><p>
+我们还可以设置沿着行和列求和,其效果就和对所有元素求和是一样的
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #531ab6;">import</span> torch
+
+<span style="color: #005e8b;">x</span> = torch.arange<span style="color: #000000;">(</span>15, dtype=torch.float32<span style="color: #000000;">)</span>.reshape<span style="color: #000000;">(</span>3, 5<span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|x|=&gt;"""</span>, x<span style="color: #000000;">)</span>
+<span style="color: #005e8b;">x_sum_axis_0_1</span> = x.<span style="color: #8f0075;">sum</span><span style="color: #000000;">(</span>axis=<span style="color: #dd22dd;">[</span>0,1<span style="color: #dd22dd;">]</span><span style="color: #000000;">)</span>
+
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|x_sum_axis_0_1|=&gt;"""</span>, x_sum_axis_0_1<span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|x.sum()|=&gt;"""</span>, x.<span style="color: #8f0075;">sum</span><span style="color: #dd22dd;">()</span><span style="color: #000000;">)</span>
+</pre>
+</div></li>
+</ul></li>
+<li>与求和相关的是求平均值
+<ul class="org-ul">
+<li><p>
+可以使用mean()函数来计算
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #531ab6;">import</span> torch
+
+<span style="color: #005e8b;">x</span> = torch.arange<span style="color: #000000;">(</span>15, dtype=torch.float32<span style="color: #000000;">)</span>.reshape<span style="color: #000000;">(</span>3, 5<span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|x|=&gt;"""</span>, x<span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|x.mean()|=&gt;"""</span>, x.mean<span style="color: #dd22dd;">()</span><span style="color: #000000;">)</span>
+
+<span style="color: #7f0000;"># </span><span style="color: #7f0000;">&lt;====================OUTPUT====================&gt;
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|x|=&gt; tensor([[ 0.,  1.,  2.,  3.,  4.],
+</span><span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[ 5.,  6.,  7.,  8.,  9.],
+</span><span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[10., 11., 12., 13., 14.]])
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|x.mean()|=&gt; tensor(7.)</span>
+</pre>
+</div></li>
+<li><p>
+也可以使用sum除以numel
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #531ab6;">import</span> torch
+
+<span style="color: #005e8b;">x</span> = torch.arange<span style="color: #000000;">(</span>15, dtype=torch.float32<span style="color: #000000;">)</span>.reshape<span style="color: #000000;">(</span>3, 5<span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|x|=&gt;"""</span>, x<span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|x.sum()|=&gt;"""</span>, x.<span style="color: #8f0075;">sum</span><span style="color: #dd22dd;">()</span><span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|x.numel()|=&gt;"""</span>, x.numel<span style="color: #dd22dd;">()</span><span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|x.sum() / x.numel()|=&gt;"""</span>, x.<span style="color: #8f0075;">sum</span><span style="color: #dd22dd;">()</span> / x.numel<span style="color: #dd22dd;">()</span><span style="color: #000000;">)</span>
+
+<span style="color: #7f0000;"># </span><span style="color: #7f0000;">&lt;====================OUTPUT====================&gt;
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|x|=&gt; tensor([[ 0.,  1.,  2.,  3.,  4.],
+</span><span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[ 5.,  6.,  7.,  8.,  9.],
+</span><span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[10., 11., 12., 13., 14.]])
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|x.sum()|=&gt; tensor(105.)
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|x.numel()|=&gt; 15
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|x.sum() / x.numel()|=&gt; tensor(7.)</span>
+</pre>
+</div></li>
+<li><p>
+还可以按沿着指定轴进行均值计算.注意指定这个轴的话,那么结果中这个轴会消失
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #531ab6;">import</span> torch
+
+<span style="color: #005e8b;">x</span> = torch.arange<span style="color: #000000;">(</span>15, dtype=torch.float32<span style="color: #000000;">)</span>.reshape<span style="color: #000000;">(</span>3, 5<span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|x|=&gt;"""</span>, x<span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|x.mean(axis=0)|=&gt;"""</span>, x.mean<span style="color: #dd22dd;">(</span>axis=0<span style="color: #dd22dd;">)</span><span style="color: #000000;">)</span>
+
+<span style="color: #7f0000;"># </span><span style="color: #7f0000;">&lt;====================OUTPUT====================&gt;
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|x|=&gt; tensor([[ 0.,  1.,  2.,  3.,  4.],
+</span><span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[ 5.,  6.,  7.,  8.,  9.],
+</span><span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[10., 11., 12., 13., 14.]])
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|x.mean(axis=0)|=&gt; tensor([5., 6., 7., 8., 9.])</span>
+</pre>
+</div></li>
+</ul></li>
+</ul>
+</div>
+<ol class="org-ol">
+<li><a id="orgdd3c024"></a>非降维求和<br />
+<div class="outline-text-5" id="text-2-3-6-1">
+<ul class="org-ul">
+<li><p>
+由于numpy有广播这个特性,所以很多时候,我们不希望降维(注意,降维说的是 <b>轴的数目减少,而不是shape改变!</b>)
+那么使用keepdims参数就非常有用,如下
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #531ab6;">import</span> torch
+
+<span style="color: #005e8b;">x</span> = torch.arange<span style="color: #000000;">(</span>15, dtype=torch.float32<span style="color: #000000;">)</span>.reshape<span style="color: #000000;">(</span>3, 5<span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|x|=&gt;"""</span>, x<span style="color: #000000;">)</span>
+
+<span style="color: #005e8b;">sum_x</span> = x.<span style="color: #8f0075;">sum</span><span style="color: #000000;">(</span>axis=1, keepdim=<span style="color: #0000b0;">True</span><span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|sum_x|=&gt;"""</span>, sum_x<span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|sum_x.shape|=&gt;"""</span>, sum_x.shape<span style="color: #000000;">)</span>
+
+<span style="color: #7f0000;"># </span><span style="color: #7f0000;">&lt;====================OUTPUT====================&gt;
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|x|=&gt; tensor([[ 0.,  1.,  2.,  3.,  4.],
+</span><span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[ 5.,  6.,  7.,  8.,  9.],
+</span><span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[10., 11., 12., 13., 14.]])
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|sum_x|=&gt; tensor([[10.],
+</span><span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[35.],
+</span><span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[60.]])
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|sum_x.shape|=&gt; torch.Size([3, 1])</span>
+</pre>
+</div></li>
+<li><p>
+由于sum_x没有降维,我们可以用x/sum_x来计算原来的数字在当前行的比例
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #531ab6;">import</span> torch
+
+<span style="color: #005e8b;">x</span> = torch.arange<span style="color: #000000;">(</span>15, dtype=torch.float32<span style="color: #000000;">)</span>.reshape<span style="color: #000000;">(</span>3, 5<span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|x|=&gt;"""</span>, x<span style="color: #000000;">)</span>
+
+<span style="color: #005e8b;">sum_x</span> = x.<span style="color: #8f0075;">sum</span><span style="color: #000000;">(</span>axis=1, keepdim=<span style="color: #0000b0;">True</span><span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|sum_x|=&gt;"""</span>, sum_x<span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|x/sum_x|=&gt;"""</span>, x / sum_x<span style="color: #000000;">)</span>
+
+<span style="color: #7f0000;"># </span><span style="color: #7f0000;">&lt;====================OUTPUT====================&gt;
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|x|=&gt; tensor([[ 0.,  1.,  2.,  3.,  4.],
+</span><span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[ 5.,  6.,  7.,  8.,  9.],
+</span><span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[10., 11., 12., 13., 14.]])
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|sum_x|=&gt; tensor([[10.],
+</span><span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[35.],
+</span><span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[60.]])
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|x/sum_x|=&gt; tensor([[0.0000, 0.1000, 0.2000, 0.3000, 0.4000],
+</span><span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[0.1429, 0.1714, 0.2000, 0.2286, 0.2571],
+</span><span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[0.1667, 0.1833, 0.2000, 0.2167, 0.2333]])</span>
+</pre>
+</div></li>
+<li>如果我们想沿某个轴计算A元素的累积总和,可以调用cumsum函数.此函数不会轴降低输入张量的维度
+<ul class="org-ul">
+<li><p>
+沿比如axis=0(按行计算)
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #531ab6;">import</span> torch
+
+<span style="color: #005e8b;">x</span> = torch.arange<span style="color: #000000;">(</span>15, dtype=torch.float32<span style="color: #000000;">)</span>.reshape<span style="color: #000000;">(</span>3, 5<span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|x|=&gt;"""</span>, x<span style="color: #000000;">)</span>
+
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|x.cumsum(axis=0)|=&gt;"""</span>, x.cumsum<span style="color: #dd22dd;">(</span>axis=0<span style="color: #dd22dd;">)</span><span style="color: #000000;">)</span>
+
+<span style="color: #7f0000;"># </span><span style="color: #7f0000;">&lt;====================OUTPUT====================&gt;
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|x|=&gt; tensor([[ 0.,  1.,  2.,  3.,  4.],
+</span><span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[ 5.,  6.,  7.,  8.,  9.],
+</span><span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[10., 11., 12., 13., 14.]])
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|x.cumsum(axis=0)|=&gt; tensor([[ 0.,  1.,  2.,  3.,  4.],
+</span><span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[ 5.,  7.,  9., 11., 13.],
+</span><span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[15., 18., 21., 24., 27.]])</span>
+</pre>
+</div></li>
+<li><p>
+沿比如axis=1(按列计算)
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #531ab6;">import</span> torch
+
+<span style="color: #005e8b;">x</span> = torch.arange<span style="color: #000000;">(</span>15, dtype=torch.float32<span style="color: #000000;">)</span>.reshape<span style="color: #000000;">(</span>3, 5<span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|x|=&gt;"""</span>, x<span style="color: #000000;">)</span>
+
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|x.cumsum(axis=1)|=&gt;"""</span>, x.cumsum<span style="color: #dd22dd;">(</span>axis=1<span style="color: #dd22dd;">)</span><span style="color: #000000;">)</span>
+
+<span style="color: #7f0000;"># </span><span style="color: #7f0000;">&lt;====================OUTPUT====================&gt;
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|x|=&gt; tensor([[ 0.,  1.,  2.,  3.,  4.],
+</span><span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[ 5.,  6.,  7.,  8.,  9.],
+</span><span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[10., 11., 12., 13., 14.]])
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|x.cumsum(axis=1)|=&gt; tensor([[ 0.,  1.,  3.,  6., 10.],
+</span><span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[ 5., 11., 18., 26., 35.],
+</span><span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[10., 21., 33., 46., 60.]])</span>
+</pre>
+</div></li>
+</ul></li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div id="outline-container-org73e78fe" class="outline-4">
+<h4 id="org73e78fe"><span class="section-number-4">2.3.7.</span> 点积(Dot Product)</h4>
+<div class="outline-text-4" id="text-2-3-7">
+<ul class="org-ul">
+<li>我们已经学习了按元素操作,求和及平均值.但是更常用的是另一个最基本的操作是点积.定义如下:
+<ul class="org-ul">
+<li>给定 <b>两个向量</b> 满足 \(\mathbf{x,y} \in \mathbb{R}^d\)</li>
+<li><p>
+这两个向量的点积(dot product) 是相同位置按元素乘积的和,也就是
+</p>
+\begin{equation}
+\mathbf{x}^\top \mathbf{y} = \sum_{i=1}^d x_i y_i \notag
+\end{equation}</li>
+<li><p>
+下面是计算两个向量的点积的例子
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #531ab6;">import</span> torch
+
+<span style="color: #005e8b;">x</span> = torch.arange<span style="color: #000000;">(</span>6<span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|x|=&gt;"""</span>, x<span style="color: #000000;">)</span>
+<span style="color: #005e8b;">y</span> = torch.ones<span style="color: #000000;">(</span>6, dtype=torch.<span style="color: #8f0075;">long</span><span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|y|=&gt;"""</span>, y<span style="color: #000000;">)</span>
+
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|torch.dot(x,y)|=&gt;"""</span>, torch.dot<span style="color: #dd22dd;">(</span>x, y<span style="color: #dd22dd;">)</span><span style="color: #000000;">)</span>
+</pre>
+</div></li>
+<li><p>
+点积相当于 <b>按元素乘法(hadamard积)</b> 之后求和,例子如下
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #531ab6;">import</span> torch
+
+<span style="color: #005e8b;">x</span> = torch.arange<span style="color: #000000;">(</span>6<span style="color: #000000;">)</span>
+<span style="color: #005e8b;">y</span> = torch.ones<span style="color: #000000;">(</span>6, dtype=torch.<span style="color: #8f0075;">long</span><span style="color: #000000;">)</span>
+
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|torch.dot(x,y)|=&gt;"""</span>, torch.dot<span style="color: #dd22dd;">(</span>x, y<span style="color: #dd22dd;">)</span><span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|torch.sum(x*y)|=&gt;"""</span>, torch.<span style="color: #8f0075;">sum</span><span style="color: #dd22dd;">(</span>x * y<span style="color: #dd22dd;">)</span><span style="color: #000000;">)</span>
+
+<span style="color: #7f0000;"># </span><span style="color: #7f0000;">&lt;====================OUTPUT====================&gt;
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|torch.dot(x,y)|=&gt; tensor(15)
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|torch.sum(x*y)|=&gt; tensor(15)</span>
+</pre>
+</div></li>
+</ul></li>
+<li>点积在很多场合都很有用.例如,
+<ul class="org-ul">
+<li>给定一组由向量 \(\mathbf{x} \in \mathbb{R}^d\) 表示的值,和一组由 \(\mathbf{w} \in \mathbb{R}^d\) 表
+示的权重.</li>
+<li>x中的值根据权重w的加权和,可以表示为点积 \(\mathbf{x}^\top \mathbf{w}\). <b>注意</b> 这里的T非常重要,因
+为默认vector都是竖向的,加了T表示一个横向的vector,只有 <b>横向的乘以竖向的</b> 才是dot product</li>
+<li>当权重为非负数且和为1时,点积表示加权平均(weighted average).将两个向量规范化得到单位长度后,点
+积表示它们夹角的余弦.本节后面的内容将正式介绍长度(length)的概念.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org997353e" class="outline-4">
+<h4 id="org997353e"><span class="section-number-4">2.3.8.</span> 矩阵-向量积</h4>
+<div class="outline-text-4" id="text-2-3-8">
+<ul class="org-ul">
+<li>理解了dot product之后,我们可以开始理解矩阵-向量积(matrix-vector product)</li>
+<li>先看下两者的区别:
+<ul class="org-ul">
+<li>dot product其实可以重命名成 <b>行向量-列向量-积</b></li>
+<li>matrix-vector可以重命名成 <b>矩阵-列向量-积</b></li>
+</ul></li>
+<li>假设上述计算中的
+<ul class="org-ul">
+<li><p>
+矩阵为 \(\mathbf{A} \in \mathbb{R}^{m \times n}\),我们可以用m个行向量来表示A, 其中每个 \(\mathbf{a}_i^\top\)
+都是行向量
+</p>
+\begin{equation}
+\mathbf{A} =
+\begin{bmatrix}
+\mathbf{a}_1^{\top} \\
+\mathbf{a}_2^{\top} \\
+\vdots \\
+\mathbf{a}_m^{\top}
+\end{bmatrix},\tag{2.3.5}
+\end{equation}</li>
+<li>向量为 $\mathbf{x} &isin; \mathbb{R}<sup>n</sup> $</li>
+</ul></li>
+<li><p>
+那么矩阵乘以向量的结果如下
+</p>
+\begin{equation}
+\mathbf{Ax} =
+\begin{bmatrix}
+\mathbf{a}_1^{\top} \\
+\mathbf{a}_2^{\top} \\
+\vdots \\
+\mathbf{a}_m^{\top}
+\end{bmatrix} \mathbf{x} =
+\begin{bmatrix}
+\mathbf{a}_1^{\top} \mathbf{x}\\
+\mathbf{a}_2^{\top} \mathbf{x}\\
+\vdots \\
+\mathbf{a}_m^{\top} \mathbf{x}
+\end{bmatrix} \tag{2.3.6}
+\end{equation}</li>
+<li><p>
+我们使用python代码表示如下
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #531ab6;">import</span> torch
+
+<span style="color: #005e8b;">A</span> = torch.arange<span style="color: #000000;">(</span>6, dtype=torch.float32<span style="color: #000000;">)</span>.reshape<span style="color: #000000;">(</span>3, 2<span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|A.shape|=&gt;"""</span>, A.shape<span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|A|=&gt;"""</span>, A<span style="color: #000000;">)</span>
+<span style="color: #005e8b;">x</span> = torch.arange<span style="color: #000000;">(</span>1, 3, dtype=torch.float32<span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|x.shape|=&gt;"""</span>, x.shape<span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|x|=&gt;"""</span>, x<span style="color: #000000;">)</span>
+
+
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|torch.mv(A,x)|=&gt;"""</span>, torch.mv<span style="color: #dd22dd;">(</span>A, x<span style="color: #dd22dd;">)</span><span style="color: #000000;">)</span>
+
+<span style="color: #7f0000;"># </span><span style="color: #7f0000;">&lt;====================OUTPUT====================&gt;
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|A.shape|=&gt; torch.Size([3, 2])
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|A|=&gt; tensor([[0., 1.],
+</span><span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[2., 3.],
+</span><span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[4., 5.]])
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|x.shape|=&gt; torch.Size([2])
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|x|=&gt; tensor([1., 2.])
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|torch.mv(A,x)|=&gt; tensor([ 2.,  8., 14.])</span>
+</pre>
+</div></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgb4cc617" class="outline-4">
+<h4 id="orgb4cc617"><span class="section-number-4">2.3.9.</span> 矩阵-矩阵乘法</h4>
+<div class="outline-text-4" id="text-2-3-9">
+<ul class="org-ul">
+<li>点积和矩阵向量都学完之后,我们来到了矩阵-矩阵乘法(matrix-matrix multiplication), 其实你能发现这是一
+个从特例到范例的过程</li>
+<li>矩阵矩阵乘法的过程如下:
+<ul class="org-ul">
+<li><p>
+假设有矩阵 \(\mathbf{A} \in \mathbb{R}^{n \times k}\)
+</p>
+\begin{equation}
+\mathbf{A} =
+\begin{bmatrix}
+a_{11} & a_{12} & \cdots & a_{1k} \\
+a_{21} & a_{22} & \cdots & a_{2k} \\
+\vdots & \vdots & \ddots & \vdots \\
+a_{n1} & a_{n2} & \cdots & a_{nk}
+\end{bmatrix}
+\end{equation}</li>
+<li><p>
+另假设有矩阵 \(\mathbf{B} \in \mathbb{R}^{k \times m}\)
+</p>
+\begin{equation}
+\mathbf{B} =
+\begin{bmatrix}
+b_{11} & b_{12} & \cdots & b_{1m} \\
+b_{21} & b_{22} & \cdots & b_{2m} \\
+\vdots & \vdots & \ddots & \vdots \\
+b_{k1} & b_{k2} & \cdots & b_{km}
+\end{bmatrix}
+\end{equation}</li>
+<li><p>
+我们用行向量来表示"被乘矩阵A",用列向量来表示"乘矩阵B",假设两个矩阵的乘积是C,那么就有
+</p>
+\begin{equation}
+\mathbf{C} = \mathbf{AB} =
+\begin{bmatrix}
+\mathbf{a}_1^{\top} \\
+\mathbf{a}_2^{\top} \\
+\vdots \\
+\mathbf{a}_n^{\top}
+\end{bmatrix}
+\begin{bmatrix}
+\mathbf{b}_1 & \mathbf{b}_2 & \cdots & \mathbf{b}_m
+\end{bmatrix}
+=
+\begin{bmatrix}
+\mathbf{a}_1^{\top}\mathbf{b}_1 & \mathbf{a}_1^{\top}\mathbf{b}_2 & \cdots & \mathbf{a}_1^{\top}\mathbf{b}_m \\
+\mathbf{a}_2^{\top}\mathbf{b}_1 & \mathbf{a}_2^{\top}\mathbf{b}_2 & \cdots & \mathbf{a}_2^{\top}\mathbf{b}_m \\
+\vdots & \vdots & \ddots & \vdots \\
+\mathbf{a}_n^{\top}\mathbf{b}_1 & \mathbf{a}_n^{\top}\mathbf{b}_2 & \cdots & \mathbf{a}_n^{\top}\mathbf{b}_m
+\end{bmatrix}.  \tag{2.3.9}
+\end{equation}</li>
+<li>我们可以将矩阵-矩阵乘法AB看作简单的执行 <b>m次矩阵-向量积</b>, 并将结果拼接在一起,形成一个 \(n\times m\) 矩阵</li>
+<li><p>
+下面用代码表示,A是一个3行2列的矩阵,B是一个2行3列的矩阵,两者相乘后,得到一个3行3列的矩阵
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #531ab6;">import</span> torch
+
+<span style="color: #005e8b;">A</span> = torch.arange<span style="color: #000000;">(</span>6, dtype=torch.float32<span style="color: #000000;">)</span>.reshape<span style="color: #000000;">(</span>3, 2<span style="color: #000000;">)</span>
+<span style="color: #005e8b;">B</span> = torch.arange<span style="color: #000000;">(</span>6, dtype=torch.float32<span style="color: #000000;">)</span>.reshape<span style="color: #000000;">(</span>2, 3<span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|A|=&gt;"""</span>, A<span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|B|=&gt;"""</span>, B<span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|torch.mm(A,B)|=&gt;"""</span>, torch.mm<span style="color: #dd22dd;">(</span>A, B<span style="color: #dd22dd;">)</span><span style="color: #000000;">)</span>
+
+<span style="color: #7f0000;"># </span><span style="color: #7f0000;">&lt;====================OUTPUT====================&gt;
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|A|=&gt; tensor([[0., 1.],
+</span><span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[2., 3.],
+</span><span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[4., 5.]])
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|B|=&gt; tensor([[0., 1., 2.],
+</span><span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[3., 4., 5.]])
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|torch.mm(A,B)|=&gt; tensor([[ 3.,  4.,  5.],
+</span><span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[ 9., 14., 19.],
+</span><span style="color: #7f0000;">#         </span><span style="color: #7f0000;">[15., 24., 33.]])</span>
+</pre>
+</div></li>
+</ul></li>
+<li><b>注意</b> 矩阵-矩阵乘法可以简单的称之为矩阵乘法,不要和Hadamard积混淆</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org2a856f6" class="outline-4">
+<h4 id="org2a856f6"><span class="section-number-4">2.3.10.</span> 范数</h4>
+<div class="outline-text-4" id="text-2-3-10">
+<ul class="org-ul">
+<li>什么是范数(norm)?
+<ul class="org-ul">
+<li>在线性代数中,范数是一种用来测量"向量的大小"的函数.注意是 <b>向量</b> 的大小哈,不是标量,也不是矩阵,是
+向量</li>
+<li>它会把一个向量映射成一个非负的实数,并且满足一些数学性质.</li>
+<li>简单来说,范数就像是"向量的长度",只不过在不同的范数下,"长度"的定义方式可能不一样.</li>
+</ul></li>
+<li>常见的范数类型(也就是不同的范数)有:
+<ul class="org-ul">
+<li><p>
+L1范数(曼哈顿范数),它表示为向量的元素的绝对值之和(像在网络城市,比如曼哈顿中沿街道走的路程)
+</p>
+\begin{equation}
+\|\mathbf{x}\|_1 = \sum_{i=1}^n |x_i| \tag{2.3.14}
+\end{equation}</li>
+<li><p>
+L2范数(欧几里得范数),就是我们平常说的长度(平方和的平方根),对应欧几里得距离
+</p>
+\begin{equation}
+\|\mathbf{x}\|_2 = \sqrt{ \sum_{i=1}^n x_i^2 } \tag{2.3.15}
+\end{equation}</li>
+<li><p>
+L1范数和L2范数其实是 \(L_p\) 范数的特例
+</p>
+\begin{equation}
+\|\mathbf{x}\|_p = \left( \sum_{i=1}^{n} |x_i|^p \right)^{1/p}.
+\end{equation}</li>
+</ul></li>
+<li><p>
+范数是向量中的概念,但是我们可以通过把矩阵所有元素展开成一个大向量,然后计算L2范数.
+</p>
+\begin{equation}
+\|\mathbf{X}\|_{F} = \sqrt{ \sum_{i=1}^{m} \sum_{j=1}^{n} x_{ij}^2 } \tag{2.3.17}
+\end{equation}</li>
+<li><p>
+在torch中,计算L1范数需要自己配置绝对值相加,代码如下
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #531ab6;">import</span> torch
+
+<span style="color: #005e8b;">u</span> = torch.tensor<span style="color: #000000;">(</span><span style="color: #dd22dd;">[</span>3.0, -4.0<span style="color: #dd22dd;">]</span><span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|torch.abs(u).sum()|=&gt;"""</span>, torch.<span style="color: #8f0075;">abs</span><span style="color: #dd22dd;">(</span>u<span style="color: #dd22dd;">)</span>.<span style="color: #8f0075;">sum</span><span style="color: #dd22dd;">()</span><span style="color: #000000;">)</span>
+
+<span style="color: #7f0000;"># </span><span style="color: #7f0000;">&lt;====================OUTPUT====================&gt;
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|torch.abs(u).sum()|=&gt; tensor(7.)</span>
+</pre>
+</div></li>
+<li><p>
+相比之下,在torch中,计算L2范数有自己的函数norm,代码如下
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #531ab6;">import</span> torch
+
+<span style="color: #005e8b;">u</span> = torch.tensor<span style="color: #000000;">(</span><span style="color: #dd22dd;">[</span>3.0, -4.0<span style="color: #dd22dd;">]</span><span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|torch.norm(u)|=&gt;"""</span>, torch.norm<span style="color: #dd22dd;">(</span>u<span style="color: #dd22dd;">)</span><span style="color: #000000;">)</span>
+
+<span style="color: #7f0000;"># </span><span style="color: #7f0000;">&lt;====================OUTPUT====================&gt;
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|torch.norm(u)|=&gt; tensor(5.)</span>
+</pre>
+</div></li>
+</ul>
+</div>
+<ol class="org-ol">
+<li><a id="org6dacf7e"></a>范数在深度学习中的作用<br />
+<div class="outline-text-5" id="text-2-3-10-1">
+<ul class="org-ul">
+<li>范数可以在深度学习中用来衡量误差(损失函数的一部分):
+<ul class="org-ul">
+<li>在回归任务重,通常用L2范数(均方误差MSE)来度量测试值和真实值的差距</li>
+<li>有时也用L1范数(MAE)来度量</li>
+</ul></li>
+<li>范数还可以做向量归一化(Normalization)
+<ul class="org-ul">
+<li>公式如下</li>
+<li>作用是产生一个新向量(只保留方向信息,提出长度影响)
+<ol class="org-ol">
+<li>新向量的方向和原向量完全一样</li>
+<li>新向量的长度是1(单位向量)</li>
+</ol></li>
+</ul></li>
+<li>归一化的作用有:
+<ul class="org-ul">
+<li>消除不同尺度的影响:如果特征的数值大小差很多,某些分量就会对模型产生过大的影响.
+归一化可以避免这个问题,比如输入数值有的单位是千米,有的是米,有的是厘米</li>
+<li>在比较两个向量相似度时(尤其是使用余弦相似度),向量长度会影响结果.归一化保证相似度度量只受方向
+影响</li>
+<li>在深度学习中,输入特征如果归一化,可以让训练过程更稳定,收敛更快</li>
+</ul></li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org3a00490" class="outline-3">
+<h3 id="org3a00490"><span class="section-number-3">2.4.</span> 微积分</h3>
+<div class="outline-text-3" id="text-2-4">
+</div>
+<div id="outline-container-org9f7c94b" class="outline-4">
+<h4 id="org9f7c94b"><span class="section-number-4">2.4.1.</span> 导数和微分</h4>
+<div class="outline-text-4" id="text-2-4-1">
+<ul class="org-ul">
+<li>我们首先讨论导数的计算,这是几乎所有深度学习优化算法的关键步骤.
+<ul class="org-ul">
+<li>在深度学习中,我们通常选择对于模型参数 <b>可微</b> 的损失函数.</li>
+<li>简而言之,对于每个参数,如果我们把这个参数增加或减少一个无穷小的量,可以知道损失会以多快的速度增
+加或减少,</li>
+</ul></li>
+<li>所谓 <b>可微(differentiable)</b> 函数定义如下:
+<ul class="org-ul">
+<li>可微是指某个函数在某一点处存在导数.</li>
+<li>如果在该点的导数值存在且唯一,我们就称该函数在该点是可微的</li>
+<li>如果函数在一个区间内的每个数上都是可微的,则此函数在此区间中是可微的</li>
+</ul></li>
+<li>常见例子
+<ul class="org-ul">
+<li>多项式函数:在所有点可微</li>
+<li>sin(x),cos(x):在所有点可微</li>
+<li>|x|:在 x = 0 不可微,因为左右斜率不同</li>
+</ul></li>
+<li><b>直观理解</b> 可微意味着该点的曲线是"光滑的",没有尖角或跳跃.换句话说,你可以在该点画一条切线,并且切
+线的斜率是明确的.</li>
+<li>为了更好地解释导数,让我们做一个实验.定义 \(u=f(x)=3x^2-4x\)
+<ul class="org-ul">
+<li><p>
+代码如下
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #531ab6;">import</span> numpy <span style="color: #531ab6;">as</span> np
+
+
+<span style="color: #531ab6;">def</span> <span style="color: #721045;">f</span><span style="color: #000000;">(</span>x<span style="color: #000000;">)</span>:
+    <span style="color: #531ab6;">return</span> 3 * x**2 - 4 * x
+
+
+<span style="color: #531ab6;">def</span> <span style="color: #721045;">numerical_lim</span><span style="color: #000000;">(</span>f, x, h<span style="color: #000000;">)</span>:
+    <span style="color: #531ab6;">return</span> <span style="color: #000000;">(</span>f<span style="color: #dd22dd;">(</span>x + h<span style="color: #dd22dd;">)</span> - f<span style="color: #dd22dd;">(</span>x<span style="color: #dd22dd;">)</span><span style="color: #000000;">)</span> / h
+
+
+<span style="color: #005e8b;">h</span> = 0.1
+<span style="color: #531ab6;">for</span> i <span style="color: #531ab6;">in</span> <span style="color: #8f0075;">range</span><span style="color: #000000;">(</span>5<span style="color: #000000;">)</span>:
+    <span style="color: #005e8b;">h</span> *= 0.1
+    <span style="color: #8f0075;">print</span><span style="color: #000000;">(</span>f<span style="color: #3548cf;">"h=</span>{h:.5f}<span style="color: #3548cf;">, numerical limit=</span>{numerical_lim(f, 1, h):.5f}<span style="color: #3548cf;">"</span><span style="color: #000000;">)</span>
+
+<span style="color: #7f0000;"># </span><span style="color: #7f0000;">&lt;====================OUTPUT====================&gt;
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">h=0.01000, numerical limit=2.03000
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">h=0.00100, numerical limit=2.00300
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">h=0.00010, numerical limit=2.00030
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">h=0.00001, numerical limit=2.00003
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">h=0.00000, numerical limit=2.00000</span>
+</pre>
+</div></li>
+<li>当x=1,而h越来越接近0的情况下, \(\frac{f(x+h) - f(x)}{h}\) 的结果逼近2. 我们知道,导数u'的值就是2</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgb5aaf1e" class="outline-4">
+<h4 id="orgb5aaf1e"><span class="section-number-4">2.4.2.</span> 偏导数</h4>
+<div class="outline-text-4" id="text-2-4-2">
+<ul class="org-ul">
+<li>到目前为止,我们只讨论了仅含一个变量的函数的微分.在深度学习中,函数通常依赖于许多变量.因此,我们
+需要将微分的思想推广到多元函数(multivariate function)上.
+<ul class="org-ul">
+<li><p>
+设 \(y=f(x_1,x_2,\cdots,x_n)\) 是一个具有n个变量的函数.y关于第i个参数xi的偏导数(partial derivative)为:
+</p>
+\begin{equation}
+\frac{\partial y}{\partial x_i} =
+\lim_{h \to 0}
+\frac{
+f(x_1, \ldots, x_{i-1}, x_i + h, x_{i+1}, \ldots, x_n)
+-
+f(x_1, \ldots, x_i, \ldots, x_n)
+}{h}. \tag{2.4.7}
+\end{equation}</li>
+<li>上例中,我们可以简单的将 \(x_1,\cdots,x_{i-1},x_{i+1},\cdots,x_n\) 看做常数,并计算y关于 \(x_i\) 的导数</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org54a01ca" class="outline-4">
+<h4 id="org54a01ca"><span class="section-number-4">2.4.3.</span> 梯度</h4>
+<div class="outline-text-4" id="text-2-4-3">
+<ul class="org-ul">
+<li>我们可以连结一个多元函数对其所有变量的偏导数,以得到该函数的梯度(gradient)
+<ul class="org-ul">
+<li>具体而言,设函数 \(f: \mathbb{R}^n \rightarrow \mathbb{R}\)
+<ol class="org-ol">
+<li>其输入是一个n维向量 \(\mathbf{x}=[x1,x2,\cdots,x_n]^\top\)</li>
+<li>其输出是一个标量.</li>
+</ol></li>
+<li><p>
+函数f (x)相对于x的梯度是一个包含n个偏导数的向量:
+</p>
+\begin{equation}
+\nabla_{\mathbf{x}} f(\mathbf{x}) =
+\left[
+\frac{\partial f(\mathbf{x})}{\partial x_1},
+\frac{\partial f(\mathbf{x})}{\partial x_2},
+\dots,
+\frac{\partial f(\mathbf{x})}{\partial x_n}
+\right]^{\mathrm{T}} \tag{2.4.9}
+\end{equation}</li>
+<li>\(\nabla_{\mathbf{x}} f(\mathbf{x})\) 读作"函数f(x)对x的梯度"</li>
+<li>\(\nabla_{\mathbf{x}} f(\mathbf{x})\) 在没有歧义的情况下, 可以写作 \(\nabla f(\mathbf{x})\)</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org84c35bc" class="outline-4">
+<h4 id="org84c35bc"><span class="section-number-4">2.4.4.</span> 链式法则</h4>
+<div class="outline-text-4" id="text-2-4-4">
+<ul class="org-ul">
+<li>深度学习中,多元函数通常是复合(composite)的 (比如 \(y=f(u), u = g(x)\)),而不是简单的多个x,所以普通的法
+则是无法微分这些函数的</li>
+<li>在深度学习中,微分这些函数的方法是 <b>链式法则</b>
+<ul class="org-ul">
+<li><p>
+单变量的情况下,假设y=f(u)和u=g(x)都是可微的,根据链式法则
+</p>
+\begin{equation}
+\frac{\partial y}{\partial x} = \frac{\partial y}{\partial u}  \frac{\partial u}{\partial x} \tag{2.4.10}
+\end{equation}</li>
+<li><p>
+更一般的场景,即函数具有任意数量的变量的情况.假设可微分函数y有变量 \(u_1, u_2, \cdots, u_m\) 其中每
+个可微分函数ui都有变量 \(x_1, x_2, \cdots, x_n\) 则有如下链式法则
+</p>
+\begin{equation}
+\frac{\partial y}{\partial x_i} = \frac{\partial y}{\partial u_1}  \frac{\partial u_1}{\partial x_i}  +
+                                  \frac{\partial y}{\partial u_2}  \frac{\partial u_2}{\partial x_i}  + \cdots
+                                  \frac{\partial y}{\partial u_m}  \frac{\partial u_m}{\partial x_i}  \tag{2.4.11}
+\end{equation}</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgc4b24db" class="outline-3">
+<h3 id="orgc4b24db"><span class="section-number-3">2.5.</span> 自动微分</h3>
+<div class="outline-text-3" id="text-2-5">
+<ul class="org-ul">
+<li>求导是几乎所有深度学习优化算法的关键步骤.虽然求导的计算很简单,只需要一些基本的微积分.</li>
+<li>但对于复杂的模型,手工进行更新是一件很痛苦的事情(而且经常容易出错).</li>
+<li>深度学习框架通过自动计算导数,即自动微分(automatic differentiation)来加快求导.
+<ul class="org-ul">
+<li>实际中,根据设计好的模型,系统会构建一个计算图(computational graph),来跟踪计算是哪些数据通过哪
+些操作组合起来产生输出.</li>
+<li>自动微分使系统能够随后反向传播梯度.这里,反向传播(backpropagate)意味着跟踪整个计算图,填充关于
+每个参数的偏导数.</li>
+</ul></li>
+<li>我们来简单介绍下自动微分的步骤:
+<ul class="org-ul">
+<li>构建计算图:当你定义模型时(例如使用PyTorch或TensorFlow),框架会动态或静态地构建一个计算图.这个
+图并不直接存储计算好的数值,而是记录所有的运算符号和依赖关系.例如,对于表达式 y = (x + 1) * (x + 2),
+计算图会记录 x经过加法,乘法等操作得到 y的完整路径.</li>
+<li>前向传播:输入数据进入图后,系统从输入(叶子节点)流向输出(根节点),为每个节点计算中间结果.这
+个过程就是在"填充"计算图,得到最终的函数输出值.</li>
+<li>反向传播:这是自动微分的精髓.当获得输出值后,从输出节点开始,逆向遍历计算图.在这个过程中,系统
+会对所有参与运算的模型参数(通常是你希望更新的权重和偏置)计算梯度(偏导数).它巧妙地运用了链式
+法则,将复杂的整体求导分解为一系列简单操作的局部求导,并将这些局部梯度从后往前逐级相乘.这使得梯
+度计算变得高效且模块化.</li>
+</ul></li>
+</ul>
+</div>
+<div id="outline-container-org4c4e82d" class="outline-4">
+<h4 id="org4c4e82d"><span class="section-number-4">2.5.1.</span> 一个简单的例子</h4>
+<div class="outline-text-4" id="text-2-5-1">
+<ul class="org-ul">
+<li>假设我们有一个函数 \(y = 2\mathbf{x}^\top \mathbf{x}\)</li>
+<li>我们希望对这个函数的列向量 \(\mathbf{x}\) 求导,
+<ul class="org-ul">
+<li><p>
+代码如下
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #531ab6;">import</span> torch
+
+<span style="color: #005e8b;">x</span> = torch.arange<span style="color: #000000;">(</span>3.0<span style="color: #000000;">)</span>
+
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|x|=&gt;"""</span>, x<span style="color: #000000;">)</span>
+
+
+x.requires_grad_<span style="color: #000000;">(</span><span style="color: #0000b0;">True</span><span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|x.grad|=&gt;"""</span>, x.grad<span style="color: #000000;">)</span>
+
+<span style="color: #005e8b;">y</span> = 2 * torch.dot<span style="color: #000000;">(</span>x, x<span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|y|=&gt;"""</span>, y<span style="color: #000000;">)</span>
+
+y.backward<span style="color: #000000;">()</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|x.grad|=&gt;"""</span>, x.grad<span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|x.grad == 4 * x|=&gt;"""</span>, x.grad == 4 * x<span style="color: #000000;">)</span>
+
+<span style="color: #7f0000;"># </span><span style="color: #7f0000;">&lt;====================OUTPUT====================&gt;
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|x|=&gt; tensor([0., 1., 2.])
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|x.grad|=&gt; None
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|y|=&gt; tensor(10., grad_fn=&lt;MulBackward0&gt;)
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|x.grad|=&gt; tensor([0., 4., 8.])
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|x.grad == 4 * x|=&gt; tensor([True, True, True])</span>
+</pre>
+</div></li>
+<li><p>
+上面的例子中,y dot product两个矩阵的过程是前向传播,前向传播之后的结果是一个标量
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #005e8b;">y</span> = 2 * torch.dot<span style="color: #000000;">(</span>x, x<span style="color: #000000;">)</span>  <span style="color: #7f0000;"># </span><span style="color: #7f0000;">&#35745;&#31639;: 2 * (0 * 0 + 1 * 1 + 2 * 2) = 2 * (0+1+4) = 2 * 5 = 10.</span>
+</pre>
+</div></li>
+<li><p>
+在这个前向传播的过程当中,pytorch会自动构建一个动态计算图.图中的带[]的节点是 <b>张量</b> ,不带[]的节点
+是 <b>操作</b> ,这个图记录了从输入x到输出y的完整计算过程,为后续的反向传播(计算梯度)做准备.
+</p>
+<pre class="example" id="orga6cb158">
+  [x]
+   │
+dot(x, x)   ← (计算节点:向量点积)
+   │
+   *2       ← (计算节点:乘以 2)
+   │
+  [y]       ← (输出张量)
+</pre></li>
+<li><p>
+这里y是第一个标量,可以直接调用backward(至于为什么非标量不能调用backward,我们下一节讲)
+</p>
+<div class="org-src-container">
+<pre class="src src-python">y.backward<span style="color: #000000;">()</span>                    <span style="color: #7f0000;">#  </span><span style="color: #7f0000;">&#36825;&#19968;&#27493;&#35302;&#21457;&#21453;&#21521;&#20256;&#25773;,&#35745;&#31639;&#26799;&#24230;</span>
+</pre>
+</div></li>
+<li>y.backward()是触发自动微分的关键指令.pytorch会从标量y开始,沿着之前构建的计算图 <b>反向传播</b>, 利用链
+式法则计算梯度:
+<ol class="org-ol">
+<li>公式\(y = 2 \times (\mathbf{x} \cdot \mathbf{x}) = 2 \times (x_0^2 + x_1^2 + x_2^2)\)</li>
+<li>根据微分原则直接得到 \(\frac{\partial y}{\partial x} = 2 \times 2x = 4x\)</li>
+<li>所以在 \([x_0, x_1, x_2]\) 处 的梯度为 [0, 4, 8]</li>
+</ol></li>
+</ul></li>
+<li>上面的y的结果是一个标量,所以可以使用backward(), <b>如果是非标量,则不可以使用backward()</b>
+<ul class="org-ul">
+<li>这个结论非常的反直觉,我们需要整整一节来介绍原因</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgd7b120a" class="outline-4">
+<h4 id="orgd7b120a"><span class="section-number-4">2.5.2.</span> 非标量变量的反向传播</h4>
+<div class="outline-text-4" id="text-2-5-2">
+<ul class="org-ul">
+<li>当函数 y(一个向量) 关于 x(另一个向量) 求导时,其结果是一个包含了所有偏导数的矩阵,也就是雅可比矩
+阵 (Jacobian Matrix),这个矩阵的每个元素 (i, j)表示 y[i]对 x[j]的偏导数
+<ul class="org-ul">
+<li>对于 \(y=x^2\) 这个运算,雅可比矩阵是一个对角矩阵(因为 y[i]只与 x[i]有关),对角线上的元素是 2*x[i]</li>
+<li><p>
+具体矩阵如下
+</p>
+<pre class="example" id="org24c67bb">
+J = [[2 * 1, 0,   0  ],
+     [0,   2 * 2, 0  ],
+     [0,   0,   2 * 3]] = [[2, 0, 0],
+                         [0, 4, 0],
+                         [0, 0, 6]]
+</pre></li>
+<li>好了问题来了,如果x的梯度存储的是雅可比矩阵,那么x.grad是一个比x维度还高的张量,这意味着计算和存储更
+昂贵,因为x如果是一个夸张的百万维度的张量,那么它的grad维度比这个还要高,不现实.</li>
+</ul></li>
+<li>所以,pytorch的做法是把雅可比矩阵"降维",把他降低到和x一个维度.这样做的好处是,新的grad的维度和x一致,
+那么新grad的(i,j)位置处的方向,就是下一步x的(i,j)优化的方向.</li>
+<li>降维的方法很简单:
+<ul class="org-ul">
+<li><p>
+如果不同的位置贡献度可能不一样,那么传入一个和x一样维度的向量
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #531ab6;">import</span> torch
+
+<span style="color: #005e8b;">x</span> = torch.tensor<span style="color: #000000;">(</span><span style="color: #dd22dd;">[</span>1.0, 2.0, 3.0<span style="color: #dd22dd;">]</span>, requires_grad=<span style="color: #0000b0;">True</span><span style="color: #000000;">)</span>
+<span style="color: #005e8b;">v</span> = torch.tensor<span style="color: #000000;">(</span><span style="color: #dd22dd;">[</span>1.0, 1.0, 1.0<span style="color: #dd22dd;">]</span><span style="color: #000000;">)</span>
+
+<span style="color: #005e8b;">y</span> = x * x
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|y|=&gt;"""</span>, y<span style="color: #000000;">)</span>
+y.backward<span style="color: #000000;">(</span>gradient=v<span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|x.grad|=&gt;"""</span>, x.grad<span style="color: #000000;">)</span>
+
+<span style="color: #7f0000;"># </span><span style="color: #7f0000;">&lt;====================OUTPUT====================&gt;
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|y|=&gt; tensor([1., 4., 9.], grad_fn=&lt;MulBackward0&gt;)
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|x.grad|=&gt; tensor([2., 4., 6.])</span>
+</pre>
+</div></li>
+<li><p>
+如果不同的位置贡献度都一样,那么可以传入一个和x一样维度的向量,也可以直接让y调用sum(相当于张量每个
+位置都是1)
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #531ab6;">import</span> torch
+
+<span style="color: #005e8b;">x</span> = torch.tensor<span style="color: #000000;">(</span><span style="color: #dd22dd;">[</span>1.0, 2.0, 3.0<span style="color: #dd22dd;">]</span>, requires_grad=<span style="color: #0000b0;">True</span><span style="color: #000000;">)</span>
+
+<span style="color: #005e8b;">y</span> = x * x
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|y|=&gt;"""</span>, y<span style="color: #000000;">)</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|y.sum()|=&gt;"""</span>, y.<span style="color: #8f0075;">sum</span><span style="color: #dd22dd;">()</span><span style="color: #000000;">)</span>
+y.<span style="color: #8f0075;">sum</span><span style="color: #000000;">()</span>.backward<span style="color: #000000;">()</span>
+<span style="color: #8f0075;">print</span><span style="color: #000000;">(</span><span style="color: #3548cf;">"""|x.grad|=&gt;"""</span>, x.grad<span style="color: #000000;">)</span>
+
+<span style="color: #7f0000;"># </span><span style="color: #7f0000;">&lt;====================OUTPUT====================&gt;
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|y|=&gt; tensor([1., 4., 9.], grad_fn=&lt;MulBackward0&gt;)
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|y.sum()|=&gt; tensor(14., grad_fn=&lt;SumBackward0&gt;)
+</span><span style="color: #7f0000;"># </span><span style="color: #7f0000;">|x.grad|=&gt; tensor([2., 4., 6.])</span>
+</pre>
+</div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: harrifeng@outlook.com</p>
+<p class="date">Created: 2025-11-29 Sat 20:27</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
