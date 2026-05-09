@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2026-04-22 Wed 19:51 -->
+<!-- 2026-05-09 Sat 16:05 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>spn</title>
@@ -15,25 +15,45 @@
 <script type="text/javascript" src="src/lib/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="src/lib/js/jquery.stickytableheaders.min.js"></script>
 <script type="text/javascript" src="src/readtheorg_theme/js/readtheorg.js"></script>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
 </head>
 <body>
 <div id="content" class="content">
 <h1 class="title">spn</h1>
-<div id="table-of-contents" role="doc-toc">
-<h2>Table of Contents</h2>
-<div id="text-table-of-contents" role="doc-toc">
-<ul>
-<li><a href="#org3b40733">1. Laying the groundwork</a>
-<ul>
-<li><a href="#org9ef8fd4">1.1. Stats and quant</a></li>
-</ul>
-</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-org3b40733" class="outline-2">
-<h2 id="org3b40733"><span class="section-number-2">1.</span> Laying the groundwork</h2>
-<div class="outline-text-2" id="text-1">
+<div id="outline-container-org12d4e32" class="outline-2">
+<h2 id="org12d4e32">Laying the groundwork</h2>
+<div class="outline-text-2" id="text-org12d4e32">
 <ul class="org-ul">
 <li>在当今 <b><b>数据驱动</b></b> 的环境中，掌握统计学与定量分析技术，是做出明智决策的关键。这些方法能将复杂数据
 转化为可落地的洞见，覆盖各行各业与各类职能——从预测股票走势、客户行为，到检测异常、优化资源配置。
@@ -50,9 +70,9 @@ Python 全程作为 <b><b>分析核心引擎</b></b> ，兼具灵活性、高效
 策。</li>
 </ul>
 </div>
-<div id="outline-container-org9ef8fd4" class="outline-3">
-<h3 id="org9ef8fd4"><span class="section-number-3">1.1.</span> Stats and quant</h3>
-<div class="outline-text-3" id="text-1-1">
+<div id="outline-container-org8a3547e" class="outline-3">
+<h3 id="org8a3547e">Stats and quant</h3>
+<div class="outline-text-3" id="text-org8a3547e">
 <ul class="org-ul">
 <li>在这个 <b><b>数字信息主导</b></b> 的时代，系统、用户与机器每一秒都在产生并存储海量数据。想要理解如此庞大且复
 杂的数据，仅凭直觉远远不够，需要一套 <b><b>系统化的分析方法</b></b> 来揭示规律、检验关联、支撑可靠决策。这正
@@ -61,12 +81,782 @@ Python 全程作为 <b><b>分析核心引擎</b></b> ，兼具灵活性、高效
 些技术不仅是有用，更是 <b><b>得出有效结论、做出快速高效且有理有据决策</b></b> 的必备能力。</li>
 </ul>
 </div>
+<div id="outline-container-org29742e9" class="outline-4">
+<h4 id="org29742e9">Understanding the basics</h4>
+<div class="outline-text-4" id="text-org29742e9">
+<ul class="org-ul">
+<li>统计学是一门帮助我们理解不确定性的学科。它包括收集、分析、解读和呈现数据，通过这种方式揭示出有价值
+的规律，即便基础信息并不完整、存在干扰或具有变异性。</li>
+<li>运用统计方法，我们能够得出可靠的推断，识别出原本隐藏在原始数据中的趋势。</li>
+<li>定量技术以统计学为基础，通过引入数学模型为结构化决策提供支撑。这类方法常用于优化结果、预测未来态势
+以及模拟复杂系统。例如，
+<ul class="org-ul">
+<li>线性规划可用于在相互竞争的目标间合理分配有限资源，</li>
+<li>蒙特卡洛模拟则通过探究大量可能出现的结果，来量化风险与机遇。</li>
+</ul></li>
+<li>统计学与定量方法（简称统计与量化）共同构成了一套实用且互补的工具，能够清晰、精准地解决现实问题。</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org88c6a5f" class="outline-4">
+<h4 id="org88c6a5f">Why they matter</h4>
+<div class="outline-text-4" id="text-org88c6a5f">
+<ul class="org-ul">
+<li>统计与定量技术之所以不可或缺，是因为它们能把数据转化为 <b><b>清晰的洞察</b></b> ，并最终带来 **更优的决策**。</li>
+<li>在高风险环境中，仅凭直觉远远不够；我们需要**系统化的方法**来发现规律、评估不确定性，并优化最终结果。</li>
+<li>试想一家数据解决方案提供商，需要在**预算紧张、资源有限**的情况下对项目进行优先级排序。
+<ul class="org-ul">
+<li>统计方法能够揭示哪些项目与绩效目标最为契合，</li>
+<li>而**线性规划**则能以**最大化整体战略效益**的方式，帮助分配有限的资源。</li>
+</ul></li>
+<li>再以**金融分析师预测股票表现**为例：通过**蒙特卡洛模拟**，分析师可以构建出数千种可能的收益结果，以
+此评估在不同市场环境下的风险敞口与潜在机会——从而更全面地描绘未来的可能走势。</li>
+<li>这些例子体现了**统计与定量分析的真正力量**：它们不只是描述已经发生的事，更提供了一套**分析框架**，
+帮助我们理解**可能发生什么**，并在复杂与不确定的局面下做出**最优决策**。</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org63f586e" class="outline-4">
+<h4 id="org63f586e">The broader effect</h4>
+<div class="outline-text-4" id="text-org63f586e">
+<ul class="org-ul">
+<li>统计与定量方法在**众多行业中都不可或缺**。
+<ul class="org-ul">
+<li>在市场营销领域，马尔可夫链等模型可以长期追踪客户行为——估算客户**品牌转换、留存或流失**的概率。</li>
+<li>在金融领域，蒙特卡洛模拟通过建模数千种潜在市场结果，用于**评估投资风险**。</li>
+<li>在运营管理中，线性规划能够在**预算紧张、后勤约束严格**的条件下，支持战略性资源分配。</li>
+</ul></li>
+<li>掌握这些技术能让程序员、分析师和决策者构建出**既技术可靠、又符合战略方向**的系统。</li>
+<li>将复杂数据转化为清晰、可落地的洞察，这一能力让统计与定量分析超越了单纯的分析工具——它们成为
+**创新、效率与明智决策的基石**，支撑着具有前瞻性和创新力的组织持续发展。</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgebe52a8" class="outline-4">
+<h4 id="orgebe52a8">Diving deeper: Core concepts</h4>
+<div class="outline-text-4" id="text-orgebe52a8">
+<ul class="org-ul">
+<li>想要**有效地运用统计学与定量分析技术**，首先必须扎实掌握几个核心概念。</li>
+<li>这些基础思想是**从基础分析到高级建模**的所有内容的核心支柱。</li>
+<li>**描述性统计**提供了数据集的概括视图，它使用均值、中位数、标准差和极差等指标，快速呈现连续数据的
+**分布形态、离散程度和集中趋势**；也使用频数、比例等指标描述分类数据的取值分布。</li>
+<li>它通常是理解数据特征、判断是否需要深入分析的**第一步**。</li>
+<li>推断统计能够让结论超越当前数据集本身的范围。通过使用样本来对更庞大的总体进行归纳推断，置信区间、p 值、假设检验
+等推断工具可以量化不确定性，并指导基于证据的决策。</li>
+<li>概率是统计推断和许多定量模型的核心。它提供了一种结构化方法，用于量化不确定性，并基于现有信息评估未
+来结果发生的可能性。</li>
+<li>回归分析探究变量之间的关系 —— 即一个变量如何随另一个变量的变化而变化。它是趋势建模、预测未来结果、
+识别行为关键驱动因素的核心工具。</li>
+<li>优化的核心是在一组约束条件下找到最优解决方案。线性规划是经典案例，常用于在存在权衡取舍时进行资源分
+配或最大化效率。</li>
+<li>仿真（尤其是蒙特卡洛仿真这类方法）通过生成数千种潜在结果，为复杂或不确定的系统建模。该技术广泛应用
+于金融、运营和风险分析领域，用于评估未来可能性并在不确定性下做出决策。</li>
+<li>机器学习建立在上述诸多原理之上，利用算法从数据中学习，从而做出越来越精准的预测或分类。尽管它可能包
+含线性回归、逻辑回归等常见工具，但机器学习的应用范围远超传统统计模型 —— 通常依赖海量数据集、非线性
+关系和迭代式模型训练。决策树、随机森林等技术支持在复杂环境中灵活建模，这些环境中的模式对传统方法而
+言可能过于细微或动态。尽管机器学习具备现代应用广度，但它根植于统计学，以概率、优化、泛化等核心思想
+为基础。</li>
+<li>这些概念共同构成了现代数据分析的实践与理论核心，也是本书后续更专业技术的起点。</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org0699be3" class="outline-3">
+<h3 id="org0699be3">Why Python?</h3>
+<div class="outline-text-3" id="text-org0699be3">
+<ul class="org-ul">
+<li>虽然并非本书的核心重点，但Python是应用书中所述统计与定量方法的核心工具。它语法易读、库函数强大且用
+途广泛，是将理论概念转化为实际应用的理想选择。</li>
+<li>Python搭建了理论与实践之间的桥梁：初学者能轻松理解其逻辑，资深使用者也能高效清晰地完成高阶任务。本
+书不会依赖晦涩繁杂的数学公式，而是通过通俗易懂的文字讲解和带注释的代码阐释各类方法——涵盖基础分析到
+复杂仿真的全场景应用。</li>
+<li>鉴于Python在数据科学、金融和机器学习领域的广泛应用，掌握这门技术是一项具备长期价值的技能。亲自动手
+编写代码，既能加深对知识的理解，又能提升实操熟练度，为跨行业发展创造更多机会。</li>
+<li>本书全程使用Python完成数据预处理、模型拟合、结果可视化和效果仿真。接下来，我们将探讨Python为何能在
+这些任务中脱颖而出，以及如何高效搭建你的编程环境。</li>
+</ul>
+</div>
+<div id="outline-container-org3883e50" class="outline-4">
+<h4 id="org3883e50">Rich ecosystem</h4>
+<div class="outline-text-4" id="text-org3883e50">
+<ul class="org-ul">
+<li>Python 庞大丰富的库生态系统，是它在数据分析和定量研究领域表现卓越的核心原因。数据处理、可视化、统计
+建模等任务借助 Python 变得高效且直观，让你能够专注于解决问题，而非应对复杂的技术细节。</li>
+<li>核心库主要包括：
+<ul class="org-ul">
+<li>**pandas**：用于数据筛选、聚合与清洗</li>
+<li><b><b>NumPy</b></b> 和 **SciPy**：用于高速数值计算</li>
+<li><b><b>Matplotlib</b></b> 和 **Seaborn**：用于制作清晰、信息量丰富的可视化图表</li>
+<li><b><b>scikit-learn</b></b> 和 **statsmodels**：用于实现机器学习与统计模型</li>
+</ul></li>
+<li>这些工具由全球开发者社区持续维护，并会定期更新、新增功能。</li>
+<li>Python 还能与其他编程语言、数据库及各类平台良好兼容，因此成为全流程数据分析的灵活之选。</li>
+<li>借助以上各类库，你可以高效完成从数据探索、模型搭建到结果展示的完整分析流程，兼顾强大性能与简洁易用性。</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org3ddddd8" class="outline-4">
+<h4 id="org3ddddd8">Ease of learning</h4>
+<div class="outline-text-4" id="text-org3ddddd8">
+<ul class="org-ul">
+<li>Python 语法简洁易懂、可读性强，是对新手最友好的编程语言之一，非常适合学习统计学与定量分析方法的人群。
+其代码结构贴近自然语言，即便没有编程基础，使用者也能快速理解代码逻辑。</li>
+<li>拟合线性回归等基础任务，仅需寥寥几行代码即可实现。这种简洁性能够降低认知负担，让你专注于理论概念，
+而非纠结语法规则。</li>
+<li>同时，Python 采用统一的模块化设计，支持快速开发。无论是快速搭建简易原型，还是优化复杂模型，都能保持
+高效的工作流程。</li>
+<li>兼具易上手与高性能的优势，让 Python 既能满足新手学习需求，也能助力资深分析师高效处理大规模业务与复
+杂分析工作。</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgd68c0d8" class="outline-4">
+<h4 id="orgd68c0d8">Online support and community</h4>
+<div class="outline-text-4" id="text-orgd68c0d8">
+<ul class="org-ul">
+<li>Python 之所以风靡全球，得益于全球最活跃的开发者与分析师社区之一。</li>
+<li>从入门教程到技术论坛，无论是代码调试还是新库学习，各类支持资源都随手可得。</li>
+<li>像 Stack Overflow 这类平台，能够为常见技术难题提供解决方案；</li>
+<li>GitHub 上则有数万个开源项目，展示了 Python 在数据分析与机器学习领域的各类应用。</li>
+<li>这种知识共享模式既能加快学习进度，也能促进协作交流。</li>
+<li>以 pandas 为代表的完善官方文档，附带大量实操示例，帮助使用者高效调用库函数。</li>
+<li>持续不断的社区贡献，也让 Python 生态始终与时俱进、不断创新。</li>
+<li>依托完善的社区支撑，学习 Python 成为一种协作式过程，帮助使用者快速解决问题，搭建稳定可靠的分析方案。</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgcf98e95" class="outline-4">
+<h4 id="orgcf98e95">Industry adoption</h4>
+<div class="outline-text-4" id="text-orgcf98e95">
+<ul class="org-ul">
+<li>Python 在数据科学、统计学与定量分析领域的主导地位，得益于其跨行业的广泛应用——涵盖科技巨头、金融、医
+疗健康以及学术研究等诸多领域。</li>
+<li>其强大的通用性，使其成为机器学习、预测分析与优化运算等工作的必备工具。</li>
+<li>Python 广受欢迎的一大原因，是它能够与各类技术无缝对接，可搭建完整的全流程解决方案，从需求预测到数据
+看板可视化皆可实现。</li>
+<li>凭借高度灵活性，小到自动化办公、大到高阶建模任务，它都能轻松胜任。</li>
+<li>各行各业的普遍采用，催生了市场对 Python 技能的旺盛需求。</li>
+<li>企业十分看重 Python 简洁易用且功能强大的综合优势，熟练掌握 Python 已成为数据分析、机器学习及科研类岗位的核心竞争力。</li>
+<li>学好 Python，既能帮助你应对各类现实业务难题，也能紧跟快速变化的就业市场与行业发展需求。</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgf0b6917" class="outline-4">
+<h4 id="orgf0b6917">Versatility</h4>
+<div class="outline-text-4" id="text-orgf0b6917">
+<ul class="org-ul">
+<li>Python 的应用广度远不止局限于统计学与数据分析。它广泛应用于**网站开发、数据工程、自动化**等领域，甚
+至涉足游戏设计、数字艺术等创意行业。</li>
+<li>数据科学家可以一边构建预测模型，一边自动化数据流程；</li>
+<li>网页开发者则能将机器学习功能嵌入交互式应用——所有工作都可通过这一门语言完成。</li>
+<li>Python 灵活性极强，无需更换工具，就能在不同学科与业务领域之间无缝切换。</li>
+<li>数据处理、可视化、建模等技能可跨行业通用，</li>
+<li>因此学习 Python 是一项极具远见的长期投入。</li>
+<li>无论你是从数据分析转向云计算，还是从科研领域转行软件工程，Python 始终适用。</li>
+<li>极强的适配性也持续推动技术创新。</li>
+<li>从原型搭建到项目落地部署，Python 助力使用者高效、灵活地攻克各类复杂技术难题。</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org3c6cdcb" class="outline-3">
+<h3 id="org3c6cdcb">Python IDEs</h3>
+<div class="outline-text-3" id="text-org3c6cdcb">
+<ul class="org-ul">
+<li>集成开发环境（IDE）能够让你高效地编写、测试、调试并运行代码。Python 自带一款基础开发环境——集成开发
+与学习环境（IDLE），但市面上还有多款第三方开发环境，可根据不同使用需求定制功能，有助于简化工作流程、
+提升开发效率。</li>
+<li>选择合适的集成开发环境，取决于你的学习目标、技术需求以及项目复杂度。IDLE 这类轻量工具，非常适合快速
+代码测试或编写简易脚本。</li>
+<li>如果要开展大型、高阶开发工作，例如仿真模拟、回归建模、多人协作项目，PyCharm、Jupyter Notebook 等功
+能完备的集成开发环境会是更好的选择，它们配备代码补全、程序调试、版本控制等专业功能。</li>
+<li>下文将介绍几款主流开发环境，梳理各自优势，帮你选出最适配数据分析工作流的工具。</li>
+</ul>
+</div>
+<div id="outline-container-orgeaa51e0" class="outline-4">
+<h4 id="orgeaa51e0">IDLE: A starting point</h4>
+</div>
+<div id="outline-container-org67b8380" class="outline-4">
+<h4 id="org67b8380">PyCharm: A professional tool</h4>
+</div>
+<div id="outline-container-orgfc25ed7" class="outline-4">
+<h4 id="orgfc25ed7">Other popular IDEs</h4>
+</div>
+</div>
+<div id="outline-container-orgaec439d" class="outline-3">
+<h3 id="orgaec439d">Benefits and larning approach</h3>
+<div class="outline-text-3" id="text-orgaec439d">
+<ul class="org-ul">
+<li>本书精心编撰，将理论知识与实操应用完美结合、相辅相成，帮助读者不仅能够理解高阶统计与定量分析方法，
+更能掌握如何在真实业务场景中高效落地运用。</li>
+<li>本书直击众多学生与职场从业者面临的核心难题：打通抽象理论概念与实际落地应用之间的壁垒。</li>
+<li>全书在严谨讲解底层原理的同时，搭配大量 Python 实操案例，助力读者夯实专业技术能力，培养批判性思维，
+从而能够在关键决策场景下，做出科学的数据驱动型判断。</li>
+<li>试想一下：在技术面试中，面试官让你定义 **coefficient of determination(决定系数)**，也就是大家熟知的
+**R平方（\(R^2\)）**。
+<ul class="org-ul">
+<li>很多应试者或许可以回答出：它用于量化在线性回归中，自变量所能解释的因变量方差占比。</li>
+<li>但一旦要求进行数学推导，大多数人都会不知所措。</li>
+</ul></li>
+<li>本书能让你从容应答 <b><b>概念定义</b></b> 与 <b><b>原理推导</b></b> 两类问题。举例来说你将会学到：
+<ul class="org-ul">
+<li>\(R^2\) 可以用 回归平方和（SSR）**除以** 总平方和（SST）计算得出；</li>
+<li>也可以用 1 减去残差方差的占比来求得。</li>
+</ul></li>
+<li>这种深度理解，体现的不只是理论储备，更是专业实操能力，能让你在面试、课堂学习与职场工作中脱颖而出。
+（如果现阶段觉得这些内容晦涩难懂也无需担心，本书第四章将详细讲解线性回归，带你轻松掌握这些指标。）</li>
+<li>这些收获远不止停留在理论理解层面。例如，
+<ul class="org-ul">
+<li>你不必只依靠直方图这类目视观察来判断数值数据序列是否服从正态分布，</li>
+<li>还将学会使用**夏皮罗-威尔克检验（Shapiro–Wilk test）**等正式统计检验方法。</li>
+</ul></li>
+<li>这类专业方法能让你的分析**精准、严谨、符合行业标准**。这种学习方式不仅能提升你的信心，更能夯实你的
+专业能力，让你清晰、精准地处理各类复杂任务。</li>
+<li>本书的学习方法兼顾**概念清晰性**与**实践可落地性**。每一章都会先奠定扎实的理论基础，确保你理解每种
+方法的原理与前提假设；随后搭配实操案例，通常使用真实数据解决有实际价值的问题。</li>
+<li>书中提供的 Python 代码片段并非仅能实现功能：所有代码都附带详细注释与讲解，让你可以灵活应用到自己的
+项目中。从构建时间序列模型到蒙特卡洛场景模拟，每一个案例都旨在巩固你对知识点的掌握，同时展示其实际
+应用价值。</li>
+<li>无论你是**想要夯实基础知识的初学者**，还是**希望精进专业能力的资深从业者**，本书都提供了一套
+<b><b>结构化、易理解、且生动有趣</b></b> 的学习路径。</li>
+<li>读完本书后，你将掌握一套 **全能实用的工具集**，让你能够自信、富有创造力且具备批判性思维地解决问题。
+本书对 **理论与实践的双重聚焦**，确保你学到的技能不仅 **技术扎实**，更能**切实落地、产生实际价值**。</li>
+</ul>
+</div>
+<div id="outline-container-org655f579" class="outline-4">
+<h4 id="org655f579">From statistical measures to real-world application</h4>
+<div class="outline-text-4" id="text-org655f579">
+<ul class="org-ul">
+<li>你所获得的知识**远不止停留在理论层面**——它专为**学术与职场场景的实际应用**而设计。书中涵盖的概念与
+技术，直接对应你在现实场景中极可能遇到的各类问题，确保你的技能**实用且具备可迁移性**。</li>
+<li>举个例子，假设你需要**构建线性回归模型**来解决业务问题。你搭建好模型后，却发现它的 \(R^2\)（决定系数）
+非常低，这意味着该模型**几乎无法解释因变量的变异**。</li>
+<li>你不会盲目增加预测变量来刻意抬高 \(R^2\)——这种做法会导致模型复杂化并引发**多重共线性**问题；</li>
+<li>相反，你将学会**拆解平方和**。通过逐步拆解 <b><b>SSR（回归平方和）</b></b> 与 <b><b>SST（总平方和）</b></b> 等概念，你
+能精准找到有效改进模型的方向，同时**保持模型的可解释性与统计严谨性**。</li>
+<li>再试想一下，你在一个**高价值、高风险的项目**中身兼两职：既要作为**技术核心人员**出力，又要担任
+**项目经理**统筹全局。你可能需要一边落地自动化报表解决方案，一边管控项目进度、交付成果与各方干系人
+的预期。</li>
+<li>本书通过**深度技术内容 + 实用项目管理策略**的结合，为你胜任这类复合型岗位做好充分准备。你不仅会学会
+如何执行统计分析，还能掌握**高效规划与管理项目**的方法，让你既能当好技术专家，也能成为出色的战略领
+导者。</li>
+<li>本书展示的分析方法还能**提升你向非技术相关方阐述分析结论的能力**。例如，
+<ul class="org-ul">
+<li>在讲解卡方检验或时间序列分析的结果时，你将掌握相应方法，既能解释统计结果，也能说明其**实际业务含义**。</li>
+</ul></li>
+<li>这种能力是**连接原始数据与可落地建议的关键桥梁**，能让你的工作更有影响力，也更容易被他人理解。</li>
+<li>本书**强调实战应用**，让你能自信应对现代数据分析中的各类复杂场景。无论你是优化业务流程、改进预测模
+型，还是为新兴挑战探索创新方案，书中培养的技能都能让你**高效、严谨**地完成各项任务。</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org8bbd40b" class="outline-4">
+<h4 id="org8bbd40b">Expanding beyond traditional techniques</h4>
+<div class="outline-text-4" id="text-org8bbd40b">
+<ul class="org-ul">
+<li>在当今数据科学与分析领域，**传统统计方法**（如线性回归、基础假设检验）通常只作为**基础工具**使用。
+然而，许多现实问题因其固有的复杂性，**需要更高级的方法**才能解决。</li>
+<li>本书内容专为帮你掌握这些**高阶技术**而设计，让你能够应对传统方法无法处理的复杂挑战。</li>
+<li>试想一下，你需要在**市场剧烈波动时期预测股价**。线性回归模型或许能提供一些参考，但它的假设与局限性，
+使其难以捕捉金融市场的**随机性特征**。</li>
+<li>本书介绍的**蒙特卡洛模拟**，可以通过生成成千上万条潜在价格轨迹，对不确定性与波动性进行建模。这类模
+拟能提供未来的概率视角，帮助你更好地评估风险、做出决策。</li>
+<li>再来看另一个场景：
+<ul class="org-ul">
+<li>使用**马尔可夫链**分析客户行为。传统模型可能只会追踪购买频率等单一指标，而马尔可夫链能让你理解
+**状态之间的转移概率**——比如从忠实客户转变为流失风险客户的可能性。这种结构化的概率方法，能帮助企
+业预测并影响长期客户行为，是市场营销与运营管理中极具价值的工具。（你现在完全不需要弄懂细节——本书
+第 9 章和第 11 章会分别带你学习蒙特卡洛模拟和马尔可夫链，并详细讲解它们的实际应用。）</li>
+</ul></li>
+<li>本书还介绍了**线性规划**这类优化技术，让你能够在约束条件下高效分配资源。例如，你可能需要在固定预算
+内对项目排定优先级，同时最大化项目效益。线性规划提供了一套系统化方法，来确定最优资源分配方案，确保
+高效达成战略目标。</li>
+<li>本书将这些高阶方法拆解为易懂的步骤，并提供**带详细注释的 Python 代码**，让你能清晰、自信地落地应用
+。每种技术都搭配实际案例，展示其在金融、医疗、物流、市场营销等多个行业的相关性与应用方式。更重要的
+是，本书注重讲解每种方法背后的**原理**，让你不只是照本宣科，更能灵活运用这些工具解决全新的、独特的
+挑战。</li>
+<li>通过这些高阶技术拓展你的分析工具箱，你将有能力解决需要更复杂方案的难题。无论你是模拟复杂系统、优化
+决策流程，还是分析概率模型，本书培养的技能都能让你更自信、更精准地应对更广泛的场景。</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org23cb825" class="outline-4">
+<h4 id="org23cb825">A balanced approach to theory and practice</h4>
+<div class="outline-text-4" id="text-org23cb825">
+<ul class="org-ul">
+<li>本书的核心目标之一，是在**理论理解**与**实际应用**之间取得平衡。很多教材要么过度依赖抽象的数学原理，
+要么只讲编程捷径，而本书弥补了这一鸿沟，通过**理论+实践双线并重**，让你不仅学会如何执行方法，更能理
+解这些方法**为什么有效**。</li>
+<li>每一章都会先讲解对应方法的**理论基础**。例如，在编写线性回归的 Python 代码之前，我们会先讲清楚模型
+假设、系数、拟合优度等关键概念；讲到蒙特卡洛模拟时，也会先建立随机性与概率分布的底层原理。这种
+**先打基础**的学习方式，能让你在将方法应用到真实问题时，做出更合理、更有依据的决策。</li>
+<li>第 2 章和第 3 章为全书的统计与定量方法奠定基础。
+<ul class="org-ul">
+<li>第 2 章介绍概率与计数的核心原理，从基础概率、组合与排列，到连续型与离散型随机变量，帮你掌握量化不
+确定性、构建解题思路的工具。</li>
+<li>第 3 章在此基础上，讲解正态分布、二项分布、均匀分布、泊松分布这四大基础概率分布，同时覆盖概率计算
+与条件概率。这两章共同为你搭建**扎实的概念与计算基础**，让你能自信地进入后续更高级的主题。</li>
+</ul></li>
+<li>理论基础打好之后，重心便转向**动手实现**。Python 作为桥梁，将抽象概念转化为可落地的解决方案，全书提
+供**可复用、注释详尽**的代码。你将学会用 pandas 预处理数据、用 NumPy 做数值计算、用 scikit-learn 构
+建预测模型。本书不止教你写代码，更会解释**每一步的目的**，在理论与实践之间建立更深的连接。</li>
+<li>这种**理论与实践结合**的方式，在应对需要批判性思维的复杂问题时尤为重要。比如，当预测模型出现异常结
+果时，理解方法背后的统计假设，能帮你更好地诊断并解决**多重共线性、数据异常值**等问题；同样，在构建
+决策树时，理解算法如何在每个节点分割数据，能让你精细调优，提升准确率。</li>
+<li>此外，这种平衡也体现在**结果解读与沟通**上。p 值、回归系数等统计指标都会结合业务场景解释，确保其与
+当前问题相关；散点图、模拟轨迹等可视化结果，也以**提取可落地洞见**为目标，而不只是展示图表。</li>
+<li>通过**严谨理论 + 实战应用**的结合，本书帮你同时掌握解决真实问题所需的**技术能力**与**批判性思维**。
+不只讲“怎么做”，更讲“为什么这么做”，让你能灵活运用方法应对各类挑战，成为更全能、更自信的分析师。
+第 2、3 章打下坚实基础，后续章节层层递进，最终让你做出**技术可靠、实用且有价值**的解决方案。</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgb860e7e" class="outline-3">
+<h3 id="orgb860e7e">How this book works</h3>
+<div class="outline-text-3" id="text-orgb860e7e">
+<ul class="org-ul">
+<li>本书内容旨在提供**无缝衔接的学习体验**，在各章节中将**理论洞见与实际应用**紧密结合。每一章都自成体
+系，专注于讲解一种特定的统计或定量技术，并按照结构化设计，一步步引导你掌握核心概念、实操落地方法，
+以及在真实场景中的解读方式。这种**模块化设计**支持你独立学习任意主题，既可以按需查阅特定方法，也可
+以按章节顺序学习，完成完整的知识体系构建。</li>
+<li>为了让学习更顺畅，本书章节结构**高度贴合现实中统计与定量问题的解决流程**：从理论基础开始，逐步进入
+探索性数据分析与Python实战编程，随后深入结果评估与解读。这种组合不仅让你明白工具“**如何使用**”，更
+能理解背后的“**为何如此**”。</li>
+<li>**第2章和第3章是全书的基础支柱**，为你夯实概率原理、计数方法与概率分布的核心知识。这两章帮你打下稳
+固的开局，为后续学习更高级的技术提供必要的统计基础。从第4章开始，本书进入专项主题，包括线性回归、逻
+辑回归、决策树与随机森林、时间序列模型、约束优化、蒙特卡洛模拟和马尔可夫链，每一项都兼顾严谨性与实
+用性。这一结构化学习路径如图1.1的流程所示。</li>
+<li>尽管大多数章节遵循**线性递进顺序**（与典型统计或定量项目的步骤一致），本书也融入了非线性设计，在最
+有效的节点将概念学习与实操练习穿插结合。这种设计确保你不仅能提升**技术熟练度**，还能培养**批判性思维**，
+从而将这些工具应用于各类复杂问题。</li>
+</ul>
+</div>
+<div id="outline-container-org4045b25" class="outline-4">
+<h4 id="org4045b25">Fundational learning with exploration and practice</h4>
+<div class="outline-text-4" id="text-org4045b25">
+<ul class="org-ul">
+<li>本书的学习方法遵循**先夯实理论基础，再展开实操应用**的原则，针对每种方法都采用这一路径。这种平衡设
+计既能让你理解方法背后的原理，又能掌握实战技能，从而有效运用这些技术。</li>
+<li>理论基础 → 探索分析 → 核心概念 → 实践练习 → 代码编写/运行/调试 → 结果分析 → 得出结论</li>
+<li><b><b>图 1.1 学习流程示意图</b></b>
+<ul class="org-ul">
+<li>本图展示了本书后续大部分章节的学习流程。其中的线性环节与工作或课堂中解决典型统计、定量问题的流程
+高度一致；即使将开头的理论基础替换为问题定义，逻辑依然成立。同时，本书在合适的节点将核心概念与实
+践穿插结合，因此也带有一定的非线性学习特征。</li>
+</ul></li>
+<li>无论是学习回归这类基础统计概念，还是深入马尔可夫链等高级方法，每一章都兼顾**概念清晰性**与**实践指导性**。
+<ul class="org-ul">
+<li>例如，第 4 章聚焦统计学的核心方法——线性回归，先介绍回归假设、关键指标与统计特性，搭建扎实的理论框
+架，再过渡到真实场景应用：利用历史赛事数据预测超级马拉松分段成绩。</li>
+<li>同样，第 12 章讲解本福特定律，先探索自然数列的理论基础，再将这些结论用于评估全球人口分布等真实数据集。</li>
+</ul></li>
+<li>**探索性分析**是本书学习体系的另一关键部分。每项分析都从探索阶段开始，用于评估数据的结构与质量。例如，
+<ul class="org-ul">
+<li>在拟合回归模型前，你会先识别异常值、检验正态性，并通过相关矩阵与散点图分析变量间关系；在检验数据
+集是否符合本福特定律时，也会先可视化其分布，并与标准本福特曲线对比。这一探索环节能保证后续分析建
+立在**全面理解数据**的基础上，从而得出更稳健、更有价值的结论。</li>
+</ul></li>
+<li>通过将**探索分析与理论学习**相结合，本书构建出一套系统化的学习流程，逐步建立你的信心与专业能力。理
+论知识帮你理解为何某些方法更适用，探索分析则保证你的分析立足于可靠的数据基础。这种双重强化思路，提
+升你严谨高效处理复杂问题的能力，让你能够得出可信结论，并在真实场景中有目标地应用分析结果。</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgf783868" class="outline-4">
+<h4 id="orgf783868">Using Python for precision and effciency</h4>
+<div class="outline-text-4" id="text-orgf783868">
+<ul class="org-ul">
+<li>Python 是本书的**核心计算工具**，支持在各类应用场景中高效实现统计与定量分析方法。其丰富的库生态系统
+能让你**无缝衔接理论与实践**，确保分析结果精准且执行高效。在后续章节中，本书将通过**带注释的代码示
+例**展示 Python 的功能，帮助你加深理解、提升实用性。例如，
+<ul class="org-ul">
+<li>在第 4 章中，我们使用 Python 拟合线性回归模型，计算回归平方和与残差平方和，并生成详细的回归分析表。</li>
+<li>第 9 章运用 Python 的 NumPy 库执行蒙特卡洛模拟，展示如何对随机性建模与分析，从而在不确定性条件下进行预测。第 11 章中，Python 助力构建与分析马尔可夫链，实现状态转移与系统长期行为的建模。</li>
+</ul></li>
+<li>每一章都将 Python 融入方法教学，提供**可复用的代码片段**，你可以直接应用到自己的项目中。</li>
+<li>除了实现算法，Python 的各类库还能简化复杂任务，让你专注于**结果解读与决策**。例如，使用 Matplotlib
+和 seaborn 生成的可视化图表，能直观展现数据分布特征；scikit-learn 与 statsmodels 则简化了机器学习与
+统计建模流程。这些工具不仅能提升工作效率，还能让你通过详细图表或简洁摘要，**更高效地传递分析结果**。</li>
+<li>将 Python 融入学习过程，能让你同时提升**技术能力**，并**深入理解所使用方法的原理**。本书中的代码并
+非“黑盒”，而是**透明的工具**，清晰展示每一步计算背后的逻辑。无论你是优化线性规划、分析时间序列数据，
+还是检验数据是否符合理论分布，Python 都能让你精准、自信地开展工作，成为你分析工具库中**不可或缺的核心工具**。</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgf4fd4da" class="outline-4">
+<h4 id="orgf4fd4da">Adaptable learning for diverse skill levels</h4>
+<div class="outline-text-4" id="text-orgf4fd4da">
+<ul class="org-ul">
+<li>本书面向**广泛的读者群体**，无论是刚刚踏入统计学与定量技术领域的初学者，还是希望精进和拓展技能的资
+深专业人士，都能从中获益。其结构化的讲解、清晰的说明和实用案例，让任何水平的学习者都能真正学有所得。</li>
+<li>对于**行业新手**，本书以**通俗易懂、循序渐进**的方式，系统介绍概率、回归建模、数据可视化等基础概念。
+Python 代码讲解由浅入深，并配有详细注释与说明，帮助初学者消除技术神秘感，逐步建立使用计算方法的信心。</li>
+<li>对于**资深从业者**，本书深入讲解**高阶技术**，包括蒙特卡洛模拟、马尔可夫链、优化方法等，既探究其理
+论基础，也展示实际实现方式。书中提供可直接复用的 Python 代码，并结合真实场景演示应用，让资深读者能
+快速掌握复杂方法，并应用到自己的分析任务中。</li>
+<li>本书的**适配性**不仅覆盖技能水平，也兼顾不同学习习惯。每一章内容独立完整，读者既可按顺序通读，也可
+直接跳读到感兴趣的专题。这种**模块化设计**让专业人士能聚焦工作中最相关的部分，同时为初学者提供一套
+完整的学习路线图，帮助他们掌握统计与定量方法。</li>
+<li>通过弥补知识与应用之间的差距，本书让你能够以清晰的思路、创造力与自信，从容应对各类数据分析问题。</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org88d0814" class="outline-2">
+<h2 id="org88d0814">第2章 探索概率与计数方法</h2>
+<div class="outline-text-2" id="text-org88d0814">
+</div>
+<div id="outline-container-org27e2b70" class="outline-3">
+<h3 id="org27e2b70">本章概览</h3>
+<div class="outline-text-3" id="text-org27e2b70">
+<ul class="org-ul">
+<li>本章与第3章的共同目标，是**从多个角度探索引人入胜的概率世界**——从最基础的知识，一直延伸到条件概率等更高级的主题。</li>
+<li>概率是统计分析和许多其他定量方法的**基石**，因此从这里开始、先用宏观视角全面了解概率，再在后续章节深入更具体的话题，是非常合理的安排。</li>
+<li>概率论并非单纯的数学抽象概念；恰恰相反，它是一种**强大的决策工具**，几乎适用于所有专业领域，也同样适用于我们的个人生活。</li>
+<li>通过理解概率，我们能够**量化不确定性、评估风险，并依据数据做出明智的预测**。</li>
+<li>掌握概率相关概念，不仅能为学习本书后续所有方法打下坚实基础，还能为数据分析、预测推断以及得出有价值、可落地的洞见打开广阔空间。</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org0ffcfa7" class="outline-3">
+<h3 id="org0ffcfa7">本章内容包括：</h3>
+<div class="outline-text-3" id="text-org0ffcfa7">
+<ul class="org-ul">
+<li>基础概率</li>
+<li>计数法则</li>
+<li>组合与排列的区别</li>
+<li>连续型随机变量</li>
+<li>离散型随机变量</li>
+
+<li>第2章将从概率与赔率的基础知识起步，逐步深入到条件概率的计算。</li>
+<li>在此过程中，我们会学习基本计数法则，辨析组合与排列的差异，并探究连续型和离散型随机变量的特性。</li>
+<li>随后在第3章，我们将学习统计与定量分析中最基础的**四种概率分布：正态分布、二项分布、均匀分布和泊松分布**，并梳理概率计算的核心原理。</li>
+<li>现在，让我们从基础开始，稳步建立扎实的认知。</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgbef6eea" class="outline-3">
+<h3 id="orgbef6eea">2.1 基础概率</h3>
+<div class="outline-text-3" id="text-orgbef6eea">
+<ul class="org-ul">
+<li>在日常生活中，大量事件的发生源于随机性或偶然性，小到琐事，大到重要抉择，皆是如此。</li>
+<li>以抛硬币为例，结果是正面还是反面，完全不受我们控制。</li>
+<li>同样，掷两枚骰子时，掷出7点的概率虽然高于其他任何组合，但结果依然充满偶然性。</li>
+<li>再看从标准52张扑克牌中抽一张：牌被均分为四种花色，又分为三种花牌和十种数字牌；无论抽到花牌还是数字牌，结果都无法确定。</li>
+
+<li>然而，当我们知道全部可能结果的总数，并且能识别出其中哪些属于“成功事件”时，就可以用**成功结果数 ÷ 全部可能结果数**来计算概率。</li>
+<li>这让我们能够基于有利结果与全部可能结果的比值，做出以概率为依据的理性决策。</li>
+<li>事实上，我们谈论概率时，真正关注的是**某一特定事件发生的可能性**——比如我们选定正面后，抛硬币恰好出现正面的概率。</li>
+
+<li>因此，成功事件的概率可以表示为：</li>
+</ul>
+\begin{equation}
+Probability(Event) = \frac{总可能结果中成功的结果数量}{所有可能结果的总数}
+\end{equation}
+
+<ul class="org-ul">
+<li>或更简洁地写作：</li>
+</ul>
+\begin{equation}
+Probability(Event) = \frac{成功次数}{总结果次数}
+\end{equation}
+
+<ul class="org-ul">
+<li>有两个前提条件**绝对关键**：
+<ol class="org-ol">
+<li>我们必须正确算出分母（全部可能结果数）。</li>
+<li>我们必须对“什么算作成功”达成明确一致。</li>
+</ol></li>
+
+<li>抛一枚两面硬币时，确定分母很容易；但掷两枚骰子、或**无放回**抽牌时，就没那么简单。</li>
+<li>同样，抛硬币猜正面时，界定成功很直观；但如果我们要追踪罕见的产品故障，也可以把**故障发生**定义为一种“成功”。</li>
+</ul>
+</div>
+<div id="outline-container-org5ccc9ad" class="outline-4">
+<h4 id="org5ccc9ad">2.1.1 概率类型</h4>
+<div class="outline-text-4" id="text-org5ccc9ad">
+<ul class="org-ul">
+<li>我们已经讲过一种概率：**理论概率**。</li>
+<li>接下来介绍另外两种：**经验概率**与**主观概率**。</li>
+
+<li>经验概率来自**试验或现实观测**。成功概率的表达式为：</li>
+</ul>
+\begin{equation}
+Probability(Event) = \frac{观测到的成功次数}{总观测次数}
+\end{equation}
+
+<ul class="org-ul">
+<li>举个例子：想知道辛辛那提某天下雨的概率。气象员收集多年数据，记录每天是否下雨。</li>
+<li>经验概率就是用**观测到的下雨天数 ÷ 总天数**。</li>
+<li>假如一年365天里下雨75天，那么任意一天降雨的经验概率就是 75/365。</li>
+
+<li>而主观概率，则基于**个人判断、观点或信念**，而非观测数据或数学计算。</li>
+<li>它因人而异，会受个人经验、偏见、感受影响。</li>
+<li>比如一个人对自己赢棋的主观概率，可能因为自信而偏高，即便理论胜算并不高。</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgb535d9c" class="outline-4">
+<h4 id="orgb535d9c">2.1.2 概率换算与度量</h4>
+<div class="outline-text-4" id="text-orgb535d9c">
+<ul class="org-ul">
+<li>概率常常被换算成**百分比**和**赔率**来呈现和使用。</li>
+<li>我们先用 Python 演示如何把概率转成百分比。</li>
+
+<li>下面这段代码计算抛一次硬币得到正面的概率，乘以100转为百分比，再拼接字符串打印：</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-python">&gt;&gt;&gt; <span style="color: #005e8b;">probability_heads</span> = 1 / 2
+&gt;&gt;&gt; <span style="color: #005e8b;">probability_heads_percent</span> = probability_heads * 100
+&gt;&gt;&gt; <span style="color: #8f0075;">print</span><span style="color: #000000;">(</span>f<span style="color: #3548cf;">'The probability of success equals: </span>{probability_heads_percent}<span style="color: #3548cf;">%'</span><span style="color: #000000;">)</span>
+</pre>
+</div>
+<p>
+The probability of success equals: 50.0%
+</p>
+
+<ul class="org-ul">
+<li>同理，掷出双六、抽到花牌的概率也可以这样计算：</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-python">&gt;&gt;&gt; <span style="color: #005e8b;">probability_double_sixes</span> = 1 / 36
+&gt;&gt;&gt; <span style="color: #005e8b;">probability_double_sixes_percent</span> = probability_double_sixes * 100
+&gt;&gt;&gt; <span style="color: #8f0075;">print</span><span style="color: #000000;">(</span>f<span style="color: #3548cf;">'The probability of success equals: </span>{probability_double_sixes_percent}<span style="color: #3548cf;">%'</span><span style="color: #000000;">)</span>
+</pre>
+</div>
+<p>
+The probability of success equals: 2.7777777777777777%
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python">&gt;&gt;&gt; <span style="color: #005e8b;">probability_face_card</span> = 12 / 52
+&gt;&gt;&gt; <span style="color: #005e8b;">probability_face_card_percent</span> = probability_face_card * 100
+&gt;&gt;&gt; <span style="color: #8f0075;">print</span><span style="color: #000000;">(</span>f<span style="color: #3548cf;">'The probability of success equals: </span>{probability_face_card_percent}<span style="color: #3548cf;">%'</span><span style="color: #000000;">)</span>
+</pre>
+</div>
+<p>
+The probability of success equals: 23.076923076923077%
+</p>
+
+<ul class="org-ul">
+<li>赔率（Odds）表示**成功数与失败数之比**；而概率是**成功数与总结果数之比**。</li>
+<li>二者相关，但**不是同一个概念**，不能混用。</li>
+
+<li>赔率公式：</li>
+</ul>
+\begin{equation}
+Odds = \frac{潜在成功次数}{潜在失败次数}
+\end{equation}
+
+<ul class="org-ul">
+<li>以抽花牌为例：
+<ul class="org-ul">
+<li>成功次数：12</li>
+<li>失败次数：40</li>
+<li>赔率 = 12/40 = 3/10 = 0.3</li>
+</ul></li>
+
+<li>也可以用概率直接算：</li>
+</ul>
+\begin{equation}
+Odds = \frac{P(成功)}{1-P(成功)}
+\end{equation}
+
+<ul class="org-ul">
+<li>反过来，从赔率也能推回概率：</li>
+</ul>
+\begin{equation}
+Probability(Event) = \frac{赔率}{赔率+1}
+\end{equation}
+
+<ul class="org-ul">
+<li>我们之前提到，计算总可能结果数有时并不容易。</li>
+<li>要解决这个难点，就要靠**基本计数法则**、**组合与排列**，以及**有放回/无放回**的概念。</li>
+<li>这正是下一节的内容。</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org77d76fe" class="outline-3">
+<h3 id="org77d76fe">2.2 计数法则</h3>
+<div class="outline-text-3" id="text-org77d76fe">
+<ul class="org-ul">
+<li>在概率论与组合数学（研究对象的计数、排列与组合）中，**计算所有可能结果的总数**至关重要。</li>
+<li>我们有两条核心指导原则：**乘法法则**与**加法法则**。</li>
+<li>这两条法则是计算多事件或多场景下总可能结果数的基石。</li>
+</ul>
+</div>
+<div id="outline-container-orgc5e3857" class="outline-4">
+<h4 id="orgc5e3857">2.2.1 乘法法则</h4>
+<div class="outline-text-4" id="text-orgc5e3857">
+<ul class="org-ul">
+<li>乘法法则指出：如果需要做出 i 个选择，第一个选择有 n₁ 种可能，第二个有 n₂ 种可能，依此类推，那么**所有可能结果的总数**等于各选择可能数的乘积：
+n₁ × n₂ × … × nᵢ</li>
+
+<li>适用场景：事件**同时发生或先后发生**、结果相互独立。</li>
+
+<li>例子：
+<ul class="org-ul">
+<li>掷两枚六面骰子：6 × 6 = 36 种结果</li>
+<li>车牌 3 个字母 + 3 个数字：26³ × 10³ = 17,576,000 种组合</li>
+<li>三位密码锁：10 × 10 × 10 = 1000 种组合</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org61c5ec3" class="outline-4">
+<h4 id="org61c5ec3">2.2.2 加法法则</h4>
+<div class="outline-text-4" id="text-org61c5ec3">
+<ul class="org-ul">
+<li>加法法则适用于**互斥事件**（不可能同时发生）。</li>
+<li>法则：互斥事件中，任一事件发生的总结果数 = 各类事件结果数直接相加。</li>
+
+<li>例子：
+<ul class="org-ul">
+<li>抛硬币（2种）或掷骰子（6种）二选一：2 + 6 = 8 种结果</li>
+<li>12 本小说或 14 本手册二选一：12 + 14 = 26 种选择</li>
+<li>3 条高速 + 2 条乡道二选一：3 + 2 = 5 条路线</li>
+</ul></li>
+
+<li>使用区分：
+<ul class="org-ul">
+<li>互斥事件 → 用**加法**</li>
+<li>独立同时/先后事件 → 用**乘法**</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgc6b4e56" class="outline-4">
+<h4 id="orgc6b4e56">2.2.3 组合与排列</h4>
+<div class="outline-text-4" id="text-orgc6b4e56">
+<ul class="org-ul">
+<li>核心区别：
+<ul class="org-ul">
+<li>不考虑顺序 → <b><b>组合</b></b></li>
+<li>考虑顺序 → <b><b>排列</b></b></li>
+</ul></li>
+
+<li>举例：
+<ul class="org-ul">
+<li>篮球首发 5 人名单 → 组合（顺序无关）</li>
+<li>三位密码锁 3‑7‑4 → 排列（顺序必须完全一致）</li>
+</ul></li>
+</ul>
+</div>
+<ul class="org-ul">
+<li><a id="org87a4795"></a>有放回排列<br />
+<div class="outline-text-5" id="text-org87a4795">
+<ul class="org-ul">
+<li>定义：顺序重要，元素可重复选取。</li>
+<li>公式：nʳ</li>
+<li>Python：pow(n, r)</li>
+</ul>
+</div>
+</li>
+<li><a id="org841a1ff"></a>无放回排列<br />
+<div class="outline-text-5" id="text-org841a1ff">
+<ul class="org-ul">
+<li>定义：顺序重要，元素不可重复。</li>
+<li>公式：n! / (n−r)!</li>
+<li>Python：math.perm(n, r)</li>
+</ul>
+</div>
+</li>
+<li><a id="org441164e"></a>无放回组合<br />
+<div class="outline-text-5" id="text-org441164e">
+<ul class="org-ul">
+<li>定义：顺序不重要，元素不可重复（彩票典型场景）。</li>
+<li>公式：C(n,r) = n! / (r!(n−r)!)</li>
+<li>Python：math.comb(n, r)</li>
+<li>可通过**帕斯卡三角**快速查表。</li>
+</ul>
+</div>
+</li>
+<li><a id="orgeb7a6b9"></a>有放回组合<br />
+<div class="outline-text-5" id="text-orgeb7a6b9">
+<ul class="org-ul">
+<li>定义：顺序不重要，元素可重复（如披萨配料可重复选择）。</li>
+<li>公式：C(n+r−1, r) = (n+r−1)! / (r!(n−1)!)</li>
+<li>Python：math.comb(n + r - 1, r)</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org3c9adcb" class="outline-3">
+<h3 id="org3c9adcb">2.3 连续型随机变量</h3>
+<div class="outline-text-3" id="text-org3c9adcb">
+<ul class="org-ul">
+<li>随机变量是给随机试验的每个可能结果分配一个数值的数学概念。</li>
+<li>**连续型随机变量**可以取某一区间内**任意值**（整数、小数、分数），精度无限。</li>
+
+<li>例子：
+<ul class="org-ul">
+<li>温度</li>
+<li>长度/距离</li>
+<li>速度</li>
+<li>体积</li>
+<li>股价</li>
+</ul></li>
+</ul>
+</div>
+<div id="outline-container-org6939240" class="outline-4">
+<h4 id="org6939240">2.3.1 概率密度函数（PDF）</h4>
+<div class="outline-text-4" id="text-org6939240">
+<ul class="org-ul">
+<li>概率密度函数用于描述连续型随机变量落在某一区间内的**相对可能性**。</li>
+<li>曲线下总面积 = 1</li>
+<li>正态分布呈钟形，均值处密度最高</li>
+<li>PDF 不直接给出单点概率，而是给出区间概率</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org8dfdfa1" class="outline-4">
+<h4 id="org8dfdfa1">2.3.2 累积分布函数（CDF）</h4>
+<div class="outline-text-4" id="text-org8dfdfa1">
+<ul class="org-ul">
+<li>累积分布函数给出随机变量 ≤ 某值的**总概率**。</li>
+<li>从 0 递增到 1</li>
+<li>正态分布下呈 S 形</li>
+<li>P(a &lt; X ≤ b) = F(b) − F(a)</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org398a8d1" class="outline-3">
+<h3 id="org398a8d1">2.4 离散型随机变量</h3>
+<div class="outline-text-3" id="text-org398a8d1">
+<ul class="org-ul">
+<li>离散型随机变量只能取**可数、分立的值**（如骰子点数、硬币正反面）。</li>
+</ul>
+</div>
+<div id="outline-container-orgd64500d" class="outline-4">
+<h4 id="orgd64500d">2.4.1 概率质量函数（PMF）</h4>
+<div class="outline-text-4" id="text-orgd64500d">
+<ul class="org-ul">
+<li>概率质量函数给出离散变量取某个具体值的**真实概率**。</li>
+<li>所有概率 ≥ 0</li>
+<li>所有概率之和 = 1</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org1f99024" class="outline-4">
+<h4 id="org1f99024">2.4.2 累积分布函数（CDF）</h4>
+<div class="outline-text-4" id="text-org1f99024">
+<ul class="org-ul">
+<li>离散型 CDF 是**阶梯函数**，只在离散点处跳跃上升。</li>
+</ul>
+</div>
+</div>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: harrifeng@outlook.com</p>
-<p class="date">Created: 2026-04-22 Wed 19:51</p>
+<p class="date">Created: 2026-05-09 Sat 16:05</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
