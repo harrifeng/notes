@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2026-05-09 Sat 22:02 -->
+<!-- 2026-05-09 Sat 22:09 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>spn</title>
@@ -55,44 +55,75 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org1ef2c15">Laying the groundwork</a>
+<li><a href="#orgde1771b">Laying the groundwork</a>
 <ul>
-<li><a href="#org150332c">Stats and quant</a>
+<li><a href="#org8bfc7ba">Stats and quant</a>
 <ul>
-<li><a href="#org96a6dca">Understanding the basics</a></li>
-<li><a href="#org23d02c9">Why they matter</a></li>
-<li><a href="#orgd20dd9d">The broader effect</a></li>
-<li><a href="#org532489d">Diving deeper: Core concepts</a></li>
+<li><a href="#org5f8361c">Understanding the basics</a></li>
+<li><a href="#orgd74f388">Why they matter</a></li>
+<li><a href="#org9a4341d">The broader effect</a></li>
+<li><a href="#orgc88c43d">Diving deeper: Core concepts</a></li>
 </ul>
 </li>
-<li><a href="#org92ec4e2">Why Python?</a>
+<li><a href="#org9e9186d">Why Python?</a>
 <ul>
-<li><a href="#org45795a6">Rich ecosystem</a></li>
-<li><a href="#org5ad39ac">Ease of learning</a></li>
-<li><a href="#org4ca885d">Online support and community</a></li>
-<li><a href="#org765677b">Industry adoption</a></li>
-<li><a href="#org7a96bd0">Versatility</a></li>
+<li><a href="#org8950591">Rich ecosystem</a></li>
+<li><a href="#org563d2a0">Ease of learning</a></li>
+<li><a href="#org321b272">Online support and community</a></li>
+<li><a href="#orgd0876bf">Industry adoption</a></li>
+<li><a href="#org997364e">Versatility</a></li>
 </ul>
 </li>
-<li><a href="#org701d7e0">Python IDEs</a>
+<li><a href="#org8646d5f">Python IDEs</a>
 <ul>
-<li><a href="#orgf0b3321">IDLE: A starting point</a></li>
-<li><a href="#orgee60c62">PyCharm: A professional tool</a></li>
-<li><a href="#org9289911">Other popular IDEs</a></li>
+<li><a href="#org71aca8d">IDLE: A starting point</a></li>
+<li><a href="#orgddeed8f">PyCharm: A professional tool</a></li>
+<li><a href="#orga695d03">Other popular IDEs</a></li>
 </ul>
 </li>
-<li><a href="#orgae3221e">Benefits and larning approach</a>
+<li><a href="#orge1cd862">Benefits and larning approach</a>
 <ul>
-<li><a href="#org34683e6">From statistical measures to real-world application</a></li>
-<li><a href="#org858bb67">Expanding beyond traditional techniques</a></li>
-<li><a href="#org44a730d">A balanced approach to theory and practice</a></li>
+<li><a href="#orgb1a846b">From statistical measures to real-world application</a></li>
+<li><a href="#orgc47918b">Expanding beyond traditional techniques</a></li>
+<li><a href="#org50ab510">A balanced approach to theory and practice</a></li>
 </ul>
 </li>
-<li><a href="#orgc274416">How this book works</a>
+<li><a href="#orgf30a757">How this book works</a>
 <ul>
-<li><a href="#org859b7be">Fundational learning with exploration and practice</a></li>
-<li><a href="#org54714ef">Using Python for precision and effciency</a></li>
-<li><a href="#org4df10d2">Adaptable learning for diverse skill levels</a></li>
+<li><a href="#org29acc91">Fundational learning with exploration and practice</a></li>
+<li><a href="#orgf18823d">Using Python for precision and effciency</a></li>
+<li><a href="#org28138d5">Adaptable learning for diverse skill levels</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgea45fb0">第2章 探索概率与计数方法</a>
+<ul>
+<li><a href="#org568aeeb">本章概览</a></li>
+<li><a href="#orgc471d0a">本章内容包括：</a></li>
+<li><a href="#orga7a1b62">2.1 基础概率</a>
+<ul>
+<li><a href="#org3aa5fdc">2.1.1 概率类型</a></li>
+<li><a href="#org2d982e6">2.1.2 概率换算与度量</a></li>
+</ul>
+</li>
+<li><a href="#org06b272f">2.2 计数法则</a>
+<ul>
+<li><a href="#org7efc87a">2.2.1 乘法法则</a></li>
+<li><a href="#orgd4268d6">2.2.2 加法法则</a></li>
+<li><a href="#orgd088b45">2.2.3 组合与排列</a></li>
+</ul>
+</li>
+<li><a href="#orgd66ec72">2.3 连续型随机变量</a>
+<ul>
+<li><a href="#orgc852812">2.3.1 概率密度函数（PDF）</a></li>
+<li><a href="#orga7fd64a">2.3.2 累积分布函数（CDF）</a></li>
+</ul>
+</li>
+<li><a href="#org9f7a9b6">2.4 离散型随机变量</a>
+<ul>
+<li><a href="#org420d80e">2.4.1 概率质量函数（PMF）</a></li>
+<li><a href="#org439caba">2.4.2 累积分布函数（CDF）</a></li>
 </ul>
 </li>
 </ul>
@@ -100,9 +131,9 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-org1ef2c15" class="outline-2">
-<h2 id="org1ef2c15">Laying the groundwork</h2>
-<div class="outline-text-2" id="text-org1ef2c15">
+<div id="outline-container-orgde1771b" class="outline-2">
+<h2 id="orgde1771b">Laying the groundwork</h2>
+<div class="outline-text-2" id="text-orgde1771b">
 <ul class="org-ul">
 <li>在当今 <b><b>数据驱动</b></b> 的环境中，掌握统计学与定量分析技术，是做出明智决策的关键。这些方法能将复杂数据
 转化为可落地的洞见，覆盖各行各业与各类职能——从预测股票走势、客户行为，到检测异常、优化资源配置。
@@ -119,9 +150,9 @@ Python 全程作为 <b><b>分析核心引擎</b></b> ，兼具灵活性、高效
 策。</li>
 </ul>
 </div>
-<div id="outline-container-org150332c" class="outline-3">
-<h3 id="org150332c">Stats and quant</h3>
-<div class="outline-text-3" id="text-org150332c">
+<div id="outline-container-org8bfc7ba" class="outline-3">
+<h3 id="org8bfc7ba">Stats and quant</h3>
+<div class="outline-text-3" id="text-org8bfc7ba">
 <ul class="org-ul">
 <li>在这个 <b><b>数字信息主导</b></b> 的时代，系统、用户与机器每一秒都在产生并存储海量数据。想要理解如此庞大且复
 杂的数据，仅凭直觉远远不够，需要一套 <b><b>系统化的分析方法</b></b> 来揭示规律、检验关联、支撑可靠决策。这正
@@ -130,9 +161,9 @@ Python 全程作为 <b><b>分析核心引擎</b></b> ，兼具灵活性、高效
 些技术不仅是有用，更是 <b><b>得出有效结论、做出快速高效且有理有据决策</b></b> 的必备能力。</li>
 </ul>
 </div>
-<div id="outline-container-org96a6dca" class="outline-4">
-<h4 id="org96a6dca">Understanding the basics</h4>
-<div class="outline-text-4" id="text-org96a6dca">
+<div id="outline-container-org5f8361c" class="outline-4">
+<h4 id="org5f8361c">Understanding the basics</h4>
+<div class="outline-text-4" id="text-org5f8361c">
 <ul class="org-ul">
 <li>统计学是一门帮助我们理解不确定性的学科。它包括收集、分析、解读和呈现数据，通过这种方式揭示出有价值
 的规律，即便基础信息并不完整、存在干扰或具有变异性。</li>
@@ -147,9 +178,9 @@ Python 全程作为 <b><b>分析核心引擎</b></b> ，兼具灵活性、高效
 </ul>
 </div>
 </div>
-<div id="outline-container-org23d02c9" class="outline-4">
-<h4 id="org23d02c9">Why they matter</h4>
-<div class="outline-text-4" id="text-org23d02c9">
+<div id="outline-container-orgd74f388" class="outline-4">
+<h4 id="orgd74f388">Why they matter</h4>
+<div class="outline-text-4" id="text-orgd74f388">
 <ul class="org-ul">
 <li>统计与定量技术之所以不可或缺，是因为它们能把数据转化为 <b><b>清晰的洞察</b></b> ，并最终带来 **更优的决策**。</li>
 <li>在高风险环境中，仅凭直觉远远不够；我们需要**系统化的方法**来发现规律、评估不确定性，并优化最终结果。</li>
@@ -165,9 +196,9 @@ Python 全程作为 <b><b>分析核心引擎</b></b> ，兼具灵活性、高效
 </ul>
 </div>
 </div>
-<div id="outline-container-orgd20dd9d" class="outline-4">
-<h4 id="orgd20dd9d">The broader effect</h4>
-<div class="outline-text-4" id="text-orgd20dd9d">
+<div id="outline-container-org9a4341d" class="outline-4">
+<h4 id="org9a4341d">The broader effect</h4>
+<div class="outline-text-4" id="text-org9a4341d">
 <ul class="org-ul">
 <li>统计与定量方法在**众多行业中都不可或缺**。
 <ul class="org-ul">
@@ -181,9 +212,9 @@ Python 全程作为 <b><b>分析核心引擎</b></b> ，兼具灵活性、高效
 </ul>
 </div>
 </div>
-<div id="outline-container-org532489d" class="outline-4">
-<h4 id="org532489d">Diving deeper: Core concepts</h4>
-<div class="outline-text-4" id="text-org532489d">
+<div id="outline-container-orgc88c43d" class="outline-4">
+<h4 id="orgc88c43d">Diving deeper: Core concepts</h4>
+<div class="outline-text-4" id="text-orgc88c43d">
 <ul class="org-ul">
 <li>想要**有效地运用统计学与定量分析技术**，首先必须扎实掌握几个核心概念。</li>
 <li>这些基础思想是**从基础分析到高级建模**的所有内容的核心支柱。</li>
@@ -210,9 +241,9 @@ Python 全程作为 <b><b>分析核心引擎</b></b> ，兼具灵活性、高效
 </div>
 </div>
 </div>
-<div id="outline-container-org92ec4e2" class="outline-3">
-<h3 id="org92ec4e2">Why Python?</h3>
-<div class="outline-text-3" id="text-org92ec4e2">
+<div id="outline-container-org9e9186d" class="outline-3">
+<h3 id="org9e9186d">Why Python?</h3>
+<div class="outline-text-3" id="text-org9e9186d">
 <ul class="org-ul">
 <li>虽然并非本书的核心重点，但Python是应用书中所述统计与定量方法的核心工具。它语法易读、库函数强大且用
 途广泛，是将理论概念转化为实际应用的理想选择。</li>
@@ -225,9 +256,9 @@ Python 全程作为 <b><b>分析核心引擎</b></b> ，兼具灵活性、高效
 这些任务中脱颖而出，以及如何高效搭建你的编程环境。</li>
 </ul>
 </div>
-<div id="outline-container-org45795a6" class="outline-4">
-<h4 id="org45795a6">Rich ecosystem</h4>
-<div class="outline-text-4" id="text-org45795a6">
+<div id="outline-container-org8950591" class="outline-4">
+<h4 id="org8950591">Rich ecosystem</h4>
+<div class="outline-text-4" id="text-org8950591">
 <ul class="org-ul">
 <li>Python 庞大丰富的库生态系统，是它在数据分析和定量研究领域表现卓越的核心原因。数据处理、可视化、统计
 建模等任务借助 Python 变得高效且直观，让你能够专注于解决问题，而非应对复杂的技术细节。</li>
@@ -244,9 +275,9 @@ Python 全程作为 <b><b>分析核心引擎</b></b> ，兼具灵活性、高效
 </ul>
 </div>
 </div>
-<div id="outline-container-org5ad39ac" class="outline-4">
-<h4 id="org5ad39ac">Ease of learning</h4>
-<div class="outline-text-4" id="text-org5ad39ac">
+<div id="outline-container-org563d2a0" class="outline-4">
+<h4 id="org563d2a0">Ease of learning</h4>
+<div class="outline-text-4" id="text-org563d2a0">
 <ul class="org-ul">
 <li>Python 语法简洁易懂、可读性强，是对新手最友好的编程语言之一，非常适合学习统计学与定量分析方法的人群。
 其代码结构贴近自然语言，即便没有编程基础，使用者也能快速理解代码逻辑。</li>
@@ -259,9 +290,9 @@ Python 全程作为 <b><b>分析核心引擎</b></b> ，兼具灵活性、高效
 </ul>
 </div>
 </div>
-<div id="outline-container-org4ca885d" class="outline-4">
-<h4 id="org4ca885d">Online support and community</h4>
-<div class="outline-text-4" id="text-org4ca885d">
+<div id="outline-container-org321b272" class="outline-4">
+<h4 id="org321b272">Online support and community</h4>
+<div class="outline-text-4" id="text-org321b272">
 <ul class="org-ul">
 <li>Python 之所以风靡全球，得益于全球最活跃的开发者与分析师社区之一。</li>
 <li>从入门教程到技术论坛，无论是代码调试还是新库学习，各类支持资源都随手可得。</li>
@@ -274,9 +305,9 @@ Python 全程作为 <b><b>分析核心引擎</b></b> ，兼具灵活性、高效
 </ul>
 </div>
 </div>
-<div id="outline-container-org765677b" class="outline-4">
-<h4 id="org765677b">Industry adoption</h4>
-<div class="outline-text-4" id="text-org765677b">
+<div id="outline-container-orgd0876bf" class="outline-4">
+<h4 id="orgd0876bf">Industry adoption</h4>
+<div class="outline-text-4" id="text-orgd0876bf">
 <ul class="org-ul">
 <li>Python 在数据科学、统计学与定量分析领域的主导地位，得益于其跨行业的广泛应用——涵盖科技巨头、金融、医
 疗健康以及学术研究等诸多领域。</li>
@@ -290,9 +321,9 @@ Python 全程作为 <b><b>分析核心引擎</b></b> ，兼具灵活性、高效
 </ul>
 </div>
 </div>
-<div id="outline-container-org7a96bd0" class="outline-4">
-<h4 id="org7a96bd0">Versatility</h4>
-<div class="outline-text-4" id="text-org7a96bd0">
+<div id="outline-container-org997364e" class="outline-4">
+<h4 id="org997364e">Versatility</h4>
+<div class="outline-text-4" id="text-org997364e">
 <ul class="org-ul">
 <li>Python 的应用广度远不止局限于统计学与数据分析。它广泛应用于**网站开发、数据工程、自动化**等领域，甚
 至涉足游戏设计、数字艺术等创意行业。</li>
@@ -308,9 +339,9 @@ Python 全程作为 <b><b>分析核心引擎</b></b> ，兼具灵活性、高效
 </div>
 </div>
 </div>
-<div id="outline-container-org701d7e0" class="outline-3">
-<h3 id="org701d7e0">Python IDEs</h3>
-<div class="outline-text-3" id="text-org701d7e0">
+<div id="outline-container-org8646d5f" class="outline-3">
+<h3 id="org8646d5f">Python IDEs</h3>
+<div class="outline-text-3" id="text-org8646d5f">
 <ul class="org-ul">
 <li>集成开发环境（IDE）能够让你高效地编写、测试、调试并运行代码。Python 自带一款基础开发环境——集成开发
 与学习环境（IDLE），但市面上还有多款第三方开发环境，可根据不同使用需求定制功能，有助于简化工作流程、
@@ -322,19 +353,19 @@ Python 全程作为 <b><b>分析核心引擎</b></b> ，兼具灵活性、高效
 <li>下文将介绍几款主流开发环境，梳理各自优势，帮你选出最适配数据分析工作流的工具。</li>
 </ul>
 </div>
-<div id="outline-container-orgf0b3321" class="outline-4">
-<h4 id="orgf0b3321">IDLE: A starting point</h4>
+<div id="outline-container-org71aca8d" class="outline-4">
+<h4 id="org71aca8d">IDLE: A starting point</h4>
 </div>
-<div id="outline-container-orgee60c62" class="outline-4">
-<h4 id="orgee60c62">PyCharm: A professional tool</h4>
+<div id="outline-container-orgddeed8f" class="outline-4">
+<h4 id="orgddeed8f">PyCharm: A professional tool</h4>
 </div>
-<div id="outline-container-org9289911" class="outline-4">
-<h4 id="org9289911">Other popular IDEs</h4>
+<div id="outline-container-orga695d03" class="outline-4">
+<h4 id="orga695d03">Other popular IDEs</h4>
 </div>
 </div>
-<div id="outline-container-orgae3221e" class="outline-3">
-<h3 id="orgae3221e">Benefits and larning approach</h3>
-<div class="outline-text-3" id="text-orgae3221e">
+<div id="outline-container-orge1cd862" class="outline-3">
+<h3 id="orge1cd862">Benefits and larning approach</h3>
+<div class="outline-text-3" id="text-orge1cd862">
 <ul class="org-ul">
 <li>本书精心编撰，将理论知识与实操应用完美结合、相辅相成，帮助读者不仅能够理解高阶统计与定量分析方法，
 更能掌握如何在真实业务场景中高效落地运用。</li>
@@ -372,9 +403,9 @@ Python 全程作为 <b><b>分析核心引擎</b></b> ，兼具灵活性、高效
 本书对 **理论与实践的双重聚焦**，确保你学到的技能不仅 **技术扎实**，更能**切实落地、产生实际价值**。</li>
 </ul>
 </div>
-<div id="outline-container-org34683e6" class="outline-4">
-<h4 id="org34683e6">From statistical measures to real-world application</h4>
-<div class="outline-text-4" id="text-org34683e6">
+<div id="outline-container-orgb1a846b" class="outline-4">
+<h4 id="orgb1a846b">From statistical measures to real-world application</h4>
+<div class="outline-text-4" id="text-orgb1a846b">
 <ul class="org-ul">
 <li>你所获得的知识**远不止停留在理论层面**——它专为**学术与职场场景的实际应用**而设计。书中涵盖的概念与
 技术，直接对应你在现实场景中极可能遇到的各类问题，确保你的技能**实用且具备可迁移性**。</li>
@@ -399,9 +430,9 @@ Python 全程作为 <b><b>分析核心引擎</b></b> ，兼具灵活性、高效
 </ul>
 </div>
 </div>
-<div id="outline-container-org858bb67" class="outline-4">
-<h4 id="org858bb67">Expanding beyond traditional techniques</h4>
-<div class="outline-text-4" id="text-org858bb67">
+<div id="outline-container-orgc47918b" class="outline-4">
+<h4 id="orgc47918b">Expanding beyond traditional techniques</h4>
+<div class="outline-text-4" id="text-orgc47918b">
 <ul class="org-ul">
 <li>在当今数据科学与分析领域，**传统统计方法**（如线性回归、基础假设检验）通常只作为**基础工具**使用。
 然而，许多现实问题因其固有的复杂性，**需要更高级的方法**才能解决。</li>
@@ -429,9 +460,9 @@ Python 全程作为 <b><b>分析核心引擎</b></b> ，兼具灵活性、高效
 </ul>
 </div>
 </div>
-<div id="outline-container-org44a730d" class="outline-4">
-<h4 id="org44a730d">A balanced approach to theory and practice</h4>
-<div class="outline-text-4" id="text-org44a730d">
+<div id="outline-container-org50ab510" class="outline-4">
+<h4 id="org50ab510">A balanced approach to theory and practice</h4>
+<div class="outline-text-4" id="text-org50ab510">
 <ul class="org-ul">
 <li>本书的核心目标之一，是在**理论理解**与**实际应用**之间取得平衡。很多教材要么过度依赖抽象的数学原理，
 要么只讲编程捷径，而本书弥补了这一鸿沟，通过**理论+实践双线并重**，让你不仅学会如何执行方法，更能理
@@ -461,9 +492,9 @@ Python 全程作为 <b><b>分析核心引擎</b></b> ，兼具灵活性、高效
 </div>
 </div>
 </div>
-<div id="outline-container-orgc274416" class="outline-3">
-<h3 id="orgc274416">How this book works</h3>
-<div class="outline-text-3" id="text-orgc274416">
+<div id="outline-container-orgf30a757" class="outline-3">
+<h3 id="orgf30a757">How this book works</h3>
+<div class="outline-text-3" id="text-orgf30a757">
 <ul class="org-ul">
 <li>本书内容旨在提供**无缝衔接的学习体验**，在各章节中将**理论洞见与实际应用**紧密结合。每一章都自成体
 系，专注于讲解一种特定的统计或定量技术，并按照结构化设计，一步步引导你掌握核心概念、实操落地方法，
@@ -481,9 +512,9 @@ Python 全程作为 <b><b>分析核心引擎</b></b> ，兼具灵活性、高效
 从而将这些工具应用于各类复杂问题。</li>
 </ul>
 </div>
-<div id="outline-container-org859b7be" class="outline-4">
-<h4 id="org859b7be">Fundational learning with exploration and practice</h4>
-<div class="outline-text-4" id="text-org859b7be">
+<div id="outline-container-org29acc91" class="outline-4">
+<h4 id="org29acc91">Fundational learning with exploration and practice</h4>
+<div class="outline-text-4" id="text-org29acc91">
 <ul class="org-ul">
 <li>本书的学习方法遵循**先夯实理论基础，再展开实操应用**的原则，针对每种方法都采用这一路径。这种平衡设
 计既能让你理解方法背后的原理，又能掌握实战技能，从而有效运用这些技术。</li>
@@ -512,9 +543,9 @@ Python 全程作为 <b><b>分析核心引擎</b></b> ，兼具灵活性、高效
 </ul>
 </div>
 </div>
-<div id="outline-container-org54714ef" class="outline-4">
-<h4 id="org54714ef">Using Python for precision and effciency</h4>
-<div class="outline-text-4" id="text-org54714ef">
+<div id="outline-container-orgf18823d" class="outline-4">
+<h4 id="orgf18823d">Using Python for precision and effciency</h4>
+<div class="outline-text-4" id="text-orgf18823d">
 <ul class="org-ul">
 <li>Python 是本书的**核心计算工具**，支持在各类应用场景中高效实现统计与定量分析方法。其丰富的库生态系统
 能让你**无缝衔接理论与实践**，确保分析结果精准且执行高效。在后续章节中，本书将通过**带注释的代码示
@@ -533,9 +564,9 @@ Python 全程作为 <b><b>分析核心引擎</b></b> ，兼具灵活性、高效
 </ul>
 </div>
 </div>
-<div id="outline-container-org4df10d2" class="outline-4">
-<h4 id="org4df10d2">Adaptable learning for diverse skill levels</h4>
-<div class="outline-text-4" id="text-org4df10d2">
+<div id="outline-container-org28138d5" class="outline-4">
+<h4 id="org28138d5">Adaptable learning for diverse skill levels</h4>
+<div class="outline-text-4" id="text-org28138d5">
 <ul class="org-ul">
 <li>本书面向**广泛的读者群体**，无论是刚刚踏入统计学与定量技术领域的初学者，还是希望精进和拓展技能的资
 深专业人士，都能从中获益。其结构化的讲解、清晰的说明和实用案例，让任何水平的学习者都能真正学有所得。</li>
@@ -553,10 +584,359 @@ Python 代码讲解由浅入深，并配有详细注释与说明，帮助初学�
 </div>
 </div>
 </div>
+<div id="outline-container-orgea45fb0" class="outline-2">
+<h2 id="orgea45fb0">第2章 探索概率与计数方法</h2>
+<div class="outline-text-2" id="text-orgea45fb0">
+</div>
+<div id="outline-container-org568aeeb" class="outline-3">
+<h3 id="org568aeeb">本章概览</h3>
+<div class="outline-text-3" id="text-org568aeeb">
+<ul class="org-ul">
+<li>本章与第3章的共同目标，是**从多个角度探索引人入胜的概率世界**——从最基础的知识，一直延伸到条件概率等更高级的主题。</li>
+<li>概率是统计分析和许多其他定量方法的**基石**，因此从这里开始、先用宏观视角全面了解概率，再在后续章节深入更具体的话题，是非常合理的安排。</li>
+<li>概率论并非单纯的数学抽象概念；恰恰相反，它是一种**强大的决策工具**，几乎适用于所有专业领域，也同样适用于我们的个人生活。</li>
+<li>通过理解概率，我们能够**量化不确定性、评估风险，并依据数据做出明智的预测**。</li>
+<li>掌握概率相关概念，不仅能为学习本书后续所有方法打下坚实基础，还能为数据分析、预测推断以及得出有价值、可落地的洞见打开广阔空间。</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgc471d0a" class="outline-3">
+<h3 id="orgc471d0a">本章内容包括：</h3>
+<div class="outline-text-3" id="text-orgc471d0a">
+<ul class="org-ul">
+<li>基础概率</li>
+<li>计数法则</li>
+<li>组合与排列的区别</li>
+<li>连续型随机变量</li>
+<li>离散型随机变量</li>
+
+<li>第2章将从概率与赔率的基础知识起步，逐步深入到条件概率的计算。</li>
+<li>在此过程中，我们会学习基本计数法则，辨析组合与排列的差异，并探究连续型和离散型随机变量的特性。</li>
+<li>随后在第3章，我们将学习统计与定量分析中最基础的**四种概率分布：正态分布、二项分布、均匀分布和泊松分布**，并梳理概率计算的核心原理。</li>
+<li>现在，让我们从基础开始，稳步建立扎实的认知。</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orga7a1b62" class="outline-3">
+<h3 id="orga7a1b62">2.1 基础概率</h3>
+<div class="outline-text-3" id="text-orga7a1b62">
+<ul class="org-ul">
+<li>在日常生活中，大量事件的发生源于随机性或偶然性，小到琐事，大到重要抉择，皆是如此。</li>
+<li>以抛硬币为例，结果是正面还是反面，完全不受我们控制。</li>
+<li>同样，掷两枚骰子时，掷出7点的概率虽然高于其他任何组合，但结果依然充满偶然性。</li>
+<li>再看从标准52张扑克牌中抽一张：牌被均分为四种花色，又分为三种花牌和十种数字牌；无论抽到花牌还是数字牌，结果都无法确定。</li>
+
+<li>然而，当我们知道全部可能结果的总数，并且能识别出其中哪些属于“成功事件”时，就可以用**成功结果数 ÷ 全部可能结果数**来计算概率。</li>
+<li>这让我们能够基于有利结果与全部可能结果的比值，做出以概率为依据的理性决策。</li>
+<li>事实上，我们谈论概率时，真正关注的是**某一特定事件发生的可能性**——比如我们选定正面后，抛硬币恰好出现正面的概率。</li>
+
+<li>因此，成功事件的概率可以表示为：</li>
+</ul>
+\begin{equation}
+Probability(Event) = \frac{总可能结果中成功的结果数量}{所有可能结果的总数}
+\end{equation}
+
+<ul class="org-ul">
+<li>或更简洁地写作：</li>
+</ul>
+\begin{equation}
+Probability(Event) = \frac{成功次数}{总结果次数}
+\end{equation}
+
+<ul class="org-ul">
+<li>有两个前提条件**绝对关键**：
+<ol class="org-ol">
+<li>我们必须正确算出分母（全部可能结果数）。</li>
+<li>我们必须对“什么算作成功”达成明确一致。</li>
+</ol></li>
+
+<li>抛一枚两面硬币时，确定分母很容易；但掷两枚骰子、或**无放回**抽牌时，就没那么简单。</li>
+<li>同样，抛硬币猜正面时，界定成功很直观；但如果我们要追踪罕见的产品故障，也可以把**故障发生**定义为一种“成功”。</li>
+</ul>
+</div>
+<div id="outline-container-org3aa5fdc" class="outline-4">
+<h4 id="org3aa5fdc">2.1.1 概率类型</h4>
+<div class="outline-text-4" id="text-org3aa5fdc">
+<ul class="org-ul">
+<li>我们已经讲过一种概率：**理论概率**。</li>
+<li>接下来介绍另外两种：**经验概率**与**主观概率**。</li>
+
+<li>经验概率来自**试验或现实观测**。成功概率的表达式为：</li>
+</ul>
+\begin{equation}
+Probability(Event) = \frac{观测到的成功次数}{总观测次数}
+\end{equation}
+
+<ul class="org-ul">
+<li>举个例子：想知道辛辛那提某天下雨的概率。气象员收集多年数据，记录每天是否下雨。</li>
+<li>经验概率就是用**观测到的下雨天数 ÷ 总天数**。</li>
+<li>假如一年365天里下雨75天，那么任意一天降雨的经验概率就是 75/365。</li>
+
+<li>而主观概率，则基于**个人判断、观点或信念**，而非观测数据或数学计算。</li>
+<li>它因人而异，会受个人经验、偏见、感受影响。</li>
+<li>比如一个人对自己赢棋的主观概率，可能因为自信而偏高，即便理论胜算并不高。</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org2d982e6" class="outline-4">
+<h4 id="org2d982e6">2.1.2 概率换算与度量</h4>
+<div class="outline-text-4" id="text-org2d982e6">
+<ul class="org-ul">
+<li>概率常常被换算成**百分比**和**赔率**来呈现和使用。</li>
+<li>我们先用 Python 演示如何把概率转成百分比。</li>
+
+<li>下面这段代码计算抛一次硬币得到正面的概率，乘以100转为百分比，再拼接字符串打印：</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-python">&gt;&gt;&gt; <span style="color: #005e8b;">probability_heads</span> = 1 / 2
+&gt;&gt;&gt; <span style="color: #005e8b;">probability_heads_percent</span> = probability_heads * 100
+&gt;&gt;&gt; <span style="color: #8f0075;">print</span><span style="color: #000000;">(</span>f<span style="color: #3548cf;">'The probability of success equals: </span>{probability_heads_percent}<span style="color: #3548cf;">%'</span><span style="color: #000000;">)</span>
+</pre>
+</div>
+<p>
+The probability of success equals: 50.0%
+</p>
+
+<ul class="org-ul">
+<li>同理，掷出双六、抽到花牌的概率也可以这样计算：</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-python">&gt;&gt;&gt; <span style="color: #005e8b;">probability_double_sixes</span> = 1 / 36
+&gt;&gt;&gt; <span style="color: #005e8b;">probability_double_sixes_percent</span> = probability_double_sixes * 100
+&gt;&gt;&gt; <span style="color: #8f0075;">print</span><span style="color: #000000;">(</span>f<span style="color: #3548cf;">'The probability of success equals: </span>{probability_double_sixes_percent}<span style="color: #3548cf;">%'</span><span style="color: #000000;">)</span>
+</pre>
+</div>
+<p>
+The probability of success equals: 2.7777777777777777%
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python">&gt;&gt;&gt; <span style="color: #005e8b;">probability_face_card</span> = 12 / 52
+&gt;&gt;&gt; <span style="color: #005e8b;">probability_face_card_percent</span> = probability_face_card * 100
+&gt;&gt;&gt; <span style="color: #8f0075;">print</span><span style="color: #000000;">(</span>f<span style="color: #3548cf;">'The probability of success equals: </span>{probability_face_card_percent}<span style="color: #3548cf;">%'</span><span style="color: #000000;">)</span>
+</pre>
+</div>
+<p>
+The probability of success equals: 23.076923076923077%
+</p>
+
+<ul class="org-ul">
+<li>赔率（Odds）表示**成功数与失败数之比**；而概率是**成功数与总结果数之比**。</li>
+<li>二者相关，但**不是同一个概念**，不能混用。</li>
+
+<li>赔率公式：</li>
+</ul>
+\begin{equation}
+Odds = \frac{潜在成功次数}{潜在失败次数}
+\end{equation}
+
+<ul class="org-ul">
+<li>以抽花牌为例：
+<ul class="org-ul">
+<li>成功次数：12</li>
+<li>失败次数：40</li>
+<li>赔率 = 12/40 = 3/10 = 0.3</li>
+</ul></li>
+
+<li>也可以用概率直接算：</li>
+</ul>
+\begin{equation}
+Odds = \frac{P(成功)}{1-P(成功)}
+\end{equation}
+
+<ul class="org-ul">
+<li>反过来，从赔率也能推回概率：</li>
+</ul>
+\begin{equation}
+Probability(Event) = \frac{赔率}{赔率+1}
+\end{equation}
+
+<ul class="org-ul">
+<li>我们之前提到，计算总可能结果数有时并不容易。</li>
+<li>要解决这个难点，就要靠**基本计数法则**、**组合与排列**，以及**有放回/无放回**的概念。</li>
+<li>这正是下一节的内容。</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org06b272f" class="outline-3">
+<h3 id="org06b272f">2.2 计数法则</h3>
+<div class="outline-text-3" id="text-org06b272f">
+<ul class="org-ul">
+<li>在概率论与组合数学（研究对象的计数、排列与组合）中，**计算所有可能结果的总数**至关重要。</li>
+<li>我们有两条核心指导原则：**乘法法则**与**加法法则**。</li>
+<li>这两条法则是计算多事件或多场景下总可能结果数的基石。</li>
+</ul>
+</div>
+<div id="outline-container-org7efc87a" class="outline-4">
+<h4 id="org7efc87a">2.2.1 乘法法则</h4>
+<div class="outline-text-4" id="text-org7efc87a">
+<ul class="org-ul">
+<li>乘法法则指出：如果需要做出 i 个选择，第一个选择有 n₁ 种可能，第二个有 n₂ 种可能，依此类推，那么**所有可能结果的总数**等于各选择可能数的乘积：
+n₁ × n₂ × … × nᵢ</li>
+
+<li>适用场景：事件**同时发生或先后发生**、结果相互独立。</li>
+
+<li>例子：
+<ul class="org-ul">
+<li>掷两枚六面骰子：6 × 6 = 36 种结果</li>
+<li>车牌 3 个字母 + 3 个数字：26³ × 10³ = 17,576,000 种组合</li>
+<li>三位密码锁：10 × 10 × 10 = 1000 种组合</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgd4268d6" class="outline-4">
+<h4 id="orgd4268d6">2.2.2 加法法则</h4>
+<div class="outline-text-4" id="text-orgd4268d6">
+<ul class="org-ul">
+<li>加法法则适用于**互斥事件**（不可能同时发生）。</li>
+<li>法则：互斥事件中，任一事件发生的总结果数 = 各类事件结果数直接相加。</li>
+
+<li>例子：
+<ul class="org-ul">
+<li>抛硬币（2种）或掷骰子（6种）二选一：2 + 6 = 8 种结果</li>
+<li>12 本小说或 14 本手册二选一：12 + 14 = 26 种选择</li>
+<li>3 条高速 + 2 条乡道二选一：3 + 2 = 5 条路线</li>
+</ul></li>
+
+<li>使用区分：
+<ul class="org-ul">
+<li>互斥事件 → 用**加法**</li>
+<li>独立同时/先后事件 → 用**乘法**</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgd088b45" class="outline-4">
+<h4 id="orgd088b45">2.2.3 组合与排列</h4>
+<div class="outline-text-4" id="text-orgd088b45">
+<ul class="org-ul">
+<li>核心区别：
+<ul class="org-ul">
+<li>不考虑顺序 → <b><b>组合</b></b></li>
+<li>考虑顺序 → <b><b>排列</b></b></li>
+</ul></li>
+
+<li>举例：
+<ul class="org-ul">
+<li>篮球首发 5 人名单 → 组合（顺序无关）</li>
+<li>三位密码锁 3‑7‑4 → 排列（顺序必须完全一致）</li>
+</ul></li>
+</ul>
+</div>
+<ul class="org-ul">
+<li><a id="org3ad7e54"></a>有放回排列<br />
+<div class="outline-text-5" id="text-org3ad7e54">
+<ul class="org-ul">
+<li>定义：顺序重要，元素可重复选取。</li>
+<li>公式：nʳ</li>
+<li>Python：pow(n, r)</li>
+</ul>
+</div>
+</li>
+<li><a id="org92329a7"></a>无放回排列<br />
+<div class="outline-text-5" id="text-org92329a7">
+<ul class="org-ul">
+<li>定义：顺序重要，元素不可重复。</li>
+<li>公式：n! / (n−r)!</li>
+<li>Python：math.perm(n, r)</li>
+</ul>
+</div>
+</li>
+<li><a id="orgca7580e"></a>无放回组合<br />
+<div class="outline-text-5" id="text-orgca7580e">
+<ul class="org-ul">
+<li>定义：顺序不重要，元素不可重复（彩票典型场景）。</li>
+<li>公式：C(n,r) = n! / (r!(n−r)!)</li>
+<li>Python：math.comb(n, r)</li>
+<li>可通过**帕斯卡三角**快速查表。</li>
+</ul>
+</div>
+</li>
+<li><a id="orgd840aa9"></a>有放回组合<br />
+<div class="outline-text-5" id="text-orgd840aa9">
+<ul class="org-ul">
+<li>定义：顺序不重要，元素可重复（如披萨配料可重复选择）。</li>
+<li>公式：C(n+r−1, r) = (n+r−1)! / (r!(n−1)!)</li>
+<li>Python：math.comb(n + r - 1, r)</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgd66ec72" class="outline-3">
+<h3 id="orgd66ec72">2.3 连续型随机变量</h3>
+<div class="outline-text-3" id="text-orgd66ec72">
+<ul class="org-ul">
+<li>随机变量是给随机试验的每个可能结果分配一个数值的数学概念。</li>
+<li>**连续型随机变量**可以取某一区间内**任意值**（整数、小数、分数），精度无限。</li>
+
+<li>例子：
+<ul class="org-ul">
+<li>温度</li>
+<li>长度/距离</li>
+<li>速度</li>
+<li>体积</li>
+<li>股价</li>
+</ul></li>
+</ul>
+</div>
+<div id="outline-container-orgc852812" class="outline-4">
+<h4 id="orgc852812">2.3.1 概率密度函数（PDF）</h4>
+<div class="outline-text-4" id="text-orgc852812">
+<ul class="org-ul">
+<li>概率密度函数用于描述连续型随机变量落在某一区间内的**相对可能性**。</li>
+<li>曲线下总面积 = 1</li>
+<li>正态分布呈钟形，均值处密度最高</li>
+<li>PDF 不直接给出单点概率，而是给出区间概率</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orga7fd64a" class="outline-4">
+<h4 id="orga7fd64a">2.3.2 累积分布函数（CDF）</h4>
+<div class="outline-text-4" id="text-orga7fd64a">
+<ul class="org-ul">
+<li>累积分布函数给出随机变量 ≤ 某值的**总概率**。</li>
+<li>从 0 递增到 1</li>
+<li>正态分布下呈 S 形</li>
+<li>P(a &lt; X ≤ b) = F(b) − F(a)</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org9f7a9b6" class="outline-3">
+<h3 id="org9f7a9b6">2.4 离散型随机变量</h3>
+<div class="outline-text-3" id="text-org9f7a9b6">
+<ul class="org-ul">
+<li>离散型随机变量只能取**可数、分立的值**（如骰子点数、硬币正反面）。</li>
+</ul>
+</div>
+<div id="outline-container-org420d80e" class="outline-4">
+<h4 id="org420d80e">2.4.1 概率质量函数（PMF）</h4>
+<div class="outline-text-4" id="text-org420d80e">
+<ul class="org-ul">
+<li>概率质量函数给出离散变量取某个具体值的**真实概率**。</li>
+<li>所有概率 ≥ 0</li>
+<li>所有概率之和 = 1</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org439caba" class="outline-4">
+<h4 id="org439caba">2.4.2 累积分布函数（CDF）</h4>
+<div class="outline-text-4" id="text-org439caba">
+<ul class="org-ul">
+<li>离散型 CDF 是**阶梯函数**，只在离散点处跳跃上升。</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: harrifeng@outlook.com</p>
-<p class="date">Created: 2026-05-09 Sat 22:02</p>
+<p class="date">Created: 2026-05-09 Sat 22:09</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
