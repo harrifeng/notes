@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2026-08-05 Wed 19:34 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>introduction-to-statistical-learning</title>
+<meta name="author" content="harrifeng@outlook.com" />
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="src/readtheorg_theme/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="src/readtheorg_theme/css/readtheorg.css"/>
+<script type="text/javascript" src="src/lib/js/jquery.min.js"></script>
+<script type="text/javascript" src="src/lib/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="src/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="src/readtheorg_theme/js/readtheorg.js"></script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">introduction-to-statistical-learning</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orga0f697d">Chapter 1: Sample Space and Probability</a>
+<ul>
+<li><a href="#org6f90f70">医院中的对话</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orga0f697d" class="outline-2">
+<h2 id="orga0f697d">Chapter 1: Sample Space and Probability</h2>
+<div class="outline-text-2" id="text-orga0f697d">
+<ul class="org-ul">
+<li>“概率”是一个非常有用的概念，但它可以有多种不同的解释。下面通过一个例子来说明。</li>
+</ul>
+</div>
+<div id="outline-container-org6f90f70" class="outline-3">
+<h3 id="org6f90f70">医院中的对话</h3>
+<div class="outline-text-3" id="text-org6f90f70">
+<blockquote>
+<p>
+一名患者住进了医院，并接受了一种可能挽救其生命的药物治疗。护士与一位忧心忡忡的患者亲属之间发生了如下对话。
+</p>
+
+<p>
+<b>亲属：</b> 护士，这种药起作用的概率是多少？
+</p>
+
+<p>
+<b>护士：</b> 我希望它有效，明天我们就知道了。
+</p>
+
+<p>
+<b>亲属：</b> 是的，但它有效的概率到底是多少？
+</p>
+
+<p>
+<b>护士：</b> 每个人的情况都不一样，我们只能等待。
+</p>
+
+<p>
+<b>亲属：</b> 不过，假设有一百名患者在类似条件下接受治疗，你预计这种药会对其中多少人有效？
+</p>
+
+<p>
+<b>护士（有些不耐烦）：</b> 我已经告诉你了，每个人都不一样；这种药对有些人有效，对另一些人则无效。
+</p>
+
+<p>
+<b>亲属（坚持追问）：</b> 那么请告诉我，如果非要就这种药是否有效打个赌，你会押哪一边？
+</p>
+
+<p>
+<b>护士（暂时打起了一点精神）：</b> 我会押它有效。
+</p>
+
+<p>
+<b>亲属（稍感宽慰）：</b> 好，那么，如果它无效，你愿意输两美元；而如果它有效，你可以赢一美元。你愿意接受这个赌注吗？
+</p>
+
+<p>
+<b>护士（恼怒不已）：</b> 这想法太病态了！你是在浪费我的时间！
+</p>
+</blockquote>
+
+
+<p>
+在这段对话中，患者亲属试图使用概率这一概念来讨论一种不确定的情形。护士最初的回答表明，人们对“概率”的含义并没有一致的认识和理解，因此患者亲属试图把这个概念说得更加具体。
+</p>
+
+<p>
+第一种方法，是根据事件发生的频率来定义概率，也就是把概率理解为：在数量相当多的类似情形中，成功情形所占的百分比。
+</p>
+
+<p>
+这种解释通常很自然。例如，当我们说一枚制作完全合格的硬币“以 50% 的概率出现正面”时，通常指的是：
+</p>
+
+<blockquote>
+<p>
+在大约一半的抛掷中，硬币会出现正面。
+</p>
+</blockquote>
+
+<p>
+不过，护士拒绝使用这种方式讨论，也未必完全没有道理。如果这是一种试验性药物，而且无论对这家医院还是对这位护士来说，都是第一次使用，又该怎么办呢？
+</p>
+
+<p>
+在许多涉及不确定性的情形中，频率解释是恰当的；但在另外一些情形中，它并不适用。
+</p>
+
+<p>
+例如，设想一位学者作出如下断言：
+</p>
+
+<blockquote>
+<p>
+《伊利亚特》和《奥德赛》由同一个人创作的概率为 90%。
+</p>
+</blockquote>
+
+<p>
+这一断言确实传达了某种信息，但它并不是用频率来表达的，因为它所涉及的是一个一次性事件。更确切地说，它表达的是这位学者的主观信念。
+</p>
+
+<p>
+有人可能会认为，至少从数学或科学的角度看，主观信念并没有什么研究价值。
+</p>
+
+<p>
+但另一方面，人们经常必须在存在不确定性的情况下作出选择。要使决策取得成功，或者至少保持前后一致，就必须采用一种系统的方法来运用自己的信念。
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: harrifeng@outlook.com</p>
+<p class="date">Created: 2026-08-05 Wed 19:34</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
