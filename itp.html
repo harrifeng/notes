@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2026-08-07 Fri 18:53 -->
+<!-- 2026-08-07 Fri 19:24 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>introduction-to-statistical-learning</title>
@@ -55,83 +55,81 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org2b42b71">Chapter 1: Sample Space and Probability</a></li>
-<li><a href="#orged11b36">1.1 集合</a>
+<li><a href="#org66eb66e">Chapter 1: Sample Space and Probability</a></li>
+<li><a href="#org33c4940">1.1 集合</a>
 <ul>
-<li><a href="#org93340d9">集合与元素</a></li>
-<li><a href="#org1782730">集合的表示方法</a></li>
-<li><a href="#org8f658cd">可数无限集</a></li>
-<li><a href="#org5ba8fab">使用性质描述集合</a></li>
-<li><a href="#org72b0365">子集、集合相等与全集</a></li>
-<li><a href="#org631a504">集合运算</a>
+<li>
 <ul>
-<li><a href="#orgf74e3a1">补集</a></li>
-<li><a href="#org600f01e">并集与交集</a></li>
-<li><a href="#org16b76b1">多个集合的并集与交集</a></li>
-<li><a href="#orge7be3d9">不相交与集合的划分</a></li>
+<li><a href="#orgbfd2dfa">集合的表示方法</a></li>
+<li><a href="#org8ff6857">可数无限集</a></li>
+<li><a href="#orgc692e39">使用性质描述集合</a></li>
+<li><a href="#org7b1dd4f">子集、集合相等与全集</a></li>
 </ul>
 </li>
-<li><a href="#org11d6b80">有序对与实数空间</a></li>
-<li><a href="#orgc944ee3">图 1.1：维恩图示例</a></li>
-<li><a href="#org3229a9b">集合代数</a></li>
-<li><a href="#orgeb65cf6">德摩根律</a></li>
+<li><a href="#orgd81efde">集合运算</a>
+<ul>
+<li><a href="#orgf038aae">补集</a></li>
+<li><a href="#orgb37fc70">并集与交集</a></li>
+<li><a href="#org01fe125">多个集合的并集与交集</a></li>
+<li><a href="#orgb61749a">不相交与集合的划分</a></li>
 </ul>
 </li>
-<li><a href="#orge1c54fd">1.2 概率模型</a>
+<li><a href="#orgd70ab59">有序对与实数空间</a>
 <ul>
-<li><a href="#org0e70403">概率模型的组成要素</a></li>
-<li><a href="#org97de1b5">图 1.2：概率模型的主要组成部分</a></li>
-<li><a href="#org7a9bc34">样本空间与事件</a></li>
-<li><a href="#orgcdb60d7">选择适当的样本空间</a></li>
-<li><a href="#org5b1b4e1">例 1.1：两个抛硬币游戏</a>
-<ul>
-<li><a href="#org95752c7">游戏 1</a></li>
-<li><a href="#orgd85a521">游戏 2</a></li>
-<li><a href="#org85694b6">关于事件的技术性说明</a></li>
+<li><a href="#org500ec8c">图 1.1：维恩图示例</a></li>
 </ul>
 </li>
-<li><a href="#org464defe">两个游戏所需的不同样本空间</a></li>
-<li><a href="#org2217fa7">序贯模型</a></li>
-<li><a href="#orga220395">图 1.3：样本空间的两种等价描述</a></li>
-<li><a href="#org4b4f799">概率律</a>
+<li><a href="#org1206a30">集合代数</a>
 <ul>
-<li><a href="#org9a461e4">概率公理</a></li>
-<li><a href="#orgb07ca32">概率质量的类比</a></li>
-<li><a href="#orgcb6d770">概率的相对频率解释</a></li>
-<li><a href="#orgfb3c7de">由概率公理推出的性质</a></li>
-<li><a href="#orga7c13e1">有限个不相交事件的可加性</a></li>
+<li><a href="#orgc075dcd">德摩根律</a></li>
 </ul>
 </li>
-<li><a href="#orgfcfe68a">离散模型</a>
+<li><a href="#org6f99c4c">1.2 概率模型</a>
 <ul>
-<li><a href="#org037bc60">例 1.2：抛一次硬币</a></li>
-<li><a href="#orgde0b231">例 1.2（续）：连续抛三次硬币</a></li>
-<li><a href="#org4cbfbc1">离散概率律</a></li>
-<li><a href="#org3a02246">离散均匀概率律</a></li>
-<li><a href="#org95a9c94">例 1.3：投掷两枚四面骰子</a></li>
-<li><a href="#org230f16d">图 1.4：四面骰子试验中的事件</a></li>
-</ul>
-</li>
-<li><a href="#orgdd15833">连续模型</a>
-<ul>
-<li><a href="#org09075e5">例 1.4：幸运转盘</a></li>
-<li><a href="#org7db5915">例 1.5：罗密欧与朱丽叶约会</a></li>
-<li><a href="#orgc9f1ef6">关于集合“长度”的说明</a></li>
-</ul>
-</li>
-<li><a href="#orgba82be0">概率律的性质</a>
-<ul>
-<li><a href="#org61fcc07">概率律的若干基本性质</a></li>
-<li><a href="#org48b5f7f">有限并集的概率上界</a></li>
-</ul>
-</li>
-<li><a href="#org01e8103">模型与现实</a>
-<ul>
-<li><a href="#orgc11fbd0">第一阶段：构造概率模型</a></li>
-<li><a href="#org7e6db74">图 1.6：使用维恩图验证概率律的性质</a></li>
-<li><a href="#orgada1bfb">第二阶段：在模型中进行推导</a></li>
-<li><a href="#orgf09b779">概率论中的“悖论”</a></li>
-<li><a href="#org5725cb0">图 1.7：伯特兰悖论</a></li>
+<li><a href="#org4e6e1bf">概率模型的组成要素</a></li>
+<li><a href="#orga2b0117">图 1.2：概率模型的主要组成部分</a></li>
+<li><a href="#org922a258">样本空间与事件</a></li>
+<li><a href="#orgcc53182">选择适当的样本空间</a></li>
+<li><a href="#org897cd45">例 1.1：两个抛硬币游戏</a></li>
+<li><a href="#orge2bd708">关于事件的技术性说明</a></li>
+<li><a href="#org70518f9">两个游戏所需的不同样本空间</a></li>
+<li><a href="#org2e434dd">序贯模型</a></li>
+<li><a href="#org2860503">图 1.3：样本空间的两种等价描述</a></li>
+<li><a href="#orgcad23a5">概率律</a></li>
+<li><a href="#org6a90356">概率公理</a></li>
+<li><a href="#orgddae1e8">概率质量的类比</a></li>
+<li><a href="#orgfcc8e5b">概率的相对频率解释</a></li>
+<li><a href="#org8832e86">由概率公理推出的性质</a></li>
+<li><a href="#orgb6dc00e">有限个不相交事件的可加性</a></li>
+<li><a href="#org91ce89f">离散模型</a></li>
+<li><a href="#org72aac90">例 1.2：抛一次硬币</a></li>
+<li><a href="#orgd40fed7">例 1.2（续）：连续抛三次硬币</a></li>
+<li><a href="#orgbe5cf48">离散概率律</a></li>
+<li><a href="#orgf4f7295">离散均匀概率律</a></li>
+<li><a href="#orgb5dfab6">例 1.3：投掷两枚四面骰子</a></li>
+<li><a href="#org6661e60">图 1.4：四面骰子试验中的事件</a></li>
+<li><a href="#org87c1c12">连续模型</a></li>
+<li><a href="#orgf7b1a1b">例 1.4：幸运转盘</a></li>
+<li><a href="#orgbb99ca1">例 1.5：罗密欧与朱丽叶约会</a></li>
+<li><a href="#org8b0ff8f">关于集合“长度”的说明</a></li>
+<li><a href="#org0add762">概率律的性质</a></li>
+<li><a href="#orgcde47ca">概率律的若干基本性质</a></li>
+<li><a href="#org77e72ae">有限并集的概率上界</a></li>
+<li><a href="#org1d27069">模型与现实</a></li>
+<li><a href="#orge49a9e0">第一阶段：构造概率模型</a></li>
+<li><a href="#org296f1b0">图 1.6：使用维恩图验证概率律的性质</a></li>
+<li><a href="#orgc124e24">第二阶段：在模型中进行推导</a></li>
+<li><a href="#orgfb4c605">概率论中的“悖论”</a></li>
+<li><a href="#org84e12c5">图 1.7：伯特兰悖论</a></li>
+<li><a href="#orgb7a4a32">概率律的性质</a></li>
+<li><a href="#org07fc8f7">概率律的若干基本性质</a></li>
+<li><a href="#org7218b22">有限并集的概率上界</a></li>
+<li><a href="#orge0d65ee">模型与现实</a></li>
+<li><a href="#orga1d80a5">第一阶段：构造概率模型</a></li>
+<li><a href="#org057db31">图 1.6：使用维恩图验证概率律的性质</a></li>
+<li><a href="#orge400f72">第二阶段：在模型中进行推导</a></li>
+<li><a href="#org58b9607">概率论中的“悖论”</a></li>
+<li><a href="#orgc3510ab">图 1.7：伯特兰悖论</a></li>
 </ul>
 </li>
 </ul>
@@ -139,9 +137,9 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-org2b42b71" class="outline-2">
-<h2 id="org2b42b71">Chapter 1: Sample Space and Probability</h2>
-<div class="outline-text-2" id="text-org2b42b71">
+<div id="outline-container-org66eb66e" class="outline-2">
+<h2 id="org66eb66e">Chapter 1: Sample Space and Probability</h2>
+<div class="outline-text-2" id="text-org66eb66e">
 <p>
 “概率”是一个非常有用的概念，但它可以有多种不同的解释。下面通过一个例子来说明。
 </p>
@@ -276,16 +274,13 @@
 </p>
 </div>
 </div>
-<div id="outline-container-orged11b36" class="outline-2">
-<h2 id="orged11b36">1.1 集合</h2>
-<div class="outline-text-2" id="text-orged11b36">
+<div id="outline-container-org33c4940" class="outline-2">
+<h2 id="org33c4940">1.1 集合</h2>
+<div class="outline-text-2" id="text-org33c4940">
 <p>
 概率论大量使用集合运算，因此我们首先介绍相关的符号和术语。
 </p>
-</div>
-<div id="outline-container-org93340d9" class="outline-3">
-<h3 id="org93340d9">集合与元素</h3>
-<div class="outline-text-3" id="text-org93340d9">
+
 <p>
 <b>集合</b> 是一些对象的汇集，这些对象称为该集合的 *元素*。
 </p>
@@ -316,14 +311,13 @@ x \notin S.
 
 <p>
 \[
-\varnothing.
+\varnothing
 \]
 </p>
 </div>
-</div>
-<div id="outline-container-org1782730" class="outline-3">
-<h3 id="org1782730">集合的表示方法</h3>
-<div class="outline-text-3" id="text-org1782730">
+<div id="outline-container-orgbfd2dfa" class="outline-4">
+<h4 id="orgbfd2dfa">集合的表示方法</h4>
+<div class="outline-text-4" id="text-orgbfd2dfa">
 <p>
 集合可以用多种方式表示。
 </p>
@@ -378,9 +372,9 @@ S=\{x_1,x_2,\ldots,x_n\}.
 </ul>
 </div>
 </div>
-<div id="outline-container-org8f658cd" class="outline-3">
-<h3 id="org8f658cd">可数无限集</h3>
-<div class="outline-text-3" id="text-org8f658cd">
+<div id="outline-container-org8ff6857" class="outline-4">
+<h4 id="org8ff6857">可数无限集</h4>
+<div class="outline-text-4" id="text-org8ff6857">
 <p>
 如果集合 \(S\) 含有无限多个元素：
 </p>
@@ -420,9 +414,9 @@ S=\{x_1,x_2,\ldots\}.
 </p>
 </div>
 </div>
-<div id="outline-container-org5ba8fab" class="outline-3">
-<h3 id="org5ba8fab">使用性质描述集合</h3>
-<div class="outline-text-3" id="text-org5ba8fab">
+<div id="outline-container-orgc692e39" class="outline-4">
+<h4 id="orgc692e39">使用性质描述集合</h4>
+<div class="outline-text-4" id="text-orgc692e39">
 <p>
 除了逐一列举元素之外，我们也可以考虑所有具有某一性质 \(P\) 的 \(x\) 所组成的集合，并将其记作：
 </p>
@@ -462,9 +456,9 @@ S=\{x_1,x_2,\ldots\}.
 </p>
 </div>
 </div>
-<div id="outline-container-org72b0365" class="outline-3">
-<h3 id="org72b0365">子集、集合相等与全集</h3>
-<div class="outline-text-3" id="text-org72b0365">
+<div id="outline-container-org7b1dd4f" class="outline-4">
+<h4 id="org7b1dd4f">子集、集合相等与全集</h4>
+<div class="outline-text-4" id="text-org7b1dd4f">
 <p>
 如果集合 \(S\) 的每一个元素也都是集合 \(T\) 的元素，我们就称 \(S\) 是 \(T\) 的 *子集*，并记作：
 </p>
@@ -524,13 +518,13 @@ S=T.
 </p>
 </div>
 </div>
-<div id="outline-container-org631a504" class="outline-3">
-<h3 id="org631a504">集合运算</h3>
-<div class="outline-text-3" id="text-org631a504">
+<div id="outline-container-orgd81efde" class="outline-3">
+<h3 id="orgd81efde">集合运算</h3>
+<div class="outline-text-3" id="text-orgd81efde">
 </div>
-<div id="outline-container-orgf74e3a1" class="outline-4">
-<h4 id="orgf74e3a1">补集</h4>
-<div class="outline-text-4" id="text-orgf74e3a1">
+<div id="outline-container-orgf038aae" class="outline-4">
+<h4 id="orgf038aae">补集</h4>
+<div class="outline-text-4" id="text-orgf038aae">
 <p>
 集合 \(S\) 关于全集 \(\Omega\) 的 *补集*，是由 \(\Omega\) 中所有不属于 \(S\) 的元素组成的集合：
 </p>
@@ -562,9 +556,9 @@ S^c.
 </p>
 </div>
 </div>
-<div id="outline-container-org600f01e" class="outline-4">
-<h4 id="org600f01e">并集与交集</h4>
-<div class="outline-text-4" id="text-org600f01e">
+<div id="outline-container-orgb37fc70" class="outline-4">
+<h4 id="orgb37fc70">并集与交集</h4>
+<div class="outline-text-4" id="text-orgb37fc70">
 <p>
 两个集合 \(S\) 和 \(T\) 的 *并集*，是由所有属于 \(S\) 或属于 \(T\)，或者同时属于二者的元素组成的集合，记作：
 </p>
@@ -610,9 +604,9 @@ S\cap T
 </p>
 </div>
 </div>
-<div id="outline-container-org16b76b1" class="outline-4">
-<h4 id="org16b76b1">多个集合的并集与交集</h4>
-<div class="outline-text-4" id="text-org16b76b1">
+<div id="outline-container-org01fe125" class="outline-4">
+<h4 id="org01fe125">多个集合的并集与交集</h4>
+<div class="outline-text-4" id="text-org01fe125">
 <p>
 在某些情况下，我们需要考虑若干个、甚至无限多个集合的并集或交集。其定义是前述定义的自然推广。
 </p>
@@ -654,9 +648,9 @@ S_1\cap S_2\cap\cdots
 </p>
 </div>
 </div>
-<div id="outline-container-orge7be3d9" class="outline-4">
-<h4 id="orge7be3d9">不相交与集合的划分</h4>
-<div class="outline-text-4" id="text-orge7be3d9">
+<div id="outline-container-orgb61749a" class="outline-4">
+<h4 id="orgb61749a">不相交与集合的划分</h4>
+<div class="outline-text-4" id="text-orgb61749a">
 <p>
 如果两个集合的交集为空，就称这两个集合 *不相交*：
 </p>
@@ -686,9 +680,9 @@ S\cap T=\varnothing.
 </div>
 </div>
 </div>
-<div id="outline-container-org11d6b80" class="outline-3">
-<h3 id="org11d6b80">有序对与实数空间</h3>
-<div class="outline-text-3" id="text-org11d6b80">
+<div id="outline-container-orgd70ab59" class="outline-3">
+<h3 id="orgd70ab59">有序对与实数空间</h3>
+<div class="outline-text-3" id="text-orgd70ab59">
 <p>
 如果 \(x\) 和 \(y\) 是两个对象，我们用：
 </p>
@@ -737,10 +731,9 @@ S\cap T=\varnothing.
 集合及其相关运算很容易借助 <b>维恩图</b> 进行直观表示，如图 1.1 所示。
 </p>
 </div>
-</div>
-<div id="outline-container-orgc944ee3" class="outline-3">
-<h3 id="orgc944ee3">图 1.1：维恩图示例</h3>
-<div class="outline-text-3" id="text-orgc944ee3">
+<div id="outline-container-org500ec8c" class="outline-4">
+<h4 id="org500ec8c">图 1.1：维恩图示例</h4>
+<div class="outline-text-4" id="text-org500ec8c">
 <ul class="org-ul">
 <li>（a）阴影区域为 \(S\cap T\)。</li>
 <li>（b）阴影区域为 \(S\cup T\)。</li>
@@ -751,9 +744,10 @@ S\cap T=\varnothing.
 </ul>
 </div>
 </div>
-<div id="outline-container-org3229a9b" class="outline-3">
-<h3 id="org3229a9b">集合代数</h3>
-<div class="outline-text-3" id="text-org3229a9b">
+</div>
+<div id="outline-container-org1206a30" class="outline-3">
+<h3 id="org1206a30">集合代数</h3>
+<div class="outline-text-3" id="text-org1206a30">
 <p>
 集合运算具有若干性质，这些性质都是由定义直接推出的基本结果。例如：
 </p>
@@ -810,10 +804,9 @@ S\cap\Omega=S.
 \]
 </p>
 </div>
-</div>
-<div id="outline-container-orgeb65cf6" class="outline-3">
-<h3 id="orgeb65cf6">德摩根律</h3>
-<div class="outline-text-3" id="text-orgeb65cf6">
+<div id="outline-container-orgc075dcd" class="outline-4">
+<h4 id="orgc075dcd">德摩根律</h4>
+<div class="outline-text-4" id="text-orgc075dcd">
 <p>
 两个特别有用的性质称为 *德摩根律*：
 </p>
@@ -896,9 +889,9 @@ x\in\bigcap_n S_n^c.
 </div>
 </div>
 </div>
-<div id="outline-container-orge1c54fd" class="outline-2">
-<h2 id="orge1c54fd">1.2 概率模型</h2>
-<div class="outline-text-2" id="text-orge1c54fd">
+<div id="outline-container-org6f99c4c" class="outline-3">
+<h3 id="org6f99c4c">1.2 概率模型</h3>
+<div class="outline-text-3" id="text-org6f99c4c">
 <p>
 概率模型是对某种不确定情形的数学描述。它必须符合本节所讨论的一个基本框架。
 </p>
@@ -907,9 +900,9 @@ x\in\bigcap_n S_n^c.
 概率模型的两个主要组成部分列在下面，并在图 1.2 中作了直观展示。
 </p>
 </div>
-<div id="outline-container-org0e70403" class="outline-3">
-<h3 id="org0e70403">概率模型的组成要素</h3>
-<div class="outline-text-3" id="text-org0e70403">
+<div id="outline-container-org4e6e1bf" class="outline-4">
+<h4 id="org4e6e1bf">概率模型的组成要素</h4>
+<div class="outline-text-4" id="text-org4e6e1bf">
 <ul class="org-ul">
 <li><p>
 <b>样本空间</b> \(\Omega\)
@@ -920,7 +913,7 @@ x\in\bigcap_n S_n^c.
 </p></li>
 
 <li><p>
-<b>概率律</b>
+<b>概率律(Probability Law)</b>
 </p>
 
 <p>
@@ -947,9 +940,9 @@ x\in\bigcap_n S_n^c.
 </ul>
 </div>
 </div>
-<div id="outline-container-org97de1b5" class="outline-3">
-<h3 id="org97de1b5">图 1.2：概率模型的主要组成部分</h3>
-<div class="outline-text-3" id="text-org97de1b5">
+<div id="outline-container-orga2b0117" class="outline-4">
+<h4 id="orga2b0117">图 1.2：概率模型的主要组成部分</h4>
+<div class="outline-text-4" id="text-orga2b0117">
 <p>
 图中的对应关系可以概括为：
 </p>
@@ -962,9 +955,9 @@ x\in\bigcap_n S_n^c.
 </ul>
 </div>
 </div>
-<div id="outline-container-org7a9bc34" class="outline-3">
-<h3 id="org7a9bc34">样本空间与事件</h3>
-<div class="outline-text-3" id="text-org7a9bc34">
+<div id="outline-container-org922a258" class="outline-4">
+<h4 id="org922a258">样本空间与事件</h4>
+<div class="outline-text-4" id="text-org922a258">
 <p>
 每个概率模型都涉及一个基础过程，称为 *试验*。一项试验会从若干个可能结果中恰好产生一个结果。
 </p>
@@ -1014,9 +1007,9 @@ x\in\bigcap_n S_n^c.
 </p>
 </div>
 </div>
-<div id="outline-container-orgcdb60d7" class="outline-3">
-<h3 id="orgcdb60d7">选择适当的样本空间</h3>
-<div class="outline-text-3" id="text-orgcdb60d7">
+<div id="outline-container-orgcc53182" class="outline-4">
+<h4 id="orgcc53182">选择适当的样本空间</h4>
+<div class="outline-text-4" id="text-orgcc53182">
 <p>
 无论样本空间中有多少个元素，不同元素都应当彼此有别并且相互排斥。这样，当试验进行时，才能得到一个唯一确定的结果。
 </p>
@@ -1042,24 +1035,23 @@ x\in\bigcap_n S_n^c.
 </p>
 </div>
 </div>
-<div id="outline-container-org5b1b4e1" class="outline-3">
-<h3 id="org5b1b4e1">例 1.1：两个抛硬币游戏</h3>
-<div class="outline-text-3" id="text-org5b1b4e1">
+<div id="outline-container-org897cd45" class="outline-4">
+<h4 id="org897cd45">例 1.1：两个抛硬币游戏</h4>
+<div class="outline-text-4" id="text-org897cd45">
 <p>
 考虑下面两个不同的游戏。两个游戏都包含连续十次抛硬币。
 </p>
 </div>
-<div id="outline-container-org95752c7" class="outline-4">
-<h4 id="org95752c7">游戏 1</h4>
-<div class="outline-text-4" id="text-org95752c7">
+<ul class="org-ul">
+<li><a id="org3337278"></a>游戏 1<br />
+<div class="outline-text-5" id="text-org3337278">
 <p>
 每出现一次正面，我们就获得 1 美元。
 </p>
 </div>
-</div>
-<div id="outline-container-orgd85a521" class="outline-4">
-<h4 id="orgd85a521">游戏 2</h4>
-<div class="outline-text-4" id="text-orgd85a521">
+</li>
+<li><a id="org5b6b706"></a>游戏 2<br />
+<div class="outline-text-5" id="text-org5b6b706">
 <p>
 在第一次出现正面之前，包括第一次出现正面的那一次，每抛一次硬币，我们都获得 1 美元。
 </p>
@@ -1072,10 +1064,12 @@ x\in\bigcap_n S_n^c.
 更一般地说，每出现一次正面，之后每次抛掷所能获得的金额就翻一倍。
 </p>
 </div>
+</li>
+</ul>
 </div>
-<div id="outline-container-org85694b6" class="outline-4">
-<h4 id="org85694b6">关于事件的技术性说明</h4>
-<div class="outline-text-4" id="text-org85694b6">
+<div id="outline-container-orge2bd708" class="outline-4">
+<h4 id="orge2bd708">关于事件的技术性说明</h4>
+<div class="outline-text-4" id="text-orge2bd708">
 <p>
 任何由可能结果构成的集合原则上都可以成为一个事件，其中包括：
 </p>
@@ -1102,10 +1096,9 @@ x\in\bigcap_n S_n^c.
 </p>
 </div>
 </div>
-</div>
-<div id="outline-container-org464defe" class="outline-3">
-<h3 id="org464defe">两个游戏所需的不同样本空间</h3>
-<div class="outline-text-3" id="text-org464defe">
+<div id="outline-container-org70518f9" class="outline-4">
+<h4 id="org70518f9">两个游戏所需的不同样本空间</h4>
+<div class="outline-text-4" id="text-org70518f9">
 <p>
 在游戏 1 中，重要的只是十次抛掷中正面出现的总次数。
 </p>
@@ -1157,9 +1150,9 @@ TTTTHTTTHT,
 </p>
 </div>
 </div>
-<div id="outline-container-org2217fa7" class="outline-3">
-<h3 id="org2217fa7">序贯模型</h3>
-<div class="outline-text-3" id="text-org2217fa7">
+<div id="outline-container-org2e434dd" class="outline-4">
+<h4 id="org2e434dd">序贯模型</h4>
+<div class="outline-text-4" id="text-org2e434dd">
 <p>
 许多试验在本质上具有 *序贯特征*，例如：
 </p>
@@ -1175,9 +1168,9 @@ TTTTHTTTHT,
 </p>
 </div>
 </div>
-<div id="outline-container-orga220395" class="outline-3">
-<h3 id="orga220395">图 1.3：样本空间的两种等价描述</h3>
-<div class="outline-text-3" id="text-orga220395">
+<div id="outline-container-org2860503" class="outline-4">
+<h4 id="org2860503">图 1.3：样本空间的两种等价描述</h4>
+<div class="outline-text-4" id="text-org2860503">
 <p>
 图 1.3 展示了连续投掷两次四面骰子这一试验的样本空间，以及它的两种等价描述方式。
 </p>
@@ -1269,9 +1262,9 @@ TTTTHTTTHT,
 </blockquote>
 </div>
 </div>
-<div id="outline-container-org4b4f799" class="outline-3">
-<h3 id="org4b4f799">概率律</h3>
-<div class="outline-text-3" id="text-org4b4f799">
+<div id="outline-container-orgcad23a5" class="outline-4">
+<h4 id="orgcad23a5">概率律</h4>
+<div class="outline-text-4" id="text-orgcad23a5">
 <p>
 假设我们已经确定了与某项试验相对应的样本空间 \(\Omega\)。
 </p>
@@ -1288,9 +1281,10 @@ TTTTHTTTHT,
 更准确地说，概率律为每个事件 \(A\) 赋予一个数 \(P(A)\)，称为 \(A\) 的 *概率*，并且这些概率必须满足下面的公理。
 </p>
 </div>
-<div id="outline-container-org9a461e4" class="outline-4">
-<h4 id="org9a461e4">概率公理</h4>
-<div class="outline-text-4" id="text-org9a461e4">
+</div>
+<div id="outline-container-org6a90356" class="outline-4">
+<h4 id="org6a90356">概率公理</h4>
+<div class="outline-text-4" id="text-org6a90356">
 <ol class="org-ol">
 <li><p>
 <b>非负性</b>
@@ -1358,9 +1352,9 @@ TTTTHTTTHT,
 </ol>
 </div>
 </div>
-<div id="outline-container-orgb07ca32" class="outline-4">
-<h4 id="orgb07ca32">概率质量的类比</h4>
-<div class="outline-text-4" id="text-orgb07ca32">
+<div id="outline-container-orgddae1e8" class="outline-4">
+<h4 id="orgddae1e8">概率质量的类比</h4>
+<div class="outline-text-4" id="text-orgddae1e8">
 <p>
 为了直观理解概率律，可以设想把一个单位的“质量”分布在整个样本空间上。
 </p>
@@ -1374,9 +1368,9 @@ TTTTHTTTHT,
 </p>
 </div>
 </div>
-<div id="outline-container-orgcb6d770" class="outline-4">
-<h4 id="orgcb6d770">概率的相对频率解释</h4>
-<div class="outline-text-4" id="text-orgcb6d770">
+<div id="outline-container-orgfcc8e5b" class="outline-4">
+<h4 id="orgfcc8e5b">概率的相对频率解释</h4>
+<div class="outline-text-4" id="text-orgfcc8e5b">
 <p>
 对概率的一种更具体的解释是使用 *相对频率*。
 </p>
@@ -1400,9 +1394,9 @@ P(A)=\frac{2}{3}
 </p>
 </div>
 </div>
-<div id="outline-container-orgfb3c7de" class="outline-4">
-<h4 id="orgfb3c7de">由概率公理推出的性质</h4>
-<div class="outline-text-4" id="text-orgfb3c7de">
+<div id="outline-container-org8832e86" class="outline-4">
+<h4 id="org8832e86">由概率公理推出的性质</h4>
+<div class="outline-text-4" id="text-org8832e86">
 <p>
 概率律还具有许多自然性质。这些性质没有被列入公理，原因很简单：它们可以由上述公理推导出来。
 </p>
@@ -1436,9 +1430,9 @@ P(\varnothing)=0.
 </p>
 </div>
 </div>
-<div id="outline-container-orga7c13e1" class="outline-4">
-<h4 id="orga7c13e1">有限个不相交事件的可加性</h4>
-<div class="outline-text-4" id="text-orga7c13e1">
+<div id="outline-container-orgb6dc00e" class="outline-4">
+<h4 id="orgb6dc00e">有限个不相交事件的可加性</h4>
+<div class="outline-text-4" id="text-orgb6dc00e">
 <p>
 再举一个例子。考虑三个两两不相交的事件：
 </p>
@@ -1475,17 +1469,17 @@ P(A_1\cup A_2\cup A_3)
 </p>
 </div>
 </div>
-</div>
-<div id="outline-container-orgfcfe68a" class="outline-3">
-<h3 id="orgfcfe68a">离散模型</h3>
-<div class="outline-text-3" id="text-orgfcfe68a">
+<div id="outline-container-org91ce89f" class="outline-4">
+<h4 id="org91ce89f">离散模型</h4>
+<div class="outline-text-4" id="text-org91ce89f">
 <p>
 下面通过一些例子说明，如何从对模型作出的常识性假设出发，构造一条概率律。
 </p>
 </div>
-<div id="outline-container-org037bc60" class="outline-4">
-<h4 id="org037bc60">例 1.2：抛一次硬币</h4>
-<div class="outline-text-4" id="text-org037bc60">
+</div>
+<div id="outline-container-org72aac90" class="outline-4">
+<h4 id="org72aac90">例 1.2：抛一次硬币</h4>
+<div class="outline-text-4" id="text-org72aac90">
 <p>
 考虑一项只抛一次硬币的试验。
 </p>
@@ -1589,9 +1583,9 @@ P(\varnothing)=0.
 </p>
 </div>
 </div>
-<div id="outline-container-orgde0b231" class="outline-4">
-<h4 id="orgde0b231">例 1.2（续）：连续抛三次硬币</h4>
-<div class="outline-text-4" id="text-orgde0b231">
+<div id="outline-container-orgd40fed7" class="outline-4">
+<h4 id="orgd40fed7">例 1.2（续）：连续抛三次硬币</h4>
+<div class="outline-text-4" id="text-orgd40fed7">
 <p>
 再考虑一项连续抛三次硬币的试验。
 </p>
@@ -1661,9 +1655,9 @@ P(\{HHT,HTH,THH\})
 </p>
 </div>
 </div>
-<div id="outline-container-org4cbfbc1" class="outline-4">
-<h4 id="org4cbfbc1">离散概率律</h4>
-<div class="outline-text-4" id="text-org4cbfbc1">
+<div id="outline-container-orgbe5cf48" class="outline-4">
+<h4 id="orgbe5cf48">离散概率律</h4>
+<div class="outline-text-4" id="text-orgbe5cf48">
 <p>
 运用可加性公理，并把前一个例子中的推理推广开来，可以得到以下结论。
 </p>
@@ -1715,9 +1709,9 @@ P(\{s_i\}).
 </p>
 </div>
 </div>
-<div id="outline-container-org3a02246" class="outline-4">
-<h4 id="org3a02246">离散均匀概率律</h4>
-<div class="outline-text-4" id="text-org3a02246">
+<div id="outline-container-orgf4f7295" class="outline-4">
+<h4 id="orgf4f7295">离散均匀概率律</h4>
+<div class="outline-text-4" id="text-orgf4f7295">
 <p>
 在特殊情况下，如果：
 </p>
@@ -1765,9 +1759,9 @@ P(A)
 </p>
 </div>
 </div>
-<div id="outline-container-org95a9c94" class="outline-4">
-<h4 id="org95a9c94">例 1.3：投掷两枚四面骰子</h4>
-<div class="outline-text-4" id="text-org95a9c94">
+<div id="outline-container-orgb5dfab6" class="outline-4">
+<h4 id="orgb5dfab6">例 1.3：投掷两枚四面骰子</h4>
+<div class="outline-text-4" id="text-orgb5dfab6">
 <p>
 考虑同时投掷两枚四面骰子的试验，参见图 1.4。
 </p>
@@ -1864,9 +1858,9 @@ P(\{\text{至少有一次点数等于 4}\})
 </p>
 </div>
 </div>
-<div id="outline-container-org230f16d" class="outline-4">
-<h4 id="org230f16d">图 1.4：四面骰子试验中的事件</h4>
-<div class="outline-text-4" id="text-org230f16d">
+<div id="outline-container-org6661e60" class="outline-4">
+<h4 id="org6661e60">图 1.4：四面骰子试验中的事件</h4>
+<div class="outline-text-4" id="text-org6661e60">
 <p>
 图 1.4 展示了投掷两枚四面骰子时的若干事件，以及根据离散均匀概率律计算出的相应概率。
 </p>
@@ -1881,10 +1875,9 @@ P(\{\text{至少有一次点数等于 4}\})
 </ul>
 </div>
 </div>
-</div>
-<div id="outline-container-orgdd15833" class="outline-3">
-<h3 id="orgdd15833">连续模型</h3>
-<div class="outline-text-3" id="text-orgdd15833">
+<div id="outline-container-org87c1c12" class="outline-4">
+<h4 id="org87c1c12">连续模型</h4>
+<div class="outline-text-4" id="text-org87c1c12">
 <p>
 具有连续样本空间的概率模型与离散模型有所不同。
 </p>
@@ -1897,9 +1890,10 @@ P(\{\text{至少有一次点数等于 4}\})
 下面的例子说明了这一点，同时也表明如何把均匀概率律推广到连续样本空间。
 </p>
 </div>
-<div id="outline-container-org09075e5" class="outline-4">
-<h4 id="org09075e5">例 1.4：幸运转盘</h4>
-<div class="outline-text-4" id="text-org09075e5">
+</div>
+<div id="outline-container-orgf7b1a1b" class="outline-4">
+<h4 id="orgf7b1a1b">例 1.4：幸运转盘</h4>
+<div class="outline-text-4" id="text-orgf7b1a1b">
 <p>
 一个幸运转盘从 0 到 1 连续标有刻度。因此，转动一次转盘这一试验的可能结果，是区间：
 </p>
@@ -1963,9 +1957,9 @@ b-a
 </p>
 </div>
 </div>
-<div id="outline-container-org7db5915" class="outline-4">
-<h4 id="org7db5915">例 1.5：罗密欧与朱丽叶约会</h4>
-<div class="outline-text-4" id="text-org7db5915">
+<div id="outline-container-orgbb99ca1" class="outline-4">
+<h4 id="orgbb99ca1">例 1.5：罗密欧与朱丽叶约会</h4>
+<div class="outline-text-4" id="text-orgbb99ca1">
 <p>
 罗密欧和朱丽叶约定在某个时间见面。
 </p>
@@ -2077,9 +2071,9 @@ P(M)=\frac7{16}.
 </p>
 </div>
 </div>
-<div id="outline-container-orgc9f1ef6" class="outline-4">
-<h4 id="orgc9f1ef6">关于集合“长度”的说明</h4>
-<div class="outline-text-4" id="text-orgc9f1ef6">
+<div id="outline-container-org8b0ff8f" class="outline-4">
+<h4 id="org8b0ff8f">关于集合“长度”的说明</h4>
+<div class="outline-text-4" id="text-org8b0ff8f">
 <p>
 区间 \([0,1]\) 的一个子集 \(S\) 的“长度”可以表示为：
 </p>
@@ -2121,17 +2115,17 @@ P([0,1])=1
 </p>
 </div>
 </div>
-</div>
-<div id="outline-container-orgba82be0" class="outline-3">
-<h3 id="orgba82be0">概率律的性质</h3>
-<div class="outline-text-3" id="text-orgba82be0">
+<div id="outline-container-org0add762" class="outline-4">
+<h4 id="org0add762">概率律的性质</h4>
+<div class="outline-text-4" id="text-org0add762">
 <p>
 概率律具有若干可以由概率公理推导出来的性质。下面概括其中的一部分。
 </p>
 </div>
-<div id="outline-container-org61fcc07" class="outline-4">
-<h4 id="org61fcc07">概率律的若干基本性质</h4>
-<div class="outline-text-4" id="text-org61fcc07">
+</div>
+<div id="outline-container-orgcde47ca" class="outline-4">
+<h4 id="orgcde47ca">概率律的若干基本性质</h4>
+<div class="outline-text-4" id="text-orgcde47ca">
 <p>
 考虑一条概率律，并设 \(A\)、\(B\) 和 \(C\) 为事件。
 </p>
@@ -2197,9 +2191,9 @@ P(A)
 </p>
 </div>
 </div>
-<div id="outline-container-org48b5f7f" class="outline-4">
-<h4 id="org48b5f7f">有限并集的概率上界</h4>
-<div class="outline-text-4" id="text-org48b5f7f">
+<div id="outline-container-org77e72ae" class="outline-4">
+<h4 id="org77e72ae">有限并集的概率上界</h4>
+<div class="outline-text-4" id="text-org77e72ae">
 <p>
 性质 3 可以推广为：
 </p>
@@ -2278,10 +2272,9 @@ P(A_1)+\cdots+P(A_n).
 </p>
 </div>
 </div>
-</div>
-<div id="outline-container-org01e8103" class="outline-3">
-<h3 id="org01e8103">模型与现实</h3>
-<div class="outline-text-3" id="text-org01e8103">
+<div id="outline-container-org1d27069" class="outline-4">
+<h4 id="org1d27069">模型与现实</h4>
+<div class="outline-text-4" id="text-org1d27069">
 <p>
 概率论的框架可以用来分析各种现实情境中的不确定性。
 </p>
@@ -2290,9 +2283,10 @@ P(A_1)+\cdots+P(A_n).
 通常，这一过程包含两个彼此不同的阶段。
 </p>
 </div>
-<div id="outline-container-orgc11fbd0" class="outline-4">
-<h4 id="orgc11fbd0">第一阶段：构造概率模型</h4>
-<div class="outline-text-4" id="text-orgc11fbd0">
+</div>
+<div id="outline-container-orge49a9e0" class="outline-4">
+<h4 id="orge49a9e0">第一阶段：构造概率模型</h4>
+<div class="outline-text-4" id="text-orge49a9e0">
 <p>
 在第一阶段，我们先适当地定义一个样本空间，再在该样本空间上指定一条概率律，从而构造概率模型。
 </p>
@@ -2324,16 +2318,16 @@ P(A_1)+\cdots+P(A_n).
 </p>
 </div>
 </div>
-<div id="outline-container-org7e6db74" class="outline-4">
-<h4 id="org7e6db74">图 1.6：使用维恩图验证概率律的性质</h4>
-<div class="outline-text-4" id="text-org7e6db74">
+<div id="outline-container-org296f1b0" class="outline-4">
+<h4 id="org296f1b0">图 1.6：使用维恩图验证概率律的性质</h4>
+<div class="outline-text-4" id="text-org296f1b0">
 <p>
 图 1.6 使用维恩图直观展示并验证了概率律的若干性质。
 </p>
 </div>
 <ul class="org-ul">
-<li><a id="orgec5766a"></a>验证性质 1<br />
-<div class="outline-text-5" id="text-orgec5766a">
+<li><a id="org91dfea5"></a>验证性质 1<br />
+<div class="outline-text-5" id="text-org91dfea5">
 <p>
 如果：
 </p>
@@ -2403,8 +2397,8 @@ P(A)\le P(B).
 </p>
 </div>
 </li>
-<li><a id="org938d576"></a>验证性质 2<br />
-<div class="outline-text-5" id="text-org938d576">
+<li><a id="org88e3c04"></a>验证性质 2<br />
+<div class="outline-text-5" id="text-org88e3c04">
 <p>
 根据图 1.6（b），事件 \(A\cup B\) 和 \(B\) 可以分别表示为不相交事件的并集：
 </p>
@@ -2470,8 +2464,8 @@ P(A)+P(B)-P(A\cap B).
 </p>
 </div>
 </li>
-<li><a id="orgd2a2030"></a>验证性质 3<br />
-<div class="outline-text-5" id="text-orgd2a2030">
+<li><a id="orge2279e2"></a>验证性质 3<br />
+<div class="outline-text-5" id="text-orge2279e2">
 <p>
 根据非负性公理：
 </p>
@@ -2511,8 +2505,8 @@ P(A)+P(B).
 </p>
 </div>
 </li>
-<li><a id="orged32b3a"></a>验证性质 4<br />
-<div class="outline-text-5" id="text-orged32b3a">
+<li><a id="org3625139"></a>验证性质 4<br />
+<div class="outline-text-5" id="text-org3625139">
 <p>
 根据图 1.6（c），事件 \(A\cup B\cup C\) 可以表示为三个两两不相交事件的并集：
 </p>
@@ -2551,9 +2545,9 @@ P(A\cup B\cup C)
 </li>
 </ul>
 </div>
-<div id="outline-container-orgada1bfb" class="outline-4">
-<h4 id="orgada1bfb">第二阶段：在模型中进行推导</h4>
-<div class="outline-text-4" id="text-orgada1bfb">
+<div id="outline-container-orgc124e24" class="outline-4">
+<h4 id="orgc124e24">第二阶段：在模型中进行推导</h4>
+<div class="outline-text-4" id="text-orgc124e24">
 <p>
 在第二阶段，我们在一个已经完整确定的概率模型内开展工作，计算某些事件的概率，或者推导一些有意义的性质。
 </p>
@@ -2575,9 +2569,9 @@ P(A\cup B\cup C)
 </p>
 </div>
 </div>
-<div id="outline-container-orgf09b779" class="outline-4">
-<h4 id="orgf09b779">概率论中的“悖论”</h4>
-<div class="outline-text-4" id="text-orgf09b779">
+<div id="outline-container-orgfb4c605" class="outline-4">
+<h4 id="orgfb4c605">概率论中的“悖论”</h4>
+<div class="outline-text-4" id="text-orgfb4c605">
 <p>
 概率论中存在许多所谓的“悖论”。在这些问题中，不同的计算方法看起来会对同一个问题给出不同答案。
 </p>
@@ -2596,9 +2590,9 @@ P(A\cup B\cup C)
 </p>
 </div>
 </div>
-<div id="outline-container-org5725cb0" class="outline-4">
-<h4 id="org5725cb0">图 1.7：伯特兰悖论</h4>
-<div class="outline-text-4" id="text-org5725cb0">
+<div id="outline-container-org84e12c5" class="outline-4">
+<h4 id="org84e12c5">图 1.7：伯特兰悖论</h4>
+<div class="outline-text-4" id="text-org84e12c5">
 <p>
 这个例子由 L. F. 伯特兰于 1889 年提出。它说明了为什么必须以无歧义的方式明确规定一个概率模型。
 </p>
@@ -2626,8 +2620,8 @@ P(A\cup B\cup C)
 </p>
 </div>
 <ul class="org-ul">
-<li><a id="org74ec877"></a>方法一：在半径上随机选择一点<br />
-<div class="outline-text-5" id="text-org74ec877">
+<li><a id="orgfec7ec7"></a>方法一：在半径上随机选择一点<br />
+<div class="outline-text-5" id="text-orgfec7ec7">
 <p>
 如图 1.7（a）所示，取圆的一条半径，例如 \(AB\)。
 </p>
@@ -2655,8 +2649,8 @@ P(A\cup B\cup C)
 </p>
 </div>
 </li>
-<li><a id="orgdda4caa"></a>方法二：随机选择弦与切线的夹角<br />
-<div class="outline-text-5" id="text-orgdda4caa">
+<li><a id="orgdef71b8"></a>方法二：随机选择弦与切线的夹角<br />
+<div class="outline-text-5" id="text-orgdef71b8">
 <p>
 如图 1.7（b）所示，在圆上取一点，例如等边三角形的顶点 \(V\)。
 </p>
@@ -2728,8 +2722,656 @@ P(A\cup B\cup C)
 </p>
 </div>
 </li>
-<li><a id="org42cddfe"></a>两种答案为什么不同<br />
-<div class="outline-text-5" id="text-org42cddfe">
+<li><a id="org1c42950"></a>两种答案为什么不同<br />
+<div class="outline-text-5" id="text-org1c42950">
+<p>
+两种方法分别得到：
+</p>
+
+<p>
+\[
+\frac12
+\]
+</p>
+
+<p>
+和：
+</p>
+
+<p>
+\[
+\frac13.
+\]
+</p>
+
+<p>
+这并不是概率公理产生了矛盾，而是因为两种方法使用了不同的概率模型。
+</p>
+
+<p>
+在第一种模型中，均匀选择的是半径上的点 \(C\)。
+</p>
+
+<p>
+在第二种模型中，均匀选择的是角度 \(\Phi\)。
+</p>
+
+<p>
+因此，“随机选择一条弦”这个说法本身不足以确定一个唯一的概率答案。只有明确规定随机选择的具体机制之后，问题才具有确定的答案。
+</p>
+</div>
+</li>
+</ul>
+</div>
+<div id="outline-container-orgb7a4a32" class="outline-4">
+<h4 id="orgb7a4a32">概率律的性质</h4>
+<div class="outline-text-4" id="text-orgb7a4a32">
+<p>
+概率律具有若干可以由概率公理推导出来的性质。下面概括其中的一部分。
+</p>
+</div>
+</div>
+<div id="outline-container-org07fc8f7" class="outline-4">
+<h4 id="org07fc8f7">概率律的若干基本性质</h4>
+<div class="outline-text-4" id="text-org07fc8f7">
+<p>
+考虑一条概率律，并设 \(A\)、\(B\) 和 \(C\) 为事件。
+</p>
+
+<blockquote>
+<ol class="org-ol">
+<li><p>
+如果 \(A\subset B\)，那么：
+</p>
+
+<p>
+\[
+   P(A)\le P(B).
+   \]
+</p></li>
+
+<li><p>
+两个事件并集的概率为：
+</p>
+
+<p>
+\[
+   P(A\cup B)
+   =
+   P(A)+P(B)-P(A\cap B).
+   \]
+</p></li>
+
+<li><p>
+两个事件并集的概率满足：
+</p>
+
+<p>
+\[
+   P(A\cup B)
+   \le
+   P(A)+P(B).
+   \]
+</p></li>
+
+<li><p>
+三个事件并集的概率可以写成：
+</p>
+
+<p>
+\[
+</p>
+\begin{aligned}
+P(A\cup B\cup C)
+={}&
+P(A)
++P(A^c\cap B)\\
+&+P(A^c\cap B^c\cap C).
+\end{aligned}
+<p>
+\]
+</p></li>
+</ol>
+</blockquote>
+
+<p>
+这些性质以及其他类似性质，都可以像图 1.6 那样，使用维恩图进行直观展示和验证。
+</p>
+</div>
+</div>
+<div id="outline-container-org7218b22" class="outline-4">
+<h4 id="org7218b22">有限并集的概率上界</h4>
+<div class="outline-text-4" id="text-org7218b22">
+<p>
+性质 3 可以推广为：
+</p>
+
+<p>
+\[
+P(A_1\cup A_2\cup\cdots\cup A_n)
+\le
+\sum_{i=1}^{n}P(A_i).
+\]
+</p>
+
+<p>
+为了证明这一结论，首先把性质 3 应用于集合：
+</p>
+
+<p>
+\[
+A_1
+\]
+</p>
+
+<p>
+和：
+</p>
+
+<p>
+\[
+A_2\cup\cdots\cup A_n.
+\]
+</p>
+
+<p>
+由此得到：
+</p>
+
+<p>
+\[
+</p>
+\begin{aligned}
+P(A_1\cup A_2\cup\cdots\cup A_n)
+\le{}&
+P(A_1)\\
+&+P(A_2\cup\cdots\cup A_n).
+\end{aligned}
+<p>
+\]
+</p>
+
+<p>
+然后，把性质 3 应用于集合 \(A_2\) 和 \(A_3\cup\cdots\cup A_n\)，得到：
+</p>
+
+<p>
+\[
+P(A_2\cup\cdots\cup A_n)
+\le
+P(A_2)+P(A_3\cup\cdots\cup A_n).
+\]
+</p>
+
+<p>
+继续以同样的方法展开，最后把所得不等式相加，就得到：
+</p>
+
+<p>
+\[
+P(A_1\cup\cdots\cup A_n)
+\le
+P(A_1)+\cdots+P(A_n).
+\]
+</p>
+
+<p>
+这个结果通常称为 <b>并集上界</b> 或 *联合界*。
+</p>
+</div>
+</div>
+<div id="outline-container-orge0d65ee" class="outline-4">
+<h4 id="orge0d65ee">模型与现实</h4>
+<div class="outline-text-4" id="text-orge0d65ee">
+<p>
+概率论的框架可以用来分析各种现实情境中的不确定性。
+</p>
+
+<p>
+通常，这一过程包含两个彼此不同的阶段。
+</p>
+</div>
+</div>
+<div id="outline-container-orga1d80a5" class="outline-4">
+<h4 id="orga1d80a5">第一阶段：构造概率模型</h4>
+<div class="outline-text-4" id="text-orga1d80a5">
+<p>
+在第一阶段，我们先适当地定义一个样本空间，再在该样本空间上指定一条概率律，从而构造概率模型。
+</p>
+
+<p>
+除了要求概率律符合三条概率公理以外，并没有严格的规则可以指导这一步骤。
+</p>
+
+<p>
+对于哪个模型最能代表现实，不同的理性分析者也可能持有不同意见。
+</p>
+
+<p>
+在许多情况下，如果某个不太“正确”的模型比“正确”的模型更加简单，或者能使计算更容易处理，那么我们甚至可能更愿意采用这个不太“正确”的模型。
+</p>
+
+<p>
+这与科学和工程中的通常做法是一致的。在这些领域，选择模型往往需要在以下因素之间作出权衡：
+</p>
+
+<ul class="org-ul">
+<li>准确性；</li>
+<li>简洁性；</li>
+<li>计算的可处理性。</li>
+</ul>
+
+<p>
+有时，人们会利用统计推断方法，根据历史数据或以往类似试验的结果来选择模型。相关方法将在第 8 章和第 9 章讨论。
+</p>
+</div>
+</div>
+<div id="outline-container-org057db31" class="outline-4">
+<h4 id="org057db31">图 1.6：使用维恩图验证概率律的性质</h4>
+<div class="outline-text-4" id="text-org057db31">
+<p>
+图 1.6 使用维恩图直观展示并验证了概率律的若干性质。
+</p>
+</div>
+<ul class="org-ul">
+<li><a id="orga5367c2"></a>验证性质 1<br />
+<div class="outline-text-5" id="text-orga5367c2">
+<p>
+如果：
+</p>
+
+<p>
+\[
+A\subset B,
+\]
+</p>
+
+<p>
+那么，事件 \(B\) 可以表示为两个不相交事件的并集：
+</p>
+
+<p>
+\[
+B=A\cup(A^c\cap B).
+\]
+</p>
+
+<p>
+参见图 1.6（a）。
+</p>
+
+<p>
+根据可加性公理：
+</p>
+
+<p>
+\[
+P(B)
+=
+P(A)+P(A^c\cap B).
+\]
+</p>
+
+<p>
+又因为非负性公理保证：
+</p>
+
+<p>
+\[
+P(A^c\cap B)\ge0,
+\]
+</p>
+
+<p>
+所以：
+</p>
+
+<p>
+\[
+P(B)\ge P(A).
+\]
+</p>
+
+<p>
+这就验证了性质 1：
+</p>
+
+<p>
+\[
+A\subset B
+\quad\Longrightarrow\quad
+P(A)\le P(B).
+\]
+</p>
+</div>
+</li>
+<li><a id="org17ffd63"></a>验证性质 2<br />
+<div class="outline-text-5" id="text-org17ffd63">
+<p>
+根据图 1.6（b），事件 \(A\cup B\) 和 \(B\) 可以分别表示为不相交事件的并集：
+</p>
+
+<p>
+\[
+A\cup B
+=
+A\cup(A^c\cap B),
+\]
+</p>
+
+<p>
+以及：
+</p>
+
+<p>
+\[
+B
+=
+(A\cap B)\cup(A^c\cap B).
+\]
+</p>
+
+<p>
+利用可加性公理，有：
+</p>
+
+<p>
+\[
+P(A\cup B)
+=
+P(A)+P(A^c\cap B),
+\]
+</p>
+
+<p>
+以及：
+</p>
+
+<p>
+\[
+P(B)
+=
+P(A\cap B)+P(A^c\cap B).
+\]
+</p>
+
+<p>
+用第一个等式减去第二个等式，并重新整理各项，可以得到：
+</p>
+
+<p>
+\[
+P(A\cup B)
+=
+P(A)+P(B)-P(A\cap B).
+\]
+</p>
+
+<p>
+这就验证了性质 2。
+</p>
+</div>
+</li>
+<li><a id="org47a1e65"></a>验证性质 3<br />
+<div class="outline-text-5" id="text-org47a1e65">
+<p>
+根据非负性公理：
+</p>
+
+<p>
+\[
+P(A\cap B)\ge0.
+\]
+</p>
+
+<p>
+结合刚刚得到的等式：
+</p>
+
+<p>
+\[
+P(A\cup B)
+=
+P(A)+P(B)-P(A\cap B),
+\]
+</p>
+
+<p>
+可以推出：
+</p>
+
+<p>
+\[
+P(A\cup B)
+\le
+P(A)+P(B).
+\]
+</p>
+
+<p>
+这就验证了性质 3。
+</p>
+</div>
+</li>
+<li><a id="orgb516eba"></a>验证性质 4<br />
+<div class="outline-text-5" id="text-orgb516eba">
+<p>
+根据图 1.6（c），事件 \(A\cup B\cup C\) 可以表示为三个两两不相交事件的并集：
+</p>
+
+<p>
+\[
+A\cup B\cup C
+=
+A
+\cup(A^c\cap B)
+\cup(A^c\cap B^c\cap C).
+\]
+</p>
+
+<p>
+因此，根据可加性公理：
+</p>
+
+<p>
+\[
+</p>
+\begin{aligned}
+P(A\cup B\cup C)
+={}&P(A)
++P(A^c\cap B)\\
+&+P(A^c\cap B^c\cap C).
+\end{aligned}
+<p>
+\]
+</p>
+
+<p>
+这就验证了性质 4。
+</p>
+</div>
+</li>
+</ul>
+</div>
+<div id="outline-container-orge400f72" class="outline-4">
+<h4 id="orge400f72">第二阶段：在模型中进行推导</h4>
+<div class="outline-text-4" id="text-orge400f72">
+<p>
+在第二阶段，我们在一个已经完整确定的概率模型内开展工作，计算某些事件的概率，或者推导一些有意义的性质。
+</p>
+
+<p>
+第一阶段通常需要完成一个较为开放的任务，即把现实世界与数学联系起来。
+</p>
+
+<p>
+相比之下，第二阶段严格受到普通逻辑规则和概率公理的约束。
+</p>
+
+<p>
+如果某些必要的计算十分复杂，或者概率律是以一种间接方式给出的，那么第二阶段也可能遇到困难。
+</p>
+
+<p>
+即便如此，这里也不存在含糊不清的余地：所有能够提出的问题都有精确答案。我们所需要的，只是培养找出这些答案的技巧。
+</p>
+</div>
+</div>
+<div id="outline-container-org58b9607" class="outline-4">
+<h4 id="org58b9607">概率论中的“悖论”</h4>
+<div class="outline-text-4" id="text-org58b9607">
+<p>
+概率论中存在许多所谓的“悖论”。在这些问题中，不同的计算方法看起来会对同一个问题给出不同答案。
+</p>
+
+<p>
+然而，无一例外，这些表面上的矛盾最终都反映出：
+</p>
+
+<ul class="org-ul">
+<li>概率模型没有得到充分说明；或者</li>
+<li>概率模型本身存在歧义。</li>
+</ul>
+
+<p>
+图 1.7 展示了其中一个著名例子，即 *伯特兰悖论*。
+</p>
+</div>
+</div>
+<div id="outline-container-orgc3510ab" class="outline-4">
+<h4 id="orgc3510ab">图 1.7：伯特兰悖论</h4>
+<div class="outline-text-4" id="text-orgc3510ab">
+<p>
+这个例子由 L. F. 伯特兰于 1889 年提出。它说明了为什么必须以无歧义的方式明确规定一个概率模型。
+</p>
+
+<p>
+考虑一个圆，以及内接于该圆的一个等边三角形。
+</p>
+
+<p>
+问题是：
+</p>
+
+<blockquote>
+<p>
+从圆中“随机选择”一条弦，这条弦的长度大于内接等边三角形边长的概率是多少？
+</p>
+</blockquote>
+
+<p>
+这里的答案取决于“随机选择”的确切含义。
+</p>
+
+<p>
+图 1.7（a）和图 1.7（b）使用了两种不同的随机选择方法，并得到了相互矛盾的答案。
+</p>
+</div>
+<ul class="org-ul">
+<li><a id="org2d686a9"></a>方法一：在半径上随机选择一点<br />
+<div class="outline-text-5" id="text-org2d686a9">
+<p>
+如图 1.7（a）所示，取圆的一条半径，例如 \(AB\)。
+</p>
+
+<p>
+在半径 \(AB\) 上等可能地选择一点 \(C\)，然后过 \(C\) 作一条与 \(AB\) 垂直的弦。
+</p>
+
+<p>
+根据初等几何，等边三角形的底边与 \(AB\) 的交点，恰好位于 \(AB\) 的中点。
+</p>
+
+<p>
+因此，当 \(C\) 位于半径的内侧一半时，过 \(C\) 的弦长大于三角形的边长。
+</p>
+
+<p>
+由于 \(C\) 在整条半径上均匀选取，所以弦长大于三角形边长的概率为：
+</p>
+
+<p>
+\[
+\frac12.
+\]
+</p>
+</div>
+</li>
+<li><a id="orgd339b09"></a>方法二：随机选择弦与切线的夹角<br />
+<div class="outline-text-5" id="text-orgd339b09">
+<p>
+如图 1.7（b）所示，在圆上取一点，例如等边三角形的顶点 \(V\)。
+</p>
+
+<p>
+过 \(V\) 作圆的切线，再过 \(V\) 作一条直线，使它与切线形成一个随机角度：
+</p>
+
+<p>
+\[
+\Phi.
+\]
+</p>
+
+<p>
+假设所有可能的角度都是等可能的。这条直线与圆相交，从而确定一条弦。
+</p>
+
+<p>
+根据初等几何，当：
+</p>
+
+<p>
+\[
+\frac{\pi}{3}
+<
+\Phi
+<
+\frac{2\pi}{3}
+\]
+</p>
+
+<p>
+时，这条弦的长度大于等边三角形的边长。
+</p>
+
+<p>
+由于 \(\Phi\) 的取值范围是：
+</p>
+
+<p>
+\[
+0\le\Phi\le\pi,
+\]
+</p>
+
+<p>
+所以满足条件的角度区间长度为：
+</p>
+
+<p>
+\[
+\frac{2\pi}{3}-\frac{\pi}{3}
+=
+\frac{\pi}{3}.
+\]
+</p>
+
+<p>
+因此，弦长大于三角形边长的概率为：
+</p>
+
+<p>
+\[
+\frac{\pi/3}{\pi}
+=
+\frac13.
+\]
+</p>
+</div>
+</li>
+<li><a id="org71bc653"></a>两种答案为什么不同<br />
+<div class="outline-text-5" id="text-org71bc653">
 <p>
 两种方法分别得到：
 </p>
@@ -2774,7 +3416,7 @@ P(A\cup B\cup C)
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: harrifeng@outlook.com</p>
-<p class="date">Created: 2026-08-07 Fri 18:53</p>
+<p class="date">Created: 2026-08-07 Fri 19:24</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
