@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN" xml:lang="zh-CN">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2026-08-12 Wed 16:06 -->
+<!-- 2026-08-12 Wed 16:09 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>introduction-to-statistical-learning 条件概率、全概率定理与贝叶斯法则 贝叶斯法则与独立性 独立性、二项概率与计数 计数结果总结 第 2 章 离散随机变量 第 2 章 离散随机变量（第 77–82 页） 第 2 章 离散随机变量（第 83–88 页） 第 2 章 离散随机变量（第 89–94 页） 第 2 章 离散随机变量（第 95–100 页） 第 2 章 离散随机变量（第 95–100 页） 第 2 章 离散随机变量（第 95–100 页） 第 2 章 离散随机变量（第 113–118 页） 第 3 章 一般随机变量（第 139–144 页） 第 3 章 一般随机变量（第 145–150 页） 第 3 章 一般随机变量（第 151–156 页） 第3章 一般随机变量（第157—162页） 第3章 一般随机变量（第163—168页） 第3章 一般随机变量 第3章 一般随机变量 第3章 一般随机变量</title>
+<title>introduction-to-statistical-learning</title>
 <meta name="author" content="harrifeng@outlook.com" />
 <meta name="generator" content="Org Mode" />
 <link rel="stylesheet" type="text/css" href="src/readtheorg_theme/css/htmlize.css"/>
@@ -50,13 +50,819 @@
 </head>
 <body>
 <div id="content" class="content">
-<h1 class="title">introduction-to-statistical-learning 条件概率、全概率定理与贝叶斯法则 贝叶斯法则与独立性 独立性、二项概率与计数 计数结果总结 第 2 章 离散随机变量 第 2 章 离散随机变量（第 77–82 页） 第 2 章 离散随机变量（第 83–88 页） 第 2 章 离散随机变量（第 89–94 页） 第 2 章 离散随机变量（第 95–100 页） 第 2 章 离散随机变量（第 95–100 页） 第 2 章 离散随机变量（第 95–100 页） 第 2 章 离散随机变量（第 113–118 页） 第 3 章 一般随机变量（第 139–144 页） 第 3 章 一般随机变量（第 145–150 页） 第 3 章 一般随机变量（第 151–156 页） 第3章 一般随机变量（第157—162页） 第3章 一般随机变量（第163—168页） 第3章 一般随机变量 第3章 一般随机变量 第3章 一般随机变量
-<br />
-<span class="subtitle">第169—174页翻译</span>
-</h1>
-<div id="outline-container-orgcd0a7d5" class="outline-2">
-<h2 id="orgcd0a7d5">Chapter 1: Sample Space and Probability</h2>
-<div class="outline-text-2" id="text-orgcd0a7d5">
+<h1 class="title">introduction-to-statistical-learning</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org68504d3">Chapter 1: Sample Space and Probability</a>
+<ul>
+<li><a href="#org8622a9e">1.1 集合</a>
+<ul>
+<li><a href="#org6a4af01">集合的表示方法</a></li>
+<li><a href="#orge6d65c6">可数无限集</a></li>
+<li><a href="#orgf1f21e4">使用性质描述集合</a></li>
+<li><a href="#orgccaf704">子集、集合相等与全集</a></li>
+<li><a href="#orgaf9d7df">集合运算</a></li>
+<li><a href="#org9f8de0d">补集</a></li>
+<li><a href="#org826b0fb">并集与交集</a></li>
+<li><a href="#org9dfb4ef">多个集合的并集与交集</a></li>
+<li><a href="#orga34c4e9">不相交与集合的划分</a></li>
+<li><a href="#org4f21806">有序对与实数空间</a></li>
+<li><a href="#org80e6c24">图 1.1：维恩图示例</a></li>
+<li><a href="#orga8df497">集合代数</a></li>
+<li><a href="#orgf4bccac">德摩根律</a></li>
+</ul>
+</li>
+<li><a href="#orgba08c65">1.2 概率模型</a>
+<ul>
+<li><a href="#orgc6ad135">概率模型的组成要素</a></li>
+<li><a href="#org4b944f6">图 1.2：概率模型的主要组成部分</a></li>
+<li><a href="#orgde8a367">样本空间与事件</a></li>
+<li><a href="#org55269b1">选择适当的样本空间</a></li>
+<li><a href="#org01ab511">例 1.1：两个抛硬币游戏</a></li>
+<li><a href="#org37707f4">关于事件的技术性说明</a></li>
+<li><a href="#orge727fb1">两个游戏所需的不同样本空间</a></li>
+<li><a href="#org12734f3">序贯模型</a></li>
+<li><a href="#orgaa3f8f8">图 1.3：样本空间的两种等价描述</a></li>
+<li><a href="#org6649cbd">概率律</a></li>
+<li><a href="#orgb5699e9">概率公理</a></li>
+<li><a href="#orgd9dab4a">概率质量的类比</a></li>
+<li><a href="#orga420af6">概率的相对频率解释</a></li>
+<li><a href="#orgf24041c">由概率公理推出的性质</a></li>
+<li><a href="#org8d2dd1e">有限个不相交事件的可加性</a></li>
+<li><a href="#org5a8f747">离散模型</a></li>
+<li><a href="#orgabee87f">例 1.2：抛一次硬币</a></li>
+<li><a href="#orgfbbe137">例 1.2（续）：连续抛三次硬币</a></li>
+<li><a href="#orgd3d1b27">离散概率律</a></li>
+<li><a href="#org4ec0530">离散均匀概率律</a></li>
+<li><a href="#org66814ae">例 1.3：投掷两枚四面骰子</a></li>
+<li><a href="#org7914bcc">图 1.4：四面骰子试验中的事件</a></li>
+<li><a href="#orgb99bec7">连续模型</a></li>
+<li><a href="#orgfa1e692">例 1.4：幸运转盘</a></li>
+<li><a href="#orgac09b6e">例 1.5：罗密欧与朱丽叶约会</a></li>
+<li><a href="#org151c3ea">关于集合“长度”的说明</a></li>
+<li><a href="#org835223b">概率律的性质</a></li>
+<li><a href="#org3219b90">概率律的若干基本性质</a></li>
+<li><a href="#org0f994fa">有限并集的概率上界</a></li>
+<li><a href="#org8d1e05a">模型与现实</a></li>
+<li><a href="#org970dd46">第一阶段：构造概率模型</a></li>
+<li><a href="#orgc6c7f2a">图 1.6：使用维恩图验证概率律的性质</a></li>
+<li><a href="#org0fd309e">第二阶段：在模型中进行推导</a></li>
+<li><a href="#orgea4cebc">概率论中的“悖论”</a></li>
+<li><a href="#org09354a5">图 1.7：伯特兰悖论</a></li>
+<li><a href="#org3b3a16e">概率律的性质</a></li>
+<li><a href="#org16839a8">概率律的若干基本性质</a></li>
+<li><a href="#org4248006">有限并集的概率上界</a></li>
+<li><a href="#orga900dd7">模型与现实</a></li>
+<li><a href="#org32159de">第一阶段：构造概率模型</a></li>
+<li><a href="#org46252a7">图 1.6：使用维恩图验证概率律的性质</a></li>
+<li><a href="#orge9d319c">第二阶段：在模型中进行推导</a></li>
+<li><a href="#org1846fcc">概率论中的“悖论”</a></li>
+<li><a href="#org7db3b8b">图 1.7：伯特兰悖论</a></li>
+</ul>
+</li>
+<li><a href="#org74076e4">1.3 条件概率</a>
+<ul>
+<li><a href="#orgcf22ef2">条件概率的定义</a></li>
+<li><a href="#orgdc9fb7c">条件概率构成一条概率律</a></li>
+<li><a href="#org6e8a988">概率律的一般性质仍然成立</a></li>
+<li><a href="#org5c16138">条件概率的性质总结</a></li>
+<li><a href="#org0f66760">例 1.6：连续抛三次硬币</a></li>
+<li><a href="#orga2d1b9b">例 1.7：两次投掷四面骰子</a></li>
+<li><a href="#orgd247451">例 1.8：两个产品设计团队</a></li>
+</ul>
+</li>
+<li><a href="#orgfa9408c">使用条件概率进行建模</a>
+<ul>
+<li><a href="#org0bb712a">例 1.9：雷达探测</a></li>
+<li><a href="#orge5f8e21">利用树形顺序表示计算概率的一般方法</a></li>
+</ul>
+</li>
+<li><a href="#org207355d">乘法法则</a>
+<ul>
+<li><a href="#orgc0758e1">乘法法则</a></li>
+<li><a href="#org5194533">图 1.10：乘法法则的直观表示</a></li>
+</ul>
+</li>
+<li><a href="#orgec993ac">例 1.10：无放回抽取三张扑克牌</a>
+<ul>
+<li><a href="#org70e87f3">图 1.11：三张牌抽取问题的顺序描述</a></li>
+</ul>
+</li>
+<li><a href="#orgf84e9cc">例 1.11：将学生随机分组</a></li>
+</ul>
+</li>
+<li><a href="#org12d4be1">例 1.11：学生分组问题（续）</a>
+<ul>
+<li><a href="#orgbf7cd9a">图 1.12：学生分组实验的顺序描述</a></li>
+</ul>
+</li>
+<li><a href="#org2819752">例 1.12：蒙提霍尔问题</a>
+<ul>
+<li><a href="#orgfc5c89d">策略一：始终不换门</a></li>
+<li><a href="#orgfe22f53">策略二：始终换门</a></li>
+<li><a href="#orgf96c26a">策略三：根据朋友打开的门决定是否换门</a>
+<ul>
+<li><a href="#org3d4a4f4">情形一：奖品在门 1 后时，朋友总是打开门 2</a></li>
+<li><a href="#org66ff6f1">情形二：奖品在门 1 后时，朋友等概率地打开门 2 或门 3</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org80c129a">1.4 全概率定理与贝叶斯法则</a>
+<ul>
+<li><a href="#orge14a64e">全概率定理</a></li>
+<li><a href="#org495ce72">图 1.13：全概率定理的直观表示和证明</a></li>
+</ul>
+</li>
+<li><a href="#org86fd350">例 1.13：国际象棋比赛</a></li>
+<li><a href="#orga918718">例 1.14：投掷四面骰子</a></li>
+<li><a href="#org1ab5f69">例 1.15：课程学习进度</a></li>
+<li><a href="#orgd64ce6d">推断与贝叶斯法则</a>
+<ul>
+<li><a href="#org26e26f7">贝叶斯法则</a></li>
+<li><a href="#org0766abd">图 1.14：贝叶斯法则中的推断情境</a></li>
+<li><a href="#org163982f">贝叶斯法则的验证</a></li>
+<li><a href="#org25acb1d">先验概率与后验概率</a></li>
+</ul>
+</li>
+<li><a href="#orgeba99d6">例 1.16：雷达探测问题</a></li>
+<li><a href="#org8d3f733">例 1.17：国际象棋比赛（续）</a></li>
+<li><a href="#org21fc3e5">例 1.18：假阳性谜题</a></li>
+<li><a href="#org12c7681">1.5 独立性</a>
+<ul>
+<li><a href="#orgf63d0ed">独立与互斥并不相同</a></li>
+</ul>
+</li>
+<li><a href="#orgc606ae5">例 1.19：两次投掷四面骰子</a>
+<ul>
+<li><a href="#org1336138">第一问：两次投掷的结果是否独立？</a></li>
+<li><a href="#org705c49a">第二问：第一次投出 1 与两次之和为 5 是否独立？</a></li>
+<li><a href="#orgece1234">第三问：最大值为 2 与最小值为 2 是否独立？</a></li>
+<li><a href="#orge6dd13c">事件与补事件的独立性</a></li>
+</ul>
+</li>
+<li><a href="#org97bc4b8">条件独立</a>
+<ul>
+<li><a href="#org3b3732d">条件独立的另一种刻画</a></li>
+</ul>
+</li>
+<li><a href="#org273b926">例 1.20：独立但不条件独立</a></li>
+<li><a href="#orgc91d106">例 1.21：条件独立但不无条件独立</a></li>
+<li><a href="#orgf9b5cef">独立性总结</a></li>
+<li><a href="#org9c9d0e0">一组事件的独立性</a>
+<ul>
+<li><a href="#org381ec20">多个事件独立的定义</a></li>
+</ul>
+</li>
+<li><a href="#orgcba73e1">多个事件的独立性</a>
+<ul>
+<li><a href="#org4212593">例 1.22：两两独立不蕴含相互独立</a></li>
+<li><a href="#org0853dda">例 1.23：仅有三事件交集的乘积公式还不足以保证独立</a></li>
+<li><a href="#orgb6fcc5a">多个事件独立的直观含义</a></li>
+</ul>
+</li>
+<li><a href="#orgc2c222f">可靠性</a>
+<ul>
+<li><a href="#orgfb17d54">例 1.24：网络连通性</a>
+<ul>
+<li><a href="#org4973ccf">图 1.15</a></li>
+<li><a href="#org1d928d9">串联系统</a></li>
+<li><a href="#org39256a6">并联系统</a></li>
+<li><a href="#orgb2fcf3f">网络成功概率</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org01e4286">独立试验与二项概率</a>
+<ul>
+<li><a href="#orgb624d08">图 1.16：三次独立硬币投掷的顺序表示</a></li>
+<li><a href="#orgb638f5d">例 1.25：服务等级</a></li>
+</ul>
+</li>
+<li><a href="#orgb3728f6">1.6 计数</a>
+<ul>
+<li><a href="#org98e6c10">基本计数原理</a>
+<ul>
+<li><a href="#org423c575">图 1.17：基本计数原理</a></li>
+<li><a href="#org624a09f">计数原理</a></li>
+</ul>
+</li>
+<li><a href="#org2862e56">例 1.26：电话号码的数量</a></li>
+<li><a href="#org302593e">例 1.27：\(n\) 元素集合的子集数量</a></li>
+</ul>
+</li>
+<li><a href="#orgb4e6799">\(k\)-排列</a>
+<ul>
+<li><a href="#org820ff35">例 1.28：由四个不同字母组成的单词</a></li>
+<li><a href="#org23b57e4">例 1.29：排列不同类型的 CD</a></li>
+</ul>
+</li>
+<li><a href="#org55e4f3f">组合</a>
+<ul>
+<li><a href="#org7f33397">例 1.30：从四个字母中选择两个</a></li>
+<li><a href="#orgcf3667f">计数解释与二项公式</a></li>
+<li><a href="#org09d473d">例 1.31：带有负责人的俱乐部</a>
+<ul>
+<li><a href="#org38f00d1">第一种计数方法</a></li>
+<li><a href="#org11ab844">第二种计数方法</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org76d619b">划分</a>
+<ul>
+<li><a href="#org909a28b">例 1.32：变位词</a></li>
+<li><a href="#org2a8d551">例 1.33：把研究生和本科生分组</a></li>
+</ul>
+</li>
+<li><a href="#org8c91afd">例 1.33：把研究生和本科生分组（续）</a></li>
+<li><a href="#org53fcbf0">1.7 总结与讨论</a>
+<ul>
+<li><a href="#orgaa3802f">计数结果总结</a></li>
+</ul>
+</li>
+<li><a href="#orgfefa20b">Chapter2: Discrete random Variables</a></li>
+<li><a href="#org692e92e">第 72 页</a>
+<ul>
+<li><a href="#org9496811">2.1 基本概念</a></li>
+</ul>
+</li>
+<li><a href="#org353de81">第 73 页</a>
+<ul>
+<li>
+<ul>
+<li><a href="#org313e9b0">与随机变量有关的主要概念</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org3cc411d">第 74 页</a>
+<ul>
+<li>
+<ul>
+<li><a href="#orgfd2e39c">与离散随机变量有关的概念</a></li>
+</ul>
+</li>
+<li><a href="#org9ba8e93">2.2 概率质量函数</a></li>
+</ul>
+</li>
+<li><a href="#org65759d5">第 75 页</a>
+<ul>
+<li>
+<ul>
+<li><a href="#org0d1a889">随机变量 \(X\) 的 PMF 的计算方法</a></li>
+<li><a href="#orgf4fa88d">伯努利随机变量</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgfa460e7">第 76 页</a></li>
+<li><a href="#orged686ce">第 77 页</a>
+<ul>
+<li><a href="#org0b58194">二项随机变量</a></li>
+<li><a href="#org0538e76">几何随机变量</a></li>
+</ul>
+</li>
+<li><a href="#org673752e">第 78 页</a>
+<ul>
+<li><a href="#org04fa138">泊松随机变量</a></li>
+</ul>
+</li>
+<li><a href="#org212916b">第 79 页</a></li>
+<li><a href="#orgcbd8930">第 80 页</a>
+<ul>
+<li><a href="#org268b451">2.3 随机变量的函数</a>
+<ul>
+<li><a href="#org3cb6e6c">例 2.1</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org73f72b6">第 81 页</a>
+<ul>
+<li><a href="#org55c20b8">2.4 期望、均值与方差</a></li>
+</ul>
+</li>
+<li><a href="#org65561a6">第 82 页</a>
+<ul>
+<li>
+<ul>
+<li><a href="#org8620598">期望</a></li>
+<li><a href="#orgf170469">例 2.2</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org985c41c">第 83 页</a>
+<ul>
+<li><a href="#org5c8d744">方差、矩与期望值法则</a></li>
+</ul>
+</li>
+<li><a href="#org57d4e6d">第 84 页</a>
+<ul>
+<li>
+<ul>
+<li><a href="#orgbc7e3b9">例 2.3</a></li>
+<li><a href="#orgfe997b3">随机变量函数的期望值法则</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgca17641">第 85 页</a>
+<ul>
+<li>
+<ul>
+<li><a href="#orgfb3202f">例 2.3（续）</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgbb1a46f">第 86 页</a>
+<ul>
+<li>
+<ul>
+<li><a href="#orgb73600a">方差</a></li>
+</ul>
+</li>
+<li><a href="#orgb9e9fae">均值与方差的性质</a></li>
+</ul>
+</li>
+<li><a href="#org9d798c7">第 87 页</a>
+<ul>
+<li>
+<ul>
+<li><a href="#org3bbd0cb">随机变量线性函数的均值与方差</a></li>
+<li><a href="#orgf33b7b9">用矩表示方差</a></li>
+<li><a href="#org08797e5">例 2.4：平均速度与平均时间</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orga409fbb">第 88 页</a>
+<ul>
+<li><a href="#orgba6c79d">一些常见随机变量的均值与方差</a>
+<ul>
+<li><a href="#org1183714">例 2.5：伯努利随机变量的均值与方差</a></li>
+<li><a href="#org1138110">例 2.6：离散均匀随机变量</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org3e2ec88">第 89 页</a></li>
+<li><a href="#orgbbc177c">第 90 页</a>
+<ul>
+<li>
+<ul>
+<li><a href="#org0f83f21">例 2.7：泊松随机变量的均值</a></li>
+</ul>
+</li>
+<li><a href="#orgb30e2dd">利用期望值进行决策</a></li>
+</ul>
+</li>
+<li><a href="#orga86b7bc">第 91 页</a>
+<ul>
+<li>
+<ul>
+<li><a href="#org4dd93e8">例 2.8：问答竞赛问题</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgdd0fd94">第 92 页</a>
+<ul>
+<li><a href="#org6d30e8c">2.5 多个随机变量的联合 PMF</a></li>
+</ul>
+</li>
+<li><a href="#orgaf0d57d">第 93 页</a>
+<ul>
+<li>
+<ul>
+<li><a href="#orgc78d762">例 2.9</a></li>
+</ul>
+</li>
+<li><a href="#org8bb72b0">多个随机变量的函数</a></li>
+</ul>
+</li>
+<li><a href="#orgf542ee3">第 94 页</a>
+<ul>
+<li>
+<ul>
+<li><a href="#orgac59f29">例 2.9（续）</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org57c5234">第 95 页</a>
+<ul>
+<li><a href="#org5304648">多于两个随机变量</a></li>
+</ul>
+</li>
+<li><a href="#org8e9af48">第 96 页</a>
+<ul>
+<li>
+<ul>
+<li><a href="#org95d5bc6">例 2.10：二项随机变量的均值</a></li>
+<li><a href="#orgc1114ac">例 2.11：帽子问题</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org839d82c">第 97 页</a>
+<ul>
+<li>
+<ul>
+<li><a href="#org7c4fead">联合 PMF 相关结论小结</a></li>
+</ul>
+</li>
+<li><a href="#orgde575f3">2.6 条件化</a></li>
+</ul>
+</li>
+<li><a href="#org5aa2b02">第 98 页</a>
+<ul>
+<li><a href="#org64aa278">在某个事件条件下的随机变量</a>
+<ul>
+<li><a href="#orgdc8c645">例 2.12</a></li>
+<li><a href="#org5b80de3">例 2.13</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgbbe6a57">第 99 页</a>
+<ul>
+<li><a href="#org4f91abd">一个随机变量在另一个随机变量条件下的分布</a></li>
+</ul>
+</li>
+<li><a href="#org564096d">第 100 页</a></li>
+<li><a href="#orgbf58b6f">第 95 页</a>
+<ul>
+<li><a href="#org0066f1f">多于两个随机变量</a></li>
+</ul>
+</li>
+<li><a href="#org2387c86">第 96 页</a>
+<ul>
+<li>
+<ul>
+<li><a href="#org55b3795">例 2.10：二项随机变量的均值</a></li>
+<li><a href="#orge83fb6e">例 2.11：帽子问题</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgb5a52de">第 97 页</a>
+<ul>
+<li>
+<ul>
+<li><a href="#orgdc9aa7d">联合 PMF 相关结论小结</a></li>
+</ul>
+</li>
+<li><a href="#orgfc56e84">2.6 条件化</a></li>
+</ul>
+</li>
+<li><a href="#orgf371049">第 98 页</a>
+<ul>
+<li><a href="#orge54d7ba">在某个事件条件下的随机变量</a>
+<ul>
+<li><a href="#org3d04181">例 2.12</a></li>
+<li><a href="#org0637a88">例 2.13</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgb293ee7">第 99 页</a>
+<ul>
+<li><a href="#org102125d">一个随机变量在另一个随机变量条件下的分布</a></li>
+</ul>
+</li>
+<li><a href="#org74fea0a">第 100 页</a></li>
+<li><a href="#orga948014">第 95 页</a>
+<ul>
+<li><a href="#org86e35ce">多于两个随机变量</a></li>
+</ul>
+</li>
+<li><a href="#org596e20c">第 96 页</a>
+<ul>
+<li>
+<ul>
+<li><a href="#org2e053de">例 2.10：二项随机变量的均值</a></li>
+<li><a href="#orgd3a5a06">例 2.11：帽子问题</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org83b588e">第 97 页</a>
+<ul>
+<li>
+<ul>
+<li><a href="#org2a7bd2c">联合 PMF 相关结论小结</a></li>
+</ul>
+</li>
+<li><a href="#orgb96a916">2.6 条件化</a></li>
+</ul>
+</li>
+<li><a href="#org83faed7">第 98 页</a>
+<ul>
+<li><a href="#org903083d">在某个事件条件下的随机变量</a>
+<ul>
+<li><a href="#org898a8b4">例 2.12</a></li>
+<li><a href="#orgef51049">例 2.13</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org6c48aa2">第 99 页</a>
+<ul>
+<li><a href="#org1511a2d">一个随机变量在另一个随机变量条件下的分布</a></li>
+</ul>
+</li>
+<li><a href="#org31e5730">第 100 页</a></li>
+<li><a href="#orgc3c6dd7">第 113 页</a>
+<ul>
+<li><a href="#orgb8f6d4c">独立随机变量之和的方差</a></li>
+<li><a href="#orga0d1220">例 2.20：二项随机变量与泊松随机变量的方差</a></li>
+</ul>
+</li>
+<li><a href="#org781597d">第 114 页</a>
+<ul>
+<li><a href="#org4bccec2">例 2.21：样本均值的均值与方差</a></li>
+</ul>
+</li>
+<li><a href="#orgfc5259b">第 115 页</a>
+<ul>
+<li><a href="#org0fae20d">例 2.22：利用模拟估计概率</a></li>
+<li><a href="#org2038aa1">2.8 总结与讨论</a></li>
+</ul>
+</li>
+<li><a href="#orga5be8f6">第 116 页</a>
+<ul>
+<li><a href="#orgfd7e419">特殊随机变量的结果汇总</a>
+<ul>
+<li><a href="#org82b269a">区间 \([a,b]\) 上的离散均匀随机变量</a></li>
+<li><a href="#org3d5d75e">参数为 \(p\) 的伯努利随机变量</a></li>
+<li><a href="#org9593e63">参数为 \(p\) 和 \(n\) 的二项随机变量</a></li>
+<li><a href="#org57435d1">参数为 \(p\) 的几何随机变量</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org0534182">第 117 页</a>
+<ul>
+<li>
+<ul>
+<li><a href="#orged03f3d">参数为 \(\lambda\) 的泊松随机变量</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgb7fd6c7">第 118 页</a></li>
+<li><a href="#orga844e5f">第 139 页</a>
+<ul>
+<li><a href="#org9a15c1b">第 3 章 一般随机变量</a>
+<ul>
+<li><a href="#orgeeed1fc">目录</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org0fe2d19">第 140 页</a>
+<ul>
+<li><a href="#org897860f">3.1 连续随机变量与 PDF</a></li>
+</ul>
+</li>
+<li><a href="#orgdb65a35">第 141 页</a>
+<ul>
+<li><a href="#org66d12eb">例 3.1：连续均匀随机变量</a></li>
+</ul>
+</li>
+<li><a href="#orgf93832b">第 142 页</a>
+<ul>
+<li><a href="#org99893a4">例 3.2：分段常数 PDF</a></li>
+</ul>
+</li>
+<li><a href="#org4d4693c">第 143 页</a>
+<ul>
+<li><a href="#org050d8bf">例 3.3：PDF 可以取任意大的值</a></li>
+</ul>
+</li>
+<li><a href="#org982b4b0">第 144 页</a>
+<ul>
+<li><a href="#orgf03e3c8">PDF 性质小结</a></li>
+<li><a href="#orgabdfac6">期望</a></li>
+</ul>
+</li>
+<li><a href="#orga84ee6f">第 145 页</a>
+<ul>
+<li><a href="#org0882403">连续随机变量的期望及其性质</a></li>
+<li><a href="#org2ca02b2">例 3.4：均匀随机变量的均值与方差</a></li>
+</ul>
+</li>
+<li><a href="#orgecf9ec6">第 146 页</a>
+<ul>
+<li><a href="#org4b391ff">指数随机变量</a></li>
+</ul>
+</li>
+<li><a href="#org104a5a8">第 147 页</a></li>
+<li><a href="#org32c77ed">第 148 页</a>
+<ul>
+<li><a href="#org2f014b3">例 3.5</a></li>
+<li><a href="#org1da8fb7">3.2 累积分布函数</a></li>
+</ul>
+</li>
+<li><a href="#org4a4d841">第 149 页</a></li>
+<li><a href="#org970d9eb">第 150 页</a>
+<ul>
+<li><a href="#org84cb189">CDF 的性质</a></li>
+<li><a href="#orgeb0e704">例 3.6：若干随机变量的最大值</a></li>
+</ul>
+</li>
+<li><a href="#org6514794">第 151 页</a>
+<ul>
+<li><a href="#orgf01efa9">几何分布与指数分布的 CDF</a></li>
+</ul>
+</li>
+<li><a href="#org7557da2">第 152 页</a></li>
+<li><a href="#org9b8c6d1">第 153 页</a>
+<ul>
+<li><a href="#org81cd82c">3.3 正态随机变量</a></li>
+</ul>
+</li>
+<li><a href="#org39c5ae3">第 154 页</a>
+<ul>
+<li><a href="#org4240e82">线性变换保持正态性</a></li>
+<li><a href="#org65ba344">标准正态随机变量</a></li>
+</ul>
+</li>
+<li><a href="#org6eb2946">第 155 页</a>
+<ul>
+<li><a href="#orged3ee43">标准正态分布表</a></li>
+</ul>
+</li>
+<li><a href="#org6753829">第 156 页</a>
+<ul>
+<li><a href="#org620b45f">例 3.7：使用正态分布表</a></li>
+</ul>
+</li>
+<li><a href="#orgcc6f57f">第157页</a>
+<ul>
+<li><a href="#orge2652a5">正态随机变量的CDF计算</a></li>
+<li><a href="#org68fc9fc">例3.8：信号检测</a></li>
+</ul>
+</li>
+<li><a href="#orgfeb14bf">第158页</a>
+<ul>
+<li><a href="#org2ee8db6">图3.11：例3.8中的信号检测方案</a></li>
+</ul>
+</li>
+<li><a href="#org8ba20ff">3.4 多个随机变量的联合PDF</a></li>
+<li><a href="#orgb3c02ab">第159页</a>
+<ul>
+<li><a href="#org4d42c25">例3.9：二维均匀PDF</a></li>
+</ul>
+</li>
+<li><a href="#orge45f1b3">第160页</a>
+<ul>
+<li><a href="#org69a0946">例3.10</a></li>
+<li><a href="#org5ae603e">图3.12</a></li>
+</ul>
+</li>
+<li><a href="#org8f8e914">第161页</a>
+<ul>
+<li><a href="#org3093137">例3.11：布丰投针问题</a></li>
+<li><a href="#org84d2013">图3.13：布丰投针问题</a></li>
+<li><a href="#org5a4a96e">注</a></li>
+</ul>
+</li>
+<li><a href="#org882a886">第162页</a>
+<ul>
+<li><a href="#org0294358">联合CDF</a></li>
+<li><a href="#org463e4ee">例3.12</a></li>
+</ul>
+</li>
+<li><a href="#org073ebdc">第163页</a>
+<ul>
+<li><a href="#orgcaa4f9f">期望值</a></li>
+<li><a href="#org51c90be">两个以上的随机变量</a></li>
+</ul>
+</li>
+<li><a href="#org4cd8973">第164页</a>
+<ul>
+<li><a href="#org34d9560">联合PDF相关事实汇总</a></li>
+</ul>
+</li>
+<li><a href="#org4beffb7">3.5 条件化</a></li>
+<li><a href="#orgf543e79">第165页</a>
+<ul>
+<li><a href="#orgc5192c8">随机变量关于一个事件的条件化</a></li>
+<li><a href="#orgfa86bca">例3.13：指数随机变量的无记忆性</a></li>
+</ul>
+</li>
+<li><a href="#orgc0d2e26">第166页</a>
+<ul>
+<li><a href="#org9db0829">图3.14：无条件PDF与条件PDF</a></li>
+</ul>
+</li>
+<li><a href="#orgc32c684">第167页</a>
+<ul>
+<li><a href="#org1b4ea6e">给定一个事件时的条件PDF</a></li>
+</ul>
+</li>
+<li><a href="#orgf682f38">第168页</a>
+<ul>
+<li><a href="#orge7da14c">例3.14：地铁候车时间</a></li>
+<li><a href="#org75c2337">图3.15</a></li>
+</ul>
+</li>
+<li><a href="#orgc0cc3e4">第169页</a>
+<ul>
+<li><a href="#org0f231b1">以一个随机变量为条件对另一个随机变量进行条件化</a>
+<ul>
+<li><a href="#org75bbc20">例 3.15：圆形区域上的均匀 PDF</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org5841ce8">第170页</a></li>
+<li><a href="#org3d89dcc">第171页</a>
+<ul>
+<li>
+<ul>
+<li><a href="#org5eec55e">例 3.16</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org02da683">第172页</a>
+<ul>
+<li><a href="#orgcd688c4">给定一个随机变量的条件 PDF</a></li>
+<li><a href="#orgf3d7ae2">条件期望</a></li>
+</ul>
+</li>
+<li><a href="#org5b669a8">第173页</a>
+<ul>
+<li><a href="#org539bd9d">条件期望相关事实汇总</a></li>
+</ul>
+</li>
+<li><a href="#orgf0129b1">第175页</a>
+<ul>
+<li><a href="#org7a9375a">独立性</a></li>
+</ul>
+</li>
+<li><a href="#orga6bb69e">第176页</a>
+<ul>
+<li><a href="#org2da6628">例3.18：相互独立的正态随机变量</a></li>
+</ul>
+</li>
+<li><a href="#org8e6f4d3">第177页</a>
+<ul>
+<li><a href="#orgf8d912a">连续随机变量独立性的要点</a></li>
+</ul>
+</li>
+<li><a href="#org0f00eb2">第178页</a></li>
+<li><a href="#org7688c3e">3.6 连续型贝叶斯法则</a></li>
+<li><a href="#org1553e2a">第179页</a>
+<ul>
+<li><a href="#org2f094e2">例3.19</a></li>
+<li><a href="#orgfe642b0">关于离散随机变量的推断</a></li>
+</ul>
+</li>
+<li><a href="#org2fc0fc5">第180页</a>
+<ul>
+<li><a href="#org190c862">例3.20：信号检测</a></li>
+</ul>
+</li>
+<li><a href="#orgf9212de">第181页</a>
+<ul>
+<li><a href="#orgcd6be75">基于离散观测的推断</a></li>
+<li><a href="#orga9b48fd">连续随机变量的贝叶斯法则</a></li>
+</ul>
+</li>
+<li><a href="#org635817a">第182页</a>
+<ul>
+<li><a href="#orgd11410f">3.7 总结与讨论</a></li>
+<li><a href="#orgec9e50e">特殊随机变量的结果汇总</a>
+<ul>
+<li><a href="#orgb830f5b">区间 \([a,b]\) 上的连续均匀分布</a></li>
+<li><a href="#org28c5c5a">参数为 \(\lambda\) 的指数分布</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orge829bdd">第183页</a>
+<ul>
+<li>
+<ul>
+<li><a href="#org74760ff">参数为 \(\mu\) 和 \(\sigma^2>0\) 的正态分布</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org68504d3" class="outline-2">
+<h2 id="org68504d3">Chapter 1: Sample Space and Probability</h2>
+<div class="outline-text-2" id="text-org68504d3">
 <p>
 “概率”是一个非常有用的概念，但它可以有多种不同的解释。下面通过一个例子来说明。
 </p>
@@ -190,9 +996,9 @@
 第一步，也就是本章的主题，是说明这类模型的一般结构及其基本性质。我们所研究的模型，会给各种可能结果的集合赋予概率。因此，我们必须先简要回顾一下集合论。
 </p>
 </div>
-<div id="outline-container-org6197129" class="outline-3">
-<h3 id="org6197129">1.1 集合</h3>
-<div class="outline-text-3" id="text-org6197129">
+<div id="outline-container-org8622a9e" class="outline-3">
+<h3 id="org8622a9e">1.1 集合</h3>
+<div class="outline-text-3" id="text-org8622a9e">
 <p>
 概率论大量使用集合运算，因此我们首先介绍相关的符号和术语。
 </p>
@@ -231,9 +1037,9 @@ x \notin S.
 \]
 </p>
 </div>
-<div id="outline-container-org20e61cd" class="outline-4">
-<h4 id="org20e61cd">集合的表示方法</h4>
-<div class="outline-text-4" id="text-org20e61cd">
+<div id="outline-container-org6a4af01" class="outline-4">
+<h4 id="org6a4af01">集合的表示方法</h4>
+<div class="outline-text-4" id="text-org6a4af01">
 <p>
 集合可以用多种方式表示。
 </p>
@@ -288,9 +1094,9 @@ S=\{x_1,x_2,\ldots,x_n\}.
 </ul>
 </div>
 </div>
-<div id="outline-container-org79dde94" class="outline-4">
-<h4 id="org79dde94">可数无限集</h4>
-<div class="outline-text-4" id="text-org79dde94">
+<div id="outline-container-orge6d65c6" class="outline-4">
+<h4 id="orge6d65c6">可数无限集</h4>
+<div class="outline-text-4" id="text-orge6d65c6">
 <p>
 如果集合 \(S\) 含有无限多个元素：
 </p>
@@ -330,9 +1136,9 @@ S=\{x_1,x_2,\ldots\}.
 </p>
 </div>
 </div>
-<div id="outline-container-org4d3aec2" class="outline-4">
-<h4 id="org4d3aec2">使用性质描述集合</h4>
-<div class="outline-text-4" id="text-org4d3aec2">
+<div id="outline-container-orgf1f21e4" class="outline-4">
+<h4 id="orgf1f21e4">使用性质描述集合</h4>
+<div class="outline-text-4" id="text-orgf1f21e4">
 <p>
 除了逐一列举元素之外，我们也可以考虑所有具有某一性质 \(P\) 的 \(x\) 所组成的集合，并将其记作：
 </p>
@@ -372,9 +1178,9 @@ S=\{x_1,x_2,\ldots\}.
 </p>
 </div>
 </div>
-<div id="outline-container-orgb2637fe" class="outline-4">
-<h4 id="orgb2637fe">子集、集合相等与全集</h4>
-<div class="outline-text-4" id="text-orgb2637fe">
+<div id="outline-container-orgccaf704" class="outline-4">
+<h4 id="orgccaf704">子集、集合相等与全集</h4>
+<div class="outline-text-4" id="text-orgccaf704">
 <p>
 如果集合 \(S\) 的每一个元素也都是集合 \(T\) 的元素，我们就称 \(S\) 是 \(T\) 的 *子集*，并记作：
 </p>
@@ -434,13 +1240,13 @@ S=T.
 </p>
 </div>
 </div>
-<div id="outline-container-orgcbf80c8" class="outline-4">
-<h4 id="orgcbf80c8">集合运算</h4>
+<div id="outline-container-orgaf9d7df" class="outline-4">
+<h4 id="orgaf9d7df">集合运算</h4>
 </div>
 
-<div id="outline-container-org12853b9" class="outline-4">
-<h4 id="org12853b9">补集</h4>
-<div class="outline-text-4" id="text-org12853b9">
+<div id="outline-container-org9f8de0d" class="outline-4">
+<h4 id="org9f8de0d">补集</h4>
+<div class="outline-text-4" id="text-org9f8de0d">
 <p>
 集合 \(S\) 关于全集 \(\Omega\) 的 *补集*，是由 \(\Omega\) 中所有不属于 \(S\) 的元素组成的集合：
 </p>
@@ -472,9 +1278,9 @@ S^c.
 </p>
 </div>
 </div>
-<div id="outline-container-org697eec8" class="outline-4">
-<h4 id="org697eec8">并集与交集</h4>
-<div class="outline-text-4" id="text-org697eec8">
+<div id="outline-container-org826b0fb" class="outline-4">
+<h4 id="org826b0fb">并集与交集</h4>
+<div class="outline-text-4" id="text-org826b0fb">
 <p>
 两个集合 \(S\) 和 \(T\) 的 *并集*，是由所有属于 \(S\) 或属于 \(T\)，或者同时属于二者的元素组成的集合，记作：
 </p>
@@ -520,9 +1326,9 @@ S\cap T
 </p>
 </div>
 </div>
-<div id="outline-container-orgd42b957" class="outline-4">
-<h4 id="orgd42b957">多个集合的并集与交集</h4>
-<div class="outline-text-4" id="text-orgd42b957">
+<div id="outline-container-org9dfb4ef" class="outline-4">
+<h4 id="org9dfb4ef">多个集合的并集与交集</h4>
+<div class="outline-text-4" id="text-org9dfb4ef">
 <p>
 在某些情况下，我们需要考虑若干个、甚至无限多个集合的并集或交集。其定义是前述定义的自然推广。
 </p>
@@ -564,9 +1370,9 @@ S_1\cap S_2\cap\cdots
 </p>
 </div>
 </div>
-<div id="outline-container-orgf53ae7d" class="outline-4">
-<h4 id="orgf53ae7d">不相交与集合的划分</h4>
-<div class="outline-text-4" id="text-orgf53ae7d">
+<div id="outline-container-orga34c4e9" class="outline-4">
+<h4 id="orga34c4e9">不相交与集合的划分</h4>
+<div class="outline-text-4" id="text-orga34c4e9">
 <p>
 如果两个集合的交集为空，就称这两个集合 *不相交*：
 </p>
@@ -595,9 +1401,9 @@ S\cap T=\varnothing.
 </p>
 </div>
 </div>
-<div id="outline-container-orgd343930" class="outline-4">
-<h4 id="orgd343930">有序对与实数空间</h4>
-<div class="outline-text-4" id="text-orgd343930">
+<div id="outline-container-org4f21806" class="outline-4">
+<h4 id="org4f21806">有序对与实数空间</h4>
+<div class="outline-text-4" id="text-org4f21806">
 <p>
 如果 \(x\) 和 \(y\) 是两个对象，我们用：
 </p>
@@ -647,9 +1453,9 @@ S\cap T=\varnothing.
 </p>
 </div>
 </div>
-<div id="outline-container-org37881ec" class="outline-4">
-<h4 id="org37881ec">图 1.1：维恩图示例</h4>
-<div class="outline-text-4" id="text-org37881ec">
+<div id="outline-container-org80e6c24" class="outline-4">
+<h4 id="org80e6c24">图 1.1：维恩图示例</h4>
+<div class="outline-text-4" id="text-org80e6c24">
 <ul class="org-ul">
 <li>（a）阴影区域为 \(S\cap T\)。</li>
 <li>（b）阴影区域为 \(S\cup T\)。</li>
@@ -660,9 +1466,9 @@ S\cap T=\varnothing.
 </ul>
 </div>
 </div>
-<div id="outline-container-org32b9602" class="outline-4">
-<h4 id="org32b9602">集合代数</h4>
-<div class="outline-text-4" id="text-org32b9602">
+<div id="outline-container-orga8df497" class="outline-4">
+<h4 id="orga8df497">集合代数</h4>
+<div class="outline-text-4" id="text-orga8df497">
 <p>
 集合运算具有若干性质，这些性质都是由定义直接推出的基本结果。例如：
 </p>
@@ -720,9 +1526,9 @@ S\cap\Omega=S.
 </p>
 </div>
 </div>
-<div id="outline-container-org80af0b2" class="outline-4">
-<h4 id="org80af0b2">德摩根律</h4>
-<div class="outline-text-4" id="text-org80af0b2">
+<div id="outline-container-orgf4bccac" class="outline-4">
+<h4 id="orgf4bccac">德摩根律</h4>
+<div class="outline-text-4" id="text-orgf4bccac">
 <p>
 两个特别有用的性质称为 *德摩根律*：
 </p>
@@ -805,9 +1611,9 @@ x\in\bigcap_n S_n^c.
 </div>
 </div>
 </div>
-<div id="outline-container-orgf2af9b4" class="outline-3">
-<h3 id="orgf2af9b4">1.2 概率模型</h3>
-<div class="outline-text-3" id="text-orgf2af9b4">
+<div id="outline-container-orgba08c65" class="outline-3">
+<h3 id="orgba08c65">1.2 概率模型</h3>
+<div class="outline-text-3" id="text-orgba08c65">
 <p>
 概率模型是对某种不确定情形的数学描述。它必须符合本节所讨论的一个基本框架。
 </p>
@@ -816,9 +1622,9 @@ x\in\bigcap_n S_n^c.
 概率模型的两个主要组成部分列在下面，并在图 1.2 中作了直观展示。
 </p>
 </div>
-<div id="outline-container-org4440e34" class="outline-4">
-<h4 id="org4440e34">概率模型的组成要素</h4>
-<div class="outline-text-4" id="text-org4440e34">
+<div id="outline-container-orgc6ad135" class="outline-4">
+<h4 id="orgc6ad135">概率模型的组成要素</h4>
+<div class="outline-text-4" id="text-orgc6ad135">
 <ul class="org-ul">
 <li><p>
 <b>样本空间</b> \(\Omega\)
@@ -856,9 +1662,9 @@ x\in\bigcap_n S_n^c.
 </ul>
 </div>
 </div>
-<div id="outline-container-org7e2947d" class="outline-4">
-<h4 id="org7e2947d">图 1.2：概率模型的主要组成部分</h4>
-<div class="outline-text-4" id="text-org7e2947d">
+<div id="outline-container-org4b944f6" class="outline-4">
+<h4 id="org4b944f6">图 1.2：概率模型的主要组成部分</h4>
+<div class="outline-text-4" id="text-org4b944f6">
 <p>
 图中的对应关系可以概括为：
 </p>
@@ -871,9 +1677,9 @@ x\in\bigcap_n S_n^c.
 </ul>
 </div>
 </div>
-<div id="outline-container-org84a8660" class="outline-4">
-<h4 id="org84a8660">样本空间与事件</h4>
-<div class="outline-text-4" id="text-org84a8660">
+<div id="outline-container-orgde8a367" class="outline-4">
+<h4 id="orgde8a367">样本空间与事件</h4>
+<div class="outline-text-4" id="text-orgde8a367">
 <p>
 每个概率模型都涉及一个基础过程，称为 *试验*。一项试验会从若干个可能结果中恰好产生一个结果。
 </p>
@@ -923,9 +1729,9 @@ x\in\bigcap_n S_n^c.
 </p>
 </div>
 </div>
-<div id="outline-container-org3bacdb8" class="outline-4">
-<h4 id="org3bacdb8">选择适当的样本空间</h4>
-<div class="outline-text-4" id="text-org3bacdb8">
+<div id="outline-container-org55269b1" class="outline-4">
+<h4 id="org55269b1">选择适当的样本空间</h4>
+<div class="outline-text-4" id="text-org55269b1">
 <p>
 无论样本空间中有多少个元素，不同元素都应当彼此有别并且相互排斥。这样，当试验进行时，才能得到一个唯一确定的结果。
 </p>
@@ -951,23 +1757,23 @@ x\in\bigcap_n S_n^c.
 </p>
 </div>
 </div>
-<div id="outline-container-orgca0ef39" class="outline-4">
-<h4 id="orgca0ef39">例 1.1：两个抛硬币游戏</h4>
-<div class="outline-text-4" id="text-orgca0ef39">
+<div id="outline-container-org01ab511" class="outline-4">
+<h4 id="org01ab511">例 1.1：两个抛硬币游戏</h4>
+<div class="outline-text-4" id="text-org01ab511">
 <p>
 考虑下面两个不同的游戏。两个游戏都包含连续十次抛硬币。
 </p>
 </div>
 <ul class="org-ul">
-<li><a id="orge95c033"></a>游戏 1<br />
-<div class="outline-text-5" id="text-orge95c033">
+<li><a id="org8ab6aa3"></a>游戏 1<br />
+<div class="outline-text-5" id="text-org8ab6aa3">
 <p>
 每出现一次正面，我们就获得 1 美元。
 </p>
 </div>
 </li>
-<li><a id="orgfed24f0"></a>游戏 2<br />
-<div class="outline-text-5" id="text-orgfed24f0">
+<li><a id="orgc5171e4"></a>游戏 2<br />
+<div class="outline-text-5" id="text-orgc5171e4">
 <p>
 在第一次出现正面之前，包括第一次出现正面的那一次，每抛一次硬币，我们都获得 1 美元。
 </p>
@@ -983,9 +1789,9 @@ x\in\bigcap_n S_n^c.
 </li>
 </ul>
 </div>
-<div id="outline-container-org0d22177" class="outline-4">
-<h4 id="org0d22177">关于事件的技术性说明</h4>
-<div class="outline-text-4" id="text-org0d22177">
+<div id="outline-container-org37707f4" class="outline-4">
+<h4 id="org37707f4">关于事件的技术性说明</h4>
+<div class="outline-text-4" id="text-org37707f4">
 <p>
 任何由可能结果构成的集合原则上都可以成为一个事件，其中包括：
 </p>
@@ -1012,9 +1818,9 @@ x\in\bigcap_n S_n^c.
 </p>
 </div>
 </div>
-<div id="outline-container-orgadfa1a5" class="outline-4">
-<h4 id="orgadfa1a5">两个游戏所需的不同样本空间</h4>
-<div class="outline-text-4" id="text-orgadfa1a5">
+<div id="outline-container-orge727fb1" class="outline-4">
+<h4 id="orge727fb1">两个游戏所需的不同样本空间</h4>
+<div class="outline-text-4" id="text-orge727fb1">
 <p>
 在游戏 1 中，重要的只是十次抛掷中正面出现的总次数。
 </p>
@@ -1066,9 +1872,9 @@ TTTTHTTTHT,
 </p>
 </div>
 </div>
-<div id="outline-container-org9c0a7d4" class="outline-4">
-<h4 id="org9c0a7d4">序贯模型</h4>
-<div class="outline-text-4" id="text-org9c0a7d4">
+<div id="outline-container-org12734f3" class="outline-4">
+<h4 id="org12734f3">序贯模型</h4>
+<div class="outline-text-4" id="text-org12734f3">
 <p>
 许多试验在本质上具有 *序贯特征*，例如：
 </p>
@@ -1084,9 +1890,9 @@ TTTTHTTTHT,
 </p>
 </div>
 </div>
-<div id="outline-container-orgd6169e2" class="outline-4">
-<h4 id="orgd6169e2">图 1.3：样本空间的两种等价描述</h4>
-<div class="outline-text-4" id="text-orgd6169e2">
+<div id="outline-container-orgaa3f8f8" class="outline-4">
+<h4 id="orgaa3f8f8">图 1.3：样本空间的两种等价描述</h4>
+<div class="outline-text-4" id="text-orgaa3f8f8">
 <p>
 图 1.3 展示了连续投掷两次四面骰子这一试验的样本空间，以及它的两种等价描述方式。
 </p>
@@ -1178,9 +1984,9 @@ TTTTHTTTHT,
 </blockquote>
 </div>
 </div>
-<div id="outline-container-org60442cd" class="outline-4">
-<h4 id="org60442cd">概率律</h4>
-<div class="outline-text-4" id="text-org60442cd">
+<div id="outline-container-org6649cbd" class="outline-4">
+<h4 id="org6649cbd">概率律</h4>
+<div class="outline-text-4" id="text-org6649cbd">
 <p>
 假设我们已经确定了与某项试验相对应的样本空间 \(\Omega\)。
 </p>
@@ -1198,9 +2004,9 @@ TTTTHTTTHT,
 </p>
 </div>
 </div>
-<div id="outline-container-orgfd2ff7c" class="outline-4">
-<h4 id="orgfd2ff7c">概率公理</h4>
-<div class="outline-text-4" id="text-orgfd2ff7c">
+<div id="outline-container-orgb5699e9" class="outline-4">
+<h4 id="orgb5699e9">概率公理</h4>
+<div class="outline-text-4" id="text-orgb5699e9">
 <ol class="org-ol">
 <li><p>
 <b>非负性</b>
@@ -1268,9 +2074,9 @@ TTTTHTTTHT,
 </ol>
 </div>
 </div>
-<div id="outline-container-org6db9cb9" class="outline-4">
-<h4 id="org6db9cb9">概率质量的类比</h4>
-<div class="outline-text-4" id="text-org6db9cb9">
+<div id="outline-container-orgd9dab4a" class="outline-4">
+<h4 id="orgd9dab4a">概率质量的类比</h4>
+<div class="outline-text-4" id="text-orgd9dab4a">
 <p>
 为了直观理解概率律，可以设想把一个单位的“质量”分布在整个样本空间上。
 </p>
@@ -1284,9 +2090,9 @@ TTTTHTTTHT,
 </p>
 </div>
 </div>
-<div id="outline-container-org225f0ab" class="outline-4">
-<h4 id="org225f0ab">概率的相对频率解释</h4>
-<div class="outline-text-4" id="text-org225f0ab">
+<div id="outline-container-orga420af6" class="outline-4">
+<h4 id="orga420af6">概率的相对频率解释</h4>
+<div class="outline-text-4" id="text-orga420af6">
 <p>
 对概率的一种更具体的解释是使用 *相对频率*。
 </p>
@@ -1310,9 +2116,9 @@ P(A)=\frac{2}{3}
 </p>
 </div>
 </div>
-<div id="outline-container-org9171844" class="outline-4">
-<h4 id="org9171844">由概率公理推出的性质</h4>
-<div class="outline-text-4" id="text-org9171844">
+<div id="outline-container-orgf24041c" class="outline-4">
+<h4 id="orgf24041c">由概率公理推出的性质</h4>
+<div class="outline-text-4" id="text-orgf24041c">
 <p>
 概率律还具有许多自然性质。这些性质没有被列入公理，原因很简单：它们可以由上述公理推导出来。
 </p>
@@ -1341,9 +2147,9 @@ P(\varnothing)=0.
 </p>
 </div>
 </div>
-<div id="outline-container-orgea3adfe" class="outline-4">
-<h4 id="orgea3adfe">有限个不相交事件的可加性</h4>
-<div class="outline-text-4" id="text-orgea3adfe">
+<div id="outline-container-org8d2dd1e" class="outline-4">
+<h4 id="org8d2dd1e">有限个不相交事件的可加性</h4>
+<div class="outline-text-4" id="text-org8d2dd1e">
 <p>
 再举一个例子。考虑三个两两不相交的事件：
 </p>
@@ -1376,17 +2182,17 @@ P(A_1\cup A_2\cup A_3)
 </p>
 </div>
 </div>
-<div id="outline-container-org7a2a43b" class="outline-4">
-<h4 id="org7a2a43b">离散模型</h4>
-<div class="outline-text-4" id="text-org7a2a43b">
+<div id="outline-container-org5a8f747" class="outline-4">
+<h4 id="org5a8f747">离散模型</h4>
+<div class="outline-text-4" id="text-org5a8f747">
 <p>
 下面通过一些例子说明，如何从对模型作出的常识性假设出发，构造一条概率律。
 </p>
 </div>
 </div>
-<div id="outline-container-org1225592" class="outline-4">
-<h4 id="org1225592">例 1.2：抛一次硬币</h4>
-<div class="outline-text-4" id="text-org1225592">
+<div id="outline-container-orgabee87f" class="outline-4">
+<h4 id="orgabee87f">例 1.2：抛一次硬币</h4>
+<div class="outline-text-4" id="text-orgabee87f">
 <p>
 考虑一项只抛一次硬币的试验。
 </p>
@@ -1486,9 +2292,9 @@ P(\varnothing)=0.
 </p>
 </div>
 </div>
-<div id="outline-container-org15d0ba8" class="outline-4">
-<h4 id="org15d0ba8">例 1.2（续）：连续抛三次硬币</h4>
-<div class="outline-text-4" id="text-org15d0ba8">
+<div id="outline-container-orgfbbe137" class="outline-4">
+<h4 id="orgfbbe137">例 1.2（续）：连续抛三次硬币</h4>
+<div class="outline-text-4" id="text-orgfbbe137">
 <p>
 再考虑一项连续抛三次硬币的试验。
 </p>
@@ -1554,9 +2360,9 @@ P(\{HHT,HTH,THH\})
 </p>
 </div>
 </div>
-<div id="outline-container-orgd750d3d" class="outline-4">
-<h4 id="orgd750d3d">离散概率律</h4>
-<div class="outline-text-4" id="text-orgd750d3d">
+<div id="outline-container-orgd3d1b27" class="outline-4">
+<h4 id="orgd3d1b27">离散概率律</h4>
+<div class="outline-text-4" id="text-orgd3d1b27">
 <p>
 运用可加性公理，并把前一个例子中的推理推广开来，可以得到以下结论。
 </p>
@@ -1608,9 +2414,9 @@ P(\{s_i\}).
 </p>
 </div>
 </div>
-<div id="outline-container-org2b2a30d" class="outline-4">
-<h4 id="org2b2a30d">离散均匀概率律</h4>
-<div class="outline-text-4" id="text-org2b2a30d">
+<div id="outline-container-org4ec0530" class="outline-4">
+<h4 id="org4ec0530">离散均匀概率律</h4>
+<div class="outline-text-4" id="text-org4ec0530">
 <p>
 在特殊情况下，如果：
 </p>
@@ -1658,9 +2464,9 @@ P(A)
 </p>
 </div>
 </div>
-<div id="outline-container-org93b6ffa" class="outline-4">
-<h4 id="org93b6ffa">例 1.3：投掷两枚四面骰子</h4>
-<div class="outline-text-4" id="text-org93b6ffa">
+<div id="outline-container-org66814ae" class="outline-4">
+<h4 id="org66814ae">例 1.3：投掷两枚四面骰子</h4>
+<div class="outline-text-4" id="text-org66814ae">
 <p>
 考虑同时投掷两枚四面骰子的试验，参见图 1.4。
 </p>
@@ -1757,9 +2563,9 @@ P(\{\text{至少有一次点数等于 4}\})
 </p>
 </div>
 </div>
-<div id="outline-container-org34668a4" class="outline-4">
-<h4 id="org34668a4">图 1.4：四面骰子试验中的事件</h4>
-<div class="outline-text-4" id="text-org34668a4">
+<div id="outline-container-org7914bcc" class="outline-4">
+<h4 id="org7914bcc">图 1.4：四面骰子试验中的事件</h4>
+<div class="outline-text-4" id="text-org7914bcc">
 <p>
 图 1.4 展示了投掷两枚四面骰子时的若干事件，以及根据离散均匀概率律计算出的相应概率。
 </p>
@@ -1774,9 +2580,9 @@ P(\{\text{至少有一次点数等于 4}\})
 </ul>
 </div>
 </div>
-<div id="outline-container-orgcb199fa" class="outline-4">
-<h4 id="orgcb199fa">连续模型</h4>
-<div class="outline-text-4" id="text-orgcb199fa">
+<div id="outline-container-orgb99bec7" class="outline-4">
+<h4 id="orgb99bec7">连续模型</h4>
+<div class="outline-text-4" id="text-orgb99bec7">
 <p>
 具有连续样本空间的概率模型与离散模型有所不同。
 </p>
@@ -1790,9 +2596,9 @@ P(\{\text{至少有一次点数等于 4}\})
 </p>
 </div>
 </div>
-<div id="outline-container-org8989cf1" class="outline-4">
-<h4 id="org8989cf1">例 1.4：幸运转盘</h4>
-<div class="outline-text-4" id="text-org8989cf1">
+<div id="outline-container-orgfa1e692" class="outline-4">
+<h4 id="orgfa1e692">例 1.4：幸运转盘</h4>
+<div class="outline-text-4" id="text-orgfa1e692">
 <p>
 一个幸运转盘从 0 到 1 连续标有刻度。因此，转动一次转盘这一试验的可能结果，是区间：
 </p>
@@ -1847,9 +2653,9 @@ b-a
 </p>
 </div>
 </div>
-<div id="outline-container-orgdbab6fe" class="outline-4">
-<h4 id="orgdbab6fe">例 1.5：罗密欧与朱丽叶约会</h4>
-<div class="outline-text-4" id="text-orgdbab6fe">
+<div id="outline-container-orgac09b6e" class="outline-4">
+<h4 id="orgac09b6e">例 1.5：罗密欧与朱丽叶约会</h4>
+<div class="outline-text-4" id="text-orgac09b6e">
 <p>
 罗密欧和朱丽叶约定在某个时间见面。
 </p>
@@ -1941,9 +2747,9 @@ P(M)=\frac7{16}.
 </p>
 </div>
 </div>
-<div id="outline-container-org329d80e" class="outline-4">
-<h4 id="org329d80e">关于集合“长度”的说明</h4>
-<div class="outline-text-4" id="text-org329d80e">
+<div id="outline-container-org151c3ea" class="outline-4">
+<h4 id="org151c3ea">关于集合“长度”的说明</h4>
+<div class="outline-text-4" id="text-org151c3ea">
 <p>
 区间 \([0,1]\) 的一个子集 \(S\) 的“长度”可以表示为：
 </p>
@@ -1985,17 +2791,17 @@ P([0,1])=1
 </p>
 </div>
 </div>
-<div id="outline-container-orgcb8fa29" class="outline-4">
-<h4 id="orgcb8fa29">概率律的性质</h4>
-<div class="outline-text-4" id="text-orgcb8fa29">
+<div id="outline-container-org835223b" class="outline-4">
+<h4 id="org835223b">概率律的性质</h4>
+<div class="outline-text-4" id="text-org835223b">
 <p>
 概率律具有若干可以由概率公理推导出来的性质。下面概括其中的一部分。
 </p>
 </div>
 </div>
-<div id="outline-container-orgc090c28" class="outline-4">
-<h4 id="orgc090c28">概率律的若干基本性质</h4>
-<div class="outline-text-4" id="text-orgc090c28">
+<div id="outline-container-org3219b90" class="outline-4">
+<h4 id="org3219b90">概率律的若干基本性质</h4>
+<div class="outline-text-4" id="text-org3219b90">
 <p>
 考虑一条概率律，并设 \(A\)、\(B\) 和 \(C\) 为事件。
 </p>
@@ -2054,9 +2860,9 @@ P(A)
 </p>
 </div>
 </div>
-<div id="outline-container-org1b558d0" class="outline-4">
-<h4 id="org1b558d0">有限并集的概率上界</h4>
-<div class="outline-text-4" id="text-org1b558d0">
+<div id="outline-container-org0f994fa" class="outline-4">
+<h4 id="org0f994fa">有限并集的概率上界</h4>
+<div class="outline-text-4" id="text-org0f994fa">
 <p>
 性质 3 可以推广为：
 </p>
@@ -2131,9 +2937,9 @@ P(A_1)+\cdots+P(A_n).
 </p>
 </div>
 </div>
-<div id="outline-container-org51cb534" class="outline-4">
-<h4 id="org51cb534">模型与现实</h4>
-<div class="outline-text-4" id="text-org51cb534">
+<div id="outline-container-org8d1e05a" class="outline-4">
+<h4 id="org8d1e05a">模型与现实</h4>
+<div class="outline-text-4" id="text-org8d1e05a">
 <p>
 概率论的框架可以用来分析各种现实情境中的不确定性。
 </p>
@@ -2143,9 +2949,9 @@ P(A_1)+\cdots+P(A_n).
 </p>
 </div>
 </div>
-<div id="outline-container-org5d1f8dd" class="outline-4">
-<h4 id="org5d1f8dd">第一阶段：构造概率模型</h4>
-<div class="outline-text-4" id="text-org5d1f8dd">
+<div id="outline-container-org970dd46" class="outline-4">
+<h4 id="org970dd46">第一阶段：构造概率模型</h4>
+<div class="outline-text-4" id="text-org970dd46">
 <p>
 在第一阶段，我们先适当地定义一个样本空间，再在该样本空间上指定一条概率律，从而构造概率模型。
 </p>
@@ -2177,16 +2983,16 @@ P(A_1)+\cdots+P(A_n).
 </p>
 </div>
 </div>
-<div id="outline-container-org2bd2f4d" class="outline-4">
-<h4 id="org2bd2f4d">图 1.6：使用维恩图验证概率律的性质</h4>
-<div class="outline-text-4" id="text-org2bd2f4d">
+<div id="outline-container-orgc6c7f2a" class="outline-4">
+<h4 id="orgc6c7f2a">图 1.6：使用维恩图验证概率律的性质</h4>
+<div class="outline-text-4" id="text-orgc6c7f2a">
 <p>
 图 1.6 使用维恩图直观展示并验证了概率律的若干性质。
 </p>
 </div>
 <ul class="org-ul">
-<li><a id="org9f6aa7b"></a>验证性质 1<br />
-<div class="outline-text-5" id="text-org9f6aa7b">
+<li><a id="org2d6aacf"></a>验证性质 1<br />
+<div class="outline-text-5" id="text-org2d6aacf">
 <p>
 如果：
 </p>
@@ -2256,8 +3062,8 @@ P(A)\le P(B).
 </p>
 </div>
 </li>
-<li><a id="orgb1d64c7"></a>验证性质 2<br />
-<div class="outline-text-5" id="text-orgb1d64c7">
+<li><a id="orgd92380a"></a>验证性质 2<br />
+<div class="outline-text-5" id="text-orgd92380a">
 <p>
 根据图 1.6（b），事件 \(A\cup B\) 和 \(B\) 可以分别表示为不相交事件的并集：
 </p>
@@ -2323,8 +3129,8 @@ P(A)+P(B)-P(A\cap B).
 </p>
 </div>
 </li>
-<li><a id="orgedce7c8"></a>验证性质 3<br />
-<div class="outline-text-5" id="text-orgedce7c8">
+<li><a id="org06727eb"></a>验证性质 3<br />
+<div class="outline-text-5" id="text-org06727eb">
 <p>
 根据非负性公理：
 </p>
@@ -2364,8 +3170,8 @@ P(A)+P(B).
 </p>
 </div>
 </li>
-<li><a id="org4dca3c7"></a>验证性质 4<br />
-<div class="outline-text-5" id="text-org4dca3c7">
+<li><a id="org955749b"></a>验证性质 4<br />
+<div class="outline-text-5" id="text-org955749b">
 <p>
 根据图 1.6（c），事件 \(A\cup B\cup C\) 可以表示为三个两两不相交事件的并集：
 </p>
@@ -2400,9 +3206,9 @@ P(A\cup B\cup C)
 </li>
 </ul>
 </div>
-<div id="outline-container-org844c6ba" class="outline-4">
-<h4 id="org844c6ba">第二阶段：在模型中进行推导</h4>
-<div class="outline-text-4" id="text-org844c6ba">
+<div id="outline-container-org0fd309e" class="outline-4">
+<h4 id="org0fd309e">第二阶段：在模型中进行推导</h4>
+<div class="outline-text-4" id="text-org0fd309e">
 <p>
 在第二阶段，我们在一个已经完整确定的概率模型内开展工作，计算某些事件的概率，或者推导一些有意义的性质。
 </p>
@@ -2424,9 +3230,9 @@ P(A\cup B\cup C)
 </p>
 </div>
 </div>
-<div id="outline-container-org5a1b078" class="outline-4">
-<h4 id="org5a1b078">概率论中的“悖论”</h4>
-<div class="outline-text-4" id="text-org5a1b078">
+<div id="outline-container-orgea4cebc" class="outline-4">
+<h4 id="orgea4cebc">概率论中的“悖论”</h4>
+<div class="outline-text-4" id="text-orgea4cebc">
 <p>
 概率论中存在许多所谓的“悖论”。在这些问题中，不同的计算方法看起来会对同一个问题给出不同答案。
 </p>
@@ -2445,9 +3251,9 @@ P(A\cup B\cup C)
 </p>
 </div>
 </div>
-<div id="outline-container-orgb3090f4" class="outline-4">
-<h4 id="orgb3090f4">图 1.7：伯特兰悖论</h4>
-<div class="outline-text-4" id="text-orgb3090f4">
+<div id="outline-container-org09354a5" class="outline-4">
+<h4 id="org09354a5">图 1.7：伯特兰悖论</h4>
+<div class="outline-text-4" id="text-org09354a5">
 <p>
 这个例子由 L. F. 伯特兰于 1889 年提出。它说明了为什么必须以无歧义的方式明确规定一个概率模型。
 </p>
@@ -2475,8 +3281,8 @@ P(A\cup B\cup C)
 </p>
 </div>
 <ul class="org-ul">
-<li><a id="orge0c9600"></a>方法一：在半径上随机选择一点<br />
-<div class="outline-text-5" id="text-orge0c9600">
+<li><a id="org48ad468"></a>方法一：在半径上随机选择一点<br />
+<div class="outline-text-5" id="text-org48ad468">
 <p>
 如图 1.7（a）所示，取圆的一条半径，例如 \(AB\)。
 </p>
@@ -2504,8 +3310,8 @@ P(A\cup B\cup C)
 </p>
 </div>
 </li>
-<li><a id="org58dbd02"></a>方法二：随机选择弦与切线的夹角<br />
-<div class="outline-text-5" id="text-org58dbd02">
+<li><a id="orgb406324"></a>方法二：随机选择弦与切线的夹角<br />
+<div class="outline-text-5" id="text-orgb406324">
 <p>
 如图 1.7（b）所示，在圆上取一点，例如等边三角形的顶点 \(V\)。
 </p>
@@ -2577,8 +3383,8 @@ P(A\cup B\cup C)
 </p>
 </div>
 </li>
-<li><a id="orgf1d8274"></a>两种答案为什么不同<br />
-<div class="outline-text-5" id="text-orgf1d8274">
+<li><a id="org34095e6"></a>两种答案为什么不同<br />
+<div class="outline-text-5" id="text-org34095e6">
 <p>
 两种方法分别得到：
 </p>
@@ -2618,17 +3424,17 @@ P(A\cup B\cup C)
 </li>
 </ul>
 </div>
-<div id="outline-container-orgf6eeaae" class="outline-4">
-<h4 id="orgf6eeaae">概率律的性质</h4>
-<div class="outline-text-4" id="text-orgf6eeaae">
+<div id="outline-container-org3b3a16e" class="outline-4">
+<h4 id="org3b3a16e">概率律的性质</h4>
+<div class="outline-text-4" id="text-org3b3a16e">
 <p>
 概率律具有若干可以由概率公理推导出来的性质。下面概括其中的一部分。
 </p>
 </div>
 </div>
-<div id="outline-container-orgff618a8" class="outline-4">
-<h4 id="orgff618a8">概率律的若干基本性质</h4>
-<div class="outline-text-4" id="text-orgff618a8">
+<div id="outline-container-org16839a8" class="outline-4">
+<h4 id="org16839a8">概率律的若干基本性质</h4>
+<div class="outline-text-4" id="text-org16839a8">
 <p>
 考虑一条概率律，并设 \(A\)、\(B\) 和 \(C\) 为事件。
 </p>
@@ -2687,9 +3493,9 @@ P(A)
 </p>
 </div>
 </div>
-<div id="outline-container-org6188260" class="outline-4">
-<h4 id="org6188260">有限并集的概率上界</h4>
-<div class="outline-text-4" id="text-org6188260">
+<div id="outline-container-org4248006" class="outline-4">
+<h4 id="org4248006">有限并集的概率上界</h4>
+<div class="outline-text-4" id="text-org4248006">
 <p>
 性质 3 可以推广为：
 </p>
@@ -2764,9 +3570,9 @@ P(A_1)+\cdots+P(A_n).
 </p>
 </div>
 </div>
-<div id="outline-container-org024ada8" class="outline-4">
-<h4 id="org024ada8">模型与现实</h4>
-<div class="outline-text-4" id="text-org024ada8">
+<div id="outline-container-orga900dd7" class="outline-4">
+<h4 id="orga900dd7">模型与现实</h4>
+<div class="outline-text-4" id="text-orga900dd7">
 <p>
 概率论的框架可以用来分析各种现实情境中的不确定性。
 </p>
@@ -2776,9 +3582,9 @@ P(A_1)+\cdots+P(A_n).
 </p>
 </div>
 </div>
-<div id="outline-container-org81515fa" class="outline-4">
-<h4 id="org81515fa">第一阶段：构造概率模型</h4>
-<div class="outline-text-4" id="text-org81515fa">
+<div id="outline-container-org32159de" class="outline-4">
+<h4 id="org32159de">第一阶段：构造概率模型</h4>
+<div class="outline-text-4" id="text-org32159de">
 <p>
 在第一阶段，我们先适当地定义一个样本空间，再在该样本空间上指定一条概率律，从而构造概率模型。
 </p>
@@ -2810,16 +3616,16 @@ P(A_1)+\cdots+P(A_n).
 </p>
 </div>
 </div>
-<div id="outline-container-org4348184" class="outline-4">
-<h4 id="org4348184">图 1.6：使用维恩图验证概率律的性质</h4>
-<div class="outline-text-4" id="text-org4348184">
+<div id="outline-container-org46252a7" class="outline-4">
+<h4 id="org46252a7">图 1.6：使用维恩图验证概率律的性质</h4>
+<div class="outline-text-4" id="text-org46252a7">
 <p>
 图 1.6 使用维恩图直观展示并验证了概率律的若干性质。
 </p>
 </div>
 <ul class="org-ul">
-<li><a id="org4edf24a"></a>验证性质 1<br />
-<div class="outline-text-5" id="text-org4edf24a">
+<li><a id="orgc76434b"></a>验证性质 1<br />
+<div class="outline-text-5" id="text-orgc76434b">
 <p>
 如果：
 </p>
@@ -2889,8 +3695,8 @@ P(A)\le P(B).
 </p>
 </div>
 </li>
-<li><a id="org3cd5ab0"></a>验证性质 2<br />
-<div class="outline-text-5" id="text-org3cd5ab0">
+<li><a id="orgb8b8106"></a>验证性质 2<br />
+<div class="outline-text-5" id="text-orgb8b8106">
 <p>
 根据图 1.6（b），事件 \(A\cup B\) 和 \(B\) 可以分别表示为不相交事件的并集：
 </p>
@@ -2956,8 +3762,8 @@ P(A)+P(B)-P(A\cap B).
 </p>
 </div>
 </li>
-<li><a id="org8055b07"></a>验证性质 3<br />
-<div class="outline-text-5" id="text-org8055b07">
+<li><a id="org7a78da3"></a>验证性质 3<br />
+<div class="outline-text-5" id="text-org7a78da3">
 <p>
 根据非负性公理：
 </p>
@@ -2997,8 +3803,8 @@ P(A)+P(B).
 </p>
 </div>
 </li>
-<li><a id="orgafb7821"></a>验证性质 4<br />
-<div class="outline-text-5" id="text-orgafb7821">
+<li><a id="org5301fa3"></a>验证性质 4<br />
+<div class="outline-text-5" id="text-org5301fa3">
 <p>
 根据图 1.6（c），事件 \(A\cup B\cup C\) 可以表示为三个两两不相交事件的并集：
 </p>
@@ -3033,9 +3839,9 @@ P(A\cup B\cup C)
 </li>
 </ul>
 </div>
-<div id="outline-container-orgcda50b2" class="outline-4">
-<h4 id="orgcda50b2">第二阶段：在模型中进行推导</h4>
-<div class="outline-text-4" id="text-orgcda50b2">
+<div id="outline-container-orge9d319c" class="outline-4">
+<h4 id="orge9d319c">第二阶段：在模型中进行推导</h4>
+<div class="outline-text-4" id="text-orge9d319c">
 <p>
 在第二阶段，我们在一个已经完整确定的概率模型内开展工作，计算某些事件的概率，或者推导一些有意义的性质。
 </p>
@@ -3057,9 +3863,9 @@ P(A\cup B\cup C)
 </p>
 </div>
 </div>
-<div id="outline-container-orgf26328a" class="outline-4">
-<h4 id="orgf26328a">概率论中的“悖论”</h4>
-<div class="outline-text-4" id="text-orgf26328a">
+<div id="outline-container-org1846fcc" class="outline-4">
+<h4 id="org1846fcc">概率论中的“悖论”</h4>
+<div class="outline-text-4" id="text-org1846fcc">
 <p>
 概率论中存在许多所谓的“悖论”。在这些问题中，不同的计算方法看起来会对同一个问题给出不同答案。
 </p>
@@ -3078,9 +3884,9 @@ P(A\cup B\cup C)
 </p>
 </div>
 </div>
-<div id="outline-container-orgb35c4e2" class="outline-4">
-<h4 id="orgb35c4e2">图 1.7：伯特兰悖论</h4>
-<div class="outline-text-4" id="text-orgb35c4e2">
+<div id="outline-container-org7db3b8b" class="outline-4">
+<h4 id="org7db3b8b">图 1.7：伯特兰悖论</h4>
+<div class="outline-text-4" id="text-org7db3b8b">
 <p>
 这个例子由 L. F. 伯特兰于 1889 年提出。它说明了为什么必须以无歧义的方式明确规定一个概率模型。
 </p>
@@ -3108,8 +3914,8 @@ P(A\cup B\cup C)
 </p>
 </div>
 <ul class="org-ul">
-<li><a id="org5952248"></a>方法一：在半径上随机选择一点<br />
-<div class="outline-text-5" id="text-org5952248">
+<li><a id="org3602c20"></a>方法一：在半径上随机选择一点<br />
+<div class="outline-text-5" id="text-org3602c20">
 <p>
 如图 1.7（a）所示，取圆的一条半径，例如 \(AB\)。
 </p>
@@ -3137,8 +3943,8 @@ P(A\cup B\cup C)
 </p>
 </div>
 </li>
-<li><a id="orgac9138c"></a>方法二：随机选择弦与切线的夹角<br />
-<div class="outline-text-5" id="text-orgac9138c">
+<li><a id="org64774e2"></a>方法二：随机选择弦与切线的夹角<br />
+<div class="outline-text-5" id="text-org64774e2">
 <p>
 如图 1.7（b）所示，在圆上取一点，例如等边三角形的顶点 \(V\)。
 </p>
@@ -3210,8 +4016,8 @@ P(A\cup B\cup C)
 </p>
 </div>
 </li>
-<li><a id="org39e1bd9"></a>两种答案为什么不同<br />
-<div class="outline-text-5" id="text-org39e1bd9">
+<li><a id="org10fb7ff"></a>两种答案为什么不同<br />
+<div class="outline-text-5" id="text-org10fb7ff">
 <p>
 两种方法分别得到：
 </p>
@@ -3252,9 +4058,9 @@ P(A\cup B\cup C)
 </ul>
 </div>
 </div>
-<div id="outline-container-orgc632269" class="outline-3">
-<h3 id="orgc632269">1.3 条件概率</h3>
-<div class="outline-text-3" id="text-orgc632269">
+<div id="outline-container-org74076e4" class="outline-3">
+<h3 id="org74076e4">1.3 条件概率</h3>
+<div class="outline-text-3" id="text-org74076e4">
 <p>
 条件概率为我们提供了一种方法，使我们能够根据 <b>部分信息</b> 对试验结果进行推理。
 </p>
@@ -3273,9 +4079,9 @@ P(A\cup B\cup C)
 <li>雷达屏幕上出现了一个光点。该光点对应一架飞机的可能性有多大？</li>
 </ol>
 </div>
-<div id="outline-container-org5df2590" class="outline-4">
-<h4 id="org5df2590">条件概率的定义</h4>
-<div class="outline-text-4" id="text-org5df2590">
+<div id="outline-container-orgcf22ef2" class="outline-4">
+<h4 id="orgcf22ef2">条件概率的定义</h4>
+<div class="outline-text-4" id="text-orgcf22ef2">
 <p>
 更准确地说，给定：
 </p>
@@ -3313,8 +4119,8 @@ P(A\mid B).
 </p>
 </div>
 <ul class="org-ul">
-<li><a id="orgef27cc5"></a>公平骰子的例子<br />
-<div class="outline-text-5" id="text-orgef27cc5">
+<li><a id="orge1a8040"></a>公平骰子的例子<br />
+<div class="outline-text-5" id="text-orge1a8040">
 <p>
 假设投掷一枚公平骰子，六个可能结果：
 </p>
@@ -3407,9 +4213,9 @@ P(B)>0.
 </li>
 </ul>
 </div>
-<div id="outline-container-org46284ec" class="outline-4">
-<h4 id="org46284ec">条件概率构成一条概率律</h4>
-<div class="outline-text-4" id="text-org46284ec">
+<div id="outline-container-orgdc9fb7c" class="outline-4">
+<h4 id="orgdc9fb7c">条件概率构成一条概率律</h4>
+<div class="outline-text-4" id="text-orgdc9fb7c">
 <p>
 对于一个固定事件 \(B\)，可以验证，条件概率：
 </p>
@@ -3425,8 +4231,8 @@ P(A\mid B)
 </p>
 </div>
 <ul class="org-ul">
-<li><a id="orgdad907d"></a>非负性<br />
-<div class="outline-text-5" id="text-orgdad907d">
+<li><a id="orgcbe482d"></a>非负性<br />
+<div class="outline-text-5" id="text-orgcbe482d">
 <p>
 因为：
 </p>
@@ -3465,8 +4271,8 @@ P(A\mid B)
 </p>
 </div>
 </li>
-<li><a id="orgf82aac0"></a>归一性<br />
-<div class="outline-text-5" id="text-orgf82aac0">
+<li><a id="org703bb68"></a>归一性<br />
+<div class="outline-text-5" id="text-org703bb68">
 <p>
 整个样本空间的条件概率为：
 </p>
@@ -3491,8 +4297,8 @@ P(\Omega\mid B)
 </p>
 </div>
 </li>
-<li><a id="org1d636fa"></a>可加性<br />
-<div class="outline-text-5" id="text-org1d636fa">
+<li><a id="org966e25c"></a>可加性<br />
+<div class="outline-text-5" id="text-org966e25c">
 <p>
 设 \(A_1\) 和 \(A_2\) 是两个不相交事件，则：
 </p>
@@ -3539,9 +4345,9 @@ P(A_1\mid B)+P(A_2\mid B).
 </li>
 </ul>
 </div>
-<div id="outline-container-orgeea9262" class="outline-4">
-<h4 id="orgeea9262">概率律的一般性质仍然成立</h4>
-<div class="outline-text-4" id="text-orgeea9262">
+<div id="outline-container-org6e8a988" class="outline-4">
+<h4 id="org6e8a988">概率律的一般性质仍然成立</h4>
+<div class="outline-text-4" id="text-org6e8a988">
 <p>
 由于条件概率构成一条合法的概率律，所以概率律的所有一般性质对于条件概率仍然成立。
 </p>
@@ -3593,9 +4399,9 @@ P(B\mid B)
 </p>
 </div>
 </div>
-<div id="outline-container-org264a920" class="outline-4">
-<h4 id="org264a920">条件概率的性质总结</h4>
-<div class="outline-text-4" id="text-org264a920">
+<div id="outline-container-org5c16138" class="outline-4">
+<h4 id="org5c16138">条件概率的性质总结</h4>
+<div class="outline-text-4" id="text-org5c16138">
 <blockquote>
 <ol class="org-ol">
 <li><p>
@@ -3636,9 +4442,9 @@ P(B\mid B)
 </blockquote>
 </div>
 </div>
-<div id="outline-container-orgb744a19" class="outline-4">
-<h4 id="orgb744a19">例 1.6：连续抛三次硬币</h4>
-<div class="outline-text-4" id="text-orgb744a19">
+<div id="outline-container-org0f66760" class="outline-4">
+<h4 id="org0f66760">例 1.6：连续抛三次硬币</h4>
+<div class="outline-text-4" id="text-org0f66760">
 <p>
 连续抛三次一枚公平硬币。
 </p>
@@ -3788,9 +4594,9 @@ P(A\mid B)
 </p>
 </div>
 </div>
-<div id="outline-container-org355d284" class="outline-4">
-<h4 id="org355d284">例 1.7：两次投掷四面骰子</h4>
-<div class="outline-text-4" id="text-org355d284">
+<div id="outline-container-orga2d1b9b" class="outline-4">
+<h4 id="orga2d1b9b">例 1.7：两次投掷四面骰子</h4>
+<div class="outline-text-4" id="text-orga2d1b9b">
 <p>
 连续投掷一枚公平的四面骰子两次，并假设全部 16 种可能的结果都是等可能的。令 \(X\) 和 \(Y\) 分别表示第一次和第二次投掷的结果。
 </p>
@@ -3835,8 +4641,8 @@ B=\{\min(X,Y)=2\},
 </p>
 </div>
 <ul class="org-ul">
-<li><a id="org740896b"></a>图 1.8：两次投掷四面骰子的样本空间<br />
-<div class="outline-text-5" id="text-org740896b">
+<li><a id="org86f7dd4"></a>图 1.8：两次投掷四面骰子的样本空间<br />
+<div class="outline-text-5" id="text-org86f7dd4">
 <p>
 这是一个连续投掷四面骰子两次的实验的样本空间，参见例 1.7。所有结果都是等可能的，每一种结果的概率都是 \(1/16\)。
 </p>
@@ -3896,9 +4702,9 @@ A=\{\max(X,Y)=m\}
 </li>
 </ul>
 </div>
-<div id="outline-container-orgacc7316" class="outline-4">
-<h4 id="orgacc7316">例 1.8：两个产品设计团队</h4>
-<div class="outline-text-4" id="text-orgacc7316">
+<div id="outline-container-orgd247451" class="outline-4">
+<h4 id="orgd247451">例 1.8：两个产品设计团队</h4>
+<div class="outline-text-4" id="text-orgd247451">
 <p>
 一个保守型设计团队，记为 \(C\)，以及一个创新型设计团队，记为 \(N\)，被要求在一个月内分别设计一种新产品。
 </p>
@@ -4015,9 +4821,9 @@ A=\{\max(X,Y)=m\}
 </div>
 </div>
 </div>
-<div id="outline-container-org2abe643" class="outline-3">
-<h3 id="org2abe643">使用条件概率进行建模</h3>
-<div class="outline-text-3" id="text-org2abe643">
+<div id="outline-container-orgfa9408c" class="outline-3">
+<h3 id="orgfa9408c">使用条件概率进行建模</h3>
+<div class="outline-text-3" id="text-orgfa9408c">
 <p>
 在为具有顺序特征的实验构造概率模型时，通常一种自然而方便的方法是：首先给出相应的条件概率，然后利用这些条件概率确定无条件概率。
 </p>
@@ -4038,9 +4844,9 @@ A=\{\max(X,Y)=m\}
 是条件概率定义的另一种表达形式。在上述建模过程中，这一公式通常非常有用。
 </p>
 </div>
-<div id="outline-container-org34af344" class="outline-4">
-<h4 id="org34af344">例 1.9：雷达探测</h4>
-<div class="outline-text-4" id="text-org34af344">
+<div id="outline-container-org0bb712a" class="outline-4">
+<h4 id="org0bb712a">例 1.9：雷达探测</h4>
+<div class="outline-text-4" id="text-org0bb712a">
 <p>
 如果某一区域内存在飞机，雷达以 \(0.99\) 的概率探测到飞机并发出警报信号。
 </p>
@@ -4139,8 +4945,8 @@ B^c=\{\text{雷达没有发出警报}\}.
 </p>
 </div>
 <ul class="org-ul">
-<li><a id="org9a77073"></a>图 1.9：雷达探测问题的顺序表示<br />
-<div class="outline-text-5" id="text-org9a77073">
+<li><a id="orga191637"></a>图 1.9：雷达探测问题的顺序表示<br />
+<div class="outline-text-5" id="text-orga191637">
 <p>
 树形图中的各分支概率为：
 </p>
@@ -4214,9 +5020,9 @@ B^c=\{\text{雷达没有发出警报}\}.
 </li>
 </ul>
 </div>
-<div id="outline-container-org06ed758" class="outline-4">
-<h4 id="org06ed758">利用树形顺序表示计算概率的一般方法</h4>
-<div class="outline-text-4" id="text-org06ed758">
+<div id="outline-container-orge5f8e21" class="outline-4">
+<h4 id="orge5f8e21">利用树形顺序表示计算概率的一般方法</h4>
+<div class="outline-text-4" id="text-orge5f8e21">
 <p>
 将前面的例子推广，我们可以得到一条一般规则：当一个实验采用基于树的顺序描述时，可以按照以下步骤计算各种概率。
 </p>
@@ -4237,9 +5043,9 @@ B^c=\{\text{雷达没有发出警报}\}.
 </div>
 </div>
 </div>
-<div id="outline-container-orgc7b347b" class="outline-3">
-<h3 id="orgc7b347b">乘法法则</h3>
-<div class="outline-text-3" id="text-orgc7b347b">
+<div id="outline-container-org207355d" class="outline-3">
+<h3 id="org207355d">乘法法则</h3>
+<div class="outline-text-3" id="text-org207355d">
 <p>
 用数学语言来说，我们处理的是这样一个事件 \(A\)：当且仅当若干事件
 \(A_1,\ldots,A_n\) 全部发生时，事件 \(A\) 才会发生。也就是说，
@@ -4259,9 +5065,9 @@ A=A_1\cap A_2\cap\cdots\cap A_n.
 在树形图中，这一过程可以表示成一条包含 \(n\) 条分支的路径，这些分支依次对应事件 \(A_1,\ldots,A_n\)。事件 \(A\) 的概率由下面的法则给出，另见图 1.10。
 </p>
 </div>
-<div id="outline-container-orgf3f1159" class="outline-4">
-<h4 id="orgf3f1159">乘法法则</h4>
-<div class="outline-text-4" id="text-orgf3f1159">
+<div id="outline-container-orgc0758e1" class="outline-4">
+<h4 id="orgc0758e1">乘法法则</h4>
+<div class="outline-text-4" id="text-orgc0758e1">
 <p>
 假设所有作为条件的事件都具有正概率，则
 </p>
@@ -4335,9 +5141,9 @@ A_n\;\middle|\;\bigcap_{i=1}^{n-1}A_i
 </p>
 </div>
 </div>
-<div id="outline-container-orgedce699" class="outline-4">
-<h4 id="orgedce699">图 1.10：乘法法则的直观表示</h4>
-<div class="outline-text-4" id="text-orgedce699">
+<div id="outline-container-org5194533" class="outline-4">
+<h4 id="org5194533">图 1.10：乘法法则的直观表示</h4>
+<div class="outline-text-4" id="text-org5194533">
 <p>
 交事件
 </p>
@@ -4401,9 +5207,9 @@ A_1\cap A_2\cap A_3,
 </div>
 </div>
 </div>
-<div id="outline-container-org0318c80" class="outline-3">
-<h3 id="org0318c80">例 1.10：无放回抽取三张扑克牌</h3>
-<div class="outline-text-3" id="text-org0318c80">
+<div id="outline-container-orgec993ac" class="outline-3">
+<h3 id="orgec993ac">例 1.10：无放回抽取三张扑克牌</h3>
+<div class="outline-text-3" id="text-orgec993ac">
 <p>
 从一副普通的 52 张扑克牌中，无放回地抽取三张牌，也就是说，抽出的牌不会被放回牌组。
 </p>
@@ -4510,9 +5316,9 @@ A_i=\{\text{第 }i\text{ 张牌不是红桃}\},
 \]
 </p>
 </div>
-<div id="outline-container-orgbc9a0d2" class="outline-4">
-<h4 id="orgbc9a0d2">图 1.11：三张牌抽取问题的顺序描述</h4>
-<div class="outline-text-4" id="text-orgbc9a0d2">
+<div id="outline-container-org70e87f3" class="outline-4">
+<h4 id="org70e87f3">图 1.11：三张牌抽取问题的顺序描述</h4>
+<div class="outline-text-4" id="text-org70e87f3">
 <p>
 图 1.11 是例 1.10 中三张牌抽取实验的树形顺序表示。各层分支表示：
 </p>
@@ -4581,9 +5387,9 @@ A_i=\{\text{第 }i\text{ 张牌不是红桃}\},
 </div>
 </div>
 </div>
-<div id="outline-container-org376929b" class="outline-3">
-<h3 id="org376929b">例 1.11：将学生随机分组</h3>
-<div class="outline-text-3" id="text-org376929b">
+<div id="outline-container-orgf84e9cc" class="outline-3">
+<h3 id="orgf84e9cc">例 1.11：将学生随机分组</h3>
+<div class="outline-text-3" id="text-orgf84e9cc">
 <p>
 一个班级由 4 名研究生和 12 名本科生组成。现将这 16 名学生随机分成 4 组，每组 4 人。
 </p>
@@ -4672,13 +5478,13 @@ A_3=\{\text{学生 1、2、3、4 被分在四个不同的小组}\}.
 </div>
 </div>
 </div>
-<div id="outline-container-orgaf4a4f4" class="outline-2">
-<h2 id="orgaf4a4f4">例 1.11：学生分组问题（续）</h2>
-<div class="outline-text-2" id="text-orgaf4a4f4">
+<div id="outline-container-org12d4be1" class="outline-2">
+<h2 id="org12d4be1">例 1.11：学生分组问题（续）</h2>
+<div class="outline-text-2" id="text-org12d4be1">
 </div>
-<div id="outline-container-orge9917bb" class="outline-3">
-<h3 id="orge9917bb">图 1.12：学生分组实验的顺序描述</h3>
-<div class="outline-text-3" id="text-orge9917bb">
+<div id="outline-container-orgbf7cd9a" class="outline-3">
+<h3 id="orgbf7cd9a">图 1.12：学生分组实验的顺序描述</h3>
+<div class="outline-text-3" id="text-orgbf7cd9a">
 <p>
 图 1.12 给出了例 1.11 中学生分组问题的顺序表示。树中相应路径上的条件概率依次为：
 </p>
@@ -4771,9 +5577,9 @@ A_3=\{\text{学生 1、2、3、4 被分在四个不同的小组}\}.
 </div>
 </div>
 </div>
-<div id="outline-container-orgeb9f48e" class="outline-2">
-<h2 id="orgeb9f48e">例 1.12：蒙提霍尔问题</h2>
-<div class="outline-text-2" id="text-orgeb9f48e">
+<div id="outline-container-org2819752" class="outline-2">
+<h2 id="org2819752">例 1.12：蒙提霍尔问题</h2>
+<div class="outline-text-2" id="text-org2819752">
 <p>
 这是一个广为讨论的谜题，源自美国早期的一档电视游戏节目。
 </p>
@@ -4809,9 +5615,9 @@ A_3=\{\text{学生 1、2、3、4 被分在四个不同的小组}\}.
 哪一种策略最好？为了回答这个问题，我们分别计算采用这三种策略时获胜的概率。
 </p>
 </div>
-<div id="outline-container-org1db7171" class="outline-3">
-<h3 id="org1db7171">策略一：始终不换门</h3>
-<div class="outline-text-3" id="text-org1db7171">
+<div id="outline-container-orgfc5c89d" class="outline-3">
+<h3 id="orgfc5c89d">策略一：始终不换门</h3>
+<div class="outline-text-3" id="text-orgfc5c89d">
 <p>
 在不换门的策略下，是否获胜完全取决于最初是否选中了奖品所在的门。
 </p>
@@ -4827,9 +5633,9 @@ A_3=\{\text{学生 1、2、3、4 被分在四个不同的小组}\}.
 </p>
 </div>
 </div>
-<div id="outline-container-orgf870792" class="outline-3">
-<h3 id="orgf870792">策略二：始终换门</h3>
-<div class="outline-text-3" id="text-orgf870792">
+<div id="outline-container-orgfe22f53" class="outline-3">
+<h3 id="orgfe22f53">策略二：始终换门</h3>
+<div class="outline-text-3" id="text-orgfe22f53">
 <p>
 如果奖品位于最初选择的门后，其概率为 \(1/3\)，那么换门后就会失败。
 </p>
@@ -4853,9 +5659,9 @@ A_3=\{\text{学生 1、2、3、4 被分在四个不同的小组}\}.
 </p>
 </div>
 </div>
-<div id="outline-container-org5994b39" class="outline-3">
-<h3 id="org5994b39">策略三：根据朋友打开的门决定是否换门</h3>
-<div class="outline-text-3" id="text-org5994b39">
+<div id="outline-container-orgf96c26a" class="outline-3">
+<h3 id="orgf96c26a">策略三：根据朋友打开的门决定是否换门</h3>
+<div class="outline-text-3" id="text-orgf96c26a">
 <p>
 对于策略三，目前给出的信息不足以确定获胜概率。答案取决于朋友在可以选择时采用什么规则决定打开哪扇门。
 </p>
@@ -4864,9 +5670,9 @@ A_3=\{\text{学生 1、2、3、4 被分在四个不同的小组}\}.
 下面考虑两种可能的规则。
 </p>
 </div>
-<div id="outline-container-org88d0476" class="outline-4">
-<h4 id="org88d0476">情形一：奖品在门 1 后时，朋友总是打开门 2</h4>
-<div class="outline-text-4" id="text-org88d0476">
+<div id="outline-container-org3d4a4f4" class="outline-4">
+<h4 id="org3d4a4f4">情形一：奖品在门 1 后时，朋友总是打开门 2</h4>
+<div class="outline-text-4" id="text-org3d4a4f4">
 <p>
 如果奖品位于门 2 或门 3 后，朋友实际上没有选择余地，只能打开剩余的那扇空门。
 </p>
@@ -4896,9 +5702,9 @@ A_3=\{\text{学生 1、2、3、4 被分在四个不同的小组}\}.
 </p>
 </div>
 </div>
-<div id="outline-container-org15fd066" class="outline-4">
-<h4 id="org15fd066">情形二：奖品在门 1 后时，朋友等概率地打开门 2 或门 3</h4>
-<div class="outline-text-4" id="text-org15fd066">
+<div id="outline-container-org66ff6f1" class="outline-4">
+<h4 id="org66ff6f1">情形二：奖品在门 1 后时，朋友等概率地打开门 2 或门 3</h4>
+<div class="outline-text-4" id="text-org66ff6f1">
 <p>
 如果奖品位于门 1 后，其概率为 \(1/3\)，朋友以 \(1/2\) 的概率打开门 2。此时你不换门并获胜，所以这种获胜情形的概率为
 </p>
@@ -4948,9 +5754,9 @@ A_3=\{\text{学生 1、2、3、4 被分在四个不同的小组}\}.
 </div>
 </div>
 </div>
-<div id="outline-container-org283de4b" class="outline-2">
-<h2 id="org283de4b">1.4 全概率定理与贝叶斯法则</h2>
-<div class="outline-text-2" id="text-org283de4b">
+<div id="outline-container-org80c129a" class="outline-2">
+<h2 id="org80c129a">1.4 全概率定理与贝叶斯法则</h2>
+<div class="outline-text-2" id="text-org80c129a">
 <p>
 本节将探讨条件概率的一些应用。
 </p>
@@ -4959,9 +5765,9 @@ A_3=\{\text{学生 1、2、3、4 被分在四个不同的小组}\}.
 我们首先介绍下面这个定理。它经常用于以一种“分而治之”的方法计算各种事件的概率。
 </p>
 </div>
-<div id="outline-container-orgb18c3c4" class="outline-3">
-<h3 id="orgb18c3c4">全概率定理</h3>
-<div class="outline-text-3" id="text-orgb18c3c4">
+<div id="outline-container-orge14a64e" class="outline-3">
+<h3 id="orge14a64e">全概率定理</h3>
+<div class="outline-text-3" id="text-orge14a64e">
 <p>
 设 \(A_1,\ldots,A_n\) 是两两互斥的事件，并且构成样本空间的一个划分。也就是说，每一个可能结果恰好属于事件 \(A_1,\ldots,A_n\) 中的一个。
 </p>
@@ -5033,9 +5839,9 @@ A_1,\ldots,A_n.
 </p>
 </div>
 </div>
-<div id="outline-container-org60c5214" class="outline-3">
-<h3 id="org60c5214">图 1.13：全概率定理的直观表示和证明</h3>
-<div class="outline-text-3" id="text-org60c5214">
+<div id="outline-container-org495ce72" class="outline-3">
+<h3 id="org495ce72">图 1.13：全概率定理的直观表示和证明</h3>
+<div class="outline-text-3" id="text-org495ce72">
 <p>
 事件 \(A_1,\ldots,A_n\) 构成样本空间的一个划分，因此可以把事件 \(B\) 分解成它与各个 \(A_i\) 的交集所构成的互斥并：
 </p>
@@ -5108,9 +5914,9 @@ B
 </div>
 </div>
 </div>
-<div id="outline-container-orgf571bca" class="outline-2">
-<h2 id="orgf571bca">例 1.13：国际象棋比赛</h2>
-<div class="outline-text-2" id="text-orgf571bca">
+<div id="outline-container-org86fd350" class="outline-2">
+<h2 id="org86fd350">例 1.13：国际象棋比赛</h2>
+<div class="outline-text-2" id="text-org86fd350">
 <p>
 你参加一场国际象棋比赛。参赛者可以分成三类：
 </p>
@@ -5188,9 +5994,9 @@ B
 </p>
 </div>
 </div>
-<div id="outline-container-org88c9314" class="outline-2">
-<h2 id="org88c9314">例 1.14：投掷四面骰子</h2>
-<div class="outline-text-2" id="text-org88c9314">
+<div id="outline-container-orga918718" class="outline-2">
+<h2 id="orga918718">例 1.14：投掷四面骰子</h2>
+<div class="outline-text-2" id="text-orga918718">
 <p>
 投掷一枚公平的四面骰子。
 </p>
@@ -5298,9 +6104,9 @@ B
 </p>
 </div>
 </div>
-<div id="outline-container-orga367ae6" class="outline-2">
-<h2 id="orga367ae6">例 1.15：课程学习进度</h2>
-<div class="outline-text-2" id="text-orga367ae6">
+<div id="outline-container-org1ab5f69" class="outline-2">
+<h2 id="org1ab5f69">例 1.15：课程学习进度</h2>
+<div class="outline-text-2" id="text-org1ab5f69">
 <p>
 对于具有顺序特征的实验，可以反复应用全概率定理计算概率。下面给出一个例子。
 </p>
@@ -5541,9 +6347,9 @@ Alice 在课程开始时默认已经跟上进度。问：三周后她仍然跟�
 </p>
 </div>
 </div>
-<div id="outline-container-org2223ad3" class="outline-2">
-<h2 id="org2223ad3">推断与贝叶斯法则</h2>
-<div class="outline-text-2" id="text-org2223ad3">
+<div id="outline-container-orgd64ce6d" class="outline-2">
+<h2 id="orgd64ce6d">推断与贝叶斯法则</h2>
+<div class="outline-text-2" id="text-orgd64ce6d">
 <p>
 全概率定理经常与下面这个著名定理结合使用。
 </p>
@@ -5572,9 +6378,9 @@ Alice 在课程开始时默认已经跟上进度。问：三周后她仍然跟�
 联系起来。
 </p>
 </div>
-<div id="outline-container-org1dd423f" class="outline-3">
-<h3 id="org1dd423f">贝叶斯法则</h3>
-<div class="outline-text-3" id="text-org1dd423f">
+<div id="outline-container-org26e26f7" class="outline-3">
+<h3 id="org26e26f7">贝叶斯法则</h3>
+<div class="outline-text-3" id="text-org26e26f7">
 <p>
 设 \(A_1,A_2,\ldots,A_n\) 是两两互斥的事件，并构成样本空间的一个划分。假设对所有 \(i\)，都有
 </p>
@@ -5630,9 +6436,9 @@ Alice 在课程开始时默认已经跟上进度。问：三周后她仍然跟�
 </p>
 </div>
 </div>
-<div id="outline-container-org9d14a3d" class="outline-3">
-<h3 id="org9d14a3d">图 1.14：贝叶斯法则中的推断情境</h3>
-<div class="outline-text-3" id="text-org9d14a3d">
+<div id="outline-container-org0766abd" class="outline-3">
+<h3 id="org0766abd">图 1.14：贝叶斯法则中的推断情境</h3>
+<div class="outline-text-3" id="text-org0766abd">
 <p>
 假设我们在某人的 X 光片中观察到一块阴影。把这一观察记为事件 \(B\)，也就是观察到的“结果”。
 </p>
@@ -5732,9 +6538,9 @@ Alice 在课程开始时默认已经跟上进度。问：三周后她仍然跟�
 </p>
 </div>
 </div>
-<div id="outline-container-org404394a" class="outline-3">
-<h3 id="org404394a">贝叶斯法则的验证</h3>
-<div class="outline-text-3" id="text-org404394a">
+<div id="outline-container-org163982f" class="outline-3">
+<h3 id="org163982f">贝叶斯法则的验证</h3>
+<div class="outline-text-3" id="text-org163982f">
 <p>
 根据条件概率的定义，
 </p>
@@ -5787,9 +6593,9 @@ Alice 在课程开始时默认已经跟上进度。问：三周后她仍然跟�
 </p>
 </div>
 </div>
-<div id="outline-container-org8d9cd7b" class="outline-3">
-<h3 id="org8d9cd7b">先验概率与后验概率</h3>
-<div class="outline-text-3" id="text-org8d9cd7b">
+<div id="outline-container-org25acb1d" class="outline-3">
+<h3 id="org25acb1d">先验概率与后验概率</h3>
+<div class="outline-text-3" id="text-org25acb1d">
 <p>
 贝叶斯法则经常用于推断。
 </p>
@@ -5848,9 +6654,9 @@ Alice 在课程开始时默认已经跟上进度。问：三周后她仍然跟�
 </div>
 </div>
 </div>
-<div id="outline-container-orgbee0ef1" class="outline-2">
-<h2 id="orgbee0ef1">例 1.16：雷达探测问题</h2>
-<div class="outline-text-2" id="text-orgbee0ef1">
+<div id="outline-container-orgeba99d6" class="outline-2">
+<h2 id="orgeba99d6">例 1.16：雷达探测问题</h2>
+<div class="outline-text-2" id="text-orgeba99d6">
 <p>
 回到例 1.9 和图 1.9 中的雷达探测问题。令
 </p>
@@ -5913,9 +6719,9 @@ B=\{\text{雷达发出警报}\}.
 </p>
 </div>
 </div>
-<div id="outline-container-orgd6729ff" class="outline-2">
-<h2 id="orgd6729ff">例 1.17：国际象棋比赛（续）</h2>
-<div class="outline-text-2" id="text-orgd6729ff">
+<div id="outline-container-org8d3f733" class="outline-2">
+<h2 id="org8d3f733">例 1.17：国际象棋比赛（续）</h2>
+<div class="outline-text-2" id="text-org8d3f733">
 <p>
 回到例 1.13 的国际象棋问题。令 \(A_i\) 表示遇到第 \(i\) 类对手，则
 </p>
@@ -5988,9 +6794,9 @@ B=\{\text{雷达发出警报}\}.
 </p>
 </div>
 </div>
-<div id="outline-container-orgf23a8d4" class="outline-2">
-<h2 id="orgf23a8d4">例 1.18：假阳性谜题</h2>
-<div class="outline-text-2" id="text-orgf23a8d4">
+<div id="outline-container-org21fc3e5" class="outline-2">
+<h2 id="org21fc3e5">例 1.18：假阳性谜题</h2>
+<div class="outline-text-2" id="text-org21fc3e5">
 <p>
 假设某种罕见疾病的检测具有 \(95\%\) 的正确率：
 </p>
@@ -6071,9 +6877,9 @@ B=\{\text{检测结果呈阳性}\}.
 </p>
 </div>
 </div>
-<div id="outline-container-org82f75be" class="outline-2">
-<h2 id="org82f75be">1.5 独立性</h2>
-<div class="outline-text-2" id="text-org82f75be">
+<div id="outline-container-org12c7681" class="outline-2">
+<h2 id="org12c7681">1.5 独立性</h2>
+<div class="outline-text-2" id="text-org12c7681">
 <p>
 我们引入条件概率
 </p>
@@ -6144,9 +6950,9 @@ B=\{\text{检测结果呈阳性}\}.
 这个关系具有对称性，因此独立性也是一种对称关系。也就是说，如果 \(A\) 独立于 \(B\)，那么 \(B\) 也独立于 \(A\)。因此，我们可以明确地说 \(A\) 和 \(B\) 是两个独立事件。
 </p>
 </div>
-<div id="outline-container-org2562075" class="outline-3">
-<h3 id="org2562075">独立与互斥并不相同</h3>
-<div class="outline-text-3" id="text-org2562075">
+<div id="outline-container-orgf63d0ed" class="outline-3">
+<h3 id="orgf63d0ed">独立与互斥并不相同</h3>
+<div class="outline-text-3" id="text-orgf63d0ed">
 <p>
 独立性通常很容易从直觉上理解。例如，如果两个事件的发生由不同且互不影响的物理过程决定，那么这两个事件通常是独立的。
 </p>
@@ -6237,16 +7043,16 @@ A\cap B=\varnothing,
 </div>
 </div>
 </div>
-<div id="outline-container-orgce2da48" class="outline-2">
-<h2 id="orgce2da48">例 1.19：两次投掷四面骰子</h2>
-<div class="outline-text-2" id="text-orgce2da48">
+<div id="outline-container-orgc606ae5" class="outline-2">
+<h2 id="orgc606ae5">例 1.19：两次投掷四面骰子</h2>
+<div class="outline-text-2" id="text-orgc606ae5">
 <p>
 考虑连续投掷一枚四面骰子两次的实验。全部 16 种可能结果都是等可能的，每种结果的概率均为 \(1/16\)。
 </p>
 </div>
-<div id="outline-container-orgb031355" class="outline-3">
-<h3 id="orgb031355">第一问：两次投掷的结果是否独立？</h3>
-<div class="outline-text-3" id="text-orgb031355">
+<div id="outline-container-org1336138" class="outline-3">
+<h3 id="org1336138">第一问：两次投掷的结果是否独立？</h3>
+<div class="outline-text-3" id="text-org1336138">
 <p>
 定义
 </p>
@@ -6336,9 +7142,9 @@ B_j=\{\text{第二次投掷结果为 }j\}.
 </p>
 </div>
 </div>
-<div id="outline-container-org1539091" class="outline-3">
-<h3 id="org1539091">第二问：第一次投出 1 与两次之和为 5 是否独立？</h3>
-<div class="outline-text-3" id="text-org1539091">
+<div id="outline-container-org705c49a" class="outline-3">
+<h3 id="org705c49a">第二问：第一次投出 1 与两次之和为 5 是否独立？</h3>
+<div class="outline-text-3" id="text-org705c49a">
 <p>
 定义
 </p>
@@ -6428,9 +7234,9 @@ B=\{\text{两次投掷结果之和为 }5\}.
 </p>
 </div>
 </div>
-<div id="outline-container-org4c76139" class="outline-3">
-<h3 id="org4c76139">第三问：最大值为 2 与最小值为 2 是否独立？</h3>
-<div class="outline-text-3" id="text-org4c76139">
+<div id="outline-container-orgece1234" class="outline-3">
+<h3 id="orgece1234">第三问：最大值为 2 与最小值为 2 是否独立？</h3>
+<div class="outline-text-3" id="text-orgece1234">
 <p>
 定义
 </p>
@@ -6544,9 +7350,9 @@ B=\{\text{两次投掷结果的最小值为 }2\}.
 </p>
 </div>
 </div>
-<div id="outline-container-org34cdf69" class="outline-3">
-<h3 id="org34cdf69">事件与补事件的独立性</h3>
-<div class="outline-text-3" id="text-org34cdf69">
+<div id="outline-container-orge6dd13c" class="outline-3">
+<h3 id="orge6dd13c">事件与补事件的独立性</h3>
+<div class="outline-text-3" id="text-orge6dd13c">
 <p>
 如果 \(A\) 和 \(B\) 独立，那么 \(B\) 的发生不会提供任何有关 \(A\) 发生概率的新信息。
 </p>
@@ -6557,9 +7363,9 @@ B=\{\text{两次投掷结果的最小值为 }2\}.
 </div>
 </div>
 </div>
-<div id="outline-container-orge23713d" class="outline-2">
-<h2 id="orge23713d">条件独立</h2>
-<div class="outline-text-2" id="text-orge23713d">
+<div id="outline-container-org97bc4b8" class="outline-2">
+<h2 id="org97bc4b8">条件独立</h2>
+<div class="outline-text-2" id="text-org97bc4b8">
 <p>
 前面已经指出：在给定某个事件的条件下，各事件的条件概率构成一个合法的概率律。因此，我们可以讨论在这个条件概率律下不同事件之间的独立性。
 </p>
@@ -6580,9 +7386,9 @@ B=\{\text{两次投掷结果的最小值为 }2\}.
 则称事件 \(A\) 和 \(B\) 在给定 \(C\) 的条件下*条件独立*。
 </p>
 </div>
-<div id="outline-container-org63d7e6e" class="outline-3">
-<h3 id="org63d7e6e">条件独立的另一种刻画</h3>
-<div class="outline-text-3" id="text-org63d7e6e">
+<div id="outline-container-org3b3732d" class="outline-3">
+<h3 id="org3b3732d">条件独立的另一种刻画</h3>
+<div class="outline-text-3" id="text-org3b3732d">
 <p>
 根据条件概率的定义和乘法法则，
 </p>
@@ -6662,9 +7468,9 @@ B=\{\text{两次投掷结果的最小值为 }2\}.
 </div>
 </div>
 </div>
-<div id="outline-container-org86a3d91" class="outline-2">
-<h2 id="org86a3d91">例 1.20：独立但不条件独立</h2>
-<div class="outline-text-2" id="text-org86a3d91">
+<div id="outline-container-org273b926" class="outline-2">
+<h2 id="org273b926">例 1.20：独立但不条件独立</h2>
+<div class="outline-text-2" id="text-org273b926">
 <p>
 考虑两次相互独立的公平硬币投掷，四种可能的结果都是等可能的。定义
 </p>
@@ -6776,9 +7582,9 @@ A\cap B\cap C=\varnothing.
 </p>
 </div>
 </div>
-<div id="outline-container-orge405721" class="outline-2">
-<h2 id="orge405721">例 1.21：条件独立但不无条件独立</h2>
-<div class="outline-text-2" id="text-orge405721">
+<div id="outline-container-orgc91d106" class="outline-2">
+<h2 id="orgc91d106">例 1.21：条件独立但不无条件独立</h2>
+<div class="outline-text-2" id="text-orgc91d106">
 <p>
 有两枚硬币，一枚蓝色，一枚红色。我们随机选择其中一枚，每枚硬币被选中的概率均为 \(1/2\)，然后将选中的硬币独立投掷两次。
 </p>
@@ -6931,9 +7737,9 @@ H_i=\{\text{第 }i\text{ 次投掷为正面}\}.
 </p>
 </div>
 </div>
-<div id="outline-container-orge05de37" class="outline-2">
-<h2 id="orge05de37">独立性总结</h2>
-<div class="outline-text-2" id="text-orge05de37">
+<div id="outline-container-orgf9b5cef" class="outline-2">
+<h2 id="orgf9b5cef">独立性总结</h2>
+<div class="outline-text-2" id="text-orgf9b5cef">
 <ul class="org-ul">
 <li><p>
 如果两个事件 \(A\) 和 \(B\) 满足
@@ -7005,16 +7811,16 @@ H_i=\{\text{第 }i\text{ 次投掷为正面}\}.
 </ul>
 </div>
 </div>
-<div id="outline-container-org0bcb74e" class="outline-2">
-<h2 id="org0bcb74e">一组事件的独立性</h2>
-<div class="outline-text-2" id="text-org0bcb74e">
+<div id="outline-container-org9c9d0e0" class="outline-2">
+<h2 id="org9c9d0e0">一组事件的独立性</h2>
+<div class="outline-text-2" id="text-org9c9d0e0">
 <p>
 独立性的定义可以推广到多个事件。
 </p>
 </div>
-<div id="outline-container-org830e185" class="outline-3">
-<h3 id="org830e185">多个事件独立的定义</h3>
-<div class="outline-text-3" id="text-org830e185">
+<div id="outline-container-org381ec20" class="outline-3">
+<h3 id="org381ec20">多个事件独立的定义</h3>
+<div class="outline-text-3" id="text-org381ec20">
 <p>
 如果对于集合
 </p>
@@ -7053,9 +7859,9 @@ A_1,A_2,\ldots,A_n
 </div>
 </div>
 </div>
-<div id="outline-container-orgce208f9" class="outline-2">
-<h2 id="orgce208f9">多个事件的独立性</h2>
-<div class="outline-text-2" id="text-orgce208f9">
+<div id="outline-container-orgcba73e1" class="outline-2">
+<h2 id="orgcba73e1">多个事件的独立性</h2>
+<div class="outline-text-2" id="text-orgcba73e1">
 <p>
 对于三个事件 \(A_1,A_2,A_3\)，它们相互独立意味着下面四个条件全部成立：
 </p>
@@ -7100,9 +7906,9 @@ A_1,A_2,\ldots,A_n
 然而，第四个条件同样重要，而且不能由前三个条件推出。反过来，第四个条件也不能推出前三个条件。下面两个例子分别说明这一点。
 </p>
 </div>
-<div id="outline-container-org2d35a36" class="outline-3">
-<h3 id="org2d35a36">例 1.22：两两独立不蕴含相互独立</h3>
-<div class="outline-text-3" id="text-org2d35a36">
+<div id="outline-container-org4212593" class="outline-3">
+<h3 id="org4212593">例 1.22：两两独立不蕴含相互独立</h3>
+<div class="outline-text-3" id="text-org4212593">
 <p>
 考虑两次相互独立的公平硬币投掷，并定义事件
 </p>
@@ -7177,9 +7983,9 @@ D=\{\text{两次投掷的结果不同}\}.
 </p>
 </div>
 </div>
-<div id="outline-container-org14580bd" class="outline-3">
-<h3 id="org14580bd">例 1.23：仅有三事件交集的乘积公式还不足以保证独立</h3>
-<div class="outline-text-3" id="text-org14580bd">
+<div id="outline-container-org0853dda" class="outline-3">
+<h3 id="org0853dda">例 1.23：仅有三事件交集的乘积公式还不足以保证独立</h3>
+<div class="outline-text-3" id="text-org0853dda">
 <p>
 考虑独立投掷一枚公平六面骰子两次，并定义事件
 </p>
@@ -7275,9 +8081,9 @@ C=\{\text{两次投掷结果之和为 }9\}.
 </p>
 </div>
 </div>
-<div id="outline-container-orgb947c2f" class="outline-3">
-<h3 id="orgb947c2f">多个事件独立的直观含义</h3>
-<div class="outline-text-3" id="text-orgb947c2f">
+<div id="outline-container-orgb6fcc5a" class="outline-3">
+<h3 id="orgb6fcc5a">多个事件独立的直观含义</h3>
+<div class="outline-text-3" id="text-orgb6fcc5a">
 <p>
 一组事件独立的直观含义与两个事件独立的情形类似。
 </p>
@@ -7316,9 +8122,9 @@ C=\{\text{两次投掷结果之和为 }9\}.
 </div>
 </div>
 </div>
-<div id="outline-container-orgcccdb8d" class="outline-2">
-<h2 id="orgcccdb8d">可靠性</h2>
-<div class="outline-text-2" id="text-orgcccdb8d">
+<div id="outline-container-orgc2c222f" class="outline-2">
+<h2 id="orgc2c222f">可靠性</h2>
+<div class="outline-text-2" id="text-orgc2c222f">
 <p>
 在由多个组件构成的复杂系统的概率模型中，通常可以方便地假设各组件的行为彼此不耦合，也就是相互独立。
 </p>
@@ -7327,9 +8133,9 @@ C=\{\text{两次投掷结果之和为 }9\}.
 这种假设一般会显著简化计算和分析。下面的例子对此进行说明。
 </p>
 </div>
-<div id="outline-container-orga8c0532" class="outline-3">
-<h3 id="orga8c0532">例 1.24：网络连通性</h3>
-<div class="outline-text-3" id="text-orga8c0532">
+<div id="outline-container-orgfb17d54" class="outline-3">
+<h3 id="orgfb17d54">例 1.24：网络连通性</h3>
+<div class="outline-text-3" id="text-orgfb17d54">
 <p>
 一个计算机网络通过中间节点 \(C,D,E,F\) 连接节点 \(A\) 和 \(B\)，如图 1.15(a) 所示。
 </p>
@@ -7342,9 +8148,9 @@ C=\{\text{两次投掷结果之和为 }9\}.
 问：存在一条从 \(A\) 到 \(B\)、且其中所有链路均正常工作的路径的概率是多少？
 </p>
 </div>
-<div id="outline-container-org3c17c0f" class="outline-4">
-<h4 id="org3c17c0f">图 1.15</h4>
-<div class="outline-text-4" id="text-org3c17c0f">
+<div id="outline-container-org4973ccf" class="outline-4">
+<h4 id="org4973ccf">图 1.15</h4>
+<div class="outline-text-4" id="text-org4973ccf">
 <p>
 图 1.15(a) 是例 1.24 中的网络。每条链路旁边的数字表示该链路正常工作的概率。
 </p>
@@ -7367,9 +8173,9 @@ C=\{\text{两次投掷结果之和为 }9\}.
 </p>
 </div>
 </div>
-<div id="outline-container-org49a1d9a" class="outline-4">
-<h4 id="org49a1d9a">串联系统</h4>
-<div class="outline-text-4" id="text-org49a1d9a">
+<div id="outline-container-org1d928d9" class="outline-4">
+<h4 id="org1d928d9">串联系统</h4>
+<div class="outline-text-4" id="text-org1d928d9">
 <p>
 设一个子系统包含组件 \(1,2,\ldots,m\)，并令 \(p_i\) 表示组件 \(i\) 正常工作的概率。
 </p>
@@ -7387,9 +8193,9 @@ p_1p_2\cdots p_m.
 </p>
 </div>
 </div>
-<div id="outline-container-org9e4328c" class="outline-4">
-<h4 id="org9e4328c">并联系统</h4>
-<div class="outline-text-4" id="text-org9e4328c">
+<div id="outline-container-org39256a6" class="outline-4">
+<h4 id="org39256a6">并联系统</h4>
+<div class="outline-text-4" id="text-org39256a6">
 <p>
 并联系统只要至少有一个组件正常工作就会成功。因此，可以先计算所有组件全部失效的概率：
 </p>
@@ -7409,9 +8215,9 @@ p_1p_2\cdots p_m.
 </p>
 </div>
 </div>
-<div id="outline-container-org749f0a6" class="outline-4">
-<h4 id="org749f0a6">网络成功概率</h4>
-<div class="outline-text-4" id="text-org749f0a6">
+<div id="outline-container-orgb2fcf3f" class="outline-4">
+<h4 id="orgb2fcf3f">网络成功概率</h4>
+<div class="outline-text-4" id="text-orgb2fcf3f">
 <p>
 回到图 1.15(a) 的网络。我们可以从末端开始，依次使用上述公式计算存在从 \(A\) 到 \(B\) 的可用路径的概率。
 </p>
@@ -7530,9 +8336,9 @@ X\longrightarrow Y
 </div>
 </div>
 </div>
-<div id="outline-container-org8e0275d" class="outline-2">
-<h2 id="org8e0275d">独立试验与二项概率</h2>
-<div class="outline-text-2" id="text-org8e0275d">
+<div id="outline-container-org01e4286" class="outline-2">
+<h2 id="org01e4286">独立试验与二项概率</h2>
+<div class="outline-text-2" id="text-org01e4286">
 <p>
 如果一个实验由一系列相互独立且结构相同的阶段组成，我们称之为一系列*独立试验*。
 </p>
@@ -7613,9 +8419,9 @@ p^k(1-p)^{n-k},
 \]
 </p>
 </div>
-<div id="outline-container-orgc22e326" class="outline-3">
-<h3 id="orgc22e326">图 1.16：三次独立硬币投掷的顺序表示</h3>
-<div class="outline-text-3" id="text-orgc22e326">
+<div id="outline-container-orgb624d08" class="outline-3">
+<h3 id="orgb624d08">图 1.16：三次独立硬币投掷的顺序表示</h3>
+<div class="outline-text-3" id="text-orgb624d08">
 <p>
 在树的各条分支上标记相应的条件概率。根据乘法法则，一个特定的三次投掷序列的概率，等于通向相应叶节点的路径上所有概率的乘积。
 </p>
@@ -7733,9 +8539,9 @@ i!
 </p>
 </div>
 </div>
-<div id="outline-container-org507b747" class="outline-3">
-<h3 id="org507b747">例 1.25：服务等级</h3>
-<div class="outline-text-3" id="text-org507b747">
+<div id="outline-container-orgb638f5d" class="outline-3">
+<h3 id="orgb638f5d">例 1.25：服务等级</h3>
+<div class="outline-text-3" id="text-orgb638f5d">
 <p>
 某互联网服务提供商安装了 \(c\) 台调制解调器，为 \(n\) 名拨号上网用户提供服务。
 </p>
@@ -7804,9 +8610,9 @@ n=100,\qquad p=0.1,\qquad c=15
 </div>
 </div>
 </div>
-<div id="outline-container-orgd38046c" class="outline-2">
-<h2 id="orgd38046c">1.6 计数</h2>
-<div class="outline-text-2" id="text-orgd38046c">
+<div id="outline-container-orgb3728f6" class="outline-2">
+<h2 id="orgb3728f6">1.6 计数</h2>
+<div class="outline-text-2" id="text-orgb3728f6">
 <p>
 概率计算经常涉及对各种事件中结果的数量进行计数。前面已经见过两种需要计数的情形。
 </p>
@@ -7862,9 +8668,9 @@ n=100,\qquad p=0.1,\qquad c=15
 本节将介绍基本计数原理，并将其应用于概率模型中经常遇到的若干情形。
 </p>
 </div>
-<div id="outline-container-org689259f" class="outline-3">
-<h3 id="org689259f">基本计数原理</h3>
-<div class="outline-text-3" id="text-org689259f">
+<div id="outline-container-org98e6c10" class="outline-3">
+<h3 id="org98e6c10">基本计数原理</h3>
+<div class="outline-text-3" id="text-org98e6c10">
 <p>
 基本计数原理采用“分而治之”的方法，利用树把计数问题分解成多个阶段。
 </p>
@@ -7904,9 +8710,9 @@ mn
 个。这个结论可以推广如下。
 </p>
 </div>
-<div id="outline-container-org14ce436" class="outline-4">
-<h4 id="org14ce436">图 1.17：基本计数原理</h4>
-<div class="outline-text-4" id="text-org14ce436">
+<div id="outline-container-org423c575" class="outline-4">
+<h4 id="org423c575">图 1.17：基本计数原理</h4>
+<div class="outline-text-4" id="text-org423c575">
 <p>
 计数过程被分成 \(r\) 个阶段，图中取 \(r=4\)。
 </p>
@@ -7931,9 +8737,9 @@ n_1n_2\cdots n_r,
 </p>
 </div>
 </div>
-<div id="outline-container-org8b4f466" class="outline-4">
-<h4 id="org8b4f466">计数原理</h4>
-<div class="outline-text-4" id="text-org8b4f466">
+<div id="outline-container-org624a09f" class="outline-4">
+<h4 id="org624a09f">计数原理</h4>
+<div class="outline-text-4" id="text-org624a09f">
 <p>
 考虑一个由 \(r\) 个阶段组成的过程。假设：
 </p>
@@ -7956,9 +8762,9 @@ n_1n_2\cdots n_r.
 </div>
 </div>
 </div>
-<div id="outline-container-org364aa99" class="outline-3">
-<h3 id="org364aa99">例 1.26：电话号码的数量</h3>
-<div class="outline-text-3" id="text-org364aa99">
+<div id="outline-container-org2862e56" class="outline-3">
+<h3 id="org2862e56">例 1.26：电话号码的数量</h3>
+<div class="outline-text-3" id="text-org2862e56">
 <p>
 本地电话号码是一个由 7 位数字组成的序列，但第一位不能是 0 或 1。
 </p>
@@ -7990,9 +8796,9 @@ n_1n_2\cdots n_r.
 </p>
 </div>
 </div>
-<div id="outline-container-org29dd83c" class="outline-3">
-<h3 id="org29dd83c">例 1.27：\(n\) 元素集合的子集数量</h3>
-<div class="outline-text-3" id="text-org29dd83c">
+<div id="outline-container-org302593e" class="outline-3">
+<h3 id="org302593e">例 1.27：\(n\) 元素集合的子集数量</h3>
+<div class="outline-text-3" id="text-org302593e">
 <p>
 考虑一个包含 \(n\) 个元素的集合
 </p>
@@ -8055,9 +8861,9 @@ n_1n_2\cdots n_r.
 </div>
 </div>
 </div>
-<div id="outline-container-orgc90875f" class="outline-2">
-<h2 id="orgc90875f">\(k\)-排列</h2>
-<div class="outline-text-2" id="text-orgc90875f">
+<div id="outline-container-orgb4e6799" class="outline-2">
+<h2 id="orgb4e6799">\(k\)-排列</h2>
+<div class="outline-text-2" id="text-orgb4e6799">
 <p>
 从 \(n\) 个互不相同的对象开始，设 \(k\) 为满足
 </p>
@@ -8150,9 +8956,9 @@ n!.
 \]
 </p>
 </div>
-<div id="outline-container-org097e190" class="outline-3">
-<h3 id="org097e190">例 1.28：由四个不同字母组成的单词</h3>
-<div class="outline-text-3" id="text-org097e190">
+<div id="outline-container-org820ff35" class="outline-3">
+<h3 id="org820ff35">例 1.28：由四个不同字母组成的单词</h3>
+<div class="outline-text-3" id="text-org820ff35">
 <p>
 计算由四个互不相同的字母组成的字母序列数量。
 </p>
@@ -8182,9 +8988,9 @@ n!.
 </p>
 </div>
 </div>
-<div id="outline-container-org6502e95" class="outline-3">
-<h3 id="org6502e95">例 1.29：排列不同类型的 CD</h3>
-<div class="outline-text-3" id="text-org6502e95">
+<div id="outline-container-org23b57e4" class="outline-3">
+<h3 id="org23b57e4">例 1.29：排列不同类型的 CD</h3>
+<div class="outline-text-3" id="text-org23b57e4">
 <p>
 现有：
 </p>
@@ -8299,9 +9105,9 @@ k_i<n_i,\qquad i=1,2,3.
 </div>
 </div>
 </div>
-<div id="outline-container-orgc76ab87" class="outline-2">
-<h2 id="orgc76ab87">组合</h2>
-<div class="outline-text-2" id="text-orgc76ab87">
+<div id="outline-container-org55e4f3f" class="outline-2">
+<h2 id="org55e4f3f">组合</h2>
+<div class="outline-text-2" id="text-org55e4f3f">
 <p>
 现有 \(n\) 个人，希望组成一个由 \(k\) 人构成的委员会。共有多少种不同的委员会？
 </p>
@@ -8378,9 +9184,9 @@ AB,AC,AD,BC,BD,CD.
 这是因为，指定一个包含 \(k\) 个正面的 \(n\) 次投掷序列，等价于从 \(n\) 个投掷位置中选择 \(k\) 个作为出现正面的位置。
 </p>
 </div>
-<div id="outline-container-org2582442" class="outline-3">
-<h3 id="org2582442">例 1.30：从四个字母中选择两个</h3>
-<div class="outline-text-3" id="text-org2582442">
+<div id="outline-container-org7f33397" class="outline-3">
+<h3 id="org7f33397">例 1.30：从四个字母中选择两个</h3>
+<div class="outline-text-3" id="text-org7f33397">
 <p>
 令
 </p>
@@ -8410,9 +9216,9 @@ n=4,\qquad k=2.
 </p>
 </div>
 </div>
-<div id="outline-container-org941c25e" class="outline-3">
-<h3 id="org941c25e">计数解释与二项公式</h3>
-<div class="outline-text-3" id="text-org941c25e">
+<div id="outline-container-orgcf3667f" class="outline-3">
+<h3 id="orgcf3667f">计数解释与二项公式</h3>
+<div class="outline-text-3" id="text-orgcf3667f">
 <p>
 计数方法有时能够给出一些难以直接通过代数推导的公式。
 </p>
@@ -8491,9 +9297,9 @@ p=\frac{1}{2}
 </p>
 </div>
 </div>
-<div id="outline-container-org14398e4" class="outline-3">
-<h3 id="org14398e4">例 1.31：带有负责人的俱乐部</h3>
-<div class="outline-text-3" id="text-org14398e4">
+<div id="outline-container-org09d473d" class="outline-3">
+<h3 id="org09d473d">例 1.31：带有负责人的俱乐部</h3>
+<div class="outline-text-3" id="text-org09d473d">
 <p>
 有一个由 \(n\) 个人组成的群体。考虑这样的俱乐部：
 </p>
@@ -8507,9 +9313,9 @@ p=\frac{1}{2}
 我们用两种不同的方法计算这种俱乐部的数量，从而得到一个代数恒等式。
 </p>
 </div>
-<div id="outline-container-org4907894" class="outline-4">
-<h4 id="org4907894">第一种计数方法</h4>
-<div class="outline-text-4" id="text-org4907894">
+<div id="outline-container-org38f00d1" class="outline-4">
+<h4 id="org38f00d1">第一种计数方法</h4>
+<div class="outline-text-4" id="text-org38f00d1">
 <p>
 负责人有
 </p>
@@ -8549,9 +9355,9 @@ n2^{n-1}.
 </p>
 </div>
 </div>
-<div id="outline-container-org6c1cad1" class="outline-4">
-<h4 id="org6c1cad1">第二种计数方法</h4>
-<div class="outline-text-4" id="text-org6c1cad1">
+<div id="outline-container-org11ab844" class="outline-4">
+<h4 id="org11ab844">第二种计数方法</h4>
+<div class="outline-text-4" id="text-org11ab844">
 <p>
 固定俱乐部总人数为 \(k\)。
 </p>
@@ -8603,9 +9409,9 @@ n2^{n-1}
 </div>
 </div>
 </div>
-<div id="outline-container-orgf1e106e" class="outline-2">
-<h2 id="orgf1e106e">划分</h2>
-<div class="outline-text-2" id="text-orgf1e106e">
+<div id="outline-container-org76d619b" class="outline-2">
+<h2 id="org76d619b">划分</h2>
+<div class="outline-text-2" id="text-org76d619b">
 <p>
 组合是从一个 \(n\) 元素集合中选出 \(k\) 个元素，并且不考虑顺序。
 </p>
@@ -8738,9 +9544,9 @@ n_1+n_2+\cdots+n_r=n.
 \]
 </p>
 </div>
-<div id="outline-container-orge7f3158" class="outline-3">
-<h3 id="orge7f3158">例 1.32：变位词</h3>
-<div class="outline-text-3" id="text-orge7f3158">
+<div id="outline-container-org909a28b" class="outline-3">
+<h3 id="org909a28b">例 1.32：变位词</h3>
+<div class="outline-text-3" id="text-org909a28b">
 <p>
 重新排列单词
 </p>
@@ -8849,9 +9655,9 @@ T_1AT_2T_3O_1O_2.
 </p>
 </div>
 </div>
-<div id="outline-container-org4e65224" class="outline-3">
-<h3 id="org4e65224">例 1.33：把研究生和本科生分组</h3>
-<div class="outline-text-3" id="text-org4e65224">
+<div id="outline-container-org2a8d551" class="outline-3">
+<h3 id="org2a8d551">例 1.33：把研究生和本科生分组</h3>
+<div class="outline-text-3" id="text-org2a8d551">
 <p>
 一个班级由 4 名研究生和 12 名本科生组成。现将这 16 名学生随机分成 4 组，每组 4 人。
 </p>
@@ -8941,9 +9747,9 @@ T_1AT_2T_3O_1O_2.
 </div>
 </div>
 </div>
-<div id="outline-container-orgc163234" class="outline-2">
-<h2 id="orgc163234">例 1.33：把研究生和本科生分组（续）</h2>
-<div class="outline-text-2" id="text-orgc163234">
+<div id="outline-container-org8c91afd" class="outline-2">
+<h2 id="org8c91afd">例 1.33：把研究生和本科生分组（续）</h2>
+<div class="outline-text-2" id="text-org8c91afd">
 <p>
 使每个小组都包含一名研究生的划分共有
 </p>
@@ -9004,16 +9810,16 @@ T_1AT_2T_3O_1O_2.
 </p>
 </div>
 </div>
-<div id="outline-container-org965a75d" class="outline-2">
-<h2 id="org965a75d">1.7 总结与讨论</h2>
-<div class="outline-text-2" id="text-org965a75d">
+<div id="outline-container-org53fcbf0" class="outline-2">
+<h2 id="org53fcbf0">1.7 总结与讨论</h2>
+<div class="outline-text-2" id="text-org53fcbf0">
 <p>
 下面总结本章得到的计数结果。
 </p>
 </div>
-<div id="outline-container-org49c0aa7" class="outline-3">
-<h3 id="org49c0aa7">计数结果总结</h3>
-<div class="outline-text-3" id="text-org49c0aa7">
+<div id="outline-container-orgaa3802f" class="outline-3">
+<h3 id="orgaa3802f">计数结果总结</h3>
+<div class="outline-text-3" id="text-orgaa3802f">
 <ul class="org-ul">
 <li><p>
 \(n\) 个不同对象的*全排列数*：
@@ -9074,18 +9880,20 @@ T_1AT_2T_3O_1O_2.
 </div>
 </div>
 </div>
-<div id="outline-container-org44b630e" class="outline-2">
-<h2 id="org44b630e">Chapter2: Discrete random Variables</h2>
-<div class="outline-text-2" id="text-org44b630e">
+<div id="outline-container-orgfefa20b" class="outline-2">
+<h2 id="orgfefa20b">Chapter2: Discrete random Variables</h2>
 </div>
+
+
+
+
+<div id="outline-container-org692e92e" class="outline-2">
+<h2 id="org692e92e">第 72 页</h2>
+<div class="outline-text-2" id="text-org692e92e">
 </div>
-<div id="outline-container-orgc2e3626" class="outline-2">
-<h2 id="orgc2e3626">第 72 页</h2>
-<div class="outline-text-2" id="text-orgc2e3626">
-</div>
-<div id="outline-container-orga231e2a" class="outline-3">
-<h3 id="orga231e2a">2.1 基本概念</h3>
-<div class="outline-text-3" id="text-orga231e2a">
+<div id="outline-container-org9496811" class="outline-3">
+<h3 id="org9496811">2.1 基本概念</h3>
+<div class="outline-text-3" id="text-org9496811">
 <p>
 在许多概率模型中，实验结果是数值，例如仪器读数或股票价格。在另一些实验中，结果本身并不是数值，但可以与某些我们感兴趣的数值联系起来。例如，如果实验是从某个给定总体中选取学生，我们可能希望考察他们的平均绩点。在处理这类数值时，为它们赋予概率通常很有用。这是通过“随机变量”这一概念实现的，而随机变量正是本章的主题。
 </p>
@@ -9095,10 +9903,10 @@ T_1AT_2T_3O_1O_2.
 </p>
 
 
-<div id="org3c01c9a" class="figure">
+<div id="org34f3b00" class="figure">
 <p><img src="page-082.png" alt="page-082.png" />
 </p>
-<p><span class="figure-number">&#22270;1&nbsp; </span>图 2.1：（a）随机变量的直观表示。随机变量是一个函数，它为实验的每个可能结果赋予一个数值。（b）随机变量的一个例子。实验包括独立掷一枚公平四面骰子两次，随机变量取两次点数中的最大值。如果实验结果为 \((4,2)\)，则该随机变量的值为 4。</p>
+<p><span class="figure-number">Figure 1: </span>图 2.1：（a）随机变量的直观表示。随机变量是一个函数，它为实验的每个可能结果赋予一个数值。（b）随机变量的一个例子。实验包括独立掷一枚公平四面骰子两次，随机变量取两次点数中的最大值。如果实验结果为 \((4,2)\)，则该随机变量的值为 4。</p>
 </div>
 
 <p>
@@ -9111,9 +9919,9 @@ T_1AT_2T_3O_1O_2.
 </div>
 </div>
 </div>
-<div id="outline-container-org0ce510c" class="outline-2">
-<h2 id="org0ce510c">第 73 页</h2>
-<div class="outline-text-2" id="text-org0ce510c">
+<div id="outline-container-org353de81" class="outline-2">
+<h2 id="org353de81">第 73 页</h2>
+<div class="outline-text-2" id="text-org353de81">
 <ol class="org-ol">
 <li>在掷一枚骰子两次的实验中，下面这些量都是随机变量：
 
@@ -9130,9 +9938,9 @@ T_1AT_2T_3O_1O_2.
 与随机变量有关的几个基本概念总结如下。本章将对这些概念进行详细讨论。
 </p>
 </div>
-<div id="outline-container-org828f4ab" class="outline-4">
-<h4 id="org828f4ab">与随机变量有关的主要概念</h4>
-<div class="outline-text-4" id="text-org828f4ab">
+<div id="outline-container-org313e9b0" class="outline-4">
+<h4 id="org313e9b0">与随机变量有关的主要概念</h4>
+<div class="outline-text-4" id="text-org313e9b0">
 <p>
 从一个实验的概率模型出发：
 </p>
@@ -9168,9 +9976,9 @@ T_1AT_2T_3O_1O_2.
 </div>
 </div>
 </div>
-<div id="outline-container-org18ac1c1" class="outline-2">
-<h2 id="org18ac1c1">第 74 页</h2>
-<div class="outline-text-2" id="text-org18ac1c1">
+<div id="outline-container-org3cc411d" class="outline-2">
+<h2 id="org3cc411d">第 74 页</h2>
+<div class="outline-text-2" id="text-org3cc411d">
 <p>
 则是离散的。
 </p>
@@ -9179,9 +9987,9 @@ T_1AT_2T_3O_1O_2.
 本章将只讨论离散随机变量，不过通常会省略“离散”这个限定词。
 </p>
 </div>
-<div id="outline-container-org834516e" class="outline-4">
-<h4 id="org834516e">与离散随机变量有关的概念</h4>
-<div class="outline-text-4" id="text-org834516e">
+<div id="outline-container-orgfd2e39c" class="outline-4">
+<h4 id="orgfd2e39c">与离散随机变量有关的概念</h4>
+<div class="outline-text-4" id="text-orgfd2e39c">
 <p>
 从一个实验的概率模型出发：
 </p>
@@ -9201,9 +10009,9 @@ T_1AT_2T_3O_1O_2.
 </p>
 </div>
 </div>
-<div id="outline-container-org686c67a" class="outline-3">
-<h3 id="org686c67a">2.2 概率质量函数</h3>
-<div class="outline-text-3" id="text-org686c67a">
+<div id="outline-container-org9ba8e93" class="outline-3">
+<h3 id="org9ba8e93">2.2 概率质量函数</h3>
+<div class="outline-text-3" id="text-org9ba8e93">
 <p>
 刻画随机变量最重要的方式，是描述它能够取到的各个值的概率。对于离散随机变量 \(X\)，这些概率由 \(X\) 的 *概率质量函数*（probability mass function，简称 PMF）给出，记作 \(p_X\)。
 </p>
@@ -9224,9 +10032,9 @@ p_X(x)=\operatorname{P}(\{X=x\}).
 </div>
 </div>
 </div>
-<div id="outline-container-org9fbc7a8" class="outline-2">
-<h2 id="org9fbc7a8">第 75 页</h2>
-<div class="outline-text-2" id="text-org9fbc7a8">
+<div id="outline-container-org65759d5" class="outline-2">
+<h2 id="org65759d5">第 75 页</h2>
+<div class="outline-text-2" id="text-org65759d5">
 <p>
 \[
 p_X(x)=
@@ -9289,9 +10097,9 @@ p_X(x)=
 从概念上说，计算 \(X\) 的 PMF 十分直接，如图 2.2 所示。
 </p>
 </div>
-<div id="outline-container-org6ef60a0" class="outline-4">
-<h4 id="org6ef60a0">随机变量 \(X\) 的 PMF 的计算方法</h4>
-<div class="outline-text-4" id="text-org6ef60a0">
+<div id="outline-container-org0d1a889" class="outline-4">
+<h4 id="org0d1a889">随机变量 \(X\) 的 PMF 的计算方法</h4>
+<div class="outline-text-4" id="text-org0d1a889">
 <p>
 对于 \(X\) 的每一个可能值 $x$：
 </p>
@@ -9302,23 +10110,23 @@ p_X(x)=
 </ol>
 </div>
 </div>
-<div id="outline-container-orge30db3c" class="outline-4">
-<h4 id="orge30db3c">伯努利随机变量</h4>
-<div class="outline-text-4" id="text-orge30db3c">
+<div id="outline-container-orgf4fa88d" class="outline-4">
+<h4 id="orgf4fa88d">伯努利随机变量</h4>
+<div class="outline-text-4" id="text-orgf4fa88d">
 <p>
 考虑抛掷一枚硬币：它以概率 \(p\) 出现正面，以概率 \(1-p\) 出现反面。*伯努利随机变量* 取 1 和 0 两个值，具体取值取决于实验结果是正面还是反面。
 </p>
 </div>
 </div>
 </div>
-<div id="outline-container-org5ca184e" class="outline-2">
-<h2 id="org5ca184e">第 76 页</h2>
-<div class="outline-text-2" id="text-org5ca184e">
+<div id="outline-container-orgfa460e7" class="outline-2">
+<h2 id="orgfa460e7">第 76 页</h2>
+<div class="outline-text-2" id="text-orgfa460e7">
 
-<div id="org7864457" class="figure">
+<div id="org9e7c8b2" class="figure">
 <p><img src="page-086.png" alt="page-086.png" />
 </p>
-<p><span class="figure-number">&#22270;2&nbsp; </span>图 2.2：（a）计算随机变量 \(X\) 的 PMF 的方法示意图。对于每一个可能值 \(x\)，收集所有使 \(X=x\) 的实验结果，并将它们的概率相加，从而得到 \(p_X(x)\)。（b）计算随机变量 \(X\) 的 PMF，其中 \(X\) 是独立掷一枚公平四面骰子两次所得点数的最大值。\(x\) 有四个可能值，即 1、2、3、4。为了计算给定 \(x\) 的 \(p_X(x)\)，需要将所有使随机变量取值为 \(x\) 的实验结果的概率相加。例如，使 \(x=2\) 的结果共有三个，即 \((1,2)\)、\((2,2)\) 和 \((2,1)\)。每个结果的概率都是 \(1/16\)，因此，如图所示，\(p_X(2)=3/16\)。</p>
+<p><span class="figure-number">Figure 2: </span>图 2.2：（a）计算随机变量 \(X\) 的 PMF 的方法示意图。对于每一个可能值 \(x\)，收集所有使 \(X=x\) 的实验结果，并将它们的概率相加，从而得到 \(p_X(x)\)。（b）计算随机变量 \(X\) 的 PMF，其中 \(X\) 是独立掷一枚公平四面骰子两次所得点数的最大值。\(x\) 有四个可能值，即 1、2、3、4。为了计算给定 \(x\) 的 \(p_X(x)\)，需要将所有使随机变量取值为 \(x\) 的实验结果的概率相加。例如，使 \(x=2\) 的结果共有三个，即 \((1,2)\)、\((2,2)\) 和 \((2,1)\)。每个结果的概率都是 \(1/16\)，因此，如图所示，\(p_X(2)=3/16\)。</p>
 </div>
 
 <p>
@@ -9358,9 +10166,9 @@ p_X(k)=
 </p>
 </div>
 </div>
-<div id="outline-container-org16f0c8c" class="outline-2">
-<h2 id="org16f0c8c">第 77 页</h2>
-<div class="outline-text-2" id="text-org16f0c8c">
+<div id="outline-container-orged686ce" class="outline-2">
+<h2 id="orged686ce">第 77 页</h2>
+<div class="outline-text-2" id="text-orged686ce">
 <blockquote>
 <p>
 <b>图 2.3：</b> 二项随机变量的 PMF。当 \(p=1/2\) 时，PMF 关于 \(n/2\) 对称。否则，当 \(p<1/2\) 时，PMF 向 0 偏斜；当 \(p>1/2\) 时，PMF 向 \(n\) 偏斜。
@@ -9381,9 +10189,9 @@ p_X(k)=
 此外，通过组合多个伯努利随机变量，还可以构造出更复杂的随机变量，例如下面将要讨论的二项随机变量。
 </p>
 </div>
-<div id="outline-container-org8e0e22c" class="outline-3">
-<h3 id="org8e0e22c">二项随机变量</h3>
-<div class="outline-text-3" id="text-org8e0e22c">
+<div id="outline-container-org0b58194" class="outline-3">
+<h3 id="org0b58194">二项随机变量</h3>
+<div class="outline-text-3" id="text-org0b58194">
 <p>
 将一枚硬币抛掷 \(n\) 次。每次抛掷中，硬币以概率 \(p\) 出现正面，以概率 \(1-p\) 出现反面，并且每次抛掷均与此前的抛掷相互独立。令 \(X\) 表示这 \(n\) 次抛掷中出现正面的次数。我们称 \(X\) 为参数为 \(n\) 和 \(p\) 的 *二项随机变量*。
 </p>
@@ -9420,18 +10228,18 @@ p_X(k)
 </p>
 </div>
 </div>
-<div id="outline-container-org8febade" class="outline-3">
-<h3 id="org8febade">几何随机变量</h3>
-<div class="outline-text-3" id="text-org8febade">
+<div id="outline-container-org0538e76" class="outline-3">
+<h3 id="org0538e76">几何随机变量</h3>
+<div class="outline-text-3" id="text-org0538e76">
 <p>
 假设我们反复且独立地抛掷一枚硬币，其出现正面的概率为 \(p\)，其中 \(0<p<1\)。几何随机变量是……
 </p>
 </div>
 </div>
 </div>
-<div id="outline-container-orgbc21b08" class="outline-2">
-<h2 id="orgbc21b08">第 78 页</h2>
-<div class="outline-text-2" id="text-orgbc21b08">
+<div id="outline-container-org673752e" class="outline-2">
+<h2 id="org673752e">第 78 页</h2>
+<div class="outline-text-2" id="text-org673752e">
 <blockquote>
 <p>
 <b>图 2.4：</b> 几何随机变量的 PMF
@@ -9490,9 +10298,9 @@ p_X(k)=(1-p)^{k-1}p,
 每次试验成功的概率都是 \(p\)，而直到并包括第一次成功在内所进行的试验次数，由几何随机变量建模。“成功”的含义取决于具体语境。例如，它可以表示在某次尝试中通过考试、在某次搜索中找到丢失的物品，或者在某次拨打电话时成功接通税务咨询热线等。
 </p>
 </div>
-<div id="outline-container-org4b39683" class="outline-3">
-<h3 id="org4b39683">泊松随机变量</h3>
-<div class="outline-text-3" id="text-org4b39683">
+<div id="outline-container-org04fa138" class="outline-3">
+<h3 id="org04fa138">泊松随机变量</h3>
+<div class="outline-text-3" id="text-org04fa138">
 <p>
 泊松随机变量的 PMF 为
 </p>
@@ -9531,9 +10339,9 @@ p_X(k)=e^{-\lambda}\frac{\lambda^k}{k!},
 </div>
 </div>
 </div>
-<div id="outline-container-org9ee2f93" class="outline-2">
-<h2 id="org9ee2f93">第 79 页</h2>
-<div class="outline-text-2" id="text-org9ee2f93">
+<div id="outline-container-org212916b" class="outline-2">
+<h2 id="org212916b">第 79 页</h2>
+<div class="outline-text-2" id="text-org212916b">
 <blockquote>
 <p>
 <b>图 2.5：</b> 参数 \(\lambda\) 取不同值时，泊松随机变量的 PMF
@@ -9625,13 +10433,13 @@ e^{-1}\frac{1}{5!}=0.00306.
 </p>
 </div>
 </div>
-<div id="outline-container-org91f3fcc" class="outline-2">
-<h2 id="org91f3fcc">第 80 页</h2>
-<div class="outline-text-2" id="text-org91f3fcc">
+<div id="outline-container-orgcbd8930" class="outline-2">
+<h2 id="orgcbd8930">第 80 页</h2>
+<div class="outline-text-2" id="text-orgcbd8930">
 </div>
-<div id="outline-container-org736930d" class="outline-3">
-<h3 id="org736930d">2.3 随机变量的函数</h3>
-<div class="outline-text-3" id="text-org736930d">
+<div id="outline-container-org268b451" class="outline-3">
+<h3 id="org268b451">2.3 随机变量的函数</h3>
+<div class="outline-text-3" id="text-org268b451">
 <p>
 给定一个随机变量 \(X\)，可以通过对 \(X\) 施加各种变换来产生其他随机变量。
 </p>
@@ -9706,9 +10514,9 @@ p_Y(y)
 \]
 </p>
 </div>
-<div id="outline-container-org45d9af5" class="outline-4">
-<h4 id="org45d9af5">例 2.1</h4>
-<div class="outline-text-4" id="text-org45d9af5">
+<div id="outline-container-org3cb6e6c" class="outline-4">
+<h4 id="org3cb6e6c">例 2.1</h4>
+<div class="outline-text-4" id="text-org3cb6e6c">
 <p>
 令
 </p>
@@ -9793,9 +10601,9 @@ p_Y(y)=
 </div>
 </div>
 </div>
-<div id="outline-container-org0dfc901" class="outline-2">
-<h2 id="org0dfc901">第 81 页</h2>
-<div class="outline-text-2" id="text-org0dfc901">
+<div id="outline-container-org73f72b6" class="outline-2">
+<h2 id="org73f72b6">第 81 页</h2>
+<div class="outline-text-2" id="text-org73f72b6">
 <blockquote>
 <p>
 <b>图 2.6：</b> 例 2.1 中 \(X\) 与 \(Y=|X|\) 的 PMF。
@@ -9857,9 +10665,9 @@ p_Z(z)=
 \]
 </p>
 </div>
-<div id="outline-container-orgae30d38" class="outline-3">
-<h3 id="orgae30d38">2.4 期望、均值与方差</h3>
-<div class="outline-text-3" id="text-orgae30d38">
+<div id="outline-container-org55c20b8" class="outline-3">
+<h3 id="org55c20b8">2.4 期望、均值与方差</h3>
+<div class="outline-text-3" id="text-org55c20b8">
 <p>
 随机变量 \(X\) 的 PMF 为我们提供了若干数值，即 \(X\) 所有可能取值的概率。然而，我们经常希望用一个具有代表性的数来概括这些信息。
 </p>
@@ -9923,9 +10731,9 @@ M=
 </div>
 </div>
 </div>
-<div id="outline-container-orgb119306" class="outline-2">
-<h2 id="orgb119306">第 82 页</h2>
-<div class="outline-text-2" id="text-orgb119306">
+<div id="outline-container-org65561a6" class="outline-2">
+<h2 id="org65561a6">第 82 页</h2>
+<div class="outline-text-2" id="text-org65561a6">
 <p>
 也就是说，
 </p>
@@ -9957,9 +10765,9 @@ M
 受这个例子的启发，我们引入下面的定义。
 </p>
 </div>
-<div id="outline-container-orga148b0a" class="outline-4">
-<h4 id="orga148b0a">期望</h4>
-<div class="outline-text-4" id="text-orga148b0a">
+<div id="outline-container-org8620598" class="outline-4">
+<h4 id="org8620598">期望</h4>
+<div class="outline-text-4" id="text-org8620598">
 <p>
 对于 PMF 为 \(p_X\) 的随机变量 \(X\)，其 <b>期望值*（也称为 *期望</b> 或 *均值*）定义为
 </p>
@@ -9973,9 +10781,9 @@ M
 </p>
 </div>
 </div>
-<div id="outline-container-org9f229bc" class="outline-4">
-<h4 id="org9f229bc">例 2.2</h4>
-<div class="outline-text-4" id="text-org9f229bc">
+<div id="outline-container-orgf170469" class="outline-4">
+<h4 id="orgf170469">例 2.2</h4>
+<div class="outline-text-4" id="text-orgf170469">
 <p>
 考虑两次相互独立的硬币抛掷，每次出现正面的概率都是 \(3/4\)。令 \(X\) 表示得到的正面次数。
 </p>
@@ -10031,9 +10839,9 @@ p_X(k)=
 </div>
 </div>
 </div>
-<div id="outline-container-orgb6cf70b" class="outline-2">
-<h2 id="orgb6cf70b">第 83 页</h2>
-<div class="outline-text-2" id="text-orgb6cf70b">
+<div id="outline-container-org985c41c" class="outline-2">
+<h2 id="org985c41c">第 83 页</h2>
+<div class="outline-text-2" id="text-org985c41c">
 <p>
 把 \(X\) 的均值看成 \(X\) 的一个“代表值”很有用；这个值大致位于其取值范围的中间。我们还可以更准确地把均值理解为 PMF 的 *重心*，其含义如图 2.7 所示。特别地，如果 PMF 关于某一点对称，那么该点一定等于均值。
 </p>
@@ -10068,9 +10876,9 @@ c=\sum_x x p_X(x),
 </p>
 </blockquote>
 </div>
-<div id="outline-container-org82362fb" class="outline-3">
-<h3 id="org82362fb">方差、矩与期望值法则</h3>
-<div class="outline-text-3" id="text-org82362fb">
+<div id="outline-container-org5c8d744" class="outline-3">
+<h3 id="org5c8d744">方差、矩与期望值法则</h3>
+<div class="outline-text-3" id="text-org5c8d744">
 <p>
 除了均值之外，还可以把其他若干量与随机变量及其 PMF 联系起来。例如，我们把随机变量 \(X\) 的 <b>二阶矩</b> 定义为随机变量 \(X^2\) 的期望值。
 </p>
@@ -10127,9 +10935,9 @@ c=\sum_x x p_X(x),
 </div>
 </div>
 </div>
-<div id="outline-container-orgcbac1b9" class="outline-2">
-<h2 id="orgcbac1b9">第 84 页</h2>
-<div class="outline-text-2" id="text-orgcbac1b9">
+<div id="outline-container-org57d4e6d" class="outline-2">
+<h2 id="org57d4e6d">第 84 页</h2>
+<div class="outline-text-2" id="text-org57d4e6d">
 <p>
 标准差往往更容易解释，因为它与 \(X\) 具有相同的单位。例如，如果 \(X\) 以米为单位度量长度，那么方差的单位是平方米，而标准差的单位仍然是米。
 </p>
@@ -10148,9 +10956,9 @@ c=\sum_x x p_X(x),
 的 PMF，然后应用期望值的定义。这个随机变量是 \(X\) 的函数，其 PMF 可以用上一节介绍的方法得到。
 </p>
 </div>
-<div id="outline-container-orgc176b02" class="outline-4">
-<h4 id="orgc176b02">例 2.3</h4>
-<div class="outline-text-4" id="text-orgc176b02">
+<div id="outline-container-orgbc7e3b9" class="outline-4">
+<h4 id="orgbc7e3b9">例 2.3</h4>
+<div class="outline-text-4" id="text-orgbc7e3b9">
 <p>
 考虑例 2.1 中的随机变量 \(X\)，其 PMF 为
 </p>
@@ -10241,9 +11049,9 @@ p_Z(z)=
 </p>
 </div>
 </div>
-<div id="outline-container-org8a2e986" class="outline-4">
-<h4 id="org8a2e986">随机变量函数的期望值法则</h4>
-<div class="outline-text-4" id="text-org8a2e986">
+<div id="outline-container-orgfe997b3" class="outline-4">
+<h4 id="orgfe997b3">随机变量函数的期望值法则</h4>
+<div class="outline-text-4" id="text-orgfe997b3">
 <p>
 令 \(X\) 为 PMF 是 \(p_X\) 的随机变量，并令 \(g(X)\) 为 \(X\) 的函数。那么随机变量 \(g(X)\) 的期望值为
 </p>
@@ -10270,9 +11078,9 @@ p_Y(y)
 </div>
 </div>
 </div>
-<div id="outline-container-orgef0d229" class="outline-2">
-<h2 id="orgef0d229">第 85 页</h2>
-<div class="outline-text-2" id="text-orgef0d229">
+<div id="outline-container-orgca17641" class="outline-2">
+<h2 id="orgca17641">第 85 页</h2>
+<div class="outline-text-2" id="text-orgca17641">
 <p>
 于是有
 </p>
@@ -10326,9 +11134,9 @@ p_Y(y)
 因此不需要计算 \(X^n\) 的 PMF。
 </p>
 </div>
-<div id="outline-container-org299f150" class="outline-4">
-<h4 id="org299f150">例 2.3（续）</h4>
-<div class="outline-text-4" id="text-org299f150">
+<div id="outline-container-orgfb3202f" class="outline-4">
+<h4 id="orgfb3202f">例 2.3（续）</h4>
+<div class="outline-text-4" id="text-orgfb3202f">
 <p>
 对于 PMF 为
 </p>
@@ -10371,9 +11179,9 @@ p_X(x)=
 </div>
 </div>
 </div>
-<div id="outline-container-org0fa939b" class="outline-2">
-<h2 id="org0fa939b">第 86 页</h2>
-<div class="outline-text-2" id="text-org0fa939b">
+<div id="outline-container-orgbb1a46f" class="outline-2">
+<h2 id="orgbb1a46f">第 86 页</h2>
+<div class="outline-text-2" id="text-orgbb1a46f">
 <p>
 如前所述，方差总是非负的，但它能否等于零呢？
 </p>
@@ -10412,9 +11220,9 @@ x=\operatorname{E}[X].
 在这种情况下，随机变量 \(X\) 实际上并不真正“随机”：它以概率 1 取其均值 \(\operatorname{E}[X]\)。
 </p>
 </div>
-<div id="outline-container-org5f41893" class="outline-4">
-<h4 id="org5f41893">方差</h4>
-<div class="outline-text-4" id="text-org5f41893">
+<div id="outline-container-orgb73600a" class="outline-4">
+<h4 id="orgb73600a">方差</h4>
+<div class="outline-text-4" id="text-orgb73600a">
 <p>
 随机变量 \(X\) 的方差 \(\operatorname{var}(X)\) 定义为
 </p>
@@ -10444,9 +11252,9 @@ x=\operatorname{E}[X].
 </p>
 </div>
 </div>
-<div id="outline-container-orge588d8b" class="outline-3">
-<h3 id="orge588d8b">均值与方差的性质</h3>
-<div class="outline-text-3" id="text-orge588d8b">
+<div id="outline-container-orgb9e9fae" class="outline-3">
+<h3 id="orgb9e9fae">均值与方差的性质</h3>
+<div class="outline-text-3" id="text-orgb9e9fae">
 <p>
 下面使用期望值法则推导均值和方差的一些重要性质。从随机变量 \(X\) 出发，定义一个新的随机变量
 </p>
@@ -10501,13 +11309,13 @@ Y=aX+b,
 </div>
 </div>
 </div>
-<div id="outline-container-org077413f" class="outline-2">
-<h2 id="org077413f">第 87 页</h2>
-<div class="outline-text-2" id="text-org077413f">
+<div id="outline-container-org9d798c7" class="outline-2">
+<h2 id="org9d798c7">第 87 页</h2>
+<div class="outline-text-2" id="text-org9d798c7">
 </div>
-<div id="outline-container-org080f724" class="outline-4">
-<h4 id="org080f724">随机变量线性函数的均值与方差</h4>
-<div class="outline-text-4" id="text-org080f724">
+<div id="outline-container-org3bbd0cb" class="outline-4">
+<h4 id="org3bbd0cb">随机变量线性函数的均值与方差</h4>
+<div class="outline-text-4" id="text-org3bbd0cb">
 <p>
 令 \(X\) 为随机变量，并令
 </p>
@@ -10539,9 +11347,9 @@ a^2\operatorname{var}(X).
 </p>
 </div>
 </div>
-<div id="outline-container-orge551d4b" class="outline-4">
-<h4 id="orge551d4b">用矩表示方差</h4>
-<div class="outline-text-4" id="text-orge551d4b">
+<div id="outline-container-orgf33b7b9" class="outline-4">
+<h4 id="orgf33b7b9">用矩表示方差</h4>
+<div class="outline-text-4" id="text-orgf33b7b9">
 <p>
 \[
 \operatorname{var}(X)
@@ -10597,9 +11405,9 @@ g(\operatorname{E}[X]).
 </p>
 </div>
 </div>
-<div id="outline-container-orgd586a17" class="outline-4">
-<h4 id="orgd586a17">例 2.4：平均速度与平均时间</h4>
-<div class="outline-text-4" id="text-orgd586a17">
+<div id="outline-container-org08797e5" class="outline-4">
+<h4 id="org08797e5">例 2.4：平均速度与平均时间</h4>
+<div class="outline-text-4" id="text-org08797e5">
 <p>
 天气晴好时——其发生概率为 \(0.6\)——Alice 以
 </p>
@@ -10662,9 +11470,9 @@ p_T(t)=
 </div>
 </div>
 </div>
-<div id="outline-container-orga0acdda" class="outline-2">
-<h2 id="orga0acdda">第 88 页</h2>
-<div class="outline-text-2" id="text-orga0acdda">
+<div id="outline-container-orga409fbb" class="outline-2">
+<h2 id="orga409fbb">第 88 页</h2>
+<div class="outline-text-2" id="text-orga409fbb">
 <p>
 然而，如果先计算速度 \(V\) 的均值
 </p>
@@ -10719,16 +11527,16 @@ T=\frac{2}{V},
 \]
 </p>
 </div>
-<div id="outline-container-orgca911d1" class="outline-3">
-<h3 id="orgca911d1">一些常见随机变量的均值与方差</h3>
-<div class="outline-text-3" id="text-orgca911d1">
+<div id="outline-container-orgba6c79d" class="outline-3">
+<h3 id="orgba6c79d">一些常见随机变量的均值与方差</h3>
+<div class="outline-text-3" id="text-orgba6c79d">
 <p>
 下面推导几个重要随机变量的均值和方差公式。在全书的各种情形中，我们都会反复使用这些公式。
 </p>
 </div>
-<div id="outline-container-org35886a9" class="outline-4">
-<h4 id="org35886a9">例 2.5：伯努利随机变量的均值与方差</h4>
-<div class="outline-text-4" id="text-org35886a9">
+<div id="outline-container-org1183714" class="outline-4">
+<h4 id="org1183714">例 2.5：伯努利随机变量的均值与方差</h4>
+<div class="outline-text-4" id="text-org1183714">
 <p>
 考虑抛掷一枚硬币的实验。硬币以概率 \(p\) 出现正面，以概率 \(1-p\) 出现反面。伯努利随机变量 \(X\) 的 PMF 为
 </p>
@@ -10792,9 +11600,9 @@ p(1-p).
 </p>
 </div>
 </div>
-<div id="outline-container-orgdf9eb22" class="outline-4">
-<h4 id="orgdf9eb22">例 2.6：离散均匀随机变量</h4>
-<div class="outline-text-4" id="text-orgdf9eb22">
+<div id="outline-container-org1138110" class="outline-4">
+<h4 id="org1138110">例 2.6：离散均匀随机变量</h4>
+<div class="outline-text-4" id="text-org1138110">
 <p>
 掷一枚公平六面骰子所对应的均值和方差分别是多少？
 </p>
@@ -10849,9 +11657,9 @@ p_X(k)=
 </div>
 </div>
 </div>
-<div id="outline-container-org544d1af" class="outline-2">
-<h2 id="org544d1af">第 89 页</h2>
-<div class="outline-text-2" id="text-org544d1af">
+<div id="outline-container-org3e2ec88" class="outline-2">
+<h2 id="org3e2ec88">第 89 页</h2>
+<div class="outline-text-2" id="text-org3e2ec88">
 <p>
 因此得到
 </p>
@@ -10963,9 +11771,9 @@ a=1,\qquad b=n.
 </blockquote>
 </div>
 </div>
-<div id="outline-container-orge17f0a4" class="outline-2">
-<h2 id="orge17f0a4">第 90 页</h2>
-<div class="outline-text-2" id="text-orge17f0a4">
+<div id="outline-container-orgbbc177c" class="outline-2">
+<h2 id="orgbbc177c">第 90 页</h2>
+<div class="outline-text-2" id="text-orgbbc177c">
 <p>
 对于一般整数 \(a\) 和 \(b\)，注意到在区间 \([a,b]\) 上均匀分布的随机变量，与在区间
 </p>
@@ -11006,9 +11814,9 @@ n=b-a+1,
 \]
 </p>
 </div>
-<div id="outline-container-orgb1ce62a" class="outline-4">
-<h4 id="orgb1ce62a">例 2.7：泊松随机变量的均值</h4>
-<div class="outline-text-4" id="text-orgb1ce62a">
+<div id="outline-container-org0f83f21" class="outline-4">
+<h4 id="org0f83f21">例 2.7：泊松随机变量的均值</h4>
+<div class="outline-text-4" id="text-org0f83f21">
 <p>
 泊松 PMF
 </p>
@@ -11073,9 +11881,9 @@ e^{-\lambda}\frac{\lambda^m}{m!}
 </p>
 </div>
 </div>
-<div id="outline-container-org896ef3a" class="outline-3">
-<h3 id="org896ef3a">利用期望值进行决策</h3>
-<div class="outline-text-3" id="text-org896ef3a">
+<div id="outline-container-orgb30e2dd" class="outline-3">
+<h3 id="orgb30e2dd">利用期望值进行决策</h3>
+<div class="outline-text-3" id="text-orgb30e2dd">
 <p>
 当需要在若干会产生随机回报的候选决策之间进行优化选择时，期望值通常能提供一种方便的方法。
 </p>
@@ -11086,13 +11894,13 @@ e^{-\lambda}\frac{\lambda^m}{m!}
 </div>
 </div>
 </div>
-<div id="outline-container-orgac7ec6f" class="outline-2">
-<h2 id="orgac7ec6f">第 91 页</h2>
-<div class="outline-text-2" id="text-orgac7ec6f">
+<div id="outline-container-orga86b7bc" class="outline-2">
+<h2 id="orga86b7bc">第 91 页</h2>
+<div class="outline-text-2" id="text-orga86b7bc">
 </div>
-<div id="outline-container-orgdd01003" class="outline-4">
-<h4 id="orgdd01003">例 2.8：问答竞赛问题</h4>
-<div class="outline-text-4" id="text-orgdd01003">
+<div id="outline-container-org4dd93e8" class="outline-4">
+<h4 id="org4dd93e8">例 2.8：问答竞赛问题</h4>
+<div class="outline-text-4" id="text-org4dd93e8">
 <p>
 经过适当推广后，本例可以作为一类问题的典型模型：如何对一组回报不确定的任务安排最优执行顺序。
 </p>
@@ -11129,8 +11937,8 @@ e^{-\lambda}\frac{\lambda^m}{m!}
 </blockquote>
 </div>
 <ul class="org-ul">
-<li><a id="org9193775"></a>先回答问题 1<br />
-<div class="outline-text-5" id="text-org9193775">
+<li><a id="org086b57b"></a>先回答问题 1<br />
+<div class="outline-text-5" id="text-org086b57b">
 <p>
 此时 \(X\) 的 PMF 为
 </p>
@@ -11166,8 +11974,8 @@ p_X(300)=0.8\cdot0.5.
 </p>
 </div>
 </li>
-<li><a id="org4fb7c6a"></a>先回答问题 2<br />
-<div class="outline-text-5" id="text-org4fb7c6a">
+<li><a id="org1358f8f"></a>先回答问题 2<br />
+<div class="outline-text-5" id="text-org1358f8f">
 <p>
 此时 \(X\) 的 PMF 为
 </p>
@@ -11206,9 +12014,9 @@ p_X(300)=0.5\cdot0.8.
 </ul>
 </div>
 </div>
-<div id="outline-container-org20d1ee5" class="outline-2">
-<h2 id="org20d1ee5">第 92 页</h2>
-<div class="outline-text-2" id="text-org20d1ee5">
+<div id="outline-container-orgdd0fd94" class="outline-2">
+<h2 id="orgdd0fd94">第 92 页</h2>
+<div class="outline-text-2" id="text-orgdd0fd94">
 <p>
 因此，先尝试较容易的问题 1 更好。
 </p>
@@ -11293,9 +12101,9 @@ p_2v_2+p_2p_1v_1
 有趣的是，这条规则还可以推广到问题数多于两个的情形，参见章末习题。
 </p>
 </div>
-<div id="outline-container-org4ed235e" class="outline-3">
-<h3 id="org4ed235e">2.5 多个随机变量的联合 PMF</h3>
-<div class="outline-text-3" id="text-org4ed235e">
+<div id="outline-container-org6d30e8c" class="outline-3">
+<h3 id="org6d30e8c">2.5 多个随机变量的联合 PMF</h3>
+<div class="outline-text-3" id="text-org6d30e8c">
 <p>
 概率模型经常涉及多个随机变量。例如，在医学诊断中，多项检查的结果可能都具有重要意义；在计算机网络中，我们可能关心多个路由器的工作负载。
 </p>
@@ -11366,9 +12174,9 @@ p_{X,Y}(x,y)
 </div>
 </div>
 </div>
-<div id="outline-container-orgce4b54f" class="outline-2">
-<h2 id="orgce4b54f">第 93 页</h2>
-<div class="outline-text-2" id="text-orgce4b54f">
+<div id="outline-container-orgaf0d57d" class="outline-2">
+<h2 id="orgaf0d57d">第 93 页</h2>
+<div class="outline-text-2" id="text-orgaf0d57d">
 <p>
 联合 PMF 决定了任何可以用随机变量 \(X\) 和 \(Y\) 描述的事件的概率。
 </p>
@@ -11444,9 +12252,9 @@ p_X(x)
 下面的例子和图 2.10 说明了这种方法。
 </p>
 </div>
-<div id="outline-container-org67a7ec0" class="outline-4">
-<h4 id="org67a7ec0">例 2.9</h4>
-<div class="outline-text-4" id="text-org67a7ec0">
+<div id="outline-container-orgc78d762" class="outline-4">
+<h4 id="orgc78d762">例 2.9</h4>
+<div class="outline-text-4" id="text-orgc78d762">
 <p>
 考虑由图 2.10 所示联合 PMF 描述的两个随机变量 \(X\) 和 \(Y\)。
 </p>
@@ -11456,9 +12264,9 @@ p_X(x)
 </p>
 </div>
 </div>
-<div id="outline-container-orgfcf8820" class="outline-3">
-<h3 id="orgfcf8820">多个随机变量的函数</h3>
-<div class="outline-text-3" id="text-orgfcf8820">
+<div id="outline-container-org8bb72b0" class="outline-3">
+<h3 id="org8bb72b0">多个随机变量的函数</h3>
+<div class="outline-text-3" id="text-org8bb72b0">
 <p>
 当存在多个我们感兴趣的随机变量时，可以通过考虑涉及其中若干随机变量的函数来产生新的随机变量。
 </p>
@@ -11488,9 +12296,9 @@ p_{X,Y}(x,y).
 </div>
 </div>
 </div>
-<div id="outline-container-org99d3577" class="outline-2">
-<h2 id="org99d3577">第 94 页</h2>
-<div class="outline-text-2" id="text-org99d3577">
+<div id="outline-container-orgf542ee3" class="outline-2">
+<h2 id="orgf542ee3">第 94 页</h2>
+<div class="outline-text-2" id="text-orgf542ee3">
 <blockquote>
 <p>
 <b>图 2.10：</b> 例 2.9 中，使用表格法从联合 PMF 计算边缘 PMF 的示意图。
@@ -11646,9 +12454,9 @@ c.
 \]
 </p>
 </div>
-<div id="outline-container-org9bde79c" class="outline-4">
-<h4 id="org9bde79c">例 2.9（续）</h4>
-<div class="outline-text-4" id="text-org9bde79c">
+<div id="outline-container-orgac59f29" class="outline-4">
+<h4 id="orgac59f29">例 2.9（续）</h4>
+<div class="outline-text-4" id="text-orgac59f29">
 <p>
 再次考虑联合 PMF 如图 2.10 所示的随机变量 \(X\) 和 \(Y\)，并定义新的随机变量
 </p>
@@ -11674,9 +12482,9 @@ p_{X,Y}(x,y).
 </div>
 </div>
 </div>
-<div id="outline-container-orgc694438" class="outline-2">
-<h2 id="orgc694438">第 95 页</h2>
-<div class="outline-text-2" id="text-orgc694438">
+<div id="outline-container-org57c5234" class="outline-2">
+<h2 id="org57c5234">第 95 页</h2>
+<div class="outline-text-2" id="text-org57c5234">
 <p>
 利用图 2.10 中给出的 PMF，可以得到
 </p>
@@ -11788,9 +12596,9 @@ p_Z(12)=\frac{1}{20}.
 \]
 </p>
 </div>
-<div id="outline-container-org47a83de" class="outline-3">
-<h3 id="org47a83de">多于两个随机变量</h3>
-<div class="outline-text-3" id="text-org47a83de">
+<div id="outline-container-org5304648" class="outline-3">
+<h3 id="org5304648">多于两个随机变量</h3>
+<div class="outline-text-3" id="text-org5304648">
 <p>
 与前面的定义类似，三个随机变量 \(X\)、\(Y\) 和 \(Z\) 的联合 PMF 定义为
 </p>
@@ -11833,9 +12641,9 @@ p_X(x)
 </div>
 </div>
 </div>
-<div id="outline-container-org8fc9875" class="outline-2">
-<h2 id="org8fc9875">第 96 页</h2>
-<div class="outline-text-2" id="text-org8fc9875">
+<div id="outline-container-org8e9af48" class="outline-2">
+<h2 id="org8e9af48">第 96 页</h2>
+<div class="outline-text-2" id="text-org8e9af48">
 <p>
 函数的期望值法则为
 </p>
@@ -11912,9 +12720,9 @@ a_1\operatorname{E}[X_1]
 \]
 </p>
 </div>
-<div id="outline-container-org7c455da" class="outline-4">
-<h4 id="org7c455da">例 2.10：二项随机变量的均值</h4>
-<div class="outline-text-4" id="text-org7c455da">
+<div id="outline-container-org95d5bc6" class="outline-4">
+<h4 id="org95d5bc6">例 2.10：二项随机变量的均值</h4>
+<div class="outline-text-4" id="text-org95d5bc6">
 <p>
 你的概率课共有 300 名学生，每名学生获得 A 的概率都是 \(1/3\)，并且彼此独立。令 \(X\) 表示获得 A 的学生人数，求 \(X\) 的均值。
 </p>
@@ -11994,9 +12802,9 @@ np.
 </p>
 </div>
 </div>
-<div id="outline-container-org81808dd" class="outline-4">
-<h4 id="org81808dd">例 2.11：帽子问题</h4>
-<div class="outline-text-4" id="text-org81808dd">
+<div id="outline-container-orgc1114ac" class="outline-4">
+<h4 id="orgc1114ac">例 2.11：帽子问题</h4>
+<div class="outline-text-4" id="text-orgc1114ac">
 <p>
 假设 \(n\) 个人把各自的帽子扔进一个箱子里，随后每个人随机取出一顶帽子。每顶帽子只能由一个人取走，而且帽子分配给各人的每一种方式都是等可能的。
 </p>
@@ -12039,9 +12847,9 @@ np.
 </div>
 </div>
 </div>
-<div id="outline-container-org88bcd47" class="outline-2">
-<h2 id="org88bcd47">第 97 页</h2>
-<div class="outline-text-2" id="text-org88bcd47">
+<div id="outline-container-org839d82c" class="outline-2">
+<h2 id="org839d82c">第 97 页</h2>
+<div class="outline-text-2" id="text-org839d82c">
 <p>
 现在有
 </p>
@@ -12072,9 +12880,9 @@ X=X_1+X_2+\cdots+X_n.
 \]
 </p>
 </div>
-<div id="outline-container-orga1047dc" class="outline-4">
-<h4 id="orga1047dc">联合 PMF 相关结论小结</h4>
-<div class="outline-text-4" id="text-orga1047dc">
+<div id="outline-container-org7c4fead" class="outline-4">
+<h4 id="org7c4fead">联合 PMF 相关结论小结</h4>
+<div class="outline-text-4" id="text-org7c4fead">
 <p>
 令 \(X\) 和 \(Y\) 为与同一个实验相关联的随机变量。
 </p>
@@ -12159,9 +12967,9 @@ c.
 </ul>
 </div>
 </div>
-<div id="outline-container-orgc026639" class="outline-3">
-<h3 id="orgc026639">2.6 条件化</h3>
-<div class="outline-text-3" id="text-orgc026639">
+<div id="outline-container-orgde575f3" class="outline-3">
+<h3 id="orgde575f3">2.6 条件化</h3>
+<div class="outline-text-3" id="text-orgde575f3">
 <p>
 与第 1 章的讨论类似，条件概率可以用来描述各种事件对于随机变量不同可能取值所提供的信息。
 </p>
@@ -12176,13 +12984,13 @@ c.
 </div>
 </div>
 </div>
-<div id="outline-container-org81cd576" class="outline-2">
-<h2 id="org81cd576">第 98 页</h2>
-<div class="outline-text-2" id="text-org81cd576">
+<div id="outline-container-org5aa2b02" class="outline-2">
+<h2 id="org5aa2b02">第 98 页</h2>
+<div class="outline-text-2" id="text-org5aa2b02">
 </div>
-<div id="outline-container-org0b1c9f7" class="outline-3">
-<h3 id="org0b1c9f7">在某个事件条件下的随机变量</h3>
-<div class="outline-text-3" id="text-org0b1c9f7">
+<div id="outline-container-org64aa278" class="outline-3">
+<h3 id="org64aa278">在某个事件条件下的随机变量</h3>
+<div class="outline-text-3" id="text-org64aa278">
 <p>
 设事件 \(A\) 满足
 </p>
@@ -12204,9 +13012,9 @@ p_{X\mid A}(x)
 \operatorname{P}(X=x\mid A)
 =
 \frac{
-  \operatorname{P}(\{X=x\}\cap A)
+\operatorname{P}(\{X=x\}\cap A)
 }{
-  \operatorname{P}(A)
+\operatorname{P}(A)
 }.
 \]
 </p>
@@ -12252,9 +13060,9 @@ p_{X\mid A}(x)
 条件 PMF 的计算方式与无条件 PMF 类似。为了求 \(p_{X\mid A}(x)\)，先把所有既使 \(X=x\)、又属于条件事件 \(A\) 的实验结果的概率相加，然后除以 \(\operatorname{P}(A)\) 进行归一化。
 </p>
 </div>
-<div id="outline-container-org1b50bb7" class="outline-4">
-<h4 id="org1b50bb7">例 2.12</h4>
-<div class="outline-text-4" id="text-org1b50bb7">
+<div id="outline-container-orgdc8c645" class="outline-4">
+<h4 id="orgdc8c645">例 2.12</h4>
+<div class="outline-text-4" id="text-orgdc8c645">
 <p>
 令 \(X\) 表示掷一枚公平六面骰子的结果，令 \(A\) 为投掷结果是偶数的事件。应用前面的公式可得
 </p>
@@ -12281,9 +13089,9 @@ p_{X\mid A}(k)
 </p>
 </div>
 </div>
-<div id="outline-container-org5543d90" class="outline-4">
-<h4 id="org5543d90">例 2.13</h4>
-<div class="outline-text-4" id="text-org5543d90">
+<div id="outline-container-org5b80de3" class="outline-4">
+<h4 id="org5b80de3">例 2.13</h4>
+<div class="outline-text-4" id="text-org5b80de3">
 <p>
 一名学生将重复参加某项考试，但最多参加 \(n\) 次。每次考试通过的概率都是 \(p\)，并且不受此前尝试次数的影响。
 </p>
@@ -12321,9 +13129,9 @@ A=\{X\le n\}.
 </div>
 </div>
 </div>
-<div id="outline-container-org274127f" class="outline-2">
-<h2 id="org274127f">第 99 页</h2>
-<div class="outline-text-2" id="text-org274127f">
+<div id="outline-container-orgbbe6a57" class="outline-2">
+<h2 id="orgbbe6a57">第 99 页</h2>
+<div class="outline-text-2" id="text-orgbbe6a57">
 <p>
 因此
 </p>
@@ -12382,9 +13190,9 @@ p<sub>X\mid A</sub>(k)
 </p>
 </blockquote>
 </div>
-<div id="outline-container-org4e321c3" class="outline-3">
-<h3 id="org4e321c3">一个随机变量在另一个随机变量条件下的分布</h3>
-<div class="outline-text-3" id="text-org4e321c3">
+<div id="outline-container-org4f91abd" class="outline-3">
+<h3 id="org4f91abd">一个随机变量在另一个随机变量条件下的分布</h3>
+<div class="outline-text-3" id="text-org4f91abd">
 <p>
 令 \(X\) 和 \(Y\) 为与同一个实验相关联的两个随机变量。如果已知 \(Y\) 的值为某个特定的 \(y\)，其中
 </p>
@@ -12401,9 +13209,9 @@ p_Y(y)>0,
 </div>
 </div>
 </div>
-<div id="outline-container-org1de4341" class="outline-2">
-<h2 id="org1de4341">第 100 页</h2>
-<div class="outline-text-2" id="text-org1de4341">
+<div id="outline-container-org564096d" class="outline-2">
+<h2 id="org564096d">第 100 页</h2>
+<div class="outline-text-2" id="text-org564096d">
 <p>
 ……给定 \(Y\) 时 \(X\) 的 <b>条件 PMF</b> \(p_{X\mid Y}\) 描述。把 \(p_{X\mid A}\) 的定义应用于形如
 </p>
@@ -12487,9 +13295,9 @@ p_{X\mid Y}(x\mid y)
 </blockquote>
 </div>
 </div>
-<div id="outline-container-org1a6eb5e" class="outline-2">
-<h2 id="org1a6eb5e">第 95 页</h2>
-<div class="outline-text-2" id="text-org1a6eb5e">
+<div id="outline-container-orgbf58b6f" class="outline-2">
+<h2 id="orgbf58b6f">第 95 页</h2>
+<div class="outline-text-2" id="text-orgbf58b6f">
 <p>
 利用图 2.10 中给出的 PMF，可以得到
 </p>
@@ -12601,9 +13409,9 @@ p_Z(12)=\frac{1}{20}.
 \]
 </p>
 </div>
-<div id="outline-container-org9b09f03" class="outline-3">
-<h3 id="org9b09f03">多于两个随机变量</h3>
-<div class="outline-text-3" id="text-org9b09f03">
+<div id="outline-container-org0066f1f" class="outline-3">
+<h3 id="org0066f1f">多于两个随机变量</h3>
+<div class="outline-text-3" id="text-org0066f1f">
 <p>
 与前面的定义类似，三个随机变量 \(X\)、\(Y\) 和 \(Z\) 的联合 PMF 定义为
 </p>
@@ -12646,9 +13454,9 @@ p_X(x)
 </div>
 </div>
 </div>
-<div id="outline-container-org4056b35" class="outline-2">
-<h2 id="org4056b35">第 96 页</h2>
-<div class="outline-text-2" id="text-org4056b35">
+<div id="outline-container-org2387c86" class="outline-2">
+<h2 id="org2387c86">第 96 页</h2>
+<div class="outline-text-2" id="text-org2387c86">
 <p>
 函数的期望值法则为
 </p>
@@ -12725,9 +13533,9 @@ a_1\operatorname{E}[X_1]
 \]
 </p>
 </div>
-<div id="outline-container-org11cc874" class="outline-4">
-<h4 id="org11cc874">例 2.10：二项随机变量的均值</h4>
-<div class="outline-text-4" id="text-org11cc874">
+<div id="outline-container-org55b3795" class="outline-4">
+<h4 id="org55b3795">例 2.10：二项随机变量的均值</h4>
+<div class="outline-text-4" id="text-org55b3795">
 <p>
 你的概率课共有 300 名学生，每名学生获得 A 的概率都是 \(1/3\)，并且彼此独立。令 \(X\) 表示获得 A 的学生人数，求 \(X\) 的均值。
 </p>
@@ -12807,9 +13615,9 @@ np.
 </p>
 </div>
 </div>
-<div id="outline-container-org2c6bf52" class="outline-4">
-<h4 id="org2c6bf52">例 2.11：帽子问题</h4>
-<div class="outline-text-4" id="text-org2c6bf52">
+<div id="outline-container-orge83fb6e" class="outline-4">
+<h4 id="orge83fb6e">例 2.11：帽子问题</h4>
+<div class="outline-text-4" id="text-orge83fb6e">
 <p>
 假设 \(n\) 个人把各自的帽子扔进一个箱子里，随后每个人随机取出一顶帽子。每顶帽子只能由一个人取走，而且帽子分配给各人的每一种方式都是等可能的。
 </p>
@@ -12852,9 +13660,9 @@ np.
 </div>
 </div>
 </div>
-<div id="outline-container-org6e6d0c0" class="outline-2">
-<h2 id="org6e6d0c0">第 97 页</h2>
-<div class="outline-text-2" id="text-org6e6d0c0">
+<div id="outline-container-orgb5a52de" class="outline-2">
+<h2 id="orgb5a52de">第 97 页</h2>
+<div class="outline-text-2" id="text-orgb5a52de">
 <p>
 现在有
 </p>
@@ -12885,9 +13693,9 @@ X=X_1+X_2+\cdots+X_n.
 \]
 </p>
 </div>
-<div id="outline-container-orga34d6c3" class="outline-4">
-<h4 id="orga34d6c3">联合 PMF 相关结论小结</h4>
-<div class="outline-text-4" id="text-orga34d6c3">
+<div id="outline-container-orgdc9aa7d" class="outline-4">
+<h4 id="orgdc9aa7d">联合 PMF 相关结论小结</h4>
+<div class="outline-text-4" id="text-orgdc9aa7d">
 <p>
 令 \(X\) 和 \(Y\) 为与同一个实验相关联的随机变量。
 </p>
@@ -12972,9 +13780,9 @@ c.
 </ul>
 </div>
 </div>
-<div id="outline-container-orgd8ac59f" class="outline-3">
-<h3 id="orgd8ac59f">2.6 条件化</h3>
-<div class="outline-text-3" id="text-orgd8ac59f">
+<div id="outline-container-orgfc56e84" class="outline-3">
+<h3 id="orgfc56e84">2.6 条件化</h3>
+<div class="outline-text-3" id="text-orgfc56e84">
 <p>
 与第 1 章的讨论类似，条件概率可以用来描述各种事件对于随机变量不同可能取值所提供的信息。
 </p>
@@ -12989,13 +13797,13 @@ c.
 </div>
 </div>
 </div>
-<div id="outline-container-org1c10b43" class="outline-2">
-<h2 id="org1c10b43">第 98 页</h2>
-<div class="outline-text-2" id="text-org1c10b43">
+<div id="outline-container-orgf371049" class="outline-2">
+<h2 id="orgf371049">第 98 页</h2>
+<div class="outline-text-2" id="text-orgf371049">
 </div>
-<div id="outline-container-org17ba722" class="outline-3">
-<h3 id="org17ba722">在某个事件条件下的随机变量</h3>
-<div class="outline-text-3" id="text-org17ba722">
+<div id="outline-container-orge54d7ba" class="outline-3">
+<h3 id="orge54d7ba">在某个事件条件下的随机变量</h3>
+<div class="outline-text-3" id="text-orge54d7ba">
 <p>
 设事件 \(A\) 满足
 </p>
@@ -13017,9 +13825,9 @@ p_{X\mid A}(x)
 \operatorname{P}(X=x\mid A)
 =
 \frac{
-  \operatorname{P}(\{X=x\}\cap A)
+\operatorname{P}(\{X=x\}\cap A)
 }{
-  \operatorname{P}(A)
+\operatorname{P}(A)
 }.
 \]
 </p>
@@ -13065,9 +13873,9 @@ p_{X\mid A}(x)
 条件 PMF 的计算方式与无条件 PMF 类似。为了求 \(p_{X\mid A}(x)\)，先把所有既使 \(X=x\)、又属于条件事件 \(A\) 的实验结果的概率相加，然后除以 \(\operatorname{P}(A)\) 进行归一化。
 </p>
 </div>
-<div id="outline-container-org0248432" class="outline-4">
-<h4 id="org0248432">例 2.12</h4>
-<div class="outline-text-4" id="text-org0248432">
+<div id="outline-container-org3d04181" class="outline-4">
+<h4 id="org3d04181">例 2.12</h4>
+<div class="outline-text-4" id="text-org3d04181">
 <p>
 令 \(X\) 表示掷一枚公平六面骰子的结果，令 \(A\) 为投掷结果是偶数的事件。应用前面的公式可得
 </p>
@@ -13094,9 +13902,9 @@ p_{X\mid A}(k)
 </p>
 </div>
 </div>
-<div id="outline-container-org347570f" class="outline-4">
-<h4 id="org347570f">例 2.13</h4>
-<div class="outline-text-4" id="text-org347570f">
+<div id="outline-container-org0637a88" class="outline-4">
+<h4 id="org0637a88">例 2.13</h4>
+<div class="outline-text-4" id="text-org0637a88">
 <p>
 一名学生将重复参加某项考试，但最多参加 \(n\) 次。每次考试通过的概率都是 \(p\)，并且不受此前尝试次数的影响。
 </p>
@@ -13134,9 +13942,9 @@ A=\{X\le n\}.
 </div>
 </div>
 </div>
-<div id="outline-container-org397dffe" class="outline-2">
-<h2 id="org397dffe">第 99 页</h2>
-<div class="outline-text-2" id="text-org397dffe">
+<div id="outline-container-orgb293ee7" class="outline-2">
+<h2 id="orgb293ee7">第 99 页</h2>
+<div class="outline-text-2" id="text-orgb293ee7">
 <p>
 因此
 </p>
@@ -13195,9 +14003,9 @@ p<sub>X\mid A</sub>(k)
 </p>
 </blockquote>
 </div>
-<div id="outline-container-org780c305" class="outline-3">
-<h3 id="org780c305">一个随机变量在另一个随机变量条件下的分布</h3>
-<div class="outline-text-3" id="text-org780c305">
+<div id="outline-container-org102125d" class="outline-3">
+<h3 id="org102125d">一个随机变量在另一个随机变量条件下的分布</h3>
+<div class="outline-text-3" id="text-org102125d">
 <p>
 令 \(X\) 和 \(Y\) 为与同一个实验相关联的两个随机变量。如果已知 \(Y\) 的值为某个特定的 \(y\)，其中
 </p>
@@ -13214,9 +14022,9 @@ p_Y(y)>0,
 </div>
 </div>
 </div>
-<div id="outline-container-orgce65823" class="outline-2">
-<h2 id="orgce65823">第 100 页</h2>
-<div class="outline-text-2" id="text-orgce65823">
+<div id="outline-container-org74fea0a" class="outline-2">
+<h2 id="org74fea0a">第 100 页</h2>
+<div class="outline-text-2" id="text-org74fea0a">
 <p>
 ……给定 \(Y\) 时 \(X\) 的 <b>条件 PMF</b> \(p_{X\mid Y}\) 描述。把 \(p_{X\mid A}\) 的定义应用于形如
 </p>
@@ -13300,9 +14108,9 @@ p_{X\mid Y}(x\mid y)
 </blockquote>
 </div>
 </div>
-<div id="outline-container-org3b9b427" class="outline-2">
-<h2 id="org3b9b427">第 95 页</h2>
-<div class="outline-text-2" id="text-org3b9b427">
+<div id="outline-container-orga948014" class="outline-2">
+<h2 id="orga948014">第 95 页</h2>
+<div class="outline-text-2" id="text-orga948014">
 <p>
 利用图 2.10 中给出的 PMF，可以得到
 </p>
@@ -13414,9 +14222,9 @@ p_Z(12)=\frac{1}{20}.
 \]
 </p>
 </div>
-<div id="outline-container-org7ad95db" class="outline-3">
-<h3 id="org7ad95db">多于两个随机变量</h3>
-<div class="outline-text-3" id="text-org7ad95db">
+<div id="outline-container-org86e35ce" class="outline-3">
+<h3 id="org86e35ce">多于两个随机变量</h3>
+<div class="outline-text-3" id="text-org86e35ce">
 <p>
 与前面的定义类似，三个随机变量 \(X\)、\(Y\) 和 \(Z\) 的联合 PMF 定义为
 </p>
@@ -13459,9 +14267,9 @@ p_X(x)
 </div>
 </div>
 </div>
-<div id="outline-container-org5efa555" class="outline-2">
-<h2 id="org5efa555">第 96 页</h2>
-<div class="outline-text-2" id="text-org5efa555">
+<div id="outline-container-org596e20c" class="outline-2">
+<h2 id="org596e20c">第 96 页</h2>
+<div class="outline-text-2" id="text-org596e20c">
 <p>
 函数的期望值法则为
 </p>
@@ -13538,9 +14346,9 @@ a_1\operatorname{E}[X_1]
 \]
 </p>
 </div>
-<div id="outline-container-orgc84125a" class="outline-4">
-<h4 id="orgc84125a">例 2.10：二项随机变量的均值</h4>
-<div class="outline-text-4" id="text-orgc84125a">
+<div id="outline-container-org2e053de" class="outline-4">
+<h4 id="org2e053de">例 2.10：二项随机变量的均值</h4>
+<div class="outline-text-4" id="text-org2e053de">
 <p>
 你的概率课共有 300 名学生，每名学生获得 A 的概率都是 \(1/3\)，并且彼此独立。令 \(X\) 表示获得 A 的学生人数，求 \(X\) 的均值。
 </p>
@@ -13620,9 +14428,9 @@ np.
 </p>
 </div>
 </div>
-<div id="outline-container-org2b18cd6" class="outline-4">
-<h4 id="org2b18cd6">例 2.11：帽子问题</h4>
-<div class="outline-text-4" id="text-org2b18cd6">
+<div id="outline-container-orgd3a5a06" class="outline-4">
+<h4 id="orgd3a5a06">例 2.11：帽子问题</h4>
+<div class="outline-text-4" id="text-orgd3a5a06">
 <p>
 假设 \(n\) 个人把各自的帽子扔进一个箱子里，随后每个人随机取出一顶帽子。每顶帽子只能由一个人取走，而且帽子分配给各人的每一种方式都是等可能的。
 </p>
@@ -13665,9 +14473,9 @@ np.
 </div>
 </div>
 </div>
-<div id="outline-container-orgfcd5c09" class="outline-2">
-<h2 id="orgfcd5c09">第 97 页</h2>
-<div class="outline-text-2" id="text-orgfcd5c09">
+<div id="outline-container-org83b588e" class="outline-2">
+<h2 id="org83b588e">第 97 页</h2>
+<div class="outline-text-2" id="text-org83b588e">
 <p>
 现在有
 </p>
@@ -13698,9 +14506,9 @@ X=X_1+X_2+\cdots+X_n.
 \]
 </p>
 </div>
-<div id="outline-container-orgb952334" class="outline-4">
-<h4 id="orgb952334">联合 PMF 相关结论小结</h4>
-<div class="outline-text-4" id="text-orgb952334">
+<div id="outline-container-org2a7bd2c" class="outline-4">
+<h4 id="org2a7bd2c">联合 PMF 相关结论小结</h4>
+<div class="outline-text-4" id="text-org2a7bd2c">
 <p>
 令 \(X\) 和 \(Y\) 为与同一个实验相关联的随机变量。
 </p>
@@ -13785,9 +14593,9 @@ c.
 </ul>
 </div>
 </div>
-<div id="outline-container-org495d08e" class="outline-3">
-<h3 id="org495d08e">2.6 条件化</h3>
-<div class="outline-text-3" id="text-org495d08e">
+<div id="outline-container-orgb96a916" class="outline-3">
+<h3 id="orgb96a916">2.6 条件化</h3>
+<div class="outline-text-3" id="text-orgb96a916">
 <p>
 与第 1 章的讨论类似，条件概率可以用来描述各种事件对于随机变量不同可能取值所提供的信息。
 </p>
@@ -13802,13 +14610,13 @@ c.
 </div>
 </div>
 </div>
-<div id="outline-container-orgb23cf91" class="outline-2">
-<h2 id="orgb23cf91">第 98 页</h2>
-<div class="outline-text-2" id="text-orgb23cf91">
+<div id="outline-container-org83faed7" class="outline-2">
+<h2 id="org83faed7">第 98 页</h2>
+<div class="outline-text-2" id="text-org83faed7">
 </div>
-<div id="outline-container-org60da8eb" class="outline-3">
-<h3 id="org60da8eb">在某个事件条件下的随机变量</h3>
-<div class="outline-text-3" id="text-org60da8eb">
+<div id="outline-container-org903083d" class="outline-3">
+<h3 id="org903083d">在某个事件条件下的随机变量</h3>
+<div class="outline-text-3" id="text-org903083d">
 <p>
 设事件 \(A\) 满足
 </p>
@@ -13830,9 +14638,9 @@ p_{X\mid A}(x)
 \operatorname{P}(X=x\mid A)
 =
 \frac{
-  \operatorname{P}(\{X=x\}\cap A)
+\operatorname{P}(\{X=x\}\cap A)
 }{
-  \operatorname{P}(A)
+\operatorname{P}(A)
 }.
 \]
 </p>
@@ -13878,9 +14686,9 @@ p_{X\mid A}(x)
 条件 PMF 的计算方式与无条件 PMF 类似。为了求 \(p_{X\mid A}(x)\)，先把所有既使 \(X=x\)、又属于条件事件 \(A\) 的实验结果的概率相加，然后除以 \(\operatorname{P}(A)\) 进行归一化。
 </p>
 </div>
-<div id="outline-container-org10f2e6b" class="outline-4">
-<h4 id="org10f2e6b">例 2.12</h4>
-<div class="outline-text-4" id="text-org10f2e6b">
+<div id="outline-container-org898a8b4" class="outline-4">
+<h4 id="org898a8b4">例 2.12</h4>
+<div class="outline-text-4" id="text-org898a8b4">
 <p>
 令 \(X\) 表示掷一枚公平六面骰子的结果，令 \(A\) 为投掷结果是偶数的事件。应用前面的公式可得
 </p>
@@ -13907,9 +14715,9 @@ p_{X\mid A}(k)
 </p>
 </div>
 </div>
-<div id="outline-container-orga5280ee" class="outline-4">
-<h4 id="orga5280ee">例 2.13</h4>
-<div class="outline-text-4" id="text-orga5280ee">
+<div id="outline-container-orgef51049" class="outline-4">
+<h4 id="orgef51049">例 2.13</h4>
+<div class="outline-text-4" id="text-orgef51049">
 <p>
 一名学生将重复参加某项考试，但最多参加 \(n\) 次。每次考试通过的概率都是 \(p\)，并且不受此前尝试次数的影响。
 </p>
@@ -13947,9 +14755,9 @@ A=\{X\le n\}.
 </div>
 </div>
 </div>
-<div id="outline-container-orgf84f1b7" class="outline-2">
-<h2 id="orgf84f1b7">第 99 页</h2>
-<div class="outline-text-2" id="text-orgf84f1b7">
+<div id="outline-container-org6c48aa2" class="outline-2">
+<h2 id="org6c48aa2">第 99 页</h2>
+<div class="outline-text-2" id="text-org6c48aa2">
 <p>
 因此
 </p>
@@ -14008,9 +14816,9 @@ p<sub>X\mid A</sub>(k)
 </p>
 </blockquote>
 </div>
-<div id="outline-container-org64480c7" class="outline-3">
-<h3 id="org64480c7">一个随机变量在另一个随机变量条件下的分布</h3>
-<div class="outline-text-3" id="text-org64480c7">
+<div id="outline-container-org1511a2d" class="outline-3">
+<h3 id="org1511a2d">一个随机变量在另一个随机变量条件下的分布</h3>
+<div class="outline-text-3" id="text-org1511a2d">
 <p>
 令 \(X\) 和 \(Y\) 为与同一个实验相关联的两个随机变量。如果已知 \(Y\) 的值为某个特定的 \(y\)，其中
 </p>
@@ -14027,9 +14835,9 @@ p_Y(y)>0,
 </div>
 </div>
 </div>
-<div id="outline-container-org5a611d7" class="outline-2">
-<h2 id="org5a611d7">第 100 页</h2>
-<div class="outline-text-2" id="text-org5a611d7">
+<div id="outline-container-org31e5730" class="outline-2">
+<h2 id="org31e5730">第 100 页</h2>
+<div class="outline-text-2" id="text-org31e5730">
 <p>
 ……给定 \(Y\) 时 \(X\) 的 <b>条件 PMF</b> \(p_{X\mid Y}\) 描述。把 \(p_{X\mid A}\) 的定义应用于形如
 </p>
@@ -14113,9 +14921,9 @@ p_{X\mid Y}(x\mid y)
 </blockquote>
 </div>
 </div>
-<div id="outline-container-orgcfd3e32" class="outline-2">
-<h2 id="orgcfd3e32">第 113 页</h2>
-<div class="outline-text-2" id="text-orgcfd3e32">
+<div id="outline-container-orgc3c6dd7" class="outline-2">
+<h2 id="orgc3c6dd7">第 113 页</h2>
+<div class="outline-text-2" id="text-orgc3c6dd7">
 <p>
 如果对于所有 \(x,y,z\) 都有
 </p>
@@ -14154,9 +14962,9 @@ f(X),\qquad g(Y),\qquad h(Z)
 如果把独立性解释为各个互不影响的（子）实验所产生的性质，那么上述结论在直观上是显然的。虽然可以对它们进行严格验证，但有时过程比较繁琐。幸运的是，直觉与数学上正确的结论通常是一致的。这从根本上说明，我们对于独立性的定义恰当地反映了原本希望表达的含义。
 </p>
 </div>
-<div id="outline-container-orgd3ad9ed" class="outline-3">
-<h3 id="orgd3ad9ed">独立随机变量之和的方差</h3>
-<div class="outline-text-3" id="text-orgd3ad9ed">
+<div id="outline-container-orgb8f6d4c" class="outline-3">
+<h3 id="orgb8f6d4c">独立随机变量之和的方差</h3>
+<div class="outline-text-3" id="text-orgb8f6d4c">
 <p>
 独立随机变量之和在许多情形中都特别重要。例如，在统计应用中，为了尽可能减小测量误差的影响，我们常常会对若干独立测量值取“平均”。
 </p>
@@ -14207,9 +15015,9 @@ X_1,X_2,\ldots,X_n
 </p>
 </div>
 </div>
-<div id="outline-container-org803b63d" class="outline-3">
-<h3 id="org803b63d">例 2.20：二项随机变量与泊松随机变量的方差</h3>
-<div class="outline-text-3" id="text-org803b63d">
+<div id="outline-container-orga0d1220" class="outline-3">
+<h3 id="orga0d1220">例 2.20：二项随机变量与泊松随机变量的方差</h3>
+<div class="outline-text-3" id="text-orga0d1220">
 <p>
 考虑 \(n\) 次相互独立的硬币抛掷，每次抛掷出现正面的概率都是 \(p\)。
 </p>
@@ -14296,9 +15104,9 @@ n\to\infty,\qquad p\to0,\qquad np=\lambda
 </div>
 </div>
 </div>
-<div id="outline-container-orgafbfebf" class="outline-2">
-<h2 id="orgafbfebf">第 114 页</h2>
-<div class="outline-text-2" id="text-orgafbfebf">
+<div id="outline-container-org781597d" class="outline-2">
+<h2 id="org781597d">第 114 页</h2>
+<div class="outline-text-2" id="text-org781597d">
 <p>
 \[
 </p>
@@ -14350,9 +15158,9 @@ n\to\infty,\qquad p\to0,\qquad np=\lambda
 随机变量加权和的均值与方差公式，是许多统计方法的基础。这些方法通过对许多独立样本取平均来估计随机变量的均值。下面的例子说明一种典型情形。
 </p>
 </div>
-<div id="outline-container-orgd2626d0" class="outline-3">
-<h3 id="orgd2626d0">例 2.21：样本均值的均值与方差</h3>
-<div class="outline-text-3" id="text-orgd2626d0">
+<div id="outline-container-org4bccec2" class="outline-3">
+<h3 id="org4bccec2">例 2.21：样本均值的均值与方差</h3>
+<div class="outline-text-3" id="text-org4bccec2">
 <p>
 我们希望估计某位称作 B 的总统的支持率。为此，从选民总体中随机抽取 \(n\) 个人进行询问，并令 \(X_i\) 表示第 \(i\) 个人的回答：
 </p>
@@ -14441,9 +15249,9 @@ S_n
 </div>
 </div>
 </div>
-<div id="outline-container-org0cd22cf" class="outline-2">
-<h2 id="org0cd22cf">第 115 页</h2>
-<div class="outline-text-2" id="text-org0cd22cf">
+<div id="outline-container-orgfc5259b" class="outline-2">
+<h2 id="orgfc5259b">第 115 页</h2>
+<div class="outline-text-2" id="text-orgfc5259b">
 <p>
 样本均值 \(S_n\) 可以看成对支持率的一个“良好”估计。这是因为，它具有正确的期望值，即支持率 \(p\)；而且随着样本量 \(n\) 增大，由方差所反映的估计精度也会提高。
 </p>
@@ -14468,9 +15276,9 @@ S_n
 我们将在第 5 章结合大数定律，再次讨论样本均值的性质，并进行更为详细的研究。
 </p>
 </div>
-<div id="outline-container-org8510951" class="outline-3">
-<h3 id="org8510951">例 2.22：利用模拟估计概率</h3>
-<div class="outline-text-3" id="text-org8510951">
+<div id="outline-container-org0fae20d" class="outline-3">
+<h3 id="org0fae20d">例 2.22：利用模拟估计概率</h3>
+<div class="outline-text-3" id="text-org0fae20d">
 <p>
 在许多实际情形中，用解析方法计算某个感兴趣事件的概率非常困难。不过，如果有一个物理模型或计算机模型，能够按照某项实验结果的真实概率生成实验结果，那么便可以使用模拟方法，高精度地计算任意给定事件 \(A\) 的概率。
 </p>
@@ -14572,7 +15380,7 @@ X
 <p>
 \[
 \frac{
- \operatorname{P}(A)\bigl(1-\operatorname{P}(A)\bigr)
+\operatorname{P}(A)\bigl(1-\operatorname{P}(A)\bigr)
 }{n}.
 \]
 </p>
@@ -14582,9 +15390,9 @@ X
 </p>
 </div>
 </div>
-<div id="outline-container-org7db887c" class="outline-3">
-<h3 id="org7db887c">2.8 总结与讨论</h3>
-<div class="outline-text-3" id="text-org7db887c">
+<div id="outline-container-org2038aa1" class="outline-3">
+<h3 id="org2038aa1">2.8 总结与讨论</h3>
+<div class="outline-text-3" id="text-org2038aa1">
 <p>
 随机变量为处理这样一类概率模型提供了自然的工具：实验结果决定了某些我们感兴趣的数值。
 </p>
@@ -14599,9 +15407,9 @@ X
 </div>
 </div>
 </div>
-<div id="outline-container-org0e7e525" class="outline-2">
-<h2 id="org0e7e525">第 116 页</h2>
-<div class="outline-text-2" id="text-org0e7e525">
+<div id="outline-container-orga5be8f6" class="outline-2">
+<h2 id="orga5be8f6">第 116 页</h2>
+<div class="outline-text-2" id="text-orga5be8f6">
 <p>
 ……离散随机变量的概率特征。
 </p>
@@ -14650,13 +15458,13 @@ a^2\operatorname{var}(X).
 我们还讨论了若干特殊的随机变量，并推导了它们的 PMF、均值与方差。下面对这些结论进行总结。
 </p>
 </div>
-<div id="outline-container-orgfa34114" class="outline-3">
-<h3 id="orgfa34114">特殊随机变量的结果汇总</h3>
-<div class="outline-text-3" id="text-orgfa34114">
+<div id="outline-container-orgfd7e419" class="outline-3">
+<h3 id="orgfd7e419">特殊随机变量的结果汇总</h3>
+<div class="outline-text-3" id="text-orgfd7e419">
 </div>
-<div id="outline-container-org39dc55d" class="outline-4">
-<h4 id="org39dc55d">区间 \([a,b]\) 上的离散均匀随机变量</h4>
-<div class="outline-text-4" id="text-org39dc55d">
+<div id="outline-container-org82b269a" class="outline-4">
+<h4 id="org82b269a">区间 \([a,b]\) 上的离散均匀随机变量</h4>
+<div class="outline-text-4" id="text-org82b269a">
 <p>
 \[
 p_X(k)=
@@ -14684,9 +15492,9 @@ p_X(k)=
 </p>
 </div>
 </div>
-<div id="outline-container-orgb30e6ef" class="outline-4">
-<h4 id="orgb30e6ef">参数为 \(p\) 的伯努利随机变量</h4>
-<div class="outline-text-4" id="text-orgb30e6ef">
+<div id="outline-container-org3d5d75e" class="outline-4">
+<h4 id="org3d5d75e">参数为 \(p\) 的伯努利随机变量</h4>
+<div class="outline-text-4" id="text-org3d5d75e">
 <p>
 它描述一次试验中的成功或失败。
 </p>
@@ -14716,9 +15524,9 @@ p(1-p).
 </p>
 </div>
 </div>
-<div id="outline-container-org3e85efb" class="outline-4">
-<h4 id="org3e85efb">参数为 \(p\) 和 \(n\) 的二项随机变量</h4>
-<div class="outline-text-4" id="text-org3e85efb">
+<div id="outline-container-org9593e63" class="outline-4">
+<h4 id="org9593e63">参数为 \(p\) 和 \(n\) 的二项随机变量</h4>
+<div class="outline-text-4" id="text-org9593e63">
 <p>
 它描述 \(n\) 次相互独立的伯努利试验中的成功次数。
 </p>
@@ -14746,9 +15554,9 @@ np(1-p).
 </p>
 </div>
 </div>
-<div id="outline-container-org69247fe" class="outline-4">
-<h4 id="org69247fe">参数为 \(p\) 的几何随机变量</h4>
-<div class="outline-text-4" id="text-org69247fe">
+<div id="outline-container-org57435d1" class="outline-4">
+<h4 id="org57435d1">参数为 \(p\) 的几何随机变量</h4>
+<div class="outline-text-4" id="text-org57435d1">
 <p>
 它描述一系列相互独立的伯努利试验中，直到第一次成功为止所需的试验次数。
 </p>
@@ -14778,13 +15586,13 @@ k=1,2,\ldots
 </div>
 </div>
 </div>
-<div id="outline-container-org29ae5f3" class="outline-2">
-<h2 id="org29ae5f3">第 117 页</h2>
-<div class="outline-text-2" id="text-org29ae5f3">
+<div id="outline-container-org0534182" class="outline-2">
+<h2 id="org0534182">第 117 页</h2>
+<div class="outline-text-2" id="text-org0534182">
 </div>
-<div id="outline-container-orgad0c845" class="outline-4">
-<h4 id="orgad0c845">参数为 \(\lambda\) 的泊松随机变量</h4>
-<div class="outline-text-4" id="text-orgad0c845">
+<div id="outline-container-orged03f3d" class="outline-4">
+<h4 id="orged03f3d">参数为 \(\lambda\) 的泊松随机变量</h4>
+<div class="outline-text-4" id="text-orged03f3d">
 <p>
 当 \(n\) 很大、\(p\) 很小且 \(\lambda=np\) 时，它可以近似二项 PMF。
 </p>
@@ -14921,9 +15729,9 @@ X=X_1+\cdots+X_n.
 </div>
 </div>
 </div>
-<div id="outline-container-org7cad682" class="outline-2">
-<h2 id="org7cad682">第 118 页</h2>
-<div class="outline-text-2" id="text-org7cad682">
+<div id="outline-container-orgb7fd6c7" class="outline-2">
+<h2 id="orgb7fd6c7">第 118 页</h2>
+<div class="outline-text-2" id="text-orgb7fd6c7">
 <p>
 我们已经说明，这个和的均值与方差分别等于各随机变量均值之和与方差之和：
 </p>
@@ -14951,23 +15759,19 @@ X=X_1+\cdots+X_n.
 <p>
 均值公式不要求 \(X_i\) 相互独立，但方差公式要求它们相互独立。
 </p>
-
-<p>
-本章的概念与方法可以适当地推广到一般随机变量，参见下一章；这些内容也是概率论这一学科的基础。
-</p>
 </div>
 </div>
-<div id="outline-container-org0cf48fe" class="outline-2">
-<h2 id="org0cf48fe">第 139 页</h2>
-<div class="outline-text-2" id="text-org0cf48fe">
+<div id="outline-container-orga844e5f" class="outline-2">
+<h2 id="orga844e5f">第 139 页</h2>
+<div class="outline-text-2" id="text-orga844e5f">
 </div>
-<div id="outline-container-orgc6a7233" class="outline-3">
-<h3 id="orgc6a7233">第 3 章 一般随机变量</h3>
-<div class="outline-text-3" id="text-orgc6a7233">
+<div id="outline-container-org9a15c1b" class="outline-3">
+<h3 id="org9a15c1b">第 3 章 一般随机变量</h3>
+<div class="outline-text-3" id="text-org9a15c1b">
 </div>
-<div id="outline-container-orga6d8bb1" class="outline-4">
-<h4 id="orga6d8bb1">目录</h4>
-<div class="outline-text-4" id="text-orga6d8bb1">
+<div id="outline-container-orgeeed1fc" class="outline-4">
+<h4 id="orgeeed1fc">目录</h4>
+<div class="outline-text-4" id="text-orgeeed1fc">
 <ul class="org-ul">
 <li>3.1 连续随机变量与 PDF …… 140</li>
 <li>3.2 累积分布函数 …… 148</li>
@@ -14982,9 +15786,9 @@ X=X_1+\cdots+X_n.
 </div>
 </div>
 </div>
-<div id="outline-container-org9889886" class="outline-2">
-<h2 id="org9889886">第 140 页</h2>
-<div class="outline-text-2" id="text-org9889886">
+<div id="outline-container-org0fe2d19" class="outline-2">
+<h2 id="org0fe2d19">第 140 页</h2>
+<div class="outline-text-2" id="text-org0fe2d19">
 <p>
 取值范围连续的随机变量相当常见，公路上行驶车辆的速度就是一个例子。如果使用数字式速度计测量速度，可以把速度计的读数看作离散随机变量。但如果希望对精确速度建模，就需要使用连续随机变量。
 </p>
@@ -14997,9 +15801,9 @@ X=X_1+\cdots+X_n.
 第 2 章介绍的所有概念与方法，例如期望、PMF 和条件化，都有相应的连续型版本。本章的主题就是建立并解释这些对应概念。
 </p>
 </div>
-<div id="outline-container-org4f57ccf" class="outline-3">
-<h3 id="org4f57ccf">3.1 连续随机变量与 PDF</h3>
-<div class="outline-text-3" id="text-org4f57ccf">
+<div id="outline-container-org897860f" class="outline-3">
+<h3 id="org897860f">3.1 连续随机变量与 PDF</h3>
+<div class="outline-text-3" id="text-org897860f">
 <p>
 如果存在一个非负函数 \(f_X\)，使得对于实数轴上的每个子集 \(B\)，都有
 </p>
@@ -15100,9 +15904,9 @@ f_X(x)\ge0,
 </div>
 </div>
 </div>
-<div id="outline-container-orgac1d994" class="outline-2">
-<h2 id="orgac1d994">第 141 页</h2>
-<div class="outline-text-2" id="text-orgac1d994">
+<div id="outline-container-orgdb65a35" class="outline-2">
+<h2 id="orgdb65a35">第 141 页</h2>
+<div class="outline-text-2" id="text-orgdb65a35">
 <blockquote>
 <p>
 <b>图 3.1：</b> PDF 的示意图。\(X\) 的取值落在区间 \([a,b]\) 内的概率为
@@ -15165,9 +15969,9 @@ f_X(x)\delta.
 </p>
 </blockquote>
 </div>
-<div id="outline-container-org4a92bb1" class="outline-3">
-<h3 id="org4a92bb1">例 3.1：连续均匀随机变量</h3>
-<div class="outline-text-3" id="text-org4a92bb1">
+<div id="outline-container-org66d12eb" class="outline-3">
+<h3 id="org66d12eb">例 3.1：连续均匀随机变量</h3>
+<div class="outline-text-3" id="text-org66d12eb">
 <p>
 一名赌徒转动一个在 0 和 1 之间连续标定的幸运转盘，并观察所得数值。
 </p>
@@ -15190,9 +15994,9 @@ f_X(x)=
 </div>
 </div>
 </div>
-<div id="outline-container-org0d4ecdb" class="outline-2">
-<h2 id="org0d4ecdb">第 142 页</h2>
-<div class="outline-text-2" id="text-org0d4ecdb">
+<div id="outline-container-orgf93832b" class="outline-2">
+<h2 id="orgf93832b">第 142 页</h2>
+<div class="outline-text-2" id="text-orgf93832b">
 <p>
 其中 \(c\) 是某个常数。可以利用归一化性质确定这个常数：
 </p>
@@ -15261,9 +16065,9 @@ f_X(x)=
 </p>
 </blockquote>
 </div>
-<div id="outline-container-org700de8a" class="outline-3">
-<h3 id="org700de8a">例 3.2：分段常数 PDF</h3>
-<div class="outline-text-3" id="text-org700de8a">
+<div id="outline-container-org99893a4" class="outline-3">
+<h3 id="org99893a4">例 3.2：分段常数 PDF</h3>
+<div class="outline-text-3" id="text-org99893a4">
 <p>
 如果天气晴朗，Alvin 开车上班所需的时间在 15 到 20 分钟之间；如果下雨，则在 20 到 25 分钟之间。在两种情况下，各个时间值都同等可能。
 </p>
@@ -15317,9 +16121,9 @@ f_X(x)=
 </div>
 </div>
 </div>
-<div id="outline-container-org3a635e5" class="outline-2">
-<h2 id="org3a635e5">第 143 页</h2>
-<div class="outline-text-2" id="text-org3a635e5">
+<div id="outline-container-org4d4693c" class="outline-2">
+<h2 id="org4d4693c">第 143 页</h2>
+<div class="outline-text-2" id="text-org4d4693c">
 <p>
 同理，
 </p>
@@ -15415,9 +16219,9 @@ a_i<a_{i+1}
 </p>
 </blockquote>
 </div>
-<div id="outline-container-org8d6ed22" class="outline-3">
-<h3 id="org8d6ed22">例 3.3：PDF 可以取任意大的值</h3>
-<div class="outline-text-3" id="text-org8d6ed22">
+<div id="outline-container-org050d8bf" class="outline-3">
+<h3 id="org050d8bf">例 3.3：PDF 可以取任意大的值</h3>
+<div class="outline-text-3" id="text-org050d8bf">
 <p>
 考虑具有如下 PDF 的随机变量 $X$：
 </p>
@@ -15456,13 +16260,13 @@ f_X(x)=
 </div>
 </div>
 </div>
-<div id="outline-container-org86974dd" class="outline-2">
-<h2 id="org86974dd">第 144 页</h2>
-<div class="outline-text-2" id="text-org86974dd">
+<div id="outline-container-org982b4b0" class="outline-2">
+<h2 id="org982b4b0">第 144 页</h2>
+<div class="outline-text-2" id="text-org982b4b0">
 </div>
-<div id="outline-container-orgff48c39" class="outline-3">
-<h3 id="orgff48c39">PDF 性质小结</h3>
-<div class="outline-text-3" id="text-orgff48c39">
+<div id="outline-container-orgf03e3c8" class="outline-3">
+<h3 id="orgf03e3c8">PDF 性质小结</h3>
+<div class="outline-text-3" id="text-orgf03e3c8">
 <p>
 令 \(X\) 为 PDF 是 \(f_X\) 的连续随机变量。
 </p>
@@ -15514,9 +16318,9 @@ PDF 满足归一化性质：
 </ul>
 </div>
 </div>
-<div id="outline-container-orgc8364cb" class="outline-3">
-<h3 id="orgc8364cb">期望</h3>
-<div class="outline-text-3" id="text-orgc8364cb">
+<div id="outline-container-orgabdfac6" class="outline-3">
+<h3 id="orgabdfac6">期望</h3>
+<div class="outline-text-3" id="text-orgabdfac6">
 <p>
 连续随机变量 \(X\) 的 <b>期望值*、*期望</b> 或 <b>均值</b> 定义为
 </p>
@@ -15568,9 +16372,9 @@ Y=g(X)=X.
 </div>
 </div>
 </div>
-<div id="outline-container-org6025fb1" class="outline-2">
-<h2 id="org6025fb1">第 145 页</h2>
-<div class="outline-text-2" id="text-org6025fb1">
+<div id="outline-container-orga84ee6f" class="outline-2">
+<h2 id="orga84ee6f">第 145 页</h2>
+<div class="outline-text-2" id="text-orga84ee6f">
 <p>
 假设当 \(x>0\) 时 \(g(x)=1\)，其他情况下 \(g(x)=0\)。那么
 </p>
@@ -15634,9 +16438,9 @@ g(x)f_X(x)\,dx.
 下面总结上述讨论，并列出若干与离散情形基本相同的其他结论。
 </p>
 </div>
-<div id="outline-container-orga987633" class="outline-3">
-<h3 id="orga987633">连续随机变量的期望及其性质</h3>
-<div class="outline-text-3" id="text-orga987633">
+<div id="outline-container-org0882403" class="outline-3">
+<h3 id="org0882403">连续随机变量的期望及其性质</h3>
+<div class="outline-text-3" id="text-org0882403">
 <p>
 令 \(X\) 为 PDF 是 \(f_X\) 的连续随机变量。
 </p>
@@ -15735,9 +16539,9 @@ g(x)f_X(x)\,dx.
 </ul>
 </div>
 </div>
-<div id="outline-container-org9af71b3" class="outline-3">
-<h3 id="org9af71b3">例 3.4：均匀随机变量的均值与方差</h3>
-<div class="outline-text-3" id="text-org9af71b3">
+<div id="outline-container-org2ca02b2" class="outline-3">
+<h3 id="org2ca02b2">例 3.4：均匀随机变量的均值与方差</h3>
+<div class="outline-text-3" id="text-org2ca02b2">
 <p>
 考虑例 3.1 中区间 \([a,b]\) 上的均匀 PDF。有
 </p>
@@ -15760,9 +16564,9 @@ g(x)f_X(x)\,dx.
 </div>
 </div>
 </div>
-<div id="outline-container-org82e869d" class="outline-2">
-<h2 id="org82e869d">第 146 页</h2>
-<div class="outline-text-2" id="text-org82e869d">
+<div id="outline-container-orgecf9ec6" class="outline-2">
+<h2 id="orgecf9ec6">第 146 页</h2>
+<div class="outline-text-2" id="text-orgecf9ec6">
 <p>
 继续计算：
 </p>
@@ -15839,9 +16643,9 @@ g(x)f_X(x)\,dx.
 \]
 </p>
 </div>
-<div id="outline-container-orgf47b1a0" class="outline-3">
-<h3 id="orgf47b1a0">指数随机变量</h3>
-<div class="outline-text-3" id="text-orgf47b1a0">
+<div id="outline-container-org4b391ff" class="outline-3">
+<h3 id="org4b391ff">指数随机变量</h3>
+<div class="outline-text-3" id="text-org4b391ff">
 <p>
 <b>指数随机变量</b> 的 PDF 具有如下形式：
 </p>
@@ -15910,9 +16714,9 @@ f_X(x)=
 </div>
 </div>
 </div>
-<div id="outline-container-orga7986f9" class="outline-2">
-<h2 id="orga7986f9">第 147 页</h2>
-<div class="outline-text-2" id="text-orga7986f9">
+<div id="outline-container-org104a5a8" class="outline-2">
+<h2 id="org104a5a8">第 147 页</h2>
+<div class="outline-text-2" id="text-org104a5a8">
 <p>
 ……到达计算机、某台设备发生故障、一个灯泡烧坏或一起事故发生等。
 </p>
@@ -16010,9 +16814,9 @@ f_X(x)=
 </p>
 </div>
 </div>
-<div id="outline-container-org149e6a0" class="outline-2">
-<h2 id="org149e6a0">第 148 页</h2>
-<div class="outline-text-2" id="text-org149e6a0">
+<div id="outline-container-org32c77ed" class="outline-2">
+<h2 id="org32c77ed">第 148 页</h2>
+<div class="outline-text-2" id="text-org32c77ed">
 <p>
 最后，利用公式
 </p>
@@ -16051,9 +16855,9 @@ f_X(x)=
 \]
 </p>
 </div>
-<div id="outline-container-org6a4417b" class="outline-3">
-<h3 id="org6a4417b">例 3.5</h3>
-<div class="outline-text-3" id="text-org6a4417b">
+<div id="outline-container-org2f014b3" class="outline-3">
+<h3 id="org2f014b3">例 3.5</h3>
+<div class="outline-text-3" id="text-org2f014b3">
 <p>
 撒哈拉沙漠中任意地点第一次落下一颗小陨石之前的等待时间，被建模为均值为 10 天的指数随机变量。
 </p>
@@ -16119,9 +16923,9 @@ e^{-\lambda a}.
 </p>
 </div>
 </div>
-<div id="outline-container-orgabdd61d" class="outline-3">
-<h3 id="orgabdd61d">3.2 累积分布函数</h3>
-<div class="outline-text-3" id="text-orgabdd61d">
+<div id="outline-container-org1da8fb7" class="outline-3">
+<h3 id="org1da8fb7">3.2 累积分布函数</h3>
+<div class="outline-text-3" id="text-org1da8fb7">
 <p>
 到目前为止，我们以略有不同的方式处理离散随机变量和连续随机变量，分别使用 PMF 和 PDF。
 </p>
@@ -16179,9 +16983,9 @@ F_X(x)
 </div>
 </div>
 </div>
-<div id="outline-container-org8ffd385" class="outline-2">
-<h2 id="org8ffd385">第 149 页</h2>
-<div class="outline-text-2" id="text-org8ffd385">
+<div id="outline-container-org4a4d841" class="outline-2">
+<h2 id="org4a4d841">第 149 页</h2>
+<div class="outline-text-2" id="text-org4a4d841">
 <blockquote>
 <p>
 <b>图 3.6：</b> 若干离散随机变量的 CDF。
@@ -16276,13 +17080,13 @@ F_X(x)
 </blockquote>
 </div>
 </div>
-<div id="outline-container-org558473b" class="outline-2">
-<h2 id="org558473b">第 150 页</h2>
-<div class="outline-text-2" id="text-org558473b">
+<div id="outline-container-org970d9eb" class="outline-2">
+<h2 id="org970d9eb">第 150 页</h2>
+<div class="outline-text-2" id="text-org970d9eb">
 </div>
-<div id="outline-container-org33eb422" class="outline-3">
-<h3 id="org33eb422">CDF 的性质</h3>
-<div class="outline-text-3" id="text-org33eb422">
+<div id="outline-container-org84cb189" class="outline-3">
+<h3 id="org84cb189">CDF 的性质</h3>
+<div class="outline-text-3" id="text-org84cb189">
 <p>
 随机变量 \(X\) 的 CDF \(F_X\) 定义为
 </p>
@@ -16379,18 +17183,18 @@ p_X(k)
 </p>
 </div>
 </div>
-<div id="outline-container-org0a430ae" class="outline-3">
-<h3 id="org0a430ae">例 3.6：若干随机变量的最大值</h3>
-<div class="outline-text-3" id="text-org0a430ae">
+<div id="outline-container-orgeb0e704" class="outline-3">
+<h3 id="orgeb0e704">例 3.6：若干随机变量的最大值</h3>
+<div class="outline-text-3" id="text-orgeb0e704">
 <p>
 你可以参加某项考试三次，而最终成绩将取三次成绩中的最大值……
 </p>
 </div>
 </div>
 </div>
-<div id="outline-container-orgde857d0" class="outline-2">
-<h2 id="orgde857d0">第 151 页</h2>
-<div class="outline-text-2" id="text-orgde857d0">
+<div id="outline-container-org6514794" class="outline-2">
+<h2 id="org6514794">第 151 页</h2>
+<div class="outline-text-2" id="text-org6514794">
 <p>
 ……三次考试成绩中的最大值。因此，
 </p>
@@ -16511,9 +17315,9 @@ F_{X_1}(x)\cdots F_{X_n}(x).
 根据该公式，如果 \(X\) 是离散随机变量，可以通过作差得到 \(p_X(x)\)；如果 \(X\) 是连续随机变量，则可以通过求导得到 \(f_X(x)\)。
 </p>
 </div>
-<div id="outline-container-org0134074" class="outline-3">
-<h3 id="org0134074">几何分布与指数分布的 CDF</h3>
-<div class="outline-text-3" id="text-org0134074">
+<div id="outline-container-orgf01efa9" class="outline-3">
+<h3 id="orgf01efa9">几何分布与指数分布的 CDF</h3>
+<div class="outline-text-3" id="text-orgf01efa9">
 <p>
 由于任何类型的随机变量都可以定义 CDF，因此 CDF 为研究连续随机变量与离散随机变量之间的关系提供了一种便利的方法。一个特别有趣的例子是几何随机变量与指数随机变量之间的关系。
 </p>
@@ -16557,9 +17361,9 @@ F_{\mathrm{geo}}(n)
 </div>
 </div>
 </div>
-<div id="outline-container-org4d137d2" class="outline-2">
-<h2 id="org4d137d2">第 152 页</h2>
-<div class="outline-text-2" id="text-org4d137d2">
+<div id="outline-container-org7557da2" class="outline-2">
+<h2 id="org7557da2">第 152 页</h2>
+<div class="outline-text-2" id="text-org7557da2">
 <p>
 现在假设 \(X\) 是参数为 \(\lambda>0\) 的指数随机变量。其 CDF 为
 </p>
@@ -16693,13 +17497,13 @@ p=1-e^{-\lambda\delta}.
 </p>
 </div>
 </div>
-<div id="outline-container-orgeaadec4" class="outline-2">
-<h2 id="orgeaadec4">第 153 页</h2>
-<div class="outline-text-2" id="text-orgeaadec4">
+<div id="outline-container-org9b8c6d1" class="outline-2">
+<h2 id="org9b8c6d1">第 153 页</h2>
+<div class="outline-text-2" id="text-org9b8c6d1">
 </div>
-<div id="outline-container-org0201ec4" class="outline-3">
-<h3 id="org0201ec4">3.3 正态随机变量</h3>
-<div class="outline-text-3" id="text-org0201ec4">
+<div id="outline-container-org81cd82c" class="outline-3">
+<h3 id="org81cd82c">3.3 正态随机变量</h3>
+<div class="outline-text-3" id="text-org81cd82c">
 <p>
 如果连续随机变量 \(X\) 的 PDF 具有如下形式，就称 \(X\) 为 <b>正态随机变量</b> 或 *高斯随机变量*，参见图 3.9：
 </p>
@@ -16841,9 +17645,9 @@ y=\frac{x-\mu}{\sigma}
 </div>
 </div>
 </div>
-<div id="outline-container-orgf0abc60" class="outline-2">
-<h2 id="orgf0abc60">第 154 页</h2>
-<div class="outline-text-2" id="text-orgf0abc60">
+<div id="outline-container-org39c5ae3" class="outline-2">
+<h2 id="org39c5ae3">第 154 页</h2>
+<div class="outline-text-2" id="text-org39c5ae3">
 <p>
 上面的最后一个等式使用了
 </p>
@@ -16870,9 +17674,9 @@ e<sup>-y^2/2</sup>\,dy
 正态随机变量具有若干特殊性质。下面这条性质尤其重要，并将在第 4.1 节中加以证明。
 </p>
 </div>
-<div id="outline-container-org56f0f53" class="outline-3">
-<h3 id="org56f0f53">线性变换保持正态性</h3>
-<div class="outline-text-3" id="text-org56f0f53">
+<div id="outline-container-org4240e82" class="outline-3">
+<h3 id="org4240e82">线性变换保持正态性</h3>
+<div class="outline-text-3" id="text-org4240e82">
 <p>
 如果 \(X\) 是均值为 \(\mu\)、方差为 \(\sigma^2\) 的正态随机变量，且 \(a\ne0\)、\(b\) 是标量，那么随机变量
 </p>
@@ -16900,9 +17704,9 @@ a^2\sigma^2.
 </p>
 </div>
 </div>
-<div id="outline-container-org63aeb5c" class="outline-3">
-<h3 id="org63aeb5c">标准正态随机变量</h3>
-<div class="outline-text-3" id="text-org63aeb5c">
+<div id="outline-container-org65ba344" class="outline-3">
+<h3 id="org65ba344">标准正态随机变量</h3>
+<div class="outline-text-3" id="text-org65ba344">
 <p>
 均值为 0、方差为 1 的正态随机变量 \(Y\) 称为 *标准正态随机变量*。它的 CDF 记作 $&Phi;$：
 </p>
@@ -16971,13 +17775,13 @@ a^2\sigma^2.
 </div>
 </div>
 </div>
-<div id="outline-container-org69ddd10" class="outline-2">
-<h2 id="org69ddd10">第 155 页</h2>
-<div class="outline-text-2" id="text-org69ddd10">
+<div id="outline-container-org6eb2946" class="outline-2">
+<h2 id="org6eb2946">第 155 页</h2>
+<div class="outline-text-2" id="text-org6eb2946">
 </div>
-<div id="outline-container-org7da2329" class="outline-3">
-<h3 id="org7da2329">标准正态分布表</h3>
-<div class="outline-text-3" id="text-org7da2329">
+<div id="outline-container-orged3ee43" class="outline-3">
+<h3 id="orged3ee43">标准正态分布表</h3>
+<div class="outline-text-3" id="text-orged3ee43">
 <p>
 本页表格给出了标准正态随机变量 \(Y\) 的累积分布函数值
 </p>
@@ -17022,9 +17826,9 @@ a^2\sigma^2.
 </div>
 </div>
 </div>
-<div id="outline-container-orgd600dc4" class="outline-2">
-<h2 id="orgd600dc4">第 156 页</h2>
-<div class="outline-text-2" id="text-orgd600dc4">
+<div id="outline-container-org6753829" class="outline-2">
+<h2 id="org6753829">第 156 页</h2>
+<div class="outline-text-2" id="text-org6753829">
 <p>
 令 \(X\) 为均值是 \(\mu\)、方差是 \(\sigma^2\) 的正态随机变量。定义新的随机变量
 </p>
@@ -17097,9 +17901,9 @@ f_Y(y)
 </p>
 </blockquote>
 </div>
-<div id="outline-container-org65105ff" class="outline-3">
-<h3 id="org65105ff">例 3.7：使用正态分布表</h3>
-<div class="outline-text-3" id="text-org65105ff">
+<div id="outline-container-org620b45f" class="outline-3">
+<h3 id="org620b45f">例 3.7：使用正态分布表</h3>
+<div class="outline-text-3" id="text-org620b45f">
 <p>
 某一特定地理位置的年降雪量被建模为正态随机变量，其均值和标准差分别为
 </p>
@@ -17172,9 +17976,9 @@ Y
 </div>
 </div>
 </div>
-<div id="outline-container-org3856c97" class="outline-2">
-<h2 id="org3856c97">第157页</h2>
-<div class="outline-text-2" id="text-org3856c97">
+<div id="outline-container-orgcc6f57f" class="outline-2">
+<h2 id="orgcc6f57f">第157页</h2>
+<div class="outline-text-2" id="text-orgcc6f57f">
 <p>
 由此得到
 </p>
@@ -17189,9 +17993,9 @@ Y
 将前一个例子中的方法推广，可以得到下面的步骤。
 </p>
 </div>
-<div id="outline-container-orgbb2c8e8" class="outline-3">
-<h3 id="orgbb2c8e8">正态随机变量的CDF计算</h3>
-<div class="outline-text-3" id="text-orgbb2c8e8">
+<div id="outline-container-orge2652a5" class="outline-3">
+<h3 id="orge2652a5">正态随机变量的CDF计算</h3>
+<div class="outline-text-3" id="text-orge2652a5">
 <p>
 对于均值为 \(\mu\)、方差为 \(\sigma^2\) 的正态随机变量 \(X\)，采用以下两步：
 </p>
@@ -17229,9 +18033,9 @@ Y\le \frac{x-\mu}{\sigma}
 </p>
 </div>
 </div>
-<div id="outline-container-org8ad0091" class="outline-3">
-<h3 id="org8ad0091">例3.8：信号检测</h3>
-<div class="outline-text-3" id="text-org8ad0091">
+<div id="outline-container-org68fc9fc" class="outline-3">
+<h3 id="org68fc9fc">例3.8：信号检测</h3>
+<div class="outline-text-3" id="text-org68fc9fc">
 <p>
 一个二进制消息以信号 \(s\) 的形式发送，其中 \(s\) 等于 \(-1\) 或 \(+1\)。通信信道在传输过程中叠加了均值为 \(\mu=0\)、方差为 \(\sigma^2\) 的正态噪声。
 </p>
@@ -17318,16 +18122,16 @@ Y\le \frac{x-\mu}{\sigma}
 </div>
 </div>
 </div>
-<div id="outline-container-orgcb810f3" class="outline-2">
-<h2 id="orgcb810f3">第158页</h2>
-<div class="outline-text-2" id="text-orgcb810f3">
+<div id="outline-container-orgfeb14bf" class="outline-2">
+<h2 id="orgfeb14bf">第158页</h2>
+<div class="outline-text-2" id="text-orgfeb14bf">
 <p>
 ——即使这些随机变量本身不一定服从正态分布，其CDF也近似为正态CDF，而与单个随机变量自身的CDF形式无关。这一性质由著名的*中心极限定理*刻画，我们将在第5章讨论它。
 </p>
 </div>
-<div id="outline-container-org580d71a" class="outline-3">
-<h3 id="org580d71a">图3.11：例3.8中的信号检测方案</h3>
-<div class="outline-text-3" id="text-org580d71a">
+<div id="outline-container-org2ee8db6" class="outline-3">
+<h3 id="org2ee8db6">图3.11：例3.8中的信号检测方案</h3>
+<div class="outline-text-3" id="text-org2ee8db6">
 <p>
 系统流程为：
 </p>
@@ -17371,9 +18175,9 @@ s=+1\ \text{或}\ -1,
 </div>
 </div>
 </div>
-<div id="outline-container-orgb458529" class="outline-2">
-<h2 id="orgb458529">3.4 多个随机变量的联合PDF</h2>
-<div class="outline-text-2" id="text-orgb458529">
+<div id="outline-container-org8ba20ff" class="outline-2">
+<h2 id="org8ba20ff">3.4 多个随机变量的联合PDF</h2>
+<div class="outline-text-2" id="text-org8ba20ff">
 <p>
 现在把PDF的概念推广到多个随机变量的情形。
 </p>
@@ -17421,9 +18225,9 @@ B=\{(x,y)\mid a\le x\le b,\ c\le y\le d\},
 </p>
 </div>
 </div>
-<div id="outline-container-orgfac5a5b" class="outline-2">
-<h2 id="orgfac5a5b">第159页</h2>
-<div class="outline-text-2" id="text-orgfac5a5b">
+<div id="outline-container-orgb3c02ab" class="outline-2">
+<h2 id="orgb3c02ab">第159页</h2>
+<div class="outline-text-2" id="text-orgb3c02ab">
 <p>
 进一步令 \(B\) 为整个二维平面，可以得到归一化性质
 </p>
@@ -17519,9 +18323,9 @@ f_{X,Y}(x,y)\,dx.
 \]
 </p>
 </div>
-<div id="outline-container-org5862cdc" class="outline-3">
-<h3 id="org5862cdc">例3.9：二维均匀PDF</h3>
-<div class="outline-text-3" id="text-org5862cdc">
+<div id="outline-container-org4d42c25" class="outline-3">
+<h3 id="org4d42c25">例3.9：二维均匀PDF</h3>
+<div class="outline-text-3" id="text-org4d42c25">
 <p>
 罗密欧和朱丽叶约定在某一时刻见面，两人到达会面地点时都可能迟到 \(0\) 到 \(1\) 小时（回顾第1.2节中的例子）。
 </p>
@@ -17549,9 +18353,9 @@ c, & 0\le x\le 1,\ 0\le y\le 1,\\
 </div>
 </div>
 </div>
-<div id="outline-container-org0aad467" class="outline-2">
-<h2 id="org0aad467">第160页</h2>
-<div class="outline-text-2" id="text-org0aad467">
+<div id="outline-container-orge45f1b3" class="outline-2">
+<h2 id="orge45f1b3">第160页</h2>
+<div class="outline-text-2" id="text-orge45f1b3">
 <p>
 为了使这个PDF满足归一化性质，必须有
 </p>
@@ -17626,9 +18430,9 @@ f_{X,Y}(x,y)\,dx\,dy\\
 \]
 </p>
 </div>
-<div id="outline-container-org5bad936" class="outline-3">
-<h3 id="org5bad936">例3.10</h3>
-<div class="outline-text-3" id="text-org5bad936">
+<div id="outline-container-org69a0946" class="outline-3">
+<h3 id="org69a0946">例3.10</h3>
+<div class="outline-text-3" id="text-org69a0946">
 <p>
 已知随机变量 \(X\) 和 \(Y\) 的联合PDF在图3.12所示的集合 \(S\) 上为常数 \(c\)，在 \(S\) 之外为零。我们希望确定 \(c\) 的值以及 \(X\) 和 \(Y\) 的边缘PDF。
 </p>
@@ -17685,22 +18489,22 @@ f_Y(y)
 </p>
 </div>
 </div>
-<div id="outline-container-org6784f7e" class="outline-3">
-<h3 id="org6784f7e">图3.12</h3>
-<div class="outline-text-3" id="text-org6784f7e">
+<div id="outline-container-org5ae603e" class="outline-3">
+<h3 id="org5ae603e">图3.12</h3>
+<div class="outline-text-3" id="text-org5ae603e">
 <p>
 例3.10中的联合PDF，以及由它得到的边缘PDF。
 </p>
 </div>
 </div>
 </div>
-<div id="outline-container-org3e64b90" class="outline-2">
-<h2 id="org3e64b90">第161页</h2>
-<div class="outline-text-2" id="text-org3e64b90">
+<div id="outline-container-org8f8e914" class="outline-2">
+<h2 id="org8f8e914">第161页</h2>
+<div class="outline-text-2" id="text-org8f8e914">
 </div>
-<div id="outline-container-org3cd50ba" class="outline-3">
-<h3 id="org3cd50ba">例3.11：布丰投针问题</h3>
-<div class="outline-text-3" id="text-org3cd50ba">
+<div id="outline-container-org3093137" class="outline-3">
+<h3 id="org3093137">例3.11：布丰投针问题</h3>
+<div class="outline-text-3" id="text-org3093137">
 <p>
 这是一个著名的例子，标志着几何概率这一研究领域的起源。所谓几何概率，是指对随机放置物体的几何构型进行分析。
 </p>
@@ -17785,9 +18589,9 @@ f_{X,\Theta}(x,\theta)\,dx\,d\theta.
 </p>
 </div>
 </div>
-<div id="outline-container-org9c2a927" class="outline-3">
-<h3 id="org9c2a927">图3.13：布丰投针问题</h3>
-<div class="outline-text-3" id="text-org9c2a927">
+<div id="outline-container-org84d2013" class="outline-3">
+<h3 id="org84d2013">图3.13：布丰投针问题</h3>
+<div class="outline-text-3" id="text-org84d2013">
 <p>
 针的中点与“针的轴线和最近平行线的交点”之间的线段长度为
 </p>
@@ -17803,9 +18607,9 @@ f_{X,\Theta}(x,\theta)\,dx\,d\theta.
 </p>
 </div>
 </div>
-<div id="outline-container-org228c607" class="outline-3">
-<h3 id="org228c607">注</h3>
-<div class="outline-text-3" id="text-org228c607">
+<div id="outline-container-org5a4a96e" class="outline-3">
+<h3 id="org5a4a96e">注</h3>
+<div class="outline-text-3" id="text-org5a4a96e">
 <p>
 这一问题由法国博物学家布丰于1777年提出并解决。
 </p>
@@ -17820,9 +18624,9 @@ f_{X,\Theta}(x,\theta)\,dx\,d\theta.
 </div>
 </div>
 </div>
-<div id="outline-container-org927c21b" class="outline-2">
-<h2 id="org927c21b">第162页</h2>
-<div class="outline-text-2" id="text-org927c21b">
+<div id="outline-container-org882a886" class="outline-2">
+<h2 id="org882a886">第162页</h2>
+<div class="outline-text-2" id="text-org882a886">
 <p>
 继续计算相交概率：
 </p>
@@ -17867,9 +18671,9 @@ dx\,d\theta\\
 这便提供了一种通过实验估计 \(\pi\) 的方法。
 </p>
 </div>
-<div id="outline-container-orgdb79385" class="outline-3">
-<h3 id="orgdb79385">联合CDF</h3>
-<div class="outline-text-3" id="text-orgdb79385">
+<div id="outline-container-org0294358" class="outline-3">
+<h3 id="org0294358">联合CDF</h3>
+<div class="outline-text-3" id="text-org0294358">
 <p>
 如果 \(X\) 和 \(Y\) 是与同一试验相关联的两个随机变量，则把它们的联合CDF定义为
 </p>
@@ -17920,9 +18724,9 @@ f_{X,Y}(x,y)
 </p>
 </div>
 </div>
-<div id="outline-container-org33911c5" class="outline-3">
-<h3 id="org33911c5">例3.12</h3>
-<div class="outline-text-3" id="text-org33911c5">
+<div id="outline-container-org463e4ee" class="outline-3">
+<h3 id="org463e4ee">例3.12</h3>
+<div class="outline-text-3" id="text-org463e4ee">
 <p>
 设 \(X\) 和 \(Y\) 由单位正方形上的均匀PDF描述。其联合CDF为
 </p>
@@ -17963,13 +18767,13 @@ f_{X,Y}(x,y),
 </div>
 </div>
 </div>
-<div id="outline-container-org80a3155" class="outline-2">
-<h2 id="org80a3155">第163页</h2>
-<div class="outline-text-2" id="text-org80a3155">
+<div id="outline-container-org073ebdc" class="outline-2">
+<h2 id="org073ebdc">第163页</h2>
+<div class="outline-text-2" id="text-org073ebdc">
 </div>
-<div id="outline-container-org3cbf34a" class="outline-3">
-<h3 id="org3cbf34a">期望值</h3>
-<div class="outline-text-3" id="text-org3cbf34a">
+<div id="outline-container-orgcaa4f9f" class="outline-3">
+<h3 id="orgcaa4f9f">期望值</h3>
+<div class="outline-text-3" id="text-orgcaa4f9f">
 <p>
 如果 \(X\) 和 \(Y\) 是联合连续随机变量，而 \(g\) 是某个函数，那么
 </p>
@@ -18007,9 +18811,9 @@ a\mathrm{E}[X]+b\mathrm{E}[Y]+c.
 </p>
 </div>
 </div>
-<div id="outline-container-org056a510" class="outline-3">
-<h3 id="org056a510">两个以上的随机变量</h3>
-<div class="outline-text-3" id="text-org056a510">
+<div id="outline-container-org51c90be" class="outline-3">
+<h3 id="org51c90be">两个以上的随机变量</h3>
+<div class="outline-text-3" id="text-org51c90be">
 <p>
 三个随机变量 \(X,Y,Z\) 的联合PDF，可仿照两个随机变量的情形定义。例如，对于任意集合 \(B\)，都有
 </p>
@@ -18114,13 +18918,13 @@ a_1\mathrm{E}[X_1]
 </div>
 </div>
 </div>
-<div id="outline-container-org6ead009" class="outline-2">
-<h2 id="org6ead009">第164页</h2>
-<div class="outline-text-2" id="text-org6ead009">
+<div id="outline-container-org4cd8973" class="outline-2">
+<h2 id="org4cd8973">第164页</h2>
+<div class="outline-text-2" id="text-org4cd8973">
 </div>
-<div id="outline-container-orgc341d22" class="outline-3">
-<h3 id="orgc341d22">联合PDF相关事实汇总</h3>
-<div class="outline-text-3" id="text-orgc341d22">
+<div id="outline-container-org34d9560" class="outline-3">
+<h3 id="org34d9560">联合PDF相关事实汇总</h3>
+<div class="outline-text-3" id="text-org34d9560">
 <p>
 设 \(X\) 和 \(Y\) 是联合连续随机变量，其联合PDF为 \(f_{X,Y}\)。
 </p>
@@ -18221,9 +19025,9 @@ a_1\mathrm{E}[X_1]
 </div>
 </div>
 </div>
-<div id="outline-container-org09d4539" class="outline-2">
-<h2 id="org09d4539">3.5 条件化</h2>
-<div class="outline-text-2" id="text-org09d4539">
+<div id="outline-container-org4beffb7" class="outline-2">
+<h2 id="org4beffb7">3.5 条件化</h2>
+<div class="outline-text-2" id="text-org4beffb7">
 <p>
 与离散随机变量的情形类似，我们可以在给定某个事件或另一个随机变量的条件下考察一个随机变量，并定义条件PDF和条件期望等概念。
 </p>
@@ -18243,13 +19047,13 @@ a_1\mathrm{E}[X_1]
 </p>
 </div>
 </div>
-<div id="outline-container-org897ee8f" class="outline-2">
-<h2 id="org897ee8f">第165页</h2>
-<div class="outline-text-2" id="text-org897ee8f">
+<div id="outline-container-orgf543e79" class="outline-2">
+<h2 id="orgf543e79">第165页</h2>
+<div class="outline-text-2" id="text-orgf543e79">
 </div>
-<div id="outline-container-org229bb14" class="outline-3">
-<h3 id="org229bb14">随机变量关于一个事件的条件化</h3>
-<div class="outline-text-3" id="text-org229bb14">
+<div id="outline-container-orgc5192c8" class="outline-3">
+<h3 id="orgc5192c8">随机变量关于一个事件的条件化</h3>
+<div class="outline-text-3" id="text-orgc5192c8">
 <p>
 给定一个满足 \(\mathrm{P}(A)>0\) 的事件 \(A\)，连续随机变量 \(X\) 的*条件PDF*被定义为一个非负函数 \(f_{X\mid A}\)，它满足
 </p>
@@ -18350,9 +19154,9 @@ f<sub>X\mid\{X&isin; A\}</sub>(x)
 </p>
 </div>
 </div>
-<div id="outline-container-org6491d1b" class="outline-3">
-<h3 id="org6491d1b">例3.13：指数随机变量的无记忆性</h3>
-<div class="outline-text-3" id="text-org6491d1b">
+<div id="outline-container-orgfa86bca" class="outline-3">
+<h3 id="orgfa86bca">例3.13：指数随机变量的无记忆性</h3>
+<div class="outline-text-3" id="text-orgfa86bca">
 <p>
 一只新灯泡从开始使用到烧坏的时间 \(T\)，服从参数为 \(\lambda\) 的指数分布。
 </p>
@@ -18399,13 +19203,13 @@ e^{-\lambda x}.
 </div>
 </div>
 </div>
-<div id="outline-container-org129e17e" class="outline-2">
-<h2 id="org129e17e">第166页</h2>
-<div class="outline-text-2" id="text-org129e17e">
+<div id="outline-container-orgc0d2e26" class="outline-2">
+<h2 id="orgc0d2e26">第166页</h2>
+<div class="outline-text-2" id="text-orgc0d2e26">
 </div>
-<div id="outline-container-orgd5ed631" class="outline-3">
-<h3 id="orgd5ed631">图3.14：无条件PDF与条件PDF</h3>
-<div class="outline-text-3" id="text-orgd5ed631">
+<div id="outline-container-org9db0829" class="outline-3">
+<h3 id="org9db0829">图3.14：无条件PDF与条件PDF</h3>
+<div class="outline-text-3" id="text-org9db0829">
 <p>
 图中显示了无条件PDF \(f_X\)，以及在事件
 </p>
@@ -18502,9 +19306,9 @@ A_1,\ldots,A_n
 </div>
 </div>
 </div>
-<div id="outline-container-orgd37dd94" class="outline-2">
-<h2 id="orgd37dd94">第167页</h2>
-<div class="outline-text-2" id="text-orgd37dd94">
+<div id="outline-container-orgc32c684" class="outline-2">
+<h2 id="orgc32c684">第167页</h2>
+<div class="outline-text-2" id="text-orgc32c684">
 <p>
 ——有
 </p>
@@ -18550,9 +19354,9 @@ f_{X\mid A_i}(t)\,dt.
 然后对等式两边关于 \(x\) 求导，便得到所需结果。
 </p>
 </div>
-<div id="outline-container-org2975161" class="outline-3">
-<h3 id="org2975161">给定一个事件时的条件PDF</h3>
-<div class="outline-text-3" id="text-org2975161">
+<div id="outline-container-org1b4ea6e" class="outline-3">
+<h3 id="org1b4ea6e">给定一个事件时的条件PDF</h3>
+<div class="outline-text-3" id="text-org1b4ea6e">
 <ul class="org-ul">
 <li><p>
 给定满足 \(\mathrm{P}(A)>0\) 的事件 \(A\)，连续随机变量 \(X\) 的条件PDF \(f_{X\mid A}\) 满足
@@ -18629,13 +19433,13 @@ f<sub>X\mid\{X&isin; A\}</sub>(x)
 </div>
 </div>
 </div>
-<div id="outline-container-org433117b" class="outline-2">
-<h2 id="org433117b">第168页</h2>
-<div class="outline-text-2" id="text-org433117b">
+<div id="outline-container-orgf682f38" class="outline-2">
+<h2 id="orgf682f38">第168页</h2>
+<div class="outline-text-2" id="text-orgf682f38">
 </div>
-<div id="outline-container-orgb392990" class="outline-3">
-<h3 id="orgb392990">例3.14：地铁候车时间</h3>
-<div class="outline-text-3" id="text-orgb392990">
+<div id="outline-container-orge7da14c" class="outline-3">
+<h3 id="orge7da14c">例3.14：地铁候车时间</h3>
+<div class="outline-text-3" id="text-orge7da14c">
 <p>
 从早晨6:00开始，你家附近的地铁站每隔15分钟有一班列车到达。
 </p>
@@ -18645,9 +19449,9 @@ f<sub>X\mid\{X&isin; A\}</sub>(x)
 </p>
 </div>
 </div>
-<div id="outline-container-org59a288e" class="outline-3">
-<h3 id="org59a288e">图3.15</h3>
-<div class="outline-text-3" id="text-org59a288e">
+<div id="outline-container-org75c2337" class="outline-3">
+<h3 id="org75c2337">图3.15</h3>
+<div class="outline-text-3" id="text-org75c2337">
 <p>
 图中依次显示了例3.14中的
 </p>
@@ -18838,13 +19642,13 @@ f_Y(y)
 </div>
 </div>
 </div>
-<div id="outline-container-org40f317d" class="outline-2">
-<h2 id="org40f317d">第169页</h2>
-<div class="outline-text-2" id="text-org40f317d">
+<div id="outline-container-orgc0cc3e4" class="outline-2">
+<h2 id="orgc0cc3e4">第169页</h2>
+<div class="outline-text-2" id="text-orgc0cc3e4">
 </div>
-<div id="outline-container-org8611315" class="outline-3">
-<h3 id="org8611315">以一个随机变量为条件对另一个随机变量进行条件化</h3>
-<div class="outline-text-3" id="text-org8611315">
+<div id="outline-container-org0f231b1" class="outline-3">
+<h3 id="org0f231b1">以一个随机变量为条件对另一个随机变量进行条件化</h3>
+<div class="outline-text-3" id="text-org0f231b1">
 <p>
 设 \(X\) 和 \(Y\) 是具有联合 PDF \(f_{X,Y}\) 的连续随机变量。对于任意满足 \(f_Y(y)>0\) 的 \(y\)，给定 \(Y=y\) 时 \(X\) 的*条件 PDF* 定义为
 </p>
@@ -18900,15 +19704,15 @@ f_Y(y)
 </p>
 
 
-<div id="orgee5d92d" class="figure">
+<div id="org91cbc2e" class="figure">
 <p><img src="file:///Users/fenghaoran/pdftoppm/pages/ch03/page-179.png" alt="page-179.png" />
 </p>
-<p><span class="figure-number">&#22270;3&nbsp; </span>图 3.16：条件 PDF \(f_{X\mid Y}(x\mid y)\) 的可视化。设 \(X\) 和 \(Y\) 的联合 PDF 在集合 \(S\) 上均匀。对于每个固定的 \(y\)，沿切片 \(Y=y\) 考察联合 PDF，并将其重新归一化，使积分等于 1。</p>
+<p><span class="figure-number">Figure 3: </span>图 3.16：条件 PDF \(f_{X\mid Y}(x\mid y)\) 的可视化。设 \(X\) 和 \(Y\) 的联合 PDF 在集合 \(S\) 上均匀。对于每个固定的 \(y\)，沿切片 \(Y=y\) 考察联合 PDF，并将其重新归一化，使积分等于 1。</p>
 </div>
 </div>
-<div id="outline-container-orgd0d3380" class="outline-4">
-<h4 id="orgd0d3380">例 3.15：圆形区域上的均匀 PDF</h4>
-<div class="outline-text-4" id="text-orgd0d3380">
+<div id="outline-container-org75bbc20" class="outline-4">
+<h4 id="org75bbc20">例 3.15：圆形区域上的均匀 PDF</h4>
+<div class="outline-text-4" id="text-org75bbc20">
 <p>
 Ben 向一个半径为 \(r\) 的圆形靶投掷飞镖（见图 3.17）。假设他总能击中靶面，并且所有撞击点 \((x,y)\) 都具有相同的可能性，因此随机变量 \(X\) 和 \(Y\) 的联合 PDF 是均匀的。
 </p>
@@ -18916,9 +19720,9 @@ Ben 向一个半径为 \(r\) 的圆形靶投掷飞镖（见图 3.17）。假设�
 </div>
 </div>
 </div>
-<div id="outline-container-orgb2c2ab4" class="outline-2">
-<h2 id="orgb2c2ab4">第170页</h2>
-<div class="outline-text-2" id="text-orgb2c2ab4">
+<div id="outline-container-org5841ce8" class="outline-2">
+<h2 id="org5841ce8">第170页</h2>
+<div class="outline-text-2" id="text-org5841ce8">
 <p>
 沿用例 3.9，并注意到圆的面积为 \(\pi r^2\)，我们有
 </p>
@@ -18958,10 +19762,10 @@ f<sub>X,Y</sub>(x,y)
 </p>
 
 
-<div id="orge72df2e" class="figure">
+<div id="org90d09b2" class="figure">
 <p><img src="file:///Users/fenghaoran/pdftoppm/pages/ch03/page-180.png" alt="page-180.png" />
 </p>
-<p><span class="figure-number">&#22270;4&nbsp; </span>图 3.17：例 3.15 中的圆形靶。</p>
+<p><span class="figure-number">Figure 4: </span>图 3.17：例 3.15 中的圆形靶。</p>
 </div>
 
 <p>
@@ -19020,9 +19824,9 @@ f_{X\mid Y}(x\mid y)
 </p>
 </div>
 </div>
-<div id="outline-container-org9a5e24c" class="outline-2">
-<h2 id="org9a5e24c">第171页</h2>
-<div class="outline-text-2" id="text-org9a5e24c">
+<div id="outline-container-org3d89dcc" class="outline-2">
+<h2 id="org3d89dcc">第171页</h2>
+<div class="outline-text-2" id="text-org3d89dcc">
 <p>
 为了解释条件 PDF，固定两个较小的正数 \(\delta_1\) 和 \(\delta_2\)，并以事件
 </p>
@@ -19120,9 +19924,9 @@ f_{X\mid Y}(x\mid y)\delta_1,
 与离散情形一样，条件 PDF \(f_{X\mid Y}\) 和边缘 PDF \(f_Y\) 有时可以用来计算联合 PDF。此外，这种方法也可用于建模：与其直接指定 \(f_{X,Y}\)，通常更自然的做法是先用 PDF \(f_Y\) 给出 \(Y\) 的概率律，然后对 \(Y\) 的每个可能值 \(y\)，给出 \(X\) 的条件 PDF \(f_{X\mid Y}(x\mid y)\)。
 </p>
 </div>
-<div id="outline-container-orgc5f181f" class="outline-4">
-<h4 id="orgc5f181f">例 3.16</h4>
-<div class="outline-text-4" id="text-orgc5f181f">
+<div id="outline-container-org5eec55e" class="outline-4">
+<h4 id="org5eec55e">例 3.16</h4>
+<div class="outline-text-4" id="text-org5eec55e">
 <p>
 经过警方测速雷达的一辆典型汽车，其速度被建模为均值为每小时 50 英里的指数分布随机变量 \(X\)。测速雷达对车速的测量值 \(Y\) 存在误差；该误差被建模为均值为 0、标准差等于实际车速十分之一的正态随机变量。求 \(X\) 和 \(Y\) 的联合 PDF。
 </p>
@@ -19172,13 +19976,13 @@ e^{-50(y-x)^2/x^2}.
 </div>
 </div>
 </div>
-<div id="outline-container-org04a5e33" class="outline-2">
-<h2 id="org04a5e33">第172页</h2>
-<div class="outline-text-2" id="text-org04a5e33">
+<div id="outline-container-org02da683" class="outline-2">
+<h2 id="org02da683">第172页</h2>
+<div class="outline-text-2" id="text-org02da683">
 </div>
-<div id="outline-container-org79b43a3" class="outline-3">
-<h3 id="org79b43a3">给定一个随机变量的条件 PDF</h3>
-<div class="outline-text-3" id="text-org79b43a3">
+<div id="outline-container-orgcd688c4" class="outline-3">
+<h3 id="orgcd688c4">给定一个随机变量的条件 PDF</h3>
+<div class="outline-text-3" id="text-orgcd688c4">
 <p>
 设 \(X\) 和 \(Y\) 是具有联合 PDF \(f_{X,Y}\) 的联合连续随机变量。
 </p>
@@ -19267,9 +20071,9 @@ f_Z(z),
 </p>
 </div>
 </div>
-<div id="outline-container-org2874e69" class="outline-3">
-<h3 id="org2874e69">条件期望</h3>
-<div class="outline-text-3" id="text-org2874e69">
+<div id="outline-container-orgf3d7ae2" class="outline-3">
+<h3 id="orgf3d7ae2">条件期望</h3>
+<div class="outline-text-3" id="text-orgf3d7ae2">
 <p>
 对于连续随机变量 \(X\)，给定事件 \(A\) 时的*条件期望* \(\operatorname{E}[X\mid A]\) 的定义与无条件情形类似，只是现在需要使用条件 PDF \(f_{X\mid A}\)。
 </p>
@@ -19284,13 +20088,13 @@ f_Z(z),
 </div>
 </div>
 </div>
-<div id="outline-container-org3bed13a" class="outline-2">
-<h2 id="org3bed13a">第173页</h2>
-<div class="outline-text-2" id="text-org3bed13a">
+<div id="outline-container-org5b669a8" class="outline-2">
+<h2 id="org5b669a8">第173页</h2>
+<div class="outline-text-2" id="text-org5b669a8">
 </div>
-<div id="outline-container-org1fedd0b" class="outline-3">
-<h3 id="org1fedd0b">条件期望相关事实汇总</h3>
-<div class="outline-text-3" id="text-org1fedd0b">
+<div id="outline-container-org539bd9d" class="outline-3">
+<h3 id="org539bd9d">条件期望相关事实汇总</h3>
+<div class="outline-text-3" id="text-org539bd9d">
 <p>
 设 \(X\) 和 \(Y\) 是联合连续随机变量，\(A\) 是满足 \(\operatorname{P}(A)>0\) 的事件。
 </p>
@@ -19353,14 +20157,14 @@ g(x)f_{X\mid Y}(x\mid y)\,dx.
 </div>
 </div>
 </div>
-<div id="outline-container-orgb219f63" class="outline-2">
-<h2 id="orgb219f63">第175页</h2>
-<div class="outline-text-2" id="text-orgb219f63">
+<div id="outline-container-orgf0129b1" class="outline-2">
+<h2 id="orgf0129b1">第175页</h2>
+<div class="outline-text-2" id="text-orgf0129b1">
 
-<div id="org8dc17d5" class="figure">
+<div id="org33e940f" class="figure">
 <p><img src="file:///Users/fenghaoran/pdftoppm/pages/ch03/page-185.png" alt="page-185.png" />
 </p>
-<p><span class="figure-number">&#22270;5&nbsp; </span>图3.18：例3.17中的分段常数 PDF。</p>
+<p><span class="figure-number">Figure 5: </span>图3.18：例3.17中的分段常数 PDF。</p>
 </div>
 
 <p>
@@ -19436,9 +20240,9 @@ g(x)f_{X\mid Y}(x\mid y)\,dx.
 注意，这种计算均值和方差的方法很容易推广到由两个以上区段组成的分段常数 PDF。
 </p>
 </div>
-<div id="outline-container-org4fcbd9c" class="outline-3">
-<h3 id="org4fcbd9c">独立性</h3>
-<div class="outline-text-3" id="text-org4fcbd9c">
+<div id="outline-container-org7a9375a" class="outline-3">
+<h3 id="org7a9375a">独立性</h3>
+<div class="outline-text-3" id="text-org7a9375a">
 <p>
 与离散情形完全类似，如果两个连续随机变量 \(X\) 和 \(Y\) 的联合 PDF 等于其边缘 PDF 的乘积，就称 \(X\) 和 \(Y\) 相互独立：
 </p>
@@ -19476,9 +20280,9 @@ f_{X\mid Y}(x\mid y)=f_X(x),
 </div>
 </div>
 </div>
-<div id="outline-container-org18c5511" class="outline-2">
-<h2 id="org18c5511">第176页</h2>
-<div class="outline-text-2" id="text-org18c5511">
+<div id="outline-container-orga6bb69e" class="outline-2">
+<h2 id="orga6bb69e">第176页</h2>
+<div class="outline-text-2" id="text-orga6bb69e">
 <p>
 或者，对称地，
 </p>
@@ -19508,9 +20312,9 @@ f_{X,Y,Z}(x,y,z)=f_X(x)f_Y(y)f_Z(z),
 我们就称 \(X,Y,Z\) 相互独立。
 </p>
 </div>
-<div id="outline-container-org74bc681" class="outline-3">
-<h3 id="org74bc681">例3.18：相互独立的正态随机变量</h3>
-<div class="outline-text-3" id="text-org74bc681">
+<div id="outline-container-org2da6628" class="outline-3">
+<h3 id="org2da6628">例3.18：相互独立的正态随机变量</h3>
+<div class="outline-text-3" id="text-org2da6628">
 <p>
 设 \(X\) 和 \(Y\) 是相互独立的正态随机变量，其均值分别为 \(\mu_x,\mu_y\)，方差分别为 \(\sigma_x^2,\sigma_y^2\)。它们的联合 PDF 为
 </p>
@@ -19557,17 +20361,17 @@ f_{X,Y}(x,y)
 </p>
 
 
-<div id="org81c1c15" class="figure">
+<div id="org10ebf31" class="figure">
 <p><img src="file:///Users/fenghaoran/pdftoppm/pages/ch03/page-186.png" alt="page-186.png" />
 </p>
-<p><span class="figure-number">&#22270;6&nbsp; </span>图3.19：两个相互独立的正态随机变量 \(X\) 和 \(Y\) 的联合 PDF 的等高线。它们的均值分别为 \(\mu_x,\mu_y\)，方差分别为 \(\sigma_x^2,\sigma_y^2\)。</p>
+<p><span class="figure-number">Figure 6: </span>图3.19：两个相互独立的正态随机变量 \(X\) 和 \(Y\) 的联合 PDF 的等高线。它们的均值分别为 \(\mu_x,\mu_y\)，方差分别为 \(\sigma_x^2,\sigma_y^2\)。</p>
 </div>
 </div>
 </div>
 </div>
-<div id="outline-container-orgddce22e" class="outline-2">
-<h2 id="orgddce22e">第177页</h2>
-<div class="outline-text-2" id="text-orgddce22e">
+<div id="outline-container-org8e6f4d3" class="outline-2">
+<h2 id="org8e6f4d3">第177页</h2>
+<div class="outline-text-2" id="text-org8e6f4d3">
 <p>
 如果 \(X\) 和 \(Y\) 相互独立，那么任意两个形如 \(\{X\in A\}\) 和 \(\{Y\in B\}\) 的事件也相互独立。事实上，
 </p>
@@ -19635,9 +20439,9 @@ F_{X,Y}(x,y)=F_X(x)F_Y(y),
 最后，独立随机变量之和的方差等于它们各自方差之和。
 </p>
 </div>
-<div id="outline-container-org19f20b2" class="outline-3">
-<h3 id="org19f20b2">连续随机变量独立性的要点</h3>
-<div class="outline-text-3" id="text-org19f20b2">
+<div id="outline-container-orgf8d912a" class="outline-3">
+<h3 id="orgf8d912a">连续随机变量独立性的要点</h3>
+<div class="outline-text-3" id="text-orgf8d912a">
 <p>
 设 \(X\) 和 \(Y\) 是联合连续随机变量。
 </p>
@@ -19671,9 +20475,9 @@ F_{X,Y}(x,y)=F_X(x)F_Y(y),
 </div>
 </div>
 </div>
-<div id="outline-container-org7b33ad8" class="outline-2">
-<h2 id="org7b33ad8">第178页</h2>
-<div class="outline-text-2" id="text-org7b33ad8">
+<div id="outline-container-org0f00eb2" class="outline-2">
+<h2 id="org0f00eb2">第178页</h2>
+<div class="outline-text-2" id="text-org0f00eb2">
 <p>
 此外，对于任意函数 \(g\) 和 \(h\)，随机变量 \(g(X)\) 与 \(h(Y)\) 相互独立，并且
 </p>
@@ -19701,9 +20505,9 @@ F_{X,Y}(x,y)=F_X(x)F_Y(y),
 </ul>
 </div>
 </div>
-<div id="outline-container-orgdb8caa7" class="outline-2">
-<h2 id="orgdb8caa7">3.6 连续型贝叶斯法则</h2>
-<div class="outline-text-2" id="text-orgdb8caa7">
+<div id="outline-container-org7688c3e" class="outline-2">
+<h2 id="org7688c3e">3.6 连续型贝叶斯法则</h2>
+<div class="outline-text-2" id="text-org7688c3e">
 <p>
 在许多情形中，我们用具有 PDF \(f_X\) 的随机变量 \(X\) 表示一个无法直接观测的现象，并对其进行带噪声的测量。测量结果记为 \(Y\)，其模型由条件 PDF \(f_{Y\mid X}\) 描述。
 </p>
@@ -19713,10 +20517,10 @@ F_{X,Y}(x,y)=F_X(x)F_Y(y),
 </p>
 
 
-<div id="orgdc70f85" class="figure">
+<div id="org07a56c9" class="figure">
 <p><img src="file:///Users/fenghaoran/pdftoppm/pages/ch03/page-188.png" alt="page-188.png" />
 </p>
-<p><span class="figure-number">&#22270;7&nbsp; </span>图3.20：推断问题的示意图。未观测随机变量 \(X\) 具有已知 PDF；按照条件 PDF \(f_{Y\mid X}\) 得到测量值 \(Y\)。给定观测值 \(y\) 后，推断问题就是求条件 PDF \(f_{X\mid Y}(x\mid y)\)。</p>
+<p><span class="figure-number">Figure 7: </span>图3.20：推断问题的示意图。未观测随机变量 \(X\) 具有已知 PDF；按照条件 PDF \(f_{Y\mid X}\) 得到测量值 \(Y\)。给定观测值 \(y\) 后，推断问题就是求条件 PDF \(f_{X\mid Y}(x\mid y)\)。</p>
 </div>
 
 <p>
@@ -19767,13 +20571,13 @@ f_X(t)f_{Y\mid X}(y\mid t)\,dt}.
 </p>
 </div>
 </div>
-<div id="outline-container-org35c778d" class="outline-2">
-<h2 id="org35c778d">第179页</h2>
-<div class="outline-text-2" id="text-org35c778d">
+<div id="outline-container-org1553e2a" class="outline-2">
+<h2 id="org1553e2a">第179页</h2>
+<div class="outline-text-2" id="text-org1553e2a">
 </div>
-<div id="outline-container-org1d63857" class="outline-3">
-<h3 id="org1d63857">例3.19</h3>
-<div class="outline-text-3" id="text-org1d63857">
+<div id="outline-container-org2f094e2" class="outline-3">
+<h3 id="org2f094e2">例3.19</h3>
+<div class="outline-text-3" id="text-org2f094e2">
 <p>
 已知通用照明公司生产的灯泡寿命 \(Y\) 服从指数分布。不过，该公司最近遇到了质量控制问题。在任意一天，\(Y\) 的 PDF 参数 \(\lambda\) 本身实际上也是一个随机变量，并在区间 \([1,3/2]\) 上均匀分布。
 </p>
@@ -19820,9 +20624,9 @@ f_{\Lambda\mid Y}(\lambda\mid y)
 </p>
 </div>
 </div>
-<div id="outline-container-org40766a0" class="outline-3">
-<h3 id="org40766a0">关于离散随机变量的推断</h3>
-<div class="outline-text-3" id="text-org40766a0">
+<div id="outline-container-orgfe642b0" class="outline-3">
+<h3 id="orgfe642b0">关于离散随机变量的推断</h3>
+<div class="outline-text-3" id="text-orgfe642b0">
 <p>
 在某些情形中，未观测的现象本质上是离散的。例如：
 </p>
@@ -19908,9 +20712,9 @@ f_Y(y)
 </div>
 </div>
 </div>
-<div id="outline-container-orgfd58f50" class="outline-2">
-<h2 id="orgfd58f50">第180页</h2>
-<div class="outline-text-2" id="text-orgfd58f50">
+<div id="outline-container-org2fc0fc5" class="outline-2">
+<h2 id="org2fc0fc5">第180页</h2>
+<div class="outline-text-2" id="text-org2fc0fc5">
 <p>
 因此，
 </p>
@@ -19974,9 +20778,9 @@ f_Y(y)
 \]
 </p>
 </div>
-<div id="outline-container-org065026d" class="outline-3">
-<h3 id="org065026d">例3.20：信号检测</h3>
-<div class="outline-text-3" id="text-org065026d">
+<div id="outline-container-org190c862" class="outline-3">
+<h3 id="org190c862">例3.20：信号检测</h3>
+<div class="outline-text-3" id="text-org190c862">
 <p>
 传输一个二元信号 \(S\)，并且已知
 </p>
@@ -20060,13 +20864,13 @@ Y=N+S,
 </div>
 </div>
 </div>
-<div id="outline-container-org8cade44" class="outline-2">
-<h2 id="org8cade44">第181页</h2>
-<div class="outline-text-2" id="text-org8cade44">
+<div id="outline-container-orgf9212de" class="outline-2">
+<h2 id="orgf9212de">第181页</h2>
+<div class="outline-text-2" id="text-orgf9212de">
 </div>
-<div id="outline-container-orgb7958ea" class="outline-3">
-<h3 id="orgb7958ea">基于离散观测的推断</h3>
-<div class="outline-text-3" id="text-orgb7958ea">
+<div id="outline-container-orgcd6be75" class="outline-3">
+<h3 id="orgcd6be75">基于离散观测的推断</h3>
+<div class="outline-text-3" id="text-orgcd6be75">
 <p>
 最后需要指出，前面用 \(f_{Y\mid A}(y)\) 表示
 \(\mathrm{P}(A\mid Y=y)\) 的公式也可以反过来写成
@@ -20127,9 +20931,9 @@ p_{N\mid Y}(n\mid y)
 </p>
 </div>
 </div>
-<div id="outline-container-org99ba575" class="outline-3">
-<h3 id="org99ba575">连续随机变量的贝叶斯法则</h3>
-<div class="outline-text-3" id="text-org99ba575">
+<div id="outline-container-orga9b48fd" class="outline-3">
+<h3 id="orga9b48fd">连续随机变量的贝叶斯法则</h3>
+<div class="outline-text-3" id="text-orga9b48fd">
 <p>
 设 \(Y\) 为连续随机变量。
 </p>
@@ -20197,9 +21001,9 @@ p_{N\mid Y}(n\mid y)
 </div>
 </div>
 </div>
-<div id="outline-container-org9e10db1" class="outline-2">
-<h2 id="org9e10db1">第182页</h2>
-<div class="outline-text-2" id="text-org9e10db1">
+<div id="outline-container-org635817a" class="outline-2">
+<h2 id="org635817a">第182页</h2>
+<div class="outline-text-2" id="text-org635817a">
 <p>
 与上述公式对偶地，还有
 </p>
@@ -20222,9 +21026,9 @@ f_Y(t)\mathrm{P}(N=n\mid Y=t)\,dt}.
 <li>对于 \(\mathrm{P}(A\mid Y=y)\) 和 \(f_{Y\mid A}(y)\)，也有类似的公式。</li>
 </ul>
 </div>
-<div id="outline-container-orgc8b11bd" class="outline-3">
-<h3 id="orgc8b11bd">3.7 总结与讨论</h3>
-<div class="outline-text-3" id="text-orgc8b11bd">
+<div id="outline-container-orgd11410f" class="outline-3">
+<h3 id="orgd11410f">3.7 总结与讨论</h3>
+<div class="outline-text-3" id="text-orgd11410f">
 <p>
 连续随机变量由 PDF 描述，而 PDF 用于计算事件的概率。这与离散情形下使用
 PMF 类似，只不过现在需要用积分来代替求和。
@@ -20243,13 +21047,13 @@ PMF 类似，只不过现在需要用积分来代替求和。
 </p>
 </div>
 </div>
-<div id="outline-container-orgc5b4aa5" class="outline-3">
-<h3 id="orgc5b4aa5">特殊随机变量的结果汇总</h3>
-<div class="outline-text-3" id="text-orgc5b4aa5">
+<div id="outline-container-orgec9e50e" class="outline-3">
+<h3 id="orgec9e50e">特殊随机变量的结果汇总</h3>
+<div class="outline-text-3" id="text-orgec9e50e">
 </div>
-<div id="outline-container-orgd27cfee" class="outline-4">
-<h4 id="orgd27cfee">区间 \([a,b]\) 上的连续均匀分布</h4>
-<div class="outline-text-4" id="text-orgd27cfee">
+<div id="outline-container-orgb830f5b" class="outline-4">
+<h4 id="orgb830f5b">区间 \([a,b]\) 上的连续均匀分布</h4>
+<div class="outline-text-4" id="text-orgb830f5b">
 <p>
 \[
 f_X(x)
@@ -20272,9 +21076,9 @@ f_X(x)
 </p>
 </div>
 </div>
-<div id="outline-container-org97c4489" class="outline-4">
-<h4 id="org97c4489">参数为 \(\lambda\) 的指数分布</h4>
-<div class="outline-text-4" id="text-org97c4489">
+<div id="outline-container-org28c5c5a" class="outline-4">
+<h4 id="org28c5c5a">参数为 \(\lambda\) 的指数分布</h4>
+<div class="outline-text-4" id="text-org28c5c5a">
 <p>
 \[
 f_X(x)
@@ -20312,13 +21116,13 @@ F_X(x)
 </div>
 </div>
 </div>
-<div id="outline-container-org003c10d" class="outline-2">
-<h2 id="org003c10d">第183页</h2>
-<div class="outline-text-2" id="text-org003c10d">
+<div id="outline-container-orge829bdd" class="outline-2">
+<h2 id="orge829bdd">第183页</h2>
+<div class="outline-text-2" id="text-orge829bdd">
 </div>
-<div id="outline-container-org133dd55" class="outline-4">
-<h4 id="org133dd55">参数为 \(\mu\) 和 \(\sigma^2>0\) 的正态分布</h4>
-<div class="outline-text-4" id="text-org133dd55">
+<div id="outline-container-org74760ff" class="outline-4">
+<h4 id="org74760ff">参数为 \(\mu\) 和 \(\sigma^2>0\) 的正态分布</h4>
+<div class="outline-text-4" id="text-org74760ff">
 <p>
 \[
 f_X(x)
@@ -20350,8 +21154,8 @@ e^{-(x-\mu)^2/(2\sigma^2)}.
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="author">&#20316;&#32773;: harrifeng@outlook.com</p>
-<p class="date">Created: 2026-08-12 Wed 16:06</p>
+<p class="author">Author: harrifeng@outlook.com</p>
+<p class="date">Created: 2026-08-12 Wed 16:09</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
